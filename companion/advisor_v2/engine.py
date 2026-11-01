@@ -76,6 +76,32 @@ def pick_order(set_code):
     return {}
 
 
+STAGES = [(0, 0, "0"), (1, 2, "1-2"), (3, 5, "3-5"), (6, 9, "6-9"), (10, 14, "10-14"), (15, 22, "15-22"), (23, 99, "23+")]
+
+
+def stage_of(spells):
+    """The pool-size bucket the branch thresholds are fitted per."""
+    return next(label for lo, hi, label in STAGES if lo <= spells <= hi)
+
+
+@lru_cache(maxsize=8)
+def branch_thresholds(set_code):
+    """{stage: gap} fitted by tools/fit_branch.py; {} when the set has none."""
+    import json
+    from pathlib import Path
+
+    path = Path(__file__).with_name(f"branch_{set_code}.json")
+    return json.loads(path.read_text()).get("stages", {}) if path.exists() else {}
+
+
+@lru_cache(maxsize=8)
+def branch_file(path):
+    import json
+    from pathlib import Path
+
+    return json.loads(Path(path).read_text()).get("stages", {})
+
+
 @lru_cache(maxsize=8)
 def tables(set_code):
     """Per-set typical-deck and synergy tables, if tools/synergy/build.py has produced them."""
@@ -96,6 +122,11 @@ class DraftAdvisorV2:
     SPLASH = 0.85  # one off-colour pip with a fixer for it in the pool: shrunk WR × SPLASH (0 = off)
     SPEC_SPLASH = 1.0  # early-draft splash before any fixing exists: shrunk WR × SPEC_SPLASH × (1 − commitment progress); 0 = off
     SPEC_ALL = False  # False: only cards castable in no two-colour lane (three-colour cards) get it; True: any card one pip off
+    SPLIT = True  # two orders: Power (best card if you end up in its colours) and Fit (best for the colours you are in); branch to Power above a learnt gap
+    BRANCH_MODE = "learnt"  # "learnt" (fitted rule), "fit" (never branch), "power" (always take the strongest card)
+    BRANCH_FILE = ""  # override the fitted rule's file (measuring alternatives); "" = companion/advisor_v2/branch_<SET>.json
+    BRANCH_DEFAULT = 3.0  # GIH WR points; used for stages with no fitted threshold (companion/advisor_v2/branch_<SET>.json)
+    ORDER_FADE_BY = 0  # pick in the pack by which the pick-order prior has faded to 0; 0 = no fade
     ORDER_WEIGHT = 2.0  # WR points per SD of how early top players take the card (their ATA), × castability; 0 = off
     TOP_WR = False  # rejected 2026-11-01 (FRA +0.1, TDM −0.7 top-drafter top-1). Use top players' win rates (the set's _Top dataset), shrunk toward all players' by sample size
     K_TOP = 300.0  # shrinkage for top-player rates: w = n_top / (n_top + K_TOP)
@@ -136,7 +167,8 @@ class DraftAdvisorV2:
         self.steer = self.STEER * (1.0 - progress)  # the candidate's pull fades as the pool becomes a deck
         self.alpha = self.ALPHA + (self.ALPHA_LATE - self.ALPHA) * progress
         self.commit = commitment(self.pool, self.mean, self.std)
-        self.lanes = self._lanes(self.commit)  # pool only; what the Analyst shows
+        self.lanes = self._lanes(self.commit)  # pool only; what the Analyst shows and what Fit uses
+        self.split = None
         set_code = next((c.get("set") for c in self.pool if c.get("set")), None)
         self.typical, self.synergy = tables(set_code) if set_code else ({}, {})
         self.top, self.top_shift = top_ratings(set_code) if set_code and self.TOP_WR else ({}, 0.0)
@@ -278,11 +310,13 @@ class DraftAdvisorV2:
             if self.ORDER_WEIGHT:
                 # What top players reach for, beyond its win rate; only as far as v2 expects to play the card.
                 live = sum(p for lane, p in lanes.items() if castable(card, lane) or self.speculative(card, lane))
-                score += self.ORDER_WEIGHT * self.order.get(name, 0.0) * live
+                score += self.order_prior(name, current_pick) * live
             wheel = upstream._wheel_chance(card, max(1, current_pick), rank_in_pack.get(name, 99), pack_size=len(pack_cards))
             recs.append(self._rec(card, name, base, score, (base - pack_mean) / pack_std, cast_p, wheel,
                                   self._reasons(card, lanes, cast_p)))
 
+        if self.SPLIT:
+            return self._split(pack_cards, recs, current_pick, set_code)
         recs.sort(key=lambda r: r.contextual_score, reverse=True)
         # Wheel as a tiebreaker: among cards within WHEEL_EPS of the best, take the one least likely to come back.
         if len(recs) > 1:
@@ -293,6 +327,67 @@ class DraftAdvisorV2:
                 recs.remove(pick)
                 recs.insert(0, pick)
         return recs
+
+    def order_prior(self, name, pick):
+        """Pick-order prior in WR points, faded through the pack when ORDER_FADE_BY is set."""
+        if not self.ORDER_WEIGHT:
+            return 0.0
+        fade = max(0.0, 1.0 - (pick - 1) / self.ORDER_FADE_BY) if self.ORDER_FADE_BY else 1.0
+        return self.ORDER_WEIGHT * self.order.get(name, 0.0) * fade
+
+    def power(self, card, pick):
+        """How good the card is if you end up in its colours: its best lane, ignoring the pool."""
+        live = [lane for lane in LANES if castable(card, lane) or self.speculative(card, lane)]
+        best = max((self.value(card, lane) for lane in live), default=self.replacement)
+        return best + self.order_prior(card.get("name", ""), pick)
+
+    def fit(self, card, pick):
+        """How good the card is for the colours the pool points to: the candidate does not pull the lanes."""
+        score = sum(p * self.value(card, lane) for lane, p in self.lanes.items())
+        live = sum(p for lane, p in self.lanes.items() if castable(card, lane) or self.speculative(card, lane))
+        return score + self.order_prior(card.get("name", ""), pick) * live
+
+    def _split(self, pack_cards, recs, pick, set_code):
+        """Final order from the two orders: Fit, unless the strongest card beats the best fit by more than the learnt gap."""
+        by_name = {c.get("name"): c for c in pack_cards}
+        playable = [r for r in recs if r.contextual_score > 0]
+        if not playable:
+            return recs
+        power = {r.card_name: self.power(by_name[r.card_name], pick) for r in playable}
+        fit = {r.card_name: self.fit(by_name[r.card_name], pick) for r in playable}
+        p_top = max(power, key=power.get)
+        c_top = max(fit, key=fit.get)
+        spells = sum(1 for c in self.pool if "Land" not in (c.get("types") or []))
+        stage = stage_of(spells)
+        gap = power[p_top] - power[c_top]
+        table = branch_file(self.BRANCH_FILE) if self.BRANCH_FILE else (branch_thresholds(set_code) if set_code else {})
+        coef = table.get(stage) or {}
+        c_strength = power[c_top] - self.mean
+        if coef.get("b", 0) > 0:
+            # Learnt from top drafters: branch more readily early and when the best in-colour card is weak.
+            threshold = -(coef["a"] + coef["c"] * c_strength) / coef["b"]
+        else:
+            threshold = self.BRANCH_DEFAULT
+        take_power = p_top != c_top and (self.BRANCH_MODE == "power" or (self.BRANCH_MODE == "learnt" and gap > threshold))
+        self.split = {
+            "power": sorted(({"card": n, "score": round(v, 2)} for n, v in power.items()), key=lambda x: -x["score"])[:3],
+            "fit": sorted(({"card": n, "score": round(v, 2)} for n, v in fit.items()), key=lambda x: -x["score"])[:3],
+            "branch": None if p_top == c_top else {"card": p_top, "over": c_top, "gap": round(gap, 2), "threshold": round(threshold, 2),
+                                                    "stage": stage, "in_colour_strength": round(c_strength, 2), "take": take_power},
+        }
+        for r in playable:
+            r.contextual_score = round(fit[r.card_name], 2)
+            pr = sorted(power, key=power.get, reverse=True).index(r.card_name) + 1
+            fr = sorted(fit, key=fit.get, reverse=True).index(r.card_name) + 1
+            r.reasoning = [f"Fit #{fr} · Power #{pr}"] + r.reasoning
+        order = sorted(playable, key=lambda r: fit[r.card_name], reverse=True)
+        if take_power:
+            top = next(r for r in order if r.card_name == p_top)
+            order.remove(top)
+            order.insert(0, top)
+            top.contextual_score = round(fit[c_top] + 0.1, 2)  # consumers rank by score, so the branch shows there too
+            top.reasoning.insert(0, f"Branch: +{gap:.1f} over {c_top}, above the {threshold:.1f} top drafters switch at")
+        return order + [r for r in recs if r.contextual_score <= 0]
 
     def _rec(self, card, name, base, score, z, cast_p, wheel, reasons):
         best = max(self.lanes, key=self.lanes.get)

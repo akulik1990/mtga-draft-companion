@@ -13,7 +13,7 @@ ADVISORS = {"upstream": DraftAdvisor, "v2": DraftAdvisorV2}
 
 def rank_pack(metrics, taken_cards, pack_cards, pick, pack_number, seen_packs=()):
     """({advisor_key: [recommendation dict with rank, ...]}, v2's P(lane) over the pool, v2's colour signal in use, v2's per-neighbour signals)."""
-    results, lanes, signals, sides = {}, {}, {}, {}
+    results, lanes, signals, sides, split = {}, {}, {}, {}, None
     for key, cls in ADVISORS.items():
         try:
             advisor = cls(metrics, taken_cards, seen_packs=list(seen_packs)) if cls is DraftAdvisorV2 else cls(metrics, taken_cards)
@@ -22,7 +22,8 @@ def rank_pack(metrics, taken_cards, pack_cards, pick, pack_number, seen_packs=()
             if cls is DraftAdvisorV2:
                 lanes, signals = advisor.lanes, advisor.signals
                 sides = {"active": advisor.signal_side, **advisor.signal_sides}
+                split = advisor.split
         except Exception:
             log.exception("Advisor %s failed", key)
             results[key] = []
-    return results, lanes, signals, sides
+    return results, lanes, signals, sides, split

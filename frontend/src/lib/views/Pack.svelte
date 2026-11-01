@@ -35,6 +35,7 @@
 		};
 		return [...snap.pack].sort((a, b) => key[sort](a) - key[sort](b));
 	});
+	const rankIn = (list: { card: string }[] | undefined, name: string) => { const i = (list ?? []).findIndex((x) => x.card === name); return i < 0 ? undefined : i + 1; };
 	function setMode(m: 'cards' | 'table') { mode = m; savePref('companion.packMode', m); }
 	function toggle(key: string) {
 		visible = visible.includes(key) ? visible.filter((k) => k !== key) : [...visible, key];
@@ -70,6 +71,17 @@
 			<span class="text-zinc-500">picked <span class="text-zinc-200">{snap.picked_from_pack.map((c) => c.name).join(', ')}</span></span>
 		{/if}
 	</div>
+	{#if snap.v2_split?.branch}
+		{@const b = snap.v2_split.branch}
+		<div class="mb-3 rounded border px-3 py-2 text-sm {b.take ? 'border-amber-500/60 bg-amber-950/40' : 'border-zinc-700 bg-zinc-900'}">
+			<span class="text-zinc-400">Strongest card:</span> <span class="font-semibold">{b.card}</span>
+			<span class="text-zinc-400"> · best for your colours:</span> <span class="font-semibold">{b.over}</span>
+			<span class="text-zinc-400"> · gap</span> <span class="font-mono">{b.gap >= 0 ? '+' : ''}{b.gap.toFixed(1)}</span>
+			<span class="text-zinc-400">; winning top drafters switch above</span> <span class="font-mono">{b.threshold >= 0 ? '+' : ''}{b.threshold.toFixed(1)}</span>
+			<span class="text-zinc-500">(pool {b.stage})</span>
+			→ <span class="font-semibold {b.take ? 'text-amber-300' : 'text-emerald-300'}">{b.take ? `take ${b.card}` : `stay with ${b.over}`}</span>
+		</div>
+	{/if}
 	{#if mode === 'table' && picker}
 		<div class="mb-3 flex flex-wrap gap-2 rounded bg-zinc-900 p-2 text-xs">
 			{#each cols as c (c.key)}
@@ -81,6 +93,7 @@
 		<div class="grid grid-cols-3 gap-3 md:grid-cols-4 xl:grid-cols-5">
 			{#each sorted as card (card.name)}
 				<CardTile {card} {snap} archetype={snap.archetype} upstream={up.get(card.name)} v2={v2.get(card.name)}
+					powerRank={rankIn(snap.v2_split?.power, card.name)} fitRank={rankIn(snap.v2_split?.fit, card.name)}
 					highlight={card.name === top} onclick={() => (open = card)} />
 			{/each}
 		</div>

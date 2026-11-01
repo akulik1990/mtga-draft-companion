@@ -28,6 +28,7 @@ export type Snapshot = {
 	signals: Record<string, number>;
 	lanes: Record<string, number>;
 	signals_v2?: Record<string, number>;
+	v2_split?: V2Split | null;
 	signals_v2_sides?: { active?: string; right?: Record<string, number>; left?: Record<string, number> };
 	pack: Card[]; missing: Card[]; picked_from_pack: Card[]; pool: Card[];
 	advisors: Partial<Record<AdvisorKey, Rec[]>>;
@@ -37,6 +38,11 @@ export type Snapshot = {
 	metrics: Record<string, Record<string, [number, number]>>; // lane -> field -> [mean, std]
 	grade_thresholds: [string, number][];
 	tiers: { key: string; label: string }[];
+};
+export type V2Split = {
+	power: { card: string; score: number }[];
+	fit: { card: string; score: number }[];
+	branch: { card: string; over: string; gap: number; threshold: number; stage: string; in_colour_strength: number; take: boolean } | null;
 };
 export type ResultFormat = 'Percentage' | 'Rating' | 'Grade';
 export type TierFile = { set: string; label: string; date: string; file: string };
