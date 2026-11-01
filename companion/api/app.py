@@ -99,7 +99,32 @@ def create_app(session: DraftSession, *, run_scanner: bool = True, frontend: Pat
 
     @app.put("/api/settings")
     def put_settings(changes: dict = Body(...)):
-        return session.update_settings(changes)
+        try:
+            return session.update_settings(changes)
+        except ValueError as e:
+            raise HTTPException(400, str(e))
+
+    @app.get("/api/tiers")
+    def tiers():
+        return session.tier_lists()
+
+    @app.post("/api/tiers")
+    def import_tier(url: str = Body(...), label: str = Body("")):
+        try:
+            return session.import_tier_list(url, label)
+        except ValueError as e:
+            raise HTTPException(400, str(e))
+
+    @app.delete("/api/tiers/{filename}")
+    def delete_tier(filename: str):
+        try:
+            return session.delete_tier_list(filename)
+        except ValueError as e:
+            raise HTTPException(400, str(e))
+
+    @app.get("/api/cards")
+    def cards(q: str = ""):
+        return jsonable_encoder(session.search_cards(q))
 
     @app.post("/api/deck/build")
     async def build_decks():

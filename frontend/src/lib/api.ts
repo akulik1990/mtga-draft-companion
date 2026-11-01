@@ -8,6 +8,7 @@ export type Card = {
 	rarity: string; image: string[]; tags: string[]; oracle_text?: string;
 	deck_colors: Record<string, Stats>;
 	grades: Record<string, Record<string, string>>;
+	tiers?: Record<string, string>;
 	returnable_at?: number[];
 };
 export type Rec = {
@@ -28,7 +29,15 @@ export type Snapshot = {
 	lanes: Record<string, number>;
 	pack: Card[]; missing: Card[]; picked_from_pack: Card[]; pool: Card[];
 	advisors: Partial<Record<AdvisorKey, Rec[]>>;
+	deck_filter: string;
+	deck_filter_options: Record<string, string>; // label -> key
+	result_format: ResultFormat;
+	metrics: Record<string, Record<string, [number, number]>>; // lane -> field -> [mean, std]
+	grade_thresholds: [string, number][];
+	tiers: { key: string; label: string }[];
 };
+export type ResultFormat = 'Percentage' | 'Rating' | 'Grade';
+export type TierFile = { set: string; label: string; date: string; file: string };
 export type DatasetRow = {
 	set: string; format: string; user_group: string; start_date: string; end_date: string;
 	games: number; file: string; collected: string;
@@ -36,6 +45,7 @@ export type DatasetRow = {
 export type Datasets = { active: string; datasets: DatasetRow[] };
 export type Settings = {
 	arena_log_location: string; arena_log_pinned: boolean; auto_sync_datasets: boolean; active_log: string;
+	deck_filter: string; result_format: ResultFormat; result_formats: ResultFormat[];
 };
 export type DeckCard = {
 	name: string; count: number; cmc: number; mana_cost: string; types: string[]; colors: string[];
@@ -69,5 +79,9 @@ export const api = {
 	buildDecks: () => post<Build[]>('/api/deck/build'),
 	mockStart: (kind: 'random' | 'table' | '17lands' = 'random') => post<Mock>('/api/mock/start', { kind }),
 	mockPick: (card_name: string) => post<Mock>('/api/mock/pick', { card_name }),
-	mockStop: () => post('/api/mock/stop')
+	mockStop: () => post('/api/mock/stop'),
+	tiers: () => call<TierFile[]>('/api/tiers'),
+	importTier: (url: string, label = '') => post<TierFile[]>('/api/tiers', { url, label }),
+	deleteTier: (file: string) => call<TierFile[]>(`/api/tiers/${encodeURIComponent(file)}`, { method: 'DELETE' }),
+	cards: (q: string) => call<Card[]>(`/api/cards?q=${encodeURIComponent(q)}`)
 };

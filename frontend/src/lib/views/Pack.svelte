@@ -2,13 +2,19 @@
 	import type { Card, Snapshot } from '../api';
 	import { app, refresh } from '../state.svelte';
 	import { api } from '../api';
-	import { ALL, byName, gihwr, stats } from '../cards';
+	import { byName, gihwr, stats } from '../cards';
+	import { DEFAULT_COLUMNS, columns as allColumns, loadPref, savePref } from '../format';
 	import CardTile from '../CardTile.svelte';
 	import CardDetail from '../CardDetail.svelte';
+	import CardTable from '../CardTable.svelte';
 
 	let { snap }: { snap: Snapshot } = $props();
 	type Sort = 'upstream' | 'v2' | 'gihwr' | 'ata' | 'alsa';
 	let sort = $state<Sort>('upstream');
+	let mode = $state<'cards' | 'table'>(loadPref('companion.packMode', 'cards'));
+	let visible = $state<string[]>(loadPref('companion.columns', DEFAULT_COLUMNS));
+	let picker = $state(false);
+	let showSeen = $state(loadPref('companion.showSeen', true));
 	let open = $state<Card | null>(null);
 	let picking = $state(false);
 	const mockLive = $derived(!!snap.mock && !snap.mock.done);
@@ -19,6 +25,7 @@
 
 	const up = $derived(byName(snap.advisors.upstream));
 	const v2 = $derived(byName(snap.advisors.v2));
+	const cols = $derived(allColumns(snap, up, v2));
 	const top = $derived(snap.advisors[app.advisor]?.[0]?.card_name);
 	const sorted = $derived.by(() => {
 		const rank = (m: Map<string, { rank: number }>) => (c: Card) => m.get(c.name)?.rank ?? 99;
@@ -28,6 +35,12 @@
 		};
 		return [...snap.pack].sort((a, b) => key[sort](a) - key[sort](b));
 	});
+	function setMode(m: 'cards' | 'table') { mode = m; savePref('companion.packMode', m); }
+	function toggle(key: string) {
+		visible = visible.includes(key) ? visible.filter((k) => k !== key) : [...visible, key];
+		savePref('companion.columns', visible);
+	}
+	function toggleSeen() { showSeen = !showSeen; savePref('companion.showSeen', showSeen); }
 </script>
 
 {#if snap.mock?.done}
@@ -35,12 +48,21 @@
 {:else if snap.pack.length === 0}
 	<p class="p-8 text-center text-zinc-500">{snap.status}</p>
 {:else}
-	<div class="mb-3 flex items-center gap-3 text-sm">
-		<span class="text-zinc-500">sort</span>
-		{#each ['upstream', 'v2', 'gihwr', 'ata', 'alsa'] as s}
-			<button class="rounded px-2 py-0.5 {sort === s ? 'bg-zinc-700' : 'text-zinc-400 hover:text-zinc-200'}" onclick={() => (sort = s as Sort)}>{s}</button>
-		{/each}
-		<span class="ml-auto text-zinc-500">archetype <span class="text-zinc-200">{snap.archetype}</span></span>
+	<div class="mb-3 flex flex-wrap items-center gap-3 text-sm">
+		<span class="flex rounded bg-zinc-900">
+			{#each ['cards', 'table'] as m}
+				<button class="rounded px-2 py-0.5 {mode === m ? 'bg-zinc-700' : 'text-zinc-400 hover:text-zinc-200'}" onclick={() => setMode(m as 'cards' | 'table')}>{m}</button>
+			{/each}
+		</span>
+		{#if mode === 'cards'}
+			<span class="text-zinc-500">sort</span>
+			{#each ['upstream', 'v2', 'gihwr', 'ata', 'alsa'] as s}
+				<button class="rounded px-2 py-0.5 {sort === s ? 'bg-zinc-700' : 'text-zinc-400 hover:text-zinc-200'}" onclick={() => (sort = s as Sort)}>{s}</button>
+			{/each}
+		{:else}
+			<button class="rounded px-2 py-0.5 text-zinc-400 hover:text-zinc-200" onclick={() => (picker = !picker)}>columns ▾</button>
+		{/if}
+		<span class="ml-auto text-zinc-500">values for <span class="text-zinc-200">{snap.archetype}</span></span>
 		{#if mockLive}
 			<span class="text-violet-300">click a card, then Pick{snap.mock?.human ? ` · human took ${snap.mock.human}` : ''}</span>
 		{/if}
@@ -48,15 +70,37 @@
 			<span class="text-zinc-500">picked <span class="text-zinc-200">{snap.picked_from_pack.map((c) => c.name).join(', ')}</span></span>
 		{/if}
 	</div>
-	<div class="grid grid-cols-3 gap-3 md:grid-cols-4 xl:grid-cols-5">
-		{#each sorted as card (card.name)}
-			<CardTile {card} archetype={snap.archetype} upstream={up.get(card.name)} v2={v2.get(card.name)}
-				highlight={card.name === top} onclick={() => (open = card)} />
-		{/each}
-	</div>
+	{#if mode === 'table' && picker}
+		<div class="mb-3 flex flex-wrap gap-2 rounded bg-zinc-900 p-2 text-xs">
+			{#each cols as c (c.key)}
+				<label class="flex items-center gap-1" title={c.title}><input type="checkbox" checked={visible.includes(c.key)} onchange={() => toggle(c.key)} />{c.label}</label>
+			{/each}
+		</div>
+	{/if}
+	{#if mode === 'cards'}
+		<div class="grid grid-cols-3 gap-3 md:grid-cols-4 xl:grid-cols-5">
+			{#each sorted as card (card.name)}
+				<CardTile {card} {snap} archetype={snap.archetype} upstream={up.get(card.name)} v2={v2.get(card.name)}
+					highlight={card.name === top} onclick={() => (open = card)} />
+			{/each}
+		</div>
+	{:else}
+		<CardTable cards={sorted} columns={cols} {visible} highlight={top} onrow={(c) => (open = c)} />
+	{/if}
+
+	{#if snap.missing.length}
+		<section class="mt-5">
+			<button class="mb-1 text-sm font-semibold text-zinc-400 hover:text-zinc-200" onclick={toggleSeen}>
+				{showSeen ? '▾' : '▸'} Seen cards, taken since this pack was last here ({snap.missing.length})
+			</button>
+			{#if showSeen}
+				<CardTable cards={snap.missing} columns={cols} visible={visible.filter((k) => k !== 'upstream' && k !== 'v2' && k !== 'wheel')} onrow={(c) => (open = c)} />
+			{/if}
+		</section>
+	{/if}
 {/if}
 
 {#if open}
 	<CardDetail card={open} archetype={snap.archetype} upstream={up.get(open.name)} v2={v2.get(open.name)} onclose={() => (open = null)}
-		onpick={mockLive ? pick : undefined} {picking} />
+		onpick={mockLive && snap.pack.some((c) => c.name === open?.name) ? pick : undefined} {picking} />
 {/if}

@@ -94,7 +94,9 @@ class DraftAdvisorV2:
         return w * wr + (1 - w) * prior, n
 
     def splash_colour(self, card, lane):
-        """The colour a one-pip splash needs, when the pool has a fixer for it; else None."""
+        """The colour a one-pip splash needs, when splashing is on and the pool has a fixer for it; else None."""
+        if self.SPLASH <= 0:
+            return None
         off = off_pips(card, lane)
         if len(off) != 1:
             return None

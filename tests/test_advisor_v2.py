@@ -180,3 +180,12 @@ def test_signal_variants_keep_a_dominant_colour(world, monkeypatch):
     centred = DraftAdvisorV2(metrics, [], seen_packs=seen).signals
     assert max(z, key=z.get) == max(centred, key=centred.get) == "R"
     assert abs(sum(centred.values())) < 1e-9 and centred["R"] > z["R"]
+
+
+def test_no_splash_reason_when_splash_is_off(world):
+    metrics, _ = world
+    stats = {"All Decks": {"gihwr": 60.0, "samples": 5000}}
+    one_red = {"name": "one red", "mana_cost": "{3}{R}", "colors": ["R"], "types": ["Creature"], "deck_colors": stats}
+    fixer = {"name": "fixer", "mana_cost": "", "colors": ["R", "W"], "types": ["Land"], "deck_colors": stats}
+    adv = DraftAdvisorV2(metrics, [fixer])
+    assert DraftAdvisorV2.SPLASH == 0.0 and adv.splash_colour(one_red, "WU") is None

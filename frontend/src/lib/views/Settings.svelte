@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { api, type Datasets, type Settings } from '../api';
+	import { api, type Datasets, type Settings, type TierFile } from '../api';
 	import { app, setAdvisor, refresh } from '../state.svelte';
 
 	let ds = $state<Datasets | null>(null);
@@ -8,9 +8,12 @@
 	let logPath = $state('');
 	let msg = $state('');
 	let busy = $state(false);
+	let tiers = $state<TierFile[]>([]);
+	let tierUrl = $state('');
+	let tierLabel = $state('');
 
 	onMount(async () => {
-		[ds, st] = await Promise.all([api.datasets(), api.settings()]);
+		[ds, st, tiers] = await Promise.all([api.datasets(), api.settings(), api.tiers()]);
 		logPath = st.arena_log_location;
 	});
 	async function run(label: string, fn: () => Promise<unknown>) {
@@ -21,6 +24,8 @@
 		run(`select ${set} ${format}`, async () => (ds = await api.selectDataset(set, format, user_group)));
 	const sync = () => run('sync', async () => { const r = await api.syncDatasets(); ds = r; msg = r.messages.join(' · ') || 'up to date'; });
 	const saveLog = () => run('save log path', async () => { st = await api.updateSettings({ arena_log_location: logPath }); });
+	const importTier = () => run('import tier list', async () => { tiers = await api.importTier(tierUrl.trim(), tierLabel.trim()); tierUrl = ''; tierLabel = ''; });
+	const deleteTier = (file: string) => run('delete tier list', async () => { tiers = await api.deleteTier(file); });
 	const toggleAuto = () => run('auto-sync', async () => { st = await api.updateSettings({ auto_sync_datasets: !st!.auto_sync_datasets }); });
 </script>
 
@@ -66,6 +71,22 @@
 				{/each}
 			</tbody>
 		</table>
+	</section>
+
+	<section>
+		<h3 class="mb-2 text-sm font-semibold text-zinc-400">Tier lists</h3>
+		<p class="mb-2 text-xs text-zinc-500">Import a 17Lands tier list (https://www.17lands.com/tier_list/…). Each one becomes a column in the Pack table, as in upstream.</p>
+		<div class="mb-2 flex gap-2">
+			<input class="flex-1 rounded bg-zinc-900 px-2 py-1 font-mono text-sm" placeholder="https://www.17lands.com/tier_list/…" bind:value={tierUrl} />
+			<input class="w-40 rounded bg-zinc-900 px-2 py-1 text-sm" placeholder="label (optional)" bind:value={tierLabel} />
+			<button class="rounded bg-zinc-700 px-3 py-1 text-sm hover:bg-zinc-600" onclick={importTier} disabled={busy || !tierUrl.trim()}>Import</button>
+		</div>
+		{#each tiers as t (t.file)}
+			<div class="flex items-center gap-3 text-sm"><span>{t.label}</span><span class="text-xs text-zinc-500">{t.set} · {t.date}</span>
+				<button class="ml-auto text-xs text-zinc-500 hover:text-rose-400" onclick={() => deleteTier(t.file)} disabled={busy}>delete</button></div>
+		{:else}
+			<p class="text-sm text-zinc-600">no tier lists for this set</p>
+		{/each}
 	</section>
 
 	{#if msg}<p class="text-sm text-zinc-400">{msg}</p>{/if}

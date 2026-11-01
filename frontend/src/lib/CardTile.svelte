@@ -1,14 +1,14 @@
 <script lang="ts">
-	import type { Card, Rec } from './api';
+	import type { Card, Rec, Snapshot } from './api';
 	import { ALL, pct } from './cards';
-	import Grade from './Grade.svelte';
+	import { fmt, tagIcons, tone } from './format';
 
 	let {
-		card, archetype, upstream, v2, highlight = false, onclick
-	}: { card: Card; archetype: string; upstream?: Rec; v2?: Rec; highlight?: boolean; onclick: () => void } = $props();
+		card, snap, archetype, upstream, v2, highlight = false, onclick
+	}: { card: Card; snap: Snapshot; archetype: string; upstream?: Rec; v2?: Rec; highlight?: boolean; onclick: () => void } = $props();
 
-	const g = $derived(card.grades ?? {});
 	const wheel = $derived(upstream?.wheel_chance ?? v2?.wheel_chance);
+	const icons = $derived(tagIcons(card.tags));
 </script>
 
 <button
@@ -19,17 +19,18 @@
 >
 	<img src={card.image?.[0]} alt={card.name} loading="lazy" class="aspect-[5/7] w-full object-cover" />
 	<div class="absolute top-1 left-1 flex gap-1">
-		{#if upstream}<span class="rounded bg-zinc-950/90 px-1.5 py-0.5 font-mono text-xs text-sky-300" title="upstream rank">U{upstream.rank}</span>{/if}
-		{#if v2}<span class="rounded bg-zinc-950/90 px-1.5 py-0.5 font-mono text-xs text-violet-300" title="v2 rank">V{v2.rank}</span>{/if}
+		{#if upstream}<span class="rounded bg-zinc-950/90 px-1.5 py-0.5 font-mono text-xs text-sky-300" title="upstream: rank {upstream.rank}, score {upstream.contextual_score.toFixed(1)}">U{upstream.rank} · {upstream.contextual_score.toFixed(0)}</span>{/if}
+		{#if v2}<span class="rounded bg-zinc-950/90 px-1.5 py-0.5 font-mono text-xs text-violet-300" title="v2: rank {v2.rank}, score {v2.contextual_score.toFixed(2)}">V{v2.rank} · {v2.contextual_score.toFixed(1)}</span>{/if}
 	</div>
 	{#if wheel != null}
 		<span class="absolute top-1 right-1 rounded bg-zinc-950/90 px-1.5 py-0.5 font-mono text-xs text-zinc-400" title="wheel chance">↻{pct(wheel, 0)}</span>
 	{/if}
+	{#if icons}<span class="absolute bottom-10 right-1 rounded bg-zinc-950/90 px-1 text-xs" title={(card.tags ?? []).join(', ')}>{icons}</span>{/if}
 	<div class="flex items-center justify-between gap-2 px-2 py-1.5">
 		<span class="truncate text-sm">{card.name}</span>
-		<span class="flex shrink-0 gap-2">
-			<Grade grade={g[ALL]?.gihwr ?? '-'} label="All" />
-			{#if archetype !== ALL}<Grade grade={g[archetype]?.gihwr ?? '-'} label={archetype} />{/if}
+		<span class="flex shrink-0 gap-2 font-mono text-xs">
+			<span><span class="text-zinc-500">All</span> <span class="font-semibold {tone(snap, card, 'gihwr', ALL)}">{fmt(snap, card, 'gihwr', ALL)}</span></span>
+			{#if archetype !== ALL}<span><span class="text-zinc-500">{archetype}</span> <span class="font-semibold {tone(snap, card, 'gihwr', archetype)}">{fmt(snap, card, 'gihwr', archetype)}</span></span>{/if}
 		</span>
 	</div>
 </button>

@@ -1,5 +1,6 @@
 """Datasets, settings and deck routes over the OTJ fixture."""
 
+import pytest
 import json
 
 from fastapi.testclient import TestClient
@@ -73,3 +74,44 @@ def test_deck_build_over_full_pool(session):
     assert deck_size == 40, deck_size
     assert "Deck" in best["arena_export"]
     assert all({"name", "count", "gihwr"} <= set(c) for c in best["deck"])
+
+
+def test_snapshot_carries_table_controls(session):
+    from tests.conftest import P1P1
+
+    append(session.log, JOIN)
+    append(session.log, P1P1)
+    session.poll()
+    snap = session.snapshot()
+    assert "Auto" in snap["deck_filter_options"].values() and snap["deck_filter"] in snap["deck_filter_options"].values()
+    assert "UB" in snap["metrics"]
+    assert set(snap["metrics"]["All Decks"]) == {"gihwr", "ohwr", "gpwr", "gnswr", "gdwr"}
+    assert snap["grade_thresholds"][0][0] == "A+"
+    card = snap["pack"][0]
+    assert set(card["grades"]["All Decks"]) == {"gihwr", "ohwr", "gpwr", "gnswr", "gdwr"} and card["tiers"] == {}
+
+
+def test_deck_filter_and_result_format_settings(session):
+    from tests.conftest import P1P1
+
+    append(session.log, JOIN)
+    append(session.log, P1P1)
+    session.poll()
+    with TestClient(create_app(session, run_scanner=False)) as client:
+        st = client.put("/api/settings", json={"deck_filter": "UB", "result_format": "Grade"}).json()
+        assert st["deck_filter"] == "UB" and st["result_format"] == "Grade"
+        assert client.put("/api/settings", json={"deck_filter": "nonsense"}).status_code == 400
+        assert client.put("/api/settings", json={"result_format": "nonsense"}).status_code == 400
+
+
+def test_card_search_and_tiers(session):
+    append(session.log, JOIN)
+    session.poll()
+    with TestClient(create_app(session, run_scanner=False)) as client:
+        found = client.get("/api/cards", params={"q": "thought"}).json()
+        assert found and all("thought" in c["name"].lower() for c in found) and "grades" in found[0]
+        assert client.get("/api/tiers").json() == []
+        assert client.post("/api/tiers", json={"url": "https://example.com/x"}).status_code == 400
+        assert client.delete("/api/tiers/..%2Fconfig.json").status_code != 200
+    with pytest.raises(ValueError):
+        session.delete_tier_list("../config.json")

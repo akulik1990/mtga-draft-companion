@@ -17,6 +17,19 @@
 	const curveMax = $derived(Math.max(1, ...curve));
 	const interaction = $derived(spells.filter((c) => c.tags?.some((t) => /removal|counter|bounce|fight/.test(t))).length);
 	const creatures = $derived(spells.filter((c) => c.types?.includes('Creature')).length);
+	// Upstream's type breakdown (dashboard.update_deck_balance), basics excluded.
+	const TYPES = ['Creature', 'Planeswalker', 'Battle', 'Instant', 'Sorcery', 'Enchantment', 'Artifact', 'Land'];
+	const typeCounts = $derived.by(() => {
+		const out: Record<string, number> = Object.fromEntries(TYPES.map((t) => [t, 0]));
+		for (const c of snap.pool) {
+			const types = c.types ?? [];
+			if (types.includes('Basic')) continue;
+			const t = TYPES.find((x) => types.includes(x));
+			if (t) out[t] += 1;
+		}
+		return out;
+	});
+	const typeMax = $derived(Math.max(1, ...Object.values(typeCounts)));
 	const lanes = $derived(Object.entries(snap.lanes ?? {}).sort((a, b) => b[1] - a[1]));
 	const laneMax = $derived(Math.max(1e-9, ...lanes.map(([, p]) => p)));
 </script>
@@ -54,6 +67,19 @@
 				</div>
 			{/each}
 		</div>
+	</section>
+
+	<section>
+		<h3 class="mb-2 text-sm font-semibold text-zinc-400">Pool by type</h3>
+		{#each TYPES.filter((t) => typeCounts[t] > 0) as t}
+			<div class="mb-1 flex items-center gap-2 text-sm">
+				<span class="w-24 text-xs text-zinc-400">{t}</span>
+				<div class="h-3 flex-1 rounded bg-zinc-800"><div class="h-3 rounded bg-amber-500" style="width:{(100 * typeCounts[t]) / typeMax}%"></div></div>
+				<span class="w-8 text-right font-mono text-xs text-zinc-400">{typeCounts[t]}</span>
+			</div>
+		{:else}
+			<p class="text-sm text-zinc-600">nothing taken yet</p>
+		{/each}
 	</section>
 
 	<section>

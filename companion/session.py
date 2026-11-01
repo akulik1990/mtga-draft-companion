@@ -15,14 +15,15 @@ from src.configuration import write_configuration
 from src.dataset_updater import DatasetUpdater
 from src.signals import SignalCalculator
 from src.ui.orchestrator import DraftOrchestrator  # threading only, no Tk
-from src.utils import retrieve_local_set_list
+from src.tier_list import TIER_FILE_PREFIX, TIER_FOLDER, TierList
+from src.utils import normalize_color_string, retrieve_local_set_list
 
 from companion.advisors import rank_pack
 from companion.mock import Cards, MockDraft, sampled_drafts
 
 log = logging.getLogger(__name__)
 
-GRADED_FIELDS = ("gihwr", "ohwr", "gpwr")
+GRADED_FIELDS = tuple(constants.WIN_RATE_OPTIONS)  # gihwr, ohwr, gpwr, gnswr, gdwr
 DECK_CARD_FIELDS = ("name", "count", "cmc", "mana_cost", "types", "colors", "image", "rarity")
 
 
@@ -87,8 +88,12 @@ class DraftSession:
         archetype = deck_filter[0] if deck_filter else constants.FILTER_OPTION_ALL_DECKS
         advisors, lanes, signals_v2 = rank_pack(metrics, taken, pack, pick, pack_no, seen_packs) if pack else ({}, {}, {})
 
+        filter_options_map = s.retrieve_color_win_rate(self.config.settings.filter_format) or {}
+        tier_data = s.retrieve_tier_data() or {}
+        tier_names = dict((v, k) for k, v in (TierList.retrieve_data(event_set)[1] or {}).items()) if event_set else {}
         for card in (*pack, *missing, *taken):
             card["grades"] = self._grades(card, metrics, archetype)
+            card["tiers"] = {key: tl.ratings[card["name"]].rating.strip() for key, tl in tier_data.items() if card.get("name") in tl.ratings}
 
         if self.status is None:
             self.status = f"Pack {pack_no} Pick {pick}" if pack_no > 0 else "Waiting for draft..."
@@ -110,6 +115,13 @@ class DraftSession:
             "picked_from_pack": picked_now,
             "pool": taken,
             "advisors": advisors,
+            # What the UI needs to show any lane and field the way upstream's table does.
+            "deck_filter": self.config.settings.deck_filter,
+            "deck_filter_options": filter_options_map,
+            "result_format": self.config.settings.result_format,
+            "metrics": self._lane_metrics(metrics, filter_options_map),
+            "grade_thresholds": [[g.strip(), z] for g, z in constants.GRADE_DEVIATION_DICT.items()],
+            "tiers": [{"key": k, "label": tier_names.get(k, k)} for k in tier_data],
         }
 
     def _signals(self, metrics, seen_packs):
@@ -122,6 +134,15 @@ class DraftSession:
             for color, value in calc.calculate_pack_signals(cards, pick).items():
                 scores[color] += value
         return scores
+
+    @staticmethod
+    def _lane_metrics(metrics, options):
+        """{lane: {field: [mean, std]}} for All Decks and every lane the deck filter offers ({label: key})."""
+        if not metrics:
+            return {}
+        lanes = {constants.FILTER_OPTION_ALL_DECKS}
+        lanes |= {normalize_color_string(k) for k in options.values() if k not in (constants.FILTER_OPTION_AUTO, constants.FILTER_OPTION_ALL_DECKS)}
+        return {lane: {f: list(metrics.get_metrics(lane, f)) for f in GRADED_FIELDS} for lane in lanes}
 
     @staticmethod
     def _grades(card, metrics, archetype):
@@ -227,12 +248,25 @@ class DraftSession:
             "arena_log_pinned": st.arena_log_pinned,
             "auto_sync_datasets": st.auto_sync_datasets,
             "active_log": self.scanner.arena_file,
+            "deck_filter": st.deck_filter,
+            "result_format": st.result_format,
+            "result_formats": list(constants.RESULT_FORMAT_LIST),
         }
 
     def update_settings(self, changes: dict) -> dict:
         st = self.config.settings
         if "auto_sync_datasets" in changes:
             st.auto_sync_datasets = bool(changes["auto_sync_datasets"])
+        if "deck_filter" in changes:
+            options = self.scanner.retrieve_color_win_rate(st.filter_format) or {}  # {label: key}
+            if changes["deck_filter"] not in options.values():
+                raise ValueError(f"unknown deck filter {changes['deck_filter']!r}")
+            st.deck_filter = changes["deck_filter"]
+            self.orchestrator.request_math_update()
+        if "result_format" in changes:
+            if changes["result_format"] not in constants.RESULT_FORMAT_LIST:
+                raise ValueError(f"unknown result format {changes['result_format']!r}")
+            st.result_format = changes["result_format"]
         if "arena_log_location" in changes:
             path = (changes["arena_log_location"] or "").strip()
             # Same rule as upstream Settings: a manual path is pinned; clearing re-enables discovery.
@@ -243,6 +277,51 @@ class DraftSession:
                 self.orchestrator.set_file_and_scan(path)
         write_configuration(self.config)
         return self.settings()
+
+    # ── tier lists and card search ───────────────────────────────────────────
+
+    def tier_lists(self) -> list[dict]:
+        event_set, _ = self.scanner.retrieve_current_limited_event()
+        return [{"set": s_, "label": l, "date": d, "file": f} for s_, l, d, f in TierList.retrieve_files(event_set or "")]
+
+    def import_tier_list(self, url: str, label: str = "") -> list[dict]:
+        """Same as upstream's tier list panel: fetch a 17Lands tier list and save it under Tier/."""
+        tl = TierList.from_api(url)
+        if not tl:
+            raise ValueError("could not fetch that tier list; it must be a https://www.17lands.com/tier_list/ URL")
+        if label:
+            tl.meta.label = label
+        import time
+        tl.to_file(os.path.join(TIER_FOLDER, f"{TIER_FILE_PREFIX}_{tl.meta.set}_{int(time.time())}.txt"))
+        self.orchestrator.request_math_update()
+        return self.tier_lists()
+
+    def delete_tier_list(self, filename: str) -> list[dict]:
+        if os.path.basename(filename) != filename:
+            raise ValueError("bad file name")
+        TierList.delete_file(filename)
+        self.orchestrator.request_math_update()
+        return self.tier_lists()
+
+    def search_cards(self, query: str, limit: int = 25) -> list[dict]:
+        """Cards of the active dataset whose name contains `query`, for Compare."""
+        q = (query or "").strip().lower()
+        with self.scanner.lock:
+            ratings = self.scanner.set_data.get_card_ratings() or {}
+            metrics = self.scanner.retrieve_set_metrics()
+            taken = self.scanner.retrieve_taken_cards()
+        deck_filter = filter_options(taken, self.config.settings.deck_filter, metrics, self.config)
+        archetype = deck_filter[0] if deck_filter else constants.FILTER_OPTION_ALL_DECKS
+        seen, out = set(), []
+        for card in ratings.values():
+            name = card.get("name", "")
+            if q and q not in name.lower() or name in seen or not (card.get("deck_colors") or {}).get(constants.FILTER_OPTION_ALL_DECKS, {}).get("gihwr"):
+                continue
+            seen.add(name)
+            out.append({**card, "grades": self._grades(card, metrics, archetype)})
+            if len(out) >= limit:
+                break
+        return out
 
     # ── deck building ────────────────────────────────────────────────────────
 

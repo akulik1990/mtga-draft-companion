@@ -9,7 +9,7 @@
 			.filter(([, s]) => s.samples > 0 && s.gihwr > 0)
 			.sort((a, b) => (a[0] === 'All Decks' ? -1 : b[0] === 'All Decks' ? 1 : b[1].gihwr - a[1].gihwr))
 	);
-	const cols = ['gihwr', 'ohwr', 'gpwr', 'iwd', 'alsa', 'ata', 'samples'] as const;
+	const cols = ['gihwr', 'ohwr', 'gpwr', 'gdwr', 'gnswr', 'iwd', 'alsa', 'ata', 'samples'] as const;
 </script>
 
 <svelte:window onkeydown={(e) => e.key === 'Escape' && onclose()} />
@@ -43,7 +43,7 @@
 						<tr class={lane === archetype ? 'bg-emerald-900/30' : lane === 'All Decks' ? 'bg-zinc-800/60' : ''}>
 							<td class="py-0.5">{lane}</td>
 							{#each cols as c}
-								<td class="text-right">{c === 'samples' ? s[c] : c === 'alsa' || c === 'ata' ? s[c].toFixed(2) : pct(s[c])}</td>
+								<td class="text-right">{c === 'samples' ? s[c] : c === 'alsa' || c === 'ata' ? (s[c] ?? 0).toFixed(2) : pct(s[c])}</td>
 							{/each}
 						</tr>
 					{/each}
