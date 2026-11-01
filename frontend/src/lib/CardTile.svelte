@@ -19,8 +19,8 @@
 >
 	<img src={card.image?.[0]} alt={card.name} loading="lazy" class="aspect-[5/7] w-full object-cover" />
 	<div class="absolute top-1 left-1 flex gap-1">
-		{#if upstream}<span class="rounded bg-zinc-950/90 px-1.5 py-0.5 font-mono text-xs text-sky-300" title="upstream: rank {upstream.rank}, score {upstream.contextual_score.toFixed(1)}">U{upstream.rank} · {upstream.contextual_score.toFixed(0)}</span>{/if}
 		{#if v2}<span class="rounded bg-zinc-950/90 px-1.5 py-0.5 font-mono text-xs text-violet-300" title="v2: rank {v2.rank}, score {v2.contextual_score.toFixed(2)}">V{v2.rank} · {v2.contextual_score.toFixed(1)}</span>{/if}
+		{#if upstream}<span class="rounded bg-zinc-950/90 px-1.5 py-0.5 font-mono text-xs text-sky-300" title="upstream: rank {upstream.rank}, score {upstream.contextual_score.toFixed(1)}">U{upstream.rank} · {upstream.contextual_score.toFixed(0)}</span>{/if}
 	</div>
 	{#if wheel != null}
 		<span class="absolute top-1 right-1 rounded bg-zinc-950/90 px-1.5 py-0.5 font-mono text-xs text-zinc-400" title="wheel chance">↻{pct(wheel, 0)}</span>

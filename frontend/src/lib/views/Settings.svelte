@@ -34,7 +34,7 @@
 <div class="grid max-w-4xl gap-6">
 	<section>
 		<h3 class="mb-2 text-sm font-semibold text-zinc-400">Highlights follow</h3>
-		{#each ['upstream', 'v2'] as k}
+		{#each ['v2', 'upstream'] as k}
 			<label class="mr-4 text-sm"><input type="radio" name="adv" checked={app.advisor === k} onchange={() => setAdvisor(k as 'upstream' | 'v2')} /> {k}</label>
 		{/each}
 	</section>

@@ -7,7 +7,7 @@ export const app = $state({
 	connected: false,
 	error: '' as string,
 	// which advisor drives highlights; UI preference, not server config
-	advisor: ((typeof localStorage !== 'undefined' && localStorage.getItem(PREF)) || 'upstream') as AdvisorKey
+	advisor: ((typeof localStorage !== 'undefined' && localStorage.getItem(PREF)) || 'v2') as AdvisorKey
 });
 
 export function setAdvisor(key: AdvisorKey) {

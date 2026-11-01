@@ -10,7 +10,7 @@
 
 	let { snap }: { snap: Snapshot } = $props();
 	type Sort = 'upstream' | 'v2' | 'gihwr' | 'ata' | 'alsa';
-	let sort = $state<Sort>('upstream');
+	let sort = $state<Sort>('v2');
 	let mode = $state<'cards' | 'table'>(loadPref('companion.packMode', 'cards'));
 	let visible = $state<string[]>(loadPref('companion.columns', DEFAULT_COLUMNS));
 	let picker = $state(false);
@@ -57,7 +57,7 @@
 		</span>
 		{#if mode === 'cards'}
 			<span class="text-zinc-500">sort</span>
-			{#each ['upstream', 'v2', 'gihwr', 'ata', 'alsa'] as s}
+			{#each ['v2', 'upstream', 'gihwr', 'ata', 'alsa'] as s}
 				<button class="rounded px-2 py-0.5 {sort === s ? 'bg-zinc-700' : 'text-zinc-400 hover:text-zinc-200'}" onclick={() => (sort = s as Sort)}>{s}</button>
 			{/each}
 		{:else}
