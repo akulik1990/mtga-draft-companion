@@ -174,6 +174,15 @@ def create_app(session: DraftSession, *, run_scanner: bool = True, frontend: Pat
         finally:
             hub.clients.discard(websocket)
 
+    @app.middleware("http")
+    async def revalidate_pages(request, call_next):
+        # Hashed bundles under _app/immutable never change; the page itself must be re-checked after a rebuild.
+        response = await call_next(request)
+        path = request.url.path
+        if not path.startswith("/api") and "/_app/immutable/" not in path:
+            response.headers["Cache-Control"] = "no-cache"
+        return response
+
     if frontend.is_dir():
         app.mount("/", StaticFiles(directory=frontend, html=True), name="frontend")
     else:

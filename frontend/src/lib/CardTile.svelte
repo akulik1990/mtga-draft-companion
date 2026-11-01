@@ -32,9 +32,9 @@
 		</div>
 	{/if}
 	{#if icons}<span class="absolute bottom-10 right-1 rounded bg-zinc-950/90 px-1 text-xs" title={(card.tags ?? []).join(', ')}>{icons}</span>{/if}
-	<div class="flex items-center justify-between gap-2 px-2 py-1.5">
-		<span class="truncate text-sm">{card.name}</span>
-		<span class="flex shrink-0 gap-2 font-mono text-xs">
+	<div class="flex flex-col gap-0.5 px-2 py-1.5">
+		<span class="truncate text-sm" title={card.name}>{card.name}</span>
+		<span class="flex gap-2 font-mono text-xs">
 			<span><span class="text-zinc-500">All</span> <span class="font-semibold {tone(snap, card, 'gihwr', ALL)}">{fmt(snap, card, 'gihwr', ALL)}</span></span>
 			{#if archetype !== ALL}<span><span class="text-zinc-500">{archetype}</span> <span class="font-semibold {tone(snap, card, 'gihwr', archetype)}">{fmt(snap, card, 'gihwr', archetype)}</span></span>{/if}
 		</span>

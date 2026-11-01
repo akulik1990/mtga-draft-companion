@@ -136,3 +136,12 @@ def test_engine_switches_toggle_and_persist(session, monkeypatch, tmp_path):
     assert V.SPLIT is False
     session.load_engine_settings()  # back to the saved file: split on, prefs on
     assert V.SPLIT is True and V.PREF_WEIGHT == V.PREF_ON_WEIGHT
+
+
+def test_pages_are_revalidated_but_bundles_cached(session, tmp_path):
+    (tmp_path / "_app" / "immutable").mkdir(parents=True)
+    (tmp_path / "index.html").write_text("<p>app</p>")
+    (tmp_path / "_app" / "immutable" / "x.js").write_text("1")
+    with TestClient(create_app(session, run_scanner=False, frontend=tmp_path)) as client:
+        assert client.get("/").headers.get("cache-control") == "no-cache"
+        assert "cache-control" not in client.get("/_app/immutable/x.js").headers

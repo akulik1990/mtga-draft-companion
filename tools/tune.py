@@ -24,6 +24,7 @@ GRID = {
     "K": [150.0, 300.0, 600.0],
     "STEER": [2.0, 4.0, 6.0],
     "COMMIT_BY": [12, 18, 24],
+    "ALPHA": [0.5, 1.0, 2.0],
     "ALPHA_LATE": [1.0, 1.5, 2.5],
     "BETA": [0.0, 0.5, 1.0],
     "GAMMA": [0.0, 0.5, 1.0],
@@ -31,7 +32,8 @@ GRID = {
     "SPARSE_SD": [0.0, 0.5, 1.0],
     "SPLASH": [0.7, 0.85, 1.0],
     "SPEC_SPLASH": [0.85, 1.0, 1.15],
-    "ORDER_WEIGHT": [0.0, 0.5, 1.0, 2.0],
+    "PREF_WEIGHT": [2.0, 4.0, 6.0],
+    "FIX_WEIGHT": [0.25, 0.5, 1.0],
 }
 
 
@@ -60,7 +62,7 @@ def score(params, sets, split, pool):
 
 def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
-    p.add_argument("--sets", nargs="+", default=["FRA", "TDM"])
+    p.add_argument("--sets", nargs="+", default=["FRA"])
     p.add_argument("--passes", type=int, default=2)
     p.add_argument("--jobs", type=int, default=8)
     p.add_argument("--only", nargs="*", help="tune only these constants")
