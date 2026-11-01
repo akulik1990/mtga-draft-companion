@@ -78,7 +78,7 @@
 		{@const b = snap.v2_split.branch}
 		<div class="mb-3 rounded border px-3 py-2 text-sm {b.take ? 'border-amber-500/60 bg-amber-950/40' : 'border-zinc-700 bg-zinc-900'}">
 			<span class="text-zinc-400">Strongest card:</span> <span class="font-semibold">{b.card}</span>
-			<span class="text-zinc-400"> · best for your colours:</span> <span class="font-semibold">{b.over}</span>
+			<span class="text-zinc-400"> · {snap.pool.length ? 'best for your colours' : 'most flexible (playable in the most colour pairs)'}:</span> <span class="font-semibold">{b.over}</span>
 			<span class="text-zinc-400"> · gap</span> <span class="font-mono">{b.gap >= 0 ? '+' : ''}{b.gap.toFixed(1)}</span>
 			<span class="text-zinc-400">; winning top drafters switch above</span> <span class="font-mono">{b.threshold >= 0 ? '+' : ''}{b.threshold.toFixed(1)}</span>
 			<span class="text-zinc-500">(pool {b.stage})</span>

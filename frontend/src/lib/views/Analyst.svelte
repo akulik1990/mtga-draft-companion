@@ -123,7 +123,7 @@
 			{#each snap.v2_split.power as x, i}<div class="text-sm"><span class="font-mono text-zinc-500">#{i + 1}</span> {x.card} <span class="font-mono text-zinc-400">{x.score.toFixed(1)}</span></div>{/each}
 		</section>
 		<section>
-			<h3 class="mb-2 text-sm font-semibold text-zinc-400">v2 Fit top 3 (best for your colours)</h3>
+			<h3 class="mb-2 text-sm font-semibold text-zinc-400">v2 Fit top 3 ({snap.pool.length ? 'best for your colours' : 'most flexible: no colours yet'})</h3>
 			{#each snap.v2_split.fit as x, i}<div class="text-sm"><span class="font-mono text-zinc-500">#{i + 1}</span> {x.card} <span class="font-mono text-zinc-400">{x.score.toFixed(1)}</span></div>{/each}
 		</section>
 	{/if}
