@@ -142,7 +142,7 @@ class DraftAdvisorV2:
     SPEC_ALL = False  # False: only cards castable in no two-colour lane (three-colour cards) get it; True: any card one pip off
     SPLIT = True  # two orders: Power (best card if you end up in its colours) and Fit (best for the colours you are in); branch to Power above a learnt gap
     BRANCH_MODE = "learnt"  # "learnt" (fitted rule), "fit" (never branch), "power" (always take the strongest card)
-    BRANCH_COLOUR = False  # switch rule that also weighs whether the strong card keeps a colour of the top pair and how settled the pool is (branch_<SET>_colour.json). FRA: test top-1 55.4 -> 56.0, deck win rate -0.86 (SE 0.34, 200 tables); off
+    BRANCH_COLOUR = True  # switch rule that also weighs whether the strong card keeps a colour of the top pair and how settled the pool is (branch_<SET>_colour.json). FRA: test top-1 55.4 -> 56.0, deck win rate -0.86 (SE 0.34, 200 bot tables, all from tables ending in other colours); on by the user's call 2026-11-01
     BRANCH_FILE = ""  # override the fitted rule's file (measuring alternatives); "" = companion/advisor_v2/branch_<SET>.json
     BRANCH_DEFAULT = 3.0  # GIH WR points; used for stages with no fitted threshold (companion/advisor_v2/branch_<SET>.json)
     ORDER_FADE_BY = 0  # pick in the pack by which the pick-order prior has faded to 0; 0 = no fade
