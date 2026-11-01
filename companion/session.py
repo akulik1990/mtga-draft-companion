@@ -6,6 +6,8 @@ Everything here calls vendor functions; nothing reimplements their logic.
 import logging
 import os
 import queue
+import random
+from pathlib import Path
 
 from src import constants
 from src.card_logic import copy_deck, filter_options, format_win_rate, suggest_deck
@@ -16,6 +18,7 @@ from src.ui.orchestrator import DraftOrchestrator  # threading only, no Tk
 from src.utils import retrieve_local_set_list
 
 from companion.advisors import rank_pack
+from companion.mock import Cards, MockDraft, sampled_drafts
 
 log = logging.getLogger(__name__)
 
@@ -29,6 +32,7 @@ class DraftSession:
         self.config = config
         self.orchestrator = DraftOrchestrator(scanner, config, refresh_callback=None)
         self.status = "Waiting for draft..."
+        self.mock = None  # MockDraft while one is running
 
     # ── lifecycle ────────────────────────────────────────────────────────────
 
@@ -44,6 +48,7 @@ class DraftSession:
         Returns True when the snapshot may have changed.
         """
         if not self.orchestrator.is_alive():
+            self._swap_pending_file()
             self.orchestrator.step_process()
         changed = False
         while True:
@@ -76,10 +81,11 @@ class DraftSession:
             event_string = s.event_string
             cards_per_pick = s.cards_per_pick
 
-        signals = self._signals(metrics, history)
+        seen_packs = [(e["Pack"], e["Pick"], self.scanner.set_data.get_data_by_id(e["Cards"])) for e in history]
+        signals = self._signals(metrics, seen_packs)
         deck_filter = filter_options(taken, self.config.settings.deck_filter, metrics, self.config)
         archetype = deck_filter[0] if deck_filter else constants.FILTER_OPTION_ALL_DECKS
-        advisors = rank_pack(metrics, taken, pack, pick, pack_no) if pack else {}
+        advisors, lanes, signals_v2 = rank_pack(metrics, taken, pack, pick, pack_no, seen_packs) if pack else ({}, {}, {})
 
         for card in (*pack, *missing, *taken):
             card["grades"] = self._grades(card, metrics, archetype)
@@ -88,6 +94,7 @@ class DraftSession:
             self.status = f"Pack {pack_no} Pick {pick}" if pack_no > 0 else "Waiting for draft..."
         return {
             "status": self.status,
+            "mock": self.mock.describe() if self.mock else None,
             "event": {"set": event_set, "type": event_type, "label": event_string, "draft_id": draft_id},
             "pack_number": pack_no,
             "pick_number": pick,
@@ -96,6 +103,8 @@ class DraftSession:
             "archetype": archetype,
             "color_ratings": color_ratings,
             "signals": signals,
+            "lanes": lanes,
+            "signals_v2": signals_v2,
             "pack": pack,
             "missing": missing,
             "picked_from_pack": picked_now,
@@ -103,14 +112,14 @@ class DraftSession:
             "advisors": advisors,
         }
 
-    def _signals(self, metrics, history):
+    def _signals(self, metrics, seen_packs):
+        """Upstream's lateness signal, for display; v2 computes its own z-scores."""
         calc = SignalCalculator(metrics)
         scores = {c: 0.0 for c in constants.CARD_COLORS}
-        for entry in history:
-            if entry["Pack"] == 2:  # upstream excludes pack 2 (other direction)
+        for pack_no, pick, cards in seen_packs:
+            if pack_no == 2:  # upstream excludes pack 2 (other direction)
                 continue
-            cards = self.scanner.set_data.get_data_by_id(entry["Cards"])
-            for color, value in calc.calculate_pack_signals(cards, entry["Pick"]).items():
+            for color, value in calc.calculate_pack_signals(cards, pick).items():
                 scores[color] += value
         return scores
 
@@ -129,6 +138,58 @@ class DraftSession:
 
     def rescan(self):
         self.orchestrator.trigger_full_scan()
+
+    def _swap_pending_file(self):
+        """Without the orchestrator thread (tests, tools), apply a queued file swap the way its loop does."""
+        new_file = None
+        while not self.orchestrator._file_swap_queue.empty():
+            new_file = self.orchestrator._file_swap_queue.get_nowait()
+        if new_file:
+            self.scanner.set_arena_file(new_file)
+            self.scanner.draft_start_search()
+            self.orchestrator.sync_dataset_to_event()
+            self.scanner.draft_data_search()
+            self.status = None
+
+    # ── mock drafts ──────────────────────────────────────────────────────────
+
+    def start_mock(self, kind="random", set_code=None, seed=None):
+        """Begin a mock draft on its own log and point the scanner at it. kind: random | table | 17lands."""
+        set_code = set_code or (self.config.card_data.latest_dataset or "").split("_")[0]
+        if not set_code:
+            raise ValueError("no active dataset; select one first")
+        dataset = Path(constants.SETS_FOLDER) / f"{set_code}_PremierDraft_All_Data.json"
+        if not dataset.exists():
+            raise FileNotFoundError(f"no Premier dataset for {set_code}")
+        cards = Cards(dataset)
+        # One file per mock: the scanner ignores a swap to the path it already watches. Only this
+        # session's previous mock is removed; other processes (a compare run) may be using the folder.
+        folder = Path(constants.TEMP_FOLDER) / "mock"
+        folder.mkdir(parents=True, exist_ok=True)
+        if self.mock and self.mock.log.exists():
+            self.mock.log.unlink()
+        log = folder / f"mock-{random.randrange(16**6):06x}.Player.log"
+        real = sampled_drafts(Path(constants.TEMP_FOLDER).parent, set_code) if kind in ("random", "17lands") else []
+        if kind == "random":
+            kind = "17lands" if real and random.random() < 0.5 else "table"
+        if kind == "17lands" and real:
+            self.mock = MockDraft.real(cards, log, random.choice(real))
+        else:
+            self.mock = MockDraft.table(cards, log, seed)
+        self.mock.start()
+        self.orchestrator.set_file_and_scan(str(log))
+        return self.mock.describe()
+
+    def mock_pick(self, card_name):
+        if not self.mock:
+            raise ValueError("no mock draft running")
+        self.mock.pick(card_name)
+        return self.mock.describe()
+
+    def stop_mock(self):
+        self.mock = None
+        live = getattr(self.orchestrator, "live_log_path", None) or self.scanner.arena_file
+        self.orchestrator.set_file_and_scan(live)
 
     def reset(self):
         with self.scanner.lock:

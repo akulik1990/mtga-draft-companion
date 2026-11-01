@@ -65,6 +65,7 @@ def create_app(session: DraftSession, *, run_scanner: bool = True, frontend: Pat
 
     @app.get("/api/state")
     def state():
+        session.poll()  # no-op drain when the scanner thread runs; advances the scanner when it does not (tests, tools)
         return snapshot()
 
     @app.post("/api/draft/rescan")
@@ -104,6 +105,25 @@ def create_app(session: DraftSession, *, run_scanner: bool = True, frontend: Pat
     async def build_decks():
         # Monte Carlo + numba JIT on first call: seconds, so keep it off the event loop.
         return jsonable_encoder(await asyncio.to_thread(session.build_decks))
+
+    @app.post("/api/mock/start")
+    def mock_start(kind: str = Body("random"), set: str | None = Body(None), seed: int | None = Body(None)):
+        try:
+            return session.start_mock(kind, set, seed)
+        except (ValueError, FileNotFoundError) as e:
+            raise HTTPException(400, str(e))
+
+    @app.post("/api/mock/pick")
+    def mock_pick(card_name: str = Body(..., embed=True)):
+        try:
+            return session.mock_pick(card_name)
+        except ValueError as e:
+            raise HTTPException(400, str(e))
+
+    @app.post("/api/mock/stop")
+    def mock_stop():
+        session.stop_mock()
+        return {"ok": True}
 
     @app.websocket("/api/ws")
     async def ws(websocket: WebSocket):

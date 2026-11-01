@@ -27,8 +27,9 @@ def test_pack_flows_to_both_advisors(session):
         recs = snap["advisors"][key]
         assert len(recs) == KNOWN_IN_PACK
         assert [r["rank"] for r in recs] == list(range(1, KNOWN_IN_PACK + 1))
-    # v2 is a stub that delegates to upstream until Phase 2.
-    assert [r["card_name"] for r in snap["advisors"]["v2"]] == [r["card_name"] for r in snap["advisors"]["upstream"]]
+    # Both rank the same cards; v2 scores in win-rate units and carries its lane distribution.
+    assert {r["card_name"] for r in snap["advisors"]["v2"]} == {r["card_name"] for r in snap["advisors"]["upstream"]}
+    assert abs(sum(snap["lanes"].values()) - 1.0) < 1e-6
 
 
 def test_api_state_and_ws(session):

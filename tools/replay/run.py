@@ -19,7 +19,7 @@ import requests  # upstream dependency; carries certifi, which the uv-managed Py
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))  # run by path, not only as -m
 import companion  # noqa: E402,F401  (vendor on sys.path, cwd = data dir)
-from companion import DATA_DIR, VENDOR  # noqa: E402
+from companion import DATA_DIR, LAUNCH_DIR, VENDOR  # noqa: E402
 
 sys.path.insert(0, str(VENDOR / "Tools" / "AdvisorReplay"))
 import replay  # noqa: E402
@@ -41,16 +41,44 @@ def advisor_class(name):
     return DraftAdvisorV2
 
 
+_original = {"init": replay.App.__init__, "advise": replay.App.advise, "replay_draft": replay.replay_draft}
+
+
 def use_advisor(name):
-    """Make replay.App construct the chosen advisor. Everything else is upstream's."""
+    """Make replay.App construct the chosen advisor. Everything else is upstream's.
+
+    Upstream's harness hands the advisor only the pool and the current pack. v2
+    also wants the packs seen earlier in the draft, so for v2 the draft being
+    replayed is remembered and its earlier picks' packs are passed as seen_packs.
+    """
     cls = advisor_class(name)
-    original = replay.App.__init__
 
     def __init__(self, *a, **k):
-        original(self, *a, **k)
+        _original["init"](self, *a, **k)
         self.DraftAdvisor = cls
+        self.current_draft = None
+
+    def replay_draft(app, draft, skipped):
+        app.current_draft = draft
+        return _original["replay_draft"](app, draft, skipped)
+
+    def advise(self, pack, pool, pack_no, pick_no):
+        if name != "v2":
+            return _original["advise"](self, pack, pool, pack_no, pick_no)
+        seen = [
+            (p, k, self.cards(names))
+            for p, k, _taken, names, _pool in (self.current_draft or {}).get("picks", [])
+            if (p, k) <= (pack_no, pick_no)
+        ]
+        recs = cls(self.metrics, pool, seen_packs=seen).evaluate_pack(pack, pick_no, current_pack=pack_no)
+        scores = {}
+        for r in recs:
+            scores.setdefault(r.card_name, r.contextual_score)
+        return scores
 
     replay.App.__init__ = __init__
+    replay.App.advise = advise
+    replay.replay_draft = replay_draft
 
 
 def fetch(url, dest):
@@ -79,8 +107,9 @@ def cmd_sample(a):
 
 def cmd_replay(a):
     use_advisor(a.advisor)
-    replay.main(["--src", str(VENDOR), "--drafts", a.drafts, "--dataset", a.dataset,
-                 "--set", a.set, "--label", a.label, "--out", a.out])
+    here = lambda p: str(LAUNCH_DIR / p)  # the package chdirs into the data dir
+    replay.main(["--src", str(VENDOR), "--drafts", here(a.drafts), "--dataset", here(a.dataset),
+                 "--set", a.set, "--label", a.label, "--out", here(a.out)])
 
 
 def cmd_compare(a):

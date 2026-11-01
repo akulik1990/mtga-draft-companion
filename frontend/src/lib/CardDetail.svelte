@@ -2,7 +2,7 @@
 	import type { Card, Rec } from './api';
 	import { pct } from './cards';
 
-	let { card, archetype, upstream, v2, onclose }: { card: Card; archetype: string; upstream?: Rec; v2?: Rec; onclose: () => void } = $props();
+	let { card, archetype, upstream, v2, onclose, onpick, picking = false }: { card: Card; archetype: string; upstream?: Rec; v2?: Rec; onclose: () => void; onpick?: (c: Card) => void; picking?: boolean } = $props();
 
 	const rows = $derived(
 		Object.entries(card.deck_colors ?? {})
@@ -26,9 +26,12 @@
 	<div role="dialog" aria-modal="true" class="relative flex max-h-full w-full max-w-5xl gap-4 overflow-auto rounded-xl bg-zinc-900 p-4">
 		<img src={card.image?.[0]} alt={card.name} class="h-[480px] shrink-0 rounded-lg" />
 		<div class="min-w-0 flex-1 text-sm">
-			<div class="flex items-baseline justify-between">
+			<div class="flex items-baseline justify-between gap-3">
 				<h2 class="text-lg font-semibold">{card.name} <span class="font-mono text-zinc-500">{card.mana_cost}</span></h2>
-				<button class="text-zinc-500 hover:text-zinc-200" onclick={onclose}>✕</button>
+				<span class="flex items-center gap-3">
+					{#if onpick}<button class="rounded bg-emerald-700 px-3 py-1 text-sm hover:bg-emerald-600 disabled:opacity-50" onclick={() => onpick(card)} disabled={picking}>Pick</button>{/if}
+					<button class="text-zinc-500 hover:text-zinc-200" onclick={onclose}>✕</button>
+				</span>
 			</div>
 			<p class="text-zinc-500">{card.types?.join(' ')} · {card.rarity} {#if card.tags?.length}· {card.tags.join(', ')}{/if}</p>
 			{@render adv('upstream', upstream)}

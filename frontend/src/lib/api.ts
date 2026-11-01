@@ -16,13 +16,16 @@ export type Rec = {
 	is_elite: boolean; archetype_fit: string; tags: string[];
 };
 export type AdvisorKey = 'upstream' | 'v2';
+export type Mock = { kind: 'table' | '17lands'; id: number | string; set: string; done: boolean; pack_number: number | null; pick_number: number | null; picks: number; human: string | null };
 export type Snapshot = {
 	status: string;
+	mock: Mock | null;
 	event: { set: string; type: string; label: string; draft_id: string };
 	pack_number: number; pick_number: number; cards_per_pick: number;
 	dataset: string; archetype: string;
 	color_ratings: Record<string, number>;
 	signals: Record<string, number>;
+	lanes: Record<string, number>;
 	pack: Card[]; missing: Card[]; picked_from_pack: Card[]; pool: Card[];
 	advisors: Partial<Record<AdvisorKey, Rec[]>>;
 };
@@ -63,5 +66,8 @@ export const api = {
 	settings: () => call<Settings>('/api/settings'),
 	updateSettings: (changes: Partial<Settings>) =>
 		call<Settings>('/api/settings', { method: 'PUT', body: JSON.stringify(changes) }),
-	buildDecks: () => post<Build[]>('/api/deck/build')
+	buildDecks: () => post<Build[]>('/api/deck/build'),
+	mockStart: (kind: 'random' | 'table' | '17lands' = 'random') => post<Mock>('/api/mock/start', { kind }),
+	mockPick: (card_name: string) => post<Mock>('/api/mock/pick', { card_name }),
+	mockStop: () => post('/api/mock/stop')
 };

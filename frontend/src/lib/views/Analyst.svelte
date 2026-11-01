@@ -17,6 +17,8 @@
 	const curveMax = $derived(Math.max(1, ...curve));
 	const interaction = $derived(spells.filter((c) => c.tags?.some((t) => /removal|counter|bounce|fight/.test(t))).length);
 	const creatures = $derived(spells.filter((c) => c.types?.includes('Creature')).length);
+	const lanes = $derived(Object.entries(snap.lanes ?? {}).sort((a, b) => b[1] - a[1]));
+	const laneMax = $derived(Math.max(1e-9, ...lanes.map(([, p]) => p)));
 </script>
 
 <div class="grid gap-6 md:grid-cols-2">
@@ -55,8 +57,16 @@
 	</section>
 
 	<section>
-		<h3 class="mb-2 text-sm font-semibold text-zinc-400">v2 lane distribution</h3>
-		<p class="text-sm text-zinc-500">Phase 2. v2 currently mirrors upstream.</p>
+		<h3 class="mb-2 text-sm font-semibold text-zinc-400">v2 P(lane) from pool, signals and format</h3>
+		{#each lanes.slice(0, 6) as [lane, p]}
+			<div class="mb-1 flex items-center gap-2 text-sm">
+				<span class="w-8 font-mono text-xs {lane === snap.archetype ? 'text-emerald-300' : 'text-zinc-400'}">{lane}</span>
+				<div class="h-3 flex-1 rounded bg-zinc-800"><div class="h-3 rounded bg-violet-500" style="width:{(100 * p) / laneMax}%"></div></div>
+				<span class="w-12 text-right font-mono text-xs text-zinc-400">{(100 * p).toFixed(0)}%</span>
+			</div>
+		{:else}
+			<p class="text-sm text-zinc-600">no pack</p>
+		{/each}
 	</section>
 
 	{#each ['upstream', 'v2'] as key}

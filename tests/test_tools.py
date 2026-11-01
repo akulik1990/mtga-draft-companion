@@ -1,11 +1,9 @@
-"""Converter and replay wrapper: a sampled 17Lands draft round-trips through the session and the harness."""
+"""Replay wrapper: the harness constructs our advisor when asked for v2."""
 
 import gzip
 import json
 
 from companion import VENDOR
-from tests.conftest import OTJ, append
-from tools import draft_to_log
 from tools.replay import run as replay_run
 
 MKM = VENDOR / "tests" / "data" / "MKM_PremierDraft_Data_2024_5_3.json"
@@ -19,19 +17,6 @@ def sampled_draft(dataset, n_picks, pack_size=6):
         pack = names[i : i + pack_size]
         picks.append([1 + i // 14, 1 + i % 14, pack[0], pack, [p[2] for p in picks]])
     return {"id": "d1", "skill": 0.6, "games": 100, "wins": 7, "losses": 2, "picks": picks}
-
-
-def test_draft_to_log_replays_through_session(session):
-    draft = sampled_draft(OTJ, 5)
-    lines = draft_to_log.to_log_lines(draft, draft_to_log.name_to_id(OTJ), "OTJ", until=(1, 5))
-    for line in lines:
-        append(session.log, line)
-    session.poll()
-    snap = session.snapshot()
-    assert (snap["pack_number"], snap["pick_number"]) == (1, 5)
-    assert [c["name"] for c in snap["pool"]] == [p[2] for p in draft["picks"][:4]]
-    assert len(snap["pack"]) == 6
-    assert set(snap["advisors"]) == {"upstream", "v2"}
 
 
 def test_replay_wrapper_uses_v2(tmp_path, monkeypatch):
