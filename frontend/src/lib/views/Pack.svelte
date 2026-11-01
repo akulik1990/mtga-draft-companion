@@ -65,7 +65,7 @@
 		{/if}
 		<span class="ml-auto text-zinc-500">values for <span class="text-zinc-200">{snap.archetype}</span></span>
 		{#if mockLive}
-			<span class="text-violet-300">click a card, then Pick{snap.mock?.human ? ` · human took ${snap.mock.human}` : ''}</span>
+			<span class="text-violet-300">Pick under a card, or click it for details{snap.mock?.human ? ` · human took ${snap.mock.human}` : ''}</span>
 		{/if}
 		{#if snap.picked_from_pack.length}
 			<span class="text-zinc-500">picked <span class="text-zinc-200">{snap.picked_from_pack.map((c) => c.name).join(', ')}</span></span>
@@ -90,11 +90,12 @@
 		</div>
 	{/if}
 	{#if mode === 'cards'}
-		<div class="grid grid-cols-3 gap-3 md:grid-cols-4 xl:grid-cols-5">
+		<div class="grid gap-3" style="grid-template-columns: repeat(auto-fill, minmax(10.5rem, 1fr));"><!-- ponytail: fixed card width, more columns on wide screens -->
 			{#each sorted as card (card.name)}
 				<CardTile {card} {snap} archetype={snap.archetype} upstream={up.get(card.name)} v2={v2.get(card.name)}
 					powerRank={rankIn(snap.v2_split?.power, card.name)} fitRank={rankIn(snap.v2_split?.fit, card.name)}
-					highlight={card.name === top} onclick={() => (open = card)} />
+					highlight={card.name === top} onclick={() => (open = card)}
+					onpick={mockLive ? () => pick(card) : undefined} {picking} />
 			{/each}
 		</div>
 	{:else}
