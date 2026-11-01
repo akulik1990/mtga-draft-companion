@@ -105,3 +105,16 @@ def test_deck_win_rate_scores_a_build(monkeypatch):
     build = {"deck": [{"name": "Bomb", "count": 2}, {"name": "Plains", "count": 8}], "colors": ["W", "U"]}
     assert mock_draft.deck_win_rate("XYZ", build) == 52.5
     assert mock_draft.deck_win_rate("XYZ", {}) is None
+
+
+def test_replayed_draft_can_pick_cards_without_data(tmp_path):
+    from companion.mock import Cards, MockDraft
+    from tests.conftest import OTJ
+
+    cards = Cards(OTJ)
+    bare = next(n for n, i in cards.id_of.items() if i not in cards.by_id)  # e.g. a basic land
+    rated = cards.names[next(iter(cards.by_id))]
+    draft = {"id": "x", "picks": [(1, 1, rated, [rated, bare], None), (1, 2, bare, [bare], None)]}
+    mock = MockDraft.real(cards, tmp_path / "Player.log", draft)
+    mock.start()
+    assert mock.pick(bare) and not mock.pick(bare)

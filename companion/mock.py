@@ -38,8 +38,10 @@ class Cards:
         data = json.loads(Path(dataset_path).read_text())
         self.set_code = Path(dataset_path).name.split("_")[0]
         self.by_id = {i: c for i, c in data["card_ratings"].items() if gihwr(c) > 0}
+        self.names = {i: c["name"] for i, c in data["card_ratings"].items()}
         self.id_of = {}
-        for i, c in data["card_ratings"].items():
+        # Printings with data first, so a replayed pick maps to the id the bots and stats use.
+        for i, c in sorted(data["card_ratings"].items(), key=lambda kv: kv[0] not in self.by_id):
             self.id_of.setdefault(c["name"], i)
             self.id_of.setdefault(c["name"].split(" // ")[0], i)
         self.by_rarity = {"common": [], "uncommon": [], "rare": [], "mythic": []}
@@ -48,7 +50,7 @@ class Cards:
                 self.by_rarity[c["rarity"]].append(i)
 
     def name(self, grp_id):
-        return self.by_id[grp_id]["name"]
+        return self.names[grp_id]
 
     def colours(self, grp_id):
         c = self.by_id[grp_id]
