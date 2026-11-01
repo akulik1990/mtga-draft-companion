@@ -246,3 +246,13 @@ def test_three_colour_bomb_is_live_on_an_empty_pool(world):
     assert recs[0].card_name == "bomb"  # early, the missing colour is a splash to find later
     late = DraftAdvisorV2(metrics, by_colors(cards, "G", 10, 50) + by_colors(cards, "B", 10, 50))
     assert late.progress == 1 and late.value(bomb, "BG") == late.replacement  # committed and two pips off: dead
+
+
+def test_pick_order_prior_breaks_a_tie(world, monkeypatch):
+    metrics, _ = world
+    monkeypatch.setattr(DraftAdvisorV2, "ORDER_WEIGHT", 1.0)
+    monkeypatch.setattr("companion.advisor_v2.engine.pick_order", lambda set_code: {"early": 1.5, "late": -1.0})
+    stats = {"All Decks": {"gihwr": 56.0, "samples": 9000}}
+    mk = lambda n: {"name": n, "set": "OTJ", "mana_cost": "{1}{W}", "colors": ["W"], "types": ["Creature"], "deck_colors": stats}
+    recs = DraftAdvisorV2(metrics, []).evaluate_pack([mk("late"), mk("early")], 3, 1)
+    assert recs[0].card_name == "early" and recs[0].contextual_score > recs[1].contextual_score

@@ -53,6 +53,30 @@ def top_ratings(set_code):
 
 
 @lru_cache(maxsize=8)
+def pick_order(set_code):
+    """{card name: earliness z} from top players' average pick position (ATA); all players' when no top file.
+
+    Positive means top players take the card earlier than the average card.
+    """
+    import json
+    from pathlib import Path
+
+    for group in ("Top", "All"):
+        path = Path(constants.SETS_FOLDER) / f"{set_code}_PremierDraft_{group}_Data.json"
+        if not path.exists():
+            continue
+        atas = {}
+        for card in (json.loads(path.read_text()).get("card_ratings") or {}).values():
+            ata = float(all_decks(card).get("ata") or 0.0)
+            if ata > 0 and int(all_decks(card).get("pick_count") or 0) >= 50:
+                atas.setdefault(card.get("name"), ata)
+        if len(atas) > 20:
+            mean, sd = statistics.mean(atas.values()), statistics.pstdev(atas.values()) or 1.0
+            return {name: (mean - ata) / sd for name, ata in atas.items()}
+    return {}
+
+
+@lru_cache(maxsize=8)
 def tables(set_code):
     """Per-set typical-deck and synergy tables, if tools/synergy/build.py has produced them."""
     return composition.load(set_code, constants.TEMP_FOLDER), synergy.load(set_code, constants.TEMP_FOLDER)
@@ -72,6 +96,7 @@ class DraftAdvisorV2:
     SPLASH = 0.85  # one off-colour pip with a fixer for it in the pool: shrunk WR × SPLASH (0 = off)
     SPEC_SPLASH = 1.0  # early-draft splash before any fixing exists: shrunk WR × SPEC_SPLASH × (1 − commitment progress); 0 = off
     SPEC_ALL = False  # False: only cards castable in no two-colour lane (three-colour cards) get it; True: any card one pip off
+    ORDER_WEIGHT = 2.0  # WR points per SD of how early top players take the card (their ATA), × castability; 0 = off
     TOP_WR = False  # rejected 2026-11-01 (FRA +0.1, TDM −0.7 top-drafter top-1). Use top players' win rates (the set's _Top dataset), shrunk toward all players' by sample size
     K_TOP = 300.0  # shrinkage for top-player rates: w = n_top / (n_top + K_TOP)
     LANDS = True  # round 2: lands exempt from the sparse prior; partial-overlap lands valued by the splashes they enable
@@ -221,6 +246,8 @@ class DraftAdvisorV2:
         by_wr = sorted(pack_cards, key=lambda c: float(all_decks(c).get("gihwr") or 0.0), reverse=True)
         rank_in_pack = {c.get("name"): i for i, c in enumerate(by_wr)}
         upstream = DraftAdvisor(self.metrics, self.pool)  # only for its wheel polynomial
+        set_code = next((c.get("set") for c in (*self.pool, *pack_cards) if c.get("set")), None)
+        self.order = pick_order(set_code) if self.ORDER_WEIGHT and set_code else {}
         if not self.typical:
             set_code = next((c.get("set") for c in pack_cards if c.get("set")), None)
             if set_code:
@@ -248,6 +275,10 @@ class DraftAdvisorV2:
             lanes = self._lanes(commit)
             score = sum(p * self.value(card, lane) for lane, p in lanes.items())
             cast_p = sum(p for lane, p in lanes.items() if castable(card, lane))
+            if self.ORDER_WEIGHT:
+                # What top players reach for, beyond its win rate; only as far as v2 expects to play the card.
+                live = sum(p for lane, p in lanes.items() if castable(card, lane) or self.speculative(card, lane))
+                score += self.ORDER_WEIGHT * self.order.get(name, 0.0) * live
             wheel = upstream._wheel_chance(card, max(1, current_pick), rank_in_pack.get(name, 99), pack_size=len(pack_cards))
             recs.append(self._rec(card, name, base, score, (base - pack_mean) / pack_std, cast_p, wheel,
                                   self._reasons(card, lanes, cast_p)))

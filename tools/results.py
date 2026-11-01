@@ -239,7 +239,7 @@ def top_drafter_metrics(run_path, drafts_path, boot=500, seed=0):
         if not meta or not d["picks"] or (meta.get("skill") or 0) < 0.60 or (meta.get("games") or 0) < 50:
             continue
         for p in d["picks"]:
-            for key in (f"P{p[0]}", f"P{p[0]} {'early' if p[1] <= 5 else 'late'}"):
+            for key in (f"P{p[0]}", f"P{p[0]} {'early' if p[1] <= 5 else 'late'}", f"P{p[0]}P{p[1]}"):
                 st = stage[key]
                 st[0] += p[2] == 0
                 st[1] += 1
@@ -297,9 +297,25 @@ def top_markdown(set_code, split, metrics):
             ("mean per-pick regret", v["mean_regret"], u["mean_regret"]),
             ("regret slope (more negative is better)", v.get("regret_slope"), u.get("regret_slope"))]
     stages = [k for k in v.get("by_stage", {}) if " " in k]
+    import re as _re
+
+    def pick_key(k):
+        m = _re.fullmatch(r"P(\d)P(\d+)", k)
+        return (int(m[1]), int(m[2])) if m else None
+
+    positions = sorted((k for k in v.get("by_stage", {}) if pick_key(k)), key=pick_key)
+    pick_rows = ["", "By pick: top-1 match % with all top drafters (v2 / upstream ref)", "",
+                 "| pick | " + " | ".join(f"P{n}" for n in (1, 2, 3)) + " |", "|---|---|---|---|"]
+    for k in range(1, 15):
+        cells = []
+        for n in (1, 2, 3):
+            key = f"P{n}P{k}"
+            a, b = v["by_stage"].get(key, {}).get("top1"), u.get("by_stage", {}).get(key, {}).get("top1")
+            cells.append(f"{a:.0f} / {b:.0f}" if a is not None and b is not None else "-")
+        pick_rows.append(f"| {k} | " + " | ".join(cells) + " |")
     stage_rows = ["", "By pack and stage (picks 1-5 early, 6+ late): top-1 % with all top drafters / with those who went 5-7", "",
                   "| stage | v2 | upstream (ref) |", "|---|---|---|"] + [
         f"| {k} | {v['by_stage'][k]['top1']} / {v['by_stage'][k]['top1_winners']} | {u['by_stage'].get(k, {}).get('top1')} / {u['by_stage'].get(k, {}).get('top1_winners')} |" for k in stages]
     return "\n".join([f"## Top drafters, {set_code} {split} sample ({v['drafts']} drafts, {v['picks']} picks)", "",
                       "Agreement with top drafters (60%+ over 50+ games) and with the ones whose events went well. Upstream is a reference, not the target.", "",
-                      "| measure | v2 | upstream (ref) |", "|---|---|---|"] + [f"| {a} | {b} | {c} |" for a, b, c in rows] + stage_rows)
+                      "| measure | v2 | upstream (ref) |", "|---|---|---|"] + [f"| {a} | {b} | {c} |" for a, b, c in rows] + stage_rows + pick_rows)

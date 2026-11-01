@@ -195,6 +195,11 @@ def cmd_top(a):
     metrics = {"v2": ledger.top_drafter_metrics(head, drafts), "upstream_ref": ledger.top_drafter_metrics(base, drafts)}
     head.unlink()
     md = ledger.top_markdown(a.set, a.split, metrics)
+    if getattr(a, "json", False):
+        import json
+
+        print("METRICS " + json.dumps(metrics["v2"]))
+        return metrics
     print(md)
     if not a.no_record:
         rec = ledger.record("top", a.set, {"split": a.split, "n": a.n}, metrics, md, a.note)
@@ -276,6 +281,7 @@ def main(argv=None):
     t = sub.add_parser("top"); t.add_argument("set"); t.add_argument("--split", choices=("train", "test"), default="train")
     t.add_argument("--n", type=int, default=600); t.add_argument("--note", default="")
     t.add_argument("--v2", action="append", default=[], metavar="NAME=VALUE"); t.add_argument("--no-record", action="store_true", help="tuning runs: print only")
+    t.add_argument("--json", action="store_true", help="print v2's metrics as one METRICS line (for tools/tune.py)")
     t.set_defaults(fn=cmd_top)
     rp = sub.add_parser("report"); rp.add_argument("results", nargs="+"); rp.set_defaults(fn=lambda a: report.main(a.results))
     a = p.parse_args(argv)
