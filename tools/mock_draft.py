@@ -176,6 +176,38 @@ def spearman(a, b):
     return cov / (va * vb) if va and vb else 0.0
 
 
+LANE_PAIRS = ["WU", "WB", "WR", "WG", "UB", "UR", "UG", "BR", "BG", "RG"]
+DECK_SPELLS = 23
+
+
+def lane_score(pool):
+    """Engine- and builder-independent deck quality: (score, pair).
+
+    For each colour pair, take the pool's spells castable in it by upstream's deck
+    builder rule (src.advisor.mana_base.is_castable: pips, hybrid aware),
+    value each by its 17Lands GIH WR in that pair (All Decks when 17Lands does not
+    publish one), and average the best 23, counting missing slots as 45.0 (a
+    filler card). The pool's score is its best pair. Nothing here comes from
+    either advisor or from upstream's deck builder.
+    """
+    from src.advisor.mana_base import is_castable
+
+    best = (0.0, "")
+    for pair in LANE_PAIRS:
+        rates = []
+        for card in pool:
+            if "Land" in (card.get("types") or []) or not is_castable(card, list(pair), strict=True):
+                continue
+            dc = card.get("deck_colors") or {}
+            wr = float((dc.get(pair) or {}).get("gihwr") or 0.0) or float((dc.get("All Decks") or {}).get("gihwr") or 0.0)
+            if wr > 0:
+                rates.append(wr)
+        rates = sorted(rates, reverse=True)[:DECK_SPELLS]
+        score = (sum(rates) + 45.0 * (DECK_SPELLS - len(rates))) / DECK_SPELLS
+        best = max(best, (round(score, 3), pair))
+    return best
+
+
 def compare_table(set_code, seed, make_app, engines=ENGINES):
     row, logs = {"seed": seed}, {}
     for e in engines:
@@ -184,10 +216,13 @@ def compare_table(set_code, seed, make_app, engines=ENGINES):
         builds = app.build()
         best = builds[0] if builds else {}
         logs[e] = log
-        row[e] = {"rating": best.get("rating"), "deck_colours": "".join(best.get("colors", [])[:2]), "label": best.get("label"),
+        score, pair = lane_score(app.state()["pool"])
+        row[e] = {"rating": best.get("rating"), "lane_score": score, "lane_score_pair": pair, "deck_colours": "".join(best.get("colors", [])[:2]), "label": best.get("label"),
                   "lane_at": {f"P{p}P1": next(x["lane"][e] for x in log if (x["pack"], x["pick"]) == (p, 1)) for p in (2, 3)},
                   "signals": [c for c in checks if c["engine"] == e], "picks": [x["took"] for x in log]}
         row[e]["lane_matches_deck"] = {k: sorted(v) == sorted(row[e]["deck_colours"]) for k, v in row[e]["lane_at"].items()}
+        late = [x["lane"][e] for x in log if (x["pack"] - 1) * 14 + x["pick"] >= 9]
+        row[e]["lane_changes"] = sum(1 for p, q in zip(late, late[1:]) if p and q and p != q)
     a, b = engines
     row["divergences"] = [
         {"pack": x["pack"], "pick": x["pick"], a: (x["took"], x["top"][a]["reasons"]), b: (y["took"], y["top"][b]["reasons"])}
@@ -199,6 +234,10 @@ def compare_table(set_code, seed, make_app, engines=ENGINES):
 
 def report(rows, engines=ENGINES):
     a, b = engines
+    la = [r[a].get("lane_score") or 0 for r in rows]
+    lb = [r[b].get("lane_score") or 0 for r in rows]
+    ldiff = [y - x for x, y in zip(la, lb)]
+    lse = statistics.stdev(ldiff) / len(ldiff) ** 0.5 if len(ldiff) > 1 else 0.0
     ra = [r[a]["rating"] or 0 for r in rows]
     rb = [r[b]["rating"] or 0 for r in rows]
     diffs = [y - x for x, y in zip(ra, rb)]
@@ -217,22 +256,26 @@ def report(rows, engines=ENGINES):
     lines = [
         f"## Mock drafts through the app: {len(rows)} tables, {a} vs {b}",
         "",
-        "### Final builds (the app's deck build; rating is upstream's deck score)",
+        "### Final decks",
         "",
-        "| engine | mean rating |", "|---|---|",
-        f"| {a} | {statistics.mean(ra):.2f} |", f"| {b} | {statistics.mean(rb):.2f} |",
+        "Lane score is independent of both engines and both builders: mean 17Lands GIH WR of the best 23 spells in the pool's best colour pair, using each card's win rate in that pair. Rating is upstream's deck builder and scorer, kept for comparison.",
         "",
-        f"{b} minus {a}: **{statistics.mean(diffs):+.2f}** (SE {se:.2f}); {b} better in {wins}, worse in {losses}, equal in {len(rows) - wins - losses}.",
+        "| engine | mean lane score | mean upstream rating |", "|---|---|---|",
+        f"| {a} | {statistics.mean(la):.2f} | {statistics.mean(ra):.2f} |", f"| {b} | {statistics.mean(lb):.2f} | {statistics.mean(rb):.2f} |",
+        "",
+        f"Lane score, {b} minus {a}: **{statistics.mean(ldiff):+.3f}** (SE {lse:.3f}); {b} better in {sum(d > 0 for d in ldiff)}, worse in {sum(d < 0 for d in ldiff)}.",
+        "",
+        f"Upstream rating, {b} minus {a}: **{statistics.mean(diffs):+.2f}** (SE {se:.2f}); {b} better in {wins}, worse in {losses}, equal in {len(rows) - wins - losses}.",
         "",
         "### Picks", "",
         f"Mean picks that differ per table: {statistics.mean(n_div):.1f} of 42. First divergence by pack: "
         + ", ".join(f"P{p} {sum(1 for r in rows if r['first_divergence'] and r['first_divergence'][0] == p)}" for p in (1, 2, 3))
         + f", never {sum(1 for r in rows if not r['first_divergence'])}.",
         "",
-        "### Colour suggestion (engine's lane at the start of a pack equals the colours of its own final build)", "",
-        "| engine | at P2P1 | at P3P1 |", "|---|---|---|",
-        f"| {a} | {pct(r[a]['lane_matches_deck']['P2P1'] for r in rows)} | {pct(r[a]['lane_matches_deck']['P3P1'] for r in rows)} |",
-        f"| {b} | {pct(r[b]['lane_matches_deck']['P2P1'] for r in rows)} | {pct(r[b]['lane_matches_deck']['P3P1'] for r in rows)} |",
+        "### Colour suggestion (engine's lane at the start of a pack equals the colours of its own final build; lane changes from pick 9 on)", "",
+        "| engine | at P2P1 | at P3P1 | lane changes per draft |", "|---|---|---|---|",
+        f"| {a} | {pct(r[a]['lane_matches_deck']['P2P1'] for r in rows)} | {pct(r[a]['lane_matches_deck']['P3P1'] for r in rows)} | {statistics.mean(r[a].get('lane_changes', 0) for r in rows):.1f} |",
+        f"| {b} | {pct(r[b]['lane_matches_deck']['P2P1'] for r in rows)} | {pct(r[b]['lane_matches_deck']['P3P1'] for r in rows)} | {statistics.mean(r[b].get('lane_changes', 0) for r in rows):.1f} |",
         "",
         "### Open-colour detection (vs what the passing seat took: Spearman over WUBRG; top signal colour among the two most open)", "",
         "| engine | after P1 ρ | after P1 top | after P2 ρ | after P2 top | after P3 ρ | after P3 top |", "|---|---|---|---|---|---|---|",
@@ -249,17 +292,40 @@ def report(rows, engines=ENGINES):
     return "\n".join(lines)
 
 
+def apply_overrides(pairs):
+    """--v2 NAME=VALUE sets a DraftAdvisorV2 constant; --v2 module.NAME=VALUE a switch in companion.advisor_v2.<module>.
+
+    The ledger records every constant and switch, so the override is visible there.
+    """
+    import importlib
+
+    from companion.advisor_v2.engine import DraftAdvisorV2
+
+    for pair in pairs:
+        name, value = pair.split("=", 1)
+        target = DraftAdvisorV2
+        if "." in name:
+            module, name = name.split(".", 1)
+            target = importlib.import_module(f"companion.advisor_v2.{module}")
+        if not hasattr(target, name):
+            raise SystemExit(f"{target.__name__} has no {name}")
+        current = getattr(target, name)
+        setattr(target, name, value.lower() in ("1", "true", "on") if isinstance(current, bool) else type(current)(value))
+
+
 def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     sub = p.add_subparsers(dest="cmd", required=True)
-    c = sub.add_parser("compare"); c.add_argument("set"); c.add_argument("--seeds", type=int, default=30); c.add_argument("--start", type=int, default=1)
+    c = sub.add_parser("compare"); c.add_argument("set"); c.add_argument("--seeds", type=int, default=200); c.add_argument("--start", type=int, default=1)
     c.add_argument("--out", help="results JSON (default <data>/Temp/sim/<SET>.json)"); c.add_argument("--note", default="", help="what this run is testing; kept in results/runs.jsonl")
+    c.add_argument("--v2", action="append", default=[], metavar="NAME=VALUE", help="override a DraftAdvisorV2 constant for this run, e.g. --v2 SPLASH=0; recorded in the ledger")
     g = sub.add_parser("play"); g.add_argument("set"); g.add_argument("--app", help="base URL of a running app; else in-process")
     g.add_argument("--follow", default="v2", choices=("upstream", "v2", "gihwr", "human")); g.add_argument("--kind", default="table", choices=("table", "17lands", "random"))
     g.add_argument("--seed", type=int); g.add_argument("--delay", type=float, default=0.0, help="seconds between picks, to watch in the browser")
     a = p.parse_args(argv)
 
     if a.cmd == "compare":
+        apply_overrides(a.v2)
         rows = []
         for seed in range(a.start, a.start + a.seeds):
             row = compare_table(a.set, seed, lambda e: InProcess.fresh(e))

@@ -6,6 +6,8 @@ from companion.advisor_v2.lanes import all_decks, quality
 
 COLORS = "WUBRG"
 PACK_WEIGHT = {1: 1.0, 2: 0.5, 3: 1.0}  # pack 2 comes from the other neighbour
+SCALE = "z"  # "z": z-score across colours (divides by their SD); "centred": subtract the mean only, so one dominant colour stays dominant
+QUALITY_POWER = 1  # lateness is weighted by quality ** QUALITY_POWER; 2 favours one strong late card over several mediocre ones
 
 
 def colour_signals(seen_packs, mean, std, alsa_spread):
@@ -34,11 +36,13 @@ def colour_signals(seen_packs, mean, std, alsa_spread):
                 continue
             for c in card.get("colors") or []:
                 if c in raw:
-                    raw[c] += w * q * late
+                    raw[c] += w * q ** QUALITY_POWER * late
     if n_packs == 0:
         return {c: 0.0 for c in COLORS}
     per_pack = {c: v / n_packs for c, v in raw.items()}
     mu = statistics.mean(per_pack.values())
+    if SCALE == "centred":
+        return {c: v - mu for c, v in per_pack.items()}
     sd = statistics.pstdev(per_pack.values())
     if sd <= 0:
         return {c: 0.0 for c in COLORS}

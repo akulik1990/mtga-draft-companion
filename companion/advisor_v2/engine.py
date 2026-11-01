@@ -17,10 +17,11 @@ from functools import lru_cache
 
 from src import constants
 from src.advisor.engine import DraftAdvisor
+from src.advisor.mana_base import count_fixing
 from src.advisor.schema import Recommendation
 
 from companion.advisor_v2 import composition, synergy
-from companion.advisor_v2.lanes import ALL, LANES, all_decks, castable, commitment, lane_distribution, quality
+from companion.advisor_v2.lanes import ALL, LANES, all_decks, castable, commitment, lane_distribution, off_pips, quality
 from companion.advisor_v2.signals import colour_signals
 
 
@@ -34,9 +35,14 @@ class DraftAdvisorV2:
     K = 300.0  # shrinkage: w = n / (n + K)
     ALPHA = 1.0  # pool commitment per quality point
     STEER = 4.0  # the candidate's own quality counts this many times
+    COMMIT_BY = 0  # spells in the pool by which STEER has decayed to 0 and ALPHA reached ALPHA_LATE; 0 = no decay
+    ALPHA_LATE = 1.0  # pool commitment weight once the pool has COMMIT_BY spells
     BETA = 0.5  # per-colour signal z
     GAMMA = 0.5  # lane prior, in SDs of the lane's card mean
     REPLACEMENT_SD = 2.0  # V when not castable: mean − 2 SD
+    N_SPARSE = 50  # fewer samples than this in a lane: the card is rarely played there
+    SPARSE_SD = 0.5  # ...so shrink toward All Decks − SPARSE_SD × std instead of All Decks
+    SPLASH = 0.0  # off: measured only together with pips (contested). 0.85 = one off-colour pip with a fixer for it in the pool: shrunk WR × SPLASH
     WHEEL_EPS = 0.3  # within this of the best score, prefer the card that wheels less
 
     def __init__(self, set_metrics, taken_cards, seen_packs=None):
@@ -54,6 +60,11 @@ class DraftAdvisorV2:
             m, _ = set_metrics.get_metrics(lane, "gihwr")
             self.prior[lane] = (m - self.mean) / self.std if m > 0 else 0.0
         self.replacement = self.mean - self.REPLACEMENT_SD * self.std
+        self.fixing = count_fixing(self.pool) if self.pool else {}
+        spells = sum(1 for c in self.pool if "Land" not in (c.get("types") or []))
+        progress = min(1.0, spells / self.COMMIT_BY) if self.COMMIT_BY > 0 else 0.0
+        self.steer = self.STEER * (1.0 - progress)  # the candidate's pull fades as the pool becomes a deck
+        self.alpha = self.ALPHA + (self.ALPHA_LATE - self.ALPHA) * progress
         self.commit = commitment(self.pool, self.mean, self.std)
         self.lanes = self._lanes(self.commit)  # pool only; what the Analyst shows
         set_code = next((c.get("set") for c in self.pool if c.get("set")), None)
@@ -61,21 +72,38 @@ class DraftAdvisorV2:
         self.composition = composition.Composition(self.typical, self.pool)
 
     def _lanes(self, commit):
-        return lane_distribution(commit, self.signals, self.prior, self.ALPHA, self.BETA, self.GAMMA)
+        return lane_distribution(commit, self.signals, self.prior, self.alpha, self.BETA, self.GAMMA)
 
     def shrunk_wr(self, card, lane):
-        """Lane GIH WR pulled toward All Decks by sample size; (value, n)."""
+        """Lane GIH WR pulled toward a prior by sample size; (value, n).
+
+        The prior is the card's All Decks GIH WR, lowered by SPARSE_SD × std when the
+        card has fewer than N_SPARSE samples in the lane, or 17Lands withheld its win
+        rate there: nobody playing a card in a lane is evidence it does not belong.
+        """
         base = float(all_decks(card).get("gihwr") or 0.0)
         row = (card.get("deck_colors") or {}).get(lane) or {}
         n = int(row.get("samples") or 0)
         wr = float(row.get("gihwr") or 0.0)
+        # 17Lands hides the win rate (0.0) when a card has too few games in a lane, even with samples > 0.
+        sparse = n < self.N_SPARSE or wr <= 0
+        prior = base - self.SPARSE_SD * self.std if sparse else base
         if n <= 0 or wr <= 0:
-            return base, 0
+            return prior, 0
         w = n / (n + self.K)
-        return w * wr + (1 - w) * base, n
+        return w * wr + (1 - w) * prior, n
+
+    def splash_colour(self, card, lane):
+        """The colour a one-pip splash needs, when the pool has a fixer for it; else None."""
+        off = off_pips(card, lane)
+        if len(off) != 1:
+            return None
+        return next((c for c in off[0] if self.fixing.get(c, 0) > 0), None)
 
     def value(self, card, lane):
         if not castable(card, lane):
+            if self.splash_colour(card, lane):
+                return max(self.replacement, self.shrunk_wr(card, lane)[0] * self.SPLASH)
             return self.replacement
         v = self.shrunk_wr(card, lane)[0] * self.composition.multiplier(card, lane)
         if synergy.ENABLED:
@@ -111,7 +139,7 @@ class DraftAdvisorV2:
             commit = dict(self.commit)
             for lane in LANES:
                 if castable(card, lane):
-                    commit[lane] += self.STEER * q
+                    commit[lane] += self.steer * q
             lanes = self._lanes(commit)
             score = sum(p * self.value(card, lane) for lane, p in lanes.items())
             cast_p = sum(p for lane, p in lanes.items() if castable(card, lane))
@@ -153,7 +181,10 @@ class DraftAdvisorV2:
                 break
             wr, n = self.shrunk_wr(card, lane)
             if castable(card, lane):
-                out.append(f"{lane} {p:.0%} → {wr:.1f}" + (f" (n={n})" if n else " (no lane data)"))
+                out.append(f"{lane} {p:.0%} → {wr:.1f}" + (f" (n={n})" if n >= self.N_SPARSE else " (rarely played there)"))
+            elif self.splash_colour(card, lane):
+                c = self.splash_colour(card, lane)
+                out.append(f"{lane} {p:.0%} → splash {c} (fixing {self.fixing.get(c, 0)}) {self.value(card, lane):.1f}")
             else:
                 out.append(f"{lane} {p:.0%} → off-colour")
         best = max(lanes, key=lanes.get)

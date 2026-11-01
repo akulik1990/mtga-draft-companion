@@ -21,15 +21,14 @@ RESULTS = ROOT / "results"
 
 
 def engine_config():
-    """The v2 constants and switches that a run depended on."""
-    from companion.advisor_v2 import composition, synergy
+    """Every v2 constant (upper-case class attribute) and module switch at run time."""
+    from companion.advisor_v2 import composition, lanes, signals, synergy
     from companion.advisor_v2.engine import DraftAdvisorV2 as V
 
-    return {
-        "K": V.K, "ALPHA": V.ALPHA, "STEER": V.STEER, "BETA": V.BETA, "GAMMA": V.GAMMA,
-        "REPLACEMENT_SD": V.REPLACEMENT_SD, "WHEEL_EPS": V.WHEEL_EPS,
-        "composition": composition.ENABLED, "synergy": synergy.ENABLED,
-    }
+    out = {k: getattr(V, k) for k in dir(V) if k.isupper()}
+    out.update(composition=composition.ENABLED, synergy=synergy.ENABLED, pips=getattr(lanes, "USE_PIPS", False),
+               signal_scale=getattr(signals, "SCALE", "z"), signal_quality_power=getattr(signals, "QUALITY_POWER", 1))
+    return out
 
 
 def git_commit():
@@ -84,7 +83,9 @@ def mock_metrics(rows, engines=("upstream", "v2")):
     for e in engines:
         out[e] = {
             "deck_rating": round(statistics.mean([r[e]["rating"] or 0 for r in rows]), 3),
+            "lane_score": round(statistics.mean([r[e].get("lane_score") or 0 for r in rows]), 3),
             "lane_matches_deck": {k: rate(r[e]["lane_matches_deck"][k] for r in rows) for k in ("P2P1", "P3P1")},
+            "lane_changes": round(statistics.mean(r[e].get("lane_changes", 0) for r in rows), 2),
             "open_colour": {f"P{p}": {"spearman": sig(e, p, "spearman"), "top_open": sig(e, p, "top_signal_open")} for p in (1, 2, 3)},
         }
     out["v2_minus_upstream"] = {
@@ -92,6 +93,11 @@ def mock_metrics(rows, engines=("upstream", "v2")):
         "se": round(statistics.stdev(diffs) / len(diffs) ** 0.5, 3) if len(diffs) > 1 else None,
         "better": sum(d > 0 for d in diffs), "worse": sum(d < 0 for d in diffs),
     }
+    ld = [(r[b].get("lane_score") or 0) - (r[a].get("lane_score") or 0) for r in rows]
+    out["v2_minus_upstream"]["lane_score"] = round(statistics.mean(ld), 3)
+    out["v2_minus_upstream"]["lane_score_se"] = round(statistics.stdev(ld) / len(ld) ** 0.5, 3) if len(ld) > 1 else None
+    out["v2_minus_upstream"]["lane_better"] = sum(d > 0 for d in ld)
+    out["v2_minus_upstream"]["lane_worse"] = sum(d < 0 for d in ld)
     return out
 
 

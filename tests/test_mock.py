@@ -58,3 +58,24 @@ def test_tool_drives_a_full_draft_in_process(session):
     assert len(app.state()["pool"]) == 3 * PACK_SIZE and app.state()["mock"]["done"]
     builds = app.build()
     assert builds and sum(c["count"] for c in builds[0]["deck"]) == 40
+
+
+def test_lane_score_uses_pair_rates_and_fills():
+    def card(name, colors, all_wr, pair=None, pair_wr=0.0):
+        dc = {"All Decks": {"gihwr": all_wr}}
+        if pair:
+            dc[pair] = {"gihwr": pair_wr}
+        return {"name": name, "colors": colors, "types": ["Creature"], "deck_colors": dc}
+
+    pool = [card(f"w{i}", ["W"], 55.0, "WU", 60.0) for i in range(23)] + [card("r", ["R"], 70.0)]
+    score, pair = mock_draft.lane_score(pool)
+    assert pair == "WU" and score == 60.0  # pair rates used; red bomb is off-pair
+    short = [card("u", ["U"], 50.0)]
+    assert mock_draft.lane_score(short)[0] == round((50.0 + 45.0 * 22) / 23, 3)
+
+
+def test_lane_score_counts_hybrid_in_either_colour():
+    hybrid = {"name": "h", "colors": ["W", "B"], "mana_cost": "{1}{W/B}", "types": ["Creature"],
+              "deck_colors": {"All Decks": {"gihwr": 60.0}, "WU": {"gihwr": 61.0}}}
+    score, pair = mock_draft.lane_score([hybrid])
+    assert pair == "WU" and score == round((61.0 + 45.0 * 22) / 23, 3)
