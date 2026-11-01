@@ -79,7 +79,7 @@ class DraftSession:
         signals = self._signals(metrics, history)
         deck_filter = filter_options(taken, self.config.settings.deck_filter, metrics, self.config)
         archetype = deck_filter[0] if deck_filter else constants.FILTER_OPTION_ALL_DECKS
-        advisors = rank_pack(metrics, taken, pack, pick, pack_no, signals) if pack else {}
+        advisors = rank_pack(metrics, taken, pack, pick, pack_no) if pack else {}
 
         for card in (*pack, *missing, *taken):
             card["grades"] = self._grades(card, metrics, archetype)

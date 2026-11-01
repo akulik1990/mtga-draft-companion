@@ -1,0 +1,51 @@
+name: Advisor replay
+
+# Gate for scorer changes: replays sampled 17Lands drafts through upstream's
+# advisor (base) and ours (head) on the same picks. See CLAUDE.md, Validation.
+
+on:
+  pull_request:
+    paths:
+      - "companion/advisor_v2/**"
+      - "tools/replay/**"
+      - ".github/workflows/advisor-replay.yml"
+  workflow_dispatch:
+    inputs:
+      sets:
+        description: 'JSON list of set codes, e.g. ["FRA", "TDM"]'
+        default: '["FRA"]'
+      drafts:
+        description: Drafts per set
+        default: "1000"
+      salt:
+        description: Any text; changes which drafts are sampled
+        default: ""
+
+permissions:
+  contents: read
+
+jobs:
+  replay:
+    name: Replay ${{ matrix.set }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        set: ${{ fromJSON(inputs.sets || '["FRA", "TDM"]') }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          python-version: "3.12"
+      - run: uv sync
+      - name: Cache 17Lands dumps
+        uses: actions/cache@v4
+        with:
+          path: ~/.local/share/mtga-draft-companion/Temp/replay/draft_data_public.*.csv.gz
+          key: 17lands-dump-${{ matrix.set }}-${{ github.run_id }}
+          restore-keys: 17lands-dump-${{ matrix.set }}-
+      - name: Compare v2 with upstream
+        run: |
+          uv run python tools/replay/run.py compare ${{ matrix.set }} \
+            --drafts ${{ inputs.drafts || '1000' }} --salt "${{ inputs.salt }}" | tee -a "$GITHUB_STEP_SUMMARY"

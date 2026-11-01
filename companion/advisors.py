@@ -11,12 +11,12 @@ log = logging.getLogger(__name__)
 ADVISORS = {"upstream": DraftAdvisor, "v2": DraftAdvisorV2}
 
 
-def rank_pack(metrics, taken_cards, pack_cards, pick, pack_number, signals):
+def rank_pack(metrics, taken_cards, pack_cards, pick, pack_number):
     """Return {advisor_key: [recommendation dict with rank, ...]} for the current pack."""
     results = {}
     for key, cls in ADVISORS.items():
         try:
-            advisor = cls(metrics, taken_cards, signals=signals)
+            advisor = cls(metrics, taken_cards)
             recs = advisor.evaluate_pack(pack_cards, pick, current_pack=pack_number)
             results[key] = [{"rank": i, **r.model_dump()} for i, r in enumerate(recs, 1)]
         except Exception:
