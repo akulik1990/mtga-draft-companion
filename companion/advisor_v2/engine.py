@@ -22,7 +22,8 @@ from src.advisor.schema import Recommendation
 
 from companion.advisor_v2 import composition, synergy
 from companion.advisor_v2.lanes import ALL, LANES, all_decks, castable, commitment, lane_distribution, off_pips, quality
-from companion.advisor_v2.signals import colour_signals
+from companion.advisor_v2 import signals as signal_mod
+from companion.advisor_v2.signals import colour_signals, side_for_pack, side_signals
 
 
 @lru_cache(maxsize=8)
@@ -57,7 +58,17 @@ class DraftAdvisorV2:
         if self.std <= 0:
             self.std = 4.0
         _, alsa_spread = set_metrics.get_metrics(ALL, "alsa")
-        self.signals = colour_signals(seen_packs or [], self.mean, self.std, alsa_spread if alsa_spread > 0 else 2.0)
+        spread = alsa_spread if alsa_spread > 0 else 2.0
+        seen = seen_packs or []
+        self.current_pack = max((p[0] for p in seen), default=1)
+        if signal_mod.DIRECTIONAL:
+            # Read only the neighbour passing to us now: packs 1 and 3 come from one side, pack 2 from the other.
+            self.signal_sides = side_signals(seen, self.mean, self.std, spread)
+            self.signal_side = side_for_pack(self.current_pack)
+            self.signals = self.signal_sides[self.signal_side]
+        else:
+            self.signal_sides, self.signal_side = {}, ""
+            self.signals = colour_signals(seen, self.mean, self.std, spread)
         self.prior = {}
         for lane in LANES:
             m, _ = set_metrics.get_metrics(lane, "gihwr")

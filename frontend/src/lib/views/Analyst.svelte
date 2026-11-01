@@ -4,6 +4,9 @@
 
 	let { snap }: { snap: Snapshot } = $props();
 
+	const SIDE_LABEL: Record<string, string> = { right: 'packs 1 and 3 neighbour', left: 'pack 2 neighbour' };
+	const sides = $derived((['right', 'left'] as const).filter((k) => snap.signals_v2_sides?.[k]));
+	const sideMax = $derived(Math.max(1e-9, ...sides.flatMap((k) => COLORS.map((c) => Math.abs(snap.signals_v2_sides?.[k]?.[c] ?? 0)))));
 	const sigMax = $derived(Math.max(1e-9, ...COLORS.map((c) => Math.abs(snap.signals[c] ?? 0))));
 	const pairs = $derived(
 		Object.entries(snap.color_ratings).filter(([k]) => k.length === 2).sort((a, b) => b[1] - a[1])
@@ -36,7 +39,7 @@
 
 <div class="grid gap-6 md:grid-cols-2">
 	<section>
-		<h3 class="mb-2 text-sm font-semibold text-zinc-400">Signals (packs 1 and 3, lateness × quality)</h3>
+		<h3 class="mb-2 text-sm font-semibold text-zinc-400">Upstream signals (packs 1 and 3, lateness × quality)</h3>
 		{#each COLORS as c}
 			{@const v = snap.signals[c] ?? 0}
 			<div class="mb-1 flex items-center gap-2 text-sm">
@@ -46,6 +49,25 @@
 			</div>
 		{/each}
 	</section>
+
+	{#if sides.length}
+		<section>
+			<h3 class="mb-2 text-sm font-semibold text-zinc-400">v2 signals by neighbour (in use: {SIDE_LABEL[snap.signals_v2_sides?.active ?? 'right']})</h3>
+			{#each sides as side}
+				<div class="mb-1 text-xs {snap.signals_v2_sides?.active === side ? 'text-zinc-200' : 'text-zinc-500'}">{SIDE_LABEL[side]}</div>
+				{#each COLORS as c}
+					{@const v = snap.signals_v2_sides?.[side]?.[c] ?? 0}
+					<div class="mb-0.5 flex items-center gap-2 text-sm">
+						<span class="w-6 rounded text-center text-xs font-bold {COLOR_BG[c]}">{c}</span>
+						<div class="relative h-2 flex-1 rounded bg-zinc-800">
+							<div class="absolute h-2 rounded {v >= 0 ? 'bg-violet-500' : 'bg-zinc-600'}" style="left:{v >= 0 ? 50 : 50 - (50 * Math.abs(v)) / sideMax}%; width:{(50 * Math.abs(v)) / sideMax}%"></div>
+						</div>
+						<span class="w-12 text-right font-mono text-xs text-zinc-400">{v.toFixed(2)}</span>
+					</div>
+				{/each}
+			{/each}
+		</section>
+	{/if}
 
 	<section>
 		<h3 class="mb-2 text-sm font-semibold text-zinc-400">Colour pair win rates (this dataset)</h3>

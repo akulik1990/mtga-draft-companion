@@ -27,6 +27,8 @@ export type Snapshot = {
 	color_ratings: Record<string, number>;
 	signals: Record<string, number>;
 	lanes: Record<string, number>;
+	signals_v2?: Record<string, number>;
+	signals_v2_sides?: { active?: string; right?: Record<string, number>; left?: Record<string, number> };
 	pack: Card[]; missing: Card[]; picked_from_pack: Card[]; pool: Card[];
 	advisors: Partial<Record<AdvisorKey, Rec[]>>;
 	deck_filter: string;

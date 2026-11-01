@@ -86,7 +86,7 @@ class DraftSession:
         signals = self._signals(metrics, seen_packs)
         deck_filter = filter_options(taken, self.config.settings.deck_filter, metrics, self.config)
         archetype = deck_filter[0] if deck_filter else constants.FILTER_OPTION_ALL_DECKS
-        advisors, lanes, signals_v2 = rank_pack(metrics, taken, pack, pick, pack_no, seen_packs) if pack else ({}, {}, {})
+        advisors, lanes, signals_v2, signal_sides = rank_pack(metrics, taken, pack, pick, pack_no, seen_packs) if pack else ({}, {}, {}, {})
 
         filter_options_map = s.retrieve_color_win_rate(self.config.settings.filter_format) or {}
         tier_data = s.retrieve_tier_data() or {}
@@ -110,6 +110,7 @@ class DraftSession:
             "signals": signals,
             "lanes": lanes,
             "signals_v2": signals_v2,
+            "signals_v2_sides": signal_sides,
             "pack": pack,
             "missing": missing,
             "picked_from_pack": picked_now,

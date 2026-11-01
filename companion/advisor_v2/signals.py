@@ -8,9 +8,21 @@ COLORS = "WUBRG"
 PACK_WEIGHT = {1: 1.0, 2: 0.5, 3: 1.0}  # pack 2 comes from the other neighbour
 SCALE = "centred"  # "z": z-score across colours (divides by their SD); "centred": subtract the mean only, so one dominant colour stays dominant
 QUALITY_POWER = 1  # lateness is weighted by quality ** QUALITY_POWER; 2 favours one strong late card over several mediocre ones
+DIRECTIONAL = True  # round 2: read each neighbour separately (packs 1+3 come from one side, pack 2 from the other)
+SIDES = {"right": (1, 3), "left": (2,)}  # who passes to us: one neighbour in packs 1 and 3, the other in pack 2
 
 
-def colour_signals(seen_packs, mean, std, alsa_spread):
+def side_signals(seen_packs, mean, std, alsa_spread):
+    """{"right": {colour: signal}, "left": {...}}: each neighbour read from only the packs it passed us."""
+    return {side: colour_signals([p for p in seen_packs if p[0] in packs], mean, std, alsa_spread, weights={k: 1.0 for k in packs})
+            for side, packs in SIDES.items()}
+
+
+def side_for_pack(pack_no):
+    return "left" if pack_no == 2 else "right"
+
+
+def colour_signals(seen_packs, mean, std, alsa_spread, weights=None):
     """{colour: z}. seen_packs: [(pack_no, pick_no, cards)].
 
     For each card seen at pick p: lateness = (p - ALSA) / alsa_spread, kept when
@@ -25,7 +37,7 @@ def colour_signals(seen_packs, mean, std, alsa_spread):
         if pick_no <= 1:
             continue  # a fresh pack says nothing about the neighbours
         n_packs += 1
-        w = PACK_WEIGHT.get(pack_no, 1.0)
+        w = (weights or PACK_WEIGHT).get(pack_no, 1.0)
         for card in cards:
             q = quality(card, mean, std)
             alsa = float(all_decks(card).get("alsa") or 0.0)

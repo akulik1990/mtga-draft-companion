@@ -208,3 +208,15 @@ def test_lands_round2(world):
     assert adv.shrunk_wr(utility, "WU") == (55.0, 0)  # lands skip the sparse prior
     recs = {r.card_name: r for r in adv.evaluate_pack([utility, spell("x", "{2}", [], 50.0)], 20, 2)}
     assert recs["Utility"].contextual_score > 0 and "Basic land" not in recs["Utility"].reasoning
+
+
+def test_signals_read_the_neighbour_passing_now(world):
+    metrics, cards = world
+    red, blue = by_colors(cards, "R", 6, 56), by_colors(cards, "U", 6, 56)
+    seen = [(1, 6, red), (1, 7, red[1:]), (2, 6, blue), (2, 7, blue[1:])]
+    adv = DraftAdvisorV2(metrics, [], seen_packs=seen)
+    assert adv.signal_side == "left"  # pack 2 is passed by the other neighbour
+    assert max(adv.signals, key=adv.signals.get) == "U"
+    assert max(adv.signal_sides["right"], key=adv.signal_sides["right"].get) == "R"
+    adv3 = DraftAdvisorV2(metrics, [], seen_packs=seen + [(3, 6, red[2:])])
+    assert adv3.signal_side == "right" and max(adv3.signals, key=adv3.signals.get) == "R"
