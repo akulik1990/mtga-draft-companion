@@ -12,6 +12,8 @@ is used as-is; only the advisor class is swapped.
 """
 
 import argparse
+import contextlib
+import io
 import sys
 from pathlib import Path
 
@@ -122,7 +124,15 @@ def cmd_compare(a):
         replay.main(["--src", str(VENDOR), "--drafts", str(drafts), "--dataset", str(dataset),
                      "--set", a.set, "--label", label, "--out", str(out)])
         results.append(str(out))
-    report.main(results)
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf):
+        report.main(results)
+    md = buf.getvalue()
+    print(md)
+    from tools import results as ledger
+
+    rec = ledger.record("harness", a.set, {"drafts": a.drafts, "salt": a.salt}, ledger.harness_metrics(md), md, a.note)
+    print(f"recorded in results/runs.jsonl as {rec['report']}")
 
 
 def main(argv=None):
@@ -135,7 +145,7 @@ def main(argv=None):
         r.add_argument(opt, required=True)
     r.add_argument("--set", default=""); r.set_defaults(fn=cmd_replay)
     c = sub.add_parser("compare"); c.add_argument("set"); c.add_argument("--drafts", type=int, default=300); c.add_argument("--salt", default="")
-    c.set_defaults(fn=cmd_compare)
+    c.add_argument("--note", default="", help="what this run is testing; kept in results/runs.jsonl"); c.set_defaults(fn=cmd_compare)
     rp = sub.add_parser("report"); rp.add_argument("results", nargs="+"); rp.set_defaults(fn=lambda a: report.main(a.results))
     a = p.parse_args(argv)
     a.fn(a)

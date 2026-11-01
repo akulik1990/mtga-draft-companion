@@ -253,7 +253,7 @@ def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     sub = p.add_subparsers(dest="cmd", required=True)
     c = sub.add_parser("compare"); c.add_argument("set"); c.add_argument("--seeds", type=int, default=30); c.add_argument("--start", type=int, default=1)
-    c.add_argument("--out", help="results JSON (default <data>/Temp/sim/<SET>.json)")
+    c.add_argument("--out", help="results JSON (default <data>/Temp/sim/<SET>.json)"); c.add_argument("--note", default="", help="what this run is testing; kept in results/runs.jsonl")
     g = sub.add_parser("play"); g.add_argument("set"); g.add_argument("--app", help="base URL of a running app; else in-process")
     g.add_argument("--follow", default="v2", choices=("upstream", "v2", "gihwr", "human")); g.add_argument("--kind", default="table", choices=("table", "17lands", "random"))
     g.add_argument("--seed", type=int); g.add_argument("--delay", type=float, default=0.0, help="seconds between picks, to watch in the browser")
@@ -268,7 +268,11 @@ def main(argv=None):
         out = (LAUNCH_DIR / a.out) if a.out else DATA_DIR / "Temp" / "sim" / f"{a.set}.json"
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(json.dumps(rows, indent=1))
-        print("\n" + report(rows) + f"\n\nwrote {out}")
+        md = report(rows)
+        from tools import results
+
+        rec = results.record("mock", a.set, {"seeds": a.seeds, "start": a.start}, results.mock_metrics(rows), md, a.note)
+        print("\n" + md + f"\n\nwrote {out}; recorded in results/runs.jsonl as {rec['report']}")
     else:
         app = Http(a.app) if a.app else InProcess.fresh("play")
         log, _ = run_draft(app, a.set, a.follow, a.kind, a.seed, delay=a.delay, quiet=False)
