@@ -50,3 +50,13 @@ def test_record_appends_and_saves_report(tmp_path, monkeypatch):
     assert [l["tool"] for l in lines] == ["mock", "harness"]
     assert (tmp_path / rec["report"]).read_text() == "## report\n"
     assert lines[0]["note"] == "trial" and lines[0]["engine"] == {"K": 1} and lines[1]["report"] == rec2["report"]
+
+
+def test_same_second_reports_do_not_collide(tmp_path, monkeypatch):
+    from datetime import datetime, timezone
+
+    monkeypatch.setattr(results, "RESULTS", tmp_path)
+    t = datetime(2026, 11, 1, 12, 0, 0, tzinfo=timezone.utc)
+    a = results.record("mock", "FRA", {}, {}, "a", stamp=t, config={})
+    b = results.record("mock", "FRA", {}, {}, "b", stamp=t, config={})
+    assert a["report"] != b["report"] and (tmp_path / b["report"]).read_text() == "b\n"

@@ -115,6 +115,9 @@ def cmd_replay(a):
 
 
 def cmd_compare(a):
+    from tools.mock_draft import apply_overrides
+
+    apply_overrides(a.v2)
     drafts = cmd_sample(a)
     dataset = dataset_path(a.set)
     results = []
@@ -145,7 +148,9 @@ def main(argv=None):
         r.add_argument(opt, required=True)
     r.add_argument("--set", default=""); r.set_defaults(fn=cmd_replay)
     c = sub.add_parser("compare"); c.add_argument("set"); c.add_argument("--drafts", type=int, default=300); c.add_argument("--salt", default="")
-    c.add_argument("--note", default="", help="what this run is testing; kept in results/runs.jsonl"); c.set_defaults(fn=cmd_compare)
+    c.add_argument("--note", default="", help="what this run is testing; kept in results/runs.jsonl")
+    c.add_argument("--v2", action="append", default=[], metavar="NAME=VALUE", help="override a v2 constant or module.SWITCH, as in tools/mock_draft.py")
+    c.set_defaults(fn=cmd_compare)
     rp = sub.add_parser("report"); rp.add_argument("results", nargs="+"); rp.set_defaults(fn=lambda a: report.main(a.results))
     a = p.parse_args(argv)
     a.fn(a)

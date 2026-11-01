@@ -6,7 +6,7 @@ from companion.advisor_v2.lanes import all_decks, quality
 
 COLORS = "WUBRG"
 PACK_WEIGHT = {1: 1.0, 2: 0.5, 3: 1.0}  # pack 2 comes from the other neighbour
-SCALE = "z"  # "z": z-score across colours (divides by their SD); "centred": subtract the mean only, so one dominant colour stays dominant
+SCALE = "centred"  # "z": z-score across colours (divides by their SD); "centred": subtract the mean only, so one dominant colour stays dominant
 QUALITY_POWER = 1  # lateness is weighted by quality ** QUALITY_POWER; 2 favours one strong late card over several mediocre ones
 
 

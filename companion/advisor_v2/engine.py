@@ -35,8 +35,8 @@ class DraftAdvisorV2:
     K = 300.0  # shrinkage: w = n / (n + K)
     ALPHA = 1.0  # pool commitment per quality point
     STEER = 4.0  # the candidate's own quality counts this many times
-    COMMIT_BY = 0  # spells in the pool by which STEER has decayed to 0 and ALPHA reached ALPHA_LATE; 0 = no decay
-    ALPHA_LATE = 1.0  # pool commitment weight once the pool has COMMIT_BY spells
+    COMMIT_BY = 24  # spells in the pool by which STEER has decayed to 0 and ALPHA reached ALPHA_LATE; 0 = no decay
+    ALPHA_LATE = 1.5  # pool commitment weight once the pool has COMMIT_BY spells
     BETA = 0.5  # per-colour signal z
     GAMMA = 0.5  # lane prior, in SDs of the lane's card mean
     REPLACEMENT_SD = 2.0  # V when not castable: mean − 2 SD

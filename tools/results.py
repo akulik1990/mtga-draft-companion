@@ -45,6 +45,10 @@ def record(tool, set_code, params, metrics, report_md, note="", stamp=None, comm
     RESULTS.mkdir(exist_ok=True)
     when = stamp or datetime.now(timezone.utc)
     name = f"{when.strftime('%Y%m%d-%H%M%S')}-{tool}-{set_code}.md"
+    n = 2
+    while (RESULTS / name).exists():  # parallel runs can finish in the same second
+        name = f"{when.strftime('%Y%m%d-%H%M%S')}-{tool}-{set_code}-{n}.md"
+        n += 1
     (RESULTS / name).write_text(report_md.rstrip() + "\n", encoding="utf-8")
     rec = {
         "time": when.isoformat(timespec="seconds"),

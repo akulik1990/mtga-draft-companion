@@ -47,7 +47,10 @@ def test_committed_pool_pulls_off_colour_to_replacement(world):
     assert recs[off["name"]].contextual_score < recs[on["name"]].contextual_score
 
 
-def test_late_good_cards_signal_their_colour(world):
+def test_late_good_cards_signal_their_colour(world, monkeypatch):
+    from companion.advisor_v2 import signals
+
+    monkeypatch.setattr(signals, "SCALE", "z")  # the threshold below is in z units
     metrics, cards = world
     good_red = by_colors(cards, "R", 6, 56)
     seen = [(1, 6, good_red), (1, 7, good_red[1:]), (1, 8, good_red[2:])]
@@ -170,6 +173,7 @@ def test_signal_variants_keep_a_dominant_colour(world, monkeypatch):
     metrics, cards = world
     good_red = by_colors(cards, "R", 6, 56)
     seen = [(1, 6, good_red), (1, 7, good_red[1:]), (1, 8, good_red[2:])]
+    monkeypatch.setattr(signals, "SCALE", "z")
     z = DraftAdvisorV2(metrics, [], seen_packs=seen).signals
     monkeypatch.setattr(signals, "SCALE", "centred")
     monkeypatch.setattr(signals, "QUALITY_POWER", 2)
