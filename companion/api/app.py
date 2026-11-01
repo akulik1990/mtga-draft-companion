@@ -104,6 +104,17 @@ def create_app(session: DraftSession, *, run_scanner: bool = True, frontend: Pat
         except ValueError as e:
             raise HTTPException(400, str(e))
 
+    @app.get("/api/engine")
+    def engine():
+        return session.engine_settings()
+
+    @app.put("/api/engine")
+    def put_engine(changes: dict = Body(...)):
+        try:
+            return session.update_engine_settings(changes)
+        except ValueError as e:
+            raise HTTPException(400, str(e))
+
     @app.get("/api/tiers")
     def tiers():
         return session.tier_lists()

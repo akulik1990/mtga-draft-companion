@@ -45,6 +45,7 @@ export type V2Split = {
 	branch: { card: string; over: string; gap: number; threshold: number; stage: string; in_colour_strength: number; take: boolean } | null;
 };
 export type ResultFormat = 'Percentage' | 'Rating' | 'Grade';
+export type EngineSwitch = { on: boolean; label: string; help: string };
 export type TierFile = { set: string; label: string; date: string; file: string };
 export type DatasetRow = {
 	set: string; format: string; user_group: string; start_date: string; end_date: string;
@@ -88,6 +89,8 @@ export const api = {
 	mockStart: (kind: 'random' | 'table' | '17lands' = 'random') => post<Mock>('/api/mock/start', { kind }),
 	mockPick: (card_name: string) => post<Mock>('/api/mock/pick', { card_name }),
 	mockStop: () => post('/api/mock/stop'),
+	engine: () => call<Record<string, EngineSwitch>>('/api/engine'),
+	setEngine: (changes: Record<string, boolean>) => call<Record<string, EngineSwitch>>('/api/engine', { method: 'PUT', body: JSON.stringify(changes) }),
 	tiers: () => call<TierFile[]>('/api/tiers'),
 	importTier: (url: string, label = '') => post<TierFile[]>('/api/tiers', { url, label }),
 	deleteTier: (file: string) => call<TierFile[]>(`/api/tiers/${encodeURIComponent(file)}`, { method: 'DELETE' }),

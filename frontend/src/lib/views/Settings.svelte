@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { api, type Datasets, type Settings, type TierFile } from '../api';
+	import { api, type Datasets, type EngineSwitch, type Settings, type TierFile } from '../api';
 	import { app, setAdvisor, refresh } from '../state.svelte';
 
 	let ds = $state<Datasets | null>(null);
@@ -9,11 +9,12 @@
 	let msg = $state('');
 	let busy = $state(false);
 	let tiers = $state<TierFile[]>([]);
+	let engine = $state<Record<string, EngineSwitch>>({});
 	let tierUrl = $state('');
 	let tierLabel = $state('');
 
 	onMount(async () => {
-		[ds, st, tiers] = await Promise.all([api.datasets(), api.settings(), api.tiers()]);
+		[ds, st, tiers, engine] = await Promise.all([api.datasets(), api.settings(), api.tiers(), api.engine()]);
 		logPath = st.arena_log_location;
 	});
 	async function run(label: string, fn: () => Promise<unknown>) {
@@ -26,6 +27,7 @@
 	const saveLog = () => run('save log path', async () => { st = await api.updateSettings({ arena_log_location: logPath }); });
 	const importTier = () => run('import tier list', async () => { tiers = await api.importTier(tierUrl.trim(), tierLabel.trim()); tierUrl = ''; tierLabel = ''; });
 	const deleteTier = (file: string) => run('delete tier list', async () => { tiers = await api.deleteTier(file); });
+	const toggleEngine = (key: string) => run('engine switch', async () => { engine = await api.setEngine({ [key]: !engine[key].on }); });
 	const toggleAuto = () => run('auto-sync', async () => { st = await api.updateSettings({ auto_sync_datasets: !st!.auto_sync_datasets }); });
 </script>
 
@@ -34,6 +36,16 @@
 		<h3 class="mb-2 text-sm font-semibold text-zinc-400">Highlights follow</h3>
 		{#each ['upstream', 'v2'] as k}
 			<label class="mr-4 text-sm"><input type="radio" name="adv" checked={app.advisor === k} onchange={() => setAdvisor(k as 'upstream' | 'v2')} /> {k}</label>
+		{/each}
+	</section>
+
+	<section>
+		<h3 class="mb-2 text-sm font-semibold text-zinc-400">v2 engine switches</h3>
+		{#each Object.entries(engine) as [key, sw] (key)}
+			<label class="mb-1 flex items-start gap-2 text-sm">
+				<input type="checkbox" class="mt-1" checked={sw.on} onchange={() => toggleEngine(key)} disabled={busy} />
+				<span>{sw.label}<span class="block text-xs text-zinc-500">{sw.help}</span></span>
+			</label>
 		{/each}
 	</section>
 

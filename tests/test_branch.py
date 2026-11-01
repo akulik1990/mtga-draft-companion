@@ -73,3 +73,14 @@ def test_logistic_recovers_a_known_crossing():
     w, se = fit_branch.logistic(np.column_stack([np.ones(4000), gap, strength]), y)
     assert abs(w[0] + 2.0) < 3 * se[0] and abs(w[1] - 0.5) < 3 * se[1] and abs(w[2] + 0.3) < 3 * se[2]
     assert fit_branch.gap_needed({"a": -2.0, "b": 0.5, "c": -0.3}, 0.0) == pytest.approx(4.0)
+
+
+def test_learnt_preference_switch(metrics, monkeypatch):
+    monkeypatch.setattr(DraftAdvisorV2, "ORDER_WEIGHT", 0.0)
+    monkeypatch.setattr(DraftAdvisorV2, "PREF_WEIGHT", 0.0)
+    adv = DraftAdvisorV2(metrics, [])
+    adv.order, adv.prefs = {}, {"liked": 2.0, "Front": 1.0}
+    assert adv.order_prior("liked", 3) == 0.0  # switched off
+    monkeypatch.setattr(DraftAdvisorV2, "PREF_WEIGHT", 1.5)
+    assert adv.order_prior("liked", 3) == 3.0
+    assert adv.order_prior("Front // Back", 3) == 1.5  # double-faced names fall back to the front face

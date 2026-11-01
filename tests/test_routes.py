@@ -115,3 +115,24 @@ def test_card_search_and_tiers(session):
         assert client.delete("/api/tiers/..%2Fconfig.json").status_code != 200
     with pytest.raises(ValueError):
         session.delete_tier_list("../config.json")
+
+
+def test_engine_switches_toggle_and_persist(session, monkeypatch, tmp_path):
+    from companion.advisor_v2.engine import DraftAdvisorV2 as V
+
+    monkeypatch.setattr(type(session), "_engine_file", lambda self: tmp_path / "engine.json")
+    for attr in ("PREF_WEIGHT", "ORDER_WEIGHT", "SPLIT"):
+        monkeypatch.setattr(V, attr, getattr(V, attr))
+    with TestClient(create_app(session, run_scanner=False)) as client:
+        sw = client.get("/api/engine").json()
+        assert set(sw) == {"learnt_prefs", "split"} and sw["learnt_prefs"]["on"] is True
+        sw = client.put("/api/engine", json={"learnt_prefs": False}).json()
+        assert sw["learnt_prefs"]["on"] is False and V.PREF_WEIGHT == 0.0 and V.ORDER_WEIGHT == V.ORDER_OFF_WEIGHT
+        assert json.loads((tmp_path / "engine.json").read_text())["learnt_prefs"] is False
+        client.put("/api/engine", json={"learnt_prefs": True})
+        assert V.PREF_WEIGHT == V.PREF_ON_WEIGHT and V.ORDER_WEIGHT == 0.0
+        assert client.put("/api/engine", json={"nonsense": True}).status_code == 400
+    session.update_engine_settings({"split": False}, save=False)
+    assert V.SPLIT is False
+    session.load_engine_settings()  # back to the saved file: split on, prefs on
+    assert V.SPLIT is True and V.PREF_WEIGHT == V.PREF_ON_WEIGHT

@@ -42,6 +42,7 @@ def build_session(log_override: str | None = None, sync: bool = True) -> DraftSe
         db_path=config.settings.database_location,
     )
     session = DraftSession(scanner, config)
+    session.load_engine_settings()
 
     # Deep scan for an in-progress or recovered draft before serving.
     scanner.draft_start_search()

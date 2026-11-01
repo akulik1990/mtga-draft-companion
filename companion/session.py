@@ -280,6 +280,55 @@ class DraftSession:
         write_configuration(self.config)
         return self.settings()
 
+    # ── engine switches (v2), saved in the data dir ───────────────────────────
+
+    ENGINE_SWITCHES = {
+        "learnt_prefs": ("PREF_WEIGHT", "Learnt top-drafter preferences", "Bonus for the cards top drafters choose head to head (tools/learn_prefs.py)."),
+        "split": ("SPLIT", "Power / Fit split", "Two orders and a learnt switch between them; off = one blended order."),
+    }
+
+    def _engine_file(self):
+        from companion import DATA_DIR
+
+        return DATA_DIR / "companion_engine.json"
+
+    def engine_settings(self) -> dict:
+        from companion.advisor_v2.engine import DraftAdvisorV2 as V
+
+        return {key: {"on": bool(getattr(V, attr)), "label": label, "help": hint}
+                for key, (attr, label, hint) in self.ENGINE_SWITCHES.items()}
+
+    def update_engine_settings(self, changes: dict, save: bool = True) -> dict:
+        """Switch v2 features on or off for this app; the change applies from the next snapshot."""
+        import json
+
+        from companion.advisor_v2.engine import DraftAdvisorV2 as V
+
+        for key, on in changes.items():
+            if key not in self.ENGINE_SWITCHES:
+                raise ValueError(f"unknown engine switch {key!r}")
+            attr = self.ENGINE_SWITCHES[key][0]
+            if attr == "PREF_WEIGHT":
+                # Learnt preferences replace the pick-order prior; switching them off brings the prior back.
+                V.PREF_WEIGHT = V.PREF_ON_WEIGHT if on else 0.0
+                V.ORDER_WEIGHT = 0.0 if on else V.ORDER_OFF_WEIGHT
+            else:
+                setattr(V, attr, bool(on))
+        if save:
+            self._engine_file().write_text(json.dumps({k: v["on"] for k, v in self.engine_settings().items()}))
+        self.orchestrator.request_math_update()
+        return self.engine_settings()
+
+    def load_engine_settings(self):
+        import json
+
+        f = self._engine_file()
+        if f.exists():
+            try:
+                self.update_engine_settings(json.loads(f.read_text()), save=False)
+            except (ValueError, json.JSONDecodeError) as e:
+                log.warning("ignoring %s: %s", f, e)
+
     # ── tier lists and card search ───────────────────────────────────────────
 
     def tier_lists(self) -> list[dict]:
