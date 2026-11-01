@@ -159,6 +159,7 @@ class DraftAdvisorV2:
     FIX_WEIGHT = 0.5  # share of each enabled splash's gain (over replacement) credited to the land
     FIX_CAP = 3.0  # most a land's fixing can add, in WR points
     HALF_PIVOT = 0  # from this many spells in the pool, lanes sharing no colour with the pool's top pair get P = 0 (winners change one colour, not both); 0 = off
+    COLOUR_SHIFT = ""  # per-colour WR points taken off a card's value, "U:2" or "U:2,B:-1"; a card gets the mean over its colours; "" = off
     WHEEL_EPS = 0.3  # within this of the best score, prefer the card that wheels less
     WHEEL_SPLIT = False  # apply the WHEEL_EPS tiebreak to the split's final order too (it used to apply only with SPLIT off)
     WHEEL_PENALTY = 0.0  # WR points taken from Power and Fit per 100% chance the card comes back; 0 = off
@@ -287,6 +288,13 @@ class DraftAdvisorV2:
                 gain += max(0.0, self.shrunk_wr(spell, lane)[0] * self.SPLASH - self.replacement)
         return min(self.FIX_CAP, self.FIX_WEIGHT * gain)
 
+    def colour_shift(self, card):
+        if not self.COLOUR_SHIFT or "Land" in (card.get("types") or []):
+            return 0.0
+        shift = {k: float(v) for k, v in (x.split(":") for x in self.COLOUR_SHIFT.split(","))}
+        cols = card.get("colors") or []
+        return sum(shift.get(c, 0.0) for c in cols) / len(cols) if cols else 0.0
+
     def value(self, card, lane):
         if self.LANDS and "Land" in (card.get("types") or []):
             colours = card.get("colors") or []
@@ -302,7 +310,7 @@ class DraftAdvisorV2:
                 # Early on, a card one pip off a lane is still a live splash: top drafters take the bomb and find the fixing later.
                 return max(self.replacement, self.shrunk_wr(card, lane)[0] * self.SPEC_SPLASH * (1 - self.progress))
             return self.replacement
-        v = self.shrunk_wr(card, lane)[0] * self.composition.multiplier(card, lane)
+        v = (self.shrunk_wr(card, lane)[0] - self.colour_shift(card)) * self.composition.multiplier(card, lane)
         if synergy.ENABLED:
             v += synergy.bonus(self.synergy, card, self.pool, lane)
         return v

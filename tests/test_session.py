@@ -56,3 +56,10 @@ def test_mana_identity_ignores_hybrid_halves():
     deck = [c("{1}{U}", 8), c("{2}{G}", 8), c("{1}{W/U}", 3), c("{R/G}", 2), c("{3}{B}")]
     out = mana_identity(deck + [{"name": "Island", "types": ["Basic", "Land"], "count": 8, "colors": ["U"]}])
     assert out == {"main": "UG", "splash": "B", "splash_cards": 1}
+
+
+def test_deck_win_rate_needs_a_model():
+    from companion.session import deck_win_rate
+
+    assert deck_win_rate("XYZ", {"deck": [{"name": "Island", "count": 17}]}) is None
+    assert deck_win_rate("", {"deck": []}) is None

@@ -305,3 +305,13 @@ def test_wheel_penalty_and_tiebreak_reorder_the_split(world, monkeypatch):
     playable = [r for r in recs if r.contextual_score > 0]
     if not any(r.reasoning and r.reasoning[0].startswith("Branch") for r in playable):
         assert playable[0].wheel_chance == min(r.wheel_chance for r in playable)
+
+
+def test_colour_shift_lowers_only_that_colour(world, monkeypatch):
+    metrics, cards = world
+    blue, white = by_colors(cards, "U", 1)[0], by_colors(cards, "W", 1)[0]
+    before = DraftAdvisorV2(metrics, [])
+    monkeypatch.setattr(DraftAdvisorV2, "COLOUR_SHIFT", "U:2")
+    after = DraftAdvisorV2(metrics, [])
+    assert abs(before.value(blue, "WU") - after.value(blue, "WU") - 2.0) < 1e-6
+    assert before.value(white, "WU") == after.value(white, "WU")

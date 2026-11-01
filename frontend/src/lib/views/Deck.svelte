@@ -13,7 +13,7 @@
 
 	async function build() {
 		busy = true; error = '';
-		try { builds = await api.buildDecks(); active = 0; ran = true; } catch (e) { error = String(e); } finally { busy = false; }
+		try { builds = (await api.buildDecks()).sort((a, b) => (b.deck_wr ?? 0) - (a.deck_wr ?? 0)); active = 0; ran = true; } catch (e) { error = String(e); } finally { busy = false; }
 	}
 	const b = $derived(builds[active]);
 	const count = (cs: DeckCard[]) => cs.reduce((n, c) => n + c.count, 0);
@@ -44,7 +44,8 @@
 		<button class="flex items-center gap-1.5 rounded px-2 py-1 text-sm {i === active ? 'bg-zinc-700' : 'text-zinc-400 hover:bg-zinc-800 hover:text-zinc-200'}" onclick={() => (active = i)} title={x.label}>
 			<Pips colors={x.main || x.colors} />
 			<span>{label(x)}</span>
-			<span class="font-mono text-xs text-zinc-500">{record(x)}{x.rating != null ? ` · ${x.rating.toFixed(0)}` : ''}</span>
+			{#if x.deck_wr != null}<span class="font-mono {i === 0 ? 'text-emerald-300' : 'text-zinc-300'}" title="Predicted game win rate for an average player, from 17Lands games (tools/deck_model.py)">{x.deck_wr.toFixed(1)}%</span>{/if}
+			<span class="font-mono text-xs text-zinc-500" title="upstream's estimate and Power rating">{record(x)}{x.rating != null ? ` · ${x.rating.toFixed(0)}` : ''}</span>
 		</button>
 	{/each}
 	{#if error}<span class="text-sm text-rose-400">{error}</span>{/if}
@@ -54,7 +55,7 @@
 	<div class="grid gap-6 xl:grid-cols-[minmax(0,1fr)_22rem]">
 		<section>
 			<h3 class="mb-2 text-sm font-semibold text-zinc-400">
-				Deck ({count(b.deck)}) · {label(b)}{b.splash ? ` (${b.splash_cards} card${b.splash_cards === 1 ? '' : 's'})` : ''} · upstream: {b.label}
+				Deck ({count(b.deck)}) · {label(b)}{b.deck_wr != null ? ` · predicted win rate ${b.deck_wr.toFixed(1)}%` : ''}{b.splash ? ` (${b.splash_cards} card${b.splash_cards === 1 ? '' : 's'})` : ''} · upstream: {b.label}
 			</h3>
 			<div class="flex gap-2 overflow-x-auto pb-2">
 				{#each columns as col (col.label)}

@@ -3,6 +3,7 @@
 Everything here calls vendor functions; nothing reimplements their logic.
 """
 
+from functools import lru_cache
 import logging
 import os
 import queue
@@ -403,7 +404,33 @@ class DraftSession:
                 "arena_export": copy_deck(deck, side),
                 **mana_identity(deck),
             })
+        set_code = (self.config.card_data.latest_dataset or "").split("_")[0]
+        for b in builds:
+            b["deck_wr"] = deck_win_rate(set_code, b)
         return builds
+
+
+@lru_cache(maxsize=4)
+def _deck_model(set_code):
+    import sys
+    from pathlib import Path
+
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # tools/ sits beside companion/
+    from tools.deck_model import DeckModel
+
+    try:
+        return DeckModel(set_code)
+    except FileNotFoundError:
+        return None
+
+
+def deck_win_rate(set_code: str, build: dict) -> float | None:
+    """Predicted game win rate of the 40 for an average player (tools/deck_model.py), or None without a model."""
+    model = _deck_model(set_code) if set_code else None
+    if not model or not build.get("deck"):
+        return None
+    counts = {c["name"]: c.get("count", 1) for c in build["deck"]}
+    return round(float(model.win_rate(counts, build.get("main", ""), build.get("splash", ""))), 2)
 
 
 def mana_identity(deck: list[dict]) -> dict:
