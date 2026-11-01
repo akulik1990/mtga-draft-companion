@@ -5,7 +5,9 @@ import logging
 import threading
 import webbrowser
 
-import companion  # noqa: F401  (bootstrap: vendor path + data dir)
+from pathlib import Path
+
+from companion import LAUNCH_DIR  # bootstrap: vendor path + data dir
 
 
 def main():
@@ -24,7 +26,8 @@ def main():
     from companion.api.app import create_app
     from companion.boot import build_session
 
-    session = build_session(args.log, sync=not args.no_sync)
+    log_path = str((LAUNCH_DIR / Path(args.log).expanduser()).resolve()) if args.log else None
+    session = build_session(log_path, sync=not args.no_sync)
     if args.browser:
         url = f"http://{args.host}:{args.port}/"
         threading.Timer(1.0, webbrowser.open, args=(url,)).start()

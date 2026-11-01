@@ -11,6 +11,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+LAUNCH_DIR = Path.cwd()  # before the chdir below; CLI paths resolve against this
 VENDOR = ROOT / "vendor" / "mtga_draft_17lands"
 
 

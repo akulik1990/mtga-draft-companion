@@ -5,7 +5,7 @@ import logging
 from contextlib import asynccontextmanager
 from pathlib import Path
 
-from fastapi import FastAPI, WebSocket, WebSocketDisconnect
+from fastapi import Body, FastAPI, HTTPException, WebSocket, WebSocketDisconnect
 from fastapi.encoders import jsonable_encoder
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
@@ -69,8 +69,41 @@ def create_app(session: DraftSession, *, run_scanner: bool = True, frontend: Pat
 
     @app.post("/api/draft/rescan")
     def rescan():
-        session.orchestrator.trigger_full_scan()
+        session.rescan()
         return {"ok": True}
+
+    @app.post("/api/draft/reset")
+    def reset():
+        session.reset()
+        return {"ok": True}
+
+    @app.get("/api/datasets")
+    def datasets():
+        return session.datasets()
+
+    @app.post("/api/datasets/select")
+    def select_dataset(set: str = Body(...), format: str = Body(...), user_group: str = Body("All")):
+        if not session.select_dataset(set, format, user_group):
+            raise HTTPException(404, f"No dataset for {set} {format} {user_group}")
+        return session.datasets()
+
+    @app.post("/api/datasets/sync")
+    async def sync_datasets():
+        messages = await asyncio.to_thread(session.sync_datasets)
+        return {"messages": messages, **session.datasets()}
+
+    @app.get("/api/settings")
+    def get_settings():
+        return session.settings()
+
+    @app.put("/api/settings")
+    def put_settings(changes: dict = Body(...)):
+        return session.update_settings(changes)
+
+    @app.post("/api/deck/build")
+    async def build_decks():
+        # Monte Carlo + numba JIT on first call: seconds, so keep it off the event loop.
+        return jsonable_encoder(await asyncio.to_thread(session.build_decks))
 
     @app.websocket("/api/ws")
     async def ws(websocket: WebSocket):
