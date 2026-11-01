@@ -1,0 +1,95 @@
+name: Daily Dataset ETL Pipeline
+
+on:
+  schedule:
+    # Off the top of the hour: GitHub drops scheduled runs in congested
+    # slots, and :00 is the most congested. Two slots so a dropped
+    # morning run still gets a retry in the afternoon.
+    - cron: "23 10 * * *"
+    - cron: "41 16 * * *"
+  workflow_dispatch: # Allows manual triggering from the GitHub UI
+    inputs:
+      initialize_warehouse:
+        description: "Allow the first deployment only when gh-pages does not exist"
+        type: boolean
+        default: false
+
+concurrency:
+  group: dataset-etl
+  cancel-in-progress: false
+
+permissions:
+  contents: write # Required to push to the gh-pages branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Main Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+
+      - name: Install Dependencies
+        run: poetry install --no-interaction --only main
+
+      - name: Check Historical Warehouse
+        id: warehouse
+        env:
+          ALLOW_INITIALIZE: ${{ github.event_name == 'workflow_dispatch' && inputs.initialize_warehouse && '1' || '0' }}
+        run: |
+          if git ls-remote --exit-code --heads origin gh-pages > "$RUNNER_TEMP/gh-pages-ref"; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            status=$?
+            if [ "$status" -ne 2 ] || [ "$ALLOW_INITIALIZE" != "1" ]; then
+              echo "Cannot restore gh-pages; refusing to replace the warehouse."
+              exit 1
+            fi
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout Historical Data (gh-pages)
+        # We checkout the gh-pages branch into the build directory.
+        # This allows server/main.py to read the old manifest.json and preserve inactive sets!
+        uses: actions/checkout@v4
+        if: steps.warehouse.outputs.exists == 'true'
+        with:
+          ref: gh-pages
+          path: build
+
+      - name: Restore API Caches
+        uses: actions/cache@v4
+        with:
+          # Tell GitHub to save/restore the two folders we moved in Fix 1
+          path: |
+            .api_cache
+            .scryfall_cache
+          # Cache key based on the date so it refreshes naturally
+          key: etl-cache-${{ runner.os }}-${{ steps.date.outputs.date }}
+          restore-keys: |
+            etl-cache-${{ runner.os }}-
+
+      - name: Run ETL Pipeline
+        env:
+          ETL_OUTPUT_DIR: build # Matches your config.py
+          ETL_ALLOW_INITIALIZE: ${{ steps.warehouse.outputs.exists == 'false' && '1' || '0' }}
+        run: |
+          # If the gh-pages branch didn't exist yet, ensure the build dir exists
+          mkdir -p build
+          poetry run python -m server.main
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          publish_branch: gh-pages
+          force_orphan: true
+          commit_message: "Automated ETL update: ${{ github.event.head_commit.message }}"

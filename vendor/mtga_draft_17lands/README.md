@@ -1,0 +1,267 @@
+# MTGA_Draft_17Lands
+
+Magic: The Gathering Arena draft tool that utilizes 17Lands data.
+
+**Version 4.27:** The Wheel column no longer shows a chance for packs that can't come back, and the Sealeddeck.tech export only opens sealeddeck.tech links. Also includes the 4.26 Quick Draft and Pick-Two fixes, which were never published separately. See the [release notes](release_notes.txt) for details.
+
+**This application will automatically support new sets as soon as the sets are released on Arena _and_ the data is available on the [17Lands card ratings](https://www.17lands.com/card_ratings) page.**
+
+**Supported Events:** Premier Draft, Traditional Draft, Quick Draft, Sealed, Traditional Sealed, and Cube.
+
+## Table of Contents
+
+- [Security, Verification & macOS Gatekeeper](#security-verification--macos-gatekeeper)
+- [Run Steps: Standalone App (Windows / macOS / Linux)](#run-steps-standalone-app-windows--macos--linux)
+- [Run Steps: Python (Windows / macOS / Linux)](#run-steps-python-windows--macos--linux)
+- [Marquee Features](#marquee-features)
+- [UI Navigation & Tabs](#ui-navigation--tabs)
+- [Settings & Preferences](#settings--preferences)
+- [File Locations](#file-locations)
+- [Tier Lists (API-Based)](#tier-lists-api-based)
+- [Signal Detection (Beta)](#signal-detection-beta)
+- [Troubleshooting](#troubleshooting)
+- [Development & Documentation](#development--documentation)
+
+---
+
+## Security, Verification & macOS Gatekeeper
+
+Because this is a free, open-source community project, the application is not signed with a paid Apple Developer Certificate ($100/year). As a result, macOS and Windows SmartScreen will flag the application as an "Unidentified Developer."
+
+Our GitHub Actions pipeline generates **SHA-256 checksums** for release assets and includes them in the release notes on the [Releases page](https://github.com/unrealities/MTGA_Draft_17Lands/releases). Compare your downloaded file's hash with its published checksum to detect a mismatch.
+
+Automatic dataset updates accept only dataset filenames confined to the Sets folder. Downloads must match the manifest's SHA-256 checksum, stay within size limits, and contain valid dataset metadata and card ratings before replacing cached data. Rejected updates keep the cached copy and show a sync message. These checks protect file integrity; the publisher is still trusted through HTTPS and GitHub Pages.
+
+**Mac Users: Bypassing the "App is Damaged" or "Malware" prompt**
+macOS actively quarantines unsigned apps downloaded from the internet. To run the app safely:
+
+1. Open **Terminal** (Command + Space -> "Terminal").
+2. Type `xattr -cr ` (make sure to include the space at the end!).
+3. Drag and drop the `MTGA_Draft_Tool.app` from your Applications folder directly into the Terminal window.
+4. Press **Enter**. You can now double-click the app to open it normally.
+
+---
+
+## Run Steps: Standalone App (Windows / macOS / Linux)
+
+- **Step 1:** Download the latest release for your operating system from the [releases page](https://github.com/unrealities/MTGA_Draft_17Lands/releases).
+- **Step 2:** Install/Extract the application:
+  - **Windows:** Unzip and double-click the installer executable. *(Run as administrator if installing to restricted folders like Program Files).*
+  - **macOS:** Unzip the downloaded file and drag `MTGA_Draft_Tool.app` to your Applications folder. *(See the Security section above if macOS blocks the app from running).*
+  - **Linux:** Extract the `.tar.gz` file and run the executable.
+- **Step 3:** In MTG Arena, go to **Options -> Account**, and check the **Detailed Logs (Plugin Support)** check box.
+- **Step 4:** Launch the `MTGA_Draft_Tool` application.
+- **Step 5:** The app will automatically sync data for the active Arena events. You can click the **Datasets** tab to manually download historical sets or custom date ranges.
+  - *Note: If MTG Arena is installed on a secondary drive/custom folder and dataset downloads fail, click `File -> Locate MTGA Data Folder...` so the app can find your local card database.*
+- **Step 6:** Configure the tool through `File -> Preferences...`.
+- **Step 7:** Start a draft or sealed event in MTG Arena!
+
+---
+
+## Run Steps: Python (Windows / macOS / Linux)
+
+- **Step 1:** [Download](https://github.com/unrealities/MTGA_Draft_17Lands/archive/refs/heads/main.zip) and unzip the repository.
+- **Step 2:** Download and install **Python 3.12**.
+- **Step 3:** Confirm that you're running Python 3.12 by opening the terminal and entering `python --version` (or `python3 --version`).
+- **Step 4:** Install the Poetry package manager by entering `pip install poetry`.
+- **Step 5:** Navigate to the unzipped repository folder in your terminal and install the dependencies by entering `poetry install`.
+- **Step 6:**
+  - *(Mac Only)* Install web certificates by going to `/Applications/Python 3.12/` and double-clicking the file `Install Certificates.command`.
+  - *(Linux only)* [Install Tkinter](https://tkdocs.com/tutorial/install.html#installlinux) via your package manager (e.g., `sudo apt-get install python3-tk`).
+- **Step 7:** In MTG Arena, go to **Options -> Account**, and check the **Detailed Logs (Plugin Support)** check box.
+- **Step 8:** Start the application by opening the terminal and entering `poetry run python main.py`.
+- **Step 9:** If the application asks you for the location of the Arena player log, click `File -> Read Player.log` and select your MTGA `Player.log` file.
+- **Step 10:** The app will automatically download 17Lands data for currently active sets in the background.
+- **Step 11:** Start your draft in Arena.
+
+---
+
+## Marquee Features
+
+- **Compositional Brain (v5.5):** A custom tactical engine that calculates a 0-100 `VALUE` score for cards in your pack. It dynamically weights raw Z-Score power, color lane commitment, curve needs, and relative wheel probability to suggest optimal picks. Look for the ⭐ symbol for elite "Bomb" picks.
+- **AI Monte Carlo Auto-Optimizer:** Click the "Auto-Optimize Deck" button to unleash a background simulation engine that mathematically tests different deck permutations (16 lands vs 17 lands, swapping out clunky 5-drops for efficient 2-drops) across 10,000 simulated games to find the perfect 40-card configuration.
+- **Sealed Studio:** A fully interactive drag-and-drop workspace specifically tailored for Sealed deckbuilding. Features an AI Shell Generator that automatically builds the top 3 mathematically optimal deck variants for your specific pool (e.g., Best 2-Color, Greedy Splash, Aggro). Saved sessions are isolated by Arena entry, restored decks respect the current pool, and clipboard imports keep sideboard cards out of the main deck.
+- **Mana Base Tools:** Auto Lands counts every card copy when filling a 40-card deck and allocating colors. Mana simulation uses the colors a source actually produces, one land drop per turn, and a shared mana budget for deploying ramp cards.
+- **Automated Cloud Datasets:** The Cloud ETL Pipeline compiles and distributes the latest 17Lands telemetry every day, using [MTGpile's Arena schedule](https://mtgpile.com/api/v1/events/arena/all.json), compiled from Wizards of the Coast's published schedules, to select active supported sets and formats. When you open the app, it syncs the data for active Arena events in the background. View the [live dataset calendar](https://unrealities.github.io/MTGA_Draft_17Lands/calendar.html), including the source update date, or read the [ETL documentation](docs/05-server-etl-pipeline.md).
+- **Event-Matched Statistics:** Startup and live scanning select statistics for the detected set and event format. A matching dataset you previously selected is retained; otherwise All users is preferred, followed by an available group for the same event. If no dataset matches the event, prior statistics are cleared; download the missing event from Datasets or select a dataset manually.
+- **Zero-Day Card Recognition:** Missing card metadata is resolved from your local MTG Arena SQLite database, with Scryfall as a fallback, in a background worker. The draft window stays responsive, and failed lookups retry automatically instead of permanently hiding cards.
+- **Mini Mode:** Click the `Mini Mode` button to hide the main dashboard and display a compact, draggable, always-on-top window. Perfect for single-monitor setups or playing seamlessly over the Arena client.
+- **Dynamic Columns:** You can customize the columns displayed in any table (Pack, Card Pool, Compare) by **Right-Clicking the column header**. Add specific 17Lands stats or remove ones you don't need. The app remembers your layout automatically.
+- **Themes & Mana Flairs:** Under the `Theme` menu, you can select custom "Mana Flairs" (Forest, Island, Swamp, Mountain, Plains, Wastes) or fall back to your Native OS System theme.
+
+---
+
+## UI Navigation & Tabs
+
+The application is structured into a collapsible Live Dashboard and several functional workspace tabs:
+
+### Live Dashboard
+- **Advisor Recommendations:** Explains the mathematical reasoning behind the top 3 cards in the current pack.
+- **Live Pack:** Displays the cards currently offered to you with their tactical scores.
+- **Seen Cards (Wheel Tracker):** Tracks cards you passed previously in the draft.
+- **Sidebar:** Contains visual "Open Lane" Signal detection, your current Mana Curve, and your Pool Balance (Creatures/Spells/Lands). You can click on the headers of these panels to collapse them.
+
+### Application Tabs
+- **Datasets:** Manage, download, and update 17Lands card data locally. Provides detailed download summaries, including exactly how many MTGA cards were successfully matched with 17Lands telemetry data. Choose a **Time Period** (All Time, Latest Event, Last Week, etc.) to match 17Lands. Right-click an unwanted dataset and choose **Delete Dataset** to remove it and prevent automatic downloads from bringing it back. **Clear Inactive Datasets** removes all downloaded datasets except the active one and prevents them from returning on restart. Switch to another active dataset first if needed. **Restore Deleted Datasets** allows those datasets to sync again; manual downloads remain available. **Reset Dataset Cache** (formerly Clear Set History) deletes cached data and downloads fresh copies on restart while preserving deletion and cleanup exclusions.
+- **Card Pool:** View the cards you have drafted. Features a **"Switch to Visual View"** button to stack your cards into mana curve columns exactly like MTG Arena does.
+- **Deck Builder:** A fully interactive deck construction environment combining Auto-Generation and manual Custom building. Features a 1-click **Auto-Lands** button, a sleek basics toolbar, and live deck size validation.
+- **Comparisons:** Search and add multiple cards to directly compare their stats side-by-side.
+- **Tier Lists:** Import and manage custom tier lists from the 17Lands API.
+
+---
+
+## Settings & Preferences
+
+Access Settings via `File -> Preferences...`
+
+- **Win Rate Format:** Switch the results for win rate fields (GIHWR, OHWR) between a Percentage (55.0%), a 5-point Rating scale, or Grades (A+ to F).
+- **Deck Filter Format:** Switch the Deck Filter dropdown to display either color permutations (e.g., UB, BG) or guild/shard names (e.g., Dimir, Golgari).
+- **UI Scale:** Increase or decrease the application text and image sizes globally (from 40% up to 250%). Perfect for smaller laptop displays or massive 4k monitors.
+- **Highlight Row by Mana Cost:** Colors the background of table rows based on the card's color identity.
+- **Auto-Switch Deck Filter to Best Colors:** When the filter is set to "Auto", the app tracks your picks and will automatically switch to displaying data for your confirmed color pair once your lane is identified.
+- **Enable Draft Log Creation:** Records the draft step-by-step in a readable log file within the `./Logs` folder.
+
+---
+
+## File Locations
+
+The application stores your settings and data in specific locations to ensure they persist across updates.
+
+### Configuration (`config.json`)
+The application looks for the configuration file in the following order:
+1. **Local Folder:** If `config.json` exists in the same folder as the application, it is used (Portable Mode).
+2. **System User Folder:**
+   - **Windows:** `%APPDATA%\MTGA_Draft_Tool\config.json`
+   - **Mac:** `~/Library/Application Support/MTGA_Draft_Tool/config.json`
+   - **Linux:** `~/.config/MTGA_Draft_Tool/config.json`
+
+### Datasets & Logs
+- Downloaded card data is stored in the `Sets` folder.
+- Custom Tier lists are stored in the `Tier` folder.
+- Application debug logs are stored in the `Debug` folder, and draft logs are in the `Logs` folder.
+
+---
+
+## Tier Lists (API-Based)
+
+MTGA_Draft_17Lands features integrated support for downloading and using 17Lands tier lists directly within the application.
+
+1. Go to the **Tier Lists** tab in the application.
+2. Enter the 17Lands tier list URL and a custom label, then click Download.
+3. Once downloaded, **Right-Click** the header of any table (like the Live Pack table), go to `Add Column`, and select your new tier list!
+
+---
+
+## Signal Detection (Beta)
+
+This feature attempts to identify "Open Lanes" by analyzing the cards passed to you during the draft.
+
+- **How it works:** The tool scans every pack you see in **Pack 1** and **Pack 3**. It calculates a "Signal Score" for every card based on its quality (GIHWR) and how late you are seeing it compared to its Average Taken At (ATA).
+- **The Table:** The "Open Lanes" bar chart in the sidebar sums up these scores. A High Score (20+) typically suggests a very open lane, meaning your neighbors are not drafting that color.
+
+---
+
+## Troubleshooting
+
+### Known Issues
+- **Missing cards after restarting Arena:** Arena creates a new log after every restart. The application cannot track cards picked prior to an Arena restart.
+
+### Desyncs & Missed Picks
+The application features robust crash-recovery and state persistence. If you close the app mid-draft (or MTG Arena crashes), simply reopening the app will instantly resume your draft exactly where you left off.
+
+If the log file ever severely desyncs, click the **Reload** button in the main dashboard. This will wipe the application's current memory, rapidly re-read the entire log file from the beginning, and cleanly reconstruct your draft state.
+
+### Arena Log Issues
+If the application cannot detect an active event, click `File -> Read Player.log` and ensure the proper file is selected.
+
+### Custom Installation Folders
+If MTG Arena is installed in a non-standard directory (e.g., a secondary Steam library drive), the application might fail to automatically locate the local MTGA card database, causing dataset downloads to fail. To fix this, click `File -> Locate MTGA Data Folder...` in the top menu bar and select your custom `MTGA_Data` folder.
+
+### Dataset Sync Rejections
+
+Automatic sync downloads only sets listed as live in the server manifest's `active_sets`. Hosted historical sets remain available through manual downloads, and existing local historical datasets are retained without automatic refresh. An empty live-set list downloads nothing; missing or malformed live-set metadata skips sync instead of downloading the archive.
+
+If a dataset update fails its checksum, size, or structure checks, the app keeps its cached copy. Retry the sync when the publisher has corrected the file. If the detected event has no matching dataset, use the Datasets tab to download that set and format. Debug logs contain the rejection reason.
+
+### Manual Dataset Download Failures
+
+Manual downloads reject malformed 17Lands card fields before caching them. Unusable raw caches are fetched again automatically; missing or null statistics remain supported. If the server response is invalid, retry later and check the debug log for the affected field.
+
+Downloaded datasets are written to a temporary file and checked before replacing an existing file. If saving fails, the app reports an error, preserves the previous dataset file, and keeps the active dataset selection. Check available disk space and write access to the Sets folder before retrying.
+
+---
+
+## Development & Documentation
+
+For developers looking to contribute, fork, or understand the architecture of this application, please refer to the markdown specifications located in the `/docs` directory of this repository:
+
+- `00-system-overview.md`
+- `01-domain-models.md`
+- `02-log-parsing-rules.md`
+- `03-business-logic.md`
+- `04-external-integrations.md`
+- `05-server-etl-pipeline.md`
+
+### Environment Setup
+
+1. **Install Python 3.12**
+2. **Install Poetry:** `pip install poetry`
+3. **Install Dependencies:**
+   ```bash
+   poetry install
+   ```
+
+### Running Tests
+
+This project uses `pytest` with `pytest-cov` for unit testing.
+
+```bash
+poetry run pytest tests/
+```
+
+To run tests with coverage reporting:
+```bash
+poetry run pytest tests/ --cov=src
+```
+
+### Continuous Integration
+
+Every pull request runs two jobs: the full Python test suite on Linux/Python 3.12
+with coverage, and the JavaScript tests. The CI workflow runs Python 3.12, 3.13
+and 3.14 on Linux, macOS and Windows every Sunday at 08:17 UTC. Weekly runs also
+audit Python and JavaScript dependencies. CI can be dispatched manually with
+`full_matrix=true` to run the same extended checks on a branch.
+
+Before releasing, run **Build & Publish Release** on the release branch with
+**publish disabled** (the default). This runs all nine Python combinations,
+JavaScript tests, dependency audits, and builds and smoke-tests the three platform
+packages without publishing. The same checks gate automatic publication after
+merging to `main` or `master`.
+
+### Automated Releases & Version Management
+
+This project uses a fully automated CI/CD pipeline via GitHub Actions. Creating a new public release is entirely frictionless.
+
+The pipeline triggers **automatically whenever code is merged into the `master` or `main` branch.** It reads the version number from `src/constants.py` and `pyproject.toml`, generates the git tag, builds the macOS/Linux/Windows executables, and publishes them to the Releases page.
+
+**The Workflow:**
+
+1. On your feature branch, run the bump script:
+   - **Patch Bump (+0.01):** `poetry run python bump_version.py`
+   - **Major Bump (+1.0):** `poetry run python bump_version.py major`
+   - **Manual Set:** `poetry run python bump_version.py --set 4.50`
+2. The script will update your config files and ask: `Would you like to automatically commit and push these changes to your branch? (y/N)`
+3. Type `y` and press **Enter**.
+4. Validate the release branch as described above, then merge your Pull Request into your main branch. The release publishes automatically only after the full tests and all three platform builds and smoke tests pass.
+
+*(Note: If you merge code into main without bumping the version number, the pipeline will simply rebuild and update the executables on the existing release—perfect for hotfixes)*
+
+### Building Locally
+
+If you need to test binary builds locally on your own machine instead of using GitHub Actions:
+
+- **macOS / Linux:** 
+  ```bash
+  poetry run pyinstaller main.spec --clean
+  ```
+- **Windows:** Compile the source code using `poetry run pyinstaller main.spec --clean`, then open `builder/Installer.iss` with [Inno Setup](https://jrsoftware.org/isdl.php#stable) and click **Build -> Compile**.
