@@ -401,8 +401,33 @@ class DraftSession:
                 "deck": [_trim(c) for c in deck],
                 "sideboard": [_trim(c) for c in side],
                 "arena_export": copy_deck(deck, side),
+                **mana_identity(deck),
             })
         return builds
+
+
+def mana_identity(deck: list[dict]) -> dict:
+    """The pair that casts the most spells, and the colours the rest need, hybrid aware.
+
+    Upstream's label counts every pip outside the top two colours as a splash, so a W/U hybrid in
+    a UG deck reads "Splash W". Here a colour is a splash only if some spell cannot be cast
+    without it.
+    """
+    from companion.advisor_v2.lanes import LANES, castable, off_pips, pips
+
+    spells = [c for c in deck if "Land" not in (c.get("types") or [])]
+    weight = lambda lane: (sum(c.get("count", 1) for c in spells if castable(c, lane)),
+                           sum(c.get("count", 1) * len(pips(c)) for c in spells if castable(c, lane)))
+    main = max(LANES, key=weight) if spells else ""
+    splash, cards = set(), 0
+    for c in spells:
+        off = off_pips(c, main)
+        if off:
+            cards += c.get("count", 1)
+            for options in off:
+                splash.add(options[0] if len(options) == 1 else next((o for o in options if o in splash), options[0]))
+    order = "WUBRG"
+    return {"main": main, "splash": "".join(sorted(splash, key=order.index)), "splash_cards": cards}
 
 
 def _trim(card: dict) -> dict:

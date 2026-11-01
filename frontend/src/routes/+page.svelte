@@ -9,6 +9,7 @@
 	import Settings from '../lib/views/Settings.svelte';
 	import Compare from '../lib/views/Compare.svelte';
 	import type { ResultFormat } from '../lib/api';
+	import HoverImage from '../lib/HoverImage.svelte';
 
 	const VIEWS = ['Draft', 'Analyst', 'Pool', 'Deck', 'Compare', 'Settings'] as const;
 	const FORMATS: ResultFormat[] = ['Percentage', 'Rating', 'Grade'];
@@ -79,3 +80,4 @@
 		<Pack {snap} />
 	{/if}
 </main>
+<HoverImage />

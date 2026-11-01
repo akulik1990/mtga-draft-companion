@@ -64,6 +64,7 @@ export type Build = {
 	label: string; variant: string; rating: number | null; record: string | null; colors: string[];
 	breakdown: Record<string, unknown> | null; stats: Record<string, number> | null; note: string | null;
 	deck: DeckCard[]; sideboard: DeckCard[]; arena_export: string;
+	main: string; splash: string; splash_cards: number;
 };
 
 async function call<T>(path: string, init?: RequestInit): Promise<T> {

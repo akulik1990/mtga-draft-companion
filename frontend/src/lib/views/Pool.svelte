@@ -3,6 +3,8 @@
 	import { ALL, COLOR_BG, colorGroup } from '../cards';
 	import { fmt, loadPref, savePref, tagIcons, tone } from '../format';
 	import CardDetail from '../CardDetail.svelte';
+	import Pips from '../Pips.svelte';
+	import { show, hide } from '../hover.svelte';
 
 	let { snap }: { snap: Snapshot } = $props();
 	let open = $state<Card | null>(null);
@@ -21,7 +23,8 @@
 </script>
 
 {#snippet row(c: Card)}
-	<button class="flex w-full items-center gap-2 rounded px-1 py-0.5 text-left text-sm hover:bg-zinc-800" onclick={() => (open = c)}>
+	<button class="flex w-full items-center gap-2 rounded px-1 py-0.5 text-left text-sm hover:bg-zinc-800" onclick={() => (open = c)} onmouseenter={(e) => show(c, e)} onmouseleave={hide}>
+		<span class="flex w-10 shrink-0"><Pips colors={c.colors ?? []} /></span>
 		<span class="w-4 font-mono text-xs text-zinc-500">{c.cmc}</span>
 		<span class="flex-1 truncate">{c.name}</span>
 		<span class="text-xs">{tagIcons(c.tags)}</span>

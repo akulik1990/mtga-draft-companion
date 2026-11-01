@@ -45,3 +45,14 @@ def test_api_state_and_ws(session):
             pushed = ws.receive_json()
             assert pushed["pick_number"] == 1
             assert len(pushed["advisors"]["upstream"]) == KNOWN_IN_PACK
+
+
+def test_mana_identity_ignores_hybrid_halves():
+    from companion.session import mana_identity
+
+    def c(cost, n=1):
+        return {"name": cost, "mana_cost": cost, "types": ["Creature"], "count": n, "colors": []}
+
+    deck = [c("{1}{U}", 8), c("{2}{G}", 8), c("{1}{W/U}", 3), c("{R/G}", 2), c("{3}{B}")]
+    out = mana_identity(deck + [{"name": "Island", "types": ["Basic", "Land"], "count": 8, "colors": ["U"]}])
+    assert out == {"main": "UG", "splash": "B", "splash_cards": 1}
