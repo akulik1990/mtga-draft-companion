@@ -160,6 +160,8 @@ class DraftAdvisorV2:
     FIX_CAP = 3.0  # most a land's fixing can add, in WR points
     HALF_PIVOT = 0  # from this many spells in the pool, lanes sharing no colour with the pool's top pair get P = 0 (winners change one colour, not both); 0 = off
     WHEEL_EPS = 0.3  # within this of the best score, prefer the card that wheels less
+    WHEEL_SPLIT = False  # apply the WHEEL_EPS tiebreak to the split's final order too (it used to apply only with SPLIT off)
+    WHEEL_PENALTY = 0.0  # WR points taken from Power and Fit per 100% chance the card comes back; 0 = off
 
     def __init__(self, set_metrics, taken_cards, seen_packs=None):
         self.metrics = set_metrics
@@ -400,8 +402,9 @@ class DraftAdvisorV2:
         playable = [r for r in recs if r.contextual_score > 0]
         if not playable:
             return recs
-        power = {r.card_name: self.power(by_name[r.card_name], pick) for r in playable}
-        fit = {r.card_name: self.fit(by_name[r.card_name], pick) for r in playable}
+        wheel = {r.card_name: (r.wheel_chance or 0.0) / 100.0 for r in playable}
+        power = {r.card_name: self.power(by_name[r.card_name], pick) - self.WHEEL_PENALTY * wheel[r.card_name] for r in playable}
+        fit = {r.card_name: self.fit(by_name[r.card_name], pick) - self.WHEEL_PENALTY * wheel[r.card_name] for r in playable}
         p_top = max(power, key=power.get)
         c_top = max(fit, key=fit.get)
         spells = sum(1 for c in self.pool if "Land" not in (c.get("types") or []))
@@ -433,6 +436,15 @@ class DraftAdvisorV2:
             fr = sorted(fit, key=fit.get, reverse=True).index(r.card_name) + 1
             r.reasoning = [f"Fit #{fr} · Power #{pr}"] + r.reasoning
         order = sorted(playable, key=lambda r: fit[r.card_name], reverse=True)
+        if self.WHEEL_SPLIT and not take_power and len(order) > 1:
+            # Of cards about as good as the top, take the one least likely to come back.
+            close = [r for r in order if fit[order[0].card_name] - fit[r.card_name] <= self.WHEEL_EPS]
+            first = min(close, key=lambda r: r.wheel_chance)
+            if first is not order[0]:
+                order.remove(first)
+                order.insert(0, first)
+                first.contextual_score = round(fit[order[1].card_name] + 0.01, 2)
+                first.reasoning.insert(0, f"Wheel: {first.wheel_chance:.0f}% vs {order[1].wheel_chance:.0f}% for {order[1].card_name}, within {self.WHEEL_EPS}")
         if take_power:
             top = next(r for r in order if r.card_name == p_top)
             order.remove(top)

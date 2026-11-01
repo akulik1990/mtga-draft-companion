@@ -289,3 +289,19 @@ def test_switch_features_and_colour_rule(world, monkeypatch):
     monkeypatch.setattr(DraftAdvisorV2, "BRANCH_COLOUR", False)
     adv.evaluate_pack(pack, 9, 1)
     assert not adv.split["branch"] or adv.split["branch"]["threshold"] == DraftAdvisorV2.BRANCH_DEFAULT
+
+
+def test_wheel_penalty_and_tiebreak_reorder_the_split(world, monkeypatch):
+    metrics, cards = world
+    pack = by_colors(cards, "U", 4) + by_colors(cards, "W", 4)
+    monkeypatch.setattr(DraftAdvisorV2, "WHEEL_PENALTY", 1000.0)
+    recs = DraftAdvisorV2(metrics, []).evaluate_pack(pack, 5, 1)
+    playable = [r for r in recs if r.contextual_score > 0]
+    assert playable[0].wheel_chance == min(r.wheel_chance for r in playable)
+    monkeypatch.setattr(DraftAdvisorV2, "WHEEL_PENALTY", 0.0)
+    monkeypatch.setattr(DraftAdvisorV2, "WHEEL_SPLIT", True)
+    monkeypatch.setattr(DraftAdvisorV2, "WHEEL_EPS", 1000.0)
+    recs = DraftAdvisorV2(metrics, []).evaluate_pack(pack, 5, 1)
+    playable = [r for r in recs if r.contextual_score > 0]
+    if not any(r.reasoning and r.reasoning[0].startswith("Branch") for r in playable):
+        assert playable[0].wheel_chance == min(r.wheel_chance for r in playable)
