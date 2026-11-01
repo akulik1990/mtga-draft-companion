@@ -93,7 +93,7 @@
 		</div>
 	{/if}
 	{#if mode === 'cards'}
-		<div class="grid gap-3" style="grid-template-columns: repeat(auto-fill, minmax(11.5rem, 1fr));">
+		<div class="grid grid-cols-7 gap-2">
 			{#each sorted as card (card.name)}
 				<CardTile {card} {snap} archetype={snap.archetype} upstream={up.get(card.name)} v2={v2.get(card.name)}
 					powerRank={rankIn(snap.v2_split?.power, card.name)} fitRank={rankIn(snap.v2_split?.fit, card.name)}
