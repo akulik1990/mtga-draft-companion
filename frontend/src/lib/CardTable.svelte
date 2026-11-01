@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { Card } from './api';
 	import { stripe, type Column } from './format';
+	import Pips from './Pips.svelte';
 
 	let { cards, columns, visible, highlight = '', onrow }: {
 		cards: Card[]; columns: Column[]; visible: string[]; highlight?: string; onrow: (c: Card) => void;
@@ -21,7 +22,7 @@
 </script>
 
 <div class="overflow-x-auto">
-	<table class="w-full font-mono text-xs">
+	<table class="w-full font-mono text-sm">
 		<thead class="text-zinc-500">
 			<tr>
 				<th class="px-2 py-1 text-left font-normal"><button class="hover:text-zinc-200" onclick={() => (sortKey = '')}>card</button></th>
@@ -35,9 +36,9 @@
 		<tbody>
 			{#each rows as card (card.name)}
 				<tr class="cursor-pointer border-l-4 {stripe(card)} {card.name === highlight ? 'bg-emerald-900/30' : 'hover:bg-zinc-800/60'}" onclick={() => onrow(card)}>
-					<td class="px-2 py-1 font-sans text-sm">{card.name}</td>
+					<td class="px-2 py-1.5 font-sans text-base">{card.name}</td>
 					{#each shown as c (c.key)}
-						<td class="px-2 py-1 text-right {c.cls?.(card) ?? 'text-zinc-300'}">{c.show(card)}</td>
+						<td class="px-2 py-1.5 text-right {c.cls?.(card) ?? 'text-zinc-300'}">{#if c.kind === 'colors'}<Pips colors={card.colors ?? []} size="h-4 w-4" />{:else}{c.show(card)}{/if}</td>
 					{/each}
 				</tr>
 			{/each}

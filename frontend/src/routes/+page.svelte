@@ -10,11 +10,11 @@
 	import Compare from '../lib/views/Compare.svelte';
 	import type { ResultFormat } from '../lib/api';
 
-	const VIEWS = ['Pack', 'Analyst', 'Pool', 'Deck', 'Compare', 'Settings'] as const;
+	const VIEWS = ['Draft', 'Analyst', 'Pool', 'Deck', 'Compare', 'Settings'] as const;
 	const FORMATS: ResultFormat[] = ['Percentage', 'Rating', 'Grade'];
 	const setting = (changes: Record<string, string>) => mock(() => api.updateSettings(changes));
 	type View = (typeof VIEWS)[number];
-	let view = $state<View>('Pack');
+	let view = $state<View>('Draft');
 
 	onMount(() => { refresh(); connect(); });
 	const snap = $derived(app.snap);

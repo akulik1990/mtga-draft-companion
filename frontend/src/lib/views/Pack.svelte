@@ -7,6 +7,7 @@
 	import CardTile from '../CardTile.svelte';
 	import CardDetail from '../CardDetail.svelte';
 	import CardTable from '../CardTable.svelte';
+	import DraftPanel from '../DraftPanel.svelte';
 
 	let { snap }: { snap: Snapshot } = $props();
 	type Sort = 'upstream' | 'v2' | 'gihwr' | 'ata' | 'alsa';
@@ -49,6 +50,8 @@
 {:else if snap.pack.length === 0}
 	<p class="p-8 text-center text-zinc-500">{snap.status}</p>
 {:else}
+<div class="grid gap-4 md:grid-cols-[minmax(0,1fr)_17rem]">
+<div>
 	<div class="mb-3 flex flex-wrap items-center gap-3 text-sm">
 		<span class="flex rounded bg-zinc-900">
 			{#each ['cards', 'table'] as m}
@@ -65,7 +68,7 @@
 		{/if}
 		<span class="ml-auto text-zinc-500">values for <span class="text-zinc-200">{snap.archetype}</span></span>
 		{#if mockLive}
-			<span class="text-violet-300">Pick under a card, or click it for details{snap.mock?.human ? ` · human took ${snap.mock.human}` : ''}</span>
+			<span class="text-violet-300">Pick under a card, click it for details{snap.mock?.human ? ` · human took ${snap.mock.human}` : ''}</span>
 		{/if}
 		{#if snap.picked_from_pack.length}
 			<span class="text-zinc-500">picked <span class="text-zinc-200">{snap.picked_from_pack.map((c) => c.name).join(', ')}</span></span>
@@ -90,7 +93,7 @@
 		</div>
 	{/if}
 	{#if mode === 'cards'}
-		<div class="grid gap-3" style="grid-template-columns: repeat(auto-fill, minmax(10.5rem, 1fr));"><!-- ponytail: fixed card width, more columns on wide screens -->
+		<div class="grid gap-3" style="grid-template-columns: repeat(auto-fill, minmax(12.5rem, 1fr));">
 			{#each sorted as card (card.name)}
 				<CardTile {card} {snap} archetype={snap.archetype} upstream={up.get(card.name)} v2={v2.get(card.name)}
 					powerRank={rankIn(snap.v2_split?.power, card.name)} fitRank={rankIn(snap.v2_split?.fit, card.name)}
@@ -112,6 +115,9 @@
 			{/if}
 		</section>
 	{/if}
+</div>
+<div class="md:sticky md:top-14 md:max-h-[calc(100vh-4rem)] md:overflow-y-auto"><DraftPanel {snap} onopen={(c) => (open = c)} /></div>
+</div>
 {/if}
 
 {#if open}

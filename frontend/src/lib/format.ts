@@ -58,7 +58,7 @@ const TAG_ICON: Record<string, string> = {
 };
 export const tagIcons = (tags: string[] | undefined) => (tags ?? []).map((t) => TAG_ICON[t] ?? '').filter(Boolean).join('');
 
-export type Column = { key: string; label: string; title: string; sort: (c: Card) => number; show: (c: Card) => string; cls?: (c: Card) => string };
+export type Column = { key: string; label: string; title: string; sort: (c: Card) => number; show: (c: Card) => string; cls?: (c: Card) => string; kind?: 'colors' };
 
 /** Every column upstream's pack table offers, plus both advisors' scores. */
 export function columns(snap: Snapshot, up: Map<string, Rec>, v2: Map<string, Rec>): Column[] {
@@ -74,7 +74,7 @@ export function columns(snap: Snapshot, up: Map<string, Rec>, v2: Map<string, Re
 	}
 	out.push(
 		{ key: 'wheel', label: 'WHEEL', title: 'Chance the card comes back', sort: (c) => -(up.get(c.name)?.wheel_chance ?? 0), show: (c) => { const w = up.get(c.name)?.wheel_chance; return w ? `${w.toFixed(0)}%` : '-'; } },
-		{ key: 'colors', label: 'COLORS', title: 'Card colours', sort: (c) => (c.colors ?? []).length, show: (c) => (c.colors ?? []).join('') },
+		{ key: 'colors', label: 'COLORS', title: 'Card colours', sort: (c) => (c.colors ?? []).length, show: (c) => (c.colors ?? []).join(''), kind: 'colors' },
 		{ key: 'tags', label: 'TAGS', title: 'Card roles', sort: (c) => -(c.tags ?? []).length, show: (c) => tagIcons(c.tags) || '-' },
 		{ key: 'upstream', label: 'UP', title: "Upstream advisor's score", sort: (c) => up.get(c.name)?.rank ?? 99, show: (c) => { const r = up.get(c.name); return r ? r.contextual_score.toFixed(0) : '-'; }, cls: () => 'text-sky-300' },
 		{ key: 'v2', label: 'V2', title: "Our advisor's score", sort: (c) => v2.get(c.name)?.rank ?? 99, show: (c) => { const r = v2.get(c.name); return r ? r.contextual_score.toFixed(1) : '-'; }, cls: () => 'text-violet-300' }
@@ -88,7 +88,7 @@ export function columns(snap: Snapshot, up: Map<string, Rec>, v2: Map<string, Re
 const TIER_ORDER = ['A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+', 'D', 'D-', 'F'];
 const tierRank = (g?: string) => { const i = TIER_ORDER.indexOf((g ?? '').trim()); return i < 0 ? 99 : i; };
 
-export const DEFAULT_COLUMNS = ['gihwr', 'ohwr', 'gpwr', 'iwd', 'ata', 'wheel', 'tags', 'upstream', 'v2'];
+export const DEFAULT_COLUMNS = ['gihwr', 'ohwr', 'gpwr', 'iwd', 'ata', 'wheel', 'colors', 'tags', 'upstream', 'v2'];
 
 export function loadPref<T>(key: string, fallback: T): T {
 	try { const v = localStorage.getItem(key); return v ? (JSON.parse(v) as T) : fallback; } catch { return fallback; }
