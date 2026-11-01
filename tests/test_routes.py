@@ -121,11 +121,12 @@ def test_engine_switches_toggle_and_persist(session, monkeypatch, tmp_path):
     from companion.advisor_v2.engine import DraftAdvisorV2 as V
 
     monkeypatch.setattr(type(session), "_engine_file", lambda self: tmp_path / "engine.json")
-    for attr in ("PREF_WEIGHT", "ORDER_WEIGHT", "SPLIT"):
+    for attr in ("PREF_WEIGHT", "ORDER_WEIGHT", "SPLIT", "BRANCH_COLOUR"):
         monkeypatch.setattr(V, attr, getattr(V, attr))
     with TestClient(create_app(session, run_scanner=False)) as client:
         sw = client.get("/api/engine").json()
-        assert set(sw) == {"learnt_prefs", "split"} and sw["learnt_prefs"]["on"] is True
+        assert set(sw) == {"learnt_prefs", "split", "branch_colour"} and sw["learnt_prefs"]["on"] is True
+        assert sw["branch_colour"]["on"] is False
         sw = client.put("/api/engine", json={"learnt_prefs": False}).json()
         assert sw["learnt_prefs"]["on"] is False and V.PREF_WEIGHT == 0.0 and V.ORDER_WEIGHT == V.ORDER_OFF_WEIGHT
         assert json.loads((tmp_path / "engine.json").read_text())["learnt_prefs"] is False

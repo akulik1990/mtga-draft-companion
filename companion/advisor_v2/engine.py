@@ -142,6 +142,7 @@ class DraftAdvisorV2:
     SPEC_ALL = False  # False: only cards castable in no two-colour lane (three-colour cards) get it; True: any card one pip off
     SPLIT = True  # two orders: Power (best card if you end up in its colours) and Fit (best for the colours you are in); branch to Power above a learnt gap
     BRANCH_MODE = "learnt"  # "learnt" (fitted rule), "fit" (never branch), "power" (always take the strongest card)
+    BRANCH_COLOUR = False  # switch rule that also weighs whether the strong card keeps a colour of the top pair and how settled the pool is (branch_<SET>_colour.json). FRA: test top-1 55.4 -> 56.0, deck win rate -0.86 (SE 0.34, 200 tables); off
     BRANCH_FILE = ""  # override the fitted rule's file (measuring alternatives); "" = companion/advisor_v2/branch_<SET>.json
     BRANCH_DEFAULT = 3.0  # GIH WR points; used for stages with no fitted threshold (companion/advisor_v2/branch_<SET>.json)
     ORDER_FADE_BY = 0  # pick in the pack by which the pick-order prior has faded to 0; 0 = no fade
@@ -157,6 +158,7 @@ class DraftAdvisorV2:
     LANDS = True  # round 2: lands exempt from the sparse prior; partial-overlap lands valued by the splashes they enable
     FIX_WEIGHT = 0.5  # share of each enabled splash's gain (over replacement) credited to the land
     FIX_CAP = 3.0  # most a land's fixing can add, in WR points
+    HALF_PIVOT = 0  # from this many spells in the pool, lanes sharing no colour with the pool's top pair get P = 0 (winners change one colour, not both); 0 = off
     WHEEL_EPS = 0.3  # within this of the best score, prefer the card that wheels less
 
     def __init__(self, set_metrics, taken_cards, seen_packs=None):
@@ -191,6 +193,11 @@ class DraftAdvisorV2:
         self.steer = self.STEER * (1.0 - progress)  # the candidate's pull fades as the pool becomes a deck
         self.alpha = self.ALPHA + (self.ALPHA_LATE - self.ALPHA) * progress
         self.commit = commitment(self.pool, self.mean, self.std)
+        self.anchor = None
+        free = self._lanes(self.commit)
+        self.top_lane = max(free, key=free.get)
+        if self.HALF_PIVOT and spells >= self.HALF_PIVOT:
+            self.anchor = self.top_lane
         self.lanes = self._lanes(self.commit)  # pool only; what the Analyst shows and what Fit uses
         self.split = None
         self.order, self.prefs = {}, {}  # filled per pack in evaluate_pack
@@ -200,7 +207,13 @@ class DraftAdvisorV2:
         self.composition = composition.Composition(self.typical, self.pool)
 
     def _lanes(self, commit):
-        return lane_distribution(commit, self.signals, self.prior, self.alpha, self.BETA, self.GAMMA)
+        p = lane_distribution(commit, self.signals, self.prior, self.alpha, self.BETA, self.GAMMA)
+        if self.anchor:
+            # Winners keep at least one colour once they have a few cards: GU can become GR, not WR.
+            p = {lane: v if set(lane) & set(self.anchor) else 0.0 for lane, v in p.items()}
+            total = sum(p.values())
+            p = {lane: v / total for lane, v in p.items()}
+        return p
 
     def shrunk_wr(self, card, lane):
         """Lane GIH WR pulled toward a prior by sample size; (value, n).
@@ -375,6 +388,12 @@ class DraftAdvisorV2:
         live = sum(p for lane, p in self.lanes.items() if castable(card, lane) or self.speculative(card, lane))
         return score + self.order_prior(card.get("name", ""), pick, prefs=self.PREF_SCOPE == "both") * live
 
+    def branch_features(self, card):
+        """(1 if the card keeps a colour of the pool's top pair or is colourless, else 0; that pair's probability)."""
+        colours = set() if "Land" in (card.get("types") or []) else set(card.get("colors") or [])
+        top = self.top_lane
+        return float(not colours or bool(colours & set(top))), self.lanes.get(top, 0.0)
+
     def _split(self, pack_cards, recs, pick, set_code):
         """Final order from the two orders: Fit, unless the strongest card beats the best fit by more than the learnt gap."""
         by_name = {c.get("name"): c for c in pack_cards}
@@ -389,11 +408,15 @@ class DraftAdvisorV2:
         stage = stage_of(spells)
         gap = power[p_top] - power[c_top]
         table = branch_file(self.BRANCH_FILE) if self.BRANCH_FILE else (branch_thresholds(set_code) if set_code else {})
+        if self.BRANCH_COLOUR and not self.BRANCH_FILE and set_code:
+            table = branch_thresholds(f"{set_code}_colour") or table
         coef = table.get(stage) or {}
         c_strength = power[c_top] - self.mean
+        shared, committed = self.branch_features(by_name[p_top])
         if coef.get("b", 0) > 0:
-            # Learnt from top drafters: branch more readily early and when the best in-colour card is weak.
-            threshold = -(coef["a"] + coef["c"] * c_strength) / coef["b"]
+            # Learnt from top drafters: branch more readily early and when the best in-colour card is weak;
+            # fitted files may also weigh whether the card keeps a colour and how settled the pool is.
+            threshold = -(coef["a"] + coef["c"] * c_strength + coef.get("d", 0.0) * shared + coef.get("e", 0.0) * committed) / coef["b"]
         else:
             threshold = self.BRANCH_DEFAULT
         take_power = p_top != c_top and (self.BRANCH_MODE == "power" or (self.BRANCH_MODE == "learnt" and gap > threshold))
@@ -401,7 +424,8 @@ class DraftAdvisorV2:
             "power": sorted(({"card": n, "score": round(v, 2)} for n, v in power.items()), key=lambda x: -x["score"])[:3],
             "fit": sorted(({"card": n, "score": round(v, 2)} for n, v in fit.items()), key=lambda x: -x["score"])[:3],
             "branch": None if p_top == c_top else {"card": p_top, "over": c_top, "gap": round(gap, 2), "threshold": round(threshold, 2),
-                                                    "stage": stage, "in_colour_strength": round(c_strength, 2), "take": take_power},
+                                                    "stage": stage, "in_colour_strength": round(c_strength, 2), "shares_colour": bool(shared),
+                                                    "committed": round(committed, 2), "take": take_power},
         }
         for r in playable:
             r.contextual_score = round(fit[r.card_name], 2)

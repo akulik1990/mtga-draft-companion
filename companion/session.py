@@ -285,6 +285,7 @@ class DraftSession:
     ENGINE_SWITCHES = {
         "learnt_prefs": ("PREF_WEIGHT", "Learnt top-drafter preferences", "Bonus for the cards top drafters choose head to head (tools/learn_prefs.py)."),
         "split": ("SPLIT", "Power / Fit split", "Two orders and a learnt switch between them; off = one blended order."),
+        "branch_colour": ("BRANCH_COLOUR", "Colour-aware switch", "The switch to the stronger card also weighs whether it keeps one of your colours and how settled your pool is. Matches top drafters better, mock decks slightly worse."),
     }
 
     def _engine_file(self):

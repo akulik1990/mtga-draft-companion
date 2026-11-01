@@ -256,3 +256,36 @@ def test_pick_order_prior_breaks_a_tie(world, monkeypatch):
     mk = lambda n: {"name": n, "set": "OTJ", "mana_cost": "{1}{W}", "colors": ["W"], "types": ["Creature"], "deck_colors": stats}
     recs = DraftAdvisorV2(metrics, []).evaluate_pack([mk("late"), mk("early")], 3, 1)
     assert recs[0].card_name == "early" and recs[0].contextual_score > recs[1].contextual_score
+
+
+def test_half_pivot_keeps_a_colour_of_the_top_pair(world, monkeypatch):
+    metrics, cards = world
+    pool = by_colors(cards, "W", 3, 54) + by_colors(cards, "U", 3, 54)
+    monkeypatch.setattr(DraftAdvisorV2, "HALF_PIVOT", 5)
+    adv = DraftAdvisorV2(metrics, pool)
+    assert adv.anchor == "WU" and abs(sum(adv.lanes.values()) - 1) < 1e-9
+    assert all(p == 0 for lane, p in adv.lanes.items() if not set(lane) & {"W", "U"})
+    assert adv.lanes["UR"] > 0
+    monkeypatch.setattr(DraftAdvisorV2, "HALF_PIVOT", 0)
+    assert DraftAdvisorV2(metrics, pool).lanes["BR"] > 0
+
+
+def test_switch_features_and_colour_rule(world, monkeypatch):
+    metrics, cards = world
+    adv = DraftAdvisorV2(metrics, by_colors(cards, "W", 4, 54) + by_colors(cards, "U", 4, 54))
+    shared, settled = adv.branch_features(by_colors(cards, "U", 1)[0])
+    assert shared == 1.0 and settled == adv.lanes["WU"]
+    assert adv.branch_features(by_colors(cards, "R", 1)[0])[0] == 0.0
+    # a fitted d term moves the threshold: a card keeping a colour needs a smaller gap
+    from companion.advisor_v2 import engine
+    pack = [dict(c, set="OTJ") for c in by_colors(cards, "U", 2) + by_colors(cards, "R", 2)]
+    rule = {stage: {"a": 0.0, "b": 1.0, "c": 0.0, "d": 5.0, "e": 0.0} for _, _, stage in engine.STAGES}
+    monkeypatch.setattr(engine, "branch_thresholds", lambda code: rule if code.endswith("_colour") else {})
+    monkeypatch.setattr(DraftAdvisorV2, "BRANCH_COLOUR", True)
+    adv.evaluate_pack(pack, 9, 1)
+    b = adv.split["branch"]
+    if b:
+        assert b["threshold"] == (-5.0 if b["shares_colour"] else 0.0)
+    monkeypatch.setattr(DraftAdvisorV2, "BRANCH_COLOUR", False)
+    adv.evaluate_pack(pack, 9, 1)
+    assert not adv.split["branch"] or adv.split["branch"]["threshold"] == DraftAdvisorV2.BRANCH_DEFAULT

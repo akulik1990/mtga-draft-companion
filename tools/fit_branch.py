@@ -75,12 +75,14 @@ def collect(set_code, split, n, winners_only):
                 continue
             by_name = {c["name"]: c for c in pack}
             c_strength = adv.power(by_name[b["over"]], k) - adv.mean
+            shared, committed = adv.branch_features(by_name[b["card"]])
             rows.append({"stage": b["stage"], "gap": b["gap"], "c_strength": c_strength, "took_power": took == b["card"],
+                         "shared": shared, "committed": committed,
                          "spells": sum(1 for c in pool if "Land" not in (c.get("types") or []))})
     return rows
 
 
-def fit(rows):
+def fit(rows, full=False):
     by_stage = defaultdict(list)
     for r in rows:
         by_stage[r["stage"]].append(r)
@@ -90,10 +92,12 @@ def fit(rows):
         if len(rs) < 40 or y.sum() < 10 or (1 - y).sum() < 10:
             out[stage] = {"n": len(rs), "took_power": int(y.sum()), "skipped": "too few conflicts"}
             continue
-        X = np.column_stack([np.ones(len(rs)), [r["gap"] for r in rs], [r["c_strength"] for r in rs]])
-        w, se = logistic(X, y)
-        out[stage] = {"a": round(float(w[0]), 4), "b": round(float(w[1]), 4), "c": round(float(w[2]), 4),
-                      "se": [round(float(x), 4) for x in se], "n": len(rs), "took_power": int(y.sum())}
+        cols = [np.ones(len(rs)), [r["gap"] for r in rs], [r["c_strength"] for r in rs]]
+        if full:
+            cols += [[r["shared"] for r in rs], [r["committed"] for r in rs]]
+        w, se = logistic(np.column_stack(cols), y)
+        out[stage] = {k: round(float(v), 4) for k, v in zip("abcde", w)}
+        out[stage].update({"se": [round(float(x), 4) for x in se], "n": len(rs), "took_power": int(y.sum())})
     return out
 
 
@@ -108,9 +112,14 @@ def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     p.add_argument("set"); p.add_argument("--split", default="train"); p.add_argument("--n", type=int, default=600)
     p.add_argument("--winners", action="store_true"); p.add_argument("--write", action="store_true")
+    p.add_argument("--full", action="store_true", help="also fit whether the strong card keeps a colour of the top pair (d) and how settled the pool is (e)")
+    p.add_argument("--out", help="write here instead of companion/advisor_v2/branch_<SET>.json (alternatives to measure)")
+    p.add_argument("--v2", action="append", default=[], metavar="NAME=VALUE", help="engine overrides while collecting, as in tools/mock_draft.py")
     a = p.parse_args(argv)
+    from tools.mock_draft import apply_overrides
+    apply_overrides(a.v2)
     rows = collect(a.set, a.split, a.n, a.winners)
-    coefs = fit(rows)
+    coefs = fit(rows, a.full)
     order = ["0", "1-2", "3-5", "6-9", "10-14", "15-22", "23+"]
     print(f"{a.set} {a.split}{' winners' if a.winners else ''}: {len(rows)} picks where Power and Fit disagreed and the drafter took one of the two")
     print("stage    picks  took Power   gap needed if in-colour is weak / average / strong (GIH WR points)")
@@ -123,11 +132,13 @@ def main(argv=None):
             continue
         g = [gap_needed(c, s) for s in (-2.0, 0.0, 2.0)]
         print(f"{st:7s} {c['n']:6d}  {c['took_power']:5d}       " + " / ".join("-" if x is None else f"{x:+.1f}" for x in g) +
-              f"   (gap coef {c['b']:+.2f} ± {c['se'][1]:.2f}, in-colour coef {c['c']:+.2f} ± {c['se'][2]:.2f})")
+              f"   (gap coef {c['b']:+.2f} ± {c['se'][1]:.2f}, in-colour coef {c['c']:+.2f} ± {c['se'][2]:.2f}"
+              + (f", keeps a colour {c['d']:+.2f} ± {c['se'][3]:.2f}, settled {c['e']:+.2f} ± {c['se'][4]:.2f}" if "d" in c else "") + ")")
     if a.write:
-        out = Path(companion.__file__).parent / "advisor_v2" / f"branch_{a.set}.json"
+        out = Path(a.out) if a.out else Path(companion.__file__).parent / "advisor_v2" / f"branch_{a.set}.json"
         out.write_text(json.dumps({"set": a.set, "fitted_on": f"top{a.n}.{a.split}" + (" winners" if a.winners else ""),
-                                   "model": "P(take Power) = sigmoid(a + b*gap + c*c_strength), c_strength = power(C) - format mean",
+                                   "model": "P(take Power) = sigmoid(a + b*gap + c*c_strength" + (" + d*keeps_colour + e*settled" if a.full else "") + "), c_strength = power(C) - format mean",
+                                   "overrides": a.v2,
                                    "stages": coefs}, indent=1))
         print(f"wrote {out}")
 
