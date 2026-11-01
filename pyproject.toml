@@ -1,0 +1,28 @@
+[project]
+name = "mtga-draft-companion"
+version = "0.1.0"
+description = "Web UI and second pick advisor on top of MTGA_Draft_17Lands"
+requires-python = ">=3.12,<3.15"
+dependencies = [
+    # vendor runtime deps (pinned to vendor/mtga_draft_17lands/pyproject.toml, minus ttkbootstrap/pywin32)
+    "numpy==2.5.4",
+    "scipy==1.18.1",
+    "numba==0.68.1",
+    "pydantic==2.14.1",
+    "requests==2.34.2",
+    "Pillow==13.0.0",
+    # ours
+    "fastapi",
+    "uvicorn[standard]",
+]
+
+[dependency-groups]
+dev = ["pytest", "httpx"]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+norecursedirs = ["vendor", ".venv", "frontend", "node_modules"]
