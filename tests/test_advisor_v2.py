@@ -310,8 +310,8 @@ def test_wheel_penalty_and_tiebreak_reorder_the_split(world, monkeypatch):
 def test_colour_shift_lowers_only_that_colour(world, monkeypatch):
     metrics, cards = world
     blue, white = by_colors(cards, "U", 1)[0], by_colors(cards, "W", 1)[0]
-    before = DraftAdvisorV2(metrics, [])
+    adv = DraftAdvisorV2(metrics, [])
+    b0, w0 = adv.value(blue, "WU"), adv.value(white, "WU")
     monkeypatch.setattr(DraftAdvisorV2, "COLOUR_SHIFT", "U:2")
-    after = DraftAdvisorV2(metrics, [])
-    assert abs(before.value(blue, "WU") - after.value(blue, "WU") - 2.0) < 1e-6
-    assert before.value(white, "WU") == after.value(white, "WU")
+    assert abs(b0 - adv.value(blue, "WU") - 2.0) < 1e-6
+    assert adv.value(white, "WU") == w0
