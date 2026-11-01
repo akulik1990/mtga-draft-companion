@@ -84,3 +84,14 @@ def test_learnt_preference_switch(metrics, monkeypatch):
     monkeypatch.setattr(DraftAdvisorV2, "PREF_WEIGHT", 1.5)
     assert adv.order_prior("liked", 3) == 3.0
     assert adv.order_prior("Front // Back", 3) == 1.5  # double-faced names fall back to the front face
+
+
+def test_preferences_can_be_kept_out_of_fit(metrics, monkeypatch):
+    monkeypatch.setattr(DraftAdvisorV2, "ORDER_WEIGHT", 0.0)
+    monkeypatch.setattr(DraftAdvisorV2, "PREF_WEIGHT", 4.0)
+    c = card("liked", "{2}{U}", ["U"], 56.0)
+    adv = DraftAdvisorV2(metrics, blue_pool(6))
+    adv.prefs = {"liked": 2.0}
+    both = (adv.power(c, 3), adv.fit(c, 3))
+    monkeypatch.setattr(DraftAdvisorV2, "PREF_SCOPE", "power")
+    assert adv.power(c, 3) == both[0] and adv.fit(c, 3) < both[1]

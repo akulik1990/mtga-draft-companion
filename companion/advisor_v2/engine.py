@@ -137,11 +137,12 @@ class DraftAdvisorV2:
     BRANCH_FILE = ""  # override the fitted rule's file (measuring alternatives); "" = companion/advisor_v2/branch_<SET>.json
     BRANCH_DEFAULT = 3.0  # GIH WR points; used for stages with no fitted threshold (companion/advisor_v2/branch_<SET>.json)
     ORDER_FADE_BY = 0  # pick in the pack by which the pick-order prior has faded to 0; 0 = no fade
-    PREF_WEIGHT = 4.0  # WR points per SD of top drafters' learnt preference (tools/learn_prefs.py); 0 = off
-    PREF_ON_WEIGHT = 4.0  # what the app's switch sets PREF_WEIGHT to; the switch also swaps the pick-order prior out
+    PREF_WEIGHT = 2.0  # WR points per SD of top drafters' learnt preference (tools/learn_prefs.py); 0 = off
+    PREF_ON_WEIGHT = 2.0  # what the app's switch sets PREF_WEIGHT to; the switch also swaps the pick-order prior out
     ORDER_OFF_WEIGHT = 2.0  # pick-order prior the app's switch restores when learnt preferences are switched off
+    PREF_SCOPE = "both"  # where learnt preferences apply: "both" orders, or "power" only (Fit stays about your colours)
     PREF_SET = "early"  # which learnt strengths: "early" (pack 1 picks 1-5) or "all" (every pick)
-    ORDER_WEIGHT = 0.0  # replaced by learnt preferences (FRA test top-1 55.4 vs 54.6); 2.0 when they are off. WR points per SD of how early top players take the card (their ATA), × castability; 0 = off
+    ORDER_WEIGHT = 0.0  # replaced by learnt preferences (FRA test top-1 55.0 at weight 2); 2.0 when they are off. WR points per SD of how early top players take the card (their ATA), × castability; 0 = off
     TOP_WR = False  # rejected 2026-11-01 (FRA +0.1, TDM −0.7 top-drafter top-1). Use top players' win rates (the set's _Top dataset), shrunk toward all players' by sample size
     K_TOP = 300.0  # shrinkage for top-player rates: w = n_top / (n_top + K_TOP)
     LANDS = True  # round 2: lands exempt from the sparse prior; partial-overlap lands valued by the splashes they enable
@@ -344,12 +345,12 @@ class DraftAdvisorV2:
                 recs.insert(0, pick)
         return recs
 
-    def order_prior(self, name, pick):
+    def order_prior(self, name, pick, prefs=True):
         """Prior in WR points from what top players reach for: their average pick position (ORDER_WEIGHT)
         and, when switched on, the preference learnt from their choices (PREF_WEIGHT)."""
         fade = max(0.0, 1.0 - (pick - 1) / self.ORDER_FADE_BY) if self.ORDER_FADE_BY else 1.0
         out = self.ORDER_WEIGHT * self.order.get(name, 0.0) if self.ORDER_WEIGHT else 0.0
-        if self.PREF_WEIGHT:
+        if self.PREF_WEIGHT and prefs:
             out += self.PREF_WEIGHT * self.prefs.get(name, self.prefs.get(name.split(" // ")[0], 0.0))
         return out * fade
 
@@ -363,7 +364,7 @@ class DraftAdvisorV2:
         """How good the card is for the colours the pool points to: the candidate does not pull the lanes."""
         score = sum(p * self.value(card, lane) for lane, p in self.lanes.items())
         live = sum(p for lane, p in self.lanes.items() if castable(card, lane) or self.speculative(card, lane))
-        return score + self.order_prior(card.get("name", ""), pick) * live
+        return score + self.order_prior(card.get("name", ""), pick, prefs=self.PREF_SCOPE == "both") * live
 
     def _split(self, pack_cards, recs, pick, set_code):
         """Final order from the two orders: Fit, unless the strongest card beats the best fit by more than the learnt gap."""
