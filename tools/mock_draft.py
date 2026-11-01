@@ -208,6 +208,20 @@ def lane_score(pool):
     return best
 
 
+def pool_composition(pool):
+    """What the engine actually drafted: lands, gold cards, creatures, mean GIH WR of spells."""
+    from tools.results import card_kind
+
+    kinds = [card_kind(c) for c in pool]
+    spells = [c for c in pool if "Land" not in (c.get("types") or [])]
+    wrs = [float((c.get("deck_colors") or {}).get("All Decks", {}).get("gihwr") or 0) for c in spells]
+    wrs = [w for w in wrs if w > 0]
+    return {"lands": sum(k.endswith("land") for k in kinds), "dual_lands": kinds.count("dual land"),
+            "gold2": kinds.count("gold2"), "gold3": kinds.count("gold3"), "hybrid": kinds.count("hybrid"),
+            "creatures": sum("Creature" in (c.get("types") or []) for c in spells),
+            "spell_gihwr": round(statistics.mean(wrs), 2) if wrs else 0.0}
+
+
 def compare_table(set_code, seed, make_app, engines=ENGINES):
     row, logs = {"seed": seed}, {}
     for e in engines:
@@ -216,10 +230,12 @@ def compare_table(set_code, seed, make_app, engines=ENGINES):
         builds = app.build()
         best = builds[0] if builds else {}
         logs[e] = log
-        score, pair = lane_score(app.state()["pool"])
+        final_pool = app.state()["pool"]
+        score, pair = lane_score(final_pool)
         row[e] = {"rating": best.get("rating"), "lane_score": score, "lane_score_pair": pair, "deck_colours": "".join(best.get("colors", [])[:2]), "label": best.get("label"),
                   "lane_at": {f"P{p}P1": next(x["lane"][e] for x in log if (x["pack"], x["pick"]) == (p, 1)) for p in (2, 3)},
-                  "signals": [c for c in checks if c["engine"] == e], "picks": [x["took"] for x in log]}
+                  "signals": [c for c in checks if c["engine"] == e], "picks": [x["took"] for x in log],
+                  "pool": pool_composition(final_pool)}
         row[e]["lane_matches_deck"] = {k: sorted(v) == sorted(row[e]["deck_colours"]) for k, v in row[e]["lane_at"].items()}
         late = [x["lane"][e] for x in log if (x["pack"] - 1) * 14 + x["pick"] >= 9]
         row[e]["lane_changes"] = sum(1 for p, q in zip(late, late[1:]) if p and q and p != q)
@@ -282,6 +298,12 @@ def report(rows, engines=ENGINES):
     ]
     for e in engines:
         lines.append(f"| {e} | " + " | ".join(f"{sig(e, p, 'spearman')} | {sig(e, p, 'top_signal_open')}" for p in (1, 2, 3)) + " |")
+    comp_keys = ["lands", "dual_lands", "gold2", "gold3", "hybrid", "creatures", "spell_gihwr"]
+    if all("pool" in r[a] for r in rows):
+        lines += ["", "### What each engine drafted (mean per 42-pick pool)", "",
+                  "| engine | " + " | ".join(comp_keys) + " |", "|---|" + "---|" * len(comp_keys)]
+        for e in engines:
+            lines.append(f"| {e} | " + " | ".join(f"{statistics.mean(r[e]['pool'][k] for r in rows):.2f}" for k in comp_keys) + " |")
     lines += ["", "### Tables where the engines ended furthest apart", ""]
     for r in sorted(rows, key=lambda r: -abs((r[b]["rating"] or 0) - (r[a]["rating"] or 0)))[:8]:
         d = (r[b]["rating"] or 0) - (r[a]["rating"] or 0)

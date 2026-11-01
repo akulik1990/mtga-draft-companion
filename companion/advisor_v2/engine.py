@@ -42,7 +42,10 @@ class DraftAdvisorV2:
     REPLACEMENT_SD = 2.0  # V when not castable: mean − 2 SD
     N_SPARSE = 50  # fewer samples than this in a lane: the card is rarely played there
     SPARSE_SD = 0.5  # ...so shrink toward All Decks − SPARSE_SD × std instead of All Decks
-    SPLASH = 0.0  # off: measured only together with pips (contested). 0.85 = one off-colour pip with a fixer for it in the pool: shrunk WR × SPLASH
+    SPLASH = 0.85  # one off-colour pip with a fixer for it in the pool: shrunk WR × SPLASH (0 = off)
+    LANDS = True  # round 2: lands exempt from the sparse prior; partial-overlap lands valued by the splashes they enable
+    FIX_WEIGHT = 0.5  # share of each enabled splash's gain (over replacement) credited to the land
+    FIX_CAP = 3.0  # most a land's fixing can add, in WR points
     WHEEL_EPS = 0.3  # within this of the best score, prefer the card that wheels less
 
     def __init__(self, set_metrics, taken_cards, seen_packs=None):
@@ -86,7 +89,9 @@ class DraftAdvisorV2:
         n = int(row.get("samples") or 0)
         wr = float(row.get("gihwr") or 0.0)
         # 17Lands hides the win rate (0.0) when a card has too few games in a lane, even with samples > 0.
-        sparse = n < self.N_SPARSE or wr <= 0
+        # Lands are exempt: their per-lane rows are thin by nature, not because nobody plays them.
+        is_land = self.LANDS and "Land" in (card.get("types") or [])
+        sparse = not is_land and (n < self.N_SPARSE or wr <= 0)
         prior = base - self.SPARSE_SD * self.std if sparse else base
         if n <= 0 or wr <= 0:
             return prior, 0
@@ -102,7 +107,32 @@ class DraftAdvisorV2:
             return None
         return next((c for c in off[0] if self.fixing.get(c, 0) > 0), None)
 
+    def fixing_gain(self, land, lane):
+        """WR points a land adds in a lane by enabling one-pip splashes of pool spells (round 2, change 1).
+
+        For each colour the land makes that is outside the lane and has no source in the pool yet,
+        every pool spell needing exactly that one off-colour pip goes from replacement to a splash.
+        """
+        if self.SPLASH <= 0:
+            return 0.0
+        new = [c for c in land.get("colors") or [] if c not in lane and not self.fixing.get(c, 0)]
+        gain = 0.0
+        for spell in self.pool:
+            if "Land" in (spell.get("types") or []):
+                continue
+            off = off_pips(spell, lane)
+            if len(off) == 1 and any(c in off[0] for c in new):
+                gain += max(0.0, self.shrunk_wr(spell, lane)[0] * self.SPLASH - self.replacement)
+        return min(self.FIX_CAP, self.FIX_WEIGHT * gain)
+
     def value(self, card, lane):
+        if self.LANDS and "Land" in (card.get("types") or []):
+            colours = card.get("colors") or []
+            if not colours or all(c in lane for c in colours):
+                return self.shrunk_wr(card, lane)[0]  # colourless or on-lane: its own win rate
+            if any(c in lane for c in colours):
+                return self.replacement + self.fixing_gain(card, lane)  # taps for the lane and fixes a splash
+            return self.replacement
         if not castable(card, lane):
             if self.splash_colour(card, lane):
                 return max(self.replacement, self.shrunk_wr(card, lane)[0] * self.SPLASH)
@@ -133,7 +163,9 @@ class DraftAdvisorV2:
         for card in pack_cards:
             name = str(card.get("name", "")).strip()
             base = float(all_decks(card).get("gihwr") or 0.0)
-            if base <= 0 or "Land" in (card.get("types") or []) and not card.get("colors"):
+            types = card.get("types") or []
+            basic = "Basic" in types or name in constants.BASIC_LANDS or (not self.LANDS and "Land" in types and not card.get("colors"))
+            if base <= 0 or basic:
                 recs.append(self._rec(card, name, base, 0.0, (base - pack_mean) / pack_std, 0.0, 0.0,
                                       ["No data" if base <= 0 else "Basic land"]))
                 continue
@@ -184,6 +216,8 @@ class DraftAdvisorV2:
             wr, n = self.shrunk_wr(card, lane)
             if castable(card, lane):
                 out.append(f"{lane} {p:.0%} → {wr:.1f}" + (f" (n={n})" if n >= self.N_SPARSE else " (rarely played there)"))
+            elif self.LANDS and "Land" in (card.get("types") or []) and self.fixing_gain(card, lane) > 0:
+                out.append(f"{lane} {p:.0%} → fixes a splash (+{self.fixing_gain(card, lane):.1f})")
             elif self.splash_colour(card, lane):
                 c = self.splash_colour(card, lane)
                 out.append(f"{lane} {p:.0%} → splash {c} (fixing {self.fixing.get(c, 0)}) {self.value(card, lane):.1f}")

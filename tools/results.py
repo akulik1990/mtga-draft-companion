@@ -90,6 +90,8 @@ def mock_metrics(rows, engines=("upstream", "v2")):
             "lane_score": round(statistics.mean([r[e].get("lane_score") or 0 for r in rows]), 3),
             "lane_matches_deck": {k: rate(r[e]["lane_matches_deck"][k] for r in rows) for k in ("P2P1", "P3P1")},
             "lane_changes": round(statistics.mean(r[e].get("lane_changes", 0) for r in rows), 2),
+            "pool": ({k: round(statistics.mean(r[e]["pool"][k] for r in rows), 2) for k in rows[0][e]["pool"]}
+                     if all("pool" in r[e] for r in rows) else None),
             "open_colour": {f"P{p}": {"spearman": sig(e, p, "spearman"), "top_open": sig(e, p, "top_signal_open")} for p in (1, 2, 3)},
         }
     out["v2_minus_upstream"] = {
@@ -119,3 +121,84 @@ def harness_metrics(report_md):
     if m:
         out["top1_diff"] = {"points": float(m[1]), "se": float(m[2])}
     return out
+
+
+# ── card kinds: where an engine disagrees with good players ─────────────────
+
+KINDS = ("mono", "gold2", "gold3", "hybrid", "dual land", "other land", "colourless")
+
+
+def card_kind(card):
+    """mono / gold2 / gold3 / hybrid / dual land / other land / colourless, from types, colours and pips."""
+    from companion.advisor_v2.lanes import pips
+
+    types, colours = card.get("types") or [], card.get("colors") or []
+    if "Land" in types:
+        return "dual land" if len(colours) >= 2 else "other land"
+    if any(len(o) > 1 for o in pips(card)):
+        return "hybrid"
+    if len(colours) >= 3:
+        return "gold3"
+    if len(colours) == 2:
+        return "gold2"
+    return "mono" if colours else "colourless"
+
+
+def harness_by_kind(base_path, head_path, drafts_path, dataset_path):
+    """Strong drafters (60%+ over 50+ games, upstream's definition): top-1 and mean per-pick regret by card kind and by pack.
+
+    Regret is upstream's: (engine's top score − score of the card taken) / SD of the pack's scores.
+    """
+    import gzip
+    import statistics
+    from collections import defaultdict
+
+    base = json.loads(Path(base_path).read_text())["drafts"]
+    head = {d["id"]: d for d in json.loads(Path(head_path).read_text())["drafts"]}
+    with gzip.open(drafts_path, "rt", encoding="utf-8") as f:
+        drafts = {d["id"]: d for d in json.load(f)}
+    opener = gzip.open if str(dataset_path).endswith(".gz") else open
+    with opener(dataset_path, "rt", encoding="utf-8") as f:
+        ratings = json.load(f)["card_ratings"]
+    by_name = {}
+    for c in ratings.values():
+        by_name.setdefault(c["name"], c)
+        by_name.setdefault(c["name"].split(" // ")[0], c)
+
+    acc = defaultdict(lambda: {"n": 0, "base_top1": 0, "head_top1": 0, "base_regret": 0.0, "head_regret": 0.0})
+    for b in base:
+        d, h = drafts.get(b["id"]), head.get(b["id"])
+        if not d or not h or (d.get("skill") or 0) < 0.6 or (d.get("games") or 0) < 50:
+            continue
+        taken = {(p[0], p[1]): p[2] for p in d["picks"]}
+        hp = {(x[0], x[1]): x for x in h["picks"]}
+        for x in b["picks"]:
+            y = hp.get((x[0], x[1]))
+            if not y:
+                continue
+            kind = card_kind(by_name.get(taken.get((x[0], x[1]), ""), {}))
+            for key in (f"kind:{kind}", f"pack:{x[0]}"):
+                a = acc[key]
+                a["n"] += 1
+                a["base_top1"] += x[2] == 0
+                a["head_top1"] += y[2] == 0
+                a["base_regret"] += x[3]
+                a["head_regret"] += y[3]
+    out = {}
+    for key, a in acc.items():
+        n = a["n"]
+        out[key] = {"n": n, "base_top1": round(100 * a["base_top1"] / n, 1), "head_top1": round(100 * a["head_top1"] / n, 1),
+                    "base_regret": round(a["base_regret"] / n, 3), "head_regret": round(a["head_regret"] / n, 3)}
+    return out
+
+
+def by_kind_markdown(by_kind):
+    lines = ["## Strong drafters by card kind and pack", "",
+             "Top-1 % and mean per-pick regret (lower is closer to what the player took) for base (upstream) and head (v2).", "",
+             "| slice | picks | top-1 base | top-1 head | regret base | regret head |", "|---|---|---|---|---|---|"]
+    order = [f"kind:{k}" for k in KINDS] + [f"pack:{p}" for p in (1, 2, 3)]
+    for key in order:
+        if key in by_kind:
+            v = by_kind[key]
+            lines.append(f"| {key.split(':', 1)[1]} | {v['n']} | {v['base_top1']} | {v['head_top1']} | {v['base_regret']} | {v['head_regret']} |")
+    return "\n".join(lines)

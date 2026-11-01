@@ -182,10 +182,29 @@ def test_signal_variants_keep_a_dominant_colour(world, monkeypatch):
     assert abs(sum(centred.values())) < 1e-9 and centred["R"] > z["R"]
 
 
-def test_no_splash_reason_when_splash_is_off(world):
+def test_no_splash_reason_when_splash_is_off(world, monkeypatch):
+    monkeypatch.setattr(DraftAdvisorV2, "SPLASH", 0.0)
     metrics, _ = world
     stats = {"All Decks": {"gihwr": 60.0, "samples": 5000}}
     one_red = {"name": "one red", "mana_cost": "{3}{R}", "colors": ["R"], "types": ["Creature"], "deck_colors": stats}
     fixer = {"name": "fixer", "mana_cost": "", "colors": ["R", "W"], "types": ["Land"], "deck_colors": stats}
     adv = DraftAdvisorV2(metrics, [fixer])
     assert DraftAdvisorV2.SPLASH == 0.0 and adv.splash_colour(one_red, "WU") is None
+
+
+def test_lands_round2(world):
+    metrics, _ = world
+    stats = lambda wr: {"All Decks": {"gihwr": wr, "samples": 5000}}
+    spell = lambda name, cost, cols, wr: {"name": name, "mana_cost": cost, "colors": cols, "types": ["Creature"], "deck_colors": stats(wr)}
+    pool = [spell(f"w{i}", "{1}{W}", ["W"], 56.0) for i in range(6)] + [spell(f"u{i}", "{1}{U}", ["U"], 56.0) for i in range(6)]
+    pool.append(spell("bomb", "{3}{R}", ["R"], 62.0))  # one off-colour pip for WU
+    wr_dual = {"name": "WR dual", "colors": ["W", "R"], "types": ["Land"], "deck_colors": stats(55.0)}
+    gb_dual = {"name": "GB dual", "colors": ["G", "B"], "types": ["Land"], "deck_colors": stats(55.0)}
+    utility = {"name": "Utility", "colors": [], "types": ["Land"], "deck_colors": {"All Decks": {"gihwr": 55.0, "samples": 5000}}}
+    adv = DraftAdvisorV2(metrics, pool)
+    assert adv.fixing_gain(wr_dual, "WU") > 0  # unlocks the red bomb in WU
+    assert adv.value(wr_dual, "WU") > adv.replacement
+    assert adv.value(gb_dual, "WU") == adv.replacement
+    assert adv.shrunk_wr(utility, "WU") == (55.0, 0)  # lands skip the sparse prior
+    recs = {r.card_name: r for r in adv.evaluate_pack([utility, spell("x", "{2}", [], 50.0)], 20, 2)}
+    assert recs["Utility"].contextual_score > 0 and "Basic land" not in recs["Utility"].reasoning

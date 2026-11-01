@@ -4,7 +4,7 @@ import math
 import re
 
 LANES = ["WU", "WB", "WR", "WG", "UB", "UR", "UG", "BR", "BG", "RG"]
-USE_PIPS = False  # contested on FRA 2026-11-01 (lane score +0.18, upstream rating -2.8); see docs. Castability from mana-cost pips (hybrid aware); False = every colour of the card must be in the lane
+USE_PIPS = True  # round 2: on together with land fixing (it was contested alone in round 1). Castability from mana-cost pips (hybrid aware); False = every colour of the card must be in the lane
 ALL = "All Decks"
 
 

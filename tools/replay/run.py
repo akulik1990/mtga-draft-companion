@@ -130,11 +130,14 @@ def cmd_compare(a):
     buf = io.StringIO()
     with contextlib.redirect_stdout(buf):
         report.main(results)
-    md = buf.getvalue()
-    print(md)
     from tools import results as ledger
 
-    rec = ledger.record("harness", a.set, {"drafts": a.drafts, "salt": a.salt}, ledger.harness_metrics(md), md, a.note)
+    by_kind = ledger.harness_by_kind(results[0], results[1], drafts, dataset)
+    md = buf.getvalue().rstrip() + "\n\n" + ledger.by_kind_markdown(by_kind) + "\n"
+    print(md)
+    metrics = ledger.harness_metrics(md)
+    metrics["by_kind"] = by_kind
+    rec = ledger.record("harness", a.set, {"drafts": a.drafts, "salt": a.salt}, metrics, md, a.note)
     print(f"recorded in results/runs.jsonl as {rec['report']}")
 
 

@@ -60,3 +60,32 @@ def test_same_second_reports_do_not_collide(tmp_path, monkeypatch):
     a = results.record("mock", "FRA", {}, {}, "a", stamp=t, config={})
     b = results.record("mock", "FRA", {}, {}, "b", stamp=t, config={})
     assert a["report"] != b["report"] and (tmp_path / b["report"]).read_text() == "b\n"
+
+
+def test_card_kinds():
+    assert results.card_kind({"types": ["Land"], "colors": ["W", "U"]}) == "dual land"
+    assert results.card_kind({"types": ["Land"], "colors": []}) == "other land"
+    assert results.card_kind({"types": ["Creature"], "colors": ["W", "B"], "mana_cost": "{1}{W/B}"}) == "hybrid"
+    assert results.card_kind({"types": ["Creature"], "colors": ["W", "B", "R"], "mana_cost": "{W}{B}{R}"}) == "gold3"
+    assert results.card_kind({"types": ["Instant"], "colors": ["U", "R"], "mana_cost": "{U}{R}"}) == "gold2"
+    assert results.card_kind({"types": ["Artifact"], "colors": [], "mana_cost": "{3}"}) == "colourless"
+
+
+def test_harness_by_kind_counts_strong_drafters_only(tmp_path):
+    import gzip
+
+    cards = {"1": {"name": "A", "types": ["Creature"], "colors": ["W"], "mana_cost": "{W}"},
+             "2": {"name": "L", "types": ["Land"], "colors": ["W", "U"]}}
+    (tmp_path / "set.json").write_text(json.dumps({"card_ratings": cards}))
+    drafts = [{"id": "s", "skill": 0.62, "games": 80, "picks": [[1, 1, "A", ["A", "L"], []], [1, 2, "L", ["L"], ["A"]]]},
+              {"id": "w", "skill": 0.50, "games": 80, "picks": [[1, 1, "A", ["A", "L"], []]]}]
+    with gzip.open(tmp_path / "d.json.gz", "wt") as f:
+        json.dump(drafts, f)
+    base = {"drafts": [{"id": "s", "picks": [[1, 1, 0, 0.0, 0], [1, 2, 0, 0.0, 0]]}, {"id": "w", "picks": [[1, 1, 0, 0.0, 0]]}]}
+    head = {"drafts": [{"id": "s", "picks": [[1, 1, 1, 1.5, 0], [1, 2, 0, 0.0, 0]]}, {"id": "w", "picks": [[1, 1, 1, 2.0, 0]]}]}
+    (tmp_path / "b.json").write_text(json.dumps(base))
+    (tmp_path / "h.json").write_text(json.dumps(head))
+    out = results.harness_by_kind(tmp_path / "b.json", tmp_path / "h.json", tmp_path / "d.json.gz", tmp_path / "set.json")
+    assert out["kind:mono"] == {"n": 1, "base_top1": 100.0, "head_top1": 0.0, "base_regret": 0.0, "head_regret": 1.5}
+    assert out["kind:dual land"]["n"] == 1 and out["pack:1"]["n"] == 2
+    assert "| mono | 1 |" in results.by_kind_markdown(out)
