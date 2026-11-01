@@ -95,6 +95,7 @@ def test_pips_hybrid_and_splash(world, monkeypatch):
 
     monkeypatch.setattr(lanes, "USE_PIPS", True)
     monkeypatch.setattr(DraftAdvisorV2, "SPLASH", 0.85)
+    monkeypatch.setattr(DraftAdvisorV2, "SPEC_SPLASH", 0.0)  # this test is about splashing with fixing only
 
     hybrid = {"name": "h", "mana_cost": "{1}{W/U}", "colors": ["W", "U"], "types": ["Creature"]}
     assert pips(hybrid) == [["W", "U"]]
@@ -220,3 +221,28 @@ def test_signals_read_the_neighbour_passing_now(world):
     assert max(adv.signal_sides["right"], key=adv.signal_sides["right"].get) == "R"
     adv3 = DraftAdvisorV2(metrics, [], seen_packs=seen + [(3, 6, red[2:])])
     assert adv3.signal_side == "right" and max(adv3.signals, key=adv3.signals.get) == "R"
+
+
+def test_top_player_rates_shift_and_shrink(world, monkeypatch):
+    metrics, _ = world
+    monkeypatch.setattr(DraftAdvisorV2, "TOP_WR", True)
+    adv = DraftAdvisorV2(metrics, [])
+    card = {"name": "c", "colors": ["W"], "types": ["Creature"],
+            "deck_colors": {"All Decks": {"gihwr": 55.0, "samples": 9000}, "WU": {"gihwr": 56.0, "samples": 9000}}}
+    adv.top = {"c": {"deck_colors": {"All Decks": {"gihwr": 64.0, "samples": 300}, "WU": {"gihwr": 63.0, "samples": 300}}}}
+    adv.top_shift = 5.0
+    # WU: top 63 - shift 5 = 58, half weight (300 / (300 + 300)) toward 56 -> 57; then the usual shrink toward the base
+    assert adv._toward_top(card, "WU", 56.0) == 57.0
+    assert adv._toward_top(card, "All Decks", 55.0) == 57.0
+    assert adv._toward_top({"name": "unknown"}, "WU", 56.0) == 56.0
+
+
+def test_three_colour_bomb_is_live_on_an_empty_pool(world):
+    metrics, cards = world
+    bomb = {"name": "bomb", "mana_cost": "{1}{W}{U}{R}", "colors": ["W", "U", "R"], "types": ["Sorcery"],
+            "deck_colors": {"All Decks": {"gihwr": 68.0, "samples": 9000}}}
+    filler = by_colors(cards, "W", 3, 50)
+    recs = DraftAdvisorV2(metrics, []).evaluate_pack([bomb] + filler, 1, 1)
+    assert recs[0].card_name == "bomb"  # early, the missing colour is a splash to find later
+    late = DraftAdvisorV2(metrics, by_colors(cards, "G", 10, 50) + by_colors(cards, "B", 10, 50))
+    assert late.progress == 1 and late.value(bomb, "BG") == late.replacement  # committed and two pips off: dead

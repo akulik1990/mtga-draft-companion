@@ -89,3 +89,27 @@ def test_harness_by_kind_counts_strong_drafters_only(tmp_path):
     assert out["kind:mono"] == {"n": 1, "base_top1": 100.0, "head_top1": 0.0, "base_regret": 0.0, "head_regret": 1.5}
     assert out["kind:dual land"]["n"] == 1 and out["pack:1"]["n"] == 2
     assert "| mono | 1 |" in results.by_kind_markdown(out)
+
+
+def test_top_drafter_metrics_split_by_outcome(tmp_path):
+    import gzip
+
+    # two winning top drafters the engine agrees with, two losing ones it does not, one weak player ignored
+    meta = [{"id": f"w{i}", "skill": 0.64, "games": 100, "wins": 7, "losses": 1} for i in range(2)] + \
+           [{"id": f"l{i}", "skill": 0.62, "games": 100, "wins": 1, "losses": 3} for i in range(2)] + \
+           [{"id": "weak", "skill": 0.48, "games": 100, "wins": 0, "losses": 3}]
+    with gzip.open(tmp_path / "d.json.gz", "wt") as f:
+        json.dump(meta, f)
+    run = {"drafts": [{"id": f"w{i}", "picks": [[1, k, 0, 0.0, 0] for k in range(1, 5)]} for i in range(2)] +
+                     [{"id": f"l{i}", "picks": [[1, k, 2, 1.0, 0] for k in range(1, 5)]} for i in range(2)] +
+                     [{"id": "weak", "picks": [[1, 1, 0, 0.0, 0]]}]}
+    (tmp_path / "r.json").write_text(json.dumps(run))
+    m = results.top_drafter_metrics(tmp_path / "r.json", tmp_path / "d.json.gz", boot=50)
+    assert m["drafts"] == 4 and m["picks"] == 16
+    assert m["top1"] == 50.0 and m["top3"] == 100.0
+    assert m["by_outcome"]["win"]["top1"] == 100.0 and m["by_outcome"]["lose"]["top1"] == 0.0
+    assert m["outcome_lift"] == 100.0
+    assert m["weighted_top1"] == round(100 * (8 * 8) / (8 * 8 + 8 * 2), 2)
+    md = results.top_markdown("OTJ", "train", {"v2": m, "upstream_ref": m})
+    assert "outcome lift" in md and "| top-3 % | 100.0 | 100.0 |" in md
+    assert m["by_stage"]["P1 early"]["picks"] == 16 and m["by_stage"]["P1 early"]["top1_winners"] == 100.0

@@ -202,3 +202,104 @@ def by_kind_markdown(by_kind):
             v = by_kind[key]
             lines.append(f"| {key.split(':', 1)[1]} | {v['n']} | {v['base_top1']} | {v['head_top1']} | {v['base_regret']} | {v['head_regret']} |")
     return "\n".join(lines)
+
+
+# ── top drafters: agreement and outcome lift (the main measure since the retarget) ──
+
+OUTCOME_BUCKETS = {"lose": (0, 2), "mid": (3, 4), "win": (5, 7)}
+
+
+def top_drafter_metrics(run_path, drafts_path, boot=500, seed=0):
+    from collections import defaultdict
+
+    """One engine's replay of a top-drafter sample, scored against what those drafters took.
+
+    top1/top3: share of picks where the engine's first / first three choices include the card taken.
+    by_outcome: top1 split by the drafter's event result (0-2, 3-4, 5-7 wins).
+    outcome_lift: top1 in 5-7 win events minus top1 in 0-2 win events, bootstrap SE over drafts.
+      Positive: the engine sides with picks that went with winning, away from ones that went with losing.
+    weighted_top1: top1 with each pick weighted by its event's wins + 1.
+    regret_slope: event wins per +1 SD of the draft's mean per-pick regret (finished events, controls for
+      skill and games buckets); more negative means straying from the engine's pick cost wins.
+    """
+    import gzip
+
+    import numpy as np
+
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "vendor" / "mtga_draft_17lands" / "Tools" / "AdvisorReplay"))
+    import report as up_report
+
+    with gzip.open(drafts_path, "rt", encoding="utf-8") as f:
+        info = {d["id"]: d for d in json.load(f)}
+    run = json.loads(Path(run_path).read_text())["drafts"]
+    stage = defaultdict(lambda: [0, 0, 0, 0])  # (pack, early|late) -> [hits1, picks, hits1 in 5-7 win events, picks in 5-7 win events]
+    rows = []  # per draft: (hits1, hits3, picks, wins, mean regret, finished, draft)
+    for d in run:
+        meta = info.get(d["id"])
+        if not meta or not d["picks"] or (meta.get("skill") or 0) < 0.60 or (meta.get("games") or 0) < 50:
+            continue
+        for p in d["picks"]:
+            for key in (f"P{p[0]}", f"P{p[0]} {'early' if p[1] <= 5 else 'late'}"):
+                st = stage[key]
+                st[0] += p[2] == 0
+                st[1] += 1
+                if (meta.get("wins") or 0) >= 5:
+                    st[2] += p[2] == 0
+                    st[3] += 1
+        ranks = [p[2] for p in d["picks"]]
+        rows.append((sum(r == 0 for r in ranks), sum(r < 3 for r in ranks), len(ranks), meta.get("wins") or 0,
+                     float(np.mean([p[3] for p in d["picks"]])), meta.get("wins") == 7 or meta.get("losses") == 3, meta))
+    if not rows:
+        return {}
+    h1 = np.array([r[0] for r in rows], float); h3 = np.array([r[1] for r in rows], float)
+    n = np.array([r[2] for r in rows], float); w = np.array([r[3] for r in rows], float)
+
+    def top1(idx):
+        return 100 * h1[idx].sum() / n[idx].sum() if n[idx].sum() else float("nan")
+
+    def bucket(name, idx=None):
+        idx = np.arange(len(rows)) if idx is None else idx
+        lo, hi = OUTCOME_BUCKETS[name]
+        return idx[(w[idx] >= lo) & (w[idx] <= hi)]
+
+    def lift(idx):
+        return top1(bucket("win", idx)) - top1(bucket("lose", idx))
+
+    rng = np.random.default_rng(seed)
+    lifts = [lift(rng.integers(0, len(rows), len(rows))) for _ in range(boot)]
+    every = np.arange(len(rows))
+    out = {
+        "drafts": len(rows), "picks": int(n.sum()),
+        "top1": round(top1(every), 2), "top3": round(100 * h3.sum() / n.sum(), 2),
+        "top1_se": round(float(np.std([top1(rng.integers(0, len(rows), len(rows))) for _ in range(boot)])), 2),
+        "by_outcome": {k: {"drafts": int(len(bucket(k))), "top1": round(top1(bucket(k)), 2)} for k in OUTCOME_BUCKETS},
+        "outcome_lift": round(lift(every), 2), "outcome_lift_se": round(float(np.nanstd(lifts)), 2),
+        "weighted_top1": round(100 * float((h1 * (w + 1)).sum() / (n * (w + 1)).sum()), 2),
+        "mean_regret": round(float(np.average([r[4] for r in rows], weights=n)), 3),
+        "by_stage": {k: {"picks": v[1], "top1": round(100 * v[0] / v[1], 2) if v[1] else None,
+                         "top1_winners": round(100 * v[2] / v[3], 2) if v[3] else None} for k, v in sorted(stage.items())},
+    }
+    done = [r for r in rows if r[5]]
+    if len(done) > 20:
+        ctrl = up_report.controls([r[6] for r in done], ["x"] * len(done))
+        out["regret_slope"] = round(float(up_report.wins_slope(np.array([r[4] for r in done]), np.array([r[3] for r in done], float), ctrl)), 3)
+    return out
+
+
+def top_markdown(set_code, split, metrics):
+    v, u = metrics["v2"], metrics["upstream_ref"]
+    rows = [("top-1 % (SE)", f"{v['top1']} ({v['top1_se']})", f"{u['top1']}"), ("top-3 %", v["top3"], u["top3"]),
+            ("top-1 in 5-7 win events", v["by_outcome"]["win"]["top1"], u["by_outcome"]["win"]["top1"]),
+            ("top-1 in 3-4 win events", v["by_outcome"]["mid"]["top1"], u["by_outcome"]["mid"]["top1"]),
+            ("top-1 in 0-2 win events", v["by_outcome"]["lose"]["top1"], u["by_outcome"]["lose"]["top1"]),
+            ("outcome lift (SE)", f"{v['outcome_lift']:+} ({v['outcome_lift_se']})", f"{u['outcome_lift']:+}"),
+            ("wins-weighted top-1 %", v["weighted_top1"], u["weighted_top1"]),
+            ("mean per-pick regret", v["mean_regret"], u["mean_regret"]),
+            ("regret slope (more negative is better)", v.get("regret_slope"), u.get("regret_slope"))]
+    stages = [k for k in v.get("by_stage", {}) if " " in k]
+    stage_rows = ["", "By pack and stage (picks 1-5 early, 6+ late): top-1 % with all top drafters / with those who went 5-7", "",
+                  "| stage | v2 | upstream (ref) |", "|---|---|---|"] + [
+        f"| {k} | {v['by_stage'][k]['top1']} / {v['by_stage'][k]['top1_winners']} | {u['by_stage'].get(k, {}).get('top1')} / {u['by_stage'].get(k, {}).get('top1_winners')} |" for k in stages]
+    return "\n".join([f"## Top drafters, {set_code} {split} sample ({v['drafts']} drafts, {v['picks']} picks)", "",
+                      "Agreement with top drafters (60%+ over 50+ games) and with the ones whose events went well. Upstream is a reference, not the target.", "",
+                      "| measure | v2 | upstream (ref) |", "|---|---|---|"] + [f"| {a} | {b} | {c} |" for a, b, c in rows] + stage_rows)

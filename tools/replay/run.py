@@ -5,7 +5,12 @@
     uv run python tools/replay/run.py replay --advisor v2 --drafts D.json.gz --dataset S.json --label head --out r.json
     uv run python tools/replay/run.py report results/*.json
 
-`compare` is the gate for scorer changes: it samples drafts (downloading the
+    uv run python tools/replay/run.py sample-top FRA --n 600          # top drafters only, disjoint train/test samples
+    uv run python tools/replay/run.py top FRA --split train [--v2 K=500] [--note ...]   # v2 only, ~30 s
+
+`top` is the main measure since the retarget (CLAUDE.md, Validation): v2's agreement with top
+drafters (60%+ over 50+ games) and its outcome lift, on a fixed top-drafter sample, with
+upstream's numbers as a cached reference. `compare` is the older random-sample comparison: it samples drafts (downloading the
 17Lands dump once into <data>/Temp/replay/), replays them through upstream's
 advisor as "base" and ours as "head", and prints upstream's report. Vendor code
 is used as-is; only the advisor class is swapped.
@@ -14,6 +19,7 @@ is used as-is; only the advisor class is swapped.
 import argparse
 import contextlib
 import io
+import os
 import sys
 from pathlib import Path
 
@@ -107,6 +113,95 @@ def cmd_sample(a):
     return out
 
 
+# ── top-drafter samples ──────────────────────────────────────────────────────
+
+TOP_SKILL, TOP_GAMES = 0.60, 50  # upstream's "strong drafter": 60%+ game win rate over 50+ games
+
+
+def top_dump(set_code):
+    """The set's dump cut down to drafts by top drafters, cached as ...PremierDraft.top.csv.gz."""
+    import csv
+    import gzip
+
+    src = fetch(DUMP_URL.format(set=set_code), CACHE / f"draft_data_public.{set_code}.PremierDraft.csv.gz")
+    out = CACHE / f"draft_data_public.{set_code}.PremierDraft.top.csv.gz"
+    if out.exists():
+        return out
+    tmp = out.with_suffix(".tmp")
+    with gzip.open(src, "rt", newline="", encoding="utf-8") as fi, gzip.open(tmp, "wt", newline="", encoding="utf-8") as fo:
+        reader, writer = csv.reader(fi), csv.writer(fo)
+        header = next(reader)
+        col = {h: i for i, h in enumerate(header)}
+        if "user_game_win_rate_bucket" not in col:
+            raise SystemExit(f"{set_code}'s dump has no skill buckets; top-drafter samples need them")
+        writer.writerow(header)
+        skill, games = col["user_game_win_rate_bucket"], col["user_n_games_bucket"]
+        kept = 0
+        for row in reader:
+            try:
+                if float(row[skill] or 0) >= TOP_SKILL and float(row[games] or 0) >= TOP_GAMES:
+                    writer.writerow(row)
+                    kept += 1
+            except ValueError:
+                continue
+    tmp.rename(out)
+    print(f"kept {kept} pick rows from top drafters")
+    return out
+
+
+def top_sample_paths(set_code, n):
+    return {split: CACHE / f"{set_code}.top{n}.{split}.drafts.json.gz" for split in ("train", "test")}
+
+
+def cmd_sample_top(a):
+    """2n top-drafter drafts sampled with a fixed salt, split alternately into disjoint train and test sets."""
+    import gzip
+    import json
+
+    paths = top_sample_paths(a.set, a.n)
+    if all(p.exists() for p in paths.values()):
+        return paths
+    with gzip.open(top_dump(a.set), "rt", newline="", encoding="utf-8") as f:
+        drafts = sample.sample_drafts(f, 2 * a.n, "top")
+    for i, split in enumerate(("train", "test")):
+        with gzip.open(paths[split], "wt", encoding="utf-8") as f:
+            json.dump(drafts[i::2], f)
+        print(f"{split}: {len(drafts[i::2])} top-drafter drafts -> {paths[split].name}")
+    return paths
+
+
+def replay_one(set_code, drafts, advisor, out):
+    use_advisor(advisor)
+    replay.main(["--src", str(VENDOR), "--drafts", str(drafts), "--dataset", str(dataset_path(set_code)),
+                 "--set", set_code, "--label", "base" if advisor == "upstream" else "head", "--out", str(out)])
+    return out
+
+
+def cmd_top(a):
+    """v2 on a top-drafter sample; upstream's replay of the same sample is cached and shown as ref."""
+    from tools import results as ledger
+    from tools.mock_draft import apply_overrides
+
+    apply_overrides(a.v2)
+    drafts = top_sample_paths(a.set, a.n)[a.split]
+    if not drafts.exists():
+        cmd_sample_top(a)
+    dataset = dataset_path(a.set)
+    base = CACHE / f"{a.set}.top{a.n}.{a.split}.base.json"
+    if not base_is_current(base, drafts, dataset):
+        replay_one(a.set, drafts, "upstream", base)
+        base.with_suffix(".key").write_text(base_key(drafts, dataset))
+    head = replay_one(a.set, drafts, "v2", CACHE / f"{a.set}.top{a.n}.{a.split}.head.{os.getpid()}.json")
+    metrics = {"v2": ledger.top_drafter_metrics(head, drafts), "upstream_ref": ledger.top_drafter_metrics(base, drafts)}
+    head.unlink()
+    md = ledger.top_markdown(a.set, a.split, metrics)
+    print(md)
+    if not a.no_record:
+        rec = ledger.record("top", a.set, {"split": a.split, "n": a.n}, metrics, md, a.note)
+        print(f"recorded in results/runs.jsonl as {rec['report']}")
+    return metrics
+
+
 def cmd_replay(a):
     use_advisor(a.advisor)
     here = lambda p: str(LAUNCH_DIR / p)  # the package chdirs into the data dir
@@ -177,6 +272,11 @@ def main(argv=None):
     c.add_argument("--v2", action="append", default=[], metavar="NAME=VALUE", help="override a v2 constant or module.SWITCH, as in tools/mock_draft.py")
     c.add_argument("--no-cache", action="store_true", help="replay upstream again instead of reusing its saved replay of this sample")
     c.set_defaults(fn=cmd_compare)
+    st = sub.add_parser("sample-top"); st.add_argument("set"); st.add_argument("--n", type=int, default=600); st.set_defaults(fn=cmd_sample_top)
+    t = sub.add_parser("top"); t.add_argument("set"); t.add_argument("--split", choices=("train", "test"), default="train")
+    t.add_argument("--n", type=int, default=600); t.add_argument("--note", default="")
+    t.add_argument("--v2", action="append", default=[], metavar="NAME=VALUE"); t.add_argument("--no-record", action="store_true", help="tuning runs: print only")
+    t.set_defaults(fn=cmd_top)
     rp = sub.add_parser("report"); rp.add_argument("results", nargs="+"); rp.set_defaults(fn=lambda a: report.main(a.results))
     a = p.parse_args(argv)
     a.fn(a)

@@ -27,6 +27,32 @@ from companion.advisor_v2.signals import colour_signals, side_for_pack, side_sig
 
 
 @lru_cache(maxsize=8)
+def top_ratings(set_code):
+    """({card name: card} from the set's top-player dataset, shift), or ({}, 0) when there is none.
+
+    Top players win more, so their rates run higher; shift is the mean gap on All Decks GIH WR,
+    subtracted so top-player rates sit on the same scale as everything else in the engine.
+    """
+    import json
+    from pathlib import Path
+
+    top_path = Path(constants.SETS_FOLDER) / f"{set_code}_PremierDraft_Top_Data.json"
+    all_path = Path(constants.SETS_FOLDER) / f"{set_code}_PremierDraft_All_Data.json"
+    if not top_path.exists() or not all_path.exists():
+        return {}, 0.0
+    top = json.loads(top_path.read_text()).get("card_ratings") or {}
+    every = json.loads(all_path.read_text()).get("card_ratings") or {}
+    gaps, by_name = [], {}
+    for key, card in top.items():
+        by_name.setdefault(card.get("name"), card)
+        t = float(all_decks(card).get("gihwr") or 0.0)
+        a = float(all_decks(every.get(key) or {}).get("gihwr") or 0.0)
+        if t > 0 and a > 0:
+            gaps.append(t - a)
+    return (by_name, statistics.mean(gaps)) if gaps else ({}, 0.0)
+
+
+@lru_cache(maxsize=8)
 def tables(set_code):
     """Per-set typical-deck and synergy tables, if tools/synergy/build.py has produced them."""
     return composition.load(set_code, constants.TEMP_FOLDER), synergy.load(set_code, constants.TEMP_FOLDER)
@@ -44,6 +70,10 @@ class DraftAdvisorV2:
     N_SPARSE = 50  # fewer samples than this in a lane: the card is rarely played there
     SPARSE_SD = 0.5  # ...so shrink toward All Decks − SPARSE_SD × std instead of All Decks
     SPLASH = 0.85  # one off-colour pip with a fixer for it in the pool: shrunk WR × SPLASH (0 = off)
+    SPEC_SPLASH = 1.0  # early-draft splash before any fixing exists: shrunk WR × SPEC_SPLASH × (1 − commitment progress); 0 = off
+    SPEC_ALL = False  # False: only cards castable in no two-colour lane (three-colour cards) get it; True: any card one pip off
+    TOP_WR = False  # rejected 2026-11-01 (FRA +0.1, TDM −0.7 top-drafter top-1). Use top players' win rates (the set's _Top dataset), shrunk toward all players' by sample size
+    K_TOP = 300.0  # shrinkage for top-player rates: w = n_top / (n_top + K_TOP)
     LANDS = True  # round 2: lands exempt from the sparse prior; partial-overlap lands valued by the splashes they enable
     FIX_WEIGHT = 0.5  # share of each enabled splash's gain (over replacement) credited to the land
     FIX_CAP = 3.0  # most a land's fixing can add, in WR points
@@ -77,12 +107,14 @@ class DraftAdvisorV2:
         self.fixing = count_fixing(self.pool) if self.pool else {}
         spells = sum(1 for c in self.pool if "Land" not in (c.get("types") or []))
         progress = min(1.0, spells / self.COMMIT_BY) if self.COMMIT_BY > 0 else 0.0
+        self.progress = progress
         self.steer = self.STEER * (1.0 - progress)  # the candidate's pull fades as the pool becomes a deck
         self.alpha = self.ALPHA + (self.ALPHA_LATE - self.ALPHA) * progress
         self.commit = commitment(self.pool, self.mean, self.std)
         self.lanes = self._lanes(self.commit)  # pool only; what the Analyst shows
         set_code = next((c.get("set") for c in self.pool if c.get("set")), None)
         self.typical, self.synergy = tables(set_code) if set_code else ({}, {})
+        self.top, self.top_shift = top_ratings(set_code) if set_code and self.TOP_WR else ({}, 0.0)
         self.composition = composition.Composition(self.typical, self.pool)
 
     def _lanes(self, commit):
@@ -99,6 +131,8 @@ class DraftAdvisorV2:
         row = (card.get("deck_colors") or {}).get(lane) or {}
         n = int(row.get("samples") or 0)
         wr = float(row.get("gihwr") or 0.0)
+        if self.TOP_WR and self.top:
+            base, wr = self._toward_top(card, ALL, base), self._toward_top(card, lane, wr)
         # 17Lands hides the win rate (0.0) when a card has too few games in a lane, even with samples > 0.
         # Lands are exempt: their per-lane rows are thin by nature, not because nobody plays them.
         is_land = self.LANDS and "Land" in (card.get("types") or [])
@@ -108,6 +142,26 @@ class DraftAdvisorV2:
             return prior, 0
         w = n / (n + self.K)
         return w * wr + (1 - w) * prior, n
+
+    def _toward_top(self, card, lane, value):
+        """value moved toward the top-player rate for this card and lane, by the top sample size."""
+        top_card = self.top.get(card.get("name"))
+        row = ((top_card or {}).get("deck_colors") or {}).get(lane) or {}
+        t, n = float(row.get("gihwr") or 0.0), int(row.get("samples") or 0)
+        if t <= 0 or n <= 0 or value <= 0:
+            return value
+        w = n / (n + self.K_TOP)
+        return w * (t - self.top_shift) + (1 - w) * value
+
+    def speculative(self, card, lane):
+        """Early draft: is this lane a live splash for the card even with no fixing yet?
+
+        Narrow by default: only cards no two-colour lane can cast (three-colour cards), so a
+        mono-colour card keeps pulling v2 into its own colours early (round 1's main gain).
+        """
+        if self.SPEC_SPLASH <= 0 or self.progress >= 1 or len(off_pips(card, lane)) != 1:
+            return False
+        return self.SPEC_ALL or not any(castable(card, other) for other in LANES)
 
     def splash_colour(self, card, lane):
         """The colour a one-pip splash needs, when splashing is on and the pool has a fixer for it; else None."""
@@ -147,6 +201,9 @@ class DraftAdvisorV2:
         if not castable(card, lane):
             if self.splash_colour(card, lane):
                 return max(self.replacement, self.shrunk_wr(card, lane)[0] * self.SPLASH)
+            if self.speculative(card, lane):
+                # Early on, a card one pip off a lane is still a live splash: top drafters take the bomb and find the fixing later.
+                return max(self.replacement, self.shrunk_wr(card, lane)[0] * self.SPEC_SPLASH * (1 - self.progress))
             return self.replacement
         v = self.shrunk_wr(card, lane)[0] * self.composition.multiplier(card, lane)
         if synergy.ENABLED:
@@ -168,6 +225,8 @@ class DraftAdvisorV2:
             set_code = next((c.get("set") for c in pack_cards if c.get("set")), None)
             if set_code:
                 self.typical, self.synergy = tables(set_code)
+                if self.TOP_WR and not self.top:
+                    self.top, self.top_shift = top_ratings(set_code)
                 self.composition = composition.Composition(self.typical, self.pool)
 
         recs = []
@@ -183,7 +242,8 @@ class DraftAdvisorV2:
             q = quality(card, self.mean, self.std)
             commit = dict(self.commit)
             for lane in LANES:
-                if castable(card, lane):
+                # The candidate pulls toward lanes where it is castable, and early on also where it is one pip off (a live splash).
+                if castable(card, lane) or self.speculative(card, lane):
                     commit[lane] += self.steer * q
             lanes = self._lanes(commit)
             score = sum(p * self.value(card, lane) for lane, p in lanes.items())
