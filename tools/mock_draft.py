@@ -252,6 +252,26 @@ def upstream_cache_dir(set_code):
     return DATA_DIR / "Temp" / "sim" / "upstream-cache" / f"{set_code}-{key}"
 
 
+_DECK_MODELS = {}
+
+
+def deck_win_rate(set_code, build):
+    """The built deck's predicted game win rate for an average player (tools/deck_model.py), or None."""
+    from tools.deck_model import DeckModel
+
+    if set_code not in _DECK_MODELS:
+        try:
+            _DECK_MODELS[set_code] = DeckModel(set_code)
+        except FileNotFoundError:
+            _DECK_MODELS[set_code] = None
+    model = _DECK_MODELS[set_code]
+    if not model or not build or not build.get("deck"):
+        return None
+    counts = {c["name"]: c.get("count", 1) for c in build["deck"]}
+    colours = build.get("colors") or []
+    return round(float(model.win_rate(counts, "".join(colours[:2]), "".join(colours[2:]))), 3)
+
+
 def compare_table(set_code, seed, make_app, engines=ENGINES):
     row, logs = {"seed": seed}, {}
     cache = upstream_cache_dir(set_code) / f"{seed}.json" if USE_UPSTREAM_CACHE and "upstream" in engines else None
@@ -267,7 +287,8 @@ def compare_table(set_code, seed, make_app, engines=ENGINES):
         logs[e] = log
         final_pool = app.state()["pool"]
         score, pair = lane_score(final_pool)
-        row[e] = {"rating": best.get("rating"), "lane_score": score, "lane_score_pair": pair, "deck_colours": "".join(best.get("colors", [])[:2]), "label": best.get("label"),
+        row[e] = {"rating": best.get("rating"), "lane_score": score, "lane_score_pair": pair, "deck_wr": deck_win_rate(set_code, best),
+                  "deck": {c["name"]: c.get("count", 1) for c in best.get("deck", [])}, "deck_colours": "".join(best.get("colors", [])[:2]), "label": best.get("label"),
                   "lane_at": {f"P{p}P1": next(x["lane"][e] for x in log if (x["pack"], x["pick"]) == (p, 1)) for p in (2, 3)},
                   "signals": [c for c in checks if c["engine"] == e], "picks": [x["took"] for x in log],
                   "pool": pool_composition(final_pool)}

@@ -137,12 +137,12 @@ class DraftAdvisorV2:
     BRANCH_FILE = ""  # override the fitted rule's file (measuring alternatives); "" = companion/advisor_v2/branch_<SET>.json
     BRANCH_DEFAULT = 3.0  # GIH WR points; used for stages with no fitted threshold (companion/advisor_v2/branch_<SET>.json)
     ORDER_FADE_BY = 0  # pick in the pack by which the pick-order prior has faded to 0; 0 = no fade
-    PREF_WEIGHT = 2.0  # WR points per SD of top drafters' learnt preference (tools/learn_prefs.py); 0 = off
-    PREF_ON_WEIGHT = 2.0  # what the app's switch sets PREF_WEIGHT to; the switch also swaps the pick-order prior out
+    PREF_WEIGHT = 4.0  # WR points per SD of top drafters' learnt preference (tools/learn_prefs.py); 0 = off
+    PREF_ON_WEIGHT = 4.0  # what the app's switch sets PREF_WEIGHT to; the switch also swaps the pick-order prior out
     ORDER_OFF_WEIGHT = 2.0  # pick-order prior the app's switch restores when learnt preferences are switched off
     PREF_SCOPE = "both"  # where learnt preferences apply: "both" orders, or "power" only (Fit stays about your colours)
     PREF_SET = "early"  # which learnt strengths: "early" (pack 1 picks 1-5) or "all" (every pick)
-    ORDER_WEIGHT = 0.0  # replaced by learnt preferences (FRA test top-1 55.0 at weight 2); 2.0 when they are off. WR points per SD of how early top players take the card (their ATA), × castability; 0 = off
+    ORDER_WEIGHT = 0.0  # replaced by learnt preferences (FRA test top-1 55.4 and best deck win rate at weight 4); 2.0 when they are off. WR points per SD of how early top players take the card (their ATA), × castability; 0 = off
     TOP_WR = False  # rejected 2026-11-01 (FRA +0.1, TDM −0.7 top-drafter top-1). Use top players' win rates (the set's _Top dataset), shrunk toward all players' by sample size
     K_TOP = 300.0  # shrinkage for top-player rates: w = n_top / (n_top + K_TOP)
     LANDS = True  # round 2: lands exempt from the sparse prior; partial-overlap lands valued by the splashes they enable

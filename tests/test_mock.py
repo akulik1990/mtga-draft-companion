@@ -94,3 +94,14 @@ def test_upstream_side_is_played_once_per_seed(session, tmp_path, monkeypatch):
     assert made == ["upstream", "v2", "v2"]  # upstream replayed only the first time
     assert second["upstream"] == first["upstream"] and (tmp_path / "OTJ" / "4.json").exists()
     assert [d["pack"] for d in second["divergences"]] == [d["pack"] for d in first["divergences"]]
+
+
+def test_deck_win_rate_scores_a_build(monkeypatch):
+    class Fake:
+        def win_rate(self, counts, main, splash):
+            return 50.0 + counts.get("Bomb", 0) + (0.5 if main == "WU" else 0)
+
+    monkeypatch.setitem(mock_draft._DECK_MODELS, "XYZ", Fake())
+    build = {"deck": [{"name": "Bomb", "count": 2}, {"name": "Plains", "count": 8}], "colors": ["W", "U"]}
+    assert mock_draft.deck_win_rate("XYZ", build) == 52.5
+    assert mock_draft.deck_win_rate("XYZ", {}) is None

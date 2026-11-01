@@ -73,8 +73,8 @@ def summary(r):
         d, v, u = m["v2_minus_upstream"], m["v2"], m["upstream"]
         o = v["open_colour"]
         pool = v.get("pool") or {}
-        return (f"mock {r['set']} x{m['tables']}: lane {d['lane_score']:+.2f} (SE {d['lane_score_se']}), "
-                f"rating {d['deck_rating']:+.2f} (SE {d['se']}), lane@P2P1 {v['lane_matches_deck']['P2P1']:.0%} vs {u['lane_matches_deck']['P2P1']:.0%}, "
+        return (f"mock {r['set']} x{m['tables']}: v2 deck win rate {v.get('deck_wr')}, v2 lane score {v.get('lane_score')}, "
+                f"lane@P2P1 {v['lane_matches_deck']['P2P1']:.0%} vs {u['lane_matches_deck']['P2P1']:.0%}, "
                 f"open after P1/P2/P3 {o['P1']['top_open']:.0%}/{o['P2']['top_open']:.0%}/{o['P3']['top_open']:.0%}, lands {pool.get('lands')}")
     bk = m.get("by_kind", {})
     lands = bk.get("kind:dual land", {})

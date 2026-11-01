@@ -88,6 +88,8 @@ def mock_metrics(rows, engines=("upstream", "v2")):
         out[e] = {
             "deck_rating": round(statistics.mean([r[e]["rating"] or 0 for r in rows]), 3),
             "lane_score": round(statistics.mean([r[e].get("lane_score") or 0 for r in rows]), 3),
+            "deck_wr": (round(statistics.mean([r[e]["deck_wr"] for r in rows]), 3)
+                        if all(r[e].get("deck_wr") is not None for r in rows) else None),
             "lane_matches_deck": {k: rate(r[e]["lane_matches_deck"][k] for r in rows) for k in ("P2P1", "P3P1")},
             "lane_changes": round(statistics.mean(r[e].get("lane_changes", 0) for r in rows), 2),
             "pool": ({k: round(statistics.mean(r[e]["pool"][k] for r in rows), 2) for k in rows[0][e]["pool"]}
