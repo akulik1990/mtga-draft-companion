@@ -79,3 +79,18 @@ def test_lane_score_counts_hybrid_in_either_colour():
               "deck_colors": {"All Decks": {"gihwr": 60.0}, "WU": {"gihwr": 61.0}}}
     score, pair = mock_draft.lane_score([hybrid])
     assert pair == "WU" and score == round((61.0 + 45.0 * 22) / 23, 3)
+
+
+def test_upstream_side_is_played_once_per_seed(session, tmp_path, monkeypatch):
+    monkeypatch.setattr(mock_draft, "upstream_cache_dir", lambda set_code: tmp_path / set_code)
+    made = []
+
+    def make_app(engine):
+        made.append(engine)
+        return mock_draft.InProcess(session)
+
+    first = mock_draft.compare_table("OTJ", 4, make_app)
+    second = mock_draft.compare_table("OTJ", 4, make_app)
+    assert made == ["upstream", "v2", "v2"]  # upstream replayed only the first time
+    assert second["upstream"] == first["upstream"] and (tmp_path / "OTJ" / "4.json").exists()
+    assert [d["pack"] for d in second["divergences"]] == [d["pack"] for d in first["divergences"]]

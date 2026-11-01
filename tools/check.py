@@ -1,15 +1,17 @@
 """One command for engine comparisons, sized to the change.
 
-    uv run python tools/check.py quick    --note "SPLASH 0.8"   --v2 SPLASH=0.8     # ~2 min: 40 tables, one set, no harness
-    uv run python tools/check.py standard --note "lands" --set TDM                    # ~6 min: 100 tables + harness, in parallel
-    uv run python tools/check.py full     --note "round 2 final"                      # ~15 min: 200 tables x FRA/MID/TDM + harness FRA/TDM
+    uv run python tools/check.py quick    --note "SPLASH 0.8"   --v2 SPLASH=0.8     # ~1 min: 40 tables, one set, no harness
+    uv run python tools/check.py standard --note "lands" --set TDM                    # ~3 min: 100 tables + harness, in parallel
+    uv run python tools/check.py full     --note "round 2 final"                      # ~8 min: 200 tables x FRA/MID/TDM + harness FRA/TDM
 
 quick: constants and small tweaks; it sees only large effects (lane score SE about 0.15).
 standard: one engine change; the set it targets plus the harness on that set (or FRA).
 full: end of a round and before a live Arena draft only; fresh seeds 1001+ so it is not
 the tables a change was tuned on.
 
-Every run is recorded in results/runs.jsonl as usual; this prints one summary line per run.
+Upstream's side is cached (per seed for mock tables, per sample for the harness), so only our
+engine is replayed; the first run on new seeds fills the cache. Every run is recorded in
+results/runs.jsonl as usual; this prints one summary line per run.
 Do not edit code under companion/ or tools/ while a check is running.
 """
 

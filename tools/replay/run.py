@@ -114,6 +114,22 @@ def cmd_replay(a):
                  "--set", a.set, "--label", a.label, "--out", here(a.out)])
 
 
+def base_key(drafts, dataset):
+    """Upstream's replay depends only on the sampled drafts, the dataset and upstream's code."""
+    import subprocess
+
+    from tools.mock_draft import _sha
+
+    vendor = subprocess.run(["git", "-C", str(Path(__file__).resolve().parents[2]), "rev-parse", "HEAD:vendor/mtga_draft_17lands"],
+                            capture_output=True, text=True).stdout.strip()
+    return "|".join([_sha(drafts), _sha(dataset), vendor or "no-git"])
+
+
+def base_is_current(out, drafts, dataset):
+    key = out.with_suffix(".key")
+    return out.exists() and key.exists() and key.read_text() == base_key(drafts, dataset)
+
+
 def cmd_compare(a):
     from tools.mock_draft import apply_overrides
 
@@ -123,10 +139,16 @@ def cmd_compare(a):
     results = []
     for label, advisor in (("base", "upstream"), ("head", "v2")):
         out = CACHE / f"{a.set}.{a.drafts}{'.' + a.salt if a.salt else ''}.{label}.json"
+        if label == "base" and not a.no_cache and base_is_current(out, drafts, dataset):
+            print(f"reusing upstream's replay {out.name}")
+            results.append(str(out))
+            continue
         use_advisor(advisor)
         replay.main(["--src", str(VENDOR), "--drafts", str(drafts), "--dataset", str(dataset),
                      "--set", a.set, "--label", label, "--out", str(out)])
         results.append(str(out))
+        if label == "base":
+            out.with_suffix(".key").write_text(base_key(drafts, dataset))
     buf = io.StringIO()
     with contextlib.redirect_stdout(buf):
         report.main(results)
@@ -153,6 +175,7 @@ def main(argv=None):
     c = sub.add_parser("compare"); c.add_argument("set"); c.add_argument("--drafts", type=int, default=300); c.add_argument("--salt", default="")
     c.add_argument("--note", default="", help="what this run is testing; kept in results/runs.jsonl")
     c.add_argument("--v2", action="append", default=[], metavar="NAME=VALUE", help="override a v2 constant or module.SWITCH, as in tools/mock_draft.py")
+    c.add_argument("--no-cache", action="store_true", help="replay upstream again instead of reusing its saved replay of this sample")
     c.set_defaults(fn=cmd_compare)
     rp = sub.add_parser("report"); rp.add_argument("results", nargs="+"); rp.set_defaults(fn=lambda a: report.main(a.results))
     a = p.parse_args(argv)

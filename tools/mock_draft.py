@@ -222,9 +222,44 @@ def pool_composition(pool):
             "spell_gihwr": round(statistics.mean(wrs), 2) if wrs else 0.0}
 
 
+# Upstream's side of a table depends only on the seed, the dataset, upstream's code and the bots,
+# so it is played once and reused. Bump UPSTREAM_CACHE_VERSION when the stored row's fields change.
+UPSTREAM_CACHE_VERSION = 1
+USE_UPSTREAM_CACHE = True
+
+
+def _sha(path):
+    import hashlib
+
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(1 << 20), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def upstream_cache_dir(set_code):
+    """<data>/Temp/sim/upstream-cache/<SET>-<key>/, key = dataset + vendored upstream + bots + format version."""
+    import hashlib
+    import subprocess
+
+    from companion import ROOT
+
+    vendor = subprocess.run(["git", "-C", str(ROOT), "rev-parse", "HEAD:vendor/mtga_draft_17lands"], capture_output=True, text=True).stdout.strip()
+    parts = [_sha(DATA_DIR / "Sets" / f"{set_code}_PremierDraft_All_Data.json"), vendor or "no-git",
+             _sha(ROOT / "companion" / "mock.py"), str(UPSTREAM_CACHE_VERSION)]
+    key = hashlib.sha256("|".join(parts).encode()).hexdigest()[:16]
+    return DATA_DIR / "Temp" / "sim" / "upstream-cache" / f"{set_code}-{key}"
+
+
 def compare_table(set_code, seed, make_app, engines=ENGINES):
     row, logs = {"seed": seed}, {}
+    cache = upstream_cache_dir(set_code) / f"{seed}.json" if USE_UPSTREAM_CACHE and "upstream" in engines else None
     for e in engines:
+        if e == "upstream" and cache and cache.exists():
+            saved = json.loads(cache.read_text())
+            row[e], logs[e] = saved["row"], saved["log"]
+            continue
         app = make_app(e)
         log, checks = run_draft(app, set_code, e, "table", seed)
         builds = app.build()
@@ -239,6 +274,9 @@ def compare_table(set_code, seed, make_app, engines=ENGINES):
         row[e]["lane_matches_deck"] = {k: sorted(v) == sorted(row[e]["deck_colours"]) for k, v in row[e]["lane_at"].items()}
         late = [x["lane"][e] for x in log if (x["pack"] - 1) * 14 + x["pick"] >= 9]
         row[e]["lane_changes"] = sum(1 for p, q in zip(late, late[1:]) if p and q and p != q)
+        if e == "upstream" and cache:
+            cache.parent.mkdir(parents=True, exist_ok=True)
+            cache.write_text(json.dumps({"row": row[e], "log": log}))
     a, b = engines
     row["divergences"] = [
         {"pack": x["pack"], "pick": x["pick"], a: (x["took"], x["top"][a]["reasons"]), b: (y["took"], y["top"][b]["reasons"])}
@@ -340,6 +378,7 @@ def main(argv=None):
     sub = p.add_subparsers(dest="cmd", required=True)
     c = sub.add_parser("compare"); c.add_argument("set"); c.add_argument("--seeds", type=int, default=200); c.add_argument("--start", type=int, default=1)
     c.add_argument("--out", help="results JSON (default <data>/Temp/sim/<SET>.json)"); c.add_argument("--note", default="", help="what this run is testing; kept in results/runs.jsonl")
+    c.add_argument("--no-cache", action="store_true", help="replay upstream's side instead of reusing its cached tables")
     c.add_argument("--v2", action="append", default=[], metavar="NAME=VALUE", help="override a DraftAdvisorV2 constant for this run, e.g. --v2 SPLASH=0; recorded in the ledger")
     g = sub.add_parser("play"); g.add_argument("set"); g.add_argument("--app", help="base URL of a running app; else in-process")
     g.add_argument("--follow", default="v2", choices=("upstream", "v2", "gihwr", "human")); g.add_argument("--kind", default="table", choices=("table", "17lands", "random"))
@@ -347,6 +386,8 @@ def main(argv=None):
     a = p.parse_args(argv)
 
     if a.cmd == "compare":
+        global USE_UPSTREAM_CACHE
+        USE_UPSTREAM_CACHE = not a.no_cache
         apply_overrides(a.v2)
         rows = []
         for seed in range(a.start, a.start + a.seeds):
