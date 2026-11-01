@@ -113,6 +113,14 @@ def learnt_prefs(set_code, which):
 
 
 @lru_cache(maxsize=8)
+def prefs_file(path, which):
+    import json
+    from pathlib import Path
+
+    return json.loads(Path(path).read_text()).get(which, {})
+
+
+@lru_cache(maxsize=8)
 def tables(set_code):
     """Per-set typical-deck and synergy tables, if tools/synergy/build.py has produced them."""
     return composition.load(set_code, constants.TEMP_FOLDER), synergy.load(set_code, constants.TEMP_FOLDER)
@@ -141,6 +149,7 @@ class DraftAdvisorV2:
     PREF_ON_WEIGHT = 4.0  # what the app's switch sets PREF_WEIGHT to; the switch also swaps the pick-order prior out
     ORDER_OFF_WEIGHT = 2.0  # pick-order prior the app's switch restores when learnt preferences are switched off
     PREF_SCOPE = "both"  # where learnt preferences apply: "both" orders, or "power" only (Fit stays about your colours)
+    PREF_FILE = ""  # override the learnt-preference file (held-out evaluations); "" = companion/advisor_v2/prefs_<SET>.json
     PREF_SET = "early"  # which learnt strengths: "early" (pack 1 picks 1-5) or "all" (every pick)
     ORDER_WEIGHT = 0.0  # replaced by learnt preferences (FRA test top-1 55.4 and best deck win rate at weight 4); 2.0 when they are off. WR points per SD of how early top players take the card (their ATA), × castability; 0 = off
     TOP_WR = False  # rejected 2026-11-01 (FRA +0.1, TDM −0.7 top-drafter top-1). Use top players' win rates (the set's _Top dataset), shrunk toward all players' by sample size
@@ -296,7 +305,7 @@ class DraftAdvisorV2:
         upstream = DraftAdvisor(self.metrics, self.pool)  # only for its wheel polynomial
         set_code = next((c.get("set") for c in (*self.pool, *pack_cards) if c.get("set")), None)
         self.order = pick_order(set_code) if self.ORDER_WEIGHT and set_code else {}
-        self.prefs = learnt_prefs(set_code, self.PREF_SET) if self.PREF_WEIGHT and set_code else {}
+        self.prefs = (prefs_file(self.PREF_FILE, self.PREF_SET) if self.PREF_FILE else learnt_prefs(set_code, self.PREF_SET)) if self.PREF_WEIGHT and set_code else {}
         if not self.typical:
             set_code = next((c.get("set") for c in pack_cards if c.get("set")), None)
             if set_code:

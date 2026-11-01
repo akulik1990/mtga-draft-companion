@@ -97,9 +97,14 @@ def fit(choices, l2=1.0):
 def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     p.add_argument("set"); p.add_argument("--n", type=int, default=600)
+    p.add_argument("--also-exclude", nargs="*", default=[], help="more drafts files (in the replay cache) to leave out")
+    p.add_argument("--out", help="write here instead of companion/advisor_v2/prefs_<SET>.json")
     a = p.parse_args(argv)
     with gzip.open(REPLAY / f"{a.set}.top{a.n}.test.drafts.json.gz", "rt", encoding="utf-8") as f:
         exclude = {d["id"] for d in json.load(f)}
+    for extra in a.also_exclude:
+        with gzip.open(REPLAY / extra, "rt", encoding="utf-8") as f:
+            exclude |= {d["id"] for d in json.load(f)}
     choices = read_choices(a.set, exclude)
     early = [c for c in choices if c[0] == "early"]
     out = {"set": a.set, "excluded_test_drafts": len(exclude)}
@@ -109,7 +114,7 @@ def main(argv=None):
         out[f"{label}_info"] = info
         top = sorted(strengths.items(), key=lambda kv: -kv[1])[:8]
         print(f"{label}: {info['decisions']} choices, {info['cards']} cards, converged {info['converged']}; strongest: " + ", ".join(f"{n} {v:+.2f}" for n, v in top))
-    path = Path(companion.__file__).parent / "advisor_v2" / f"prefs_{a.set}.json"
+    path = Path(a.out) if a.out else Path(companion.__file__).parent / "advisor_v2" / f"prefs_{a.set}.json"
     path.write_text(json.dumps(out))
     print(f"wrote {path}")
 

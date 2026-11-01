@@ -170,6 +170,28 @@ def cmd_sample_top(a):
     return paths
 
 
+def cmd_sample_wins(a):
+    """n top-drafter drafts that went exactly `wins` wins, none from the train or test samples."""
+    import gzip
+    import json
+
+    out = CACHE / f"{a.set}.win{a.wins}_{a.n}.drafts.json.gz"
+    if out.exists():
+        return out
+    used = set()
+    for path in top_sample_paths(a.set, 600).values():
+        if path.exists():
+            with gzip.open(path, "rt", encoding="utf-8") as f:
+                used |= {d["id"] for d in json.load(f)}
+    with gzip.open(top_dump(a.set), "rt", newline="", encoding="utf-8") as f:
+        pool = sample.sample_drafts(f, 20 * a.n, f"win{a.wins}")
+    chosen = [d for d in pool if d["wins"] == a.wins and d["id"] not in used][: a.n]
+    with gzip.open(out, "wt", encoding="utf-8") as f:
+        json.dump(chosen, f)
+    print(f"{len(chosen)} drafts with {a.wins} wins (of {len(pool)} sampled), none from train/test -> {out.name}")
+    return out
+
+
 def replay_one(set_code, drafts, advisor, out):
     use_advisor(advisor)
     replay.main(["--src", str(VENDOR), "--drafts", str(drafts), "--dataset", str(dataset_path(set_code)),
@@ -183,15 +205,21 @@ def cmd_top(a):
     from tools.mock_draft import apply_overrides
 
     apply_overrides(a.v2)
-    drafts = top_sample_paths(a.set, a.n)[a.split]
-    if not drafts.exists():
-        cmd_sample_top(a)
+    if a.sample:
+        drafts = Path(a.sample) if Path(a.sample).is_absolute() else CACHE / a.sample
+        stem = drafts.name.replace(".drafts.json.gz", "")
+        a.split = stem
+    else:
+        drafts = top_sample_paths(a.set, a.n)[a.split]
+        if not drafts.exists():
+            cmd_sample_top(a)
+        stem = f"{a.set}.top{a.n}.{a.split}"
     dataset = dataset_path(a.set)
-    base = CACHE / f"{a.set}.top{a.n}.{a.split}.base.json"
+    base = CACHE / f"{stem}.base.json"
     if not base_is_current(base, drafts, dataset):
         replay_one(a.set, drafts, "upstream", base)
         base.with_suffix(".key").write_text(base_key(drafts, dataset))
-    head = replay_one(a.set, drafts, "v2", CACHE / f"{a.set}.top{a.n}.{a.split}.head.{os.getpid()}.json")
+    head = replay_one(a.set, drafts, "v2", CACHE / f"{stem}.head.{os.getpid()}.json")
     metrics = {"v2": ledger.top_drafter_metrics(head, drafts), "upstream_ref": ledger.top_drafter_metrics(base, drafts)}
     head.unlink()
     md = ledger.top_markdown(a.set, a.split, metrics)
@@ -278,7 +306,10 @@ def main(argv=None):
     c.add_argument("--no-cache", action="store_true", help="replay upstream again instead of reusing its saved replay of this sample")
     c.set_defaults(fn=cmd_compare)
     st = sub.add_parser("sample-top"); st.add_argument("set"); st.add_argument("--n", type=int, default=600); st.set_defaults(fn=cmd_sample_top)
+    sw = sub.add_parser("sample-wins"); sw.add_argument("set"); sw.add_argument("--n", type=int, default=600); sw.add_argument("--wins", type=int, default=7)
+    sw.set_defaults(fn=cmd_sample_wins)
     t = sub.add_parser("top"); t.add_argument("set"); t.add_argument("--split", choices=("train", "test"), default="train")
+    t.add_argument("--sample", help="another drafts file in the replay cache (e.g. FRA.win7_600.drafts.json.gz) instead of train/test")
     t.add_argument("--n", type=int, default=600); t.add_argument("--note", default="")
     t.add_argument("--v2", action="append", default=[], metavar="NAME=VALUE"); t.add_argument("--no-record", action="store_true", help="tuning runs: print only")
     t.add_argument("--json", action="store_true", help="print v2's metrics as one METRICS line (for tools/tune.py)")
