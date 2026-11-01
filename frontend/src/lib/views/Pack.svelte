@@ -50,7 +50,7 @@
 {:else if snap.pack.length === 0}
 	<p class="p-8 text-center text-zinc-500">{snap.status}</p>
 {:else}
-<div class="grid gap-4 md:grid-cols-[minmax(0,1fr)_17rem]">
+<div class="grid gap-4 md:grid-cols-[minmax(0,1fr)_20rem] 2xl:grid-cols-[minmax(0,1fr)_24rem]">
 <div>
 	<div class="mb-3 flex flex-wrap items-center gap-3 text-sm">
 		<span class="flex rounded bg-zinc-900">
@@ -93,7 +93,7 @@
 		</div>
 	{/if}
 	{#if mode === 'cards'}
-		<div class="grid gap-3" style="grid-template-columns: repeat(auto-fill, minmax(12.5rem, 1fr));">
+		<div class="grid gap-3" style="grid-template-columns: repeat(auto-fill, minmax(11.5rem, 1fr));">
 			{#each sorted as card (card.name)}
 				<CardTile {card} {snap} archetype={snap.archetype} upstream={up.get(card.name)} v2={v2.get(card.name)}
 					powerRank={rankIn(snap.v2_split?.power, card.name)} fitRank={rankIn(snap.v2_split?.fit, card.name)}
@@ -116,7 +116,7 @@
 		</section>
 	{/if}
 </div>
-<div class="md:sticky md:top-14 md:max-h-[calc(100vh-4rem)] md:overflow-y-auto"><DraftPanel {snap} onopen={(c) => (open = c)} /></div>
+<div class="md:sticky md:top-24 md:max-h-[calc(100vh-6.5rem)] md:overflow-y-auto"><DraftPanel {snap} onopen={(c) => (open = c)} /></div>
 </div>
 {/if}
 

@@ -26,10 +26,12 @@
 	const lane = $derived(snap.archetype || ALL);
 
 	let hover = $state<{ card: Card; x: number; y: number } | null>(null);
-	const show = (card: Card, e: MouseEvent) => (hover = { card, x: e.clientX, y: e.clientY });
+	let panel: HTMLElement;
+	// The image opens left of the panel, level with the row, so it never covers the list.
+	const show = (card: Card, e: MouseEvent) => (hover = { card, x: panel.getBoundingClientRect().left, y: (e.currentTarget as HTMLElement).getBoundingClientRect().top });
 </script>
 
-<aside class="flex flex-col gap-4 text-sm">
+<aside bind:this={panel} class="flex flex-col gap-4 text-sm">
 	<section>
 		<h3 class="mb-1 font-semibold text-zinc-400">Lanes (v2)</h3>
 		{#each lanes as [l, p]}
@@ -53,24 +55,24 @@
 
 	<section>
 		<h3 class="mb-1 font-semibold text-zinc-400">Pool {snap.pool.length} <span class="font-normal text-zinc-500">· {creatures} creatures · {interaction} interaction</span></h3>
-		<div class="mb-2 flex h-12 items-end gap-1">
+		<div class="mt-1 mb-3 flex h-16 items-end gap-1">
 			{#each curve as n, i}
 				<div class="flex flex-1 flex-col items-center">
 					<span class="font-mono text-xs text-zinc-400">{n || ''}</span>
-					<div class="w-full rounded-t bg-sky-600" style="height:{(28 * n) / curveMax}px"></div>
+					<div class="w-full rounded-t bg-sky-600" style="height:{(32 * n) / curveMax}px"></div>
 					<span class="font-mono text-xs text-zinc-500">{i === 6 ? '7+' : i + 1}</span>
 				</div>
 			{/each}
 		</div>
-		{#each groups as [k, cards]}
-			<div class="mb-1.5">
-				<div class="flex items-center gap-1 text-xs text-zinc-500">{#if k.length === 1}<Pips colors={k} />{:else}{k}{/if} {cards.length}</div>
+		{#each groups as [, cards]}
+			<div class="mb-2 border-t border-zinc-800 pt-1">
 				{#each cards as c}
-					<button class="flex w-full items-center gap-2 rounded px-1 text-left hover:bg-zinc-800" onclick={() => onopen(c)}
-						onmouseenter={(e) => show(c, e)} onmousemove={(e) => show(c, e)} onmouseleave={() => (hover = null)}>
-						<span class="w-3 font-mono text-xs text-zinc-500">{c.cmc}</span>
-						<span class="flex-1 truncate">{c.name}</span>
-						<span class="font-mono text-xs {tone(snap, c, 'gihwr', lane)}">{fmt(snap, c, 'gihwr', lane)}</span>
+					<button class="flex w-full items-center gap-2 rounded px-1 py-0.5 text-left hover:bg-zinc-800" onclick={() => onopen(c)}
+						onmouseenter={(e) => show(c, e)} onmouseleave={() => (hover = null)}>
+						<span class="flex w-10 shrink-0"><Pips colors={c.colors ?? []} /></span>
+						<span class="w-4 shrink-0 text-right font-mono text-xs text-zinc-500">{c.cmc}</span>
+						<span class="min-w-0 flex-1 truncate" title={c.name}>{c.name}</span>
+						<span class="w-12 shrink-0 text-right font-mono text-xs {tone(snap, c, 'gihwr', lane)}">{fmt(snap, c, 'gihwr', lane)}</span>
 					</button>
 				{/each}
 			</div>
@@ -79,7 +81,6 @@
 </aside>
 
 {#if hover?.card.image?.[0]}
-	<!-- ponytail: image opens to the left of the cursor, the panel sits on the right edge -->
 	<img src={hover.card.image[0]} alt="" class="pointer-events-none fixed z-50 w-64 rounded-xl shadow-2xl"
-		style="left:{Math.max(8, hover.x - 272)}px; top:{Math.max(8, Math.min(hover.y - 180, innerHeight - 370))}px" />
+		style="left:{Math.max(8, hover.x - 272)}px; top:{Math.max(8, Math.min(hover.y - 150, innerHeight - 370))}px" />
 {/if}
