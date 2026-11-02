@@ -245,100 +245,125 @@ ShellRoot {
                 }
 
                 Item { width: 1; height: win.unit * 0.3 }
-                Heading { text: "OPEN COLOURS (passing to you)" }
-                Row {
-                    id: sig
-                    readonly property var vals: win.pn ? win.pn.signals : ({})
-                    readonly property real peak: Math.max(0.01, ...Object.values(vals).map(Math.abs))
-                    visible: Object.values(vals).some(v => v !== 0)
-                    spacing: win.unit * 0.3
-                    Repeater {
-                        model: ["W", "U", "B", "R", "G"]
-                        Column {
-                            required property string modelData
-                            readonly property real v: sig.vals[modelData] || 0
-                            spacing: 2
-                            Item {  // centred bar: up = open, down = cut
-                                width: (col.width - win.unit * 1.2) / 5; height: win.unit * 2.4
-                                Rectangle { y: parent.height / 2; width: parent.width; height: 1; color: "#40ffffff" }
-                                Rectangle {
-                                    width: parent.width * 0.7; x: parent.width * 0.15
-                                    height: Math.abs(parent.parent.v) / sig.peak * parent.height / 2
-                                    y: parent.parent.v >= 0 ? parent.height / 2 - height : parent.height / 2
-                                    radius: 2; color: win.wubrg[modelData]; opacity: parent.parent.v >= 0 ? 1 : 0.45
+                Row {  // open colours (signal from the passing neighbour) beside your likeliest lanes
+                    spacing: win.unit * 0.6
+                    Column {
+                        width: (col.width - win.unit * 0.6) * 0.48
+                        spacing: 2
+                        Heading { text: "OPEN" }
+                        Row {
+                            id: sig
+                            readonly property var vals: win.pn ? win.pn.signals : ({})
+                            readonly property real peak: Math.max(0.01, ...Object.values(vals).map(Math.abs))
+                            readonly property bool any: Object.values(vals).some(v => v !== 0)
+                            spacing: win.unit * 0.15
+                            Repeater {
+                                model: ["W", "U", "B", "R", "G"]
+                                Column {
+                                    required property string modelData
+                                    readonly property real v: sig.vals[modelData] || 0
+                                    Item {  // up = open, down = cut
+                                        width: (col.width * 0.48 - win.unit * 1.2) / 5; height: win.unit * 1.6
+                                        Rectangle { y: parent.height / 2; width: parent.width; height: 1; color: "#40ffffff" }
+                                        Rectangle {
+                                            width: parent.width * 0.7; x: parent.width * 0.15
+                                            height: Math.abs(parent.parent.v) / sig.peak * parent.height / 2
+                                            y: parent.parent.v >= 0 ? parent.height / 2 - height : parent.height / 2
+                                            radius: 1; color: win.wubrg[modelData]; opacity: parent.parent.v >= 0 ? 1 : 0.45
+                                        }
+                                    }
+                                    Text { anchors.horizontalCenter: parent.horizontalCenter; text: modelData; color: win.wubrg[modelData]; font.pixelSize: win.unit * 0.55; font.bold: true }
                                 }
                             }
-                            Text { anchors.horizontalCenter: parent.horizontalCenter; text: modelData; color: win.wubrg[modelData]; font.pixelSize: win.unit * 0.65; font.bold: true }
+                        }
+                    }
+                    Column {
+                        width: (col.width - win.unit * 0.6) * 0.52
+                        spacing: 1
+                        Heading { text: "LANES" }
+                        Repeater {
+                            model: win.pn ? win.pn.lanes : []
+                            Row {
+                                required property var modelData
+                                spacing: win.unit * 0.25
+                                Text { text: modelData.lane; width: win.unit * 1.2; color: "#e8eaed"; font.pixelSize: win.unit * 0.6; font.bold: true }
+                                Item {
+                                    width: (col.width - win.unit * 0.6) * 0.52 - win.unit * 3.2; height: win.unit * 0.4
+                                    anchors.verticalCenter: parent.verticalCenter
+                                    Rectangle { anchors.fill: parent; radius: height / 2; color: "#2a2f35" }
+                                    Row {
+                                        height: parent.height
+                                        Rectangle { width: parent.parent.width * modelData.p / win.pn.lanes[0].p / 2; height: parent.height; color: win.wubrg[modelData.lane[0]] }
+                                        Rectangle { width: parent.parent.width * modelData.p / win.pn.lanes[0].p / 2; height: parent.height; color: win.wubrg[modelData.lane[1]] }
+                                    }
+                                }
+                                Text { text: Math.round(modelData.p * 100) + "%"; width: win.unit * 1.5; horizontalAlignment: Text.AlignRight; color: "#c8cdd3"; font.pixelSize: win.unit * 0.55 }
+                            }
                         }
                     }
                 }
-                Line { visible: !sig.visible; text: "No signal yet"; color: "#8f98a3"; font.pixelSize: win.unit * 0.65 }
 
-                Item { width: 1; height: win.unit * 0.3 }
-                Heading { text: "YOUR LANES" }
+                // Your deck in the likeliest pair against top players' typical deck there (tools/deck_targets.py).
+                Item { width: 1; height: win.unit * 0.3; visible: !!deck.d }
+                Heading { id: deck; readonly property var d: win.pn ? win.pn.deck : null; visible: !!d; text: d ? "YOUR " + d.lane + " DECK vs TOP PLAYERS" : "" }
                 Repeater {
-                    model: win.pn ? win.pn.lanes : []
+                    model: deck.d ? [["creatures", "Creatures"], ["removal", "Removal"], ["card_advantage", "Card draw"], ["evasion", "Evasion"], ["two_drops", "2-drops"], ["five_plus", "5+ drops"]] : []
                     Row {
                         required property var modelData
-                        spacing: win.unit * 0.4
-                        Text { text: modelData.lane; width: win.unit * 1.6; color: "#e8eaed"; font.pixelSize: win.unit * 0.72; font.bold: true }
-                        Item {  // probability bar in the pair's two colours
-                            width: col.width - win.unit * 5.2; height: win.unit * 0.55
+                        readonly property real have: deck.d.have[modelData[0]]
+                        readonly property real want: deck.d.target[modelData[0]]
+                        readonly property real due: want * deck.d.pace  // roughly where a drafter is by now
+                        spacing: win.unit * 0.3
+                        Text { text: modelData[1]; width: win.unit * 3.6; color: "#c8cdd3"; font.pixelSize: win.unit * 0.6 }
+                        Item {
+                            width: col.width - win.unit * 7.2; height: win.unit * 0.45
                             anchors.verticalCenter: parent.verticalCenter
                             Rectangle { anchors.fill: parent; radius: height / 2; color: "#2a2f35" }
-                            Row {
-                                height: parent.height
-                                Rectangle { width: parent.parent.width * modelData.p / win.pn.lanes[0].p / 2; height: parent.height; color: win.wubrg[modelData.lane[0]] }
-                                Rectangle { width: parent.parent.width * modelData.p / win.pn.lanes[0].p / 2; height: parent.height; color: win.wubrg[modelData.lane[1]] }
+                            Rectangle {
+                                width: parent.width * Math.min(1, have / Math.max(1, want)); height: parent.height; radius: height / 2
+                                color: have >= due ? "#5fae6e" : have >= due * 0.6 ? "#d6a84a" : "#d0613f"
                             }
+                            Rectangle { x: parent.width * Math.min(1, due / Math.max(1, want)) - 1; width: 2; height: parent.height + 4; y: -2; color: "#e8eaed"; opacity: 0.8 }
                         }
-                        Text { text: Math.round(modelData.p * 100) + "%"; width: win.unit * 1.6; horizontalAlignment: Text.AlignRight; color: "#c8cdd3"; font.pixelSize: win.unit * 0.65 }
+                        Text { text: have + " / " + Math.round(want); width: win.unit * 2.6; horizontalAlignment: Text.AlignRight; color: "#e8eaed"; font.pixelSize: win.unit * 0.6 }
                     }
-                }
-                Line {
-                    visible: !!win.pn && win.pn.lanes.length > 0
-                    text: win.pn ? "Pair win rates: " + win.pn.lanes.map(l => l.lane + " " + (l.wr ? Number(l.wr).toFixed(1) : "–")).join(" · ") : ""
-                    color: "#8f98a3"; font.pixelSize: win.unit * 0.58
                 }
 
-                Item { width: 1; height: win.unit * 0.3 }
-                Heading { text: win.pn ? "POOL · " + win.pn.pool.n + " CARDS" : "POOL" }
+                // Curve of your spells in that pair; ticks mark top players' typical deck.
+                Item { width: 1; height: win.unit * 0.5; visible: !!deck.d }
                 Row {
-                    spacing: win.unit * 0.5
-                    Repeater {
-                        model: ["W", "U", "B", "R", "G"]
-                        Row {
-                            required property string modelData
-                            spacing: 3
-                            Rectangle { width: win.unit * 0.6; height: width; radius: width / 2; color: win.wubrg[modelData]; anchors.verticalCenter: parent.verticalCenter }
-                            Text { text: win.pn ? win.pn.pool.colours[modelData] : 0; color: "#e8eaed"; font.pixelSize: win.unit * 0.68 }
-                        }
-                    }
-                }
-                Item { width: 1; height: win.unit * 0.9 }  // room for the curve's count labels
-                Row {  // curve: spells by mana value 1..6+
                     id: curve
-                    readonly property var c: win.pn ? win.pn.pool.curve : [0, 0, 0, 0, 0, 0]
-                    readonly property int peak: Math.max(1, ...c)
+                    visible: !!deck.d
+                    readonly property var slots: ["1", "2", "3", "4", "5", "6+"]
+                    readonly property var c: deck.d ? deck.d.curve : ({})
+                    readonly property var t: deck.d ? deck.d.target_curve : ({})
+                    readonly property real peak: Math.max(1, ...slots.map(k => Math.max(c[k] || 0, t[k] || 0)))
                     spacing: win.unit * 0.25
                     Repeater {
-                        model: 6
+                        model: curve.slots
                         Column {
-                            required property int index
+                            required property string modelData
+                            readonly property real n: curve.c[modelData] || 0
+                            readonly property real want: curve.t[modelData] || 0
                             spacing: 1
                             Item {
-                                width: (col.width - win.unit * 1.3) / 6; height: win.unit * 2.6
+                                width: (col.width - win.unit * 1.3) / 6; height: win.unit * 2.4
                                 Rectangle {
                                     anchors.bottom: parent.bottom; width: parent.width; radius: 2
-                                    height: Math.max(1, curve.c[index] / curve.peak * parent.height)
-                                    color: curve.c[index] ? "#7f8c99" : "#2a2f35"
+                                    height: Math.max(1, n / curve.peak * parent.height)
+                                    color: n ? "#7f8c99" : "#2a2f35"
                                 }
-                                Text { anchors.horizontalCenter: parent.horizontalCenter; y: -height + parent.height - Math.max(1, curve.c[index] / curve.peak * parent.height); visible: curve.c[index] > 0; text: curve.c[index]; color: "#c8cdd3"; font.pixelSize: win.unit * 0.55 }
+                                Rectangle {  // top players' typical count
+                                    width: parent.width + 4; x: -2; height: 2; color: "#ffd54f"
+                                    y: parent.height - want / curve.peak * parent.height
+                                }
+                                Text { anchors.horizontalCenter: parent.horizontalCenter; anchors.bottom: parent.bottom; anchors.bottomMargin: 1; visible: n > 0; text: n; color: "#0e1215"; font.pixelSize: win.unit * 0.55; font.bold: true }
                             }
-                            Text { anchors.horizontalCenter: parent.horizontalCenter; text: index === 5 ? "6+" : index + 1; color: "#8f98a3"; font.pixelSize: win.unit * 0.55 }
+                            Text { anchors.horizontalCenter: parent.horizontalCenter; text: modelData; color: "#8f98a3"; font.pixelSize: win.unit * 0.55 }
                         }
                     }
                 }
+                Line { visible: !!deck.d; text: win.pn ? "Pool " + win.pn.pool.n + " cards · gold line: top players' curve" : ""; color: "#8f98a3"; font.pixelSize: win.unit * 0.55 }
             }
         }
 

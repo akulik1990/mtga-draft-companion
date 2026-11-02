@@ -13,6 +13,7 @@ from fastapi.staticfiles import StaticFiles
 
 from companion import ROOT
 from companion.advisor_v2 import config
+from companion.advisor_v2.composition import ROLES, curve_slot, roles
 from companion.advisor_v2.lanes import castable, pips
 from companion.session import DraftSession
 
@@ -69,6 +70,27 @@ def lane_rates(card, lanes, min_games=200):
     return out
 
 
+def deck_vs_top(s, lane, complete_by=30):
+    """The pool's cards castable in the likeliest pair, by role, against top players' typical deck in that pair.
+
+    pace: the share of the target a drafter would roughly have by now, full by pick complete_by.
+    """
+    set_code = (s.get("event") or {}).get("set") or ""
+    target = (config.fitted(set_code, "decks").get("pairs") or {}).get(lane)
+    if not lane or not target:
+        return None
+    have, curve = dict.fromkeys(ROLES, 0), dict.fromkeys(("1", "2", "3", "4", "5", "6+"), 0)
+    for c in s.get("pool") or []:
+        if "Land" in (c.get("types") or []) or castable(c, lane):
+            for r in roles(c):
+                have[r] += 1
+            if curve_slot(c):
+                curve[curve_slot(c)] += 1
+    picks = len(s.get("pool") or [])
+    return {"lane": lane, "have": have, "target": {r: target[r] for r in ROLES}, "curve": curve,
+            "target_curve": target.get("curve") or {}, "pace": round(min(1.0, picks / complete_by), 2)}
+
+
 def side_panel(s, ranked=()):
     """What the overlay's left panel shows: v2's top three and how top drafters split between them in this spot,
     v2's reasons, likeliest lanes, open colours, pool summary."""
@@ -98,6 +120,7 @@ def side_panel(s, ranked=()):
         "why": [plain(r) for r in (top or {}).get("reasoning") or [] if not r.startswith("Fit #")][:3],
         "lanes": [{"lane": l, "p": round(p, 3), "wr": pair_wr.get(l)} for l, p in lanes],
         "signals": sides.get(sides.get("active")) or s.get("signals_v2") or {},
+        "deck": deck_vs_top(s, lanes[0][0] if lanes else None),
         "pool": {"n": len(s.get("pool") or []), "colours": {k: sum(k in (c.get("colors") or []) for c in spells) for k in "WUBRG"}, "curve": curve},
     }
 

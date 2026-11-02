@@ -49,3 +49,29 @@ class Composition:
             gap = (t["interaction"] - self.scale * self.interaction) / t["interaction"]
             m *= 1.0 + BOUND * max(-1.0, min(1.0, gap))
         return max(1.0 - 2 * BOUND, min(1.0 + 2 * BOUND, m))
+
+
+ROLES = ("creatures", "removal", "card_advantage", "evasion", "two_drops", "five_plus", "lands")
+
+
+def roles(card):
+    """Which ROLES a card counts toward (deck-shape counts for tools/deck_targets.py and the overlay)."""
+    types, tags, cmc = card.get("types") or [], card.get("tags") or [], int(card.get("cmc") or 0)
+    if "Land" in types:
+        return {"lands"}
+    out = {t for t in ("removal", "card_advantage", "evasion") if t in tags}
+    if "Creature" in types:
+        out.add("creatures")
+    if cmc == 2:
+        out.add("two_drops")
+    if cmc >= 5:
+        out.add("five_plus")
+    return out
+
+
+def curve_slot(card):
+    """A spell's mana-value slot, "1" .. "5" or "6+" (zero-cost spells count as 1); None for lands."""
+    if "Land" in (card.get("types") or []):
+        return None
+    cmc = int(card.get("cmc") or 0)
+    return "6+" if cmc >= 6 else str(max(1, cmc))
