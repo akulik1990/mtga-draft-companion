@@ -106,7 +106,8 @@ def arena_order(card):
     """Where Arena's draft screen puts a card: rarity, then mono colours WUBRG, multicolour, colourless, lands.
 
     Colours come from the front face's mana cost, hybrid pips counting both colours.
-    ponytail: from one FRA pack (2026-11-02); pair order, three colours and same-group ties (cmc, name) are guesses.
+    Ties go by name: Arena follows collector number, alphabetical within a colour (Divining Duelist before Unsummon).
+    ponytail: from two FRA packs (2026-11-02); pair order and three colours are still guesses.
     """
     front = (card.get("mana_cost") or "").split("//")[0]
     colours = "".join(c for c in "WUBRG" if any(c in o for o in pips({"mana_cost": front, "types": []})))
@@ -119,7 +120,7 @@ def arena_order(card):
         group = (1, pair if pair is not None else len(PAIRS) + len(colours))
     else:
         group = (2, 0)
-    return RARITY.get(card.get("rarity"), 4), group, card.get("cmc") or 0, card.get("name") or ""
+    return RARITY.get(card.get("rarity"), 4), group, card.get("name") or ""
 
 
 class Hub:

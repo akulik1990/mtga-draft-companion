@@ -176,6 +176,9 @@ def test_arena_order_matches_a_live_fra_pack():
               card("Theorix Metamage", "common", "{2}{U/B} // {U/B}"), card("Charge the Sanctum", "common", "{2}{R/W}"),
               card("Afterthought Sentry", "common", "{2}", cmc=2)]
     assert sorted(reversed(screen), key=arena_order) == screen
+    # Pack 1 pick 6 of the same draft: two blue commons, Divining Duelist ({2}{U}) shown before Unsummon ({U}).
+    duelist, unsummon = card("Divining Duelist", "common", "{2}{U}", cmc=3), card("Unsummon", "common", "{U}", cmc=1)
+    assert sorted([unsummon, duelist], key=arena_order) == [duelist, unsummon]
 
 
 def test_heat_marks_top_twenty_and_early_picks():

@@ -308,6 +308,7 @@ ShellRoot {
                         }
                     }
                 }
+                Item { width: 1; height: win.unit * 0.9 }  // room for the curve's count labels
                 Row {  // curve: spells by mana value 1..6+
                     id: curve
                     readonly property var c: win.pn ? win.pn.pool.curve : [0, 0, 0, 0, 0, 0]
@@ -319,7 +320,7 @@ ShellRoot {
                             required property int index
                             spacing: 1
                             Item {
-                                width: (col.width - win.unit * 1.3) / 6; height: win.unit * 1.8
+                                width: (col.width - win.unit * 1.3) / 6; height: win.unit * 2.6
                                 Rectangle {
                                     anchors.bottom: parent.bottom; width: parent.width; radius: 2
                                     height: Math.max(1, curve.c[index] / curve.peak * parent.height)
