@@ -23,6 +23,18 @@ RARITY = {"mythic": 0, "rare": 1, "uncommon": 2, "common": 3}
 PAIRS = ["WU", "UB", "BR", "RG", "GW", "WB", "UR", "BG", "RW", "GU"]
 
 
+def heat(ratings, mean, std):
+    """{name: 2 | 1} for the set's standout cards. 2 (blue fire): top 20 by All Decks GIH WR. 1 (fire): taken by pick 2
+    on average (ATA <= 2.0) or GIH WR >= mean + 1 SD. Cards in hand for under 500 games are left out."""
+    rows = {}
+    for c in (ratings or {}).values():
+        a = (c.get("deck_colors") or {}).get("All Decks") or {}
+        if "Land" not in (c.get("types") or []) and (a.get("samples") or 0) >= 500:
+            rows[c["name"]] = (a.get("gihwr") or 0, a.get("ata") or 99)
+    top = set(sorted(rows, key=lambda n: -rows[n][0])[:20])
+    return {n: 2 if n in top else 1 for n, (wr, ata) in rows.items() if n in top or ata <= 2.0 or (std and wr >= mean + std)}
+
+
 def arena_order(card):
     """Where Arena's draft screen puts a card: rarity, then mono colours WUBRG, multicolour, colourless, lands.
 
@@ -92,10 +104,15 @@ def create_app(session: DraftSession, *, run_scanner: bool = True, frontend: Pat
         session.poll()  # no-op drain when the scanner thread runs; advances the scanner when it does not (tests, tools)
         return snapshot()
 
+    heat_cache = {}
+
     @app.get("/api/overlay")
     def overlay():
         """The pack in log order with v2's verdict per card; what overlay/draft.qml draws over Arena's cards."""
         s = session.snapshot()
+        mean, std = ((s.get("metrics") or {}).get("All Decks") or {}).get("gihwr") or (0.0, 0.0)
+        if heat_cache.get("dataset") != s["dataset"]:
+            heat_cache.update(dataset=s["dataset"], heat=heat(session.scanner.set_data.get_card_ratings(), mean, std))
         v2 = {r["card_name"]: r for r in s["advisors"].get("v2") or []}
         up = {r["card_name"]: r["rank"] for r in s["advisors"].get("upstream") or []}
         cards = []
@@ -106,10 +123,10 @@ def create_app(session: DraftSession, *, run_scanner: bool = True, frontend: Pat
             ranks = re.match(r"Fit #(\d+) · Power #(\d+)", why[0])
             cards.append({"name": c["name"], "rank": r and r["rank"], "score": r and r["contextual_score"],
                           "orders": why[0] if ranks else "", "fit": ranks and int(ranks[1]), "power": ranks and int(ranks[2]),
+                          "heat": heat_cache["heat"].get(c["name"], 0),
                           "upstream": up.get(c["name"]), "gihwr": gih})
         b = (s.get("v2_split") or {}).get("branch")
         line = "" if not b else (f"Switch: {b['card']} over {b['over']} (+{b['gap']:.1f})" if b["take"] else f"Stay: {b['over']} (not {b['card']})")
-        mean, std = ((s.get("metrics") or {}).get("All Decks") or {}).get("gihwr") or (0.0, 0.0)
         return {"status": s["status"], "pick": [s["pack_number"], s["pick_number"]], "cards": cards, "branch": line,
                 "mean": mean, "std": std}
 

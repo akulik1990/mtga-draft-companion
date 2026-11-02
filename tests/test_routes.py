@@ -176,3 +176,19 @@ def test_arena_order_matches_a_live_fra_pack():
               card("Theorix Metamage", "common", "{2}{U/B} // {U/B}"), card("Charge the Sanctum", "common", "{2}{R/W}"),
               card("Afterthought Sentry", "common", "{2}", cmc=2)]
     assert sorted(reversed(screen), key=arena_order) == screen
+
+
+def test_heat_marks_top_twenty_and_early_picks():
+    from companion.api.app import heat
+
+    def card(name, wr, ata, n=1000, types=("Creature",)):
+        return {"name": name, "types": list(types), "deck_colors": {"All Decks": {"gihwr": wr, "ata": ata, "samples": n}}}
+
+    ratings = {str(i): card(f"c{i}", 70 - i * 0.1, 5.0) for i in range(30)}  # c0..c19 are the top 20
+    ratings["x"] = card("early", 50.0, 1.8)
+    ratings["y"] = card("strong", 61.0, 6.0)
+    ratings["z"] = card("rare sample", 99.0, 1.0, n=100)
+    h = heat(ratings, mean=56.0, std=4.0)
+    assert h["c0"] == 2 and h["c19"] == 2 and h["early"] == 1 and h["strong"] == 1
+    assert "c25" in h and h["c25"] == 1  # 67.5 >= 60: fire by win rate
+    assert "rare sample" not in h

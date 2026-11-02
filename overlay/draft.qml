@@ -118,10 +118,10 @@ ShellRoot {
         visible: root.arenaFocused && !!root.data && (root.data.cards || []).length > 0
 
         // Shield colour by v2's pack rank. The pick glows when it also tops both Fit and Power (best for your colours and
-        // strongest outright), and turns to fire when that card is a bomb too: All Decks GIH WR >= set mean + BOMB_SD.
-        // ponytail: BOMB_SD 1 fires on ~8% of picks 1-3 per pack and almost never later (100 FRA top-drafter drafts, 2026-11-02).
-        readonly property real bombSd: 1.0
+        // strongest outright); such a pick turns to fire when the card is a standout (taken by pick 2 on average, or
+        // GIH WR >= mean + 1 SD) and blue fire when it is one of the set's top 20 by GIH WR. Lists from /api/overlay "heat".
         readonly property var medals: ({
+            bluefire: { hi: "#c8f4ff", lo: "#1f6fe0", edge: "#6fd3ff" },
             fire: { hi: "#ffd27a", lo: "#e0441c", edge: "#ffb347" },
             gold: { hi: "#fff1a8", lo: "#c9971c", edge: "#ffd54f" },
             silver: { hi: "#ffffff", lo: "#b4c8e0", edge: "#eaf2ff" },
@@ -129,9 +129,8 @@ ShellRoot {
             grey: { hi: "#3c4148", lo: "#1d2024", edge: "#50565e" }
         })
         function clear(c) { return c.rank === 1 && c.fit === 1 && c.power === 1; }
-        function bomb(c) { return !!root.data && !!root.data.std && c.gihwr >= root.data.mean + bombSd * root.data.std; }
         function medal(c) {
-            if (c.rank === 1) return medals[clear(c) && bomb(c) ? "fire" : "gold"];
+            if (c.rank === 1) return medals[!clear(c) ? "gold" : c.heat === 2 ? "bluefire" : c.heat === 1 ? "fire" : "gold"];
             return medals[["", "", "silver", "bronze"][c.rank] || "grey"];
         }
         readonly property int unit: Math.round(win.height * 0.017)
