@@ -117,9 +117,9 @@ ShellRoot {
         mask: Region {}  // empty input region: every click goes to Arena
         visible: root.arenaFocused && !!root.data && (root.data.cards || []).length > 0
 
-        // Shield colour by v2's pack rank. The pick glows when it also tops both Fit and Power (best for your colours and
-        // strongest outright); such a pick turns to fire when the card is a standout (taken by pick 2 on average, or
-        // GIH WR >= mean + 1 SD) and blue fire when it is one of the set's top 20 by GIH WR. Lists from /api/overlay "heat".
+        // Shield colour by v2's pack rank. v2's pick turns to fire when the card is a standout (taken by pick 2 on average,
+        // or GIH WR >= mean + 1 SD) and blue fire when it is one of the set's top 20 by GIH WR (/api/overlay "heat").
+        // It glows when it also tops both Fit and Power: best for your colours and strongest outright.
         readonly property var medals: ({
             bluefire: { hi: "#c8f4ff", lo: "#1f6fe0", edge: "#6fd3ff" },
             fire: { hi: "#ffd27a", lo: "#e0441c", edge: "#ffb347" },
@@ -130,25 +130,143 @@ ShellRoot {
         })
         function clear(c) { return c.rank === 1 && c.fit === 1 && c.power === 1; }
         function medal(c) {
-            if (c.rank === 1) return medals[!clear(c) ? "gold" : c.heat === 2 ? "bluefire" : c.heat === 1 ? "fire" : "gold"];
+            if (c.rank === 1) return medals[c.heat === 2 ? "bluefire" : c.heat === 1 ? "fire" : "gold"];
             return medals[["", "", "silver", "bronze"][c.rank] || "grey"];
         }
         readonly property int unit: Math.round(win.height * 0.017)
 
+        readonly property var wubrg: ({ W: "#efe3b8", U: "#4a90d9", B: "#a58fcf", R: "#e0583a", G: "#3fa35c" })
+        readonly property var pn: root.data && root.data.panel ? root.data.panel : null
+
+        // Left panel: v2's pick and why, likeliest lanes, open colours, pool. Sits in the empty strip left of the pack.
         Rectangle {
-            visible: !!root.data && !!root.data.branch
-            x: win.width * root.g.x0
-            y: win.height * root.g.y0 - height - win.unit * 0.6
-            width: branchText.implicitWidth + win.unit * 1.4
-            height: branchText.implicitHeight + win.unit * 0.6
-            radius: height / 2
+            id: side
+            visible: !!win.pn
+            x: win.width * 0.008
+            y: win.height * root.g.y0
+            width: win.width * (root.g.x0 - 0.018)
+            height: col.implicitHeight + win.unit * 1.2
+            radius: win.unit * 0.6
             color: "#d90e1215"
-            border.color: "#40ffffff"
-            Text {
-                id: branchText
-                anchors.centerIn: parent
-                text: root.data ? root.data.branch : ""
-                color: "#f0f0f0"; font.pixelSize: win.unit * 1.05; font.weight: Font.DemiBold
+            border.color: "#30ffffff"
+
+            Column {
+                id: col
+                x: win.unit * 0.6; y: win.unit * 0.6
+                width: side.width - win.unit * 1.2
+                spacing: win.unit * 0.35
+
+                component Heading: Text { color: "#8f98a3"; font.pixelSize: win.unit * 0.62; font.weight: Font.DemiBold; font.letterSpacing: 1 }
+                component Line: Text { color: "#e8eaed"; font.pixelSize: win.unit * 0.72; width: col.width; wrapMode: Text.Wrap }
+
+                Heading { text: "V2 PICK" }
+                Text {
+                    width: col.width; elide: Text.ElideRight
+                    text: win.pn ? win.pn.pick || "–" : ""
+                    color: "#ffd54f"; font.pixelSize: win.unit * 0.95; font.bold: true
+                }
+                Repeater { model: win.pn ? win.pn.why : []; Line { required property string modelData; text: modelData; color: "#c8cdd3" } }
+                Line {
+                    visible: !!root.data && !!root.data.branch
+                    text: root.data ? root.data.branch : ""
+                    color: root.data && root.data.branch.startsWith("Switch") ? "#ffb347" : "#9fd3a8"
+                    font.weight: Font.DemiBold
+                }
+
+                Item { width: 1; height: win.unit * 0.3 }
+                Heading { text: "YOUR LANES" }
+                Repeater {
+                    model: win.pn ? win.pn.lanes : []
+                    Row {
+                        required property var modelData
+                        spacing: win.unit * 0.4
+                        Text { text: modelData.lane; width: win.unit * 1.6; color: "#e8eaed"; font.pixelSize: win.unit * 0.72; font.bold: true }
+                        Item {  // probability bar in the pair's two colours
+                            width: col.width - win.unit * 5.2; height: win.unit * 0.55
+                            anchors.verticalCenter: parent.verticalCenter
+                            Rectangle { anchors.fill: parent; radius: height / 2; color: "#2a2f35" }
+                            Row {
+                                height: parent.height
+                                Rectangle { width: parent.parent.width * modelData.p / win.pn.lanes[0].p / 2; height: parent.height; color: win.wubrg[modelData.lane[0]] }
+                                Rectangle { width: parent.parent.width * modelData.p / win.pn.lanes[0].p / 2; height: parent.height; color: win.wubrg[modelData.lane[1]] }
+                            }
+                        }
+                        Text { text: Math.round(modelData.p * 100) + "%"; width: win.unit * 1.6; horizontalAlignment: Text.AlignRight; color: "#c8cdd3"; font.pixelSize: win.unit * 0.65 }
+                    }
+                }
+                Line {
+                    visible: !!win.pn && win.pn.lanes.length > 0
+                    text: win.pn ? "Pair win rates: " + win.pn.lanes.map(l => l.lane + " " + (l.wr ? Number(l.wr).toFixed(1) : "–")).join(" · ") : ""
+                    color: "#8f98a3"; font.pixelSize: win.unit * 0.58
+                }
+
+                Item { width: 1; height: win.unit * 0.3 }
+                Heading { text: "OPEN COLOURS (passing to you)" }
+                Row {
+                    id: sig
+                    readonly property var vals: win.pn ? win.pn.signals : ({})
+                    readonly property real peak: Math.max(0.01, ...Object.values(vals).map(Math.abs))
+                    visible: Object.values(vals).some(v => v !== 0)
+                    spacing: win.unit * 0.3
+                    Repeater {
+                        model: ["W", "U", "B", "R", "G"]
+                        Column {
+                            required property string modelData
+                            readonly property real v: sig.vals[modelData] || 0
+                            spacing: 2
+                            Item {  // centred bar: up = open, down = cut
+                                width: (col.width - win.unit * 1.2) / 5; height: win.unit * 2.4
+                                Rectangle { y: parent.height / 2; width: parent.width; height: 1; color: "#40ffffff" }
+                                Rectangle {
+                                    width: parent.width * 0.7; x: parent.width * 0.15
+                                    height: Math.abs(parent.parent.v) / sig.peak * parent.height / 2
+                                    y: parent.parent.v >= 0 ? parent.height / 2 - height : parent.height / 2
+                                    radius: 2; color: win.wubrg[modelData]; opacity: parent.parent.v >= 0 ? 1 : 0.45
+                                }
+                            }
+                            Text { anchors.horizontalCenter: parent.horizontalCenter; text: modelData; color: win.wubrg[modelData]; font.pixelSize: win.unit * 0.65; font.bold: true }
+                        }
+                    }
+                }
+                Line { visible: !sig.visible; text: "No signal yet"; color: "#8f98a3"; font.pixelSize: win.unit * 0.65 }
+
+                Item { width: 1; height: win.unit * 0.3 }
+                Heading { text: win.pn ? "POOL · " + win.pn.pool.n + " CARDS" : "POOL" }
+                Row {
+                    spacing: win.unit * 0.5
+                    Repeater {
+                        model: ["W", "U", "B", "R", "G"]
+                        Row {
+                            required property string modelData
+                            spacing: 3
+                            Rectangle { width: win.unit * 0.6; height: width; radius: width / 2; color: win.wubrg[modelData]; anchors.verticalCenter: parent.verticalCenter }
+                            Text { text: win.pn ? win.pn.pool.colours[modelData] : 0; color: "#e8eaed"; font.pixelSize: win.unit * 0.68 }
+                        }
+                    }
+                }
+                Row {  // curve: spells by mana value 1..6+
+                    id: curve
+                    readonly property var c: win.pn ? win.pn.pool.curve : [0, 0, 0, 0, 0, 0]
+                    readonly property int peak: Math.max(1, ...c)
+                    spacing: win.unit * 0.25
+                    Repeater {
+                        model: 6
+                        Column {
+                            required property int index
+                            spacing: 1
+                            Item {
+                                width: (col.width - win.unit * 1.3) / 6; height: win.unit * 1.8
+                                Rectangle {
+                                    anchors.bottom: parent.bottom; width: parent.width; radius: 2
+                                    height: Math.max(1, curve.c[index] / curve.peak * parent.height)
+                                    color: curve.c[index] ? "#7f8c99" : "#2a2f35"
+                                }
+                                Text { anchors.horizontalCenter: parent.horizontalCenter; y: -height + parent.height - Math.max(1, curve.c[index] / curve.peak * parent.height); visible: curve.c[index] > 0; text: curve.c[index]; color: "#c8cdd3"; font.pixelSize: win.unit * 0.55 }
+                            }
+                            Text { anchors.horizontalCenter: parent.horizontalCenter; text: index === 5 ? "6+" : index + 1; color: "#8f98a3"; font.pixelSize: win.unit * 0.55 }
+                        }
+                    }
+                }
             }
         }
 

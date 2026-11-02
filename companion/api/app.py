@@ -35,6 +35,25 @@ def heat(ratings, mean, std):
     return {n: 2 if n in top else 1 for n, (wr, ata) in rows.items() if n in top or ata <= 2.0 or (std and wr >= mean + std)}
 
 
+def side_panel(s):
+    """What the overlay's left panel shows: v2's pick and reasons, likeliest lanes, open colours, pool summary."""
+    top = (s["advisors"].get("v2") or [None])[0]
+    lanes = sorted((s.get("lanes") or {}).items(), key=lambda kv: -kv[1])[:4]
+    pair_wr = s.get("color_ratings") or {}
+    sides = s.get("signals_v2_sides") or {}
+    spells = [c for c in s.get("pool") or [] if "Land" not in (c.get("types") or [])]
+    curve = [0] * 6
+    for c in spells:
+        curve[min(max(int(c.get("cmc") or 0), 1), 6) - 1] += 1
+    return {
+        "pick": top and top["card_name"],
+        "why": [r for r in (top or {}).get("reasoning") or [] if not r.startswith("Fit #")][:3],
+        "lanes": [{"lane": l, "p": round(p, 3), "wr": pair_wr.get(l)} for l, p in lanes],
+        "signals": sides.get(sides.get("active")) or s.get("signals_v2") or {},
+        "pool": {"n": len(s.get("pool") or []), "colours": {k: sum(k in (c.get("colors") or []) for c in spells) for k in "WUBRG"}, "curve": curve},
+    }
+
+
 def arena_order(card):
     """Where Arena's draft screen puts a card: rarity, then mono colours WUBRG, multicolour, colourless, lands.
 
@@ -128,7 +147,7 @@ def create_app(session: DraftSession, *, run_scanner: bool = True, frontend: Pat
         b = (s.get("v2_split") or {}).get("branch")
         line = "" if not b else (f"Switch: {b['card']} over {b['over']} (+{b['gap']:.1f})" if b["take"] else f"Stay: {b['over']} (not {b['card']})")
         return {"status": s["status"], "pick": [s["pack_number"], s["pick_number"]], "cards": cards, "branch": line,
-                "mean": mean, "std": std}
+                "mean": mean, "std": std, "panel": side_panel(s)}
 
     @app.post("/api/draft/rescan")
     def rescan():
