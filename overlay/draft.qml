@@ -328,7 +328,7 @@ ShellRoot {
                     }
                 }
 
-                // Curve of your spells in that pair; gold lines mark top players' typical deck.
+                // Curve of your spells in that pair (solid) inside top players' typical curve (outlined).
                 Item { width: 1; height: win.unit * 0.5; visible: !!deck.d }
                 Row {
                     id: curve
@@ -347,19 +347,21 @@ ShellRoot {
                             spacing: 1
                             Item {
                                 width: (col.width - win.unit * 1.3) / 6; height: win.unit * 1.9
-                                Rectangle {
+                                Rectangle {  // top players' typical count: a faint outlined bar behind yours
                                     anchors.bottom: parent.bottom; width: parent.width; radius: 2
+                                    height: want / curve.peak * parent.height
+                                    color: "#1affd54f"; border.color: "#99ffd54f"; border.width: 1
+                                }
+                                Rectangle {  // yours
+                                    anchors.bottom: parent.bottom; anchors.horizontalCenter: parent.horizontalCenter
+                                    width: parent.width * 0.62; radius: 2
                                     height: Math.max(1, n / curve.peak * parent.height)
-                                    color: n ? "#7f8c99" : "#2a2f35"
+                                    color: n ? "#9aa7b4" : "transparent"
                                 }
-                                Rectangle {  // top players' typical count
-                                    width: parent.width + 4; x: -2; height: 2; color: "#ffd54f"
-                                    y: parent.height - want / curve.peak * parent.height
-                                }
-                                Text {  // count above the bar, light on the panel
+                                Text {  // your count, above the taller of the two bars
                                     anchors.horizontalCenter: parent.horizontalCenter
-                                    y: parent.height - Math.max(1, n / curve.peak * parent.height) - height
-                                    visible: n > 0; text: n; color: "#e8eaed"; font.pixelSize: win.unit * 0.55; font.bold: true
+                                    y: parent.height - Math.max(n, want) / curve.peak * parent.height - height
+                                    text: n; color: "#e8eaed"; font.pixelSize: win.unit * 0.55; font.bold: true
                                 }
                             }
                             Text { anchors.horizontalCenter: parent.horizontalCenter; text: modelData; color: "#8f98a3"; font.pixelSize: win.unit * 0.55 }
