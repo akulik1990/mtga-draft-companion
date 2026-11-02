@@ -319,3 +319,15 @@ def test_colour_shift_lowers_only_that_colour(world, monkeypatch):
     monkeypatch.setattr(DraftAdvisorV2, "COLOUR_SHIFT", "U:2")
     assert abs(b0 - adv.value(blue, "WU") - 2.0) < 1e-6
     assert adv.value(white, "WU") == w0
+
+
+def test_lane_flat_power_by_pick(world, monkeypatch):
+    metrics, cards = world
+    monkeypatch.setattr(DraftAdvisorV2, "LANE_FLAT", "3:0.5,9:0.75")
+    assert DraftAdvisorV2(metrics, []).lane_flat_power() == 0.5          # pick 1
+    assert DraftAdvisorV2(metrics, cards[:3]).lane_flat_power() == 0.75  # pick 4
+    assert DraftAdvisorV2(metrics, cards[:9]).lane_flat_power() == 1.0   # pick 10
+    flat = DraftAdvisorV2(metrics, cards[:3]).lanes
+    monkeypatch.setattr(DraftAdvisorV2, "LANE_FLAT", "")
+    sharp = DraftAdvisorV2(metrics, cards[:3]).lanes
+    assert max(flat.values()) < max(sharp.values()) and abs(sum(flat.values()) - 1) < 1e-9

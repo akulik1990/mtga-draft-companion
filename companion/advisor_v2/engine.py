@@ -159,6 +159,7 @@ class DraftAdvisorV2:
     FIX_WEIGHT = 0.5  # share of each enabled splash's gain (over replacement) credited to the land
     FIX_CAP = 3.0  # most a land's fixing can add, in WR points
     HALF_PIVOT = 0  # from this many spells in the pool, lanes sharing no colour with the pool's top pair get P = 0 (winners change one colour, not both); 0 = off
+    LANE_FLAT = ""  # flatten P(lane) early, "3:0.5,9:0.75": up to pick 3 P ∝ P^0.5, picks 4-9 P^0.75, later unchanged; "" = off
     COLOUR_SHIFT = ""  # per-colour WR points taken off a card's value, "U:2" or "U:2,B:-1"; a card gets the mean over its colours; "" = off
     WHEEL_EPS = 0.3  # within this of the best score, prefer the card that wheels less
     WHEEL_SPLIT = False  # apply the WHEEL_EPS tiebreak to the split's final order too (it used to apply only with SPLIT off)
@@ -216,7 +217,21 @@ class DraftAdvisorV2:
             p = {lane: v if set(lane) & set(self.anchor) else 0.0 for lane, v in p.items()}
             total = sum(p.values())
             p = {lane: v / total for lane, v in p.items()}
+        power = self.lane_flat_power()
+        if power != 1.0:
+            p = {lane: v ** power for lane, v in p.items()}
+            total = sum(p.values())
+            p = {lane: v / total for lane, v in p.items()}
         return p
+
+    def lane_flat_power(self):
+        """The LANE_FLAT exponent for the pick being made (pool size + 1)."""
+        pick = len(self.pool) + 1
+        for part in filter(None, self.LANE_FLAT.split(",")):
+            last, power = part.split(":")
+            if pick <= int(last):
+                return float(power)
+        return 1.0
 
     def shrunk_wr(self, card, lane):
         """Lane GIH WR pulled toward a prior by sample size; (value, n).
