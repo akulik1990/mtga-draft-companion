@@ -183,7 +183,7 @@ ShellRoot {
                     Column {
                         anchors.verticalCenter: parent.verticalCenter
                         Text {
-                            text: card.modelData.score != null ? Number(card.modelData.score).toFixed(1) : ""
+                            text: card.modelData.score ? Number(card.modelData.score).toFixed(1) : "n/a"
                             color: card.medal ? card.medal.edge : "#f5f5f5"
                             font.pixelSize: win.unit * 1.1; font.bold: true
                         }
