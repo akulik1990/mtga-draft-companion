@@ -432,6 +432,8 @@ ShellRoot {
                 readonly property int col: index % root.g.perRow
                 readonly property int row: Math.floor(index / root.g.perRow)
                 readonly property var t: win.medal(modelData)
+                readonly property real k: Math.min(1, root.g.cardW / 0.09)  // smaller text on the narrower cards of the deck-below layout
+                readonly property real maxW: win.width * root.g.cardW - win.unit * 1.2
                 x: win.width * (root.g.x0 + col * root.g.dx) + win.unit * 0.3
                 y: win.height * (root.g.y0 + row * root.g.dy + root.g.cardH * 0.1)
                 width: stats.implicitWidth + win.unit * 0.8
@@ -443,13 +445,19 @@ ShellRoot {
                     id: stats
                     anchors.centerIn: parent
                     Text {
-                        text: (panel.modelData.gihwr ? "GIH " + Number(panel.modelData.gihwr).toFixed(1) : "GIH n/a") + (panel.modelData.upstream ? "  ·  U" + panel.modelData.upstream : "") + (panel.modelData.wheel != null ? "  ·  wheel " + Math.round(panel.modelData.wheel) + "%" : "")
-                        color: "#f0f0f0"; font.pixelSize: win.unit * 0.72; font.weight: Font.DemiBold
+                        width: Math.min(implicitWidth, panel.maxW); elide: Text.ElideRight
+                        text: (panel.modelData.gihwr ? "GIH " + Number(panel.modelData.gihwr).toFixed(1) : "GIH n/a") + (panel.modelData.upstream ? " · U" + panel.modelData.upstream : "")
+                        color: "#f0f0f0"; font.pixelSize: win.unit * 0.72 * panel.k; font.weight: Font.DemiBold
                     }
                     Text {
-                        visible: !!panel.modelData.orders
+                        width: Math.min(implicitWidth, panel.maxW); elide: Text.ElideRight
                         text: (panel.modelData.orders || "").replace("Power ", "Pow ").replace(/#/g, "")
-                        color: "#b8bec6"; font.pixelSize: win.unit * 0.65
+                        color: "#b8bec6"; font.pixelSize: win.unit * 0.65 * panel.k
+                    }
+                    Text {  // chance the card comes back on the wheel
+                        visible: panel.modelData.wheel != null
+                        text: "↻ " + Math.round(panel.modelData.wheel || 0) + "%"
+                        color: (panel.modelData.wheel || 0) >= 50 ? "#9fd3a8" : "#b8bec6"; font.pixelSize: win.unit * 0.65 * panel.k
                     }
                 }
             }
