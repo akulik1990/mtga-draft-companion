@@ -1,7 +1,10 @@
 {
- "values": {},
+ "values": {"FIX_BONUS": 3.0},
  "pairs": {},
  "types": {},
  "cards": {},
- "combos": []
+ "combos": [],
+ "notes": {
+  "FIX_BONUS": "Top players' FRA draft video (2026-11-02): 'always take the land unless it's so above replacement'. FRA top-drafter train top-1 55.76 -> 56.11, test 55.87 -> 56.33 (top-3 85.79 -> 86.58); mock decks 54.58 -> 54.54 (100 fresh tables); dual lands per draft 0.28 -> 0.97. Bonus 1-6 all similar; 3 is the middle."
+ }
 }
