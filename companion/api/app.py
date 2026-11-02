@@ -35,6 +35,18 @@ def heat(ratings, mean, std):
     return {n: 2 if n in top else 1 for n, (wr, ata) in rows.items() if n in top or ata <= 2.0 or (std and wr >= mean + std)}
 
 
+def plain(reason):
+    """v2's reasoning lines, reworded for the overlay panel."""
+    m = re.match(r"Branch: \+([\d.]+) over (.+), above the (-?[\d.]+) top drafters switch at", reason)
+    if m:
+        return f"{m[1]} points stronger than {m[2]}; top drafters switch at {m[3]} or more this early"
+    m = re.match(r"(\w+) (\d+)% → ([\d.]+) \((?:n=(\d+)|rarely played there)\)", reason)
+    if m:
+        games = f"{int(m[4]):,} games" if m[4] else "rarely played there"
+        return f"Plays in {m[1]}: wins {m[3]}%, {games}" if m[2] == "100" else f"{m[1]} ({m[2]}% likely): wins {m[3]}%, {games}"
+    return reason
+
+
 def side_panel(s):
     """What the overlay's left panel shows: v2's pick and reasons, likeliest lanes, open colours, pool summary."""
     top = (s["advisors"].get("v2") or [None])[0]
@@ -47,7 +59,7 @@ def side_panel(s):
         curve[min(max(int(c.get("cmc") or 0), 1), 6) - 1] += 1
     return {
         "pick": top and top["card_name"],
-        "why": [r for r in (top or {}).get("reasoning") or [] if not r.startswith("Fit #")][:3],
+        "why": [plain(r) for r in (top or {}).get("reasoning") or [] if not r.startswith("Fit #")][:3],
         "lanes": [{"lane": l, "p": round(p, 3), "wr": pair_wr.get(l)} for l, p in lanes],
         "signals": sides.get(sides.get("active")) or s.get("signals_v2") or {},
         "pool": {"n": len(s.get("pool") or []), "colours": {k: sum(k in (c.get("colors") or []) for c in spells) for k in "WUBRG"}, "curve": curve},
@@ -145,6 +157,11 @@ def create_app(session: DraftSession, *, run_scanner: bool = True, frontend: Pat
                           "heat": heat_cache["heat"].get(c["name"], 0),
                           "upstream": up.get(c["name"]), "gihwr": gih})
         b = (s.get("v2_split") or {}).get("branch")
+        if b and b["take"]:  # the switch pick was chosen on Power; show that, not its blended Fit-side score
+            power_top = s["v2_split"]["power"][0]
+            for c in cards:
+                if c["name"] == power_top["card"]:
+                    c["score"] = power_top["score"]
         line = "" if not b else (f"Switch: {b['card']} over {b['over']} (+{b['gap']:.1f})" if b["take"] else f"Stay: {b['over']} (not {b['card']})")
         return {"status": s["status"], "pick": [s["pack_number"], s["pick_number"]], "cards": cards, "branch": line,
                 "mean": mean, "std": std, "panel": side_panel(s)}
