@@ -1,7 +1,9 @@
 """FastAPI app: snapshot endpoint, WebSocket push, static frontend."""
 
 import asyncio
+import json
 import re
+from functools import lru_cache
 import logging
 from contextlib import asynccontextmanager
 from pathlib import Path
@@ -47,9 +49,24 @@ def plain(reason):
     return reason
 
 
-def side_panel(s):
-    """What the overlay's left panel shows: v2's pick and reasons, likeliest lanes, open colours, pool summary."""
+@lru_cache
+def close_calls(set_code):
+    path = ROOT / "companion" / "advisor_v2" / f"closecalls_{set_code}.json"
+    return json.loads(path.read_text())["buckets"] if path.exists() else []
+
+
+def side_panel(s, ranked=()):
+    """What the overlay's left panel shows: v2's top three and how top drafters split between them in this spot,
+    v2's reasons, likeliest lanes, open colours, pool summary."""
     top = (s["advisors"].get("v2") or [None])[0]
+    why = {r["card_name"]: next((plain(w) for w in r.get("reasoning") or [] if re.match(r"\w+ \d+% →", w)), "")
+           for r in s["advisors"].get("v2") or []}
+    close = None
+    if len(ranked) >= 2 and ranked[0]["score"] and ranked[1]["score"]:
+        gap = ranked[0]["score"] - ranked[1]["score"]
+        row = next((r for r in close_calls((s.get("event") or {}).get("set") or "")
+                    if r["from"] <= gap and (r["to"] is None or gap < r["to"])), None)
+        close = {"gap": round(gap, 1), "took": row and row["took"][:3]}
     lanes = sorted((s.get("lanes") or {}).items(), key=lambda kv: -kv[1])[:4]
     pair_wr = s.get("color_ratings") or {}
     sides = s.get("signals_v2_sides") or {}
@@ -59,6 +76,8 @@ def side_panel(s):
         curve[min(max(int(c.get("cmc") or 0), 1), 6) - 1] += 1
     return {
         "pick": top and top["card_name"],
+        "top3": [{"name": c["name"], "score": c["score"], "why": why.get(c["name"], "")} for c in ranked],
+        "close": close,
         "why": [plain(r) for r in (top or {}).get("reasoning") or [] if not r.startswith("Fit #")][:3],
         "lanes": [{"lane": l, "p": round(p, 3), "wr": pair_wr.get(l)} for l, p in lanes],
         "signals": sides.get(sides.get("active")) or s.get("signals_v2") or {},
@@ -162,9 +181,16 @@ def create_app(session: DraftSession, *, run_scanner: bool = True, frontend: Pat
             for c in cards:
                 if c["name"] == power_top["card"]:
                     c["score"] = power_top["score"]
-        line = "" if not b else (f"Switch: {b['card']} over {b['over']} (+{b['gap']:.1f})" if b["take"] else f"Stay: {b['over']} (not {b['card']})")
+        if not b:
+            line = ""
+        elif b["take"]:
+            line = f"Switch: {b['card']} over {b['over']} (+{b['gap']:.1f})"
+        else:
+            line = (f"Not switching to {b['card']}: {b['gap']:+.1f} stronger, needs {b['threshold']:+.1f} at this stage"
+                    + ("" if b.get("shares_colour", True) else " for a card outside both your colours"))
+        ranked = sorted((c for c in cards if c["rank"]), key=lambda c: c["rank"])[:3]
         return {"status": s["status"], "pick": [s["pack_number"], s["pick_number"]], "cards": cards, "branch": line,
-                "mean": mean, "std": std, "panel": side_panel(s)}
+                "mean": mean, "std": std, "panel": side_panel(s, ranked)}
 
     @app.post("/api/draft/rescan")
     def rescan():

@@ -159,18 +159,56 @@ ShellRoot {
                 component Heading: Text { color: "#8f98a3"; font.pixelSize: win.unit * 0.62; font.weight: Font.DemiBold; font.letterSpacing: 1 }
                 component Line: Text { color: "#e8eaed"; font.pixelSize: win.unit * 0.72; width: col.width; wrapMode: Text.Wrap }
 
-                Heading { text: "V2 PICK" }
-                Text {
-                    width: col.width; elide: Text.ElideRight
-                    text: win.pn ? win.pn.pick || "–" : ""
-                    color: "#ffd54f"; font.pixelSize: win.unit * 0.95; font.bold: true
+                Heading { text: "V2 TOP 3" }
+                Repeater {
+                    model: win.pn ? win.pn.top3 : []
+                    Column {
+                        required property var modelData
+                        required property int index
+                        readonly property var m: win.medals[["gold", "silver", "bronze"][index]]
+                        width: col.width
+                        spacing: 1
+                        Row {
+                            spacing: win.unit * 0.4
+                            Rectangle {
+                                width: win.unit * 1.1; height: width; radius: width / 2
+                                anchors.verticalCenter: parent.verticalCenter
+                                gradient: Gradient {
+                                    GradientStop { position: 0; color: m.hi }
+                                    GradientStop { position: 1; color: m.lo }
+                                }
+                                Text { anchors.centerIn: parent; text: index + 1; color: "#1b1407"; font.pixelSize: win.unit * 0.7; font.bold: true }
+                            }
+                            Text {
+                                width: col.width - win.unit * 4.4; elide: Text.ElideRight
+                                text: modelData.name
+                                color: index === 0 ? "#ffd54f" : "#e8eaed"; font.pixelSize: win.unit * 0.82; font.bold: index === 0
+                            }
+                            Text {
+                                width: win.unit * 2.4; horizontalAlignment: Text.AlignRight
+                                text: modelData.score ? (index === 0 ? Number(modelData.score).toFixed(1)
+                                      : (modelData.score - win.pn.top3[0].score).toFixed(1)) : "n/a"
+                                color: "#c8cdd3"; font.pixelSize: win.unit * 0.72
+                            }
+                        }
+                        Line { visible: !!modelData.why; text: modelData.why; leftPadding: win.unit * 1.5; color: "#9aa3ad"; font.pixelSize: win.unit * 0.62 }
+                    }
                 }
-                Repeater { model: win.pn ? win.pn.why : []; Line { required property string modelData; text: modelData; color: "#c8cdd3" } }
+                Line {  // how top drafters split between v2's top three when #1 leads by this much
+                    visible: !!win.pn && !!win.pn.close && !!win.pn.close.took
+                    text: win.pn && win.pn.close && win.pn.close.took
+                          ? (win.pn.close.gap < 1 ? "Close call. " : win.pn.close.gap < 4 ? "" : "Clear. ")
+                            + "#1 leads by " + win.pn.close.gap + "; top drafters here take #1 " + Math.round(win.pn.close.took[0])
+                            + "%, #2 " + Math.round(win.pn.close.took[1]) + "%, #3 " + Math.round(win.pn.close.took[2]) + "%"
+                          : ""
+                    color: win.pn && win.pn.close && win.pn.close.gap < 1 ? "#ffcc80" : "#9fd3a8"
+                    font.pixelSize: win.unit * 0.66
+                }
                 Line {
                     visible: !!root.data && !!root.data.branch
                     text: root.data ? root.data.branch : ""
-                    color: root.data && root.data.branch.startsWith("Switch") ? "#ffb347" : "#9fd3a8"
-                    font.weight: Font.DemiBold
+                    color: root.data && root.data.branch.startsWith("Switch") ? "#ffb347" : "#8f98a3"
+                    font.pixelSize: win.unit * 0.62
                 }
 
                 Item { width: 1; height: win.unit * 0.3 }
