@@ -3,6 +3,7 @@
 // The API sorts the pack the way Arena displays it. Arena has two draft layouts; one screen pixel tells them apart.
 // ponytail: assumes Arena fills the output. Grids measured on 2560x1440, 2026-11-02.
 import QtQuick
+import QtQuick.Shapes
 import Quickshell
 import Quickshell.Io
 import Quickshell.Wayland
@@ -115,13 +116,20 @@ ShellRoot {
         mask: Region {}  // empty input region: every click goes to Arena
         visible: root.arenaFocused && !!root.data && (root.data.cards || []).length > 0
 
-        // Gold, silver, bronze for v2's top three; the rest stay quiet.
-        readonly property var medals: [
-            null,
-            { hi: "#fff1a8", lo: "#c9971c", edge: "#ffd54f" },
-            { hi: "#ffffff", lo: "#9aa4ae", edge: "#d5dbe1" },
-            { hi: "#ffc58f", lo: "#a5612c", edge: "#e0955a" }
+        // Draftsmith-style tiers on v2's score, in set SDs from the set's mean GIH WR. v2's scores run about one SD
+        // under raw win rates early (they average over lanes a card cannot be cast in), hence the low cut-offs.
+        readonly property var tiers: [
+            { min: 1, hi: "#ffd27a", lo: "#e0441c", edge: "#ffb347" },    // fire
+            { min: 0, hi: "#fff1a8", lo: "#c9971c", edge: "#ffd54f" },    // gold
+            { min: -1, hi: "#ffffff", lo: "#9aa4ae", edge: "#d5dbe1" },   // silver
+            { min: -2, hi: "#ffc58f", lo: "#a5612c", edge: "#e0955a" },   // bronze
+            { min: -99, hi: "#6a7078", lo: "#2e3238", edge: "#80868e" }   // weak
         ]
+        function tier(score) {
+            if (!score || !root.data || !root.data.std) return tiers[4];
+            const z = (score - root.data.mean) / root.data.std;
+            return tiers.find(t => z >= t.min);
+        }
         readonly property int unit: Math.round(win.height * 0.017)
 
         Rectangle {
@@ -143,59 +151,58 @@ ShellRoot {
 
         Repeater {
             model: root.data ? root.data.cards : []
-            delegate: Rectangle {
+            delegate: Item {
                 id: card
                 visible: !root.overCard
                 required property var modelData
                 required property int index
                 readonly property int col: index % root.g.perRow
                 readonly property int row: Math.floor(index / root.g.perRow)
-                readonly property var medal: modelData.rank && modelData.rank <= 3 ? win.medals[modelData.rank] : null
-                x: win.width * (root.g.x0 + col * root.g.dx) + win.unit * 0.3
-                y: win.height * (root.g.y0 + row * root.g.dy + root.g.cardH * 0.1)
-                width: content.implicitWidth + win.unit * 0.9
-                height: content.implicitHeight + win.unit * 0.5
-                radius: height / 2
-                color: medal ? "#e60e1215" : "#bf0e1215"
-                border.color: medal ? medal.edge : "#30ffffff"
-                border.width: medal ? 2 : 1
+                readonly property var t: win.tier(modelData.score)
+                // Shield on the card's bottom edge, clear of art and rules text.
+                width: win.width * root.g.cardW * 0.34
+                height: width * 1.15
+                x: win.width * (root.g.x0 + col * root.g.dx + root.g.cardW / 2) - width / 2
+                y: win.height * (root.g.y0 + row * root.g.dy + root.g.cardH) - height * 0.45
 
-                Row {
-                    id: content
-                    anchors.verticalCenter: parent.verticalCenter
-                    x: win.unit * 0.25
-                    spacing: win.unit * 0.4
-
-                    Rectangle {  // rank medallion
-                        width: win.unit * 1.9; height: width; radius: width / 2
-                        anchors.verticalCenter: parent.verticalCenter
-                        gradient: Gradient {
-                            GradientStop { position: 0; color: card.medal ? card.medal.hi : "#4a5058" }
-                            GradientStop { position: 1; color: card.medal ? card.medal.lo : "#2a2e33" }
+                Shape {
+                    id: shield
+                    anchors.fill: parent
+                    preferredRendererType: Shape.CurveRenderer
+                    ShapePath {
+                        strokeColor: card.t.edge; strokeWidth: 1.5
+                        fillGradient: LinearGradient {
+                            x1: 0; y1: 0; x2: 0; y2: card.height
+                            GradientStop { position: 0; color: card.t.hi }
+                            GradientStop { position: 1; color: card.t.lo }
                         }
-                        Text {
-                            anchors.centerIn: parent
-                            text: card.modelData.rank || "–"
-                            color: card.medal ? "#1b1407" : "#e8e8e8"
-                            font.pixelSize: win.unit * 1.05; font.bold: true
-                        }
+                        PathSvg { path: `M ${card.width/2} 0 L ${card.width} ${card.height*0.14} L ${card.width} ${card.height*0.5} Q ${card.width} ${card.height*0.84} ${card.width/2} ${card.height} Q 0 ${card.height*0.84} 0 ${card.height*0.5} L 0 ${card.height*0.14} Z` }
                     }
-                    Column {
-                        anchors.verticalCenter: parent.verticalCenter
-                        Text {
-                            text: card.modelData.score ? Number(card.modelData.score).toFixed(1) : "n/a"
-                            color: card.medal ? card.medal.edge : "#f5f5f5"
-                            font.pixelSize: win.unit * 1.1; font.bold: true
-                        }
-                        Text {
-                            text: (card.modelData.orders || "").replace("Power ", "Pow ").replace(/#/g, "") + (card.modelData.upstream ? " · U" + card.modelData.upstream : "")
-                            color: "#b8bec6"; font.pixelSize: win.unit * 0.6
-                        }
-                        Text {
-                            visible: root.showNames
-                            text: card.modelData.name
-                            color: "#9aa0a8"; font.pixelSize: win.unit * 0.6
-                        }
+                    ShapePath {  // dark plate inside the rim
+                        readonly property real m: card.width * 0.13
+                        strokeColor: "transparent"
+                        fillColor: "#ee15181c"
+                        PathSvg { path: `M ${card.width/2} ${card.height*0.1} L ${card.width*0.87} ${card.height*0.21} L ${card.width*0.87} ${card.height*0.5} Q ${card.width*0.87} ${card.height*0.77} ${card.width/2} ${card.height*0.89} Q ${card.width*0.13} ${card.height*0.77} ${card.width*0.13} ${card.height*0.5} L ${card.width*0.13} ${card.height*0.21} Z` }
+                    }
+                }
+                Text {
+                    anchors.centerIn: parent
+                    anchors.verticalCenterOffset: -card.height * 0.03
+                    text: card.modelData.score ? Math.round(card.modelData.score) : "–"
+                    color: "white"; font.pixelSize: card.width * 0.36; font.bold: true
+                }
+                Rectangle {  // pack rank, gold ring for v2's pick
+                    visible: !!card.modelData.rank
+                    width: card.width * 0.38; height: width; radius: width / 2
+                    x: card.width * 0.78; y: -height * 0.15
+                    color: "#15181c"
+                    border.color: card.modelData.rank === 1 ? "#ffd54f" : "#80868e"
+                    border.width: card.modelData.rank === 1 ? 2 : 1
+                    Text {
+                        anchors.centerIn: parent
+                        text: card.modelData.rank
+                        color: card.modelData.rank === 1 ? "#ffd54f" : "#d0d4d8"
+                        font.pixelSize: parent.width * 0.55; font.bold: true
                     }
                 }
             }

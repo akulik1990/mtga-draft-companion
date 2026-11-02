@@ -107,7 +107,9 @@ def create_app(session: DraftSession, *, run_scanner: bool = True, frontend: Pat
                           "upstream": up.get(c["name"]), "gihwr": gih})
         b = (s.get("v2_split") or {}).get("branch")
         line = "" if not b else (f"Switch: {b['card']} over {b['over']} (+{b['gap']:.1f})" if b["take"] else f"Stay: {b['over']} (not {b['card']})")
-        return {"status": s["status"], "pick": [s["pack_number"], s["pick_number"]], "cards": cards, "branch": line}
+        mean, std = ((s.get("metrics") or {}).get("All Decks") or {}).get("gihwr") or (0.0, 0.0)
+        return {"status": s["status"], "pick": [s["pack_number"], s["pick_number"]], "cards": cards, "branch": line,
+                "mean": mean, "std": std}
 
     @app.post("/api/draft/rescan")
     def rescan():
