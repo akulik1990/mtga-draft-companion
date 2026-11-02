@@ -54,6 +54,13 @@ def castable(card, lane):
     return not off_pips(card, lane)
 
 
+def any_colour_fixer(card):
+    """A spell that finds or makes any colour: basic landcycling, or a mana ability for any color."""
+    if "Land" in (card.get("types") or []):
+        return False
+    return "Basic landcycling" in (card.get("keywords") or []) or "mana of any color" in (card.get("oracle_text") or "")
+
+
 def quality(card, mean, std):
     """0 for an unplayable card, 1 at the format mean, 2 one SD above. Lands count 0."""
     if "Land" in (card.get("types") or []):

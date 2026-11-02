@@ -12,6 +12,7 @@ fall to replacement value. Wheel chance is a tiebreaker only.
 Constants are tuned on tools/replay/run.py compare; see CLAUDE.md, Validation.
 """
 
+import math
 import statistics
 from functools import lru_cache
 
@@ -21,7 +22,7 @@ from src.advisor.mana_base import count_fixing
 from src.advisor.schema import Recommendation
 
 from companion.advisor_v2 import composition, config, synergy
-from companion.advisor_v2.lanes import ALL, LANES, all_decks, castable, commitment, lane_distribution, off_pips, pips, quality
+from companion.advisor_v2.lanes import ALL, LANES, all_decks, any_colour_fixer, castable, commitment, lane_distribution, off_pips, pips, quality
 from companion.advisor_v2 import signals as signal_mod
 from companion.advisor_v2.signals import colour_signals, side_for_pack, side_signals
 
@@ -112,13 +113,6 @@ def prefs_file(path, which):
     return json.loads(Path(path).read_text()).get(which, {})
 
 
-def any_colour_fixer(card):
-    """A spell that finds or makes any colour: basic landcycling, or a mana ability for any color."""
-    if "Land" in (card.get("types") or []):
-        return False
-    return "Basic landcycling" in (card.get("keywords") or []) or "mana of any color" in (card.get("oracle_text") or "")
-
-
 @lru_cache(maxsize=8)
 def tables(set_code):
     """Per-set typical-deck and synergy tables, if tools/synergy/build.py has produced them."""
@@ -138,7 +132,9 @@ class DraftAdvisorV2:
     SPARSE_SD = 0.5  # ...so shrink toward All Decks − SPARSE_SD × std instead of All Decks
     SPLASH = 0.85  # one off-colour pip with a fixer for it in the pool: shrunk WR × SPLASH (0 = off)
     SPEC_SPLASH = 1.0  # early-draft splash before any fixing exists: shrunk WR × SPEC_SPLASH × (1 − commitment progress); 0 = off
+    OFF_PLAY = False  # a card a lane cannot cast is worth replacement + (its value - replacement) x the chance top players play such a card outside their core pair, by its strength and off-colour pips (fitted.json "offcolour", tools/fit_offcolour.py); replaces SPLASH and SPEC_SPLASH for those cards
     SPEC_ALL = False  # False: only cards castable in no two-colour lane (three-colour cards) get it; True: any card one pip off
+    SPEC_ALL_PULL = True  # with SPEC_ALL: a one-pip-off card also pulls P(lane) toward the lanes it could splash into; False = it pulls only toward its own colours (and three-colour cards as before)
     SPLIT = True  # two orders: Power (best card if you end up in its colours) and Fit (best for the colours you are in); branch to Power above a learnt gap
     BRANCH_MODE = "learnt"  # "learnt" (fitted rule), "fit" (never branch), "power" (always take the strongest card)
     BRANCH_COLOUR = True  # switch rule that also weighs whether the strong card keeps a colour of the top pair and how settled the pool is (fitted.json, branch_colour). FRA: test top-1 55.4 -> 56.0, deck win rate -0.86 (SE 0.34, 200 bot tables, all from tables ending in other colours); on by the user's call 2026-11-01
@@ -172,6 +168,9 @@ class DraftAdvisorV2:
     CREATURE_FROM = 8  # spells in the pool before the creature need applies
     COPIES_MAX = 2  # copies of one card a deck wants
     COPIES_POINTS = 0.0  # WR points off per copy at or beyond COPIES_MAX already in the pool; 0 = off
+    DECK_WEIGHT = 0.0  # Fit adds this share of the card's value above replacement in the likely pairs' best 23 (top players' shape penalty included) minus its own value: a card that would not make the deck loses, one that fills a shape gap gains; 0 = off
+    DECK_FROM = 12  # spells in the pool before deck-aware value applies
+    DECK_MIN_P = 0.05  # pairs below this probability are not built
     LANE_FLAT = "4:1,14:0.7,45:0.8"  # P(lane) ∝ P^τ by pick: picks 1-4 unchanged, 5-14 τ 0.7, 15-45 τ 0.8 (calibrated against top drafters' final pairs); "" = off
     COLOUR_SHIFT = ""  # per-colour WR points taken off a card's value, "U:2" or "U:2,B:-1"; a card gets the mean over its colours; "" = off
     WHEEL_EPS = 0.3  # within this of the best score, prefer the card that wheels less
@@ -231,9 +230,13 @@ class DraftAdvisorV2:
         if self.HALF_PIVOT and spells >= self.HALF_PIVOT:
             self.anchor = self.top_lane
         self.lanes = self._lanes(self.commit)  # pool only; what the Analyst shows and what Fit uses
+        self.spells = spells
+        self.decks = {}  # lane -> [(value, card)] of the pool's castable spells, best first; built on demand
         self.split = None
         self.order, self.prefs = {}, {}  # filled per pack in evaluate_pack
         set_code = next((c.get("set") for c in self.pool if c.get("set")), None)
+        self.set_code = set_code
+        self.offcolour = config.fitted(set_code, "offcolour") if set_code and self.OFF_PLAY else None
         self.typical, self.synergy = tables(set_code) if set_code else ({}, {})
         self.top, self.top_shift = top_ratings(set_code) if set_code and self.TOP_WR else ({}, 0.0)
         self.composition = composition.Composition(self.typical, self.pool)
@@ -294,7 +297,14 @@ class DraftAdvisorV2:
         w = n / (n + self.K_TOP)
         return w * (t - self.top_shift) + (1 - w) * value
 
-    def speculative(self, card, lane):
+    def off_play(self, card, lane):
+        """Chance top players play this card in a deck whose core pair is the lane (the fitted "offcolour" rule)."""
+        r = self.offcolour
+        wr = float(all_decks(card).get("gihwr") or 0.0)
+        z = r["w"][0] + r["w"][1] * (wr - r["mean"]) / r["std"] + r["w"][2] * (len(off_pips(card, lane)) >= 2)
+        return 1.0 / (1.0 + math.exp(-z))
+
+    def speculative(self, card, lane, pull=False):
         """Early draft: is this lane a live splash for the card even with no fixing yet?
 
         Narrow by default: only cards no two-colour lane can cast (three-colour cards), so a
@@ -302,7 +312,8 @@ class DraftAdvisorV2:
         """
         if self.SPEC_SPLASH <= 0 or self.progress >= 1 or len(off_pips(card, lane)) != 1:
             return False
-        return self.SPEC_ALL or not any(castable(card, other) for other in LANES)
+        wide = self.SPEC_ALL and (self.SPEC_ALL_PULL or not pull)
+        return wide or not any(castable(card, other) for other in LANES)
 
     def splash_colour(self, card, lane):
         """The colour a one-pip splash needs, when splashing is on and the pool has a fixer for it; else None."""
@@ -384,6 +395,8 @@ class DraftAdvisorV2:
                 return self.replacement + self.fixing_gain(card, lane) + self.FIX_BONUS  # taps for the lane and fixes a splash
             return self.replacement
         if not castable(card, lane):
+            if self.OFF_PLAY and self.offcolour:
+                return self.replacement + max(0.0, self.shrunk_wr(card, lane)[0] - self.replacement) * self.off_play(card, lane)
             if self.splash_colour(card, lane):
                 return max(self.replacement, self.shrunk_wr(card, lane)[0] * self.SPLASH)
             if self.speculative(card, lane):
@@ -410,6 +423,8 @@ class DraftAdvisorV2:
         upstream = DraftAdvisor(self.metrics, self.pool)  # only for its wheel polynomial
         set_code = next((c.get("set") for c in (*self.pool, *pack_cards) if c.get("set")), None)
         config.activate(set_code)
+        if self.OFF_PLAY and not self.offcolour and set_code:
+            self.offcolour = config.fitted(set_code, "offcolour")
         self.order = pick_order(set_code) if self.ORDER_WEIGHT and set_code else {}
         self.prefs = (prefs_file(self.PREF_FILE, self.PREF_SET) if self.PREF_FILE else learnt_prefs(set_code, self.PREF_SET)) if self.PREF_WEIGHT and set_code else {}
         if not self.typical:
@@ -434,7 +449,7 @@ class DraftAdvisorV2:
             commit = dict(self.commit)
             for lane in LANES:
                 # The candidate pulls toward lanes where it is castable, and early on also where it is one pip off (a live splash).
-                if castable(card, lane) or self.speculative(card, lane):
+                if castable(card, lane) or self.speculative(card, lane, pull=True):
                     commit[lane] += self.steer * q
             lanes = self._lanes(commit)
             score = sum(p * self.value(card, lane) for lane, p in lanes.items())
@@ -479,7 +494,50 @@ class DraftAdvisorV2:
         """How good the card is for the colours the pool points to: the candidate does not pull the lanes."""
         score = sum(p * self.value(card, lane) for lane, p in self.lanes.items())
         live = sum(p for lane, p in self.lanes.items() if castable(card, lane) or self.speculative(card, lane))
-        return score + self.order_prior(card.get("name", ""), pick, prefs=self.PREF_SCOPE == "both") * live
+        return score + self.order_prior(card.get("name", ""), pick, prefs=self.PREF_SCOPE == "both") * live + self.deck_term(card)
+
+    def deck_term(self, card):
+        """Value above replacement: in each likely pair, the card is worth replacement level plus how much the best 23
+        improves with it (empty slots count at replacement, shape penalty included); the term is that less its own
+        value. Zero while the deck has room and the shape is fine; down to replacement level once the card would only
+        push out something nearly as good or not make the deck; positive when it fills a gap in the shape."""
+        targets = (config.fitted(self.set_code, "decks") or {}).get("pairs") if self.set_code else None
+        if not self.DECK_WEIGHT or not targets or self.spells < self.DECK_FROM:
+            return 0.0
+        from companion.advisor_v2 import deckbuilder  # deckbuilder imports this module
+        out = 0.0
+        if "Land" in (card.get("types") or []):
+            # A land takes a basic's slot, not a spell's: replacement plus its edge over a basic (an average card).
+            # Fixing lands are already valued from replacement up (fixing_gain), so only colourless and on-lane ones.
+            colours = card.get("colors") or []
+            for lane, p in self.lanes.items():
+                if p >= self.DECK_MIN_P and all(c in lane for c in colours):
+                    v = self.value(card, lane)
+                    out += p * (self.replacement + max(0.0, v - self.mean) - v)
+            return self.DECK_WEIGHT * out
+        for lane, p in self.lanes.items():
+            if p < self.DECK_MIN_P or lane not in targets:
+                continue
+            if lane not in self.decks:
+                # Every pool spell the lane can use, splashes included: they all compete for the 23 slots.
+                spells = [(self.value(c, lane), c) for c in self.pool if "Land" not in (c.get("types") or [])]
+                self.decks[lane] = sorted((x for x in spells if x[0] > self.replacement), key=lambda x: -x[0])
+            now, v = self.decks[lane], self.value(card, lane)
+            if v <= self.replacement:
+                continue  # not playable here: worth replacement either way
+            scale = min(1.0, (len(now) + 1) / deckbuilder.SPELLS)
+            after = sorted(now + [(v, card)], key=lambda x: -x[0])
+            # Never below zero: a card that would spoil the shape is left in the sideboard.
+            gain = max(0.0, self._deck_score(after, lane, targets[lane], scale) - self._deck_score(now, lane, targets[lane], scale))
+            out += p * (self.replacement + gain - v)  # worth replacement plus what it adds; Fit already counts v
+        return self.DECK_WEIGHT * out
+
+    def _deck_score(self, ranked, lane, target, scale):
+        """The best 23's value, empty slots filled at replacement level, less the shape penalty."""
+        from companion.advisor_v2 import deckbuilder
+        top = ranked[:deckbuilder.SPELLS]
+        filler = (deckbuilder.SPELLS - len(top)) * self.replacement
+        return sum(v for v, _ in top) + filler - deckbuilder.shape_penalty([c for _, c in top], target, lane, scale=scale)
 
     def branch_features(self, card):
         """(1 if the card keeps a colour of the pool's top pair or is colourless, else 0; that pair's probability)."""

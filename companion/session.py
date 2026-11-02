@@ -530,7 +530,7 @@ def own_builds(set_code, taken):
         return sorted(out.values(), key=lambda e: (e.get("cmc") or 0, e["name"]))
 
     builds = []
-    for b in deckbuilder.build(taken, model, targets):
+    for b in deckbuilder.build(taken, model, targets, rule=config.fitted(set_code, "splash"), three=config.fitted(set_code, "three")):
         deck = grouped(b["spells"] + b["nonbasics"])
         for col, name in deckbuilder.BASIC.items():
             if b["basics"].get(name):

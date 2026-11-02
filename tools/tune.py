@@ -26,7 +26,7 @@ GRID = {
     "COMMIT_BY": [12, 18, 24],
     "ALPHA": [0.5, 1.0, 2.0],
     "ALPHA_LATE": [1.0, 1.5, 2.5],
-    "BETA": [0.0, 0.5, 1.0],
+    "BETA": [2.0, 4.0, 6.0],
     "GAMMA": [0.0, 0.5, 1.0],
     "REPLACEMENT_SD": [1.5, 2.0, 3.0],
     "SPARSE_SD": [0.0, 0.5, 1.0],
@@ -70,9 +70,12 @@ def main(argv=None):
 
     sys.path.insert(0, str(ROOT))
     import companion  # noqa: F401
+    from companion.advisor_v2 import config
     from companion.advisor_v2.engine import DraftAdvisorV2
 
+    config.activate(a.sets[0])  # start from the set's layered values (fitted, manual), not the code defaults
     current = {k: getattr(DraftAdvisorV2, k) for k in GRID if hasattr(DraftAdvisorV2, k)}
+    start_values = dict(current)
     names = [k for k in current if not a.only or k in a.only]
     with ThreadPoolExecutor(a.jobs) as pool:
         (best, se), _ = score(current, a.sets, "train", pool)
@@ -92,7 +95,7 @@ def main(argv=None):
             if not moved:
                 break
         (test, test_se), test_results = score(current, a.sets, "test", pool)
-        (base_test, _), base_results = score({k: getattr(DraftAdvisorV2, k) for k in current}, a.sets, "test", pool)
+        (base_test, _), base_results = score(start_values, a.sets, "test", pool)
 
     print(f"\ntrain: {start:.2f} -> {best:.2f}; test: {base_test:.2f} -> {test:.2f} (SE {test_se:.2f})")
     print("constants:", json.dumps(current))

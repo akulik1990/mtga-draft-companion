@@ -9,12 +9,12 @@ Search: start from the pair's best cards by win rate, repair the shape, then swa
 the objective improves. Pools are small (about 40 cards), so a few hundred model evaluations per pair suffice.
 """
 
+import math
 import re
 from collections import Counter
 
 from companion.advisor_v2.composition import curve_slot, roles
-from companion.advisor_v2.engine import any_colour_fixer
-from companion.advisor_v2.lanes import LANES, castable, off_pips
+from companion.advisor_v2.lanes import LANES, any_colour_fixer, castable, off_pips
 
 SPELLS = 23
 LANDS = 17
@@ -30,9 +30,14 @@ TOP_END_SLACK = 2.0  # five-plus drops above the target
 CURVE_SLACK = 2.0  # per mana value, either way
 PENALTY = 1.5  # predicted win-rate points per card outside the bounds
 MIN_PER_COLOUR = 5  # spells that need each main colour; fewer and the "pair" is a mono-colour deck with a stray card
+MIN_PER_COLOUR_THREE = 3  # the same for each colour of a three-colour deck
+MIN_BASICS = 6  # basics of each colour of a pair
+MIN_BASICS_THREE = 4  # ...and of each colour of a three-colour deck
 MAX_SPLASH = 3  # splash cards; more and it is a third main colour
 MIN_SPLASH_CMC = 3  # splash late, impactful cards, not early drops
 MAX_SPLASH_BASICS = 4  # basics of the splash colour before the main colours suffer
+SPLASH_COST = -1.0  # win-rate points charged for splashing, in place of the deck model's splash term (which mostly
+#                     reflects that weaker decks splash: 60%+ FRA players splash 49% of two-colour decks); < 0 = the model's term
 
 
 def pips(card):
@@ -66,7 +71,8 @@ def lands_for(spells, lane, nonbasics=(), splash="", fixers=0):
         splash_basics = max(0, want - have)
     basics_n = LANDS - len(nonbasics) - splash_basics
     total = sum(weight[c] for c in lane) or 1.0
-    counts = {c: max(6 if len(lane) == 2 else 0, round(basics_n * weight[c] / total)) for c in lane}
+    floor = MIN_BASICS if len(lane) == 2 else MIN_BASICS_THREE
+    counts = {c: max(floor, round(basics_n * weight[c] / total)) for c in lane}
     while sum(counts.values()) > basics_n:
         counts[max(counts, key=counts.get)] -= 1
     while sum(counts.values()) < basics_n:
@@ -74,6 +80,78 @@ def lands_for(spells, lane, nonbasics=(), splash="", fixers=0):
     if splash_basics:
         counts[splash] = splash_basics
     return {BASIC[c]: n for c, n in counts.items() if n}
+
+
+def _wr(card, lane):
+    d = card.get("deck_colors") or {}
+    return (d.get(lane) or {}).get("gihwr") or (d.get("All Decks") or {}).get("gihwr") or 0.0
+
+
+def splash_features(pool, lane):
+    """(edge, fixing, playables, colour) for the pool's best splash colour in this pair: how much the best single-pip
+    card of that colour beats the 23rd on-colour spell (All Decks GIH WR), fixing sources for the colour (nonbasic
+    lands making it, any-colour fixers), and how many on-colour playables the pool has. The inputs of the fitted
+    splash rule (tools/fit_splash.py); colour is None when no single-pip off-colour spell exists."""
+    spell = lambda c: "Land" not in (c.get("types") or [])
+    on = sorted((_wr(c, lane) for c in pool if spell(c) and castable(c, lane) and _wr(c, lane) > 0), reverse=True)
+    cut = on[SPELLS - 1] if len(on) >= SPELLS else 45.0
+    best = {}
+    for c in pool:
+        if spell(c) and not castable(c, lane):
+            off = off_pips(c, lane)
+            if len(off) == 1:
+                for col in off[0]:
+                    best[col] = max(best.get(col, 0.0), _wr(c, "All Decks"))
+    fix = dict.fromkeys("WUBRG", 0)
+    for c in pool:
+        if "Land" in (c.get("types") or []) and "Basic" not in (c.get("types") or []):
+            for col in c.get("colors") or []:
+                if col not in lane:
+                    fix[col] += 1
+        if any_colour_fixer(c):
+            for col in "WUBRG":
+                fix[col] += 1
+    if not best:
+        return -10.0, 0, len(on), None
+    col = max(best, key=lambda k: best[k] - cut + 0.5 * min(fix[k], 6))
+    return best[col] - cut, min(fix[col], 8), len(on), col
+
+
+def three_features(pool, lane):
+    """(adds, fixing, playables, colour) for the pool's best third colour on top of this pair: spells the three colours
+    cast but the pair cannot that beat the pair's 23rd spell (All Decks GIH WR), fixing sources for the colour, and the
+    pair's playables. Inputs of the fitted three-colour rule (tools/fit_splash.py); colour None when nothing adds."""
+    spell = lambda c: "Land" not in (c.get("types") or [])
+    on = sorted((_wr(c, lane) for c in pool if spell(c) and castable(c, lane) and _wr(c, lane) > 0), reverse=True)
+    cut = on[SPELLS - 1] if len(on) >= SPELLS else 45.0
+    fix = dict.fromkeys("WUBRG", 0)
+    for c in pool:
+        if "Land" in (c.get("types") or []) and "Basic" not in (c.get("types") or []):
+            for col in c.get("colors") or []:
+                if col not in lane:
+                    fix[col] += 1
+        if any_colour_fixer(c):
+            for col in "WUBRG":
+                fix[col] += 1
+    adds = {col: sum(1 for c in pool if spell(c) and not castable(c, lane) and castable(c, lane + col) and _wr(c, "All Decks") >= cut)
+            for col in "WUBRG" if col not in lane}
+    col = max(adds, key=lambda k: adds[k] + 0.5 * min(fix[k], 6))
+    if not adds[col]:
+        return 0, 0, len(on), None
+    return adds[col], min(fix[col], 8), len(on), col
+
+
+def rule_chance(rule, x):
+    """A fitted logistic rule's probability for inputs x."""
+    z = rule["w"][0] + sum(w * (v - m) / s for w, v, m, s in zip(rule["w"][1:], x, rule["mu"], rule["sd"]))
+    return 1.0 / (1.0 + math.exp(-z))
+
+
+def splash_chance(rule, pool, lane):
+    """P(a top player splashes this pool in this pair), from the set's fitted splash rule; None without one."""
+    if not rule:
+        return None
+    return rule_chance(rule, splash_features(pool, lane)[:3])
 
 
 def splashable(card, lane, splash):
@@ -91,27 +169,31 @@ def needs(card, colour, lane):
                for opts in (pip.split("/") for pip in re.findall(r"\{(.*?)\}", front)))
 
 
-def shape_penalty(spells, target, lane="", min_creatures_slack=None):
-    """Win-rate points lost for straying outside top players' shape in the pair."""
+def shape_penalty(spells, target, lane="", min_creatures_slack=None, scale=1.0):
+    """Win-rate points lost for straying outside top players' shape in the pair.
+    scale < 1 judges a part-built deck against the same share of the target (the engine's deck-aware picks)."""
     r, cv = Counter(), Counter()
     for c in spells:
         for x in roles(c):
             r[x] += 1
         cv[curve_slot(c)] += 1
-    over = 0.0
+    over, f = 0.0, scale
     below = CREATURE_BELOW if min_creatures_slack is None else min_creatures_slack
-    lo, hi = target["creatures"] - below, target["creatures"] + CREATURE_ABOVE
+    lo, hi = f * (target["creatures"] - below), f * (target["creatures"] + CREATURE_ABOVE)
     over += max(0.0, lo - r["creatures"]) + max(0.0, r["creatures"] - hi)
-    over += max(0.0, target["two_drops"] - TWO_DROP_SLACK - r["two_drops"])
-    over += max(0.0, r["five_plus"] - target["five_plus"] - TOP_END_SLACK)
+    over += max(0.0, f * (target["two_drops"] - TWO_DROP_SLACK) - r["two_drops"])
+    over += max(0.0, r["five_plus"] - f * (target["five_plus"] + TOP_END_SLACK))
     for k in CURVE:
-        over += max(0.0, abs(cv[k] - (target.get("curve") or {}).get(k, cv[k])) - CURVE_SLACK)
+        want = (target.get("curve") or {}).get(k)
+        if want is not None:
+            over += max(0.0, abs(cv[k] - f * want) - f * CURVE_SLACK)
+    least = MIN_PER_COLOUR if len(lane) == 2 else MIN_PER_COLOUR_THREE
     for colour in lane:
-        over += max(0, MIN_PER_COLOUR - sum(needs(c, colour, lane) for c in spells))
+        over += max(0.0, f * least - sum(needs(c, colour, lane) for c in spells))
     return PENALTY * over
 
 
-def build_pair(pool, lane, model, target, min_creatures_slack=None, variant="", splash=""):
+def build_pair(pool, lane, model, target, min_creatures_slack=None, variant="", splash="", splash_cost=None):
     """The best 23 spells for one pair (and optional splash colour), with lands; None when the pool cannot make a deck."""
     spells = [c for c in pool if "Land" not in (c.get("types") or []) and (castable(c, lane) or (splash and splashable(c, lane, splash)))]
     lane_colours = lane + splash
@@ -141,7 +223,16 @@ def build_pair(pool, lane, model, target, min_creatures_slack=None, variant="", 
         counts.update(mana(chosen))
         counts.update(Counter(c["name"] for c in nonbasics))
         used = splash if splash and any(not castable(c, lane) for c in chosen) else ""
-        return float(model.win_rate(dict(counts), lane, used)) - penalty(chosen)
+        return predicted(counts, used) - penalty(chosen)
+
+    cost = SPLASH_COST if splash_cost is None else splash_cost
+
+    def predicted(counts, used):
+        if cost < 0:
+            return float(model.win_rate(dict(counts), lane, used))
+        # A fitted rule decided the colours: score the cards and shape as a plain pair (the model's colour-count and
+        # splash terms mostly say that weaker decks add colours).
+        return float(model.win_rate(dict(counts), lane[:2], "")) - (cost if used else 0.0)
 
     # Start from the pair's own cards (splash cards come in only when a swap pays).
     order = sorted(range(len(spells)), key=lambda i: (not castable(spells[i], lane), -wr(spells[i])))
@@ -169,13 +260,19 @@ def build_pair(pool, lane, model, target, min_creatures_slack=None, variant="", 
     full.update(lands)
     full.update(Counter(c["name"] for c in nonbasics))
     return {"lane": lane, "splash": used, "variant": variant, "spells": chosen, "nonbasics": nonbasics, "basics": lands,
-            "penalty": penalty(chosen), "predicted": float(model.win_rate(full, lane, used)), "objective": best,
+            "penalty": penalty(chosen), "predicted": predicted(full, used), "objective": best,
             "sideboard": [spells[i] for i in side] + [c for c in pool if c not in spells and c not in nonbasics]}
 
 
-def build(pool, model, targets, top=3, splash_pairs=2):
-    """Best builds across the pairs the pool supports, best first: each pair plain, the best pairs also with each
-    splash colour that pays, plus a creature-heavier take on the best pair."""
+def build(pool, model, targets, top=3, splash_pairs=2, rule=None, three=None):
+    """Best builds across the pairs the pool supports, best first: each pair plain, the best pairs also with a splash
+    or a third colour, plus a creature-heavier take on the first build.
+
+    With the set's fitted rules (rule: "splash", three: "three"), the colours are the rules' call for the best pair:
+    three colours if top players would go three colours with this pool at least half the time, else a splash if they
+    would splash, else the plain pair. The deck model then only picks the cards: ruled builds are scored without its
+    colour-count and splash terms, which mostly say that weaker decks add colours. Without rules, every variant
+    competes on the model's score as before."""
     plain = []
     for lane in LANES:
         t = (targets or {}).get(lane)
@@ -185,17 +282,50 @@ def build(pool, model, targets, top=3, splash_pairs=2):
                 plain.append(b)
     # A build that still breaks the shape after the search (a "pair" with one card of its second colour) is no deck.
     plain = sorted((b for b in plain if b["penalty"] <= 3 * PENALTY), key=lambda b: -b["objective"]) or sorted(plain, key=lambda b: -b["objective"])[:1]
-    out = list(plain)
-    for b in plain[:splash_pairs]:
+    if not plain:
+        return []
+
+    def splashes(b, chance):
+        out = []
         for col in "WUBRG":
             if col not in b["lane"]:
-                s = build_pair(pool, b["lane"], model, targets[b["lane"]], splash=col)
+                s = build_pair(pool, b["lane"], model, targets[b["lane"]], splash=col, splash_cost=None if chance is None else 0.0)
                 if s and s["penalty"] <= 3 * PENALTY and s["objective"] > b["objective"]:
+                    s["splash_chance"] = None if chance is None else round(chance, 2)
                     out.append(s)
-    out.sort(key=lambda b: -b["objective"])
-    if out:
-        lane = out[0]["lane"]
-        more = build_pair(pool, lane, model, targets[lane], min_creatures_slack=0.0, variant="more creatures", splash=out[0].get("splash", ""))
-        if more and Counter(c["name"] for c in more["spells"]) != Counter(c["name"] for c in out[0]["spells"]):
-            out.insert(1, more)
+        return sorted(out, key=lambda x: -x["objective"])
+
+    def third(b):
+        adds, fixing, playables, col = three_features(pool, b["lane"])
+        lane = "".join(sorted(b["lane"] + (col or ""), key="WUBRG".index))
+        if not col or lane not in (targets or {}):
+            return None, None
+        chance = rule_chance(three, (adds, fixing, playables))
+        t = build_pair(pool, lane, model, targets[lane], splash_cost=0.0)
+        if t and t["penalty"] <= 3 * PENALTY:
+            t["three_chance"] = round(chance, 2)
+            return t, chance
+        return None, chance
+
+    if rule or three:
+        first, extra = plain[0], []
+        t, p3 = third(first) if three else (None, None)
+        ps = splash_chance(rule, pool, first["lane"])
+        variants = splashes(first, ps) if ps is not None and ps >= 0.5 else []
+        if t and p3 >= 0.5:
+            first, extra = t, [plain[0]] + variants
+        elif variants:
+            first, extra = variants[0], [plain[0]] + variants[1:]
+        out = [first] + sorted(extra + plain[1:], key=lambda b: -b["objective"])
+    else:
+        out = list(plain)
+        for b in plain[:splash_pairs]:
+            out += splashes(b, None)
+        out.sort(key=lambda b: -b["objective"])
+    lane = out[0]["lane"]
+    ruled = out[0].get("splash_chance") is not None or out[0].get("three_chance") is not None
+    more = build_pair(pool, lane, model, targets[lane], min_creatures_slack=0.0, variant="more creatures", splash=out[0].get("splash", ""),
+                      splash_cost=0.0 if ruled else None)
+    if more and Counter(c["name"] for c in more["spells"]) != Counter(c["name"] for c in out[0]["spells"]):
+        out.insert(1, more)
     return out[:top]

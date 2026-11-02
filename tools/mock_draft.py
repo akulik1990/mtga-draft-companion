@@ -22,6 +22,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import companion  # noqa: E402,F401
 from companion import DATA_DIR, LAUNCH_DIR  # noqa: E402
+from companion.advisor_v2 import config  # noqa: E402
 
 COLOURS = "WUBRG"
 ENGINES = ("upstream", "v2")
@@ -222,8 +223,9 @@ def pool_composition(pool):
             "spell_gihwr": round(statistics.mean(wrs), 2) if wrs else 0.0}
 
 
-# Upstream's side of a table depends only on the seed, the dataset, upstream's code and the bots,
-# so it is played once and reused. Bump UPSTREAM_CACHE_VERSION when the stored row's fields change.
+# Upstream's side of a table depends only on the seed, the dataset, upstream's code, the bots and (for its deck
+# score) our builder and its fitted inputs, so it is played once and reused. Bump UPSTREAM_CACHE_VERSION when the
+# stored row's fields change.
 UPSTREAM_CACHE_VERSION = 1
 USE_UPSTREAM_CACHE = True
 
@@ -239,7 +241,10 @@ def _sha(path):
 
 
 def upstream_cache_dir(set_code):
-    """<data>/Temp/sim/upstream-cache/<SET>-<key>/, key = dataset + vendored upstream + bots + format version."""
+    """<data>/Temp/sim/upstream-cache/<SET>-<key>/, key = dataset + vendored upstream + bots + builder + format version."""
+    import json
+
+    import companion.advisor_v2.engine  # noqa: F401  (registers the settings config.resolve checks against)
     import hashlib
     import subprocess
 
@@ -247,7 +252,10 @@ def upstream_cache_dir(set_code):
 
     vendor = subprocess.run(["git", "-C", str(ROOT), "rev-parse", "HEAD:vendor/mtga_draft_17lands"], capture_output=True, text=True).stdout.strip()
     parts = [_sha(DATA_DIR / "Sets" / f"{set_code}_PremierDraft_All_Data.json"), vendor or "no-git",
-             _sha(ROOT / "companion" / "mock.py"), str(UPSTREAM_CACHE_VERSION)]
+             _sha(ROOT / "companion" / "mock.py"), _sha(ROOT / "companion" / "advisor_v2" / "deckbuilder.py"),
+             json.dumps([config.fitted(set_code, k) for k in ("deckmodel", "decks", "splash")], sort_keys=True),
+             json.dumps({k: v for k, v in config.resolve(set_code)[0].items() if k.startswith("deckbuilder.")}, sort_keys=True),
+             str(UPSTREAM_CACHE_VERSION)]
     key = hashlib.sha256("|".join(parts).encode()).hexdigest()[:16]
     return DATA_DIR / "Temp" / "sim" / "upstream-cache" / f"{set_code}-{key}"
 
@@ -313,8 +321,8 @@ def report(rows, engines=ENGINES):
     lb = [r[b].get("lane_score") or 0 for r in rows]
     ldiff = [y - x for x, y in zip(la, lb)]
     lse = statistics.stdev(ldiff) / len(ldiff) ** 0.5 if len(ldiff) > 1 else 0.0
-    ra = [r[a]["rating"] or 0 for r in rows]
-    rb = [r[b]["rating"] or 0 for r in rows]
+    ra = [r[a].get("deck_wr") or 0 for r in rows]
+    rb = [r[b].get("deck_wr") or 0 for r in rows]
     diffs = [y - x for x, y in zip(ra, rb)]
     wins, losses = sum(d > 0 for d in diffs), sum(d < 0 for d in diffs)
     se = statistics.stdev(diffs) / len(diffs) ** 0.5 if len(diffs) > 1 else 0.0
@@ -333,14 +341,14 @@ def report(rows, engines=ENGINES):
         "",
         "### Final decks",
         "",
-        "Lane score is independent of both engines and both builders: mean 17Lands GIH WR of the best 23 spells in the pool's best colour pair, using each card's win rate in that pair. Rating is upstream's deck builder and scorer, kept for comparison.",
+        "Lane score is independent of both engines and both builders: mean 17Lands GIH WR of the best 23 spells in the pool's best colour pair, using each card's win rate in that pair. Deck win rate is the deck model's predicted win rate of the app's best build (our builder when OWN_BUILDER is on).",
         "",
-        "| engine | mean lane score | mean upstream rating |", "|---|---|---|",
+        "| engine | mean lane score | mean deck win rate |", "|---|---|---|",
         f"| {a} | {statistics.mean(la):.2f} | {statistics.mean(ra):.2f} |", f"| {b} | {statistics.mean(lb):.2f} | {statistics.mean(rb):.2f} |",
         "",
         f"Lane score, {b} minus {a}: **{statistics.mean(ldiff):+.3f}** (SE {lse:.3f}); {b} better in {sum(d > 0 for d in ldiff)}, worse in {sum(d < 0 for d in ldiff)}.",
         "",
-        f"Upstream rating, {b} minus {a}: **{statistics.mean(diffs):+.2f}** (SE {se:.2f}); {b} better in {wins}, worse in {losses}, equal in {len(rows) - wins - losses}.",
+        f"Deck win rate, {b} minus {a}: **{statistics.mean(diffs):+.2f}** (SE {se:.2f}); {b} better in {wins}, worse in {losses}, equal in {len(rows) - wins - losses}.",
         "",
         "### Picks", "",
         f"Mean picks that differ per table: {statistics.mean(n_div):.1f} of 42. First divergence by pack: "
@@ -364,8 +372,8 @@ def report(rows, engines=ENGINES):
         for e in engines:
             lines.append(f"| {e} | " + " | ".join(f"{statistics.mean(r[e]['pool'][k] for r in rows):.2f}" for k in comp_keys) + " |")
     lines += ["", "### Tables where the engines ended furthest apart", ""]
-    for r in sorted(rows, key=lambda r: -abs((r[b]["rating"] or 0) - (r[a]["rating"] or 0)))[:8]:
-        d = (r[b]["rating"] or 0) - (r[a]["rating"] or 0)
+    for r in sorted(rows, key=lambda r: -abs((r[b].get("deck_wr") or 0) - (r[a].get("deck_wr") or 0)))[:8]:
+        d = (r[b].get("deck_wr") or 0) - (r[a].get("deck_wr") or 0)
         fd = r["first_divergence"]
         lines.append(f"- seed {r['seed']}: {d:+.1f}, first diff at P{fd[0]}P{fd[1]}, {a} {r[a]['deck_colours']} vs {b} {r[b]['deck_colours']}" if fd else f"- seed {r['seed']}: identical drafts")
         for div in r["divergences"][:3]:
@@ -417,7 +425,7 @@ def main(argv=None):
         for seed in range(a.start, a.start + a.seeds):
             row = compare_table(a.set, seed, lambda e: InProcess.fresh(e))
             rows.append(row)
-            print(f"seed {seed}: " + "  ".join(f"{e} {row[e]['rating'] or 0:.1f} {row[e]['deck_colours']}" for e in ENGINES) + f"  first diff {row['first_divergence']}", flush=True)
+            print(f"seed {seed}: " + "  ".join(f"{e} {row[e].get('deck_wr') or 0:.1f} {row[e]['deck_colours']}" for e in ENGINES) + f"  first diff {row['first_divergence']}", flush=True)
         out = (LAUNCH_DIR / a.out) if a.out else DATA_DIR / "Temp" / "sim" / f"{a.set}.json"
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(json.dumps(rows, indent=1))
