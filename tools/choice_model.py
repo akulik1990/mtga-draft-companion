@@ -96,7 +96,7 @@ def load_cards(set_code):
     return by
 
 
-def fit_clogit(X, groups, chosen):
+def fit_clogit(X, groups, chosen, ridge=0.0):
     """Conditional logit: X rows, groups[i] = choice set id, chosen[i] = 1 for the card taken. (beta, se)."""
     order = np.argsort(groups, kind="stable")
     X, groups, chosen = X[order], groups[order], chosen[order]
@@ -113,7 +113,7 @@ def fit_clogit(X, groups, chosen):
         p = e / np.repeat(s, np.diff(np.r_[starts, len(u)]))
         ll = (u[chosen == 1]).sum() - (np.log(s) + m).sum()
         g = Z[chosen == 1].sum(0) - (p[:, None] * Z).sum(0)
-        return -ll, -g
+        return -ll + 0.5 * ridge * (b @ b), -g + ridge * b
 
     res = minimize(f, np.zeros(Z.shape[1]), jac=True, method="BFGS")
     se = np.sqrt(np.diag(res.hess_inv))
@@ -156,26 +156,29 @@ def cmd_fit(a):
                         "tools/choice_model.py fit: conditional logit of top drafters' picks on v2's score plus synergy, deck needs, colour, mana value")
 
 
-CHART = ["Power", "Fit", "Signal", "Wheel", "Synergy", "Needs", "Fixer", "Splash", "Mana value"]
+from companion.advisor_v2.needs import DIMS, fills, mate_score, set_wr  # noqa: E402
+
+CHART = ["Power", "Fit", "Signal", "Wheel", "Themes", "Deck-mates", "Splash"] + list(DIMS)
 NOTE = {"Power": "card's value in its own best pair, plus the learnt top-drafter strength (bombs land here)",
         "Fit": "card's value under the pairs the pool points to (castability, splash, land fixing value)",
         "Signal": "openness of the card's colours from what the passing neighbour sent",
         "Wheel": "chance the card comes back",
-        "Synergy": "payoffs whose enablers are in the pool, and enablers for held payoffs (manual.json themes)",
-        "Needs": "removal, creature and two-drop shortfall of the pool against top players' decks",
-        "Fixer": "a land or card that fixes toward another colour",
+        "Themes": "colour-pair synergy: payoffs with their enablers in the pool and enablers for held payoffs (manual.json themes)",
+        "Deck-mates": "card synergy: how much more often top players' decks in the pair hold this card with the pool's cards than chance",
         "Splash": "an off-colour single-pip card the pool already has fixing for",
-        "Mana value": "the card's mana value"}
+        **{d: f"fills a {d.replace('_', ' ')} slot the deck still lacks against top players' decks in the pair" for d in DIMS}}
+NOTE["finishers"] = "fills a finisher slot (five-plus drop a SD above the set's mean win rate) the deck still lacks"
+NOTE["fixing"] = "fills a fixing slot (dual land, fixer) the deck still lacks against top players' decks in the pair"
 
 
-def cmd_chart(a):
-    """Per pick of the draft, a conditional logit of top drafters' choices on Power, Fit, signal and the Fit parts;
-    weights per SD of each input at that pick (how far one SD moves the odds of taking the card)."""
+def chart_data(a):
+    """{(pack, pick): (X, G, Y)} over CHART inputs, from the collected picks."""
     rows = json.load(gzip.open(cache(a.set, a.split), "rt"))
     by = load_cards(a.set)
     tags = theme_tags(a.set)
     themes = list(tags)
     targets = (config.fitted(a.set, "decks") or {}).get("pairs") or {}
+    mean, sd = set_wr(a.set)
     data = {}
     for row in rows:
         extra = row.get("extra") or {}
@@ -189,9 +192,41 @@ def cmd_chart(a):
         for c in pack:
             pw, fv, sig, wh = extra[c["name"]][:4]  # a duplicate in the pack appends its wheel twice
             x = features(c, pool, lane, themes, tags, targets, 0.0, 0.0)
-            X.append([pw, fv, sig, wh, x[1] + x[2], x[4] + x[5] + x[6], x[9], x[8], x[10]])
+            X.append([pw, fv, sig, wh, x[1] + x[2], mate_score(c, pool, lane, a.set), x[8]]
+                     + fills(c, pool, lane, (targets.get(lane) or {}).get("dims"), mean, sd))
             G.append(g)
             Y.append(1 if c["name"] == row["taken"] else 0)
+    return data
+
+
+def cmd_blend(a):
+    """Weights per pick for the engine's BLEND: the chart's logit per raw unit, fitted on each pick and its neighbours in
+    the same pack, with a ridge penalty, into the set's fitted.json (blend)."""
+    data = chart_data(a)
+    out = {}
+    for (pk, k) in sorted(data):
+        X, G, Y = [], [], []
+        for kk in (k - 1, k, k + 1):
+            if (pk, kk) not in data:
+                continue
+            x, g, y = data[(pk, kk)]
+            X += x; Y += y; G += [f"{kk}:{v}" for v in g]
+        X, Y = np.array(X, float), np.array(Y)
+        _, G = np.unique(np.array(G), return_inverse=True)
+        keep = X.std(0) > 0
+        w = np.zeros(len(CHART))
+        raw, _, _, _ = fit_clogit(X[:, keep], G, Y, ridge=a.ridge)
+        w[keep] = raw
+        out[f"{pk}-{k}"] = [round(float(v), 5) for v in w]
+        print(f"P{pk}p{k:<2d} " + " ".join(f"{n[:5]}={v:+.3f}" for n, v in zip(CHART, w) if abs(v) >= 0.01))
+    config.write_fitted(a.set, "blend", {"split": a.split, "ridge": a.ridge, "inputs": CHART, "picks": out},
+                        "tools/choice_model.py blend: conditional logit of top drafters' picks per pick (with its neighbours) on Power, Fit, signal, wheel, synergy, needs")
+
+
+def cmd_chart(a):
+    """Per pick of the draft, a conditional logit of top drafters' choices on Power, Fit, signal and the Fit parts;
+    weights per SD of each input at that pick (how far one SD moves the odds of taking the card)."""
+    data = chart_data(a)
     out = []
     for (pk, k), (X, G, Y) in sorted(data.items()):
         X, G, Y = np.array(X, float), np.array(G), np.array(Y)
@@ -203,7 +238,7 @@ def cmd_chart(a):
         b[keep], se[keep], bw[keep] = sd_b, sd_se, raw
         out.append({"pack": pk, "pick": k, "picks": len(set(G.tolist())), "per_sd": [round(float(v), 3) for v in b],
                     "se": [round(float(v), 3) for v in se], "per_point": [round(float(v), 4) for v in bw]})
-        print(f"P{pk}p{k:<2d} n={len(set(G.tolist())):4d} " + " ".join(f"{n[:6]}={v:+.2f}" for n, v in zip(CHART, b)))
+        print(f"P{pk}p{k:<2d} n={len(set(G.tolist())):4d} " + " ".join(f"{n[:5]}={v:+.2f}" for n, v in zip(CHART, b) if abs(v) >= 0.1))
     path = ROOT / "docs" / f"pick-weights-{a.set}.json"
     doc = {"set": a.set, "split": a.split, "inputs": CHART, "notes": NOTE, "picks": out}
     path.write_text(json.dumps(doc, indent=1))
@@ -215,10 +250,11 @@ def cmd_chart(a):
 def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     sub = p.add_subparsers(dest="cmd", required=True)
-    for name, fn in (("collect", cmd_collect), ("fit", cmd_fit), ("chart", cmd_chart)):
+    for name, fn in (("collect", cmd_collect), ("fit", cmd_fit), ("chart", cmd_chart), ("blend", cmd_blend)):
         s = sub.add_parser(name)
         s.add_argument("set")
         s.add_argument("--split", default="train")
+        s.add_argument("--ridge", type=float, default=2.0)
         s.set_defaults(fn=fn)
     a = p.parse_args(argv)
     a.fn(a)

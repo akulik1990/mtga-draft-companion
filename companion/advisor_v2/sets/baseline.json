@@ -3,6 +3,7 @@
   "ALPHA": 1.0,
   "ALPHA_LATE": 1.5,
   "BETA": 0.5,
+  "BLEND": false,
   "BRANCH_COLOUR": true,
   "BRANCH_DEFAULT": 3.0,
   "BRANCH_FILE": "",

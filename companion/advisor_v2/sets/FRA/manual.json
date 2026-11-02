@@ -474,5 +474,145 @@
     "Guide: Compel Brutality with Arcane Amphisbaena (deathtouch) is clean removal."
    ]
   }
+ },
+ "card_wants": {
+  "_how": "Top 30 FRA cards by All Decks GIH WR (2026-11-03), read by Claude from their rules text for review by the user: what each depends on and which cards enable it, as patterns over rules text (reminder text stripped), tags, or types. tools/card_needs.py matches the enablers and tests each card against the game data. Cards listed under standalone need nothing to shine.",
+  "_standalone": [
+   "Ajani Unrelenting",
+   "The Theorist, Jace Beleren",
+   "Sublime Epiphany",
+   "Garruk, Veiled Butcher",
+   "Overwrite the Multiverse",
+   "Sphinx of False Conclusions",
+   "Lich's Relic",
+   "Craftwork Crusher",
+   "Kindred Judgment",
+   "Kiora of Fire and Ashes",
+   "Austere Command",
+   "Chandra, Torch of Defiance",
+   "Mindseeker Oculus"
+  ],
+  "Uldaros Theorix": {
+   "wants": "a graveyard holding several card types (instant, sorcery, artifact, creature) to copy and cast free",
+   "enabler": "\\bmills?\\b|surveil|discard a card|discard your hand|discard (two|three|\\d+|x) cards|into your graveyard",
+   "rule": "cards that mill, surveil, make you discard or put cards into your graveyard"
+  },
+  "Null Summoner": {
+   "wants": "seven or more cards in the graveyard (threshold) to cast the exiled card",
+   "enabler": "\\bmills?\\b|surveil|discard a card|discard your hand|discard (two|three|\\d+|x) cards|into your graveyard|flashback",
+   "rule": "cards that mill, surveil, make you discard, put cards into your graveyard, or have flashback"
+  },
+  "Recursive Recruitment": {
+   "wants": "a big graveyard when flashed back (+1/+1 counter per three cards)",
+   "enabler": "\\bmills?\\b|surveil|discard a card|discard your hand|discard (two|three|\\d+|x) cards|into your graveyard",
+   "rule": "cards that mill, surveil, make you discard or put cards into your graveyard"
+  },
+  "Kwia Vigorbloom": {
+   "wants": "gaining life each turn for Lotus tokens",
+   "enabler": "gains? (\\d+ |x )?life|lifelink",
+   "enabler_tags": [
+    "lifegain"
+   ],
+   "rule": "cards that gain life, have lifelink, or are tagged lifegain"
+  },
+  "Denzilore Fatehold": {
+   "wants": "scrying or surveilling often",
+   "enabler": "\\bscry|surveil|empower jace",
+   "rule": "cards that scry, surveil, or empower Jace (the Jace token's −1 surveils)"
+  },
+  "Proctor of Potential": {
+   "wants": "creatures entering (surveil each) and a scry/surveil turn to return it",
+   "enabler": "create .*creature token|\\bscry|surveil",
+   "rule": "cards that create creature tokens, scry or surveil"
+  },
+  "Splinter Twin": {
+   "wants": "a creature with a strong enters effect to copy every turn",
+   "enabler": "when (this creature|.+) enters",
+   "enabler_types": [
+    "Creature"
+   ],
+   "all": true,
+   "rule": "creatures with an 'when this enters' effect"
+  },
+  "Hungering Puppetbeast": {
+   "wants": "other artifacts to sacrifice",
+   "enabler": "heartwood|treasure|lotus|artifact token",
+   "enabler_types": [
+    "Artifact"
+   ],
+   "rule": "artifacts, and cards that make Heartwood, Treasure, Lotus or other artifact tokens"
+  },
+  "Aerid Konstrari": {
+   "wants": "artifacts in play to pump it",
+   "enabler": "heartwood|treasure|lotus|artifact token",
+   "enabler_types": [
+    "Artifact"
+   ],
+   "rule": "artifacts, and cards that make Heartwood, Treasure, Lotus or other artifact tokens"
+  },
+  "Sanctum Lurker": {
+   "wants": "planeswalkers (Jace tokens) to keep and to give +2",
+   "enabler": "empower jace",
+   "enabler_types": [
+    "Planeswalker"
+   ],
+   "rule": "planeswalkers and cards that empower Jace"
+  },
+  "Avatar of Burgeoning Echoes": {
+   "wants": "lands entering and planeswalkers",
+   "enabler": "empower jace|search your library for .*land|landfall",
+   "enabler_types": [
+    "Planeswalker"
+   ],
+   "rule": "planeswalkers, cards that empower Jace, land search and landfall cards"
+  },
+  "Countersculpt": {
+   "wants": "a Jace to behold, else it costs one more",
+   "enabler": "empower jace|\\bjace\\b",
+   "enabler_types": [
+    "Planeswalker"
+   ],
+   "rule": "planeswalkers, Jace cards and cards that empower Jace"
+  },
+  "Garruk, Curse Breaker": {
+   "wants": "creatures with power 4 or more (draws a card each); power is not in the dataset, so creatures costing 5+ stand in",
+   "enabler_types": [
+    "Creature"
+   ],
+   "enabler_min_cmc": 5,
+   "rule": "creatures costing 5 or more (stand-in for power 4+, which the data lacks)"
+  },
+  "Vraska, the Cutting Glare": {
+   "wants": "six or more lands for the removal: ramp and a long game",
+   "enabler": "add \\{|search your library for .*land|treasure|heartwood|lotus",
+   "enabler_tags": [
+    "fixing_ramp"
+   ],
+   "rule": "mana makers: cards that add mana, search for lands, make Treasure/Heartwood/Lotus, or are tagged ramp"
+  },
+  "Mind Twist": {
+   "wants": "lots of mana for a big X",
+   "enabler": "add \\{|search your library for .*land|treasure|heartwood|lotus",
+   "enabler_tags": [
+    "fixing_ramp"
+   ],
+   "rule": "mana makers: cards that add mana, search for lands, make Treasure/Heartwood/Lotus, or are tagged ramp"
+  },
+  "Lyra, Tolarian Archangel": {
+   "wants": "drawing three or more cards in a turn",
+   "enabler": "draws? (two|three|\\d+|x) cards|draw a card",
+   "enabler_tags": [
+    "card_advantage"
+   ],
+   "rule": "cards that draw cards or are tagged card advantage"
+  },
+  "Fblthp, Impossibly Lost": {
+   "wants": "combat damage to the opponent: evasive attackers",
+   "enabler": "flying|can't be blocked|menace|trample",
+   "enabler_tags": [
+    "evasion"
+   ],
+   "rule": "evasive creatures: flying, can't be blocked, menace, trample, or tagged evasion"
+  }
  }
 }

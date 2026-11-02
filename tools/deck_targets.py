@@ -23,8 +23,10 @@ import companion  # noqa: E402,F401
 from companion import DATA_DIR  # noqa: E402
 from companion.advisor_v2 import config  # noqa: E402
 from companion.advisor_v2.composition import ROLES, curve_slot, roles  # noqa: E402
+from companion.advisor_v2.needs import DIMS, dims, lift  # noqa: E402
 
 CURVE = ("1", "2", "3", "4", "5", "6+")
+BASICS = {"Plains", "Island", "Swamp", "Mountain", "Forest", "Wastes"}
 
 
 def main(argv=None):
@@ -35,12 +37,19 @@ def main(argv=None):
     a = p.parse_args(argv)
 
     data = json.loads((DATA_DIR / "Sets" / f"{a.set}_PremierDraft_All_Data.json").read_text())["card_ratings"]
-    by_name, slot = {}, {}
+    wrs = [((c.get("deck_colors") or {}).get("All Decks") or {}).get("gihwr") or 0.0 for c in data.values()]
+    wrs = [w for w in wrs if w > 0]
+    mean = sum(wrs) / len(wrs)
+    sd = (sum((w - mean) ** 2 for w in wrs) / len(wrs)) ** 0.5
+    by_name, slot, dim = {}, {}, {}
     for c in data.values():
         for n in (c["name"], c["name"].split(" // ")[0]):
             by_name.setdefault(n, roles(c))
             slot.setdefault(n, curve_slot(c))
+            dim.setdefault(n, dims(c, mean, sd))
     sums, decks, seen = defaultdict(lambda: dict.fromkeys(ROLES + CURVE, 0.0)), defaultdict(int), set()
+    dim_sums = defaultdict(lambda: dict.fromkeys(DIMS, 0.0))  # apart from sums: some names (removal, two_drops) are in both
+    single, together = defaultdict(lambda: defaultdict(int)), defaultdict(lambda: defaultdict(int))
     path = DATA_DIR / "Temp" / "synergy" / f"game_data_public.{a.set}.PremierDraft.csv.gz"
     with gzip.open(path, "rt", newline="", encoding="utf-8") as fh:
         reader = csv.reader(fh)
@@ -56,17 +65,38 @@ def main(argv=None):
                 continue  # one deck per draft build, not one per game
             seen.add(key)
             lane = "".join(sorted(pair, key="WUBRG".index))
+            names = []
             for i, name in deck_cols:
                 if row[i] and row[i] != "0":
                     n = int(float(row[i]))
                     for r in by_name.get(name, ()):
                         sums[lane][r] += n
+                    for d in dim.get(name, ()):
+                        dim_sums[lane][d] += n
                     if slot.get(name):
                         sums[lane][slot[name]] += n
+                    if slot.get(name):  # spells only: lands go together for fixing, measured on its own
+                        names.append(name)
             decks[lane] += 1
+            if len(lane) == 2:
+                # Deck-mates: which cards top players' decks in this pair hold together, beyond how often each is played.
+                names.sort()
+                for j, x in enumerate(names):
+                    single[lane][x] += 1
+                    for y in names[j + 1:]:
+                        together[lane][(x, y)] += 1
     out = {lane: {"decks": decks[lane], **{r: round(sums[lane][r] / decks[lane], 1) for r in ROLES},
-                  "curve": {k: round(sums[lane][k] / decks[lane], 1) for k in CURVE}} for lane in sorted(decks)
+                  "curve": {k: round(sums[lane][k] / decks[lane], 1) for k in CURVE},
+                  "dims": {d: round(dim_sums[lane][d] / decks[lane], 2) for d in DIMS}} for lane in sorted(decks)
            if len(lane) == 2 or decks[lane] >= a.min_triple}
+    mates = {}
+    for lane, pairs in together.items():
+        n, one = decks[lane], single[lane]
+        mates[lane] = [[x, y, round(v, 3)] for (x, y), k in pairs.items()
+                       if k >= 3 and abs(v := lift(k, one[x], one[y], n)) >= 0.05]
+    mate_path = DATA_DIR / "Temp" / f"deckmates_{a.set}.json"
+    mate_path.write_text(json.dumps(mates))
+    print(f"wrote {sum(len(v) for v in mates.values())} deck-mate lifts to {mate_path}")
     for lane, t in out.items():
         print(lane, t)
     path = config.write_fitted(a.set, "decks", {"min_skill": a.min_skill, "pairs": out},

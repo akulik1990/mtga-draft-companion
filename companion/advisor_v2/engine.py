@@ -177,6 +177,7 @@ class DraftAdvisorV2:
     TIE_WR = 0.5
     CHOICE_FEATURES = ""  # per stage and feature group, e.g. "p1close:synergy;p2open:synergy,colour,splash;fit:synergy,colour,splash,fixer,needs;late:all" (stages p1open, p1close, p2open, fit, late; groups synergy, needs, colour, splash, fixer, cmc, all); overrides CHOICE_STAGES when set
     CHOICE_STAGES = "all"  # which stages CHOICE_ADJUST applies to: "all", or a comma list of p1open (P1 picks 1-7), p1close (P1 8-11), p2open (P2 1-6), fit (P2 7-11, P3 1-11), late (picks 12-14)
+    BLEND = False  # rank by the learnt per-pick blend of top drafters' weights on Power, Fit, signal, wheel, synergy and deck needs (fitted "blend", tools/choice_model.py blend) instead of the Power/Fit switch
     CHOICE_IN_FIT = False  # apply the choice correction inside Fit (before the Power/Fit switch) instead of to the final order
     REMOVAL_POINTS = 0.0  # WR points for a removal spell when the pool, projected to 23 spells, is fully short of its top pair's removal floor (top players' count there minus deckbuilder.REMOVAL_SLACK); 0 = off
     REMOVAL_FROM = 8  # spells in the pool before the removal need applies
@@ -488,6 +489,8 @@ class DraftAdvisorV2:
             recs.append(self._rec(card, name, base, score, (base - pack_mean) / pack_std, cast_p, wheel,
                                   self._reasons(card, lanes, cast_p)))
 
+        if self.SPLIT and self.BLEND and set_code and config.fitted(set_code, "blend"):
+            return self._tie_cheaper(self._blend(self._split(pack_cards, recs, current_pick, set_code), pack_cards, current_pick, current_pack, set_code), pack_cards)
         if self.SPLIT:
             return self._tie_cheaper(self._choice_adjust(self._split(pack_cards, recs, current_pick, set_code), pack_cards, current_pick, current_pack, set_code), pack_cards)
         recs.sort(key=lambda r: r.contextual_score, reverse=True)
@@ -522,6 +525,46 @@ class DraftAdvisorV2:
         first.contextual_score = round(top.contextual_score + 0.01, 2)
         first.reasoning.insert(0, f"Tie on power with {top.card_name}: cheaper ({cmc(first):g} vs {cmc(top):g} mana)")
         return recs
+
+    def blend_inputs(self, card, pick, wheel, set_code):
+        """The blend's inputs for a card (choice_model.CHART order): Power, Fit (pool-weighted value), signal for its
+        colours, wheel chance, colour-pair synergy, deck-mates, splash, and the deck-need fills."""
+        from companion.advisor_v2 import choice, needs
+
+        spell = "Land" not in (card.get("types") or [])
+        colours = [x for x in (card.get("colors") or []) if x in self.signals] if spell else []
+        tags = choice.theme_tags(set_code)
+        targets = (config.fitted(set_code, "decks") or {}).get("pairs") or {}
+        lane = choice.top_lane(self.pool)
+        x = choice.features(card, self.pool, lane, list(tags), tags, targets, 0.0, 0.0)
+        return ([self.power(card, pick), sum(p * self.value(card, l) for l, p in self.lanes.items()),
+                 sum(self.signals[c] for c in colours) / len(colours) if colours else 0.0, wheel,
+                 x[1] + x[2], needs.mate_score(card, self.pool, lane, set_code), x[8]]
+                + needs.fills(card, self.pool, lane, (targets.get(lane) or {}).get("dims"), *needs.set_wr(set_code)))
+
+    def _blend(self, recs, pack_cards, pick, pack_no, set_code):
+        """Order by the learnt blend for this pick; scores in WR points (the utility over Power's and Fit's weights)."""
+        table = config.fitted(set_code, "blend")
+        picks = table["picks"]
+        key = f"{pack_no}-{pick}"
+        if key not in picks:
+            same = [k for k in picks if k.startswith(f"{pack_no}-")]
+            if not same:
+                return recs
+            key = min(same, key=lambda k: abs(int(k.split("-")[1]) - pick))
+        w, names = picks[key], table["inputs"]
+        scale = w[0] + w[1] if w[0] + w[1] > 0 else 1.0
+        by_name = {c.get("name"): c for c in pack_cards}
+        playable = [r for r in recs if r.contextual_score > 0]
+        for r in playable:
+            x = self.blend_inputs(by_name[r.card_name], pick, (r.wheel_chance or 0.0) / 100.0, set_code)
+            parts = [wi * xi for wi, xi in zip(w, x)]
+            r.contextual_score = round(sum(parts) / scale, 2)
+            top = sorted((p / scale, n) for p, n in zip(parts[2:], names[2:]) if abs(p / scale) >= 0.3)
+            if top:
+                r.reasoning.append("Blend: " + ", ".join(f"{n} {v:+.1f}" for v, n in top[::-1]))
+        playable.sort(key=lambda r: r.contextual_score, reverse=True)
+        return playable + [r for r in recs if r.contextual_score <= 0]
 
     def _choice_adjust(self, recs, pack_cards, pick, pack_no, set_code):
         """Re-rank the final order by the fitted choice model of top drafters (CHOICE_ADJUST); scores stay in WR points."""
