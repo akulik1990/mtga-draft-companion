@@ -2,13 +2,14 @@
 
 Both write the same Player.log lines Arena writes, into a log the scanner
 watches, so nothing downstream knows it is a mock. Seat 0 is the player (or a
-tool following an engine); seven bots take the best GIH WR card and stick to
-two colours once they have them. The bots' pools are ground truth for
+tool following an engine); seven bots take the best GIH WR card, +3 in their two colours once they have them,
+fixing lands for those colours at their own rating, and off-colour cards by how often top players play them (BOT). The bots' pools are ground truth for
 open-colour detection in tests.
 """
 
 import gzip
 import json
+import math
 import random
 import uuid
 from collections import Counter
@@ -85,10 +86,41 @@ class Table:
     def pack(self):
         return list(self._holding()[0])
 
+    BOT = "top"  # "top": lands and off-colour cards as top players treat them; "simple": best GIH WR, +3 in the two main colours (before 2026-11-02)
+
     def bot_pick(self, pack, pool):
         colours = Counter(c for i in pool for c in self.cards.colours(i))
         main = {c for c, _ in colours.most_common(2)} if len(pool) >= 3 else set()
-        return max(pack, key=lambda i: gihwr(self.cards.by_id[i]) + (3.0 if main and set(self.cards.colours(i)) <= main else 0.0))
+        if self.BOT == "simple":
+            return max(pack, key=lambda i: gihwr(self.cards.by_id[i]) + (3.0 if main and set(self.cards.colours(i)) <= main else 0.0))
+        return max(pack, key=lambda i: self._bot_value(self.cards.by_id[i], main))
+
+    def _bot_value(self, card, main):
+        """A bot's value for a card: its GIH WR, +3 in its two colours. A land counts as in colour only when it makes
+        one of them (the simple bot took every dual as on-colour, so they vanished early: our seat drafted 1.5 nonbasic
+        lands per draft against top drafters' 4.4). An off-colour spell keeps 3 x the chance top players play such a
+        card outside their pair (the set's fitted offcolour rule), so bots splash bombs as people do."""
+        w = gihwr(card)
+        if not main:
+            return w
+        types = card.get("types") or []
+        if "Land" in types:
+            return w if set(card.get("colors") or []) & main else w - 3.0
+        cols = set(card.get("colors") or [])
+        if cols <= main:
+            return w + 3.0
+        return w + 3.0 * self._off_play(card, main)
+
+    def _off_play(self, card, main):
+        from companion.advisor_v2 import config
+        from companion.advisor_v2.lanes import off_pips
+
+        rule = config.fitted(self.cards.set_code, "offcolour")
+        if not rule:
+            return 0.0
+        lane = "".join(sorted(main, key=COLOURS.index))
+        z = rule["w"][0] + rule["w"][1] * (gihwr(card) - rule["mean"]) / rule["std"] + rule["w"][2] * (len(off_pips(card, lane)) >= 2)
+        return 1.0 / (1.0 + math.exp(-z))
 
     def take(self, grp_id):
         holding = self._holding()
