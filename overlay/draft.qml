@@ -15,8 +15,8 @@ ShellRoot {
     // Card grids as fractions of the screen. side: deck list on the right, 5 per row; bottom: deck under the pack, 8 per row.
     readonly property var layouts: ({
         // deck: the deck list's area [x0, y0, x1, y1]; hovering a card there opens Arena's preview over the pack too.
-        side: { x0: 0.145, dx: 0.1025, cardW: 0.09, y0: 0.1707, dy: 0.2489, cardH: 0.227, perRow: 5, deck: [0.785, 0.15, 1.0, 0.92] },
-        bottom: { x0: 0.1715, dx: 0.0835, cardW: 0.069, y0: 0.1636, dy: 0.1858, cardH: 0.17, perRow: 8, deck: [0.0, 0.55, 1.0, 1.0] }
+        side: { x0: 0.145, dx: 0.1025, cardW: 0.09, y0: 0.1707, dy: 0.2489, cardH: 0.227, perRow: 5, deck: [0.785, 0.15, 1.0, 0.92], panelBottom: 0.98 },
+        bottom: { x0: 0.1715, dx: 0.0835, cardW: 0.069, y0: 0.1636, dy: 0.1858, cardH: 0.17, perRow: 8, deck: [0.0, 0.655, 1.0, 1.0], panelBottom: 0.55 }  // deck cards start under the Deck / Confirm Pick bar
     })
     // Arena's layout toggle in the top bar draws the current layout: deck on the side = bottom half filled, deck
     // below = right third filled. A sits in its lower left, B in its upper right (fractions of a 16:9 screen).
@@ -171,7 +171,7 @@ ShellRoot {
             y: win.height * 0.085  // just under Arena's top menu bar
             width: win.width * (root.g.x0 - 0.018)
             // Never over the deck list (with the deck below the pack it starts at mid-screen): the contents shrink to fit.
-            readonly property real room: win.height * (root.g.deck[0] < 0.2 ? root.g.deck[1] : 0.98) - y - win.unit * 0.5
+            readonly property real room: win.height * root.g.panelBottom - y - win.unit * 0.5
             readonly property real fit: Math.min(1, (room - win.unit * 1.2) / Math.max(1, col.implicitHeight))
             height: col.implicitHeight * fit + win.unit * 1.2
             radius: win.unit * 0.6
