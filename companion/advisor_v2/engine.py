@@ -171,7 +171,13 @@ class DraftAdvisorV2:
     CREATURE_POINTS = 0.0  # WR points for a creature when the pool, projected to 23 spells, is fully short of CREATURE_TARGET; 0 = off
     CREATURE_FROM = 8  # spells in the pool before the creature need applies
     CHOICE_ADJUST = False  # final scores move toward how top drafters choose: + sum(beta_f / beta_v2 * f) for the pick's stage from the fitted "choices" model (tools/choice_model.py; synergy with the pool, deck needs, colour, fixing, mana value)
-    CHOICE_STAGES = "all"  # which stages CHOICE_ADJUST applies to: "all", or a comma list of "early" (pack 1 picks 1-7), "middle", "late" (picks 12-14)
+    SYNERGY_FIT = 0.0  # weight on the choice model's synergy part in Fit at every stage (payoffs with their enablers in the pool, enablers for held payoffs, payoffs with none), x the share of likely pairs that can cast the card; 0 = off
+    TIE_CHEAPER = True  # among cards within TIE_EPS of the top score, castable in the pool's top pair and within TIE_WR of each other's GIH WR, the cheaper goes first (equal power, lower cost: the guides' "Juza rule")
+    TIE_EPS = 0.3
+    TIE_WR = 0.5
+    CHOICE_FEATURES = ""  # per stage and feature group, e.g. "p1close:synergy;p2open:synergy,colour,splash;fit:synergy,colour,splash,fixer,needs;late:all" (stages p1open, p1close, p2open, fit, late; groups synergy, needs, colour, splash, fixer, cmc, all); overrides CHOICE_STAGES when set
+    CHOICE_STAGES = "all"  # which stages CHOICE_ADJUST applies to: "all", or a comma list of p1open (P1 picks 1-7), p1close (P1 8-11), p2open (P2 1-6), fit (P2 7-11, P3 1-11), late (picks 12-14)
+    CHOICE_IN_FIT = False  # apply the choice correction inside Fit (before the Power/Fit switch) instead of to the final order
     REMOVAL_POINTS = 0.0  # WR points for a removal spell when the pool, projected to 23 spells, is fully short of its top pair's removal floor (top players' count there minus deckbuilder.REMOVAL_SLACK); 0 = off
     REMOVAL_FROM = 8  # spells in the pool before the removal need applies
     COPIES_MAX = 2  # copies of one card a deck wants
@@ -249,6 +255,7 @@ class DraftAdvisorV2:
         self.spells = spells
         self.decks = {}  # lane -> [(value, card)] of the pool's castable spells, best first; built on demand
         self.split = None
+        self.set_code_now, self.pack_now = None, 1  # set by evaluate_pack
         self.order, self.prefs = {}, {}  # filled per pack in evaluate_pack
         set_code = next((c.get("set") for c in self.pool if c.get("set")), None)
         self.set_code = set_code
@@ -441,6 +448,7 @@ class DraftAdvisorV2:
         upstream = DraftAdvisor(self.metrics, self.pool)  # only for its wheel polynomial
         set_code = next((c.get("set") for c in (*self.pool, *pack_cards) if c.get("set")), None)
         config.activate(set_code)
+        self.set_code_now, self.pack_now = set_code, current_pack
         if self.OFF_PLAY and not self.offcolour and set_code:
             self.offcolour = config.fitted(set_code, "offcolour")
         self.order = pick_order(set_code) if self.ORDER_WEIGHT and set_code else {}
@@ -481,7 +489,7 @@ class DraftAdvisorV2:
                                   self._reasons(card, lanes, cast_p)))
 
         if self.SPLIT:
-            return self._choice_adjust(self._split(pack_cards, recs, current_pick, set_code), pack_cards, current_pick, current_pack, set_code)
+            return self._tie_cheaper(self._choice_adjust(self._split(pack_cards, recs, current_pick, set_code), pack_cards, current_pick, current_pack, set_code), pack_cards)
         recs.sort(key=lambda r: r.contextual_score, reverse=True)
         # Wheel as a tiebreaker: among cards within WHEEL_EPS of the best, take the one least likely to come back.
         if len(recs) > 1:
@@ -493,9 +501,31 @@ class DraftAdvisorV2:
                 recs.insert(0, pick)
         return recs
 
+    def _tie_cheaper(self, recs, pack_cards):
+        """Equal power, lower cost: among cards tied at the top (TIE_EPS), castable in the pool's top pair and of
+        near-equal raw rating (TIE_WR), put the cheapest first. Never overrides a real difference."""
+        if not self.TIE_CHEAPER or len(recs) < 2 or recs[0].contextual_score <= 0:
+            return recs
+        by_name = {c.get("name"): c for c in pack_cards}
+        top = recs[0]
+        wr = lambda r: float(all_decks(by_name[r.card_name]).get("gihwr") or 0.0)
+        tied = [r for r in recs if top.contextual_score - r.contextual_score <= self.TIE_EPS and r.contextual_score > 0
+                and castable(by_name[r.card_name], self.top_lane) and abs(wr(r) - wr(top)) <= self.TIE_WR]
+        if len(tied) < 2 or not castable(by_name[top.card_name], self.top_lane):
+            return recs
+        cmc = lambda r: by_name[r.card_name].get("cmc") or 0
+        first = min(tied, key=lambda r: (cmc(r), -r.contextual_score))
+        if first is top or cmc(first) >= cmc(top):
+            return recs
+        recs.remove(first)
+        recs.insert(0, first)
+        first.contextual_score = round(top.contextual_score + 0.01, 2)
+        first.reasoning.insert(0, f"Tie on power with {top.card_name}: cheaper ({cmc(first):g} vs {cmc(top):g} mana)")
+        return recs
+
     def _choice_adjust(self, recs, pack_cards, pick, pack_no, set_code):
         """Re-rank the final order by the fitted choice model of top drafters (CHOICE_ADJUST); scores stay in WR points."""
-        if not self.CHOICE_ADJUST or not set_code:
+        if not self.CHOICE_ADJUST or self.CHOICE_IN_FIT or not set_code:
             return recs
         from companion.advisor_v2 import choice
 
@@ -503,7 +533,8 @@ class DraftAdvisorV2:
         lane = choice.top_lane(self.pool)
         playable = [r for r in recs if r.contextual_score > 0]
         for r in playable:
-            adj = choice.correction(by_name[r.card_name], self.pool, set_code, pack_no, pick, lane, self.CHOICE_STAGES)
+            adj = choice.correction(by_name[r.card_name], self.pool, set_code, pack_no, pick, lane, self.CHOICE_STAGES,
+                                    skip=choice.SYNERGY if self.SYNERGY_FIT else (), spec=self.CHOICE_FEATURES)
             if abs(adj) >= 0.05:
                 r.contextual_score = round(r.contextual_score + adj, 2)
                 r.reasoning.append(f"Top drafters' choices: {adj:+.1f}")
@@ -529,7 +560,17 @@ class DraftAdvisorV2:
         """How good the card is for the colours the pool points to: the candidate does not pull the lanes."""
         score = sum(p * self.value(card, lane) for lane, p in self.lanes.items())
         live = sum(p for lane, p in self.lanes.items() if castable(card, lane) or self.speculative(card, lane))
-        return score + self.order_prior(card.get("name", ""), pick, prefs=self.PREF_SCOPE == "both") * live + self.deck_term(card)
+        synergy = 0.0
+        if self.SYNERGY_FIT and self.set_code_now:
+            from companion.advisor_v2 import choice
+
+            synergy = self.SYNERGY_FIT * choice.synergy_points(card, self.pool, self.set_code_now, self.pack_now, pick) * live
+        if self.CHOICE_ADJUST and self.CHOICE_IN_FIT and self.set_code_now:
+            from companion.advisor_v2 import choice
+
+            synergy += choice.correction(card, self.pool, self.set_code_now, self.pack_now, pick, choice.top_lane(self.pool), self.CHOICE_STAGES,
+                                         skip=choice.SYNERGY if self.SYNERGY_FIT else (), spec=self.CHOICE_FEATURES)
+        return score + self.order_prior(card.get("name", ""), pick, prefs=self.PREF_SCOPE == "both") * live + self.deck_term(card) + synergy
 
     def deck_term(self, card):
         """Value above replacement: in each likely pair, the card is worth replacement level plus how much the best 23

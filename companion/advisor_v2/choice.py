@@ -15,8 +15,16 @@ from companion.advisor_v2.synergy import roles
 
 FEATURES = ["v2", "syn_payoff", "syn_enabler", "lonely_payoff", "two_need", "creature_need", "removal_need",
             "on_colour", "splash_fixed", "fixer", "cmc"]
-STAGES = {"P1 picks 1-7": lambda p, k: p == 1 and k <= 7, "middle": lambda p, k: not (p == 1 and k <= 7) and k <= 11,
+# Draft phases (the user's structure, 2026-11-02): pack 1 opens on raw card quality and signals, closes on synergy;
+# pack 2 opens on synergy and settling final colours (two or three, splash or not); from mid pack 2 the deck's fit
+# (curve, needs, composition) takes over; picks 12-14 of any pack fill the deck.
+STAGES = {"P1 picks 1-7": lambda p, k: p == 1 and k <= 7,
+          "P1 picks 8-11": lambda p, k: p == 1 and 8 <= k <= 11,
+          "P2 picks 1-6": lambda p, k: p == 2 and k <= 6,
+          "fit phase": lambda p, k: ((p == 2 and 7 <= k) or p == 3) and k <= 11,
           "picks 12-14": lambda p, k: k >= 12}
+
+SHORT = {"P1 picks 1-7": "p1open", "P1 picks 8-11": "p1close", "P2 picks 1-6": "p2open", "fit phase": "fit", "picks 12-14": "late"}
 
 
 def stage_of(pack_no, pick):
@@ -100,13 +108,47 @@ def features(card, pool, lane, themes, tags, targets, score, best):
 
 
 
-SHORT = {"P1 picks 1-7": "early", "middle": "middle", "picks 12-14": "late"}
 
 
-def correction(card, pool, set_code, pack_no, pick, lane=None, stages="all"):
-    """WR points to add to v2's final score for this card, from the fitted choice model; 0 without one or outside stages."""
+SYNERGY = (1, 2, 3)  # FEATURES indices: syn_payoff, syn_enabler, lonely_payoff
+GROUPS = {"synergy": SYNERGY, "needs": (4, 5, 6), "colour": (7,), "splash": (8,), "fixer": (9,), "cmc": (10,),
+          "all": tuple(range(1, len(FEATURES)))}
+
+
+def allowed(spec, stage):
+    """FEATURES indices a CHOICE_FEATURES spec ("early:synergy;middle:synergy,fixer;late:all") applies at this stage;
+    None when the spec is empty (fall back to CHOICE_STAGES)."""
+    if not spec:
+        return None
+    for part in filter(None, spec.split(";")):
+        name, groups = part.split(":")
+        if name.strip() == SHORT[stage]:
+            return {i for g in groups.split(",") if g.strip() for i in GROUPS[g.strip()]}
+    return set()
+
+
+def synergy_points(card, pool, set_code, pack_no, pick):
+    """The synergy part of the choice model for this card and pool, in v2's WR points at this stage: payoffs whose
+    enablers are in the pool, enablers for payoffs in the pool, payoffs with none of their enablers. 0 without a model."""
+    model = ((config.fitted(set_code, "choices") or {}).get("stages") or {}).get(stage_of(pack_no, pick))
+    if not model:
+        return 0.0
+    tags = theme_tags(set_code)
+    x = features(card, pool, top_lane(pool), list(tags), tags, {}, 0.0, 0.0)
+    b = model["beta"]
+    return sum(b[i] / b[0] * x[i] for i in SYNERGY)
+
+
+def correction(card, pool, set_code, pack_no, pick, lane=None, stages="all", skip=(), spec=""):
+    """WR points to add to v2's final score for this card, from the fitted choice model; 0 without one or outside stages.
+    skip: FEATURES indices another term already applies (SYNERGY when SYNERGY_FIT is on)."""
     stage = stage_of(pack_no, pick)
-    if stages != "all" and SHORT[stage] not in stages.split(","):
+    use = allowed(spec, stage)
+    if use is None:
+        if stages != "all" and SHORT[stage] not in stages.split(","):
+            return 0.0
+        use = set(GROUPS["all"])
+    if not use:
         return 0.0
     model = ((config.fitted(set_code, "choices") or {}).get("stages") or {}).get(stage)
     if not model:
@@ -115,4 +157,4 @@ def correction(card, pool, set_code, pack_no, pick, lane=None, stages="all"):
     targets = (config.fitted(set_code, "decks") or {}).get("pairs") or {}
     x = features(card, pool, lane or top_lane(pool), list(tags), tags, targets, 0.0, 0.0)
     b = model["beta"]
-    return sum(b[i] / b[0] * x[i] for i in range(1, len(b)))
+    return sum(b[i] / b[0] * x[i] for i in range(1, len(b)) if i in use and i not in skip)

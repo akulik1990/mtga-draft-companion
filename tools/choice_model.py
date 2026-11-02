@@ -46,6 +46,17 @@ def cmd_collect(a):
     def capture(self, pack, pick, current_pack=1):
         recs = evaluate(self, pack, pick, current_pack)
         last["scores"] = {r.card_name: float(r.contextual_score) for r in recs}
+        # For the weights-by-pick chart: each card's Power, its pool-weighted value, the signal for its colours, its wheel chance.
+        extra = {}
+        for c in pack:
+            spell = "Land" not in (c.get("types") or [])
+            colours = [x for x in (c.get("colors") or []) if x in self.signals] if spell else []
+            extra[c.get("name")] = [self.power(c, pick), sum(p * self.value(c, lane) for lane, p in self.lanes.items()),
+                                    sum(self.signals[x] for x in colours) / len(colours) if colours else 0.0]
+        for r in recs:
+            if r.card_name in extra:
+                extra[r.card_name].append((r.wheel_chance or 0.0) / 100.0)
+        last["extra"] = extra
         return recs
 
     DraftAdvisorV2.evaluate_pack = capture
@@ -61,7 +72,7 @@ def cmd_collect(a):
             if taken and last.get("scores"):
                 rows.append({"draft": self.current_draft.get("id"), "wins": self.current_draft.get("wins"), "pack": pack_no, "pick": pick_no,
                              "taken": taken, "pack_cards": [c["name"] for c in pack], "pool": [c["name"] for c in pool],
-                             "scores": last["scores"]})
+                             "scores": last["scores"], "extra": last.get("extra", {})})
             return out
 
         run.replay.App.advise = wrapped
@@ -145,10 +156,66 @@ def cmd_fit(a):
                         "tools/choice_model.py fit: conditional logit of top drafters' picks on v2's score plus synergy, deck needs, colour, mana value")
 
 
+CHART = ["Power", "Fit", "Signal", "Wheel", "Synergy", "Needs", "Fixer", "Splash", "Mana value"]
+NOTE = {"Power": "card's value in its own best pair, plus the learnt top-drafter strength (bombs land here)",
+        "Fit": "card's value under the pairs the pool points to (castability, splash, land fixing value)",
+        "Signal": "openness of the card's colours from what the passing neighbour sent",
+        "Wheel": "chance the card comes back",
+        "Synergy": "payoffs whose enablers are in the pool, and enablers for held payoffs (manual.json themes)",
+        "Needs": "removal, creature and two-drop shortfall of the pool against top players' decks",
+        "Fixer": "a land or card that fixes toward another colour",
+        "Splash": "an off-colour single-pip card the pool already has fixing for",
+        "Mana value": "the card's mana value"}
+
+
+def cmd_chart(a):
+    """Per pick of the draft, a conditional logit of top drafters' choices on Power, Fit, signal and the Fit parts;
+    weights per SD of each input at that pick (how far one SD moves the odds of taking the card)."""
+    rows = json.load(gzip.open(cache(a.set, a.split), "rt"))
+    by = load_cards(a.set)
+    tags = theme_tags(a.set)
+    themes = list(tags)
+    targets = (config.fitted(a.set, "decks") or {}).get("pairs") or {}
+    data = {}
+    for row in rows:
+        extra = row.get("extra") or {}
+        pool = [by[n] for n in row["pool"] if n in by]
+        pack = [by[n] for n in row["pack_cards"] if n in by and n in extra and row["scores"].get(n, 0) > 0]
+        if len(pack) < 2 or row["taken"] not in {c["name"] for c in pack}:
+            continue
+        lane = top_lane(pool)
+        X, G, Y = data.setdefault((row["pack"], row["pick"]), ([], [], []))
+        g = len(set(G))
+        for c in pack:
+            pw, fv, sig, wh = extra[c["name"]][:4]  # a duplicate in the pack appends its wheel twice
+            x = features(c, pool, lane, themes, tags, targets, 0.0, 0.0)
+            X.append([pw, fv, sig, wh, x[1] + x[2], x[4] + x[5] + x[6], x[9], x[8], x[10]])
+            G.append(g)
+            Y.append(1 if c["name"] == row["taken"] else 0)
+    out = []
+    for (pk, k), (X, G, Y) in sorted(data.items()):
+        X, G, Y = np.array(X, float), np.array(G), np.array(Y)
+        if len(set(G.tolist())) < 100:
+            continue
+        keep = X.std(0) > 0
+        b = np.zeros(len(CHART)); se = np.zeros(len(CHART)); bw = np.zeros(len(CHART))
+        raw, raw_se, sd_b, sd_se = fit_clogit(X[:, keep], G, Y)
+        b[keep], se[keep], bw[keep] = sd_b, sd_se, raw
+        out.append({"pack": pk, "pick": k, "picks": len(set(G.tolist())), "per_sd": [round(float(v), 3) for v in b],
+                    "se": [round(float(v), 3) for v in se], "per_point": [round(float(v), 4) for v in bw]})
+        print(f"P{pk}p{k:<2d} n={len(set(G.tolist())):4d} " + " ".join(f"{n[:6]}={v:+.2f}" for n, v in zip(CHART, b)))
+    path = ROOT / "docs" / f"pick-weights-{a.set}.json"
+    doc = {"set": a.set, "split": a.split, "inputs": CHART, "notes": NOTE, "picks": out}
+    path.write_text(json.dumps(doc, indent=1))
+    page = path.with_suffix(".html")
+    page.write_text((ROOT / "tools" / "pick_weights.html").read_text().replace("__DATA__", json.dumps(doc)))
+    print(f"wrote {path} and {page}")
+
+
 def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     sub = p.add_subparsers(dest="cmd", required=True)
-    for name, fn in (("collect", cmd_collect), ("fit", cmd_fit)):
+    for name, fn in (("collect", cmd_collect), ("fit", cmd_fit), ("chart", cmd_chart)):
         s = sub.add_parser(name)
         s.add_argument("set")
         s.add_argument("--split", default="train")

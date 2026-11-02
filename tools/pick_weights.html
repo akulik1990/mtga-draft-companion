@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pick Weights</title>
+<style>
+.viz-root {
+  color-scheme: light;
+  --surface-0: #f4f4f2; --surface-1: #fcfcfb; --border: #dddcd7; --grid: #ebeae6;
+  --text-primary: #0b0b0b; --text-secondary: #52514e; --text-muted: #7a7974;
+  --series-1: #2a78d6; --series-2: #eb6834; --series-3: #1baf7a; --band: rgba(42,120,214,.16);
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) .viz-root {
+    color-scheme: dark;
+    --surface-0: #121211; --surface-1: #1a1a19; --border: #33332f; --grid: #262624;
+    --text-primary: #f0efec; --text-secondary: #c3c2b7; --text-muted: #8f8e86;
+    --series-1: #3987e5; --series-2: #d95926; --series-3: #199e70; --band: rgba(57,135,229,.22);
+  }
+}
+:root[data-theme="dark"] .viz-root {
+  color-scheme: dark;
+  --surface-0: #121211; --surface-1: #1a1a19; --border: #33332f; --grid: #262624;
+  --text-primary: #f0efec; --text-secondary: #c3c2b7; --text-muted: #8f8e86;
+  --series-1: #3987e5; --series-2: #d95926; --series-3: #199e70; --band: rgba(57,135,229,.22);
+}
+html, body { margin: 0; }
+body { font: 14px/1.45 system-ui, sans-serif; }
+.viz-root { background: var(--surface-0); color: var(--text-primary); min-height: 100vh; padding: 24px 16px 48px; box-sizing: border-box; }
+.wrap { max-width: 1080px; margin: 0 auto; }
+h1 { font-size: 20px; margin: 0 0 4px; }
+p.lede { color: var(--text-secondary); margin: 0 0 20px; max-width: 760px; }
+.card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px; padding: 14px 14px 8px; position: relative; }
+.card h2 { font-size: 14px; margin: 0; }
+.card .sub { color: var(--text-muted); font-size: 12px; margin: 2px 0 6px; min-height: 2.9em; }
+.hero { margin-bottom: 16px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; }
+.legend { display: flex; gap: 16px; font-size: 12px; color: var(--text-secondary); margin: 2px 0 4px; flex-wrap: wrap; }
+.legend i { display: inline-block; width: 14px; height: 2px; vertical-align: middle; margin-right: 6px; border-radius: 1px; }
+svg { display: block; width: 100%; height: auto; overflow: visible; }
+svg text { fill: var(--text-muted); font-size: 11px; }
+.tip { position: absolute; pointer-events: none; background: var(--surface-1); border: 1px solid var(--border); border-radius: 6px;
+       padding: 6px 8px; font-size: 12px; color: var(--text-primary); box-shadow: 0 2px 8px rgba(0,0,0,.15); display: none; white-space: nowrap; z-index: 2; }
+.tip b { font-weight: 600; }
+details { margin-top: 20px; }
+summary { cursor: pointer; color: var(--text-secondary); }
+table { border-collapse: collapse; font-size: 12px; margin-top: 8px; font-variant-numeric: tabular-nums; }
+th, td { padding: 3px 8px; text-align: right; border-bottom: 1px solid var(--grid); }
+th:first-child, td:first-child { text-align: left; }
+.foot { color: var(--text-muted); font-size: 12px; margin-top: 16px; max-width: 760px; }
+</style>
+</head>
+<body>
+<div class="viz-root">
+<div class="wrap">
+<h1 id="title"></h1>
+<p class="lede">Each point is one pick of the draft. A conditional logit over top drafters' (60%+ over 50+ games) actual choices finds how much each input moves the odds of taking a card at that pick, with the other inputs held fixed. Units: change in log-odds per one standard deviation of the input within that pick's packs, so inputs are comparable. Bands are ±1 SE. Above zero means top drafters lean toward cards high on it.</p>
+<div class="card hero" id="hero"></div>
+<div class="grid" id="grid"></div>
+<details><summary>Table view</summary><div id="table"></div></details>
+<p class="foot" id="foot"></p>
+</div>
+</div>
+<script>
+const DATA = __DATA__;
+const css = n => getComputedStyle(document.querySelector('.viz-root')).getPropertyValue(n).trim();
+const picks = DATA.picks, N = picks.length;
+const xi = p => (p.pack - 1) * 14 + p.pick;            // 1..42
+const label = p => `P${p.pack}p${p.pick}`;
+document.getElementById('title').textContent = `How top drafters weigh each input, pick by pick (${DATA.set})`;
+document.getElementById('foot').textContent = `${DATA.split} sample, ${picks.reduce((s, p) => s + p.picks, 0).toLocaleString()} picks. Power and Fit overlap early (with an empty pool they are nearly the same number), so their separate weights are noisy in the first picks; read their sum and their split together.`;
+
+function panel(el, series, opts) {
+  const W = opts.w || 360, H = opts.h || 220, m = {l: 30, r: opts.r || 8, t: 8, b: 22};
+  const all = series.flatMap(s => s.vals.flatMap((v, i) => [v - (s.se ? s.se[i] : 0), v + (s.se ? s.se[i] : 0)]));
+  let lo = Math.min(0, ...(opts.lo != null ? [opts.lo] : all)), hi = Math.max(0, ...(opts.hi != null ? [opts.hi] : all));
+  const X = x => m.l + (x - 1) / 41 * (W - m.l - m.r), Y = v => m.t + (hi - v) / (hi - lo) * (H - m.t - m.b);
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${opts.aria}">`;
+  const step = (hi - lo) > 2 ? 1 : (hi - lo) > 1 ? 0.5 : 0.25;
+  for (let v = Math.ceil(lo / step) * step; v <= hi + 1e-9; v += step)
+    s += `<line x1="${m.l}" x2="${W - m.r}" y1="${Y(v)}" y2="${Y(v)}" stroke="${Math.abs(v) < 1e-9 ? css('--text-muted') : css('--grid')}" stroke-width="1"/><text x="${m.l - 6}" y="${Y(v) + 4}" text-anchor="end">${+v.toFixed(2)}</text>`;
+  for (const pk of [1, 2, 3]) {
+    const x0 = X((pk - 1) * 14 + 1);
+    if (pk > 1) s += `<line x1="${x0 - (X(2) - X(1)) / 2}" x2="${x0 - (X(2) - X(1)) / 2}" y1="${m.t}" y2="${H - m.b}" stroke="${css('--border')}" stroke-dasharray="3 3"/>`;
+    s += `<text x="${x0}" y="${H - 6}">Pack ${pk}</text>`;
+  }
+  for (const se of series) {
+    for (const pk of [1, 2, 3]) {
+      const idx = picks.map((p, i) => i).filter(i => picks[i].pack === pk);
+      if (!idx.length) continue;
+      if (se.se) {
+        const up = idx.map(i => `${X(xi(picks[i]))},${Y(se.vals[i] + se.se[i])}`), dn = idx.slice().reverse().map(i => `${X(xi(picks[i]))},${Y(se.vals[i] - se.se[i])}`);
+        s += `<polygon points="${up.concat(dn).join(' ')}" fill="${css('--band')}"/>`;
+      }
+      s += `<polyline points="${idx.map(i => `${X(xi(picks[i]))},${Y(se.vals[i])}`).join(' ')}" fill="none" stroke="${se.color}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>`;
+    }
+    if (opts.direct) { const i = N - 1; s += `<text x="${X(xi(picks[i])) + 6}" y="${Y(se.vals[i]) + 4}" style="fill:${css('--text-secondary')}">${se.name}</text>`; }
+  }
+  s += `<line class="cross" x1="0" x2="0" y1="${m.t}" y2="${H - m.b}" stroke="${css('--text-muted')}" stroke-width="1" visibility="hidden"/>`;
+  s += `<rect x="${m.l}" y="${m.t}" width="${W - m.l - m.r}" height="${H - m.t - m.b}" fill="transparent"/></svg><div class="tip"></div>`;
+  el.insertAdjacentHTML('beforeend', s);
+  const svg = el.querySelector('svg:last-of-type'), tip = el.querySelector('.tip:last-of-type'), cross = svg.querySelector('.cross');
+  svg.addEventListener('pointermove', e => {
+    const r = svg.getBoundingClientRect(), x = (e.clientX - r.left) / r.width * W;
+    let best = 0; picks.forEach((p, i) => { if (Math.abs(X(xi(p)) - x) < Math.abs(X(xi(picks[best])) - x)) best = i; });
+    const p = picks[best];
+    cross.setAttribute('x1', X(xi(p))); cross.setAttribute('x2', X(xi(p))); cross.setAttribute('visibility', 'visible');
+    tip.innerHTML = `<b>${label(p)}</b> · ${p.picks} picks<br>` + series.map(se => `${series.length > 1 ? `<i style="display:inline-block;width:10px;height:2px;background:${se.color};vertical-align:middle;margin-right:5px"></i>` : ''}${se.name} ${se.vals[best] >= 0 ? '+' : ''}${se.vals[best].toFixed(2)}${se.se ? ` ± ${se.se[best].toFixed(2)}` : ''}`).join('<br>');
+    tip.style.display = 'block';
+    const er = el.getBoundingClientRect(), left = e.clientX - er.left + 12;
+    tip.style.left = Math.min(left, er.width - tip.offsetWidth - 4) + 'px'; tip.style.top = (e.clientY - er.top + 12) + 'px';
+  });
+  svg.addEventListener('pointerleave', () => { tip.style.display = 'none'; cross.setAttribute('visibility', 'hidden'); });
+}
+
+const col = name => DATA.inputs.indexOf(name);
+const get = (name, key) => picks.map(p => p[key][col(name)]);
+const hero = document.getElementById('hero');
+hero.innerHTML = `<h2>Power, Fit and Signal</h2><div class="sub">The three big inputs on one scale. ${DATA.notes.Power}; ${DATA.notes.Fit}; ${DATA.notes.Signal}.</div>
+<div class="legend"><span><i style="background:var(--series-1)"></i>Power</span><span><i style="background:var(--series-2)"></i>Fit</span><span><i style="background:var(--series-3)"></i>Signal</span></div>`;
+panel(hero, [{name: 'Power', vals: get('Power', 'per_sd'), color: css('--series-1')}, {name: 'Fit', vals: get('Fit', 'per_sd'), color: css('--series-2')},
+             {name: 'Signal', vals: get('Signal', 'per_sd'), color: css('--series-3')}], {w: 1000, h: 320, r: 56, direct: true, aria: 'Power, Fit and Signal weights by pick'});
+
+const small = DATA.inputs;
+const allv = small.flatMap(n => get(n, 'per_sd').map((v, i) => [v - get(n, 'se')[i], v + get(n, 'se')[i]]).flat());
+const lo = Math.min(...allv), hi = Math.max(...allv);
+const grid = document.getElementById('grid');
+for (const name of small) {
+  const c = document.createElement('div'); c.className = 'card';
+  c.innerHTML = `<h2>${name}</h2><div class="sub">${DATA.notes[name]}</div>`;
+  grid.appendChild(c);
+  panel(c, [{name, vals: get(name, 'per_sd'), se: get(name, 'se'), color: css('--series-1')}], {lo, hi, aria: `${name} weight by pick`});
+}
+document.getElementById('table').innerHTML = `<table><tr><th>pick</th><th>n</th>${small.map(n => `<th>${n}</th>`).join('')}</tr>` +
+  picks.map(p => `<tr><td>${label(p)}</td><td>${p.picks}</td>${p.per_sd.map((v, i) => `<td>${v >= 0 ? '+' : ''}${v.toFixed(2)} ±${p.se[i].toFixed(2)}</td>`).join('')}</tr>`).join('') + '</table>';
+</script>
+</body>
+</html>

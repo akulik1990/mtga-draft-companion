@@ -19,7 +19,13 @@
   "deckbuilder.MIN_SPLASH_CMC": 1,
   "REMOVAL_POINTS": 4.0,
   "CHOICE_ADJUST": true,
-  "CHOICE_STAGES": "late"
+  "CHOICE_STAGES": "late",
+  "CHOICE_IN_FIT": true,
+  "CHOICE_FEATURES": "p1close:synergy;p2open:synergy,colour,splash;fit:synergy,colour,splash,fixer,needs;late:all",
+  "OFF_PLAY": true,
+  "REMOVAL_FROM": 20,
+  "DECK_WEIGHT": 0.5,
+  "DECK_FROM": 20
  },
  "pairs": {
   "k": 4,
@@ -517,7 +523,7 @@
   "choices": {
    "how": "tools/choice_model.py fit: conditional logit of top drafters' picks on v2's score plus synergy, deck needs, colour, mana value",
    "date": "2026-11-02",
-   "commit": "013f35b"
+   "commit": "e935884"
   }
  },
  "prefs": {
@@ -3972,34 +3978,34 @@
      "cmc"
     ],
     "beta": [
-     0.3681,
-     0.2179,
-     0.1697,
-     0.0178,
-     0.1161,
-     0.2559,
-     0.1328,
-     -0.3037,
-     -0.569,
+     0.368,
+     0.218,
+     0.1696,
+     0.018,
+     0.1171,
+     0.255,
+     0.1338,
+     -0.3018,
+     -0.5798,
      -0.4296,
-     0.1449
+     0.145
     ],
     "se": [
-     0.006,
+     0.0059,
      0.0446,
      0.0468,
      0.1419,
-     0.2928,
-     0.3449,
-     0.4792,
-     0.0433,
-     0.12,
-     0.0705,
+     0.2932,
+     0.3429,
+     0.4762,
+     0.0432,
+     0.121,
+     0.0707,
      0.0117
     ]
    },
-   "middle": {
-    "picks": 15600,
+   "P1 picks 8-11": {
+    "picks": 2400,
     "features": [
      "v2",
      "syn_payoff",
@@ -4014,30 +4020,114 @@
      "cmc"
     ],
     "beta": [
-     0.204,
-     0.0663,
-     0.0244,
-     -0.1251,
-     -0.057,
-     -0.2778,
-     0.499,
-     0.5341,
-     -0.4206,
-     0.3442,
-     0.001
+     0.1783,
+     0.1666,
+     0.113,
+     -0.0035,
+     -0.0415,
+     0.1325,
+     0.1633,
+     0.8246,
+     -0.2265,
+     0.827,
+     -0.0479
     ],
     "se": [
-     0.0024,
-     0.0077,
-     0.0081,
-     0.0451,
-     0.0893,
-     0.1152,
-     0.1325,
-     0.0327,
-     0.0401,
-     0.0342,
-     0.0066
+     0.0071,
+     0.0344,
+     0.0378,
+     0.084,
+     0.1567,
+     0.2015,
+     0.2502,
+     0.0662,
+     0.0948,
+     0.0853,
+     0.0176
+    ]
+   },
+   "P2 picks 1-6": {
+    "picks": 3600,
+    "features": [
+     "v2",
+     "syn_payoff",
+     "syn_enabler",
+     "lonely_payoff",
+     "two_need",
+     "creature_need",
+     "removal_need",
+     "on_colour",
+     "splash_fixed",
+     "fixer",
+     "cmc"
+    ],
+    "beta": [
+     0.2957,
+     0.1026,
+     0.0287,
+     -0.1281,
+     0.0033,
+     0.0878,
+     -0.0181,
+     -0.1938,
+     -0.1306,
+     -0.1042,
+     0.0556
+    ],
+    "se": [
+     0.0054,
+     0.0187,
+     0.0207,
+     0.0906,
+     0.1719,
+     0.2241,
+     0.2245,
+     0.0658,
+     0.0782,
+     0.0747,
+     0.014
+    ]
+   },
+   "fit phase": {
+    "picks": 9600,
+    "features": [
+     "v2",
+     "syn_payoff",
+     "syn_enabler",
+     "lonely_payoff",
+     "two_need",
+     "creature_need",
+     "removal_need",
+     "on_colour",
+     "splash_fixed",
+     "fixer",
+     "cmc"
+    ],
+    "beta": [
+     0.1764,
+     0.058,
+     0.0253,
+     -0.1353,
+     -0.1038,
+     -0.7391,
+     1.1427,
+     0.6866,
+     -0.526,
+     0.4331,
+     -0.0084
+    ],
+    "se": [
+     0.0029,
+     0.0088,
+     0.0092,
+     0.0716,
+     0.1416,
+     0.1881,
+     0.2367,
+     0.0435,
+     0.0521,
+     0.0448,
+     0.0086
     ]
    },
    "picks 12-14": {
