@@ -26,6 +26,16 @@ ShellRoot {
     property bool test: Quickshell.env("OVERLAY_TEST") === "1"
     property var data: null
     property bool arenaFocused: false
+    property real px: -1  // pointer, in screen pixels (from overlay/pointer.py)
+    property real py: -1
+    // Arena opens a large preview over the pack while the pointer is on a card; the badges step aside.
+    readonly property bool overCard: {
+        if (!data || !win.screen) return false;
+        const fx = (px - win.screen.x) / win.width, fy = (py - win.screen.y) / win.height;
+        const col = Math.floor((fx - g.x0) / g.dx), row = Math.floor((fy - g.y0) / g.dy);
+        return col >= 0 && col < g.perRow && row >= 0 && fx - g.x0 - col * g.dx <= g.cardW
+            && fy - g.y0 - row * g.dy <= g.cardH && row * g.perRow + col < (data.cards || []).length + 1;  // + the basic land Arena shows but the log omits
+    }
 
     function poll() {
         const x = new XMLHttpRequest();
@@ -82,6 +92,17 @@ ShellRoot {
         }
     }
 
+    Process {
+        running: true
+        command: ["python3", Qt.resolvedUrl("pointer.py").toString().replace("file://", "")]
+        stdout: SplitParser {
+            onRead: line => {
+                const [x, y] = line.split(" ").map(Number);
+                root.px = x; root.py = y;
+            }
+        }
+    }
+
     PanelWindow {
         id: win
         screen: Quickshell.screens.find(s => s.name === root.screenName) ?? null
@@ -106,6 +127,7 @@ ShellRoot {
         Repeater {
             model: root.data ? root.data.cards : []
             delegate: Rectangle {
+                visible: !root.overCard
                 required property var modelData
                 required property int index
                 readonly property int col: index % root.g.perRow
