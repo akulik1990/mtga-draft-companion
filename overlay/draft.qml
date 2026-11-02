@@ -29,12 +29,14 @@ ShellRoot {
     property string api: (Quickshell.env("OVERLAY_API") || "http://localhost:17173") + "/api/overlay"
     property bool test: !!Quickshell.env("OVERLAY_TEST")  // 1 / gold / fire / bluefire: dummy pack, first card in that tier
     property var data: null
-    property bool arenaFocused: false
+    property bool arenaFocused: false  // Arena is the active window on our output (the overlay shows)
+    property bool pointerInArena: false  // Arena has keyboard focus; with niri's focus-follows-mouse, the pointer is over it
     property real px: -1  // pointer, in screen pixels (from overlay/pointer.py)
     property real py: -1
     // Arena opens a large preview over the pack while the pointer is on a card; the badges step aside.
     readonly property bool overCard: {
-        if (!data || !win.screen || test) return false;
+        // X11 keeps reporting the last position once the pointer leaves Arena; trust it only while Arena has focus.
+        if (!data || !win.screen || test || !pointerInArena) return false;
         const fx = (px - win.screen.x) / win.width, fy = (py - win.screen.y) / win.height;
         const d = g.deck;
         if (fx >= d[0] && fx <= d[2] && fy >= d[1] && fy <= d[3]) return true;
@@ -66,10 +68,14 @@ ShellRoot {
         onTriggered: {
             if (root.test) { root.data = root.dummy(); root.arenaFocused = true; return; }
             root.poll();
-            if (!focus.running) focus.running = true;
             // A hover preview can cover the probe pixel; read the layout only while nothing is hovered.
             if (root.arenaFocused && !root.overCard && !pixel.running) pixel.running = true;
         }
+    }
+
+    Timer {  // window state, faster than the pack poll so hover hiding follows the pointer closely
+        interval: 300; running: !root.test; repeat: true; triggeredOnStart: true
+        onTriggered: if (!focus.running) focus.running = true
     }
 
     // Shown while Arena is the active window on our output, focused or not (the other monitor may have focus).
@@ -83,6 +89,7 @@ ShellRoot {
                     const ws = spaces.find(w => w.output === root.screenName && w.is_active);
                     const win = windows.find(w => w.id === (ws || {}).active_window_id);
                     root.arenaFocused = !!win && win.app_id === "steam_app_2141910";
+                    root.pointerInArena = root.arenaFocused && !!win.is_focused;
                 } catch (e) { root.arenaFocused = false; }
             }
         }
