@@ -113,6 +113,10 @@ def prefs_file(path, which):
     return json.loads(Path(path).read_text()).get(which, {})
 
 
+def set_code_of(cards):
+    return next((c.get("set") for c in cards if c.get("set")), None)
+
+
 @lru_cache(maxsize=8)
 def tables(set_code):
     """Per-set typical-deck and synergy tables, if tools/synergy/build.py has produced them."""
@@ -166,6 +170,8 @@ class DraftAdvisorV2:
     CREATURE_TARGET = 15.0  # creatures wanted in 23 spells
     CREATURE_POINTS = 0.0  # WR points for a creature when the pool, projected to 23 spells, is fully short of CREATURE_TARGET; 0 = off
     CREATURE_FROM = 8  # spells in the pool before the creature need applies
+    REMOVAL_POINTS = 0.0  # WR points for a removal spell when the pool, projected to 23 spells, is fully short of its top pair's removal floor (top players' count there minus deckbuilder.REMOVAL_SLACK); 0 = off
+    REMOVAL_FROM = 8  # spells in the pool before the removal need applies
     COPIES_MAX = 2  # copies of one card a deck wants
     COPIES_POINTS = 0.0  # WR points off per copy at or beyond COPIES_MAX already in the pool; 0 = off
     DECK_WEIGHT = 0.0  # Fit adds this share of the card's value above replacement in the likely pairs' best 23 (top players' shape penalty included) minus its own value: a card that would not make the deck loses, one that fills a shape gap gains; 0 = off
@@ -227,6 +233,14 @@ class DraftAdvisorV2:
         creatures = sum(1 for c in self.pool if "Creature" in (c.get("types") or []))
         self.creature_need = (max(0.0, self.CREATURE_TARGET - creatures * 23.0 / spells) / self.CREATURE_TARGET
                               if self.CREATURE_POINTS and spells >= self.CREATURE_FROM else 0.0)
+        self.removal_need = 0.0
+        if self.REMOVAL_POINTS and spells >= self.REMOVAL_FROM and set_code_of(self.pool):
+            # FRA games: decks under 6 removal lose ~0.6 WR points beyond their cards; the builder keeps a floor, the picker leans toward it.
+            from companion.advisor_v2 import deckbuilder  # deckbuilder imports this module
+            target = ((config.fitted(set_code_of(self.pool), "decks") or {}).get("pairs") or {}).get(self.top_lane) or {}
+            floor = max(0.0, target.get("removal", 6.0 + deckbuilder.REMOVAL_SLACK) - deckbuilder.REMOVAL_SLACK)
+            removal = sum(1 for c in self.pool if "Land" not in (c.get("types") or []) and "removal" in (c.get("tags") or []))
+            self.removal_need = max(0.0, floor - removal * 23.0 / spells) / floor if floor else 0.0
         if self.HALF_PIVOT and spells >= self.HALF_PIVOT:
             self.anchor = self.top_lane
         self.lanes = self._lanes(self.commit)  # pool only; what the Analyst shows and what Fit uses
@@ -373,6 +387,8 @@ class DraftAdvisorV2:
                 a += combo.get("points", 0.0)
         if self.creature_need and kind == "creature":
             a += self.CREATURE_POINTS * self.creature_need
+        if self.removal_need and "removal" in (card.get("tags") or []) and kind != "land":
+            a += self.REMOVAL_POINTS * self.removal_need
         if self.COPIES_POINTS and self.names.get(name, 0) >= self.COPIES_MAX:
             a -= self.COPIES_POINTS * (self.names[name] - self.COPIES_MAX + 1)
         if self.DOUBLE_PIP and (self.three_colour or self.DOUBLE_PIP_ALL) and (card.get("cmc") or 0) <= self.DOUBLE_PIP_CMC:

@@ -42,6 +42,8 @@
   "PREF_SCOPE": "both",
   "PREF_SET": "early",
   "PREF_WEIGHT": 4.0,
+  "REMOVAL_FROM": 8,
+  "REMOVAL_POINTS": 0.0,
   "REPLACEMENT_SD": 2.0,
   "SPARSE_SD": 0.5,
   "SPEC_ALL": false,
