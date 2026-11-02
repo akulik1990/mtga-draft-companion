@@ -4,6 +4,7 @@
 // ponytail: assumes Arena fills the output. Grids measured on 2560x1440, 2026-11-02.
 import QtQuick
 import QtQuick.Shapes
+import QtQuick.Effects
 import Quickshell
 import Quickshell.Io
 import Quickshell.Wayland
@@ -116,19 +117,22 @@ ShellRoot {
         mask: Region {}  // empty input region: every click goes to Arena
         visible: root.arenaFocused && !!root.data && (root.data.cards || []).length > 0
 
-        // Draftsmith-style tiers on v2's score, in set SDs from the set's mean GIH WR. v2's scores run about one SD
-        // under raw win rates early (they average over lanes a card cannot be cast in), hence the low cut-offs.
-        readonly property var tiers: [
-            { min: 1, hi: "#ffd27a", lo: "#e0441c", edge: "#ffb347" },    // fire
-            { min: 0, hi: "#fff1a8", lo: "#c9971c", edge: "#ffd54f" },    // gold
-            { min: -1, hi: "#ffffff", lo: "#9aa4ae", edge: "#d5dbe1" },   // silver
-            { min: -2, hi: "#ffc58f", lo: "#a5612c", edge: "#e0955a" },   // bronze
-            { min: -99, hi: "#6a7078", lo: "#2e3238", edge: "#80868e" }   // weak
-        ]
-        function tier(score) {
-            if (!score || !root.data || !root.data.std) return tiers[4];
-            const z = (score - root.data.mean) / root.data.std;
-            return tiers.find(t => z >= t.min);
+        // Shield colour by v2's pack rank. The pick glows when it also tops both Fit and Power (best for your colours and
+        // strongest outright), and turns to fire when that card is a bomb too: All Decks GIH WR >= set mean + BOMB_SD.
+        // ponytail: BOMB_SD 1 fires on ~8% of picks 1-3 per pack and almost never later (100 FRA top-drafter drafts, 2026-11-02).
+        readonly property real bombSd: 1.0
+        readonly property var medals: ({
+            fire: { hi: "#ffd27a", lo: "#e0441c", edge: "#ffb347" },
+            gold: { hi: "#fff1a8", lo: "#c9971c", edge: "#ffd54f" },
+            silver: { hi: "#ffffff", lo: "#b4c8e0", edge: "#eaf2ff" },
+            bronze: { hi: "#ffc58f", lo: "#a5612c", edge: "#e0955a" },
+            grey: { hi: "#3c4148", lo: "#1d2024", edge: "#50565e" }
+        })
+        function clear(c) { return c.rank === 1 && c.fit === 1 && c.power === 1; }
+        function bomb(c) { return !!root.data && !!root.data.std && c.gihwr >= root.data.mean + bombSd * root.data.std; }
+        function medal(c) {
+            if (c.rank === 1) return medals[clear(c) && bomb(c) ? "fire" : "gold"];
+            return medals[["", "", "silver", "bronze"][c.rank] || "grey"];
         }
         readonly property int unit: Math.round(win.height * 0.017)
 
@@ -158,7 +162,9 @@ ShellRoot {
                 required property int index
                 readonly property int col: index % root.g.perRow
                 readonly property int row: Math.floor(index / root.g.perRow)
-                readonly property var t: win.tier(modelData.score)
+                readonly property var t: win.medal(modelData)
+                readonly property bool glow: win.clear(modelData)
+                opacity: modelData.rank && modelData.rank <= 3 ? 1.0 : 0.8
                 // Shield on the card's bottom edge, clear of art and rules text.
                 width: win.width * root.g.cardW * 0.34
                 height: width * 1.15
@@ -168,6 +174,23 @@ ShellRoot {
                 Shape {
                     id: shield
                     anchors.fill: parent
+                    // A clear pick glows in its own colour, pulsing.
+                    property real pulse: 0.6
+                    SequentialAnimation on pulse {
+                        running: card.glow; loops: Animation.Infinite
+                        NumberAnimation { from: 0.4; to: 1.0; duration: 900; easing.type: Easing.InOutSine }
+                        NumberAnimation { from: 1.0; to: 0.4; duration: 900; easing.type: Easing.InOutSine }
+                    }
+                    layer.enabled: card.glow
+                    layer.effect: MultiEffect {
+                        shadowEnabled: true
+                        shadowColor: card.t.edge
+                        shadowBlur: 1.0
+                        shadowOpacity: shield.pulse
+                        shadowHorizontalOffset: 0; shadowVerticalOffset: 0
+                        blurMax: 48
+                        autoPaddingEnabled: true
+                    }
                     preferredRendererType: Shape.CurveRenderer
                     ShapePath {
                         strokeColor: card.t.edge; strokeWidth: 1.5
@@ -217,7 +240,7 @@ ShellRoot {
                 required property int index
                 readonly property int col: index % root.g.perRow
                 readonly property int row: Math.floor(index / root.g.perRow)
-                readonly property var t: win.tier(modelData.score)
+                readonly property var t: win.medal(modelData)
                 x: win.width * (root.g.x0 + col * root.g.dx) + win.unit * 0.3
                 y: win.height * (root.g.y0 + row * root.g.dy + root.g.cardH * 0.1)
                 width: stats.implicitWidth + win.unit * 0.8

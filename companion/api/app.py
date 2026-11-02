@@ -1,6 +1,7 @@
 """FastAPI app: snapshot endpoint, WebSocket push, static frontend."""
 
 import asyncio
+import re
 import logging
 from contextlib import asynccontextmanager
 from pathlib import Path
@@ -102,8 +103,9 @@ def create_app(session: DraftSession, *, run_scanner: bool = True, frontend: Pat
             r = v2.get(c["name"])
             gih = ((c.get("deck_colors") or {}).get("All Decks") or {}).get("gihwr") or 0
             why = (r or {}).get("reasoning") or [""]
+            ranks = re.match(r"Fit #(\d+) · Power #(\d+)", why[0])
             cards.append({"name": c["name"], "rank": r and r["rank"], "score": r and r["contextual_score"],
-                          "orders": why[0] if why[0].startswith("Fit #") else "",
+                          "orders": why[0] if ranks else "", "fit": ranks and int(ranks[1]), "power": ranks and int(ranks[2]),
                           "upstream": up.get(c["name"]), "gihwr": gih})
         b = (s.get("v2_split") or {}).get("branch")
         line = "" if not b else (f"Switch: {b['card']} over {b['over']} (+{b['gap']:.1f})" if b["take"] else f"Stay: {b['over']} (not {b['card']})")
