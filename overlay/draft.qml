@@ -21,6 +21,7 @@ ShellRoot {
     // The bottom layout's deck panel covers this point in a flat (9,16,16); the side layout shows the pack or backdrop there.
     readonly property var probe: [0.5, 0.85]
     property string layoutName: "side"
+    property string lastSeen: "side"
     readonly property var g: layouts[layoutName]
     property bool showNames: false // card name on each badge, to spot a wrong order at a glance
 
@@ -65,7 +66,8 @@ ShellRoot {
             if (root.test) { root.data = root.dummy(); root.arenaFocused = true; return; }
             root.poll();
             if (!focus.running) focus.running = true;
-            if (root.arenaFocused && !pixel.running) pixel.running = true;
+            // A hover preview can cover the probe pixel; read the layout only while nothing is hovered.
+            if (root.arenaFocused && !root.overCard && !pixel.running) pixel.running = true;
         }
     }
 
@@ -91,8 +93,12 @@ ShellRoot {
         stdout: StdioCollector {
             onStreamFinished: {
                 const v = text.trim().split(/\s+/).map(Number);
-                if (v.length === 3)
-                    root.layoutName = v.every((c, i) => Math.abs(c - [9, 16, 16][i]) <= 6) ? "bottom" : "side";
+                if (v.length !== 3 || root.overCard)
+                    return;
+                const seen = v.every((c, i) => Math.abs(c - [9, 16, 16][i]) <= 6) ? "bottom" : "side";
+                if (seen === root.lastSeen)
+                    root.layoutName = seen;  // two readings in a row before switching
+                root.lastSeen = seen;
             }
         }
     }
