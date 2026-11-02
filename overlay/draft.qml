@@ -207,5 +207,38 @@ ShellRoot {
                 }
             }
         }
+
+        Repeater {  // stats panel over the top of the art
+            model: root.data ? root.data.cards : []
+            delegate: Rectangle {
+                id: panel
+                visible: !root.overCard
+                required property var modelData
+                required property int index
+                readonly property int col: index % root.g.perRow
+                readonly property int row: Math.floor(index / root.g.perRow)
+                readonly property var t: win.tier(modelData.score)
+                x: win.width * (root.g.x0 + col * root.g.dx) + win.unit * 0.3
+                y: win.height * (root.g.y0 + row * root.g.dy + root.g.cardH * 0.1)
+                width: stats.implicitWidth + win.unit * 0.8
+                height: stats.implicitHeight + win.unit * 0.4
+                radius: win.unit * 0.4
+                color: "#cc0e1215"
+                border.color: Qt.rgba(Qt.color(t.edge).r, Qt.color(t.edge).g, Qt.color(t.edge).b, 0.6)
+                Column {
+                    id: stats
+                    anchors.centerIn: parent
+                    Text {
+                        text: (panel.modelData.gihwr ? "GIH " + Number(panel.modelData.gihwr).toFixed(1) : "GIH n/a") + (panel.modelData.upstream ? "  ·  U" + panel.modelData.upstream : "")
+                        color: "#f0f0f0"; font.pixelSize: win.unit * 0.72; font.weight: Font.DemiBold
+                    }
+                    Text {
+                        visible: !!panel.modelData.orders
+                        text: (panel.modelData.orders || "").replace("Power ", "Pow ").replace(/#/g, "")
+                        color: "#b8bec6"; font.pixelSize: win.unit * 0.65
+                    }
+                }
+            }
+        }
     }
 }
