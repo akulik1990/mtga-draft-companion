@@ -513,7 +513,7 @@ def own_builds(set_code, taken):
     """Our builder's decks in the app's build format; None when it is off or the set lacks a deck model or targets."""
     from collections import Counter
 
-    from companion import deckbuilder
+    from companion.advisor_v2 import deckbuilder
     from companion.advisor_v2 import config
     from companion.advisor_v2.engine import DraftAdvisorV2
 
@@ -538,9 +538,9 @@ def own_builds(set_code, taken):
         side = grouped(b["sideboard"])
         creatures = sum(1 for c in b["spells"] if "Creature" in (c.get("types") or []))
         builds.append({
-            "label": b["lane"] + (f" ({b['variant']})" if b["variant"] else ""), "variant": b["variant"],
+            "label": b["lane"] + (f" + {b['splash']}" if b.get("splash") else "") + (f" ({b['variant']})" if b["variant"] else ""), "variant": b["variant"],
             "rating": None, "record": None, "colors": list(b["lane"]), "breakdown": None, "stats": None,
-            "note": "companion/deckbuilder.py", "deck": deck, "sideboard": side, "arena_export": copy_deck(deck, side),
+            "note": "companion/advisor_v2/deckbuilder.py", "deck": deck, "sideboard": side, "arena_export": copy_deck(deck, side),
             **mana_identity(deck), "deck_wr": round(b["predicted"], 2), "creatures": creatures, "realistic": True,
         })
     return builds

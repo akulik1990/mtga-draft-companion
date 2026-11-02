@@ -22,7 +22,7 @@ from functools import lru_cache
 from pathlib import Path
 
 SETS = Path(__file__).with_name("sets")
-MODULES = ("lanes", "signals", "composition", "synergy")
+MODULES = ("lanes", "signals", "composition", "synergy", "deckbuilder")
 STRUCTURAL = {"lanes.ALL", "signals.COLORS"}  # names, not settings
 TABLES = ("pairs", "types", "cards", "combos")
 

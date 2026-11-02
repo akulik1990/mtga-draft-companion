@@ -161,7 +161,7 @@ class DraftAdvisorV2:
     HALF_PIVOT = 0  # from this many spells in the pool, lanes sharing no colour with the pool's top pair get P = 0 (winners change one colour, not both); 0 = off
     # Neutral by default; for testing ideas from top players per set (sets/<SET>/manual.json, "values"):
     FIX_BONUS = 0.0  # WR points for a land that taps for the lane and makes another colour, on top of the splashes it enables
-    OWN_BUILDER = True  # deck building: companion/deckbuilder.py (model win rate within top players' deck shape); False = upstream's builder
+    OWN_BUILDER = True  # deck building: companion/advisor_v2/deckbuilder.py (model win rate within top players' deck shape); False = upstream's builder
     CYCLE_FIX = False  # basic landcyclers and any-colour mana rocks count as fixing for every colour (and earn the splashes they enable)
     THREE_COLOUR_AT = 0  # the pool counts as three-colour once it has this many one-pip splash spells for its top pair; 0 = never
     DOUBLE_PIP = 0.0  # in a three-colour pool, WR points off per extra pip of one colour ({U}{U}: one extra)
