@@ -13,7 +13,7 @@
 
 	async function build() {
 		busy = true; error = '';
-		try { builds = (await api.buildDecks()).sort((a, b) => (b.deck_wr ?? 0) - (a.deck_wr ?? 0)); active = 0; ran = true; } catch (e) { error = String(e); } finally { busy = false; }
+		try { builds = (await api.buildDecks()).sort((a, b) => Number(b.realistic ?? true) - Number(a.realistic ?? true) || (b.deck_wr ?? 0) - (a.deck_wr ?? 0)); active = 0; ran = true; } catch (e) { error = String(e); } finally { busy = false; }
 	}
 	const b = $derived(builds[active]);
 	const count = (cs: DeckCard[]) => cs.reduce((n, c) => n + c.count, 0);
@@ -45,6 +45,7 @@
 			<Pips colors={x.main || x.colors} />
 			<span>{label(x)}</span>
 			{#if x.deck_wr != null}<span class="font-mono {i === 0 ? 'text-emerald-300' : 'text-zinc-300'}" title="Predicted game win rate for an average player, from 17Lands games (tools/deck_model.py)">{x.deck_wr.toFixed(1)}%</span>{/if}
+			{#if x.realistic === false}<span class="text-amber-400" title="{x.creatures} creatures: fewer than real decks run, so the predicted win rate is outside the model's evidence">{x.creatures} creatures ⚠</span>{/if}
 			<span class="font-mono text-xs text-zinc-500" title="upstream's estimate and Power rating">{record(x)}{x.rating != null ? ` · ${x.rating.toFixed(0)}` : ''}</span>
 		</button>
 	{/each}

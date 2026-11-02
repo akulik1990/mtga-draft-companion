@@ -82,5 +82,7 @@ def test_completed_picks_and_overlay_builds():
               {"deck_wr": 60.0, "main": "UR", "deck": [{"name": "B", "count": 1, "types": ["Instant"], "cmc": 1}]}]
     out = overlay_builds(builds, pool)
     assert [b["main"] for b in out] == ["UR", "UB"]
+    builds[1]["realistic"] = False  # far too few creatures: ranked after realistic builds whatever its predicted win rate
+    assert [b["main"] for b in overlay_builds(builds, pool)] == ["UB", "UR"]
     assert out[1]["remove"] == [{"name": "A", "count": 1}, {"name": "B", "count": 1}]
     assert out[1]["lands"] == [{"name": "Island", "count": 17}]

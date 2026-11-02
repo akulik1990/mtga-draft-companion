@@ -446,6 +446,9 @@ class DraftSession:
         set_code = (self.config.card_data.latest_dataset or "").split("_")[0]
         for b in builds:
             b["deck_wr"] = deck_win_rate(set_code, b)
+            b["creatures"] = sum(c.get("count", 1) for c in b["deck"] if "Creature" in (c.get("types") or []))
+            # The deck model learnt from real decks; far fewer creatures than any of them run is outside its evidence.
+            b["realistic"] = b["creatures"] >= MIN_CREATURES
         return builds
 
 
@@ -502,6 +505,9 @@ def _trim(card: dict) -> dict:
     return out
 
 
+MIN_CREATURES = 11  # top players' decks run 12-15 creatures in every FRA pair (tools/deck_targets.py)
+
+
 def log_tail(path, size=2_000_000):
     """The last part of Arena's Player.log, as text ('' when unreadable)."""
     try:
@@ -535,7 +541,7 @@ def overlay_builds(builds, pool, top=3):
 
     out = []
     pool_counts = Counter(c.get("name") for c in pool if "Basic" not in (c.get("types") or []))
-    for b in sorted(builds, key=lambda b: -(b.get("deck_wr") or 0))[:top]:
+    for b in sorted(builds, key=lambda b: (not b.get("realistic", True), -(b.get("deck_wr") or 0)))[:top]:
         deck = b.get("deck") or []
         spells = sorted((c for c in deck if "Land" not in (c.get("types") or [])), key=lambda c: (c.get("cmc") or 0, c.get("name") or ""))
         lands = [c for c in deck if "Land" in (c.get("types") or [])]
@@ -545,6 +551,7 @@ def overlay_builds(builds, pool, top=3):
         remove = sorted(((n, k - in_deck.get(n, 0)) for n, k in pool_counts.items() if k > in_deck.get(n, 0)), key=lambda x: x[0])
         out.append({
             "label": b.get("label"), "main": b.get("main"), "splash": b.get("splash"), "deck_wr": b.get("deck_wr"),
+            "creatures": b.get("creatures"), "realistic": b.get("realistic", True),
             "spells": [{"name": c.get("name"), "count": c.get("count", 1), "cmc": c.get("cmc"), "mana_cost": c.get("mana_cost") or ""} for c in spells],
             "lands": [{"name": c.get("name"), "count": c.get("count", 1)} for c in lands],
             "remove": [{"name": n, "count": k} for n, k in remove],
