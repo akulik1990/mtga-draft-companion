@@ -227,8 +227,7 @@ def create_app(session: DraftSession, *, run_scanner: bool = True, frontend: Pat
         elif b["take"]:
             line = f"Switch: {b['card']} over {b['over']} (+{b['gap']:.1f})"
         else:
-            line = (f"Not switching to {b['card']}: {b['gap']:+.1f} stronger, needs {b['threshold']:+.1f} at this stage"
-                    + ("" if b.get("shares_colour", True) else " for a card outside both your colours"))
+            line = f"Not switching to {b['card']} ({b['gap']:+.1f}, needs {b['threshold']:+.1f})"
         ranked = sorted((c for c in cards if c["rank"]), key=lambda c: c["rank"])[:3]
         return {"status": s["status"], "pick": [s["pack_number"], s["pick_number"]], "cards": cards, "branch": line,
                 "mean": mean, "std": std, "panel": side_panel(s, ranked)}

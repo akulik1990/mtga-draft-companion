@@ -170,9 +170,10 @@ ShellRoot {
             x: win.width * 0.008
             y: win.height * 0.085  // just under Arena's top menu bar
             width: win.width * (root.g.x0 - 0.018)
-            // Never over the deck list (with the deck below the pack it starts at mid-screen); what does not fit is cut, pool first.
-            height: Math.min(col.implicitHeight + win.unit * 1.2, win.height * (root.g.deck[0] < 0.2 ? root.g.deck[1] : 0.98) - y - win.unit * 0.5)
-            clip: true
+            // Never over the deck list (with the deck below the pack it starts at mid-screen): the contents shrink to fit.
+            readonly property real room: win.height * (root.g.deck[0] < 0.2 ? root.g.deck[1] : 0.98) - y - win.unit * 0.5
+            readonly property real fit: Math.min(1, (room - win.unit * 1.2) / Math.max(1, col.implicitHeight))
+            height: col.implicitHeight * fit + win.unit * 1.2
             radius: win.unit * 0.6
             color: "#d90e1215"
             border.color: "#30ffffff"
@@ -180,7 +181,8 @@ ShellRoot {
             Column {
                 id: col
                 x: win.unit * 0.6; y: win.unit * 0.6
-                width: side.width - win.unit * 1.2
+                width: (side.width - win.unit * 1.2) / side.fit
+                scale: side.fit; transformOrigin: Item.TopLeft
                 spacing: win.unit * 0.35
 
                 component Heading: Text { color: "#8f98a3"; font.pixelSize: win.unit * 0.62; font.weight: Font.DemiBold; font.letterSpacing: 1 }
@@ -230,9 +232,9 @@ ShellRoot {
                 Line {  // how top drafters split between v2's top three when #1 leads by this much
                     visible: !!win.pn && !!win.pn.close && !!win.pn.close.took
                     text: win.pn && win.pn.close && win.pn.close.took
-                          ? (win.pn.close.gap < 1 ? "Close call. " : win.pn.close.gap < 4 ? "" : "Clear. ")
-                            + "#1 leads by " + win.pn.close.gap + "; top drafters here take #1 " + Math.round(win.pn.close.took[0])
-                            + "%, #2 " + Math.round(win.pn.close.took[1]) + "%, #3 " + Math.round(win.pn.close.took[2]) + "%"
+                          ? (win.pn.close.gap < 1 ? "Close call" : win.pn.close.gap < 4 ? "Lead" : "Clear") + " +" + win.pn.close.gap
+                            + " · top drafters take #1 " + Math.round(win.pn.close.took[0])
+                            + "% #2 " + Math.round(win.pn.close.took[1]) + "% #3 " + Math.round(win.pn.close.took[2]) + "%"
                           : ""
                     color: win.pn && win.pn.close && win.pn.close.gap < 1 ? "#ffcc80" : "#9fd3a8"
                     font.pixelSize: win.unit * 0.66
