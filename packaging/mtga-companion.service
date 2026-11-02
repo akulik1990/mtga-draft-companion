@@ -1,0 +1,16 @@
+# systemd user service: start the companion (app + in-game overlay) with the graphical session.
+# Install: packaging/install-autostart.sh   Logs: journalctl --user -u mtga-companion -f
+[Unit]
+Description=MTGA Draft Companion (app and in-game overlay)
+After=graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+WorkingDirectory=@ROOT@
+Environment=MTGA_COMPANION_DATA=@ROOT@/data
+ExecStart=@UV@ run python -m companion --host 0.0.0.0 --port 17173
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=graphical-session.target

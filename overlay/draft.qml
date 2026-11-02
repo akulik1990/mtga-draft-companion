@@ -27,14 +27,14 @@ ShellRoot {
 
     property string screenName: Quickshell.env("OVERLAY_SCREEN") || "DP-1"
     property string api: (Quickshell.env("OVERLAY_API") || "http://localhost:17173") + "/api/overlay"
-    property bool test: Quickshell.env("OVERLAY_TEST") === "1"
+    property bool test: !!Quickshell.env("OVERLAY_TEST")  // 1 / gold / fire / bluefire: dummy pack, first card in that tier
     property var data: null
     property bool arenaFocused: false
     property real px: -1  // pointer, in screen pixels (from overlay/pointer.py)
     property real py: -1
     // Arena opens a large preview over the pack while the pointer is on a card; the badges step aside.
     readonly property bool overCard: {
-        if (!data || !win.screen) return false;
+        if (!data || !win.screen || test) return false;
         const fx = (px - win.screen.x) / win.width, fy = (py - win.screen.y) / win.height;
         const d = g.deck;
         if (fx >= d[0] && fx <= d[2] && fy >= d[1] && fy <= d[3]) return true;
@@ -56,7 +56,8 @@ ShellRoot {
     function dummy() {
         const cards = [];
         for (let i = 0; i < 14; i++)
-            cards.push({ name: "card " + (i + 1), rank: i + 1, score: 60 - i, orders: "Fit #" + (i + 1) + " · Power #" + (14 - i), upstream: i + 1 });
+            cards.push({ name: "card " + (i + 1), rank: i + 1, score: 60 - i, orders: "Fit #" + (i + 1) + " · Power #" + (i + 1), upstream: i + 1,
+                         fit: i + 1, power: i + 1, heat: i === 0 ? ({ fire: 1, bluefire: 2 })[Quickshell.env("OVERLAY_TEST")] || 0 : 0, gihwr: 60 - i, wheel: 10 * i });
         return { cards: cards, branch: "Stay: card 1 (not card 2)" };
     }
 
@@ -138,10 +139,11 @@ ShellRoot {
             grey: { hi: "#3c4148", lo: "#1d2024", edge: "#50565e" }
         })
         function clear(c) { return c.rank === 1 && c.fit === 1 && c.power === 1; }
-        function medal(c) {
-            if (c.rank === 1) return medals[c.heat === 2 ? "bluefire" : c.heat === 1 ? "fire" : "gold"];
-            return medals[["", "", "silver", "bronze"][c.rank] || "grey"];
+        function tierName(c) {
+            if (c.rank === 1) return c.heat === 2 ? "bluefire" : c.heat === 1 ? "fire" : "gold";
+            return ["", "", "silver", "bronze"][c.rank] || "grey";
         }
+        function medal(c) { return medals[tierName(c)]; }
         readonly property int unit: Math.round(win.height * 0.017)
 
         readonly property var wubrg: ({ W: "#efe3b8", U: "#4a90d9", B: "#a58fcf", R: "#e0583a", G: "#3fa35c" })
@@ -321,110 +323,21 @@ ShellRoot {
 
         Repeater {
             model: root.data ? root.data.cards : []
-            delegate: Item {
-                id: card
-                visible: !root.overCard
+            delegate: Shield {
                 required property var modelData
                 required property int index
                 readonly property int col: index % root.g.perRow
                 readonly property int row: Math.floor(index / root.g.perRow)
-                readonly property var t: win.medal(modelData)
-                readonly property bool glow: win.clear(modelData) || !!t.flame
-                readonly property bool flame: !!t.flame
-                opacity: modelData.rank && modelData.rank <= 3 ? 1.0 : 0.8
-                // Shield on the card's bottom edge, clear of art and rules text.
+                visible: !root.overCard
+                tier: win.tierName(modelData)
+                glow: win.clear(modelData)
+                score: modelData.score
+                rank: modelData.rank || 0
+                // On the card's bottom edge, clear of art and rules text.
                 width: win.width * root.g.cardW * 0.34
                 height: width * 1.15
                 x: win.width * (root.g.x0 + col * root.g.dx + root.g.cardW / 2) - width / 2
                 y: win.height * (root.g.y0 + row * root.g.dy + root.g.cardH) - height * 0.45
-
-                Repeater {  // flames for fire / blue fire, flickering behind the shield's top
-                    model: card.flame ? [[-0.28, 0.75, 0], [0, 1.0, 140], [0.28, 0.75, 280]] : []
-                    Shape {
-                        id: fl
-                        required property var modelData
-                        readonly property real w: card.width * 0.42
-                        readonly property real h: card.height * 0.62 * modelData[1]
-                        x: card.width / 2 + modelData[0] * card.width - w / 2
-                        y: -h * 0.55
-                        width: w; height: h
-                        transformOrigin: Item.Bottom
-                        preferredRendererType: Shape.CurveRenderer
-                        SequentialAnimation on scale {
-                            loops: Animation.Infinite
-                            PauseAnimation { duration: modelData[2] }
-                            NumberAnimation { from: 0.85; to: 1.12; duration: 420; easing.type: Easing.InOutQuad }
-                            NumberAnimation { from: 1.12; to: 0.85; duration: 420; easing.type: Easing.InOutQuad }
-                        }
-                        ShapePath {
-                            strokeColor: "transparent"
-                            fillGradient: LinearGradient {
-                                x1: 0; y1: 0; x2: 0; y2: fl.h
-                                GradientStop { position: 0; color: "transparent" }
-                                GradientStop { position: 0.35; color: card.t.edge }
-                                GradientStop { position: 1; color: card.t.lo }
-                            }
-                            PathSvg { path: `M ${fl.w/2} 0 Q ${fl.w*0.95} ${fl.h*0.55} ${fl.w*0.8} ${fl.h*0.85} Q ${fl.w/2} ${fl.h*1.05} ${fl.w*0.2} ${fl.h*0.85} Q ${fl.w*0.05} ${fl.h*0.55} ${fl.w/2} 0 Z` }
-                        }
-                    }
-                }
-                Shape {
-                    id: shield
-                    anchors.fill: parent
-                    // A clear pick glows in its own colour, pulsing.
-                    property real pulse: 0.6
-                    SequentialAnimation on pulse {
-                        running: card.glow; loops: Animation.Infinite
-                        NumberAnimation { from: 0.4; to: 1.0; duration: 900; easing.type: Easing.InOutSine }
-                        NumberAnimation { from: 1.0; to: 0.4; duration: 900; easing.type: Easing.InOutSine }
-                    }
-                    layer.enabled: card.glow
-                    layer.effect: MultiEffect {
-                        shadowEnabled: true
-                        shadowColor: card.t.edge
-                        shadowBlur: 1.0
-                        shadowOpacity: shield.pulse
-                        shadowHorizontalOffset: 0; shadowVerticalOffset: 0
-                        blurMax: 48
-                        autoPaddingEnabled: true
-                    }
-                    preferredRendererType: Shape.CurveRenderer
-                    ShapePath {
-                        strokeColor: card.t.edge; strokeWidth: 1.5
-                        fillGradient: LinearGradient {
-                            x1: 0; y1: 0; x2: 0; y2: card.height
-                            GradientStop { position: 0; color: card.t.hi }
-                            GradientStop { position: 1; color: card.t.lo }
-                        }
-                        PathSvg { path: `M ${card.width/2} 0 L ${card.width} ${card.height*0.14} L ${card.width} ${card.height*0.5} Q ${card.width} ${card.height*0.84} ${card.width/2} ${card.height} Q 0 ${card.height*0.84} 0 ${card.height*0.5} L 0 ${card.height*0.14} Z` }
-                    }
-                    ShapePath {  // dark plate inside the rim
-                        readonly property real m: card.width * 0.13
-                        strokeColor: "transparent"
-                        fillColor: "#ee15181c"
-                        PathSvg { path: `M ${card.width/2} ${card.height*0.1} L ${card.width*0.87} ${card.height*0.21} L ${card.width*0.87} ${card.height*0.5} Q ${card.width*0.87} ${card.height*0.77} ${card.width/2} ${card.height*0.89} Q ${card.width*0.13} ${card.height*0.77} ${card.width*0.13} ${card.height*0.5} L ${card.width*0.13} ${card.height*0.21} Z` }
-                    }
-                }
-                Text {
-                    anchors.centerIn: parent
-                    anchors.verticalCenterOffset: -card.height * 0.03
-                    text: card.modelData.score ? Math.round(card.modelData.score) : "–"
-                    color: "white"; font.pixelSize: card.width * 0.36; font.bold: true
-                }
-                Rectangle {  // pack rank, gold ring for v2's pick
-                    visible: !!card.modelData.rank
-                    width: card.width * 0.38; height: width; radius: width / 2
-                    x: card.width * 0.78; y: -height * 0.15
-                    color: "#15181c"
-                    border.color: card.modelData.rank === 1 ? "#ffd54f" : "#80868e"
-                    border.width: card.modelData.rank === 1 ? 2 : 1
-                    Text {
-                        anchors.centerIn: parent
-                        text: card.modelData.rank
-                        color: card.modelData.rank === 1 ? "#ffd54f" : "#d0d4d8"
-                        font.pixelSize: parent.width * 0.55; font.bold: true
-                    }
-                }
             }
         }
 
