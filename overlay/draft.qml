@@ -328,7 +328,7 @@ ShellRoot {
                     }
                 }
 
-                // Curve of your spells in that pair (solid) inside top players' typical curve (outlined).
+                // Curve of your spells in that pair; under each mana value, top players' typical count.
                 Item { width: 1; height: win.unit * 0.5; visible: !!deck.d }
                 Row {
                     id: curve
@@ -336,7 +336,7 @@ ShellRoot {
                     readonly property var slots: ["1", "2", "3", "4", "5", "6+"]
                     readonly property var c: deck.d ? deck.d.curve : ({})
                     readonly property var t: deck.d ? deck.d.target_curve : ({})
-                    readonly property real peak: Math.max(1, ...slots.map(k => Math.max(c[k] || 0, t[k] || 0)))
+                    readonly property real peak: Math.max(1, ...slots.map(k => c[k] || 0))
                     spacing: win.unit * 0.25
                     Repeater {
                         model: curve.slots
@@ -347,24 +347,25 @@ ShellRoot {
                             spacing: 1
                             Item {
                                 width: (col.width - win.unit * 1.3) / 6; height: win.unit * 1.9
-                                Rectangle {  // top players' typical count: a faint outlined bar behind yours
-                                    anchors.bottom: parent.bottom; width: parent.width; radius: 2
-                                    height: want / curve.peak * parent.height
-                                    color: "#1affd54f"; border.color: "#99ffd54f"; border.width: 1
-                                }
-                                Rectangle {  // yours
+                                Rectangle {  // yours, coloured against top players' count at this point of the draft
+                                    readonly property real due: want * (deck.d ? deck.d.pace : 0)
                                     anchors.bottom: parent.bottom; anchors.horizontalCenter: parent.horizontalCenter
-                                    width: parent.width * 0.62; radius: 2
-                                    height: Math.max(1, n / curve.peak * parent.height)
-                                    color: n ? "#9aa7b4" : "transparent"
+                                    width: parent.width * 0.7; radius: 2
+                                    height: Math.max(2, n / curve.peak * parent.height)
+                                    color: n > want + 1 ? "#6f8aa6" : n >= due - 0.5 ? "#5fae6e" : n >= due * 0.6 ? "#d6a84a" : "#d0613f"
                                 }
-                                Text {  // your count, above the taller of the two bars
+                                Text {
                                     anchors.horizontalCenter: parent.horizontalCenter
-                                    y: parent.height - Math.max(n, want) / curve.peak * parent.height - height
+                                    y: parent.height - Math.max(2, n / curve.peak * parent.height) - height
                                     text: n; color: "#e8eaed"; font.pixelSize: win.unit * 0.55; font.bold: true
                                 }
                             }
-                            Text { anchors.horizontalCenter: parent.horizontalCenter; text: modelData; color: "#8f98a3"; font.pixelSize: win.unit * 0.55 }
+                            Text {  // mana value, then top players' typical count
+                                anchors.horizontalCenter: parent.horizontalCenter
+                                textFormat: Text.StyledText
+                                text: modelData + " <font color='#6b737c'>/" + Math.round(want) + "</font>"
+                                color: "#8f98a3"; font.pixelSize: win.unit * 0.55
+                            }
                         }
                     }
                 }
