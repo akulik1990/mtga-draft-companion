@@ -9,7 +9,9 @@
  "notes": {
   "FIX_BONUS": "Top players' FRA draft video (2026-11-02): 'always take the land unless it's so above replacement'. FRA top-drafter train top-1 55.76 -> 56.11, test 55.87 -> 56.33 (top-3 85.79 -> 86.58); mock decks 54.58 -> 54.54 (100 fresh tables); dual lands per draft 0.28 -> 0.97. Bonus 1-6 all similar; 3 is the middle.",
   "themes": "Synergy hypotheses from FRA guides, recorded 2026-11-02 for testing (tools/fit_themes.py); not applied by the engine. Patterns match lower-cased oracle text.",
-  "splash_claims": "Guides on splashing, to check against fitted splash/three rules: slow decks (ramp, graveyard, control) splash, aggro does not (LLU #258); 3 sources minimum, 4 ideal, scale with real fixers, basics alone do not count (LLU #258); double-pip splashes work with 7-8 sources thanks to duals, landcyclers, Murmuring Volume (State of the Format; our deck_features showed -2.0 points per double-pip splash copy); splash order: single-pip raw power, then card advantage or removal to fill gaps, then to replace filler (LLU #258); RG ramp often ends 3-5 colours (State of the Format); Heartwood makes red the easiest splash for green."
+  "splash_claims": "Guides on splashing, to check against fitted splash/three rules: slow decks (ramp, graveyard, control) splash, aggro does not (LLU #258); 3 sources minimum, 4 ideal, scale with real fixers, basics alone do not count (LLU #258); double-pip splashes work with 7-8 sources thanks to duals, landcyclers, Murmuring Volume (State of the Format; our deck_features showed -2.0 points per double-pip splash copy); splash order: single-pip raw power, then card advantage or removal to fill gaps, then to replace filler (LLU #258); RG ramp often ends 3-5 colours (State of the Format); Heartwood makes red the easiest splash for green.",
+  "card_verdicts": "Card verdicts in the ranking videos vs 17Lands All Decks GIH WR percentile (2026-11-02): bombs median 97th, 'shockingly strong' 80th, 'surprisingly weak' 9th, 'never draft' 10th, so card ratings already carry them. Disagreements: Sphinx's Approach 62nd (video: never; LLU #261: good filler, stats inflated by who plays it), Rise of the Deathbringer 51st (video: bomb). Video advice 'do not play two bad cards because they combo' (Ghalta + Living Library) matches the synergy tests: payoffs add little beyond card ratings.",
+  "pick_rules_from_videos": "Veveil: take a planeswalker dual over a replacement-level card ('you always get 23 spells'; ~50% of packs have one), as FRA's FIX_BONUS already does; two Rewrite Regrets ideal, Geist of Saint Thalia max 2, Unsummon 1-2; three colours after a black Garruk; pack 3 wheels are the oddest; skip extra removal when flush (5-6); two-bodied cards (Heartstring Puller) lower the creature count a removal-heavy deck needs. Tournament video: P1P1 Null Summoner partly because splashable; read the open lane (red) and pivot. Draft guide: UB needs cheap defence (Mabel, Bitter Recluse) to reach the late game; WB should lean aggressive."
  },
  "themes": {
   "surveil": {
@@ -28,7 +30,8 @@
    ],
    "video_claims": [
     "Videos add Proctor of Potential, Denzilore Fatehold, Diviner of Victory, Fatehold Charm, Eye of Jace; WU named one of the strongest decks because its cards pull the same way.",
-    "Set reviews: surveil has the most support of any synergy in the set; Saheeli, Consul of Oversight needs a Jace token present; Surveillance Phantasm is good on turn 2 and turn 10."
+    "Set reviews: surveil has the most support of any synergy in the set; Saheeli, Consul of Oversight needs a Jace token present; Surveillance Phantasm is good on turn 2 and turn 10.",
+    "Draft guide: minus-one the Jace to trigger surveil payoffs every turn and keep it around longer."
    ]
   },
   "jace": {
@@ -45,13 +48,16 @@
     "https://limitedmtg.com/reality-fracture/",
     "https://www.youtube.com/watch?v=_LfIxIuRQI0 (LLU FRA set review, multicolour + colourless)",
     "https://www.youtube.com/watch?v=XPPMF-xrFjk (LLU FRA rare + mythic set review)",
-    "https://www.youtube.com/watch?v=yAsCF-NNrLs (LLU #261, Saying Goodbye to Reality Fracture, ft. Marc; transcript pasted by the user)"
+    "https://www.youtube.com/watch?v=yAsCF-NNrLs (LLU #261, Saying Goodbye to Reality Fracture, ft. Marc; transcript pasted by the user)",
+    "I Drafted With the #1 Arena Direct Box Winner (Ft. Veveil) + REALITY FRACTURE DRAFT GUIDE part 2 (transcripts pasted by the user; claims extracted by an agent)"
    ],
    "video_claims": [
     "Videos add Avatar of Burgeoning Echoes, Sanctum Lurker, Repurposed Enforcer, Theorist's Sanctum, Jace's Machinations, Tam's Resistance; Kiora of Salt and Sand an 'upside trap'.",
     "LLU #261: Way of the Mind Sculptor pairs with other ways' -2+ abilities and needs some empower cards; Way of the Healer good in WU, narrow elsewhere; Jace mostly downticks once.",
     "Set reviews: Protege's Awakening only good with ways to spend big loyalty chunks (Amphisbaena, Kiora of Salt and Sand line); Way of the Cryomancer wants 7-8 empower cards; Campus Crier empowers from the graveyard at instant speed.",
-    "State of the Format: play 3 Ways at most (one loyalty activation a turn); Way of the Healer wants 5-7 empower cards; ranking Healer > Mind Sculptor > Paradox > Wildspeaker."
+    "State of the Format: play 3 Ways at most (one loyalty activation a turn); Way of the Healer wants 5-7 empower cards; ranking Healer > Mind Sculptor > Paradox > Wildspeaker.",
+    "Draft guide: do not leave a high-loyalty Jace up (Extended Absence, Clash of Elements kill it); spend loyalty the turn it is gained.",
+    "Veveil: often worth not activating Jace or using it as life buffer; Keeper of the Quiet Hour good only with other empower cards, bad with surveil alone; Countersculpt is two mana with a Jace in play."
    ]
   },
   "graveyard": {
@@ -94,7 +100,8 @@
    "video_claims": [
     "Videos: Master of Barbs with Ingris Stingerquill 'game over'; cast payoffs before enablers; hosts trust BR least.",
     "LLU #261: Command the Stage needs multiples plus Hallway Heckler; 75-80% of RB decks are midrange piles that do not want it; Vicious Verse underpowered.",
-    "Set reviews: Screeching Soulbreaker as a repeatable free trigger; Tomik, Izzet Sparkmage with Fulminous Forte; Danitha, Spear of Agony grows on Vicious Verse."
+    "Set reviews: Screeching Soulbreaker as a repeatable free trigger; Tomik, Izzet Sparkmage with Fulminous Forte; Danitha, Spear of Agony grows on Vicious Verse.",
+    "Draft guide: look for multipliers (Tomik, Izzet Sparkmage); weak-cards video: noncombat enablers are weak, so Massacre Girl and Command the Stage underperform."
    ]
   },
   "lifegain": {
@@ -116,7 +123,8 @@
     "Videos: Germinate Recruits (X 2/2s, X = life gained this turn), Ajani Resolute 'dream' payoff; the WG prepared spell gains only 1; Vigorbloom Charm is the best partner.",
     "LLU #261: Germinate Recruits made 6+ tokens in the right deck despite F/D- stats.",
     "Set reviews: Unflinching Hortimancer with the WG prepared spell (two counters a turn); Greenhouse Propagator curves into Bloombrute.",
-    "LLU #258: Lyra, Archangel of Dawn counters every Angel; pair with Blossom-Blessed Angel."
+    "LLU #258: Lyra, Archangel of Dawn counters every Angel; pair with Blossom-Blessed Angel.",
+    "Draft guide: repeatable lifegain (Koth of the Homestead) beats one-shot (Seed Suture) as an engine; weak-cards video: Germinate Recruits and Ajani Resolute fail because gains come one life at a time."
    ]
   },
   "aristocrats": {
@@ -149,10 +157,12 @@
    "claim": "UR/BR spells: noncreature spells trigger prowess creatures, Saheeli Jewel of Avishkar, Chandra's Emberling, Traxos.",
    "sources": [
     "https://draftsim.com/mtg-reality-fracture-draft-guide/",
-    "https://blog.cardkingdom.com/reality-fracture-draft-guide/"
+    "https://blog.cardkingdom.com/reality-fracture-draft-guide/",
+    "I Drafted With the #1 Arena Direct Box Winner (Ft. Veveil) + REALITY FRACTURE DRAFT GUIDE part 2 (transcripts pasted by the user; claims extracted by an agent)"
    ],
    "video_claims": [
-    "LLU #258: UR control (blue draw + red removal, 3-4 resilient finishers) beats UR tempo-prowess; tempo wants 10-12 creatures, Unsummon, 2-3 Twinned Vision; prepared spells count as noncreature casts (Traxos, Plan for All Outcomes)."
+    "LLU #258: UR control (blue draw + red removal, 3-4 resilient finishers) beats UR tempo-prowess; tempo wants 10-12 creatures, Unsummon, 2-3 Twinned Vision; prepared spells count as noncreature casts (Traxos, Plan for All Outcomes).",
+    "Veveil: UB/UR noncreature value with Geist of Saint Thalia (max 2) and Twinned Vision; spells castable twice trigger payoffs twice."
    ]
   },
   "counters": {
@@ -167,10 +177,12 @@
     "https://draftsim.com/mtg-reality-fracture-draft-guide/",
     "https://blog.cardkingdom.com/reality-fracture-draft-guide/",
     "https://www.youtube.com/watch?v=_LfIxIuRQI0 (LLU FRA set review, multicolour + colourless)",
-    "https://www.youtube.com/watch?v=XPPMF-xrFjk (LLU FRA rare + mythic set review)"
+    "https://www.youtube.com/watch?v=XPPMF-xrFjk (LLU FRA rare + mythic set review)",
+    "I Drafted With the #1 Arena Direct Box Winner (Ft. Veveil) + REALITY FRACTURE DRAFT GUIDE part 2 (transcripts pasted by the user; claims extracted by an agent)"
    ],
    "video_claims": [
-    "Videos: Vigorbloom Vanguard (counters give vigilance), Mabel, Warrior's Blades (discount doubted)."
+    "Videos: Vigorbloom Vanguard (counters give vigilance), Mabel, Warrior's Blades (discount doubted).",
+    "Guide: RW Mabel, Valley Hero + Gallia, the Merrymaker (haste for countered creatures) + Warrior's Blades (equip discount per counter)."
    ]
   },
   "ramp": {
@@ -191,7 +203,8 @@
     "https://www.youtube.com/watch?v=XPPMF-xrFjk (LLU FRA rare + mythic set review)"
    ],
    "video_claims": [
-    "Videos: Craftwork Crusher reached turn 6-7 through Heartwood; Murmuring Volume as fixing for a black splash."
+    "Videos: Craftwork Crusher reached turn 6-7 through Heartwood; Murmuring Volume as fixing for a black splash.",
+    "Draft guide: use Heartwood mana the turn it is made to recoup tempo; weak-cards video: Woodwork Prodigy's Soul Tether is too slow on turn 4."
    ]
   },
   "etb": {
@@ -208,10 +221,12 @@
     "https://draftsim.com/mtg-reality-fracture-draft-guide/",
     "https://blog.cardkingdom.com/reality-fracture-draft-guide/",
     "https://www.youtube.com/watch?v=_LfIxIuRQI0 (LLU FRA set review, multicolour + colourless)",
-    "https://www.youtube.com/watch?v=XPPMF-xrFjk (LLU FRA rare + mythic set review)"
+    "https://www.youtube.com/watch?v=XPPMF-xrFjk (LLU FRA rare + mythic set review)",
+    "I Drafted With the #1 Arena Direct Box Winner (Ft. Veveil) + REALITY FRACTURE DRAFT GUIDE part 2 (transcripts pasted by the user; claims extracted by an agent)"
    ],
    "video_claims": [
-    "Videos: Ferocity of the Hunt best on tramplers, first strikers and enters-the-battlefield creatures; Flickering Hound graded D."
+    "Videos: Ferocity of the Hunt best on tramplers, first strikers and enters-the-battlefield creatures; Flickering Hound graded D.",
+    "Veveil: Rescue Girl, First Responder needs Generous Revival, Fateshaper Aspirant, Rank Rat, Plan for All Outcomes; dies a lot."
    ]
   },
   "artifacts": {
@@ -263,7 +278,11 @@
    "payoff": "flashback|instant or sorcery card in your graveyard|instant and sorcery cards? in your graveyard",
    "claim": "UR/UB spell recursion: Stingcaster Mage needs many castable instants and sorceries (counterspells and attack-only removal do not count); Twinned Vision and Cryotheory flashback cards.",
    "sources": [
-    "https://www.youtube.com/watch?v=XPPMF-xrFjk (LLU FRA rare + mythic set review)"
+    "https://www.youtube.com/watch?v=XPPMF-xrFjk (LLU FRA rare + mythic set review)",
+    "I Drafted With the #1 Arena Direct Box Winner (Ft. Veveil) + REALITY FRACTURE DRAFT GUIDE part 2 (transcripts pasted by the user; claims extracted by an agent)"
+   ],
+   "video_claims": [
+    "Guide: Bestial Incursion with self-mill or Jace surveil makes the flashback a free card."
    ]
   },
   "millcount": {
@@ -332,7 +351,11 @@
    "payoff": "if you control a legendary|legendary (creature|card|spell)",
    "claim": "Wrath of the Bloodmane costs 1 less with a legendary creature (about 3 legends a pack); Fatehold Aspirant returns a legendary card.",
    "sources": [
-    "LLU FRA set review, single colours (W/U/B/R/G), transcripts pasted by the user"
+    "LLU FRA set review, single colours (W/U/B/R/G), transcripts pasted by the user",
+    "I Drafted With the #1 Arena Direct Box Winner (Ft. Veveil) + REALITY FRACTURE DRAFT GUIDE part 2 (transcripts pasted by the user; claims extracted by an agent)"
+   ],
+   "video_claims": [
+    "Guide: Wrath of the Bloodmane usually costs 2 with a legendary creature."
    ]
   },
   "wizards": {
@@ -369,7 +392,11 @@
    "claim": "Rewrite Regrets (mana value 6 or less) and Generous Revival bring back landcyclers cycled early, e.g. Apex Witchstalker.",
    "sources": [
     "LLU FRA set review, single colours (W/U/B/R/G), transcripts pasted by the user",
-    "The Reality Fracture State of the Format Address Draft Guide (transcript pasted by the user)"
+    "The Reality Fracture State of the Format Address Draft Guide (transcript pasted by the user)",
+    "I Drafted With the #1 Arena Direct Box Winner (Ft. Veveil) + REALITY FRACTURE DRAFT GUIDE part 2 (transcripts pasted by the user; claims extracted by an agent)"
+   ],
+   "video_claims": [
+    "Veveil: Rewrite Regrets with cyclers and ETB creatures (Tether Technician, Undulating Witness); two copies ideal; 16 lands only with 3 cyclers + 2 Rewrites."
    ]
   },
   "sac_jace": {
@@ -382,7 +409,11 @@
    "payoff": "sacrifice (a|another) creature or planeswalker|sacrifice (a|another) planeswalker",
    "claim": "Black uses a spent 1-loyalty Jace as sacrifice fodder: Silence the Echo, Winter Tormented Loner, Loot the Anomaly.",
    "sources": [
-    "LLU FRA set review, single colours (W/U/B/R/G), transcripts pasted by the user"
+    "LLU FRA set review, single colours (W/U/B/R/G), transcripts pasted by the user",
+    "I Drafted With the #1 Arena Direct Box Winner (Ft. Veveil) + REALITY FRACTURE DRAFT GUIDE part 2 (transcripts pasted by the user; claims extracted by an agent)"
+   ],
+   "video_claims": [
+    "Guide: Silence the Echo with a 1-loyalty Jace or spare body as sacrifice is a one-mana removal spell."
    ]
   },
   "heroic": {
@@ -425,6 +456,22 @@
    "sources": [
     "The Reality Fracture State of the Format Address Draft Guide (transcript pasted by the user)",
     "https://www.youtube.com/watch? (LLU #258, Draft Navigation, Splashing, and How to Blue-Red; transcript pasted by the user)"
+   ]
+  },
+  "deathtouch_trample": {
+   "pairs": [
+    "BG",
+    "RG"
+   ],
+   "enabler": "deathtouch",
+   "payoff": "trample",
+   "claim": "BG assembles deathtouch plus trample (Hunter's Axe, Ferocity of the Hunt on tramplers): a big deathtouch trampler pushes almost all its damage through.",
+   "sources": [
+    "Card-ranking videos pasted by the user: Surprisingly Weak Cards, NEVER Draft These Cards, Shockingly Strong Cards, The BEST CARDS, REALITY FRACTURE DRAFT GUIDE, My Honest Thoughts, My Best Tournament Finish (2026-11-02)",
+    "I Drafted With the #1 Arena Direct Box Winner (Ft. Veveil) + REALITY FRACTURE DRAFT GUIDE part 2 (transcripts pasted by the user; claims extracted by an agent)"
+   ],
+   "video_claims": [
+    "Guide: Compel Brutality with Arcane Amphisbaena (deathtouch) is clean removal."
    ]
   }
  }

@@ -504,7 +504,7 @@
   "synergy": {
    "how": "tools/fit_themes.py: manual.json themes tested as enablers x payoffs terms in the deck model, held-out games",
    "date": "2026-11-02",
-   "commit": "c887b65"
+   "commit": "ebac09c"
   },
   "pairs": {
    "how": "tools/fit_pairs.py: low-rank card-pair interactions on top of the deck model, 17Lands game data",
@@ -2362,7 +2362,8 @@
      "https://limitedmtg.com/reality-fracture/",
      "https://www.youtube.com/watch?v=_LfIxIuRQI0 (LLU FRA set review, multicolour + colourless)",
      "https://www.youtube.com/watch?v=XPPMF-xrFjk (LLU FRA rare + mythic set review)",
-     "https://www.youtube.com/watch?v=yAsCF-NNrLs (LLU #261, Saying Goodbye to Reality Fracture, ft. Marc; transcript pasted by the user)"
+     "https://www.youtube.com/watch?v=yAsCF-NNrLs (LLU #261, Saying Goodbye to Reality Fracture, ft. Marc; transcript pasted by the user)",
+     "I Drafted With the #1 Arena Direct Box Winner (Ft. Veveil) + REALITY FRACTURE DRAFT GUIDE part 2 (transcripts pasted by the user; claims extracted by an agent)"
     ]
    },
    "graveyard": {
@@ -2781,7 +2782,8 @@
     "claim": "UR/BR spells: noncreature spells trigger prowess creatures, Saheeli Jewel of Avishkar, Chandra's Emberling, Traxos.",
     "sources": [
      "https://draftsim.com/mtg-reality-fracture-draft-guide/",
-     "https://blog.cardkingdom.com/reality-fracture-draft-guide/"
+     "https://blog.cardkingdom.com/reality-fracture-draft-guide/",
+     "I Drafted With the #1 Arena Direct Box Winner (Ft. Veveil) + REALITY FRACTURE DRAFT GUIDE part 2 (transcripts pasted by the user; claims extracted by an agent)"
     ]
    },
    "counters": {
@@ -2852,7 +2854,8 @@
      "https://draftsim.com/mtg-reality-fracture-draft-guide/",
      "https://blog.cardkingdom.com/reality-fracture-draft-guide/",
      "https://www.youtube.com/watch?v=_LfIxIuRQI0 (LLU FRA set review, multicolour + colourless)",
-     "https://www.youtube.com/watch?v=XPPMF-xrFjk (LLU FRA rare + mythic set review)"
+     "https://www.youtube.com/watch?v=XPPMF-xrFjk (LLU FRA rare + mythic set review)",
+     "I Drafted With the #1 Arena Direct Box Winner (Ft. Veveil) + REALITY FRACTURE DRAFT GUIDE part 2 (transcripts pasted by the user; claims extracted by an agent)"
     ]
    },
    "ramp": {
@@ -3026,7 +3029,8 @@
      "https://draftsim.com/mtg-reality-fracture-draft-guide/",
      "https://blog.cardkingdom.com/reality-fracture-draft-guide/",
      "https://www.youtube.com/watch?v=_LfIxIuRQI0 (LLU FRA set review, multicolour + colourless)",
-     "https://www.youtube.com/watch?v=XPPMF-xrFjk (LLU FRA rare + mythic set review)"
+     "https://www.youtube.com/watch?v=XPPMF-xrFjk (LLU FRA rare + mythic set review)",
+     "I Drafted With the #1 Arena Direct Box Winner (Ft. Veveil) + REALITY FRACTURE DRAFT GUIDE part 2 (transcripts pasted by the user; claims extracted by an agent)"
     ]
    },
    "artifacts": {
@@ -3245,7 +3249,8 @@
     "typical_points": 0.02,
     "claim": "UR/UB spell recursion: Stingcaster Mage needs many castable instants and sorceries (counterspells and attack-only removal do not count); Twinned Vision and Cryotheory flashback cards.",
     "sources": [
-     "https://www.youtube.com/watch?v=XPPMF-xrFjk (LLU FRA rare + mythic set review)"
+     "https://www.youtube.com/watch?v=XPPMF-xrFjk (LLU FRA rare + mythic set review)",
+     "I Drafted With the #1 Arena Direct Box Winner (Ft. Veveil) + REALITY FRACTURE DRAFT GUIDE part 2 (transcripts pasted by the user; claims extracted by an agent)"
     ]
    },
    "millcount": {
@@ -3507,7 +3512,8 @@
     "typical_points": 0.0,
     "claim": "Wrath of the Bloodmane costs 1 less with a legendary creature (about 3 legends a pack); Fatehold Aspirant returns a legendary card.",
     "sources": [
-     "LLU FRA set review, single colours (W/U/B/R/G), transcripts pasted by the user"
+     "LLU FRA set review, single colours (W/U/B/R/G), transcripts pasted by the user",
+     "I Drafted With the #1 Arena Direct Box Winner (Ft. Veveil) + REALITY FRACTURE DRAFT GUIDE part 2 (transcripts pasted by the user; claims extracted by an agent)"
     ]
    },
    "wizards": {
@@ -3610,7 +3616,8 @@
     "claim": "Rewrite Regrets (mana value 6 or less) and Generous Revival bring back landcyclers cycled early, e.g. Apex Witchstalker.",
     "sources": [
      "LLU FRA set review, single colours (W/U/B/R/G), transcripts pasted by the user",
-     "The Reality Fracture State of the Format Address Draft Guide (transcript pasted by the user)"
+     "The Reality Fracture State of the Format Address Draft Guide (transcript pasted by the user)",
+     "I Drafted With the #1 Arena Direct Box Winner (Ft. Veveil) + REALITY FRACTURE DRAFT GUIDE part 2 (transcripts pasted by the user; claims extracted by an agent)"
     ]
    },
    "sac_jace": {
@@ -3667,7 +3674,8 @@
     "typical_points": -0.07,
     "claim": "Black uses a spent 1-loyalty Jace as sacrifice fodder: Silence the Echo, Winter Tormented Loner, Loot the Anomaly.",
     "sources": [
-     "LLU FRA set review, single colours (W/U/B/R/G), transcripts pasted by the user"
+     "LLU FRA set review, single colours (W/U/B/R/G), transcripts pasted by the user",
+     "I Drafted With the #1 Arena Direct Box Winner (Ft. Veveil) + REALITY FRACTURE DRAFT GUIDE part 2 (transcripts pasted by the user; claims extracted by an agent)"
     ]
    },
    "heroic": {
@@ -3884,6 +3892,55 @@
     "sources": [
      "The Reality Fracture State of the Format Address Draft Guide (transcript pasted by the user)",
      "https://www.youtube.com/watch? (LLU #258, Draft Navigation, Splashing, and How to Blue-Red; transcript pasted by the user)"
+    ]
+   },
+   "deathtouch_trample": {
+    "enablers": [
+     "Arcane Amphisbaena",
+     "Carnivorous Cultivator",
+     "Ferocity of the Hunt",
+     "Hunter's Axe",
+     "Mabel, Bitter Recluse",
+     "Rampart Hunter",
+     "Stingerquill Charm",
+     "Teyo, Diamondblade Mage",
+     "Vraska, the Cutting Glare"
+    ],
+    "payoffs": [
+     "Ajani's Anguish",
+     "Arni, Renowned Champion",
+     "Bestial Incursion",
+     "Bloombrute",
+     "Craftwork Crusher",
+     "Craterclaw Colossus",
+     "Curse-Marred Demon",
+     "Emrakul, the Exigent Doom",
+     "Frostbite Pyromental",
+     "Garruk, Curse Breaker",
+     "Garruk, Veiled Butcher",
+     "Ghalta the Unstoppable",
+     "Heartstring Puller",
+     "Hungering Puppetbeast",
+     "Hunter's Axe",
+     "Karn, Gilded Guardian",
+     "Konstrari Charm",
+     "Ruric Thar, Magecrusher",
+     "Traxos, Scourge Eternal",
+     "Way of the Deathbringer",
+     "Way of the Wildspeaker",
+     "Wrecking Gecko"
+    ],
+    "decks_with": 0.339,
+    "typical_x": 0.174,
+    "sd_x": 0.152,
+    "heldout_gain": 2.88e-06,
+    "beta_per_sd": 0.0013,
+    "se": 0.0046,
+    "typical_points": 0.04,
+    "claim": "BG assembles deathtouch plus trample (Hunter's Axe, Ferocity of the Hunt on tramplers): a big deathtouch trampler pushes almost all its damage through.",
+    "sources": [
+     "Card-ranking videos pasted by the user: Surprisingly Weak Cards, NEVER Draft These Cards, Shockingly Strong Cards, The BEST CARDS, REALITY FRACTURE DRAFT GUIDE, My Honest Thoughts, My Best Tournament Finish (2026-11-02)",
+     "I Drafted With the #1 Arena Direct Box Winner (Ft. Veveil) + REALITY FRACTURE DRAFT GUIDE part 2 (transcripts pasted by the user; claims extracted by an agent)"
     ]
    }
   }
