@@ -86,11 +86,8 @@ def stage_of(spells):
 
 @lru_cache(maxsize=8)
 def branch_thresholds(set_code, name="branch"):
-    """{stage: gap} fitted by tools/fit_branch.py (sets/<SET>/branch.json, branch_colour.json); {} when the set has none."""
-    import json
-
-    path = config.set_file(set_code, name)
-    return json.loads(path.read_text()).get("stages", {}) if path.exists() else {}
+    """{stage: gap} fitted by tools/fit_branch.py (sections branch, branch_colour of fitted.json); {} when the set has none."""
+    return config.fitted(set_code, name).get("stages", {})
 
 
 @lru_cache(maxsize=8)
@@ -103,11 +100,8 @@ def branch_file(path):
 
 @lru_cache(maxsize=8)
 def learnt_prefs(set_code, which):
-    """{card name: strength z} learnt from top drafters' choices, or {} when the set has none."""
-    import json
-
-    path = config.set_file(set_code, "prefs")
-    return json.loads(path.read_text()).get(which, {}) if path.exists() else {}
+    """{card name: strength z} learnt from top drafters' choices (section prefs of fitted.json), or {} when the set has none."""
+    return config.fitted(set_code, "prefs").get(which, {})
 
 
 @lru_cache(maxsize=8)
@@ -140,15 +134,15 @@ class DraftAdvisorV2:
     SPEC_ALL = False  # False: only cards castable in no two-colour lane (three-colour cards) get it; True: any card one pip off
     SPLIT = True  # two orders: Power (best card if you end up in its colours) and Fit (best for the colours you are in); branch to Power above a learnt gap
     BRANCH_MODE = "learnt"  # "learnt" (fitted rule), "fit" (never branch), "power" (always take the strongest card)
-    BRANCH_COLOUR = True  # switch rule that also weighs whether the strong card keeps a colour of the top pair and how settled the pool is (sets/<SET>/branch_colour.json). FRA: test top-1 55.4 -> 56.0, deck win rate -0.86 (SE 0.34, 200 bot tables, all from tables ending in other colours); on by the user's call 2026-11-01
-    BRANCH_FILE = ""  # override the fitted rule's file (measuring alternatives); "" = sets/<SET>/branch.json
-    BRANCH_DEFAULT = 3.0  # GIH WR points; used for stages with no fitted threshold (sets/<SET>/branch.json)
+    BRANCH_COLOUR = True  # switch rule that also weighs whether the strong card keeps a colour of the top pair and how settled the pool is (fitted.json, branch_colour). FRA: test top-1 55.4 -> 56.0, deck win rate -0.86 (SE 0.34, 200 bot tables, all from tables ending in other colours); on by the user's call 2026-11-01
+    BRANCH_FILE = ""  # override the fitted rule's file (measuring alternatives); "" = the set's fitted.json
+    BRANCH_DEFAULT = 3.0  # GIH WR points; used for stages with no fitted threshold (fitted.json, branch)
     ORDER_FADE_BY = 0  # pick in the pack by which the pick-order prior has faded to 0; 0 = no fade
     PREF_WEIGHT = 4.0  # WR points per SD of top drafters' learnt preference (tools/learn_prefs.py); 0 = off
     PREF_ON_WEIGHT = 4.0  # what the app's switch sets PREF_WEIGHT to; the switch also swaps the pick-order prior out
     ORDER_OFF_WEIGHT = 2.0  # pick-order prior the app's switch restores when learnt preferences are switched off
     PREF_SCOPE = "both"  # where learnt preferences apply: "both" orders, or "power" only (Fit stays about your colours)
-    PREF_FILE = ""  # override the learnt-preference file (held-out evaluations); "" = sets/<SET>/prefs.json
+    PREF_FILE = ""  # override the learnt-preference file (held-out evaluations); "" = the set's fitted.json
     PREF_SET = "early"  # which learnt strengths: "early" (pack 1 picks 1-5) or "all" (every pick)
     ORDER_WEIGHT = 0.0  # replaced by learnt preferences (FRA test top-1 55.4 and best deck win rate at weight 4); 2.0 when they are off. WR points per SD of how early top players take the card (their ATA), × castability; 0 = off
     TOP_WR = False  # rejected 2026-11-01 (FRA +0.1, TDM −0.7 top-drafter top-1). Use top players' win rates (the set's _Top dataset), shrunk toward all players' by sample size

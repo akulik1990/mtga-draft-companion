@@ -1,6 +1,6 @@
 """How often top drafters take v2's #1, #2 or #3, by how far #1 is ahead of #2 (the overlay's "close call" line).
 
-    uv run python tools/close_calls.py FRA        # train sample; writes companion/advisor_v2/sets/FRA/closecalls.json
+    uv run python tools/close_calls.py FRA        # train sample; writes the closecalls section of companion/advisor_v2/sets/FRA/fitted.json
 
 The gap is between the numbers the overlay shows: a switch pick's Power score, otherwise the ranking score.
 """
@@ -80,8 +80,8 @@ def main(argv=None):
                           "took": [round(100 * x / n, 1) for x in c]})
     for row in table:
         print(f"gap {row['from']:>4}-{row['to'] or '':<4} n={row['n']:5}  #1 {row['took'][0]:5.1f}%  #2 {row['took'][1]:5.1f}%  #3 {row['took'][2]:5.1f}%  other {row['took'][3]:5.1f}%")
-    path = config.set_file(a.set, "closecalls")
-    path.write_text(json.dumps({"sample": a.split, "buckets": table}, indent=1) + "\n")
+    path = config.write_fitted(a.set, "closecalls", {"sample": a.split, "buckets": table},
+                               f"tools/close_calls.py: how often top drafters ({a.split} sample) take v2's #1/#2/#3 by gap")
     print(f"wrote {path.relative_to(ROOT)}")
 
 

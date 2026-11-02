@@ -1,8 +1,9 @@
-"""Per-set engine settings in three layers: manual > stats > baseline, with runtime overrides on top.
+"""Per-set engine settings in three layers: manual > fitted > baseline, with runtime overrides on top.
 
     sets/baseline.json        every adjustable value with its default (generated from the code: tools/sets.py baseline)
-    sets/<SET>/stats.json     values worked out from that set's data, plus the fitted files beside it
-    sets/<SET>/manual.json    only what a person chose to change for that set
+    sets/<SET>/fitted.json    everything worked out from that set's data: tuned values, and sections the fitting tools
+                              write (prefs, branch, branch_colour, closecalls, deckmodel), with "sources" saying how
+    sets/<SET>/manual.json    what comes from anywhere else (people, videos, guides): only what was changed
     MTGA_V2_MANUAL=path       use another manual file (to test an adjusted layer against the current one)
 
 Each layer is {"values": {NAME: value}, "pairs": {...}, "types": {...}, "cards": {...}, "combos": [...]}. NAME is an
@@ -12,9 +13,12 @@ combos [{"cards": ["A", "B"], "points": 1.5}] (each gets the points when the oth
 Runtime overrides (--v2 NAME=VALUE, the app's engine switches) win over every layer.
 """
 
+import datetime
 import importlib
 import json
 import os
+import subprocess
+from functools import lru_cache
 from pathlib import Path
 
 SETS = Path(__file__).with_name("sets")
@@ -28,8 +32,34 @@ ACTIVE = {"set": None, "tables": {t: ([] if t == "combos" else {}) for t in TABL
 
 
 def set_file(set_code, name):
-    """A fitted per-set file: sets/<SET>/<name>.json."""
+    """sets/<SET>/<name>.json (fitted, manual)."""
     return SETS / set_code / f"{name}.json"
+
+
+@lru_cache(maxsize=16)
+def _fitted(path, mtime):
+    return json.loads(Path(path).read_text())
+
+
+def fitted(set_code, section):
+    """One section of the set's fitted.json, {} when the set or the section has none."""
+    path = set_file(set_code, "fitted") if set_code else None
+    if not path or not path.exists():
+        return {}
+    return _fitted(str(path), path.stat().st_mtime).get(section) or {}
+
+
+def write_fitted(set_code, section, data, how):
+    """Store a fitting tool's output as one section of the set's fitted.json, and record how it was made."""
+    path = set_file(set_code, "fitted")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    doc = json.loads(path.read_text()) if path.exists() else {"values": {}, "sources": {}}
+    root = Path(__file__).resolve().parents[2]
+    commit = subprocess.run(["git", "-C", str(root), "rev-parse", "--short", "HEAD"], capture_output=True, text=True).stdout.strip()
+    doc[section] = data
+    doc.setdefault("sources", {})[section] = {"how": how, "date": datetime.date.today().isoformat(), "commit": commit}
+    path.write_text(json.dumps(doc, indent=1) + "\n")
+    return path
 
 
 def _target(name):
@@ -62,20 +92,20 @@ def layer(set_code, which):
 
 
 def resolve(set_code):
-    """(values, tables, source): each value from runtime, manual, stats or baseline, whichever has it first."""
-    stats, manual = layer(set_code, "stats"), layer(set_code, "manual")
+    """(values, tables, source): each value from runtime, manual, fitted or baseline, whichever has it first."""
+    fitted_layer, manual = layer(set_code, "fitted"), layer(set_code, "manual")
     values, source = {}, {}
     for name, base in BASELINE.items():
-        for where, layer_values in (("runtime", RUNTIME), ("manual", manual.get("values") or {}), ("stats", stats.get("values") or {})):
+        for where, layer_values in (("runtime", RUNTIME), ("manual", manual.get("values") or {}), ("fitted", fitted_layer.get("values") or {})):
             if name in layer_values:
                 values[name], source[name] = layer_values[name], where
                 break
         else:
             values[name], source[name] = base, "baseline"
-    unknown = set((manual.get("values") or {}) | (stats.get("values") or {})) - set(BASELINE)
+    unknown = set((manual.get("values") or {}) | (fitted_layer.get("values") or {})) - set(BASELINE)
     if unknown:
         raise ValueError(f"{set_code}: unknown settings {sorted(unknown)}")
-    tables = {t: (stats.get(t) or ([] if t == "combos" else {})) for t in TABLES}
+    tables = {t: (fitted_layer.get(t) or ([] if t == "combos" else {})) for t in TABLES}
     for t in TABLES:
         if t == "combos":
             tables[t] = list(tables[t]) + list(manual.get(t) or [])
@@ -87,13 +117,13 @@ def resolve(set_code):
 def activate(set_code, force=False):
     """Make the engine use this set's settings. Cheap when the set is already active.
 
-    Only values a stats or manual layer sets are written; anything the previous set wrote goes back to baseline.
+    Only values a fitted or manual layer sets are written; anything the previous set wrote goes back to baseline.
     Everything else is left as it is, so runtime changes (and tests' monkeypatches) are not undone.
     """
     if not set_code or (set_code == ACTIVE["set"] and not force):
         return
     values, tables, source = resolve(set_code)
-    layered = {name for name, where in source.items() if where in ("manual", "stats")}
+    layered = {name for name, where in source.items() if where in ("manual", "fitted")}
     for name in ACTIVE["applied"] - layered - set(RUNTIME):
         target, attr = _target(name)
         setattr(target, attr, BASELINE[name])

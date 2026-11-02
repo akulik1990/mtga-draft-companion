@@ -1,8 +1,8 @@
 """Per-set engine settings (companion/advisor_v2/config.py): write the baseline list, show where each value comes from.
 
     uv run python tools/sets.py baseline          # regenerate sets/baseline.json from the code
-    uv run python tools/sets.py show FRA          # every value for FRA and its layer (baseline / stats / manual)
-    uv run python tools/sets.py new SET           # empty stats.json and manual.json for a new set
+    uv run python tools/sets.py show FRA          # every value for FRA and its layer (baseline / fitted / manual), and the fitted sections
+    uv run python tools/sets.py new SET           # empty fitted.json and manual.json for a new set
 """
 
 import argparse
@@ -33,7 +33,7 @@ def main(argv=None):
         (config.SETS / "baseline.json").write_text(baseline_json())
         print(f"wrote {len(config.BASELINE)} values to {config.SETS / 'baseline.json'}")
     elif a.cmd == "new":
-        for which in ("stats", "manual"):
+        for which in ("fitted", "manual"):
             path = config.set_file(a.set, which)
             path.parent.mkdir(parents=True, exist_ok=True)
             if not path.exists():
@@ -46,6 +46,8 @@ def main(argv=None):
         for t in config.TABLES:
             if tables[t]:
                 print(f"{t}: {json.dumps(tables[t])}")
+        for section, src in (config.layer(a.set, "fitted").get("sources") or {}).items():
+            print(f"fitted {section:14} {src.get('date', '')} {src.get('commit', '')}  {src.get('how', '')}")
 
 
 if __name__ == "__main__":

@@ -1,6 +1,6 @@
 """A deck's chance to win a game, learnt from 17Lands' public game data: the deck-quality measure.
 
-    uv run python tools/deck_model.py fit FRA      # writes companion/advisor_v2/sets/FRA/deckmodel.json
+    uv run python tools/deck_model.py fit FRA      # writes the deckmodel section of companion/advisor_v2/sets/FRA/fitted.json
 
 Each game row in game_data_public.<SET>.PremierDraft.csv.gz has the deck played (card counts), the
 result, and context: the player's win-rate and games buckets, play/draw, both sides' mulligans.
@@ -162,8 +162,7 @@ def cmd_fit(a):
              "shape_names": SHAPE + ["creatures^2", "lands^2", "cmc2^2"], "shape": [float(x) for x in w[1 + k_ctx:1 + k_ctx + k_shape]],
              "shape_mu": [float(x) for x in mu_s], "shape_sd": [float(x) for x in sd_s],
              "cards": {n: float(x) for n, x in zip(names, w[1 + k_ctx + k_shape:])}, "typical": TYPICAL}
-    out = config.set_file(a.set, "deckmodel")
-    out.write_text(json.dumps(model))
+    out = config.write_fitted(a.set, "deckmodel", model, "tools/deck_model.py fit: regularised logistic of game wins on 17Lands public game data")
     top = sorted(model["cards"].items(), key=lambda kv: -kv[1])[:6]
     print("strongest per copy:", ", ".join(f"{n} {v:+.3f}" for n, v in top))
     print("shape:", ", ".join(f"{n} {v:+.3f}" for n, v in zip(model["shape_names"], model["shape"])))
@@ -174,7 +173,9 @@ class DeckModel:
     """Score a deck ({card name: count}, basics included) as a win rate for an average player."""
 
     def __init__(self, set_code):
-        self.m = json.loads(config.set_file(set_code, "deckmodel").read_text())
+        self.m = config.fitted(set_code, "deckmodel")
+        if not self.m:
+            raise FileNotFoundError(f"no deckmodel section in {config.set_file(set_code, 'fitted')}")
         self.facts = card_facts(set_code)
         t = self.m["typical"]
         self.ctx = float(np.dot(self.m["context"], context_row(t["skill"], t["games"], t["on_play"], t["mull"], t["opp_mull"])))

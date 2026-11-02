@@ -1,9 +1,7 @@
 """FastAPI app: snapshot endpoint, WebSocket push, static frontend."""
 
 import asyncio
-import json
 import re
-from functools import lru_cache
 import logging
 from contextlib import asynccontextmanager
 from pathlib import Path
@@ -50,10 +48,8 @@ def plain(reason):
     return reason
 
 
-@lru_cache
 def close_calls(set_code):
-    path = config.set_file(set_code, "closecalls")
-    return json.loads(path.read_text())["buckets"] if path.exists() else []
+    return config.fitted(set_code, "closecalls").get("buckets", [])
 
 
 def side_panel(s, ranked=()):

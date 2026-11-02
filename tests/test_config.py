@@ -11,15 +11,15 @@ def test_baseline_file_matches_the_code():
     assert (config.SETS / "baseline.json").read_text() == baseline_json()
 
 
-def test_layers_resolve_runtime_manual_stats_baseline(tmp_path, monkeypatch):
+def test_layers_resolve_runtime_manual_fitted_baseline(tmp_path, monkeypatch):
     monkeypatch.setattr(config, "SETS", tmp_path)
     (tmp_path / "XYZ").mkdir()
-    (tmp_path / "XYZ" / "stats.json").write_text(json.dumps({"values": {"STEER": 3.0, "K": 200.0}, "pairs": {"UB": 0.5}}))
+    (tmp_path / "XYZ" / "fitted.json").write_text(json.dumps({"values": {"STEER": 3.0, "K": 200.0}, "pairs": {"UB": 0.5}}))
     (tmp_path / "XYZ" / "manual.json").write_text(json.dumps({"values": {"STEER": 2.0}, "pairs": {"UB": 1.0}, "cards": {"Foo": 2.0}}))
     monkeypatch.setattr(config, "RUNTIME", {"SPLASH": 0.5})
     values, tables, source = config.resolve("XYZ")
     assert (values["STEER"], source["STEER"]) == (2.0, "manual")
-    assert (values["K"], source["K"]) == (200.0, "stats")
+    assert (values["K"], source["K"]) == (200.0, "fitted")
     assert (values["SPLASH"], source["SPLASH"]) == (0.5, "runtime")
     assert source["ALPHA"] == "baseline" and values["ALPHA"] == config.BASELINE["ALPHA"]
     assert tables["pairs"] == {"UB": 1.0} and tables["cards"] == {"Foo": 2.0}
@@ -47,3 +47,11 @@ def test_manual_card_and_pair_points_move_values(world, monkeypatch):
     plain = DraftAdvisorV2(metrics, []).value(card, lane)
     monkeypatch.setitem(config.ACTIVE, "tables", {"pairs": {lane: 1.0}, "types": {}, "cards": {card["name"]: 2.0}, "combos": []})
     assert abs(DraftAdvisorV2(metrics, []).value(card, lane) - plain - 3.0) < 1e-9
+
+
+def test_write_fitted_keeps_other_sections(tmp_path, monkeypatch):
+    monkeypatch.setattr(config, "SETS", tmp_path)
+    config.write_fitted("XYZ", "prefs", {"early": {"A": 1.0}}, "test")
+    config.write_fitted("XYZ", "closecalls", {"buckets": []}, "test")
+    assert config.fitted("XYZ", "prefs") == {"early": {"A": 1.0}}
+    assert set(config.layer("XYZ", "fitted")["sources"]) == {"prefs", "closecalls"}
