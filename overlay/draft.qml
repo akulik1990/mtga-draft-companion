@@ -328,9 +328,7 @@ ShellRoot {
                     }
                 }
 
-                Line { visible: !!deck.d; text: "bar = share of their count · green on pace, amber behind, red far behind (full by pick 30)"; color: "#8f98a3"; font.pixelSize: win.unit * 0.52 }
-
-                // Curve of your spells in that pair; ticks mark top players' typical deck.
+                // Curve of your spells in that pair; gold lines mark top players' typical deck.
                 Item { width: 1; height: win.unit * 0.5; visible: !!deck.d }
                 Row {
                     id: curve
@@ -348,7 +346,7 @@ ShellRoot {
                             readonly property real want: curve.t[modelData] || 0
                             spacing: 1
                             Item {
-                                width: (col.width - win.unit * 1.3) / 6; height: win.unit * 2.4
+                                width: (col.width - win.unit * 1.3) / 6; height: win.unit * 1.9
                                 Rectangle {
                                     anchors.bottom: parent.bottom; width: parent.width; radius: 2
                                     height: Math.max(1, n / curve.peak * parent.height)
@@ -358,13 +356,16 @@ ShellRoot {
                                     width: parent.width + 4; x: -2; height: 2; color: "#ffd54f"
                                     y: parent.height - want / curve.peak * parent.height
                                 }
-                                Text { anchors.horizontalCenter: parent.horizontalCenter; anchors.bottom: parent.bottom; anchors.bottomMargin: 1; visible: n > 0; text: n; color: "#0e1215"; font.pixelSize: win.unit * 0.55; font.bold: true }
+                                Text {  // count above the bar, light on the panel
+                                    anchors.horizontalCenter: parent.horizontalCenter
+                                    y: parent.height - Math.max(1, n / curve.peak * parent.height) - height
+                                    visible: n > 0; text: n; color: "#e8eaed"; font.pixelSize: win.unit * 0.55; font.bold: true
+                                }
                             }
                             Text { anchors.horizontalCenter: parent.horizontalCenter; text: modelData; color: "#8f98a3"; font.pixelSize: win.unit * 0.55 }
                         }
                     }
                 }
-                Line { visible: !!deck.d; text: win.pn ? "Pool " + win.pn.pool.n + " cards · gold line: top players' curve" : ""; color: "#8f98a3"; font.pixelSize: win.unit * 0.55 }
             }
         }
 
