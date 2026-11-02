@@ -14,8 +14,9 @@ ShellRoot {
 
     // Card grids as fractions of the screen. side: deck list on the right, 5 per row; bottom: deck under the pack, 8 per row.
     readonly property var layouts: ({
-        side: { x0: 0.145, dx: 0.1025, cardW: 0.09, y0: 0.1707, dy: 0.2489, cardH: 0.227, perRow: 5 },
-        bottom: { x0: 0.1715, dx: 0.0835, cardW: 0.069, y0: 0.1636, dy: 0.1858, cardH: 0.17, perRow: 8 }
+        // deck: the deck list's area [x0, y0, x1, y1]; hovering a card there opens Arena's preview over the pack too.
+        side: { x0: 0.145, dx: 0.1025, cardW: 0.09, y0: 0.1707, dy: 0.2489, cardH: 0.227, perRow: 5, deck: [0.785, 0.15, 1.0, 0.92] },
+        bottom: { x0: 0.1715, dx: 0.0835, cardW: 0.069, y0: 0.1636, dy: 0.1858, cardH: 0.17, perRow: 8, deck: [0.0, 0.55, 1.0, 1.0] }
     })
     // The bottom layout's deck panel covers this point in a flat (9,16,16); the side layout shows the pack or backdrop there.
     readonly property var probe: [0.5, 0.85]
@@ -34,6 +35,8 @@ ShellRoot {
     readonly property bool overCard: {
         if (!data || !win.screen) return false;
         const fx = (px - win.screen.x) / win.width, fy = (py - win.screen.y) / win.height;
+        const d = g.deck;
+        if (fx >= d[0] && fx <= d[2] && fy >= d[1] && fy <= d[3]) return true;
         const col = Math.floor((fx - g.x0) / g.dx), row = Math.floor((fy - g.y0) / g.dy);
         return col >= 0 && col < g.perRow && row >= 0 && fx - g.x0 - col * g.dx <= g.cardW
             && fy - g.y0 - row * g.dy <= g.cardH && row * g.perRow + col < (data.cards || []).length + 1;  // + the basic land Arena shows but the log omits
