@@ -19,7 +19,7 @@ ShellRoot {
     readonly property var probe: [0.5, 0.85]
     property string layoutName: "side"
     readonly property var g: layouts[layoutName]
-    property bool showNames: true // card name on each badge, to spot a wrong order at a glance
+    property bool showNames: false // card name on each badge, to spot a wrong order at a glance
 
     property string screenName: Quickshell.env("OVERLAY_SCREEN") || "DP-1"
     property string api: (Quickshell.env("OVERLAY_API") || "http://localhost:17173") + "/api/overlay"
@@ -110,12 +110,12 @@ ShellRoot {
                 required property int index
                 readonly property int col: index % root.g.perRow
                 readonly property int row: Math.floor(index / root.g.perRow)
-                x: win.width * (root.g.x0 + col * root.g.dx)
                 y: win.height * (root.g.y0 + row * root.g.dy + root.g.cardH * 0.1)
-                width: win.width * root.g.cardW
-                height: badge.implicitHeight + 8
+                x: win.width * (root.g.x0 + col * root.g.dx) + 4
+                width: badge.implicitWidth + 10
+                height: badge.implicitHeight + 4
                 radius: 4
-                color: modelData.rank === 1 ? "#e6c8a000" : modelData.rank <= 3 ? "#e62e7d32" : "#cc202020"
+                color: modelData.rank === 1 ? "#d9c8a000" : modelData.rank <= 3 ? "#d92e7d32" : "#b3202020"
                 border.color: modelData.rank === 1 ? "#ffe082" : "transparent"
                 border.width: 2
 
@@ -126,12 +126,12 @@ ShellRoot {
                     Text {
                         anchors.horizontalCenter: parent.horizontalCenter
                         text: modelData.rank ? "#" + modelData.rank + "  " + Number(modelData.score).toFixed(1) : "–"
-                        color: "white"; font.pixelSize: win.height * 0.024; font.bold: true
+                        color: "white"; font.pixelSize: win.height * 0.017; font.bold: true
                     }
                     Text {
                         anchors.horizontalCenter: parent.horizontalCenter
                         text: (modelData.orders || "").replace("Power", "Pow") + (modelData.upstream ? "  U" + modelData.upstream : "")
-                        color: "#e0e0e0"; font.pixelSize: win.height * 0.013
+                        color: "#e0e0e0"; font.pixelSize: win.height * 0.0095
                     }
                     Text {
                         visible: root.showNames
