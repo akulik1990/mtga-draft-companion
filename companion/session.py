@@ -3,11 +3,12 @@
 Everything here calls vendor functions; nothing reimplements their logic.
 """
 
-from functools import lru_cache
 import logging
 import os
 import queue
 import random
+import threading
+from functools import lru_cache
 from pathlib import Path
 
 from src import constants
@@ -35,6 +36,7 @@ class DraftSession:
         self.orchestrator = DraftOrchestrator(scanner, config, refresh_callback=None)
         self.status = "Waiting for draft..."
         self.mock = None  # MockDraft while one is running
+        self._deckbuild = {}  # overlay builds for the finished draft's pool: key, busy, builds
 
     # ── lifecycle ────────────────────────────────────────────────────────────
 
@@ -385,9 +387,39 @@ class DraftSession:
 
     # ── deck building ────────────────────────────────────────────────────────
 
-    def build_decks(self) -> list[dict]:
+    def deckbuild_state(self) -> dict:
+        """After a draft: Arena's deck builder is open, so the overlay suggests builds. {"phase": "draft"} otherwise.
+
+        Upstream's scanner stops before the last pick ("Completed" carries it), so the pool comes from that message.
+        Builds take seconds, so they are made once per pool in a thread; until then "building" is true.
+        """
+        tail = log_tail(self.scanner.arena_file)
+        scene = tail.rfind('"toSceneName":"DeckBuilder"')
+        if scene < 0 or tail.rfind('"toSceneName":"Draft"') > scene:
+            return {"phase": "draft"}
+        ids = completed_picks(tail)
+        if not ids:
+            return {"phase": "draft"}
+        key = tuple(sorted(ids))
+        cache = self._deckbuild
+        if cache.get("key") != key and not cache.get("busy"):
+            cache.update(key=key, busy=True, builds=None)
+
+            def run():
+                try:
+                    with self.scanner.lock:
+                        pool = self.scanner.set_data.get_data_by_id(list(ids))
+                    cache["builds"] = overlay_builds(self.build_decks(pool), pool)
+                finally:
+                    cache["busy"] = False
+
+            threading.Thread(target=run, daemon=True).start()
+        return {"phase": "deckbuild", "building": cache.get("builds") is None, "builds": cache.get("builds") or []}
+
+    def build_decks(self, taken=None) -> list[dict]:
+        """Upstream's builds for the pool (taken, else the scanner's picks), each with our label and predicted win rate."""
         with self.scanner.lock:
-            taken = self.scanner.retrieve_taken_cards()
+            taken = taken if taken is not None else self.scanner.retrieve_taken_cards()
             metrics = self.scanner.retrieve_set_metrics()
             _, event_type = self.scanner.retrieve_current_limited_event()
         results = suggest_deck(
@@ -467,4 +499,54 @@ def mana_identity(deck: list[dict]) -> dict:
 def _trim(card: dict) -> dict:
     out = {k: card.get(k) for k in DECK_CARD_FIELDS if k in card}
     out["gihwr"] = (card.get("deck_colors", {}).get("All Decks") or {}).get("gihwr")
+    return out
+
+
+def log_tail(path, size=2_000_000):
+    """The last part of Arena's Player.log, as text ('' when unreadable)."""
+    try:
+        with open(path, "rb") as f:
+            f.seek(0, 2)
+            f.seek(max(0, f.tell() - size))
+            return f.read().decode("utf-8", "replace")
+    except (OSError, TypeError):
+        return ""
+
+
+def completed_picks(tail):
+    """Card ids of the draft Arena last reported as Completed (all picks, the last one included)."""
+    import json
+
+    i = tail.rfind('\\"DraftStatus\\":\\"Completed')
+    if i < 0:
+        return []
+    start = tail.rfind("\n", 0, i) + 1
+    end = tail.find("\n", i)
+    try:
+        return json.loads(json.loads(tail[start:end if end > 0 else None])["Payload"]).get("PickedCards") or []
+    except (ValueError, KeyError, TypeError):
+        return []
+
+
+def overlay_builds(builds, pool, top=3):
+    """The best builds by predicted win rate, shaped for the overlay: cards, lands, and what to take out of a deck
+    that holds the whole pool (Arena starts the draft deck with every pick)."""
+    from collections import Counter
+
+    out = []
+    pool_counts = Counter(c.get("name") for c in pool if "Basic" not in (c.get("types") or []))
+    for b in sorted(builds, key=lambda b: -(b.get("deck_wr") or 0))[:top]:
+        deck = b.get("deck") or []
+        spells = sorted((c for c in deck if "Land" not in (c.get("types") or [])), key=lambda c: (c.get("cmc") or 0, c.get("name") or ""))
+        lands = [c for c in deck if "Land" in (c.get("types") or [])]
+        in_deck = Counter()
+        for c in deck:
+            in_deck[c.get("name")] += c.get("count", 1)
+        remove = sorted(((n, k - in_deck.get(n, 0)) for n, k in pool_counts.items() if k > in_deck.get(n, 0)), key=lambda x: x[0])
+        out.append({
+            "label": b.get("label"), "main": b.get("main"), "splash": b.get("splash"), "deck_wr": b.get("deck_wr"),
+            "spells": [{"name": c.get("name"), "count": c.get("count", 1), "cmc": c.get("cmc"), "mana_cost": c.get("mana_cost") or ""} for c in spells],
+            "lands": [{"name": c.get("name"), "count": c.get("count", 1)} for c in lands],
+            "remove": [{"name": n, "count": k} for n, k in remove],
+        })
     return out

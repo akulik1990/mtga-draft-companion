@@ -139,7 +139,7 @@ ShellRoot {
         WlrLayershell.keyboardFocus: WlrKeyboardFocus.None
         color: "transparent"
         mask: Region {}  // empty input region: every click goes to Arena
-        visible: root.arenaFocused && !!root.data && (root.data.cards || []).length > 0
+        visible: root.arenaFocused && !!root.data && ((root.data.cards || []).length > 0 || (root.data.builds || []).length > 0)
 
         // Shield colour by v2's pack rank. v2's pick turns to fire when the card is a standout (taken by pick 2 on average,
         // or GIH WR >= mean + 1 SD) and blue fire when it is one of the set's top 20 by GIH WR (/api/overlay "heat").
@@ -161,6 +161,93 @@ ShellRoot {
         readonly property int unit: Math.round(win.height * 0.017)
 
         readonly property var wubrg: ({ W: "#efe3b8", U: "#4a90d9", B: "#a58fcf", R: "#e0583a", G: "#3fa35c" })
+
+        // After the draft, in Arena's deck builder: the three best builds by predicted win rate, side by side, with
+        // what to take out of Arena's starting deck (which holds every pick).
+        Row {
+            id: builds
+            visible: !!root.data && root.data.phase === "deckbuild"
+            x: win.width * 0.415; y: win.height * 0.085  // clear of Arena's buttons at the top right
+            spacing: win.unit * 0.5
+            Repeater {
+                model: builds.visible ? root.data.builds : []
+                Rectangle {
+                    id: bcol
+                    required property var modelData
+                    required property int index
+                    width: win.width * 0.155
+                    height: bcolumn.implicitHeight + win.unit * 1.0
+                    radius: win.unit * 0.5
+                    color: "#e60e1215"
+                    border.color: index === 0 ? "#ffd54f" : "#40ffffff"
+                    border.width: index === 0 ? 2 : 1
+                    Column {
+                        id: bcolumn
+                        x: win.unit * 0.5; y: win.unit * 0.5
+                        width: bcol.width - win.unit * 1.0
+                        spacing: 1
+                        Row {
+                            spacing: win.unit * 0.3
+                            Repeater {
+                                model: ((bcol.modelData.main || "") + (bcol.modelData.splash || "")).split("")
+                                Rectangle {
+                                    required property string modelData
+                                    required property int index
+                                    width: win.unit * 0.8; height: width; radius: width / 2
+                                    anchors.verticalCenter: parent.verticalCenter
+                                    color: win.wubrg[modelData] || "#888"
+                                    opacity: index >= (bcol.modelData.main || "").length ? 0.5 : 1  // splash colours dimmer
+                                }
+                            }
+                            Text {
+                                text: (bcol.modelData.main || "") + (bcol.modelData.splash ? " + " + bcol.modelData.splash : "")
+                                color: "#e8eaed"; font.pixelSize: win.unit * 0.8; font.bold: true
+                            }
+                        }
+                        Text {
+                            text: bcol.modelData.deck_wr ? Number(bcol.modelData.deck_wr).toFixed(1) + "% predicted" : ""
+                            color: bcol.index === 0 ? "#ffd54f" : "#c8cdd3"; font.pixelSize: win.unit * 0.9; font.bold: true
+                        }
+                        Item { width: 1; height: win.unit * 0.25 }
+                        Repeater {
+                            model: bcol.modelData.spells
+                            Row {
+                                required property var modelData
+                                spacing: win.unit * 0.3
+                                Text { text: modelData.cmc; width: win.unit * 0.6; color: "#8f98a3"; font.pixelSize: win.unit * 0.55 }
+                                Text {
+                                    width: bcolumn.width - win.unit * 2.0; elide: Text.ElideRight
+                                    text: modelData.name; color: "#e8eaed"; font.pixelSize: win.unit * 0.58
+                                }
+                                Text { text: modelData.count > 1 ? "×" + modelData.count : ""; color: "#c8cdd3"; font.pixelSize: win.unit * 0.55 }
+                            }
+                        }
+                        Text {
+                            width: bcolumn.width; wrapMode: Text.Wrap
+                            text: (bcol.modelData.lands || []).map(l => l.count + " " + l.name).join(", ")
+                            color: "#9fd3a8"; font.pixelSize: win.unit * 0.55
+                        }
+                        Item { width: 1; height: win.unit * 0.3 }
+                        Text { text: "TAKE OUT"; color: "#8f98a3"; font.pixelSize: win.unit * 0.55; font.bold: true; font.letterSpacing: 1 }
+                        Repeater {
+                            model: bcol.modelData.remove
+                            Text {
+                                required property var modelData
+                                width: bcolumn.width; elide: Text.ElideRight
+                                text: "−" + modelData.count + "  " + modelData.name
+                                color: "#e88a6a"; font.pixelSize: win.unit * 0.55
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        Text {
+            visible: !!root.data && root.data.phase === "deckbuild" && !!root.data.building
+            x: win.width * 0.45; y: win.height * 0.085
+            text: "Building decks for your pool…"
+            color: "#e8eaed"; style: Text.Outline; styleColor: "black"; font.pixelSize: win.unit * 0.9
+        }
         readonly property var pn: root.data && root.data.panel ? root.data.panel : null
 
         // Left panel: v2's pick and why, likeliest lanes, open colours, pool. Sits in the empty strip left of the pack.
@@ -241,8 +328,8 @@ ShellRoot {
                 }
                 Line {
                     visible: !!root.data && !!root.data.branch
-                    text: root.data ? root.data.branch : ""
-                    color: root.data && root.data.branch.startsWith("Switch") ? "#ffb347" : "#8f98a3"
+                    text: root.data && root.data.branch ? root.data.branch : ""
+                    color: text.startsWith("Switch") ? "#ffb347" : "#8f98a3"
                     font.pixelSize: win.unit * 0.62
                 }
 

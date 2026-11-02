@@ -63,3 +63,24 @@ def test_deck_win_rate_needs_a_model():
 
     assert deck_win_rate("XYZ", {"deck": [{"name": "Island", "count": 17}]}) is None
     assert deck_win_rate("", {"deck": []}) is None
+
+
+def test_completed_picks_and_overlay_builds():
+    import json
+
+    from companion.session import completed_picks, overlay_builds
+
+    compact = {"separators": (",", ":")}  # Arena writes compact JSON
+    payload = json.dumps({"DraftStatus": "Completed", "PickedCards": ["1", "2", "3"]}, **compact)
+    tail = "noise\n" + json.dumps({"CurrentModule": "DeckSelect", "Payload": payload}, **compact) + "\nmore\n"
+    assert completed_picks(tail) == ["1", "2", "3"]
+    assert completed_picks("nothing here") == []
+
+    pool = [{"name": "A", "types": ["Creature"]}, {"name": "A", "types": ["Creature"]}, {"name": "B", "types": ["Instant"]}]
+    builds = [{"deck_wr": 55.0, "main": "UB", "deck": [{"name": "A", "count": 1, "types": ["Creature"], "cmc": 2},
+                                                       {"name": "Island", "count": 17, "types": ["Basic", "Land"]}]},
+              {"deck_wr": 60.0, "main": "UR", "deck": [{"name": "B", "count": 1, "types": ["Instant"], "cmc": 1}]}]
+    out = overlay_builds(builds, pool)
+    assert [b["main"] for b in out] == ["UR", "UB"]
+    assert out[1]["remove"] == [{"name": "A", "count": 1}, {"name": "B", "count": 1}]
+    assert out[1]["lands"] == [{"name": "Island", "count": 17}]

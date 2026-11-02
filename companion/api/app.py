@@ -199,7 +199,10 @@ def create_app(session: DraftSession, *, run_scanner: bool = True, frontend: Pat
 
     @app.get("/api/overlay")
     def overlay():
-        """The pack in log order with v2's verdict per card; what overlay/draft.qml draws over Arena's cards."""
+        """The pack in Arena's order with v2's verdict per card; after the draft, suggested builds for the deck builder."""
+        build = session.deckbuild_state()
+        if build["phase"] == "deckbuild":
+            return build
         s = session.snapshot()
         mean, std = ((s.get("metrics") or {}).get("All Decks") or {}).get("gihwr") or (0.0, 0.0)
         if heat_cache.get("dataset") != s["dataset"]:
@@ -229,7 +232,7 @@ def create_app(session: DraftSession, *, run_scanner: bool = True, frontend: Pat
         else:
             line = f"Not switching to {b['card']} ({b['gap']:+.1f}, needs {b['threshold']:+.1f})"
         ranked = sorted((c for c in cards if c["rank"]), key=lambda c: c["rank"])[:3]
-        return {"status": s["status"], "pick": [s["pack_number"], s["pick_number"]], "cards": cards, "branch": line,
+        return {"phase": "draft", "status": s["status"], "pick": [s["pack_number"], s["pick_number"]], "cards": cards, "branch": line,
                 "mean": mean, "std": std, "panel": side_panel(s, ranked)}
 
     @app.post("/api/draft/rescan")
