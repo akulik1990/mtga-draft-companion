@@ -125,7 +125,8 @@ def test_engine_switches_toggle_and_persist(session, monkeypatch, tmp_path):
         monkeypatch.setattr(V, attr, getattr(V, attr))
     with TestClient(create_app(session, run_scanner=False)) as client:
         sw = client.get("/api/engine").json()
-        assert set(sw) == {"learnt_prefs", "split", "branch_colour"} and sw["learnt_prefs"]["on"] is True
+        assert set(sw) == {"learnt_prefs", "split", "branch_colour", "own_builder"} and sw["learnt_prefs"]["on"] is True
+        assert sw["own_builder"]["on"] is True
         assert sw["branch_colour"]["on"] is True
         sw = client.put("/api/engine", json={"learnt_prefs": False}).json()
         assert sw["learnt_prefs"]["on"] is False and V.PREF_WEIGHT == 0.0 and V.ORDER_WEIGHT == V.ORDER_OFF_WEIGHT

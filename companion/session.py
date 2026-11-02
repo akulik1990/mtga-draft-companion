@@ -288,6 +288,7 @@ class DraftSession:
     ENGINE_SWITCHES = {
         "learnt_prefs": ("PREF_WEIGHT", "Learnt top-drafter preferences", "Bonus for the cards top drafters choose head to head (tools/learn_prefs.py)."),
         "split": ("SPLIT", "Power / Fit split", "Two orders and a learnt switch between them; off = one blended order."),
+        "own_builder": ("OWN_BUILDER", "Our deck builder", "Builds from the deck win model within top players' deck shape (creatures, curve, two colours); off = upstream's builder."),
         "branch_colour": ("BRANCH_COLOUR", "Colour-aware switch", "The switch to the stronger card also weighs whether it keeps one of your colours and how settled your pool is. Matches top drafters better, mock decks slightly worse."),
     }
 
@@ -422,6 +423,10 @@ class DraftSession:
             taken = taken if taken is not None else self.scanner.retrieve_taken_cards()
             metrics = self.scanner.retrieve_set_metrics()
             _, event_type = self.scanner.retrieve_current_limited_event()
+        set_code = (self.config.card_data.latest_dataset or "").split("_")[0]
+        ours = own_builds(set_code, taken)
+        if ours is not None:
+            return ours
         results = suggest_deck(
             taken, metrics, self.config, event_type or "PremierDraft", None,
             self.config.card_data.latest_dataset,
@@ -443,7 +448,6 @@ class DraftSession:
                 "arena_export": copy_deck(deck, side),
                 **mana_identity(deck),
             })
-        set_code = (self.config.card_data.latest_dataset or "").split("_")[0]
         for b in builds:
             b["deck_wr"] = deck_win_rate(set_code, b)
             b["creatures"] = sum(c.get("count", 1) for c in b["deck"] if "Creature" in (c.get("types") or []))
@@ -503,6 +507,43 @@ def _trim(card: dict) -> dict:
     out = {k: card.get(k) for k in DECK_CARD_FIELDS if k in card}
     out["gihwr"] = (card.get("deck_colors", {}).get("All Decks") or {}).get("gihwr")
     return out
+
+
+def own_builds(set_code, taken):
+    """Our builder's decks in the app's build format; None when it is off or the set lacks a deck model or targets."""
+    from collections import Counter
+
+    from companion import deckbuilder
+    from companion.advisor_v2 import config
+    from companion.advisor_v2.engine import DraftAdvisorV2
+
+    targets = config.fitted(set_code, "decks").get("pairs")
+    model = _deck_model(set_code) if set_code else None
+    if not DraftAdvisorV2.OWN_BUILDER or not targets or not model or not taken:
+        return None
+
+    def grouped(cards):
+        out = {}
+        for c in cards:
+            e = out.setdefault(c["name"], {**_trim(c), "count": 0})
+            e["count"] += 1
+        return sorted(out.values(), key=lambda e: (e.get("cmc") or 0, e["name"]))
+
+    builds = []
+    for b in deckbuilder.build(taken, model, targets):
+        deck = grouped(b["spells"] + b["nonbasics"])
+        for col, name in deckbuilder.BASIC.items():
+            if b["basics"].get(name):
+                deck.append({"name": name, "count": b["basics"][name], "cmc": 0, "mana_cost": "", "types": ["Basic", "Land"], "colors": [col]})
+        side = grouped(b["sideboard"])
+        creatures = sum(1 for c in b["spells"] if "Creature" in (c.get("types") or []))
+        builds.append({
+            "label": b["lane"] + (f" ({b['variant']})" if b["variant"] else ""), "variant": b["variant"],
+            "rating": None, "record": None, "colors": list(b["lane"]), "breakdown": None, "stats": None,
+            "note": "companion/deckbuilder.py", "deck": deck, "sideboard": side, "arena_export": copy_deck(deck, side),
+            **mana_identity(deck), "deck_wr": round(b["predicted"], 2), "creatures": creatures, "realistic": True,
+        })
+    return builds
 
 
 MIN_CREATURES = 11  # top players' decks run 12-15 creatures in every FRA pair (tools/deck_targets.py)

@@ -32,6 +32,7 @@
   "ORDER_FADE_BY": 0,
   "ORDER_OFF_WEIGHT": 2.0,
   "ORDER_WEIGHT": 0.0,
+  "OWN_BUILDER": true,
   "PREF_FILE": "",
   "PREF_ON_WEIGHT": 4.0,
   "PREF_SCOPE": "both",
