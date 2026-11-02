@@ -170,6 +170,8 @@ class DraftAdvisorV2:
     CREATURE_TARGET = 15.0  # creatures wanted in 23 spells
     CREATURE_POINTS = 0.0  # WR points for a creature when the pool, projected to 23 spells, is fully short of CREATURE_TARGET; 0 = off
     CREATURE_FROM = 8  # spells in the pool before the creature need applies
+    CHOICE_ADJUST = False  # final scores move toward how top drafters choose: + sum(beta_f / beta_v2 * f) for the pick's stage from the fitted "choices" model (tools/choice_model.py; synergy with the pool, deck needs, colour, fixing, mana value)
+    CHOICE_STAGES = "all"  # which stages CHOICE_ADJUST applies to: "all", or a comma list of "early" (pack 1 picks 1-7), "middle", "late" (picks 12-14)
     REMOVAL_POINTS = 0.0  # WR points for a removal spell when the pool, projected to 23 spells, is fully short of its top pair's removal floor (top players' count there minus deckbuilder.REMOVAL_SLACK); 0 = off
     REMOVAL_FROM = 8  # spells in the pool before the removal need applies
     COPIES_MAX = 2  # copies of one card a deck wants
@@ -479,7 +481,7 @@ class DraftAdvisorV2:
                                   self._reasons(card, lanes, cast_p)))
 
         if self.SPLIT:
-            return self._split(pack_cards, recs, current_pick, set_code)
+            return self._choice_adjust(self._split(pack_cards, recs, current_pick, set_code), pack_cards, current_pick, current_pack, set_code)
         recs.sort(key=lambda r: r.contextual_score, reverse=True)
         # Wheel as a tiebreaker: among cards within WHEEL_EPS of the best, take the one least likely to come back.
         if len(recs) > 1:
@@ -490,6 +492,23 @@ class DraftAdvisorV2:
                 recs.remove(pick)
                 recs.insert(0, pick)
         return recs
+
+    def _choice_adjust(self, recs, pack_cards, pick, pack_no, set_code):
+        """Re-rank the final order by the fitted choice model of top drafters (CHOICE_ADJUST); scores stay in WR points."""
+        if not self.CHOICE_ADJUST or not set_code:
+            return recs
+        from companion.advisor_v2 import choice
+
+        by_name = {c.get("name"): c for c in pack_cards}
+        lane = choice.top_lane(self.pool)
+        playable = [r for r in recs if r.contextual_score > 0]
+        for r in playable:
+            adj = choice.correction(by_name[r.card_name], self.pool, set_code, pack_no, pick, lane, self.CHOICE_STAGES)
+            if abs(adj) >= 0.05:
+                r.contextual_score = round(r.contextual_score + adj, 2)
+                r.reasoning.append(f"Top drafters' choices: {adj:+.1f}")
+        playable.sort(key=lambda r: r.contextual_score, reverse=True)
+        return playable + [r for r in recs if r.contextual_score <= 0]
 
     def order_prior(self, name, pick, prefs=True):
         """Prior in WR points from what top players reach for: their average pick position (ORDER_WEIGHT)

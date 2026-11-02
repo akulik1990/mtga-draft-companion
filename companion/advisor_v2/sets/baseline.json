@@ -7,6 +7,8 @@
   "BRANCH_DEFAULT": 3.0,
   "BRANCH_FILE": "",
   "BRANCH_MODE": "learnt",
+  "CHOICE_ADJUST": false,
+  "CHOICE_STAGES": "all",
   "COLOUR_SHIFT": "",
   "COMMIT_BY": 18,
   "COPIES_MAX": 2,

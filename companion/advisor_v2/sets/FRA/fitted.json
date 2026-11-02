@@ -17,7 +17,9 @@
   "LANE_FLAT": "4:1,14:0.7,45:0.8",
   "KEEP_ANY": true,
   "deckbuilder.MIN_SPLASH_CMC": 1,
-  "REMOVAL_POINTS": 4.0
+  "REMOVAL_POINTS": 4.0,
+  "CHOICE_ADJUST": true,
+  "CHOICE_STAGES": "late"
  },
  "pairs": {
   "k": 4,
@@ -454,7 +456,7 @@
  "combos": [],
  "sources": {
   "values": {
-   "how": "swept on FRA: mock decks (tools/check.py) and top-drafter matching (tools/replay/run.py top); docs/engine-comparison-2026-11-01-round1.md, -round2.md, docs/switch-rule-colours-2026-11-01.md; BETA 0.5 -> 4.0 and KEEP_ANY on (2026-11-02): mock decks +0.72 (SE 0.33, 200 fresh tables 2001+), test top-1 56.33 -> 55.71; top drafters end in a signal-open pair 47% vs 30% by chance and pivot one colour, not both; deckbuilder.MIN_SPLASH_CMC 3 -> 1 (2026-11-02): 16% of top players' splashed cards cost 1-2; tools/builder_check.py FRA agreement on whether to splash 81.1/16.7% (from 78.3/16.0), same colour 63.6% (58.7%); REMOVAL_POINTS 0 -> 4 (2026-11-02): removal spells worth up to 4 points while the pool, projected to 23 spells, is short of its top pair's removal floor; FRA train top-1 55.76 -> 55.71, top-3 86.09 -> 86.14, outcome lift +2.15 -> +2.22; mock decks +0.21 (SE 0.11, 59 paired tables 6001+, removal-floor builder)",
+   "how": "swept on FRA: mock decks (tools/check.py) and top-drafter matching (tools/replay/run.py top); docs/engine-comparison-2026-11-01-round1.md, -round2.md, docs/switch-rule-colours-2026-11-01.md; BETA 0.5 -> 4.0 and KEEP_ANY on (2026-11-02): mock decks +0.72 (SE 0.33, 200 fresh tables 2001+), test top-1 56.33 -> 55.71; top drafters end in a signal-open pair 47% vs 30% by chance and pivot one colour, not both; deckbuilder.MIN_SPLASH_CMC 3 -> 1 (2026-11-02): 16% of top players' splashed cards cost 1-2; tools/builder_check.py FRA agreement on whether to splash 81.1/16.7% (from 78.3/16.0), same colour 63.6% (58.7%); REMOVAL_POINTS 0 -> 4 (2026-11-02): removal spells worth up to 4 points while the pool, projected to 23 spells, is short of its top pair's removal floor; FRA train top-1 55.76 -> 55.71, top-3 86.09 -> 86.14, outcome lift +2.15 -> +2.22; mock decks +0.21 (SE 0.11, 59 paired tables 6001+, removal-floor builder); CHOICE_ADJUST on, CHOICE_STAGES late (2026-11-02): picks 12-14 re-ranked by the fitted choice model of top drafters (choices section); FRA test top-1 55.78 -> 56.36, 5-7 win events 55.67 -> 56.28, mock decks +0.08 (SE 0.13, 60 paired tables 7001+). All stages: test 56.19 but mocks -0.68 (SE 0.35); middle+late: test 56.48, mocks -0.20 (SE 0.29), P2P1 56 -> 49",
    "date": "2026-11-02"
   },
   "prefs": {
@@ -511,6 +513,11 @@
    "how": "tools/fit_pairs.py: low-rank card-pair interactions on top of the deck model, 17Lands game data",
    "date": "2026-11-02",
    "commit": "8bd413a"
+  },
+  "choices": {
+   "how": "tools/choice_model.py fit: conditional logit of top drafters' picks on v2's score plus synergy, deck needs, colour, mana value",
+   "date": "2026-11-02",
+   "commit": "013f35b"
   }
  },
  "prefs": {
@@ -3942,6 +3949,137 @@
     "sources": [
      "Card-ranking videos pasted by the user: Surprisingly Weak Cards, NEVER Draft These Cards, Shockingly Strong Cards, The BEST CARDS, REALITY FRACTURE DRAFT GUIDE, My Honest Thoughts, My Best Tournament Finish (2026-11-02)",
      "I Drafted With the #1 Arena Direct Box Winner (Ft. Veveil) + REALITY FRACTURE DRAFT GUIDE part 2 (transcripts pasted by the user; claims extracted by an agent)"
+    ]
+   }
+  }
+ },
+ "choices": {
+  "split": "train",
+  "stages": {
+   "P1 picks 1-7": {
+    "picks": 4199,
+    "features": [
+     "v2",
+     "syn_payoff",
+     "syn_enabler",
+     "lonely_payoff",
+     "two_need",
+     "creature_need",
+     "removal_need",
+     "on_colour",
+     "splash_fixed",
+     "fixer",
+     "cmc"
+    ],
+    "beta": [
+     0.3681,
+     0.2179,
+     0.1697,
+     0.0178,
+     0.1161,
+     0.2559,
+     0.1328,
+     -0.3037,
+     -0.569,
+     -0.4296,
+     0.1449
+    ],
+    "se": [
+     0.006,
+     0.0446,
+     0.0468,
+     0.1419,
+     0.2928,
+     0.3449,
+     0.4792,
+     0.0433,
+     0.12,
+     0.0705,
+     0.0117
+    ]
+   },
+   "middle": {
+    "picks": 15600,
+    "features": [
+     "v2",
+     "syn_payoff",
+     "syn_enabler",
+     "lonely_payoff",
+     "two_need",
+     "creature_need",
+     "removal_need",
+     "on_colour",
+     "splash_fixed",
+     "fixer",
+     "cmc"
+    ],
+    "beta": [
+     0.204,
+     0.0663,
+     0.0244,
+     -0.1251,
+     -0.057,
+     -0.2778,
+     0.499,
+     0.5341,
+     -0.4206,
+     0.3442,
+     0.001
+    ],
+    "se": [
+     0.0024,
+     0.0077,
+     0.0081,
+     0.0451,
+     0.0893,
+     0.1152,
+     0.1325,
+     0.0327,
+     0.0401,
+     0.0342,
+     0.0066
+    ]
+   },
+   "picks 12-14": {
+    "picks": 3600,
+    "features": [
+     "v2",
+     "syn_payoff",
+     "syn_enabler",
+     "lonely_payoff",
+     "two_need",
+     "creature_need",
+     "removal_need",
+     "on_colour",
+     "splash_fixed",
+     "fixer",
+     "cmc"
+    ],
+    "beta": [
+     0.0676,
+     0.0978,
+     0.085,
+     0.048,
+     0.2936,
+     -0.1399,
+     0.4006,
+     1.2224,
+     -0.159,
+     1.1257,
+     0.0495
+    ],
+    "se": [
+     0.0031,
+     0.0221,
+     0.0251,
+     0.1388,
+     0.2649,
+     0.3554,
+     0.434,
+     0.0893,
+     0.1013,
+     0.1324,
+     0.0213
     ]
    }
   }
