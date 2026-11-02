@@ -323,11 +323,12 @@ ShellRoot {
                                 width: parent.width * Math.min(1, have / Math.max(1, want)); height: parent.height; radius: height / 2
                                 color: have >= due ? "#5fae6e" : have >= due * 0.6 ? "#d6a84a" : "#d0613f"
                             }
-                            Rectangle { x: parent.width * Math.min(1, due / Math.max(1, want)) - 1; width: 2; height: parent.height + 4; y: -2; color: "#e8eaed"; opacity: 0.8 }
                         }
                         Text { text: have + " / " + Math.round(want); width: win.unit * 2.6; horizontalAlignment: Text.AlignRight; color: "#e8eaed"; font.pixelSize: win.unit * 0.6 }
                     }
                 }
+
+                Line { visible: !!deck.d; text: "bar = share of their count · green on pace, amber behind, red far behind (full by pick 30)"; color: "#8f98a3"; font.pixelSize: win.unit * 0.52 }
 
                 // Curve of your spells in that pair; ticks mark top players' typical deck.
                 Item { width: 1; height: win.unit * 0.5; visible: !!deck.d }
