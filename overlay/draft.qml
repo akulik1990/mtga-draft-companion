@@ -115,53 +115,87 @@ ShellRoot {
         mask: Region {}  // empty input region: every click goes to Arena
         visible: root.arenaFocused && !!root.data && (root.data.cards || []).length > 0
 
-        Text {
+        // Gold, silver, bronze for v2's top three; the rest stay quiet.
+        readonly property var medals: [
+            null,
+            { hi: "#fff1a8", lo: "#c9971c", edge: "#ffd54f" },
+            { hi: "#ffffff", lo: "#9aa4ae", edge: "#d5dbe1" },
+            { hi: "#ffc58f", lo: "#a5612c", edge: "#e0955a" }
+        ]
+        readonly property int unit: Math.round(win.height * 0.017)
+
+        Rectangle {
             visible: !!root.data && !!root.data.branch
             x: win.width * root.g.x0
-            y: win.height * root.g.y0 - height - 6
-            text: root.data ? root.data.branch : ""
-            color: "white"; style: Text.Outline; styleColor: "black"
-            font.pixelSize: win.height * 0.022; font.bold: true
+            y: win.height * root.g.y0 - height - win.unit * 0.6
+            width: branchText.implicitWidth + win.unit * 1.4
+            height: branchText.implicitHeight + win.unit * 0.6
+            radius: height / 2
+            color: "#d90e1215"
+            border.color: "#40ffffff"
+            Text {
+                id: branchText
+                anchors.centerIn: parent
+                text: root.data ? root.data.branch : ""
+                color: "#f0f0f0"; font.pixelSize: win.unit * 1.05; font.weight: Font.DemiBold
+            }
         }
 
         Repeater {
             model: root.data ? root.data.cards : []
             delegate: Rectangle {
+                id: card
                 visible: !root.overCard
                 required property var modelData
                 required property int index
                 readonly property int col: index % root.g.perRow
                 readonly property int row: Math.floor(index / root.g.perRow)
+                readonly property var medal: modelData.rank && modelData.rank <= 3 ? win.medals[modelData.rank] : null
+                x: win.width * (root.g.x0 + col * root.g.dx) + win.unit * 0.3
                 y: win.height * (root.g.y0 + row * root.g.dy + root.g.cardH * 0.1)
-                x: win.width * (root.g.x0 + col * root.g.dx) + 4
-                width: badge.implicitWidth + 10
-                height: badge.implicitHeight + 4
-                radius: 4
-                color: modelData.rank === 1 ? "#d9c8a000" : modelData.rank <= 3 ? "#d92e7d32" : "#b3202020"
-                border.color: modelData.rank === 1 ? "#ffe082" : "transparent"
-                border.width: 2
+                width: content.implicitWidth + win.unit * 0.9
+                height: content.implicitHeight + win.unit * 0.5
+                radius: height / 2
+                color: medal ? "#e60e1215" : "#bf0e1215"
+                border.color: medal ? medal.edge : "#30ffffff"
+                border.width: medal ? 2 : 1
 
-                Column {
-                    id: badge
-                    anchors.centerIn: parent
-                    spacing: 0
-                    Text {
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        text: modelData.rank ? "#" + modelData.rank + "  " + Number(modelData.score).toFixed(1) : "–"
-                        color: "white"; font.pixelSize: win.height * 0.017; font.bold: true
+                Row {
+                    id: content
+                    anchors.verticalCenter: parent.verticalCenter
+                    x: win.unit * 0.25
+                    spacing: win.unit * 0.4
+
+                    Rectangle {  // rank medallion
+                        width: win.unit * 1.9; height: width; radius: width / 2
+                        anchors.verticalCenter: parent.verticalCenter
+                        gradient: Gradient {
+                            GradientStop { position: 0; color: card.medal ? card.medal.hi : "#4a5058" }
+                            GradientStop { position: 1; color: card.medal ? card.medal.lo : "#2a2e33" }
+                        }
+                        Text {
+                            anchors.centerIn: parent
+                            text: card.modelData.rank || "–"
+                            color: card.medal ? "#1b1407" : "#e8e8e8"
+                            font.pixelSize: win.unit * 1.05; font.bold: true
+                        }
                     }
-                    Text {
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        text: (modelData.orders || "").replace("Power", "Pow") + (modelData.upstream ? "  U" + modelData.upstream : "")
-                        color: "#e0e0e0"; font.pixelSize: win.height * 0.0095
-                    }
-                    Text {
-                        visible: root.showNames
-                        width: win.width * root.g.cardW - 8
-                        horizontalAlignment: Text.AlignHCenter
-                        elide: Text.ElideRight
-                        text: modelData.name
-                        color: "#bdbdbd"; font.pixelSize: win.height * 0.012
+                    Column {
+                        anchors.verticalCenter: parent.verticalCenter
+                        Text {
+                            text: card.modelData.score != null ? Number(card.modelData.score).toFixed(1) : ""
+                            color: card.medal ? card.medal.edge : "#f5f5f5"
+                            font.pixelSize: win.unit * 1.1; font.bold: true
+                        }
+                        Text {
+                            text: (card.modelData.orders || "").replace("Power ", "Pow ").replace(/#/g, "") + (card.modelData.upstream ? " · U" + card.modelData.upstream : "")
+                            color: "#b8bec6"; font.pixelSize: win.unit * 0.6
+                        }
+                        Text {
+                            visible: root.showNames
+                            text: card.modelData.name
+                            color: "#9aa0a8"; font.pixelSize: win.unit * 0.6
+                        }
                     }
                 }
             }
