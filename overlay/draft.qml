@@ -22,7 +22,7 @@ ShellRoot {
     // below = right third filled. A sits in its lower left, B in its upper right (fractions of a 16:9 screen).
     readonly property var probeA: [0.830, 0.046]
     readonly property var probeB: [0.840, 0.027]
-    function px(p) { return Math.round(win.screen.x + p[0] * win.width) + "," + Math.round(win.screen.y + p[1] * win.height); }
+    function probeAt(p) { return Math.round(win.screen.x + p[0] * win.width) + "," + Math.round(win.screen.y + p[1] * win.height); }
     property string layoutName: "side"
     property string lastSeen: "side"
     readonly property var g: layouts[layoutName]
@@ -101,7 +101,7 @@ ShellRoot {
 
     Process {
         id: pixel
-        command: ["sh", "-c", "for p in " + root.px(root.probeA) + " " + root.px(root.probeB) + "; do grim -t ppm -g \"$p 1x1\" - | tail -c 3 | od -An -tu1; done"]
+        command: ["sh", "-c", "for p in " + root.probeAt(root.probeA) + " " + root.probeAt(root.probeB) + "; do grim -t ppm -g \"$p 1x1\" - | tail -c 3 | od -An -tu1; done"]
         stdout: StdioCollector {
             onStreamFinished: {
                 const v = text.trim().split(/\s+/).map(Number);
