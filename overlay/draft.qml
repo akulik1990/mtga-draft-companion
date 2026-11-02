@@ -146,7 +146,7 @@ ShellRoot {
             id: side
             visible: !!win.pn && !root.overCard  // Arena's preview can reach over it too
             x: win.width * 0.008
-            y: win.height * root.g.y0
+            y: win.height * 0.085  // just under Arena's top menu bar
             width: win.width * (root.g.x0 - 0.018)
             height: col.implicitHeight + win.unit * 1.2
             radius: win.unit * 0.6
@@ -441,7 +441,7 @@ ShellRoot {
                     id: stats
                     anchors.centerIn: parent
                     Text {
-                        text: (panel.modelData.gihwr ? "GIH " + Number(panel.modelData.gihwr).toFixed(1) : "GIH n/a") + (panel.modelData.upstream ? "  ·  U" + panel.modelData.upstream : "")
+                        text: (panel.modelData.gihwr ? "GIH " + Number(panel.modelData.gihwr).toFixed(1) : "GIH n/a") + (panel.modelData.upstream ? "  ·  U" + panel.modelData.upstream : "") + (panel.modelData.wheel != null ? "  ·  wheel " + Math.round(panel.modelData.wheel) + "%" : "")
                         color: "#f0f0f0"; font.pixelSize: win.unit * 0.72; font.weight: Font.DemiBold
                     }
                     Text {

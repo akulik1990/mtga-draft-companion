@@ -44,7 +44,7 @@ def plain(reason):
     m = re.match(r"(\w+) (\d+)% → ([\d.]+) \((?:n=(\d+)|rarely played there)\)", reason)
     if m:
         games = f"{int(m[4]):,} games" if m[4] else "rarely played there"
-        return f"Plays in {m[1]}: wins {m[3]}%, {games}" if m[2] == "100" else f"{m[1]} ({m[2]}% likely): wins {m[3]}%, {games}"
+        return f"Plays in {m[1]}: wins {m[3]}%, {games}" if m[2] == "100" else f"If taken, {m[1]} {m[2]}% likely; wins {m[3]}% there, {games}"
     return reason
 
 
@@ -170,7 +170,7 @@ def create_app(session: DraftSession, *, run_scanner: bool = True, frontend: Pat
             ranks = next(filter(None, (re.match(r"Fit #(\d+) · Power #(\d+)", w) for w in why)), None)  # after "Branch: ..." on a switch
             cards.append({"name": c["name"], "rank": r and r["rank"], "score": r and r["contextual_score"],
                           "orders": ranks[0] if ranks else "", "fit": ranks and int(ranks[1]), "power": ranks and int(ranks[2]),
-                          "heat": heat_cache["heat"].get(c["name"], 0),
+                          "heat": heat_cache["heat"].get(c["name"], 0), "wheel": r and r.get("wheel_chance"),
                           "upstream": up.get(c["name"]), "gihwr": gih})
         b = (s.get("v2_split") or {}).get("branch")
         if b and b["take"]:  # the switch pick was chosen on Power; show that, not its blended Fit-side score

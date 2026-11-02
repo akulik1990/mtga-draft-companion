@@ -142,6 +142,7 @@ class DraftAdvisorV2:
     SPLIT = True  # two orders: Power (best card if you end up in its colours) and Fit (best for the colours you are in); branch to Power above a learnt gap
     BRANCH_MODE = "learnt"  # "learnt" (fitted rule), "fit" (never branch), "power" (always take the strongest card)
     BRANCH_COLOUR = True  # switch rule that also weighs whether the strong card keeps a colour of the top pair and how settled the pool is (fitted.json, branch_colour). FRA: test top-1 55.4 -> 56.0, deck win rate -0.86 (SE 0.34, 200 bot tables, all from tables ending in other colours); on by the user's call 2026-11-01
+    KEEP_ANY = False  # "keeps a colour" = some pair that casts the card shares a colour with the top pair (a mono-red card keeps U of a UB pool via UR); False = the card itself shares a colour with the top pair
     BRANCH_FILE = ""  # override the fitted rule's file (measuring alternatives); "" = the set's fitted.json
     BRANCH_DEFAULT = 3.0  # GIH WR points; used for stages with no fitted threshold (fitted.json, branch)
     ORDER_FADE_BY = 0  # pick in the pack by which the pick-order prior has faded to 0; 0 = no fade
@@ -483,7 +484,12 @@ class DraftAdvisorV2:
         """(1 if the card keeps a colour of the pool's top pair or is colourless, else 0; that pair's probability)."""
         colours = set() if "Land" in (card.get("types") or []) else set(card.get("colors") or [])
         top = self.top_lane
-        return float(not colours or bool(colours & set(top))), self.lanes.get(top, 0.0)
+        if self.KEEP_ANY:
+            # Taking the card moves the deck to a pair that casts it; it keeps a colour if such a pair overlaps the top pair.
+            keeps = not colours or any(castable(card, lane) and set(lane) & set(top) for lane in LANES)
+        else:
+            keeps = not colours or bool(colours & set(top))
+        return float(keeps), self.lanes.get(top, 0.0)
 
     def _split(self, pack_cards, recs, pick, set_code):
         """Final order from the two orders: Fit, unless the strongest card beats the best fit by more than the learnt gap."""
