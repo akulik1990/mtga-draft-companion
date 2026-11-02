@@ -478,11 +478,7 @@
  "card_wants": {
   "_how": "Top 30 FRA cards by All Decks GIH WR (2026-11-03), read by Claude from their rules text for review by the user: what each depends on and which cards enable it, as patterns over rules text (reminder text stripped), tags, or types. tools/card_needs.py matches the enablers and tests each card against the game data. Cards listed under standalone need nothing to shine.",
   "_standalone": [
-   "Ajani Unrelenting",
-   "The Theorist, Jace Beleren",
    "Sublime Epiphany",
-   "Garruk, Veiled Butcher",
-   "Overwrite the Multiverse",
    "Sphinx of False Conclusions",
    "Lich's Relic",
    "Craftwork Crusher",
@@ -490,12 +486,40 @@
    "Kiora of Fire and Ashes",
    "Austere Command",
    "Chandra, Torch of Defiance",
-   "Mindseeker Oculus"
+   "Mindseeker Oculus",
+   "Mind Twist",
+   "Overwrite the Multiverse"
   ],
   "Uldaros Theorix": {
-   "wants": "a graveyard holding several card types (instant, sorcery, artifact, creature) to copy and cast free",
-   "enabler": "\\bmills?\\b|surveil|discard a card|discard your hand|discard (two|three|\\d+|x) cards|into your graveyard",
-   "rule": "cards that mill, surveil, make you discard or put cards into your graveyard"
+   "wants": "a graveyard filled by milling, and in it strong spells (mana value 6 or less in total) worth casting free; the second part is read from the cards top players' decks hold with him",
+   "enabler": "\\bmills?\\b",
+   "rule": "cards that mill",
+   "source": "user review 2026-11-03",
+   "extra": [
+    {
+     "name": "own discard",
+     "rule": "your own discard outlets: discard-to-draw, cycling and landcycling",
+     "enabler": "discard a card|discard your hand|cycling|\\bthen discard"
+    },
+    {
+     "name": "copy targets",
+     "rule": "removal instants and sorceries (copied free for a second removal)",
+     "enabler_types": [
+      "Instant",
+      "Sorcery"
+     ],
+     "enabler_tags": [
+      "removal"
+     ],
+     "all_types_tags": true
+    },
+    {
+     "name": "poor targets",
+     "rule": "cards with two card types (artifact creature): one target, both type slots used, so worse than two cards",
+     "enabler": "^$",
+     "multi_type": true
+    }
+   ]
   },
   "Null Summoner": {
    "wants": "seven or more cards in the graveyard (threshold) to cast the exiled card",
@@ -542,14 +566,6 @@
    ],
    "rule": "artifacts, and cards that make Heartwood, Treasure, Lotus or other artifact tokens"
   },
-  "Aerid Konstrari": {
-   "wants": "artifacts in play to pump it",
-   "enabler": "heartwood|treasure|lotus|artifact token",
-   "enabler_types": [
-    "Artifact"
-   ],
-   "rule": "artifacts, and cards that make Heartwood, Treasure, Lotus or other artifact tokens"
-  },
   "Sanctum Lurker": {
    "wants": "planeswalkers (Jace tokens) to keep and to give +2",
    "enabler": "empower jace",
@@ -575,23 +591,33 @@
    "rule": "planeswalkers, Jace cards and cards that empower Jace"
   },
   "Garruk, Curse Breaker": {
-   "wants": "creatures with power 4 or more (draws a card each); power is not in the dataset, so creatures costing 5+ stand in",
-   "enabler_types": [
-    "Creature"
+   "wants": "creatures with power 4 or more (each draws a card), creature tokens for his −4 attack boost, and, like Garruk, Veiled Butcher, boosts for his 4/4 Beasts and Ajani Unrelenting",
+   "rule": "creatures with power 4 or more (Scryfall power), and cards that create power 4+ creature tokens",
+   "enabler": "create[^.]*\\b([4-9]|\\d\\d)/\\d+",
+   "min_power": 4,
+   "extra": [
+    {
+     "name": "creature spam",
+     "rule": "cards that create creature tokens",
+     "enabler": "create[^.]*creature tokens?|create[^.]*\\d+/\\d+[^.]*tokens?|create[^.]*tokens? that's a copy of[^.]*creature"
+    },
+    {
+     "name": "boosts",
+     "rule": "cards that pump or give deathtouch",
+     "enabler": "creatures you control get \\+|gets? \\+\\d+/\\+\\d+|gains? deathtouch|have deathtouch|\\+\\d+/\\+0"
+    },
+    {
+     "name": "Ajani",
+     "rule": "Ajani Unrelenting",
+     "names": [
+      "Ajani Unrelenting"
+     ]
+    }
    ],
-   "enabler_min_cmc": 5,
-   "rule": "creatures costing 5 or more (stand-in for power 4+, which the data lacks)"
+   "source": "user review 2026-11-03"
   },
   "Vraska, the Cutting Glare": {
    "wants": "six or more lands for the removal: ramp and a long game",
-   "enabler": "add \\{|search your library for .*land|treasure|heartwood|lotus",
-   "enabler_tags": [
-    "fixing_ramp"
-   ],
-   "rule": "mana makers: cards that add mana, search for lands, make Treasure/Heartwood/Lotus, or are tagged ramp"
-  },
-  "Mind Twist": {
-   "wants": "lots of mana for a big X",
    "enabler": "add \\{|search your library for .*land|treasure|heartwood|lotus",
    "enabler_tags": [
     "fixing_ramp"
@@ -613,6 +639,76 @@
     "evasion"
    ],
    "rule": "evasive creatures: flying, can't be blocked, menace, trample, or tagged evasion"
+  },
+  "Ajani Unrelenting": {
+   "wants": "other planeswalkers (each loyalty ability makes a Cadet), many creatures (+1 buffs them all, −2 draws a card per creature) and creature tokens, best made again and again, since −3 wipes everything but your tokens",
+   "rule": "planeswalkers, cards that create creature tokens (copies of creatures included), and cards that empower Jace (the Jace token is a planeswalker); repeatable creature-token makers first",
+   "enabler": "create[^.]*creature tokens?|create[^.]*\\d+/\\d+[^.]*tokens?|create[^.]*tokens? that's a copy of[^.]*creature|empower jace",
+   "enabler_types": [
+    "Planeswalker"
+   ],
+   "prefer": "(whenever|at the beginning|\\{t\\}|: )[^.]*(create[^.]*creature tokens?|create[^.]*\\d+/\\d+[^.]*tokens?|create[^.]*tokens? that's a copy of[^.]*creature)",
+   "source": "user review 2026-11-03"
+  },
+  "The Theorist, Jace Beleren": {
+   "wants": "a game ender once set up: a wide board of creatures and a full hand. Card draw (−6 counts cards in hand), many creatures (−6 puts counters on each), cheap cards to keep the board growing, extra loyalty to reach −6",
+   "rule": "cards that draw two or more at once, or draw again and again (on a trigger, each turn, or an activated ability)",
+   "enabler": "draws? (two|three|four|x|\\d+) cards|(whenever|at the beginning|\\{t\\}|: )[^.]*draws? (a|two|three|x|\\d+) cards?",
+   "extra": [
+    {
+     "name": "creature spam",
+     "rule": "repeatable creature-token makers (on a trigger, each turn, or an activated ability)",
+     "enabler": "(whenever|at the beginning|\\{t\\}|: )[^.]*(create[^.]*creature tokens?|create[^.]*\\d+/\\d+[^.]*tokens?|create[^.]*tokens? that's a copy of[^.]*creature)"
+    },
+    {
+     "name": "cheap cards",
+     "rule": "spells costing 2 or less",
+     "cheap": 2
+    },
+    {
+     "name": "loyalty",
+     "rule": "cards that add loyalty to planeswalkers or give them abilities: loyalty counters, proliferate, 'planeswalkers you control have'; empower Jace does not count, it feeds only the Jace token, not The Theorist",
+     "enabler": "loyalty counter|proliferate|planeswalkers you control have"
+    }
+   ],
+   "source": "user review 2026-11-03",
+   "finisher": true
+  },
+  "_notes": {
+   "Sublime Epiphany": "standalone: very strong removal (user review 2026-11-03)",
+   "Mind Twist": "standalone (user review 2026-11-03)",
+   "Overwrite the Multiverse": "standalone: board wipe that is itself a Jace enabler (user review 2026-11-03)",
+   "Aerid Konstrari": "mostly an enabler, a mana and artifact generator (Heartwood tokens); artifacts improve it (user review 2026-11-03)",
+   "Sphinx of False Conclusions": "standalone: an enabler, fills the graveyard much like mill (draw, then discard on each attack) (user review 2026-11-03)"
+  },
+  "Garruk, Veiled Butcher": {
+   "wants": "recurring removal on its own (+2 shrinks, −2 edict); better with creature tokens to sacrifice to his −2 and with boosts for his 4/4 Beast tokens; super with Ajani Unrelenting (+1 gives the Beasts +1/+0 and haste)",
+   "rule": "cards that create creature tokens (fodder for his −2)",
+   "enabler": "create[^.]*creature tokens?|create[^.]*\\d+/\\d+[^.]*tokens?|create[^.]*tokens? that's a copy of[^.]*creature",
+   "extra": [
+    {
+     "name": "boosts",
+     "rule": "cards that pump or give deathtouch: '+N/+N', 'creatures you control get +', 'gain(s)/have deathtouch'",
+     "enabler": "creatures you control get \\+|gets? \\+\\d+/\\+\\d+|gains? deathtouch|have deathtouch|\\+\\d+/\\+0"
+    },
+    {
+     "name": "Ajani",
+     "rule": "Ajani Unrelenting",
+     "names": [
+      "Ajani Unrelenting"
+     ]
+    }
+   ],
+   "source": "user review 2026-11-03"
+  },
+  "Aerid Konstrari": {
+   "wants": "mostly an enabler itself (Heartwood mana and artifacts); more artifacts make its {6} ability hit harder",
+   "rule": "artifacts, and cards that make Heartwood, Treasure, Lotus or other artifact tokens",
+   "enabler": "heartwood|treasure|lotus|artifact token",
+   "enabler_types": [
+    "Artifact"
+   ],
+   "source": "user review 2026-11-03"
   }
  }
 }

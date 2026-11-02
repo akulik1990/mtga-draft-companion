@@ -16,6 +16,7 @@ import json
 import re
 import sys
 from collections import defaultdict
+from functools import lru_cache
 from pathlib import Path
 
 import numpy as np
@@ -29,15 +30,44 @@ from companion.advisor_v2 import config  # noqa: E402
 P_TYPICAL = 0.55  # log-odds to WR points at a typical win rate: x p(1-p) x 100
 
 
+@lru_cache(maxsize=1)
+def scryfall(set_code="FRA"):
+    """{name: {power, toughness}} cached from Scryfall (the dataset has no power)."""
+    path = DATA_DIR / "Temp" / f"scryfall_{set_code}.json"
+    return json.loads(path.read_text()) if path.exists() else {}
+
+
+def power(card):
+    p = (scryfall().get(card.get("name")) or {}).get("power")
+    return int(p) if p and p.isdigit() else None
+
+
 def is_enabler(card, spec):
     text = re.sub(r"\([^)]*\)", "", (card.get("oracle_text") or "").lower())
     types, tags = card.get("types") or [], card.get("tags") or []
     by_text = bool(spec.get("enabler") and re.search(spec["enabler"], text))
-    by_type = bool(spec.get("enabler_types")) and any(t in types for t in spec["enabler_types"]) and (card.get("cmc") or 0) >= spec.get("enabler_min_cmc", 0)
+    by_type = (bool(spec.get("enabler_types")) and any(t in types for t in spec["enabler_types"])
+               and spec.get("enabler_min_cmc", 0) <= (card.get("cmc") or 0) <= spec.get("enabler_max_cmc", 99))
+    if spec.get("min_power") and "Creature" in types and (power(card) or 0) >= spec["min_power"]:
+        return True
+    if spec.get("names"):
+        return card.get("name") in spec["names"]
+    if spec.get("cheap"):
+        return "Land" not in types and (card.get("cmc") or 0) <= spec["cheap"]
     by_tag = any(t in tags for t in spec.get("enabler_tags", ()))
+    if spec.get("multi_type"):
+        return sum(t in types for t in ("Artifact", "Creature", "Enchantment", "Planeswalker", "Instant", "Sorcery", "Battle")) >= 2
+    if spec.get("all_types_tags"):
+        return any(t in types for t in spec["enabler_types"]) and by_tag
     if spec.get("all"):
         return by_text and by_type
     return by_text or by_type or by_tag
+
+
+def prefer(card, spec):
+    """The enablers a card wants most (manual "prefer" pattern): listed first among the examples."""
+    text = re.sub(r"\([^)]*\)", "", (card.get("oracle_text") or "").lower())
+    return bool(spec.get("prefer") and re.search(spec["prefer"], text))
 
 
 def logit(X, y):
@@ -62,9 +92,15 @@ def main(argv=None):
     cards = {}
     for c in data.values():
         cards.setdefault(c["name"], c)
-    wants = {k: v for k, v in (config.layer(a.set, "manual").get("card_wants") or {}).items() if not k.startswith("_")}
+    wants = {}
+    for k, v in (config.layer(a.set, "manual").get("card_wants") or {}).items():
+        if k.startswith("_"):
+            continue
+        wants[k] = v
+        for x in v.get("extra") or []:  # further enabler lists, each tested on its own as "card: name"
+            wants[f"{k}: {x['name']}"] = {**x, "card": k}
     gih = {n: ((c.get("deck_colors") or {}).get("All Decks") or {}).get("gihwr") or 0.0 for n, c in cards.items()}
-    enablers = {x: sorted(n for n, c in cards.items() if n != x and "Basic" not in (c.get("types") or []) and is_enabler(c, spec))
+    enablers = {x: sorted(n for n, c in cards.items() if n != spec.get("card", x) and "Basic" not in (c.get("types") or []) and is_enabler(c, spec))
                 for x, spec in wants.items()}
     rows = defaultdict(list)  # card -> [enablers, in hand, deck quality, skill, on play, won]
     path = DATA_DIR / "Temp" / "synergy" / f"game_data_public.{a.set}.PremierDraft.csv.gz"
@@ -73,7 +109,8 @@ def main(argv=None):
         header = next(reader)
         col = {h: i for i, h in enumerate(header)}
         deck_cols = [(i, h[len("deck_"):]) for i, h in enumerate(header) if h.startswith("deck_")]
-        watch = [(x, col.get(f"deck_{x}"), col.get(f"opening_hand_{x}"), col.get(f"drawn_{x}"), set(enablers[x])) for x in wants]
+        base = lambda x: wants[x].get("card", x)
+        watch = [(x, col.get(f"deck_{base(x)}"), col.get(f"opening_hand_{base(x)}"), col.get(f"drawn_{base(x)}"), set(enablers[x])) for x in wants]
         watch = [w for w in watch if w[1] is not None]
         for row in reader:
             held = [w for w in watch if row[w[1]] not in ("", "0")]
@@ -119,6 +156,9 @@ def report(set_code, top=30):
     """docs/top-cards-<SET>.html (print to PDF) for review: the set's top cards by GIH WR, their rules text, what we read
     them as needing (manual.json card_wants) and every enabler the rule matches."""
     import html
+    import math
+
+    from companion.advisor_v2.needs import deckmates
 
     data = json.loads((DATA_DIR / "Sets" / f"{set_code}_PremierDraft_All_Data.json").read_text())["card_ratings"]
     cards = {}
@@ -143,12 +183,25 @@ def report(set_code, top=30):
             spec = manual[name]
             wr = lambda o: ((o.get("deck_colors") or {}).get("All Decks") or {}).get("gihwr") or 0.0
             names = sorted((n for n, o in cards_all.items() if n != name and "Basic" not in (o.get("types") or []) and is_enabler(o, spec)),
-                           key=lambda n: -wr(cards_all[n]))
+                           key=lambda n: (not prefer(cards_all[n], spec), -wr(cards_all[n])))
             read = f"<b>Reading:</b> wants {e(spec['wants'])}."
             verdict = (f"<div class='en'><b>Enabler rule:</b> {e(spec.get('rule', ''))}. "
                        f"<b>Examples</b> (strongest of {len(names)}): {', '.join(e(n) for n in names[:6])}.</div>")
+            for x in spec.get("extra") or []:
+                more = sorted((n for n, o in cards_all.items() if n != name and "Basic" not in (o.get("types") or []) and is_enabler(o, x)),
+                              key=lambda n: -wr(cards_all[n]))
+                verdict += (f"<div class='en'><b>Also, {e(x['name'])}:</b> {e(x['rule'])}. "
+                            f"<b>Examples</b> (strongest of {len(more)}): {', '.join(e(n) for n in more[:6])}.</div>")
         else:
             read, verdict = "<i>Not reviewed.</i>", ""
+        mates = sorted(((v, o) for lane, row in deckmates(set_code).items() for o, v in (row.get(name) or {}).items()), reverse=True)
+        best = {}
+        for v, o in mates:
+            best.setdefault(o, v)
+        top = sorted(best.items(), key=lambda kv: -kv[1])[:8]
+        if top:
+            verdict += ("<div class='en'><b>Seen in the same top-player decks</b> (times more often than chance): "
+                        + ", ".join(f"{e(o)} {math.exp(v):.1f}x" for o, v in top) + ".</div>")
         text = e(c.get("oracle_text") or "").replace("\n", "<br>")
         img = f"<img src='{e(c['image'][0] if isinstance(c.get('image'), list) else c.get('image') or '')}'>" if c.get("image") else ""
         out.append(f"<section>{img}<div><h2>{i}. {e(name)} <span>{e(c.get('mana_cost') or '')}</span></h2>"
