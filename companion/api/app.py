@@ -13,7 +13,7 @@ from fastapi.staticfiles import StaticFiles
 
 from companion import ROOT
 from companion.advisor_v2 import config
-from companion.advisor_v2.lanes import pips
+from companion.advisor_v2.lanes import castable, pips
 from companion.session import DraftSession
 
 log = logging.getLogger(__name__)
@@ -54,6 +54,21 @@ def close_calls(set_code):
     return config.fitted(set_code, "closecalls").get("buckets", [])
 
 
+def lane_rates(card, lanes, min_games=200):
+    """The card's 17Lands GIH WR in each pair: None when it cannot be cast there, "few" under min_games."""
+    out = []
+    for lane in lanes:
+        row = ((card or {}).get("deck_colors") or {}).get(lane) or {}
+        if not card or not castable(card, lane):
+            wr = None
+        elif (row.get("samples") or 0) < min_games or not row.get("gihwr"):
+            wr = "few"
+        else:
+            wr = round(row["gihwr"], 1)
+        out.append({"lane": lane, "wr": wr})
+    return out
+
+
 def side_panel(s, ranked=()):
     """What the overlay's left panel shows: v2's top three and how top drafters split between them in this spot,
     v2's reasons, likeliest lanes, open colours, pool summary."""
@@ -67,6 +82,8 @@ def side_panel(s, ranked=()):
                     if r["from"] <= gap and (r["to"] is None or gap < r["to"])), None)
         close = {"gap": round(gap, 1), "took": row and row["took"][:3]}
     lanes = sorted((s.get("lanes") or {}).items(), key=lambda kv: -kv[1])[:4]
+    likely = [lane for lane, p in lanes if p >= 0.10]  # pairs worth showing a card's win rate for
+    by_name = {c["name"]: c for c in s.get("pack") or []}
     pair_wr = s.get("color_ratings") or {}
     sides = s.get("signals_v2_sides") or {}
     spells = [c for c in s.get("pool") or [] if "Land" not in (c.get("types") or [])]
@@ -75,7 +92,8 @@ def side_panel(s, ranked=()):
         curve[min(max(int(c.get("cmc") or 0), 1), 6) - 1] += 1
     return {
         "pick": top and top["card_name"],
-        "top3": [{"name": c["name"], "score": c["score"], "why": why.get(c["name"], "")} for c in ranked],
+        "top3": [{"name": c["name"], "score": c["score"], "why": why.get(c["name"], ""),
+                  "lanes": lane_rates(by_name.get(c["name"]), likely)} for c in ranked],
         "close": close,
         "why": [plain(r) for r in (top or {}).get("reasoning") or [] if not r.startswith("Fit #")][:3],
         "lanes": [{"lane": l, "p": round(p, 3), "wr": pair_wr.get(l)} for l, p in lanes],

@@ -202,3 +202,11 @@ def test_plain_reasoning():
     assert plain("UG 34% → 56.6 (rarely played there)") == "In UG: wins 56.6%, rarely played there"
     assert plain("Branch: +9.4 over Hapatra, the Desert Frost, above the -1.6 top drafters switch at") == \
         "9.4 points stronger than Hapatra, the Desert Frost; top drafters switch at -1.6 or more this early"
+
+
+def test_lane_rates_marks_uncastable_and_thin_pairs():
+    from companion.api.app import lane_rates
+
+    card = {"name": "x", "mana_cost": "{1}{U}", "colors": ["U"], "types": ["Creature"],
+            "deck_colors": {"UB": {"gihwr": 58.04, "samples": 900}, "UR": {"gihwr": 61.0, "samples": 50}}}
+    assert lane_rates(card, ["UB", "UR", "BR"]) == [{"lane": "UB", "wr": 58.0}, {"lane": "UR", "wr": "few"}, {"lane": "BR", "wr": None}]

@@ -211,7 +211,13 @@ ShellRoot {
                                 color: "#c8cdd3"; font.pixelSize: win.unit * 0.72
                             }
                         }
-                        Line { visible: !!modelData.why; text: modelData.why; leftPadding: win.unit * 1.5; color: "#9aa3ad"; font.pixelSize: win.unit * 0.62 }
+                        Line {  // win rate in each likely pair: ✕ cannot be cast there, – too few games
+                            visible: (modelData.lanes || []).length > 0
+                            leftPadding: win.unit * 1.5
+                            textFormat: Text.StyledText
+                            text: (modelData.lanes || []).map(l => "<b>" + l.lane + "</b> " + (l.wr === null ? "✕" : l.wr === "few" ? "–" : Number(l.wr).toFixed(1))).join("&nbsp;&nbsp;")
+                            color: "#9aa3ad"; font.pixelSize: win.unit * 0.64
+                        }
                     }
                 }
                 Line {  // how top drafters split between v2's top three when #1 leads by this much
