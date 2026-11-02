@@ -141,7 +141,7 @@ ShellRoot {
         // Left panel: v2's pick and why, likeliest lanes, open colours, pool. Sits in the empty strip left of the pack.
         Rectangle {
             id: side
-            visible: !!win.pn
+            visible: !!win.pn && !root.overCard  // Arena's preview can reach over it too
             x: win.width * 0.008
             y: win.height * root.g.y0
             width: win.width * (root.g.x0 - 0.018)
