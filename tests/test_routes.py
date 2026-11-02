@@ -146,3 +146,15 @@ def test_pages_are_revalidated_but_bundles_cached(session, tmp_path):
     with TestClient(create_app(session, run_scanner=False, frontend=tmp_path)) as client:
         assert client.get("/").headers.get("cache-control") == "no-cache"
         assert "cache-control" not in client.get("/_app/immutable/x.js").headers
+
+
+def test_overlay_keeps_log_order_and_ranks(session):
+    from tests.conftest import P1P1
+
+    append(session.log, JOIN)
+    append(session.log, P1P1)
+    session.poll()
+    with TestClient(create_app(session, run_scanner=False)) as client:
+        o = client.get("/api/overlay").json()
+    assert [c["name"] for c in o["cards"]] == [c["name"] for c in session.snapshot()["pack"]]
+    assert sorted(c["rank"] for c in o["cards"] if c["rank"] is not None)[0] == 1

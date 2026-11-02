@@ -68,6 +68,24 @@ def create_app(session: DraftSession, *, run_scanner: bool = True, frontend: Pat
         session.poll()  # no-op drain when the scanner thread runs; advances the scanner when it does not (tests, tools)
         return snapshot()
 
+    @app.get("/api/overlay")
+    def overlay():
+        """The pack in log order with v2's verdict per card; what overlay/draft.qml draws over Arena's cards."""
+        s = session.snapshot()
+        v2 = {r["card_name"]: r for r in s["advisors"].get("v2") or []}
+        up = {r["card_name"]: r["rank"] for r in s["advisors"].get("upstream") or []}
+        cards = []
+        for c in s["pack"]:
+            r = v2.get(c["name"])
+            gih = ((c.get("deck_colors") or {}).get("All Decks") or {}).get("gihwr") or 0
+            why = (r or {}).get("reasoning") or [""]
+            cards.append({"name": c["name"], "rank": r and r["rank"], "score": r and r["contextual_score"],
+                          "orders": why[0] if why[0].startswith("Fit #") else "",
+                          "upstream": up.get(c["name"]), "gihwr": gih})
+        b = (s.get("v2_split") or {}).get("branch")
+        line = "" if not b else (f"Switch: {b['card']} over {b['over']} (+{b['gap']:.1f})" if b["take"] else f"Stay: {b['over']} (not {b['card']})")
+        return {"status": s["status"], "pick": [s["pack_number"], s["pick_number"]], "cards": cards, "branch": line}
+
     @app.post("/api/draft/rescan")
     def rescan():
         session.rescan()
