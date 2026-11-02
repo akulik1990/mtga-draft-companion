@@ -8,7 +8,8 @@
  "combos": [],
  "notes": {
   "FIX_BONUS": "Top players' FRA draft video (2026-11-02): 'always take the land unless it's so above replacement'. FRA top-drafter train top-1 55.76 -> 56.11, test 55.87 -> 56.33 (top-3 85.79 -> 86.58); mock decks 54.58 -> 54.54 (100 fresh tables); dual lands per draft 0.28 -> 0.97. Bonus 1-6 all similar; 3 is the middle.",
-  "themes": "Synergy hypotheses from FRA guides, recorded 2026-11-02 for testing (tools/fit_themes.py); not applied by the engine. Patterns match lower-cased oracle text."
+  "themes": "Synergy hypotheses from FRA guides, recorded 2026-11-02 for testing (tools/fit_themes.py); not applied by the engine. Patterns match lower-cased oracle text.",
+  "splash_claims": "Guides on splashing, to check against fitted splash/three rules: slow decks (ramp, graveyard, control) splash, aggro does not (LLU #258); 3 sources minimum, 4 ideal, scale with real fixers, basics alone do not count (LLU #258); double-pip splashes work with 7-8 sources thanks to duals, landcyclers, Murmuring Volume (State of the Format; our deck_features showed -2.0 points per double-pip splash copy); splash order: single-pip raw power, then card advantage or removal to fill gaps, then to replace filler (LLU #258); RG ramp often ends 3-5 colours (State of the Format); Heartwood makes red the easiest splash for green."
  },
  "themes": {
   "surveil": {
@@ -26,7 +27,8 @@
     "https://www.youtube.com/watch?v=XPPMF-xrFjk (LLU FRA rare + mythic set review)"
    ],
    "video_claims": [
-    "Videos add Proctor of Potential, Denzilore Fatehold, Diviner of Victory, Fatehold Charm, Eye of Jace; WU named one of the strongest decks because its cards pull the same way."
+    "Videos add Proctor of Potential, Denzilore Fatehold, Diviner of Victory, Fatehold Charm, Eye of Jace; WU named one of the strongest decks because its cards pull the same way.",
+    "Set reviews: surveil has the most support of any synergy in the set; Saheeli, Consul of Oversight needs a Jace token present; Surveillance Phantasm is good on turn 2 and turn 10."
    ]
   },
   "jace": {
@@ -42,10 +44,14 @@
     "https://blog.cardkingdom.com/reality-fracture-draft-guide/",
     "https://limitedmtg.com/reality-fracture/",
     "https://www.youtube.com/watch?v=_LfIxIuRQI0 (LLU FRA set review, multicolour + colourless)",
-    "https://www.youtube.com/watch?v=XPPMF-xrFjk (LLU FRA rare + mythic set review)"
+    "https://www.youtube.com/watch?v=XPPMF-xrFjk (LLU FRA rare + mythic set review)",
+    "https://www.youtube.com/watch?v=yAsCF-NNrLs (LLU #261, Saying Goodbye to Reality Fracture, ft. Marc; transcript pasted by the user)"
    ],
    "video_claims": [
-    "Videos add Avatar of Burgeoning Echoes, Sanctum Lurker, Repurposed Enforcer, Theorist's Sanctum, Jace's Machinations, Tam's Resistance; Kiora of Salt and Sand an 'upside trap'."
+    "Videos add Avatar of Burgeoning Echoes, Sanctum Lurker, Repurposed Enforcer, Theorist's Sanctum, Jace's Machinations, Tam's Resistance; Kiora of Salt and Sand an 'upside trap'.",
+    "LLU #261: Way of the Mind Sculptor pairs with other ways' -2+ abilities and needs some empower cards; Way of the Healer good in WU, narrow elsewhere; Jace mostly downticks once.",
+    "Set reviews: Protege's Awakening only good with ways to spend big loyalty chunks (Amphisbaena, Kiora of Salt and Sand line); Way of the Cryomancer wants 7-8 empower cards; Campus Crier empowers from the graveyard at instant speed.",
+    "State of the Format: play 3 Ways at most (one loyalty activation a turn); Way of the Healer wants 5-7 empower cards; ranking Healer > Mind Sculptor > Paradox > Wildspeaker."
    ]
   },
   "graveyard": {
@@ -61,10 +67,13 @@
     "https://blog.cardkingdom.com/reality-fracture-draft-guide/",
     "https://limitedmtg.com/reality-fracture/",
     "https://www.youtube.com/watch?v=_LfIxIuRQI0 (LLU FRA set review, multicolour + colourless)",
-    "https://www.youtube.com/watch?v=XPPMF-xrFjk (LLU FRA rare + mythic set review)"
+    "https://www.youtube.com/watch?v=XPPMF-xrFjk (LLU FRA rare + mythic set review)",
+    "https://www.youtube.com/watch?v=yAsCF-NNrLs (LLU #261, Saying Goodbye to Reality Fracture, ft. Marc; transcript pasted by the user)"
    ],
    "video_claims": [
-    "Videos: Theorix Metamage/Charm, Void Extrapolator, Paradox Shaper mill via the prepared spell; Recursive Recruitment can be splashed in BG; Hapatra wants big cards (landcyclers are MV 6) in the graveyard; Paradox Shaper does not share a deck with threshold."
+    "Videos: Theorix Metamage/Charm, Void Extrapolator, Paradox Shaper mill via the prepared spell; Recursive Recruitment can be splashed in BG; Hapatra wants big cards (landcyclers are MV 6) in the graveyard; Paradox Shaper does not share a deck with threshold.",
+    "LLU #261: Omit Variables (the UB prepared spell) is close to a card's worth because so much uses the graveyard: Twinned Vision, Theoretical Necromancer (want multiples), Recursive Recruitment (flashback with two 6/6s; often rummage the front half away).",
+    "LLU #258: Something Worth Saving is the key BG enabler; one Theoretical Necromancer, two only with heavy mill; Blessed Ghoul wants 4-5 self-mill cards; Null Summoner must be cast, not reanimated."
    ]
   },
   "noncombat": {
@@ -79,10 +88,13 @@
     "https://blog.cardkingdom.com/reality-fracture-draft-guide/",
     "https://limitedmtg.com/reality-fracture/",
     "https://www.youtube.com/watch?v=_LfIxIuRQI0 (LLU FRA set review, multicolour + colourless)",
-    "https://www.youtube.com/watch?v=XPPMF-xrFjk (LLU FRA rare + mythic set review)"
+    "https://www.youtube.com/watch?v=XPPMF-xrFjk (LLU FRA rare + mythic set review)",
+    "https://www.youtube.com/watch?v=yAsCF-NNrLs (LLU #261, Saying Goodbye to Reality Fracture, ft. Marc; transcript pasted by the user)"
    ],
    "video_claims": [
-    "Videos: Master of Barbs with Ingris Stingerquill 'game over'; cast payoffs before enablers; hosts trust BR least."
+    "Videos: Master of Barbs with Ingris Stingerquill 'game over'; cast payoffs before enablers; hosts trust BR least.",
+    "LLU #261: Command the Stage needs multiples plus Hallway Heckler; 75-80% of RB decks are midrange piles that do not want it; Vicious Verse underpowered.",
+    "Set reviews: Screeching Soulbreaker as a repeatable free trigger; Tomik, Izzet Sparkmage with Fulminous Forte; Danitha, Spear of Agony grows on Vicious Verse."
    ]
   },
   "lifegain": {
@@ -97,10 +109,14 @@
     "https://blog.cardkingdom.com/reality-fracture-draft-guide/",
     "https://limitedmtg.com/reality-fracture/",
     "https://www.youtube.com/watch?v=_LfIxIuRQI0 (LLU FRA set review, multicolour + colourless)",
-    "https://www.youtube.com/watch?v=XPPMF-xrFjk (LLU FRA rare + mythic set review)"
+    "https://www.youtube.com/watch?v=XPPMF-xrFjk (LLU FRA rare + mythic set review)",
+    "https://www.youtube.com/watch?v=yAsCF-NNrLs (LLU #261, Saying Goodbye to Reality Fracture, ft. Marc; transcript pasted by the user)"
    ],
    "video_claims": [
-    "Videos: Germinate Recruits (X 2/2s, X = life gained this turn), Ajani Resolute 'dream' payoff; the WG prepared spell gains only 1; Vigorbloom Charm is the best partner."
+    "Videos: Germinate Recruits (X 2/2s, X = life gained this turn), Ajani Resolute 'dream' payoff; the WG prepared spell gains only 1; Vigorbloom Charm is the best partner.",
+    "LLU #261: Germinate Recruits made 6+ tokens in the right deck despite F/D- stats.",
+    "Set reviews: Unflinching Hortimancer with the WG prepared spell (two counters a turn); Greenhouse Propagator curves into Bloombrute.",
+    "LLU #258: Lyra, Archangel of Dawn counters every Angel; pair with Blossom-Blessed Angel."
    ]
   },
   "aristocrats": {
@@ -134,6 +150,9 @@
    "sources": [
     "https://draftsim.com/mtg-reality-fracture-draft-guide/",
     "https://blog.cardkingdom.com/reality-fracture-draft-guide/"
+   ],
+   "video_claims": [
+    "LLU #258: UR control (blue draw + red removal, 3-4 resilient finishers) beats UR tempo-prowess; tempo wants 10-12 creatures, Unsummon, 2-3 Twinned Vision; prepared spells count as noncreature casts (Traxos, Plan for All Outcomes)."
    ]
   },
   "counters": {
@@ -208,7 +227,12 @@
    "claim": "RG/UR artifacts: Heartwood, Thopter and Treasure makers feed Craterclaw Colossus (+X per artifact, 'medium to strong with one artifact'), Puppet Crafting (wants 6-7 artifacts or enchantments), Draconic Visitor, Saheeli's thopters.",
    "sources": [
     "https://www.youtube.com/watch?v=_LfIxIuRQI0 (LLU FRA set review, multicolour + colourless)",
-    "https://www.youtube.com/watch?v=XPPMF-xrFjk (LLU FRA rare + mythic set review)"
+    "https://www.youtube.com/watch?v=XPPMF-xrFjk (LLU FRA rare + mythic set review)",
+    "https://www.youtube.com/watch?v=yAsCF-NNrLs (LLU #261, Saying Goodbye to Reality Fracture, ft. Marc; transcript pasted by the user)"
+   ],
+   "video_claims": [
+    "LLU #261: Karn, Gilded Guardian in Golgari/Sultai with 4-5+ Heartwood tokens (Konstrari Improviser wheels late in the format); Marwyn, the Preserver plus the counters land cast it for 5-6.",
+    "LLU #258: Craterclaw Colossus needs about 4 artifacts (Woodwork Prodigy, Saheeli thopters); 2 is often not enough. Set reviews: Pia, Determined Rebuilder gets much better with one other artifact."
    ]
   },
   "prepared": {
@@ -252,6 +276,155 @@
    "claim": "Self-mill payoffs counting the graveyard: Cruel Calculations (draw X milled this turn), Tarmogoyf, Dark Matter Manipulator; decking is a real risk with Liliana the Repentant.",
    "sources": [
     "https://www.youtube.com/watch?v=XPPMF-xrFjk (LLU FRA rare + mythic set review)"
+   ]
+  },
+  "card_advantage": {
+   "pairs": [
+    "WU",
+    "UB",
+    "UG",
+    "UR"
+   ],
+   "enabler_tags": [
+    "card_advantage"
+   ],
+   "count": true,
+   "claim": "Blue decks want 3-4 card advantage spells; when short, play filler draw like Sphinx's Approach (stats undersell it).",
+   "sources": [
+    "https://www.youtube.com/watch?v=yAsCF-NNrLs (LLU #261, Saying Goodbye to Reality Fracture, ft. Marc; transcript pasted by the user)"
+   ]
+  },
+  "card_advantage_short": {
+   "pairs": [
+    "WU",
+    "UB",
+    "UG",
+    "UR"
+   ],
+   "enabler_tags": [
+    "card_advantage"
+   ],
+   "count": true,
+   "shortfall": 4,
+   "claim": "Same claim as a threshold: decks below 4 card advantage spells lose.",
+   "sources": [
+    "https://www.youtube.com/watch?v=yAsCF-NNrLs (LLU #261, Saying Goodbye to Reality Fracture, ft. Marc; transcript pasted by the user)"
+   ]
+  },
+  "decking": {
+   "pairs": [
+    "UB"
+   ],
+   "enabler": "\\bmill\\b|\\bmills\\b",
+   "payoff": "library has no cards|put target card from your graveyard on the bottom of your library",
+   "claim": "UB: Omit Variables mill plus Paradox Shaper and Fblthp, Impossibly Lost make an empty-library win plan; Theoretical Necromancer rebuys.",
+   "sources": [
+    "https://www.youtube.com/watch?v=yAsCF-NNrLs (LLU #261, Saying Goodbye to Reality Fracture, ft. Marc; transcript pasted by the user)"
+   ]
+  },
+  "legends": {
+   "pairs": [
+    "WR",
+    "BR",
+    "UR"
+   ],
+   "enabler": "legendary creature",
+   "payoff": "if you control a legendary|legendary (creature|card|spell)",
+   "claim": "Wrath of the Bloodmane costs 1 less with a legendary creature (about 3 legends a pack); Fatehold Aspirant returns a legendary card.",
+   "sources": [
+    "LLU FRA set review, single colours (W/U/B/R/G), transcripts pasted by the user"
+   ]
+  },
+  "wizards": {
+   "pairs": [
+    "WU",
+    "BR"
+   ],
+   "enabler": "named cadet|wizard soldier",
+   "payoff": "other wizard tokens?|wizard tokens? you control|wizards you control",
+   "claim": "Command the Stage grows every Wizard token: Cadets from the WU prepared spell, Hexhaven Battalion, the RB charm.",
+   "sources": [
+    "LLU FRA set review, single colours (W/U/B/R/G), transcripts pasted by the user"
+   ]
+  },
+  "discard": {
+   "pairs": [
+    "BR",
+    "UR"
+   ],
+   "enabler": "discards? (a|one|two|that) card|draw a card, then discard|discard a card, then draw|each opponent discards",
+   "payoff": "whenever (a player|you|an opponent) discards?|when you discard",
+   "claim": "Tinybones pings on every discard; Rank Rat, Hallway Heckler and loot effects feed it; Titanbones gains when discarded.",
+   "sources": [
+    "LLU FRA set review, single colours (W/U/B/R/G), transcripts pasted by the user"
+   ]
+  },
+  "reanimate_cyclers": {
+   "pairs": [
+    "BG",
+    "UB"
+   ],
+   "enabler": "landcycling",
+   "payoff": "from your graveyard to the battlefield",
+   "claim": "Rewrite Regrets (mana value 6 or less) and Generous Revival bring back landcyclers cycled early, e.g. Apex Witchstalker.",
+   "sources": [
+    "LLU FRA set review, single colours (W/U/B/R/G), transcripts pasted by the user",
+    "The Reality Fracture State of the Format Address Draft Guide (transcript pasted by the user)"
+   ]
+  },
+  "sac_jace": {
+   "pairs": [
+    "WB",
+    "BG",
+    "UB"
+   ],
+   "enabler": "empower jace",
+   "payoff": "sacrifice (a|another) creature or planeswalker|sacrifice (a|another) planeswalker",
+   "claim": "Black uses a spent 1-loyalty Jace as sacrifice fodder: Silence the Echo, Winter Tormented Loner, Loot the Anomaly.",
+   "sources": [
+    "LLU FRA set review, single colours (W/U/B/R/G), transcripts pasted by the user"
+   ]
+  },
+  "heroic": {
+   "pairs": [
+    "WG",
+    "WR"
+   ],
+   "enabler": "target creature you control|equip \\{|equipped creature",
+   "enabler_types": [
+    "Instant"
+   ],
+   "payoff": "spell that targets a creature you control|whenever you cast an equipment",
+   "claim": "Danitha, Sword of Hope draws on equipment and on spells targeting your creatures (the WG prepared spell, tricks); needs about 9-10 such cards, 4-5 is not enough.",
+   "sources": [
+    "LLU FRA set review, single colours (W/U/B/R/G), transcripts pasted by the user",
+    "The Reality Fracture State of the Format Address Draft Guide (transcript pasted by the user)"
+   ]
+  },
+  "go_wide": {
+   "pairs": [
+    "WU",
+    "WB",
+    "WG"
+   ],
+   "enabler": "create (a|an|two|three|x|that many) [^.]*creature tokens?",
+   "payoff": "creatures you control get \\+",
+   "claim": "White go-wide: Hexhaven Battalion, Way of the Healer, Fatehold Chronologist make tokens for team pumps (Shatterwing Pegasus, Fatehold Charm).",
+   "sources": [
+    "The Reality Fracture State of the Format Address Draft Guide (transcript pasted by the user)"
+   ]
+  },
+  "removal_count": {
+   "pairs": [],
+   "enabler_tags": [
+    "removal"
+   ],
+   "count": true,
+   "shortfall": 6,
+   "claim": "Midrange wants 6-7 removal spells (counterspells count); below that, splash for removal.",
+   "sources": [
+    "The Reality Fracture State of the Format Address Draft Guide (transcript pasted by the user)",
+    "https://www.youtube.com/watch? (LLU #258, Draft Navigation, Splashing, and How to Blue-Red; transcript pasted by the user)"
    ]
   }
  }

@@ -3,7 +3,8 @@
     uv run python tools/fit_themes.py FRA        # writes the synergy section of the set's fitted.json
 
 Themes are hypotheses in the set's manual.json ("themes": patterns over oracle text, from guides and videos, with
-sources). For each theme a deck gets x = enablers x payoffs / 23 (cards tagged by companion/advisor_v2/synergy.roles).
+sources). For each theme a deck gets x = enablers x payoffs / 23 (cards tagged by companion/advisor_v2/synergy.roles),
+or for a "count" theme the number of enablers (or, with "shortfall": n, how far below n the deck is).
 The deck model's design (context, shape, card counts; tools/deck_model.py) is refitted with the theme columns added, on
 its own draft-id split, at its chosen penalty. Reported per theme, alone and all together: held-out log-loss gain over
 the model without themes, the coefficient with an approximate SE (Wald, theme block only), and what a typical package
@@ -100,7 +101,13 @@ def main(argv=None):
         tags = [roles(by[n], th) if n in by else (False, False) for n in names]
         e = np.array([float(x[0]) for x in tags], np.float32)
         pay = np.array([float(x[1]) for x in tags], np.float32)
-        x = (C @ e) * (C @ pay) / 23.0
+        if th.get("count"):
+            # A deck-level count ("blue decks want 3-4 card advantage spells"): the number of tagged cards, or how far
+            # short of a target it falls ("shortfall": n).
+            k = C @ e
+            x = np.maximum(0.0, th["shortfall"] - k) if th.get("shortfall") else k
+        else:
+            x = (C @ e) * (C @ pay) / 23.0
         typical = float(np.median(x[x > 0])) if (x > 0).any() else 0.0
         sd = float(x[~test].std()) or 1.0
         T.append(x / sd)
@@ -127,7 +134,7 @@ def main(argv=None):
     for i, t in enumerate(keys):
         gain, b, se = out[i]
         pts = 25.0 * b * info[t]["typical_x"] / info[t]["sd_x"]  # d(win %)/d(logit) = 25 at 50%
-        print(f"{t:12s} {100 * info[t]['decks_with']:5.1f}% {1e5 * gain:+19.1f}  {b:+8.3f} {se:6.3f} {b / se:+5.1f} {pts:+19.2f}")
+        print(f"{t:12s} {100 * info[t]['decks_with']:5.1f}% {1e5 * gain:+19.1f}  {b:+8.3f} {se:6.3f} {(b / se if se else float("nan")):+5.1f} {pts:+19.2f}")
         result["themes"][t] = {**info[t], "heldout_gain": round(gain, 8), "beta_per_sd": round(b, 4), "se": round(se, 4),
                                "typical_points": round(pts, 2), "claim": themes[t].get("claim", ""), "sources": themes[t].get("sources", [])}
     path = config.write_fitted(a.set, "synergy", result, "tools/fit_themes.py: manual.json themes tested as enablers x payoffs terms in the deck model, held-out games")
