@@ -1,6 +1,7 @@
 // Badges over Arena's draft cards: a transparent, click-through layer-shell surface (niri overlay layer).
 // Run with overlay/run.sh. OVERLAY_TEST=1 draws 14 dummy badges to check alignment without a draft.
-// ponytail: assumes Arena fills the output and lays the pack out in log order, five per row. Calibrate below.
+// The API sorts the pack the way Arena displays it. Arena has two draft layouts; one screen pixel tells them apart.
+// ponytail: assumes Arena fills the output. Grids measured on 2560x1440, 2026-11-02.
 import QtQuick
 import Quickshell
 import Quickshell.Io
@@ -9,14 +10,15 @@ import Quickshell.Wayland
 ShellRoot {
     id: root
 
-    // Card grid as fractions of the screen, from a 16:9 capture of the draft screen.
-    property real x0: 0.1436      // left edge of column 1
-    property real dx: 0.1033      // column step
-    property real cardW: 0.0907
-    property real y0: 0.1682      // top edge of row 1
-    property real dy: 0.2511      // row step
-    property real cardH: 0.235
-    property int perRow: 5
+    // Card grids as fractions of the screen. side: deck list on the right, 5 per row; bottom: deck under the pack, 8 per row.
+    readonly property var layouts: ({
+        side: { x0: 0.145, dx: 0.1025, cardW: 0.09, y0: 0.1707, dy: 0.2489, cardH: 0.227, perRow: 5 },
+        bottom: { x0: 0.1715, dx: 0.0835, cardW: 0.069, y0: 0.1636, dy: 0.1858, cardH: 0.17, perRow: 8 }
+    })
+    // The bottom layout's deck panel covers this point in a flat (9,16,16); the side layout shows the pack or backdrop there.
+    readonly property var probe: [0.5, 0.85]
+    property string layoutName: "side"
+    readonly property var g: layouts[layoutName]
     property bool showNames: true // card name on each badge, to spot a wrong order at a glance
 
     property string screenName: Quickshell.env("OVERLAY_SCREEN") || "DP-1"
@@ -48,16 +50,34 @@ ShellRoot {
             if (root.test) { root.data = root.dummy(); root.arenaFocused = true; return; }
             root.poll();
             if (!focus.running) focus.running = true;
+            if (root.arenaFocused && !pixel.running) pixel.running = true;
+        }
+    }
+
+    // Shown while Arena is the active window on our output, focused or not (the other monitor may have focus).
+    Process {
+        id: focus
+        command: ["sh", "-c", "niri msg --json workspaces; niri msg --json windows"]
+        stdout: StdioCollector {
+            onStreamFinished: {
+                try {
+                    const [spaces, windows] = text.trim().split("\n").map(JSON.parse);
+                    const ws = spaces.find(w => w.output === root.screenName && w.is_active);
+                    const win = windows.find(w => w.id === (ws || {}).active_window_id);
+                    root.arenaFocused = !!win && win.app_id === "steam_app_2141910";
+                } catch (e) { root.arenaFocused = false; }
+            }
         }
     }
 
     Process {
-        id: focus
-        command: ["niri", "msg", "--json", "focused-window"]
+        id: pixel
+        command: ["sh", "-c", "grim -t ppm -g \"" + Math.round(win.screen.x + root.probe[0] * win.width) + "," + Math.round(win.screen.y + root.probe[1] * win.height) + " 1x1\" - | tail -c 3 | od -An -tu1"]
         stdout: StdioCollector {
             onStreamFinished: {
-                try { root.arenaFocused = (JSON.parse(text) || {}).app_id === "steam_app_2141910"; }
-                catch (e) { root.arenaFocused = false; }
+                const v = text.trim().split(/\s+/).map(Number);
+                if (v.length === 3)
+                    root.layoutName = v.every((c, i) => Math.abs(c - [9, 16, 16][i]) <= 6) ? "bottom" : "side";
             }
         }
     }
@@ -76,8 +96,8 @@ ShellRoot {
 
         Text {
             visible: !!root.data && !!root.data.branch
-            x: win.width * root.x0
-            y: win.height * root.y0 - height - 6
+            x: win.width * root.g.x0
+            y: win.height * root.g.y0 - height - 6
             text: root.data ? root.data.branch : ""
             color: "white"; style: Text.Outline; styleColor: "black"
             font.pixelSize: win.height * 0.022; font.bold: true
@@ -88,11 +108,11 @@ ShellRoot {
             delegate: Rectangle {
                 required property var modelData
                 required property int index
-                readonly property int col: index % root.perRow
-                readonly property int row: Math.floor(index / root.perRow)
-                x: win.width * (root.x0 + col * root.dx)
-                y: win.height * (root.y0 + row * root.dy + root.cardH * 0.36)
-                width: win.width * root.cardW
+                readonly property int col: index % root.g.perRow
+                readonly property int row: Math.floor(index / root.g.perRow)
+                x: win.width * (root.g.x0 + col * root.g.dx)
+                y: win.height * (root.g.y0 + row * root.g.dy + root.g.cardH * 0.1)
+                width: win.width * root.g.cardW
                 height: badge.implicitHeight + 8
                 radius: 4
                 color: modelData.rank === 1 ? "#e6c8a000" : modelData.rank <= 3 ? "#e62e7d32" : "#cc202020"
@@ -115,7 +135,7 @@ ShellRoot {
                     }
                     Text {
                         visible: root.showNames
-                        width: win.width * root.cardW - 8
+                        width: win.width * root.g.cardW - 8
                         horizontalAlignment: Text.AlignHCenter
                         elide: Text.ElideRight
                         text: modelData.name

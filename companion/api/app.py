@@ -11,12 +11,35 @@ from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 
 from companion import ROOT
+from companion.advisor_v2.lanes import pips
 from companion.session import DraftSession
 
 log = logging.getLogger(__name__)
 
 FRONTEND_BUILD = ROOT / "frontend" / "build"
 POLL_SECONDS = 0.5
+RARITY = {"mythic": 0, "rare": 1, "uncommon": 2, "common": 3}
+PAIRS = ["WU", "UB", "BR", "RG", "GW", "WB", "UR", "BG", "RW", "GU"]
+
+
+def arena_order(card):
+    """Where Arena's draft screen puts a card: rarity, then mono colours WUBRG, multicolour, colourless, lands.
+
+    Colours come from the front face's mana cost, hybrid pips counting both colours.
+    ponytail: from one FRA pack (2026-11-02); pair order, three colours and same-group ties (cmc, name) are guesses.
+    """
+    front = (card.get("mana_cost") or "").split("//")[0]
+    colours = "".join(c for c in "WUBRG" if any(c in o for o in pips({"mana_cost": front, "types": []})))
+    if "Land" in (card.get("types") or []):
+        group = (3, 0)
+    elif len(colours) == 1:
+        group = (0, "WUBRG".index(colours))
+    elif colours:
+        pair = next((i for i, p in enumerate(PAIRS) if set(p) == set(colours)), None)
+        group = (1, pair if pair is not None else len(PAIRS) + len(colours))
+    else:
+        group = (2, 0)
+    return RARITY.get(card.get("rarity"), 4), group, card.get("cmc") or 0, card.get("name") or ""
 
 
 class Hub:
@@ -75,7 +98,7 @@ def create_app(session: DraftSession, *, run_scanner: bool = True, frontend: Pat
         v2 = {r["card_name"]: r for r in s["advisors"].get("v2") or []}
         up = {r["card_name"]: r["rank"] for r in s["advisors"].get("upstream") or []}
         cards = []
-        for c in s["pack"]:
+        for c in sorted(s["pack"], key=arena_order):
             r = v2.get(c["name"])
             gih = ((c.get("deck_colors") or {}).get("All Decks") or {}).get("gihwr") or 0
             why = (r or {}).get("reasoning") or [""]

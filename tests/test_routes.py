@@ -148,7 +148,8 @@ def test_pages_are_revalidated_but_bundles_cached(session, tmp_path):
         assert "cache-control" not in client.get("/_app/immutable/x.js").headers
 
 
-def test_overlay_keeps_log_order_and_ranks(session):
+def test_overlay_uses_arena_order_and_ranks(session):
+    from companion.api.app import arena_order
     from tests.conftest import P1P1
 
     append(session.log, JOIN)
@@ -156,5 +157,22 @@ def test_overlay_keeps_log_order_and_ranks(session):
     session.poll()
     with TestClient(create_app(session, run_scanner=False)) as client:
         o = client.get("/api/overlay").json()
-    assert [c["name"] for c in o["cards"]] == [c["name"] for c in session.snapshot()["pack"]]
+    assert [c["name"] for c in o["cards"]] == [c["name"] for c in sorted(session.snapshot()["pack"], key=arena_order)]
     assert sorted(c["rank"] for c in o["cards"] if c["rank"] is not None)[0] == 1
+
+
+def test_arena_order_matches_a_live_fra_pack():
+    from companion.api.app import arena_order
+
+    def card(name, rarity, cost, types=("Creature",), cmc=3):
+        return {"name": name, "rarity": rarity, "mana_cost": cost, "types": list(types), "cmc": cmc}
+
+    # Pack 1 pick 1 of a live Reality Fracture draft, 2026-11-02, in the order Arena showed it.
+    screen = [card("Jace", "rare", "{3}{U}{U}", cmc=5), card("Master of Barbs", "rare", "{1}{R}", cmc=2),
+              card("Precise Redaction", "uncommon", "{1}{U}", cmc=2), card("Mabel, Bitter Recluse", "uncommon", "{B}", cmc=1),
+              card("Twisted Fates", "uncommon", "{2}{W}{W}{B}", cmc=5), card("Mabel, Valley Hero", "uncommon", "{1}{R}{W}"),
+              card("Graft Surgeon", "common", "{2}{W}"), card("Silence the Echo", "common", "{1}{B}", cmc=2),
+              card("Hallway Heckler", "common", "{2}{R} // {B/R}"), card("Greenhouse Propagator", "common", "{2}{G}"),
+              card("Theorix Metamage", "common", "{2}{U/B} // {U/B}"), card("Charge the Sanctum", "common", "{2}{R/W}"),
+              card("Afterthought Sentry", "common", "{2}", cmc=2)]
+    assert sorted(reversed(screen), key=arena_order) == screen
