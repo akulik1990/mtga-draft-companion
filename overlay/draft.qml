@@ -42,7 +42,8 @@ ShellRoot {
         if (fx >= d[0] && fx <= d[2] && fy >= d[1] && fy <= d[3]) return true;
         const col = Math.floor((fx - g.x0) / g.dx), row = Math.floor((fy - g.y0) / g.dy);
         return col >= 0 && col < g.perRow && row >= 0 && fx - g.x0 - col * g.dx <= g.cardW
-            && fy - g.y0 - row * g.dy <= g.cardH && row * g.perRow + col < (data.cards || []).length + 1;  // + the basic land Arena shows but the log omits
+            && fy - g.y0 - row * g.dy <= g.cardH && row * g.perRow + col < (data.cards || []).length;
+        // ponytail: a basic land Arena sometimes shows after the last card is not in the log, so hovering it does not hide the overlay.
     }
 
     function poll() {
