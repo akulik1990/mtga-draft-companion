@@ -25,3 +25,17 @@ def bonus(table, card, pool, lane):
             games, _, lift = row
             total += lift * games / (games + K)
     return total
+
+
+def roles(card, theme):
+    """(enabler, payoff) for a card under one theme definition (a set's manual.json "themes" entry): patterns over the
+    lower-cased oracle text, or types / minimum mana value / names where the theme says so."""
+    import re
+
+    text = re.sub(r"\([^)]*\)", "", (card.get("oracle_text") or "").lower())  # reminder text is not the card's own
+    types = card.get("types") or []
+    enabler = bool(theme.get("enabler") and re.search(theme["enabler"], text)) or any(t in types for t in theme.get("enabler_types", ()))
+    payoff = bool(theme.get("payoff") and re.search(theme["payoff"], text)) or card.get("name") in theme.get("payoff_names", ())
+    if theme.get("payoff_min_cmc"):
+        payoff = payoff or ((card.get("cmc") or 0) >= theme["payoff_min_cmc"] and all(t in types for t in theme.get("payoff_types", ())))
+    return enabler, payoff

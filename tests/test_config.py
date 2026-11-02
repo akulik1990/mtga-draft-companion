@@ -55,3 +55,15 @@ def test_write_fitted_keeps_other_sections(tmp_path, monkeypatch):
     config.write_fitted("XYZ", "closecalls", {"buckets": []}, "test")
     assert config.fitted("XYZ", "prefs") == {"early": {"A": 1.0}}
     assert set(config.layer("XYZ", "fitted")["sources"]) == {"prefs", "closecalls"}
+
+
+def test_synergy_roles_ignore_reminder_text_and_use_types():
+    from companion.advisor_v2.synergy import roles
+
+    theme = {"enabler": r"empower jace", "payoff": r"jace tokens? you control", "enabler_types": ["Instant"]}
+    empower = {"oracle_text": "Empower Jace 2. (Put two loyalty counters on a Jace token you control.)", "types": ["Creature"]}
+    payoff = {"oracle_text": "Jace tokens you control have hexproof.", "types": ["Enchantment"]}
+    spell = {"oracle_text": "Draw a card.", "types": ["Instant"]}
+    assert roles(empower, theme) == (True, False)  # the reminder text's "Jace token you control" is not a payoff
+    assert roles(payoff, theme) == (False, True)
+    assert roles(spell, theme) == (True, False)

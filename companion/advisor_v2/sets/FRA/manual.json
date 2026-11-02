@@ -1,10 +1,258 @@
 {
- "values": {"FIX_BONUS": 3.0},
+ "values": {
+  "FIX_BONUS": 3.0
+ },
  "pairs": {},
  "types": {},
  "cards": {},
  "combos": [],
  "notes": {
-  "FIX_BONUS": "Top players' FRA draft video (2026-11-02): 'always take the land unless it's so above replacement'. FRA top-drafter train top-1 55.76 -> 56.11, test 55.87 -> 56.33 (top-3 85.79 -> 86.58); mock decks 54.58 -> 54.54 (100 fresh tables); dual lands per draft 0.28 -> 0.97. Bonus 1-6 all similar; 3 is the middle."
+  "FIX_BONUS": "Top players' FRA draft video (2026-11-02): 'always take the land unless it's so above replacement'. FRA top-drafter train top-1 55.76 -> 56.11, test 55.87 -> 56.33 (top-3 85.79 -> 86.58); mock decks 54.58 -> 54.54 (100 fresh tables); dual lands per draft 0.28 -> 0.97. Bonus 1-6 all similar; 3 is the middle.",
+  "themes": "Synergy hypotheses from FRA guides, recorded 2026-11-02 for testing (tools/fit_themes.py); not applied by the engine. Patterns match lower-cased oracle text."
+ },
+ "themes": {
+  "surveil": {
+   "pairs": [
+    "WU"
+   ],
+   "enabler": "\\bsurveil \\d|\\bscry \\d|empower jace",
+   "payoff": "whenever you scry or surveil|scried or surveilled|whenever you surveil|surveilled this turn",
+   "claim": "WU surveil: Peer Review, Fatehold Chronologist, Semester Foreseer and every empower card feed Prudent Fateseer, Surveillance Phantasm, Desperate Futurescribe, Denzilore Fatehold.",
+   "sources": [
+    "https://draftsim.com/mtg-reality-fracture-draft-guide/",
+    "https://blog.cardkingdom.com/reality-fracture-draft-guide/",
+    "https://limitedmtg.com/reality-fracture/",
+    "https://www.youtube.com/watch?v=_LfIxIuRQI0 (LLU FRA set review, multicolour + colourless)",
+    "https://www.youtube.com/watch?v=XPPMF-xrFjk (LLU FRA rare + mythic set review)"
+   ],
+   "video_claims": [
+    "Videos add Proctor of Potential, Denzilore Fatehold, Diviner of Victory, Fatehold Charm, Eye of Jace; WU named one of the strongest decks because its cards pull the same way."
+   ]
+  },
+  "jace": {
+   "pairs": [
+    "UG",
+    "WU"
+   ],
+   "enabler": "empower jace",
+   "payoff": "control a jace|jace tokens? you control|loyalty abilit|planeswalkers? you control|another planeswalker",
+   "claim": "UG empower: Jace tokens grow into card draw; Way of the Mind Sculptor, Tam, Kiora of Salt and Sand and Mind Meanderer pay off; Arcane Amphisbaena, Keeper of the Quiet Hour, Mindseeker Oculus enable.",
+   "sources": [
+    "https://draftsim.com/mtg-reality-fracture-draft-guide/",
+    "https://blog.cardkingdom.com/reality-fracture-draft-guide/",
+    "https://limitedmtg.com/reality-fracture/",
+    "https://www.youtube.com/watch?v=_LfIxIuRQI0 (LLU FRA set review, multicolour + colourless)",
+    "https://www.youtube.com/watch?v=XPPMF-xrFjk (LLU FRA rare + mythic set review)"
+   ],
+   "video_claims": [
+    "Videos add Avatar of Burgeoning Echoes, Sanctum Lurker, Repurposed Enforcer, Theorist's Sanctum, Jace's Machinations, Tam's Resistance; Kiora of Salt and Sand an 'upside trap'."
+   ]
+  },
+  "graveyard": {
+   "pairs": [
+    "UB",
+    "BG"
+   ],
+   "enabler": "\\bmill\\b|\\bmills\\b|surveil \\d|discard",
+   "payoff": "threshold|seven or more cards in your graveyard|cards in your graveyard|from your graveyard|flashback",
+   "claim": "UB threshold / BG recursion: Omit Variables, Void Extrapolator, Primal Witchstalker fill the graveyard for Recursive Recruitment, Theoretical Necromancer, Null Summoner, Rewrite Regrets.",
+   "sources": [
+    "https://draftsim.com/mtg-reality-fracture-draft-guide/",
+    "https://blog.cardkingdom.com/reality-fracture-draft-guide/",
+    "https://limitedmtg.com/reality-fracture/",
+    "https://www.youtube.com/watch?v=_LfIxIuRQI0 (LLU FRA set review, multicolour + colourless)",
+    "https://www.youtube.com/watch?v=XPPMF-xrFjk (LLU FRA rare + mythic set review)"
+   ],
+   "video_claims": [
+    "Videos: Theorix Metamage/Charm, Void Extrapolator, Paradox Shaper mill via the prepared spell; Recursive Recruitment can be splashed in BG; Hapatra wants big cards (landcyclers are MV 6) in the graveyard; Paradox Shaper does not share a deck with threshold."
+   ]
+  },
+  "noncombat": {
+   "pairs": [
+    "BR"
+   ],
+   "enabler": "deals? \\d+ damage to (target|each) opponent|damage to each opponent|vicious verse",
+   "payoff": "noncombat damage",
+   "claim": "BR pings: Stingerquill Voxmancer (Vicious Verse), Screeching Soulbreaker, Hallway Heckler enable Grim Repriser, Master of Barbs, Massacre Girl, Command the Stage.",
+   "sources": [
+    "https://draftsim.com/mtg-reality-fracture-draft-guide/",
+    "https://blog.cardkingdom.com/reality-fracture-draft-guide/",
+    "https://limitedmtg.com/reality-fracture/",
+    "https://www.youtube.com/watch?v=_LfIxIuRQI0 (LLU FRA set review, multicolour + colourless)",
+    "https://www.youtube.com/watch?v=XPPMF-xrFjk (LLU FRA rare + mythic set review)"
+   ],
+   "video_claims": [
+    "Videos: Master of Barbs with Ingris Stingerquill 'game over'; cast payoffs before enablers; hosts trust BR least."
+   ]
+  },
+  "lifegain": {
+   "pairs": [
+    "WG"
+   ],
+   "enabler": "gains? \\d+ life|gain life equal|lifelink",
+   "payoff": "whenever you gain life|if you gained life",
+   "claim": "WG lifegain: Blessed Ghoul, Medic's Kitesail, Seed Suture creatures trigger Bloombrute, Titanbones, Kwia Vigorbloom, Unflinching Hortimancer, Lyra.",
+   "sources": [
+    "https://draftsim.com/mtg-reality-fracture-draft-guide/",
+    "https://blog.cardkingdom.com/reality-fracture-draft-guide/",
+    "https://limitedmtg.com/reality-fracture/",
+    "https://www.youtube.com/watch?v=_LfIxIuRQI0 (LLU FRA set review, multicolour + colourless)",
+    "https://www.youtube.com/watch?v=XPPMF-xrFjk (LLU FRA rare + mythic set review)"
+   ],
+   "video_claims": [
+    "Videos: Germinate Recruits (X 2/2s, X = life gained this turn), Ajani Resolute 'dream' payoff; the WG prepared spell gains only 1; Vigorbloom Charm is the best partner."
+   ]
+  },
+  "aristocrats": {
+   "pairs": [
+    "WB"
+   ],
+   "enabler": "create (a|an|two|three|x) [^.]*creature token|sacrifice|return this card from your graveyard|exile this card from your graveyard",
+   "payoff": "whenever (another|a) (nontoken )?creature( or planeswalker)? you control dies|sacrifice another creature|sacrifice a creature|creatures? died this turn|each player sacrifices",
+   "claim": "WB sacrifice / recursion: recursive bodies (Gallia, Blessed Ghoul, Campus Crier) and token makers feed death payoffs (Edgar, Bloodline Recollector, Massacre Girl, Garruk Veiled Butcher).",
+   "sources": [
+    "https://draftsim.com/mtg-reality-fracture-draft-guide/",
+    "https://blog.cardkingdom.com/reality-fracture-draft-guide/",
+    "https://www.youtube.com/watch?v=_LfIxIuRQI0 (LLU FRA set review, multicolour + colourless)",
+    "https://www.youtube.com/watch?v=XPPMF-xrFjk (LLU FRA rare + mythic set review)"
+   ],
+   "video_claims": [
+    "Videos: Bloodline Recollector and Darklight Phoenix need 3+ / 2+ deaths a turn; Twisted Fates wants a big board, which fights Edgar's sacrifice plan."
+   ]
+  },
+  "spells": {
+   "pairs": [
+    "UR",
+    "BR"
+   ],
+   "enabler_types": [
+    "Instant",
+    "Sorcery"
+   ],
+   "payoff": "prowess|whenever you cast a noncreature spell|whenever you cast an instant or sorcery",
+   "claim": "UR/BR spells: noncreature spells trigger prowess creatures, Saheeli Jewel of Avishkar, Chandra's Emberling, Traxos.",
+   "sources": [
+    "https://draftsim.com/mtg-reality-fracture-draft-guide/",
+    "https://blog.cardkingdom.com/reality-fracture-draft-guide/"
+   ]
+  },
+  "counters": {
+   "pairs": [
+    "WR",
+    "WG"
+   ],
+   "enabler": "put (a|an|one|two|three|x) \\+1/\\+1 counters?|enters with [^.]*\\+1/\\+1 counter",
+   "payoff": "with (a|one or more) \\+1/\\+1 counters?|for each \\+1/\\+1 counter|\\+1/\\+1 counters? (is|are) put",
+   "claim": "WR counters: Mabel, Yoshimaru, Warrior's Blades, Winter Team Player.",
+   "sources": [
+    "https://draftsim.com/mtg-reality-fracture-draft-guide/",
+    "https://blog.cardkingdom.com/reality-fracture-draft-guide/",
+    "https://www.youtube.com/watch?v=_LfIxIuRQI0 (LLU FRA set review, multicolour + colourless)",
+    "https://www.youtube.com/watch?v=XPPMF-xrFjk (LLU FRA rare + mythic set review)"
+   ],
+   "video_claims": [
+    "Videos: Vigorbloom Vanguard (counters give vigilance), Mabel, Warrior's Blades (discount doubted)."
+   ]
+  },
+  "ramp": {
+   "pairs": [
+    "RG"
+   ],
+   "enabler": "heartwood token|add \\{|landcycling|search your library for a basic land",
+   "payoff_min_cmc": 5,
+   "payoff_types": [
+    "Creature"
+   ],
+   "claim": "RG ramp: Heartwood makers (Konstrari Improviser, Heartwood Crafter, Woodwork Prodigy) cast Craftwork Crusher, Aerid Konstrari, Ruric Thar early.",
+   "sources": [
+    "https://draftsim.com/mtg-reality-fracture-draft-guide/",
+    "https://blog.cardkingdom.com/reality-fracture-draft-guide/",
+    "https://limitedmtg.com/reality-fracture/",
+    "https://www.youtube.com/watch?v=_LfIxIuRQI0 (LLU FRA set review, multicolour + colourless)",
+    "https://www.youtube.com/watch?v=XPPMF-xrFjk (LLU FRA rare + mythic set review)"
+   ],
+   "video_claims": [
+    "Videos: Craftwork Crusher reached turn 6-7 through Heartwood; Murmuring Volume as fixing for a black splash."
+   ]
+  },
+  "etb": {
+   "pairs": [
+    "BG"
+   ],
+   "enabler": "when (this creature|[a-z ,']+) enters",
+   "payoff_names": [
+    "Ferocity of the Hunt",
+    "Rescue Girl, First Responder"
+   ],
+   "claim": "BG: Ferocity of the Hunt (and Rescue Girl in WB) reuse enters-the-battlefield creatures like Rank Rat, Arcane Amphisbaena, Primal Witchstalker.",
+   "sources": [
+    "https://draftsim.com/mtg-reality-fracture-draft-guide/",
+    "https://blog.cardkingdom.com/reality-fracture-draft-guide/",
+    "https://www.youtube.com/watch?v=_LfIxIuRQI0 (LLU FRA set review, multicolour + colourless)",
+    "https://www.youtube.com/watch?v=XPPMF-xrFjk (LLU FRA rare + mythic set review)"
+   ],
+   "video_claims": [
+    "Videos: Ferocity of the Hunt best on tramplers, first strikers and enters-the-battlefield creatures; Flickering Hound graded D."
+   ]
+  },
+  "artifacts": {
+   "pairs": [
+    "RG",
+    "UR"
+   ],
+   "enabler": "create (a|an|one|two|three|x|that many) [^.]*(heartwood|thopter|treasure|artifact)[^.]*token",
+   "enabler_types": [
+    "Artifact"
+   ],
+   "payoff": "artifacts? you control|for each artifact|number of artifacts|enchant artifact|artifact tokens? would be created",
+   "claim": "RG/UR artifacts: Heartwood, Thopter and Treasure makers feed Craterclaw Colossus (+X per artifact, 'medium to strong with one artifact'), Puppet Crafting (wants 6-7 artifacts or enchantments), Draconic Visitor, Saheeli's thopters.",
+   "sources": [
+    "https://www.youtube.com/watch?v=_LfIxIuRQI0 (LLU FRA set review, multicolour + colourless)",
+    "https://www.youtube.com/watch?v=XPPMF-xrFjk (LLU FRA rare + mythic set review)"
+   ]
+  },
+  "prepared": {
+   "pairs": [
+    "WU",
+    "UB",
+    "BR",
+    "WG",
+    "RG"
+   ],
+   "enabler": "enters prepared|becomes prepared|each creature you control becomes prepared",
+   "payoff": "prepared spell|whenever you cast a copy|becomes prepared",
+   "claim": "Prepared copies: Codie, Ravenous Codex copies prepared spells; Draconic Visitor with the self-preparing RG uncommon; Hexhaven Dueling Arena re-prepares (rated F).",
+   "sources": [
+    "https://www.youtube.com/watch?v=_LfIxIuRQI0 (LLU FRA set review, multicolour + colourless)",
+    "https://www.youtube.com/watch?v=XPPMF-xrFjk (LLU FRA rare + mythic set review)"
+   ]
+  },
+  "flashback": {
+   "pairs": [
+    "UR",
+    "UB"
+   ],
+   "enabler_types": [
+    "Instant",
+    "Sorcery"
+   ],
+   "payoff": "flashback|instant or sorcery card in your graveyard|instant and sorcery cards? in your graveyard",
+   "claim": "UR/UB spell recursion: Stingcaster Mage needs many castable instants and sorceries (counterspells and attack-only removal do not count); Twinned Vision and Cryotheory flashback cards.",
+   "sources": [
+    "https://www.youtube.com/watch?v=XPPMF-xrFjk (LLU FRA rare + mythic set review)"
+   ]
+  },
+  "millcount": {
+   "pairs": [
+    "UB",
+    "BG"
+   ],
+   "enabler": "\\bmill\\b|\\bmills\\b",
+   "payoff": "put into [^.]*graveyard from [^.]*library this turn|for each [^.]*cards? in your graveyard|card types among cards in",
+   "claim": "Self-mill payoffs counting the graveyard: Cruel Calculations (draw X milled this turn), Tarmogoyf, Dark Matter Manipulator; decking is a real risk with Liliana the Repentant.",
+   "sources": [
+    "https://www.youtube.com/watch?v=XPPMF-xrFjk (LLU FRA rare + mythic set review)"
+   ]
+  }
  }
 }

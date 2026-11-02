@@ -74,7 +74,7 @@ def context_row(skill, games, on_play, mull, opp_mull):
 TYPICAL = {"skill": 0.56, "games": 100, "on_play": 0.5, "mull": 0, "opp_mull": 0}
 
 
-def read(set_code, facts):
+def read(set_code, facts, ids=False):
     path = DATA_DIR / "Temp" / "synergy" / f"game_data_public.{set_code}.PremierDraft.csv.gz"
     with gzip.open(path, "rt", newline="", encoding="utf-8") as f:
         reader = csv.reader(f)
@@ -82,7 +82,7 @@ def read(set_code, facts):
         col = {h: i for i, h in enumerate(header)}
         deck_cols = [(i, h[len("deck_"):]) for i, h in enumerate(header) if h.startswith("deck_")]
         names = [n for _, n in deck_cols]
-        rows, cols, vals, X_ctx, X_shape, y, test = [], [], [], [], [], [], []
+        rows, cols, vals, X_ctx, X_shape, y, test, drafts = [], [], [], [], [], [], [], []
         r = 0
         for row in reader:
             counts = {}
@@ -100,9 +100,11 @@ def read(set_code, facts):
             X_shape.append([s[k] for k in SHAPE])
             y.append(row[col["won"]] == "True")
             test.append(int(hashlib.md5(row[col["draft_id"]].encode()).hexdigest()[:2], 16) < 52)  # ~20%
+            drafts.append(row[col["draft_id"]])
             r += 1
     C = sparse.csr_matrix((np.array(vals, np.float32), (rows, cols)), shape=(r, len(names)))
-    return names, C, np.array(X_ctx, np.float32), np.array(X_shape, np.float32), np.array(y, np.float32), np.array(test)
+    out = (names, C, np.array(X_ctx, np.float32), np.array(X_shape, np.float32), np.array(y, np.float32), np.array(test))
+    return out + (drafts,) if ids else out
 
 
 def fit_logistic(X, y, l2):
