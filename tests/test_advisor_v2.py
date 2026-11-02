@@ -110,6 +110,10 @@ def test_pips_hybrid_and_splash(world, monkeypatch):
     two_red = dict(one_red, name="two red", mana_cost="{2}{R}{R}")
     fixer = {"name": "fixer", "mana_cost": "", "colors": ["R", "W"], "types": ["Land"], "deck_colors": stats}
     assert len(off_pips(two_red, "WU")) == 2
+    assert off_pips({"mana_cost": "{3}{W}{R}", "types": ["Creature"]}, "WU") == [["R"]]  # 3AX in A: one pip to splash
+    assert castable({"mana_cost": "{3}{W/R}", "types": ["Creature"]}, "WU")  # 3A/X in A: no splash at all
+    assert off_pips({"mana_cost": "{1}{B} // {B}", "types": ["Creature"]}, "WU") == [["B"]]  # faces need one B, not two
+    assert len(off_pips({"mana_cost": "{B} // {1}{B}{B}", "types": ["Creature"]}, "WU")) == 2
 
     plain = DraftAdvisorV2(metrics, [])
     fixed = DraftAdvisorV2(metrics, [fixer])

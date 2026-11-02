@@ -2,6 +2,7 @@
 
 import math
 import re
+from collections import Counter
 
 LANES = ["WU", "WB", "WR", "WG", "UB", "UR", "UG", "BR", "BG", "RG"]
 USE_PIPS = True  # round 2: on together with land fixing (it was contested alone in round 1). Castability from mana-cost pips (hybrid aware); False = every colour of the card must be in the lane
@@ -17,8 +18,9 @@ def pips(card):
 
     Generic, X, colourless, twobrid ({2/W}) and Phyrexian ({W/P}) pips are payable
     without the colour, so they are skipped, as upstream's get_strict_colors does.
-    Without a mana cost, each colour counts as one pip. Both faces of an "A // B" card
-    are merged, which is how upstream's deck builder (mana_base.is_castable) judges them.
+    Without a mana cost, each colour counts as one pip. An "A // B" card needs every colour
+    either face needs (as upstream's mana_base.is_castable judges it), but only as many pips
+    of each as the hungrier face: {1}{B} // {B} is a one-pip splash, not two.
     """
     cost = card.get("mana_cost") or ""
     if "Land" in (card.get("types") or []):
@@ -26,15 +28,18 @@ def pips(card):
         return [[c] for c in card.get("colors") or [] if c in "WUBRG"]
     if not cost:
         return [[c] for c in card.get("colors") or [] if c in "WUBRG"]
-    out = []
-    for pip in re.findall(r"\{(.*?)\}", cost):
-        parts = pip.split("/")
-        if any(p.isdigit() or p in ("X", "C", "P") for p in parts):
-            continue
-        options = [p for p in parts if p in "WUBRG"]
-        if options:
-            out.append(options)
-    return out
+    need = Counter()
+    for face in cost.split("//"):
+        face_need = Counter()
+        for pip in re.findall(r"\{(.*?)\}", face):
+            parts = pip.split("/")
+            if any(p.isdigit() or p in ("X", "C", "P") for p in parts):
+                continue
+            options = tuple(p for p in parts if p in "WUBRG")
+            if options:
+                face_need[options] += 1
+        need |= face_need  # per pip type, the larger of the faces
+    return [list(o) for o, n in need.items() for _ in range(n)]
 
 
 def off_pips(card, lane):
