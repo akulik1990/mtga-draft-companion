@@ -112,6 +112,13 @@ def prefs_file(path, which):
     return json.loads(Path(path).read_text()).get(which, {})
 
 
+def any_colour_fixer(card):
+    """A spell that finds or makes any colour: basic landcycling, or a mana ability for any color."""
+    if "Land" in (card.get("types") or []):
+        return False
+    return "Basic landcycling" in (card.get("keywords") or []) or "mana of any color" in (card.get("oracle_text") or "")
+
+
 @lru_cache(maxsize=8)
 def tables(set_code):
     """Per-set typical-deck and synergy tables, if tools/synergy/build.py has produced them."""
@@ -153,8 +160,11 @@ class DraftAdvisorV2:
     HALF_PIVOT = 0  # from this many spells in the pool, lanes sharing no colour with the pool's top pair get P = 0 (winners change one colour, not both); 0 = off
     # Neutral by default; for testing ideas from top players per set (sets/<SET>/manual.json, "values"):
     FIX_BONUS = 0.0  # WR points for a land that taps for the lane and makes another colour, on top of the splashes it enables
+    CYCLE_FIX = False  # basic landcyclers and any-colour mana rocks count as fixing for every colour (and earn the splashes they enable)
     THREE_COLOUR_AT = 0  # the pool counts as three-colour once it has this many one-pip splash spells for its top pair; 0 = never
     DOUBLE_PIP = 0.0  # in a three-colour pool, WR points off per extra pip of one colour ({U}{U}: one extra)
+    DOUBLE_PIP_ALL = False  # apply DOUBLE_PIP in any pool: {1}{U}{U} is harder to cast on curve than {2}{U} even in two colours
+    DOUBLE_PIP_CMC = 99  # only cards at or below this mana value lose points (a six-drop has time to find its second pip)
     CREATURE_TARGET = 15.0  # creatures wanted in 23 spells
     CREATURE_POINTS = 0.0  # WR points for a creature when the pool, projected to 23 spells, is fully short of CREATURE_TARGET; 0 = off
     CREATURE_FROM = 8  # spells in the pool before the creature need applies
@@ -194,6 +204,11 @@ class DraftAdvisorV2:
             self.prior[lane] += config.ACTIVE["tables"]["pairs"].get(lane, 0.0) / self.std  # manual pair strength, in WR points
         self.replacement = self.mean - self.REPLACEMENT_SD * self.std
         self.fixing = count_fixing(self.pool) if self.pool else {}
+        if self.CYCLE_FIX:
+            for c in self.pool:
+                if any_colour_fixer(c):
+                    for colour in "WUBRG":
+                        self.fixing[colour] = self.fixing.get(colour, 0) + 1
         self.names = {}
         for c in self.pool:
             self.names[c.get("name")] = self.names.get(c.get("name"), 0) + 1
@@ -296,6 +311,18 @@ class DraftAdvisorV2:
             return None
         return next((c for c in off[0] if self.fixing.get(c, 0) > 0), None)
 
+    def cycle_fix_gain(self, card, lane):
+        """A landcycler or any-colour rock in the lane enables every off-colour one-pip splash with no source yet."""
+        new = [c for c in "WUBRG" if c not in lane and not self.fixing.get(c, 0)]
+        gain = 0.0
+        for spell in self.pool:
+            if "Land" in (spell.get("types") or []):
+                continue
+            off = off_pips(spell, lane)
+            if len(off) == 1 and any(c in off[0] for c in new):
+                gain += max(0.0, self.shrunk_wr(spell, lane)[0] * self.SPLASH - self.replacement)
+        return min(self.FIX_CAP, self.FIX_WEIGHT * gain)
+
     def fixing_gain(self, land, lane):
         """WR points a land adds in a lane by enabling one-pip splashes of pool spells (round 2, change 1).
 
@@ -335,7 +362,7 @@ class DraftAdvisorV2:
             a += self.CREATURE_POINTS * self.creature_need
         if self.COPIES_POINTS and self.names.get(name, 0) >= self.COPIES_MAX:
             a -= self.COPIES_POINTS * (self.names[name] - self.COPIES_MAX + 1)
-        if self.DOUBLE_PIP and self.three_colour:
+        if self.DOUBLE_PIP and (self.three_colour or self.DOUBLE_PIP_ALL) and (card.get("cmc") or 0) <= self.DOUBLE_PIP_CMC:
             singles = [o[0] for o in pips(card) if len(o) == 1]
             a -= self.DOUBLE_PIP * max(0, max((singles.count(c) for c in set(singles)), default=0) - 1)
         return a
@@ -362,6 +389,8 @@ class DraftAdvisorV2:
                 return max(self.replacement, self.shrunk_wr(card, lane)[0] * self.SPEC_SPLASH * (1 - self.progress))
             return self.replacement
         v = (self.shrunk_wr(card, lane)[0] - self.colour_shift(card)) * self.composition.multiplier(card, lane)
+        if self.CYCLE_FIX and any_colour_fixer(card):
+            v += self.cycle_fix_gain(card, lane)
         if synergy.ENABLED:
             v += synergy.bonus(self.synergy, card, self.pool, lane)
         return v
