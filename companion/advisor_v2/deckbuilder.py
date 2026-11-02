@@ -28,6 +28,7 @@ CREATURE_ABOVE = 3.0  # and above it
 TWO_DROP_SLACK = 2.0  # below the target
 TOP_END_SLACK = 2.0  # five-plus drops above the target
 CURVE_SLACK = 2.0  # per mana value, either way
+REMOVAL_SLACK = 2.0  # removal spells below the target before the penalty starts (FRA: decks under 6 removal lose ~0.6 WR points beyond their cards, docs/synergy-2026-11-02.md); 99 = off
 PENALTY = 1.5  # predicted win-rate points per card outside the bounds
 MIN_PER_COLOUR = 5  # spells that need each main colour; fewer and the "pair" is a mono-colour deck with a stray card
 MIN_PER_COLOUR_THREE = 3  # the same for each colour of a three-colour deck
@@ -182,6 +183,8 @@ def shape_penalty(spells, target, lane="", min_creatures_slack=None, scale=1.0):
     lo, hi = f * (target["creatures"] - below), f * (target["creatures"] + CREATURE_ABOVE)
     over += max(0.0, lo - r["creatures"]) + max(0.0, r["creatures"] - hi)
     over += max(0.0, f * (target["two_drops"] - TWO_DROP_SLACK) - r["two_drops"])
+    if "removal" in target:
+        over += max(0.0, f * (target["removal"] - REMOVAL_SLACK) - r["removal"])
     over += max(0.0, r["five_plus"] - f * (target["five_plus"] + TOP_END_SLACK))
     for k in CURVE:
         want = (target.get("curve") or {}).get(k)

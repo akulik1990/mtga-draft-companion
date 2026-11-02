@@ -71,6 +71,7 @@
   "deckbuilder.MIN_PER_COLOUR_THREE": 3,
   "deckbuilder.MIN_SPLASH_CMC": 3,
   "deckbuilder.PENALTY": 1.5,
+  "deckbuilder.REMOVAL_SLACK": 2.0,
   "deckbuilder.SPELLS": 23,
   "deckbuilder.SPLASH_COST": -1.0,
   "deckbuilder.TOP_END_SLACK": 2.0,

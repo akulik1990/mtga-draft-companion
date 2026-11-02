@@ -91,7 +91,9 @@ def one(item):
     theirs = Counter({n: k for n, k in deck.items() if n in by_name and "Land" not in (by_name[n].get("types") or [])})
     overlap = sum((ours & theirs).values()) / max(1, sum(theirs.values()))
     their_splash_cards = sum(k for n, k in theirs.items() if not castable(by_name[n], lane))
-    return {"lane": lane, "our_lane": b["lane"], "splash": splash, "our_splash": b["splash"], "overlap": overlap,
+    removal = lambda cards: sum("removal" in (c.get("tags") or []) for c in cards)
+    their_cards = [by_name[n] for n, k in theirs.items() for _ in range(k)]
+    return {"our_removal": removal(b["spells"]), "their_removal": removal(their_cards), "lane": lane, "our_lane": b["lane"], "splash": splash, "our_splash": b["splash"], "overlap": overlap,
             "their_splash_cards": their_splash_cards, "our_splash_cards": sum(1 for c in b["spells"] if not castable(c, b["lane"]))}
 
 
@@ -125,6 +127,8 @@ def main(argv=None):
           f"we go three when they do {100 * sum(len(r['our_lane']) == 3 for r in three_they) / max(1, len(three_they)):.1f}% "
           f"(same three {100 * sum(r['our_lane'] == r['lane'] for r in three_they) / max(1, len(three_they)):.1f}%), "
           f"when they don't {100 * sum(len(r['our_lane']) == 3 for r in rows if len(r['lane']) == 2) / max(1, n - len(three_they)):.1f}%")
+    print(f"  removal: we {sum(r['our_removal'] for r in rows) / n:.1f}, they {sum(r['their_removal'] for r in rows) / n:.1f}; "
+          f"below 6: we {100 * sum(r['our_removal'] < 6 for r in rows) / n:.1f}%, they {100 * sum(r['their_removal'] < 6 for r in rows) / n:.1f}%")
     print(f"  splash cards per splash deck: they {sum(r['their_splash_cards'] for r in real) / max(1, len(real)):.1f}, "
           f"we {sum(r['our_splash_cards'] for r in rows if r['our_splash']) / max(1, we):.1f}")
 
