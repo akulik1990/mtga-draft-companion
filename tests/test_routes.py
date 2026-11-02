@@ -197,8 +197,8 @@ def test_heat_marks_top_twenty_and_early_picks():
 def test_plain_reasoning():
     from companion.api.app import plain
 
-    assert plain("UB 28% → 61.9 (n=937)") == "If taken, UB 28% likely; wins 61.9% there, 937 games"
-    assert plain("UB 100% → 61.3 (n=7419)") == "Plays in UB: wins 61.3%, 7,419 games"
-    assert plain("UG 34% → 56.6 (rarely played there)") == "If taken, UG 34% likely; wins 56.6% there, rarely played there"
+    assert plain("UB 28% → 61.9 (n=937)") == "In UB: wins 61.9%, 937 games"
+    assert plain("UB 100% → 61.3 (n=7419)") == "In UB: wins 61.3%, 7,419 games"
+    assert plain("UG 34% → 56.6 (rarely played there)") == "In UG: wins 56.6%, rarely played there"
     assert plain("Branch: +9.4 over Hapatra, the Desert Frost, above the -1.6 top drafters switch at") == \
         "9.4 points stronger than Hapatra, the Desert Frost; top drafters switch at -1.6 or more this early"

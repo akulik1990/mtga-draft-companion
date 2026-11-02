@@ -44,7 +44,9 @@ def plain(reason):
     m = re.match(r"(\w+) (\d+)% → ([\d.]+) \((?:n=(\d+)|rarely played there)\)", reason)
     if m:
         games = f"{int(m[4]):,} games" if m[4] else "rarely played there"
-        return f"Plays in {m[1]}: wins {m[3]}%, {games}" if m[2] == "100" else f"If taken, {m[1]} {m[2]}% likely; wins {m[3]}% there, {games}"
+        # The engine's lane share here counts the candidate several times over (STEER), so it is not the chance of
+        # ending in that pair; the panel's lanes section shows those odds. Say only where the card is good.
+        return f"In {m[1]}: wins {m[3]}%, {games}"
     return reason
 
 

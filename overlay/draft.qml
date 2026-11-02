@@ -148,7 +148,9 @@ ShellRoot {
             x: win.width * 0.008
             y: win.height * 0.085  // just under Arena's top menu bar
             width: win.width * (root.g.x0 - 0.018)
-            height: col.implicitHeight + win.unit * 1.2
+            // Never over the deck list (with the deck below the pack it starts at mid-screen); what does not fit is cut, pool first.
+            height: Math.min(col.implicitHeight + win.unit * 1.2, win.height * (root.g.deck[0] < 0.2 ? root.g.deck[1] : 0.98) - y - win.unit * 0.5)
+            clip: true
             radius: win.unit * 0.6
             color: "#d90e1215"
             border.color: "#30ffffff"
@@ -215,33 +217,6 @@ ShellRoot {
                 }
 
                 Item { width: 1; height: win.unit * 0.3 }
-                Heading { text: "YOUR LANES" }
-                Repeater {
-                    model: win.pn ? win.pn.lanes : []
-                    Row {
-                        required property var modelData
-                        spacing: win.unit * 0.4
-                        Text { text: modelData.lane; width: win.unit * 1.6; color: "#e8eaed"; font.pixelSize: win.unit * 0.72; font.bold: true }
-                        Item {  // probability bar in the pair's two colours
-                            width: col.width - win.unit * 5.2; height: win.unit * 0.55
-                            anchors.verticalCenter: parent.verticalCenter
-                            Rectangle { anchors.fill: parent; radius: height / 2; color: "#2a2f35" }
-                            Row {
-                                height: parent.height
-                                Rectangle { width: parent.parent.width * modelData.p / win.pn.lanes[0].p / 2; height: parent.height; color: win.wubrg[modelData.lane[0]] }
-                                Rectangle { width: parent.parent.width * modelData.p / win.pn.lanes[0].p / 2; height: parent.height; color: win.wubrg[modelData.lane[1]] }
-                            }
-                        }
-                        Text { text: Math.round(modelData.p * 100) + "%"; width: win.unit * 1.6; horizontalAlignment: Text.AlignRight; color: "#c8cdd3"; font.pixelSize: win.unit * 0.65 }
-                    }
-                }
-                Line {
-                    visible: !!win.pn && win.pn.lanes.length > 0
-                    text: win.pn ? "Pair win rates: " + win.pn.lanes.map(l => l.lane + " " + (l.wr ? Number(l.wr).toFixed(1) : "–")).join(" · ") : ""
-                    color: "#8f98a3"; font.pixelSize: win.unit * 0.58
-                }
-
-                Item { width: 1; height: win.unit * 0.3 }
                 Heading { text: "OPEN COLOURS (passing to you)" }
                 Row {
                     id: sig
@@ -270,6 +245,33 @@ ShellRoot {
                     }
                 }
                 Line { visible: !sig.visible; text: "No signal yet"; color: "#8f98a3"; font.pixelSize: win.unit * 0.65 }
+
+                Item { width: 1; height: win.unit * 0.3 }
+                Heading { text: "YOUR LANES" }
+                Repeater {
+                    model: win.pn ? win.pn.lanes : []
+                    Row {
+                        required property var modelData
+                        spacing: win.unit * 0.4
+                        Text { text: modelData.lane; width: win.unit * 1.6; color: "#e8eaed"; font.pixelSize: win.unit * 0.72; font.bold: true }
+                        Item {  // probability bar in the pair's two colours
+                            width: col.width - win.unit * 5.2; height: win.unit * 0.55
+                            anchors.verticalCenter: parent.verticalCenter
+                            Rectangle { anchors.fill: parent; radius: height / 2; color: "#2a2f35" }
+                            Row {
+                                height: parent.height
+                                Rectangle { width: parent.parent.width * modelData.p / win.pn.lanes[0].p / 2; height: parent.height; color: win.wubrg[modelData.lane[0]] }
+                                Rectangle { width: parent.parent.width * modelData.p / win.pn.lanes[0].p / 2; height: parent.height; color: win.wubrg[modelData.lane[1]] }
+                            }
+                        }
+                        Text { text: Math.round(modelData.p * 100) + "%"; width: win.unit * 1.6; horizontalAlignment: Text.AlignRight; color: "#c8cdd3"; font.pixelSize: win.unit * 0.65 }
+                    }
+                }
+                Line {
+                    visible: !!win.pn && win.pn.lanes.length > 0
+                    text: win.pn ? "Pair win rates: " + win.pn.lanes.map(l => l.lane + " " + (l.wr ? Number(l.wr).toFixed(1) : "–")).join(" · ") : ""
+                    color: "#8f98a3"; font.pixelSize: win.unit * 0.58
+                }
 
                 Item { width: 1; height: win.unit * 0.3 }
                 Heading { text: win.pn ? "POOL · " + win.pn.pool.n + " CARDS" : "POOL" }
