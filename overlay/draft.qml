@@ -18,8 +18,11 @@ ShellRoot {
         side: { x0: 0.145, dx: 0.1025, cardW: 0.09, y0: 0.1707, dy: 0.2489, cardH: 0.227, perRow: 5, deck: [0.785, 0.15, 1.0, 0.92] },
         bottom: { x0: 0.1715, dx: 0.0835, cardW: 0.069, y0: 0.1636, dy: 0.1858, cardH: 0.17, perRow: 8, deck: [0.0, 0.55, 1.0, 1.0] }
     })
-    // The bottom layout's deck panel covers this point in a flat (9,16,16); the side layout shows the pack or backdrop there.
-    readonly property var probe: [0.5, 0.85]
+    // Arena's layout toggle in the top bar draws the current layout: deck on the side = bottom half filled, deck
+    // below = right third filled. A sits in its lower left, B in its upper right (fractions of a 16:9 screen).
+    readonly property var probeA: [0.830, 0.046]
+    readonly property var probeB: [0.840, 0.027]
+    function px(p) { return Math.round(win.screen.x + p[0] * win.width) + "," + Math.round(win.screen.y + p[1] * win.height); }
     property string layoutName: "side"
     property string lastSeen: "side"
     readonly property var g: layouts[layoutName]
@@ -98,13 +101,16 @@ ShellRoot {
 
     Process {
         id: pixel
-        command: ["sh", "-c", "grim -t ppm -g \"" + Math.round(win.screen.x + root.probe[0] * win.width) + "," + Math.round(win.screen.y + root.probe[1] * win.height) + " 1x1\" - | tail -c 3 | od -An -tu1"]
+        command: ["sh", "-c", "for p in " + root.px(root.probeA) + " " + root.px(root.probeB) + "; do grim -t ppm -g \"$p 1x1\" - | tail -c 3 | od -An -tu1; done"]
         stdout: StdioCollector {
             onStreamFinished: {
                 const v = text.trim().split(/\s+/).map(Number);
-                if (v.length !== 3 || root.overCard)
+                if (v.length !== 6 || root.overCard)
                     return;
-                const seen = v.every((c, i) => Math.abs(c - [9, 16, 16][i]) <= 6) ? "bottom" : "side";
+                const a = v[0] + v[1] + v[2], b = v[3] + v[4] + v[5];  // brightness: icon fill ~370-400, background ~90-180
+                const seen = b > 300 && a < 250 ? "bottom" : a > 300 && b < 250 ? "side" : "";
+                if (!seen)
+                    return;  // icon covered or not on screen: keep the current layout
                 if (seen === root.lastSeen)
                     root.layoutName = seen;  // two readings in a row before switching
                 root.lastSeen = seen;
