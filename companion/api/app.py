@@ -139,9 +139,9 @@ def create_app(session: DraftSession, *, run_scanner: bool = True, frontend: Pat
             r = v2.get(c["name"])
             gih = ((c.get("deck_colors") or {}).get("All Decks") or {}).get("gihwr") or 0
             why = (r or {}).get("reasoning") or [""]
-            ranks = re.match(r"Fit #(\d+) · Power #(\d+)", why[0])
+            ranks = next(filter(None, (re.match(r"Fit #(\d+) · Power #(\d+)", w) for w in why)), None)  # after "Branch: ..." on a switch
             cards.append({"name": c["name"], "rank": r and r["rank"], "score": r and r["contextual_score"],
-                          "orders": why[0] if ranks else "", "fit": ranks and int(ranks[1]), "power": ranks and int(ranks[2]),
+                          "orders": ranks[0] if ranks else "", "fit": ranks and int(ranks[1]), "power": ranks and int(ranks[2]),
                           "heat": heat_cache["heat"].get(c["name"], 0),
                           "upstream": up.get(c["name"]), "gihwr": gih})
         b = (s.get("v2_split") or {}).get("branch")

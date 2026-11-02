@@ -121,11 +121,11 @@ ShellRoot {
         // or GIH WR >= mean + 1 SD) and blue fire when it is one of the set's top 20 by GIH WR (/api/overlay "heat").
         // It glows when it also tops both Fit and Power: best for your colours and strongest outright.
         readonly property var medals: ({
-            bluefire: { hi: "#c8f4ff", lo: "#1f6fe0", edge: "#6fd3ff" },
-            fire: { hi: "#ffd27a", lo: "#e0441c", edge: "#ffb347" },
+            bluefire: { hi: "#e6fbff", lo: "#1550d0", edge: "#4fc3ff", flame: true },
+            fire: { hi: "#ffe066", lo: "#d42a10", edge: "#ff7a1a", flame: true },
             gold: { hi: "#fff1a8", lo: "#c9971c", edge: "#ffd54f" },
             silver: { hi: "#ffffff", lo: "#b4c8e0", edge: "#eaf2ff" },
-            bronze: { hi: "#ffc58f", lo: "#a5612c", edge: "#e0955a" },
+            bronze: { hi: "#d9a27a", lo: "#6e3f1e", edge: "#b87a4b" },
             grey: { hi: "#3c4148", lo: "#1d2024", edge: "#50565e" }
         })
         function clear(c) { return c.rank === 1 && c.fit === 1 && c.power === 1; }
@@ -280,7 +280,8 @@ ShellRoot {
                 readonly property int col: index % root.g.perRow
                 readonly property int row: Math.floor(index / root.g.perRow)
                 readonly property var t: win.medal(modelData)
-                readonly property bool glow: win.clear(modelData)
+                readonly property bool glow: win.clear(modelData) || !!t.flame
+                readonly property bool flame: !!t.flame
                 opacity: modelData.rank && modelData.rank <= 3 ? 1.0 : 0.8
                 // Shield on the card's bottom edge, clear of art and rules text.
                 width: win.width * root.g.cardW * 0.34
@@ -288,6 +289,36 @@ ShellRoot {
                 x: win.width * (root.g.x0 + col * root.g.dx + root.g.cardW / 2) - width / 2
                 y: win.height * (root.g.y0 + row * root.g.dy + root.g.cardH) - height * 0.45
 
+                Repeater {  // flames for fire / blue fire, flickering behind the shield's top
+                    model: card.flame ? [[-0.28, 0.75, 0], [0, 1.0, 140], [0.28, 0.75, 280]] : []
+                    Shape {
+                        id: fl
+                        required property var modelData
+                        readonly property real w: card.width * 0.42
+                        readonly property real h: card.height * 0.62 * modelData[1]
+                        x: card.width / 2 + modelData[0] * card.width - w / 2
+                        y: -h * 0.55
+                        width: w; height: h
+                        transformOrigin: Item.Bottom
+                        preferredRendererType: Shape.CurveRenderer
+                        SequentialAnimation on scale {
+                            loops: Animation.Infinite
+                            PauseAnimation { duration: modelData[2] }
+                            NumberAnimation { from: 0.85; to: 1.12; duration: 420; easing.type: Easing.InOutQuad }
+                            NumberAnimation { from: 1.12; to: 0.85; duration: 420; easing.type: Easing.InOutQuad }
+                        }
+                        ShapePath {
+                            strokeColor: "transparent"
+                            fillGradient: LinearGradient {
+                                x1: 0; y1: 0; x2: 0; y2: fl.h
+                                GradientStop { position: 0; color: "transparent" }
+                                GradientStop { position: 0.35; color: card.t.edge }
+                                GradientStop { position: 1; color: card.t.lo }
+                            }
+                            PathSvg { path: `M ${fl.w/2} 0 Q ${fl.w*0.95} ${fl.h*0.55} ${fl.w*0.8} ${fl.h*0.85} Q ${fl.w/2} ${fl.h*1.05} ${fl.w*0.2} ${fl.h*0.85} Q ${fl.w*0.05} ${fl.h*0.55} ${fl.w/2} 0 Z` }
+                        }
+                    }
+                }
                 Shape {
                     id: shield
                     anchors.fill: parent
