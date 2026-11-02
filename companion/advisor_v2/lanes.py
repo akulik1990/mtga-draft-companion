@@ -62,6 +62,10 @@ def quality(card, mean, std):
     return max(0.0, (wr - (mean - std)) / std) if wr > 0 else 0.0
 
 
+GOLD_MIN = 0.0  # a card castable in one pair only pulls toward it by its quality above this (q - GOLD_MIN, at least 0); 0 = full quality
+SPLASH_COMMIT = 0.0  # share of a card's quality it adds to pairs where it is one pip off (a splash: {2}{U}{B} in UR, UG, WU, BR...); 0 = off
+
+
 def commitment(pool, mean, std):
     """Per lane: summed quality of the pool cards castable there."""
     out = {lane: 0.0 for lane in LANES}
@@ -69,9 +73,15 @@ def commitment(pool, mean, std):
         q = quality(card, mean, std)
         if q <= 0:
             continue
-        for lane in LANES:
-            if castable(card, lane):
-                out[lane] += q
+        lanes = [lane for lane in LANES if castable(card, lane)]
+        if GOLD_MIN and len(lanes) == 1 and "Land" not in (card.get("types") or []):
+            q = max(0.0, q - GOLD_MIN)  # a medium gold card should not decide the pair on its own
+        for lane in lanes:
+            out[lane] += q
+        if SPLASH_COMMIT:
+            for lane in LANES:
+                if lane not in lanes and len(off_pips(card, lane)) == 1:
+                    out[lane] += q * SPLASH_COMMIT
     return out
 
 

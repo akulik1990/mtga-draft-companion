@@ -159,7 +159,7 @@ class DraftAdvisorV2:
     FIX_WEIGHT = 0.5  # share of each enabled splash's gain (over replacement) credited to the land
     FIX_CAP = 3.0  # most a land's fixing can add, in WR points
     HALF_PIVOT = 0  # from this many spells in the pool, lanes sharing no colour with the pool's top pair get P = 0 (winners change one colour, not both); 0 = off
-    LANE_FLAT = ""  # flatten P(lane) early, "3:0.5,9:0.75": up to pick 3 P ∝ P^0.5, picks 4-9 P^0.75, later unchanged; "" = off
+    LANE_FLAT = "4:1,14:0.7,45:0.8"  # P(lane) ∝ P^τ by pick: picks 1-4 unchanged, 5-14 τ 0.7, 15-45 τ 0.8 (calibrated against top drafters' final pairs); "" = off
     COLOUR_SHIFT = ""  # per-colour WR points taken off a card's value, "U:2" or "U:2,B:-1"; a card gets the mean over its colours; "" = off
     WHEEL_EPS = 0.3  # within this of the best score, prefer the card that wheels less
     WHEEL_SPLIT = False  # apply the WHEEL_EPS tiebreak to the split's final order too (it used to apply only with SPLIT off)
