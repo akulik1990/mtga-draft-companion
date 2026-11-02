@@ -284,7 +284,7 @@ def test_switch_features_and_colour_rule(world, monkeypatch):
     from companion.advisor_v2 import engine
     pack = [dict(c, set="OTJ") for c in by_colors(cards, "U", 2) + by_colors(cards, "R", 2)]
     rule = {stage: {"a": 0.0, "b": 1.0, "c": 0.0, "d": 5.0, "e": 0.0} for _, _, stage in engine.STAGES}
-    monkeypatch.setattr(engine, "branch_thresholds", lambda code: rule if code.endswith("_colour") else {})
+    monkeypatch.setattr(engine, "branch_thresholds", lambda code, name="branch": rule if name == "branch_colour" else {})
     monkeypatch.setattr(DraftAdvisorV2, "BRANCH_COLOUR", True)
     adv.evaluate_pack(pack, 9, 1)
     b = adv.split["branch"]

@@ -14,6 +14,7 @@ from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 
 from companion import ROOT
+from companion.advisor_v2 import config
 from companion.advisor_v2.lanes import pips
 from companion.session import DraftSession
 
@@ -51,7 +52,7 @@ def plain(reason):
 
 @lru_cache
 def close_calls(set_code):
-    path = ROOT / "companion" / "advisor_v2" / f"closecalls_{set_code}.json"
+    path = config.set_file(set_code, "closecalls")
     return json.loads(path.read_text())["buckets"] if path.exists() else []
 
 

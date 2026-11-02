@@ -8,7 +8,7 @@ power(P) - power(C), how strong C is on its own (power(C) minus the format's mea
 size, and whether the drafter took P or C. Per pool-size stage, a two-variable logistic model
 P(took P | took P or C) = sigmoid(a + b*gap + c*c_strength) says when they branch: early and when the
 in-colour option is weak, a smaller gap is enough. --winners fits only on events that went 5-7 wins.
---write saves the coefficients to companion/advisor_v2/branch_<SET>.json, which the engine reads.
+--write saves the coefficients to companion/advisor_v2/sets/<SET>/branch.json, which the engine reads.
 """
 
 import argparse
@@ -24,6 +24,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 import companion  # noqa: E402,F401
 from companion import DATA_DIR, VENDOR  # noqa: E402
+from companion.advisor_v2 import config  # noqa: E402
 
 sys.path.insert(0, str(VENDOR / "Tools" / "AdvisorReplay"))
 
@@ -113,7 +114,7 @@ def main(argv=None):
     p.add_argument("set"); p.add_argument("--split", default="train"); p.add_argument("--n", type=int, default=600)
     p.add_argument("--winners", action="store_true"); p.add_argument("--write", action="store_true")
     p.add_argument("--full", action="store_true", help="also fit whether the strong card keeps a colour of the top pair (d) and how settled the pool is (e)")
-    p.add_argument("--out", help="write here instead of companion/advisor_v2/branch_<SET>.json (alternatives to measure)")
+    p.add_argument("--out", help="write here instead of companion/advisor_v2/sets/<SET>/branch.json (alternatives to measure)")
     p.add_argument("--v2", action="append", default=[], metavar="NAME=VALUE", help="engine overrides while collecting, as in tools/mock_draft.py")
     a = p.parse_args(argv)
     from tools.mock_draft import apply_overrides
@@ -135,7 +136,7 @@ def main(argv=None):
               f"   (gap coef {c['b']:+.2f} ± {c['se'][1]:.2f}, in-colour coef {c['c']:+.2f} ± {c['se'][2]:.2f}"
               + (f", keeps a colour {c['d']:+.2f} ± {c['se'][3]:.2f}, settled {c['e']:+.2f} ± {c['se'][4]:.2f}" if "d" in c else "") + ")")
     if a.write:
-        out = Path(a.out) if a.out else Path(companion.__file__).parent / "advisor_v2" / f"branch_{a.set}.json"
+        out = Path(a.out) if a.out else config.set_file(a.set, "branch")
         out.write_text(json.dumps({"set": a.set, "fitted_on": f"top{a.n}.{a.split}" + (" winners" if a.winners else ""),
                                    "model": "P(take Power) = sigmoid(a + b*gap + c*c_strength" + (" + d*keeps_colour + e*settled" if a.full else "") + "), c_strength = power(C) - format mean",
                                    "overrides": a.v2,

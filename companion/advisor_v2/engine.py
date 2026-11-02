@@ -20,8 +20,8 @@ from src.advisor.engine import DraftAdvisor
 from src.advisor.mana_base import count_fixing
 from src.advisor.schema import Recommendation
 
-from companion.advisor_v2 import composition, synergy
-from companion.advisor_v2.lanes import ALL, LANES, all_decks, castable, commitment, lane_distribution, off_pips, quality
+from companion.advisor_v2 import composition, config, synergy
+from companion.advisor_v2.lanes import ALL, LANES, all_decks, castable, commitment, lane_distribution, off_pips, pips, quality
 from companion.advisor_v2 import signals as signal_mod
 from companion.advisor_v2.signals import colour_signals, side_for_pack, side_signals
 
@@ -85,12 +85,11 @@ def stage_of(spells):
 
 
 @lru_cache(maxsize=8)
-def branch_thresholds(set_code):
-    """{stage: gap} fitted by tools/fit_branch.py; {} when the set has none."""
+def branch_thresholds(set_code, name="branch"):
+    """{stage: gap} fitted by tools/fit_branch.py (sets/<SET>/branch.json, branch_colour.json); {} when the set has none."""
     import json
-    from pathlib import Path
 
-    path = Path(__file__).with_name(f"branch_{set_code}.json")
+    path = config.set_file(set_code, name)
     return json.loads(path.read_text()).get("stages", {}) if path.exists() else {}
 
 
@@ -106,9 +105,8 @@ def branch_file(path):
 def learnt_prefs(set_code, which):
     """{card name: strength z} learnt from top drafters' choices, or {} when the set has none."""
     import json
-    from pathlib import Path
 
-    path = Path(__file__).with_name(f"prefs_{set_code}.json")
+    path = config.set_file(set_code, "prefs")
     return json.loads(path.read_text()).get(which, {}) if path.exists() else {}
 
 
@@ -142,15 +140,15 @@ class DraftAdvisorV2:
     SPEC_ALL = False  # False: only cards castable in no two-colour lane (three-colour cards) get it; True: any card one pip off
     SPLIT = True  # two orders: Power (best card if you end up in its colours) and Fit (best for the colours you are in); branch to Power above a learnt gap
     BRANCH_MODE = "learnt"  # "learnt" (fitted rule), "fit" (never branch), "power" (always take the strongest card)
-    BRANCH_COLOUR = True  # switch rule that also weighs whether the strong card keeps a colour of the top pair and how settled the pool is (branch_<SET>_colour.json). FRA: test top-1 55.4 -> 56.0, deck win rate -0.86 (SE 0.34, 200 bot tables, all from tables ending in other colours); on by the user's call 2026-11-01
-    BRANCH_FILE = ""  # override the fitted rule's file (measuring alternatives); "" = companion/advisor_v2/branch_<SET>.json
-    BRANCH_DEFAULT = 3.0  # GIH WR points; used for stages with no fitted threshold (companion/advisor_v2/branch_<SET>.json)
+    BRANCH_COLOUR = True  # switch rule that also weighs whether the strong card keeps a colour of the top pair and how settled the pool is (sets/<SET>/branch_colour.json). FRA: test top-1 55.4 -> 56.0, deck win rate -0.86 (SE 0.34, 200 bot tables, all from tables ending in other colours); on by the user's call 2026-11-01
+    BRANCH_FILE = ""  # override the fitted rule's file (measuring alternatives); "" = sets/<SET>/branch.json
+    BRANCH_DEFAULT = 3.0  # GIH WR points; used for stages with no fitted threshold (sets/<SET>/branch.json)
     ORDER_FADE_BY = 0  # pick in the pack by which the pick-order prior has faded to 0; 0 = no fade
     PREF_WEIGHT = 4.0  # WR points per SD of top drafters' learnt preference (tools/learn_prefs.py); 0 = off
     PREF_ON_WEIGHT = 4.0  # what the app's switch sets PREF_WEIGHT to; the switch also swaps the pick-order prior out
     ORDER_OFF_WEIGHT = 2.0  # pick-order prior the app's switch restores when learnt preferences are switched off
     PREF_SCOPE = "both"  # where learnt preferences apply: "both" orders, or "power" only (Fit stays about your colours)
-    PREF_FILE = ""  # override the learnt-preference file (held-out evaluations); "" = companion/advisor_v2/prefs_<SET>.json
+    PREF_FILE = ""  # override the learnt-preference file (held-out evaluations); "" = sets/<SET>/prefs.json
     PREF_SET = "early"  # which learnt strengths: "early" (pack 1 picks 1-5) or "all" (every pick)
     ORDER_WEIGHT = 0.0  # replaced by learnt preferences (FRA test top-1 55.4 and best deck win rate at weight 4); 2.0 when they are off. WR points per SD of how early top players take the card (their ATA), × castability; 0 = off
     TOP_WR = False  # rejected 2026-11-01 (FRA +0.1, TDM −0.7 top-drafter top-1). Use top players' win rates (the set's _Top dataset), shrunk toward all players' by sample size
@@ -159,6 +157,15 @@ class DraftAdvisorV2:
     FIX_WEIGHT = 0.5  # share of each enabled splash's gain (over replacement) credited to the land
     FIX_CAP = 3.0  # most a land's fixing can add, in WR points
     HALF_PIVOT = 0  # from this many spells in the pool, lanes sharing no colour with the pool's top pair get P = 0 (winners change one colour, not both); 0 = off
+    # Neutral by default; for testing ideas from top players per set (sets/<SET>/manual.json, "values"):
+    FIX_BONUS = 0.0  # WR points for a land that taps for the lane and makes another colour, on top of the splashes it enables
+    THREE_COLOUR_AT = 0  # the pool counts as three-colour once it has this many one-pip splash spells for its top pair; 0 = never
+    DOUBLE_PIP = 0.0  # in a three-colour pool, WR points off per extra pip of one colour ({U}{U}: one extra)
+    CREATURE_TARGET = 15.0  # creatures wanted in 23 spells
+    CREATURE_POINTS = 0.0  # WR points for a creature when the pool, projected to 23 spells, is fully short of CREATURE_TARGET; 0 = off
+    CREATURE_FROM = 8  # spells in the pool before the creature need applies
+    COPIES_MAX = 2  # copies of one card a deck wants
+    COPIES_POINTS = 0.0  # WR points off per copy at or beyond COPIES_MAX already in the pool; 0 = off
     LANE_FLAT = "4:1,14:0.7,45:0.8"  # P(lane) ∝ P^τ by pick: picks 1-4 unchanged, 5-14 τ 0.7, 15-45 τ 0.8 (calibrated against top drafters' final pairs); "" = off
     COLOUR_SHIFT = ""  # per-colour WR points taken off a card's value, "U:2" or "U:2,B:-1"; a card gets the mean over its colours; "" = off
     WHEEL_EPS = 0.3  # within this of the best score, prefer the card that wheels less
@@ -168,6 +175,7 @@ class DraftAdvisorV2:
     def __init__(self, set_metrics, taken_cards, seen_packs=None):
         self.metrics = set_metrics
         self.pool = [c for c in (taken_cards or []) if c]
+        config.activate(next((c.get("set") for c in self.pool if c.get("set")), None))
         self.mean, self.std = set_metrics.get_metrics(ALL, "gihwr")
         if self.mean <= 0:
             self.mean = 54.0
@@ -189,8 +197,12 @@ class DraftAdvisorV2:
         for lane in LANES:
             m, _ = set_metrics.get_metrics(lane, "gihwr")
             self.prior[lane] = (m - self.mean) / self.std if m > 0 else 0.0
+            self.prior[lane] += config.ACTIVE["tables"]["pairs"].get(lane, 0.0) / self.std  # manual pair strength, in WR points
         self.replacement = self.mean - self.REPLACEMENT_SD * self.std
         self.fixing = count_fixing(self.pool) if self.pool else {}
+        self.names = {}
+        for c in self.pool:
+            self.names[c.get("name")] = self.names.get(c.get("name"), 0) + 1
         spells = sum(1 for c in self.pool if "Land" not in (c.get("types") or []))
         progress = min(1.0, spells / self.COMMIT_BY) if self.COMMIT_BY > 0 else 0.0
         self.progress = progress
@@ -200,6 +212,11 @@ class DraftAdvisorV2:
         self.anchor = None
         free = self._lanes(self.commit)
         self.top_lane = max(free, key=free.get)
+        splashes = sum(1 for c in self.pool if "Land" not in (c.get("types") or []) and len(off_pips(c, self.top_lane)) == 1)
+        self.three_colour = bool(self.THREE_COLOUR_AT) and splashes >= self.THREE_COLOUR_AT
+        creatures = sum(1 for c in self.pool if "Creature" in (c.get("types") or []))
+        self.creature_need = (max(0.0, self.CREATURE_TARGET - creatures * 23.0 / spells) / self.CREATURE_TARGET
+                              if self.CREATURE_POINTS and spells >= self.CREATURE_FROM else 0.0)
         if self.HALF_PIVOT and spells >= self.HALF_PIVOT:
             self.anchor = self.top_lane
         self.lanes = self._lanes(self.commit)  # pool only; what the Analyst shows and what Fit uses
@@ -310,13 +327,38 @@ class DraftAdvisorV2:
         cols = card.get("colors") or []
         return sum(shift.get(c, 0.0) for c in cols) / len(cols) if cols else 0.0
 
+    def adjust(self, card, lane):
+        """Manual per-set adjustments and the neutral-by-default deck-need settings, in WR points."""
+        t = config.ACTIVE["tables"]
+        name, types = card.get("name"), card.get("types") or []
+        kind = "land" if "Land" in types else "creature" if "Creature" in types else "other"
+        a = t["pairs"].get(lane, 0.0) + t["types"].get(kind, 0.0) + t["cards"].get(name, 0.0)
+        for combo in t["combos"]:
+            cards = combo.get("cards") or []
+            if name in cards and any(other in self.names for other in cards if other != name):
+                a += combo.get("points", 0.0)
+        if self.creature_need and kind == "creature":
+            a += self.CREATURE_POINTS * self.creature_need
+        if self.COPIES_POINTS and self.names.get(name, 0) >= self.COPIES_MAX:
+            a -= self.COPIES_POINTS * (self.names[name] - self.COPIES_MAX + 1)
+        if self.DOUBLE_PIP and self.three_colour:
+            singles = [o[0] for o in pips(card) if len(o) == 1]
+            a -= self.DOUBLE_PIP * max(0, max((singles.count(c) for c in set(singles)), default=0) - 1)
+        return a
+
     def value(self, card, lane):
+        v = self._value(card, lane)
+        if v == self.replacement and not castable(card, lane):
+            return v  # an uncastable card stays at replacement level
+        return v + self.adjust(card, lane)
+
+    def _value(self, card, lane):
         if self.LANDS and "Land" in (card.get("types") or []):
             colours = card.get("colors") or []
             if not colours or all(c in lane for c in colours):
                 return self.shrunk_wr(card, lane)[0]  # colourless or on-lane: its own win rate
             if any(c in lane for c in colours):
-                return self.replacement + self.fixing_gain(card, lane)  # taps for the lane and fixes a splash
+                return self.replacement + self.fixing_gain(card, lane) + self.FIX_BONUS  # taps for the lane and fixes a splash
             return self.replacement
         if not castable(card, lane):
             if self.splash_colour(card, lane):
@@ -342,6 +384,7 @@ class DraftAdvisorV2:
         rank_in_pack = {c.get("name"): i for i, c in enumerate(by_wr)}
         upstream = DraftAdvisor(self.metrics, self.pool)  # only for its wheel polynomial
         set_code = next((c.get("set") for c in (*self.pool, *pack_cards) if c.get("set")), None)
+        config.activate(set_code)
         self.order = pick_order(set_code) if self.ORDER_WEIGHT and set_code else {}
         self.prefs = (prefs_file(self.PREF_FILE, self.PREF_SET) if self.PREF_FILE else learnt_prefs(set_code, self.PREF_SET)) if self.PREF_WEIGHT and set_code else {}
         if not self.typical:
@@ -435,7 +478,7 @@ class DraftAdvisorV2:
         gap = power[p_top] - power[c_top]
         table = branch_file(self.BRANCH_FILE) if self.BRANCH_FILE else (branch_thresholds(set_code) if set_code else {})
         if self.BRANCH_COLOUR and not self.BRANCH_FILE and set_code:
-            table = branch_thresholds(f"{set_code}_colour") or table
+            table = branch_thresholds(set_code, "branch_colour") or table
         coef = table.get(stage) or {}
         c_strength = power[c_top] - self.mean
         shared, committed = self.branch_features(by_name[p_top])
@@ -517,3 +560,6 @@ class DraftAdvisorV2:
         if strong:
             out.append("open: " + "".join(strong))
         return out
+
+
+config.BASELINE.update(config.snapshot(DraftAdvisorV2))  # the code's values are the baseline layer

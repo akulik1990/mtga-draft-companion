@@ -4,6 +4,7 @@ the pointer to any client, which Wayland does not. Read by overlay/draft.qml."""
 import ctypes
 import ctypes.util
 import glob
+import os
 import sys
 import time
 
@@ -24,7 +25,8 @@ display = ctypes.c_void_p(display)
 root = ctypes.c_ulong(x.XDefaultRootWindow(display))
 
 last = None
-while True:
+parent = os.getppid()
+while os.getppid() == parent:  # exit with the overlay, not linger as an orphan
     r, c = ctypes.c_ulong(), ctypes.c_ulong()
     rx, ry, wx, wy = (ctypes.c_int() for _ in range(4))
     mask = ctypes.c_uint()

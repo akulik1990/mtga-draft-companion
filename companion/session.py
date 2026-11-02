@@ -304,6 +304,7 @@ class DraftSession:
         """Switch v2 features on or off for this app; the change applies from the next snapshot."""
         import json
 
+        from companion.advisor_v2 import config
         from companion.advisor_v2.engine import DraftAdvisorV2 as V
 
         for key, on in changes.items():
@@ -312,10 +313,16 @@ class DraftSession:
             attr = self.ENGINE_SWITCHES[key][0]
             if attr == "PREF_WEIGHT":
                 # Learnt preferences replace the pick-order prior; switching them off brings the prior back.
-                V.PREF_WEIGHT = V.PREF_ON_WEIGHT if on else 0.0
-                V.ORDER_WEIGHT = 0.0 if on else V.ORDER_OFF_WEIGHT
+                wanted = {"PREF_WEIGHT": V.PREF_ON_WEIGHT if on else 0.0, "ORDER_WEIGHT": 0.0 if on else V.ORDER_OFF_WEIGHT}
             else:
-                setattr(V, attr, bool(on))
+                wanted = {attr: bool(on)}
+            for name, value in wanted.items():
+                # A switch left at the code's default does not pin the value: a set's manual layer can still change it.
+                if value == config.BASELINE.get(name):
+                    config.RUNTIME.pop(name, None)
+                    setattr(V, name, value)
+                else:
+                    config.override(name, value)
         if save:
             self._engine_file().write_text(json.dumps({k: v["on"] for k, v in self.engine_settings().items()}))
         self.orchestrator.request_math_update()

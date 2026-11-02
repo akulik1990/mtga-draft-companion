@@ -1,6 +1,6 @@
 """Learn what top drafters prefer from their picks: one strength per card, from head-to-head choices.
 
-    uv run python tools/learn_prefs.py FRA            # writes companion/advisor_v2/prefs_FRA.json
+    uv run python tools/learn_prefs.py FRA            # writes companion/advisor_v2/sets/FRA/prefs.json
 
 Every pick by a top drafter (60%+ over 50+ games, the filtered dump from tools/replay/run.py
 sample-top) is a choice: these cards were in the pack, this one was taken. A conditional logit
@@ -25,6 +25,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 import companion  # noqa: E402,F401
 from companion import DATA_DIR  # noqa: E402
+from companion.advisor_v2 import config  # noqa: E402
 
 REPLAY = DATA_DIR / "Temp" / "replay"
 
@@ -98,7 +99,7 @@ def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     p.add_argument("set"); p.add_argument("--n", type=int, default=600)
     p.add_argument("--also-exclude", nargs="*", default=[], help="more drafts files (in the replay cache) to leave out")
-    p.add_argument("--out", help="write here instead of companion/advisor_v2/prefs_<SET>.json")
+    p.add_argument("--out", help="write here instead of companion/advisor_v2/sets/<SET>/prefs.json")
     a = p.parse_args(argv)
     with gzip.open(REPLAY / f"{a.set}.top{a.n}.test.drafts.json.gz", "rt", encoding="utf-8") as f:
         exclude = {d["id"] for d in json.load(f)}
@@ -114,7 +115,7 @@ def main(argv=None):
         out[f"{label}_info"] = info
         top = sorted(strengths.items(), key=lambda kv: -kv[1])[:8]
         print(f"{label}: {info['decisions']} choices, {info['cards']} cards, converged {info['converged']}; strongest: " + ", ".join(f"{n} {v:+.2f}" for n, v in top))
-    path = Path(a.out) if a.out else Path(companion.__file__).parent / "advisor_v2" / f"prefs_{a.set}.json"
+    path = Path(a.out) if a.out else config.set_file(a.set, "prefs")
     path.write_text(json.dumps(out))
     print(f"wrote {path}")
 

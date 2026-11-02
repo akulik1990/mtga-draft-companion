@@ -391,7 +391,10 @@ def apply_overrides(pairs):
         if not hasattr(target, name):
             raise SystemExit(f"{target.__name__} has no {name}")
         current = getattr(target, name)
-        setattr(target, name, value.lower() in ("1", "true", "on") if isinstance(current, bool) else type(current)(value))
+        from companion.advisor_v2 import config
+
+        key = f"{target.__name__.rsplit('.', 1)[-1]}.{name}" if target is not DraftAdvisorV2 else name
+        config.override(key, value.lower() in ("1", "true", "on") if isinstance(current, bool) else type(current)(value))
 
 
 def main(argv=None):
