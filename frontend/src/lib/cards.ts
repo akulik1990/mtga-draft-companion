@@ -27,3 +27,6 @@ export const pct = (v: number | undefined | null, d = 1) =>
 export const gradeTone = (g: string) =>
 	g.startsWith('A') ? 'text-emerald-400' : g.startsWith('B') ? 'text-lime-300' :
 	g.startsWith('C') ? 'text-zinc-300' : g === '-' ? 'text-zinc-600' : 'text-rose-400';
+
+/** The set-rank marker: "#1".."#5", then "Top 10" / "Top 20" / "Top 30"; '' below that. */
+export const rankMark = (r?: number | null) => (!r || r > 30 ? '' : r <= 5 ? `#${r}` : r <= 10 ? 'Top 10' : r <= 20 ? 'Top 20' : 'Top 30');

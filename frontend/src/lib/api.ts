@@ -6,6 +6,7 @@ export type Stats = {
 export type Card = {
 	name: string; cmc: number; mana_cost: string; colors: string[]; types: string[]; subtypes: string[];
 	rarity: string; image: string[]; tags: string[]; oracle_text?: string;
+	set_rank?: number | null;
 	deck_colors: Record<string, Stats>;
 	grades: Record<string, Record<string, string>>;
 	tiers?: Record<string, string>;

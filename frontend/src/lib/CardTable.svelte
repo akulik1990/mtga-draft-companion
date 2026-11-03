@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { Card } from './api';
 	import { stripe, type Column } from './format';
+	import { rankMark } from './cards';
 	import Pips from './Pips.svelte';
 
 	let { cards, columns, visible, highlight = '', onrow }: {
@@ -36,7 +37,7 @@
 		<tbody>
 			{#each rows as card (card.name)}
 				<tr class="cursor-pointer border-l-4 {stripe(card)} {card.name === highlight ? 'bg-emerald-900/30' : 'hover:bg-zinc-800/60'}" onclick={() => onrow(card)}>
-					<td class="px-2 py-1.5 font-sans text-base">{card.name}</td>
+					<td class="px-2 py-1.5 font-sans text-base">{card.name}{#if rankMark(card.set_rank)} <span class="ml-1 rounded bg-amber-500/90 px-1 font-mono text-xs font-bold text-zinc-950" title="Rank {card.set_rank} in the set by All Decks GIH WR">{rankMark(card.set_rank)}</span>{/if}</td>
 					{#each shown as c (c.key)}
 						<td class="px-2 py-1.5 text-right {c.cls?.(card) ?? 'text-zinc-300'}">{#if c.kind === 'colors'}<Pips colors={card.colors ?? []} size="h-4 w-4" />{:else}{c.show(card)}{/if}</td>
 					{/each}

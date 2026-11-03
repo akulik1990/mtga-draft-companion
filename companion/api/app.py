@@ -219,7 +219,7 @@ def create_app(session: DraftSession, *, run_scanner: bool = True, frontend: Pat
             cards.append({"name": c["name"], "rank": r and r["rank"], "score": r and r["contextual_score"],
                           "orders": ranks[0] if ranks else "", "fit": ranks and int(ranks[1]), "power": ranks and int(ranks[2]),
                           "heat": heat_cache["heat"].get(c["name"], 0), "wheel": r and r.get("wheel_chance"),
-                          "upstream": up.get(c["name"]), "gihwr": gih})
+                          "upstream": up.get(c["name"]), "gihwr": gih, "set_rank": c.get("set_rank")})
         b = (s.get("v2_split") or {}).get("branch")
         if b and b["take"]:  # the switch pick was chosen on Power; show that, not its blended Fit-side score
             power_top = s["v2_split"]["power"][0]

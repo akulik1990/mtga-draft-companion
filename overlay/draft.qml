@@ -63,7 +63,7 @@ ShellRoot {
         const cards = [];
         for (let i = 0; i < 14; i++)
             cards.push({ name: "card " + (i + 1), rank: i + 1, score: 60 - i, orders: "Fit #" + (i + 1) + " · Power #" + (i + 1), upstream: i + 1,
-                         fit: i + 1, power: i + 1, heat: i === 0 ? ({ fire: 1, bluefire: 2 })[Quickshell.env("OVERLAY_TEST")] || 0 : 0, gihwr: 60 - i, wheel: 10 * i });
+                         fit: i + 1, power: i + 1, heat: i === 0 ? ({ fire: 1, bluefire: 2 })[Quickshell.env("OVERLAY_TEST")] || 0 : 0, gihwr: 60 - i, wheel: 10 * i, set_rank: [1, 4, 8, 15, 27, 40][i] || 0 });
         return { cards: cards, branch: "Stay: card 1 (not card 2)",
                  panel: { pick: "card 1", top3: [], why: [], lanes: [{ lane: "UB", p: 0.6 }, { lane: "UBG", p: 0.3 }, { lane: "UG", p: 0.1 }],
                           signals: { W: -0.6, U: 1.2, B: 0.1, R: -0.3, G: -0.15 }, signal_from: { side: "left", packs: 8 },
@@ -523,6 +523,13 @@ ShellRoot {
                 Column {
                     id: stats
                     anchors.centerIn: parent
+                    Text {  // the card's rank in the set by GIH WR: #1-#5, then Top 10 / 20 / 30
+                        readonly property int r: panel.modelData.set_rank || 0
+                        visible: r > 0 && r <= 30
+                        text: r <= 5 ? "#" + r + " in set" : r <= 10 ? "Top 10" : r <= 20 ? "Top 20" : "Top 30"
+                        color: r <= 5 ? "#ffd75e" : r <= 10 ? "#f2c14e" : r <= 20 ? "#d9b56a" : "#b9a67e"
+                        font.pixelSize: win.unit * 0.66 * panel.k; font.weight: Font.Bold
+                    }
                     Text {
                         width: Math.min(implicitWidth, panel.maxW); elide: Text.ElideRight
                         text: (panel.modelData.gihwr ? "GIH " + Number(panel.modelData.gihwr).toFixed(1) : "GIH n/a") + (panel.modelData.upstream ? " · U" + panel.modelData.upstream : "")

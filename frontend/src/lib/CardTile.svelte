@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Card, Rec, Snapshot } from './api';
-	import { ALL, pct } from './cards';
+	import { ALL, pct, rankMark } from './cards';
 	import { fmt, tagIcons, tone } from './format';
 
 	let {
@@ -18,6 +18,7 @@
 		<div class="absolute inset-x-[6%] top-[11.5%] flex h-[43%] flex-col justify-between overflow-hidden rounded bg-zinc-950/80 p-[3%] text-left font-mono leading-tight" style="font-size: clamp(8px, 6.8cqw, 15px)"><!-- ponytail: text scales with card width -->
 			<div class="flex flex-wrap items-center gap-1">
 				{#if v2}<span class="rounded bg-violet-700 px-[0.3em] text-[1.15em] font-bold text-white" title="v2: rank {v2.rank}, score {v2.contextual_score.toFixed(2)}">V{v2.rank} <span class="font-normal text-violet-100">{v2.contextual_score.toFixed(1)}</span></span>{/if}
+				{#if rankMark(card.set_rank)}<span class="rounded bg-amber-500/90 px-1 font-bold text-zinc-950" title="Rank {card.set_rank} in the set by All Decks GIH WR">{rankMark(card.set_rank)}</span>{/if}
 				{#if upstream}<span class="rounded bg-sky-900 px-1 text-sky-100" title="upstream: rank {upstream.rank}, score {upstream.contextual_score.toFixed(1)}">U{upstream.rank} {upstream.contextual_score.toFixed(0)}</span>{/if}
 			</div>
 			<div class="flex flex-wrap gap-1">

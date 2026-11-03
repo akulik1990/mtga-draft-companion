@@ -29,8 +29,20 @@ GRADED_FIELDS = tuple(constants.WIN_RATE_OPTIONS)  # gihwr, ohwr, gpwr, gnswr, g
 DECK_CARD_FIELDS = ("name", "count", "cmc", "mana_cost", "types", "colors", "image", "rarity")
 
 
+def set_ranks(ratings):
+    """{name: rank} of the set's cards by All Decks GIH WR, 1 = best; lands and cards in hand for under 500 games
+    are left out (the same pool the overlay's fire markers use)."""
+    rows = {}
+    for c in (ratings or {}).values():
+        a = (c.get("deck_colors") or {}).get("All Decks") or {}
+        if "Land" not in (c.get("types") or []) and (a.get("samples") or 0) >= 500 and a.get("gihwr"):
+            rows[c["name"]] = a["gihwr"]
+    return {n: i for i, n in enumerate(sorted(rows, key=lambda n: -rows[n]), 1)}
+
+
 class DraftSession:
     def __init__(self, scanner, config):
+        self._ranks = (None, {})  # (dataset, {name: set rank by GIH WR})
         self.scanner = scanner
         self.config = config
         self.orchestrator = DraftOrchestrator(scanner, config, refresh_callback=None)
@@ -94,7 +106,10 @@ class DraftSession:
         filter_options_map = s.retrieve_color_win_rate(self.config.settings.filter_format) or {}
         tier_data = s.retrieve_tier_data() or {}
         tier_names = dict((v, k) for k, v in (TierList.retrieve_data(event_set)[1] or {}).items()) if event_set else {}
+        if self._ranks[0] != self.config.card_data.latest_dataset:
+            self._ranks = (self.config.card_data.latest_dataset, set_ranks(self.scanner.set_data.get_card_ratings()))
         for card in (*pack, *missing, *taken):
+            card["set_rank"] = self._ranks[1].get(card.get("name"))
             card["grades"] = self._grades(card, metrics, archetype)
             card["tiers"] = {key: tl.ratings[card["name"]].rating.strip() for key, tl in tier_data.items() if card.get("name") in tl.ratings}
 
