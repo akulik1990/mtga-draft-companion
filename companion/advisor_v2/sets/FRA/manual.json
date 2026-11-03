@@ -522,14 +522,16 @@
    ]
   },
   "Null Summoner": {
-   "wants": "seven or more cards in the graveyard (threshold) to cast the exiled card",
-   "enabler": "\\bmills?\\b|surveil|discard a card|discard your hand|discard (two|three|\\d+|x) cards|into your graveyard|flashback",
-   "rule": "cards that mill, surveil, make you discard, put cards into your graveyard, or have flashback"
+   "wants": "mostly self-sufficient (the hand disruption is value on its own); a little mill helps reach threshold to cast the exiled card",
+   "rule": "cards that mill",
+   "enabler": "\\bmills?\\b",
+   "source": "user review 2026-11-03"
   },
   "Recursive Recruitment": {
    "wants": "a big graveyard when flashed back (+1/+1 counter per three cards)",
    "enabler": "\\bmills?\\b|surveil|discard a card|discard your hand|discard (two|three|\\d+|x) cards|into your graveyard",
-   "rule": "cards that mill, surveil, make you discard or put cards into your graveyard"
+   "rule": "cards that mill, surveil, make you discard or put cards into your graveyard",
+   "source": "user review 2026-11-03: reading confirmed"
   },
   "Kwia Vigorbloom": {
    "wants": "gaining life each turn for Lotus tokens",
@@ -537,17 +539,20 @@
    "enabler_tags": [
     "lifegain"
    ],
-   "rule": "cards that gain life, have lifelink, or are tagged lifegain"
+   "rule": "cards that gain life, have lifelink, or are tagged lifegain",
+   "source": "user review 2026-11-03: reading confirmed"
   },
   "Denzilore Fatehold": {
    "wants": "scrying or surveilling often",
    "enabler": "\\bscry|surveil|empower jace",
-   "rule": "cards that scry, surveil, or empower Jace (the Jace token's −1 surveils)"
+   "rule": "cards that scry, surveil, or empower Jace (the Jace token's −1 surveils)",
+   "source": "user review 2026-11-03: reading confirmed"
   },
   "Proctor of Potential": {
    "wants": "creatures entering (surveil each) and a scry/surveil turn to return it",
    "enabler": "create .*creature token|\\bscry|surveil",
-   "rule": "cards that create creature tokens, scry or surveil"
+   "rule": "cards that create creature tokens, scry or surveil",
+   "source": "user review 2026-11-03: reading confirmed"
   },
   "Splinter Twin": {
    "wants": "a creature with a strong enters effect to copy every turn",
@@ -556,7 +561,8 @@
     "Creature"
    ],
    "all": true,
-   "rule": "creatures with an 'when this enters' effect"
+   "rule": "creatures with an 'when this enters' effect",
+   "source": "user review 2026-11-03: reading confirmed"
   },
   "Hungering Puppetbeast": {
    "wants": "other artifacts to sacrifice",
@@ -564,7 +570,8 @@
    "enabler_types": [
     "Artifact"
    ],
-   "rule": "artifacts, and cards that make Heartwood, Treasure, Lotus or other artifact tokens"
+   "rule": "artifacts, and cards that make Heartwood, Treasure, Lotus or other artifact tokens",
+   "source": "user review 2026-11-03: reading confirmed"
   },
   "Sanctum Lurker": {
    "wants": "planeswalkers (Jace tokens) to keep and to give +2",
@@ -572,7 +579,8 @@
    "enabler_types": [
     "Planeswalker"
    ],
-   "rule": "planeswalkers and cards that empower Jace"
+   "rule": "planeswalkers and cards that empower Jace",
+   "source": "user review 2026-11-03: reading confirmed"
   },
   "Avatar of Burgeoning Echoes": {
    "wants": "lands entering and planeswalkers",
@@ -580,7 +588,8 @@
    "enabler_types": [
     "Planeswalker"
    ],
-   "rule": "planeswalkers, cards that empower Jace, land search and landfall cards"
+   "rule": "planeswalkers, cards that empower Jace, land search and landfall cards",
+   "source": "user review 2026-11-03: reading confirmed"
   },
   "Countersculpt": {
    "wants": "a Jace to behold, else it costs one more",
@@ -622,7 +631,8 @@
    "enabler_tags": [
     "fixing_ramp"
    ],
-   "rule": "mana makers: cards that add mana, search for lands, make Treasure/Heartwood/Lotus, or are tagged ramp"
+   "rule": "mana makers: cards that add mana, search for lands, make Treasure/Heartwood/Lotus, or are tagged ramp",
+   "source": "user review 2026-11-03: reading confirmed"
   },
   "Lyra, Tolarian Archangel": {
    "wants": "drawing three or more cards in a turn",
@@ -630,15 +640,14 @@
    "enabler_tags": [
     "card_advantage"
    ],
-   "rule": "cards that draw cards or are tagged card advantage"
+   "rule": "cards that draw cards or are tagged card advantage",
+   "source": "user review 2026-11-03: reading confirmed"
   },
   "Fblthp, Impossibly Lost": {
-   "wants": "combat damage to the opponent: evasive attackers",
-   "enabler": "flying|can't be blocked|menace|trample",
-   "enabler_tags": [
-    "evasion"
-   ],
-   "rule": "evasive creatures: flying, can't be blocked, menace, trample, or tagged evasion"
+   "wants": "cards in the graveyard: mill",
+   "enabler": "\\bmills?\\b",
+   "rule": "cards that mill",
+   "source": "user review 2026-11-03"
   },
   "Ajani Unrelenting": {
    "wants": "other planeswalkers (each loyalty ability makes a Cadet), many creatures (+1 buffs them all, −2 draws a card per creature) and creature tokens, best made again and again, since −3 wipes everything but your tokens",
@@ -679,7 +688,13 @@
    "Mind Twist": "standalone (user review 2026-11-03)",
    "Overwrite the Multiverse": "standalone: board wipe that is itself a Jace enabler (user review 2026-11-03)",
    "Aerid Konstrari": "mostly an enabler, a mana and artifact generator (Heartwood tokens); artifacts improve it (user review 2026-11-03)",
-   "Sphinx of False Conclusions": "standalone: an enabler, fills the graveyard much like mill (draw, then discard on each attack) (user review 2026-11-03)"
+   "Sphinx of False Conclusions": "standalone: an enabler, fills the graveyard much like mill (draw, then discard on each attack) (user review 2026-11-03)",
+   "Lich's Relic": "standalone removal (user review 2026-11-03)",
+   "Craftwork Crusher": "standalone (user review 2026-11-03: confirmed)",
+   "Kindred Judgment": "standalone (user review 2026-11-03: confirmed)",
+   "Kiora of Fire and Ashes": "standalone (user review 2026-11-03: confirmed)",
+   "Austere Command": "standalone (user review 2026-11-03: confirmed)",
+   "Chandra, Torch of Defiance": "standalone (user review 2026-11-03: confirmed)"
   },
   "Garruk, Veiled Butcher": {
    "wants": "recurring removal on its own (+2 shrinks, −2 edict); better with creature tokens to sacrifice to his −2 and with boosts for his 4/4 Beast tokens; super with Ajani Unrelenting (+1 gives the Beasts +1/+0 and haste)",
