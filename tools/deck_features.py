@@ -34,11 +34,15 @@ FEATURES = {
     "dual_splash": "lands making 2+ colours, in splash decks",
     "cycler_splash": "basic landcyclers, in splash decks",
     "rock_splash": "any-colour mana spells, in splash decks",
+    "ur_other": "Izzet (UR main) decks: spells that are not interaction (removal, counter, bounce), card draw/selection or a top-30 card (video: Izzet wants only those)",
 }
 
 
 def extra_facts(set_code):
     data = json.loads((DATA_DIR / "Sets" / f"{set_code}_PremierDraft_All_Data.json").read_text())["card_ratings"]
+    wr = lambda c: ((c.get("deck_colors") or {}).get("All Decks") or {}).get("gihwr") or 0.0
+    top30 = {c["name"] for c in sorted(data.values(), key=lambda c: -wr(c))[:30]}
+    interact = re.compile(r"counter target|return target [^.]*to its owner's hand|put target [^.]*on (the )?(top|bottom)", re.I)
     out = {}
     for c in data.values():
         front = (c.get("mana_cost") or "").split("//")[0]
@@ -50,6 +54,8 @@ def extra_facts(set_code):
             "makes": [x for x in c.get("colors") or [] if x in "WUBRG"] if land else [],
             "cycler": "Basic landcycling" in (c.get("keywords") or []),
             "rock": not land and "mana of any color" in (c.get("oracle_text") or ""),
+            "plan": land or c["name"] in top30 or bool({"removal", "card_advantage"} & set(c.get("tags") or []))
+                    or bool(interact.search(c.get("oracle_text") or "")),
         })
     return out
 
@@ -72,6 +78,8 @@ def deck_features(counts, facts, main, splash):
             f["dp_short"] += n * (x["cmc"] <= 4 and sources[x["double"]] < 8)
             f["dp_splash"] += n * (x["double"] in splash)
             f["dp_multi"] += n * multi
+        if sorted(main) == ["R", "U"]:
+            f["ur_other"] += n * (not x["plan"])
         if splash:
             f["dual_splash"] += n * (x["land"] and len(x["makes"]) >= 2)
             f["cycler_splash"] += n * x["cycler"]
