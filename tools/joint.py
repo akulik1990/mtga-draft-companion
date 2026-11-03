@@ -18,6 +18,7 @@ import argparse
 import gzip
 import json
 import random
+import re
 import subprocess
 import sys
 from concurrent.futures import ThreadPoolExecutor
@@ -109,6 +110,7 @@ def main(argv=None):
     print(f"{'variant':44} {'top-1':>6} {'d':>6} {'top-3':>6} {'d':>6} {'P1 1-5':>7}")
     for name, values, m in sorted(results[1:], key=lambda x: -x[2]["top1"]):
         label = name if not name.startswith("random") else name + ": " + " ".join(f"{k}={v}" for k, v in values.items())
+        label = re.sub(r"=/\S*/", "=", label)  # file values by their name only
         print(f"{label[:44]:44} {m['top1']:6.2f} {m['top1'] - b['top1']:+6.2f} {m['top3']:6.2f} {m['top3'] - b['top3']:+6.2f} {early(m) or 0:7.2f}")
         if name.startswith("random") and len(label) > 44:
             print(f"    {label[44:]}")

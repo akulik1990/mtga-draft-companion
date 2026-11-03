@@ -153,6 +153,9 @@ class DraftAdvisorV2:
     BRANCH_COLOUR = True  # switch rule that also weighs whether the strong card keeps a colour of the top pair and how settled the pool is (fitted.json, branch_colour). FRA: test top-1 55.4 -> 56.0, deck win rate -0.86 (SE 0.34, 200 bot tables, all from tables ending in other colours); on by the user's call 2026-11-01
     KEEP_ANY = False  # "keeps a colour" = some pair that casts the card shares a colour with the top pair (a mono-red card keeps U of a UB pool via UR); False = the card itself shares a colour with the top pair
     BRANCH_FILE = ""  # override the fitted rule's file (measuring alternatives); "" = the set's fitted.json
+    BOMB_WR = 61.0  # All Decks GIH WR from which the strong card counts as a bomb in the switch rule (its "f" term, tools/fit_branch.py --bomb)
+    BRANCH_EARLY = 0.0  # WR points added to the switch bar at pack 1 picks 2..BRANCH_EARLY_TO (FRA train: early switches matched top drafters 30.9% vs 55.4% otherwise)
+    BRANCH_EARLY_TO = 7
     BRANCH_DEFAULT = 3.0  # GIH WR points; used for stages with no fitted threshold (fitted.json, branch)
     ORDER_FADE_BY = 0  # pick in the pack by which the pick-order prior has faded to 0; 0 = no fade
     PREF_WEIGHT = 4.0  # WR points per SD of top drafters' learnt preference (tools/learn_prefs.py); 0 = off
@@ -762,9 +765,13 @@ class DraftAdvisorV2:
         if coef.get("b", 0) > 0:
             # Learnt from top drafters: branch more readily early and when the best in-colour card is weak;
             # fitted files may also weigh whether the card keeps a colour and how settled the pool is.
-            threshold = -(coef["a"] + coef["c"] * c_strength + coef.get("d", 0.0) * shared + coef.get("e", 0.0) * committed) / coef["b"]
+            bomb = float(float((all_decks(by_name[p_top])).get("gihwr") or 0.0) >= self.BOMB_WR)
+            threshold = -(coef["a"] + coef["c"] * c_strength + coef.get("d", 0.0) * shared + coef.get("e", 0.0) * committed
+                          + coef.get("f", 0.0) * bomb) / coef["b"]
         else:
             threshold = self.BRANCH_DEFAULT
+        if self.pack_now == 1 and 2 <= pick <= self.BRANCH_EARLY_TO:
+            threshold += self.BRANCH_EARLY  # top drafters stay with their first picks' colours more than the fitted rule says
         take_power = p_top != c_top and (self.BRANCH_MODE == "power" or (self.BRANCH_MODE == "learnt" and gap > threshold))
         self.split = {
             "power": sorted(({"card": n, "score": round(v, 2)} for n, v in power.items()), key=lambda x: -x["score"])[:3],
