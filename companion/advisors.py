@@ -5,6 +5,7 @@ import logging
 from src.advisor.engine import DraftAdvisor
 
 from companion.advisor_v2.engine import DraftAdvisorV2
+from companion.advisor_v2.signals import SIDES
 
 log = logging.getLogger(__name__)
 
@@ -21,7 +22,8 @@ def rank_pack(metrics, taken_cards, pack_cards, pick, pack_number, seen_packs=()
             results[key] = [{"rank": i, **r.model_dump()} for i, r in enumerate(recs, 1)]
             if cls is DraftAdvisorV2:
                 lanes, signals = advisor.lanes, advisor.signals
-                sides = {"active": advisor.signal_side, **advisor.signal_sides}
+                read = sum(1 for p in seen_packs if p[1] > 1 and p[0] in SIDES.get(advisor.signal_side, ()))
+                sides = {"active": advisor.signal_side, "read": read, **advisor.signal_sides}
                 split = advisor.split
         except Exception:
             log.exception("Advisor %s failed", key)

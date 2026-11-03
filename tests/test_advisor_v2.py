@@ -331,3 +331,16 @@ def test_lane_flat_power_by_pick(world, monkeypatch):
     monkeypatch.setattr(DraftAdvisorV2, "LANE_FLAT", "")
     sharp = DraftAdvisorV2(metrics, cards[:3]).lanes
     assert max(flat.values()) < max(sharp.values()) and abs(sum(flat.values()) - 1) < 1e-9
+
+
+def test_pool_fixing_ignores_landcyclers():
+    from companion.advisor_v2.lanes import pool_fixing
+    cycler = {"name": "Cycler", "types": ["Creature"], "keywords": ["Basic landcycling"],
+              "oracle_text": "Basic landcycling {2} ({2}, Discard this card: Search your library for a basic land card...)"}
+    dual = {"name": "Dual", "types": ["Land"], "colors": ["U", "B"], "oracle_text": "{T}: Add {U} or {B}."}
+    fetch = {"name": "Fetch", "types": ["Land"], "colors": [], "oracle_text": "Sacrifice: search your library for a basic land card."}
+    rock = {"name": "Rock", "types": ["Artifact"], "oracle_text": "{T}: Add one mana of any color."}
+    basic = {"name": "Island", "types": ["Basic", "Land"], "colors": ["U"]}
+    assert pool_fixing([cycler, basic]) == dict.fromkeys("WUBRG", 0)
+    assert pool_fixing([dual]) == {"W": 0, "U": 1, "B": 1, "R": 0, "G": 0}
+    assert pool_fixing([fetch, rock]) == dict.fromkeys("WUBRG", 2)

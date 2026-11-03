@@ -22,7 +22,7 @@ from src.advisor.mana_base import count_fixing
 from src.advisor.schema import Recommendation
 
 from companion.advisor_v2 import composition, config, synergy
-from companion.advisor_v2.lanes import ALL, LANES, all_decks, any_colour_fixer, castable, commitment, lane_distribution, off_pips, pips, quality
+from companion.advisor_v2.lanes import ALL, LANES, all_decks, any_colour_fixer, castable, commitment, lane_distribution, off_pips, pips, pool_fixing, quality
 from companion.advisor_v2 import signals as signal_mod
 from companion.advisor_v2.signals import colour_signals, side_for_pack, side_signals
 
@@ -162,6 +162,7 @@ class DraftAdvisorV2:
     # Neutral by default; for testing ideas from top players per set (sets/<SET>/manual.json, "values"):
     FIX_BONUS = 0.0  # WR points for a land that taps for the lane and makes another colour, on top of the splashes it enables
     OWN_BUILDER = True  # deck building: companion/advisor_v2/deckbuilder.py (model win rate within top players' deck shape); False = upstream's builder
+    OWN_FIXING = True  # pool fixing counted by lanes.pool_fixing (nonbasic lands, any-colour lands and mana); False = upstream's count_fixing, which also counts basic landcyclers as sources of every colour
     CYCLE_FIX = False  # basic landcyclers and any-colour mana rocks count as fixing for every colour (and earn the splashes they enable)
     THREE_COLOUR_AT = 0  # the pool counts as three-colour once it has this many one-pip splash spells for its top pair; 0 = never
     DOUBLE_PIP = 0.0  # in a three-colour pool, WR points off per extra pip of one colour ({U}{U}: one extra)
@@ -192,6 +193,7 @@ class DraftAdvisorV2:
     COLOUR_SHIFT = ""  # per-colour WR points taken off a card's value, "U:2" or "U:2,B:-1"; a card gets the mean over its colours; "" = off
     WHEEL_EPS = 0.3  # within this of the best score, prefer the card that wheels less
     WHEEL_SPLIT = False  # apply the WHEEL_EPS tiebreak to the split's final order too (it used to apply only with SPLIT off)
+    SIGNAL_OTHER = 0.0  # weight of the other neighbour's signal added to the one passing now (pack 2 still learns from pack 1's side, which passes again in pack 3); 0 = off
     WHEEL_PENALTY = 0.0  # WR points taken from Power and Fit per 100% chance the card comes back; 0 = off
 
     def __init__(self, set_metrics, taken_cards, seen_packs=None):
@@ -212,6 +214,9 @@ class DraftAdvisorV2:
             self.signal_sides = side_signals(seen, self.mean, self.std, spread)
             self.signal_side = side_for_pack(self.current_pack)
             self.signals = self.signal_sides[self.signal_side]
+            if self.SIGNAL_OTHER:
+                other = next((v for k, v in self.signal_sides.items() if k != self.signal_side), {})
+                self.signals = {c: v + self.SIGNAL_OTHER * other.get(c, 0.0) for c, v in self.signals.items()}
         else:
             self.signal_sides, self.signal_side = {}, ""
             self.signals = colour_signals(seen, self.mean, self.std, spread)
@@ -221,7 +226,7 @@ class DraftAdvisorV2:
             self.prior[lane] = (m - self.mean) / self.std if m > 0 else 0.0
             self.prior[lane] += config.ACTIVE["tables"]["pairs"].get(lane, 0.0) / self.std  # manual pair strength, in WR points
         self.replacement = self.mean - self.REPLACEMENT_SD * self.std
-        self.fixing = count_fixing(self.pool) if self.pool else {}
+        self.fixing = (pool_fixing(self.pool) if self.OWN_FIXING else count_fixing(self.pool)) if self.pool else {}
         if self.CYCLE_FIX:
             for c in self.pool:
                 if any_colour_fixer(c):

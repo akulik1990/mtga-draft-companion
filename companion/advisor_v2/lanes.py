@@ -61,6 +61,25 @@ def any_colour_fixer(card):
     return "Basic landcycling" in (card.get("keywords") or []) or "mana of any color" in (card.get("oracle_text") or "")
 
 
+def pool_fixing(pool):
+    """Sources per colour a splash can count on: nonbasic lands by the colours they make, plus any-colour lands
+    (fetches) and any-colour mana. Basic landcyclers are not sources: they find a basic the deck already plays."""
+    fix = dict.fromkeys("WUBRG", 0)
+    for c in pool:
+        types, text = c.get("types") or [], (c.get("oracle_text") or "").lower()
+        if "Land" in types:
+            if "Basic" in types:
+                continue
+            cols = [col for col in c.get("colors") or [] if col in fix]
+            if not cols and ("any color" in text or "basic land card" in text):
+                cols = list(fix)
+        else:
+            cols = list(fix) if "mana of any color" in text else []
+        for col in cols:
+            fix[col] += 1
+    return fix
+
+
 def quality(card, mean, std):
     """0 for an unplayable card, 1 at the format mean, 2 one SD above. Lands count 0."""
     if "Land" in (card.get("types") or []):

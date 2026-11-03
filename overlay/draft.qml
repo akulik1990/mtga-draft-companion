@@ -64,7 +64,10 @@ ShellRoot {
         for (let i = 0; i < 14; i++)
             cards.push({ name: "card " + (i + 1), rank: i + 1, score: 60 - i, orders: "Fit #" + (i + 1) + " · Power #" + (i + 1), upstream: i + 1,
                          fit: i + 1, power: i + 1, heat: i === 0 ? ({ fire: 1, bluefire: 2 })[Quickshell.env("OVERLAY_TEST")] || 0 : 0, gihwr: 60 - i, wheel: 10 * i });
-        return { cards: cards, branch: "Stay: card 1 (not card 2)" };
+        return { cards: cards, branch: "Stay: card 1 (not card 2)",
+                 panel: { pick: "card 1", top3: [], why: [], lanes: [{ lane: "UB", p: 0.9 }, { lane: "UG", p: 0.1 }],
+                          signals: { W: -0.6, U: 1.2, B: 0.1, R: -0.3, G: -0.15 }, signal_from: { side: "left", packs: 8 },
+                          pool: { n: 22, colours: {}, curve: [4, 6, 7, 3, 1, 1] } } };
     }
 
     Timer {
@@ -343,27 +346,38 @@ ShellRoot {
                         Row {
                             id: sig
                             readonly property var vals: win.pn ? win.pn.signals : ({})
-                            readonly property real peak: Math.max(0.01, ...Object.values(vals).map(Math.abs))
-                            readonly property bool any: Object.values(vals).some(v => v !== 0)
+                            readonly property real full: 1.0  // fixed scale: a signal of 1 fills the half; small early noise stays small
                             spacing: win.unit * 0.15
                             Repeater {
                                 model: ["W", "U", "B", "R", "G"]
                                 Column {
                                     required property string modelData
                                     readonly property real v: sig.vals[modelData] || 0
-                                    Item {  // up = open, down = cut
+                                    Item {  // up = open (filled), down = cut (outline)
                                         width: (col.width * 0.48 - win.unit * 1.2) / 5; height: win.unit * 1.6
                                         Rectangle { y: parent.height / 2; width: parent.width; height: 1; color: "#40ffffff" }
                                         Rectangle {
                                             width: parent.width * 0.7; x: parent.width * 0.15
-                                            height: Math.abs(parent.parent.v) / sig.peak * parent.height / 2
+                                            height: Math.max(1, Math.min(1, Math.abs(parent.parent.v) / sig.full) * parent.height / 2)
                                             y: parent.parent.v >= 0 ? parent.height / 2 - height : parent.height / 2
-                                            radius: 1; color: win.wubrg[modelData]; opacity: parent.parent.v >= 0 ? 1 : 0.45
+                                            radius: 1
+                                            color: parent.parent.v >= 0 ? win.wubrg[modelData] : "transparent"
+                                            border.width: parent.parent.v >= 0 ? 0 : 1; border.color: win.wubrg[modelData]
                                         }
                                     }
                                     Text { anchors.horizontalCenter: parent.horizontalCenter; text: modelData; color: win.wubrg[modelData]; font.pixelSize: win.unit * 0.55; font.bold: true }
+                                    Text {
+                                        anchors.horizontalCenter: parent.horizontalCenter
+                                        text: (parent.v > 0 ? "+" : parent.v < 0 ? "\u2212" : "") + Math.abs(parent.v).toFixed(1)
+                                        color: Math.abs(parent.v) < 0.2 ? "#6b737c" : "#c9ced4"; font.pixelSize: win.unit * 0.45
+                                    }
                                 }
                             }
+                        }
+                        Text {  // which neighbour the signal reads, and from how many passed packs
+                            readonly property var from: win.pn ? win.pn.signal_from : null
+                            text: from && from.side ? (from.side === "right" ? "from right" : "from left") + " \u00b7 " + from.packs + " packs" : ""
+                            color: "#6b737c"; font.pixelSize: win.unit * 0.45
                         }
                     }
                     Column {
