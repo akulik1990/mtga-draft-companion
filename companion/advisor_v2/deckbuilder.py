@@ -14,7 +14,7 @@ import re
 from collections import Counter
 
 from companion.advisor_v2.composition import curve_slot, roles
-from companion.advisor_v2.lanes import LANES, any_colour_fixer, castable, off_pips
+from companion.advisor_v2.lanes import LANES, any_colour_fixer, castable, off_pips, pool_fixing
 
 SPELLS = 23
 LANDS = 17
@@ -37,6 +37,7 @@ MIN_BASICS_THREE = 4  # ...and of each colour of a three-colour deck
 MAX_SPLASH = 3  # splash cards; more and it is a third main colour
 MIN_SPLASH_CMC = 3  # splash late, impactful cards, not early drops
 MAX_SPLASH_BASICS = 4  # basics of the splash colour before the main colours suffer
+OWN_FIXING = True  # splash and three-colour rule inputs count fixing without basic landcyclers (colour_fixing); refit the rules when switching
 THREE_AT = 0.5  # go three colours when the fitted three rule gives at least this chance
 SPLASH_AT = 0.5  # splash when the fitted splash rule gives at least this chance
 SYN_MATES = 0.0  # WR points per unit of the deck's deck-mate sum (pairwise log lift of top players' decks in the pair, over 23); 0 = off
@@ -114,15 +115,7 @@ def splash_features(pool, lane):
             if len(off) == 1:
                 for col in off[0]:
                     best[col] = max(best.get(col, 0.0), _wr(c, "All Decks"))
-    fix = dict.fromkeys("WUBRG", 0)
-    for c in pool:
-        if "Land" in (c.get("types") or []) and "Basic" not in (c.get("types") or []):
-            for col in c.get("colors") or []:
-                if col not in lane:
-                    fix[col] += 1
-        if any_colour_fixer(c):
-            for col in "WUBRG":
-                fix[col] += 1
+    fix = colour_fixing(pool, lane)
     if not best:
         return -10.0, 0, len(on), None, 0, 0, cut
     col = max(best, key=lambda k: best[k] - cut + 0.5 * min(fix[k], 6))
@@ -132,6 +125,23 @@ def splash_features(pool, lane):
                 and col in off_pips(c, lane)[0] and _wr(c, "All Decks") >= cut)
     duals = sum(1 for c in pool if "Land" in (c.get("types") or []) and "Basic" not in (c.get("types") or []) and col in (c.get("colors") or []))
     return best[col] - cut, min(fix[col], 8), len(on), col, above, min(duals, 6), cut
+
+
+def colour_fixing(pool, lane):
+    """Sources per off-lane colour for the splash and three-colour rules. OWN_FIXING: lanes.pool_fixing (nonbasic lands by
+    colour, fetches, any-colour mana); off: the old count, which also took basic landcyclers as sources of every colour."""
+    if OWN_FIXING:
+        return {col: (0 if col in lane else n) for col, n in pool_fixing(pool).items()}
+    fix = dict.fromkeys("WUBRG", 0)
+    for c in pool:
+        if "Land" in (c.get("types") or []) and "Basic" not in (c.get("types") or []):
+            for col in c.get("colors") or []:
+                if col not in lane:
+                    fix[col] += 1
+        if any_colour_fixer(c):
+            for col in "WUBRG":
+                fix[col] += 1
+    return fix
 
 
 SPLASH_INPUTS = ("edge", "fixing", "playables", "colour", "above", "duals", "depth")
@@ -150,15 +160,7 @@ def three_features(pool, lane):
     spell = lambda c: "Land" not in (c.get("types") or [])
     on = sorted((_wr(c, lane) for c in pool if spell(c) and castable(c, lane) and _wr(c, lane) > 0), reverse=True)
     cut = on[SPELLS - 1] if len(on) >= SPELLS else 45.0
-    fix = dict.fromkeys("WUBRG", 0)
-    for c in pool:
-        if "Land" in (c.get("types") or []) and "Basic" not in (c.get("types") or []):
-            for col in c.get("colors") or []:
-                if col not in lane:
-                    fix[col] += 1
-        if any_colour_fixer(c):
-            for col in "WUBRG":
-                fix[col] += 1
+    fix = colour_fixing(pool, lane)
     adds = {col: sum(1 for c in pool if spell(c) and not castable(c, lane) and castable(c, lane + col) and _wr(c, "All Decks") >= cut)
             for col in "WUBRG" if col not in lane}
     col = max(adds, key=lambda k: adds[k] + 0.5 * min(fix[k], 6))

@@ -94,6 +94,7 @@
   "deckbuilder.MIN_PER_COLOUR": 5,
   "deckbuilder.MIN_PER_COLOUR_THREE": 3,
   "deckbuilder.MIN_SPLASH_CMC": 3,
+  "deckbuilder.OWN_FIXING": true,
   "deckbuilder.PENALTY": 1.5,
   "deckbuilder.REMOVAL_SLACK": 2.0,
   "deckbuilder.SPELLS": 23,
