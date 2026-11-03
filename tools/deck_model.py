@@ -27,7 +27,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 import companion  # noqa: E402,F401
 from companion import DATA_DIR  # noqa: E402
-from companion.advisor_v2 import config  # noqa: E402
+from companion.advisor_v2 import composition, config  # noqa: E402
 
 SHAPE = ["creatures", "cmc1", "cmc2", "cmc3", "cmc4", "cmc5", "cmc6p", "removal", "lands", "nonbasic_lands", "colours", "splash"]
 SKILLS = [0.40, 0.44, 0.48, 0.52, 0.56, 0.60, 0.64, 0.68]
@@ -38,7 +38,7 @@ def card_facts(set_code):
     facts = {}
     for c in data.values():
         types, tags = c.get("types") or [], config.tags(c, set_code)
-        f = {"creature": "Creature" in types, "land": "Land" in types, "basic": "Basic" in types,
+        f = {"creature": composition.is_creature(c), "land": "Land" in types, "basic": "Basic" in types,
              "cmc": int(c.get("cmc") or 0), "removal": "removal" in tags}
         facts.setdefault(c["name"], f)
         facts.setdefault(c["name"].split(" // ")[0], f)
@@ -205,6 +205,8 @@ def main(argv=None):
     f.add_argument("--section", default="deckmodel", help="fitted.json section to write (deckmodel is the mock yardstick; the builder can use another)")
     f.set_defaults(fn=cmd_fit)
     a = p.parse_args(argv)
+    import companion.advisor_v2.engine  # noqa: F401  (registers the settings activate checks)
+    config.activate(a.set)  # the set's settings (e.g. composition.TOKENS_AS_CREATURES) shape what is fitted
     a.fn(a)
 
 

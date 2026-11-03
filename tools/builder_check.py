@@ -22,7 +22,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 import companion  # noqa: E402,F401
 from companion import DATA_DIR  # noqa: E402
-from companion.advisor_v2 import config, deckbuilder  # noqa: E402
+from companion.advisor_v2 import composition, config, deckbuilder  # noqa: E402
 from companion.advisor_v2.lanes import castable  # noqa: E402
 from tools.deck_model import DeckModel  # noqa: E402
 from tools.mock_draft import apply_overrides  # noqa: E402
@@ -99,7 +99,7 @@ def one(item):
     their_bombs = [n for n in theirs if n in top]
     kept = sum(1 for n in their_bombs if n in ours)
     return {"bombs": len(their_bombs), "bombs_kept": kept, "bombs_missed": [n for n in their_bombs if n not in ours], "predicted": b["predicted"], "our_removal": removal(b["spells"]), "their_removal": removal(their_cards),
-            "our_creatures": sum("Creature" in (c.get("types") or []) for c in b["spells"]), "their_creatures": sum("Creature" in (c.get("types") or []) for c in their_cards), "lane": lane, "our_lane": b["lane"], "splash": splash, "our_splash": b["splash"], "overlap": overlap,
+            "our_creatures": sum(composition.is_creature(c) for c in b["spells"]), "their_creatures": sum(composition.is_creature(c) for c in their_cards), "lane": lane, "our_lane": b["lane"], "splash": splash, "our_splash": b["splash"], "overlap": overlap,
             "their_splash_cards": their_splash_cards, "our_splash_cards": sum(1 for c in b["spells"] if not castable(c, b["lane"]))}
 
 

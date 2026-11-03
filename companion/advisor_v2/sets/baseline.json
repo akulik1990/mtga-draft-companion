@@ -86,6 +86,7 @@
   "composition.DECK_SPELLS": 23.0,
   "composition.ENABLED": false,
   "composition.MIN_POOL": 12,
+  "composition.TOKENS_AS_CREATURES": false,
   "deckbuilder.BOMB_BONUS": 0.0,
   "deckbuilder.BOMB_TOP": 30,
   "deckbuilder.CREATURE_ABOVE": 3.0,

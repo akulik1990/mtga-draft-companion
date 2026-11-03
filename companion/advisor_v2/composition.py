@@ -7,6 +7,7 @@ already over gets down to -BOUND. Lands and cards with no data get 1.0.
 """
 
 import json
+import re
 from pathlib import Path
 from companion.advisor_v2 import config
 
@@ -55,13 +56,25 @@ class Composition:
 ROLES = ("creatures", "removal", "card_advantage", "evasion", "two_drops", "five_plus", "lands")
 
 
+TOKENS_AS_CREATURES = False  # a non-creature card that makes creature tokens (Recursive Recruitment, Hexhaven Battalion, Garruk) counts as a creature in shape counts; Jace tokens are planeswalkers and do not
+
+
+def makes_creatures(card):
+    return "Creature" not in (card.get("types") or []) and bool(re.search(r"\bcreates? [^.]*?creature tokens?", card.get("oracle_text") or "", re.I))
+
+
+def is_creature(card):
+    """Creature for deck-shape counts: the card itself, or with TOKENS_AS_CREATURES a maker of creature tokens."""
+    return "Creature" in (card.get("types") or []) or (TOKENS_AS_CREATURES and makes_creatures(card))
+
+
 def roles(card):
     """Which ROLES a card counts toward (deck-shape counts for tools/deck_targets.py and the overlay)."""
     types, tags, cmc = card.get("types") or [], config.tags(card), int(card.get("cmc") or 0)
     if "Land" in types:
         return {"lands"}
     out = {t for t in ("removal", "card_advantage", "evasion") if t in tags}
-    if "Creature" in types:
+    if is_creature(card):
         out.add("creatures")
     if cmc == 2:
         out.add("two_drops")

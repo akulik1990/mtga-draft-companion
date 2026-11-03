@@ -37,6 +37,8 @@ def main(argv=None):
     p.add_argument("--min-skill", type=float, default=0.60)
     p.add_argument("--min-triple", type=int, default=150)
     a = p.parse_args(argv)
+    import companion.advisor_v2.engine  # noqa: F401  (registers the settings activate checks)
+    config.activate(a.set)  # the set's settings (e.g. composition.TOKENS_AS_CREATURES) shape what is fitted
 
     data = json.loads((DATA_DIR / "Sets" / f"{a.set}_PremierDraft_All_Data.json").read_text())["card_ratings"]
     wrs = [((c.get("deck_colors") or {}).get("All Decks") or {}).get("gihwr") or 0.0 for c in data.values()]

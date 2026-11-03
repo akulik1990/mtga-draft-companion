@@ -265,6 +265,8 @@ def main(argv=None):
         s.add_argument("--ridge", type=float, default=2.0)
         s.set_defaults(fn=fn)
     a = p.parse_args(argv)
+    import companion.advisor_v2.engine  # noqa: F401  (registers the settings activate checks)
+    config.activate(a.set)  # the set's settings (e.g. composition.TOKENS_AS_CREATURES) shape what is fitted
     a.fn(a)
 
 
