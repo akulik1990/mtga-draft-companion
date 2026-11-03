@@ -83,10 +83,13 @@ def main(argv=None):
             X.append(splash_features(cards, lane))
             y.append(1.0 if splash else 0.0)
     wide = ["edge", "fixing", "playables", "above", "duals", "depth"]
+    card = wide + ["removal", "cmc"]  # the best splash card itself
     pick = lambda names: [[dict(zip(SPLASH_INPUTS, x))[k] for k in names] for x in X]
-    base, ext = fit(pick(NAMES), y), fit(pick(wide), y)
-    print(f"splash rule held-out accuracy: {NAMES} {base[3]:.3f}, {wide} {ext[3]:.3f}")
+    base, ext, ext2 = fit(pick(NAMES), y), fit(pick(wide), y), fit(pick(card), y)
+    print(f"splash rule held-out accuracy: {NAMES} {base[3]:.3f}, {wide} {ext[3]:.3f}, + removal, cmc {ext2[3]:.3f}")
     names, best = (wide, ext) if ext[3] >= base[3] + 0.005 else (NAMES, base)
+    if ext2[3] >= best[3]:  # level or better: the card inputs stay in
+        names, best = card, ext2
     record(a.set, "splash", names, *best, y,
            f"tools/fit_splash.py: when 60%+ players splash (17Lands game data), logistic on {', '.join(names)}")
     pick3 = lambda names: [[dict(zip(THREE_INPUTS, x))[k] for k in names] for x in X3]

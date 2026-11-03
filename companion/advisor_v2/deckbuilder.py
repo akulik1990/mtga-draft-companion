@@ -119,14 +119,18 @@ def splash_features(pool, lane):
                     best[col] = max(best.get(col, 0.0), _wr(c, "All Decks"))
     fix = colour_fixing(pool, lane)
     if not best:
-        return -10.0, 0, len(on), None, 0, 0, cut
+        return -10.0, 0, len(on), None, 0, 0, cut, 0.0, 0
     col = max(best, key=lambda k: best[k] - cut + 0.5 * min(fix[k], 6))
     # Extended inputs (used when the fitted rule lists them): splashable cards of the colour above the 23rd, that
     # colour's own dual lands (any-colour fixers aside), and the pair's depth (its 23rd card's win rate).
     above = sum(1 for c in pool if spell(c) and not castable(c, lane) and len(off_pips(c, lane)) == 1
                 and col in off_pips(c, lane)[0] and _wr(c, "All Decks") >= cut)
     duals = sum(1 for c in pool if "Land" in (c.get("types") or []) and "Basic" not in (c.get("types") or []) and col in (c.get("colors") or []))
-    return best[col] - cut, min(fix[col], 8), len(on), col, above, min(duals, 6), cut
+    # The best splash card itself: removal (what guides say to splash) and its mana value (late, impactful cards).
+    top = max((c for c in pool if spell(c) and not castable(c, lane) and len(off_pips(c, lane)) == 1 and col in off_pips(c, lane)[0]),
+              key=lambda c: _wr(c, "All Decks"))
+    return (best[col] - cut, min(fix[col], 8), len(on), col, above, min(duals, 6), cut,
+            float("removal" in (top.get("tags") or [])), min(int(top.get("cmc") or 0), 7))
 
 
 def colour_fixing(pool, lane):
@@ -146,7 +150,7 @@ def colour_fixing(pool, lane):
     return fix
 
 
-SPLASH_INPUTS = ("edge", "fixing", "playables", "colour", "above", "duals", "depth")
+SPLASH_INPUTS = ("edge", "fixing", "playables", "colour", "above", "duals", "depth", "removal", "cmc")
 
 
 def splash_inputs(rule, f):

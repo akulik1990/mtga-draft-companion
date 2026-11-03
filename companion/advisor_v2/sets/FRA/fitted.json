@@ -506,9 +506,9 @@
    "commit": "7a17cb0"
   },
   "splash": {
-   "how": "tools/fit_splash.py: when 60%+ players splash (17Lands game data), logistic on edge, fixing, playables, above, duals, depth",
+   "how": "tools/fit_splash.py: when 60%+ players splash (17Lands game data), logistic on edge, fixing, playables, above, duals, depth, removal, cmc",
    "date": "2026-11-03",
-   "commit": "dedd0c2"
+   "commit": "906f1a2"
   },
   "offcolour": {
    "how": "tools/fit_offcolour.py: share of cards outside 60%+ players' core pair that made their deck, logistic on GIH WR z and 2+ off pips",
@@ -518,7 +518,7 @@
   "three": {
    "how": "tools/fit_splash.py: when 60%+ players play three main colours (17Lands game data), logistic on adds, fixing, playables, duals, depth",
    "date": "2026-11-03",
-   "commit": "dedd0c2"
+   "commit": "906f1a2"
   },
   "synergy": {
    "how": "tools/fit_themes.py: manual.json themes tested as enablers x payoffs terms in the deck model, held-out games",
@@ -2587,16 +2587,20 @@
    "playables",
    "above",
    "duals",
-   "depth"
+   "depth",
+   "removal",
+   "cmc"
   ],
   "w": [
-   0.1026,
-   1.095,
-   0.8411,
-   -0.6441,
-   -0.0028,
-   1.173,
-   0.4504
+   0.0969,
+   1.0508,
+   0.8455,
+   -0.6417,
+   -0.0042,
+   1.1466,
+   0.4021,
+   0.0108,
+   0.2291
   ],
   "mu": [
    4.463,
@@ -2604,7 +2608,9 @@
    30.7858,
    2.217,
    1.5064,
-   53.3512
+   53.3512,
+   0.4496,
+   3.2401
   ],
   "sd": [
    4.6107,
@@ -2612,11 +2618,13 @@
    3.4701,
    1.679,
    1.4521,
-   2.0277
+   2.0277,
+   0.4975,
+   1.2471
   ],
   "n": 6355,
   "rate": 0.494,
-  "heldout_accuracy": 0.864
+  "heldout_accuracy": 0.865
  },
  "offcolour": {
   "w": [
