@@ -98,7 +98,8 @@ def one(item):
     top = ARGS["top"]
     their_bombs = [n for n in theirs if n in top]
     kept = sum(1 for n in their_bombs if n in ours)
-    return {"bombs": len(their_bombs), "bombs_kept": kept, "bombs_missed": [n for n in their_bombs if n not in ours], "predicted": b["predicted"], "our_removal": removal(b["spells"]), "their_removal": removal(their_cards), "lane": lane, "our_lane": b["lane"], "splash": splash, "our_splash": b["splash"], "overlap": overlap,
+    return {"bombs": len(their_bombs), "bombs_kept": kept, "bombs_missed": [n for n in their_bombs if n not in ours], "predicted": b["predicted"], "our_removal": removal(b["spells"]), "their_removal": removal(their_cards),
+            "our_creatures": sum("Creature" in (c.get("types") or []) for c in b["spells"]), "their_creatures": sum("Creature" in (c.get("types") or []) for c in their_cards), "lane": lane, "our_lane": b["lane"], "splash": splash, "our_splash": b["splash"], "overlap": overlap,
             "their_splash_cards": their_splash_cards, "our_splash_cards": sum(1 for c in b["spells"] if not castable(c, b["lane"]))}
 
 
@@ -135,6 +136,9 @@ def main(argv=None):
           f"when they don't {100 * sum(len(r['our_lane']) == 3 for r in rows if len(r['lane']) == 2) / max(1, n - len(three_they)):.1f}%")
     print(f"  removal: we {sum(r['our_removal'] for r in rows) / n:.1f}, they {sum(r['their_removal'] for r in rows) / n:.1f}; "
           f"below 6: we {100 * sum(r['our_removal'] < 6 for r in rows) / n:.1f}%, they {100 * sum(r['their_removal'] < 6 for r in rows) / n:.1f}%")
+    print(f"  creatures: we {sum(r['our_creatures'] for r in rows) / n:.2f}, they {sum(r['their_creatures'] for r in rows) / n:.2f}; "
+          f"same main pair: we {sum(r['our_creatures'] for r in rows if r['lane'] == r['our_lane']) / max(1, same):.2f}, "
+          f"they {sum(r['their_creatures'] for r in rows if r['lane'] == r['our_lane']) / max(1, same):.2f}")
     bombs = sum(r["bombs"] for r in rows)
     same_rows = [r for r in rows if r["lane"] == r["our_lane"]]
     sb = sum(r["bombs"] for r in same_rows)

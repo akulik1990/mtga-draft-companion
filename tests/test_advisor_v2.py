@@ -344,3 +344,17 @@ def test_pool_fixing_ignores_landcyclers():
     assert pool_fixing([cycler, basic]) == dict.fromkeys("WUBRG", 0)
     assert pool_fixing([dual]) == {"W": 0, "U": 1, "B": 1, "R": 0, "G": 0}
     assert pool_fixing([fetch, rock]) == dict.fromkeys("WUBRG", 2)
+
+
+def test_three_lanes_moves_a_share_to_the_triple(monkeypatch):
+    from companion.advisor_v2 import config, deckbuilder
+    from companion.advisor_v2.engine import DraftAdvisorV2
+    a = DraftAdvisorV2.__new__(DraftAdvisorV2)
+    a.pool = [{"name": f"c{i}", "set": "XXX"} for i in range(20)]
+    monkeypatch.setattr(DraftAdvisorV2, "THREE_LANES", 1.0)
+    monkeypatch.setattr(config, "fitted", lambda s, k: {"inputs": ["adds"], "w": [0.0, 0.0], "mu": [0.0], "sd": [1.0]})
+    monkeypatch.setattr(deckbuilder, "three_features", lambda pool, lane: (2, 0, 20, "G", 0, 50.0) if lane == "UB" else (0, 0, 0, None, 0, 0))
+    out = a._three({"UB": 0.8, "WU": 0.2})
+    assert out["UB"] == pytest.approx(0.4) and out["UBG"] == pytest.approx(0.4) and out["WU"] == 0.2
+    monkeypatch.setattr(DraftAdvisorV2, "THREE_LANES", 0.0)
+    assert a._three({"UB": 0.8, "WU": 0.2}) == {"UB": 0.8, "WU": 0.2}

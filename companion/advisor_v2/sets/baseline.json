@@ -64,6 +64,8 @@
   "STEER": 4.0,
   "SYNERGY_FIT": 0.0,
   "THREE_COLOUR_AT": 0,
+  "THREE_LANES": 0.0,
+  "THREE_MIN_P": 0.05,
   "TIE_CHEAPER": true,
   "TIE_EPS": 0.3,
   "TIE_WR": 0.5,

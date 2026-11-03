@@ -193,6 +193,8 @@ class DraftAdvisorV2:
     COLOUR_SHIFT = ""  # per-colour WR points taken off a card's value, "U:2" or "U:2,B:-1"; a card gets the mean over its colours; "" = off
     WHEEL_EPS = 0.3  # within this of the best score, prefer the card that wheels less
     WHEEL_SPLIT = False  # apply the WHEEL_EPS tiebreak to the split's final order too (it used to apply only with SPLIT off)
+    THREE_LANES = 0.0  # from pack 2, each likely pair passes this share of the fitted chance that top drafters end in it plus a third colour (fitted "three_draft", tools/fit_three_draft.py) to that three-colour lane; 0 = two-colour lanes only
+    THREE_MIN_P = 0.05  # pairs below this probability are not split
     SIGNAL_OTHER = 0.0  # weight of the other neighbour's signal added to the one passing now (pack 2 still learns from pack 1's side, which passes again in pack 3); 0 = off
     WHEEL_PENALTY = 0.0  # WR points taken from Power and Fit per 100% chance the card comes back; 0 = off
 
@@ -284,7 +286,28 @@ class DraftAdvisorV2:
             p = {lane: v ** power for lane, v in p.items()}
             total = sum(p.values())
             p = {lane: v / total for lane, v in p.items()}
-        return p
+        return self._three(p)
+
+    def _three(self, p):
+        """Move each likely pair's chance of ending three-colour (fitted from top drafters, pack 2 on) to that lane."""
+        set_code = set_code_of(self.pool)
+        rule = config.fitted(set_code, "three_draft") if self.THREE_LANES and set_code and len(self.pool) >= 14 else None
+        if not rule:
+            return p
+        from companion.advisor_v2 import deckbuilder  # deckbuilder imports this module
+        out = dict(p)
+        for lane, v in p.items():
+            if v < self.THREE_MIN_P:
+                continue
+            f3 = deckbuilder.three_features(self.pool, lane)
+            if not f3[3]:
+                continue
+            named = {**dict(zip(deckbuilder.THREE_INPUTS, f3)), "pick": len(self.pool) + 1}
+            share = v * min(1.0, self.THREE_LANES * deckbuilder.rule_chance(rule, [named[k] for k in rule["inputs"]]))
+            three = "".join(sorted(lane + f3[3], key="WUBRG".index))
+            out[lane] -= share
+            out[three] = out.get(three, 0.0) + share
+        return out
 
     def lane_flat_power(self):
         """The LANE_FLAT exponent for the pick being made (pool size + 1)."""

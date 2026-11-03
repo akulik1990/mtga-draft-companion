@@ -65,7 +65,7 @@ ShellRoot {
             cards.push({ name: "card " + (i + 1), rank: i + 1, score: 60 - i, orders: "Fit #" + (i + 1) + " · Power #" + (i + 1), upstream: i + 1,
                          fit: i + 1, power: i + 1, heat: i === 0 ? ({ fire: 1, bluefire: 2 })[Quickshell.env("OVERLAY_TEST")] || 0 : 0, gihwr: 60 - i, wheel: 10 * i });
         return { cards: cards, branch: "Stay: card 1 (not card 2)",
-                 panel: { pick: "card 1", top3: [], why: [], lanes: [{ lane: "UB", p: 0.9 }, { lane: "UG", p: 0.1 }],
+                 panel: { pick: "card 1", top3: [], why: [], lanes: [{ lane: "UB", p: 0.6 }, { lane: "UBG", p: 0.3 }, { lane: "UG", p: 0.1 }],
                           signals: { W: -0.6, U: 1.2, B: 0.1, R: -0.3, G: -0.15 }, signal_from: { side: "left", packs: 8 },
                           pool: { n: 22, colours: {}, curve: [4, 6, 7, 3, 1, 1] } } };
     }
@@ -392,12 +392,18 @@ ShellRoot {
                                 Text { text: modelData.lane; width: win.unit * 1.2; color: "#e8eaed"; font.pixelSize: win.unit * 0.6; font.bold: true }
                                 Item {
                                     width: (col.width - win.unit * 0.6) * 0.52 - win.unit * 3.2; height: win.unit * 0.4
+                                    readonly property real lanePart: modelData.p / win.pn.lanes[0].p / modelData.lane.length
                                     anchors.verticalCenter: parent.verticalCenter
                                     Rectangle { anchors.fill: parent; radius: height / 2; color: "#2a2f35" }
                                     Row {
                                         height: parent.height
-                                        Rectangle { width: parent.parent.width * modelData.p / win.pn.lanes[0].p / 2; height: parent.height; color: win.wubrg[modelData.lane[0]] }
-                                        Rectangle { width: parent.parent.width * modelData.p / win.pn.lanes[0].p / 2; height: parent.height; color: win.wubrg[modelData.lane[1]] }
+                                        Repeater {  // one segment per colour: two for a pair, three for a three-colour lane
+                                            model: modelData.lane.split("")
+                                            Rectangle {
+                                                required property string modelData
+                                                width: parent.parent.width * parent.parent.lanePart; height: parent.height; color: win.wubrg[modelData]
+                                            }
+                                        }
                                     }
                                 }
                                 Text { text: Math.round(modelData.p * 100) + "%"; width: win.unit * 1.5; horizontalAlignment: Text.AlignRight; color: "#c8cdd3"; font.pixelSize: win.unit * 0.55 }
