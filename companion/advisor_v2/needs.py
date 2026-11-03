@@ -10,6 +10,7 @@ import math
 import re
 from functools import lru_cache
 
+from companion.advisor_v2 import config
 from companion.advisor_v2.lanes import any_colour_fixer
 
 DIMS = ("early_creatures", "late_creatures", "noncreature", "one_drops", "two_drops", "three_drops", "four_drops", "five_plus",
@@ -51,7 +52,7 @@ def top_cards(set_code, n=30):
 
 def dims(card, mean, sd):
     """The DIMS a card counts toward. Finishers: five-plus drops at least one SD above the set's mean GIH WR."""
-    types, tags = card.get("types") or [], card.get("tags") or []
+    types, tags = card.get("types") or [], config.tags(card)
     if "Land" in types:
         fixes = len(card.get("colors") or []) >= 2 or "fixing_ramp" in tags or any_colour_fixer(card)
         return {"fixing"} if fixes and "Basic" not in types else set()
@@ -102,7 +103,7 @@ def power(card):
 
 def is_enabler(card, spec):
     text = re.sub(r"\([^)]*\)", "", (card.get("oracle_text") or "").lower())
-    types, tags = card.get("types") or [], card.get("tags") or []
+    types, tags = card.get("types") or [], config.tags(card)
     by_text = bool(spec.get("enabler") and re.search(spec["enabler"], text))
     by_type = (bool(spec.get("enabler_types")) and any(t in types for t in spec["enabler_types"])
                and spec.get("enabler_min_cmc", 0) <= (card.get("cmc") or 0) <= spec.get("enabler_max_cmc", 99))

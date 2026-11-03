@@ -284,7 +284,7 @@ class DraftAdvisorV2:
             target = ((config.fitted(set_code_of(self.pool), "decks") or {}).get("pairs") or {}).get(self.top_lane) or {}
             slack = deckbuilder.REMOVAL_SLACK if self.REMOVAL_SLACK_PICK < 0 else self.REMOVAL_SLACK_PICK
             floor = max(0.0, target.get("removal", 6.0 + slack) - slack)
-            removal = sum(1 for c in self.pool if "Land" not in (c.get("types") or []) and "removal" in (c.get("tags") or []))
+            removal = sum(1 for c in self.pool if "Land" not in (c.get("types") or []) and "removal" in config.tags(c))
             self.removal_need = max(0.0, floor - removal * 23.0 / spells) / floor if floor else 0.0
         if self.HALF_PIVOT and spells >= self.HALF_PIVOT:
             self.anchor = self.top_lane
@@ -462,7 +462,7 @@ class DraftAdvisorV2:
             rate = all_decks(card).get("play_rate")
             if rate is not None:
                 a -= self.PLAY_RATE_POINTS * max(0.0, self.PLAY_RATE_FROM - float(rate)) / self.PLAY_RATE_FROM
-        if self.removal_need and "removal" in (card.get("tags") or []) and kind != "land":
+        if self.removal_need and "removal" in config.tags(card) and kind != "land":
             a += self.REMOVAL_POINTS * self.removal_need
         if self.COPIES_POINTS and self.names.get(name, 0) >= self.COPIES_MAX:
             a -= self.COPIES_POINTS * (self.names[name] - self.COPIES_MAX + 1)
@@ -848,7 +848,7 @@ class DraftAdvisorV2:
             reasoning=reasons,
             is_elite=z >= 1.5 and cast_p > 0.4,
             archetype_fit=best if castable(card, best) else "Off-colour",
-            tags=card.get("tags") or [],
+            tags=config.tags(card),
         )
 
     def _reasons(self, card, lanes, cast_p):

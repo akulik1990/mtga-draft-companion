@@ -37,7 +37,7 @@ def card_facts(set_code):
     data = json.loads((DATA_DIR / "Sets" / f"{set_code}_PremierDraft_All_Data.json").read_text())["card_ratings"]
     facts = {}
     for c in data.values():
-        types, tags = c.get("types") or [], c.get("tags") or []
+        types, tags = c.get("types") or [], config.tags(c, set_code)
         f = {"creature": "Creature" in types, "land": "Land" in types, "basic": "Basic" in types,
              "cmc": int(c.get("cmc") or 0), "removal": "removal" in tags}
         facts.setdefault(c["name"], f)

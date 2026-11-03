@@ -25,6 +25,7 @@ import numpy as np
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 import companion  # noqa: E402,F401
 from companion import DATA_DIR  # noqa: E402
+from companion.advisor_v2 import config  # noqa: E402
 
 GAME_URL = "https://17lands-public.s3.amazonaws.com/analysis_data/game_data/game_data_public.{set}.PremierDraft.csv.gz"
 PAIRS = ["WU", "WB", "WR", "WG", "UB", "UR", "UG", "BR", "BG", "RG"]
@@ -50,7 +51,7 @@ def card_facts(set_code):
     data = json.loads((DATA_DIR / "Sets" / f"{set_code}_PremierDraft_All_Data.json").read_text())
     facts = {}
     for c in data["card_ratings"].values():
-        types, tags = c.get("types") or [], c.get("tags") or []
+        types, tags = c.get("types") or [], config.tags(c, set_code)
         f = (int(c.get("cmc") or 0), "Creature" in types, "removal" in tags, "Land" in types)
         facts.setdefault(c["name"], f)
         facts.setdefault(c["name"].split(" // ")[0], f)

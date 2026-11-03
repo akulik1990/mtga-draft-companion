@@ -93,7 +93,7 @@ def one(item):
     theirs = Counter({n: k for n, k in deck.items() if n in by_name and "Land" not in (by_name[n].get("types") or [])})
     overlap = sum((ours & theirs).values()) / max(1, sum(theirs.values()))
     their_splash_cards = sum(k for n, k in theirs.items() if not castable(by_name[n], lane))
-    removal = lambda cards: sum("removal" in (c.get("tags") or []) for c in cards)
+    removal = lambda cards: sum("removal" in config.tags(c) for c in cards)
     their_cards = [by_name[n] for n, k in theirs.items() for _ in range(k)]
     top = ARGS["top"]
     their_bombs = [n for n in theirs if n in top]

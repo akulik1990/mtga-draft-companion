@@ -8,6 +8,7 @@ already over gets down to -BOUND. Lands and cards with no data get 1.0.
 
 import json
 from pathlib import Path
+from companion.advisor_v2 import config
 
 ENABLED = False  # FRA 2026-11-01: -1.5 top-1 on the harness, no mock-deck gain. docs/engine-comparison-2026-11-01.md
 MIN_POOL = 12
@@ -25,7 +26,7 @@ def bucket(card):
 
 
 def is_interaction(card):
-    return "removal" in (card.get("tags") or [])
+    return "removal" in config.tags(card)
 
 
 class Composition:
@@ -56,7 +57,7 @@ ROLES = ("creatures", "removal", "card_advantage", "evasion", "two_drops", "five
 
 def roles(card):
     """Which ROLES a card counts toward (deck-shape counts for tools/deck_targets.py and the overlay)."""
-    types, tags, cmc = card.get("types") or [], card.get("tags") or [], int(card.get("cmc") or 0)
+    types, tags, cmc = card.get("types") or [], config.tags(card), int(card.get("cmc") or 0)
     if "Land" in types:
         return {"lands"}
     out = {t for t in ("removal", "card_advantage", "evasion") if t in tags}

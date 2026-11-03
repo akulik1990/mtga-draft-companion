@@ -24,6 +24,7 @@ from scipy import sparse
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import companion  # noqa: E402,F401
 from companion import DATA_DIR  # noqa: E402
+from companion.advisor_v2 import config  # noqa: E402
 from tools.deck_model import SHAPE, card_facts, fit_logistic, read, standardise  # noqa: E402
 
 BASICS = {"Plains": "W", "Island": "U", "Swamp": "B", "Mountain": "R", "Forest": "G"}
@@ -54,7 +55,7 @@ def extra_facts(set_code):
             "makes": [x for x in c.get("colors") or [] if x in "WUBRG"] if land else [],
             "cycler": "Basic landcycling" in (c.get("keywords") or []),
             "rock": not land and "mana of any color" in (c.get("oracle_text") or ""),
-            "plan": land or c["name"] in top30 or bool({"removal", "card_advantage"} & set(c.get("tags") or []))
+            "plan": land or c["name"] in top30 or bool({"removal", "card_advantage"} & set(config.tags(c, set_code)))
                     or bool(interact.search(c.get("oracle_text") or "")),
         })
     return out
@@ -121,8 +122,6 @@ def main(argv=None):
     facts = card_facts(a.set)
     names, C, ctx, shp, y, test = read(a.set, facts)
     F = read_features(a.set, extra_facts(a.set))
-    from companion.advisor_v2 import config
-
     l2 = a.l2 or config.fitted(a.set, "deckmodel").get("l2") or 30.0
     mu, sd = standardise(shp[~test])
     S = (shp - mu) / sd

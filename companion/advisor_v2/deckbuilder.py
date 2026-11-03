@@ -15,6 +15,7 @@ from collections import Counter
 
 from companion.advisor_v2.composition import curve_slot, roles
 from companion.advisor_v2.lanes import LANES, any_colour_fixer, castable, off_pips, pool_fixing
+from companion.advisor_v2 import config
 
 SPELLS = 23
 LANDS = 17
@@ -130,7 +131,7 @@ def splash_features(pool, lane):
     top = max((c for c in pool if spell(c) and not castable(c, lane) and len(off_pips(c, lane)) == 1 and col in off_pips(c, lane)[0]),
               key=lambda c: _wr(c, "All Decks"))
     return (best[col] - cut, min(fix[col], 8), len(on), col, above, min(duals, 6), cut,
-            float("removal" in (top.get("tags") or [])), min(int(top.get("cmc") or 0), 7))
+            float("removal" in config.tags(top)), min(int(top.get("cmc") or 0), 7))
 
 
 def colour_fixing(pool, lane):

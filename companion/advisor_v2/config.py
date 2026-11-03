@@ -86,6 +86,27 @@ def snapshot(engine_cls):
     return out
 
 
+def tags(card, set_code=None):
+    """The card's dataset tags with the set's manual corrections ("tag_fixes": {"remove": {tag: [names]}, "add": {...}}).
+    The dataset takes its tags from Scryfall's automatic tagging, which calls face damage and counterspells "removal"."""
+    out = list(card.get("tags") or [])
+    fixes = _tag_fixes(set_code or card.get("set") or ACTIVE["set"])
+    if fixes:
+        names = {card.get("name"), (card.get("name") or "").split(" // ")[0]}
+        for tag, cards in (fixes.get("remove") or {}).items():
+            if names & set(cards):
+                out = [t for t in out if t != tag]
+        for tag, cards in (fixes.get("add") or {}).items():
+            if names & set(cards) and tag not in out:
+                out.append(tag)
+    return out
+
+
+@lru_cache(maxsize=8)
+def _tag_fixes(set_code):
+    return layer(set_code, "manual").get("tag_fixes") or {} if set_code else {}
+
+
 def layer(set_code, which):
     path = Path(os.environ["MTGA_V2_MANUAL"]) if which == "manual" and os.environ.get("MTGA_V2_MANUAL") else set_file(set_code, which)
     return json.loads(path.read_text()) if set_code and path.exists() else {}

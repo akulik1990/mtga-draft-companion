@@ -85,7 +85,7 @@ def features(card, pool, lane, themes, tags, targets, score, best):
 
     two = is_spell and int(card.get("cmc") or 0) == 2
     creature = "Creature" in types
-    removal = is_spell and "removal" in (card.get("tags") or [])
+    removal = is_spell and "removal" in config.tags(card)
     on = castable(card, lane)
     off = off_pips(card, lane)
     fixing = Counter()
@@ -103,7 +103,7 @@ def features(card, pool, lane, themes, tags, targets, score, best):
     return [score - best, syn_p, syn_e, lonely,
             float(two) * need(lambda c: int(c.get("cmc") or 0) == 2, tgt.get("two_drops", 8.5)),
             float(creature) * need(lambda c: "Creature" in (c.get("types") or []), tgt.get("creatures", 13.5)),
-            float(removal) * need(lambda c: "removal" in (c.get("tags") or []), max(1.0, tgt.get("removal", 8.0) - 2.0)),
+            float(removal) * need(lambda c: "removal" in config.tags(c), max(1.0, tgt.get("removal", 8.0) - 2.0)),
             float(on), splash_fixed, fixer, float(card.get("cmc") or 0) if is_spell else 0.0]
 
 
