@@ -39,8 +39,9 @@
   "FIT_WEIGHTS_CAP": 4.0,
   "SPEC_ALL": true,
   "PLAY_RATE_POINTS": 5.0,
-  "COLOURLESS_EARLY": 4.0,
-  "ORDER_WEIGHT": 1.0
+  "COLOURLESS_EARLY": 8.0,
+  "ORDER_WEIGHT": 1.0,
+  "CARD_PAIRS_PULL": 0.5
  },
  "pairs": {
   "k": 4,
@@ -559,6 +560,11 @@
    "how": "tools/deck_model.py fit: regularised logistic of game wins on 17Lands public game data, 60%+ players' games weighted x3.0",
    "date": "2026-11-03",
    "commit": "4d82695"
+  },
+  "card_pairs": {
+   "how": "tools/card_pairs.py: setup cards' pairs within 1.5 GIH WR points of their best (>= 150 games in hand)",
+   "date": "2026-11-03",
+   "commit": "378f06d"
   }
  },
  "prefs": {
@@ -7796,5 +7802,78 @@
    "opp_mull": 0
   },
   "top_weight": 3.0
+ },
+ "card_pairs": {
+  "Uldaros Theorix": [
+   "UB"
+  ],
+  "Null Summoner": [
+   "UB"
+  ],
+  "Recursive Recruitment": [
+   "UB"
+  ],
+  "Kwia Vigorbloom": [
+   "WG",
+   "WU"
+  ],
+  "Denzilore Fatehold": [
+   "WU"
+  ],
+  "Proctor of Potential": [
+   "WU"
+  ],
+  "Splinter Twin": [
+   "UR"
+  ],
+  "Hungering Puppetbeast": [
+   "RG",
+   "BG"
+  ],
+  "Sanctum Lurker": [
+   "BR",
+   "WB",
+   "UB"
+  ],
+  "Avatar of Burgeoning Echoes": [
+   "UG"
+  ],
+  "Countersculpt": [
+   "UB",
+   "WU"
+  ],
+  "Garruk, Curse Breaker": [
+   "BG",
+   "RG",
+   "WG"
+  ],
+  "Vraska, the Cutting Glare": [
+   "UB",
+   "BG"
+  ],
+  "Lyra, Tolarian Archangel": [
+   "WU",
+   "UB"
+  ],
+  "Fblthp, Impossibly Lost": [
+   "UB",
+   "WU",
+   "UR"
+  ],
+  "Ajani Unrelenting": [
+   "UR",
+   "RG"
+  ],
+  "The Theorist, Jace Beleren": [
+   "UB",
+   "WU"
+  ],
+  "Garruk, Veiled Butcher": [
+   "BG",
+   "UB"
+  ],
+  "Aerid Konstrari": [
+   "RG"
+  ]
  }
 }

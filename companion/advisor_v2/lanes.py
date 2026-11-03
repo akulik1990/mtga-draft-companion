@@ -88,6 +88,23 @@ def quality(card, mean, std):
     return max(0.0, (wr - (mean - std)) / std) if wr > 0 else 0.0
 
 
+LANE_WR_COMMIT = 0.0  # pull of a pool card on each pair scaled by 1 + this x (its GIH WR there - its overall) / format SD, over pairs with LANE_WR_MIN games in hand (splash pairs included); 0 = equal pull on every pair that casts it
+LANE_WR_MIN = 150
+
+
+def lane_shine(card, std):
+    """{pair: (GIH WR in the pair - All Decks GIH WR) / std} over pairs with enough games in hand; {} when none."""
+    base = float(all_decks(card).get("gihwr") or 0.0)
+    if base <= 0 or std <= 0:
+        return {}
+    out = {}
+    for lane in LANES:
+        row = (card.get("deck_colors") or {}).get(lane) or {}
+        if (row.get("samples") or 0) >= LANE_WR_MIN and row.get("gihwr"):
+            out[lane] = (float(row["gihwr"]) - base) / std
+    return out
+
+
 GOLD_MIN = 0.0  # a card castable in one pair only pulls toward it by its quality above this (q - GOLD_MIN, at least 0); 0 = full quality
 SPLASH_COMMIT = 0.0  # share of a card's quality it adds to pairs where it is one pip off (a splash: {2}{U}{B} in UR, UG, WU, BR...); 0 = off
 
@@ -99,6 +116,18 @@ def commitment(pool, mean, std):
         q = quality(card, mean, std)
         if q <= 0:
             continue
+        if LANE_WR_COMMIT:
+            # A card pulls hardest toward the pairs where it wins most (Ajani Unrelenting: UR, RG over WR), including pairs
+            # that splash it (Vraska, the Cutting Glare: UB with green splashed).
+            shine = lane_shine(card, std)
+            if shine:
+                for lane in LANES:
+                    x = shine.get(lane)
+                    if castable(card, lane):
+                        out[lane] += q * (max(0.0, 1.0 + LANE_WR_COMMIT * x) if x is not None else 1.0)
+                    elif x is not None and x > 0 and len(off_pips(card, lane)) == 1:
+                        out[lane] += q * LANE_WR_COMMIT * x  # a splash pair where it wins more than overall
+                continue
         lanes = [lane for lane in LANES if castable(card, lane)]
         if GOLD_MIN and len(lanes) == 1 and "Land" not in (card.get("types") or []):
             q = max(0.0, q - GOLD_MIN)  # a medium gold card should not decide the pair on its own

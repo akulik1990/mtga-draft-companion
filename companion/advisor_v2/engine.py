@@ -153,6 +153,7 @@ class DraftAdvisorV2:
     BRANCH_COLOUR = True  # switch rule that also weighs whether the strong card keeps a colour of the top pair and how settled the pool is (fitted.json, branch_colour). FRA: test top-1 55.4 -> 56.0, deck win rate -0.86 (SE 0.34, 200 bot tables, all from tables ending in other colours); on by the user's call 2026-11-01
     KEEP_ANY = False  # "keeps a colour" = some pair that casts the card shares a colour with the top pair (a mono-red card keeps U of a UB pool via UR); False = the card itself shares a colour with the top pair
     BRANCH_FILE = ""  # override the fitted rule's file (measuring alternatives); "" = the set's fitted.json
+    CARD_PAIRS_PULL = 0.0  # extra pull of a setup bomb in the pool toward its home pairs (fitted card_pairs), x its quality; 0 = off
     COLOURLESS_EARLY = 0.0  # WR points off colourless cards (artifacts, colourless lands) in pack 1; 0 = off
     PLAY_RATE_POINTS = 0.0  # WR points off a non-land card in proportion to how far its play rate falls below PLAY_RATE_FROM (all of them at 0%); 0 = off
     PLAY_RATE_FROM = 50.0
@@ -260,6 +261,13 @@ class DraftAdvisorV2:
         self.steer = self.STEER * (1.0 - progress)  # the candidate's pull fades as the pool becomes a deck
         self.alpha = self.ALPHA + (self.ALPHA_LATE - self.ALPHA) * progress
         self.commit = commitment(self.pool, self.mean, self.std)
+        if self.CARD_PAIRS_PULL:
+            # Setup bombs pull toward the pairs they shine in (fitted card_pairs, tools/card_pairs.py), not just their colours.
+            homes = config.fitted(set_code_of(self.pool), "card_pairs") or {}
+            for c in self.pool:
+                for lane in homes.get(c.get("name"), homes.get((c.get("name") or "").split(" // ")[0], [])):
+                    if lane in self.commit:
+                        self.commit[lane] += self.CARD_PAIRS_PULL * quality(c, self.mean, self.std)
         self.anchor = None
         free = self._lanes(self.commit)
         self.top_lane = max(free, key=free.get)
