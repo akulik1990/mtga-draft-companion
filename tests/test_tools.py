@@ -38,3 +38,11 @@ def test_replay_wrapper_uses_v2(tmp_path, monkeypatch):
     assert result["label"] == "head" and len(result["drafts"]) == 1
     assert len(result["drafts"][0]["picks"]) == 3
     assert seen and set(seen) == {"Spy"}
+
+
+def test_upstream_lane_comes_from_its_pool():
+    from tools.mock_draft import lane_of
+
+    card = lambda cost: {"mana_cost": cost, "types": ["Creature"], "colors": []}
+    snap = {"pool": [card("{1}{U}"), card("{U}{B}"), card("{2}{B}"), card("{R}")], "advisors": {"upstream": []}}
+    assert lane_of(snap, "upstream") == "UB"

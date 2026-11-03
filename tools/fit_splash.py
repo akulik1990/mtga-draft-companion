@@ -51,12 +51,13 @@ def fit(X, y):
     return w, mu, sd, acc
 
 
-def record(set_code, section, names, w, mu, sd, acc, y, how):
+def record(set_code, section, names, w, mu, sd, acc, y, how, extra=None):
     y = np.array(y)
     print(f"{section}: {len(y)} pools, rate {y.mean():.3f}; held-out accuracy {acc:.3f} (majority {max(y.mean(), 1 - y.mean()):.3f})")
     print("  per SD:", ", ".join(f"{n} {v:+.2f}" for n, v in zip(["intercept"] + names, w)))
     rule = {"inputs": names, "w": [round(float(v), 4) for v in w], "mu": [round(float(v), 4) for v in mu],
-            "sd": [round(float(v), 4) for v in sd], "n": int(len(y)), "rate": round(float(y.mean()), 3), "heldout_accuracy": round(acc, 3)}
+            "sd": [round(float(v), 4) for v in sd], "n": int(len(y)), "rate": round(float(y.mean()), 3), "heldout_accuracy": round(acc, 3),
+            **(extra or {})}
     path = config.write_fitted(set_code, section, rule, how)
     print(f"  wrote {section} to {path.relative_to(ROOT)}")
 
@@ -72,7 +73,7 @@ def main(argv=None):
     for c in data.values():
         for n in (c["name"], c["name"].split(" // ")[0]):
             by.setdefault(n, c)
-    X, y, X3, y3 = [], [], [], []
+    X, y, X3, y3, lanes = [], [], [], [], []
     for lane, splash, deck, pool in sample(a.set, a.n, buckets=(CHECK[1], 1000), colours=(2, 3)):
         cards = [by[n] for n, k in pool.items() if n in by for _ in range(k)]
         spells = [by[n] for n in deck if n in by and "Land" not in (by[n].get("types") or [])]
@@ -82,16 +83,27 @@ def main(argv=None):
         if len(lane) == 2:
             X.append(splash_features(cards, lane))
             y.append(1.0 if splash else 0.0)
+            lanes.append(lane)
     wide = ["edge", "fixing", "playables", "above", "duals", "depth"]
     card = wide + ["removal", "cmc"]  # the best splash card itself
-    pick = lambda names: [[dict(zip(SPLASH_INPUTS, x))[k] for k in names] for x in X]
-    base, ext, ext2 = fit(pick(NAMES), y), fit(pick(wide), y), fit(pick(card), y)
-    print(f"splash rule held-out accuracy: {NAMES} {base[3]:.3f}, {wide} {ext[3]:.3f}, + removal, cmc {ext2[3]:.3f}")
+    # How often top players splash in each pair (shrunk toward the overall rate with 20 decks).
+    from collections import Counter
+    n_l, s_l = Counter(lanes), Counter(l for l, v in zip(lanes, y) if v)
+    overall = sum(y) / len(y)
+    pair_rate = {l: round((s_l[l] + 20 * overall) / (n_l[l] + 20), 3) for l in n_l}
+    pick = lambda names: [[{**dict(zip(SPLASH_INPUTS, x)), "pair": pair_rate[l]}[k] for k in names] for x, l in zip(X, lanes)]
+    paired = card + ["pair"]
+    base, ext, ext2, ext3 = fit(pick(NAMES), y), fit(pick(wide), y), fit(pick(card), y), fit(pick(paired), y)
+    print(f"splash rule held-out accuracy: {NAMES} {base[3]:.3f}, {wide} {ext[3]:.3f}, + removal, cmc {ext2[3]:.3f}, + pair rate {ext3[3]:.3f}")
+    print("  pair splash rates:", ", ".join(f"{l} {r:.2f}" for l, r in sorted(pair_rate.items(), key=lambda kv: -kv[1])))
     names, best = (wide, ext) if ext[3] >= base[3] + 0.005 else (NAMES, base)
     if ext2[3] >= best[3]:  # level or better: the card inputs stay in
         names, best = card, ext2
+    if ext3[3] >= best[3]:
+        names, best = paired, ext3
     record(a.set, "splash", names, *best, y,
-           f"tools/fit_splash.py: when 60%+ players splash (17Lands game data), logistic on {', '.join(names)}")
+           f"tools/fit_splash.py: when 60%+ players splash (17Lands game data), logistic on {', '.join(names)}",
+           extra={"pair_rate": pair_rate} if "pair" in names else None)
     pick3 = lambda names: [[dict(zip(THREE_INPUTS, x))[k] for k in names] for x in X3]
     n3, w3 = ["adds", "fixing", "playables"], ["adds", "fixing", "playables", "duals", "depth"]
     base3, ext3 = fit(pick3(n3), y3), fit(pick3(w3), y3)

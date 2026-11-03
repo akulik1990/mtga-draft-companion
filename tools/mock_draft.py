@@ -118,11 +118,11 @@ def lane_of(snap, engine):
     if engine == "v2":
         lanes = snap.get("lanes") or {}
         return max(lanes, key=lanes.get) if lanes else ""
-    for r in snap["advisors"].get("upstream") or []:
-        fit = r.get("archetype_fit") or ""
-        if len(fit) == 2 and set(fit) <= set(COLOURS):
-            return fit
-    return ""
+    # Upstream 4.28 no longer reports its archetype: read the lane off its pool, the pair that casts most of it.
+    from companion.session import mana_identity
+
+    pool = [c for c in snap.get("pool") or [] if "Land" not in (c.get("types") or [])]
+    return mana_identity(pool)["main"] if pool else ""
 
 
 def run_draft(app, set_code, follow, kind="table", seed=None, delay=0.0, quiet=True):

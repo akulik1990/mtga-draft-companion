@@ -35,7 +35,9 @@
   "deckbuilder.MAX_SPLASH": 2,
   "deckbuilder.SPLASH_FORCE": true,
   "deckbuilder.SPLASH_AT": 0.45,
-  "deckbuilder.MODEL": "deckmodel_top3"
+  "deckbuilder.MODEL": "deckmodel_top3",
+  "FIT_WEIGHTS_CAP": 4.0,
+  "SPEC_ALL": true
  },
  "pairs": {
   "k": 4,
@@ -506,9 +508,9 @@
    "commit": "7a17cb0"
   },
   "splash": {
-   "how": "tools/fit_splash.py: when 60%+ players splash (17Lands game data), logistic on edge, fixing, playables, above, duals, depth, removal, cmc",
+   "how": "tools/fit_splash.py: when 60%+ players splash (17Lands game data), logistic on edge, fixing, playables, above, duals, depth, removal, cmc, pair",
    "date": "2026-11-03",
-   "commit": "906f1a2"
+   "commit": "94c0a66"
   },
   "offcolour": {
    "how": "tools/fit_offcolour.py: share of cards outside 60%+ players' core pair that made their deck, logistic on GIH WR z and 2+ off pips",
@@ -518,7 +520,7 @@
   "three": {
    "how": "tools/fit_splash.py: when 60%+ players play three main colours (17Lands game data), logistic on adds, fixing, playables, duals, depth",
    "date": "2026-11-03",
-   "commit": "906f1a2"
+   "commit": "94c0a66"
   },
   "synergy": {
    "how": "tools/fit_themes.py: manual.json themes tested as enablers x payoffs terms in the deck model, held-out games",
@@ -2589,18 +2591,20 @@
    "duals",
    "depth",
    "removal",
-   "cmc"
+   "cmc",
+   "pair"
   ],
   "w": [
-   0.0969,
-   1.0508,
-   0.8455,
-   -0.6417,
-   -0.0042,
-   1.1466,
-   0.4021,
-   0.0108,
-   0.2291
+   0.1031,
+   1.0517,
+   0.7737,
+   -0.5841,
+   -0.0071,
+   1.1968,
+   0.3275,
+   0.0307,
+   0.24,
+   0.3679
   ],
   "mu": [
    4.463,
@@ -2610,7 +2614,8 @@
    1.5064,
    53.3512,
    0.4496,
-   3.2401
+   3.2401,
+   0.494
   ],
   "sd": [
    4.6107,
@@ -2620,11 +2625,24 @@
    1.4521,
    2.0277,
    0.4975,
-   1.2471
+   1.2471,
+   0.1113
   ],
   "n": 6355,
   "rate": 0.494,
-  "heldout_accuracy": 0.865
+  "heldout_accuracy": 0.865,
+  "pair_rate": {
+   "WR": 0.306,
+   "BR": 0.298,
+   "UB": 0.503,
+   "UG": 0.748,
+   "BG": 0.683,
+   "WG": 0.47,
+   "RG": 0.452,
+   "WU": 0.485,
+   "UR": 0.465,
+   "WB": 0.455
+  }
  },
  "offcolour": {
   "w": [

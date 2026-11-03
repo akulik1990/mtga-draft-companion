@@ -153,9 +153,11 @@ def colour_fixing(pool, lane):
 SPLASH_INPUTS = ("edge", "fixing", "playables", "colour", "above", "duals", "depth", "removal", "cmc")
 
 
-def splash_inputs(rule, f):
-    """The fitted rule's inputs from splash_features (rules list their input names; old rules use the first three)."""
+def splash_inputs(rule, f, lane=""):
+    """The fitted rule's inputs from splash_features (rules list their input names; old rules use the first three).
+    "pair": how often top players splash in this pair (the rule's own pair_rate table)."""
     named = dict(zip(SPLASH_INPUTS, f))
+    named["pair"] = (rule.get("pair_rate") or {}).get(lane, rule.get("rate", 0.5))
     return [named[k] for k in rule.get("inputs", SPLASH_INPUTS[:3])]
 
 
@@ -194,7 +196,7 @@ def splash_chance(rule, pool, lane):
     """P(a top player splashes this pool in this pair), from the set's fitted splash rule; None without one."""
     if not rule:
         return None
-    return rule_chance(rule, splash_inputs(rule, splash_features(pool, lane)))
+    return rule_chance(rule, splash_inputs(rule, splash_features(pool, lane), lane))
 
 
 def splashable(card, lane, splash):
