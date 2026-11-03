@@ -26,7 +26,7 @@ sys.path.insert(0, str(ROOT))
 import companion  # noqa: E402,F401
 from companion import DATA_DIR  # noqa: E402
 from companion.advisor_v2 import config  # noqa: E402
-from companion.advisor_v2.deckbuilder import splash_features, three_features  # noqa: E402
+from companion.advisor_v2.deckbuilder import SPLASH_INPUTS, THREE_INPUTS, splash_features, three_features  # noqa: E402
 from companion.advisor_v2.lanes import LANES, castable  # noqa: E402
 from tools.builder_check import CHECK, sample  # noqa: E402
 
@@ -77,15 +77,25 @@ def main(argv=None):
         cards = [by[n] for n, k in pool.items() if n in by for _ in range(k)]
         spells = [by[n] for n in deck if n in by and "Land" not in (by[n].get("types") or [])]
         core = lane if len(lane) == 2 else max(LANES, key=lambda pair: sum(castable(c, pair) for c in spells))
-        X3.append(three_features(cards, core)[:3])
+        X3.append(three_features(cards, core))
         y3.append(1.0 if len(lane) == 3 else 0.0)
         if len(lane) == 2:
-            X.append(splash_features(cards, lane)[:3])
+            X.append(splash_features(cards, lane))
             y.append(1.0 if splash else 0.0)
-    record(a.set, "splash", NAMES, *fit(X, y), y,
-           "tools/fit_splash.py: when 60%+ players splash (17Lands game data), logistic on edge, fixing, playables")
-    record(a.set, "three", ["adds", "fixing", "playables"], *fit(X3, y3), y3,
-           "tools/fit_splash.py: when 60%+ players play three main colours (17Lands game data), logistic on adds, fixing, playables")
+    wide = ["edge", "fixing", "playables", "above", "duals", "depth"]
+    pick = lambda names: [[dict(zip(SPLASH_INPUTS, x))[k] for k in names] for x in X]
+    base, ext = fit(pick(NAMES), y), fit(pick(wide), y)
+    print(f"splash rule held-out accuracy: {NAMES} {base[3]:.3f}, {wide} {ext[3]:.3f}")
+    names, best = (wide, ext) if ext[3] >= base[3] + 0.005 else (NAMES, base)
+    record(a.set, "splash", names, *best, y,
+           f"tools/fit_splash.py: when 60%+ players splash (17Lands game data), logistic on {', '.join(names)}")
+    pick3 = lambda names: [[dict(zip(THREE_INPUTS, x))[k] for k in names] for x in X3]
+    n3, w3 = ["adds", "fixing", "playables"], ["adds", "fixing", "playables", "duals", "depth"]
+    base3, ext3 = fit(pick3(n3), y3), fit(pick3(w3), y3)
+    print(f"three rule held-out accuracy: {n3} {base3[3]:.3f}, {w3} {ext3[3]:.3f}")
+    names3, best3 = (w3, ext3) if ext3[3] >= base3[3] + 0.005 else (n3, base3)
+    record(a.set, "three", names3, *best3, y3,
+           f"tools/fit_splash.py: when 60%+ players play three main colours (17Lands game data), logistic on {', '.join(names3)}")
 
 
 if __name__ == "__main__":

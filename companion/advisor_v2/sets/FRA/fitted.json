@@ -500,9 +500,9 @@
    "commit": "7a17cb0"
   },
   "splash": {
-   "how": "tools/fit_splash.py: when 60%+ players splash (17Lands game data), logistic on edge, fixing, playables",
-   "date": "2026-11-02",
-   "commit": "b6ac417"
+   "how": "tools/fit_splash.py: when 60%+ players splash (17Lands game data), logistic on edge, fixing, playables, above, duals, depth",
+   "date": "2026-11-03",
+   "commit": "b01c748"
   },
   "offcolour": {
    "how": "tools/fit_offcolour.py: share of cards outside 60%+ players' core pair that made their deck, logistic on GIH WR z and 2+ off pips",
@@ -510,9 +510,9 @@
    "commit": "b6ac417"
   },
   "three": {
-   "how": "tools/fit_splash.py: when 60%+ players play three main colours (17Lands game data), logistic on adds, fixing, playables",
-   "date": "2026-11-02",
-   "commit": "b6ac417"
+   "how": "tools/fit_splash.py: when 60%+ players play three main colours (17Lands game data), logistic on adds, fixing, playables, duals, depth",
+   "date": "2026-11-03",
+   "commit": "b01c748"
   },
   "synergy": {
    "how": "tools/fit_themes.py: manual.json themes tested as enablers x payoffs terms in the deck model, held-out games",
@@ -2568,27 +2568,39 @@
   "inputs": [
    "edge",
    "fixing",
-   "playables"
+   "playables",
+   "above",
+   "duals",
+   "depth"
   ],
   "w": [
-   -0.0119,
-   0.7705,
-   1.4856,
-   -0.7902
+   0.0785,
+   1.1044,
+   0.6515,
+   -0.6641,
+   -0.0244,
+   1.4272,
+   0.4288
   ],
   "mu": [
-   4.4675,
-   3.5893,
-   30.7858
+   4.4669,
+   3.5896,
+   30.7858,
+   2.2168,
+   1.4932,
+   53.3512
   ],
   "sd": [
-   4.6146,
-   2.0479,
-   3.4701
+   4.6109,
+   2.0493,
+   3.4701,
+   1.6769,
+   1.4428,
+   2.0277
   ],
   "n": 6355,
   "rate": 0.494,
-  "heldout_accuracy": 0.82
+  "heldout_accuracy": 0.865
  },
  "offcolour": {
   "w": [
@@ -2605,27 +2617,35 @@
   "inputs": [
    "adds",
    "fixing",
-   "playables"
+   "playables",
+   "duals",
+   "depth"
   ],
   "w": [
-   -3.2886,
-   1.3532,
-   1.7416,
-   -0.8206
+   -3.5134,
+   1.3449,
+   0.8808,
+   -0.7516,
+   1.3155,
+   0.1413
   ],
   "mu": [
-   3.7176,
-   4.2606,
-   29.5587
+   3.7161,
+   4.2585,
+   29.5587,
+   2.2027,
+   52.6841
   ],
   "sd": [
-   2.7149,
-   2.4661,
-   4.156
+   2.7173,
+   2.4671,
+   4.156,
+   1.9002,
+   2.6996
   ],
   "n": 8000,
   "rate": 0.206,
-  "heldout_accuracy": 0.916
+  "heldout_accuracy": 0.929
  },
  "synergy": {
   "method": "offset: deck model fitted once, each theme fitted alone on its linear predictor; SE from 20 draft-cluster bootstraps",

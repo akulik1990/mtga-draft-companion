@@ -124,9 +124,23 @@ def splash_features(pool, lane):
             for col in "WUBRG":
                 fix[col] += 1
     if not best:
-        return -10.0, 0, len(on), None
+        return -10.0, 0, len(on), None, 0, 0, cut
     col = max(best, key=lambda k: best[k] - cut + 0.5 * min(fix[k], 6))
-    return best[col] - cut, min(fix[col], 8), len(on), col
+    # Extended inputs (used when the fitted rule lists them): splashable cards of the colour above the 23rd, that
+    # colour's own dual lands (any-colour fixers aside), and the pair's depth (its 23rd card's win rate).
+    above = sum(1 for c in pool if spell(c) and not castable(c, lane) and len(off_pips(c, lane)) == 1
+                and col in off_pips(c, lane)[0] and _wr(c, "All Decks") >= cut)
+    duals = sum(1 for c in pool if "Land" in (c.get("types") or []) and "Basic" not in (c.get("types") or []) and col in (c.get("colors") or []))
+    return best[col] - cut, min(fix[col], 8), len(on), col, above, min(duals, 6), cut
+
+
+SPLASH_INPUTS = ("edge", "fixing", "playables", "colour", "above", "duals", "depth")
+
+
+def splash_inputs(rule, f):
+    """The fitted rule's inputs from splash_features (rules list their input names; old rules use the first three)."""
+    named = dict(zip(SPLASH_INPUTS, f))
+    return [named[k] for k in rule.get("inputs", SPLASH_INPUTS[:3])]
 
 
 def three_features(pool, lane):
@@ -149,8 +163,17 @@ def three_features(pool, lane):
             for col in "WUBRG" if col not in lane}
     col = max(adds, key=lambda k: adds[k] + 0.5 * min(fix[k], 6))
     if not adds[col]:
-        return 0, 0, len(on), None
-    return adds[col], min(fix[col], 8), len(on), col
+        return 0, 0, len(on), None, 0, cut
+    duals = sum(1 for c in pool if "Land" in (c.get("types") or []) and "Basic" not in (c.get("types") or []) and col in (c.get("colors") or []))
+    return adds[col], min(fix[col], 8), len(on), col, min(duals, 6), cut
+
+
+THREE_INPUTS = ("adds", "fixing", "playables", "colour", "duals", "depth")
+
+
+def three_inputs(rule, f):
+    named = dict(zip(THREE_INPUTS, f))
+    return [named[k] for k in rule.get("inputs", THREE_INPUTS[:3])]
 
 
 def rule_chance(rule, x):
@@ -163,7 +186,7 @@ def splash_chance(rule, pool, lane):
     """P(a top player splashes this pool in this pair), from the set's fitted splash rule; None without one."""
     if not rule:
         return None
-    return rule_chance(rule, splash_features(pool, lane)[:3])
+    return rule_chance(rule, splash_inputs(rule, splash_features(pool, lane)))
 
 
 def splashable(card, lane, splash):
@@ -388,11 +411,12 @@ def build(pool, model, targets, top=3, splash_pairs=2, rule=None, three=None):
         return sorted(out, key=lambda x: -(x["objective"] + SPLASH_FIX_POINTS * fixing(x["splash"])))
 
     def third(b):
-        adds, fixing, playables, col = three_features(pool, b["lane"])
+        f3 = three_features(pool, b["lane"])
+        col = f3[3]
         lane = "".join(sorted(b["lane"] + (col or ""), key="WUBRG".index))
         if not col or lane not in (targets or {}):
             return None, None
-        chance = rule_chance(three, (adds, fixing, playables))
+        chance = rule_chance(three, three_inputs(three, f3))
         t = build_pair(pool, lane, model, targets[lane], splash_cost=0.0)
         if t and t["penalty"] <= 3 * PENALTY:
             t["three_chance"] = round(chance, 2)
