@@ -15,6 +15,7 @@
   "CHOICE_FEATURES": "",
   "CHOICE_IN_FIT": false,
   "CHOICE_STAGES": "all",
+  "COLOURLESS_EARLY": 0.0,
   "COLOUR_SHIFT": "",
   "COMMIT_BY": 18,
   "COPIES_MAX": 2,
