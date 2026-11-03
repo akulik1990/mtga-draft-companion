@@ -4,7 +4,19 @@
  },
  "pairs": {},
  "types": {},
- "cards": {},
+ "cards": {
+  "Flickering Hound": -10.0,
+  "Germinate Recruits": -10.0,
+  "Loyal Tutor": -10.0,
+  "Extrapolate the Impossible": -10.0,
+  "Yargle, Glutton of Urborg": -10.0,
+  "Identity Echo": -10.0,
+  "Gardenize": -10.0,
+  "Omnipresence": -10.0,
+  "Hexhaven Dueling Arena": -10.0,
+  "Entrust the Spark": -10.0,
+  "Karn, Gilded Guardian": -10.0
+ },
  "combos": [],
  "notes": {
   "FIX_BONUS": "Top players' FRA draft video (2026-11-02): 'always take the land unless it's so above replacement'. FRA top-drafter train top-1 55.76 -> 56.11, test 55.87 -> 56.33 (top-3 85.79 -> 86.58); mock decks 54.58 -> 54.54 (100 fresh tables); dual lands per draft 0.28 -> 0.97. Bonus 1-6 all similar; 3 is the middle.",
@@ -727,5 +739,8 @@
    ],
    "source": "user review 2026-11-03"
   }
+ },
+ "sources": {
+  "cards_ftier": "F tier (unplayable, constructed cards) from cardgamebase.com Reality Fracture draft tier list, 2026-09-23: -10 WR points each. 9 of 11 are bottom-15 by GIH WR or too rarely played for 17Lands to publish; Karn, Gilded Guardian (53.0) and Hexhaven Dueling Arena (50.0) are the exceptions. Level on the 100-draft slices (about -3 picks each)."
  }
 }
