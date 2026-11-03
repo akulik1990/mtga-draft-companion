@@ -173,6 +173,25 @@ def deckmates(set_code):
     return out
 
 
+@lru_cache(maxsize=4)
+def inclusion(set_code, prior=10.0):
+    """{pair: {card: log-odds that top players put a copy they hold in the deck}}, shrunk toward the pair's overall rate
+    with `prior` copies; from tools/deck_targets.py (<data>/Temp/inclusion_<SET>.json)."""
+    from companion import DATA_DIR
+
+    path = DATA_DIR / "Temp" / f"inclusion_{set_code}.json"
+    if not path.exists():
+        return {}
+    out = {}
+    for lane, rows in json.loads(path.read_text()).items():
+        base = sum(p for p, _ in rows.values()) / max(1, sum(h for _, h in rows.values()))
+        out[lane] = {}
+        for name, (p, h) in rows.items():
+            r = (p + prior * base) / (h + prior)
+            out[lane][name] = math.log(r / (1 - r)) - math.log(base / (1 - base))
+    return out
+
+
 def mate_score(card, pool, lane, set_code):
     """How much top players' decks in the lane pair this card with the pool's cards: the sum of log lifts, per 23 cards."""
     table = deckmates(set_code).get(lane) or {}

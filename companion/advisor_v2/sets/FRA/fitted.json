@@ -28,7 +28,8 @@
   "DECK_FROM": 20,
   "FIT_WEIGHTS": true,
   "deckbuilder.SYN_MATES": 8.0,
-  "deckbuilder.SPLASH_FIX_POINTS": 2.0
+  "deckbuilder.SPLASH_FIX_POINTS": 2.0,
+  "deckbuilder.INCLUDE_WEIGHT": 0.5
  },
  "pairs": {
   "k": 4,
@@ -496,7 +497,7 @@
   "decks": {
    "how": "tools/deck_targets.py: mean deck of 60%+ players per two-colour pair and three-colour combination (>= 150 decks), from 17Lands game data",
    "date": "2026-11-03",
-   "commit": "3786010"
+   "commit": "7a17cb0"
   },
   "splash": {
    "how": "tools/fit_splash.py: when 60%+ players splash (17Lands game data), logistic on edge, fixing, playables",

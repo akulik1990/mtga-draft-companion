@@ -42,6 +42,7 @@ SPLASH_AT = 0.5  # splash when the fitted splash rule gives at least this chance
 SYN_MATES = 0.0  # WR points per unit of the deck's deck-mate sum (pairwise log lift of top players' decks in the pair, over 23); 0 = off
 SYN_CARDS = 0.0  # WR points per log(1 + enablers in the deck) for each list of a reviewed top card in the deck (manual card_wants); 0 = off
 SPLASH_FIX_POINTS = 0.0  # when choosing the splash colour: WR points per land in the pool that makes that colour (up to 3); top players splash the colour their duals support; 0 = off
+INCLUDE_WEIGHT = 0.0  # WR points per unit of a card's inclusion log-odds (how often top players put the copies they hold in the deck, in the pair, against the pair's average); 0 = off
 BOMB_BONUS = 0.0  # WR points for each of the set's top BOMB_TOP cards in the deck: top players nearly always play them; 0 = off
 BOMB_TOP = 30
 DIM_PENALTY = 0.0  # WR points per card outside top players' count +- DIM_SLACK on the composition slots in DIM_CHECK; 0 = off
@@ -208,7 +209,7 @@ def shape_penalty(spells, target, lane="", min_creatures_slack=None, scale=1.0):
 
 def make_extras(spells, lane, target, set_code):
     """f(indices of spells in the deck) -> WR points for synergy (SYN_MATES, SYN_CARDS) less composition misses (DIM_PENALTY)."""
-    if not set_code or not (SYN_MATES or SYN_CARDS or DIM_PENALTY or BOMB_BONUS):
+    if not set_code or not (SYN_MATES or SYN_CARDS or DIM_PENALTY or BOMB_BONUS or INCLUDE_WEIGHT):
         return lambda idx: 0.0
     import math
 
@@ -245,9 +246,17 @@ def make_extras(spells, lane, target, set_code):
         top = deck_needs.top_cards(set_code, BOMB_TOP)
         bombs = {i for i, x in enumerate(names) if x in top}
 
+    incl = [0.0] * n
+    if INCLUDE_WEIGHT:
+        subs = [a + b for i, a in enumerate(lane) for b in lane[i + 1:]]
+        tables = [deck_needs.inclusion(set_code).get(x) or {} for x in subs]
+        for i, x in enumerate(names):
+            vals = [t[x] for t in tables if x in t]
+            incl[i] = sum(vals) / len(vals) if vals and home[i] else 0.0  # splash cards: no evidence in two-colour decks
+
     def extras(idx):
         idx = sorted(idx)
-        out = BOMB_BONUS * sum(1 for i in idx if i in bombs)
+        out = BOMB_BONUS * sum(1 for i in idx if i in bombs) + INCLUDE_WEIGHT * sum(incl[i] for i in idx)
         if SYN_MATES:
             # Mean over pairs of on-colour cards, scaled to a full deck's pairs: swapping one in for a splash card changes
             # the mean, not how many pairs count, so splashing is not charged for the pairs it leaves out.

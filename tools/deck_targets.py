@@ -52,12 +52,14 @@ def main(argv=None):
     sums, decks, seen = defaultdict(lambda: dict.fromkeys(ROLES + CURVE, 0.0)), defaultdict(int), set()
     dim_sums = defaultdict(lambda: dict.fromkeys(DIMS, 0.0))  # apart from sums: some names (removal, two_drops) are in both
     single, together = defaultdict(lambda: defaultdict(int)), defaultdict(lambda: defaultdict(int))
+    played, held = defaultdict(lambda: defaultdict(int)), defaultdict(lambda: defaultdict(int))  # inclusion: copies in deck / in pool
     path = DATA_DIR / "Temp" / "synergy" / f"game_data_public.{a.set}.PremierDraft.csv.gz"
     with gzip.open(path, "rt", newline="", encoding="utf-8") as fh:
         reader = csv.reader(fh)
         header = next(reader)
         col = {h: i for i, h in enumerate(header)}
         deck_cols = [(i, h[len("deck_"):]) for i, h in enumerate(header) if h.startswith("deck_")]
+        side_cols = {h[len("sideboard_"):]: i for i, h in enumerate(header) if h.startswith("sideboard_")}
         for row in reader:
             skill, pair = row[col["user_game_win_rate_bucket"]], row[col["main_colors"]]
             if len(pair) not in (2, 3) or skill in ("", "None") or float(skill) < a.min_skill:
@@ -81,6 +83,15 @@ def main(argv=None):
                         names.append(name)
             decks[lane] += 1
             if len(lane) == 2 and int(hashlib.md5(key[0].encode()).hexdigest(), 16) % 1000 >= CHECK[1]:
+                # Inclusion: of the copies of a spell top players had in their pool, how many they put in the deck.
+                for i, name in deck_cols:
+                    if not slot.get(name):
+                        continue
+                    d = int(float(row[i] or 0))
+                    sb = int(float(row[side_cols[name]] or 0)) if name in side_cols else 0
+                    if d + sb:
+                        played[lane][name] += d
+                        held[lane][name] += d + sb
                 # Deck-mates (outside tools/builder_check.py's sample, which judges a builder that uses them): which cards top players' decks in this pair hold together, beyond how often each is played.
                 names.sort()
                 for j, x in enumerate(names):
@@ -96,6 +107,9 @@ def main(argv=None):
         n, one = decks[lane], single[lane]
         mates[lane] = [[x, y, round(v, 3)] for (x, y), k in pairs.items()
                        if k >= 3 and abs(v := lift(k, one[x], one[y], n)) >= 0.05]
+    inclusion = {lane: {x: [played[lane][x], held[lane][x]] for x in held[lane]} for lane in held}
+    (DATA_DIR / "Temp" / f"inclusion_{a.set}.json").write_text(json.dumps(inclusion))
+    print(f"wrote inclusion for {sum(len(v) for v in inclusion.values())} card-pairs")
     mate_path = DATA_DIR / "Temp" / f"deckmates_{a.set}.json"
     mate_path.write_text(json.dumps(mates))
     print(f"wrote {sum(len(v) for v in mates.values())} deck-mate lifts to {mate_path}")
