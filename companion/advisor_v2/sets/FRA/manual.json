@@ -529,9 +529,9 @@
   },
   "Recursive Recruitment": {
    "wants": "a big graveyard when flashed back (+1/+1 counter per three cards)",
-   "enabler": "\\bmills?\\b|surveil|discard a card|discard your hand|discard (two|three|\\d+|x) cards|into your graveyard",
-   "rule": "cards that mill, surveil, make you discard or put cards into your graveyard",
-   "source": "user review 2026-11-03: reading confirmed"
+   "enabler": "\\bmills?\\b",
+   "rule": "cards that mill",
+   "source": "user review 2026-11-03; narrowed to mill 2026-11-03 (the wider list of mill, surveil, discard and graveyard cards tested -0.4 per enabler, z -2.0)"
   },
   "Kwia Vigorbloom": {
    "wants": "gaining life each turn for Lotus tokens",
