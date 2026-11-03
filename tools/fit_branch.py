@@ -78,13 +78,15 @@ def collect(set_code, split, n, winners_only):
             c_strength = adv.power(by_name[b["over"]], k) - adv.mean
             shared, committed = adv.branch_features(by_name[b["card"]])
             bomb = float(float(((by_name[b["card"]].get("deck_colors") or {}).get("All Decks") or {}).get("gihwr") or 0.0) >= DraftAdvisorV2.BOMB_WR)
+            best_wr, keeps_best = adv.best_card_features(by_name[b["card"]])
             rows.append({"stage": b["stage"], "gap": b["gap"], "c_strength": c_strength, "took_power": took == b["card"], "bomb": bomb,
+                         "best_wr": best_wr, "keeps_best": keeps_best,
                          "shared": shared, "committed": committed,
                          "spells": sum(1 for c in pool if "Land" not in (c.get("types") or []))})
     return rows
 
 
-def fit(rows, full=False, bomb=False):
+def fit(rows, full=False, bomb=False, best=False):
     by_stage = defaultdict(list)
     for r in rows:
         by_stage[r["stage"]].append(r)
@@ -99,8 +101,10 @@ def fit(rows, full=False, bomb=False):
             cols += [[r["shared"] for r in rs], [r["committed"] for r in rs]]
         if bomb and full:
             cols += [[r["bomb"] for r in rs]]
+        if best and bomb and full:
+            cols += [[r["best_wr"] for r in rs], [r["keeps_best"] for r in rs]]
         w, se = logistic(np.column_stack(cols), y)
-        out[stage] = {k: round(float(v), 4) for k, v in zip("abcdef", w)}
+        out[stage] = {k: round(float(v), 4) for k, v in zip("abcdefgh", w)}
         out[stage].update({"se": [round(float(x), 4) for x in se], "n": len(rs), "took_power": int(y.sum())})
     return out
 
@@ -118,13 +122,14 @@ def main(argv=None):
     p.add_argument("--winners", action="store_true"); p.add_argument("--write", action="store_true")
     p.add_argument("--full", action="store_true", help="also fit whether the strong card keeps a colour of the top pair (d) and how settled the pool is (e)")
     p.add_argument("--bomb", action="store_true", help="with --full: also whether the strong card is a bomb (All Decks GIH WR >= the engine's BOMB_WR) (f)")
+    p.add_argument("--best", action="store_true", help="with --full --bomb: also the pool's best card's strength (g) and whether the strong card keeps its colour (h)")
     p.add_argument("--out", help="write here to this file instead of the set's fitted.json (alternatives to measure)")
     p.add_argument("--v2", action="append", default=[], metavar="NAME=VALUE", help="engine overrides while collecting, as in tools/mock_draft.py")
     a = p.parse_args(argv)
     from tools.mock_draft import apply_overrides
     apply_overrides(a.v2)
     rows = collect(a.set, a.split, a.n, a.winners)
-    coefs = fit(rows, a.full, a.bomb)
+    coefs = fit(rows, a.full, a.bomb, a.best)
     order = ["0", "1-2", "3-5", "6-9", "10-14", "15-22", "23+"]
     print(f"{a.set} {a.split}{' winners' if a.winners else ''}: {len(rows)} picks where Power and Fit disagreed and the drafter took one of the two")
     print("stage    picks  took Power   gap needed if in-colour is weak / average / strong (GIH WR points)")

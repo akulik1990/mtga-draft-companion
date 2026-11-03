@@ -738,6 +738,16 @@ class DraftAdvisorV2:
         filler = (deckbuilder.SPELLS - len(top)) * self.replacement
         return sum(v for v, _ in top) + filler - deckbuilder.shape_penalty([c for _, c in top], target, lane, scale=scale)
 
+    def best_card_features(self, card):
+        """(the pool's best card's All Decks GIH WR over the format mean, 0 for an empty pool; 1 if the card shares a colour
+        with that best card or is colourless). Drafters holding a strong card switch less, and more when the switch keeps it."""
+        spells = [c for c in self.pool if "Land" not in (c.get("types") or [])]
+        if not spells:
+            return 0.0, 0.0
+        best = max(spells, key=lambda c: float(all_decks(c).get("gihwr") or 0.0))
+        colours = set(card.get("colors") or []) if "Land" not in (card.get("types") or []) else set()
+        return float(all_decks(best).get("gihwr") or 0.0) - self.mean, float(not colours or bool(colours & set(best.get("colors") or [])))
+
     def branch_features(self, card):
         """(1 if the card keeps a colour of the pool's top pair or is colourless, else 0; that pair's probability)."""
         colours = set() if "Land" in (card.get("types") or []) else set(card.get("colors") or [])
@@ -773,8 +783,9 @@ class DraftAdvisorV2:
             # Learnt from top drafters: branch more readily early and when the best in-colour card is weak;
             # fitted files may also weigh whether the card keeps a colour and how settled the pool is.
             bomb = float(float((all_decks(by_name[p_top])).get("gihwr") or 0.0) >= self.BOMB_WR)
+            best_wr, keeps_best = self.best_card_features(by_name[p_top])
             threshold = -(coef["a"] + coef["c"] * c_strength + coef.get("d", 0.0) * shared + coef.get("e", 0.0) * committed
-                          + coef.get("f", 0.0) * bomb) / coef["b"]
+                          + coef.get("f", 0.0) * bomb + coef.get("g", 0.0) * best_wr + coef.get("h", 0.0) * keeps_best) / coef["b"]
         else:
             threshold = self.BRANCH_DEFAULT
         if self.pack_now == 1 and 2 <= pick <= self.BRANCH_EARLY_TO:
