@@ -424,7 +424,9 @@ class DraftSession:
         with self.scanner.lock:
             taken = taken if taken is not None else self.scanner.retrieve_taken_cards()
         set_code = (self.config.card_data.latest_dataset or "").split("_")[0]
-        out = deckscore.score(set_code, taken, counts, _deck_model(set_code) if set_code else None)
+        from companion.advisor_v2.deckbuilder import MODEL  # the editor judges as the builder does
+
+        out = deckscore.score(set_code, taken, counts, _deck_model(set_code, MODEL) if set_code else None)
         deck, side = [], []
         held = {}
         for c in taken:
@@ -487,8 +489,8 @@ def deckbuilder_basics():
     return BASIC
 
 
-@lru_cache(maxsize=4)
-def _deck_model(set_code):
+@lru_cache(maxsize=8)
+def _deck_model(set_code, section="deckmodel"):
     import sys
     from pathlib import Path
 
@@ -496,7 +498,7 @@ def _deck_model(set_code):
     from tools.deck_model import DeckModel
 
     try:
-        return DeckModel(set_code)
+        return DeckModel(set_code, section)
     except FileNotFoundError:
         return None
 
@@ -549,7 +551,7 @@ def own_builds(set_code, taken):
     from companion.advisor_v2.engine import DraftAdvisorV2
 
     targets = config.fitted(set_code, "decks").get("pairs")
-    model = _deck_model(set_code) if set_code else None
+    model = _deck_model(set_code, deckbuilder.MODEL) if set_code else None
     if not DraftAdvisorV2.OWN_BUILDER or not targets or not model or not taken:
         return None
 

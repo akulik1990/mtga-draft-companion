@@ -39,6 +39,8 @@ MIN_SPLASH_CMC = 3  # splash late, impactful cards, not early drops
 MAX_SPLASH_BASICS = 4  # basics of the splash colour before the main colours suffer
 OWN_FIXING = True  # splash and three-colour rule inputs count fixing without basic landcyclers (colour_fixing); refit the rules when switching
 THREE_AT = 0.5  # go three colours when the fitted three rule gives at least this chance
+SPLASH_FORCE = False  # when the fitted rule says splash, splash even if the splash build scores below the plain pair
+MODEL = "deckmodel"  # fitted.json section of the deck model the builder maximises (the mock yardstick stays "deckmodel")
 SPLASH_AT = 0.5  # splash when the fitted splash rule gives at least this chance
 SYN_MATES = 0.0  # WR points per unit of the deck's deck-mate sum (pairwise log lift of top players' decks in the pair, over 23); 0 = off
 SYN_CARDS = 0.0  # WR points per log(1 + enablers in the deck) for each list of a reviewed top card in the deck (manual card_wants); 0 = off
@@ -303,7 +305,7 @@ def make_extras(spells, lane, target, set_code):
     return extras
 
 
-def build_pair(pool, lane, model, target, min_creatures_slack=None, variant="", splash="", splash_cost=None):
+def build_pair(pool, lane, model, target, min_creatures_slack=None, variant="", splash="", splash_cost=None, force=False):
     """The best 23 spells for one pair (and optional splash colour), with lands; None when the pool cannot make a deck."""
     spells = [c for c in pool if "Land" not in (c.get("types") or []) and (castable(c, lane) or (splash and splashable(c, lane, splash)))]
     lane_colours = lane + splash
@@ -364,6 +366,13 @@ def build_pair(pool, lane, model, target, min_creatures_slack=None, variant="", 
                     break
             if improved:
                 break
+    if splash and force and not any(not castable(spells[i], lane) for i in deck):
+        # The fitted rule decided to splash: bring in the splash card whose best swap costs least.
+        trials = [(score([spells[k] for k in (deck - {i}) | {j}], (deck - {i}) | {j}), i, j)
+                  for j in side if not castable(spells[j], lane) for i in deck if castable(spells[i], lane)]
+        if trials:
+            _, i, j = max(trials)
+            deck, side = (deck - {i}) | {j}, (side - {j}) | {i}
     chosen = [spells[i] for i in deck]
     used = splash if splash and any(not castable(c, lane) for c in chosen) else ""
     if splash and not used:
@@ -402,8 +411,9 @@ def build(pool, model, targets, top=3, splash_pairs=2, rule=None, three=None):
         out = []
         for col in "WUBRG":
             if col not in b["lane"]:
-                s = build_pair(pool, b["lane"], model, targets[b["lane"]], splash=col, splash_cost=None if chance is None else 0.0)
-                if s and s["penalty"] <= 3 * PENALTY and s["objective"] > b["objective"]:
+                force = SPLASH_FORCE and chance is not None
+                s = build_pair(pool, b["lane"], model, targets[b["lane"]], splash=col, splash_cost=None if chance is None else 0.0, force=force)
+                if s and s["penalty"] <= 3 * PENALTY and (force or s["objective"] > b["objective"]):
                     s["splash_chance"] = None if chance is None else round(chance, 2)
                     out.append(s)
 

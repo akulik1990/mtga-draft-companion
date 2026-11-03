@@ -107,17 +107,18 @@ def read(set_code, facts, ids=False):
     return out + (drafts,) if ids else out
 
 
-def fit_logistic(X, y, l2):
-    """Ridge logistic regression (intercept unpenalised) on a sparse or dense design."""
+def fit_logistic(X, y, l2, sw=None):
+    """Ridge logistic regression (intercept unpenalised) on a sparse or dense design; sw: per-row weights."""
     n, k = X.shape
+    sw = np.ones(n) if sw is None else sw
 
     def f(w):
         z = X @ w[1:] + w[0]
         p = 1 / (1 + np.exp(-z))
         eps = 1e-9
-        loss = -(y * np.log(p + eps) + (1 - y) * np.log(1 - p + eps)).sum() + l2 * (w[1:] @ w[1:])
+        loss = -(sw * (y * np.log(p + eps) + (1 - y) * np.log(1 - p + eps))).sum() + l2 * (w[1:] @ w[1:])
         g = np.empty_like(w)
-        r = p - y
+        r = sw * (p - y)
         g[0] = r.sum()
         g[1:] = X.T @ r + 2 * l2 * w[1:]
         return loss, g
@@ -147,24 +148,29 @@ def cmd_fit(a):
     full = sparse.hstack([sparse.csr_matrix(ctx), sparse.csr_matrix(S2), C]).tocsr()
     base = sparse.csr_matrix(ctx)
     tr, te = ~test, test
+    # Games by 60%+ players count top_weight times (their card choices are the ones the builder copies).
+    top = ctx[:, [i for i, b in enumerate(SKILLS[1:]) if b >= 0.60 - 1e-9]].sum(axis=1) > 0
+    sw = np.where(top, a.top_weight, 1.0)
     w0 = fit_logistic(base[tr], y[tr], 1.0)
     print(f"held-out log-loss, context only: {logloss(w0, base[te], y[te]):.5f}")
     best = None
     for l2 in a.l2:
-        w = fit_logistic(full[tr], y[tr], l2)
+        w = fit_logistic(full[tr], y[tr], l2, sw[tr])
         ll = logloss(w, full[te], y[te])
         print(f"held-out log-loss, deck + context, l2={l2}: {ll:.5f}")
         if best is None or ll < best[0]:
             best = (ll, l2, w)
     ll, l2, _ = best
-    w = fit_logistic(full, y, l2)  # refit on everything with the chosen penalty
+    w = fit_logistic(full, y, l2, sw)  # refit on everything with the chosen penalty
     k_ctx, k_shape = ctx.shape[1], S2.shape[1]
     model = {"set": a.set, "l2": l2, "heldout_logloss": ll, "context_only_logloss": logloss(w0, base[te], y[te]),
              "intercept": float(w[0]), "context": [float(x) for x in w[1:1 + k_ctx]],
              "shape_names": SHAPE + ["creatures^2", "lands^2", "cmc2^2"], "shape": [float(x) for x in w[1 + k_ctx:1 + k_ctx + k_shape]],
              "shape_mu": [float(x) for x in mu_s], "shape_sd": [float(x) for x in sd_s],
              "cards": {n: float(x) for n, x in zip(names, w[1 + k_ctx + k_shape:])}, "typical": TYPICAL}
-    out = config.write_fitted(a.set, "deckmodel", model, "tools/deck_model.py fit: regularised logistic of game wins on 17Lands public game data")
+    model["top_weight"] = a.top_weight
+    out = config.write_fitted(a.set, a.section, model, "tools/deck_model.py fit: regularised logistic of game wins on 17Lands public game data"
+                              + (f", 60%+ players' games weighted x{a.top_weight}" if a.top_weight != 1.0 else ""))
     top = sorted(model["cards"].items(), key=lambda kv: -kv[1])[:6]
     print("strongest per copy:", ", ".join(f"{n} {v:+.3f}" for n, v in top))
     print("shape:", ", ".join(f"{n} {v:+.3f}" for n, v in zip(model["shape_names"], model["shape"])))
@@ -174,8 +180,8 @@ def cmd_fit(a):
 class DeckModel:
     """Score a deck ({card name: count}, basics included) as a win rate for an average player."""
 
-    def __init__(self, set_code):
-        self.m = config.fitted(set_code, "deckmodel")
+    def __init__(self, set_code, section="deckmodel"):
+        self.m = config.fitted(set_code, section) or (config.fitted(set_code, "deckmodel") if section != "deckmodel" else None)
         if not self.m:
             raise FileNotFoundError(f"no deckmodel section in {config.set_file(set_code, 'fitted')}")
         self.facts = card_facts(set_code)
@@ -195,6 +201,8 @@ def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     sub = p.add_subparsers(dest="cmd", required=True)
     f = sub.add_parser("fit"); f.add_argument("set"); f.add_argument("--l2", type=float, nargs="+", default=[10.0, 30.0, 100.0, 300.0])
+    f.add_argument("--top-weight", type=float, default=1.0, help="weight of 60%%+ players' games")
+    f.add_argument("--section", default="deckmodel", help="fitted.json section to write (deckmodel is the mock yardstick; the builder can use another)")
     f.set_defaults(fn=cmd_fit)
     a = p.parse_args(argv)
     a.fn(a)

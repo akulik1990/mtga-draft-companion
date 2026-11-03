@@ -77,7 +77,7 @@ def init(set_code, overrides, no_rule=False):
             by_name.setdefault(n, dict(c, set=set_code))
     ranked = sorted({c["name"] for c in data.values() if ((c.get("deck_colors") or {}).get("All Decks") or {}).get("gihwr")},
                     key=lambda n: -by_name[n]["deck_colors"]["All Decks"]["gihwr"])
-    ARGS.update(top=set(ranked[:30]), by_name=by_name, model=DeckModel(set_code), targets=config.fitted(set_code, "decks")["pairs"],
+    ARGS.update(top=set(ranked[:30]), by_name=by_name, model=DeckModel(set_code, deckbuilder.MODEL), targets=config.fitted(set_code, "decks")["pairs"],
                 rule=None if no_rule else config.fitted(set_code, "splash"), three=None if no_rule else config.fitted(set_code, "three"))
 
 
