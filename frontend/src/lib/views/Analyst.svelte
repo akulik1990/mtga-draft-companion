@@ -134,7 +134,7 @@
 			{#each (snap.advisors[key as 'upstream' | 'v2'] ?? []).slice(0, 3) as r}
 				<div class="mb-2 text-sm">
 					<span class="font-mono text-zinc-500">#{r.rank}</span> <span class="font-medium">{r.card_name}</span>
-					<span class="font-mono text-zinc-400">{r.contextual_score.toFixed(1)} · base {pct(r.base_win_rate)} · z {r.z_score.toFixed(2)}</span>
+					<span class="font-mono text-zinc-400">{r.contextual_score.toFixed(1)}{r.base_win_rate != null ? ` · base ${pct(r.base_win_rate)}` : ''} · z {r.z_score.toFixed(2)}</span>
 					{#if r.reasoning?.length}<div class="text-xs text-zinc-500">{r.reasoning.join('; ')}</div>{/if}
 				</div>
 			{:else}

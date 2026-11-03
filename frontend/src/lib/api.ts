@@ -12,9 +12,9 @@ export type Card = {
 	returnable_at?: number[];
 };
 export type Rec = {
-	rank: number; card_name: string; base_win_rate: number; contextual_score: number; z_score: number;
-	cast_probability: number; wheel_chance: number; functional_cmc: number; reasoning: string[];
-	is_elite: boolean; archetype_fit: string; tags: string[];
+	rank: number; card_name: string; base_win_rate?: number; contextual_score: number; z_score: number;
+	cast_probability?: number; wheel_chance: number; functional_cmc?: number; reasoning: string[];
+	is_elite: boolean; archetype_fit?: string; tags: string[];
 };
 export type AdvisorKey = 'upstream' | 'v2';
 export type Mock = { kind: 'table' | '17lands'; id: number | string; set: string; done: boolean; pack_number: number | null; pick_number: number | null; picks: number; human: string | null };

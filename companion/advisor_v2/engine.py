@@ -21,6 +21,15 @@ from src.advisor.engine import DraftAdvisor
 from src.advisor.mana_base import count_fixing
 from src.advisor.schema import Recommendation
 
+
+class V2Recommendation(Recommendation):
+    """Upstream's model plus the fields 4.28 dropped from it, which v2 still fills and the app shows."""
+
+    base_win_rate: float = 0.0
+    cast_probability: float = 1.0
+    functional_cmc: float = 0.0
+    archetype_fit: str = ""
+
 from companion.advisor_v2 import composition, config, synergy
 from companion.advisor_v2.lanes import ALL, LANES, all_decks, any_colour_fixer, castable, commitment, lane_distribution, off_pips, pips, pool_fixing, quality
 from companion.advisor_v2 import signals as signal_mod
@@ -789,7 +798,7 @@ class DraftAdvisorV2:
 
     def _rec(self, card, name, base, score, z, cast_p, wheel, reasons):
         best = max(self.lanes, key=self.lanes.get)
-        return Recommendation(
+        return V2Recommendation(
             card_name=name,
             base_win_rate=round(base, 2),
             contextual_score=round(score, 2),
