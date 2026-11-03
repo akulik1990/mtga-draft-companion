@@ -153,6 +153,8 @@ class DraftAdvisorV2:
     BRANCH_COLOUR = True  # switch rule that also weighs whether the strong card keeps a colour of the top pair and how settled the pool is (fitted.json, branch_colour). FRA: test top-1 55.4 -> 56.0, deck win rate -0.86 (SE 0.34, 200 bot tables, all from tables ending in other colours); on by the user's call 2026-11-01
     KEEP_ANY = False  # "keeps a colour" = some pair that casts the card shares a colour with the top pair (a mono-red card keeps U of a UB pool via UR); False = the card itself shares a colour with the top pair
     BRANCH_FILE = ""  # override the fitted rule's file (measuring alternatives); "" = the set's fitted.json
+    PLAY_RATE_POINTS = 0.0  # WR points off a non-land card in proportion to how far its play rate falls below PLAY_RATE_FROM (all of them at 0%); 0 = off
+    PLAY_RATE_FROM = 50.0
     BOMB_WR = 61.0  # All Decks GIH WR from which the strong card counts as a bomb in the switch rule (its "f" term, tools/fit_branch.py --bomb)
     BRANCH_EARLY = 0.0  # WR points added to the switch bar at pack 1 picks 2..BRANCH_EARLY_TO (FRA train: early switches matched top drafters 30.9% vs 55.4% otherwise)
     BRANCH_EARLY_TO = 7
@@ -441,6 +443,11 @@ class DraftAdvisorV2:
                 a += combo.get("points", 0.0)
         if self.creature_need and kind == "creature":
             a += self.CREATURE_POINTS * self.creature_need
+        if self.PLAY_RATE_POINTS and kind != "land":
+            # Rarely played when picked (17Lands play rate): niche or unplayable cards, even when their win rate looks fine.
+            rate = all_decks(card).get("play_rate")
+            if rate is not None:
+                a -= self.PLAY_RATE_POINTS * max(0.0, self.PLAY_RATE_FROM - float(rate)) / self.PLAY_RATE_FROM
         if self.removal_need and "removal" in (card.get("tags") or []) and kind != "land":
             a += self.REMOVAL_POINTS * self.removal_need
         if self.COPIES_POINTS and self.names.get(name, 0) >= self.COPIES_MAX:

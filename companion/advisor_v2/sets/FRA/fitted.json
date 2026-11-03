@@ -37,7 +37,8 @@
   "deckbuilder.SPLASH_AT": 0.45,
   "deckbuilder.MODEL": "deckmodel_top3",
   "FIT_WEIGHTS_CAP": 4.0,
-  "SPEC_ALL": true
+  "SPEC_ALL": true,
+  "PLAY_RATE_POINTS": 5.0
  },
  "pairs": {
   "k": 4,

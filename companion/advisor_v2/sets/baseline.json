@@ -50,6 +50,8 @@
   "ORDER_WEIGHT": 0.0,
   "OWN_BUILDER": true,
   "OWN_FIXING": true,
+  "PLAY_RATE_FROM": 50.0,
+  "PLAY_RATE_POINTS": 0.0,
   "PREF_FILE": "",
   "PREF_ON_WEIGHT": 4.0,
   "PREF_SCOPE": "both",
