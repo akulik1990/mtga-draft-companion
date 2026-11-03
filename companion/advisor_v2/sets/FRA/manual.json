@@ -597,7 +597,8 @@
    "enabler_types": [
     "Planeswalker"
    ],
-   "rule": "planeswalkers, Jace cards and cards that empower Jace"
+   "rule": "planeswalkers, Jace cards and cards that empower Jace",
+   "source": "user review 2026-11-03: reading confirmed"
   },
   "Garruk, Curse Breaker": {
    "wants": "creatures with power 4 or more (each draws a card), creature tokens for his −4 attack boost, and, like Garruk, Veiled Butcher, boosts for his 4/4 Beasts and Ajani Unrelenting",
@@ -694,7 +695,8 @@
    "Kindred Judgment": "standalone (user review 2026-11-03: confirmed)",
    "Kiora of Fire and Ashes": "standalone (user review 2026-11-03: confirmed)",
    "Austere Command": "standalone (user review 2026-11-03: confirmed)",
-   "Chandra, Torch of Defiance": "standalone (user review 2026-11-03: confirmed)"
+   "Chandra, Torch of Defiance": "standalone (user review 2026-11-03: confirmed)",
+   "Mindseeker Oculus": "standalone (user review 2026-11-03: confirmed)"
   },
   "Garruk, Veiled Butcher": {
    "wants": "recurring removal on its own (+2 shrinks, −2 edict); better with creature tokens to sacrifice to his −2 and with boosts for his 4/4 Beast tokens; super with Ajani Unrelenting (+1 gives the Beasts +1/+0 and haste)",

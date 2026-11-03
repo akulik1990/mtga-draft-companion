@@ -537,7 +537,7 @@
   "card_needs": {
    "how": "tools/card_needs.py: manual.json card_wants tested on 17Lands game data (enablers x card in hand, controlling for deck quality, skill, play/draw)",
    "date": "2026-11-03",
-   "commit": "3414ecf"
+   "commit": "44a0d50"
   }
  },
  "prefs": {
