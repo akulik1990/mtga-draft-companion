@@ -199,6 +199,7 @@ class DraftAdvisorV2:
     FIT_WEIGHTS_CAP = 8.0  # largest WR-point change the per-pick terms make to one card's Fit
     BLEND = False  # rank by the learnt per-pick blend of top drafters' weights on Power, Fit, signal, wheel, synergy and deck needs (fitted "blend", tools/choice_model.py blend) instead of the Power/Fit switch
     CHOICE_IN_FIT = False  # apply the choice correction inside Fit (before the Power/Fit switch) instead of to the final order
+    REMOVAL_SLACK_PICK = -1.0  # removal spells below top players' count before the picker's removal need starts; -1 = the builder's REMOVAL_SLACK
     REMOVAL_POINTS = 0.0  # WR points for a removal spell when the pool, projected to 23 spells, is fully short of its top pair's removal floor (top players' count there minus deckbuilder.REMOVAL_SLACK); 0 = off
     REMOVAL_FROM = 8  # spells in the pool before the removal need applies
     COPIES_MAX = 2  # copies of one card a deck wants
@@ -281,7 +282,8 @@ class DraftAdvisorV2:
             # FRA games: decks under 6 removal lose ~0.6 WR points beyond their cards; the builder keeps a floor, the picker leans toward it.
             from companion.advisor_v2 import deckbuilder  # deckbuilder imports this module
             target = ((config.fitted(set_code_of(self.pool), "decks") or {}).get("pairs") or {}).get(self.top_lane) or {}
-            floor = max(0.0, target.get("removal", 6.0 + deckbuilder.REMOVAL_SLACK) - deckbuilder.REMOVAL_SLACK)
+            slack = deckbuilder.REMOVAL_SLACK if self.REMOVAL_SLACK_PICK < 0 else self.REMOVAL_SLACK_PICK
+            floor = max(0.0, target.get("removal", 6.0 + slack) - slack)
             removal = sum(1 for c in self.pool if "Land" not in (c.get("types") or []) and "removal" in (c.get("tags") or []))
             self.removal_need = max(0.0, floor - removal * 23.0 / spells) / floor if floor else 0.0
         if self.HALF_PIVOT and spells >= self.HALF_PIVOT:

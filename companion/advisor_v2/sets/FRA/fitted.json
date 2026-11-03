@@ -17,7 +17,7 @@
   "LANE_FLAT": "4:1,14:0.7,45:0.8",
   "KEEP_ANY": true,
   "deckbuilder.MIN_SPLASH_CMC": 1,
-  "REMOVAL_POINTS": 4.0,
+  "REMOVAL_POINTS": 6.0,
   "CHOICE_ADJUST": true,
   "CHOICE_STAGES": "late",
   "CHOICE_IN_FIT": true,
@@ -41,7 +41,8 @@
   "PLAY_RATE_POINTS": 5.0,
   "COLOURLESS_EARLY": 8.0,
   "ORDER_WEIGHT": 1.0,
-  "CARD_PAIRS_PULL": 0.5
+  "CARD_PAIRS_PULL": 0.5,
+  "REMOVAL_SLACK_PICK": 0.0
  },
  "pairs": {
   "k": 4,
