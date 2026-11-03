@@ -179,6 +179,7 @@ class DraftAdvisorV2:
     CHOICE_FEATURES = ""  # per stage and feature group, e.g. "p1close:synergy;p2open:synergy,colour,splash;fit:synergy,colour,splash,fixer,needs;late:all" (stages p1open, p1close, p2open, fit, late; groups synergy, needs, colour, splash, fixer, cmc, all); overrides CHOICE_STAGES when set
     CHOICE_STAGES = "all"  # which stages CHOICE_ADJUST applies to: "all", or a comma list of p1open (P1 picks 1-7), p1close (P1 8-11), p2open (P2 1-6), fit (P2 7-11, P3 1-11), late (picks 12-14)
     FIT_WEIGHTS = False  # Fit adds the per-pick weights of top drafters (fitted "blend") on synergy (themes, deck-mates, reviewed cards), splash and the deck-slot fills, in Fit's WR points; the Power/Fit switch stays
+    FIT_PASSED = True  # the per-pick weights include "Passed": quality already passed in the card's colours to the neighbour passing now (needs.passed)
     FIT_WEIGHTS_CAP = 8.0  # largest WR-point change the per-pick terms make to one card's Fit
     BLEND = False  # rank by the learnt per-pick blend of top drafters' weights on Power, Fit, signal, wheel, synergy and deck needs (fitted "blend", tools/choice_model.py blend) instead of the Power/Fit switch
     CHOICE_IN_FIT = False  # apply the choice correction inside Fit (before the Power/Fit switch) instead of to the final order
@@ -210,6 +211,7 @@ class DraftAdvisorV2:
         _, alsa_spread = set_metrics.get_metrics(ALL, "alsa")
         spread = alsa_spread if alsa_spread > 0 else 2.0
         seen = seen_packs or []
+        self.seen_packs = seen
         self.current_pack = max((p[0] for p in seen), default=1)
         if signal_mod.DIRECTIONAL:
             # Read only the neighbour passing to us now: packs 1 and 3 come from one side, pack 2 from the other.
@@ -657,11 +659,11 @@ class DraftAdvisorV2:
         w = picks[key]
         if w[1] <= 0.02:
             return 0.0
-        x = self.blend_parts(card, self.set_code_now)
+        x = self.blend_parts(card, self.set_code_now, pick)
         out = sum(wi * xi for wi, xi in zip(w[self.FIT_PARTS_FROM:], x)) / w[1]
         return max(-self.FIT_WEIGHTS_CAP, min(self.FIT_WEIGHTS_CAP, out))
 
-    def blend_parts(self, card, set_code):
+    def blend_parts(self, card, set_code, pick=0):
         """Fit's parts among the blend inputs (choice_model.CHART from Themes on)."""
         from companion.advisor_v2 import choice, needs
 
@@ -669,8 +671,10 @@ class DraftAdvisorV2:
         targets = (config.fitted(set_code, "decks") or {}).get("pairs") or {}
         lane = choice.top_lane(self.pool)
         x = choice.features(card, self.pool, lane, list(tags), tags, targets, 0.0, 0.0)
+        wr = needs.set_wr(set_code)
+        passed = needs.passed(card, self.pool, self.seen_packs, self.pack_now, pick, *wr) if self.FIT_PASSED else 0.0
         return ([x[1] + x[2], needs.mate_score(card, self.pool, lane, set_code), needs.card_synergy(card, self.pool, set_code), x[8]]
-                + needs.fills(card, self.pool, lane, (targets.get(lane) or {}).get("dims"), *needs.set_wr(set_code)))
+                + needs.fills(card, self.pool, lane, (targets.get(lane) or {}).get("dims"), *wr) + [passed])
 
     def deck_term(self, card):
         """Value above replacement: in each likely pair, the card is worth replacement level plus how much the best 23

@@ -27,6 +27,7 @@
   "DOUBLE_PIP_ALL": false,
   "DOUBLE_PIP_CMC": 99,
   "FIT_PARTS_FROM": 4,
+  "FIT_PASSED": true,
   "FIT_WEIGHTS": false,
   "FIT_WEIGHTS_CAP": 8.0,
   "FIX_BONUS": 0.0,

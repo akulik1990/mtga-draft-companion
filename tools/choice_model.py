@@ -156,9 +156,9 @@ def cmd_fit(a):
                         "tools/choice_model.py fit: conditional logit of top drafters' picks on v2's score plus synergy, deck needs, colour, mana value")
 
 
-from companion.advisor_v2.needs import DIMS, card_synergy, fills, mate_score, set_wr  # noqa: E402
+from companion.advisor_v2.needs import DIMS, card_synergy, fills, mate_score, passed, set_wr  # noqa: E402
 
-CHART = ["Power", "Fit", "Signal", "Wheel", "Themes", "Deck-mates", "Card synergy", "Splash"] + list(DIMS)
+CHART = ["Power", "Fit", "Signal", "Wheel", "Themes", "Deck-mates", "Card synergy", "Splash"] + list(DIMS) + ["Passed"]
 NOTE = {"Power": "card's value in its own best pair, plus the learnt top-drafter strength (bombs land here)",
         "Fit": "card's value under the pairs the pool points to (castability, splash, land fixing value)",
         "Signal": "openness of the card's colours from what the passing neighbour sent",
@@ -168,6 +168,7 @@ NOTE = {"Power": "card's value in its own best pair, plus the learnt top-drafter
         "Deck-mates": "card synergy: how much more often top players' decks in the pair hold this card with the pool's cards than chance",
         "Splash": "an off-colour single-pip card the pool already has fixing for",
         **{d: f"fills a {d.replace('_', ' ')} slot the deck still lacks against top players' decks in the pair" for d in DIMS}}
+NOTE["Passed"] = "above-average quality already passed in the card's colours to the neighbour passing now (fed to them; they pass to you again in pack 3)"
 NOTE["finishers"] = "fills a finisher slot (five-plus drop a SD above the set's mean win rate) the deck still lacks"
 NOTE["pressure"] = "fills a pressure slot (power above toughness, haste, or evasive with power 2+) the deck still lacks"
 NOTE["defence"] = "fills a defence slot (toughness 2+ above power, or toughness 4+ for 3 mana or less) the deck still lacks"
@@ -182,8 +183,11 @@ def chart_data(a):
     themes = list(tags)
     targets = (config.fitted(a.set, "decks") or {}).get("pairs") or {}
     mean, sd = set_wr(a.set)
-    data = {}
+    data, seen, current = {}, [], None
     for row in rows:
+        if row["draft"] != current:
+            current, seen = row["draft"], []
+        seen.append((row["pack"], row["pick"], [by[n] for n in row["pack_cards"] if n in by]))
         extra = row.get("extra") or {}
         pool = [by[n] for n in row["pool"] if n in by]
         pack = [by[n] for n in row["pack_cards"] if n in by and n in extra and row["scores"].get(n, 0) > 0]
@@ -196,7 +200,8 @@ def chart_data(a):
             pw, fv, sig, wh = extra[c["name"]][:4]  # a duplicate in the pack appends its wheel twice
             x = features(c, pool, lane, themes, tags, targets, 0.0, 0.0)
             X.append([pw, fv, sig, wh, x[1] + x[2], mate_score(c, pool, lane, a.set), card_synergy(c, pool, a.set), x[8]]
-                     + fills(c, pool, lane, (targets.get(lane) or {}).get("dims"), mean, sd))
+                     + fills(c, pool, lane, (targets.get(lane) or {}).get("dims"), mean, sd)
+                     + [passed(c, pool, seen, row["pack"], row["pick"], mean, sd)])
             G.append(g)
             Y.append(1 if c["name"] == row["taken"] else 0)
     return data

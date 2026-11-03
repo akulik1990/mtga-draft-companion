@@ -19,6 +19,7 @@ ALPHA = 5.0  # deck-mate lift prior: (together + ALPHA) / (expected + ALPHA)
 
 
 @lru_cache(maxsize=4)
+@lru_cache(maxsize=4)
 def set_wr(set_code):
     """(mean, SD) of All Decks GIH WR over the set's cards with data: the finisher bar."""
     from companion import DATA_DIR
@@ -222,3 +223,29 @@ def fills(card, pool, lane, target, mean, sd):
             have[d] += 1
     open_slots = max(1.0, 23.0 - len(spells))
     return [max(-1.0, min(2.0, (target.get(d, 0.0) - have[d]) / open_slots)) if d in mine else 0.0 for d in DIMS]
+
+
+def passed(card, pool, seen_packs, pack_no, pick, mean, sd):
+    """Above-average quality already passed in the card's colours, from the neighbour passing now (packs 1 and 3, or
+    pack 2): every earlier pack seen from that side, less the cards taken from them (pool cards found in those packs).
+    Passing a strong card feeds its colour to that neighbour, who passes to you again in pack 3. Max over the card's
+    colours; 0 for colourless cards."""
+    side = (2,) if pack_no == 2 else (1, 3)
+    q = lambda c: max(0.0, (float(((c.get("deck_colors") or {}).get("All Decks") or {}).get("gihwr") or 0.0) - mean) / sd)
+    seen = [c for pk, pi, cards in seen_packs if pk in side and (pk, pi) != (pack_no, pick) for c in cards]
+    left = {}
+    for c in seen:
+        left[c.get("name")] = left.get(c.get("name"), 0) + 1
+    out = dict.fromkeys("WUBRG", 0.0)
+    for c in seen:
+        if q(c) > 0:
+            for col in c.get("colors") or []:
+                if col in out:
+                    out[col] += q(c)
+    for c in pool:  # what was taken from those packs
+        if left.get(c.get("name"), 0) > 0:
+            left[c.get("name")] -= 1
+            for col in c.get("colors") or []:
+                if col in out:
+                    out[col] -= q(c)
+    return max((out[col] for col in card.get("colors") or [] if col in out), default=0.0)
