@@ -738,6 +738,92 @@
     "Artifact"
    ],
    "source": "user review 2026-11-03"
+  },
+  "Way of the Cryomancer": {
+   "wants": "removal or token-making instants and sorceries to copy (7-8 of them)",
+   "rule": "removal instants and sorceries",
+   "enabler_types": [
+    "Instant",
+    "Sorcery"
+   ],
+   "enabler_tags": [
+    "removal"
+   ],
+   "all_types_tags": true,
+   "source": "LLU #259 Buildarounds, Synergy (2026-10-17), pasted transcript",
+   "extra": [
+    {
+     "name": "token spells",
+     "rule": "instants and sorceries that make creature tokens",
+     "enabler": "create [^.]*creature tokens?",
+     "enabler_types": [
+      "Instant",
+      "Sorcery"
+     ],
+     "all": true
+    }
+   ]
+  },
+  "Way of the Pyromancer": {
+   "wants": "many two- and four-drops (and medium empower numbers)",
+   "rule": "two-mana creatures",
+   "enabler_types": [
+    "Creature"
+   ],
+   "enabler_min_cmc": 2,
+   "enabler_max_cmc": 2,
+   "source": "LLU #259 Buildarounds, Synergy (2026-10-17), pasted transcript",
+   "extra": [
+    {
+     "name": "four-drops",
+     "rule": "four-mana cards",
+     "enabler_types": [
+      "Creature",
+      "Sorcery",
+      "Instant",
+      "Enchantment",
+      "Artifact",
+      "Planeswalker"
+     ],
+     "enabler_min_cmc": 4,
+     "enabler_max_cmc": 4
+    }
+   ]
+  },
+  "Kiora of Salt and Sand": {
+   "wants": "big empower Jace numbers (Tam's Resistance, Protege's Awakening, Jace's Machinations, Repurposed Enforcer)",
+   "rule": "empower Jace 4 or more, or X",
+   "enabler": "empower jace ([4-9]|x)",
+   "source": "LLU #259 Buildarounds, Synergy (2026-10-17), pasted transcript"
+  },
+  "Rescue Girl, First Responder": {
+   "wants": "permanents whose entering kills something, to return and replay (mostly rares: Lich's Relic, Ajani's Anguish, Vraska; Hapatra)",
+   "rule": "enters-the-battlefield removal",
+   "enabler": "when [^.]*?enters[^.]*?(destroy target|deals? (x|\\d+) damage to (any target|target creature)|-1/-1 counters on|exile target)",
+   "source": "LLU #259 Buildarounds, Synergy (2026-10-17), pasted transcript"
+  },
+  "Ghalta the Unstoppable": {
+   "wants": "creatures with power 4 or more so it costs about 5",
+   "rule": "creatures with power 4+, and 4/4 token makers",
+   "min_power": 4,
+   "enabler": "create a 4/4",
+   "source": "LLU #259 Buildarounds, Synergy (2026-10-17), pasted transcript"
+  },
+  "Bestial Incursion": {
+   "wants": "Heartwood Crafter: its mana pays the flashback (turn 3 Incursion, turn 4 flashback)",
+   "rule": "Heartwood Crafter",
+   "names": [
+    "Heartwood Crafter"
+   ],
+   "source": "LLU #259 Buildarounds, Synergy (2026-10-17), pasted transcript"
+  },
+  "Marwyn, the Preserver": {
+   "wants": "Room of Refuge to sacrifice and return every turn (late game)",
+   "rule": "Room of Refuge",
+   "names": [
+    "Room of Refuge"
+   ],
+   "source": "LLU #259 Buildarounds, Synergy (2026-10-17), pasted transcript"
   }
  },
  "sources": {
