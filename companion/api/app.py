@@ -310,6 +310,11 @@ def create_app(session: DraftSession, *, run_scanner: bool = True, frontend: Pat
         # Monte Carlo + numba JIT on first call: seconds, so keep it off the event loop.
         return jsonable_encoder(await asyncio.to_thread(session.build_decks))
 
+    @app.post("/api/deck/score")
+    async def score_deck(deck: dict = Body(..., embed=True)):
+        # {card name: copies} of the 40, basics by name; the pool is the draft's picks.
+        return jsonable_encoder(await asyncio.to_thread(session.score_deck, deck))
+
     @app.post("/api/mock/start")
     def mock_start(kind: str = Body("random"), set: str | None = Body(None), seed: int | None = Body(None)):
         try:

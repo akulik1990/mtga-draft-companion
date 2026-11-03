@@ -66,6 +66,19 @@ export type Build = {
 	deck: DeckCard[]; sideboard: DeckCard[]; arena_export: string;
 	main: string; splash: string; splash_cards: number; deck_wr: number | null; creatures?: number; realistic?: boolean;
 };
+export type ScoredCard = {
+	name: string; in_deck: number; held: number; land: boolean; status: 'on' | 'splash' | 'off';
+	power: number; power_lane: string; fit: number | null; mates: number | null; inclusion: number | null;
+	bomb: number | null; value?: number; swap_for?: string | null;
+};
+export type DeckScore = {
+	main: string; splash: string; total: number; spells: number; lands: number;
+	deck_wr: number | null; shape_penalty: number | null; extras: number | null; objective: number | null;
+	shape: { name: string; deck: number; top: number | null }[];
+	mana: { colour: string; sources: number; spells: number; max_pips: number }[];
+	cards: ScoredCard[]; bombs: { held: number; in_deck: number };
+	pool: DeckCard[]; arena_export: string;
+};
 
 async function call<T>(path: string, init?: RequestInit): Promise<T> {
 	const r = await fetch(path, { headers: { 'content-type': 'application/json' }, ...init });
@@ -87,6 +100,7 @@ export const api = {
 	updateSettings: (changes: Partial<Settings>) =>
 		call<Settings>('/api/settings', { method: 'PUT', body: JSON.stringify(changes) }),
 	buildDecks: () => post<Build[]>('/api/deck/build'),
+	scoreDeck: (deck: Record<string, number>) => post<DeckScore>('/api/deck/score', { deck }),
 	mockStart: (kind: 'random' | 'table' | '17lands' = 'random') => post<Mock>('/api/mock/start', { kind }),
 	mockPick: (card_name: string) => post<Mock>('/api/mock/pick', { card_name }),
 	mockStop: () => post('/api/mock/stop'),

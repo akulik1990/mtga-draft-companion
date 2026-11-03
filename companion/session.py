@@ -417,6 +417,31 @@ class DraftSession:
             threading.Thread(target=run, daemon=True).start()
         return {"phase": "deckbuild", "building": cache.get("builds") is None, "builds": cache.get("builds") or []}
 
+    def score_deck(self, counts: dict, taken=None) -> dict:
+        """The deck editor's live stats for a 40 of the user's choosing (companion/deckscore.py)."""
+        from companion import deckscore
+
+        with self.scanner.lock:
+            taken = taken if taken is not None else self.scanner.retrieve_taken_cards()
+        set_code = (self.config.card_data.latest_dataset or "").split("_")[0]
+        out = deckscore.score(set_code, taken, counts, _deck_model(set_code) if set_code else None)
+        deck, side = [], []
+        held = {}
+        for c in taken:
+            held.setdefault(c["name"], [c, 0])[1] += 1
+        for name, (c, k) in held.items():
+            n = min(int(counts.get(name, 0)), k)
+            if n:
+                deck.append({**c, "count": n})
+            if k - n:
+                side.append({**c, "count": k - n})
+        for col, name in deckbuilder_basics().items():
+            if counts.get(name):
+                deck.append({"name": name, "count": int(counts[name]), "types": ["Basic", "Land"], "colors": [col]})
+        out["arena_export"] = copy_deck(deck, side)
+        out["pool"] = [_trim({**c, "count": k}) | {"count": k} for c, k in held.values()]
+        return out
+
     def build_decks(self, taken=None) -> list[dict]:
         """Upstream's builds for the pool (taken, else the scanner's picks), each with our label and predicted win rate."""
         with self.scanner.lock:
@@ -454,6 +479,12 @@ class DraftSession:
             # The deck model learnt from real decks; far fewer creatures than any of them run is outside its evidence.
             b["realistic"] = b["creatures"] >= MIN_CREATURES
         return builds
+
+
+def deckbuilder_basics():
+    from companion.advisor_v2.deckbuilder import BASIC
+
+    return BASIC
 
 
 @lru_cache(maxsize=4)

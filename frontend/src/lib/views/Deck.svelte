@@ -3,6 +3,7 @@
 	import { pct } from '../cards';
 	import { show, hide } from '../hover.svelte';
 	import Pips from '../Pips.svelte';
+	import DeckEditor from '../DeckEditor.svelte';
 
 	let builds = $state<Build[]>([]);
 	let active = $state(0);
@@ -10,6 +11,8 @@
 	let error = $state('');
 	let copied = $state(false);
 	let ran = $state(false);
+	let editing = $state<Record<string, number> | null>(null);  // your own deck: {name: copies}, from a build's copy or empty
+	const copyOf = (x: Build) => Object.fromEntries(x.deck.map((c) => [c.name, c.count]));
 
 	async function build() {
 		busy = true; error = '';
@@ -36,7 +39,12 @@
 	}
 </script>
 
+{#if editing}
+	<DeckEditor start={editing} onclose={() => (editing = null)} />
+{:else}
 <div class="mb-3 flex flex-wrap items-center gap-2">
+	{#if b}<button class="rounded bg-sky-800 px-3 py-1 text-sm hover:bg-sky-700" onclick={() => (editing = copyOf(b))} title="Copy this build into the editor and change it">Edit a copy</button>{/if}
+	<button class="rounded bg-zinc-700 px-3 py-1 text-sm hover:bg-zinc-600" onclick={() => (editing = {})} title="Build your own deck from the pool">Start empty</button>
 	<button class="rounded bg-emerald-700 px-3 py-1 text-sm hover:bg-emerald-600 disabled:opacity-50" onclick={build} disabled={busy}>
 		{busy ? 'building…' : 'Build decks'}
 	</button>
@@ -107,4 +115,5 @@
 	<p class="text-sm text-zinc-500">Upstream's builder returned no deck. It needs a near-complete pool (about 23 playable spells).</p>
 {:else if !busy}
 	<p class="text-sm text-zinc-500">Builds from the current pool with upstream's deck builder and mana simulator. First build compiles the simulator; expect a few seconds.</p>
+{/if}
 {/if}
