@@ -26,7 +26,9 @@
   "REMOVAL_FROM": 20,
   "DECK_WEIGHT": 0.5,
   "DECK_FROM": 20,
-  "FIT_WEIGHTS": true
+  "FIT_WEIGHTS": true,
+  "deckbuilder.SYN_MATES": 8.0,
+  "deckbuilder.SPLASH_FIX_POINTS": 2.0
  },
  "pairs": {
   "k": 4,

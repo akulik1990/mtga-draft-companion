@@ -37,8 +37,13 @@ MIN_BASICS_THREE = 4  # ...and of each colour of a three-colour deck
 MAX_SPLASH = 3  # splash cards; more and it is a third main colour
 MIN_SPLASH_CMC = 3  # splash late, impactful cards, not early drops
 MAX_SPLASH_BASICS = 4  # basics of the splash colour before the main colours suffer
+THREE_AT = 0.5  # go three colours when the fitted three rule gives at least this chance
+SPLASH_AT = 0.5  # splash when the fitted splash rule gives at least this chance
 SYN_MATES = 0.0  # WR points per unit of the deck's deck-mate sum (pairwise log lift of top players' decks in the pair, over 23); 0 = off
 SYN_CARDS = 0.0  # WR points per log(1 + enablers in the deck) for each list of a reviewed top card in the deck (manual card_wants); 0 = off
+SPLASH_FIX_POINTS = 0.0  # when choosing the splash colour: WR points per land in the pool that makes that colour (up to 3); top players splash the colour their duals support; 0 = off
+BOMB_BONUS = 0.0  # WR points for each of the set's top BOMB_TOP cards in the deck: top players nearly always play them; 0 = off
+BOMB_TOP = 30
 DIM_PENALTY = 0.0  # WR points per card outside top players' count +- DIM_SLACK on the composition slots in DIM_CHECK; 0 = off
 DIM_SLACK = 2.0
 DIM_CHECK = "early_creatures,late_creatures,noncreature,pressure,defence,finishers"
@@ -203,7 +208,7 @@ def shape_penalty(spells, target, lane="", min_creatures_slack=None, scale=1.0):
 
 def make_extras(spells, lane, target, set_code):
     """f(indices of spells in the deck) -> WR points for synergy (SYN_MATES, SYN_CARDS) less composition misses (DIM_PENALTY)."""
-    if not set_code or not (SYN_MATES or SYN_CARDS or DIM_PENALTY):
+    if not set_code or not (SYN_MATES or SYN_CARDS or DIM_PENALTY or BOMB_BONUS):
         return lambda idx: 0.0
     import math
 
@@ -212,11 +217,16 @@ def make_extras(spells, lane, target, set_code):
     names = [c["name"] for c in spells]
     n = len(spells)
     lift = [[0.0] * n for _ in range(n)]
+    home = [castable(c, lane) for c in spells]
     if SYN_MATES:
         subs = [a + b for i, a in enumerate(lane) for b in lane[i + 1:]]
         tables = [deck_needs.deckmates(set_code).get(x) or {} for x in subs]
+        # Only between cards the pair casts: splash cards rarely share a two-colour deck, so their lifts would read as
+        # "top players do not play this" and talk the builder out of splashing.
         for i in range(n):
             for j in range(i + 1, n):
+                if not (home[i] and home[j]):
+                    continue
                 vals = [(t.get(names[i]) or {}).get(names[j], 0.0) for t in tables]
                 lift[i][j] = max(vals, key=abs) if vals else 0.0
     lists = []
@@ -230,11 +240,22 @@ def make_extras(spells, lane, target, set_code):
         dims_of = [deck_needs.dims(c, mean, sd) for c in spells]
         want = {d: target["dims"].get(d, 0.0) for d in DIM_CHECK.split(",")}
 
+    bombs = set()
+    if BOMB_BONUS:
+        top = deck_needs.top_cards(set_code, BOMB_TOP)
+        bombs = {i for i, x in enumerate(names) if x in top}
+
     def extras(idx):
         idx = sorted(idx)
-        out = 0.0
+        out = BOMB_BONUS * sum(1 for i in idx if i in bombs)
         if SYN_MATES:
-            out += SYN_MATES * sum(lift[i][j] for a, i in enumerate(idx) for j in idx[a + 1:]) / SPELLS
+            # Mean over pairs of on-colour cards, scaled to a full deck's pairs: swapping one in for a splash card changes
+            # the mean, not how many pairs count, so splashing is not charged for the pairs it leaves out.
+            mine = [i for i in idx if home[i]]
+            pairs = len(mine) * (len(mine) - 1) / 2
+            if pairs:
+                mean = sum(lift[i][j] for a, i in enumerate(mine) for j in mine[a + 1:]) / pairs
+                out += SYN_MATES * mean * (SPELLS - 1) / 2
         if lists:
             chosen = set(idx)
             for payoff, en in lists:
@@ -351,7 +372,11 @@ def build(pool, model, targets, top=3, splash_pairs=2, rule=None, three=None):
                 if s and s["penalty"] <= 3 * PENALTY and s["objective"] > b["objective"]:
                     s["splash_chance"] = None if chance is None else round(chance, 2)
                     out.append(s)
-        return sorted(out, key=lambda x: -x["objective"])
+
+        def fixing(col):
+            return min(3, sum(1 for c in pool if "Land" in (c.get("types") or []) and "Basic" not in (c.get("types") or [])
+                              and col in (c.get("colors") or [])))
+        return sorted(out, key=lambda x: -(x["objective"] + SPLASH_FIX_POINTS * fixing(x["splash"])))
 
     def third(b):
         adds, fixing, playables, col = three_features(pool, b["lane"])
@@ -369,8 +394,8 @@ def build(pool, model, targets, top=3, splash_pairs=2, rule=None, three=None):
         first, extra = plain[0], []
         t, p3 = third(first) if three else (None, None)
         ps = splash_chance(rule, pool, first["lane"])
-        variants = splashes(first, ps) if ps is not None and ps >= 0.5 else []
-        if t and p3 >= 0.5:
+        variants = splashes(first, ps) if ps is not None and ps >= SPLASH_AT else []
+        if t and p3 >= THREE_AT:
             first, extra = t, [plain[0]] + variants
         elif variants:
             first, extra = variants[0], [plain[0]] + variants[1:]

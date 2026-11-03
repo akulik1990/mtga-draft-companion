@@ -75,7 +75,9 @@ def init(set_code, overrides, no_rule=False):
     for c in data.values():
         for n in (c["name"], c["name"].split(" // ")[0]):
             by_name.setdefault(n, dict(c, set=set_code))
-    ARGS.update(by_name=by_name, model=DeckModel(set_code), targets=config.fitted(set_code, "decks")["pairs"],
+    ranked = sorted({c["name"] for c in data.values() if ((c.get("deck_colors") or {}).get("All Decks") or {}).get("gihwr")},
+                    key=lambda n: -by_name[n]["deck_colors"]["All Decks"]["gihwr"])
+    ARGS.update(top=set(ranked[:30]), by_name=by_name, model=DeckModel(set_code), targets=config.fitted(set_code, "decks")["pairs"],
                 rule=None if no_rule else config.fitted(set_code, "splash"), three=None if no_rule else config.fitted(set_code, "three"))
 
 
@@ -93,7 +95,10 @@ def one(item):
     their_splash_cards = sum(k for n, k in theirs.items() if not castable(by_name[n], lane))
     removal = lambda cards: sum("removal" in (c.get("tags") or []) for c in cards)
     their_cards = [by_name[n] for n, k in theirs.items() for _ in range(k)]
-    return {"predicted": b["predicted"], "our_removal": removal(b["spells"]), "their_removal": removal(their_cards), "lane": lane, "our_lane": b["lane"], "splash": splash, "our_splash": b["splash"], "overlap": overlap,
+    top = ARGS["top"]
+    their_bombs = [n for n in theirs if n in top]
+    kept = sum(1 for n in their_bombs if n in ours)
+    return {"bombs": len(their_bombs), "bombs_kept": kept, "bombs_missed": [n for n in their_bombs if n not in ours], "predicted": b["predicted"], "our_removal": removal(b["spells"]), "their_removal": removal(their_cards), "lane": lane, "our_lane": b["lane"], "splash": splash, "our_splash": b["splash"], "overlap": overlap,
             "their_splash_cards": their_splash_cards, "our_splash_cards": sum(1 for c in b["spells"] if not castable(c, b["lane"]))}
 
 
@@ -130,6 +135,12 @@ def main(argv=None):
           f"when they don't {100 * sum(len(r['our_lane']) == 3 for r in rows if len(r['lane']) == 2) / max(1, n - len(three_they)):.1f}%")
     print(f"  removal: we {sum(r['our_removal'] for r in rows) / n:.1f}, they {sum(r['their_removal'] for r in rows) / n:.1f}; "
           f"below 6: we {100 * sum(r['our_removal'] < 6 for r in rows) / n:.1f}%, they {100 * sum(r['their_removal'] < 6 for r in rows) / n:.1f}%")
+    bombs = sum(r["bombs"] for r in rows)
+    same_rows = [r for r in rows if r["lane"] == r["our_lane"]]
+    sb = sum(r["bombs"] for r in same_rows)
+    print(f"  top-30 cards in their deck: {bombs}; in ours too {100 * sum(r['bombs_kept'] for r in rows) / max(1, bombs):.1f}% "
+          f"(same main colours: {100 * sum(r['bombs_kept'] for r in same_rows) / max(1, sb):.1f}% of {sb}; missed there: "
+          f"{', '.join(sorted({m for r in same_rows for m in r['bombs_missed']}))})")
     print(f"  splash cards per splash deck: they {sum(r['their_splash_cards'] for r in real) / max(1, len(real)):.1f}, "
           f"we {sum(r['our_splash_cards'] for r in rows if r['our_splash']) / max(1, we):.1f}")
 

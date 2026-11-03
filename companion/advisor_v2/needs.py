@@ -38,6 +38,16 @@ def marked_finishers(set_code):
                      if isinstance(v, dict) and v.get("finisher"))
 
 
+@lru_cache(maxsize=4)
+def top_cards(set_code, n=30):
+    """The set's n best cards by All Decks GIH WR."""
+    from companion import DATA_DIR
+
+    data = json.loads((DATA_DIR / "Sets" / f"{set_code}_PremierDraft_All_Data.json").read_text())["card_ratings"]
+    wr = {c["name"]: ((c.get("deck_colors") or {}).get("All Decks") or {}).get("gihwr") or 0.0 for c in data.values()}
+    return frozenset(sorted((k for k in wr if wr[k] > 0), key=lambda k: -wr[k])[:n])
+
+
 def dims(card, mean, sd):
     """The DIMS a card counts toward. Finishers: five-plus drops at least one SD above the set's mean GIH WR."""
     types, tags = card.get("types") or [], card.get("tags") or []
