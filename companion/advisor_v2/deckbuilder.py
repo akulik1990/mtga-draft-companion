@@ -37,6 +37,11 @@ MIN_BASICS_THREE = 4  # ...and of each colour of a three-colour deck
 MAX_SPLASH = 3  # splash cards; more and it is a third main colour
 MIN_SPLASH_CMC = 3  # splash late, impactful cards, not early drops
 MAX_SPLASH_BASICS = 4  # basics of the splash colour before the main colours suffer
+SYN_MATES = 0.0  # WR points per unit of the deck's deck-mate sum (pairwise log lift of top players' decks in the pair, over 23); 0 = off
+SYN_CARDS = 0.0  # WR points per log(1 + enablers in the deck) for each list of a reviewed top card in the deck (manual card_wants); 0 = off
+DIM_PENALTY = 0.0  # WR points per card outside top players' count +- DIM_SLACK on the composition slots in DIM_CHECK; 0 = off
+DIM_SLACK = 2.0
+DIM_CHECK = "early_creatures,late_creatures,noncreature,pressure,defence,finishers"
 SPLASH_COST = -1.0  # win-rate points charged for splashing, in place of the deck model's splash term (which mostly
 #                     reflects that weaker decks splash: 60%+ FRA players splash 49% of two-colour decks); < 0 = the model's term
 
@@ -196,6 +201,53 @@ def shape_penalty(spells, target, lane="", min_creatures_slack=None, scale=1.0):
     return PENALTY * over
 
 
+def make_extras(spells, lane, target, set_code):
+    """f(indices of spells in the deck) -> WR points for synergy (SYN_MATES, SYN_CARDS) less composition misses (DIM_PENALTY)."""
+    if not set_code or not (SYN_MATES or SYN_CARDS or DIM_PENALTY):
+        return lambda idx: 0.0
+    import math
+
+    from companion.advisor_v2 import needs as deck_needs
+
+    names = [c["name"] for c in spells]
+    n = len(spells)
+    lift = [[0.0] * n for _ in range(n)]
+    if SYN_MATES:
+        subs = [a + b for i, a in enumerate(lane) for b in lane[i + 1:]]
+        tables = [deck_needs.deckmates(set_code).get(x) or {} for x in subs]
+        for i in range(n):
+            for j in range(i + 1, n):
+                vals = [(t.get(names[i]) or {}).get(names[j], 0.0) for t in tables]
+                lift[i][j] = max(vals, key=abs) if vals else 0.0
+    lists = []
+    if SYN_CARDS:
+        for payoff, enablers in deck_needs.synergy_lists(set_code):
+            if payoff in names:
+                lists.append((payoff, [i for i, x in enumerate(names) if x in enablers]))
+    dims_of, want = [], {}
+    if DIM_PENALTY and target.get("dims"):
+        mean, sd = deck_needs.set_wr(set_code)
+        dims_of = [deck_needs.dims(c, mean, sd) for c in spells]
+        want = {d: target["dims"].get(d, 0.0) for d in DIM_CHECK.split(",")}
+
+    def extras(idx):
+        idx = sorted(idx)
+        out = 0.0
+        if SYN_MATES:
+            out += SYN_MATES * sum(lift[i][j] for a, i in enumerate(idx) for j in idx[a + 1:]) / SPELLS
+        if lists:
+            chosen = set(idx)
+            for payoff, en in lists:
+                if any(names[i] == payoff for i in chosen):
+                    out += SYN_CARDS * math.log1p(sum(1 for i in en if i in chosen))
+        if want:
+            have = Counter(d for i in idx for d in dims_of[i])
+            out -= DIM_PENALTY * sum(max(0.0, abs(have[d] - w) - DIM_SLACK) for d, w in want.items())
+        return out
+
+    return extras
+
+
 def build_pair(pool, lane, model, target, min_creatures_slack=None, variant="", splash="", splash_cost=None):
     """The best 23 spells for one pair (and optional splash colour), with lands; None when the pool cannot make a deck."""
     spells = [c for c in pool if "Land" not in (c.get("types") or []) and (castable(c, lane) or (splash and splashable(c, lane, splash)))]
@@ -221,12 +273,15 @@ def build_pair(pool, lane, model, target, min_creatures_slack=None, variant="", 
             p += PENALTY * max(0, mana(chosen).get(BASIC[splash], 0) - MAX_SPLASH_BASICS)
         return p
 
-    def score(chosen):
+    set_code = next((c.get("set") for c in pool if c.get("set")), None)
+    extras = make_extras(spells, lane, target, set_code)
+
+    def score(chosen, idx=None):
         counts = Counter(c["name"] for c in chosen)
         counts.update(mana(chosen))
         counts.update(Counter(c["name"] for c in nonbasics))
         used = splash if splash and any(not castable(c, lane) for c in chosen) else ""
-        return predicted(counts, used) - penalty(chosen)
+        return predicted(counts, used) - penalty(chosen) + (extras(idx) if idx is not None else 0.0)
 
     cost = SPLASH_COST if splash_cost is None else splash_cost
 
@@ -240,14 +295,14 @@ def build_pair(pool, lane, model, target, min_creatures_slack=None, variant="", 
     # Start from the pair's own cards (splash cards come in only when a swap pays).
     order = sorted(range(len(spells)), key=lambda i: (not castable(spells[i], lane), -wr(spells[i])))
     deck, side = set(order[:SPELLS]), set(order[SPELLS:])
-    best = score([spells[i] for i in deck])
+    best = score([spells[i] for i in deck], deck)
     improved = True
     while improved:
         improved = False
         for i in sorted(deck):
             for j in sorted(side):
                 trial = (deck - {i}) | {j}
-                s = score([spells[k] for k in trial])
+                s = score([spells[k] for k in trial], trial)
                 if s > best + 1e-6:
                     deck, side, best = trial, (side - {j}) | {i}, s
                     improved = True
@@ -263,7 +318,7 @@ def build_pair(pool, lane, model, target, min_creatures_slack=None, variant="", 
     full.update(lands)
     full.update(Counter(c["name"] for c in nonbasics))
     return {"lane": lane, "splash": used, "variant": variant, "spells": chosen, "nonbasics": nonbasics, "basics": lands,
-            "penalty": penalty(chosen), "predicted": predicted(full, used), "objective": best,
+            "penalty": penalty(chosen), "predicted": predicted(full, used), "objective": best, "extras": round(extras(deck), 2),
             "sideboard": [spells[i] for i in side] + [c for c in pool if c not in spells and c not in nonbasics]}
 
 

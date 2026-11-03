@@ -26,42 +26,9 @@ sys.path.insert(0, str(ROOT))
 import companion  # noqa: E402,F401
 from companion import DATA_DIR  # noqa: E402
 from companion.advisor_v2 import config  # noqa: E402
+from companion.advisor_v2.needs import is_enabler  # noqa: E402
 
 P_TYPICAL = 0.55  # log-odds to WR points at a typical win rate: x p(1-p) x 100
-
-
-@lru_cache(maxsize=1)
-def scryfall(set_code="FRA"):
-    """{name: {power, toughness}} cached from Scryfall (the dataset has no power)."""
-    path = DATA_DIR / "Temp" / f"scryfall_{set_code}.json"
-    return json.loads(path.read_text()) if path.exists() else {}
-
-
-def power(card):
-    p = (scryfall().get(card.get("name")) or {}).get("power")
-    return int(p) if p and p.isdigit() else None
-
-
-def is_enabler(card, spec):
-    text = re.sub(r"\([^)]*\)", "", (card.get("oracle_text") or "").lower())
-    types, tags = card.get("types") or [], card.get("tags") or []
-    by_text = bool(spec.get("enabler") and re.search(spec["enabler"], text))
-    by_type = (bool(spec.get("enabler_types")) and any(t in types for t in spec["enabler_types"])
-               and spec.get("enabler_min_cmc", 0) <= (card.get("cmc") or 0) <= spec.get("enabler_max_cmc", 99))
-    if spec.get("min_power") and "Creature" in types and (power(card) or 0) >= spec["min_power"]:
-        return True
-    if spec.get("names"):
-        return card.get("name") in spec["names"]
-    if spec.get("cheap"):
-        return "Land" not in types and (card.get("cmc") or 0) <= spec["cheap"]
-    by_tag = any(t in tags for t in spec.get("enabler_tags", ()))
-    if spec.get("multi_type"):
-        return sum(t in types for t in ("Artifact", "Creature", "Enchantment", "Planeswalker", "Instant", "Sorcery", "Battle")) >= 2
-    if spec.get("all_types_tags"):
-        return any(t in types for t in spec["enabler_types"]) and by_tag
-    if spec.get("all"):
-        return by_text and by_type
-    return by_text or by_type or by_tag
 
 
 def prefer(card, spec):

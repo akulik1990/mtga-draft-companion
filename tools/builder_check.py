@@ -93,7 +93,7 @@ def one(item):
     their_splash_cards = sum(k for n, k in theirs.items() if not castable(by_name[n], lane))
     removal = lambda cards: sum("removal" in (c.get("tags") or []) for c in cards)
     their_cards = [by_name[n] for n, k in theirs.items() for _ in range(k)]
-    return {"our_removal": removal(b["spells"]), "their_removal": removal(their_cards), "lane": lane, "our_lane": b["lane"], "splash": splash, "our_splash": b["splash"], "overlap": overlap,
+    return {"predicted": b["predicted"], "our_removal": removal(b["spells"]), "their_removal": removal(their_cards), "lane": lane, "our_lane": b["lane"], "splash": splash, "our_splash": b["splash"], "overlap": overlap,
             "their_splash_cards": their_splash_cards, "our_splash_cards": sum(1 for c in b["spells"] if not castable(c, b["lane"]))}
 
 
@@ -104,9 +104,10 @@ def main(argv=None):
     p.add_argument("--jobs", type=int, default=10)
     p.add_argument("--v2", action="append", default=[], metavar="NAME=VALUE")
     p.add_argument("--no-rule", action="store_true", help="ignore the fitted splash rule (the deck model's own splash term decides)")
+    p.add_argument("--tune", action="store_true", help="sample from the draft buckets outside the check (for tuning; confirm on the check)")
     a = p.parse_args(argv)
     init(a.set, a.v2, a.no_rule)  # fail here, not in workers: Pool respawns a worker whose initializer raises, forever
-    items = sample(a.set, a.n, colours=(2, 3))
+    items = sample(a.set, a.n, colours=(2, 3), buckets=(CHECK[1], 1000) if a.tune else CHECK)
     with Pool(a.jobs, initializer=init, initargs=(a.set, a.v2, a.no_rule)) as pool:
         rows = [r for r in pool.map(one, items, chunksize=2) if r]
     n = len(rows)
@@ -117,7 +118,7 @@ def main(argv=None):
     colour = sum(bool(r["splash"] and r["our_splash"] and r["our_splash"] in r["splash"]) for r in rows)
     real = [r for r in rows if r["their_splash_cards"]]
     print(f"{' '.join(a.v2 + (['no splash rule'] if a.no_rule else [])) or 'as configured'}: {n} top-player pools")
-    print(f"  same main pair {100 * same / n:.1f}%   spell overlap {100 * sum(r['overlap'] for r in rows) / n:.1f}%")
+    print(f"  same main pair {100 * same / n:.1f}%   spell overlap {100 * sum(r['overlap'] for r in rows) / n:.1f}%   predicted WR {sum(r['predicted'] for r in rows) / n:.2f}")
     print(f"  splash: they {100 * they / n:.1f}% (with an off-colour spell {100 * len(real) / n:.1f}%), we {100 * we / n:.1f}%; "
           f"we splash when they do {100 * both / max(1, they):.1f}%, same colour {100 * colour / max(1, they):.1f}%; "
           f"we splash when they don't {100 * (we - both) / max(1, n - they):.1f}%")

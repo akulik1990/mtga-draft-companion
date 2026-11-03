@@ -177,6 +177,8 @@ class DraftAdvisorV2:
     TIE_WR = 0.5
     CHOICE_FEATURES = ""  # per stage and feature group, e.g. "p1close:synergy;p2open:synergy,colour,splash;fit:synergy,colour,splash,fixer,needs;late:all" (stages p1open, p1close, p2open, fit, late; groups synergy, needs, colour, splash, fixer, cmc, all); overrides CHOICE_STAGES when set
     CHOICE_STAGES = "all"  # which stages CHOICE_ADJUST applies to: "all", or a comma list of p1open (P1 picks 1-7), p1close (P1 8-11), p2open (P2 1-6), fit (P2 7-11, P3 1-11), late (picks 12-14)
+    FIT_WEIGHTS = False  # Fit adds the per-pick weights of top drafters (fitted "blend") on synergy (themes, deck-mates, reviewed cards), splash and the deck-slot fills, in Fit's WR points; the Power/Fit switch stays
+    FIT_WEIGHTS_CAP = 8.0  # largest WR-point change the per-pick terms make to one card's Fit
     BLEND = False  # rank by the learnt per-pick blend of top drafters' weights on Power, Fit, signal, wheel, synergy and deck needs (fitted "blend", tools/choice_model.py blend) instead of the Power/Fit switch
     CHOICE_IN_FIT = False  # apply the choice correction inside Fit (before the Power/Fit switch) instead of to the final order
     REMOVAL_POINTS = 0.0  # WR points for a removal spell when the pool, projected to 23 spells, is fully short of its top pair's removal floor (top players' count there minus deckbuilder.REMOVAL_SLACK); 0 = off
@@ -528,19 +530,12 @@ class DraftAdvisorV2:
 
     def blend_inputs(self, card, pick, wheel, set_code):
         """The blend's inputs for a card (choice_model.CHART order): Power, Fit (pool-weighted value), signal for its
-        colours, wheel chance, colour-pair synergy, deck-mates, splash, and the deck-need fills."""
-        from companion.advisor_v2 import choice, needs
-
+        colours, wheel chance, then Fit's parts (blend_parts)."""
         spell = "Land" not in (card.get("types") or [])
         colours = [x for x in (card.get("colors") or []) if x in self.signals] if spell else []
-        tags = choice.theme_tags(set_code)
-        targets = (config.fitted(set_code, "decks") or {}).get("pairs") or {}
-        lane = choice.top_lane(self.pool)
-        x = choice.features(card, self.pool, lane, list(tags), tags, targets, 0.0, 0.0)
         return ([self.power(card, pick), sum(p * self.value(card, l) for l, p in self.lanes.items()),
-                 sum(self.signals[c] for c in colours) / len(colours) if colours else 0.0, wheel,
-                 x[1] + x[2], needs.mate_score(card, self.pool, lane, set_code), x[8]]
-                + needs.fills(card, self.pool, lane, (targets.get(lane) or {}).get("dims"), *needs.set_wr(set_code)))
+                 sum(self.signals[c] for c in colours) / len(colours) if colours else 0.0, wheel]
+                + self.blend_parts(card, set_code))
 
     def _blend(self, recs, pack_cards, pick, pack_no, set_code):
         """Order by the learnt blend for this pick; scores in WR points (the utility over Power's and Fit's weights)."""
@@ -613,7 +608,41 @@ class DraftAdvisorV2:
 
             synergy += choice.correction(card, self.pool, self.set_code_now, self.pack_now, pick, choice.top_lane(self.pool), self.CHOICE_STAGES,
                                          skip=choice.SYNERGY if self.SYNERGY_FIT else (), spec=self.CHOICE_FEATURES)
+        if self.FIT_WEIGHTS and self.set_code_now:
+            synergy += self.fit_weights(card, pick)
         return score + self.order_prior(card.get("name", ""), pick, prefs=self.PREF_SCOPE == "both") * live + self.deck_term(card) + synergy
+
+    FIT_PARTS_FROM = 4  # blend inputs from here on are Fit's parts (before: Power, Fit, signal, wheel)
+
+    def fit_weights(self, card, pick):
+        """Top drafters' per-pick weights on Fit's parts, over their weight on Fit itself: WR points added to Fit."""
+        table = config.fitted(self.set_code_now, "blend")
+        if not table:
+            return 0.0
+        picks = table["picks"]
+        key = f"{self.pack_now}-{pick}"
+        if key not in picks:
+            same = [k for k in picks if k.startswith(f"{self.pack_now}-")]
+            if not same:
+                return 0.0
+            key = min(same, key=lambda k: abs(int(k.split("-")[1]) - pick))
+        w = picks[key]
+        if w[1] <= 0.02:
+            return 0.0
+        x = self.blend_parts(card, self.set_code_now)
+        out = sum(wi * xi for wi, xi in zip(w[self.FIT_PARTS_FROM:], x)) / w[1]
+        return max(-self.FIT_WEIGHTS_CAP, min(self.FIT_WEIGHTS_CAP, out))
+
+    def blend_parts(self, card, set_code):
+        """Fit's parts among the blend inputs (choice_model.CHART from Themes on)."""
+        from companion.advisor_v2 import choice, needs
+
+        tags = choice.theme_tags(set_code)
+        targets = (config.fitted(set_code, "decks") or {}).get("pairs") or {}
+        lane = choice.top_lane(self.pool)
+        x = choice.features(card, self.pool, lane, list(tags), tags, targets, 0.0, 0.0)
+        return ([x[1] + x[2], needs.mate_score(card, self.pool, lane, set_code), needs.card_synergy(card, self.pool, set_code), x[8]]
+                + needs.fills(card, self.pool, lane, (targets.get(lane) or {}).get("dims"), *needs.set_wr(set_code)))
 
     def deck_term(self, card):
         """Value above replacement: in each likely pair, the card is worth replacement level plus how much the best 23

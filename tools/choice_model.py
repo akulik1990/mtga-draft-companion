@@ -156,18 +156,21 @@ def cmd_fit(a):
                         "tools/choice_model.py fit: conditional logit of top drafters' picks on v2's score plus synergy, deck needs, colour, mana value")
 
 
-from companion.advisor_v2.needs import DIMS, fills, mate_score, set_wr  # noqa: E402
+from companion.advisor_v2.needs import DIMS, card_synergy, fills, mate_score, set_wr  # noqa: E402
 
-CHART = ["Power", "Fit", "Signal", "Wheel", "Themes", "Deck-mates", "Splash"] + list(DIMS)
+CHART = ["Power", "Fit", "Signal", "Wheel", "Themes", "Deck-mates", "Card synergy", "Splash"] + list(DIMS)
 NOTE = {"Power": "card's value in its own best pair, plus the learnt top-drafter strength (bombs land here)",
         "Fit": "card's value under the pairs the pool points to (castability, splash, land fixing value)",
         "Signal": "openness of the card's colours from what the passing neighbour sent",
         "Wheel": "chance the card comes back",
         "Themes": "colour-pair synergy: payoffs with their enablers in the pool and enablers for held payoffs (manual.json themes)",
+        "Card synergy": "the reviewed top cards (manual.json card_wants): a card with its enablers in the pool, or an enabler for one held",
         "Deck-mates": "card synergy: how much more often top players' decks in the pair hold this card with the pool's cards than chance",
         "Splash": "an off-colour single-pip card the pool already has fixing for",
         **{d: f"fills a {d.replace('_', ' ')} slot the deck still lacks against top players' decks in the pair" for d in DIMS}}
 NOTE["finishers"] = "fills a finisher slot (five-plus drop a SD above the set's mean win rate) the deck still lacks"
+NOTE["pressure"] = "fills a pressure slot (power above toughness, haste, or evasive with power 2+) the deck still lacks"
+NOTE["defence"] = "fills a defence slot (toughness 2+ above power, or toughness 4+ for 3 mana or less) the deck still lacks"
 NOTE["fixing"] = "fills a fixing slot (dual land, fixer) the deck still lacks against top players' decks in the pair"
 
 
@@ -192,7 +195,7 @@ def chart_data(a):
         for c in pack:
             pw, fv, sig, wh = extra[c["name"]][:4]  # a duplicate in the pack appends its wheel twice
             x = features(c, pool, lane, themes, tags, targets, 0.0, 0.0)
-            X.append([pw, fv, sig, wh, x[1] + x[2], mate_score(c, pool, lane, a.set), x[8]]
+            X.append([pw, fv, sig, wh, x[1] + x[2], mate_score(c, pool, lane, a.set), card_synergy(c, pool, a.set), x[8]]
                      + fills(c, pool, lane, (targets.get(lane) or {}).get("dims"), mean, sd))
             G.append(g)
             Y.append(1 if c["name"] == row["taken"] else 0)

@@ -13,6 +13,7 @@ card roles from the dataset's tags.
 import argparse
 import csv
 import gzip
+import hashlib
 import json
 import sys
 from collections import defaultdict
@@ -26,6 +27,7 @@ from companion.advisor_v2.composition import ROLES, curve_slot, roles  # noqa: E
 from companion.advisor_v2.needs import DIMS, dims, lift  # noqa: E402
 
 CURVE = ("1", "2", "3", "4", "5", "6+")
+CHECK = (0, 300)  # tools/builder_check.py's draft-id hash buckets (of 1000)
 BASICS = {"Plains", "Island", "Swamp", "Mountain", "Forest", "Wastes"}
 
 
@@ -78,8 +80,8 @@ def main(argv=None):
                     if slot.get(name):  # spells only: lands go together for fixing, measured on its own
                         names.append(name)
             decks[lane] += 1
-            if len(lane) == 2:
-                # Deck-mates: which cards top players' decks in this pair hold together, beyond how often each is played.
+            if len(lane) == 2 and int(hashlib.md5(key[0].encode()).hexdigest(), 16) % 1000 >= CHECK[1]:
+                # Deck-mates (outside tools/builder_check.py's sample, which judges a builder that uses them): which cards top players' decks in this pair hold together, beyond how often each is played.
                 names.sort()
                 for j, x in enumerate(names):
                     single[lane][x] += 1
