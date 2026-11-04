@@ -2,8 +2,8 @@
 
     uv run python tools/deck_sheet.py FRA [--n 100] [--min-games 5] [--seed 0]
 
-Reads the stored tables only (tools/deck_table.py: every deck once; tools/card_table.py: every card's features), so a
-new measure is a new card-table column, picked up here without reading the game data. A random sample of decks by 60%+
+Reads table 3 (tools/deck_counts.py: every deck's counts) and table 1 (tools/deck_table.py) for the card lists, so a
+new measure is a new card-table column (tools/card_table.py) and a re-run of deck_counts, without the game data. A random sample of decks by 60%+
 players with at least --min-games games, sorted by colours and record. Each deck: colours (+ splash), games, its own
 win rate, the deck model's predicted win rate for the same games, then each feature summed over its spells (lands
 counted apart). The pair's min/best/max from the structure section heads each colour group. Writes docs/decks-SET.md
@@ -20,11 +20,11 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 import companion  # noqa: E402,F401
 from companion.advisor_v2 import config  # noqa: E402
-from tools.deck_table import cards, load, measure  # noqa: E402
+from tools import deck_counts  # noqa: E402
+from tools.deck_table import cards, load  # noqa: E402
 
 MAIN = ["role_creatures", "role_removal", "role_card_advantage", "role_evasion", "role_mana"]
 CURVE = ["1", "2", "3", "4", "5", "6+"]
-SKIP = {"cmc", "slot", "rarity", "land", "basic", "power", "toughness", "rank", "gihwr", "colours", "pips"}
 
 
 def main(argv=None):
@@ -34,26 +34,17 @@ def main(argv=None):
     p.add_argument("--min-games", type=int, default=5)
     p.add_argument("--seed", type=int, default=0)
     a = p.parse_args(argv)
-    table = cards(a.set)
-    feats = [k for k, v in next(iter(table.values())).items() if isinstance(v, float) and k not in SKIP]
-    pool = [d for d in load(a.set) if (d["skill"] or 0) >= 0.6 - 1e-9 and d["games"] >= a.min_games]
-    rows = random.Random(a.seed).sample(pool, min(a.n, len(pool)))
+    table, decks, counts = cards(a.set), load(a.set), deck_counts.read(a.set)
+    fixed = set(deck_counts.META) | {"spells", "lands", "avg_mv", "power", "toughness"} | set(CURVE)
+    feats = [k for k in counts[0] if k not in fixed]
+    pool = [r for r in counts if r["skill"] >= 0.6 - 1e-9 and r["games"] >= a.min_games]
     out = []
-    for d in rows:
-        spells = {n: k for n, k in d["counts"].items() if n in table and not table[n].get("land")}
-        n_spells = sum(spells.values()) or 1
-        x = {"colours": d["lane"] + (f"+{d['splash']}" if d["splash"] else ""), "lane": d["lane"], "games": d["games"],
-             "win%": round(100 * d["wins"] / d["games"]), "pred%": round(100 * d["pred"] / d["games"], 1),
-             "spells": sum(spells.values()), "lands": sum(k for n, k in d["counts"].items() if n in table and table[n].get("land")),
-             "avg_mv": round(measure(d, table, "cmc") / n_spells, 2),
-             "power": int(sum(k * (table[n].get("power") or 0) for n, k in spells.items() if isinstance(table[n].get("power"), float))),
-             "toughness": int(sum(k * (table[n].get("toughness") or 0) for n, k in spells.items() if isinstance(table[n].get("toughness"), float)))}
-        for f in feats:
-            x[f] = int(measure(d, table, f))
-        slot = lambda v: v if isinstance(v, str) else f"{int(v)}"  # the CSV loader reads "1".."5" as numbers
-        for s in CURVE:
-            x[s] = sum(k for n, k in spells.items() if slot(table[n].get("slot")) == s)
-        x["cards"] = ", ".join(f"{k} {n}" if k > 1 else n for n, k in sorted(spells.items(), key=lambda kv: (table[kv[0]].get("cmc") or 0, kv[0])))
+    for r in random.Random(a.seed).sample(pool, min(a.n, len(pool))):
+        spells = {n: k for n, k in decks[int(r["deck"])]["counts"].items() if n in table and not table[n].get("land")}
+        x = {k: (int(v) if isinstance(v, float) and k != "avg_mv" else v) for k, v in r.items()}
+        x.update(colours=r["lane"] + (f"+{r['splash']}" if r["splash"] else ""), games=int(r["games"]),
+                 **{"win%": round(100 * r["wins"] / r["games"]), "pred%": round(100 * r["pred"] / r["games"], 1)},
+                 cards=", ".join(f"{k} {n}" if k > 1 else n for n, k in sorted(spells.items(), key=lambda kv: (table[kv[0]].get("cmc") or 0, kv[0]))))
         out.append(x)
     out.sort(key=lambda x: (x["lane"], -x["win%"]))
     bounds = (config.fitted(a.set, "structure") or {}).get("bounds", {})

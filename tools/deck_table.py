@@ -4,8 +4,8 @@
 
 One entry per deck (draft id + build): main colours, splash, the player's win-rate bucket, games, wins, the sum over
 its games of the builder's deck model's predicted win chance (each game with its own player, play/draw and mulligan
-context), whether it is in tools/builder_check.py's check buckets, and its card counts. A deck's value for any card
-feature is its counts times the card table (tools/card_table.py); `load` and `measure` do that.
+context), whether it is in tools/builder_check.py's check buckets, and its card counts. Table 1 of three: table 2 is
+each card's features (tools/card_table.py), table 3 every deck's counts from the two (tools/deck_counts.py).
 """
 
 import argparse
@@ -46,16 +46,6 @@ def cards(set_code):
             out[name] = {k: (float(v) if v not in ("",) and v.replace(".", "", 1).lstrip("-").isdigit() else v) for k, v in r.items()}
             out.setdefault(name.split(" // ")[0], out[name])
         return out
-
-
-def measure(deck, table, feature, spells_only=True):
-    """Sum of a numeric card feature over a deck's cards (spells only by default)."""
-    total = 0.0
-    for n, k in deck["counts"].items():
-        f = table.get(n)
-        if f and (not spells_only or not f.get("land")) and isinstance(f.get(feature), float):
-            total += k * f[feature]
-    return total
 
 
 def main(argv=None):
