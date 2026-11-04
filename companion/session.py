@@ -464,7 +464,11 @@ class DraftSession:
 
         taken = taken if taken is not None else self.deck_pool()
         set_code = (self.config.card_data.latest_dataset or "").split("_")[0]
-        from companion.advisor_v2.deckbuilder import MODEL  # the editor judges as the builder does
+        from companion.advisor_v2 import config, deckbuilder
+        from companion.advisor_v2.engine import DraftAdvisorV2  # noqa: F401  (registers the settings activate sets)
+
+        config.activate(set_code)
+        MODEL = deckbuilder.MODEL  # the editor judges as the builder does
 
         out = deckscore.score(set_code, taken, counts, _deck_model(set_code, MODEL) if set_code else None)
         deck, side = [], []
@@ -590,6 +594,7 @@ def own_builds(set_code, taken):
     from companion.advisor_v2 import config
     from companion.advisor_v2.engine import DraftAdvisorV2
 
+    config.activate(set_code)  # else the set's builder settings wait until a pack has been scored
     targets = config.fitted(set_code, "decks").get("pairs")
     model = _deck_model(set_code, deckbuilder.MODEL) if set_code else None
     if not DraftAdvisorV2.OWN_BUILDER or not targets or not model or not taken:
