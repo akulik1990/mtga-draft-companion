@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deck Tables</title>
+<style>
+:root {
+  --bg: #f7f7f5; --panel: #ffffff; --ink: #1d1d1b; --ink-2: #55554f; --ink-3: #8a8a83; --line: #e3e3de;
+  --accent: #2f6fd6; --low: #c2410c; --low-bg: #fde7dc; --high: #8a5a00; --high-bg: #fbefcf; --row-hover: #f0f0ec;
+  --bound: #eef3fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #131416; --panel: #1b1c1f; --ink: #e9e9e6; --ink-2: #b2b2ab; --ink-3: #7c7c76; --line: #2c2d31;
+    --accent: #6ea0f0; --low: #ff9a6b; --low-bg: #3a2219; --high: #f0c060; --high-bg: #352a12; --row-hover: #222327;
+    --bound: #1c2534;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #131416; --panel: #1b1c1f; --ink: #e9e9e6; --ink-2: #b2b2ab; --ink-3: #7c7c76; --line: #2c2d31;
+  --accent: #6ea0f0; --low: #ff9a6b; --low-bg: #3a2219; --high: #f0c060; --high-bg: #352a12; --row-hover: #222327;
+  --bound: #1c2534;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+header { padding: 20px 16px 4px; max-width: 1600px; }
+h1 { font-size: 20px; margin: 0 0 4px; font-weight: 600; }
+.sub { color: var(--ink-2); margin: 0; max-width: 960px; }
+.tabs { display: flex; gap: 4px; padding: 12px 16px 0; border-bottom: 1px solid var(--line); }
+.tab { border: 1px solid transparent; border-bottom: none; background: none; color: var(--ink-2); padding: 6px 14px; border-radius: 8px 8px 0 0; cursor: pointer; font: inherit; }
+.tab[aria-selected="true"] { background: var(--panel); border-color: var(--line); color: var(--ink); margin-bottom: -1px; }
+.tab small { color: var(--ink-3); }
+.note { color: var(--ink-2); padding: 10px 16px 0; margin: 0; max-width: 960px; font-size: 13px; }
+.controls { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; padding: 10px 16px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip, .btn { border: 1px solid var(--line); background: var(--panel); color: var(--ink-2); border-radius: 999px; padding: 3px 10px; cursor: pointer; font: inherit; font-size: 13px; }
+.chip[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
+input { background: var(--panel); color: var(--ink); border: 1px solid var(--line); border-radius: 6px; padding: 4px 8px; font: inherit; }
+.count { color: var(--ink-3); font-size: 13px; }
+.wrap { overflow: auto; max-height: calc(100vh - 230px); margin: 0 16px 24px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); }
+table { border-collapse: collapse; font-variant-numeric: tabular-nums; }
+th, td { padding: 4px 8px; text-align: right; white-space: nowrap; border-bottom: 1px solid var(--line); }
+thead tr.h th { position: sticky; top: 0; background: var(--panel); color: var(--ink-2); font-weight: 500; font-size: 12px; cursor: pointer; z-index: 2; }
+thead tr.f th { position: sticky; top: 27px; background: var(--panel); z-index: 2; padding: 2px 4px; }
+thead tr.f input { width: 100%; min-width: 44px; padding: 2px 4px; font-size: 12px; }
+.grp { border-left: 1px solid var(--line); }
+th:first-child, td:first-child { text-align: left; position: sticky; left: 0; background: inherit; }
+thead th:first-child { z-index: 3; }
+tbody tr { background: var(--panel); }
+tbody tr.click { cursor: pointer; }
+tbody tr:hover { background: var(--row-hover); }
+td.text { text-align: left; white-space: normal; min-width: 320px; max-width: 640px; color: var(--ink-2); }
+tr.bounds { background: var(--bound); color: var(--ink-2); font-size: 12px; }
+tr.more td { text-align: left; white-space: normal; color: var(--ink-2); background: var(--bg); }
+td.zero { color: var(--ink-3); }
+td.low { color: var(--low); background: var(--low-bg); }
+td.high { color: var(--high); background: var(--high-bg); }
+.legend { color: var(--ink-3); font-size: 12px; }
+.legend span { padding: 0 6px; border-radius: 4px; }
+.sorted::after { content: " ▾"; }
+.sorted.asc::after { content: " ▴"; }
+</style>
+</head>
+<body>
+<header>
+  <h1 id="title"></h1>
+  <p class="sub" id="sub"></p>
+</header>
+<div class="tabs" id="tabs" role="tablist"></div>
+<p class="note" id="note"></p>
+<div class="controls">
+  <div class="chips" id="groups"></div>
+  <label>Search <input id="q" placeholder="any text" size="18"></label>
+  <button class="btn" id="clear">Clear filters</button>
+  <span class="legend" id="legend"><span style="color:var(--low);background:var(--low-bg)">below min</span> <span style="color:var(--high);background:var(--high-bg)">above max</span> of the deck's pair</span>
+  <span class="count" id="count"></span>
+</div>
+<div class="wrap"><table id="t"><thead></thead><tbody></tbody></table></div>
+<script>
+const DATA = __DATA__;
+const label = c => DATA.labels[c] || c;
+const state = {};  // per table: sort, asc, filters, q, open
+DATA.tables.forEach(t => state[t.id] = {sort: t.cols[0], asc: true, filters: {}, q: "", open: new Set()});
+let cur = DATA.tables[0];
+
+document.getElementById("title").textContent = DATA.title;
+document.getElementById("sub").textContent = DATA.sub;
+const tabs = document.getElementById("tabs");
+DATA.tables.forEach(t => {
+  const b = document.createElement("button");
+  b.className = "tab"; b.role = "tab"; b.innerHTML = `${t.name} <small>${t.rows.length}</small>`;
+  b.onclick = () => { cur = t; show(); };
+  t.button = b; tabs.appendChild(b);
+});
+const q = document.getElementById("q");
+q.oninput = () => { state[cur.id].q = q.value.trim().toLowerCase(); body(); };
+document.getElementById("clear").onclick = () => { const s = state[cur.id]; s.filters = {}; s.q = ""; q.value = ""; show(); };
+
+// "3", ">3", ">=2", "<1", "=0", "!=0", "a-b" for numbers; otherwise text contains
+function test(v, f) {
+  f = f.trim(); if (!f) return true;
+  const n = typeof v === "number" ? v : parseFloat(v);
+  let m = f.match(/^(>=|<=|!=|>|<|=)\s*(-?[\d.]+)$/);
+  if (m && !isNaN(n)) { const x = +m[2]; return {">": n > x, "<": n < x, ">=": n >= x, "<=": n <= x, "=": n === x, "!=": n !== x}[m[1]]; }
+  m = f.match(/^(-?[\d.]+)\s*-\s*(-?[\d.]+)$/);
+  if (m && !isNaN(n)) return n >= +m[1] && n <= +m[2];
+  if (/^-?[\d.]+$/.test(f) && !isNaN(n)) return n === +f;
+  if (f[0] === "=") return String(v ?? "").toLowerCase() === f.slice(1).trim().toLowerCase();
+  return String(v ?? "").toLowerCase().includes(f.toLowerCase());
+}
+function cls(t, r, c) {
+  const v = r[c];
+  let k = v === 0 ? "zero" : "";
+  const b = t.bounds && (DATA.bounds[r.lane] || {})[t.boundKey[c]];
+  if (b && typeof v === "number") { if (v < b[0]) k = "low"; else if (v > b[2]) k = "high"; }
+  return k;
+}
+function columns(t) {
+  const cols = [[t.cols[0], false]];
+  t.groups.filter(g => g.on).forEach(g => g.cols.forEach((c, i) => cols.push([c, i === 0])));
+  return cols;
+}
+function show() {
+  DATA.tables.forEach(t => t.button.setAttribute("aria-selected", t === cur));
+  document.getElementById("note").textContent = cur.note;
+  document.getElementById("legend").style.display = cur.bounds ? "" : "none";
+  q.value = state[cur.id].q;
+  const chips = document.getElementById("groups"); chips.innerHTML = "";
+  cur.groups.forEach(g => {
+    const b = document.createElement("button");
+    b.className = "chip"; b.textContent = g.name; b.setAttribute("aria-pressed", g.on);
+    b.onclick = () => { g.on = !g.on; show(); };
+    chips.appendChild(b);
+  });
+  const s = state[cur.id], cols = columns(cur);
+  const head = document.querySelector("#t thead");
+  head.innerHTML = "<tr class='h'>" + cols.map(([c, first]) =>
+    `<th data-c="${c}" class="${first ? "grp" : ""}${c === s.sort ? " sorted" + (s.asc ? " asc" : "") : ""}" title="${c}">${label(c)}</th>`).join("") + "</tr>"
+    + "<tr class='f'>" + cols.map(([c, first]) => `<th class="${first ? "grp" : ""}"><input data-c="${c}" value="${(s.filters[c] || "").replace(/"/g, "&quot;")}" placeholder="filter"></th>`).join("") + "</tr>";
+  head.querySelectorAll("tr.h th").forEach(th => th.onclick = () => {
+    const c = th.dataset.c; if (c === s.sort) s.asc = !s.asc; else { s.sort = c; s.asc = typeof cur.rows[0][c] !== "number"; } show();
+  });
+  head.querySelectorAll("tr.f input").forEach(inp => inp.oninput = () => { s.filters[inp.dataset.c] = inp.value; body(); });
+  body();
+}
+function body() {
+  const t = cur, s = state[t.id], cols = columns(t);
+  let rows = t.rows.filter(r => Object.entries(s.filters).every(([c, f]) => test(r[c], f))
+    && (!s.q || t.search.some(c => String(r[c] ?? "").toLowerCase().includes(s.q))));
+  rows = rows.slice().sort((a, b) => {
+    const x = a[s.sort], y = b[s.sort];
+    const r = typeof x === "number" && typeof y === "number" ? x - y : String(x ?? "").localeCompare(String(y ?? ""));
+    return s.asc ? r : -r;
+  });
+  const out = [];
+  const lane = t.bounds && rows.length && rows.every(r => r.lane === rows[0].lane) ? rows[0].lane : null;
+  const b = lane && DATA.bounds[lane];
+  if (b) out.push(`<tr class="bounds"><td>${lane} min/best/max</td>` + cols.slice(1).map(([c, first]) => {
+    const r = b[t.boundKey[c]]; return `<td class="${first ? "grp" : ""}">${r ? r.map(x => +x.toFixed(1)).join("/") : ""}</td>`; }).join("") + "</tr>");
+  rows.forEach(r => {
+    out.push(`<tr data-k="${r._k}" class="${t.more ? "click" : ""}">` + cols.map(([c, first]) =>
+      `<td class="${first ? "grp " : ""}${c === "text" || c === "cards" ? "text " : ""}${cls(t, r, c)}">${r[c] ?? ""}</td>`).join("") + "</tr>");
+    if (t.more && s.open.has(r._k)) out.push(`<tr class="more"><td colspan="${cols.length}">${r[t.more]}</td></tr>`);
+  });
+  const tb = document.querySelector("#t tbody");
+  tb.innerHTML = out.join("");
+  if (t.more) tb.querySelectorAll("tr[data-k]").forEach(tr => tr.onclick = () => {
+    const k = tr.dataset.k; s.open.has(k) ? s.open.delete(k) : s.open.add(k); body();
+  });
+  document.getElementById("count").textContent = `${rows.length} of ${t.rows.length}`;
+}
+show();
+</script>
+</body>
+</html>
