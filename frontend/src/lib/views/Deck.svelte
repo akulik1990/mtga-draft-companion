@@ -114,6 +114,6 @@
 {:else if ran && !busy}
 	<p class="text-sm text-zinc-500">Upstream's builder returned no deck. It needs a near-complete pool (about 23 playable spells).</p>
 {:else if !busy}
-	<p class="text-sm text-zinc-500">Builds from the current pool with upstream's deck builder and mana simulator. First build compiles the simulator; expect a few seconds.</p>
+	<p class="text-sm text-zinc-500">Builds from the current pool with our deck builder (best 23 by predicted win rate, top players' deck shape). Needs a near-complete pool; after Arena restarts the pool is empty until the next draft.</p>
 {/if}
 {/if}
