@@ -76,6 +76,49 @@ def mechanical(set_code, criterion, fields):
     return out
 
 
+PREFER = ("role_", "", "col_", "land_", "pip_", "lc_", "mech_", "tag_")  # which name a merged field keeps, first match wins
+
+
+def merge_fields(rows, fields, corr=0.95, sample=20000):
+    """(fields to keep, {kept: [merged]}): fields that never vary are dropped; fields correlated >= corr across decks
+    (a mechanic and its keyword, a colour's cards and its pips) are one field, named by PREFER."""
+    import random
+
+    sub = random.Random(0).sample(rows, min(sample, len(rows)))
+    X = np.array([[r[f] for f in fields] for r in sub], float)
+    live = [i for i in range(len(fields)) if X[:, i].std() > 0]
+    C = np.corrcoef(X[:, live].T)
+    parent = {i: i for i in live}
+
+    def root(i):
+        while parent[i] != i:
+            i = parent[i]
+        return i
+
+    for a_, i in enumerate(live):
+        for b_ in range(a_ + 1, len(live)):
+            if abs(C[a_, b_]) >= corr:
+                parent[root(live[b_])] = root(i)
+    groups = defaultdict(list)
+    for i in live:
+        groups[root(i)].append(fields[i])
+    rank = lambda f: (next(k for k, pre in enumerate(PREFER) if pre == "" and "_" not in f.split("_")[0] and not any(f.startswith(x) for x in PREFER if x)
+                           or (pre and f.startswith(pre))), len(f))
+    keep, merged = [], {}
+    for g in groups.values():
+        g.sort(key=rank)
+        keep.append(g[0])
+        if len(g) > 1:
+            merged[g[0]] = g[1:]
+    return [f for f in fields if f in keep], merged
+
+
+def deck_se(g, p, m):
+    """Standard error, in win-rate points, of wins - predicted over the decks in mask m (binomial per game)."""
+    q = np.clip(p[m] / np.maximum(g[m], 1), 0.01, 0.99)
+    return 100 * np.sqrt((g[m] * q * (1 - q)).sum()) / g[m].sum()
+
+
 def compare(rows, fields, sel, rest):
     X = np.array([[r[f] for f in fields] for r in rows], float)
     half = np.array([int(hashlib.md5(r["draft"].encode()).hexdigest(), 16) % 2 for r in rows])
@@ -107,7 +150,7 @@ def run(a, criterion, side, group, rows_all, fields, mech_cache):
     rest = ~sel
     if sel.sum() < 30 or rest.sum() < 30:
         print(f"{name}: only {sel.sum()} decks selected, skipped")
-        return name, []
+        return name, [], None, []
     d, z, d0, z0, d1, z1 = compare(rel, fields, sel, rest)
     if criterion != "trophy" and criterion not in mech_cache:
         mech_cache[criterion] = mechanical(a.set, criterion, fields)
@@ -133,9 +176,37 @@ def run(a, criterion, side, group, rows_all, fields, mech_cache):
         wr = csv.DictWriter(f, fieldnames=list(out[0]))
         wr.writeheader()
         wr.writerows(out)
-    print(f"{name}: {sel.sum()} decks against {rest.sum()}; beyond the deck model {beyond(sel):+.2f} vs {beyond(rest):+.2f}; "
-          f"{sum(r['clean'] for r in out)} clean of {len(out)} fields")
-    return name, out
+    for r in out:
+        r["same_as"] = " ".join(a.merged.get(r["field"], []))
+    gap = beyond(sel) - beyond(rest)
+    se = float(np.hypot(deck_se(g, p, sel), deck_se(g, p, rest)))
+    outcome = {"criterion": name, "decks": int(sel.sum()), "other_decks": int(rest.sum()), "beyond_these": round(beyond(sel), 2),
+               "beyond_rest": round(beyond(rest), 2), "gap": round(gap, 2), "se": round(se, 2), "z": round(gap / se, 1)}
+    # Table 8: within these decks, do the ones with more of each clean field win beyond the model, more than the same
+    # split does among the other decks? (the interaction: the field pays off more when the criterion holds)
+    comp = []
+    for i, f in enumerate(fields):
+        row = next((r for r in out if r["field"] == f and r["clean"]), None)
+        if row is None:
+            continue
+        v = np.array([r[f] for r in rel])
+
+        def split(m):
+            cut = np.median(v[m])
+            hi, lo = m & (v > cut), m & (v <= cut)
+            if hi.sum() < 30 or lo.sum() < 30:
+                return None, None
+            return beyond(hi) - beyond(lo), float(np.hypot(deck_se(g, p, hi), deck_se(g, p, lo)))
+
+        (ds, ss), (dr, sr) = split(sel), split(rest)
+        if ds is None or dr is None:
+            continue
+        comp.append({"criterion": name, "field": f, "same_as": row["same_as"], "shift": row["diff"], "pays_here": round(ds, 2),
+                     "se_here": round(ss, 2), "pays_elsewhere": round(dr, 2), "se_elsewhere": round(sr, 2),
+                     "interaction": round(ds - dr, 2), "z": round((ds - dr) / float(np.hypot(ss, sr)), 1), "decks": int(sel.sum())})
+    print(f"{name}: {sel.sum()} decks against {rest.sum()}; beyond the deck model {beyond(sel):+.2f} vs {beyond(rest):+.2f} "
+          f"(gap {gap:+.2f}, SE {se:.2f}); {sum(r['clean'] for r in out)} clean of {len(out)} fields")
+    return name, out, outcome, comp
 
 
 def main(argv=None):
@@ -153,22 +224,28 @@ def main(argv=None):
     p.add_argument("--show", type=int, default=15)
     a = p.parse_args(argv)
     rows = deck_counts.read(a.set)
-    fields = [k for k in rows[0] if k not in TEXT and k not in META]
+    fields, a.merged = merge_fields(rows, [k for k in rows[0] if k not in TEXT and k not in META])
     mech_cache = {}
     if a.all:
         jobs = [(c, s) for c in MAIN for s in ("low", "high")] + [("trophy", "low")]
-        found = []
+        found, outcomes, comps = [], [], []
         for c, s in jobs:
-            _, out = run(a, c, s, a.group if c != "trophy" else "all", rows, fields, mech_cache)
+            if c not in fields:
+                continue
+            _, out, outcome, comp = run(a, c, s, a.group if c != "trophy" else "all", rows, fields, mech_cache)
             found += [r for r in out if r["clean"]]
-        path = tables.path(a.set, tables.FINDINGS)
-        with open(path, "w", newline="") as f:
-            wr = csv.DictWriter(f, fieldnames=list(found[0]))
-            wr.writeheader()
-            wr.writerows(found)
-        print(f"{len(found)} clean findings -> {path}")
+            outcomes += [outcome] if outcome else []
+            comps += comp
+        for name, data in ((tables.FINDINGS, found), (tables.OUTCOMES, sorted(outcomes, key=lambda r: -abs(r["z"]))),
+                           (tables.COMPENSATION, sorted(comps, key=lambda r: -abs(r["z"])))):
+            path = tables.path(a.set, name)
+            with open(path, "w", newline="") as f:
+                wr = csv.DictWriter(f, fieldnames=list(data[0]))
+                wr.writeheader()
+                wr.writerows(data)
+            print(f"{len(data)} rows -> {path}")
         return
-    name, out = run(a, a.criterion, a.side, a.group, rows, fields, mech_cache)
+    name, out, _, _ = run(a, a.criterion, a.side, a.group, rows, fields, mech_cache)
     print(f"\n{'field':24} {'diff':>7} {'z':>6} {'half a':>7} {'half b':>7} {'mech':>5}  clean")
     for r in out[:a.show]:
         print(f"{r['field']:24} {r['diff']:+7.2f} {r['z']:+6.1f} {r['diff_half_a']:+7.2f} {r['diff_half_b']:+7.2f} {r['mechanical']:5.2f}  {'yes' if r['clean'] else ''}")
