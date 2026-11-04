@@ -50,7 +50,11 @@ EFFECTS = {
     "food_clue": r"\b(?:food|clue|blood|map) tokens?\b",
     "creature_tokens": r"create[^.]*creature tokens?|create[^.]*\d+/\d+[^.]*tokens?",
     "tokens": r"\bcreates? [^.]*\btokens?\b",
-    "drain": r"(?:each opponent|target opponent|target player|defending player) loses (?:\d+|x|that much) life",
+    "drain": r"damage to (?:each opponent|target opponent|that player|each player|target player|defending player)"
+             r"|(?:each opponent|target opponent|target player|that player|defending player|each player) loses (?:\d+|x|that much) life",
+    "any_target": r"damage to any target",
+    "noncombat_payoff": r"dealt noncombat damage|would deal noncombat damage",
+    "combat_damage_trigger": r"deals combat damage to a player|are dealt combat damage",
     "landcycling": r"landcycling",
     "land_search": r"search your library for (?:a|up to \w+) (?:basic )?land",
     "etb": r"when (?:this creature|this permanent|[^.,]*) enters",
