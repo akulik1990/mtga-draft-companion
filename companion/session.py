@@ -15,6 +15,7 @@ from src import constants
 from src.card_logic import copy_deck, filter_options, format_win_rate, suggest_deck
 from src.configuration import write_configuration
 from src.dataset_updater import DatasetUpdater
+from src.dataset_selection import select_event_dataset
 from src.signals import SignalCalculator
 from src.ui.orchestrator import DraftOrchestrator  # threading only, no Tk
 from src.tier_list import TIER_FILE_PREFIX, TIER_FOLDER, TierList
@@ -432,12 +433,36 @@ class DraftSession:
             threading.Thread(target=run, daemon=True).start()
         return {"phase": "deckbuild", "building": cache.get("builds") is None, "builds": cache.get("builds") or []}
 
+    def deck_pool(self) -> list[dict]:
+        """The pool to build from: the scanner's picks, else (Arena restarted, so the new log holds no draft) the last
+        Completed draft in the log, else the card pool of the latest draft event in Arena's course list."""
+        with self.scanner.lock:
+            taken = self.scanner.retrieve_taken_cards()
+        if taken:
+            return taken
+        tail = log_tail(self.scanner.arena_file)
+        ids, event = completed_picks(tail), None
+        if not ids:
+            ids, event = course_pool(tail)
+        if not ids:
+            return []
+        with self.scanner.lock:
+            pool = self.scanner.set_data.get_data_by_id(list(ids))
+        parts = (event or "").split("_")  # "QuickDraft_FRA_20261027": no draft seen yet, so load that set's dataset
+        if len(pool) < len(ids) // 2 and len(parts) >= 2:
+            with self.scanner.lock:  # look first: upstream's sync clears the active dataset when nothing matches
+                found = select_event_dataset(self.scanner, parts[1], parts[0], "All")
+            if not (found and self.select_dataset(parts[1], parts[0], "All")):
+                return pool
+            with self.scanner.lock:
+                pool = self.scanner.set_data.get_data_by_id(list(ids))
+        return pool
+
     def score_deck(self, counts: dict, taken=None) -> dict:
         """The deck editor's live stats for a 40 of the user's choosing (companion/deckscore.py)."""
         from companion import deckscore
 
-        with self.scanner.lock:
-            taken = taken if taken is not None else self.scanner.retrieve_taken_cards()
+        taken = taken if taken is not None else self.deck_pool()
         set_code = (self.config.card_data.latest_dataset or "").split("_")[0]
         from companion.advisor_v2.deckbuilder import MODEL  # the editor judges as the builder does
 
@@ -461,8 +486,8 @@ class DraftSession:
 
     def build_decks(self, taken=None) -> list[dict]:
         """Upstream's builds for the pool (taken, else the scanner's picks), each with our label and predicted win rate."""
+        taken = taken if taken is not None else self.deck_pool()
         with self.scanner.lock:
-            taken = taken if taken is not None else self.scanner.retrieve_taken_cards()
             metrics = self.scanner.retrieve_set_metrics()
             _, event_type = self.scanner.retrieve_current_limited_event()
         set_code = (self.config.card_data.latest_dataset or "").split("_")[0]
@@ -621,6 +646,30 @@ def completed_picks(tail):
         return json.loads(json.loads(tail[start:end if end > 0 else None])["Payload"]).get("PickedCards") or []
     except (ValueError, KeyError, TypeError):
         return []
+
+
+def course_pool(tail):
+    """(card ids, event name) of the latest draft event's pool in Arena's course list, written at every start."""
+    import json
+
+    i = tail.rfind('{"Courses":')
+    if i < 0:
+        return [], None
+    end = tail.find("\n", i)
+    try:
+        courses = json.loads(tail[i:end if end > 0 else None])["Courses"]
+    except (ValueError, KeyError, TypeError):
+        return [], None
+    drafts = [c for c in courses if "Draft" in (c.get("InternalEventName") or "") and c.get("CardPool")]
+    # ponytail: latest by the deck's LastUpdated attribute; a missing one sorts first
+    def updated(c):
+        attrs = (c.get("CourseDeckSummary") or {}).get("Attributes") or []
+        return next((a.get("value", "") for a in attrs if a.get("name") == "LastUpdated"), "")
+
+    if not drafts:
+        return [], None
+    c = max(drafts, key=updated)
+    return c["CardPool"], c["InternalEventName"]
 
 
 def overlay_builds(builds, pool, top=3):

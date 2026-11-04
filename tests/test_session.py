@@ -1,5 +1,6 @@
 """Drive a DraftSession from log lines, using upstream's OTJ dataset fixture."""
 
+import json
 from fastapi.testclient import TestClient
 
 from companion.api.app import create_app
@@ -86,3 +87,16 @@ def test_completed_picks_and_overlay_builds():
     assert [b["main"] for b in overlay_builds(builds, pool)] == ["UB", "UR"]
     assert out[1]["remove"] == [{"name": "A", "count": 1}, {"name": "B", "count": 1}]
     assert out[1]["lands"] == [{"name": "Island", "count": 17}]
+
+
+def test_course_pool_takes_latest_draft():
+    from companion.session import course_pool
+
+    def course(event, pool, updated):
+        return {"InternalEventName": event, "CardPool": pool,
+                "CourseDeckSummary": {"Attributes": [{"name": "LastUpdated", "value": updated}]}}
+
+    line = json.dumps({"Courses": [course("QuickDraft_A", [1], "2026-01-01"), course("Play", [9], "2027-01-01"),
+                                   course("PremierDraft_B", [2, 3], "2026-02-01")]})
+    assert course_pool(f"junk\n{line}\nmore") == ([2, 3], "PremierDraft_B")
+    assert course_pool("no courses") == ([], None)
