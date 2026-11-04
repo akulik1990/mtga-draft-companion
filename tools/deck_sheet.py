@@ -84,7 +84,7 @@ def write_html(a, out, feats, bounds, pool_size):
     t3 = [dict({k: x[k] for k in ["format", "trophy", "colours", "lane", "cards", "games", "win%", "pred%", "spells", "lands", "avg_mv", "power", "toughness"] + CURVE + feats},
                _k=str(i), deck=i + 1) for i, x in enumerate(out)]
     bound_key = {**{c: c.removeprefix("role_") for c in MAIN}, **{c: c for c in CURVE}}
-    tables = [
+    tabs = [
         {"id": "decks", "name": "1 Decks", "cols": ["deck"], "rows": t1, "search": ["colours", "cards"],
          "note": "Table 1: each deck with its record and spells. Filter a column with text (contains), =text (exact) or a comparison: >3, <=1, =0, 2-4.",
          "groups": [{"name": "Record", "cols": ["format", "colours", "skill", "games", "wins", "trophy", "win%", "pred%"], "on": True},
@@ -104,7 +104,7 @@ def write_html(a, out, feats, bounds, pool_size):
     data = {"title": f"{a.set}: {len(out)} decks by 60%+ players, their cards and counts",
             "sub": f"A random sample of {len(out)} of the {pool_size} decks with {a.min_games}+ games (seed {a.seed}). win% is the deck's own "
                    "record, pred% the deck model's predicted win chance for the same games.",
-            "labels": labels, "bounds": bounds, "tables": tables}
+            "labels": labels, "bounds": bounds, "tables": tabs}
     page = (ROOT / "tools" / "deck_sheet.html").read_text().replace("__DATA__", json.dumps(data).replace("</", "<\\/"))
     (ROOT / "docs" / f"decks-{a.set}.html").write_text(page)
 
