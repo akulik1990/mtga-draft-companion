@@ -1,6 +1,6 @@
 """Everything readable about each card of a set, one row per card: the table deck measures are built from.
 
-    uv run python tools/card_table.py FRA      # writes <data>/Temp/cards_FRA.csv
+    uv run python tools/card_table.py FRA      # writes <data>/tables/FRA/2_cards.csv
 
 From the dataset (types, subtypes, mana cost, keywords, rules text, tags) and Scryfall's power/toughness
 and Scryfall's card objects (cards/collection, cached in <data>/Temp/scryfall_cards_SET.json: type line for legendary
@@ -21,6 +21,7 @@ sys.path.insert(0, str(ROOT))
 import companion  # noqa: E402,F401
 from companion import DATA_DIR  # noqa: E402
 from companion.advisor_v2 import config  # noqa: E402
+from tools import tables  # noqa: E402
 
 KEYWORDS = ("flying", "deathtouch", "lifelink", "trample", "haste", "vigilance", "reach", "menace", "first strike",
             "double strike", "flash", "defender", "hexproof", "ward", "indestructible", "prowess")
@@ -109,6 +110,35 @@ def _scryfall(set_code):
     return needs.scryfall(set_code)
 
 
+BASIC_COLOUR = {"Plains": "W", "Island": "U", "Swamp": "B", "Mountain": "R", "Forest": "G", "Wastes": "C"}
+
+
+def colour_features(card, types, sf):
+    """Colour columns. Spells: col_X (the card is X), pip_X, col_multi, col_colourless; landcycling cards by their own
+    colour (lc_X, lc_multi; FRA's are all basic landcycling, any colour). Lands (summed over a deck's lands in table 3):
+    land_X (makes X), land_mono, land_multi (two or more colours), land_colourless, land_basic."""
+    from companion.advisor_v2.deckbuilder import pips
+
+    out, land = {}, "Land" in types
+    colours = [] if land else list(card.get("colors") or [])
+    cost = pips(card) if not land else {}
+    text = (card.get("oracle_text") or "").lower()
+    cycles = not land and "landcycling" in text
+    sfc = (sf or {}).get(card["name"]) or (sf or {}).get(card["name"].split(" // ")[0]) or {}
+    name = card["name"].removeprefix("Snow-Covered ")
+    makes = set() if not land else ({BASIC_COLOUR[name]} if name in BASIC_COLOUR else set(sfc.get("produced_mana") or []))
+    makes_coloured = makes - {"C"}
+    for x in "WUBRG":
+        out[f"col_{x}"] = int(x in colours)
+        out[f"pip_{x}"] = cost.get(x, 0)
+        out[f"lc_{x}"] = int(cycles and x in colours)
+        out[f"land_{x}"] = int(x in makes)
+    out.update(col_multi=int(len(colours) >= 2), col_colourless=int(not land and not colours), lc_multi=int(cycles and len(colours) >= 2),
+               land_mono=int(len(makes_coloured) == 1), land_multi=int(len(makes_coloured) >= 2),
+               land_colourless=int(land and not makes_coloured), land_basic=int(land and name in BASIC_COLOUR))
+    return out
+
+
 def features(card, stats=None, sf=None):
     """{feature: value} for one card (non-land and land alike)."""
     from companion.advisor_v2 import composition
@@ -127,6 +157,7 @@ def features(card, stats=None, sf=None):
     }
     for r in ("common", "uncommon", "rare", "mythic"):
         out[r] = int(card.get("rarity") == r)
+    out.update(colour_features(card, types, sf))
     for t in ("Creature", "Artifact", "Enchantment", "Instant", "Sorcery", "Planeswalker", "Battle"):  # no supertypes in the dataset
         out[t.lower()] = int(t in types)
     sfc = (sf or {}).get(card["name"]) or (sf or {}).get(card["name"].split(" // ")[0]) or {}
@@ -192,7 +223,7 @@ def main(argv=None):
     import companion.advisor_v2.engine  # noqa: F401
     config.activate(a.set)
     rows = card_rows(a.set, a.refresh)
-    path = DATA_DIR / "Temp" / f"cards_{a.set}.csv"
+    path = tables.path(a.set, tables.CARDS)
     with open(path, "w", newline="") as f:
         w = csv.writer(f)
         w.writerow(["name"] + FEATURES)

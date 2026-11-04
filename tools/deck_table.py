@@ -1,6 +1,6 @@
 """Every deck in 17Lands' public game data, stored once: what deck measures are computed from.
 
-    uv run python tools/deck_table.py FRA      # writes <data>/Temp/decks_FRA.json.gz
+    uv run python tools/deck_table.py FRA      # writes <data>/tables/FRA/1_decks.json.gz
 
 One entry per deck (format, draft id + build), for Premier, Traditional and Pick-Two Draft: format, main colours, splash, the player's win-rate bucket, games, wins, the sum over
 its games of the builder's deck model's predicted win chance (each game with its own player, play/draw and mulligan
@@ -24,13 +24,14 @@ sys.path.insert(0, str(ROOT))
 import companion  # noqa: E402,F401
 from companion import DATA_DIR  # noqa: E402
 from companion.advisor_v2 import config  # noqa: E402
+from tools import tables  # noqa: E402
 
 CHECK = (0, 300)  # tools/builder_check.py's draft-id hash buckets (of 1000)
 TROPHY = {"PremierDraft": 7, "PickTwoDraft": 4, "TradDraft": 3}  # match wins that end the event as a trophy
 
 
 def path(set_code):
-    return DATA_DIR / "Temp" / f"decks_{set_code}.json.gz"
+    return tables.path(set_code, tables.DECKS)
 
 
 def load(set_code):
@@ -41,7 +42,7 @@ def load(set_code):
 
 def cards(set_code):
     """{name: {feature: value}} from tools/card_table.py's CSV."""
-    with open(DATA_DIR / "Temp" / f"cards_{set_code}.csv", newline="") as f:
+    with open(tables.path(set_code, tables.CARDS), newline="") as f:
         out = {}
         for r in csv.DictReader(f):
             name = r.pop("name")

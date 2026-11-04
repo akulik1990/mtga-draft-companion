@@ -21,7 +21,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 import companion  # noqa: E402,F401
 from companion.advisor_v2 import config  # noqa: E402
-from tools import deck_counts  # noqa: E402
+from tools import deck_counts, tables  # noqa: E402
 from tools.deck_table import cards, load  # noqa: E402
 
 MAIN = ["role_creatures", "role_removal", "role_card_advantage", "role_evasion", "role_mana"]
@@ -69,7 +69,7 @@ def write_html(a, out, feats, bounds, pool_size):
     # 2: every card's features, with its rules text (Scryfall, both faces; else the dataset's)
     sf_path = DATA_DIR / "Temp" / f"scryfall_cards_{a.set}.json"
     sf = json.loads(sf_path.read_text()) if sf_path.exists() else {}
-    with open(DATA_DIR / "Temp" / f"cards_{a.set}.csv", newline="") as f:
+    with open(tables.path(a.set, tables.CARDS), newline="") as f:
         cards_rows = list(_csv.DictReader(f))
     t2 = []
     for r in cards_rows:
@@ -117,7 +117,7 @@ def main(argv=None):
     p.add_argument("--seed", type=int, default=0)
     a = p.parse_args(argv)
     table, decks, counts = cards(a.set), load(a.set), deck_counts.read(a.set)
-    fixed = set(deck_counts.META) | {"spells", "lands", "avg_mv", "power", "toughness"} | set(CURVE)
+    fixed = set(deck_counts.META) | {"base", "splash_ours", "combo", "n_base", "spells", "lands", "avg_mv", "power", "toughness"} | set(CURVE)
     feats = [k for k in counts[0] if k not in fixed]
     pool = [r for r in counts if r["skill"] >= 0.6 - 1e-9 and r["games"] >= a.min_games]
     out = []
