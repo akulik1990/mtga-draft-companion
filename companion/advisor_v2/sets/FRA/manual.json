@@ -857,5 +857,31 @@
    ]
   },
   "_why": "user review 2026-11-03 (Eye of Jace is not removal): the dataset's 'removal' tag (Scryfall's automatic tagging) also covers face damage, counterspells, temporary bounce and cards that cannot hit creatures. Kept: permanent tucks (Clash of Elements, Plan for All Outcomes), Infinite Coursework, modal cards with a removal mode, sweepers."
+ },
+ "structure_replacements": {
+  "1": [
+   "card_advantage",
+   "mana"
+  ],
+  "2": [
+   "card_advantage",
+   "mana"
+  ],
+  "3": [
+   "card_advantage",
+   "mana"
+  ],
+  "4": [
+   "card_advantage",
+   "mana"
+  ],
+  "5": [
+   "card_advantage",
+   "mana"
+  ],
+  "6+": [
+   "card_advantage",
+   "mana"
+  ]
  }
 }

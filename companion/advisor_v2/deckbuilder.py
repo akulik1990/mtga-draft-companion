@@ -16,7 +16,7 @@ from functools import lru_cache
 
 import numpy as np
 
-from companion.advisor_v2.composition import curve_slot, roles
+from companion.advisor_v2.composition import curve_slot, helps_mana, roles
 from companion.advisor_v2.lanes import LANES, any_colour_fixer, castable, off_pips, pool_fixing
 from companion.advisor_v2 import config
 
@@ -50,11 +50,12 @@ SPLASH_AT = 0.5  # splash when the fitted splash rule gives at least this chance
 # best and max per pair from 60%+ players' decks (the "structure" section of the set's fitted.json, tools/deck_shapes.py).
 # The search first brings the deck inside min..max, with a category low (best - COMP_SLACK or less) made up by its
 # replacements (what top players run more of when that category is low: few creatures -> more removal and card
-# advantage); then swaps for win rate keep that, and only trade a card for one of the same curve slot, the same role,
+# advantage; manual "structure_replacements" add what people know: each curve slot <- card advantage, mana); then
+# swaps for win rate keep that, and only trade a card for one of the same curve slot, the same role,
 # or a replacement category (2-drop for 2-drop, removal for removal, creature for removal). Off: one search on win
 # rate less the shape penalty.
 STRUCTURE = False
-STRUCTURE_DIMS = ("creatures", "removal", "card_advantage", "evasion", "1", "2", "3", "4", "5", "6+")
+STRUCTURE_DIMS = ("creatures", "removal", "card_advantage", "evasion", "mana", "1", "2", "3", "4", "5", "6+")
 COMP_SLACK = 1.0  # cards a category may sit under its best before its replacements must make up the rest
 COMP_RATIO = 1.0  # replacement cards above their best needed per card the category is short
 BEST_POINTS = 0.0  # WR points per card away from best in each category (a light pull toward best); 0 = off
@@ -232,42 +233,68 @@ def needs(card, colour, lane):
                for opts in (pip.split("/") for pip in re.findall(r"\{(.*?)\}", front)))
 
 
-SHAPE_DIMS = ("creatures", "removal", "card_advantage", "evasion") + CURVE
+ROLE_DIMS = ("creatures", "removal", "card_advantage", "evasion", "mana")
+SHAPE_DIMS = ROLE_DIMS + CURVE
+
+
+def card_roles(card):
+    """A spell's ROLE_DIMS: composition roles plus "mana" (gets lands or mana: composition.helps_mana)."""
+    return (roles(card) & set(ROLE_DIMS)) | ({"mana"} if helps_mana(card) else set())
 
 
 def shape_vector(spells):
     """A deck's whole shape: role counts and spells per curve slot, in SHAPE_DIMS order (tools/deck_shapes.py)."""
     v = [0.0] * len(SHAPE_DIMS)
     for c in spells:
-        r = roles(c)
-        for i, k in enumerate(SHAPE_DIMS[:4]):
+        r = card_roles(c)
+        for i, k in enumerate(ROLE_DIMS):
             v[i] += k in r
         slot = curve_slot(c)
         if slot:
-            v[4 + CURVE.index(slot)] += 1
+            v[len(ROLE_DIMS) + CURVE.index(slot)] += 1
     return v
 
 
+@lru_cache(maxsize=64)
 def _structure(set_code, lane):
+    """(min/best/max per category for the lane, replacements): {category: [option, ...]}, an option being one category
+    or a composite (a tuple: all its parts must run high together). Fitted singles plus the manual layer's
+    "structure_replacements" (lists in it are composites). A category with no options has no substitute."""
     st = config.fitted(set_code, "structure") if set_code else None
-    return (st or {}).get("bounds", {}).get(lane), (st or {}).get("replacements") or {}
+    repl = {k: list(v) for k, v in ((st or {}).get("replacements") or {}).items()}
+    for k, extra in ((config.layer(set_code, "manual") if set_code else {}).get("structure_replacements") or {}).items():
+        for x in extra:
+            x = tuple(x) if isinstance(x, list) else x
+            if x not in repl.setdefault(k, []):
+                repl[k].append(x)
+    return (st or {}).get("bounds", {}).get(lane), repl
+
+
+def covered(options, x, bounds):
+    """Cards a low category's replacements make up: single replacements' excess over their best adds up; a composite
+    counts its parts times its weakest part's excess (all must run high); the larger of the two."""
+    up = lambda k: max(0.0, x[k] - bounds[k][1])
+    singles = sum(up(o) for o in options if isinstance(o, str))
+    composite = max((len(o) * min(up(p) for p in o) for o in options if not isinstance(o, str)), default=0.0)
+    return max(singles, composite)
 
 
 def structure_dev(spells, target, lane="", set_code=None):
-    """Cards off top players' structure in the pair: counts outside min..max, plus what a low category's
-    replacements leave short; without a structure section, beyond STRUCTURE_TOL of the pair's mean."""
+    """Cards off top players' structure in the pair: counts outside min..max, plus what is left uncovered of a category
+    running low (more than COMP_SLACK under best) after its replacements; a category with no substitute is never
+    covered. Without a structure section, beyond STRUCTURE_TOL of the pair's mean."""
     x = dict(zip(SHAPE_DIMS, shape_vector(spells)))
     bounds, repl = _structure(set_code, lane)
     if not bounds:
-        want = {**{k: target.get(k) for k in SHAPE_DIMS[:4]}, **(target.get("curve") or {})}
+        want = {**{k: target.get(k) for k in ROLE_DIMS}, **(target.get("curve") or {})}
         return sum(max(0.0, abs(x[k] - want[k]) - STRUCTURE_TOL) for k in STRUCTURE_DIMS if want.get(k) is not None)
     out = 0.0
     for k in STRUCTURE_DIMS:
         lo, best, hi = bounds[k]
         out += max(0.0, lo - x[k], x[k] - hi)
         short = best - x[k] - COMP_SLACK
-        if short > 0 and repl.get(k):
-            out += max(0.0, COMP_RATIO * short - sum(max(0.0, x[b] - bounds[b][1]) for b in repl[k]))
+        if short > 0:
+            out += max(0.0, COMP_RATIO * short - covered(repl.get(k, ()), x, bounds))
     return out
 
 
@@ -282,13 +309,14 @@ def off_best(spells, lane, set_code):
 
 def categories(card):
     """A spell's structure categories: its curve slot and its roles."""
-    return (roles(card) & set(SHAPE_DIMS[:4])) | {curve_slot(card)}
+    return card_roles(card) | {curve_slot(card)}
 
 
 def swappable(out, into, repl):
     """Same curve slot or role, or the incoming card fills a replacement for a category the outgoing one leaves."""
     a, b = categories(out), categories(into)
-    return bool(a & b) or any(y in repl.get(x, ()) for x in a for y in b)
+    parts = lambda k: {p for o in repl.get(k, ()) for p in ((o,) if isinstance(o, str) else o)}
+    return bool(a & b) or any(parts(x) & b for x in a)
 
 
 @lru_cache(maxsize=4)

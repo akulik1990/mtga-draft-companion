@@ -35,6 +35,7 @@ def main(argv=None):
     p.add_argument("set")
     p.add_argument("--range", type=float, nargs=2, default=(10, 90), help="percentiles of 60%%+ players' decks for min and max")
     p.add_argument("--repl", type=float, default=0.5, help="cards above the usual count that make a category a replacement")
+    p.add_argument("--repl-z", type=float, default=4.0, help="and its z (low decks vs the rest)")
     a = p.parse_args(argv)
     import companion.advisor_v2.engine  # noqa: F401  (registers the settings activate checks)
     config.activate(a.set)
@@ -99,7 +100,9 @@ def main(argv=None):
         if len(lane) == 2:
             rel.append(top - med)
     # Replacements: when a category runs >= 2 under its pair's median in 60%+ players' decks, what they run more of
-    # instead (mean excess over decks where it is not low), pooled over the two-colour pairs.
+    # instead (mean excess over decks where it is not low), pooled over the two-colour pairs. Composites (two categories
+# raised together) do not show in FRA: top players raise one or the other, both no more often than chance; people's
+# composites go in the manual layer.
     R = np.vstack(rel)
     repl, excess = {}, {}
     for i, d in enumerate(dims):
@@ -107,7 +110,9 @@ def main(argv=None):
         if low.sum() < 100:
             continue
         ex = R[low].mean(0) - R[~low].mean(0)
-        repl[d] = [dims[j] for j in np.argsort(-ex) if j != i and ex[j] >= a.repl]
+        z = ex / np.sqrt(R[low].var(0) / low.sum() + R[~low].var(0) / (~low).sum())
+        # clear ones only: not every category has a substitute (evasion: none)
+        repl[d] = [dims[j] for j in np.argsort(-ex) if j != i and ex[j] >= a.repl and z[j] >= a.repl_z]
         excess[d] = {dims[j]: round(float(ex[j]), 2) for j in range(k) if j != i}
     written = config.write_fitted(a.set, "structure", {"bounds": bounds, "replacements": repl, "excess": excess, "range": list(a.range)},
                                   f"tools/deck_shapes.py: min/best/max (p{a.range[0]:g}/median/p{a.range[1]:g}) of 60%+ players' decks per "

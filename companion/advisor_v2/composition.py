@@ -59,6 +59,16 @@ ROLES = ("creatures", "removal", "card_advantage", "evasion", "two_drops", "five
 TOKENS_AS_CREATURES = False  # a non-creature card that makes creature tokens (Recursive Recruitment, Hexhaven Battalion, Garruk) counts as a creature in shape counts; Jace tokens are planeswalkers and do not
 
 
+def helps_mana(card):
+    """A spell that gets lands or mana: ramp/fixing (dataset tag), landcycling, land search, Treasure."""
+    if "Land" in (card.get("types") or []):
+        return False
+    text = card.get("oracle_text") or ""
+    return "fixing_ramp" in config.tags(card) or bool(re.search(
+        r"landcycling|search your library for (?:a|up to \w+) (?:basic )?land|land cards? .{0,40}onto the battlefield|create (?:a|an|one|two|three|\w+) treasure",
+        text, re.I))
+
+
 def makes_creatures(card):
     return "Creature" not in (card.get("types") or []) and bool(re.search(r"\bcreates? [^.]*?creature tokens?", card.get("oracle_text") or "", re.I))
 
