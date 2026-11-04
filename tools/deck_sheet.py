@@ -1,30 +1,30 @@
-"""Top players' decks written out, to read rather than test: curve, components, other tags, record, cards.
+"""Top players' decks written out, to read rather than test: every card feature counted per deck.
 
     uv run python tools/deck_sheet.py FRA [--n 100] [--min-games 5] [--seed 0]
 
-From 17Lands' public game data: a random sample of decks by 60%+ players with at least --min-games games, sorted by
-colours and record. Each row: colours (+ splash), games and win rate, the deck model's predicted win rate for an average
-player, counts of creatures, removal, card advantage, evasion, mana (gets lands or mana), combat tricks, lifegain,
-mana sinks, protection, spells per curve slot, lands; then each deck's spells. The pair's min/best/max from the
-structure section heads each colour group. Writes docs/decks-SET.md and docs/decks-SET.csv.
+Reads the stored tables only (tools/deck_table.py: every deck once; tools/card_table.py: every card's features), so a
+new measure is a new card-table column, picked up here without reading the game data. A random sample of decks by 60%+
+players with at least --min-games games, sorted by colours and record. Each deck: colours (+ splash), games, its own
+win rate, the deck model's predicted win rate for the same games, then each feature summed over its spells (lands
+counted apart). The pair's min/best/max from the structure section heads each colour group. Writes docs/decks-SET.md
+(the main columns as a table, then every non-zero feature and the cards per deck) and docs/decks-SET.csv (everything).
 """
 
 import argparse
 import csv
-import gzip
-import json
 import random
 import sys
-from collections import defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 import companion  # noqa: E402,F401
-from companion import DATA_DIR  # noqa: E402
 from companion.advisor_v2 import config  # noqa: E402
+from tools.deck_table import cards, load, measure  # noqa: E402
 
-TAGS = ("combat_trick", "lifegain", "mana_sink", "protection")
+MAIN = ["role_creatures", "role_removal", "role_card_advantage", "role_evasion", "role_mana"]
+CURVE = ["1", "2", "3", "4", "5", "6+"]
+SKIP = {"cmc", "slot", "rarity", "land", "basic", "power", "toughness", "rank", "gihwr", "colours", "pips"}
 
 
 def main(argv=None):
@@ -34,70 +34,60 @@ def main(argv=None):
     p.add_argument("--min-games", type=int, default=5)
     p.add_argument("--seed", type=int, default=0)
     a = p.parse_args(argv)
-    import companion.advisor_v2.engine  # noqa: F401
-    config.activate(a.set)
-    from companion.advisor_v2 import deckbuilder
-    from tools.deck_model import DeckModel
-
-    model = DeckModel(a.set, deckbuilder.MODEL)
-    data = json.loads((DATA_DIR / "Sets" / f"{a.set}_PremierDraft_All_Data.json").read_text())["card_ratings"]
-    card = {}
-    for c in data.values():
-        card.setdefault(c["name"], c)
-        card.setdefault(c["name"].split(" // ")[0], c)
-    decks = defaultdict(lambda: {"games": 0, "wins": 0})
-    with gzip.open(DATA_DIR / "Temp" / "synergy" / f"game_data_public.{a.set}.PremierDraft.csv.gz", "rt", newline="") as f:
-        r = csv.reader(f)
-        h = next(r)
-        ix = {k: i for i, k in enumerate(h)}
-        cols = [(k[len("deck_"):], i) for k, i in ix.items() if k.startswith("deck_")]
-        for row in r:
-            sk = row[ix["user_game_win_rate_bucket"]]
-            if sk in ("", "None") or float(sk) < 0.6 - 1e-9:
-                continue
-            d = decks[(row[ix["draft_id"]], row[ix["build_index"]])]
-            if not d["games"]:
-                d.update(counts={n: int(float(row[i])) for n, i in cols if row[i] not in ("", "0")},
-                         lane=row[ix["main_colors"]], splash=row[ix["splash_colors"]])
-            d["games"] += 1
-            d["wins"] += row[ix["won"]] == "True"
-    pool = [d for d in decks.values() if d["games"] >= a.min_games]
+    table = cards(a.set)
+    feats = [k for k, v in next(iter(table.values())).items() if isinstance(v, float) and k not in SKIP]
+    pool = [d for d in load(a.set) if (d["skill"] or 0) >= 0.6 - 1e-9 and d["games"] >= a.min_games]
     rows = random.Random(a.seed).sample(pool, min(a.n, len(pool)))
-    head = ["colours", "games", "win%", "pred%", *deckbuilder.ROLE_DIMS, *TAGS, *deckbuilder.CURVE, "lands"]
     out = []
     for d in rows:
-        spells = [card[n] for n, k in d["counts"].items() if n in card and "Land" not in (card[n].get("types") or []) for _ in range(k)]
-        v = dict(zip(deckbuilder.SHAPE_DIMS, deckbuilder.shape_vector(spells)))
-        tags = {t: sum(t in config.tags(c) for c in spells) for t in TAGS}
-        lands = sum(k for n, k in d["counts"].items() if n in card and "Land" in (card[n].get("types") or []))
-        out.append({"colours": d["lane"] + (f"+{d['splash']}" if d["splash"] else ""), "lane": d["lane"], "games": d["games"],
-                    "win%": round(100 * d["wins"] / d["games"]), "pred%": round(float(model.win_rate(d["counts"], d["lane"], d["splash"])), 1),
-                    **{k: int(v[k]) for k in deckbuilder.SHAPE_DIMS}, **tags, "lands": lands,
-                    "cards": ", ".join(f"{k} {n}" if k > 1 else n for n, k in sorted(d["counts"].items(), key=lambda kv: (card.get(kv[0], {}).get("cmc") or 0, kv[0]))
-                                       if n in card and "Land" not in (card[n].get("types") or []))})
+        spells = {n: k for n, k in d["counts"].items() if n in table and not table[n].get("land")}
+        n_spells = sum(spells.values()) or 1
+        x = {"colours": d["lane"] + (f"+{d['splash']}" if d["splash"] else ""), "lane": d["lane"], "games": d["games"],
+             "win%": round(100 * d["wins"] / d["games"]), "pred%": round(100 * d["pred"] / d["games"], 1),
+             "spells": sum(spells.values()), "lands": sum(k for n, k in d["counts"].items() if n in table and table[n].get("land")),
+             "avg_mv": round(measure(d, table, "cmc") / n_spells, 2),
+             "power": int(sum(k * (table[n].get("power") or 0) for n, k in spells.items() if isinstance(table[n].get("power"), float))),
+             "toughness": int(sum(k * (table[n].get("toughness") or 0) for n, k in spells.items() if isinstance(table[n].get("toughness"), float)))}
+        for f in feats:
+            x[f] = int(measure(d, table, f))
+        slot = lambda v: v if isinstance(v, str) else f"{int(v)}"  # the CSV loader reads "1".."5" as numbers
+        for s in CURVE:
+            x[s] = sum(k for n, k in spells.items() if slot(table[n].get("slot")) == s)
+        x["cards"] = ", ".join(f"{k} {n}" if k > 1 else n for n, k in sorted(spells.items(), key=lambda kv: (table[kv[0]].get("cmc") or 0, kv[0])))
+        out.append(x)
     out.sort(key=lambda x: (x["lane"], -x["win%"]))
     bounds = (config.fitted(a.set, "structure") or {}).get("bounds", {})
+    head = ["colours", "games", "win%", "pred%"] + MAIN + CURVE + ["avg_mv", "lands"]
+    names = {f: f.removeprefix("role_") for f in head}
     md = [f"# {a.set}: {len(out)} decks by 60%+ players", "",
-          f"Random sample of decks with >= {a.min_games} games (seed {a.seed}). win% is the deck's own record; pred% the deck model's win rate for an "
-          "average player with it (its cards and shape). mana = spells that get lands or mana. Curve = spells by mana value. "
-          "Each colour group starts with its min/best/max (p10/median/p90 of all 60%+ decks in the pair).", "",
-          "| " + " | ".join(head) + " |", "|" + "---|" * len(head)]
+          f"Random sample of decks with >= {a.min_games} games (seed {a.seed}). win% is the deck's own record; pred% the deck model's "
+          "average predicted win chance over the same games (its cards, shape and the player). mana = spells that get lands or mana. "
+          "Curve = spells by mana value. Each colour group starts with its min/best/max (p10/median/p90 of all 60%+ decks in the pair). "
+          "Under the table, every non-zero feature per deck (rank_1_10 = cards ranked 1-10 in the set by GIH WR; mech_* = the set's "
+          "own mechanics) and its spells. docs/decks-" + a.set + ".csv has every column.", "",
+          "| " + " | ".join(names[h] for h in head) + " |", "|" + "---|" * len(head)]
     last = None
     for x in out:
         if x["lane"] != last:
             last = x["lane"]
             b = bounds.get(last)
             if b:
-                md.append("| **" + last + " min/best/max** | | | | " + " | ".join("/".join(f"{y:g}" for y in b[k]) for k in deckbuilder.ROLE_DIMS)
-                          + " | " * (len(TAGS) + 1) + " | ".join("/".join(f"{y:g}" for y in b[k]) for k in deckbuilder.CURVE) + " | |")
-        md.append("| " + " | ".join(str(x[k]) for k in head) + " |")
-    md += ["", "## Cards", ""] + [f"- **{x['colours']}** {x['win%']}% ({x['games']} games): {x['cards']}" for x in out]
+                cell = lambda k: "/".join(f"{y:g}" for y in b[k])
+                md.append(f"| **{last} min/best/max** | | | | " + " | ".join(cell(k.removeprefix("role_")) for k in MAIN) + " | "
+                          + " | ".join(cell(k) for k in CURVE) + " | | |")
+        md.append("| " + " | ".join(str(x[h]) for h in head) + " |")
+    md += ["", "## Every feature and the cards", ""]
+    for x in out:
+        nz = ", ".join(f"{f} {x[f]}" for f in feats if x[f] and f not in MAIN)
+        md.append(f"- **{x['colours']}** {x['win%']}% of {x['games']} (pred {x['pred%']}%), power {x['power']}, toughness {x['toughness']}: {nz}")
+        md.append(f"  - {x['cards']}")
     (ROOT / "docs" / f"decks-{a.set}.md").write_text("\n".join(md) + "\n")
+    cols = ["colours", "games", "win%", "pred%", "spells", "lands", "avg_mv", "power", "toughness"] + CURVE + feats + ["cards"]
     with open(ROOT / "docs" / f"decks-{a.set}.csv", "w", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=head + ["cards"], extrasaction="ignore")
+        w = csv.DictWriter(f, fieldnames=cols, extrasaction="ignore")
         w.writeheader()
         w.writerows(out)
-    print(f"{len(out)} decks (of {len(pool)} with >= {a.min_games} games) -> docs/decks-{a.set}.md, .csv")
+    print(f"{len(out)} decks (of {len(pool)}) x {len(cols)} columns -> docs/decks-{a.set}.md, .csv")
 
 
 if __name__ == "__main__":
