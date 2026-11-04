@@ -24,7 +24,7 @@ from companion import DATA_DIR  # noqa: E402
 from tools.deck_table import cards, load  # noqa: E402
 
 CURVE = ("1", "2", "3", "4", "5", "6+")
-META = ("deck", "draft", "lane", "splash", "skill", "games", "wins", "pred", "check")  # deck: row number in table 1
+META = ("deck", "format", "draft", "lane", "splash", "skill", "games", "wins", "match_wins", "trophy", "pred", "check")  # deck: row number in table 1
 SKIP = {"cmc", "slot", "rarity", "land", "basic", "power", "toughness", "rank", "gihwr", "colours", "pips"}
 
 
@@ -37,7 +37,7 @@ def read(set_code):
     with gzip.open(path(set_code), "rt", newline="") as f:
         out = []
         for r in csv.DictReader(f):
-            out.append({k: (v if k in ("draft", "lane", "splash", "check") else float(v or 0)) for k, v in r.items()})
+            out.append({k: (v if k in ("format", "draft", "lane", "splash", "check") else float(v or 0)) for k, v in r.items()})
         return out
 
 
@@ -69,7 +69,8 @@ def main(argv=None):
         w.writerow(list(META) + ["spells", "lands", "avg_mv", "power", "toughness"] + list(CURVE) + feats)
         for i, d in enumerate(decks):
             s = S[i]
-            w.writerow([i, d["draft"], d["lane"], d["splash"], d["skill"] if d["skill"] is not None else "", d["games"], d["wins"], d["pred"], int(d["check"]),
+            w.writerow([i, d["format"], d["draft"], d["lane"], d["splash"], d["skill"] if d["skill"] is not None else "", d["games"], d["wins"],
+                        d["match_wins"], d["trophy"], d["pred"], int(d["check"]),
                         int(n_spells[i]), int(n_lands[i]), round(s[k + 6] / n_spells[i], 2) if n_spells[i] else 0, int(s[k + 7]), int(s[k + 8])]
                        + [int(x) for x in s[k:k + 6]] + [int(x) for x in s[:k]])
     print(f"{len(decks)} decks x {len(feats) + 14} columns -> {path(a.set)}")

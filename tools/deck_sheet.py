@@ -63,7 +63,8 @@ def write_html(a, out, feats, bounds, pool_size):
     labels.update({f"rank_{lo}_{lo + 9}": f"rank {lo}-{lo + 9}" for lo in range(1, 100, 10)}, lane="pair")
 
     # 1: decks and their cards
-    t1 = [dict(_k=str(i), deck=i + 1, colours=x["colours"], lane=x["lane"], skill=x["skill"], games=x["games"], wins=x["wins"],
+    t1 = [dict(_k=str(i), deck=i + 1, format=x["format"], colours=x["colours"], lane=x["lane"], skill=x["skill"], games=x["games"], wins=x["wins"],
+               trophy=x["trophy"],
                **{"win%": x["win%"], "pred%": x["pred%"]}, cards=x["cards"]) for i, x in enumerate(out)]
     # 2: every card's features, with its rules text (Scryfall, both faces; else the dataset's)
     sf_path = DATA_DIR / "Temp" / f"scryfall_cards_{a.set}.json"
@@ -80,13 +81,13 @@ def write_html(a, out, feats, bounds, pool_size):
     card_cols = [k for k in cards_rows[0] if k != "name"]
     basics = ["rarity", "cmc", "slot", "colours", "pips", "power", "toughness", "gihwr", "rank"]
     # 3: counts per deck
-    t3 = [dict({k: x[k] for k in ["colours", "lane", "cards", "games", "win%", "pred%", "spells", "lands", "avg_mv", "power", "toughness"] + CURVE + feats},
+    t3 = [dict({k: x[k] for k in ["format", "trophy", "colours", "lane", "cards", "games", "win%", "pred%", "spells", "lands", "avg_mv", "power", "toughness"] + CURVE + feats},
                _k=str(i), deck=i + 1) for i, x in enumerate(out)]
     bound_key = {**{c: c.removeprefix("role_") for c in MAIN}, **{c: c for c in CURVE}}
     tables = [
         {"id": "decks", "name": "1 Decks", "cols": ["deck"], "rows": t1, "search": ["colours", "cards"],
          "note": "Table 1: each deck with its record and spells. Filter a column with text (contains), =text (exact) or a comparison: >3, <=1, =0, 2-4.",
-         "groups": [{"name": "Record", "cols": ["colours", "skill", "games", "wins", "win%", "pred%"], "on": True},
+         "groups": [{"name": "Record", "cols": ["format", "colours", "skill", "games", "wins", "trophy", "win%", "pred%"], "on": True},
                     {"name": "Cards", "cols": ["cards"], "on": True}]},
         {"id": "cards", "name": "2 Cards", "cols": ["name"], "rows": t2, "search": ["name", "text"],
          "note": "Table 2: every card in the set and what it does: stats, roles, types, keywords, the set's mechanics, effects read "
@@ -97,7 +98,7 @@ def write_html(a, out, feats, bounds, pool_size):
          "boundKey": bound_key,
          "note": "Table 3: each deck's counts over its spells, from tables 1 and 2. Click a deck for its cards. Filter pair to one "
                  "pair (=UB: exact; splashes included) to see its min/best/max row.",
-         "groups": [{"name": "Deck", "cols": ["colours", "lane", "games", "win%", "pred%", "spells", "lands", "avg_mv", "power", "toughness"], "on": True},
+         "groups": [{"name": "Deck", "cols": ["format", "trophy", "colours", "lane", "games", "win%", "pred%", "spells", "lands", "avg_mv", "power", "toughness"], "on": True},
                     {"name": "Curve", "cols": CURVE, "on": True}] + grouping(feats, feature_spec)},
     ]
     data = {"title": f"{a.set}: {len(out)} decks by 60%+ players, their cards and counts",

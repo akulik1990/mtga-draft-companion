@@ -3,7 +3,8 @@
     uv run python tools/compare_decks.py FRA role_creatures            # 2+ under the pair's median
     uv run python tools/compare_decks.py FRA role_removal --high       # 2+ over it
     uv run python tools/compare_decks.py FRA 2 --by 1 --skill 0.0      # 2-drops, 1+ under, all players
-    uv run python tools/compare_decks.py FRA wins --won 6 --lost 2      # decks with 6+ wins against decks with 2 or fewer
+    uv run python tools/compare_decks.py FRA wins --won 6 --lost 2      # decks with 6+ wins against decks with 2 or fewer (--formats PremierDraft)
+    uv run python tools/compare_decks.py FRA trophy                     # trophy decks (Premier 7, Pick-Two 4, Traditional 3 matches) against the rest
 
 From table 3 (tools/deck_counts.py) only: decks by --skill players (default 60%+) in two-colour pairs with at least
 100 such decks; each field taken relative to its pair's median, so pairs that differ by nature do not show up as
@@ -23,7 +24,7 @@ sys.path.insert(0, str(ROOT))
 import companion  # noqa: E402,F401
 from tools import deck_counts  # noqa: E402
 
-TEXT = {"deck", "draft", "lane", "splash", "check", "skill", "games", "wins", "pred"}
+TEXT = {"deck", "format", "draft", "lane", "splash", "check", "skill", "games", "wins", "match_wins", "trophy", "pred"}
 
 
 def main(argv=None):
@@ -36,22 +37,27 @@ def main(argv=None):
     p.add_argument("--high", action="store_true")
     p.add_argument("--skill", type=float, default=0.6)
     p.add_argument("--top", type=int, default=25)
+    p.add_argument("--formats", default="PremierDraft,TradDraft,PickTwoDraft")
     a = p.parse_args(argv)
-    rows = [r for r in deck_counts.read(a.set) if len(r["lane"]) == 2 and r["skill"] >= a.skill - 1e-9]
+    formats = a.formats.split(",")
+    rows = [r for r in deck_counts.read(a.set) if len(r["lane"]) == 2 and r["skill"] >= a.skill - 1e-9 and r["format"] in formats]
     fields = [k for k in rows[0] if k not in TEXT]
     by = defaultdict(list)
     for r in rows:
         by[r["lane"]].append(r)
-    X, games, wins, pred = [], [], [], []
+    X, games, wins, pred, trophy = [], [], [], [], []
     for lane, rs in by.items():
         if len(rs) < 100:
             continue
         m = np.array([[r[f] for f in fields] for r in rs], float)
         X.append(m - np.median(m, 0))
         games += [r["games"] for r in rs]; wins += [r["wins"] for r in rs]; pred += [r["pred"] for r in rs]
-    X, games, wins, pred = np.vstack(X), np.array(games), np.array(wins), np.array(pred)
+        trophy += [r["trophy"] for r in rs]
+    X, games, wins, pred, trophy = np.vstack(X), np.array(games), np.array(wins), np.array(pred), np.array(trophy) > 0
     rest = np.ones(len(X), bool)
-    if a.field == "wins":
+    if a.field == "trophy":
+        sel, rest, i = trophy, ~trophy, None
+    elif a.field == "wins":
         # a deck's games in the data are its event: wins counted there (17Lands public data: one row per game)
         sel, rest, i = wins >= a.won, wins <= a.lost, None
     else:
@@ -64,7 +70,8 @@ def main(argv=None):
     z = diff / np.sqrt(X[sel].var(0) / sel.sum() + X[rest].var(0) / rest.sum() + 1e-12)
     beyond = lambda m: 100 * (wins[m].sum() - pred[m].sum()) / games[m].sum()
     if i is None:
-        print(f"{a.set}: {sel.sum()} decks with {a.won}+ wins against {rest.sum()} with {a.lost} or fewer ({a.skill:.0%}+ players, of {len(X)})")
+        what = "trophy decks against the other" if a.field == "trophy" else f"decks with {a.won}+ wins against {a.lost} or fewer:"
+        print(f"{a.set} ({', '.join(formats)}): {sel.sum()} {what} {rest.sum()} ({a.skill:.0%}+ players, of {len(X)})")
         print(f"predicted win rate (deck model, cards + shape + player): these {100 * pred[sel].sum() / games[sel].sum():.1f}%, "
               f"the others {100 * pred[rest].sum() / games[rest].sum():.1f}%")
     else:
