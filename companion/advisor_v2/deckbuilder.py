@@ -12,6 +12,9 @@ the objective improves. Pools are small (about 40 cards), so a few hundred model
 import math
 import re
 from collections import Counter
+from functools import lru_cache
+
+import numpy as np
 
 from companion.advisor_v2.composition import curve_slot, roles
 from companion.advisor_v2.lanes import LANES, any_colour_fixer, castable, off_pips, pool_fixing
@@ -43,6 +46,20 @@ THREE_AT = 0.5  # go three colours when the fitted three rule gives at least thi
 SPLASH_FORCE = False  # when the fitted rule says splash, splash even if the splash build scores below the plain pair
 MODEL = "deckmodel"  # fitted.json section of the deck model the builder maximises (the mock yardstick stays "deckmodel")
 SPLASH_AT = 0.5  # splash when the fitted splash rule gives at least this chance
+# Structure first (STRUCTURE): every category (creatures, removal, card advantage, evasion) and curve slot has a min,
+# best and max per pair from 60%+ players' decks (the "structure" section of the set's fitted.json, tools/deck_shapes.py).
+# The search first brings the deck inside min..max, with a category low (best - COMP_SLACK or less) made up by its
+# replacements (what top players run more of when that category is low: few creatures -> more removal and card
+# advantage); then swaps for win rate keep that, and only trade a card for one of the same curve slot, the same role,
+# or a replacement category (2-drop for 2-drop, removal for removal, creature for removal). Off: one search on win
+# rate less the shape penalty.
+STRUCTURE = False
+STRUCTURE_DIMS = ("creatures", "removal", "card_advantage", "evasion", "1", "2", "3", "4", "5", "6+")
+COMP_SLACK = 1.0  # cards a category may sit under its best before its replacements must make up the rest
+COMP_RATIO = 1.0  # replacement cards above their best needed per card the category is short
+BEST_POINTS = 0.0  # WR points per card away from best in each category (a light pull toward best); 0 = off
+STRUCTURE_TOL = 0.5  # without a structure section: cards either side of the pair's mean before it counts as off-structure
+RISK_RADIUS = 0.8  # whole-shape support (a measure, tools/builder_check.py): real decks within this distance, in the pair's SDs
 SYN_MATES = 0.0  # WR points per unit of the deck's deck-mate sum (pairwise log lift of top players' decks in the pair, over 23); 0 = off
 SYN_CARDS = 0.0  # WR points per log(1 + enablers in the deck) for each list of a reviewed top card in the deck (manual card_wants); 0 = off
 SPLASH_FIX_POINTS = 0.0  # when choosing the splash colour: WR points per land in the pool that makes that colour (up to 3); top players splash the colour their duals support; 0 = off
@@ -215,7 +232,101 @@ def needs(card, colour, lane):
                for opts in (pip.split("/") for pip in re.findall(r"\{(.*?)\}", front)))
 
 
-def shape_penalty(spells, target, lane="", min_creatures_slack=None, scale=1.0):
+SHAPE_DIMS = ("creatures", "removal", "card_advantage", "evasion") + CURVE
+
+
+def shape_vector(spells):
+    """A deck's whole shape: role counts and spells per curve slot, in SHAPE_DIMS order (tools/deck_shapes.py)."""
+    v = [0.0] * len(SHAPE_DIMS)
+    for c in spells:
+        r = roles(c)
+        for i, k in enumerate(SHAPE_DIMS[:4]):
+            v[i] += k in r
+        slot = curve_slot(c)
+        if slot:
+            v[4 + CURVE.index(slot)] += 1
+    return v
+
+
+def _structure(set_code, lane):
+    st = config.fitted(set_code, "structure") if set_code else None
+    return (st or {}).get("bounds", {}).get(lane), (st or {}).get("replacements") or {}
+
+
+def structure_dev(spells, target, lane="", set_code=None):
+    """Cards off top players' structure in the pair: counts outside min..max, plus what a low category's
+    replacements leave short; without a structure section, beyond STRUCTURE_TOL of the pair's mean."""
+    x = dict(zip(SHAPE_DIMS, shape_vector(spells)))
+    bounds, repl = _structure(set_code, lane)
+    if not bounds:
+        want = {**{k: target.get(k) for k in SHAPE_DIMS[:4]}, **(target.get("curve") or {})}
+        return sum(max(0.0, abs(x[k] - want[k]) - STRUCTURE_TOL) for k in STRUCTURE_DIMS if want.get(k) is not None)
+    out = 0.0
+    for k in STRUCTURE_DIMS:
+        lo, best, hi = bounds[k]
+        out += max(0.0, lo - x[k], x[k] - hi)
+        short = best - x[k] - COMP_SLACK
+        if short > 0 and repl.get(k):
+            out += max(0.0, COMP_RATIO * short - sum(max(0.0, x[b] - bounds[b][1]) for b in repl[k]))
+    return out
+
+
+def off_best(spells, lane, set_code):
+    """Cards away from best over every category (BEST_POINTS' pull)."""
+    bounds, _ = _structure(set_code, lane)
+    if not bounds:
+        return 0.0
+    x = dict(zip(SHAPE_DIMS, shape_vector(spells)))
+    return sum(abs(x[k] - bounds[k][1]) for k in STRUCTURE_DIMS)
+
+
+def categories(card):
+    """A spell's structure categories: its curve slot and its roles."""
+    return (roles(card) & set(SHAPE_DIMS[:4])) | {curve_slot(card)}
+
+
+def swappable(out, into, repl):
+    """Same curve slot or role, or the incoming card fills a replacement for a category the outgoing one leaves."""
+    a, b = categories(out), categories(into)
+    return bool(a & b) or any(y in repl.get(x, ()) for x in a for y in b)
+
+
+@lru_cache(maxsize=4)
+def _shapes(set_code):
+    import gzip
+    import json
+
+    from companion import DATA_DIR
+
+    path = DATA_DIR / "Temp" / f"deckshapes_{set_code}.json.gz"
+    if not path.exists():
+        return {}
+    with gzip.open(path, "rt") as f:
+        raw = json.load(f)
+    out = {}
+    for lane, rows in raw["lanes"].items():
+        a = np.array(rows, float)
+        k = len(raw["dims"])
+        sd = a[:, :k].std(0)
+        out[lane] = (a[:, :k], np.where(sd > 0, sd, 1.0), a[:, k], a[:, k + 1], a[:, k + 2])
+    return out
+
+
+def support(set_code, lane, spells):
+    """(decks, win-rate points) for real decks of the pair shaped like these spells: how many lie within RISK_RADIUS,
+    and how far their wins ran above (+) or below (-) what their cards predicted. (0, None) without the shape table."""
+    t = _shapes(set_code).get(lane)
+    if t is None:
+        return 0, None
+    X, sd, games, wins, pred = t
+    d = np.sqrt((((X - np.array(shape_vector(spells))) / sd) ** 2).mean(1))
+    m = d <= RISK_RADIUS
+    if not m.any():
+        return 0, None
+    return int(m.sum()), float(100 * (wins[m].sum() - pred[m].sum()) / games[m].sum())
+
+
+def shape_penalty(spells, target, lane="", min_creatures_slack=None, scale=1.0, colours_only=False):
     """Win-rate points lost for straying outside top players' shape in the pair.
     scale < 1 judges a part-built deck against the same share of the target (the engine's deck-aware picks)."""
     r, cv = Counter(), Counter()
@@ -224,6 +335,9 @@ def shape_penalty(spells, target, lane="", min_creatures_slack=None, scale=1.0):
             r[x] += 1
         cv[curve_slot(c)] += 1
     over, f = 0.0, scale
+    if colours_only:  # structure-first search: the shape is the search's own business; only the colours stay
+        least = MIN_PER_COLOUR if len(lane) == 2 else MIN_PER_COLOUR_THREE
+        return PENALTY * sum(max(0.0, least - sum(needs(c, colour, lane) for c in spells)) for colour in lane)
     below = CREATURE_BELOW if min_creatures_slack is None else min_creatures_slack
     lo, hi = f * (target["creatures"] - below), f * (target["creatures"] + CREATURE_ABOVE)
     over += max(0.0, lo - r["creatures"]) + max(0.0, r["creatures"] - hi)
@@ -330,7 +444,7 @@ def build_pair(pool, lane, model, target, min_creatures_slack=None, variant="", 
         return lands_for(chosen, lane, nonbasics, splash, fixers)
 
     def penalty(chosen):
-        p = shape_penalty(chosen, target, lane, min_creatures_slack)
+        p = shape_penalty(chosen, target, lane, min_creatures_slack, colours_only=STRUCTURE)
         if splash:
             n = sum(1 for c in chosen if not castable(c, lane))
             p += PENALTY * max(0, n - MAX_SPLASH)
@@ -360,7 +474,9 @@ def build_pair(pool, lane, model, target, min_creatures_slack=None, variant="", 
     order = sorted(range(len(spells)), key=lambda i: (not castable(spells[i], lane), -wr(spells[i])))
     deck, side = set(order[:SPELLS]), set(order[SPELLS:])
     best = score([spells[i] for i in deck], deck)
-    improved = True
+    if STRUCTURE:
+        deck, side, best = _structured(spells, deck, side, score, target, set_code, lane)
+    improved = not STRUCTURE
     while improved:
         improved = False
         for i in sorted(deck):
@@ -390,7 +506,37 @@ def build_pair(pool, lane, model, target, min_creatures_slack=None, variant="", 
     full.update(Counter(c["name"] for c in nonbasics))
     return {"lane": lane, "splash": used, "variant": variant, "spells": chosen, "nonbasics": nonbasics, "basics": lands,
             "penalty": penalty(chosen), "predicted": predicted(full, used), "objective": best, "extras": round(extras(deck), 2),
+            "structure_dev": round(structure_dev(chosen, target, lane, set_code), 1),
             "sideboard": [spells[i] for i in side] + [c for c in pool if c not in spells and c not in nonbasics]}
+
+
+def _structured(spells, deck, side, score, target, set_code, lane):
+    """Structure first, then win rate within it through like-for-like or replacement swaps. Returns (deck, side, objective)."""
+    cards = lambda idx: [spells[k] for k in idx]
+    _, repl = _structure(set_code, lane)
+    pull = lambda idx: BEST_POINTS * off_best(cards(idx), lane, set_code) if BEST_POINTS else 0.0
+    dev = structure_dev(cards(deck), target, lane, set_code)
+    plain = score(cards(deck), deck)
+    best = plain - pull(deck)
+    while True:
+        # each round: the best-scoring swap that gets nearer the structure, else the best like-for-like or
+        # replacement swap that stays as near and scores higher
+        pick = None
+        for i in sorted(deck):
+            for j in sorted(side):
+                trial = (deck - {i}) | {j}
+                d = structure_dev(cards(trial), target, lane, set_code)
+                if d > dev + 1e-9 or (d >= dev - 1e-9 and not swappable(spells[i], spells[j], repl)):
+                    continue
+                s = score(cards(trial), trial)
+                key = (d < dev - 1e-9, s - pull(trial))
+                if (d < dev - 1e-9 or key[1] > best + 1e-6) and (pick is None or key > pick[0]):
+                    pick = (key, i, j, s, d)
+        if pick is None:
+            break
+        (_, adj), i, j, plain, dev = pick
+        deck, side, best = (deck - {i}) | {j}, (side - {j}) | {i}, adj
+    return deck, side, plain
 
 
 def build(pool, model, targets, top=3, splash_pairs=2, rule=None, three=None):

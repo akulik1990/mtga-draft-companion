@@ -77,7 +77,7 @@ def init(set_code, overrides, no_rule=False):
             by_name.setdefault(n, dict(c, set=set_code))
     ranked = sorted({c["name"] for c in data.values() if ((c.get("deck_colors") or {}).get("All Decks") or {}).get("gihwr")},
                     key=lambda n: -by_name[n]["deck_colors"]["All Decks"]["gihwr"])
-    ARGS.update(top=set(ranked[:30]), by_name=by_name, model=DeckModel(set_code, deckbuilder.MODEL), targets=config.fitted(set_code, "decks")["pairs"],
+    ARGS.update(set=set_code, top=set(ranked[:30]), by_name=by_name, model=DeckModel(set_code, deckbuilder.MODEL), targets=config.fitted(set_code, "decks")["pairs"],
                 rule=None if no_rule else config.fitted(set_code, "splash"), three=None if no_rule else config.fitted(set_code, "three"))
 
 
@@ -100,7 +100,11 @@ def one(item):
     kept = sum(1 for n in their_bombs if n in ours)
     return {"bombs": len(their_bombs), "bombs_kept": kept, "bombs_missed": [n for n in their_bombs if n not in ours], "predicted": b["predicted"], "our_removal": removal(b["spells"]), "their_removal": removal(their_cards),
             "our_creatures": sum(composition.is_creature(c) for c in b["spells"]), "their_creatures": sum(composition.is_creature(c) for c in their_cards), "lane": lane, "our_lane": b["lane"], "splash": splash, "our_splash": b["splash"], "overlap": overlap,
-            "their_splash_cards": their_splash_cards, "our_splash_cards": sum(1 for c in b["spells"] if not castable(c, b["lane"]))}
+            "their_splash_cards": their_splash_cards, "our_splash_cards": sum(1 for c in b["spells"] if not castable(c, b["lane"])),
+            "our_dev": deckbuilder.structure_dev(b["spells"], ARGS["targets"][b["lane"]], b["lane"], ARGS["set"]),
+            "their_dev": deckbuilder.structure_dev(their_cards, ARGS["targets"][lane], lane, ARGS["set"]) if lane in ARGS["targets"] else None,
+            "our_shape": deckbuilder.support(ARGS["set"], b["lane"], b["spells"]),
+            "their_shape": deckbuilder.support(ARGS["set"], lane, their_cards)}
 
 
 def main(argv=None):
@@ -136,6 +140,11 @@ def main(argv=None):
           f"when they don't {100 * sum(len(r['our_lane']) == 3 for r in rows if len(r['lane']) == 2) / max(1, n - len(three_they)):.1f}%")
     print(f"  removal: we {sum(r['our_removal'] for r in rows) / n:.1f}, they {sum(r['their_removal'] for r in rows) / n:.1f}; "
           f"below 6: we {100 * sum(r['our_removal'] < 6 for r in rows) / n:.1f}%, they {100 * sum(r['their_removal'] < 6 for r in rows) / n:.1f}%")
+    dev = lambda k: [r[k] for r in rows if r[k] is not None]
+    shp = lambda k: [r[k][1] for r in rows if r[k][1] is not None]
+    print(f"  structure (cards outside the range of 60%+ players' decks in the pair): we {sum(dev('our_dev')) / max(1, len(dev('our_dev'))):.1f}, "
+          f"they {sum(dev('their_dev')) / max(1, len(dev('their_dev'))):.1f}; whole-shape points (real decks shaped alike, wins - predicted): "
+          f"we {sum(shp('our_shape')) / max(1, len(shp('our_shape'))):+.2f} ({len(shp('our_shape'))} decks), they {sum(shp('their_shape')) / max(1, len(shp('their_shape'))):+.2f}")
     print(f"  creatures: we {sum(r['our_creatures'] for r in rows) / n:.2f}, they {sum(r['their_creatures'] for r in rows) / n:.2f}; "
           f"same main pair: we {sum(r['our_creatures'] for r in rows if r['lane'] == r['our_lane']) / max(1, same):.2f}, "
           f"they {sum(r['their_creatures'] for r in rows if r['lane'] == r['our_lane']) / max(1, same):.2f}")
