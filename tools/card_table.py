@@ -3,7 +3,8 @@
     uv run python tools/card_table.py FRA      # writes <data>/Temp/cards_FRA.csv
 
 From the dataset (types, subtypes, mana cost, keywords, rules text, tags) and Scryfall's power/toughness
-(needs.scryfall): card types, stats, keywords, effects matched in the rules text, our roles (removal, card advantage,
+and Scryfall's card objects (cards/collection, cached in <data>/Temp/scryfall_cards_SET.json: type line for legendary
+and snow, power/toughness, both faces' rules text, complete keywords, produced mana): card types, stats, keywords, effects matched in the rules text, our roles (removal, card advantage,
 evasion, mana, creature) and the dataset's tags. A new measure is one more entry in FEATURES; decks pick it up from
 their card counts (tools/deck_table.py), without reading the game data again.
 """
@@ -74,13 +75,41 @@ FEATURES = None  # filled by card_rows: the column names after "name"
 RANK_BUCKETS = 10  # rank_1_10 .. rank_91_100
 
 
+def scryfall_cards(set_code, names, refresh=False):
+    """{name: Scryfall card} for the set's card names, cached in <data>/Temp/scryfall_cards_SET.json. Fetched with the
+    collection endpoint (75 names a request, 100 ms apart, as Scryfall asks); names it cannot find are listed."""
+    import time
+
+    import requests
+
+    path = DATA_DIR / "Temp" / f"scryfall_cards_{set_code}.json"
+    if path.exists() and not refresh:
+        return json.loads(path.read_text())
+    out, missing = {}, []
+    todo = sorted({n.split(" // ")[0] for n in names})
+    for i in range(0, len(todo), 75):
+        r = requests.post("https://api.scryfall.com/cards/collection", json={"identifiers": [{"name": n} for n in todo[i:i + 75]]},
+                          headers={"User-Agent": "mtga-draft-companion/1.0", "Accept": "application/json"}, timeout=30)
+        r.raise_for_status()
+        body = r.json()
+        for c in body.get("data", []):
+            out[c["name"]] = c
+            out.setdefault(c["name"].split(" // ")[0], c)
+        missing += [m.get("name") for m in body.get("not_found", [])]
+        time.sleep(0.1)
+    path.write_text(json.dumps(out))
+    if missing:
+        print(f"Scryfall did not find {len(missing)}: {', '.join(missing)}")
+    return out
+
+
 def _scryfall(set_code):
     from companion.advisor_v2 import needs
 
     return needs.scryfall(set_code)
 
 
-def features(card, stats=None):
+def features(card, stats=None, sf=None):
     """{feature: value} for one card (non-land and land alike)."""
     from companion.advisor_v2 import composition
     from companion.advisor_v2.deckbuilder import card_roles, curve_slot, pips
@@ -100,6 +129,16 @@ def features(card, stats=None):
         out[r] = int(card.get("rarity") == r)
     for t in ("Creature", "Artifact", "Enchantment", "Instant", "Sorcery", "Planeswalker", "Battle"):  # no supertypes in the dataset
         out[t.lower()] = int(t in types)
+    sfc = (sf or {}).get(card["name"]) or (sf or {}).get(card["name"].split(" // ")[0]) or {}
+    type_line = sfc.get("type_line") or ""
+    out.update(legendary=int("Legendary" in type_line), snow=int("Snow" in type_line),
+               makes_mana=int(bool(sfc.get("produced_mana"))) * (1 - int("Land" in types)))
+    if sfc:  # Scryfall's rules text covers both faces and its keyword list is complete; the dataset's is often empty
+        faces = sfc.get("card_faces") or [sfc]
+        text = "\n".join(f.get("oracle_text") or "" for f in faces).lower() or text
+        kw |= {k.lower() for k in sfc.get("keywords") or []}
+        front = faces[0]
+        st = {"power": front.get("power", st.get("power")), "toughness": front.get("toughness", st.get("toughness"))}
     subs = {s.lower() for s in card.get("subtypes") or []}
     out.update(equipment=int("equipment" in subs), aura=int("aura" in subs), vehicle=int("vehicle" in subs),
                double_faced=int("//" in (card.get("mana_cost") or "")), creature_like=int(composition.is_creature(card)))
@@ -116,28 +155,30 @@ def features(card, stats=None):
     return out
 
 
-def card_rows(set_code):
+def card_rows(set_code, refresh=False):
     """[(name, features)] for every distinct card name in the set's dataset."""
     global FEATURES
     data = json.loads((DATA_DIR / "Sets" / f"{set_code}_PremierDraft_All_Data.json").read_text())["card_ratings"]
     stats, seen, rows = _scryfall(set_code), set(), []
+    sf = scryfall_cards(set_code, [c["name"] for c in data.values() if "Basic" not in (c.get("types") or [])], refresh)
     wr = lambda c: ((c.get("deck_colors") or {}).get("All Decks") or {}).get("gihwr") or 0.0
     ranked = sorted({c["name"]: wr(c) for c in data.values() if wr(c) > 0}.items(), key=lambda kv: -kv[1])
     rank = {n: i + 1 for i, (n, _) in enumerate(ranked)}
     # the set's own mechanics: every keyword the dataset lists on its cards, one column each
-    mechs = sorted({k for c in data.values() for k in c.get("keywords") or []})
+    mechs = sorted({k for c in data.values() for k in c.get("keywords") or []} | {k for c in sf.values() for k in c.get("keywords") or []})
     for c in data.values():
         if c["name"] in seen:
             continue
         seen.add(c["name"])
         c = dict(c, set=set_code)
-        ft = features(c, stats)
+        ft = features(c, stats, sf)
         r = rank.get(c["name"])
         ft["gihwr"], ft["rank"] = round(wr(c), 1), r or ""
         for lo in range(1, RANK_BUCKETS * 10, 10):  # rank_1_10, rank_11_20, ...: set rank by All Decks GIH WR
             ft[f"rank_{lo}_{lo + 9}"] = int(bool(r) and lo <= r <= lo + 9)
+        sfk = set((sf.get(c["name"]) or sf.get(c["name"].split(" // ")[0]) or {}).get("keywords") or [])
         for m in mechs:
-            ft["mech_" + m.lower().replace(" ", "_")] = int(m in (c.get("keywords") or []))
+            ft["mech_" + m.lower().replace(" ", "_")] = int(m in (c.get("keywords") or []) or m in sfk)
         rows.append((c["name"], ft))
     FEATURES = list(rows[0][1])
     return rows
@@ -146,10 +187,11 @@ def card_rows(set_code):
 def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     p.add_argument("set")
+    p.add_argument("--refresh", action="store_true", help="fetch the Scryfall cards again")
     a = p.parse_args(argv)
     import companion.advisor_v2.engine  # noqa: F401
     config.activate(a.set)
-    rows = card_rows(a.set)
+    rows = card_rows(a.set, a.refresh)
     path = DATA_DIR / "Temp" / f"cards_{a.set}.csv"
     with open(path, "w", newline="") as f:
         w = csv.writer(f)
