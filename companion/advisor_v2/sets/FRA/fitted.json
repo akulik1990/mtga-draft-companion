@@ -62,6 +62,7 @@
   "deckbuilder.TWO_DROP_SLACK": 99.0,
   "deckbuilder.CURVE_SKIP": "2",
   "deckbuilder.MIN_PER_COLOUR": 4,
+  "deckbuilder.SWAP_MARGIN": 0.3,
   "deckbuilder.BEST_POINTS": 0.5,
   "deckbuilder.COMP_SLACK": 2.0
  },

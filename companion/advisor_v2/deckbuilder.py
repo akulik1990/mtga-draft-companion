@@ -80,6 +80,7 @@ BOMB_TOP = 30
 DIM_PENALTY = 0.0  # WR points per card outside top players' count +- DIM_SLACK on the composition slots in DIM_CHECK; 0 = off
 DIM_SLACK = 2.0
 DIM_CHECK = "early_creatures,late_creatures,noncreature,pressure,defence,finishers"
+SWAP_MARGIN = 0.0  # list sideboard swaps that cost at most this many objective points as close calls ("swaps" in each build); 0 = off
 THREE_FALLBACK = True  # a pool where no pair has 23 castable spells gets its best three-colour build instead of none
 SPLASH_COST = -1.0  # win-rate points charged for splashing, in place of the deck model's splash term (which mostly
 #                     reflects that weaker decks splash: 60%+ FRA players splash 49% of two-colour decks); < 0 = the model's term
@@ -580,6 +581,7 @@ def build_pair(pool, lane, model, target, min_creatures_slack=None, variant="", 
     used = splash if splash and any(not castable(c, lane) for c in chosen) else ""
     if splash and not used:
         return None  # the splash did not pay: the plain pair covers it
+    swaps = close_calls(spells, deck, side, score, best) if SWAP_MARGIN else []
     want = land_count(chosen, nonbasics, lane)
     if lands is None and want != lands_n:  # rebuild once at the rule's count; keep it only if the deck still qualifies
         again = build_pair(pool, lane, model, target, min_creatures_slack, variant, splash, splash_cost, force, lands=want)
@@ -592,7 +594,28 @@ def build_pair(pool, lane, model, target, min_creatures_slack=None, variant="", 
     return {"lane": lane, "splash": used, "variant": variant, "spells": chosen, "nonbasics": nonbasics, "basics": lands,
             "penalty": penalty(chosen), "predicted": predicted(full, used), "objective": best, "extras": round(extras(deck), 2),
             "structure_dev": round(structure_dev(chosen, target, lane, set_code), 1),
-            "sideboard": [spells[i] for i in side] + [c for c in pool if c not in spells and c not in nonbasics]}
+            "sideboard": [spells[i] for i in side] + [c for c in pool if c not in spells and c not in nonbasics], "swaps": swaps}
+
+
+def close_calls(spells, deck, side, score, best, top=3):
+    """Sideboard cards within SWAP_MARGIN of a deck card: [{out, in, cost, when}]. "when" reads the trade: a cheaper interactive card in for
+    a top-end or engine card is for fast opponents; the reverse is for slow ones."""
+    seen, out = set(), []
+    for i in deck:
+        for j in side:
+            key = (spells[i]["name"], spells[j]["name"])
+            if key in seen or key[0] == key[1]:
+                continue
+            seen.add(key)
+            trial = (deck - {i}) | {j}
+            cost = best - score([spells[k] for k in trial], trial)
+            if cost <= SWAP_MARGIN:
+                a, b = spells[i], spells[j]
+                cheap = lambda c: (c.get("cmc") or 0) <= 2 or "tempo" in roles(c) or "removal" in roles(c)
+                when = ("against fast decks" if cheap(b) and (a.get("cmc") or 0) >= 4 else
+                        "against slow decks" if cheap(a) and (b.get("cmc") or 0) >= 4 else "either way")
+                out.append({"out": key[0], "in": key[1], "cost": round(cost, 2), "when": when})
+    return sorted(out, key=lambda x: x["cost"])[:top]
 
 
 def _structured(spells, deck, side, score, target, set_code, lane):
