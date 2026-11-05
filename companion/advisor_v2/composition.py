@@ -53,7 +53,9 @@ class Composition:
         return max(1.0 - 2 * BOUND, min(1.0 + 2 * BOUND, m))
 
 
-ROLES = ("creatures", "removal", "card_advantage", "evasion", "two_drops", "five_plus", "lands")
+ROLES = ("creatures", "removal", "card_advantage", "evasion", "two_drops", "five_plus", "lands", "tempo")
+# Cheap answers that are not removal: bounce, tap-down, counter (Unsummon, Icy Reception, Countersculpt, Fatehold Charm)
+TEMPO = re.compile(r"counter target|return target [^.]*to (?:its|their) owner'?s'? hand|tap target|stun counter|doesn't untap", re.I)
 
 
 TOKENS_AS_CREATURES = False  # a non-creature card that makes creature tokens (Recursive Recruitment, Hexhaven Battalion, Garruk) counts as a creature in shape counts; Jace tokens are planeswalkers and do not
@@ -86,6 +88,8 @@ def roles(card):
     out = {t for t in ("removal", "card_advantage", "evasion") if t in tags}
     if is_creature(card):
         out.add("creatures")
+    if "removal" not in out and "Creature" not in types and cmc <= 2 and TEMPO.search(card.get("oracle_text") or ""):
+        out.add("tempo")
     if cmc == 2:
         out.add("two_drops")
     if cmc >= 5:

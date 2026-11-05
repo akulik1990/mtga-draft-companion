@@ -53,6 +53,9 @@
   "REMOVAL_SLACK_PICK": 0.0,
   "composition.TOKENS_AS_CREATURES": true,
   "deckbuilder.STRUCTURE": false,
+  "deckbuilder.TEMPO_CREATURE": 0.57,
+  "deckbuilder.LANDS": 17,
+  "deckbuilder.LAND_STEPS": true,
   "deckbuilder.BEST_POINTS": 0.5,
   "deckbuilder.COMP_SLACK": 2.0
  },

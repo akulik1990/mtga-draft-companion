@@ -22,6 +22,7 @@ from companion.advisor_v2 import config
 
 SPELLS = 23
 LANDS = 17
+LAND_STEPS = False  # Akshin's rule: one land fewer with 1+ landcycler and 1+ dual in the deck, two fewer with 2+ of each
 BASIC = {"W": "Plains", "U": "Island", "B": "Swamp", "R": "Mountain", "G": "Forest"}
 CURVE = ("1", "2", "3", "4", "5", "6+")
 
@@ -55,6 +56,7 @@ SPLASH_AT = 0.5  # splash when the fitted splash rule gives at least this chance
 # or a replacement category (2-drop for 2-drop, removal for removal, creature for removal). Off: one search on win
 # rate less the shape penalty.
 STRUCTURE = False
+TEMPO_CREATURE = 0.0  # creatures a cheap tempo spell (composition "tempo" role) counts as for the creature bounds; FRA 0.57 from top players' decks (analysis/tempo_substitution.py)
 STRUCTURE_DIMS = ("creatures", "removal", "card_advantage", "evasion", "mana", "1", "2", "3", "4", "5", "6+")
 COMP_SLACK = 1.0  # cards a category may sit under its best before its replacements must make up the rest
 COMP_RATIO = 1.0  # replacement cards above their best needed per card the category is short
@@ -86,7 +88,7 @@ def pips(card):
     return out
 
 
-def lands_for(spells, lane, nonbasics=(), splash="", fixers=0):
+def lands_for(spells, lane, nonbasics=(), splash="", fixers=0, lands=None):
     """Basics for a 17-land mana base: each main colour's share follows its pips, weighting double pips and
     cheap cards (needed early) more; at least 6 sources of each main colour. Nonbasic lands count first.
     A splash gets basics only for the sources its other fixing (duals, landcyclers, any-colour mana) leaves short:
@@ -104,7 +106,7 @@ def lands_for(spells, lane, nonbasics=(), splash="", fixers=0):
         want = 0 if not n_splash else 3 if n_splash == 1 else 4
         have = fixers + sum(1 for c in nonbasics if splash in (c.get("colors") or []) or not c.get("colors"))  # colourless nonbasics here tap for a chosen colour
         splash_basics = max(0, want - have)
-    basics_n = LANDS - len(nonbasics) - splash_basics
+    basics_n = (lands or LANDS) - len(nonbasics) - splash_basics
     total = sum(weight[c] for c in lane) or 1.0
     floor = MIN_BASICS if len(lane) == 2 else MIN_BASICS_THREE
     counts = {c: max(floor, round(basics_n * weight[c] / total)) for c in lane}
@@ -369,7 +371,8 @@ def shape_penalty(spells, target, lane="", min_creatures_slack=None, scale=1.0, 
         return PENALTY * sum(max(0.0, least - sum(needs(c, colour, lane) for c in spells)) for colour in lane)
     below = CREATURE_BELOW if min_creatures_slack is None else min_creatures_slack
     lo, hi = f * (target["creatures"] - below), f * (target["creatures"] + CREATURE_ABOVE)
-    over += max(0.0, lo - r["creatures"]) + max(0.0, r["creatures"] - hi)
+    creatures = r["creatures"] + TEMPO_CREATURE * r["tempo"]
+    over += max(0.0, lo - creatures) + max(0.0, creatures - hi)
     over += max(0.0, f * (target["two_drops"] - TWO_DROP_SLACK) - r["two_drops"])
     if "removal" in target:
         over += max(0.0, f * (target["removal"] - REMOVAL_SLACK) - r["removal"])
@@ -455,7 +458,20 @@ def make_extras(spells, lane, target, set_code):
     return extras
 
 
-def build_pair(pool, lane, model, target, min_creatures_slack=None, variant="", splash="", splash_cost=None, force=False):
+def cycler(card, lane):
+    return castable(card, lane) and "landcycling" in (card.get("oracle_text") or "").lower()
+
+
+def land_count(chosen, nonbasics, lane):
+    """LANDS, less LAND_STEPS' steps for the landcyclers and duals (multicolour or any-colour non-basics) the deck plays."""
+    if not LAND_STEPS:
+        return LANDS
+    cyc = sum(1 for c in chosen if cycler(c, lane))
+    duals = sum(1 for c in nonbasics if len(c.get("colors") or []) >= 2 or not c.get("colors"))
+    return LANDS - (cyc >= 1 and duals >= 1) - (cyc >= 2 and duals >= 2)
+
+
+def build_pair(pool, lane, model, target, min_creatures_slack=None, variant="", splash="", splash_cost=None, force=False, lands=None):
     """The best 23 spells for one pair (and optional splash colour), with lands; None when the pool cannot make a deck."""
     spells = [c for c in pool if "Land" not in (c.get("types") or []) and (castable(c, lane) or (splash and splashable(c, lane, splash)))]
     lane_colours = lane + splash
@@ -464,7 +480,9 @@ def build_pair(pool, lane, model, target, min_creatures_slack=None, variant="", 
                  and (((c.get("colors") or []) and all(x in lane_colours for x in c.get("colors"))
                        and (not splash or any(x in lane for x in c.get("colors"))))
                       or (not c.get("colors") and any(s in (c.get("oracle_text") or "") for s in ("chosen color", "any color"))))]
-    if len(spells) < SPELLS:
+    lands_n = lands or LANDS
+    spells_n = 40 - lands_n
+    if len(spells) < spells_n:
         return None
 
     def wr(card):
@@ -472,7 +490,7 @@ def build_pair(pool, lane, model, target, min_creatures_slack=None, variant="", 
 
     def mana(chosen):
         fixers = sum(1 for c in chosen if any_colour_fixer(c))
-        return lands_for(chosen, lane, nonbasics, splash, fixers)
+        return lands_for(chosen, lane, nonbasics, splash, fixers, lands_n)
 
     def penalty(chosen):
         p = shape_penalty(chosen, target, lane, min_creatures_slack, colours_only=STRUCTURE)
@@ -503,7 +521,7 @@ def build_pair(pool, lane, model, target, min_creatures_slack=None, variant="", 
 
     # Start from the pair's own cards (splash cards come in only when a swap pays).
     order = sorted(range(len(spells)), key=lambda i: (not castable(spells[i], lane), -wr(spells[i])))
-    deck, side = set(order[:SPELLS]), set(order[SPELLS:])
+    deck, side = set(order[:spells_n]), set(order[spells_n:])
     best = score([spells[i] for i in deck], deck)
     if STRUCTURE:
         deck, side, best = _structured(spells, deck, side, score, target, set_code, lane)
@@ -531,6 +549,11 @@ def build_pair(pool, lane, model, target, min_creatures_slack=None, variant="", 
     used = splash if splash and any(not castable(c, lane) for c in chosen) else ""
     if splash and not used:
         return None  # the splash did not pay: the plain pair covers it
+    want = land_count(chosen, nonbasics, lane)
+    if lands is None and want != lands_n:  # rebuild once at the rule's count; keep it only if the deck still qualifies
+        again = build_pair(pool, lane, model, target, min_creatures_slack, variant, splash, splash_cost, force, lands=want)
+        if again and land_count(again["spells"], nonbasics, lane) == want:
+            return again
     lands = mana(chosen)
     full = dict(Counter(c["name"] for c in chosen))
     full.update(lands)

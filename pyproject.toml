@@ -25,4 +25,4 @@ package = false
 [tool.pytest.ini_options]
 pythonpath = ["."]
 testpaths = ["tests"]
-norecursedirs = ["vendor", ".venv", "frontend", "node_modules"]
+norecursedirs = ["vendor", ".venv", "frontend", "node_modules", "analysis"]
