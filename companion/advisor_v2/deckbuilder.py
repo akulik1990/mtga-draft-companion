@@ -459,9 +459,11 @@ def build_pair(pool, lane, model, target, min_creatures_slack=None, variant="", 
     """The best 23 spells for one pair (and optional splash colour), with lands; None when the pool cannot make a deck."""
     spells = [c for c in pool if "Land" not in (c.get("types") or []) and (castable(c, lane) or (splash and splashable(c, lane, splash)))]
     lane_colours = lane + splash
+    # Colourless lands that tap for a chosen or any colour (Room of Refuge: top players play every copy) count as on-colour.
     nonbasics = [c for c in pool if "Land" in (c.get("types") or []) and "Basic" not in (c.get("types") or [])
-                 and (c.get("colors") or []) and all(x in lane_colours for x in c.get("colors"))
-                 and (not splash or any(x in lane for x in c.get("colors")))]
+                 and (((c.get("colors") or []) and all(x in lane_colours for x in c.get("colors"))
+                       and (not splash or any(x in lane for x in c.get("colors"))))
+                      or (not c.get("colors") and any(s in (c.get("oracle_text") or "") for s in ("chosen color", "any color"))))]
     if len(spells) < SPELLS:
         return None
 
