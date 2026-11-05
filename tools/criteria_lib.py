@@ -34,7 +34,7 @@ def sigmoid(z):
     return 1 / (1 + np.exp(-z))
 
 
-def load_data(set_code="FRA", outcome="all"):
+def load_data(set_code="FRA", outcome="all", buckets=BIG, formats=None):
     games = pickle.loads((DATA_DIR / "Temp" / f"context_games_{set_code}.pkl").read_bytes())
     first, order, W, G = {}, [], {}, {}
     for x in games:  # (fmt, draft, build, time, skill, games bucket, rank, on_play, mull, omull, won)
@@ -49,7 +49,7 @@ def load_data(set_code="FRA", outcome="all"):
     rows = deck_counts.read(set_code)
     if len(rows) != len(order) or any((k[0], k[1]) != (r["format"], r["draft"]) for k, r in zip(order, rows)):
         sys.exit("table 3 does not line up with the game data")
-    keep = [i for i, (k, r) in enumerate(zip(order, rows)) if 2 <= r["n_base"] <= 3 and first[k][5] in BIG]
+    keep = [i for i, (k, r) in enumerate(zip(order, rows)) if 2 <= r["n_base"] <= 3 and first[k][5] in buckets and (formats is None or k[0] in formats)]
     with gzip.open(tables.path(set_code, tables.DECKS), "rt") as f:
         decks = json.load(f)
     D = dict(idx=np.array(keep), rows=[rows[i] for i in keep], decks=[decks[i] for i in keep], fg=[first[order[i]] for i in keep])
