@@ -1,6 +1,6 @@
 """Pre-registered test: do decks short of two-drops underperform beyond card quality, and did
 their drafters pass playable two-drops late? Rule in docs/podcast-test-twodrops-FRA.md.
-Run: nix shell python3 with pandas numpy statsmodels scipy; python3 analysis/twodrop_test.py"""
+Run: nix shell python3 with pandas numpy statsmodels scipy; python3 analysis/podcast_twodrop.py"""
 import gzip, json, os
 import numpy as np, pandas as pd, statsmodels.api as sm, statsmodels.formula.api as smf
 from scipy import stats

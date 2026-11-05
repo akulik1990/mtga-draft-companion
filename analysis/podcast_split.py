@@ -1,5 +1,5 @@
 """Pre-registered: deep-main/thin-second two-colour decks vs balanced, FRA. See docs/podcast-test-split-FRA.md.
-Run: nix shell --impure --expr 'with import <nixpkgs> {}; python3.withPackages (p: [p.pandas p.numpy p.statsmodels])' -c python3 analysis/split_test.py"""
+Run: nix shell --impure --expr 'with import <nixpkgs> {}; python3.withPackages (p: [p.pandas p.numpy p.statsmodels])' -c python3 analysis/podcast_split.py"""
 import gzip, json, re, os
 import numpy as np, pandas as pd, statsmodels.api as sm, statsmodels.formula.api as smf
 

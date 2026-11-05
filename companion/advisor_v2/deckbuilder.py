@@ -102,7 +102,7 @@ def lands_for(spells, lane, nonbasics=(), splash="", fixers=0):
     if splash:
         n_splash = sum(1 for c in spells if not castable(c, lane))
         want = 0 if not n_splash else 3 if n_splash == 1 else 4
-        have = fixers + sum(1 for c in nonbasics if splash in (c.get("colors") or []))
+        have = fixers + sum(1 for c in nonbasics if splash in (c.get("colors") or []) or not c.get("colors"))  # colourless nonbasics here tap for a chosen colour
         splash_basics = max(0, want - have)
     basics_n = LANDS - len(nonbasics) - splash_basics
     total = sum(weight[c] for c in lane) or 1.0

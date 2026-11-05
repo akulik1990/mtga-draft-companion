@@ -11,3 +11,6 @@ data/
 # analysis intermediates (regenerable: see docs/handover-2026-11-05b.md)
 analysis/out/*.pkl
 analysis/out/*.csv.gz
+analysis/out/*.json.gz
+analysis/out/*.json
+analysis/out/twodrop_partA.csv

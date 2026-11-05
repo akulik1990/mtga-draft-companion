@@ -71,7 +71,7 @@ def pool_fixing(pool):
             if "Basic" in types:
                 continue
             cols = [col for col in c.get("colors") or [] if col in fix]
-            if not cols and ("any color" in text or "basic land card" in text):
+            if not cols and ("any color" in text or "chosen color" in text or "basic land card" in text):
                 cols = list(fix)
         else:
             cols = list(fix) if "mana of any color" in text else []

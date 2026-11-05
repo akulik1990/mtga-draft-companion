@@ -1,5 +1,5 @@
 """Pre-registered test: do extra colours pay more in weak pools? (LR ep. 224). Run:
-nix shell --impure --expr 'with import <nixpkgs> {}; python3.withPackages (p: [p.pandas p.numpy p.statsmodels p.scipy])' -c python3 analysis/weakpool_test.py
+nix shell --impure --expr 'with import <nixpkgs> {}; python3.withPackages (p: [p.pandas p.numpy p.statsmodels p.scipy])' -c python3 analysis/podcast_weakpool.py
 """
 import gzip, itertools, json, os, sys
 import numpy as np, pandas as pd, statsmodels.api as sm, statsmodels.formula.api as smf
