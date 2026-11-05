@@ -7,3 +7,7 @@ frontend/build/
 frontend/.svelte-kit/
 data/
 *.log
+
+# analysis intermediates (regenerable: see docs/handover-2026-11-05b.md)
+analysis/out/*.pkl
+analysis/out/*.csv.gz
