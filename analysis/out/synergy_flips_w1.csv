@@ -1,0 +1,72 @@
+draft,pack,pick,outcome,A,B,human,lane,commit,pool,gap_off,syn_shift,gih_A,gih_B,gih_diff,B_in_lane,A_in_lane,B_strat,A_strat,B_partners,A_partners,B_lanes_tagged,A_lanes_tagged
+0cbc7f82027a489f8ec4c8eda2ccf500,1,4,helped,Surveillance Phantasm,Memory Trap,Memory Trap,UR,0.67,3,0.31,0.32,56.92,55.74,-1.18,0,1,1,0,0,0,1,5
+0f2258f5a4a3412e9c34320b89319ad4,2,6,helped,Surveillance Phantasm,Face Yourself,Face Yourself,UR,0.8,17,0.07,0.09,56.92,54.94,-1.98,1,1,1,0,2,0,3,5
+1350e0e9cf78428dbd2e7fe21e407203,1,2,hurt,Multiply by Zero,Mindseeker Oculus,Multiply by Zero,WG,1.0,1,0.01,0.32,58.71,59.53,0.82,0,0,0,0,0,0,3,1
+158d2b58ea844540814d7ea6d815efe7,1,2,neither,Bloombrute,Twinned Vision,"Ruric Thar, Magecrusher",WB,1.0,1,0.11,6.16,57.05,57.53,0.48,0,0,0,0,0,0,3,2
+194f4398b3984bc89a6cbddccd00ebff,3,4,neither,Unsummon,Apex Witchstalker,Paradox Shaper,UB,0.77,26,0.01,0.33,57.0,55.26,-1.74,1,1,1,0,8,0,5,1
+196df604f546488b812bd1171c740180,2,2,helped,Unsummon,Theorix Charm,Theorix Charm,UB,0.88,15,0.01,0.36,57.0,56.74,-0.26,1,1,1,0,9,0,2,1
+2454d870948a44b38e3082963023d1b9,3,2,helped,Wrath of the Bloodmane,Warrior's Blades,Warrior's Blades,WR,0.84,27,0.13,0.75,55.56,54.53,-1.03,1,1,1,0,3,0,4,1
+31f457ec80fc41d5a442c87e4e1393c6,2,4,helped,"Fblthp, Knows the Way",Bloombrute,Bloombrute,WG,0.73,17,0.02,0.14,57.62,57.05,-0.57,1,1,2,0,5,0,2,0
+32edba8b646d4fdcbe81578575323af8,3,7,helped,"Jiang Yanggu, Never Alone",Koth of the Homestead,Koth of the Homestead,WG,0.86,31,0.07,0.56,55.18,53.74,-1.44,1,1,1,0,2,0,2,1
+35a2e3d96b9e4fb99faa9ff650903d58,1,3,hurt,Greenhouse Propagator,"Loot, the Nexus",Greenhouse Propagator,BG,1.0,2,0.01,0.64,54.16,52.18,-1.98,1,1,0,1,0,1,1,3
+370b4113634f4bf69eb371a34d0309e8,1,10,hurt,Whiplash Wordsmith,Tether Technician,Whiplash Wordsmith,BR,1.0,9,0.03,0.09,49.57,52.74,3.17,1,1,1,2,1,4,3,2
+379402a76bf74770813c541b2275c449,2,2,hurt,Awaken the Inferno,Way of the Paradox,Awaken the Inferno,RG,0.9,13,0.4,0.45,55.74,56.42,0.68,1,1,1,0,1,0,5,3
+37deb9b508c3431fa8310a1ef1b01797,2,6,hurt,Semester Foreseer,"Yuriko, Hope from the Shadows",Semester Foreseer,UB,0.8,19,0.44,0.45,53.52,53.52,0.0,1,0,1,0,4,0,4,3
+38d6511201d5499c9c50900f65fa357c,3,6,hurt,Generous Revival,Way of the Paradox,Generous Revival,WG,0.79,31,0.43,0.49,57.15,56.42,-0.73,1,1,1,0,0,0,5,4
+39de31daf0e74bd69bad7d2ec92cd82c,1,3,neither,Last Gasp,No Admittance,"Saheeli, Jewel of Avishkar",BR,1.0,2,0.04,0.74,56.53,56.47,-0.06,1,1,1,0,0,0,4,1
+3b5e35c8c9b5452a87f3ba1dbb7030d7,1,3,hurt,Prophesied End,Surgical Precision,Prophesied End,WU,1.0,2,0.3,0.31,54.98,57.13,2.15,1,1,0,0,0,0,2,1
+3bdf6681e72a4d469875fde2cc8600c5,3,10,hurt,"Edgar, Ancient Bloodlord",Blessed Ghoul,"Edgar, Ancient Bloodlord",WB,0.82,35,0.3,0.6,52.8,54.01,1.21,1,1,1,2,1,5,3,4
+3c8f4bb28921490ca5a83db732c0c604,3,5,neither,"Loot, the Nexus",Proctor of Potential,Emergency Phytomedic,WG,0.71,28,13.43,13.68,52.18,59.64,7.46,0,1,0,0,0,0,6,1
+3e86ef8ed84e442b9db8c8c9307141e4,3,5,neither,"Jiang Yanggu, Never Alone",Vinelasher Adept,Last Gasp,BR,0.82,32,0.26,0.59,55.18,55.35,0.17,0,0,0,0,0,0,4,1
+48974a238e304e048808dd998f2f0989,1,3,helped,Konstrari Improviser,Stingerquill Charm,Stingerquill Charm,BR,1.0,2,0.05,0.41,53.82,55.1,1.28,1,0,1,0,0,0,2,1
+4cc71eb1179d4df0932794626dfbca56,3,8,helped,Screeching Soulbreaker,Cryotheory Adept,Cryotheory Adept,UB,0.81,28,0.36,0.37,53.32,52.93,-0.39,1,1,1,0,7,0,2,2
+53518e274eb04cffa0e0b1b8514ee71d,3,4,hurt,Campus Crier,Restore with Empathy,Campus Crier,WG,0.81,28,0.01,0.79,55.62,54.62,-1.0,1,1,1,0,4,0,3,3
+54c09b4dbae64fc3a58424b5852f96e5,1,8,helped,Way of the Paradox,Blessed Ghoul,Blessed Ghoul,WU,0.75,7,0.1,0.16,56.42,54.01,-2.41,0,0,0,1,0,1,3,5
+557a893ad40a4511ab2bd52610188021,2,2,helped,Surgical Precision,"Saheeli, Jewel of Avishkar","Saheeli, Jewel of Avishkar",WU,0.76,14,0.01,0.37,57.13,56.49,-0.64,0,1,0,0,0,0,1,2
+57424c7e7b204e07b050a2aca33e6590,1,8,helped,Keeper of the Quiet Hour,Screeching Soulbreaker,Screeching Soulbreaker,BR,0.9,7,0.14,0.43,55.93,53.32,-2.61,1,1,1,0,1,0,2,3
+5b2d49ca8a74406b979a141b49466b0b,1,13,hurt,"Teyo, Diamondblade Mage",Living Library,"Teyo, Diamondblade Mage",WU,0.71,12,0.02,0.04,50.95,52.69,1.74,1,0,0,0,0,0,2,2
+5ccf422b92034da2ad48ac20bfab7298,3,6,neither,Twisted Fates,Hallway Heckler,"Arni, Renowned Champion",BR,0.74,30,0.36,0.74,57.02,52.02,-5.0,1,0,1,0,2,0,2,2
+5e21434de4bc496ebcf3eb871031edbb,1,5,hurt,Awaken the Inferno,Way of the Paradox,Awaken the Inferno,RG,1.0,4,0.21,0.42,55.74,56.42,0.68,1,1,1,0,0,0,5,3
+5e56635594784b6795115fdbb47cf36e,1,2,helped,Mindseeker Oculus,Heartwood Crafter,Heartwood Crafter,WG,1.0,1,0.01,0.34,59.53,56.55,-2.98,0,0,0,0,0,0,1,3
+5e56635594784b6795115fdbb47cf36e,3,4,helped,Bestial Incursion,Face Yourself,Face Yourself,RG,0.88,29,0.85,0.86,55.99,54.94,-1.05,1,1,1,0,4,0,3,2
+66fd182c974e49c29b7648bd39a418c2,2,1,hurt,Something Worth Saving,Ghalta the Unstoppable,Something Worth Saving,RG,0.67,12,0.64,0.65,56.45,53.25,-3.2,1,1,1,0,2,0,1,3
+68644c97631c471b85e4c28d8655561b,3,6,helped,Ferocity of the Hunt,"Danitha, Spear of Agony","Danitha, Spear of Agony",BG,0.69,30,0.31,0.32,52.62,50.07,-2.55,1,1,0,1,0,7,2,3
+7573c7681c2f4a2d87eeb9ec2d5db3ee,3,9,hurt,Bestial Incursion,Murmuring Volume,Bestial Incursion,RG,0.78,35,0.6,0.61,55.99,55.72,-0.27,1,1,1,0,4,0,3,2
+774b753a21a04ec58bda1a66afad9202,1,3,neither,Compel Brutality,"Ruric Thar, Magecrusher","Tetsuko Umezawa, Pursuer",RG,1.0,2,0.01,0.52,54.42,54.27,-0.15,1,1,1,0,0,0,1,3
+7e64ad8009b2417bba383853c3204ab6,3,1,helped,Plan for All Outcomes,Null Summoner,Null Summoner,UB,0.88,23,0.48,0.49,58.69,62.46,3.77,1,1,1,0,6,0,2,4
+802599ec83d14621a0f6e81444319c48,1,10,neither,Vigorbloom Annex,Campus Crier,Afterthought Sentry,UB,0.7,8,0.01,0.12,52.92,55.62,2.7,0,0,1,0,3,0,3,0
+812be42f71dc4248b00b70af3cd1ae69,1,3,neither,Generous Revival,Way of the Paradox,Fatehold Chronologist,WG,1.0,2,0.2,0.54,57.15,56.42,-0.73,1,1,1,0,0,0,5,4
+812be42f71dc4248b00b70af3cd1ae69,1,4,neither,"Teyo, Lightshield Expert",Way of the Paradox,Twisted Fates,WG,0.83,3,0.01,0.65,56.28,56.42,0.14,1,1,1,0,0,0,5,2
+812be42f71dc4248b00b70af3cd1ae69,1,5,helped,Recursive Recruitment,Greenhouse Propagator,Greenhouse Propagator,WG,0.75,4,0.17,0.35,60.17,54.16,-6.01,1,0,1,0,0,0,3,2
+841cd6a140124675ab212d3304240187,1,7,helped,Awaken the Inferno,Stingerquill Charm,Stingerquill Charm,BR,0.83,5,0.47,0.79,55.74,55.1,-0.64,1,1,1,0,0,0,2,3
+85c8bc5844a3405bba4489d59ba770a1,2,11,helped,Blessed Ghoul,Artifist Acumen,Artifist Acumen,UR,0.78,20,0.02,0.08,54.01,48.77,-5.24,1,0,1,0,3,0,1,3
+8ae8dcf5e3b8454eaa48303ece37baa1,3,10,helped,Stingerquill Voxmancer,Void Extrapolator,Void Extrapolator,WB,0.74,34,0.03,0.25,54.18,55.31,1.13,0,0,0,0,0,0,2,1
+8d1c6520810e434c8802514e77c9b7a0,1,3,helped,Sphinx's Approach,Bestial Incursion,Bestial Incursion,UB,1.0,2,0.31,0.32,55.88,55.99,0.11,0,1,1,0,0,0,2,1
+9014f00b058c4b9d8eacf1a1987c1a09,1,3,neither,Prudent Fateseer,Heartwood Crafter,Twinned Vision,WB,1.0,2,2.64,2.76,55.55,56.55,1.0,0,0,0,0,0,0,1,4
+97ca9953a467493b9ad24fe4a1187d35,2,3,neither,Greenhouse Propagator,Ghalta the Unstoppable,Tam's Resistance,RG,0.71,15,0.01,0.38,54.16,53.25,-0.91,1,1,1,1,3,1,1,3
+9a67dfef55bb4b69a0ed92946ce22eb5,1,4,helped,Tam's Resistance,"Proft, Sinister Mastermind","Proft, Sinister Mastermind",UB,0.75,3,0.01,0.46,55.78,54.23,-1.55,1,0,2,0,2,0,2,4
+9bf6b2d29da541e3bc6739eaac7182c5,1,9,hurt,Awaken the Inferno,"Ruric Thar, Magecrusher",Awaken the Inferno,RG,1.0,8,0.61,0.62,55.74,54.27,-1.47,1,1,1,0,2,0,1,3
+a95bbea7e66b43678cc47caf9d7cee4a,3,12,helped,"Traxos, Scourge Eternal",Blessed Ghoul,Blessed Ghoul,UB,0.77,36,0.05,0.23,51.14,54.01,2.87,0,1,1,0,8,0,3,0
+abcc06e07a914b729ba3046ac74875fa,2,3,neither,"Proft, Consulting Detective",Bestial Incursion,"Jiang Yanggu, Alone",RG,0.82,16,0.01,0.32,57.17,55.99,-1.18,1,0,0,0,0,0,2,2
+b1532a23457b4bbe908b72d2dd2f8e6f,1,3,helped,Sphinx's Approach,Theorix Metamage,Theorix Metamage,WU,1.0,2,0.01,0.35,55.88,54.14,-1.74,0,1,0,0,0,0,2,1
+b37c268e67544d71a6fc494249ad46db,1,7,helped,Protege's Awakening,Geist of Saint Thalia,Geist of Saint Thalia,UB,0.75,6,0.04,0.07,58.2,56.8,-1.4,1,1,0,0,0,0,2,3
+b8fcf79cfb6f4f6a95c3c86c69b64fb9,2,11,hurt,Countersculpt,"Proft, Sinister Mastermind",Countersculpt,UB,0.92,22,0.03,0.28,59.49,54.23,-5.26,1,1,2,0,15,0,2,5
+bf8c6ca0b4af450ca9164486c835d340,3,8,hurt,Stingerquill Annex,Cryotheory Adept,Stingerquill Annex,UB,0.77,32,0.19,0.19,53.79,52.93,-0.86,1,0,1,0,10,0,2,0
+c3303306991349878aa52199c98203eb,1,7,neither,Protege's Awakening,Twinned Vision,Solve for Disappointment,WB,0.83,6,0.16,0.17,58.2,57.53,-0.67,0,0,0,0,0,0,3,3
+c3e74599e0cb4f8ab9b9c4ceb35345b9,2,5,neither,Unsummon,Apex Witchstalker,Ghalta the Unstoppable,BR,0.62,16,0.01,0.31,57.0,55.26,-1.74,1,0,0,0,0,0,5,1
+ca4fe15903fe49ca91ef493aaf888279,1,7,helped,Wrecking Gecko,Rank Rat,Rank Rat,RG,0.83,5,0.06,0.08,54.31,54.84,0.53,0,1,0,0,0,0,1,0
+cb1e10584c034bdcbdc78e710110eea8,2,7,helped,Wrecking Gecko,Medic's Kitesail,Medic's Kitesail,WG,0.82,18,0.65,0.66,54.31,54.21,-0.1,1,1,1,0,1,0,2,0
+e22b269839a24b539f5974bf1436c231,2,6,helped,Last Gasp,Stingerquill Voxmancer,Stingerquill Voxmancer,BR,0.92,18,0.8,1.03,56.53,54.18,-2.35,1,1,1,0,2,0,1,1
+e308ebf4ed12449c8c3bebb47a81ec24,1,6,helped,Tam's Resistance,"Arni, Humble Scribe","Arni, Humble Scribe",UB,0.75,5,0.04,0.06,55.78,54.24,-1.54,1,0,1,0,2,0,2,4
+e45071292ea4434b88fc8f06c040a211,1,9,hurt,Vinelasher Adept,Blossom-Blessed Angel,Vinelasher Adept,WB,0.57,6,0.44,0.45,55.35,55.79,0.44,0,0,0,0,0,0,2,4
+e8606c186c414b7db4cbf159af0801f7,3,1,helped,"Pia, Determined Rebuilder",Icy Reception,Icy Reception,UR,0.72,25,0.31,0.32,56.18,57.5,1.32,1,1,1,0,0,0,1,1
+ea6927bb37e041f282d2045393aba9ac,3,9,hurt,"Massacre Girl, Most Wanted",Mind Meanderer,"Massacre Girl, Most Wanted",WG,0.67,35,0.0,0.37,49.66,57.21,7.55,0,0,0,1,0,0,2,4
+eafea989491d476db108769e0f4738d0,1,10,helped,Fateshaper Aspirant,Cast Away Doubt,Cast Away Doubt,BR,0.89,8,0.05,0.14,52.11,52.95,0.84,1,0,1,0,1,0,2,3
+ed95b85261604ad3b4aec2cee3befd27,3,3,hurt,Surveillance Phantasm,Generous Revival,Surveillance Phantasm,WU,0.73,28,0.01,0.33,56.92,57.15,0.23,1,1,0,2,0,15,4,5
+eddd6a703939416e857e12a99d314648,3,8,hurt,"Saheeli, Consul of Oversight",Fatehold Charm,"Saheeli, Consul of Oversight",WU,0.8,31,0.02,0.06,54.86,57.45,2.59,1,1,1,1,3,8,3,2
+f641a5f14fd34a43b1447d04fc3d31a0,1,6,neither,Prudent Fateseer,"Traxos, Academy Guardian","Vraska, Soul of Stone",UR,1.0,5,0.01,0.36,55.55,55.43,-0.12,1,0,1,0,5,0,1,4
+f90b33cb87d84a16afdf9209d45c93f2,3,2,hurt,Arcane Amphisbaena,Murmuring Volume,Arcane Amphisbaena,RG,0.77,24,0.01,0.47,55.23,55.72,0.49,1,1,1,0,3,0,3,3
+f99c44997d5645d2a11e2db338d1ab35,3,2,helped,Way of the Paradox,Vinelasher Adept,Vinelasher Adept,BG,0.9,25,0.01,0.36,56.42,55.35,-1.07,1,1,1,0,1,0,4,5
+f9c7918f4c534e42bddfc5b894233ed4,1,4,hurt,Icy Reception,"Ruric Thar, Biomagus",Icy Reception,WU,1.0,3,0.32,0.33,57.5,55.29,-2.21,1,1,0,0,0,0,2,1
+faf9442b963b4e7b8ed554c267b3fa2b,2,6,hurt,"Teyo, Lightshield Expert",Prudent Fateseer,"Teyo, Lightshield Expert",WR,0.81,19,0.24,0.31,56.28,55.55,-0.73,0,1,0,1,0,1,4,2
+fd94ba1f2144485d995bb05ea33dd360,1,2,neither,Generous Revival,Vindictive Triumph,"Arni, Humble Scribe",WB,1.0,1,0.01,0.34,57.15,54.28,-2.87,1,1,1,0,0,0,2,4
