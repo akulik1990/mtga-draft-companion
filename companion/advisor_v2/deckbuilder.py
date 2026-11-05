@@ -45,6 +45,11 @@ MAX_SPLASH_BASICS = 4  # basics of the splash colour before the main colours suf
 OWN_FIXING = True  # splash and three-colour rule inputs count fixing without basic landcyclers (colour_fixing); refit the rules when switching
 THREE_AT = 0.5  # go three colours when the fitted three rule gives at least this chance
 SPLASH_FORCE = False  # when the fitted rule says splash, splash even if the splash build scores below the plain pair
+OBJECTIVE = "model"  # "model": maximise the fitted deck model; "gihwr": GIH_SLOPE x the mean 17Lands GIH WR (lane, else All Decks) of the spells,
+# less SPLASH_TERM for a splash: the cards' own win rates, as Draftsim and top players read them (the deck model's per-card and curve terms
+# contradict the card data, docs/engine-comparison-2026-11-03.md)
+GIH_SLOPE = 1.72  # deck WR points per +1 mean spell GIH WR (FRA decks of 100+ games players, 2026-11-05)
+SPLASH_TERM = 4.07  # WR points for a splash under "gihwr" (the deck model's splash term)
 MODEL = "deckmodel"  # fitted.json section of the deck model the builder maximises (the mock yardstick stays "deckmodel")
 SPLASH_AT = 0.5  # splash when the fitted splash rule gives at least this chance
 # Structure first (STRUCTURE): every category (creatures, removal, card advantage, evasion) and curve slot has a min,
@@ -474,6 +479,7 @@ def land_count(chosen, nonbasics, lane):
 def build_pair(pool, lane, model, target, min_creatures_slack=None, variant="", splash="", splash_cost=None, force=False, lands=None):
     """The best 23 spells for one pair (and optional splash colour), with lands; None when the pool cannot make a deck."""
     spells = [c for c in pool if "Land" not in (c.get("types") or []) and (castable(c, lane) or (splash and splashable(c, lane, splash)))]
+    by_name = {c["name"]: c for c in pool}
     lane_colours = lane + splash
     # Colourless lands that tap for a chosen or any colour (Room of Refuge: top players play every copy) count as on-colour.
     nonbasics = [c for c in pool if "Land" in (c.get("types") or []) and "Basic" not in (c.get("types") or [])
@@ -513,6 +519,11 @@ def build_pair(pool, lane, model, target, min_creatures_slack=None, variant="", 
     cost = SPLASH_COST if splash_cost is None else splash_cost
 
     def predicted(counts, used):
+        if OBJECTIVE == "gihwr":
+            g = [_wr(by_name[n], lane[:2]) for n, k in counts.items()
+                 if n in by_name and "Land" not in (by_name[n].get("types") or []) for _ in range(k)]
+            g = [x for x in g if x]
+            return GIH_SLOPE * (sum(g) / len(g) if g else 0.0) - (SPLASH_TERM if used else 0.0)
         if cost < 0:
             return float(model.win_rate(dict(counts), lane, used))
         # A fitted rule decided the colours: score the cards and shape as a plain pair (the model's colour-count and

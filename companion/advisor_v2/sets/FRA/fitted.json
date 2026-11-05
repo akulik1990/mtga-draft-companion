@@ -56,6 +56,7 @@
   "deckbuilder.TEMPO_CREATURE": 0.57,
   "deckbuilder.LANDS": 17,
   "deckbuilder.LAND_STEPS": true,
+  "deckbuilder.OBJECTIVE": "gihwr",
   "deckbuilder.BEST_POINTS": 0.5,
   "deckbuilder.COMP_SLACK": 2.0
  },
