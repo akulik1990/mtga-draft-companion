@@ -174,6 +174,8 @@ class DraftAdvisorV2:
     LANDS = True  # round 2: lands exempt from the sparse prior; partial-overlap lands valued by the splashes they enable
     FIX_WEIGHT = 0.5  # share of each enabled splash's gain (over replacement) credited to the land
     FIX_CAP = 3.0  # most a land's fixing can add, in WR points
+    LAND_DECK = False  # on-colour and colourless lands keep their lane value in the deck term instead of "replacement plus edge over an average card" (FRA train: on-pair duals lost ~6 points there; top drafters take them at ATA 6-9)
+    LAND_PREF = False  # lands get no learnt preference: it is learnt on pack 1 picks 1-5, where nobody takes lands yet
     HALF_PIVOT = 0  # from this many spells in the pool, lanes sharing no colour with the pool's top pair get P = 0 (winners change one colour, not both); 0 = off
     # Neutral by default; for testing ideas from top players per set (sets/<SET>/manual.json, "values"):
     FIX_BONUS = 0.0  # WR points for a land that taps for the lane and makes another colour, on top of the splashes it enables
@@ -220,6 +222,8 @@ class DraftAdvisorV2:
     THREE_MIN_P = 0.05  # pairs below this probability are not split
     SIGNAL_OTHER = 0.0  # weight of the other neighbour's signal added to the one passing now (pack 2 still learns from pack 1's side, which passes again in pack 3); 0 = off
     WHEEL_PENALTY = 0.0  # WR points taken from Power and Fit per 100% chance the card comes back; 0 = off
+
+    land_names = frozenset()  # lands in the pack being scored (LAND_PREF)
 
     def __init__(self, set_metrics, taken_cards, seen_packs=None):
         self.metrics = set_metrics
@@ -524,6 +528,7 @@ class DraftAdvisorV2:
     def evaluate_pack(self, pack_cards, current_pick, current_pack=1):
         if not pack_cards:
             return []
+        self.land_names = {c.get("name") for c in pack_cards if "Land" in (c.get("types") or [])}
         wrs = [float(all_decks(c).get("gihwr") or 0.0) for c in pack_cards]
         wrs = [w for w in wrs if w > 0]
         pack_mean = statistics.mean(wrs) if wrs else self.mean
@@ -685,7 +690,7 @@ class DraftAdvisorV2:
         and, when switched on, the preference learnt from their choices (PREF_WEIGHT)."""
         fade = max(0.0, 1.0 - (pick - 1) / self.ORDER_FADE_BY) if self.ORDER_FADE_BY else 1.0
         out = self.ORDER_WEIGHT * self.order.get(name, 0.0) if self.ORDER_WEIGHT else 0.0
-        if self.PREF_WEIGHT and prefs:
+        if self.PREF_WEIGHT and prefs and not (self.LAND_PREF and name in self.land_names):
             out += self.PREF_WEIGHT * self.prefs.get(name, self.prefs.get(name.split(" // ")[0], 0.0))
         return out * fade
 
@@ -772,6 +777,8 @@ class DraftAdvisorV2:
         from companion.advisor_v2 import deckbuilder  # deckbuilder imports this module
         out = 0.0
         if "Land" in (card.get("types") or []):
+            if self.LAND_DECK:
+                return 0.0
             # A land takes a basic's slot, not a spell's: replacement plus its edge over a basic (an average card).
             # Fixing lands are already valued from replacement up (fixing_gain), so only colourless and on-lane ones.
             colours = card.get("colors") or []

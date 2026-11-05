@@ -46,6 +46,8 @@
   "KEEP_ANY": false,
   "K_TOP": 300.0,
   "LANDS": true,
+  "LAND_DECK": false,
+  "LAND_PREF": false,
   "LANE_FLAT": "4:1,14:0.7,45:0.8",
   "N_SPARSE": 50,
   "OFF_PLAY": false,

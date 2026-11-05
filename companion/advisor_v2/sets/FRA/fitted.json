@@ -48,6 +48,8 @@
   "SPEC_ALL": true,
   "PLAY_RATE_POINTS": 5.0,
   "COLOURLESS_EARLY": 8.0,
+  "LAND_DECK": true,
+  "LAND_PREF": true,
   "ORDER_WEIGHT": 1.0,
   "CARD_PAIRS_PULL": 0.5,
   "REMOVAL_SLACK_PICK": 0.0,
