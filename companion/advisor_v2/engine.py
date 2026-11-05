@@ -202,6 +202,9 @@ class DraftAdvisorV2:
     REMOVAL_SLACK_PICK = -1.0  # removal spells below top players' count before the picker's removal need starts; -1 = the builder's REMOVAL_SLACK
     REMOVAL_POINTS = 0.0  # WR points for a removal spell when the pool, projected to 23 spells, is fully short of its top pair's removal floor (top players' count there minus deckbuilder.REMOVAL_SLACK); 0 = off
     REMOVAL_FROM = 8  # spells in the pool before the removal need applies
+    REMOVAL_FLAT = 0.0  # WR points for every removal spell at any count (FRA games: removal pays on, no ceiling: +0.8 per spell in the deck model, drafted not built); 0 = off
+    FINISHER_POINTS = 0.0  # WR points for a finisher (cmc 5+, GIH WR one SD over the format mean) in proportion to how far the pool, projected to 23 spells, is under FINISHER_UP_TO castable finishers (FRA games: 1-2 +1.4, 3+ +4.0 points; decks hold what they drafted); 0 = off
+    FINISHER_UP_TO = 3  # finishers a deck wants
     COPIES_MAX = 2  # copies of one card a deck wants
     COPIES_POINTS = 0.0  # WR points off per copy at or beyond COPIES_MAX already in the pool; 0 = off
     DECK_WEIGHT = 0.0  # Fit adds this share of the card's value above replacement in the likely pairs' best 23 (top players' shape penalty included) minus its own value: a card that would not make the deck loses, one that fills a shape gap gains; 0 = off
@@ -286,6 +289,10 @@ class DraftAdvisorV2:
             floor = max(0.0, target.get("removal", 6.0 + slack) - slack)
             removal = sum(1 for c in self.pool if "Land" not in (c.get("types") or []) and "removal" in config.tags(c))
             self.removal_need = max(0.0, floor - removal * 23.0 / spells) / floor if floor else 0.0
+        self.finisher_need = 0.0
+        if self.FINISHER_POINTS and spells >= self.REMOVAL_FROM:
+            have = sum(1 for c in self.pool if self.is_finisher(c) and castable(c, self.top_lane))
+            self.finisher_need = max(0.0, self.FINISHER_UP_TO - have * 23.0 / spells) / self.FINISHER_UP_TO
         if self.HALF_PIVOT and spells >= self.HALF_PIVOT:
             self.anchor = self.top_lane
         self.lanes = self._lanes(self.commit)  # pool only; what the Analyst shows and what Fit uses
@@ -442,6 +449,13 @@ class DraftAdvisorV2:
         cols = card.get("colors") or []
         return sum(shift.get(c, 0.0) for c in cols) / len(cols) if cols else 0.0
 
+    def is_finisher(self, card):
+        """A spell of mana value 5+ whose GIH WR is a standard deviation over the format mean (the finisher field of the deck tables)."""
+        if "Land" in (card.get("types") or []) or (card.get("cmc") or 0) < 5:
+            return False
+        wr = float(all_decks(card).get("gihwr") or 0.0)
+        return wr > 0 and wr >= self.mean + self.std
+
     def adjust(self, card, lane):
         """Manual per-set adjustments and the neutral-by-default deck-need settings, in WR points."""
         t = config.ACTIVE["tables"]
@@ -464,6 +478,10 @@ class DraftAdvisorV2:
                 a -= self.PLAY_RATE_POINTS * max(0.0, self.PLAY_RATE_FROM - float(rate)) / self.PLAY_RATE_FROM
         if self.removal_need and "removal" in config.tags(card) and kind != "land":
             a += self.REMOVAL_POINTS * self.removal_need
+        if self.REMOVAL_FLAT and "removal" in config.tags(card) and kind != "land":
+            a += self.REMOVAL_FLAT
+        if self.finisher_need and self.is_finisher(card):
+            a += self.FINISHER_POINTS * self.finisher_need
         if self.COPIES_POINTS and self.names.get(name, 0) >= self.COPIES_MAX:
             a -= self.COPIES_POINTS * (self.names[name] - self.COPIES_MAX + 1)
         if self.DOUBLE_PIP and (self.three_colour or self.DOUBLE_PIP_ALL) and (card.get("cmc") or 0) <= self.DOUBLE_PIP_CMC:
