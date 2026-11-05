@@ -70,6 +70,7 @@ BOMB_TOP = 30
 DIM_PENALTY = 0.0  # WR points per card outside top players' count +- DIM_SLACK on the composition slots in DIM_CHECK; 0 = off
 DIM_SLACK = 2.0
 DIM_CHECK = "early_creatures,late_creatures,noncreature,pressure,defence,finishers"
+THREE_FALLBACK = True  # a pool where no pair has 23 castable spells gets its best three-colour build instead of none
 SPLASH_COST = -1.0  # win-rate points charged for splashing, in place of the deck model's splash term (which mostly
 #                     reflects that weaker decks splash: 60%+ FRA players splash 49% of two-colour decks); < 0 = the model's term
 
@@ -585,6 +586,14 @@ def build(pool, model, targets, top=3, splash_pairs=2, rule=None, three=None):
                 plain.append(b)
     # A build that still breaks the shape after the search (a "pair" with one card of its second colour) is no deck.
     plain = sorted((b for b in plain if b["penalty"] <= 3 * PENALTY), key=lambda b: -b["objective"]) or sorted(plain, key=lambda b: -b["objective"])[:1]
+    if not plain and THREE_FALLBACK:
+        # No pair has 23 castable spells (top players' three-colour pools: 24% of them): build the best three-colour deck outright.
+        triples = [b for lane, t in (targets or {}).items() if len(lane) == 3 and t
+                   for b in [build_pair(pool, lane, model, t, splash_cost=0.0)] if b and b["penalty"] <= 3 * PENALTY]
+        if triples:
+            best = max(triples, key=lambda b: b["objective"])
+            best["three_chance"] = None
+            return [best]
     if not plain:
         return []
 

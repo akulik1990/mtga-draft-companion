@@ -122,6 +122,7 @@
   "deckbuilder.SYN_CARDS": 0.0,
   "deckbuilder.SYN_MATES": 0.0,
   "deckbuilder.THREE_AT": 0.5,
+  "deckbuilder.THREE_FALLBACK": true,
   "deckbuilder.TOP_END_SLACK": 2.0,
   "deckbuilder.TWO_DROP_SLACK": 2.0,
   "lanes.GOLD_MIN": 0.0,

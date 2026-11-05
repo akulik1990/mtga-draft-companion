@@ -1,0 +1,9 @@
+controls,model,decks,loss,gain,gain_se,spread_sd_points,q1_minus_expected,q5_minus_expected,q5_minus_q1,q5_minus_q1_se,l2
+with skill bucket,context only,35646,0.65768,0.0,0.0,0.0,,,,,10 / 10
+with skill bucket,card quality,35646,0.65511,0.00257,0.00038,3.64,-4.16,5.31,9.47,0.8,300 / 100
+with skill bucket,structure,35646,0.65541,0.00227,0.00034,3.3,-4.71,5.19,9.9,0.8,1000 / 1000
+with skill bucket,quality + structure,35646,0.65388,0.0038,0.00048,4.55,-5.1,5.75,10.85,0.8,1000 / 300
+without skill bucket,context only,35646,0.66664,0.0,0.0,0.0,,,,,10 / 10
+without skill bucket,card quality,35646,0.66254,0.0041,0.00047,4.45,-5.79,6.38,12.17,0.81,300 / 100
+without skill bucket,structure,35646,0.66254,0.0041,0.00056,5.35,-6.27,6.22,12.49,0.81,300 / 100
+without skill bucket,quality + structure,35646,0.66126,0.00538,0.00067,6.35,-7.07,7.22,14.29,0.81,300 / 30
