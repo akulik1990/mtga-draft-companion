@@ -1,0 +1,77 @@
+games 208173, decks 36438, drafts 36304; on_play dtype bool; median games/deck 5.0
+
+MAIN (N=208173; refs: lands=3, cheap=2 (modal), removal=0, big=0, opp_mull=0; on_play = play vs draw)
+               pts     lo     hi         n
+lands<=1    -11.44 -21.26  -1.63     121.0
+lands=2      -4.11  -4.70  -3.52   49700.0
+lands=4      -2.73  -3.37  -2.08   37886.0
+lands=5     -12.91 -17.69  -8.13     534.0
+cheap=0      -3.00  -3.85  -2.14   22864.0
+cheap=1      -0.40  -0.98   0.18   67980.0
+cheap>=3     -0.16  -0.83   0.51   44176.0
+removal=1     0.14  -0.42   0.70   85557.0
+removal>=2   -1.52  -2.20  -0.84   55120.0
+big=1        -0.72  -1.27  -0.17   77812.0
+big>=2       -2.00  -2.84  -1.15   26377.0
+on_play       4.85   4.39   5.32  104665.0
+opp_mull>=1  15.85  15.16  16.54   22092.0
+
+(a) play N=99744, draw N=98601
+
+(a) split by on_play: play vs draw
+              play   draw   diff     lo    hi     z
+term                                               
+lands=2      -4.97  -3.11  -1.86  -3.18 -0.54 -2.77
+lands=5     -17.03  -4.94 -12.09 -22.51 -1.66 -2.27
+removal=1    -0.85   1.11  -1.96  -3.21 -0.71 -3.08
+removal>=2   -4.23   1.66  -5.89  -7.40 -4.38 -7.66
+opp_mull>=1  14.36  16.84  -2.48  -4.02 -0.94 -3.16
+terms compared 12; expect ~0.6 by chance
+
+(b) skill bands (bucket includes own game; NaN dropped 98): {'mid': 120551, 'high': 63898, 'low': 23626}
+
+(b): low vs mid
+               low    mid   diff     lo    hi     z
+term                                               
+lands<=1    -33.63  -4.81 -28.82 -52.58 -5.06 -2.38
+opp_mull>=1  18.77  16.17   2.60   0.13  5.07  2.06
+terms compared 13; expect ~0.7 by chance
+
+(b): low vs high
+               low   high  diff    lo    hi     z
+term                                             
+opp_mull>=1  18.77  14.27   4.5  1.96  7.04  3.48
+terms compared 13; expect ~0.7 by chance
+
+(b): mid vs high
+               mid   high  diff    lo    hi     z
+term                                             
+opp_mull>=1  16.17  14.27   1.9  0.45  3.35  2.57
+terms compared 13; expect ~0.7 by chance
+
+(c) effective lands (hand_lands+hand_lc) bins
+               pts     lo     hi         n
+lands<=1    -12.81 -26.61   1.00      60.0
+lands=2      -4.65  -5.32  -3.98   35006.0
+lands=4      -1.81  -2.38  -1.24   58076.0
+lands=5      -4.75  -6.04  -3.46    8347.0
+lands>=6     -5.70 -11.26  -0.14     384.0
+cheap=0      -2.78  -3.63  -1.92   22864.0
+cheap=1      -0.31  -0.89   0.28   67980.0
+cheap>=3     -0.12  -0.79   0.54   44176.0
+removal=1     0.12  -0.44   0.68   85557.0
+removal>=2   -1.58  -2.26  -0.90   55120.0
+big=1        -0.56  -1.10  -0.01   77812.0
+big>=2       -1.78  -2.62  -0.95   26377.0
+on_play       4.86   4.39   5.32  104665.0
+opp_mull>=1  15.87  15.18  16.56   22092.0
+
+NOTABLE CHECKS (main model)
+removal=1: 0.14 [-0.42,0.70] pts vs 0; per card for 2+: 0.14
+removal>=2: -1.52 [-2.20,-0.84] pts vs 0; per card for 2+: -0.76
+
+play-vs-draw contrasts (alt model: lands<=2 vs 3 with lands>=4 separate; cheap>=2 vs 0/1)
+cheap>=2: play 0.53 [-0.28,1.34], draw 1.39 [0.54,2.24], diff -0.86 [-2.03,0.32] z=-1.43
+lands<=2: play -4.96 [-5.87,-4.05], draw -3.03 [-3.95,-2.10], diff -1.93 [-3.23,-0.63] z=-2.92
+
+CAVEATS: num_mulligans=0 = kept hands (player-selected); Arena Bo1 hand smoothing, hands not hypergeometric; within-deck association quasi-random except keep decisions; tracker users only. Skill bucket includes the game itself; mid/high gap (0.595-0.60) empty at 0.01 resolution. Subgroup SEs treated independent (split samples share no games, but share clusters/decks in skill splits only partly).

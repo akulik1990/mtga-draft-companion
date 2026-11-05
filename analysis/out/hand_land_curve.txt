@@ -1,0 +1,72 @@
+rows 297964 -> decks>=4 games 241801 decks 40805 drafts 40564
+CAVEATS: (a) mull=0 hands were KEPT (conditional on keeping); (b) Arena Bo1 hand smoothing may apply, hand dist not hypergeometric; (c) value of the extra spell in a 16-land deck NOT priced; (d) no data near 10-14 lands; (e) 17Lands tracker users only.
+
+== FIT1 kept hands, hand_lands == n=220334 decks=40797 (empty bins dropped: ['ge6'])
+bin  games  coef_pts  CI95_lo  CI95_hi
+le1          123  -11.35  -21.10   -1.60
+l2         52506   -4.24   -4.80   -3.68
+l4         40115   -2.82   -3.43   -2.21
+l5           569  -12.49  -17.13   -7.84
+ge6            0 (empty)
+on_play   110803    5.00    4.54    5.45
+opp1       22268   15.37   14.67   16.07
+opp2        1064   30.84   28.54   33.13
+ref bin = 3 lands; base games: 127021
+
+== FIT2 all games, hand_lands + mulligan dummies == n=241801 decks=40805 (empty bins dropped: ['ge6'])
+bin  games  coef_pts  CI95_lo  CI95_hi
+le1          166  -10.30  -18.65   -1.96
+l2         57847   -4.19   -4.72   -3.67
+l4         44003   -2.57   -3.15   -2.00
+l5           635  -11.75  -16.01   -7.49
+ge6            0 (empty)
+on_play   121377    4.62    4.19    5.05
+opp1       24482   15.47   14.80   16.13
+opp2        1179   31.24   29.04   33.45
+mul1       20711  -16.94  -17.74  -16.14
+mul2         756  -40.29  -43.68  -36.90
+ref bin = 3 lands; base games: 139150
+
+== FIT1b kept hands, effective lands (hand_lands+hand_lc) == n=220334 decks=40797 (empty bins dropped: [])
+bin  games  coef_pts  CI95_lo  CI95_hi
+le1           62  -11.78  -25.52    1.96
+l2         37011   -4.61   -5.25   -3.96
+l4         61345   -2.03   -2.57   -1.49
+l5          8771   -5.91   -7.13   -4.68
+ge6          401   -7.69  -13.14   -2.24
+on_play   110803    5.01    4.55    5.47
+opp1       22268   15.40   14.70   16.09
+opp2        1064   30.77   28.47   33.07
+ref bin = 3 lands; base games: 112744
+
+== D16 (win-rate pts/game, 16 vs 17 lands; delta method, cluster cov of w(k), P treated as fixed) ==
+[all decks] kept games n16=45827 n17=170500
+ P16-P17 empirical: {'le1': 0.0006, 'l2': 0.0888, 'l4': -0.074, 'l5': -0.0023, 'ge6': 0.0}
+EMPIRICAL (primary) all decks: D16=-0.15 pts [-0.21, -0.09] 
+ hypergeometric UNCONDITIONAL (sensitivity) P16-P17: {'le1': 0.0289, 'l2': 0.0281, 'l4': -0.0285, 'l5': -0.0193, 'ge6': -0.0054}
+HYPERGEOMETRIC unconditional (sensitivity) all decks: D16=-0.13 pts [-0.42, 0.17] 
+[deck_lc>=2] kept games n16=24353 n17=66541
+ P16-P17 empirical: {'le1': 0.0006, 'l2': 0.086, 'l4': -0.0728, 'l5': -0.0021, 'ge6': 0.0}
+EMPIRICAL (primary) deck_lc>=2: D16=-0.14 pts [-0.20, -0.08] 
+ hypergeometric UNCONDITIONAL (sensitivity) P16-P17: {'le1': 0.0289, 'l2': 0.0281, 'l4': -0.0285, 'l5': -0.0193, 'ge6': -0.0054}
+HYPERGEOMETRIC unconditional (sensitivity) deck_lc>=2: D16=-0.13 pts [-0.42, 0.17] 
+
+== Descriptive: mulligan rate, kept hands share <=2 or >=5 lands ==
+by deck_lands (decks>=4 games)
+               games  mull_rate    kept_n  kept_le2_or_ge5
+deck_lands                                                
+15.0          2119.0     0.1015    1904.0           0.4128
+16.0         50436.0     0.0914   45827.0           0.3090
+17.0        186939.0     0.0879  170500.0           0.2219
+18.0          1953.0     0.0829    1791.0           0.1792
+by deck_lands x deck_lc (0,1,2=2+)
+                   games  mull_rate   kept_n  kept_le2_or_ge5
+deck_lands lc_b                                              
+16.0       0.0    9238.0     0.1125   8199.0           0.2977
+           1.0   14775.0     0.1015  13275.0           0.3095
+           2.0   26423.0     0.0783  24353.0           0.3126
+17.0       0.0   45361.0     0.1006  40796.0           0.2161
+           1.0   69458.0     0.0906  63163.0           0.2192
+           2.0   72120.0     0.0774  66541.0           0.2280
+
+VERDICT (all decks, empirical): D16=-0.15 [-0.21,-0.09] -> land count is a wash in opening hands; no change
