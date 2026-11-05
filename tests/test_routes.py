@@ -214,3 +214,20 @@ def test_lane_rates_marks_uncastable_and_thin_pairs():
     card = {"name": "x", "mana_cost": "{1}{U}", "colors": ["U"], "types": ["Creature"],
             "deck_colors": {"UB": {"gihwr": 58.04, "samples": 900}, "UR": {"gihwr": 61.0, "samples": 50}}}
     assert lane_rates(card, ["UB", "UR", "BR"]) == [{"lane": "UB", "wr": 58.0}, {"lane": "UR", "wr": "few"}, {"lane": "BR", "wr": None}]
+
+
+def test_plan_for_counts_pool_and_describes_wants():
+    from companion.api.app import plan_for
+
+    def card(name, types, colors):
+        return {"name": name, "types": types, "colors": colors}
+
+    s = {
+        "event": {"set": "FRA"},
+        "pool": [card("Apex Witchstalker", ["Creature"], ["B"]), card("Break Under Pressure", ["Instant"], ["B"])],
+        "pack": [card("Bloodline Recollector", ["Creature"], ["B"]), card("Apex Witchstalker", ["Creature"], ["B"])],
+    }
+    p = plan_for(s, "BG")
+    assert p["lane"] == "BG" and p["have"]["enabler"] >= 1 and set(p["need"]) == {"enabler", "payoff", "top_payoff"}
+    assert p["wants"]["enabler"] and p["wants"]["payoff"] and "pack" not in p
+    assert plan_for(s, "XX") is None and plan_for({**s, "event": {"set": "OTJ"}}, "BG") is None

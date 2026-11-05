@@ -478,6 +478,28 @@ ShellRoot {
                         }
                     }
                 }
+
+                // The likeliest pair's plan: what the pool has against trophy decks' median, and the sort of cards it wants.
+                Item { width: 1; height: win.unit * 0.5; visible: !!plan.d }
+                Heading { id: plan; readonly property var d: win.pn ? win.pn.plan : null; visible: !!d; text: d ? d.lane + " " + d.name.toUpperCase() : "" }
+                Text { visible: !!plan.d; width: col.width; wrapMode: Text.WordWrap; text: plan.d ? plan.d.plan : ""; color: "#c8cdd3"; font.pixelSize: win.unit * 0.6 }
+                Text {
+                    visible: !!plan.d
+                    textFormat: Text.StyledText
+                    color: "#8f98a3"; font.pixelSize: win.unit * 0.6
+                    text: {
+                        if (!plan.d) return ""
+                        const n = (label, k) => label + " <font color='" + (plan.d.have[k] < plan.d.need[k] ? "#d6a84a" : "#e8eaed") + "'>" + plan.d.have[k] + "</font> / " + plan.d.need[k]
+                        return n("Enablers", "enabler") + " · " + n("Payoffs", "payoff") + " · " + n("Top payoff", "top_payoff")
+                    }
+                }
+                Text {
+                    visible: !!plan.d && !!plan.d.wants.enabler
+                    width: col.width; wrapMode: Text.WordWrap
+                    textFormat: Text.StyledText
+                    color: "#c8cdd3"; font.pixelSize: win.unit * 0.55
+                    text: plan.d ? "<font color='#8f98a3'>Enablers:</font> " + plan.d.wants.enabler + "<br><font color='#8f98a3'>Payoffs:</font> " + plan.d.wants.payoff : ""
+                }
             }
         }
 

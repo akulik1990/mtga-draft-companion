@@ -188,9 +188,11 @@ class DraftAdvisorV2:
     CREATURE_POINTS = 0.0  # WR points for a creature when the pool, projected to 23 spells, is fully short of CREATURE_TARGET; 0 = off
     CREATURE_FROM = 8  # spells in the pool before the creature need applies
     CHOICE_ADJUST = False  # final scores move toward how top drafters choose: + sum(beta_f / beta_v2 * f) for the pick's stage from the fitted "choices" model (tools/choice_model.py; synergy with the pool, deck needs, colour, fixing, mana value)
+    STRAT_SYN = 0.0  # multiplier on the fitted per-card weights of each pair's strategy tags (fitted "strategy", analysis/strategy_win_loss.py; tags from sets/<SET>/roles.json), added to Fit per likely pair; 1 = the data's weights, 0 = off
     SYNERGY_FIT = 0.0  # weight on the choice model's synergy part in Fit at every stage (payoffs with their enablers in the pool, enablers for held payoffs, payoffs with none), x the share of likely pairs that can cast the card; 0 = off
     TIE_CHEAPER = True  # among cards within TIE_EPS of the top score, castable in the pool's top pair and within TIE_WR of each other's GIH WR, the cheaper goes first (equal power, lower cost: the guides' "Juza rule")
     TIE_EPS = 0.3
+    SYN_TIE = 0.0  # synergy as a tie-breaker (Akshin, 2026-11-05): among cards within this many WR points of the top, the one with the most main-pair strategy credit (strategy_points) goes first; 0 = off. Flips within ~1 point went toward top drafters' picks (analysis/synergy_flips.py)
     TIE_WR = 0.5
     CHOICE_FEATURES = ""  # per stage and feature group, e.g. "p1close:synergy;p2open:synergy,colour,splash;fit:synergy,colour,splash,fixer,needs;late:all" (stages p1open, p1close, p2open, fit, late; groups synergy, needs, colour, splash, fixer, cmc, all); overrides CHOICE_STAGES when set
     CHOICE_STAGES = "all"  # which stages CHOICE_ADJUST applies to: "all", or a comma list of p1open (P1 picks 1-7), p1close (P1 8-11), p2open (P2 1-6), fit (P2 7-11, P3 1-11), late (picks 12-14)
@@ -573,9 +575,9 @@ class DraftAdvisorV2:
                                   self._reasons(card, lanes, cast_p)))
 
         if self.SPLIT and self.BLEND and set_code and config.fitted(set_code, "blend"):
-            return self._tie_cheaper(self._blend(self._split(pack_cards, recs, current_pick, set_code), pack_cards, current_pick, current_pack, set_code), pack_cards)
+            return self._tie_synergy(self._tie_cheaper(self._blend(self._split(pack_cards, recs, current_pick, set_code), pack_cards, current_pick, current_pack, set_code), pack_cards), pack_cards)
         if self.SPLIT:
-            return self._tie_cheaper(self._choice_adjust(self._split(pack_cards, recs, current_pick, set_code), pack_cards, current_pick, current_pack, set_code), pack_cards)
+            return self._tie_synergy(self._tie_cheaper(self._choice_adjust(self._split(pack_cards, recs, current_pick, set_code), pack_cards, current_pick, current_pack, set_code), pack_cards), pack_cards)
         recs.sort(key=lambda r: r.contextual_score, reverse=True)
         # Wheel as a tiebreaker: among cards within WHEEL_EPS of the best, take the one least likely to come back.
         if len(recs) > 1:
@@ -607,6 +609,24 @@ class DraftAdvisorV2:
         recs.insert(0, first)
         first.contextual_score = round(top.contextual_score + 0.01, 2)
         first.reasoning.insert(0, f"Tie on power with {top.card_name}: cheaper ({cmc(first):g} vs {cmc(top):g} mana)")
+        return recs
+
+    def _tie_synergy(self, recs, pack_cards):
+        """Among cards within SYN_TIE of the top score, put first the one with the most main-pair strategy credit, if it has
+        more than the top card. Outside the window card values decide alone."""
+        if not self.SYN_TIE or len(recs) < 2 or recs[0].contextual_score <= 0 or not self.set_code_now:
+            return recs
+        by_name = {c.get("name"): c for c in pack_cards}
+        top = recs[0]
+        close = [r for r in recs if r.contextual_score > 0 and top.contextual_score - r.contextual_score <= self.SYN_TIE]
+        syn = {r.card_name: self.strategy_points(by_name[r.card_name]) for r in close}
+        first = max(close, key=lambda r: (syn[r.card_name], r.contextual_score))
+        if first is top or syn[first.card_name] <= syn[top.card_name]:
+            return recs
+        recs.remove(first)
+        recs.insert(0, first)
+        first.reasoning.insert(0, f"Synergy breaks a near-tie with {top.card_name} ({top.contextual_score - first.contextual_score:.1f} points apart)")
+        first.contextual_score = round(top.contextual_score + 0.01, 2)
         return recs
 
     def blend_inputs(self, card, pick, wheel, set_code):
@@ -691,7 +711,21 @@ class DraftAdvisorV2:
                                          skip=choice.SYNERGY if self.SYNERGY_FIT else (), spec=self.CHOICE_FEATURES)
         if self.FIT_WEIGHTS and self.set_code_now:
             synergy += self.fit_weights(card, pick)
+        if self.STRAT_SYN and self.set_code_now:
+            synergy += self.STRAT_SYN * self.strategy_points(card)
         return score + self.order_prior(card.get("name", ""), pick, prefs=self.PREF_SCOPE == "both") * live + self.deck_term(card) + synergy
+
+    def strategy_points(self, card):
+        """WR points for the card's tags in the pool's main pair's strategy, weighted by that pair's chance. Credit from other
+        pairs moved picks away from top drafters' (analysis/synergy_flips.py: 37% helped off-plan vs 55% on-plan)."""
+        lane = self.top_lane
+        if not (castable(card, lane) or self.speculative(card, lane)):
+            return 0.0
+        weights = config.fitted(self.set_code_now, "strategy").get(lane, {})
+        tags = set(config.roles(self.set_code_now).get(card.get("name", "").split(" // ")[0], ()))
+        if "Creature" not in (card.get("types") or []) and "Land" not in (card.get("types") or []):
+            tags.add("spells")  # UR's enabler is any noncreature spell
+        return self.lanes.get(lane, 0.0) * sum(w for t, w in weights.items() if t in tags)
 
     FIT_PARTS_FROM = 4  # blend inputs from here on are Fit's parts (before: Power, Fit, signal, wheel)
 

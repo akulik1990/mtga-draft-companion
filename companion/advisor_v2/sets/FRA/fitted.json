@@ -598,6 +598,16 @@
    "how": "tools/deck_shapes.py: min/best/max (p10/median/p90) of 60%+ players' decks per colour combination; replacements = categories they run >= 0.5 more of when one is 2+ under",
    "date": "2026-11-04",
    "commit": "139c9e9"
+  },
+  "strategy": {
+   "how": "analysis/strategy_win_loss.py: Premier drafts with one deck for the whole run, binomial match wins ~ enablers + payoffs + skill + q; match-WR points per extra card (descriptive; only ping_enabler clears zero at p<0.001)",
+   "date": "2026-11-05",
+   "commit": "d369d87"
+  },
+  "strategy_plan": {
+   "how": "analysis/strategy_plan.py: median enablers / payoffs / top payoffs in one-deck Premier trophy decks per pair, with the pair's plan from docs/archetypes-FRA.md",
+   "date": "2026-11-05",
+   "commit": "d369d87"
   }
  },
  "prefs": {
@@ -9987,5 +9997,209 @@
    10,
    90
   ]
+ },
+ "strategy": {
+  "WU": {
+   "jace_enabler": 0.019,
+   "jace_payoff": -0.059
+  },
+  "UG": {
+   "jace_enabler": 0.019,
+   "jace_payoff": -0.059
+  },
+  "UB": {
+   "mill": 0.067,
+   "gy_payoff": 0.234
+  },
+  "BR": {
+   "ping_enabler": 1.11,
+   "ping_payoff": -0.096
+  },
+  "RG": {
+   "ramp": 0.539,
+   "ramp_payoff": 0.648
+  },
+  "WG": {
+   "lifegain_enabler": 0.608,
+   "lifegain_payoff": -0.353
+  },
+  "WB": {
+   "death_enabler": 0.223,
+   "death_payoff": -0.621
+  },
+  "UR": {
+   "spells": 0.131,
+   "spells_payoff": 0.461
+  },
+  "BG": {
+   "etb_enabler": 0.17,
+   "etb_payoff": -0.455
+  },
+  "WR": {
+   "counters_enabler": -0.314,
+   "counters_payoff": 0.868
+  }
+ },
+ "strategy_plan": {
+  "WU": {
+   "name": "Jace's Mastery",
+   "plan": "surveil and empower Jace, then attack",
+   "enabler": "jace_enabler",
+   "payoff": "jace_payoff",
+   "wants": {
+    "enabler": "cards that empower Jace, scry or surveil",
+    "payoff": "cards that reward a Jace on the board or each surveil"
+   },
+   "decks": 188,
+   "median": {
+    "enabler": 11.0,
+    "payoff": 5.0,
+    "top_payoff": 2.0
+   }
+  },
+  "UG": {
+   "name": "Jace's Mastery",
+   "plan": "empower Jace, draw value from the token",
+   "enabler": "jace_enabler",
+   "payoff": "jace_payoff",
+   "wants": {
+    "enabler": "cards that empower Jace",
+    "payoff": "cards that use the Jace token's loyalty or reward a planeswalker"
+   },
+   "decks": 35,
+   "median": {
+    "enabler": 8,
+    "payoff": 5,
+    "top_payoff": 2
+   }
+  },
+  "UB": {
+   "name": "Theorix Graveyard Math",
+   "plan": "get seven or more cards in your graveyard",
+   "enabler": "mill",
+   "payoff": "gy_payoff",
+   "wants": {
+    "enabler": "cards that mill you or put your own cards in the graveyard",
+    "payoff": "cards that get better with seven or more cards in your graveyard, and flashback"
+   },
+   "decks": 211,
+   "median": {
+    "enabler": 6,
+    "payoff": 7,
+    "top_payoff": 1
+   }
+  },
+  "BR": {
+   "name": "Stingerquill Face Burn",
+   "plan": "direct damage to opponents and creatures",
+   "enabler": "ping_enabler",
+   "payoff": "ping_payoff",
+   "wants": {
+    "enabler": "spells and creatures that deal direct damage",
+    "payoff": "cards that reward damaging the opponent or targeting their side"
+   },
+   "decks": 72,
+   "median": {
+    "enabler": 7.0,
+    "payoff": 3.0,
+    "top_payoff": 1.0
+   }
+  },
+  "RG": {
+   "name": "Konstrari Mana Ramp",
+   "plan": "Heartwood tokens cast big top end early",
+   "enabler": "ramp",
+   "payoff": "ramp_payoff",
+   "wants": {
+    "enabler": "Heartwood tokens, mana creatures, landcyclers and cost reducers",
+    "payoff": "strong cards costing six or more"
+   },
+   "decks": 114,
+   "median": {
+    "enabler": 5.0,
+    "payoff": 3.0,
+    "top_payoff": 2.0
+   }
+  },
+  "WG": {
+   "name": "Vigorbloom Life Gain",
+   "plan": "gain life, grow your board",
+   "enabler": "lifegain_enabler",
+   "payoff": "lifegain_payoff",
+   "wants": {
+    "enabler": "cards that gain life",
+    "payoff": "cards that trigger whenever you gain life"
+   },
+   "decks": 69,
+   "median": {
+    "enabler": 8,
+    "payoff": 3,
+    "top_payoff": 1
+   }
+  },
+  "WB": {
+   "name": "Liliana's Attrition",
+   "plan": "small creatures, profit from deaths on both sides",
+   "enabler": "death_enabler",
+   "payoff": "death_payoff",
+   "wants": {
+    "enabler": "cheap creatures, tokens and sacrifice outlets",
+    "payoff": "cards that trigger when creatures die"
+   },
+   "decks": 33,
+   "median": {
+    "enabler": 3,
+    "payoff": 1,
+    "top_payoff": 1
+   }
+  },
+  "UR": {
+   "name": "Chandra's Prowess",
+   "plan": "cards that care about noncreature spells",
+   "enabler": "spells",
+   "payoff": "spells_payoff",
+   "wants": {
+    "enabler": "instants, sorceries and other noncreature spells",
+    "payoff": "creatures that trigger on noncreature spells"
+   },
+   "decks": 109,
+   "median": {
+    "enabler": 12,
+    "payoff": 3,
+    "top_payoff": 1
+   }
+  },
+  "BG": {
+   "name": "Garruk's Bestiary",
+   "plan": "value creatures: enter-the-battlefield effects and ways to reuse them",
+   "enabler": "etb_enabler",
+   "payoff": "etb_payoff",
+   "wants": {
+    "enabler": "creatures with value when they enter",
+    "payoff": "cards that reuse enter effects or reward creatures entering"
+   },
+   "decks": 94,
+   "median": {
+    "enabler": 8.0,
+    "payoff": 2.0,
+    "top_payoff": 0.0
+   }
+  },
+  "WR": {
+   "name": "Ajani's Army",
+   "plan": "+1/+1 counters on aggressive creatures",
+   "enabler": "counters_enabler",
+   "payoff": "counters_payoff",
+   "wants": {
+    "enabler": "cards that put +1/+1 counters on creatures",
+    "payoff": "cards that reward creatures with counters, and creatures that grow"
+   },
+   "decks": 43,
+   "median": {
+    "enabler": 5,
+    "payoff": 1,
+    "top_payoff": 1
+   }
+  }
  }
 }

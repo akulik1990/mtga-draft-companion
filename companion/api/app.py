@@ -91,6 +91,32 @@ def deck_vs_top(s, lane, complete_by=30):
             "target_curve": target.get("curve") or {}, "pace": round(min(1.0, picks / complete_by), 2)}
 
 
+def plan_for(s, lane):
+    """What the likeliest pair wants to do: the sort of cards it needs (described, not listed) and the pool's enablers /
+    payoffs castable in it against trophy decks' median. None when the set has no plan for the pair."""
+    set_code = (s.get("event") or {}).get("set") or ""
+    plan = (config.fitted(set_code, "strategy_plan") or {}).get(lane) if lane else None
+    if not plan:
+        return None
+    tags_of = config.roles(set_code)
+
+    def tags(c):
+        t = set(tags_of.get(c["name"].split(" // ")[0], []))
+        if "Creature" not in (c.get("types") or []):
+            t.add("spells")
+        return t
+
+    have = dict.fromkeys(("enabler", "payoff", "top_payoff"), 0)
+    for c in s.get("pool") or []:
+        if "Land" in (c.get("types") or []) or not castable(c, lane):
+            continue
+        t = tags(c)
+        have["enabler"] += plan["enabler"] in t
+        have["payoff"] += plan["payoff"] in t
+        have["top_payoff"] += "top_payoff" in t
+    return {"lane": lane, "name": plan["name"], "plan": plan["plan"], "have": have, "need": plan["median"], "wants": plan.get("wants") or {}}
+
+
 def side_panel(s, ranked=()):
     """What the overlay's left panel shows: v2's top three and how top drafters split between them in this spot,
     v2's reasons, likeliest lanes, open colours, pool summary."""
@@ -122,6 +148,7 @@ def side_panel(s, ranked=()):
         "signals": s.get("signals_v2") or sides.get(sides.get("active")) or {},
         "signal_from": {"side": sides.get("active"), "packs": sides.get("read", 0)},
         "deck": deck_vs_top(s, lanes[0][0] if lanes else None),
+        "plan": plan_for(s, lanes[0][0] if lanes else None),
         "pool": {"n": len(s.get("pool") or []), "colours": {k: sum(k in (c.get("colors") or []) for c in spells) for k in "WUBRG"}, "curve": curve},
     }
 

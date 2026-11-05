@@ -1,0 +1,3013 @@
+[
+ {
+  "name": "Apex Witchstalker",
+  "colors": "B",
+  "tags": [
+   "mill",
+   "ramp",
+   "defence",
+   "lifegain_enabler",
+   "etb_enabler",
+   "ramp_payoff"
+  ],
+  "reason": "Akshin's tags; gains 2 on enter and on death (lifegain enabler, ETB value body).; ramp_payoff: costs 6+ (Akshin Q6)"
+ },
+ {
+  "name": "Bloodline Recollector",
+  "colors": "B",
+  "tags": [
+   "draw",
+   "death_payoff"
+  ],
+  "reason": "Two-drop whose draw-three spell only unlocks after three creatures die in a turn: weak alone, good in a deaths deck."
+ },
+ {
+  "name": "Break Under Pressure",
+  "colors": "B",
+  "tags": [
+   "removal",
+   "defence",
+   "delay",
+   "lifegain_enabler"
+  ],
+  "reason": "Instant edict on their biggest creature usable in combat, plus 2 life."
+ },
+ {
+  "name": "Cast Away Doubt",
+  "colors": "B",
+  "tags": [
+   "draw",
+   "ping_enabler"
+  ],
+  "reason": "Draw two; the 2 damage to each player is noncombat damage to the opponent."
+ },
+ {
+  "name": "Danitha, Spear of Agony",
+  "colors": "B",
+  "tags": [
+   "ping_payoff",
+   "spells_payoff",
+   "growth"
+  ],
+  "reason": "Grows with every spell that targets the opponent or their creatures: burn and removal payoff.; growth: counter per spell targeting the opponent's side (Akshin, 2026-11-05)"
+ },
+ {
+  "name": "Dark Matter Manipulator",
+  "colors": "B",
+  "tags": [
+   "mill",
+   "gy_payoff",
+   "tempo",
+   "etb_enabler"
+  ],
+  "reason": "Akshin's tags; ETB mill 3 is enters value for the BG value plan.",
+  "question": ""
+ },
+ {
+  "name": "Darklight Phoenix",
+  "colors": "B",
+  "tags": [
+   "gy_payoff",
+   "gy_recursion",
+   "death_payoff"
+  ],
+  "reason": "Akshin's tags; returns itself only when two or more creatures died this turn, a death payoff."
+ },
+ {
+  "name": "Extended Absence",
+  "colors": "B",
+  "tags": [
+   "removal",
+   "defence",
+   "ping_enabler",
+   "lifegain_enabler"
+  ],
+  "reason": "Instant exile usable in combat; 1 damage to the opponent and 1 life on top.; tempo dropped: pure interaction is delay (Akshin Q1, 2026-11-05); delay removed: 4 mana is over the 3-mana cap (Akshin Q7)",
+  "question": ""
+ },
+ {
+  "name": "Extrapolate the Impossible",
+  "colors": "B",
+  "tags": [
+   "draw"
+  ],
+  "reason": "Two-mana wish: fetches one of two sideboard cards (opponent picks), card selection that replaces itself.; in Arena limited, outside the game = your sideboard",
+  "question": ""
+ },
+ {
+  "name": "Gallia, Tragic Host",
+  "colors": "B",
+  "tags": [
+   "gy_payoff",
+   "gy_recursion",
+   "tempo",
+   "death_enabler"
+  ],
+  "reason": "Akshin's tags; returns herself from the graveyard, so reusable sacrifice fodder."
+ },
+ {
+  "name": "Garruk, Veiled Butcher",
+  "colors": "B",
+  "tags": [
+   "removal",
+   "defence",
+   "mill",
+   "death_enabler",
+   "draw"
+  ],
+  "reason": "+2 shrink lasts through their turn (kills X/1, blunts an attacker); -2 two-sided edict with your sacrifice making a 4/4; -3 two-card discard or draw."
+ },
+ {
+  "name": "Gideon the Oathless",
+  "colors": "B",
+  "tags": [
+   "ping_enabler"
+  ],
+  "reason": "Repeated 1 damage to the opponent whenever their creatures enter or they use loyalty abilities."
+ },
+ {
+  "name": "Last Gasp",
+  "colors": "B",
+  "tags": [
+   "removal",
+   "defence",
+   "delay"
+  ],
+  "reason": "Akshin's tags; 2-mana instant -3/-3 is cheap combat-speed interaction.; tempo dropped: pure interaction is delay (Akshin Q1, 2026-11-05)",
+  "question": ""
+ },
+ {
+  "name": "Lich's Relic",
+  "colors": "B",
+  "tags": [
+   "removal",
+   "tempo"
+  ],
+  "reason": "Akshin's tags; 3 mana for a destroy effect that leaves a +2/+1 equipment, more than its cost. Sorcery speed, so not delay."
+ },
+ {
+  "name": "Liliana the Repentant",
+  "colors": "B",
+  "tags": [
+   "mill",
+   "gy_payoff",
+   "gy_recursion",
+   "etb_payoff"
+  ],
+  "reason": "Akshin's tags; mills on every other creature entering, and the exhaust reanimates an ETB creature."
+ },
+ {
+  "name": "Loot, the Anomaly",
+  "colors": "B",
+  "tags": [
+   "mill",
+   "gy_payoff",
+   "death_enabler",
+   "defence"
+  ],
+  "reason": "Threshold sac outlet: sacrificing your own creatures fills the graveyard and feeds death triggers.; defence by body (toughness > power, rule 14)"
+ },
+ {
+  "name": "Mabel, Bitter Recluse",
+  "colors": "B",
+  "tags": [
+   "removal",
+   "tempo",
+   "defence"
+  ],
+  "reason": "Akshin's tags; 1-mana deathtouch body plus counter removal is genuine tempo, not instant so not delay."
+ },
+ {
+  "name": "Massacre Girl, Most Wanted",
+  "colors": "B",
+  "tags": [
+   "death_payoff",
+   "ping_enabler",
+   "ping_payoff",
+   "lifegain_enabler"
+  ],
+  "reason": "Drains 1 per creature of yours dying and grows on noncombat damage to the opponent: payoff for both WB and BR."
+ },
+ {
+  "name": "Mind Twist",
+  "colors": "B",
+  "tags": [
+   "removal"
+  ],
+  "reason": "X discard at random strips threats from hand (Q3). X spell, so not tempo."
+ },
+ {
+  "name": "Multiply by Zero",
+  "colors": "B",
+  "tags": [
+   "removal",
+   "defence",
+   "delay"
+  ],
+  "reason": "Akshin's tags; 2-mana instant that zeroes a creature in combat.; tempo dropped: pure interaction is delay (Akshin Q1, 2026-11-05)",
+  "question": ""
+ },
+ {
+  "name": "Necrodominance",
+  "colors": "B",
+  "tags": [
+   "draw"
+  ],
+  "reason": "Life-for-cards engine; exiles everything bound for the graveyard, so it switches off your own graveyard cards."
+ },
+ {
+  "name": "Overwrite the Multiverse",
+  "colors": "B",
+  "tags": [
+   "surveil",
+   "jace_enabler",
+   "removal",
+   "draw",
+   "ramp_payoff",
+   "top_payoff"
+  ],
+  "reason": "Akshin's tags; exile wrath that empowers Jace per creature exiled.; ramp_payoff: costs 6+ (Akshin Q6); top payoff: game-ender (Akshin, step 3)"
+ },
+ {
+  "name": "Proft, Sinister Mastermind",
+  "colors": "B",
+  "tags": [
+   "mill",
+   "gy_payoff",
+   "tempo",
+   "defence",
+   "delay"
+  ],
+  "reason": "Akshin's tags; the 1-mana discard -3/-1 is instant-speed and shrinks or kills an attacker."
+ },
+ {
+  "name": "Rampart Hunter",
+  "colors": "B",
+  "tags": [
+   "etb_enabler"
+  ],
+  "reason": "Deathtouch body with an ETB pump and deathtouch for another creature: enters-value creature."
+ },
+ {
+  "name": "Rank Rat",
+  "colors": "B",
+  "tags": [
+   "tempo",
+   "etb_enabler",
+   "removal"
+  ],
+  "reason": "Akshin's tag; ETB discard is enters value.; removal added (Akshin, review answers)",
+  "question": ""
+ },
+ {
+  "name": "Rewrite Regrets",
+  "colors": "B",
+  "tags": [
+   "surveil",
+   "gy_payoff",
+   "gy_recursion",
+   "jace_enabler",
+   "tempo",
+   "draw",
+   "etb_payoff"
+  ],
+  "reason": "Akshin's tags; reanimating a creature reuses its ETB."
+ },
+ {
+  "name": "Rise of the Deathbringer",
+  "colors": "B",
+  "tags": [
+   "draw",
+   "removal",
+   "defence"
+  ],
+  "reason": "Modal instant: power-based draw, or a -3/-3 sweeper usable in their combat."
+ },
+ {
+  "name": "Sanctum Lurker",
+  "colors": "B",
+  "tags": [
+   "surveil",
+   "jace_enabler",
+   "jace_payoff",
+   "draw",
+   "ping_enabler",
+   "lifegain_enabler",
+   "top_payoff"
+  ],
+  "reason": "Akshin's tags; the granted +2 deals 1 to the opponent and gains 1 each turn.; top payoff: game-ender (Akshin, step 3)"
+ },
+ {
+  "name": "Screeching Soulbreaker",
+  "colors": "B",
+  "tags": [
+   "tempo",
+   "ping_enabler",
+   "lifegain_enabler",
+   "defence"
+  ],
+  "reason": "Akshin's tag; each attack drains 1 (noncombat damage plus lifegain).; defence by body, real blocker (Akshin Q5)",
+  "question": ""
+ },
+ {
+  "name": "Silence the Echo",
+  "colors": "B",
+  "tags": [
+   "mill",
+   "removal",
+   "tempo",
+   "death_enabler"
+  ],
+  "reason": "Akshin's tags; the optional sacrifice cost is a sac outlet."
+ },
+ {
+  "name": "Snow-Covered Swamp",
+  "colors": "B",
+  "tags": [],
+  "reason": "basic land"
+ },
+ {
+  "name": "Solve for Disappointment",
+  "colors": "B",
+  "tags": [
+   "surveil",
+   "jace_enabler",
+   "draw",
+   "removal"
+  ],
+  "reason": "Akshin's tags; also takes their best nonland permanent from hand.; removal added (Akshin, review answers)",
+  "question": ""
+ },
+ {
+  "name": "Swamp",
+  "colors": "B",
+  "tags": [],
+  "reason": "basic land"
+ },
+ {
+  "name": "Terminal Criticism",
+  "colors": "B",
+  "tags": [
+   "removal",
+   "delay",
+   "defence",
+   "lifegain_enabler"
+  ],
+  "reason": "2-mana instant kill, only blue or red targets; usable in combat; 1 life."
+ },
+ {
+  "name": "Teyo, Diamondblade Mage",
+  "colors": "B",
+  "tags": [
+   "defence",
+   "etb_enabler",
+   "counters_enabler"
+  ],
+  "reason": "Flash ETB gives a blocker deathtouch mid-combat and a +1/+1 counter."
+ },
+ {
+  "name": "Theoretical Necromancer",
+  "colors": "B",
+  "tags": [
+   "gy_payoff",
+   "gy_recursion",
+   "tempo",
+   "etb_payoff"
+  ],
+  "reason": "Akshin's tags; returning a creature to hand lets its ETB be replayed."
+ },
+ {
+  "name": "Tinybones, Pocket Nuisance",
+  "colors": "B",
+  "tags": [
+   "removal",
+   "tempo",
+   "ping_enabler",
+   "etb_enabler"
+  ],
+  "reason": "Akshin's tags; ETB discard is enters value and every discard pings the opponent."
+ },
+ {
+  "name": "Vraska's Final Mercy",
+  "colors": "B",
+  "tags": [
+   "surveil",
+   "jace_enabler",
+   "removal",
+   "draw"
+  ],
+  "reason": "Akshin's tags; modal kill or empower Jace 6."
+ },
+ {
+  "name": "Way of the Deathbringer",
+  "colors": "B",
+  "tags": [
+   "surveil",
+   "jace_enabler",
+   "draw",
+   "death_enabler",
+   "mill"
+  ],
+  "reason": "Akshin's tags; planeswalker -2 sacrifices a creature for a 4/4, a sac outlet.; mill added: sacrifice = mill (Q4)",
+  "question": ""
+ },
+ {
+  "name": "Way of the Necromancer",
+  "colors": "B",
+  "tags": [
+   "surveil",
+   "jace_enabler",
+   "draw",
+   "death_payoff"
+  ],
+  "reason": "Akshin's tags; your creatures dying add loyalty to every planeswalker."
+ },
+ {
+  "name": "Winter, Tormented Loner",
+  "colors": "B",
+  "tags": [
+   "mill",
+   "gy_payoff",
+   "removal",
+   "defence",
+   "death_enabler",
+   "etb_enabler",
+   "growth"
+  ],
+  "reason": "Akshin's tags; ETB sacrifice-for-edict is both a sac outlet and enters value.; growth: +1/+0 per creature/walker card in your graveyard (Akshin, 2026-11-05)"
+ },
+ {
+  "name": "Yargle, Glutton of Urborg",
+  "colors": "B",
+  "tags": [],
+  "reason": "no text (vanilla)"
+ },
+ {
+  "name": "Afterthought Sentry",
+  "colors": "C",
+  "tags": [],
+  "reason": "2-mana artifact body with paid flying and graveyard hate on attack; hate is not a graveyard payoff, no role"
+ },
+ {
+  "name": "Arcane Amphisbaena",
+  "colors": "G",
+  "tags": [
+   "jace_enabler",
+   "surveil",
+   "draw",
+   "tempo",
+   "etb_enabler"
+  ],
+  "reason": "2-mana deathtouch plus empower 2 on ETB: Jace enabler (surveil + draw, rule 1), more than its cost"
+ },
+ {
+  "name": "Archive Arbiter",
+  "colors": "C",
+  "tags": [
+   "removal",
+   "lifegain_enabler",
+   "etb_enabler",
+   "ramp_payoff"
+  ],
+  "reason": "6-mana flyer whose ETB destroys a noncreature permanent or gains 4 life (both modes count, Q6); ramp_payoff: costs 6+ (Akshin Q6)"
+ },
+ {
+  "name": "Bestial Incursion",
+  "colors": "G",
+  "tags": [
+   "gy_payoff",
+   "gy_recursion",
+   "defence"
+  ],
+  "reason": "4/4 trampler now and again via flashback (rule 2); Akshin's tags; defence: 4/4 body, toughness 3+ (rule 3; added 2026-11-05 deck review)"
+ },
+ {
+  "name": "Budding Insurgent",
+  "colors": "G",
+  "tags": [
+   "removal",
+   "mill",
+   "death_enabler"
+  ],
+  "reason": "sacrifices itself to destroy an artifact/enchantment: situational removal, self-sacrifice is mill (rule 17) and death fodder"
+ },
+ {
+  "name": "Carnivorous Cultivator",
+  "colors": "G",
+  "tags": [
+   "mill",
+   "gy_payoff",
+   "gy_recursion",
+   "tempo",
+   "defence"
+  ],
+  "reason": "2-mana deathtouch with a prepare spell that puts a land in the graveyard, then returns lands from it; two cards in one; defence by body (toughness > power, rule 14)"
+ },
+ {
+  "name": "Compel Brutality",
+  "colors": "G",
+  "tags": [
+   "removal",
+   "defence",
+   "delay",
+   "jace_payoff"
+  ],
+  "reason": "2-mana instant one-sided bite usable in their combat; the Jace-token mode turns loyalty into damage"
+ },
+ {
+  "name": "Edgar, Moonlit Sovereign",
+  "colors": "G",
+  "tags": [
+   "counters_enabler",
+   "counters_payoff",
+   "defence",
+   "growth"
+  ],
+  "reason": "flash 5-drop that grows itself with +1/+1 counters and pumps every creature that has a counter; defence: flash, ambushes attackers (Akshin, 2026-11-05); growth: two +1/+1 counters each end step without a spell (Akshin, 2026-11-05)"
+ },
+ {
+  "name": "Emrakul, the Exigent Doom",
+  "colors": "C",
+  "tags": [
+   "ramp",
+   "ramp_payoff",
+   "top_payoff"
+  ],
+  "reason": "10-mana flyer: exile from hand to make a land tap for 2, then cast it early; the ramp top end; top payoff: game-ender (Akshin, step 3)"
+ },
+ {
+  "name": "Eye of Jace",
+  "colors": "C",
+  "tags": [
+   "surveil",
+   "gy_payoff",
+   "tempo",
+   "jace_enabler",
+   "mill",
+   "ping_enabler",
+   "lifegain_enabler"
+  ],
+  "reason": "1-mana surveil engine that sacrifices itself at seven graveyard cards for 2 to each opponent and 2 life; Akshin's tags plus strategy roles"
+ },
+ {
+  "name": "Eye of Ugin",
+  "colors": "C",
+  "tags": [
+   "draw"
+  ],
+  "reason": "colourless utility land: tutors a colourless creature for 7 (card advantage); cost reduction only for Eldrazi"
+ },
+ {
+  "name": "Fblthp, Knows the Way",
+  "colors": "G",
+  "tags": [
+   "draw"
+  ],
+  "reason": "X spell that fetches up to X basics to hand: card advantage and colour fixing, body sized by domain"
+ },
+ {
+  "name": "Flourishing Grapple",
+  "colors": "G",
+  "tags": [
+   "removal",
+   "delay",
+   "defence"
+  ],
+  "reason": "1-mana instant one-sided bite (rule 4), usable in the opponent's combat; tempo dropped: pure interaction is delay (Akshin Q1, 2026-11-05)"
+ },
+ {
+  "name": "Forest",
+  "colors": "G",
+  "tags": [],
+  "reason": "basic land"
+ },
+ {
+  "name": "Gardenize",
+  "colors": "G",
+  "tags": [
+   "ramp",
+   "death_payoff"
+  ],
+  "reason": "does nothing alone; your creatures dying turn into extra green mana each turn"
+ },
+ {
+  "name": "Garruk, Curse Breaker",
+  "colors": "G",
+  "tags": [
+   "draw",
+   "ramp"
+  ],
+  "reason": "5-mana walker: draws off power-4+ creatures, +2 untaps two lands, -3 makes a 4/4 (modes count fully)"
+ },
+ {
+  "name": "Ghalta the Unstoppable",
+  "colors": "G",
+  "tags": [
+   "ramp_payoff"
+  ],
+  "reason": "9-mana trampler that gets cheap once you have a big creature; much better on a ramp/big-body board"
+ },
+ {
+  "name": "Greenhouse Propagator",
+  "colors": "G",
+  "tags": [
+   "ramp",
+   "lifegain_enabler",
+   "defence",
+   "etb_payoff"
+  ],
+  "reason": "3-mana mana creature that gains 1 life whenever another creature enters; defence by body (toughness > power, rule 14); another-creature-enters trigger counts as ETB payoff (Akshin Q3)"
+ },
+ {
+  "name": "Hall of Echoes",
+  "colors": "C",
+  "tags": [],
+  "reason": "colourless utility land; late copy of your creature, no role in limited beyond a colourless source"
+ },
+ {
+  "name": "Hexhaven Dueling Arena",
+  "colors": "C",
+  "tags": [],
+  "reason": "colourless utility land that re-prepares creatures; prepare is not a set strategy here"
+ },
+ {
+  "name": "Hexhaven Invigorator",
+  "colors": "G",
+  "tags": [
+   "ramp"
+  ],
+  "reason": "GGGG body that puts lands onto the battlefield when dealt damage"
+ },
+ {
+  "name": "Hungering Puppetbeast",
+  "colors": "G",
+  "tags": [
+   "ramp",
+   "etb_enabler",
+   "mill",
+   "counters_enabler",
+   "growth"
+  ],
+  "reason": "5-drop with a Heartwood mana token on ETB and an artifact sac outlet that adds +1/+1 counters; growth: counter per artifact sacrificed (Akshin, 2026-11-05)"
+ },
+ {
+  "name": "Hunter's Axe",
+  "colors": "G",
+  "tags": [
+   "tempo"
+  ],
+  "reason": "1-mana equipment (rule 4) giving +2/+0 and trample or deathtouch"
+ },
+ {
+  "name": "Inspired Tethermage",
+  "colors": "G",
+  "tags": [
+   "jace_payoff",
+   "jace_enabler",
+   "surveil",
+   "draw",
+   "counters_enabler",
+   "growth"
+  ],
+  "reason": "grows with each loyalty counter placed (rewards empower) and can empower Jace 2 itself late; growth: counter whenever loyalty counters go on a walker (Akshin, 2026-11-05)"
+ },
+ {
+  "name": "Jiang Yanggu, Never Alone",
+  "colors": "G",
+  "tags": [
+   "tempo",
+   "etb_enabler"
+  ],
+  "reason": "4 mana for a body plus a 3/3 token on ETB: more than its cost"
+ },
+ {
+  "name": "Karn, Argent Defender",
+  "colors": "C",
+  "tags": [
+   "defence"
+  ],
+  "reason": "2-mana artifact creature that stops ETB triggers for both players; a hoser, also hurts your own etb deck; defence by body (toughness > power, rule 14)"
+ },
+ {
+  "name": "Keeper of the Quiet Hour",
+  "colors": "C",
+  "tags": [
+   "surveil",
+   "jace_enabler",
+   "draw",
+   "etb_enabler"
+  ],
+  "reason": "3-mana colourless empower Jace 2 on ETB; Akshin's tags plus etb_enabler"
+ },
+ {
+  "name": "Living Library",
+  "colors": "C",
+  "tags": [
+   "removal",
+   "mill",
+   "death_enabler",
+   "defence"
+  ],
+  "reason": "2-drop that later sacrifices itself to tuck an opponent's creature/walker: removal, sac is mill (rule 17), dies; defence by body (toughness > power, rule 14)"
+ },
+ {
+  "name": "Loot, the Nexus",
+  "colors": "G",
+  "tags": [
+   "ramp",
+   "dual"
+  ],
+  "reason": "3-mana mana creature making any colour, more with varied powers"
+ },
+ {
+  "name": "Marwyn, the Preserver",
+  "colors": "G",
+  "tags": [
+   "gy_recursion",
+   "gy_payoff"
+  ],
+  "reason": "2-drop that returns land cards from the graveyard to hand (uses the graveyard, rule 18)"
+ },
+ {
+  "name": "Medic's Kitesail",
+  "colors": "C",
+  "tags": [
+   "lifegain_enabler"
+  ],
+  "reason": "equipment granting flying and 1 life per attack"
+ },
+ {
+  "name": "Murmuring Volume",
+  "colors": "C",
+  "tags": [
+   "mill",
+   "draw",
+   "ramp",
+   "dual"
+  ],
+  "reason": "any-colour mana rock with a discard-to-draw loot; Akshin's tags"
+ },
+ {
+  "name": "Omnipresence",
+  "colors": "G",
+  "tags": [
+   "ramp_payoff"
+  ],
+  "reason": "8-mana enchantment that casts cheap spells free; only good if you reach it early with a board",
+  "question": ""
+ },
+ {
+  "name": "Pia, Aether Ascetic",
+  "colors": "G",
+  "tags": [
+   "mill",
+   "etb_enabler"
+  ],
+  "reason": "ETB discard a card (mill, rule 5) to tutor an enchantment"
+ },
+ {
+  "name": "Puppet Crafting",
+  "colors": "G",
+  "tags": [
+   "gy_payoff",
+   "gy_recursion",
+   "tempo"
+  ],
+  "reason": "2-mana aura making an artifact (e.g. a Heartwood token) a 5/5, returns itself from the graveyard (rule 3)"
+ },
+ {
+  "name": "Restore with Empathy",
+  "colors": "G",
+  "tags": [
+   "gy_recursion",
+   "gy_payoff",
+   "lifegain_enabler"
+  ],
+  "reason": "instant return of a permanent card from graveyard plus 4 life"
+ },
+ {
+  "name": "Roiling Canopy",
+  "colors": "G",
+  "tags": [],
+  "reason": "mono-green tapped land with a rarely live Forest-count pump"
+ },
+ {
+  "name": "Room of Refuge",
+  "colors": "C",
+  "tags": [
+   "dual",
+   "counters_enabler",
+   "mill"
+  ],
+  "reason": "any-one-colour tapped land that later sacrifices itself (rule 17) for two +1/+1 counters; Akshin's dual kept"
+ },
+ {
+  "name": "Root Maze",
+  "colors": "G",
+  "tags": [],
+  "reason": "symmetric: artifacts and lands enter tapped for both players, slows your own mana too; no role"
+ },
+ {
+  "name": "Ruric Thar, Magecrusher",
+  "colors": "G",
+  "tags": [
+   "ramp_payoff"
+  ],
+  "reason": "7-mana uncounterable reach/vigilance/trample hexproof threat; big top end that is much better cast early"
+ },
+ {
+  "name": "Simulacrum Shaper",
+  "colors": "G",
+  "tags": [
+   "ramp",
+   "draw",
+   "etb_enabler",
+   "death_enabler"
+  ],
+  "reason": "3-drop that ramps a basic onto the battlefield and draws when it dies"
+ },
+ {
+  "name": "Snow-Covered Forest",
+  "colors": "G",
+  "tags": [],
+  "reason": "basic land"
+ },
+ {
+  "name": "Something Worth Saving",
+  "colors": "G",
+  "tags": [
+   "mill",
+   "draw",
+   "lifegain_enabler"
+  ],
+  "reason": "instant mill 4, take a permanent from them, gain 1"
+ },
+ {
+  "name": "Sureshot Sower",
+  "colors": "G",
+  "tags": [
+   "removal",
+   "mill",
+   "defence"
+  ],
+  "reason": "2-mana reach blocker or discard itself (rule 5) to kill a flyer at instant speed"
+ },
+ {
+  "name": "Tarmogoyf",
+  "colors": "G",
+  "tags": [
+   "gy_payoff",
+   "defence",
+   "tempo",
+   "growth"
+  ],
+  "reason": "2-drop sized by card types in all graveyards, toughness above power, often above rate; growth: grows with card types in graveyards (Akshin, 2026-11-05)"
+ },
+ {
+  "name": "Tethermage's Advantage",
+  "colors": "G",
+  "tags": [
+   "tempo"
+  ],
+  "reason": "1-mana instant trick +2/+2, reach and untap (rule 4)"
+ },
+ {
+  "name": "The Echoverse Fulcrum",
+  "colors": "C",
+  "tags": [
+   "mill",
+   "removal"
+  ],
+  "reason": "2-mana ETB loot and a late sorcery-speed board wipe; Akshin's tags"
+ },
+ {
+  "name": "Titanbones, Towering Heart",
+  "colors": "G",
+  "tags": [
+   "lifegain_payoff",
+   "counters_enabler",
+   "growth"
+  ],
+  "reason": "4-drop that grows +2 counters per lifegain event; gains 3 if discarded; growth: two counters per lifegain (Akshin, 2026-11-05)"
+ },
+ {
+  "name": "Traxos, Scourge Eternal",
+  "colors": "C",
+  "tags": [
+   "tempo"
+  ],
+  "reason": "4-mana trampler with an oversized body that untaps when you cast an artifact or creature; 5/4 trample for 4 confirmed (Scryfall)",
+  "question": ""
+ },
+ {
+  "name": "Verdant Kraken",
+  "colors": "G",
+  "tags": [
+   "ramp",
+   "ramp_payoff",
+   "top_payoff"
+  ],
+  "reason": "7-drop making a 3/3 mana land creature every upkeep; much better early; top payoff: game-ender (Akshin, step 3)"
+ },
+ {
+  "name": "Vinelasher Adept",
+  "colors": "G",
+  "tags": [
+   "mill",
+   "counters_enabler",
+   "etb_enabler",
+   "defence",
+   "ramp_payoff"
+  ],
+  "reason": "6-mana reach with ETB three +1/+1 counters, or landcycles (discard = mill); Akshin's mill kept; defence by body, real blocker (Akshin Q5); ramp_payoff: costs 6+ (Akshin Q6)",
+  "question": ""
+ },
+ {
+  "name": "Wastes",
+  "colors": "C",
+  "tags": [],
+  "reason": "basic land"
+ },
+ {
+  "name": "Way of the Paradox",
+  "colors": "G",
+  "tags": [
+   "jace_enabler",
+   "surveil",
+   "draw",
+   "ramp",
+   "lifegain_enabler"
+  ],
+  "reason": "3-mana empower Jace 5, extra land drop, 1 life per loyalty activation"
+ },
+ {
+  "name": "Way of the Wildspeaker",
+  "colors": "G",
+  "tags": [
+   "jace_enabler",
+   "surveil",
+   "draw",
+   "jace_payoff"
+  ],
+  "reason": "5-mana empower Jace 7 and gives walkers a -4 for a 4/4 Beast: makes the Jace token much stronger"
+ },
+ {
+  "name": "Wrecking Gecko",
+  "colors": "G",
+  "tags": [],
+  "reason": "5-mana ward body with an expensive pump; a vanilla-ish body at rate"
+ },
+ {
+  "name": "Yoshimaru, Scrappy Stray",
+  "colors": "G",
+  "tags": [
+   "removal",
+   "etb_enabler",
+   "tempo"
+  ],
+  "reason": "2-drop whose ETB makes another creature fight: body plus removal for 2"
+ },
+ {
+  "name": "Ajani Unrelenting",
+  "colors": "R",
+  "tags": [
+   "removal",
+   "draw",
+   "mill",
+   "ramp_payoff",
+   "top_payoff"
+  ],
+  "reason": "6-mana walker: -3 sweeps non-token creatures, -2 discards hand (mill) and draws per creature, Cadet each activation; big top end; top payoff: game-ender (Akshin, step 3)"
+ },
+ {
+  "name": "Ajani's Anguish",
+  "colors": "R",
+  "tags": [
+   "removal",
+   "ping_enabler"
+  ],
+  "reason": "X damage to any target on ETB: removal or face burn; X spell so not tempo (rule 4), sorcery speed so not defence"
+ },
+ {
+  "name": "Arni, Renowned Champion",
+  "colors": "R",
+  "tags": [
+   "etb_payoff",
+   "defence"
+  ],
+  "reason": "Pumps whenever another creature enters: rewards creatures entering, repeatable; defence by body (toughness > power, rule 14)",
+  "question": ""
+ },
+ {
+  "name": "Artifist Acumen",
+  "colors": "R",
+  "tags": [
+   "draw",
+   "tempo"
+  ],
+  "reason": "1-mana cantrip with team first strike: tempo by default (rule 4) and draws"
+ },
+ {
+  "name": "Awaken the Inferno",
+  "colors": "R",
+  "tags": [
+   "mill",
+   "counters_enabler",
+   "removal"
+  ],
+  "reason": "Akshin: mill (landcycling discards itself); added counters_enabler for the +1/+1 counter; removal added (Akshin, review answers)",
+  "question": ""
+ },
+ {
+  "name": "Blazing Crescendo",
+  "colors": "R",
+  "tags": [
+   "draw",
+   "tempo",
+   "defence"
+  ],
+  "reason": "2-mana instant trick plus impulse card: two effects for little mana, card advantage; defence: instant trick that wins a block (Akshin, 2026-11-05)"
+ },
+ {
+  "name": "Chandra's Emberling",
+  "colors": "R",
+  "tags": [
+   "spells_payoff",
+   "counters_enabler",
+   "growth"
+  ],
+  "reason": "Haste body that grows with a +1/+1 counter per noncreature spell; growth: counter per noncreature spell (Akshin, 2026-11-05)"
+ },
+ {
+  "name": "Chandra, Torch of Defiance",
+  "colors": "R",
+  "tags": [
+   "draw",
+   "ping_enabler",
+   "ramp",
+   "removal"
+  ],
+  "reason": "Walker: +1 card or 2 to face, +1 RR, -3 four damage to a creature; every mode counts (Q6)"
+ },
+ {
+  "name": "Command the Stage",
+  "colors": "R",
+  "tags": [
+   "gy_payoff",
+   "gy_recursion",
+   "ping_payoff"
+  ],
+  "reason": "Akshin: gy_payoff + recursion; returns itself only if the opponent took noncombat damage, so ping_payoff"
+ },
+ {
+  "name": "Craterclaw Colossus",
+  "colors": "R",
+  "tags": [
+   "ramp_payoff",
+   "etb_enabler",
+   "top_payoff"
+  ],
+  "reason": "7-mana haste with an ETB overrun: big top end, ETB value; top payoff: game-ender (Akshin, step 3)"
+ },
+ {
+  "name": "Curse-Marred Demon",
+  "colors": "R",
+  "tags": [
+   "mill",
+   "etb_enabler"
+  ],
+  "reason": "4-mana flying trample, ETB tutor then random discard (mill, rule 5)"
+ },
+ {
+  "name": "Draconic Visitor",
+  "colors": "R",
+  "tags": [],
+  "reason": "5-mana flier; the artifact-token replacement has few enablers in mono red, no tagged role"
+ },
+ {
+  "name": "Eardrum Rattler",
+  "colors": "R",
+  "tags": [],
+  "reason": "2-mana body that makes a small creature unblockable; aggro utility, no tagged role"
+ },
+ {
+  "name": "Essence Burn",
+  "colors": "R",
+  "tags": [
+   "removal",
+   "delay",
+   "defence"
+  ],
+  "reason": "2-mana instant, 5 damage to a black or green creature: cheap instant removal, usable in their combat"
+ },
+ {
+  "name": "Face Yourself",
+  "colors": "R",
+  "tags": [
+   "ramp_payoff",
+   "death_enabler",
+   "top_payoff"
+  ],
+  "reason": "7-mana sorcery copying their board with haste; copies are sacrificed at end step (death fodder); top payoff: game-ender (Akshin, step 3)",
+  "question": ""
+ },
+ {
+  "name": "Fulminous Forte",
+  "colors": "R",
+  "tags": [
+   "removal",
+   "defence",
+   "delay"
+  ],
+  "reason": "3-mana instant modal: 5 damage to one creature or 1 to each of theirs; instant so defence; delay: instant interaction at 3 or less (Akshin Q7)"
+ },
+ {
+  "name": "Gallia, the Merrymaker",
+  "colors": "R",
+  "tags": [
+   "counters_enabler",
+   "counters_payoff"
+  ],
+  "reason": "Puts +1/+1 counters on fresh creatures and gives countered creatures haste"
+ },
+ {
+  "name": "Heartstring Puller",
+  "colors": "R",
+  "tags": [
+   "etb_enabler"
+  ],
+  "reason": "4-mana trample that brings a 2/2 Cadet on ETB: two bodies, ETB value"
+ },
+ {
+  "name": "Identity Echo",
+  "colors": "R",
+  "tags": [
+   "etb_payoff"
+  ],
+  "reason": "Repeatable: exile your creature, put the next creature from the library onto the battlefield, re-triggering ETBs"
+ },
+ {
+  "name": "Jiang Yanggu, Alone",
+  "colors": "R",
+  "tags": [
+   "mill",
+   "draw",
+   "counters_enabler"
+  ],
+  "reason": "Menace; loots on solo attack (discard = mill, draw as with the looter Arni) and adds +1/+1 counters"
+ },
+ {
+  "name": "Kiora of Fire and Ashes",
+  "colors": "R",
+  "tags": [
+   "etb_enabler",
+   "ramp_payoff",
+   "top_payoff"
+  ],
+  "reason": "6-mana ETB 5/5 flying Dragon, 8-mana repeatable Dragons: top end and mana sink; top payoff: game-ender (Akshin, step 3)"
+ },
+ {
+  "name": "Koth, the Geomancer",
+  "colors": "R",
+  "tags": [
+   "ping_enabler",
+   "ramp"
+  ],
+  "reason": "Reach; landfall pings each opponent and adds R on Mountains"
+ },
+ {
+  "name": "Marwyn, the Clearcutter",
+  "colors": "R",
+  "tags": [
+   "tempo",
+   "draw",
+   "mill"
+  ],
+  "reason": "1-mana (rule 4); sacrifices an artifact or land to draw (sacrifice = mill, rule 17)"
+ },
+ {
+  "name": "Master of Barbs",
+  "colors": "R",
+  "tags": [
+   "ping_payoff"
+  ],
+  "reason": "Menace 2-drop; team +1/+0 whenever opponents take noncombat damage"
+ },
+ {
+  "name": "Mountain",
+  "colors": "R",
+  "tags": [],
+  "reason": "basic land"
+ },
+ {
+  "name": "No Admittance",
+  "colors": "R",
+  "tags": [
+   "removal",
+   "ping_enabler",
+   "jace_enabler",
+   "surveil",
+   "draw",
+   "tempo"
+  ],
+  "reason": "2-mana sorcery: 3 damage to any target plus empower Jace 1 (rule 1); two effects for 2 mana, sorcery so not delay"
+ },
+ {
+  "name": "Pia, Determined Rebuilder",
+  "colors": "R",
+  "tags": [
+   "etb_enabler",
+   "tempo"
+  ],
+  "reason": "3-mana body plus a 1/1 flying Thopter on ETB; late artifact pump; tempo: two bodies on 3 mana (Akshin, 2026-11-05)"
+ },
+ {
+  "name": "Pompous Battlemage",
+  "colors": "R",
+  "tags": [
+   "tempo",
+   "spells_payoff",
+   "mill",
+   "draw"
+  ],
+  "reason": "1-mana prowess creature (rule 4) with a prepared rummage (discard = mill, draws)"
+ },
+ {
+  "name": "Pyre Rhymer",
+  "colors": "R",
+  "tags": [
+   "spells_payoff",
+   "ramp"
+  ],
+  "reason": "Prowess creature with a prepared Mountain-ritual spell"
+ },
+ {
+  "name": "Samut, Hazoret's Champion",
+  "colors": "R",
+  "tags": [],
+  "reason": "Haste lord for aggro, no tagged role"
+ },
+ {
+  "name": "Skilled Battlecarver",
+  "colors": "R",
+  "tags": [],
+  "reason": "2-drop with first strike on your turn and firebreathing; rate body, no tagged role"
+ },
+ {
+  "name": "Snow-Covered Mountain",
+  "colors": "R",
+  "tags": [],
+  "reason": "basic land"
+ },
+ {
+  "name": "Splinter Twin",
+  "colors": "R",
+  "tags": [
+   "etb_payoff"
+  ],
+  "reason": "Aura: tap for a hasty token copy each turn, reusing the creature's ETB"
+ },
+ {
+  "name": "Stingcaster Mage",
+  "colors": "R",
+  "tags": [
+   "gy_recursion",
+   "gy_payoff",
+   "etb_enabler",
+   "tempo"
+  ],
+  "reason": "2-mana haste body that gives an instant or sorcery in your graveyard flashback: two effects for 2 mana"
+ },
+ {
+  "name": "Tether Technician",
+  "colors": "R",
+  "tags": [
+   "mill",
+   "removal",
+   "ping_enabler",
+   "etb_enabler",
+   "defence"
+  ],
+  "reason": "5-mana reach; ETB optional discard (mill) for 2 damage to any target; defence by body (toughness > power, rule 14)"
+ },
+ {
+  "name": "Tetsuko Umezawa, Pursuer",
+  "colors": "R",
+  "tags": [
+   "spells_payoff",
+   "ping_enabler",
+   "defence"
+  ],
+  "reason": "Double strike prowess; deals 1 to the opponent when a small creature blocks; defence by body (toughness > power, rule 14)"
+ },
+ {
+  "name": "Tomik, Izzet Sparkmage",
+  "colors": "R",
+  "tags": [
+   "spells_payoff",
+   "ping_payoff"
+  ],
+  "reason": "Prowess; adds 1 to every noncombat damage source: mediocre alone, strong with burn; defence by body (toughness > power, rule 14); body too small to block (x/2), Akshin Q5"
+ },
+ {
+  "name": "Violent Echoes",
+  "colors": "R",
+  "tags": [
+   "removal",
+   "defence",
+   "jace_enabler",
+   "surveil",
+   "draw"
+  ],
+  "reason": "4-mana instant 6 damage to a creature, excess empowers Jace (rule 1); instant so defence"
+ },
+ {
+  "name": "Way of the Pyromancer",
+  "colors": "R",
+  "tags": [
+   "jace_enabler",
+   "surveil",
+   "draw",
+   "ramp"
+  ],
+  "reason": "2-mana empower Jace 2 (rule 1); walkers gain +1: add R"
+ },
+ {
+  "name": "Way of the Warlord",
+  "colors": "R",
+  "tags": [
+   "jace_enabler",
+   "surveil",
+   "draw",
+   "removal",
+   "ping_enabler",
+   "tempo"
+  ],
+  "reason": "3 mana for Jace with 5 loyalty plus a -4 that deals 2 to a creature and 2 to a player: more than its cost"
+ },
+ {
+  "name": "Winter, Team Player",
+  "colors": "R",
+  "tags": [
+   "spells_payoff"
+  ],
+  "reason": "Convoke 5-drop; team +1/+0 per noncreature spell"
+ },
+ {
+  "name": "Wrath of the Bloodmane",
+  "colors": "R",
+  "tags": [
+   "removal",
+   "defence",
+   "delay"
+  ],
+  "reason": "Instant 4 damage, 2 mana with a legend: cheap instant removal usable in their combat"
+ },
+ {
+  "name": "Arni, Humble Scribe",
+  "colors": "U",
+  "tags": [
+   "mill",
+   "tempo",
+   "draw",
+   "etb_payoff"
+  ],
+  "reason": "Repeatable loot that untaps on each creature entering: discard feeds the graveyard, cheap engine.; another-creature-enters trigger counts as ETB payoff (Akshin Q3)"
+ },
+ {
+  "name": "Chandra, Chill of Compliance",
+  "colors": "U",
+  "tags": [
+   "surveil",
+   "tempo",
+   "ramp",
+   "defence",
+   "jace_enabler",
+   "delay"
+  ],
+  "reason": "Surveil +1 (Jace line), noncreature mana, -X taps and stuns a creature (delays the opponent)."
+ },
+ {
+  "name": "Consider",
+  "colors": "U",
+  "tags": [
+   "surveil",
+   "tempo",
+   "draw",
+   "jace_enabler"
+  ],
+  "reason": "One-mana cantrip with surveil 1."
+ },
+ {
+  "name": "Consign to Memory",
+  "colors": "U",
+  "tags": [
+   "removal",
+   "delay"
+  ],
+  "reason": "One-mana counter for triggered abilities or colourless spells, replicate for more; narrow in limited.; tempo dropped: pure interaction is delay (Akshin Q1, 2026-11-05)",
+  "question": ""
+ },
+ {
+  "name": "Countersculpt",
+  "colors": "U",
+  "tags": [
+   "surveil",
+   "jace_enabler",
+   "jace_payoff",
+   "removal",
+   "tempo",
+   "draw",
+   "delay"
+  ],
+  "reason": "Hard counter that also empowers Jace 1: delay plus an extra for you."
+ },
+ {
+  "name": "Cruel Calculations",
+  "colors": "U",
+  "tags": [
+   "draw",
+   "gy_payoff",
+   "jace_payoff"
+  ],
+  "reason": "Draws per card put into a graveyard from the library this turn: weak alone, strong after mill or surveil."
+ },
+ {
+  "name": "Cryotheory Adept",
+  "colors": "U",
+  "tags": [
+   "gy_payoff",
+   "tempo",
+   "defence",
+   "spells_payoff",
+   "delay"
+  ],
+  "reason": "Two-drop prowess body; later exiles itself from the graveyard to tap and stun a creature."
+ },
+ {
+  "name": "Diviner of Victory",
+  "colors": "U",
+  "tags": [
+   "surveil",
+   "jace_enabler",
+   "jace_payoff",
+   "removal",
+   "delay",
+   "tempo"
+  ],
+  "reason": "One-drop that grows on scry/surveil, prepared spell bounces a 3-drop and surveils 1: two cards for one mana."
+ },
+ {
+  "name": "Divining Duelist",
+  "colors": "U",
+  "tags": [
+   "mill",
+   "tempo",
+   "defence",
+   "delay",
+   "etb_enabler"
+  ],
+  "reason": "Flash ETB modal: tap a creature, untap, or loot."
+ },
+ {
+  "name": "Fblthp, Impossibly Lost",
+  "colors": "U",
+  "tags": [
+   "gy_payoff",
+   "draw",
+   "top_payoff"
+  ],
+  "reason": "Draws two on combat damage; wins with an empty library.; top payoff: game-ender (Akshin, step 3)"
+ },
+ {
+  "name": "Flesh Duplicate",
+  "colors": "U",
+  "tags": [
+   "death_enabler",
+   "etb_payoff",
+   "mill",
+   "tempo"
+  ],
+  "reason": "Two-mana clone of the best creature for three turns, then sacrificed: copies ETB value and reliably dies.; etb_payoff + tempo (Akshin Q9)",
+  "question": ""
+ },
+ {
+  "name": "Geist of Saint Thalia",
+  "colors": "U",
+  "tags": [
+   "tempo",
+   "ramp",
+   "spells_payoff"
+  ],
+  "reason": "Two-mana flyer that discounts noncreature spells.",
+  "question": ""
+ },
+ {
+  "name": "Hapatra, the Desert Frost",
+  "colors": "U",
+  "tags": [
+   "tempo",
+   "defence",
+   "delay",
+   "etb_enabler"
+  ],
+  "reason": "ETB taps and stuns a creature; untap ability later."
+ },
+ {
+  "name": "Icy Reception",
+  "colors": "U",
+  "tags": [
+   "removal",
+   "defence",
+   "delay"
+  ],
+  "reason": "Two-mana instant: soft counter on a creature or -5/-0 on an attacker.; tempo dropped: pure interaction is delay (Akshin Q1, 2026-11-05)",
+  "question": ""
+ },
+ {
+  "name": "Infinite Coursework",
+  "colors": "U",
+  "tags": [
+   "removal",
+   "defence",
+   "delay"
+  ],
+  "reason": "Three-mana aura that taps and locks down a creature and removes its abilities.; tempo dropped: pure interaction is delay (Akshin Q1, 2026-11-05)",
+  "question": ""
+ },
+ {
+  "name": "Island",
+  "colors": "U",
+  "tags": [],
+  "reason": "basic land"
+ },
+ {
+  "name": "Jace's Machinations",
+  "colors": "U",
+  "tags": [
+   "surveil",
+   "jace_enabler",
+   "jace_payoff",
+   "draw"
+  ],
+  "reason": "Empower Jace 8 at instant speed and lets Jace abilities be used at instant speed."
+ },
+ {
+  "name": "Jace, Reality Sculptor",
+  "colors": "U",
+  "tags": [
+   "surveil",
+   "jace_enabler",
+   "jace_payoff",
+   "draw",
+   "top_payoff"
+  ],
+  "reason": "Empowers the Jace token per Island; -3 blunts attackers; alt-win at 25 loyalty.; top payoff: game-ender (Akshin, step 3)"
+ },
+ {
+  "name": "Lyra, Tolarian Archangel",
+  "colors": "U",
+  "tags": [
+   "tempo",
+   "draw",
+   "defence",
+   "draw_payoff"
+  ],
+  "reason": "Three-mana flyer, Angel tokens when you draw three in a turn, late draw-two on damage.; draw_payoff added (Akshin, review answers)",
+  "question": ""
+ },
+ {
+  "name": "Mindseeker Oculus",
+  "colors": "U",
+  "tags": [
+   "surveil",
+   "jace_enabler",
+   "draw",
+   "etb_enabler"
+  ],
+  "reason": "ETB empower Jace 4."
+ },
+ {
+  "name": "Perfected Theory",
+  "colors": "U",
+  "tags": [
+   "tempo",
+   "defence",
+   "delay"
+  ],
+  "reason": "One-mana instant: shrink a creature to 1/1 or grow one to 4/5, wins a combat either way.; delay, not removal: never kills alone (Akshin Q10)",
+  "question": ""
+ },
+ {
+  "name": "Plan for All Outcomes",
+  "colors": "U",
+  "tags": [
+   "surveil",
+   "jace_enabler",
+   "removal",
+   "tempo",
+   "draw",
+   "delay",
+   "spells_payoff"
+  ],
+  "reason": "ETB tucks a nonland permanent (top or bottom), then empowers Jace on your first noncreature spell each turn."
+ },
+ {
+  "name": "Precise Redaction",
+  "colors": "U",
+  "tags": [
+   "removal",
+   "delay"
+  ],
+  "reason": "Two-mana counter for white or black spells; narrow."
+ },
+ {
+  "name": "Proft, Consulting Detective",
+  "colors": "U",
+  "tags": [
+   "jace_payoff",
+   "tempo",
+   "draw",
+   "defence",
+   "growth"
+  ],
+  "reason": "Surveil payoff: pay 2 to grow and draw on each scry/surveil.; growth: counter per paid scry/surveil trigger (Akshin, 2026-11-05)"
+ },
+ {
+  "name": "Protege's Awakening",
+  "colors": "U",
+  "tags": [
+   "surveil",
+   "jace_enabler",
+   "draw"
+  ],
+  "reason": "Empower Jace 6 and draw a card."
+ },
+ {
+  "name": "Ruric Thar, Biomagus",
+  "colors": "U",
+  "tags": [
+   "draw",
+   "defence",
+   "spells_payoff",
+   "ramp_payoff"
+  ],
+  "reason": "Six-mana flyer with double prowess; draws when targeted.; ramp_payoff: costs 6+ (Akshin Q6)"
+ },
+ {
+  "name": "Samut, Tyrant of Naktamun",
+  "colors": "U",
+  "tags": [
+   "spells_payoff"
+  ],
+  "reason": "Two-drop that gives your instants and sorceries split second; little alone."
+ },
+ {
+  "name": "Seasoned Cryomancer",
+  "colors": "U",
+  "tags": [
+   "mill",
+   "tempo",
+   "draw",
+   "defence",
+   "delay",
+   "etb_enabler",
+   "gy_payoff"
+  ],
+  "reason": "ETB draw two discard two, taps and stuns per nonland discard; exiles from the graveyard to draw two."
+ },
+ {
+  "name": "Snow-Covered Island",
+  "colors": "U",
+  "tags": [],
+  "reason": "basic land"
+ },
+ {
+  "name": "Sphinx of False Conclusions",
+  "colors": "U",
+  "tags": [
+   "mill",
+   "draw",
+   "death_enabler"
+  ],
+  "reason": "Flash flyer that loots on attack and returns as a token copy when it dies."
+ },
+ {
+  "name": "Sphinx's Approach",
+  "colors": "U",
+  "tags": [
+   "draw"
+  ],
+  "reason": "Instant draw two; the Sphinx search needs five copies.; draw added (Akshin, review answers)",
+  "question": ""
+ },
+ {
+  "name": "Sublime Epiphany",
+  "colors": "U",
+  "tags": [
+   "removal",
+   "tempo",
+   "draw",
+   "ramp_payoff"
+  ],
+  "reason": "Six-mana modal instant: counter, bounce, copy, draw; several modes at once.; ramp_payoff: costs 6+ (Akshin Q6); delay removed: 6 mana, over the 3-mana cap (R2)"
+ },
+ {
+  "name": "Surveillance Phantasm",
+  "colors": "U",
+  "tags": [
+   "surveil",
+   "gy_payoff",
+   "tempo",
+   "defence",
+   "jace_enabler",
+   "jace_payoff"
+  ],
+  "reason": "Defender flyer that attacks after you surveil; has its own surveil activation."
+ },
+ {
+  "name": "Tetsuko Umezawa, Fugitive",
+  "colors": "U",
+  "tags": [
+   "tempo",
+   "defence"
+  ],
+  "reason": "Makes small creatures unblockable."
+ },
+ {
+  "name": "The Theorist, Jace Beleren",
+  "colors": "U",
+  "tags": [
+   "draw",
+   "removal",
+   "delay",
+   "tempo"
+  ],
+  "reason": "Four-mana walker: draws each opponent turn, makes 1/1s, -2 bounces a creature, -6 draws three."
+ },
+ {
+  "name": "Theorist's Proxy",
+  "colors": "U",
+  "tags": [
+   "surveil",
+   "jace_enabler",
+   "draw",
+   "etb_enabler",
+   "death_enabler",
+   "defence"
+  ],
+  "reason": "Flash ETB empower Jace 3; can sacrifice itself for U.; defence by body, real blocker (Akshin Q5)",
+  "question": ""
+ },
+ {
+  "name": "Theorist's Sanctum",
+  "colors": "U",
+  "tags": [
+   "surveil",
+   "jace_enabler",
+   "draw"
+  ],
+  "reason": "Island that empowers Jace 2 for three mana."
+ },
+ {
+  "name": "Traxos, Academy Guardian",
+  "colors": "U",
+  "tags": [
+   "tempo",
+   "defence",
+   "spells_payoff"
+  ],
+  "reason": "Flying vigilance prowess, costs 2 less after a noncreature spell."
+ },
+ {
+  "name": "Undulating Witness",
+  "colors": "U",
+  "tags": [
+   "mill",
+   "ramp",
+   "defence"
+  ],
+  "reason": "Five-mana flyer or basic landcycling 2 (discards itself).; defence by body, real blocker (Akshin Q5)",
+  "question": ""
+ },
+ {
+  "name": "Unsummon",
+  "colors": "U",
+  "tags": [
+   "removal",
+   "defence",
+   "delay"
+  ],
+  "reason": "One-mana instant bounce.; tempo dropped: pure interaction is delay (Akshin Q1, 2026-11-05)",
+  "question": ""
+ },
+ {
+  "name": "Variable Chaser",
+  "colors": "U",
+  "tags": [
+   "mill",
+   "draw",
+   "spells_payoff",
+   "defence"
+  ],
+  "reason": "Flying prowess body; prepared wheel discards and redraws seven.; defence by body 2/3 (Akshin Q5: toughness 3+)",
+  "question": ""
+ },
+ {
+  "name": "Way of the Cryomancer",
+  "colors": "U",
+  "tags": [
+   "surveil",
+   "jace_enabler",
+   "draw",
+   "jace_payoff",
+   "spells_payoff"
+  ],
+  "reason": "Empower Jace 5; planeswalkers can spend 3 loyalty to copy your next instant or sorcery.; jace_payoff confirmed: spends Jace token loyalty (Akshin Q8)",
+  "question": ""
+ },
+ {
+  "name": "Way of the Mind Sculptor",
+  "colors": "U",
+  "tags": [
+   "surveil",
+   "jace_enabler",
+   "jace_payoff",
+   "draw"
+  ],
+  "reason": "Empower Jace 5; draws when a loyalty ability removes two or more counters."
+ },
+ {
+  "name": "Yargle, Goliath of Otaria",
+  "colors": "U",
+  "tags": [
+   "defence"
+  ],
+  "reason": "vanilla body, no text; defence by body (toughness > power, rule 14)"
+ },
+ {
+  "name": "Yuriko, Hope from the Shadows",
+  "colors": "U",
+  "tags": [
+   "surveil",
+   "gy_payoff",
+   "tempo",
+   "defence",
+   "jace_enabler",
+   "etb_enabler"
+  ],
+  "reason": "One-mana flash ETB: surveil 2 or -X/-0 by graveyard size."
+ },
+ {
+  "name": "Academic Ascent",
+  "colors": "W",
+  "tags": [
+   "jace_enabler",
+   "surveil",
+   "draw",
+   "tempo"
+  ],
+  "reason": "2-mana instant pump + flying plus empower Jace 2 (rule 1): two effects for little mana"
+ },
+ {
+  "name": "Ajani Resolute",
+  "colors": "W",
+  "tags": [
+   "lifegain_enabler",
+   "lifegain_payoff"
+  ],
+  "reason": "0 gains life; grows on lifegain and makes a Pridemate that rewards lifegain"
+ },
+ {
+  "name": "Austere Command",
+  "colors": "W",
+  "tags": [
+   "removal",
+   "ramp_payoff",
+   "top_payoff"
+  ],
+  "reason": "6-mana modal sorcery sweeper; ramp_payoff: costs 6+ (Akshin Q6); top payoff: game-ender (Akshin, step 3)"
+ },
+ {
+  "name": "Campus Crier",
+  "colors": "W",
+  "tags": [
+   "gy_payoff",
+   "jace_enabler",
+   "surveil",
+   "draw"
+  ],
+  "reason": "2-drop whose exile-from-graveyard cost empowers Jace 2 (rules 1, 18)"
+ },
+ {
+  "name": "Danitha, Sword of Hope",
+  "colors": "W",
+  "tags": [
+   "draw",
+   "spells_payoff"
+  ],
+  "reason": "first strike 3-drop drawing off Equipment or spells targeting your creatures; draw + spells_payoff (Akshin Q11)",
+  "question": ""
+ },
+ {
+  "name": "Enlightened Confidant",
+  "colors": "W",
+  "tags": [
+   "lifegain_enabler",
+   "lifegain_payoff",
+   "surveil",
+   "jace_enabler",
+   "draw"
+  ],
+  "reason": "lifelink 2-drop that surveils after lifegain and returns the card to hand"
+ },
+ {
+  "name": "Fateshaper Aspirant",
+  "colors": "W",
+  "tags": [
+   "etb_enabler",
+   "gy_recursion",
+   "gy_payoff",
+   "counters_enabler",
+   "defence"
+  ],
+  "reason": "ETB modal: return a legendary card from graveyard or +1/+1 counter and indestructible (Q6); defence by body (toughness > power, rule 14)"
+ },
+ {
+  "name": "Flickering Hound",
+  "colors": "W",
+  "tags": [
+   "etb_payoff"
+  ],
+  "reason": "blinks a creature every time you cast a creature: reuses ETBs"
+ },
+ {
+  "name": "Generous Revival",
+  "colors": "W",
+  "tags": [
+   "gy_payoff",
+   "gy_recursion",
+   "counters_enabler",
+   "etb_payoff"
+  ],
+  "reason": "reanimates a cheap creature with a counter, flashback; reanimating an ETB creature reuses it"
+ },
+ {
+  "name": "Germinate Recruits",
+  "colors": "W",
+  "tags": [
+   "lifegain_payoff"
+  ],
+  "reason": "X 2/2s where X is life gained this turn: nothing without lifegain"
+ },
+ {
+  "name": "Ghalta the Immovable",
+  "colors": "W",
+  "tags": [
+   "defence",
+   "ramp_payoff"
+  ],
+  "reason": "cost reduced by toughness, lets high-toughness/defender bodies attack for toughness; ramp_payoff: costs 6+ (Akshin Q6)",
+  "question": ""
+ },
+ {
+  "name": "Gideon's Memorial",
+  "colors": "W",
+  "tags": [
+   "removal",
+   "defence",
+   "delay",
+   "mill"
+  ],
+  "reason": "discard itself for 4 damage to an attacker or blocker at instant speed (rules 5, Q2); token anthem; planeswalker-only mana not counted as ramp"
+ },
+ {
+  "name": "Graft Surgeon",
+  "colors": "W",
+  "tags": [
+   "counters_enabler",
+   "death_enabler"
+  ],
+  "reason": "enters with a counter and passes its counters on when it dies"
+ },
+ {
+  "name": "Guiding Hydra",
+  "colors": "W",
+  "tags": [
+   "counters_enabler"
+  ],
+  "reason": "X counters, spreads +1/+1 counters each combat; X spell so not tempo"
+ },
+ {
+  "name": "Hexhaven Battalion",
+  "colors": "W",
+  "tags": [
+   "mill",
+   "surveil",
+   "jace_enabler",
+   "draw",
+   "ramp",
+   "ramp_payoff",
+   "top_payoff"
+  ],
+  "reason": "Akshin's tags: three Cadets + empower Jace 2, landcycling discards itself; ramp_payoff: costs 6+ (Akshin Q6); top payoff: game-ender (Akshin, step 3)"
+ },
+ {
+  "name": "Kindred Judgment",
+  "colors": "W",
+  "tags": [
+   "removal",
+   "ramp_payoff",
+   "top_payoff"
+  ],
+  "reason": "7-mana one-sided-ish sweeper; ramp_payoff: costs 6+ (Akshin Q6); top payoff: game-ender (Akshin, step 3)"
+ },
+ {
+  "name": "Koth of the Homestead",
+  "colors": "W",
+  "tags": [
+   "lifegain_enabler",
+   "counters_enabler",
+   "defence"
+  ],
+  "reason": "landfall life gain; Plains drops add +1/+1 counters; defence by body (toughness > power, rule 14)"
+ },
+ {
+  "name": "Liliana the Faultless",
+  "colors": "W",
+  "tags": [
+   "tempo",
+   "lifegain_enabler",
+   "mill"
+  ],
+  "reason": "1-drop (rule 4) gaining life as creatures enter; discard cost for hexproof (rule 5)"
+ },
+ {
+  "name": "Loyal Tutor",
+  "colors": "W",
+  "tags": [],
+  "reason": "1-mana instant planeswalker tutor to top (rule 4); no role: tutors a planeswalker card (Akshin Q8)",
+  "question": ""
+ },
+ {
+  "name": "Lyra, Archangel of Dawn",
+  "colors": "W",
+  "tags": [
+   "lifegain_payoff",
+   "counters_enabler"
+  ],
+  "reason": "3-mana flyer that grows on every lifegain"
+ },
+ {
+  "name": "Memory Trap",
+  "colors": "W",
+  "tags": [
+   "removal"
+  ],
+  "reason": "3-mana O-Ring style exile of any nonland permanent, sorcery speed"
+ },
+ {
+  "name": "Plains",
+  "colors": "W",
+  "tags": [],
+  "reason": "basic land"
+ },
+ {
+  "name": "Predictive Preparations",
+  "colors": "W",
+  "tags": [
+   "counters_enabler",
+   "gy_payoff",
+   "gy_recursion"
+  ],
+  "reason": "+1/+1 counters on two creatures with flashback (rule 2)"
+ },
+ {
+  "name": "Prophesied End",
+  "colors": "W",
+  "tags": [
+   "removal",
+   "defence",
+   "delay"
+  ],
+  "reason": "2-mana instant kill; no card for them when it hits an attacker"
+ },
+ {
+  "name": "Refute Destiny",
+  "colors": "W",
+  "tags": [
+   "removal",
+   "surveil",
+   "jace_enabler"
+  ],
+  "reason": "2-mana sorcery exile for green/blue creatures or planeswalkers, surveil 1"
+ },
+ {
+  "name": "Repurposed Enforcer",
+  "colors": "W",
+  "tags": [
+   "jace_enabler",
+   "surveil",
+   "draw",
+   "tempo"
+  ],
+  "reason": "2-drop that empowers Jace X on every attack: much more than its cost"
+ },
+ {
+  "name": "Rescue Girl, First Responder",
+  "colors": "W",
+  "tags": [
+   "etb_payoff",
+   "defence"
+  ],
+  "reason": "flyer that bounces your own permanents each turn to reuse ETBs; defence by body (toughness > power, rule 14)"
+ },
+ {
+  "name": "Return to the Light Realms",
+  "colors": "W",
+  "tags": [
+   "gy_payoff",
+   "gy_recursion",
+   "etb_payoff",
+   "ramp_payoff",
+   "top_payoff"
+  ],
+  "reason": "9-mana mass reanimation of every nonland permanent in your graveyard; ramp_payoff: costs 6+ (Akshin Q6); top payoff: game-ender (Akshin, step 3)"
+ },
+ {
+  "name": "Saheeli, Consul of Oversight",
+  "colors": "W",
+  "tags": [
+   "jace_payoff"
+  ],
+  "reason": "flyer making a Thopter on each turn you scry or surveil (rule 20)"
+ },
+ {
+  "name": "Shatterwing Pegasus",
+  "colors": "W",
+  "tags": [
+   "defence"
+  ],
+  "reason": "3-mana flyer with an expensive team pump; no role; defence by body (toughness > power, rule 14)"
+ },
+ {
+  "name": "Snow-Covered Plains",
+  "colors": "W",
+  "tags": [],
+  "reason": "basic land"
+ },
+ {
+  "name": "Surgical Precision",
+  "colors": "W",
+  "tags": [
+   "removal",
+   "draw",
+   "lifegain_enabler"
+  ],
+  "reason": "modal: kill toughness 4+ and gain 1, or draw and gain 2 (Q6); sorcery"
+ },
+ {
+  "name": "Teyo, Lightshield Expert",
+  "colors": "W",
+  "tags": [
+   "tempo",
+   "etb_enabler",
+   "counters_enabler"
+  ],
+  "reason": "2-mana flash creature with ETB counter and hexproof (rule 15 example)"
+ },
+ {
+  "name": "Thalia, the Survivor",
+  "colors": "W",
+  "tags": [
+   "lifegain_enabler",
+   "delay",
+   "defence"
+  ],
+  "reason": "lifelink 4-drop taxing the opponent's noncreature spells; defence by body (toughness > power, rule 14)"
+ },
+ {
+  "name": "Tomik, Orzhov Lawmage",
+  "colors": "W",
+  "tags": [
+   "counters_payoff",
+   "defence"
+  ],
+  "reason": "2-mana flyer giving flying to countered creatures; protects planeswalkers (Jace) from swarms"
+ },
+ {
+  "name": "Unflinching Hortimancer",
+  "colors": "W",
+  "tags": [
+   "lifegain_payoff",
+   "counters_enabler",
+   "growth"
+  ],
+  "reason": "ward 2-drop growing on every lifegain; growth: counter per lifegain (Akshin, 2026-11-05)"
+ },
+ {
+  "name": "Way of the Healer",
+  "colors": "W",
+  "tags": [
+   "jace_enabler",
+   "jace_payoff",
+   "surveil",
+   "draw"
+  ],
+  "reason": "empower Jace 5, and planeswalkers make Cadets and surveil"
+ },
+ {
+  "name": "Way of the Mentor",
+  "colors": "W",
+  "tags": [
+   "jace_enabler",
+   "surveil",
+   "draw",
+   "lifegain_payoff"
+  ],
+  "reason": "empower Jace 5, lifegain adds loyalty"
+ },
+ {
+  "name": "Yoshimaru, Beloved Companion",
+  "colors": "W",
+  "tags": [
+   "counters_payoff"
+  ],
+  "reason": "adds an extra +1/+1 counter whenever counters are placed"
+ },
+ {
+  "name": "Your Fate Ends Here",
+  "colors": "W",
+  "tags": [
+   "removal",
+   "defence",
+   "delay",
+   "surveil",
+   "jace_enabler"
+  ],
+  "reason": "3-mana instant kill of MV 3+ creature or planeswalker, surveil 1"
+ },
+ {
+  "name": "Yuriko, Blade of the Mighty",
+  "colors": "W",
+  "tags": [
+   "defence"
+  ],
+  "reason": "combat lock on spells and double strike for lone attackers; no listed role; defence by body (toughness > power, rule 14); defence: shuts off combat tricks (Akshin Q13)",
+  "question": ""
+ },
+ {
+  "name": "Aerid Konstrari",
+  "colors": "RG",
+  "tags": [
+   "ramp",
+   "tempo",
+   "etb_enabler"
+  ],
+  "reason": "4-mana 5/4 flyer that also makes a Heartwood on entering and dying: above rate plus mana, an ETB-value creature"
+ },
+ {
+  "name": "Bloombrute",
+  "colors": "WG",
+  "tags": [
+   "draw",
+   "lifegain_payoff",
+   "lifegain_enabler"
+  ],
+  "reason": "4/4 for 4 that draws once a turn on lifegain (needs the WG plan to draw); late activation grants lifelink"
+ },
+ {
+  "name": "Blossom-Blessed Angel",
+  "colors": "WG",
+  "tags": [
+   "defence",
+   "tempo",
+   "lifegain_enabler",
+   "counters_enabler"
+  ],
+  "reason": "2/4 flying vigilance body (toughness > power) plus a 1-mana counter-and-gain-1 spell copy: two effects for the price"
+ },
+ {
+  "name": "Craftwork Crusher",
+  "colors": "RG",
+  "tags": [
+   "removal",
+   "draw",
+   "ramp_payoff",
+   "etb_enabler",
+   "top_payoff"
+  ],
+  "reason": "7-drop 7/5 trampler whose ETB picks two of 4 damage / Cadet / draw; RG's big top end, far better cast early off Heartwoods; top payoff: game-ender (Akshin, step 3)"
+ },
+ {
+  "name": "Denzilore Fatehold",
+  "colors": "WU",
+  "tags": [
+   "jace_payoff",
+   "counters_enabler",
+   "defence"
+  ],
+  "reason": "flash flying 3/4 (toughness > power) that puts a counter on every creature each time you scry/surveil: surveil payoff, mediocre without it"
+ },
+ {
+  "name": "Deserted Beach",
+  "colors": "WU",
+  "tags": [
+   "dual"
+  ],
+  "reason": "dual land, enters tapped early (rule 10)"
+ },
+ {
+  "name": "Desperate Futurescribe",
+  "colors": "WU",
+  "tags": [
+   "jace_payoff",
+   "counters_enabler",
+   "defence"
+  ],
+  "reason": "3/4 flyer whose combat pump becomes a permanent +1/+1 counter if you scried/surveilled: surveil payoff"
+ },
+ {
+  "name": "Emergency Phytomedic",
+  "colors": "WG",
+  "tags": [
+   "tempo",
+   "lifegain_enabler",
+   "counters_enabler"
+  ],
+  "reason": "1-mana creature plus a 1-mana counter-and-gain-1 copy (rule 4); gains life and places counters"
+ },
+ {
+  "name": "Fatehold Annex",
+  "colors": "WU",
+  "tags": [
+   "dual"
+  ],
+  "reason": "dual land, enters tapped without a planeswalker (rule 10)"
+ },
+ {
+  "name": "Fatehold Charm",
+  "colors": "WU",
+  "tags": [
+   "surveil",
+   "jace_enabler",
+   "tempo",
+   "draw",
+   "delay"
+  ],
+  "reason": "Akshin's tags kept; instant bounce of a spell or creature costs the opponent time (delay), modal so tempo stays (rule 15 choice of effects)"
+ },
+ {
+  "name": "Fatehold Chronologist",
+  "colors": "WU",
+  "tags": [
+   "surveil",
+   "tempo",
+   "defence",
+   "jace_enabler"
+  ],
+  "reason": "Akshin's tags kept; the Cadet + surveil 1 copy is surveil, so jace_enabler"
+ },
+ {
+  "name": "Grim Repriser",
+  "colors": "BR",
+  "tags": [
+   "gy_payoff",
+   "gy_recursion",
+   "ping_payoff",
+   "spells_payoff"
+  ],
+  "reason": "Akshin's tags kept; prowess = spells_payoff (rule 9); a plain 2/2 that only returns after noncombat damage to the opponent, so ping_payoff"
+ },
+ {
+  "name": "Hallway Heckler",
+  "colors": "BR",
+  "tags": [
+   "mill",
+   "draw",
+   "defence",
+   "ping_enabler",
+   "tempo"
+  ],
+  "reason": "2/3 rummager (discarding own card = mill, rule 5, plus draw) with a 1-mana ping-face copy; two effects for the cost"
+ },
+ {
+  "name": "Haunted Ridge",
+  "colors": "BR",
+  "tags": [
+   "dual"
+  ],
+  "reason": "dual land, enters tapped early (rule 10)"
+ },
+ {
+  "name": "Heartwood Crafter",
+  "colors": "RG",
+  "tags": [
+   "ramp",
+   "tempo"
+  ],
+  "reason": "1-mana mana creature (rule 4) whose copy makes a Heartwood mana rock"
+ },
+ {
+  "name": "Ingris Stingerquill",
+  "colors": "BR",
+  "tags": [
+   "ping_enabler",
+   "defence"
+  ],
+  "reason": "1/4 flyer (toughness > power); every attacker pings the opponent for 1 noncombat damage, turning on BR payoffs"
+ },
+ {
+  "name": "Konstrari Annex",
+  "colors": "RG",
+  "tags": [
+   "dual"
+  ],
+  "reason": "dual land, enters tapped without a planeswalker (rule 10)"
+ },
+ {
+  "name": "Konstrari Charm",
+  "colors": "RG",
+  "tags": [
+   "removal",
+   "delay",
+   "defence",
+   "counters_enabler",
+   "ramp"
+  ],
+  "reason": "modal instant (Q6): 6 to a flyer at instant speed (removal, delay, defence), two +1/+1 counters, or add {C}{C}{C} to cast a big spell early"
+ },
+ {
+  "name": "Konstrari Improviser",
+  "colors": "RG",
+  "tags": [
+   "ramp",
+   "tempo"
+  ],
+  "reason": "2-mana 2/2 plus a later Heartwood mana rock: two bodies of value for little mana"
+ },
+ {
+  "name": "Kwia Vigorbloom",
+  "colors": "WG",
+  "tags": [
+   "lifegain_enabler",
+   "ramp",
+   "ramp_payoff",
+   "top_payoff"
+  ],
+  "reason": "6-mana 6/6 flying lifelinker with ward; lifegain makes Lotus tokens (mana). Strong alone, so not a payoff (Q7); ramp_payoff: costs 6+ (Akshin Q6); top payoff: game-ender (Akshin, step 3)"
+ },
+ {
+  "name": "Null Summoner",
+  "colors": "UB",
+  "tags": [
+   "gy_payoff",
+   "removal",
+   "etb_enabler"
+  ],
+  "reason": "Akshin's tags kept; ETB takes a card from the opponent's hand, an ETB-value creature"
+ },
+ {
+  "name": "Overgrown Farmland",
+  "colors": "WG",
+  "tags": [
+   "dual"
+  ],
+  "reason": "dual land, enters tapped early (rule 10)"
+ },
+ {
+  "name": "Paradox Shaper",
+  "colors": "UB",
+  "tags": [
+   "mill",
+   "defence"
+  ],
+  "reason": "Akshin's tags kept; re-prepares every upkeep, so the mill-3 copy repeats (UB enabler is mill, already tagged)"
+ },
+ {
+  "name": "Proctor of Potential",
+  "colors": "WU",
+  "tags": [
+   "surveil",
+   "jace_enabler",
+   "jace_payoff",
+   "gy_recursion",
+   "gy_payoff",
+   "tempo",
+   "etb_payoff"
+  ],
+  "reason": "2-mana 3/1 that surveils whenever a creature enters; returns from the graveyard if you scried/surveilled (rule 3, rule 20); another-creature-enters trigger counts as ETB payoff (Akshin Q3)"
+ },
+ {
+  "name": "Prudent Fateseer",
+  "colors": "WU",
+  "tags": [
+   "surveil",
+   "jace_enabler",
+   "jace_payoff",
+   "defence",
+   "tempo"
+  ],
+  "reason": "1/4 (defence) that pumps the team on scry/surveil, plus a Cadet + surveil 1 copy: enabler and payoff, two bodies for the cost"
+ },
+ {
+  "name": "Recursive Recruitment",
+  "colors": "UB",
+  "tags": [
+   "gy_payoff",
+   "gy_recursion"
+  ],
+  "reason": "Akshin's tags kept; flashback (rule 2), the UB 'rather milled than drawn' payoff (Q7)"
+ },
+ {
+  "name": "Rockfall Vale",
+  "colors": "RG",
+  "tags": [
+   "dual"
+  ],
+  "reason": "dual land, enters tapped early (rule 10)"
+ },
+ {
+  "name": "Semester Foreseer",
+  "colors": "WU",
+  "tags": [
+   "surveil",
+   "tempo",
+   "defence",
+   "jace_enabler",
+   "etb_enabler"
+  ],
+  "reason": "Akshin's tags kept; ETB surveil + Cadet/surveil copy make it jace_enabler and an ETB-value creature"
+ },
+ {
+  "name": "Shipwreck Marsh",
+  "colors": "UB",
+  "tags": [
+   "dual"
+  ],
+  "reason": "dual land, enters tapped early (rule 10)"
+ },
+ {
+  "name": "Solarium Sentry",
+  "colors": "WG",
+  "tags": [
+   "lifegain_enabler",
+   "tempo"
+  ],
+  "reason": "2-mana 3/3 above rate that gains 2 whenever the opponent casts a cheap spell"
+ },
+ {
+  "name": "Stingerquill Annex",
+  "colors": "BR",
+  "tags": [
+   "dual"
+  ],
+  "reason": "dual land, enters tapped without a planeswalker (rule 10)"
+ },
+ {
+  "name": "Stingerquill Charm",
+  "colors": "BR",
+  "tags": [
+   "removal",
+   "delay",
+   "defence",
+   "ping_enabler"
+  ],
+  "reason": "modal instant: 3 damage to any target (removal at instant speed, or noncombat face damage), deathtouch/first strike trick, or a hasty Cadet"
+ },
+ {
+  "name": "Stingerquill Voxmancer",
+  "colors": "BR",
+  "tags": [
+   "tempo",
+   "ping_enabler"
+  ],
+  "reason": "Akshin's tag kept; re-prepares every upkeep, a repeatable 1-mana noncombat ping to the opponent",
+  "question": ""
+ },
+ {
+  "name": "Stinging Vitriol",
+  "colors": "BR",
+  "tags": [
+   "removal",
+   "ping_enabler",
+   "tempo"
+  ],
+  "reason": "2 to the opponent's face plus taking a nonland card from their hand (rule 16): two effects for 2 mana"
+ },
+ {
+  "name": "Tenured Tethermage",
+  "colors": "RG",
+  "tags": [
+   "ramp",
+   "mill",
+   "counters_enabler",
+   "growth"
+  ],
+  "reason": "ETB sacrifices a land (mill, rule 17) for two Heartwoods (ramp); taps artifacts to grow itself with +1/+1 counters; ramp, mill, counters_enabler (Akshin Q13); growth: two counters per two artifacts tapped (Akshin, 2026-11-05)",
+  "question": ""
+ },
+ {
+  "name": "Theorix Annex",
+  "colors": "UB",
+  "tags": [
+   "dual"
+  ],
+  "reason": "Akshin's tag kept; dual land (rule 10)"
+ },
+ {
+  "name": "Theorix Charm",
+  "colors": "UB",
+  "tags": [
+   "mill",
+   "removal",
+   "tempo",
+   "delay",
+   "draw"
+  ],
+  "reason": "Akshin's tags kept; soft counter and instant -2/-2 are delay; modal so tempo stays; draw added (Akshin, review answers)",
+  "question": ""
+ },
+ {
+  "name": "Theorix Metamage",
+  "colors": "UB",
+  "tags": [
+   "mill",
+   "gy_payoff",
+   "defence"
+  ],
+  "reason": "Akshin's tags kept; mill-3 copy and threshold body already carry the UB enabler/payoff"
+ },
+ {
+  "name": "Uldaros Theorix",
+  "colors": "UB",
+  "tags": [
+   "gy_payoff",
+   "gy_recursion",
+   "etb_enabler",
+   "ramp_payoff"
+  ],
+  "reason": "6-mana 5/5 flyer whose ETB recasts copies of graveyard cards (up to 6 mana value): uses the graveyard, ETB value; ramp_payoff: costs 6+ (Akshin Q6)"
+ },
+ {
+  "name": "Vigorbloom Annex",
+  "colors": "WG",
+  "tags": [
+   "dual"
+  ],
+  "reason": "dual land, enters tapped without a planeswalker (rule 10)"
+ },
+ {
+  "name": "Vigorbloom Charm",
+  "colors": "WG",
+  "tags": [
+   "removal",
+   "delay",
+   "defence",
+   "draw",
+   "lifegain_enabler",
+   "counters_enabler"
+  ],
+  "reason": "modal instant (Q6): protect a permanent, draw + gain 3, or +1/+1 counter and fight at instant speed (removal usable in combat)"
+ },
+ {
+  "name": "Vigorbloom Vanguard",
+  "colors": "WG",
+  "tags": [
+   "counters_enabler",
+   "counters_payoff",
+   "lifegain_enabler",
+   "tempo"
+  ],
+  "reason": "2-mana 2/2 giving countered creatures vigilance (counters payoff) plus a 1-mana counter-and-gain-1 copy; both tags per Akshin's WG call"
+ },
+ {
+  "name": "Void Extrapolator",
+  "colors": "UB",
+  "tags": [
+   "mill",
+   "gy_payoff",
+   "tempo"
+  ],
+  "reason": "Akshin's tags kept; mill copy + threshold body are the UB enabler/payoff"
+ },
+ {
+  "name": "Whiplash Wordsmith",
+  "colors": "BR",
+  "tags": [
+   "ping_enabler",
+   "ping_payoff"
+  ],
+  "reason": "3/3 for 4 that only gets flying and haste after noncombat damage to the opponent; its own 1-mana ping copy turns it on"
+ },
+ {
+  "name": "Woodwork Prodigy",
+  "colors": "RG",
+  "tags": [
+   "ramp"
+  ],
+  "reason": "3/3 for 3 that re-prepares every upkeep: a repeatable Heartwood mana rock maker"
+ },
+ {
+  "name": "Avatar of Burgeoning Echoes",
+  "colors": "UG",
+  "tags": [
+   "jace_enabler",
+   "surveil",
+   "draw",
+   "tempo",
+   "defence"
+  ],
+  "reason": "2-mana repeatable empower Jace 2 on every land drop (rule 1: enabler + surveil + draw); far more than its cost over a game; defence by body (toughness > power, rule 14)"
+ },
+ {
+  "name": "Blessed Ghoul",
+  "colors": "WB",
+  "tags": [
+   "gy_payoff",
+   "gy_recursion",
+   "tempo",
+   "defence",
+   "death_enabler",
+   "lifegain_enabler"
+  ],
+  "reason": "Akshin's tags kept (self-return, 1-drop); added: recurring chump/sac fodder for death triggers, lifelink gains life"
+ },
+ {
+  "name": "Charge the Sanctum",
+  "colors": "WR",
+  "tags": [
+   "counters_enabler"
+  ],
+  "reason": "modal combat trick; the single-target mode puts a +1/+1 counter, the team mode is an alpha-strike finisher"
+ },
+ {
+  "name": "Clash of Elements",
+  "colors": "UR",
+  "tags": [
+   "removal",
+   "delay",
+   "defence"
+  ],
+  "reason": "instant tuck of any nonland permanent (bottom, or top plus 2 damage = they redraw it); answers an attacker and costs the opponent a draw step"
+ },
+ {
+  "name": "Codie, Ravenous Codex",
+  "colors": "WUBRG",
+  "tags": [
+   "defence"
+  ],
+  "reason": "copies prepared spells; prepared is not a set strategy and the WUBRG activation is not castable in limited, so no role; defence by body (toughness > power, rule 14)"
+ },
+ {
+  "name": "Dedicated Commons",
+  "colors": "WR",
+  "tags": [
+   "dual"
+  ],
+  "reason": "RW dual land"
+ },
+ {
+  "name": "Edgar, Ancient Bloodlord",
+  "colors": "WB",
+  "tags": [
+   "death_enabler",
+   "death_payoff",
+   "lifegain_enabler",
+   "mill",
+   "defence",
+   "growth"
+  ],
+  "reason": "sac outlet (enabler, sacrificing own permanent = mill, rule 17) and gains life on each of your creature deaths (payoff); defence by body (toughness > power, rule 14); growth: counter per creature/walker sacrificed (Akshin, 2026-11-05)"
+ },
+ {
+  "name": "Entrust the Spark",
+  "colors": "UG",
+  "tags": [],
+  "reason": "needs a planeswalker to sacrifice, so it is dead without the Jace token; sacrificing turns the token into a planeswalker card from the library (rule 17 mill for the sacrifice); no role: planeswalker-card tutor, the Jace token is not used (Akshin Q8)",
+  "question": ""
+ },
+ {
+  "name": "Ferocity of the Hunt",
+  "colors": "BG",
+  "tags": [
+   "etb_payoff",
+   "death_payoff",
+   "gy_recursion",
+   "defence",
+   "tempo"
+  ],
+  "reason": "named BG etb_payoff: brings the creature back to re-trigger its ETB when it dies; flash deathtouch at 2 mana ambushes an attacker"
+ },
+ {
+  "name": "Formidable Commons",
+  "colors": "BG",
+  "tags": [
+   "dual"
+  ],
+  "reason": "BG dual land"
+ },
+ {
+  "name": "Frostbite Pyromental",
+  "colors": "UR",
+  "tags": [
+   "draw",
+   "tempo",
+   "mill",
+   "death_enabler"
+  ],
+  "reason": "3-mana haste trampler that draws two on connecting, then sacrifices itself (mill, rule 17; a dying creature for death triggers)"
+ },
+ {
+  "name": "Hapatra, the Desert Fang",
+  "colors": "BG",
+  "tags": [
+   "gy_payoff",
+   "removal",
+   "defence",
+   "etb_enabler"
+  ],
+  "reason": "Akshin's tags kept; ETB -1/-1 counters scaled by graveyard mana value make it an ETB-value creature (etb_enabler)"
+ },
+ {
+  "name": "Innovative Commons",
+  "colors": "UR",
+  "tags": [
+   "dual"
+  ],
+  "reason": "UR dual land"
+ },
+ {
+  "name": "Karn, Gilded Guardian",
+  "colors": "WUBRG",
+  "tags": [
+   "draw",
+   "etb_enabler",
+   "ramp_payoff"
+  ],
+  "reason": "vigilance trampler whose ETB draws per colour among your other artifacts; ETB-value creature; ramp_payoff: costs 6+ (Akshin Q6)"
+ },
+ {
+  "name": "Kiora of Salt and Sand",
+  "colors": "UG",
+  "tags": [
+   "jace_payoff",
+   "defence",
+   "top_payoff"
+  ],
+  "reason": "attack trigger needs a loyalty activation this turn and the -8 needs a planeswalker; mediocre 3-drop without the Jace token; defence by body (toughness > power, rule 14); top payoff: game-ender (Akshin, step 3)"
+ },
+ {
+  "name": "Mabel, Valley Hero",
+  "colors": "WR",
+  "tags": [
+   "counters_enabler",
+   "etb_payoff"
+  ],
+  "reason": "puts a +1/+1 counter on each creature as it enters, including herself; defence by body (toughness > power, rule 14); another-creature-enters trigger counts as ETB payoff (Akshin Q3); body too small to block (x/2), Akshin Q5"
+ },
+ {
+  "name": "Meticulous Commons",
+  "colors": "WB",
+  "tags": [
+   "dual"
+  ],
+  "reason": "WB dual land"
+ },
+ {
+  "name": "Mind Meanderer",
+  "colors": "UG",
+  "tags": [
+   "removal",
+   "etb_enabler",
+   "ramp_payoff",
+   "top_payoff"
+  ],
+  "reason": "6-mana flyer with an ETB fight: removal attached to an ETB-value body; ramp_payoff: costs 6+ (Akshin Q6); top payoff: game-ender (Akshin, step 3)"
+ },
+ {
+  "name": "Primal Witchstalker",
+  "colors": "BG",
+  "tags": [
+   "mill",
+   "gy_payoff",
+   "gy_recursion",
+   "ramp",
+   "etb_enabler"
+  ],
+  "reason": "ETB mills four and returns a land from graveyard to the battlefield tapped (land recursion = ramp); ETB-value creature, keeps the graveyard reading"
+ },
+ {
+  "name": "Saheeli, Jewel of Avishkar",
+  "colors": "UR",
+  "tags": [
+   "spells_payoff",
+   "defence"
+  ],
+  "reason": "makes a hasty 1/1 flyer per noncreature spell; a weak 4-drop without spells; defence by body (toughness > power, rule 14)"
+ },
+ {
+  "name": "Solitary Cell",
+  "colors": "WR",
+  "tags": [
+   "removal",
+   "tempo",
+   "mill",
+   "draw"
+  ],
+  "reason": "2-mana exile of a cheap nonland permanent plus a loot outlet (discard own legendary = mill, draws); several effects for little mana"
+ },
+ {
+  "name": "Tam's Resistance",
+  "colors": "UG",
+  "tags": [
+   "surveil",
+   "jace_enabler",
+   "tempo",
+   "draw",
+   "defence",
+   "counters_enabler"
+  ],
+  "reason": "Akshin's tags kept; added counters_enabler for the +1/+1 counter"
+ },
+ {
+  "name": "Tam, the Possibility",
+  "colors": "WUBRG",
+  "tags": [],
+  "reason": "planeswalker cost reduction is narrow and the proliferate needs WUBRG; nothing it does matters in limited beyond a body; defence by body (toughness > power, rule 14); no role (Akshin Q13)",
+  "question": ""
+ },
+ {
+  "name": "Transformative Commons",
+  "colors": "UG",
+  "tags": [
+   "dual"
+  ],
+  "reason": "UG dual land"
+ },
+ {
+  "name": "Twinned Vision",
+  "colors": "UR",
+  "tags": [
+   "mill",
+   "gy_payoff",
+   "gy_recursion",
+   "draw"
+  ],
+  "reason": "Akshin's tags kept; flashback draws two with a discard cost"
+ },
+ {
+  "name": "Twisted Fates",
+  "colors": "WB",
+  "tags": [
+   "removal",
+   "counters_enabler"
+  ],
+  "reason": "5-mana sorcery destroy any nonland permanent plus a +1/+1 counter on each of your creatures"
+ },
+ {
+  "name": "Vindictive Triumph",
+  "colors": "WB",
+  "tags": [
+   "removal",
+   "defence",
+   "delay",
+   "tempo",
+   "death_enabler"
+  ],
+  "reason": "instant exile of a creature or walker; on 3-or-less it comes back under your control until end step, which also makes it sac fodder",
+  "question": ""
+ },
+ {
+  "name": "Vraska, Soul of Stone",
+  "colors": "WUR",
+  "tags": [
+   "spells_payoff",
+   "ramp",
+   "death_enabler"
+  ],
+  "reason": "each noncreature spell makes a Treasure creature token: mana (ramp) and creatures to sacrifice; weak without spells"
+ },
+ {
+  "name": "Vraska, the Cutting Glare",
+  "colors": "BG",
+  "tags": [
+   "removal",
+   "etb_enabler",
+   "tempo"
+  ],
+  "reason": "3-mana deathtouch body with an ETB destroy-any-permanent once you have six lands",
+  "question": ""
+ },
+ {
+  "name": "Warrior's Blades",
+  "colors": "WR",
+  "tags": [
+   "removal",
+   "ping_enabler",
+   "lifegain_enabler",
+   "counters_payoff"
+  ],
+  "reason": "ETB 3 damage to any target (removal or face burn) and gain 3; equip gets cheaper per +1/+1 counter"
+ }
+]

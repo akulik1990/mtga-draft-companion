@@ -159,3 +159,10 @@ def override(name, value):
     target, attr = _target(name)
     setattr(target, attr, value)
     RUNTIME[name] = value
+
+
+@lru_cache(maxsize=16)
+def roles(set_code):
+    """Hand-reviewed card roles, sets/<SET>/roles.json: {card name: [tags]}; {} when the set has none."""
+    path = set_file(set_code, "roles") if set_code else None
+    return {r["name"]: r["tags"] for r in json.loads(path.read_text())} if path and path.exists() else {}
