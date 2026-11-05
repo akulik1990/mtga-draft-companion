@@ -57,6 +57,11 @@
   "deckbuilder.LANDS": 17,
   "deckbuilder.LAND_STEPS": true,
   "deckbuilder.OBJECTIVE": "gihwr",
+  "deckbuilder.WALKER_CREATURE": 0.62,
+  "deckbuilder.LEGEND_DUP": 3.0,
+  "deckbuilder.TWO_DROP_SLACK": 99.0,
+  "deckbuilder.CURVE_SKIP": "2",
+  "deckbuilder.MIN_PER_COLOUR": 4,
   "deckbuilder.BEST_POINTS": 0.5,
   "deckbuilder.COMP_SLACK": 2.0
  },

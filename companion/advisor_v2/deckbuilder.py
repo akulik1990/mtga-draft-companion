@@ -33,6 +33,7 @@ CREATURE_ABOVE = 3.0  # and above it
 TWO_DROP_SLACK = 2.0  # below the target
 TOP_END_SLACK = 2.0  # five-plus drops above the target
 CURVE_SLACK = 2.0  # per mana value, either way
+CURVE_SKIP = ""  # comma-separated curve slots left out of the curve check ("2": two-drop shortages do not lose, docs/podcast-test-twodrops-FRA.md)
 REMOVAL_SLACK = 2.0  # removal spells below the target before the penalty starts (FRA: decks under 6 removal lose ~0.6 WR points beyond their cards, docs/synergy-2026-11-02.md); 99 = off
 PENALTY = 1.5  # predicted win-rate points per card outside the bounds
 MIN_PER_COLOUR = 5  # spells that need each main colour; fewer and the "pair" is a mono-colour deck with a stray card
@@ -61,6 +62,8 @@ SPLASH_AT = 0.5  # splash when the fitted splash rule gives at least this chance
 # or a replacement category (2-drop for 2-drop, removal for removal, creature for removal). Off: one search on win
 # rate less the shape penalty.
 STRUCTURE = False
+WALKER_CREATURE = 0.0  # creatures a planeswalker or Jace-token maker (composition "walker" role) counts as for the creature bounds; FRA 0.62
+LEGEND_DUP = 0.0  # GIH WR points off each extra copy of a legendary card under "gihwr" (legend rule: dead while the first is in play); 0 = off
 TEMPO_CREATURE = 0.0  # creatures a cheap tempo spell (composition "tempo" role) counts as for the creature bounds; FRA 0.57 from top players' decks (analysis/tempo_substitution.py)
 STRUCTURE_DIMS = ("creatures", "removal", "card_advantage", "evasion", "mana", "1", "2", "3", "4", "5", "6+")
 COMP_SLACK = 1.0  # cards a category may sit under its best before its replacements must make up the rest
@@ -376,13 +379,15 @@ def shape_penalty(spells, target, lane="", min_creatures_slack=None, scale=1.0, 
         return PENALTY * sum(max(0.0, least - sum(needs(c, colour, lane) for c in spells)) for colour in lane)
     below = CREATURE_BELOW if min_creatures_slack is None else min_creatures_slack
     lo, hi = f * (target["creatures"] - below), f * (target["creatures"] + CREATURE_ABOVE)
-    creatures = r["creatures"] + TEMPO_CREATURE * r["tempo"]
+    creatures = r["creatures"] + TEMPO_CREATURE * r["tempo"] + WALKER_CREATURE * r["walker"]
     over += max(0.0, lo - creatures) + max(0.0, creatures - hi)
     over += max(0.0, f * (target["two_drops"] - TWO_DROP_SLACK) - r["two_drops"])
     if "removal" in target:
         over += max(0.0, f * (target["removal"] - REMOVAL_SLACK) - r["removal"])
     over += max(0.0, r["five_plus"] - f * (target["five_plus"] + TOP_END_SLACK))
     for k in CURVE:
+        if k in CURVE_SKIP.split(","):
+            continue
         want = (target.get("curve") or {}).get(k)
         if want is not None:
             over += max(0.0, abs(cv[k] - f * want) - f * CURVE_SLACK)
@@ -463,6 +468,20 @@ def make_extras(spells, lane, target, set_code):
     return extras
 
 
+_LEGENDS = {}
+
+
+def legendary(set_code):
+    """Names of the set's legendary cards, from the Scryfall cache (<data>/Temp/scryfall_cards_SET.json, tools/card_table.py)."""
+    if set_code not in _LEGENDS:
+        import json
+        from companion import DATA_DIR
+        path = DATA_DIR / "Temp" / f"scryfall_cards_{set_code}.json"
+        cards = json.loads(path.read_text()) if path.exists() else {}
+        _LEGENDS[set_code] = {n for n, c in cards.items() if "Legendary" in (c.get("type_line") or "")}
+    return _LEGENDS[set_code]
+
+
 def cycler(card, lane):
     return castable(card, lane) and "landcycling" in (card.get("oracle_text") or "").lower()
 
@@ -480,6 +499,7 @@ def build_pair(pool, lane, model, target, min_creatures_slack=None, variant="", 
     """The best 23 spells for one pair (and optional splash colour), with lands; None when the pool cannot make a deck."""
     spells = [c for c in pool if "Land" not in (c.get("types") or []) and (castable(c, lane) or (splash and splashable(c, lane, splash)))]
     by_name = {c["name"]: c for c in pool}
+    legends = legendary(next((c.get("set") for c in pool if c.get("set")), "")) if LEGEND_DUP else set()
     lane_colours = lane + splash
     # Colourless lands that tap for a chosen or any colour (Room of Refuge: top players play every copy) count as on-colour.
     nonbasics = [c for c in pool if "Land" in (c.get("types") or []) and "Basic" not in (c.get("types") or [])
@@ -520,8 +540,8 @@ def build_pair(pool, lane, model, target, min_creatures_slack=None, variant="", 
 
     def predicted(counts, used):
         if OBJECTIVE == "gihwr":
-            g = [_wr(by_name[n], lane[:2]) for n, k in counts.items()
-                 if n in by_name and "Land" not in (by_name[n].get("types") or []) for _ in range(k)]
+            g = [_wr(by_name[n], lane[:2]) - (LEGEND_DUP if i and n in legends else 0.0) for n, k in counts.items()
+                 if n in by_name and "Land" not in (by_name[n].get("types") or []) for i in range(k)]
             g = [x for x in g if x]
             return GIH_SLOPE * (sum(g) / len(g) if g else 0.0) - (SPLASH_TERM if used else 0.0)
         if cost < 0:

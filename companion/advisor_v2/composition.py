@@ -53,7 +53,7 @@ class Composition:
         return max(1.0 - 2 * BOUND, min(1.0 + 2 * BOUND, m))
 
 
-ROLES = ("creatures", "removal", "card_advantage", "evasion", "two_drops", "five_plus", "lands", "tempo")
+ROLES = ("creatures", "removal", "card_advantage", "evasion", "two_drops", "five_plus", "lands", "tempo", "walker")
 # Cheap answers that are not removal: bounce, tap-down, counter (Unsummon, Icy Reception, Countersculpt, Fatehold Charm)
 TEMPO = re.compile(r"counter target|return target [^.]*to (?:its|their) owner'?s'? hand|tap target|stun counter|doesn't untap", re.I)
 
@@ -90,6 +90,8 @@ def roles(card):
         out.add("creatures")
     if "removal" not in out and "Creature" not in types and cmc <= 2 and TEMPO.search(card.get("oracle_text") or ""):
         out.add("tempo")
+    elif "Creature" not in types and ("Planeswalker" in types or re.search(r"empower jace", card.get("oracle_text") or "", re.I)):
+        out.add("walker")  # planeswalkers and Jace-token makers: top players run 0.62 fewer creatures per card (analysis/walker_substitution.py)
     if cmc == 2:
         out.add("two_drops")
     if cmc >= 5:
