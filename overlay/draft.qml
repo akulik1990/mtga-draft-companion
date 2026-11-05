@@ -30,6 +30,7 @@ ShellRoot {
 
     property string screenName: Quickshell.env("OVERLAY_SCREEN") || "DP-1"
     property string api: (Quickshell.env("OVERLAY_API") || "http://localhost:17173") + "/api/overlay"
+    property string hoverTest: Quickshell.env("OVERLAY_HOVER") || ""  // test mode: show this lane's plan as if hovered
     property bool test: !!Quickshell.env("OVERLAY_TEST")  // 1 / gold / fire / bluefire: dummy pack, first card in that tier
     property var data: null
     property bool arenaFocused: false  // Arena is the active window on our output (the overlay shows)
@@ -385,6 +386,7 @@ ShellRoot {
                         spacing: 1
                         Heading { text: "LANES" }
                         Repeater {
+                            id: laneRows
                             model: win.pn ? win.pn.lanes : []
                             Row {
                                 required property var modelData
@@ -479,26 +481,56 @@ ShellRoot {
                     }
                 }
 
-                // The likeliest pair's plan: what the pool has against trophy decks' median, and the sort of cards it wants.
-                Item { width: 1; height: win.unit * 0.5; visible: !!plan.d }
-                Heading { id: plan; readonly property var d: win.pn ? win.pn.plan : null; visible: !!d; text: d ? d.lane + " " + d.name.toUpperCase() : "" }
-                Text { visible: !!plan.d; width: col.width; wrapMode: Text.WordWrap; text: plan.d ? plan.d.plan : ""; color: "#c8cdd3"; font.pixelSize: win.unit * 0.6 }
+            }
+        }
+
+        // A pair's plan while the pointer is on its row in LANES: what the pool has against trophy decks' median, and the
+        // sort of cards it wants. Over the panel below the row, like a tooltip. Three-colour lanes have no plan.
+        Rectangle {
+            id: tip
+            readonly property var hit: {
+                if (!side.visible) return null;
+                const x = root.px - win.screen.x, y = root.py - win.screen.y;
+                for (let i = 0; i < laneRows.count; i++) {
+                    const r = laneRows.itemAt(i);
+                    if (!r) continue;
+                    if (root.test ? r.modelData.lane === root.hoverTest : root.pointerInArena) {
+                        const a = r.mapToItem(null, 0, 0), b = r.mapToItem(null, r.width, r.height);
+                        if (root.test || (x >= a.x && x <= b.x && y >= a.y && y <= b.y)) return { d: r.modelData.plan, y: b.y };
+                    }
+                }
+                return null;
+            }
+            readonly property var d: hit ? hit.d : null
+            visible: !!d
+            x: side.x; y: hit ? hit.y + win.unit * 0.3 : 0
+            width: side.width; height: tipCol.implicitHeight + win.unit * 1.2
+            radius: win.unit * 0.6
+            color: "#f00e1215"
+            border.color: "#50ffffff"
+
+            Column {
+                id: tipCol
+                x: win.unit * 0.6; y: win.unit * 0.6
+                width: tip.width - win.unit * 1.2
+                spacing: 2
+                Heading { text: tip.d ? tip.d.lane + " " + tip.d.name.toUpperCase() : "" }
+                Text { width: tipCol.width; wrapMode: Text.WordWrap; text: tip.d ? tip.d.plan : ""; color: "#c8cdd3"; font.pixelSize: win.unit * 0.6 }
                 Text {
-                    visible: !!plan.d
                     textFormat: Text.StyledText
                     color: "#8f98a3"; font.pixelSize: win.unit * 0.6
                     text: {
-                        if (!plan.d) return ""
-                        const n = (label, k) => label + " <font color='" + (plan.d.have[k] < plan.d.need[k] ? "#d6a84a" : "#e8eaed") + "'>" + plan.d.have[k] + "</font> / " + plan.d.need[k]
+                        if (!tip.d) return ""
+                        const n = (label, k) => label + " <font color='" + (tip.d.have[k] < tip.d.need[k] ? "#d6a84a" : "#e8eaed") + "'>" + tip.d.have[k] + "</font> / " + tip.d.need[k]
                         return n("Enablers", "enabler") + " · " + n("Payoffs", "payoff") + " · " + n("Top payoff", "top_payoff")
                     }
                 }
                 Text {
-                    visible: !!plan.d && !!plan.d.wants.enabler
-                    width: col.width; wrapMode: Text.WordWrap
+                    visible: !!tip.d && !!tip.d.wants.enabler
+                    width: tipCol.width; wrapMode: Text.WordWrap
                     textFormat: Text.StyledText
                     color: "#c8cdd3"; font.pixelSize: win.unit * 0.55
-                    text: plan.d ? "<font color='#8f98a3'>Enablers:</font> " + plan.d.wants.enabler + "<br><font color='#8f98a3'>Payoffs:</font> " + plan.d.wants.payoff : ""
+                    text: tip.d ? "<font color='#8f98a3'>Enablers:</font> " + tip.d.wants.enabler + "<br><font color='#8f98a3'>Payoffs:</font> " + tip.d.wants.payoff : ""
                 }
             }
         }

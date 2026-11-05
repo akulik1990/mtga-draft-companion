@@ -144,11 +144,10 @@ def side_panel(s, ranked=()):
                   "lanes": lane_rates(by_name.get(c["name"]), likely)} for c in ranked],
         "close": close,
         "why": [plain(r) for r in (top or {}).get("reasoning") or [] if not r.startswith("Fit #")][:3],
-        "lanes": [{"lane": l, "p": round(p, 3), "wr": pair_wr.get(l)} for l, p in lanes],
+        "lanes": [{"lane": l, "p": round(p, 3), "wr": pair_wr.get(l), "plan": plan_for(s, l)} for l, p in lanes],
         "signals": s.get("signals_v2") or sides.get(sides.get("active")) or {},
         "signal_from": {"side": sides.get("active"), "packs": sides.get("read", 0)},
         "deck": deck_vs_top(s, lanes[0][0] if lanes else None),
-        "plan": plan_for(s, lanes[0][0] if lanes else None),
         "pool": {"n": len(s.get("pool") or []), "colours": {k: sum(k in (c.get("colors") or []) for c in spells) for k in "WUBRG"}, "curve": curve},
     }
 
