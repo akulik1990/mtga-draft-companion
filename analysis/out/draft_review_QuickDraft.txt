@@ -1,0 +1,134 @@
+pool 41 cards; set GIH WR mean 56.2 SD 4.1
+
+== 1. what the pool can build (builder, every pair it can make 23 castable spells in)
+pairs with >= 23 castable spells in the pool: ['WU', 'UB', 'UR', 'UG']
+castable spells per pair: {'WU': 28, 'WB': 13, 'WR': 3, 'WG': 5, 'UB': 38, 'UR': 29, 'UG': 31, 'BR': 12, 'BG': 14, 'RG': 5}
+lane score (best 23 by GIH WR in the pair, filler 45) per pair: {'WU': 58.44, 'WB': 50.68, 'WR': 46.2, 'WG': 46.37, 'UB': 60.24, 'UR': 59.25, 'UG': 57.5, 'BR': 50.05, 'BG': 50.28, 'RG': 46.32}
+
+criteria model fitted on 35646 decks. Builds: predicted WR (deck model), deck part vs the average deck of the same colours, percentile among those decks. A = structure-first, R = gate off
+build      mode  pred    pts pctile  rm fin creat duals lands devs  pen
+UB         A     64.4   +2.4    69%   4   0    12     1    17  0.0  0.0
+UB         R     65.2   +3.8    78%   4   0    11     1    17  1.0  0.8
+-- every pair and three-colour combination built directly (the builder's own cut on shape penalty is skipped here)
+WU         A     55.6   +nan   nan%   2   0    13     0    17  0.0  7.5
+UB         A     64.4   +2.4    69%   4   0    12     1    17  0.0  0.0
+UR         A     59.6   +nan   nan%   2   0    11     0    17  3.0  6.0
+UG         A     56.4   +nan   nan%   3   0    13     0    17  0.0  6.0
+UBG        A     64.3   +2.4    69%   4   0    13     1    17  0.0  3.0
+UBR        A     65.6   +3.6    76%   4   0    11     1    17  2.0  4.5
+URG        A     57.4   +nan   nan%   4   0    12     0    17  0.2  4.5
+WUB        A     65.6   +3.6    76%   4   0    12     1    17  0.0  4.5
+WUG        A     57.5   +nan   nan%   3   0    13     0    17  0.0  7.5
+WUR        A     60.4   +nan   nan%   2   0    11     0    17  4.0  7.5
+WU         R     59.8   +nan   nan%   2   0    10     0    17  6.0 14.5
+UB         R     65.2   +3.8    78%   4   0    11     1    17  1.0  0.8
+UR         R     59.5   +nan   nan%   2   0    11     0    17  3.0  8.4
+UG         R     58.8   +nan   nan%   3   0    10     0    17  5.0  9.0
+UBG        R     63.2   +1.4    63%   4   0    13     1    17  0.0  3.0
+UBR        R     65.7   +nan   nan%   4   0    10     1    17  2.0  6.8
+URG        R     59.3   +nan   nan%   3   0    12     0    17  2.2  7.9
+WUB        R     65.4   +nan   nan%   4   0    11     1    17  1.0  6.1
+WUG        R     58.6   +nan   nan%   3   0    12     0    17  1.1  9.5
+WUR        R     60.4   +nan   nan%   2   0    11     0    17  4.0 11.4
+
+current build (A) of the first pair: Break Under Pressure, Chandra, Chill of Compliance, Countersculpt, Extended Absence, Fatehold Chronologist, Geist of Saint Thalia, Icy Reception, Infinite Coursework, Infinite Coursework, Jace, Reality Sculptor, Jace, Reality Sculptor, Lyra, Tolarian Archangel, Mindseeker Oculus, Mindseeker Oculus, Protege's Awakening, Protege's Awakening, Recursive Recruitment, Ruric Thar, Biomagus, Surveillance Phantasm, Undulating Witness, Void Extrapolator, Void Extrapolator, Void Extrapolator
+
+== 2. where the pool sits among 26023 drafted pools with a full 23 (same method: best pair by top-23 mean GIH WR)
+yours: pair UB, quality 57.93 (n 23), removal 4, finishers 0
+quality percentile: all drafters 99%, 100+ games players 98% (median 56.10, 90th 57.27)
+removal percentile 23% (median 5), finishers percentile 0% (share with 2+: 9%)
+
+== 3. picks. final lane UB. 'best' = highest GIH WR card in the pack, 'v2' = top pick now, 'lane' = best card in the final lane (WR there)
+pick   took                             gih  rk/n  best in pack                     gih  v2 top                         lane best                      v2 lanes
+P1P1   Jace, Reality Sculptor          59.0   1/13 Jace, Reality Sculptor          59.0  Jace, Reality Sculptor         Jace, Reality Sculptor 62.9  UB0.14 UR0.13 WU0.12
+P1P2   Recursive Recruitment           60.8   1/13 Recursive Recruitment           60.8  Recursive Recruitment          Recursive Recruitment  61.5  WU0.20 UB0.20 UR0.20
+P1P3   Chandra, Chill of Compliance    58.6   3/12 Recursive Recruitment           60.8  Chandra, Chill of Compliance   Recursive Recruitment  61.5  UB0.89 WU0.04 UR0.03
+P1P4   Ruric Thar, Biomagus            56.6   3/10 Bloombrute                      59.1  Ruric Thar, Biomagus           Ruric Thar, Biomagus   57.8  UB0.86 WU0.06 UG0.05
+P1P5   Stingerquill Voxmancer          55.3   7/10 Mind Meanderer                  58.8  Mind Meanderer                 Void Extrapolator      57.7  UB0.72 UG0.10 UR0.09
+P1P6   Unsummon                        58.3   1/9  Unsummon                        58.3  Unsummon                       Archive Arbiter        60.0  UB0.80 UR0.10 WU0.05
+P1P7   Countersculpt                   59.8   1/8  Countersculpt                   59.8  Countersculpt                  Countersculpt          59.5  UB0.84 UR0.08 WU0.04
+P1P8   Void Extrapolator               56.2   3/7  Stingerquill Charm              56.9  Void Extrapolator              Void Extrapolator      57.7  UB0.94 UR0.03 WU0.02
+P1P9   Theorix Metamage                55.4   1/5  Theorix Metamage                55.4  Theorix Metamage               Theorix Metamage       56.2  UB0.98 UR0.01 WU0.01
+P1P10  Sphinx's Approach               57.3   1/5  Sphinx's Approach               57.3  Void Extrapolator              Sphinx's Approach      57.8  UB0.99 UR0.01 WU0.00
+P1P11  Cryotheory Adept                54.7   3/4  Vinelasher Adept                56.5  Cryotheory Adept               Afterthought Sentry    55.0  UB0.99 UR0.01 WU0.00
+P1P12  Eye of Jace                     51.5   1/2  Eye of Jace                     51.5  Eye of Jace                    Eye of Jace            51.5  UB0.99 UR0.00 WU0.00
+P1P13  Void Extrapolator               56.2   1/2  Void Extrapolator               56.2  Void Extrapolator              Void Extrapolator      57.7  UB0.99 UR0.00 WU0.00
+P1P14  Divining Duelist                56.3   1/1  Divining Duelist                56.3  Divining Duelist               Divining Duelist       57.5  UB1.00 UR0.00 WU0.00
+P2P1   Fatehold Chronologist           57.7   5/13 Hapatra, the Desert Fang        59.3  Fatehold Chronologist          Arni, Humble Scribe    58.0  UB1.00 WU0.00 UR0.00
+P2P2   Lyra, Tolarian Archangel        62.4   1/12 Lyra, Tolarian Archangel        62.4  Lyra, Tolarian Archangel       Lyra, Tolarian Archang 64.2  UB1.00 WU0.00 UR0.00
+P2P3   Mindseeker Oculus               60.6   2/12 Fblthp, Impossibly Lost         60.6  Mindseeker Oculus              Mindseeker Oculus      61.1  UB1.00 WU0.00 UR0.00
+P2P4   Infinite Coursework             57.6   2/10 Saheeli, Jewel of Avishkar      58.6  Infinite Coursework            Infinite Coursework    58.7  UB1.00 WU0.00 UR0.00
+P2P5   Protege's Awakening             59.5   1/9  Protege's Awakening             59.5  Protege's Awakening            Protege's Awakening    60.9  UB1.00 WU0.00 UR0.00
+P2P6   Surveillance Phantasm           57.2   1/8  Surveillance Phantasm           57.2  Surveillance Phantasm          Surveillance Phantasm  57.1  UB1.00 WU0.00 UR0.00
+P2P7   Unsummon                        58.3   1/7  Unsummon                        58.3  Unsummon                       Unsummon               58.4  UB1.00 WU0.00 UR0.00
+P2P8   Traxos, Academy Guardian        56.7   2/7  Tam's Resistance                57.3  Traxos, Academy Guardian       Tam's Resistance       57.9  UB1.00 WU0.00 UR0.00
+P2P9   Undulating Witness              57.0   2/5  No Admittance                   58.2  Apex Witchstalker              Undulating Witness     57.6  UB1.00 WU0.00 UR0.00
+P2P10  Void Extrapolator               56.2   1/4  Void Extrapolator               56.2  Void Extrapolator              Void Extrapolator      57.7  UB1.00 WU0.00 UR0.00
+P2P11  Unsummon                        58.3   1/4  Unsummon                        58.3  Unsummon                       Unsummon               58.4  UB1.00 WU0.00 UR0.00
+P2P12  Theorix Metamage                55.4   1/2  Theorix Metamage                55.4  Theorix Metamage               Theorix Metamage       56.2  UB1.00 WU0.00 UR0.00
+P2P13  Flourishing Grapple              0.0   1/1  Flourishing Grapple              0.0  Flourishing Grapple            -                       0.0  UB1.00 WU0.00 UR0.00
+P2P14  ?106532                          0.0   1/0  ?106532                          0.0  ?                              -                       0.0  UB1.00 WU0.00 UR0.00
+P3P1   Geist of Saint Thalia           58.7   2/14 Mind Meanderer                  58.8  Geist of Saint Thalia          Geist of Saint Thalia  59.3  UB1.00 WU0.00 UR0.00
+P3P2   Jace, Reality Sculptor          59.0   3/13 Multiply by Zero                60.5  Multiply by Zero               Jace, Reality Sculptor 62.9  UB1.00 WU0.00 UR0.00
+P3P3   Break Under Pressure            61.1   1/12 Break Under Pressure            61.1  Break Under Pressure           Break Under Pressure   63.8  UB1.00 WU0.00 UR0.00
+P3P4   Mindseeker Oculus               60.6   1/11 Mindseeker Oculus               60.6  Mindseeker Oculus              Mindseeker Oculus      61.1  UB1.00 WU0.00 UR0.00
+P3P5   Theorix Annex                   57.5   2/10 Hapatra, the Desert Fang        59.3  Hapatra, the Desert Frost      Keeper of the Quiet Ho 57.9  UB1.00 WU0.00 UR0.00
+P3P6   Icy Reception                   58.9   1/9  Icy Reception                   58.9  Icy Reception                  Icy Reception          60.6  UB1.00 WU0.00 UR0.00
+P3P7   Infinite Coursework             57.6   2/8  Unsummon                        58.3  Infinite Coursework            Infinite Coursework    58.7  UB1.00 WU0.00 UR0.00
+P3P8   Protege's Awakening             59.5   1/6  Protege's Awakening             59.5  Protege's Awakening            Protege's Awakening    60.9  UB1.00 WU0.00 UR0.00
+P3P9   Ferocity of the Hunt            53.6   4/6  Mind Meanderer                  58.8  Mind Meanderer                 Divining Duelist       57.5  UB1.00 WU0.00 UR0.00
+P3P10  Extended Absence                60.4   1/5  Extended Absence                60.4  Extended Absence               Extended Absence       61.9  UB1.00 WU0.00 UR0.00
+P3P11  Protege's Awakening             59.5   1/4  Protege's Awakening             59.5  Protege's Awakening            Protege's Awakening    60.9  UB1.00 WU0.00 UR0.00
+P3P12  Sureshot Sower                  54.8   1/3  Sureshot Sower                  54.8  Refute Destiny                 Yargle, Glutton of Urb  0.0  UB1.00 WU0.00 UR0.00
+P3P13  Void Extrapolator               56.2   1/2  Void Extrapolator               56.2  Void Extrapolator              Void Extrapolator      57.7  UB1.00 WU0.00 UG0.00
+P3P14  Rampart Hunter                  49.7   1/1  Rampart Hunter                  49.7  Rampart Hunter                 Rampart Hunter         49.7  UB1.00 WU0.00 UG0.00
+
+you matched v2's top pick 34/42 (with FINISHER_POINTS=4: 34); took the pack's top GIH card 27/42; v2's pick differed from yours by >1.5 GIH points of the card you took: 3
+v2's top pick differs from yours:
+  P1P5   you Stingerquill Voxmancer (55.3) | v2 Mind Meanderer (58.8) | lane best Void Extrapolator (57.7)
+  P1P10  you Sphinx's Approach (57.3) | v2 Void Extrapolator (56.2) | lane best Sphinx's Approach (57.8)
+  P2P9   you Undulating Witness (57.0) | v2 Apex Witchstalker (56.5) | lane best Undulating Witness (57.6)
+  P2P14  you ?106532 (0.0) | v2 ? (0.0) | lane best - (0.0)
+  P3P2   you Jace, Reality Sculptor (59.0) | v2 Multiply by Zero (60.5) | lane best Jace, Reality Sculptor (62.9)
+  P3P5   you Theorix Annex (57.5) | v2 Hapatra, the Desert Frost (57.2) | lane best Keeper of the Quiet Hour (57.9)
+  P3P9   you Ferocity of the Hunt (53.6) | v2 Mind Meanderer (58.8) | lane best Divining Duelist (57.5)
+  P3P12  you Sureshot Sower (54.8) | v2 Refute Destiny (54.2) | lane best Yargle, Glutton of Urborg (0.0)
+
+== 4. lane score of the pool after each stage (top 4 pairs; filler 45 until 23 playables)
+  after pick  7: UB 49.3   UR 48.6   WU 47.8   UG 47.7   | 7 cards, castable in UB: 7
+  after pick 14: UB 52.6   UR 51.1   WU 50.1   UG 49.5   | 14 cards, castable in UB: 14
+  after pick 21: UB 57.1   UR 55.4   WU 54.5   UG 53.4   | 21 cards, castable in UB: 21
+  after pick 28: UB 58.7   UR 57.6   WU 56.7   UG 55.3   | 27 cards, castable in UB: 26
+  after pick 35: UB 59.8   UR 59.0   WU 58.2   UG 57.1   | 34 cards, castable in UB: 32
+  after pick 42: UB 60.2   UR 59.2   WU 58.4   UG 57.5   | 41 cards, castable in UB: 38
+
+== 5. what the other seats took: cards of a colour above the set mean that were in a pack when you saw it (not your pick) and gone when it came back 8 picks later
+  pack 1: W 6/6  U 4/6  B 3/3  R 3/3  G 7/8  C 1/1   (sizes 14 -> 6)
+  pack 2: W 5/6  U 4/7  B 3/4  R 3/4  G 4/4  C 0/1   (sizes 14 -> 6)
+  pack 3: W 4/4  U 7/10  B 2/3  R 5/5  G 3/4  C 2/2   (sizes 14 -> 6)
+
+== 6. hindsight: from pick k take the best GIH WR card (in the pair) in every pack as seen; final lane score of that pair (yours: actual picks)
+pair  actual  from 1  from 4  from 7 from 10 from 15 from 22
+WU      58.4    58.9    58.8    58.8    58.8    58.6    58.4
+WB      50.7    56.2    55.6    55.1    55.1    55.2    54.3
+WR      46.2    55.5    55.1    54.7    54.7    54.5    52.5
+WG      46.4    56.3    55.7    55.2    54.8    54.0    51.0
+UB      60.2    59.6    59.6    59.5    59.5    59.5    59.6
+UR      59.2    59.5    59.5    59.2    59.2    59.2    59.3
+UG      57.5    57.5    57.4    57.2    57.3    57.3    57.3
+BR      50.1    56.3    56.0    55.8    55.5    55.5    53.8
+BG      50.3    57.6    57.4    57.0    57.0    56.8    54.5
+RG      46.3    55.9    55.6    55.2    55.1    54.8    51.8
+
+== 7. removal you saw, castable in UB: first sighting, what you took then, whether it was still there 8 picks later
+  distinct cards seen 7, you took 2 of them at first sighting (plus later copies)
+  P1P1   Silence the Echo                 WR  56.4  passed for Jace, Reality Sculptor (59.0)      gone by the wheel
+  P2P1   Vraska's Final Mercy             WR  50.7  passed for Fatehold Chronologist (57.7)       gone by the wheel
+  P2P4   Infinite Coursework              WR  58.7  TAKEN                                         gone by the wheel
+  P2P4   Living Library                   WR  55.0  passed for Infinite Coursework (57.6)         gone by the wheel
+  P3P2   Extended Absence                 WR  61.9  passed for Jace, Reality Sculptor (59.0)      wheeled
+  P3P2   Multiply by Zero                 WR  61.4  passed for Jace, Reality Sculptor (59.0)      gone by the wheel
+  P3P3   Break Under Pressure             WR  63.8  TAKEN                                         gone by the wheel
+
+== 7. finishers (cmc 5+, GIH WR >= 60.3) you saw, castable in UB: first sighting, what you took then, whether it was still there 8 picks later
+  distinct cards seen 0, you took 0 of them at first sighting (plus later copies)

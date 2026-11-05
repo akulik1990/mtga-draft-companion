@@ -27,7 +27,10 @@ from tools.mock_draft import apply_overrides  # noqa: E402
 from tools.replay.run import replay  # noqa: E402
 
 LOG = ROOT / "data/Temp/live/FRA-quickdraft-2026-11-02.Player.log"
-app = replay.App(str(DATA_DIR / "Sets" / "FRA_PremierDraft_All_Data.json"))
+import os  # noqa: E402
+DATASET = os.environ.get("DRAFT_REVIEW_DATASET", "PremierDraft")  # PremierDraft or QuickDraft: which 17Lands ratings the review uses
+SUFFIX = "" if DATASET == "PremierDraft" else "_" + DATASET
+app = replay.App(str(DATA_DIR / "Sets" / f"FRA_{DATASET}_All_Data.json"))
 ratings = {k: dict(v, set="FRA") for k, v in app.dataset.get_card_ratings().items()}
 steps = picks(LOG)
 assert len(steps) == 42, len(steps)
@@ -155,7 +158,7 @@ for i, ((pn, pk, pids, _), t, (recs, lanes), (recsB, _)) in enumerate(zip(steps,
     v2 = recs[0].card_name if recs else "?"
     tbl.append((i + 1, f"P{pn}P{pk}", tc["name"], gih(tc), rank, len(pack), order[0]["name"], gih(order[0]), v2, lane_best["name"] if lane_best else "-", wr_in(lane_best, lane) if lane_best else 0, recsB[0].card_name if recsB else "?", lanes))
     print(f"P{pn}P{pk:<3} {tc['name'][:30]:30} {gih(tc):5.1f} {rank:3d}/{len(pack):<2} {order[0]['name'][:30]:30} {gih(order[0]):5.1f}  {v2[:30]:30} {(lane_best['name'] if lane_best else '-')[:22]:22}{wr_in(lane_best, lane) if lane_best else 0:5.1f}  " + " ".join(f"{l}{p:.2f}" for l, p in lanes))
-with open(ROOT / "analysis/out/draft_review_picks.csv", "w", newline="") as fh:
+with open(ROOT / f"analysis/out/draft_review_picks{SUFFIX}.csv", "w", newline="") as fh:
     w = csv.writer(fh); w.writerow(["n", "pick", "took", "took_gih", "rank", "pack", "best", "best_gih", "v2", "lane_best", "lane_best_wr", "v2_finisher4", "v2_lanes"]); w.writerows([r[:-1] + (str(r[-1]),) for r in tbl])
 agree = sum(r[2] == r[8] for r in tbl); agreeB = sum(r[2] == r[11] for r in tbl)
 miss = [r for r in tbl if r[3] < r[7] - 1.5 and r[2] != r[8]]

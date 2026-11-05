@@ -1,0 +1,28 @@
+mean 55.04 sd 4.30 finisher>=59.34 near>=57.19
+steps 42 last pack size 1
+unresolved picks 0
+pool size 42
+ungrouped ids in packs ['106526', '106527', '106528', '106530', '106532', '106533', '106534', '106535'] in pool ['106532']
+pair  fin  fin_by28  fin_taken  near  rem_names  rem_copies  rem_taken  lane
+  WU    0         0          0     1          5          10          1 57.39
+  WB    0         0          0     0         10          17          2 46.56
+  WR    0         0          0     0         10          18          0 45.20
+  WG    0         0          0     0          9          18          2 45.51
+  UB    0         0          0     1          7          12          3 57.89
+  UR    0         0          0     1          8          14          1 57.35
+  UG    0         0          0     2          7          16          3 57.35
+  BR    0         0          0     0         12          20          2 46.96
+  BG    0         0          0     1         11          22          4 47.21
+  RG    0         0          0     0         10          20          2 45.51
+UB lane 57.89 ; (a)+(b): [] ; (a) only: []
+
+Finishers/near seen (any pair):
+  Jace, Reality Sculptor (cmc5, 57.8, first p0, TAKEN) | pair-castable ['WU', 'UB', 'UR', 'UG'] | his pick then: Jace, Reality Sculptor 57.84
+  Hapatra, the Desert Fang (cmc5, 58.8, first p2, passed) | pair-castable ['BG'] | his pick then: Chandra, Chill of Compliance 58.76
+  Mind Meanderer (cmc6, 57.2, first p4, passed) | pair-castable ['UG'] | his pick then: Stingerquill Voxmancer 54.18
+
+n==23 drafts 26023
+finishers >=1 36.0 >=2 9.4 ==0 64.0 mean 0.49  
+removal >=1 99.4 >=2 96.6 ==0 0.6 mean 5.45 ; >=4 removal 77.2
+
+Lyra check: [('106446', 'Lyra, Archangel of Dawn', 0, None, False), ('106462', 'Lyra, Tolarian Archangel', 1, 15, True)]
