@@ -1,0 +1,58 @@
+{
+ "id": "uoyPQJ0NxO8",
+ "time": "12:14-13:25 (build; the deck screen is at 40/40 cards at 13:20 and the game screen loads from 13:28)",
+ "main": {
+  "No Admittance": 1,
+  "Stingerquill Charm": 1,
+  "Extended Absence": 1,
+  "Tether Technician": 1,
+  "Dark Matter Manipulator": 1,
+  "Marwyn, the Clearcutter": 2,
+  "Pompous Battlemage": 1,
+  "Blazing Crescendo": 1,
+  "Samut, Hazoret's Champion": 2,
+  "Skilled Battlecarver": 1,
+  "Afterthought Sentry": 1,
+  "Medic's Kitesail": 2,
+  "Cast Away Doubt": 1,
+  "Gideon the Oathless": 1,
+  "Screeching Soulbreaker": 1,
+  "Hallway Heckler": 1,
+  "Heartstring Puller": 2,
+  "Traxos, Scourge Eternal": 1,
+  "Overwrite the Multiverse": 1
+ },
+ "lands": {
+  "Swamp": 8,
+  "Mountain": 8,
+  "Room of Refuge": 1
+ },
+ "sideboard": {
+  "Mabel, Valley Hero": 2,
+  "Refute Destiny": 1,
+  "Danitha, Sword of Hope": 1,
+  "Shatterwing Pegasus": 1,
+  "Precise Redaction": 1,
+  "Mabel, Bitter Recluse": 1,
+  "Terminal Criticism": 1,
+  "Artifist Acumen": 1,
+  "Eardrum Rattler": 1,
+  "Blessed Ghoul": 1,
+  "Innovative Commons": 1,
+  "Ferocity of the Hunt": 1,
+  "Konstrari Improviser": 1,
+  "Blazing Crescendo": 1
+ },
+ "spells": 23,
+ "land_count": 17,
+ "landcyclers_in_main": [],
+ "colours": "R/B aggro: red base with Gideon the Oathless, Stingerquill Charm (gold) and Extended Absence (black); 8 Swamp, 8 Mountain, Room of Refuge.",
+ "notes": [
+  "The deck screen read 41/40 at 12:40 to 13:10 (24 spells and 17 lands, with the 16 basics auto-added: Swamp x8, Mountain x8): \"we have one cut to make.\"",
+  "12:44 to 13:17: names a candidate (caption \"Drakuseth\", garbled) for the cut, Blazing Crescendo (\"with the relative lack of removal, I kind of want just like ways to keep having my creatures attack\"), \"Tether Technician also probably stays\", \"I could cut Soulbreaker, it's kind of close\", \"maybe just one Crescendo\". The deck screen at 13:20 has one Blazing Crescendo and the same 17 lands, 40/40; the second Crescendo is inferred to be in the sideboard.",
+  "13:26 \"go up a mountain here\": the deck screen at 13:20 still shows Mountain x8; a later basic change, if any, was not seen (the game screen loads from 13:28).",
+  "13:28 to 13:47: answers chat about cutting a land: he does not cut lands in aggro decks.",
+  "12:14 to 12:32: grade of the deck \"a six out of 10 ... 6.5\"; wants a little more removal; regrets not taking No Admittance at P2p3.",
+  "Pool accounting: 42 picks = 25 non-basic main cards (24 spells counting both Crescendos plus Room of Refuge) + 14 sideboard cards + 3 single-card basics (Plains P1p14, Plains P2p14, Forest P3p14) that the deck screen does not show. Deck-builder counts: creatures 15, 17 lands. Sideboard read from the deck screen at 12:40 (13 distinct cards, Mabel, Valley Hero x2)."
+ ]
+}

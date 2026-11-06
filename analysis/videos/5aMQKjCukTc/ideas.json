@@ -1,0 +1,478 @@
+{
+ "video": "5aMQKjCukTc",
+ "player": "Alex Nikolic (Limited Level-Ups)",
+ "set": "FRA",
+ "source": "YouTube auto-caption transcript 0:00-18:35 (tools/video_draft.py transcript 5aMQKjCukTc --start 0 --end 1115), card names corrected against data/Sets/FRA_PremierDraft_All_Data.json; nothing past the start of game 1 (about 18:29) read. 'type' marks each idea as claim, heuristic or one-off pick; 'repeats' lists ideas of earlier videos it restates (none); 'related' lists looser matches on the same card or topic.",
+ "ideas": [
+  {
+   "id": "5aM-01",
+   "time": 0,
+   "phase": "draft",
+   "claim": "Draconic Visitor is overrated: mostly a big flier that dies to everything and hard to turn into the dragon; No Admittance is taken over it in a weak pack.",
+   "quote": "Visitor is very mid. I think this is probably one of the most overrated cards in the sets.",
+   "cards": [
+    "Draconic Visitor",
+    "No Admittance"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR and ALSA of Draconic Visitor against other rares and No Admittance, skill-split.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "CWs-01",
+    "CWs-02"
+   ]
+  },
+  {
+   "id": "5aM-02",
+   "time": 41,
+   "phase": "draft",
+   "claim": "Recursive Recruitment is a very strong card; at P1p2 it is an easy pick over Master of Barbs and Geist of Saint Thalia.",
+   "quote": "I think it's a pretty easy recursive recruitment here. This card is just excellent.",
+   "cards": [
+    "Recursive Recruitment",
+    "Master of Barbs",
+    "Geist of Saint Thalia"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Recursive Recruitment in decks where it is main colour vs splash, skill-split.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-05"
+   ]
+  },
+  {
+   "id": "5aM-03",
+   "time": 90,
+   "phase": "draft",
+   "claim": "Read the first-pick neighbour: compare what the first pack lost against what it held, and move out of the colour that went. He sees red taken from the pack and moves toward blue-white / non-red.",
+   "quote": "what did they take based on what was in the pack.",
+   "cards": [],
+   "kind": "colours / signals",
+   "engine_area": "none",
+   "test_idea": "Does the colour a first-pick pack loses predict which colours flow from that direction in pack 1? Needs the first-pack contents per draft (17Lands has no per-pack picks for other seats).",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "CWs-20",
+    "mqZ-06"
+   ]
+  },
+  {
+   "id": "5aM-04",
+   "time": 142,
+   "phase": "draft",
+   "claim": "A weak pack gives a removal spell off the plan (Vraska's Final Mercy) over playables for the plan.",
+   "quote": "I guess there is this Frasis File Mercy. That's not junk.",
+   "cards": [
+    "Vraska's Final Mercy",
+    "Blessed Ghoul",
+    "Cryotheory Adept"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "ALSA and GIH WR of Vraska's Final Mercy against the other cards in that pack; share of drafters who end black.",
+   "type": "one-off pick",
+   "repeats": [],
+   "related": [
+    "CWs-04"
+   ]
+  },
+  {
+   "id": "5aM-05",
+   "time": 173,
+   "phase": "draft",
+   "claim": "Thalia, the Survivor is only fine: a three-mana 3/4 that taxes noncreature spells; not worth a high pick and cut from the final deck.",
+   "quote": "don't love Thalia.",
+   "cards": [
+    "Thalia, the Survivor"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Thalia, the Survivor in white decks, skill-split.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "5aM-06",
+   "time": 247,
+   "phase": "draft",
+   "claim": "Generous Revival belongs to a black-white deck rather than blue-white, while Tam's Resistance is the blue-white card.",
+   "quote": "Generous revival, I think, is more of an Obson card than a blue white card.",
+   "cards": [
+    "Generous Revival",
+    "Tam's Resistance"
+   ],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Generous Revival by colour pair: WB against WU.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "5aM-07",
+   "time": 288,
+   "phase": "draft",
+   "claim": "Blessed Ghoul is good with Empower Jace and surveil: a cheap one-drop that pumps when going wide and returns from the graveyard.",
+   "quote": "Oh, ghoul comes back. Hell yeah. I mean it's kind of good with empower Jace and just surveilling.",
+   "cards": [
+    "Blessed Ghoul"
+   ],
+   "kind": "synergy",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Blessed Ghoul with the count of surveil / Empower Jace cards in the deck.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-18",
+    "CWs-26"
+   ]
+  },
+  {
+   "id": "5aM-08",
+   "time": 341,
+   "phase": "draft",
+   "claim": "A Jace blue-white deck needs creatures, ideally ones that can attack; Theorist's Proxy is taken over Fatehold Chronologist as the stronger card on theme.",
+   "quote": "one thing with this deck is we do be needing creatures. Ideally, creatures that can attack.",
+   "cards": [
+    "Theorist's Proxy",
+    "Fatehold Chronologist"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Creature count of winning UW Jace decks; GIH WR of Proxy against Chronologist.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "5aM-09",
+   "time": 387,
+   "phase": "draft",
+   "claim": "Take the two-drop the curve needs over the stronger Hexhaven Battalion: Enlightened Confidant over Battalion because the deck needs twos (Battalion is good with Kindred Judgment: it reaches seven mana and keeps creatures after the sweeper).",
+   "quote": "I think enlightening Conan's good and I think I'm going to take it over battalion just because we need twos.",
+   "cards": [
+    "Enlightened Confidant",
+    "Hexhaven Battalion",
+    "Kindred Judgment"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Win rate of decks by number of two-drops at the time of the pick; GIH WR of both cards.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "994-08",
+    "n6s-02"
+   ]
+  },
+  {
+   "id": "5aM-10",
+   "time": 405,
+   "phase": "draft",
+   "claim": "Generous Revival is a good card to take with surveil in the deck: a great thing to bring back, and surveil can fill the graveyard for it.",
+   "quote": "now I'm a little more interested in general survival. Like this is a great thing to bring back.",
+   "cards": [
+    "Generous Revival"
+   ],
+   "kind": "synergy",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Generous Revival against the number of surveil / self-mill cards in the deck.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "5aM-11",
+   "time": 459,
+   "phase": "draft",
+   "claim": "A second Blessed Ghoul is never wanted; he would spec on a land (Transformative Commons) or an off-colour card instead.",
+   "quote": "I haven't really found I want second ghoul basically ever.",
+   "cards": [
+    "Blessed Ghoul",
+    "Transformative Commons"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Marginal value of a second Blessed Ghoul in the deck: win rate of decks with 2 against 1.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "mqZ-09"
+   ]
+  },
+  {
+   "id": "5aM-12",
+   "time": 482,
+   "phase": "draft",
+   "claim": "Tetsuko Umezawa is a deck-dependent card: mediocre in a deck without the support, really good in the right one.",
+   "quote": "Like she's right in that sweet spot of not great in every deck.",
+   "cards": [
+    "Tetsuko Umezawa, Fugitive"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Tetsuko Umezawa, Fugitive split by the number of Empower Jace / counter cards in the deck.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "5aM-13",
+   "time": 491,
+   "phase": "draft",
+   "claim": "Prudent Fateseer is better than its 17Lands numbers say; he rates it highly despite the stats.",
+   "quote": "This card doesn't have great stats on 17 lands, but I I really really like this card a lot.",
+   "cards": [
+    "Prudent Fateseer"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "Within-deck GIH WR of Prudent Fateseer by skill group; compare with its raw GIH WR.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "re7-08"
+   ]
+  },
+  {
+   "id": "5aM-14",
+   "time": 587,
+   "phase": "draft",
+   "claim": "Take the Jace land (Theorist's Sanctum) over Saheeli, Consul of Oversight; Saheeli is good if triggered the turn she comes down and wheels at pick 10.",
+   "quote": "I love Sanctum too. There's Sahili. Uh, she is quite good as long as you can trigger her the turn she comes down.",
+   "cards": [
+    "Theorist's Sanctum",
+    "Saheeli, Consul of Oversight"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Saheeli with the number of instants/sorceries or wizards in the deck; wheel rate of Saheeli.",
+   "type": "one-off pick",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "5aM-15",
+   "time": 630,
+   "phase": "draft",
+   "claim": "Fblthp, Impossibly Lost is better than he had it ranked: he was a little too low on it after a Discord comment on his last episode and playing it a lot this week.",
+   "quote": "I was a little too low on it.",
+   "cards": [
+    "Fblthp, Impossibly Lost"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR and IWD of Fblthp, Impossibly Lost by skill group.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "re7-24"
+   ]
+  },
+  {
+   "id": "5aM-16",
+   "time": 650,
+   "phase": "draft",
+   "claim": "With few removal spells, take the removal (Surgical Precision) over the strong creature (Fblthp); with two more removal spells he would take the creature.",
+   "quote": "If I had like two more removal spells, I would vote the other way.",
+   "cards": [
+    "Surgical Precision",
+    "Fblthp, Impossibly Lost"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Value of the Nth removal spell: marginal win rate by removal count already in the pool at pick time.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "re7-13",
+    "994-27"
+   ]
+  },
+  {
+   "id": "5aM-17",
+   "time": 709,
+   "phase": "draft",
+   "claim": "With Jace in the deck, curve is the tiebreaker: take the cheaper creature so a two goes into a three to protect the planeswalker (Theorix Metamage over Blossom-Blessed Angel).",
+   "quote": "Especially when I have Jace, like when I've got Jace, you really want to play a two into a three so you can protect it.",
+   "cards": [
+    "Theorix Metamage",
+    "Blossom-Blessed Angel",
+    "The Theorist, Jace Beleren"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Win rate of Jace decks by number of two- and three-drops; GIH WR of the two cards.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "CWs-45",
+    "CWs-23"
+   ]
+  },
+  {
+   "id": "5aM-18",
+   "time": 743,
+   "phase": "draft",
+   "claim": "Sphinx's Approach is playable ('I don't hate it'), a late pick that makes his deck but is awkward to cast.",
+   "quote": "I guess I don't hate this card.",
+   "cards": [
+    "Sphinx's Approach"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Sphinx's Approach in blue decks, skill-split.",
+   "type": "one-off pick",
+   "repeats": [],
+   "related": [
+    "CWs-37"
+   ]
+  },
+  {
+   "id": "5aM-19",
+   "time": 815,
+   "phase": "build",
+   "claim": "A splash card is found late: Recursive Recruitment is splashed in a blue-white deck because the pool holds two white-black duals (Meticulous Commons x2).",
+   "quote": "I didn't consider this during the draft, but maybe we're supposed to splash recruitment as well.",
+   "cards": [
+    "Recursive Recruitment",
+    "Meticulous Commons"
+   ],
+   "kind": "splash / mana",
+   "engine_area": "builder",
+   "test_idea": "GIH WR of Recursive Recruitment as a splash card with 0, 1, 2 duals of its colour.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "CWs-12",
+    "CWs-22",
+    "mqZ-16"
+   ]
+  },
+  {
+   "id": "5aM-20",
+   "time": 842,
+   "phase": "build",
+   "claim": "When cutting, do not cut a two-mana card; cut the expensive or off-plan cards (Generous Revival, Tam's Resistance, Thalia, Sphinx's Approach).",
+   "quote": "Although again, I don't really want to cut a two mana card.",
+   "cards": [
+    "Shatterwing Pegasus",
+    "Generous Revival",
+    "Tam's Resistance",
+    "Thalia, the Survivor",
+    "Sphinx's Approach"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Win rate of decks by cheap-card count when cutting from 41-42 playables.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "CWs-45"
+   ]
+  },
+  {
+   "id": "5aM-21",
+   "time": 895,
+   "phase": "general",
+   "claim": "Aggressive decks are better right now: in his last ten or so drafts the midrange mirrors came down to who drew better.",
+   "quote": "I've actually been leaning a little more aggressive in my past 10ish drafts.",
+   "cards": [],
+   "kind": "format",
+   "engine_area": "none",
+   "test_idea": "Win rate by archetype speed (average mana value) on 17Lands data, mirror matches against others.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "5aM-22",
+   "time": 930,
+   "phase": "build",
+   "claim": "Never go below 17 lands: missing land drops is the worse failure; fill the extra slots with card draw instead.",
+   "quote": "I never want to miss my land drops.",
+   "cards": [],
+   "kind": "land count",
+   "engine_area": "builder",
+   "test_idea": "Win rate of 16 against 17 lands by deck archetype and by splash; test the claim that 17 beats 16 with a splash.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-38"
+   ]
+  },
+  {
+   "id": "5aM-23",
+   "time": 965,
+   "phase": "build",
+   "claim": "Cut Sphinx's Approach for being awkward to cast when there is card advantage elsewhere, then keeps it at the end for the curve: 'slightly awkward mana be damned'.",
+   "quote": "I think I can cut Spinx's approach. It's just like not going to be super easy to cast.",
+   "cards": [
+    "Sphinx's Approach"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Win rate of decks containing Sphinx's Approach by number of its colour sources.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "5aM-24",
+   "time": 981,
+   "phase": "build",
+   "claim": "Keep at least 13 creatures (counting the Recursive Recruitment tokens) when the deck has Jace and a team pump spell.",
+   "quote": "My creature count is 13 plus recruitment, right? Don't think I want to go too much lower than that when I've got like a Jace and like a team pump spell.",
+   "cards": [
+    "Recursive Recruitment",
+    "The Theorist, Jace Beleren",
+    "Fatehold Charm"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Win rate of UW Jace decks by creature count (12-16).",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "mqZ-46",
+    "CWs-45"
+   ]
+  },
+  {
+   "id": "5aM-25",
+   "time": 1027,
+   "phase": "build",
+   "claim": "The math always points to 17 lands over 16, especially with a splash, both for hitting land drops and for source counts.",
+   "quote": "the math always kind of points towards you playing 17 rather than 16 in in especially if you're splashing, right?",
+   "cards": [],
+   "kind": "land count",
+   "engine_area": "builder",
+   "test_idea": "Probability of hitting land drops and colour sources at 16 against 17 lands (hypergeometric), plus 17Lands win rate by land count with a splash.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-38"
+   ]
+  },
+  {
+   "id": "5aM-26",
+   "time": 1076,
+   "phase": "build",
+   "claim": "If you get flooded often, the fix is not cutting lands but adding things to do with your mana (card draw, sinks).",
+   "quote": "the solve for that isn't cut lands. It's include more things to do with your mana.",
+   "cards": [],
+   "kind": "land count",
+   "engine_area": "builder",
+   "test_idea": "Win rate by number of mana sinks / card-draw cards at 17 lands.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": []
+  }
+ ]
+}

@@ -1,0 +1,1032 @@
+{
+ "id": "994X9PlPInQ",
+ "url": "https://youtu.be/994X9PlPInQ",
+ "title": "Reality Fracture Drafts are Here and They're GREAT!",
+ "player": "Alex Nikolic",
+ "set": "FRA",
+ "event": "FRA Arena draft, likely the early-access event (the draft screen shows the Chord_O_Calls handle and the pick timer; he says he plays best of one right now, 18:52; 'Reality Fracture Draft 1' for YouTube, 0:02); exact queue (Premier / Traditional / Quick) is not named or visible",
+ "dataset": "FRA_PremierDraft_All_Data.json",
+ "recorded": null,
+ "source": "frames from data/videos/raw/994X9PlPInQ (tools/video_draft.py frames grab, pack crop 1650:900 at x=270 y=70); pack contents read from frames, taken cards confirmed by the next pick's pool and the deck screen at 19:20-21:25. Unshown packs are marked unreadable. Transcript from YouTube auto captions, card names corrected; nothing past 22:00 used.",
+ "colour_path": [
+  {
+   "after": "P1p1",
+   "main": "Open (RG ramp)",
+   "quote": "especially because red green is a ramp archetype."
+  },
+  {
+   "after": "P1p4",
+   "main": "RG ramp, will splash removal",
+   "quote": "Splashing is pretty doable in this format and the other cards ... I think splashing removal spell makes a little more sense."
+  },
+  {
+   "after": "P1p8",
+   "main": "RG with fixing",
+   "quote": "It's a pretty good set for splashing in general being a little bit slower."
+  },
+  {
+   "after": "P2p3",
+   "main": "GR base, splash held back",
+   "quote": "I'm not going to dive into this territory of splashiness just yet."
+  },
+  {
+   "after": "P2p7",
+   "main": "GR base, black splash for removal",
+   "quote": "This is probably going to be the last off-color card I take."
+  },
+  {
+   "after": "P2p9",
+   "main": "GR base, heavier splash",
+   "quote": "we might be in for a slightly heavier splash than I'd like."
+  },
+  {
+   "after": "P3p4",
+   "main": "GR + B splash",
+   "quote": "Don't want to overload the splash."
+  },
+  {
+   "after": "deck",
+   "main": "RG(B) splash, 8 Forest 4 Mountain 2 Swamp",
+   "quote": "I think this is better than the world we would have been in if we were just red green. Again, big deal is just like not enough removal in the colors."
+  }
+ ],
+ "picks": [
+  {
+   "pack": 1,
+   "pick": 1,
+   "time": "0:09-1:09",
+   "pack_cards": [
+    "Aerid Konstrari",
+    "Thalia, the Survivor",
+    "Your Fate Ends Here",
+    "Yargle, Goliath of Otaria",
+    "Yargle, Glutton of Urborg",
+    "Theorix Charm",
+    "Konstrari Charm",
+    "Predictive Preparations",
+    "Sphinx's Approach",
+    "Screeching Soulbreaker",
+    "Tether Technician",
+    "Inspired Tethermage",
+    "Afterthought Sentry",
+    "Innovative Commons"
+   ],
+   "taken": "Aerid Konstrari",
+   "reasoning": "Rare, one of the five mythic sphinxes: a 5/4 flier for four that makes a Heartwood token on enter and death; a big flier that ramps, and red-green is a ramp archetype.",
+   "considered": {
+    "Your Fate Ends Here": "really good removal, probably his second pick",
+    "Konstrari Charm": "charms are pretty good",
+    "Thalia, the Survivor": "likes it a decent amount"
+   },
+   "plan": "Open; red-green ramp is the archetype in mind.",
+   "quotes": [
+    "the other cards in this pack that I'm interested in, the charms are pretty good ... Your Fate Ends Here, really good removal spell. That'd probably be my second pick here.",
+    "my pick orders, like where I want to take removal spells has just like kept going up ... my number usually is like fiveish ... trending towards wanting six, maybe seven."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 2,
+   "time": "1:09-1:45",
+   "pack_cards": [
+    "Kiora of Fire and Ashes",
+    "Edgar, Ancient Bloodlord",
+    "Theorix Charm",
+    "Kiora of Salt and Sand",
+    "Cryotheory Adept",
+    "Semester Foreseer",
+    "Solve for Disappointment",
+    "Eardrum Rattler",
+    "Greenhouse Propagator",
+    "Blessed Ghoul",
+    "Charge the Sanctum",
+    "Living Library",
+    "Swamp"
+   ],
+   "taken": "Kiora of Fire and Ashes",
+   "reasoning": "Best card in the pack: six mana 2/2 that makes a 5/5 flier, and if you do not answer both halves you are probably dead; a great ramp target for Aerid. Another charm and Edgar noted; Face Yourself seen in the next pack.",
+   "considered": {
+    "Edgar, Ancient Bloodlord": "pretty solid",
+    "Kiora of Salt and Sand": "can do some stuff; seen once in play, the opponent made an 8/8"
+   },
+   "plan": "Red-green ramp with Aerid plus Kiora.",
+   "quotes": [
+    "The best card in this pack is Kiora, Fire and Ashes. This card is excellent.",
+    "great follow-up to our ramp card. A great ramp target."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 3,
+   "time": "1:45-2:55",
+   "pack_cards": [
+    "Face Yourself",
+    "Countersculpt",
+    "Hapatra, the Desert Frost",
+    "Mabel, Bitter Recluse",
+    "Woodwork Prodigy",
+    "Memory Trap",
+    "Cryotheory Adept",
+    "Divining Duelist",
+    "Solve for Disappointment",
+    "Blazing Crescendo",
+    "Budding Insurgent",
+    "Formidable Commons"
+   ],
+   "taken": "Woodwork Prodigy",
+   "reasoning": "Kiora into Woodwork Prodigy is very tempting: three mana 3/3 that makes a Heartwood token and keeps re-preparing, so it keeps pumping out mana. Prefers the enabler over the bomb rare when the top end is already good; calls it close with Face Yourself.",
+   "considered": {
+    "Face Yourself": "solid thing to ramp into; copies creatures; not quite a bomb rare; pick is close",
+    "Countersculpt": "excellent counter spell, empowers Jace"
+   },
+   "plan": "Ramp; top end in hand, wants enablers.",
+   "quotes": [
+    "I think that pick is kind of close by the way. The prodigy versus face yourself. I'm not exactly sure.",
+    "I don't think face yourself is quite a bomb rare. So, I like the enabler where we've got some nice top end."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 4,
+   "time": "2:55-3:55",
+   "pack_cards": [
+    "Bloodline Recollector",
+    "Hapatra, the Desert Frost",
+    "Campus Crier",
+    "Semester Foreseer",
+    "Screeching Soulbreaker",
+    "Bestial Incursion",
+    "Wrecking Gecko",
+    "Fatehold Chronologist",
+    "Whiplash Wordsmith",
+    "Keeper of the Quiet Hour",
+    "Plains"
+   ],
+   "taken": "Bestial Incursion",
+   "reasoning": "Likes Bestial Incursion (4/4 trampler, flashback for six); has no removal yet and is wary of it. Considers a sacrifice-removal spell in the pack for a splash ('splashing is pretty doable in this format'), but takes the green card and says he liked specing down the removal later. Traxos, Scourge Eternal would be a medium creature.",
+   "considered": {
+    "Hapatra, the Desert Frost": "a lock-something-down-for-a-turn card, playable",
+    "Bloodline Recollector": "interesting mythic, three creatures dying is a hoop",
+    "Traxos, Scourge Eternal": "not an amazing splash"
+   },
+   "plan": "Ramp; wary of no removal; plans to take removal and splash it.",
+   "quotes": [
+    "I do like Bestial Incursion. This card's nice. Make a 4/4 trample token flashback for six mana.",
+    "we don't have any removal and that's like I think just something you absolutely need.",
+    "Splashing is pretty doable in this format."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 5,
+   "time": "3:55-4:37",
+   "pack_cards": [
+    "Traxos, Academy Guardian",
+    "Tetsuko Umezawa, Pursuer",
+    "Traxos, Scourge Eternal",
+    "Academic Ascent",
+    "Icy Reception",
+    "Silence the Echo",
+    "Budding Insurgent",
+    "Whiplash Wordsmith",
+    "Medic's Kitesail",
+    "Forest"
+   ],
+   "taken": "Silence the Echo",
+   "reasoning": "Takes the removal: 'splashing a removal spell makes a little more sense' than a Traxos. Sacrifice-or-pay-three destroy target creature.",
+   "considered": {
+    "Traxos, Scourge Eternal": "good but not an amazing splash; 'medium removal spell' as a creature",
+    "Tetsuko Umezawa, Pursuer": "kind of medium"
+   },
+   "plan": "Same; collecting off-colour removal to splash.",
+   "quotes": [
+    "I think splashing removal spell makes a little more sense."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 6,
+   "time": "4:37-5:03",
+   "pack_cards": [
+    "Fatehold Charm",
+    "Shatterwing Pegasus",
+    "Infinite Coursework",
+    "Protege's Awakening",
+    "Screeching Soulbreaker",
+    "Silence the Echo",
+    "Tether Technician",
+    "Compel Brutality",
+    "Forest"
+   ],
+   "taken": "Compel Brutality",
+   "reasoning": "On-colour removal ('punch something or bite something'), planeswalkers can do the biting; takes it over Fatehold Charm, which he calls really strong, potentially the best of the charms, because he will keep going down this path until it gets cut off.",
+   "considered": {
+    "Fatehold Charm": "really strong, potentially the best of the charms"
+   },
+   "plan": "Green removal plus ramp; keeps going until it gets cut off.",
+   "quotes": [
+    "Now we get a on color removal spell. So that's great, compel brutality.",
+    "I'm happy to keep on going down this path until it gets mega cut off or something."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 7,
+   "time": "5:03-5:36",
+   "pack_cards": [
+    "Traxos, Academy Guardian",
+    "Essence Burn",
+    "Unflinching Hortimancer",
+    "Infinite Coursework",
+    "Void Extrapolator",
+    "Awaken the Inferno",
+    "Charge the Sanctum",
+    "Transformative Commons"
+   ],
+   "taken": "Awaken the Inferno",
+   "reasoning": "'Going to lock that one in': deal six to something, put a counter on something, and basic landcycling. Notes blue is floating (Traxos, Infinite Coursework).",
+   "considered": {
+    "Traxos, Academy Guardian": "four mana 1/5 flier vigilance prowess, costs two after a noncreature spell; blue is floating through"
+   },
+   "plan": "Red-green ramp.",
+   "quotes": [
+    "Awaken the Inferno. Going to lock that one in, I'm pretty sure. Deal six to something."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 8,
+   "time": "5:36-6:05",
+   "pack_cards": [
+    "Paradox Shaper",
+    "Campus Crier",
+    "Surveillance Phantasm",
+    "Rampart Hunter",
+    "Chandra's Emberling",
+    "Vinelasher Adept",
+    "Konstrari Annex"
+   ],
+   "taken": "Konstrari Annex",
+   "reasoning": "Lacking two-drops but chooses the fixing land: another fixer. Vinelasher Adept is a fine filler two-drop he hovered; the land Konstrari Annex (red-green dual, enters tapped unless you control a planeswalker) was picked (confirmed by the pool in the next pick). All the landcyclers are good.",
+   "considered": {
+    "Vinelasher Adept": "fine filler two-drop",
+    "Chandra's Emberling": "pretty medium card"
+   },
+   "plan": "Red-green, fixing taken.",
+   "quotes": [
+    "There's another fixer here.",
+    "Okay, take a land. I might use that."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 9,
+   "time": "6:05-6:37",
+   "pack_cards": [
+    "Yargle, Goliath of Otaria",
+    "Yargle, Glutton of Urborg",
+    "Screeching Soulbreaker",
+    "Tether Technician",
+    "Inspired Tethermage",
+    "Afterthought Sentry"
+   ],
+   "taken": "Afterthought Sentry",
+   "reasoning": "Needs plays on turn two; takes the two-drop (pack had Tether Technician and Inspired Tethermage, 'a fine filler card'). Pack 1 summary: two excellent top-end cards, a bit of removal, a good enabler.",
+   "considered": {
+    "Tether Technician": "fine filler card",
+    "Inspired Tethermage": "good thing to sink a bunch of mana into"
+   },
+   "plan": "Same.",
+   "quotes": [
+    "I'm going to take the two drop. It's just the thing that I can see myself missing the most."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 10,
+   "time": "6:37-7:02",
+   "pack_cards": [
+    "Kiora of Salt and Sand",
+    "Solve for Disappointment",
+    "Eardrum Rattler",
+    "Living Library",
+    "Swamp"
+   ],
+   "taken": "Eardrum Rattler",
+   "reasoning": "Kiora comes back; he says he is not a good Kiora deck (zero Empower Jace cards) and would not speculate on it over a below-average filler two-drop. Takes Eardrum Rattler as a filler; is mostly making sure he is not dying.",
+   "considered": {
+    "Kiora of Salt and Sand": "not a very good Kiora deck, no Empower Jace cards in the pile"
+   },
+   "plan": "Same.",
+   "quotes": [
+    "we're not a very good Kiora deck and that is to say we're not very good at empowering Jace as evidenced by zero Empower Jace cards in our pile."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 11,
+   "time": "7:02-7:10",
+   "pack_cards": [
+    "Hapatra, the Desert Frost",
+    "Solve for Disappointment",
+    "Blazing Crescendo",
+    "Formidable Commons"
+   ],
+   "taken": "Formidable Commons",
+   "reasoning": "Takes the green-black untapped-with-planeswalker land; nothing else in the pack matters. (He had mentioned grabbing a land after fixing and removal.)",
+   "considered": {},
+   "plan": "Same.",
+   "quotes": [
+    "Okay, take a land."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 12,
+   "time": "7:10-7:15",
+   "pack_cards": [
+    "Semester Foreseer",
+    "Screeching Soulbreaker",
+    "Plains"
+   ],
+   "taken": "Screeching Soulbreaker",
+   "reasoning": "Last cards of pack 1; no comment. Confirmed from the sideboard (Screeching Soulbreaker) and the one-card-lighter pack in the next frame.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 1,
+   "pick": 13,
+   "time": "7:15-7:20",
+   "pack_cards": [
+    "Academic Ascent",
+    "Forest"
+   ],
+   "taken": "Academic Ascent",
+   "reasoning": "No comment. Confirmed by the sideboard.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 1,
+   "pick": 14,
+   "time": "7:20-7:25",
+   "pack_cards": [
+    "Forest"
+   ],
+   "taken": "Forest",
+   "reasoning": "Last card.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 1,
+   "time": "7:25-8:40",
+   "pack_cards": [
+    "Solarium Sentry",
+    "Vraska, Soul of Stone",
+    "Hapatra, the Desert Frost",
+    "Recursive Recruitment",
+    "Hapatra, the Desert Fang",
+    "Archive Arbiter",
+    "Hexhaven Battalion",
+    "Predictive Preparations",
+    "Apex Witchstalker",
+    "Hallway Heckler",
+    "Twinned Vision",
+    "Ferocity of the Hunt",
+    "Room of Refuge",
+    "Dedicated Commons"
+   ],
+   "taken": "Room of Refuge",
+   "reasoning": "'This pack is not as exciting for us'. Hapatra, the Desert Fang is really strong but not splashable in non-base pairs because of the double black; he takes the flexible fixing (one mana of a colour chosen on entering) because 'we're not doing anything in particular aside from casting big things', so splash off-colour spells. Archive Arbiter noted (six mana 4/4 flier, blows up Oblivion Rings).",
+   "considered": {
+    "Hapatra, the Desert Fang": "really strong, not splashable in non-base colour pairs (double black)",
+    "Archive Arbiter": "likes it a decent amount, not the worst card",
+    "Twinned Vision": "pretty solid"
+   },
+   "plan": "Red-green with a splash; fixing now.",
+   "quotes": [
+    "Not a very splashable one in non-base color pairs, of course, because the double black.",
+    "I am happy to just like take some flexible fixing.",
+    "It's a pretty good set for splashing in general being a little bit slower."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 2,
+   "time": "8:40-9:12",
+   "pack_cards": [
+    "Germinate Recruits",
+    "Plan for All Outcomes",
+    "Traxos, Academy Guardian",
+    "Stingerquill Voxmancer",
+    "Traxos, Scourge Eternal",
+    "Blossom-Blessed Angel",
+    "Fateshaper Aspirant",
+    "Cast Away Doubt",
+    "Something Worth Saving",
+    "Tethermage's Advantage",
+    "Twinned Vision",
+    "Whiplash Wordsmith",
+    "Vigorbloom Annex"
+   ],
+   "taken": "Plan for All Outcomes",
+   "reasoning": "Takes Plan for All Outcomes, a card he could splash (a Plan for all outcomes or the mill spell; 'those kind of cards tend to come around late'), and wants to lock in interaction even if he is splashing it.",
+   "considered": {
+    "Something Worth Saving": "fills the graveyard, helps find important cards"
+   },
+   "plan": "Green-red base; Plan for All Outcomes as a possible splash.",
+   "quotes": [
+    "Plan for all outcomes is pretty strong. It's a card I could consider splashing.",
+    "I just really want to lock in some interaction, even if I'm trying to splash it."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 3,
+   "time": "9:12-9:55",
+   "pack_cards": [
+    "Samut, Tyrant of Naktamun",
+    "Null Summoner",
+    "Command the Stage",
+    "Heartwood Crafter",
+    "Surgical Precision",
+    "Icy Reception",
+    "Theoretical Necromancer",
+    "Heartstring Puller",
+    "Tether Technician",
+    "Tethermage's Advantage",
+    "Afterthought Sentry",
+    "Swamp"
+   ],
+   "taken": "Heartwood Crafter",
+   "reasoning": "Takes the excellent enabler over splashing Null Summoner: 'with a Heartwood Crafter in the pack, an excellent enabler, I'm not going to dive into this territory of splashiness just yet, but if it wasn't in the pack I think I would.' Next best was Heartstring Puller.",
+   "considered": {
+    "Null Summoner": "very off-colour splash for a green-red base, but strong enough to consider",
+    "Heartstring Puller": "solid card, next best"
+   },
+   "plan": "Not yet committing to a splash.",
+   "quotes": [
+    "with a Heartwood Crafter in the pack, which is an excellent enabler, I'm not going to dive into this territory of splashiness just yet."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 4,
+   "time": "9:55-10:35",
+   "pack_cards": [
+    "Recursive Recruitment",
+    "Traxos, Scourge Eternal",
+    "Fateshaper Aspirant",
+    "Sphinx's Approach",
+    "Theoretical Necromancer",
+    "Wrecking Gecko",
+    "Blessed Ghoul",
+    "Twinned Vision",
+    "Living Library",
+    "Murmuring Volume",
+    "Mountain"
+   ],
+   "taken": "Twinned Vision",
+   "reasoning": "Murmuring Volume ramps and fixes but he prefers Twinned Vision: card advantage and cheap, 'we just don't have that right now', in a splashy rampy deck you want it. Would take one of the three-mana rocks but not a huge priority. (Pick tag sat on Murmuring Volume while hovering; the next frame's pool shows Twinned Vision.)",
+   "considered": {
+    "Murmuring Volume": "ramps, fixes, filters; would not mind it",
+    "Traxos, Scourge Eternal": "mentioned"
+   },
+   "plan": "Needs card advantage.",
+   "quotes": [
+    "Twin Vision is a card I think is pretty appealing for us. Like just some card advantage here.",
+    "We are in need of some card advantage."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 5,
+   "time": "10:35-11:05",
+   "pack_cards": [
+    "Mabel, Bitter Recluse",
+    "Flourishing Grapple",
+    "Kiora of Salt and Sand",
+    "Fateshaper Aspirant",
+    "Solve for Disappointment",
+    "Hallway Heckler",
+    "Inspired Tethermage",
+    "Theorix Metamage",
+    "Afterthought Sentry",
+    "Stingerquill Annex"
+   ],
+   "taken": "Stingerquill Annex",
+   "reasoning": "Takes a black-red dual: 'now I can take a black Redland maybe'. Holy Heckler is a fairly medium card; land seems better here. (Pick tag on Stingerquill Annex; confirmed by the deck screen.)",
+   "considered": {
+    "Hallway Heckler": "fairly medium quality card, a bit of card filtering"
+   },
+   "plan": "Black as a splash.",
+   "quotes": [
+    "I can take a black red land maybe.",
+    "Land seems better here."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 6,
+   "time": "11:05-11:25",
+   "pack_cards": [
+    "Break Under Pressure",
+    "Academic Ascent",
+    "Icy Reception",
+    "Apex Witchstalker",
+    "Solve for Disappointment",
+    "Awaken the Inferno",
+    "Tethermage's Advantage",
+    "Fatehold Chronologist",
+    "Mountain"
+   ],
+   "taken": "Break Under Pressure",
+   "reasoning": "A really nice removal spell (opponent sacrifices their biggest thing, you gain two). Taking it because 'we've taken some fixing, might as well get paid out for it'; there was also an Awaken the Inferno in the pack.",
+   "considered": {
+    "Awaken the Inferno": "could take that too"
+   },
+   "plan": "Black splash for removal.",
+   "quotes": [
+    "You don't want to take a bunch of fixing then just be like actually we're not playing any of that."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 7,
+   "time": "11:25-11:52",
+   "pack_cards": [
+    "Danitha, Spear of Agony",
+    "Rewrite Regrets",
+    "Fateshaper Aspirant",
+    "Semester Foreseer",
+    "Extended Absence",
+    "Vinelasher Adept",
+    "Wrecking Gecko",
+    "Charge the Sanctum"
+   ],
+   "taken": "Extended Absence",
+   "reasoning": "Another removal spell (exile target creature or planeswalker plus one damage to each opponent). Danitha is pretty good, 'but in a more aggressive deck'; Rewrite Regrets is not a bad card, good with the landcyclers. 'This is probably going to be the last off-colour card I take' (we don't want to splash infinite cards). Deck screen confirms Extended Absence.",
+   "considered": {
+    "Danitha, Spear of Agony": "pretty good but more for an aggressive deck",
+    "Rewrite Regrets": "not a bad card, good with the landcyclers"
+   },
+   "plan": "Black splash capped; no more off-colour cards.",
+   "quotes": [
+    "This is probably going to be the last off-color card I take.",
+    "we don't want to splash infinite cards or anything."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 8,
+   "time": "11:52-12:09",
+   "pack_cards": [
+    "Command the Stage",
+    "Unflinching Hortimancer",
+    "Cryotheory Adept",
+    "Unsummon",
+    "Eardrum Rattler",
+    "Tethermage's Advantage",
+    "Meticulous Commons"
+   ],
+   "taken": "Unsummon",
+   "reasoning": "Nothing he expects to play ('there's a trick, a land, an unsummon, I don't think I'm going to play any of that'). Pick inferred from the sideboard (Unsummon present, Meticulous Commons not in the pool); the Pick tag sat on Meticulous Commons during the hover.",
+   "considered": {
+    "Command the Stage": "pinging payoff, hard to get going"
+   },
+   "plan": "",
+   "quotes": [
+    "I don't think I'm going to play any of that stuff to be honest."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 9,
+   "time": "12:09-12:25",
+   "pack_cards": [
+    "Recursive Recruitment",
+    "Hexhaven Battalion",
+    "Predictive Preparations",
+    "Apex Witchstalker",
+    "Ferocity of the Hunt",
+    "unreadable"
+   ],
+   "taken": "Apex Witchstalker",
+   "reasoning": "Ferocity not great with a lowish creature count; takes the black landcycler Apex Witchstalker. 'Battalion wheels, a little bit surprising.' Leaning away from green-red base but the best cards are double-pipped in those colours, so 'we might be in for a slightly heavier splash than I'd like'.",
+   "considered": {
+    "Ferocity of the Hunt": "not great on lowish creature counts",
+    "Recursive Recruitment": "don't want to splash too heavily"
+   },
+   "plan": "Green-red base still, heavier splash.",
+   "quotes": [
+    "we're also kind of leaning away from green green red base at this point.",
+    "we might be in for a slightly heavier splash than I'd like."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 10,
+   "time": "12:25-12:40",
+   "pack_cards": [
+    "Fateshaper Aspirant",
+    "Cast Away Doubt",
+    "Something Worth Saving",
+    "Tethermage's Advantage",
+    "Whiplash Wordsmith"
+   ],
+   "taken": "Something Worth Saving",
+   "reasoning": "No narration; inferred from the deck screen (two Something Worth Saving in the main, the second from pack 3 pick 6).",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 11,
+   "time": "12:40-12:50",
+   "pack_cards": [
+    "Theoretical Necromancer",
+    "Tether Technician",
+    "Afterthought Sentry",
+    "Swamp"
+   ],
+   "taken": "Tether Technician",
+   "reasoning": "Takes Tether Technician over another Afterthought Sentry: filling two-drop slots is not super important in a slow format, 'I don't like filling in the two drop slot over just other things that fill in the needs of the deck'. The sideboard has Tether Technician and a second Afterthought Sentry (the Sentry came from pack 3 pick 8).",
+   "considered": {
+    "Afterthought Sentry": "another two-drop, not over the card that fills a need"
+   },
+   "plan": "",
+   "quotes": [
+    "I don't like filling in the two drop slot over just other things that fill in the needs of the deck."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 12,
+   "time": "12:50-13:25",
+   "pack_cards": [
+    "unreadable",
+    "unreadable",
+    "unreadable"
+   ],
+   "taken": "Living Library",
+   "reasoning": "Pack never shown (waiting screen). Inferred: the pack-2 pick-4 pack wheeled with three cards and Living Library is in the sideboard. UNCERTAIN.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 13,
+   "time": "13:25-13:40",
+   "pack_cards": [
+    "Inspired Tethermage",
+    "Afterthought Sentry"
+   ],
+   "taken": "Inspired Tethermage",
+   "reasoning": "He took the tether mage over another sentry ('I'll take tether mage though over another sentry'); deck screen has Inspired Tethermage.",
+   "considered": {},
+   "plan": "",
+   "quotes": [
+    "I'll take tether mage though over another sentry."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 14,
+   "time": "13:40-13:50",
+   "pack_cards": [
+    "unreadable"
+   ],
+   "taken": "unreadable: a basic land",
+   "reasoning": "Final card of pack 2 never shown; by the pool count this was a basic land (the deck builder has 3 unaccounted basics). UNCERTAIN.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 1,
+   "time": "13:50-14:20",
+   "pack_cards": [
+    "Pompous Battlemage",
+    "Kiora of Fire and Ashes",
+    "Edgar, Ancient Bloodlord",
+    "Theorix Charm",
+    "Bloombrute",
+    "Kiora of Salt and Sand",
+    "Memory Trap",
+    "Predictive Preparations",
+    "Cryotheory Adept",
+    "Sureshot Sower",
+    "Whiplash Wordsmith",
+    "Ferocity of the Hunt",
+    "Medic's Kitesail",
+    "Theorix Annex"
+   ],
+   "taken": "Kiora of Fire and Ashes",
+   "reasoning": "'Happy to lock in a second Kiora ... just phenomenal, puts a ton of pressure on'. The rest of the pack nothing amazing; Sureshot Sower would be fine too.",
+   "considered": {
+    "Sureshot Sower": "would be a fine too (wheeled)",
+    "Theorix Charm": "blue is pretty good if you're green"
+   },
+   "plan": "Green-red ramp with top end.",
+   "quotes": [
+    "Happy to lock in a second Kiora. ... really just phenomenal, really just puts a ton of pressure on and I don't think the rest of the pack's anything amazing."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 2,
+   "time": "14:20-14:55",
+   "pack_cards": [
+    "Verdant Kraken",
+    "Tomik, Orzhov Lawmage",
+    "Tomik, Izzet Sparkmage",
+    "Desperate Futurescribe",
+    "Craftwork Crusher",
+    "Blossom-Blessed Angel",
+    "Graft Surgeon",
+    "Protege's Awakening",
+    "Void Extrapolator",
+    "Awaken the Inferno",
+    "unreadable",
+    "unreadable"
+   ],
+   "taken": "Verdant Kraken",
+   "reasoning": "Nice top end: Verdant Kraken (seven mana 6/6 that makes a three-three Forest creature each upkeep) over Craftwork Crusher (choose two of: 4 damage, a 2/2, draw a card). 'I'm honestly not sure which one is better. I'm going to take the Kraken.' A minuscule chance Crusher wheels is the tiebreaker.",
+   "considered": {
+    "Craftwork Crusher": "choose two: deal four, make a two-two, draw; may turn out better in the stats"
+   },
+   "plan": "",
+   "quotes": [
+    "I am honestly not sure which one is better. I'm going to take the Kraken.",
+    "There's also a minuscule chance that card wheels."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 3,
+   "time": "14:55-15:26",
+   "pack_cards": [
+    "Prophesied End",
+    "Gallia, Tragic Host",
+    "Gallia, the Merrymaker",
+    "Eye of Jace",
+    "Hexhaven Battalion",
+    "Protege's Awakening",
+    "Unsummon",
+    "Solve for Disappointment",
+    "Awaken the Inferno",
+    "Inspired Tethermage",
+    "Ferocity of the Hunt",
+    "Konstrari Annex"
+   ],
+   "taken": "Awaken the Inferno",
+   "reasoning": "Takes another Awaken: helps the fixing, 'we have a lot of lands and can't have too many tap lands'. Gallia is more of an aggressive card. (Pick tag first sat on Konstrari Annex; the empty slot after the pick and the pool show Awaken the Inferno x2.)",
+   "considered": {
+    "Gallia, the Merrymaker": "more of an aggressive card",
+    "Konstrari Annex": "a land, tap lands hurt at some point"
+   },
+   "plan": "",
+   "quotes": [
+    "Yeah, I'm happy to take another awaken. I think like that helps the fixing."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 4,
+   "time": "15:26-15:41",
+   "pack_cards": [
+    "Traxos, Academy Guardian",
+    "Terminal Criticism",
+    "Traxos, Scourge Eternal",
+    "Campus Crier",
+    "Undulating Witness",
+    "Extended Absence",
+    "unreadable",
+    "Eardrum Rattler",
+    "Sureshot Sower",
+    "unreadable",
+    "unreadable"
+   ],
+   "taken": "Sureshot Sower",
+   "reasoning": "'Take a fine curve filler over another Extended Absence. Don't want to overload the splash.' (Sureshot Sower hovered with the Pick; the deck screen has two Sowers, the second from pick 9.)",
+   "considered": {
+    "Extended Absence": "another one, does not want to overload the splash",
+    "Terminal Criticism": "sideboard card for best of three"
+   },
+   "plan": "Does not want to overload the splash.",
+   "quotes": [
+    "Just take a a fine curve filler over like another extended absence. Don't want to overload the splash."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 5,
+   "time": "15:41-16:00",
+   "pack_cards": [
+    "Gideon's Memorial",
+    "Rockfall Vale",
+    "Refute Destiny",
+    "Jiang Yanggu, Never Alone",
+    "Fateshaper Aspirant",
+    "Icy Reception",
+    "Solve for Disappointment",
+    "Budding Insurgent",
+    "Blessed Ghoul",
+    "Swamp"
+   ],
+   "taken": "Jiang Yanggu, Never Alone",
+   "reasoning": "Untapped mana fixing land noted (Rockfall Vale) but 'we're good on fixing, so we'll just take the good spell': four mana 2/2 that makes a 3/3 Dog and untaps all your tokens (counts Heartwoods).",
+   "considered": {
+    "Rockfall Vale": "untapped fixing land is nice",
+    "Refute Destiny": "exile target creature or planeswalker that is green or blue (wheels at pick 13)"
+   },
+   "plan": "",
+   "quotes": [
+    "I think we're good on fixing. So, we'll just take the good spell."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 6,
+   "time": "16:01-16:50",
+   "pack_cards": [
+    "unreadable",
+    "Traxos, Academy Guardian",
+    "Jiang Yanggu, Alone",
+    "Traxos, Scourge Eternal",
+    "Campus Crier",
+    "Eardrum Rattler",
+    "Something Worth Saving",
+    "Murmuring Volume",
+    "Island"
+   ],
+   "taken": "Something Worth Saving",
+   "reasoning": "Takes the second copy over Jiang Yanggu, Alone / Traxos: 'with all this great top end, I just want to find the top end, find the lands if I need them. It adds a lot to the consistency of the deck. I don't think we need more threats.' Wouldn't hate another threat but not over a cheap spell that adds consistency. (First card in the pack unreadable.)",
+   "considered": {
+    "Jiang Yanggu, Alone": "worse when not curving out; needs to attack",
+    "Traxos, Scourge Eternal": "maybe even better, then decided not"
+   },
+   "plan": "",
+   "quotes": [
+    "I'm going to take something worth saving at this point. I think even the second copy with all this great top end, I just want to like find the top end, find the lands if I need them."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 7,
+   "time": "16:51-17:07",
+   "pack_cards": [
+    "Winter, Team Player",
+    "unreadable",
+    "Hexhaven Battalion",
+    "Screeching Soulbreaker",
+    "Budding Insurgent",
+    "Charge the Sanctum",
+    "Room of Refuge",
+    "Island"
+   ],
+   "taken": "Room of Refuge",
+   "reasoning": "'Let's take another land.' Winter is good if you have a lot of prepared spells.",
+   "considered": {
+    "Winter, Team Player": "good with many prepared spells (creatures that trigger noncreature stuff)"
+   },
+   "plan": "",
+   "quotes": [
+    "Let's take another land."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 8,
+   "time": "17:07-17:15",
+   "pack_cards": [
+    "Academic Ascent",
+    "Rampart Hunter",
+    "unreadable",
+    "unreadable",
+    "unreadable",
+    "unreadable",
+    "unreadable"
+   ],
+   "taken": "Afterthought Sentry",
+   "reasoning": "'Another awaken, I don't think I need another awaken. We'll take a sentry now.' Only three of seven cards visible; Sentry inferred from the words and the sideboard's second Afterthought Sentry. Removal count at the end: six.",
+   "considered": {
+    "Awaken the Inferno": "another awaken, not needed"
+   },
+   "plan": "",
+   "quotes": [
+    "I don't think I need another awaken. We'll take a sentry now."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 9,
+   "time": "17:16-17:38",
+   "pack_cards": [
+    "Edgar, Ancient Bloodlord",
+    "Kiora of Salt and Sand",
+    "Cryotheory Adept",
+    "Sureshot Sower",
+    "Ferocity of the Hunt",
+    "Theorix Annex"
+   ],
+   "taken": "Sureshot Sower",
+   "reasoning": "'I could take a second one. I could take this ferocity. Yeah, let's take a second one.' Pick tag on Sureshot Sower.",
+   "considered": {
+    "Ferocity of the Hunt": "could take it, probably not play it"
+   },
+   "plan": "",
+   "quotes": [
+    "Let's take a second one."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 10,
+   "time": "17:38-17:57",
+   "pack_cards": [
+    "Graft Surgeon",
+    "Void Extrapolator",
+    "Wrecking Gecko",
+    "Murmuring Volume"
+   ],
+   "taken": "Murmuring Volume",
+   "reasoning": "'This volume comes back. We didn't actually pick up too much ramp ... I don't mind a murmuring volume at this point. We play it right here.'",
+   "considered": {},
+   "plan": "",
+   "quotes": [
+    "We didn't actually pick up too much ramp like this. I've been talking about like oh ramp deck but like really it's just two."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 11,
+   "time": "17:57-18:03",
+   "pack_cards": [
+    "unreadable",
+    "unreadable",
+    "unreadable",
+    "Ferocity of the Hunt"
+   ],
+   "taken": "Ferocity of the Hunt",
+   "reasoning": "'We'll take ferocity and probably not play it.' Pack partially seen (the pick-3 pack wheel).",
+   "considered": {},
+   "plan": "",
+   "quotes": [
+    "We'll take ferocity and probably not play it."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 12,
+   "time": "18:03-18:07",
+   "pack_cards": [
+    "unreadable",
+    "unreadable",
+    "unreadable"
+   ],
+   "taken": "Terminal Criticism",
+   "reasoning": "Not shown. Inferred: the pick-4 pack wheels with three cards at pick 12 and Terminal Criticism is in the sideboard. UNCERTAIN.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 13,
+   "time": "18:07-18:10",
+   "pack_cards": [
+    "unreadable",
+    "unreadable"
+   ],
+   "taken": "Refute Destiny",
+   "reasoning": "Not shown. Inferred: the pick-5 pack wheels with two cards at pick 13 and Refute Destiny is in the sideboard. UNCERTAIN.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 14,
+   "time": "18:10-18:15",
+   "pack_cards": [
+    "Island"
+   ],
+   "taken": "Island",
+   "reasoning": "Auto-selected last card (frame: Island, Auto Select).",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  }
+ ],
+ "player_note": "Alex Nikolic (Limited Level-Ups; Arena handle Chord_O_Calls shown in the draft UI)"
+}

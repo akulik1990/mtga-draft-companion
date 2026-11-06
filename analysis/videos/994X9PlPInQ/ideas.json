@@ -1,0 +1,622 @@
+{
+ "video": "994X9PlPInQ",
+ "player": "Alex Nikolic",
+ "set": "FRA",
+ "source": "YouTube auto-caption transcript 0:00-22:00 (tools/video_draft.py transcript 994X9PlPInQ --start 0 --end 1320), card names corrected against data/Sets/FRA_PremierDraft_All_Data.json; draft ends 18:15, deck build to 21:30. 'type' marks claim, heuristic or one-off pick; 'repeats' lists ideas of earlier videos restated here, 'related' same card or topic with a different claim.",
+ "ideas": [
+  {
+   "id": "994-01",
+   "time": 15,
+   "phase": "draft",
+   "claim": "Take the ramp-and-bomb rare first: a 5/4 flier that ramps (Aerid Konstrari) is great in a red-green ramp archetype; the strongest later targets (Kiora, Fire and Ashes) are great ramp payoffs.",
+   "quote": "just like 5-4 big giant flyer that ramps you is great, especially because red green is a ramp archetype.",
+   "cards": [
+    "Aerid Konstrari",
+    "Kiora of Fire and Ashes"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR and ALSA of Aerid Konstrari and Kiora, Fire and Ashes; their win rate in decks with 2+ Heartwood makers.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "994-02",
+   "time": 60,
+   "phase": "draft",
+   "claim": "Removal pick order keeps rising in this set: the usual slot for removal is about fifth, now trending to sixth or seventh, because there are many must-answer threats.",
+   "quote": "my pick orders, like where I want to take removal spells has just like kept going up and up and up. There's a lot of must answer threats in this set. So my number usually is like fiveish. I've been more kind of trending towards wanting six, maybe seven.",
+   "cards": [
+    "Your Fate Ends Here"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Average pick position of removal spells among 60%+ drafters; win rate of decks by removal count (3-4 vs 5-6 vs 7+).",
+   "type": "heuristic",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "994-03",
+   "time": 78,
+   "phase": "draft",
+   "claim": "Kiora, Fire and Ashes is the best card in its pack: six mana 2/2 plus a 5/5 flier that keeps making dragons; if the opponent cannot answer both halves they are probably dead.",
+   "quote": "if you don't answer both halves of the card, you're probably dead cuz this eventually pumps out a bunch of five five flyers.",
+   "cards": [
+    "Kiora of Fire and Ashes"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR and games-in-hand win rate of Kiora, Fire and Ashes against other six-drops; skill-split.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "994-04",
+   "time": 165,
+   "phase": "draft",
+   "claim": "Take the enabler over a good-but-not-bomb rare when the top end is already good: Woodwork Prodigy (three mana 3/3 that keeps making Heartwood tokens) over Face Yourself; he calls it close and says Face Yourself is not quite a bomb.",
+   "quote": "I don't think face yourself is quite a bomb rare. So, I like the enabler where we've got some nice top end.",
+   "cards": [
+    "Woodwork Prodigy",
+    "Face Yourself",
+    "Countersculpt"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Within-deck GIH WR of Woodwork Prodigy vs Face Yourself; pick order at P1p3.",
+   "type": "one-off pick",
+   "repeats": [],
+   "related": [
+    "CWs-07"
+   ]
+  },
+  {
+   "id": "994-05",
+   "time": 225,
+   "phase": "draft",
+   "claim": "Splashing removal makes more sense than splashing a decent creature: with no removal yet he passes Traxos, Scourge Eternal for the removal spell (Silence the Echo) as the colour-light pick.",
+   "quote": "Think splashing removal spell makes a little more sense.",
+   "cards": [
+    "Silence the Echo",
+    "Traxos, Scourge Eternal"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Splash-card win rates by card type (removal vs creature) in decks with a 3rd colour.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "mqZ-51",
+    "CWs-04"
+   ]
+  },
+  {
+   "id": "994-06",
+   "time": 280,
+   "phase": "draft",
+   "claim": "Fatehold Charm is potentially the best of the charms, but he keeps taking on-colour removal (Compel Brutality) 'until it gets cut off'.",
+   "quote": "I'm happy to keep on going down this path until it gets mega cut off or something.",
+   "cards": [
+    "Compel Brutality",
+    "Fatehold Charm"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Compel Brutality vs the charms; skill-split.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "994-07",
+   "time": 305,
+   "phase": "draft",
+   "claim": "Awaken the Inferno is an easy lock-in: six damage plus a counter plus basic landcycling; all the landcyclers are quality, the white three-token one is a really good common and the blue one is the worst.",
+   "quote": "All the land cyclers are pretty good. I think this one is probably the worst or maybe second worst. The blue one's probably the worst, I think.",
+   "cards": [
+    "Awaken the Inferno",
+    "Apex Witchstalker",
+    "Undulating Witness"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of the five basic landcyclers; value of a cycled landcycler as removal vs fixing.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-45",
+    "mqZ-66"
+   ]
+  },
+  {
+   "id": "994-08",
+   "time": 385,
+   "phase": "draft",
+   "claim": "With few two-drops he takes a filler two-drop, saying a slow format does not punish missing turn two often, but quick starts happen: filling two-drop slots is not worth more than cards that fill the deck's needs.",
+   "quote": "I don't like filling in the two drop slot over just other things that fill in the needs of the deck. It's just a slow enough format where you don't get punished for not playing a two on two all that often.",
+   "cards": [
+    "Tether Technician",
+    "Inspired Tethermage",
+    "Afterthought Sentry"
+   ],
+   "kind": "deckbuilding",
+   "engine_area": "builder",
+   "test_idea": "Win rate by number of two-drops (0-3 vs 4-6) in FRA decks, skill-controlled.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "mqZ-33",
+    "mqZ-52"
+   ]
+  },
+  {
+   "id": "994-09",
+   "time": 412,
+   "phase": "draft",
+   "claim": "Kiora of Salt and Sand is not worth speculating on without Empower Jace cards; a below-average two-drop is a better pick than a speculative payoff when the top end is good and the risk is dying.",
+   "quote": "we're not a very good Kiora deck and that is to say we're not very good at empowering Jace as evidenced by zero Empower Jace cards in our pile.",
+   "cards": [
+    "Kiora of Salt and Sand"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Kiora, Salt and Sand by number of Empower Jace cards in the deck.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "CWs-05"
+   ]
+  },
+  {
+   "id": "994-10",
+   "time": 492,
+   "phase": "draft",
+   "claim": "Hapatra, the Desert Fang is really strong but not splashable in non-base colour pairs because of the double black pip.",
+   "quote": "Not a very splashable one in non-base color pairs, of course, because the double black.",
+   "cards": [
+    "Hapatra, the Desert Fang"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "builder",
+   "test_idea": "Splash penalty of double-pip cards: GIH WR of double-pip cards played as splash vs base.",
+   "type": "claim",
+   "repeats": [
+    "mqZ-32"
+   ],
+   "related": [
+    "mqZ-61"
+   ]
+  },
+  {
+   "id": "994-11",
+   "time": 492,
+   "phase": "draft",
+   "claim": "Take the flexible fixing land (Room of Refuge) over playables when the pack has nothing for the deck, because the deck is casting big things and may splash.",
+   "quote": "I am happy to just like take some flexible fixing. ... we're not doing anything in particular aside from just like casting these big things. So, we might want to splash some offcolor spells.",
+   "cards": [
+    "Room of Refuge",
+    "Archive Arbiter"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Pick-2-ish fixing land (Room of Refuge) GIH WR and its splash effect.",
+   "type": "heuristic",
+   "repeats": [
+    "CWs-19"
+   ],
+   "related": [
+    "mqZ-34"
+   ]
+  },
+  {
+   "id": "994-12",
+   "time": 540,
+   "phase": "draft",
+   "claim": "Do not take fixing then play none of it: after picking fixing he takes the removal that makes the splash worth it ('might as well get paid out for it').",
+   "quote": "You don't want to take a bunch of fixing then just be like actually we're not playing any of that, you know.",
+   "cards": [
+    "Break Under Pressure",
+    "Murmuring Volume"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Rate of decks that play off-colour splash cards after taking 3+ fixing lands/rocks by P2p6.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "mqZ-17"
+   ]
+  },
+  {
+   "id": "994-13",
+   "time": 554,
+   "phase": "draft",
+   "claim": "Plan for All Outcomes is a card he would consider splashing; mill and filtering cards like Something Worth Saving tend to come around late, so he takes the stronger card first.",
+   "quote": "those kind of cards kind of tend to come around late.",
+   "cards": [
+    "Plan for All Outcomes",
+    "Something Worth Saving"
+   ],
+   "kind": "signal",
+   "engine_area": "picker",
+   "test_idea": "ALSA of Something Worth Saving / Plan for All Outcomes; win rate of Something Worth Saving as a 2-of.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-29"
+   ]
+  },
+  {
+   "id": "994-14",
+   "time": 565,
+   "phase": "draft",
+   "claim": "Heartwood Crafter (an enabler) is taken over splashing a very good off-colour card (Null Summoner): not diving into splashiness until the base is secured; he would take the splash card if the enabler were not in the pack.",
+   "quote": "with a Hurtwood Crafter in the pack, which is an excellent enabler, I'm not going to dive into, you know, this territory of splish splashiness just yet. But if it wasn't in the pack, I think I would.",
+   "cards": [
+    "Heartwood Crafter",
+    "Null Summoner"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Heartwood Crafter vs Null Summoner within-deck GIH WR; fraction of Null Summoner decks that are not Jund/Sultai.",
+   "type": "one-off pick",
+   "repeats": [],
+   "related": [
+    "CWs-27",
+    "CWs-33"
+   ]
+  },
+  {
+   "id": "994-15",
+   "time": 590,
+   "phase": "draft",
+   "claim": "Card advantage is needed in a rampy, splashy deck: Twinned Vision (cheap card draw) over Murmuring Volume; he would take one of the three-mana rocks but not at high priority.",
+   "quote": "in this kind of like splish splashy rampy deck, you kind of want that [card advantage].",
+   "cards": [
+    "Twinned Vision",
+    "Murmuring Volume"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR Twinned Vision vs Murmuring Volume; value of card advantage in 3+ colour decks.",
+   "type": "one-off pick",
+   "repeats": [],
+   "related": [
+    "mqZ-20"
+   ]
+  },
+  {
+   "id": "994-16",
+   "time": 640,
+   "phase": "draft",
+   "claim": "A removal spell's value is lifted by already holding fixing: with fixing taken, Break Under Pressure (opponent sacrifices their biggest, gain 2) over Awaken the Inferno.",
+   "quote": "we've taken some fixing. Might as well get paid out for it. It's kind of my logic here.",
+   "cards": [
+    "Break Under Pressure",
+    "Awaken the Inferno"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Break Under Pressure vs Awaken the Inferno.",
+   "type": "one-off pick",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "994-17",
+   "time": 700,
+   "phase": "draft",
+   "claim": "Cap off-colour cards: Extended Absence is the last off-colour card he takes ('we don't want to splash infinite cards'); Rewrite Regrets is not bad and good with landcyclers.",
+   "quote": "This is probably going to be the last offcolor card I take. ... we don't want to splash infinite cards or anything.",
+   "cards": [
+    "Extended Absence",
+    "Rewrite Regrets",
+    "Danitha, Spear of Agony"
+   ],
+   "kind": "deckbuilding",
+   "engine_area": "builder",
+   "test_idea": "Win rate of decks by number of off-colour (splash) cards taken in pack 2.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "mqZ-30",
+    "mqZ-44"
+   ]
+  },
+  {
+   "id": "994-18",
+   "time": 730,
+   "phase": "draft",
+   "claim": "Danitha, Spear of Agony is pretty good but more for an aggressive deck; Command the Stage pinging payoff is hard to get going.",
+   "quote": "Danith is pretty good, but uh more in a more aggressive deck.",
+   "cards": [
+    "Danitha, Spear of Agony",
+    "Command the Stage"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Danitha by archetype.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "994-19",
+   "time": 740,
+   "phase": "draft",
+   "claim": "Ferocity of the Hunt is not great on a low creature count; Battalion wheeling is a small surprise; a heavier splash is acceptable if the best cards are double-pipped in the base colours.",
+   "quote": "we're also kind of leaning away from green green red base at this point. ... we might be in for a slightly heavier splash than I'd like.",
+   "cards": [
+    "Ferocity of the Hunt",
+    "Apex Witchstalker"
+   ],
+   "kind": "signal",
+   "engine_area": "picker",
+   "test_idea": "ALSA of Hexhaven Battalion; Ferocity GIH WR vs creature count.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-22"
+   ]
+  },
+  {
+   "id": "994-20",
+   "time": 790,
+   "phase": "draft",
+   "claim": "Prefer the card that fills needs over a second copy of a filler: a Technician over another Sentry (and the tether mage over the sentry at the end).",
+   "quote": "I'll take a technician over another sentry.",
+   "cards": [
+    "Tether Technician",
+    "Afterthought Sentry",
+    "Inspired Tethermage"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Win rate of second Afterthought Sentry vs Tether Technician as 2-4 drop filler.",
+   "type": "one-off pick",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "994-21",
+   "time": 860,
+   "phase": "draft",
+   "claim": "Verdant Kraken vs Craftwork Crusher: he thinks Kraken is currently better but would not be surprised if the stats show the Crusher is better; the chance it wheels is the tiebreaker.",
+   "quote": "I am honestly not sure which one is better. ... Currently, I think this card is better, but I would not be surprised if you know the stats bear out as the better.",
+   "cards": [
+    "Verdant Kraken",
+    "Craftwork Crusher"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Verdant Kraken vs Craftwork Crusher; ALSA of Craftwork Crusher.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "994-22",
+   "time": 900,
+   "phase": "draft",
+   "claim": "Another Awaken the Inferno is taken for fixing rather than a land, because tapped lands hurt even in multicolour decks; Gallia is more for aggressive decks.",
+   "quote": "I think like that helps the fixing. I mean, so does this of course, but we have a lot of lands and can't have too many tap lands.",
+   "cards": [
+    "Awaken the Inferno",
+    "Konstrari Annex",
+    "Gallia, the Merrymaker"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Tapped-land count vs win rate; value of a second landcycler.",
+   "type": "heuristic",
+   "repeats": [
+    "mqZ-69"
+   ],
+   "related": [
+    "mqZ-72"
+   ]
+  },
+  {
+   "id": "994-23",
+   "time": 940,
+   "phase": "draft",
+   "claim": "With enough fixing, take the good spell over the untapped dual land: Jiang Yanggu, Never Alone over Rockfall Vale because 'we're good on fixing'.",
+   "quote": "I think we're good on fixing. So, we'll just take the good spell.",
+   "cards": [
+    "Jiang Yanggu, Never Alone",
+    "Rockfall Vale"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Jiang Yanggu, Never Alone; value of a 6th/7th fixing land.",
+   "type": "heuristic",
+   "repeats": [
+    "mqZ-48"
+   ],
+   "related": [
+    "mqZ-28"
+   ]
+  },
+  {
+   "id": "994-24",
+   "time": 985,
+   "phase": "draft",
+   "claim": "Something Worth Saving (a cheap filter/mill spell that finds top end and lands) over a second threat: with great top end he wants consistency, not more threats; Jiang Yanggu, Alone is worse when you do not curve out.",
+   "quote": "I just want to like find the top end, find the lands if I need them. I think it just adds a lot to the consistency of the deck. I don't think we need more threats.",
+   "cards": [
+    "Something Worth Saving",
+    "Jiang Yanggu, Alone"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Something Worth Saving as a 2-of in ramp decks.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "994-25",
+   "time": 1020,
+   "phase": "draft",
+   "claim": "Take the second land (Room of Refuge) in pack 3 when the pack offers nothing else; Winter, Team Player is good with many prepared spells.",
+   "quote": "Let's take another land.",
+   "cards": [
+    "Room of Refuge",
+    "Winter, Team Player"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Number of tapped fixers vs win rate.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "CWs-36",
+    "mqZ-34"
+   ]
+  },
+  {
+   "id": "994-26",
+   "time": 1030,
+   "phase": "draft",
+   "claim": "Do not overload the splash: he takes a fine curve filler (Sureshot Sower) over a second Extended Absence.",
+   "quote": "Just take a a fine curve filler over like another extended absence. Don't want to overload the splash.",
+   "cards": [
+    "Sureshot Sower",
+    "Extended Absence"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Win rate by number of splash cards of the same colour.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "mqZ-50",
+    "CWs-33"
+   ]
+  },
+  {
+   "id": "994-27",
+   "time": 1090,
+   "phase": "draft",
+   "claim": "Count the removal at the end of pack 3: six (counting the Awakens, which are sometimes cycled) is 'good, not amazing'.",
+   "quote": "it's 1, two, three, four, five, six. Some of the time we're going to have to cycle this inferno.",
+   "cards": [
+    "Awaken the Inferno"
+   ],
+   "kind": "deckbuilding",
+   "engine_area": "builder",
+   "test_idea": "Win rate by removal count where landcyclers count as half.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-53"
+   ]
+  },
+  {
+   "id": "994-28",
+   "time": 1130,
+   "phase": "build",
+   "claim": "Hate-cycle cards (Refute Destiny, Terminal Criticism) are worth a C plus/B minus pick for best-of-three, where they upgrade a weak card into efficient interaction; not for best-of-one.",
+   "quote": "if you're playing best of three, if you think you're gonna make playables in your main deck, I would tend to take these at like a C plus D uh B minusish level.",
+   "cards": [
+    "Refute Destiny",
+    "Terminal Criticism"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Not testable on Premier data (best of one); skip or use Traditional if available.",
+   "type": "claim",
+   "repeats": [
+    "CWs-25"
+   ],
+   "related": []
+  },
+  {
+   "id": "994-29",
+   "time": 1200,
+   "phase": "build",
+   "claim": "Count splash sources including the cards that find it; he cuts tapped lands, thinking five tapped lands is too many.",
+   "quote": "five tap plans is just a lot. Don't really want that many.",
+   "cards": [
+    "Stingerquill Annex",
+    "Formidable Commons",
+    "Konstrari Annex",
+    "Room of Refuge"
+   ],
+   "kind": "deckbuilding",
+   "engine_area": "builder",
+   "test_idea": "Win rate vs number of enters-tapped lands in FRA decks.",
+   "type": "heuristic",
+   "repeats": [
+    "mqZ-69"
+   ],
+   "related": [
+    "mqZ-38"
+   ]
+  },
+  {
+   "id": "994-30",
+   "time": 1254,
+   "phase": "build",
+   "claim": "Keep landcyclers as spells where possible; add a second basic of the splash colour (Swamp) so you do not have to cycle them as often.",
+   "quote": "It's nice to have these as buyouts. Like if you can cycle, like if you don't have the mana, sure, cycle it on, too. But you would like to keep them to cast them as a spell.",
+   "cards": [
+    "Awaken the Inferno",
+    "Apex Witchstalker"
+   ],
+   "kind": "deckbuilding",
+   "engine_area": "builder",
+   "test_idea": "Per-game rate of cycling vs casting landcyclers; splash colour sources vs win rate.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "mqZ-66",
+    "mqZ-72"
+   ]
+  },
+  {
+   "id": "994-31",
+   "time": 1274,
+   "phase": "build",
+   "claim": "A second basic of the splash colour is normally wrong, but right when the splash is heavy; splash the colour that supplies the removal the base colours lack.",
+   "quote": "I'm pretty hesitant generally about a second basic of my splash color, but we're splashing fairly heavily here. So, I think that's probably right.",
+   "cards": [
+    "Silence the Echo",
+    "Break Under Pressure",
+    "Extended Absence"
+   ],
+   "kind": "deckbuilding",
+   "engine_area": "builder",
+   "test_idea": "Win rate of RG+B splash builds by number of black sources.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "mqZ-40",
+    "mqZ-44"
+   ]
+  },
+  {
+   "id": "994-32",
+   "time": 1290,
+   "phase": "build",
+   "claim": "A three-colour deck with strong removal beats a cleaner two-colour deck without it: the worry is 'not enough removal in the colours' (red and green have removal; given the cards he saw there was not enough).",
+   "quote": "I also think this is better than the world we would have been in if we were just red green. Again, big big deal is just like not enough removal in the colors.",
+   "cards": [
+    "Silence the Echo",
+    "Break Under Pressure",
+    "Extended Absence"
+   ],
+   "kind": "deckbuilding",
+   "engine_area": "builder",
+   "test_idea": "Win rate RG vs RG+B decks by removal count.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "CWs-46"
+   ]
+  }
+ ]
+}

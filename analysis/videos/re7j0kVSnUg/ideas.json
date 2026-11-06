@@ -1,0 +1,571 @@
+{
+ "video": "re7j0kVSnUg",
+ "player": "Alex Nikolic (Chord_O_Calls)",
+ "set": "FRA",
+ "source": "YouTube auto-caption transcript 0:00-20:00 (tools/video_draft.py transcript re7j0kVSnUg --start 0 --end 1200), card names corrected against data/Sets/FRA_PremierDraft_All_Data.json; the transcript was read up to about 20:43, no content after about 20:00 is used. 'type' marks each idea as claim, heuristic or one-off pick; 'repeats' lists ideas of mqZsj4Vg2Es, CWsZxo1pB6Y and 994X9PlPInQ this one restates, 'related' same card or topic with a different claim.",
+ "ideas": [
+  {
+   "id": "re7-01",
+   "time": 14,
+   "phase": "draft",
+   "claim": "Hungering Puppetbeast is a good rare: a five-mana 5/5 that makes a Heartwood token on entering and can sacrifice an artifact for haste, trample or hexproof, so it protects itself and can start hasty.",
+   "quote": "Protects itself when it comes down. Could be hasty when it comes down.",
+   "cards": [
+    "Hungering Puppetbeast"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR and ALSA of Hungering Puppetbeast against other rares; skill-split.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "re7-02",
+   "time": 55,
+   "phase": "draft",
+   "claim": "Rewrite Regrets is a pushed reanimation spell in a set with landcyclers, and would be the second pick of P1p1 after the rare.",
+   "quote": "anytime there's a reanimation spell in a set with land cyclers like these, I'm I'm all for it.",
+   "cards": [
+    "Rewrite Regrets"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Rewrite Regrets by number of landcyclers / self-mill cards in the deck; pick position of Rewrite Regrets.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "CWs-04",
+    "994-17"
+   ]
+  },
+  {
+   "id": "re7-03",
+   "time": 70,
+   "phase": "draft",
+   "claim": "Colour strength matters little for pick order: there will be stronger and weaker colours, but he drafts the cards that come, unlike in earlier sets where one colour was much better.",
+   "quote": "I think there's going to be stronger colors and weaker colors in the set, but I don't think it should really affect your draft picks that much.",
+   "cards": [],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "Win rate by colour pair (GIH WR spread between pairs) against earlier sets; does colour-pair strength move the card win rates enough to matter?",
+   "type": "heuristic",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "re7-04",
+   "time": 105,
+   "phase": "draft",
+   "claim": "Bestial Incursion is better than Jiang Yanggu, Never Alone: it can be discarded or milled and has more synergy, while Jiang's untap of Heartwood tokens is cute.",
+   "quote": "Beast Steel Incursion, honestly, I liked it more than Jong because ... you can discard it, you can mill it.",
+   "cards": [
+    "Bestial Incursion",
+    "Jiang Yanggu, Never Alone"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of the two cards; within-deck value with self-mill cards.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "994-23"
+   ]
+  },
+  {
+   "id": "re7-05",
+   "time": 180,
+   "phase": "draft",
+   "claim": "Take the splashable removal spell (Memory Trap) over the card that wants to be cast early (Vigorbloom Charm): a splash card should be good whenever it is drawn.",
+   "quote": "Memory trap's just like, you know, always going to be good no matter when you draw it.",
+   "cards": [
+    "Memory Trap",
+    "Vigorbloom Charm"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Win rate of splash cards by turn drawn; Memory Trap vs Vigorbloom Charm GIH WR.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "994-05",
+    "994-06"
+   ]
+  },
+  {
+   "id": "re7-06",
+   "time": 190,
+   "phase": "draft",
+   "claim": "In a green-red ramp deck the uncommon payoffs (Craftwork Crusher, Ruric Thar, Red Kiora) are what makes the archetype work, since a ramp deck usually has to rely on rares to have real top-end.",
+   "quote": "to get enough like actual good ... expensive creature to ramp into, usually that means it's a rare, right? And so these existing at uncommon is just you know huge boon for these archetypes.",
+   "cards": [
+    "Craftwork Crusher",
+    "Ruric Thar, Magecrusher",
+    "Kiora of Fire and Ashes"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "builder",
+   "test_idea": "Deck win rate of RG ramp decks by number of top-end payoffs; GIH WR of Craftwork Crusher and Ruric Thar by number of ramp cards.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "994-01"
+   ]
+  },
+  {
+   "id": "re7-07",
+   "time": 260,
+   "phase": "draft",
+   "claim": "Compel Brutality is a good removal spell but easy to splash for a green deck, so it is not a high priority and is passed when other cards are better; he prefers to snipe the other cards.",
+   "quote": "when I'm green, it's pretty easy to splash. And so I I don't take this one all that highly. I kind of like to snipe the other ones.",
+   "cards": [
+    "Compel Brutality",
+    "Arcane Amphisbaena"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR and ALSA of Compel Brutality; how often it is splashed (share of decks with off-colour Compel Brutality).",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "994-06"
+   ]
+  },
+  {
+   "id": "re7-08",
+   "time": 285,
+   "phase": "draft",
+   "claim": "Blue-white is one of the best decks in the format; Prudent Fateseer is one of the best cards for it and Campus Crier is good in blue and in any white deck.",
+   "quote": "I really like blue white. Blue white's one of my favorite decks in the format.",
+   "cards": [
+    "Prudent Fateseer",
+    "Campus Crier"
+   ],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "Win rate by colour pair, WU against the field; GIH WR of Prudent Fateseer.",
+   "type": "claim",
+   "related": [
+    "mqZ-09"
+   ]
+  },
+  {
+   "id": "re7-09",
+   "time": 305,
+   "phase": "draft",
+   "claim": "Take a landcycler over the splashable removal (Silence the Echo) when a white card is already a possible splash: the cycler fixes and the removal cannot be cast without the colour.",
+   "quote": "I think it's a good point to take a land cycler here. We've already got like a white card that we want to splash potentially.",
+   "cards": [
+    "Vinelasher Adept",
+    "Silence the Echo"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Win rate of Silence the Echo as a splash card; of splash decks by number of basic landcyclers.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "994-05",
+    "994-07"
+   ]
+  },
+  {
+   "id": "re7-10",
+   "time": 330,
+   "phase": "draft",
+   "claim": "Card draw is valuable in ramp decks because it helps hit land drops and find ramp targets (Twinned Vision taken over the land).",
+   "quote": "card draw is pretty nice in these ramp decks. You just want to be able to hit your lands, find your ramp targets.",
+   "cards": [
+    "Twinned Vision"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Twinned Vision in decks with 4+ ramp cards against others.",
+   "type": "heuristic",
+   "repeats": [
+    "994-15"
+   ],
+   "related": []
+  },
+  {
+   "id": "re7-11",
+   "time": 345,
+   "phase": "draft",
+   "claim": "Dual lands are taken when nothing else is playable, but one with no use is a late pick (Innovative Commons): the blue-red land is fine, 'sure, why not'.",
+   "quote": "Blue red land. Sure, why not. I don't think Cure is anything special.",
+   "cards": [
+    "Innovative Commons"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "ALSA and win rate of Innovative Commons; taken position vs on-colour playables.",
+   "type": "one-off pick",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "re7-12",
+   "time": 410,
+   "phase": "draft",
+   "claim": "Way of the Paradox over Arcane Amphisbaena in P2p1: it is cheap ramp, gains one life, and one life matters in slow decks, so the higher-upside card is taken; Amphisbaena is a close second.",
+   "quote": "one life is the difference maker there. I think I'm going to take it here over ASB. That's close though.",
+   "cards": [
+    "Way of the Paradox",
+    "Arcane Amphisbaena"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Way of the Paradox vs Arcane Amphisbaena by deck speed; skill-split.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "re7-13",
+   "time": 475,
+   "phase": "draft",
+   "claim": "A slow, ramp-based deck needs five, six or seven removal spells; a low, high-synergy deck (red-black, blue-white with synergies) can get by with fewer, but a deck that plans to go long must lock in removal.",
+   "quote": "if you're a deck like this, planning to go long ... you just need to lock in a bunch of removal spells.",
+   "cards": [
+    "Wrath of the Bloodmane"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Deck win rate of ramp decks by number of removal spells (0-3, 4-5, 6+), controlling for skill; same for synergy decks.",
+   "type": "claim",
+   "related": [
+    "994-02",
+    "994-27",
+    "994-32"
+   ]
+  },
+  {
+   "id": "re7-14",
+   "time": 490,
+   "phase": "draft",
+   "claim": "Infinite Coursework is a worse card than Mindseeker Oculus, but he would take it over Oculus at that point because of the removal count.",
+   "quote": "I think Oculus is a better card, but it's just like the removal.",
+   "cards": [
+    "Infinite Coursework",
+    "Mindseeker Oculus"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Infinite Coursework and Mindseeker Oculus; removal-count interaction.",
+   "type": "one-off pick",
+   "repeats": [],
+   "related": [
+    "mqZ-22"
+   ]
+  },
+  {
+   "id": "re7-15",
+   "time": 540,
+   "phase": "draft",
+   "claim": "Ferocity of the Hunt is a good enter-the-battlefield pair but does not suit big ramp decks: the card rots in the hand when you are trying to reach the mana for the giant, and it plays better with early creatures.",
+   "quote": "if you have this card in your hand as you're about to cast this giant thing ... this card just is rotting in your hand, right?",
+   "cards": [
+    "Ferocity of the Hunt"
+   ],
+   "kind": "synergy",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Ferocity of the Hunt by deck average mana value and ETB count.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "994-19"
+   ]
+  },
+  {
+   "id": "re7-16",
+   "time": 610,
+   "phase": "draft",
+   "claim": "Apex Witchstalker is a strong ramp card for the graveyard, and a basic landcycler ('lock in some fixing') even before the splash colour has fixing, as long as the pack has fixing for it.",
+   "quote": "putting stuff in the graveyard is generally good in this set. So, I'll lock in some fixing there.",
+   "cards": [
+    "Apex Witchstalker",
+    "Primal Witchstalker"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of the Witchstalkers by deck colour, splash share; basic landcyclers as fixing.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "CWs-03",
+    "994-07",
+    "994-19"
+   ]
+  },
+  {
+   "id": "re7-17",
+   "time": 715,
+   "phase": "draft",
+   "claim": "Most decks want only two tapped dual lands: even a multicolour deck will play them to cast spells, but they hurt tempo; he takes one because it fixes for the card he wants, accepting the cost.",
+   "quote": "most decks only want two. Like if you're a two-color deck, you want two ... it does hurt you at some point.",
+   "cards": [
+    "Formidable Commons"
+   ],
+   "kind": "splash / mana",
+   "engine_area": "builder",
+   "test_idea": "Win rate by number of enters-tapped dual lands in the deck (0, 1-2, 3-4, 5+); tapped lands in splash decks.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "mqZ-69",
+    "mqZ-38",
+    "994-22",
+    "994-29"
+   ]
+  },
+  {
+   "id": "re7-18",
+   "time": 740,
+   "phase": "draft",
+   "claim": "With many strong cards in the format a double splash is acceptable for the best cards in the set because the set is slower and has a lot of fixing and card draw; normally he advises against splashing double-pip cards.",
+   "quote": "I can stomach a double splash for some of the best cards in the set. Not always going to do it, but I think the tools are there.",
+   "cards": [
+    "Chandra, Torch of Defiance"
+   ],
+   "kind": "splash / mana",
+   "engine_area": "builder",
+   "test_idea": "Win rate of decks with a double-pip splash card by number of fixing sources; GIH WR of Chandra, Torch of Defiance.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "mqZ-32",
+    "mqZ-44",
+    "994-31"
+   ]
+  },
+  {
+   "id": "re7-19",
+   "time": 755,
+   "phase": "draft",
+   "claim": "Chandra, Torch of Defiance draws cards, makes mana, kills things and ultimates in a few turns: strong enough to open and plan a double splash around.",
+   "quote": "draws cards, makes mana, kills things. Uh, ultimates really quickly, right? Ultimates in just a few turns.",
+   "cards": [
+    "Chandra, Torch of Defiance"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR and ALSA of Chandra, Torch of Defiance; skill-split.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "re7-20",
+   "time": 785,
+   "phase": "draft",
+   "claim": "A land cycler that also fills the graveyard for Rewrite Regrets fulfils both roles, so it is taken over the black-green dual land.",
+   "quote": "I think that fulfills our both roles there, right? It fixes us and it gets a card in the grave for rewrite regrets.",
+   "cards": [
+    "Vinelasher Adept",
+    "Rewrite Regrets"
+   ],
+   "kind": "synergy",
+   "engine_area": "builder",
+   "test_idea": "Win rate of Rewrite Regrets by number of landcyclers in the deck; ALSA of landcyclers.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "CWs-04",
+    "994-30"
+   ]
+  },
+  {
+   "id": "re7-21",
+   "time": 830,
+   "phase": "draft",
+   "claim": "Take the removal spell over a good rare creature (Woodwork Prodigy) when the deck has little top end; with two or three more top-end threats he would take another ramp spell instead.",
+   "quote": "I think I just take a removal spell here. ... If I have like maybe two more good top end threats, I just want to lock in another ramp spell.",
+   "cards": [
+    "Extended Absence",
+    "Woodwork Prodigy"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Extended Absence against Woodwork Prodigy; effect of the pool's top-end count.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "994-04"
+   ]
+  },
+  {
+   "id": "re7-22",
+   "time": 870,
+   "phase": "draft",
+   "claim": "A double-pip off-colour card (Hapatra, the Desert Fang with double black) is a stretch to splash but is still the best card in the pack; he hopes the fixing arrives.",
+   "quote": "I'm just going to take Hapatra. Maybe we pick up enough fixing to make it work.",
+   "cards": [
+    "Hapatra, the Desert Fang"
+   ],
+   "kind": "splash / mana",
+   "engine_area": "builder",
+   "test_idea": "Win rate of Hapatra, the Desert Fang by number of black sources; splash share by pip count.",
+   "type": "heuristic",
+   "related": [
+    "994-10",
+    "CWs-02"
+   ]
+  },
+  {
+   "id": "re7-23",
+   "time": 905,
+   "phase": "draft",
+   "claim": "Fixing land at the last second over playables: at pick five of pack three a red-white dual (Dedicated Commons) for a splash of Memory Trap is taken instead of a playable.",
+   "quote": "I'm going to take the land.",
+   "cards": [
+    "Dedicated Commons",
+    "Marwyn, the Preserver"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "ALSA of Dedicated Commons; win rate of splash decks by number of fixing lands.",
+   "type": "one-off pick",
+   "repeats": [],
+   "related": [
+    "mqZ-16",
+    "CWs-12",
+    "994-11",
+    "994-25"
+   ]
+  },
+  {
+   "id": "re7-24",
+   "time": 925,
+   "phase": "draft",
+   "claim": "Fblthp, Knows the Way fixes all colours: a legend that searches for basics by name, so it supports a multicolour splash.",
+   "quote": "Fixes for all our colors.",
+   "cards": [
+    "Fblthp, Knows the Way"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Fblthp, Knows the Way by number of colours in the deck; as fixing: colours played vs sources.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "re7-25",
+   "time": 955,
+   "phase": "draft",
+   "claim": "Take card quality when value is already enough: Archive Arbiter over a further card-draw spell because 'we're kind of good on value'.",
+   "quote": "I think we're actually kind of good on value. I'll take Arbiter.",
+   "cards": [
+    "Archive Arbiter",
+    "Twinned Vision"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Archive Arbiter; pick-order effect of existing card draw in the pool.",
+   "type": "one-off pick",
+   "repeats": [],
+   "related": [
+    "mqZ-08",
+    "994-15"
+   ]
+  },
+  {
+   "id": "re7-26",
+   "time": 995,
+   "phase": "draft",
+   "claim": "Filtering and card draw (Empower Jace cards, Something Worth Saving) help find the splash sources, so a mana base like this is more reasonable than the source count suggests.",
+   "quote": "they can help you find your sources. So, they're not exactly fixing, but they make it a bit more reasonable, right, to have a mana base like this.",
+   "cards": [
+    "Something Worth Saving"
+   ],
+   "kind": "splash / mana",
+   "engine_area": "builder",
+   "test_idea": "Win rate of splash cards with 0, 1-2, 3+ filter cards in the deck, controlling for sources.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-60",
+    "994-13",
+    "994-24"
+   ]
+  },
+  {
+   "id": "re7-27",
+   "time": 1020,
+   "phase": "deckbuilding",
+   "claim": "A black splash heavier than usual is justified when the deck lacks removal and fixing: 'just enough interaction'; red-green base splashing black and blue.",
+   "quote": "one thing that's pushing me to play the black like a heavier black splash for this is we don't have all the fixing or all the removal in the world.",
+   "cards": [
+    "Memory Trap",
+    "Extended Absence"
+   ],
+   "kind": "splash / mana",
+   "engine_area": "builder",
+   "test_idea": "Win rate of RG decks splashing black by removal count in the splash colour.",
+   "type": "heuristic",
+   "repeats": [
+    "994-31"
+   ],
+   "related": [
+    "994-32"
+   ]
+  },
+  {
+   "id": "re7-28",
+   "time": 1070,
+   "phase": "deckbuilding",
+   "claim": "Cut the blue-black and blue-red tapped lands once red-green is the base: fewer tapped lands, and the cyclers do not have to fetch an Island.",
+   "quote": "that makes me feel a lot more comfortable not having so many taplands and not having to play an island to go fetch with the cyclers.",
+   "cards": [],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Effect of tapped lands on deck win rate in a splash deck; cyclers' basic type.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "mqZ-69",
+    "994-29"
+   ]
+  },
+  {
+   "id": "re7-29",
+   "time": 1130,
+   "phase": "deckbuilding",
+   "claim": "Count sources including landcyclers and Fblthp: 11 green, 9 red, 10 black, then shave one Forest and one Swamp because the deck has too many lands.",
+   "quote": "So we shave on a forest and shave on a swamp. I think that's probably the fix. It's still pretty good.",
+   "cards": [
+    "Fblthp, Knows the Way",
+    "Arcane Amphisbaena",
+    "Vinelasher Adept"
+   ],
+   "kind": "splash / mana",
+   "engine_area": "builder",
+   "test_idea": "Win rate by source counts per colour, counting landcyclers as sources; land count with landcyclers.",
+   "type": "heuristic",
+   "repeats": [
+    "994-29",
+    "mqZ-60"
+   ],
+   "related": [
+    "mqZ-60",
+    "mqZ-53"
+   ]
+  },
+  {
+   "id": "re7-30",
+   "time": 1190,
+   "phase": "deckbuilding",
+   "claim": "This format punishes bad mana bases: you will have to do a mana base like this a decent amount of the time, and knowing the maths of an acceptable mana base is the most important thing to be a better limited player.",
+   "quote": "this format's going to punish you or teach you because I think this is something you're going to want to do a decent amount of the time.",
+   "cards": [],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Win rate against mana-base quality (sources per colour vs pips) in FRA decks.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "994-29"
+   ]
+  }
+ ]
+}

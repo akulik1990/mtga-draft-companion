@@ -1,0 +1,63 @@
+{
+ "id": "994X9PlPInQ",
+ "time": "19:20-21:30 (deck screen read at 19:20, 21:25; 'let's run it' at 21:26; sideboard row read at 19:20)",
+ "main": {
+  "Heartwood Crafter": 1,
+  "Silence the Echo": 1,
+  "Compel Brutality": 1,
+  "Something Worth Saving": 2,
+  "Sureshot Sower": 2,
+  "Twinned Vision": 1,
+  "Afterthought Sentry": 1,
+  "Break Under Pressure": 1,
+  "Inspired Tethermage": 1,
+  "Woodwork Prodigy": 1,
+  "Murmuring Volume": 1,
+  "Extended Absence": 1,
+  "Bestial Incursion": 1,
+  "Jiang Yanggu, Never Alone": 1,
+  "Aerid Konstrari": 1,
+  "Awaken the Inferno": 2,
+  "Apex Witchstalker": 1,
+  "Kiora of Fire and Ashes": 2,
+  "Verdant Kraken": 1
+ },
+ "lands": {
+  "Forest": 8,
+  "Mountain": 4,
+  "Swamp": 2,
+  "Formidable Commons": 1,
+  "Konstrari Annex": 1,
+  "Stingerquill Annex": 1
+ },
+ "sideboard": {
+  "Academic Ascent": 1,
+  "Refute Destiny": 1,
+  "Unsummon": 1,
+  "Plan for All Outcomes": 1,
+  "Terminal Criticism": 1,
+  "Screeching Soulbreaker": 1,
+  "Eardrum Rattler": 1,
+  "Tether Technician": 1,
+  "Ferocity of the Hunt": 1,
+  "Afterthought Sentry": 1,
+  "Living Library": 1,
+  "Room of Refuge": 2
+ },
+ "spells": 23,
+ "land_count": 17,
+ "landcyclers_in_main": [
+  "Awaken the Inferno",
+  "Awaken the Inferno",
+  "Apex Witchstalker"
+ ],
+ "colours": "Green base with red (Kiora x2, Awaken x2, Aerid, Woodwork Prodigy, Twinned Vision) and a black splash for removal (Silence the Echo, Break Under Pressure, Extended Absence, Compel Brutality is green) plus Apex Witchstalker; 8 Forest, 4 Mountain, 2 Swamp, three duals (Formidable Commons G/B, Konstrari Annex R/G, Stingerquill Annex B/R), Murmuring Volume and the landcyclers as extra fixing.",
+ "notes": [
+  "The deck screen read at 19:20 (Draft Deck 40/40) already had the builder's auto-filled basics: lands then Plains 1, Swamp 2, Mountain 4, Forest 5, Stingerquill Annex, Formidable Commons, Konstrari Annex, Room of Refuge x2; he changed the manabase by 21:25 to Forest 8, Mountain 4, Swamp 2 and the three duals (Room of Refuge x2 and the Plains gone to the sideboard, three Forests added). The sideboard row (11 cards) plus Room of Refuge x2 was read at 19:20; the sideboard after the change was not shown, so Room of Refuge x2 is inferred.",
+  "18:04-18:19: still cutting: 'This Eardrum Rattler out. One more cut'; 'I don't hate the idea of cutting another sentry' (the deck keeps one Afterthought Sentry). 18:27: mentions a one-mana red rare (discard a card, draw a card) as constructed-level.",
+  "18:47-19:41: sideboard hate cards (Refute Destiny, Terminal Criticism) matter for best of three, he takes them 'at like a C plus D, B minusish level'; he plays best of one now.",
+  "19:58-20:30: counts black sources: 'one swamp ... nine sources, 10 sources of the volume' (counting black cards that make black, i.e. landcyclers/Murmuring Volume), then 'we should actually cut some of the taplands. Probably even two of them because five tap lands is just a lot.' 20:41: 'maybe we go up another forest, down a ...'. 20:54: considers a second Swamp 'because then I don't have to cycle my landcyclers as often. It's nice to have these as buyouts' (keep landcyclers to cast as spells).",
+  "21:14-21:48: 'I'm pretty hesitant generally about a second basic of my splash color, but we're splashing fairly heavily here. So I think that's probably right ... I would prefer it to be slightly cleaner, more good colors or more good cards than just red green. Maybe splashing one removal spell or something. But also think this is better than the world we would have been in if we were just red green. Again, big big deal is just like not enough removal in the colors.' 21:26: 'Yeah, let's run it.'",
+  "Pool accounting (all 42 picks): 23 main spells + Konstrari Annex, Formidable Commons, Stingerquill Annex, Room of Refuge x2 + 11 sideboard cards (Academic Ascent, Refute Destiny, Unsummon, Plan for All Outcomes, Terminal Criticism, Screeching Soulbreaker, Eardrum Rattler, Tether Technician, Ferocity of the Hunt, Afterthought Sentry, Living Library) = 39, plus three picked basics (Forest P1p14, one unseen last card of pack 2, Island P3p14). The builder's free basics are separate. The attribution of pack 2 picks 12 and 14 and pack 3 picks 12 and 13 to cards is inferred from the pack wheels and the sideboard, not seen."
+ ]
+}

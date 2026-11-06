@@ -1,0 +1,65 @@
+{
+ "id": "CWsZxo1pB6Y",
+ "time": "20:32-24:10 (build; no later change shown before 24:30)",
+ "main": {
+  "Dark Matter Manipulator": 1,
+  "Mabel, Bitter Recluse": 1,
+  "Proft, Consulting Detective": 1,
+  "Gallia, Tragic Host": 1,
+  "Multiply by Zero": 2,
+  "Void Extrapolator": 2,
+  "Paradox Shaper": 1,
+  "Theorix Charm": 2,
+  "Countersculpt": 1,
+  "Arni, Humble Scribe": 1,
+  "Mindseeker Oculus": 1,
+  "Proft, Sinister Mastermind": 1,
+  "Theoretical Necromancer": 1,
+  "Rewrite Regrets": 1,
+  "Bestial Incursion": 1,
+  "Null Summoner": 2,
+  "Undulating Witness": 1,
+  "Jace, Reality Sculptor": 1,
+  "Hapatra, the Desert Fang": 1
+ },
+ "lands": {
+  "Island": 7,
+  "Swamp": 6,
+  "Forest": 1,
+  "Formidable Commons": 1,
+  "Room of Refuge": 2
+ },
+ "sideboard": {
+  "Unsummon": 1,
+  "Way of the Necromancer": 2,
+  "Compel Brutality": 1,
+  "Murmuring Volume": 1,
+  "Protege's Awakening": 1,
+  "Blessed Ghoul": 1,
+  "Theorix Metamage": 1,
+  "Generous Revival": 1,
+  "Precise Redaction": 1,
+  "Tether Technician": 1,
+  "Arcane Amphisbaena": 1,
+  "Meticulous Commons": 1,
+  "Innovative Commons": 1,
+  "Stingerquill Annex": 1
+ },
+ "spells": 23,
+ "land_count": 17,
+ "landcyclers_in_main": [
+  "Undulating Witness"
+ ],
+ "colours": "UB base; G splash (Hapatra, the Desert Fang; Bestial Incursion), no other splash. Green sources: Forest, Formidable Commons, Room of Refuge x2.",
+ "notes": [
+  "The deck builder opened at 47/40 (30 spells and 17 lands, 14 of them auto-added basics): 'I have to make seven cuts though.' Final 40 read from the deck screen at about 23:50.",
+  "20:35: 'I think I might actually play the compelled brutality since I already am doing a pretty reasonably deep splash of green.' 20:44-21:01: counts six green sources (one Forest, 'five, six green sources') for 'one, two, three cards': 'That's totally enough.' Compel Brutality is cut later (22:15, 'it doesn't synergize with the graveyard').",
+  "21:23-21:34: 'I don't want to play way of the necromancer. I'm just going to cut that.' 21:55: 'I think I'm going to cut Unsummon. I don't think I need that effect really.'",
+  "22:01: 'I also have like nine blue sources, [nine] black sources. So I'm okay with the splash even though it's a little bit potentially dicey.' 22:06: 'Maybe I cut murmuring volume. It makes my splash a little bit weaker, but ... I'll still have five green sources for my three cards.'",
+  "22:25: cuts Protege's Awakening ('I don't have tons of synergies with Empower Jace; it's just a big card draw spell and I'm getting plenty of card advantage from other stuff'). 22:57: Blessed Ghoul 'seems pretty reasonable, but maybe I just cut that one' (early game already there).",
+  "23:08: 'My creature count is at 16. I think I can cut a creature here.' He weighs Void Extrapolator against Theorix Metamage, 'I usually like to lean towards cutting the more expensive cards', 'I'd rather just have a cheaper curve'. The final deck screen keeps both Void Extrapolators and cuts Theorix Metamage.",
+  "Basics changed during the build: Forest 2 to 1, Island 6 to 7 (read from the deck screen, no comment).",
+  "23:47: 'Maybe I decide not to splash because I do have plenty of playables, but I think Hapatra is going to be really really strong.' 'We can always make changes over the course of the five rounds.'",
+  "Pool accounting: 42 picks = 23 spells + Formidable Commons + Room of Refuge x2 + Forest (the picked Forest) in the main, 15 in the sideboard; Island 7 and Swamp 6 are free basics from the builder."
+ ]
+}

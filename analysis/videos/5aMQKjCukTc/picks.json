@@ -1,0 +1,972 @@
+{
+ "id": "5aMQKjCukTc",
+ "url": "https://youtu.be/5aMQKjCukTc",
+ "title": "The Best Control Deck I've Drafted in a Long Time | Reality Fracture Draft",
+ "player": "Alex Nikolic",
+ "set": "FRA",
+ "event": "Premier draft (he says 'Premier draft' at 9:24; event name not shown on screen; picks have 40-50 s timers). Streamed, with chat.",
+ "dataset": "FRA_PremierDraft_All_Data.json",
+ "recorded": null,
+ "source": "frames read from data/videos/raw/5aMQKjCukTc (tools/video_draft.py frames, banner tiles and full-frame grabs); the pack of every pick was read from frames; the taken card confirmed from the next pick's pool and the final deck-builder screens (all 42 picks accounted for: 40-card main plus 15 sideboard; P1p12, P1p14, P2p11 and P3p14 are inferred from counts, see reasoning); transcript from YouTube auto captions, card names corrected; nothing past 18:32 (game 1) read",
+ "colour_path": [
+  {
+   "after": "P1p4",
+   "main": "UW or Esper (non-red)",
+   "quote": "we should probably move into blue-eyed at this point, huh? Or like non red."
+  },
+  {
+   "after": "P1p7",
+   "main": "UW",
+   "quote": "Okay, this is a good sign."
+  },
+  {
+   "after": "P2p3",
+   "main": "UW (needs creatures)",
+   "quote": "one thing with this deck is we do be needing creatures."
+  },
+  {
+   "after": "deck",
+   "main": "UW splashing B (Recursive Recruitment)",
+   "quote": "maybe we're supposed to splash recruitment as well."
+  }
+ ],
+ "picks": [
+  {
+   "pack": 1,
+   "pick": 1,
+   "time": "0:00-0:33",
+   "pack_cards": [
+    "Draconic Visitor",
+    "Face Yourself",
+    "Generous Revival",
+    "Way of the Mentor",
+    "Way of the Warlord",
+    "Ruric Thar, Magecrusher",
+    "Woodwork Prodigy",
+    "Graft Surgeon",
+    "Silence the Echo",
+    "No Admittance",
+    "Skilled Battlecarver",
+    "Tam's Resistance",
+    "Medic's Kitesail",
+    "Stingerquill Annex"
+   ],
+   "taken": "No Admittance",
+   "reasoning": "Pack called weak. Draconic Visitor is \"very mid\" and overrated (a big flier that dies to everything, hard to make the dragon); he takes No Admittance over it. The first frame (0:02) shows Pack 1 Pick 1. Confirmed by the pick-2 pool.",
+   "considered": {
+    "Draconic Visitor": "very mid, one of the most overrated cards in the set",
+    "Face Yourself": "'Face yourself's cool'",
+    "Ruric Thar, Magecrusher": "'fine but nothing special'"
+   },
+   "plan": "Open.",
+   "quotes": [
+    "Visitor is very mid.",
+    "I think I would just take no admittance though over it."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 2,
+   "time": "0:34-1:17",
+   "pack_cards": [
+    "Ajani Resolute",
+    "Master of Barbs",
+    "Geist of Saint Thalia",
+    "Hunter's Axe",
+    "Recursive Recruitment",
+    "Surgical Precision",
+    "Semester Foreseer",
+    "Solve for Disappointment",
+    "Heartstring Puller",
+    "Tether Technician",
+    "Bestial Incursion",
+    "Living Library",
+    "Forest"
+   ],
+   "taken": "Recursive Recruitment",
+   "reasoning": "Recursive Recruitment: 'pretty easy' and 'just excellent'; he would take the other card (Master of Barbs / Geist of Saint Thalia, which he calls a pet card) if Recruitment were not there.",
+   "considered": {
+    "Geist of Saint Thalia": "a pet card; 'really really good in blue red' too",
+    "Master of Barbs": "'something kind of weird', would take it if Recruitment were not there"
+   },
+   "plan": "Open; Recruitment is W/U/B gold (black), no colour stated.",
+   "quotes": [
+    "I think it's a pretty easy recursive recruitment here. This card is just excellent."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 3,
+   "time": "1:18-1:35",
+   "pack_cards": [
+    "Kindred Judgment",
+    "Countersculpt",
+    "Yargle, Glutton of Urborg",
+    "Tetsuko Umezawa, Pursuer",
+    "Kiora of Salt and Sand",
+    "Campus Crier",
+    "Infinite Coursework",
+    "Bestial Incursion",
+    "Twinned Vision",
+    "Ferocity of the Hunt",
+    "Room of Refuge",
+    "Island"
+   ],
+   "taken": "Kindred Judgment",
+   "reasoning": "No pick reasoning in the transcript ('Good pack though', then chat). Kindred Judgment confirmed by the pick-4 pool and later by the deck.",
+   "considered": {},
+   "plan": "Open.",
+   "quotes": [
+    "Good pack though."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 4,
+   "time": "1:36-2:09",
+   "pack_cards": [
+    "Ghalta the Immovable",
+    "Tetsuko Umezawa, Fugitive",
+    "Tinybones, Pocket Nuisance",
+    "Tetsuko Umezawa, Pursuer",
+    "Flourishing Grapple",
+    "Desperate Futurescribe",
+    "Fateshaper Aspirant",
+    "Rank Rat",
+    "Budding Insurgent",
+    "Tethermage's Advantage",
+    "Swamp"
+   ],
+   "taken": "Desperate Futurescribe",
+   "reasoning": "No reasoning for the card; he reads signals instead: asks what the player to his left took from their pack (a red giant, so red is being taken upstream) and decides to move to blue-white / non-red ('could be Esper').",
+   "considered": {},
+   "plan": "Moves toward blue-white, maybe Esper; red is cut upstream.",
+   "quotes": [
+    "what did they take based on what was in the pack.",
+    "we should probably move into blue-eyed at this point, huh? Or like non red.",
+    "Could be Esper."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 5,
+   "time": "2:10-2:41",
+   "pack_cards": [
+    "Vraska's Final Mercy",
+    "Danitha, Sword of Hope",
+    "Danitha, Spear of Agony",
+    "Konstrari Charm",
+    "Cryotheory Adept",
+    "Rank Rat",
+    "Tether Technician",
+    "Tethermage's Advantage",
+    "Blessed Ghoul",
+    "Plains"
+   ],
+   "taken": "Vraska's Final Mercy",
+   "reasoning": "'Bunch of junk' pack; Blessed Ghoul, Danitha and Cryotheory Adept are cards he could see taking, but Vraska's Final Mercy 'is not junk'. Taken as the best card of a weak pack (black, off the white-blue plan; ends in the sideboard).",
+   "considered": {
+    "Blessed Ghoul": "one he sometimes likes, with enough self-mill",
+    "Danitha, Sword of Hope": "could see taking",
+    "Cryotheory Adept": "could see taking"
+   },
+   "plan": "Not committed.",
+   "quotes": [
+    "This pack. Bunch of junk.",
+    "I guess there is this Frasis File Mercy. That's not junk.",
+    "I guess we take Mercy."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 6,
+   "time": "2:42-3:15",
+   "pack_cards": [
+    "Karn, Gilded Guardian",
+    "Karn, Argent Defender",
+    "Thalia, the Survivor",
+    "Predictive Preparations",
+    "Silence the Echo",
+    "Chandra's Emberling",
+    "Inspired Tethermage",
+    "Whiplash Wordsmith",
+    "Vigorbloom Annex"
+   ],
+   "taken": "Thalia, the Survivor",
+   "reasoning": "Pack 'a little bit junky': Thalia and a land. Thalia is only 'fine' ('don't love Thalia'). Confirmed by the pick-7 pool.",
+   "considered": {},
+   "plan": "Not committed.",
+   "quotes": [
+    "This pack's also a little bit junky.",
+    "don't love Thalia.",
+    "I think she's fine."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 7,
+   "time": "3:16-3:39",
+   "pack_cards": [
+    "Way of the Deathbringer",
+    "Winter, Tormented Loner",
+    "Fatehold Charm",
+    "Stingerquill Charm",
+    "Cryotheory Adept",
+    "Screeching Soulbreaker",
+    "Charge the Sanctum",
+    "Formidable Commons"
+   ],
+   "taken": "Fatehold Charm",
+   "reasoning": "'Okay, this is a good sign' on seeing the pack (a WU gold card at pick 7). Confirmed by the pick-8 pool.",
+   "considered": {},
+   "plan": "Blue-white gets a first gold signal.",
+   "quotes": [
+    "Okay, this is a good sign."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 8,
+   "time": "3:40-3:59",
+   "pack_cards": [
+    "Way of the Mentor",
+    "Loot, the Nexus",
+    "Fatehold Charm",
+    "Academic Ascent",
+    "Sphinx's Approach",
+    "Screeching Soulbreaker",
+    "Innovative Commons"
+   ],
+   "taken": "Fatehold Charm",
+   "reasoning": "A second Fatehold Charm (pool shows x2 afterwards). While picking he agrees with chat that the player next to him is red.",
+   "considered": {},
+   "plan": "Blue-white; neighbour red.",
+   "quotes": [
+    "The person next to me is red."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 9,
+   "time": "4:00-4:19",
+   "pack_cards": [
+    "Generous Revival",
+    "Way of the Warlord",
+    "Graft Surgeon",
+    "Tam's Resistance",
+    "Medic's Kitesail",
+    "Stingerquill Annex"
+   ],
+   "taken": "Tam's Resistance",
+   "reasoning": "Generous Revival is 'more of an Orzhov card' than a blue-white card; Tam's Resistance is the blue-white card. The first pack's Generous Revival wheeled and he leaves it again (it comes back at P2p4).",
+   "considered": {
+    "Generous Revival": "more a black-white card than blue-white"
+   },
+   "plan": "Blue-white.",
+   "quotes": [
+    "Generous revival, I think, is more of an Obson card than a blue white card.",
+    "I think Tam's Resistance is more of a blue white card."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 10,
+   "time": "4:20-4:27",
+   "pack_cards": [
+    "Master of Barbs",
+    "Solve for Disappointment",
+    "Tether Technician",
+    "Living Library",
+    "Forest"
+   ],
+   "taken": "Master of Barbs",
+   "reasoning": "He needs cheap creatures; Master of Barbs comes back from the P1p2 pack and is taken ('not going to play any of these'). Ends in the sideboard.",
+   "considered": {},
+   "plan": "Blue-white.",
+   "quotes": [
+    "need some cheap creatures and all, but Master of Barbs comes back.",
+    "Not going to play any of these."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 11,
+   "time": "4:28-4:33",
+   "pack_cards": [
+    "Yargle, Glutton of Urborg",
+    "Tetsuko Umezawa, Pursuer",
+    "Ferocity of the Hunt",
+    "Island"
+   ],
+   "taken": "Tetsuko Umezawa, Pursuer",
+   "reasoning": "Pick confirmed from the sideboard (Tetsuko Umezawa, Pursuer; Yargle is the other copy, taken at P2p14). No comment on the pick in the transcript (he talks to chat).",
+   "considered": {},
+   "plan": "Blue-white.",
+   "quotes": []
+  },
+  {
+   "pack": 1,
+   "pick": 12,
+   "time": "4:34-4:47",
+   "pack_cards": [
+    "Flourishing Grapple",
+    "Fateshaper Aspirant",
+    "Swamp"
+   ],
+   "taken": "Fateshaper Aspirant",
+   "reasoning": "Inferred, not seen: the sideboard holds two Fateshaper Aspirant; the other is P3p13. Both packs at P1p12 hold it, so this is the pick (marked inferred). No comment in the transcript.",
+   "considered": {},
+   "plan": "Blue-white.",
+   "quotes": []
+  },
+  {
+   "pack": 1,
+   "pick": 13,
+   "time": "4:48-4:55",
+   "pack_cards": [
+    "Blessed Ghoul",
+    "Plains"
+   ],
+   "taken": "Blessed Ghoul",
+   "reasoning": "Blessed Ghoul comes back ('hell yeah'): good with Empower Jace and surveil, a cheap one-drop to pump when going wide.",
+   "considered": {},
+   "plan": "Blue-white with Jace payoffs.",
+   "quotes": [
+    "Oh, ghoul comes back. Hell yeah. I mean it's kind of good with empower Jace and just surveilling."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 14,
+   "time": "4:56-4:57",
+   "pack_cards": [
+    "unreadable (unseen (waiting screen between picks; last card of the P1p6 pack))"
+   ],
+   "taken": "Whiplash Wordsmith",
+   "reasoning": "Unseen. Whiplash Wordsmith is the one sideboard card not accounted for by another pick and was in the P1p6 pack (whose 14th pick this is), so it is inferred by elimination (uncertain).",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 1,
+   "time": "4:58-5:33",
+   "pack_cards": [
+    "Frostbite Pyromental",
+    "Yargle, Goliath of Otaria",
+    "Way of the Deathbringer",
+    "Way of the Necromancer",
+    "Violent Echoes",
+    "Way of the Wildspeaker",
+    "Desperate Futurescribe",
+    "Shatterwing Pegasus",
+    "Cryotheory Adept",
+    "Apex Witchstalker",
+    "Chandra's Emberling",
+    "Arcane Amphisbaena",
+    "Whiplash Wordsmith",
+    "Konstrari Annex"
+   ],
+   "taken": "Desperate Futurescribe",
+   "reasoning": "'We'll take a Futurescribe here' (the second copy; the Johnny player will be happy, a joke in chat). No further reasoning given.",
+   "considered": {},
+   "plan": "Blue-white.",
+   "quotes": [
+    "All right, we'll take a future scribe here."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 2,
+   "time": "5:34-6:05",
+   "pack_cards": [
+    "Theorist's Proxy",
+    "Vraska, Soul of Stone",
+    "Massacre Girl, Most Wanted",
+    "Vigorbloom Charm",
+    "Kiora of Salt and Sand",
+    "Fateshaper Aspirant",
+    "Consider",
+    "Screeching Soulbreaker",
+    "Silence the Echo",
+    "No Admittance",
+    "Budding Insurgent",
+    "Fatehold Chronologist",
+    "Island"
+   ],
+   "taken": "Theorist's Proxy",
+   "reasoning": "The deck needs creatures, ideally ones that can attack. Proxy is a stronger card and on theme, so it is taken over Fatehold Chronologist; he would like a two-drop with power (and assumes some will come).",
+   "considered": {
+    "Fatehold Chronologist": "the alternative; wheels later (P2p7)"
+   },
+   "plan": "Blue-white needing attacking creatures.",
+   "quotes": [
+    "one thing with this deck is we do be needing creatures. Ideally, creatures that can attack.",
+    "Proxy is I think still good enough to take over Chronologist"
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 3,
+   "time": "6:06-6:39",
+   "pack_cards": [
+    "Enlightened Confidant",
+    "Tam, the Possibility",
+    "Precise Redaction",
+    "Way of the Deathbringer",
+    "Way of the Wildspeaker",
+    "Traxos, Scourge Eternal",
+    "Hexhaven Battalion",
+    "Last Gasp",
+    "Blazing Crescendo",
+    "Bestial Incursion",
+    "Tam's Resistance",
+    "Meticulous Commons"
+   ],
+   "taken": "Enlightened Confidant",
+   "reasoning": "Hexhaven Battalion is 'real good' and good with Kindred Judgment (helps get to seven mana and leaves creatures after the sweeper), but the deck needs twos, so Enlightened Confidant is taken (also nice with Tetsuko). Confirmed by the pick-4 pool.",
+   "considered": {
+    "Hexhaven Battalion": "very good with Kindred Judgment; passed because the deck needs twos"
+   },
+   "plan": "Blue-white, curve needs.",
+   "quotes": [
+    "Battalion's also very good with Kinder Judgment, right?",
+    "I think enlightening Conan's good and I think I'm going to take it over battalion just because we need twos."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 4,
+   "time": "6:40-7:03",
+   "pack_cards": [
+    "Vraska's Final Mercy",
+    "Generous Revival",
+    "Rescue Girl, First Responder",
+    "Way of the Deathbringer",
+    "Primal Witchstalker",
+    "Cryotheory Adept",
+    "Blazing Crescendo",
+    "Emergency Phytomedic",
+    "Tam's Resistance",
+    "Medic's Kitesail",
+    "Transformative Commons"
+   ],
+   "taken": "Generous Revival",
+   "reasoning": "Now more interested in Generous Revival: a great thing to bring back, and it can be surveilled. He weighs it against Emergency Phytomedic ('which I do not care very much about here') and notes he has played the Phytomedic in blue-white for the life gain.",
+   "considered": {
+    "Emergency Phytomedic": "played it in blue-white sometimes for the life gain; not wanted here"
+   },
+   "plan": "Blue-white with surveil.",
+   "quotes": [
+    "now I'm a little more interested in general survival. Like this is a great thing to bring back.",
+    "We can surveil it."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 5,
+   "time": "7:04-7:19",
+   "pack_cards": [
+    "Stinging Vitriol",
+    "Tetsuko Umezawa, Fugitive",
+    "Rewrite Regrets",
+    "Tomik, Izzet Sparkmage",
+    "Restore with Empathy",
+    "Way of the Wildspeaker",
+    "Rank Rat",
+    "Charge the Sanctum",
+    "Keeper of the Quiet Hour",
+    "Meticulous Commons"
+   ],
+   "taken": "Tetsuko Umezawa, Fugitive",
+   "reasoning": "'Okay, there's Tetsuko.' He notes the draft has been on rails: few real options per pick.",
+   "considered": {},
+   "plan": "Blue-white.",
+   "quotes": [
+    "It's been a bit of a on rails draft in the sense that there hasn't been too many options each pick."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 6,
+   "time": "7:20-7:55",
+   "pack_cards": [
+    "Precise Redaction",
+    "Yargle, Goliath of Otaria",
+    "Yargle, Glutton of Urborg",
+    "Grim Repriser",
+    "Screeching Soulbreaker",
+    "Awaken the Inferno",
+    "Blessed Ghoul",
+    "Living Library",
+    "Transformative Commons"
+   ],
+   "taken": "Transformative Commons",
+   "reasoning": "A second Blessed Ghoul is 'kind of rough' and he has 'basically never' wanted one. He considers speccing on a land (not usually a splashing blue-white deck, and he cannot name a green card to splash; Bloom Brute at most). Transformative Commons is taken; the pick tag sat on Blessed Ghoul. Confirmed by the pick-7 pool.",
+   "considered": {
+    "Blessed Ghoul": "second copy, 'basically never' wanted",
+    "Awaken the Inferno": "passed (not mentioned)"
+   },
+   "plan": "Blue-white, no splash yet.",
+   "quotes": [
+    "We take another ghoul. That's kind of rough. I guess I could spec on a land, but I don't usually splash in blue white",
+    "I haven't really found I want second ghoul basically ever."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 7,
+   "time": "7:56-8:09",
+   "pack_cards": [
+    "Hall of Echoes",
+    "Tomik, Izzet Sparkmage",
+    "Paradox Shaper",
+    "Rampart Hunter",
+    "Artifist Acumen",
+    "Fatehold Chronologist",
+    "Room of Refuge",
+    "Forest"
+   ],
+   "taken": "Fatehold Chronologist",
+   "reasoning": "Chronologist wheeled from the P2p2 pack. No pick comment; he remarks on Tetsuko (already in the pool) being 'right in that sweet spot of not great in every deck, really good in the right deck'. Confirmed by the pick-8 pool.",
+   "considered": {},
+   "plan": "Blue-white.",
+   "quotes": [
+    "Like she's right in that sweet spot of not great in every deck."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 8,
+   "time": "8:10-8:37",
+   "pack_cards": [
+    "Extrapolate the Impossible",
+    "Teyo, Diamondblade Mage",
+    "Prudent Fateseer",
+    "Academic Ascent",
+    "Cryotheory Adept",
+    "Extended Absence",
+    "Theorix Annex"
+   ],
+   "taken": "Prudent Fateseer",
+   "reasoning": "'I love Fateseer': it does not have great stats on 17Lands but he really likes it, and was surprised how low it ranked. He wants more interaction (the deck only has this so far). Confirmed by the pick-9 pool.",
+   "considered": {},
+   "plan": "Blue-white, wants interaction.",
+   "quotes": [
+    "Oh, I love Fatesier.",
+    "This card doesn't have great stats on 17 lands, but I I really really like this card a lot."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 9,
+   "time": "8:38-8:43",
+   "pack_cards": [
+    "Yargle, Goliath of Otaria",
+    "Way of the Deathbringer",
+    "Way of the Necromancer",
+    "Shatterwing Pegasus",
+    "Chandra's Emberling",
+    "Whiplash Wordsmith"
+   ],
+   "taken": "Shatterwing Pegasus",
+   "reasoning": "Pegasus taken; he notes the deck is 'not really going wide' yet (a couple of Fateseer-type creatures, no battalions or Ways). Confirmed by the pick-10 pool.",
+   "considered": {},
+   "plan": "Blue-white, not going wide.",
+   "quotes": [
+    "We're not really going wide just yet."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 10,
+   "time": "8:44-8:49",
+   "pack_cards": [
+    "Consider",
+    "Screeching Soulbreaker",
+    "Silence the Echo",
+    "Budding Insurgent",
+    "Island"
+   ],
+   "taken": "Consider",
+   "reasoning": "Consider (surveil) from the P2p2 pack wheel. Confirmed by the pick-11 pool. No pick comment.",
+   "considered": {},
+   "plan": "Blue-white.",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 11,
+   "time": "8:50-8:59",
+   "pack_cards": [
+    "Precise Redaction",
+    "Way of the Deathbringer",
+    "Blazing Crescendo",
+    "Meticulous Commons"
+   ],
+   "taken": "Meticulous Commons",
+   "reasoning": "Inferred: the card went to the sideboard (sideboard 7 to 8, deck unchanged) and the sideboard holds two Meticulous Commons (the other is P2p13). Meticulous Commons is the only card of the four that fits; no comment in the transcript.",
+   "considered": {},
+   "plan": "Blue-white.",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 12,
+   "time": "9:00-9:03",
+   "pack_cards": [
+    "Way of the Deathbringer",
+    "Blazing Crescendo",
+    "Medic's Kitesail"
+   ],
+   "taken": "Medic's Kitesail",
+   "reasoning": "Taken (card seen flying to the sideboard, sideboard 8 to 9; Medic's Kitesail is in the final sideboard). No comment.",
+   "considered": {},
+   "plan": "Blue-white.",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 13,
+   "time": "9:04-9:07",
+   "pack_cards": [
+    "Rank Rat",
+    "Meticulous Commons"
+   ],
+   "taken": "Meticulous Commons",
+   "reasoning": "Meticulous Commons (white-black land) taken as the last useful card; it becomes the splash source for Recursive Recruitment later. No comment.",
+   "considered": {},
+   "plan": "Blue-white.",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 14,
+   "time": "9:08-9:10",
+   "pack_cards": [
+    "Yargle, Glutton of Urborg"
+   ],
+   "taken": "Yargle, Glutton of Urborg",
+   "reasoning": "Last card of the pack, auto-selected.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 1,
+   "time": "9:15-9:44",
+   "pack_cards": [
+    "The Theorist, Jace Beleren",
+    "Refute Destiny",
+    "Ruric Thar, Biomagus",
+    "Yuriko, Hope from the Shadows",
+    "Essence Burn",
+    "Way of the Pyromancer",
+    "Ruric Thar, Magecrusher",
+    "Unsummon",
+    "Rank Rat",
+    "Tether Technician",
+    "Something Worth Saving",
+    "Charge the Sanctum",
+    "Room of Refuge",
+    "Vigorbloom Annex"
+   ],
+   "taken": "The Theorist, Jace Beleren",
+   "reasoning": "Jace: he has opened Jace three times this weekend and calls this 'the best one'. Confirmed by the pick-2 pool.",
+   "considered": {},
+   "plan": "Blue-white Jace pile.",
+   "quotes": [
+    "I opened Jace like three times in my drafts I did just yesterday.",
+    "Uh so hashtag blessed. Yes, this is best one."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 2,
+   "time": "9:45-10:23",
+   "pack_cards": [
+    "Theorist's Sanctum",
+    "Roiling Canopy",
+    "Refute Destiny",
+    "Saheeli, Consul of Oversight",
+    "Multiply by Zero",
+    "Fblthp, Knows the Way",
+    "Blossom-Blessed Angel",
+    "Cryotheory Adept",
+    "Theoretical Necromancer",
+    "Eardrum Rattler",
+    "Hallway Heckler",
+    "Bestial Incursion",
+    "Plains"
+   ],
+   "taken": "Theorist's Sanctum",
+   "reasoning": "'I love Sanctum too': the Jace land. Saheeli, Consul of Oversight is 'quite good as long as you can trigger her the turn she comes down' but is passed (she wheels at P3p10 and is taken then). Confirmed by the pick-3 pool.",
+   "considered": {
+    "Saheeli, Consul of Oversight": "quite good if triggered the turn she comes down; wheels"
+   },
+   "plan": "Blue-white with Jace.",
+   "quotes": [
+    "I love Sanctum too. There's Sahili.",
+    "Uh, she is quite good as long as you can trigger her the turn she comes down."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 3,
+   "time": "10:24-11:00",
+   "pack_cards": [
+    "Haunted Ridge",
+    "Way of the Mentor",
+    "Fblthp, Impossibly Lost",
+    "Edgar, Moonlit Sovereign",
+    "Edgar, Ancient Bloodlord",
+    "Stingerquill Voxmancer",
+    "Surgical Precision",
+    "Divining Duelist",
+    "Undulating Witness",
+    "Solve for Disappointment",
+    "Budding Insurgent",
+    "Formidable Commons"
+   ],
+   "taken": "Surgical Precision",
+   "reasoning": "Chooses removal over Fblthp: 'do we just need to take precision here? Kind of feels like we do.' With two more removal spells he would vote the other way. He also says he was too low on Fblthp (a Discord comment convinced him). Confirmed by the pick-4 pool.",
+   "considered": {
+    "Fblthp, Impossibly Lost": "'I love Fibble'; he was 'a little too low on it'; with two more removal spells he would take it"
+   },
+   "plan": "Blue-white, short on interaction.",
+   "quotes": [
+    "I was a little too low on it.",
+    "do we just need to take precision here? Kind of feels like we do.",
+    "If I had like two more removal spells, I would vote the other way."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 4,
+   "time": "11:00-11:21",
+   "pack_cards": [
+    "Tomik, Orzhov Lawmage",
+    "Yargle, Glutton of Urborg",
+    "Tomik, Izzet Sparkmage",
+    "Vigorbloom Vanguard",
+    "Graft Surgeon",
+    "Memory Trap",
+    "Undulating Witness",
+    "Blazing Crescendo",
+    "Ferocity of the Hunt",
+    "Murmuring Volume",
+    "Theorix Annex"
+   ],
+   "taken": "Memory Trap",
+   "reasoning": "'Memory Trap, some two drops, yeah, we're just going to take the removal.' The deck is low on creatures and on interaction. Confirmed by the pick-5 pool.",
+   "considered": {},
+   "plan": "Blue-white, low on creatures and interaction.",
+   "quotes": [
+    "all right, memory trap, some two drops, yeah, we're just going to take the removal."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 5,
+   "time": "11:22-11:50",
+   "pack_cards": [
+    "Command the Stage",
+    "Primal Witchstalker",
+    "Traxos, Scourge Eternal",
+    "Blossom-Blessed Angel",
+    "Fateshaper Aspirant",
+    "Solve for Disappointment",
+    "Hallway Heckler",
+    "Inspired Tethermage",
+    "Theorix Metamage",
+    "Stingerquill Annex"
+   ],
+   "taken": "Theorix Metamage",
+   "reasoning": "Angel or Metamage, 'I like both', takes the cheaper card ('that's close'). The pick tag sat on Blossom-Blessed Angel; the pick-6 pool shows Theorix Metamage (deck 20 to 21).",
+   "considered": {
+    "Blossom-Blessed Angel": "the alternative; liked both"
+   },
+   "plan": "Blue-white.",
+   "quotes": [
+    "angel or metam mage I like both.",
+    "think I'm going to take the cheaper card that's close."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 6,
+   "time": "11:50-12:19",
+   "pack_cards": [
+    "Vraska, Soul of Stone",
+    "Generous Revival",
+    "Arni, Renowned Champion",
+    "Graft Surgeon",
+    "Rampart Hunter",
+    "Chandra's Emberling",
+    "Vinelasher Adept",
+    "Theorix Metamage",
+    "Plains"
+   ],
+   "taken": "Theorix Metamage",
+   "reasoning": "Second Metamage over Generous Revival (he already has one; the other side of the vote was Confidant-style life gain); 'curve is kind of the tiebreaker', especially with Jace: play a two into a three to protect it.",
+   "considered": {
+    "Generous Revival": "already has one; maybe plays Ghoul"
+   },
+   "plan": "Blue-white, curve and Jace protection.",
+   "quotes": [
+    "I think curve is kind of the tiebreaker.",
+    "Especially when I have Jace, like when I've got Jace, you really want to play a two into a three so you can protect it.",
+    "And we'll just take another mana mage."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 7,
+   "time": "12:20-12:50",
+   "pack_cards": [
+    "Refute Destiny",
+    "Loot, the Anomaly",
+    "Essence Burn",
+    "Loot, the Nexus",
+    "Theorix Charm",
+    "Sphinx's Approach",
+    "Eardrum Rattler",
+    "Something Worth Saving"
+   ],
+   "taken": "Sphinx's Approach",
+   "reasoning": "'I guess I don't hate this card.' Confirmed by the pick-8 pool.",
+   "considered": {},
+   "plan": "Blue-white.",
+   "quotes": [
+    "Sphinx's approach. I guess I don't hate this card."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 8,
+   "time": "12:51-13:12",
+   "pack_cards": [
+    "Arni, Humble Scribe",
+    "Way of the Deathbringer",
+    "Unsummon",
+    "Solve for Disappointment",
+    "Tethermage's Advantage",
+    "Living Library",
+    "Fatehold Annex"
+   ],
+   "taken": "Unsummon",
+   "reasoning": "Unsummon against a land: 'probably should be Unsummon, but my mana is a little sketch with double blues and double whites and no duals and no cyclers.' Pick-9 pool shows Unsummon.",
+   "considered": {
+    "Fatehold Annex": "the land; mana is sketchy with no duals or cyclers"
+   },
+   "plan": "Blue-white, mana concern.",
+   "quotes": [
+    "Probably should be unsummon,",
+    "but my mana is a little sketch with like double blues and double whites and no duels and no cyclingers."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 9,
+   "time": "13:12-13:20",
+   "pack_cards": [
+    "Refute Destiny",
+    "Yuriko, Hope from the Shadows",
+    "Essence Burn",
+    "Way of the Pyromancer",
+    "Rank Rat",
+    "Charge the Sanctum"
+   ],
+   "taken": "Yuriko, Hope from the Shadows",
+   "reasoning": "'Don't like [Yuriko] very much, but we'll take her': nothing else for the deck. Ends in the sideboard (confirmed by the sideboard count and list).",
+   "considered": {},
+   "plan": "Blue-white.",
+   "quotes": [
+    "Don't like Euro very much, but we'll take her."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 10,
+   "time": "13:21-13:24",
+   "pack_cards": [
+    "Refute Destiny",
+    "Saheeli, Consul of Oversight",
+    "Theoretical Necromancer",
+    "Eardrum Rattler",
+    "Plains"
+   ],
+   "taken": "Saheeli, Consul of Oversight",
+   "reasoning": "Saheeli wheels (he notes it). Confirmed by the pick-11 pool.",
+   "considered": {},
+   "plan": "Blue-white.",
+   "quotes": [
+    "Oh, Sahili wheels."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 11,
+   "time": "13:25-13:29",
+   "pack_cards": [
+    "Way of the Mentor",
+    "Edgar, Ancient Bloodlord",
+    "Stingerquill Voxmancer",
+    "Solve for Disappointment"
+   ],
+   "taken": "Way of the Mentor",
+   "reasoning": "Seen flying to the sideboard (Way of the Mentor is in the final sideboard). No comment.",
+   "considered": {},
+   "plan": "Blue-white.",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 12,
+   "time": "13:30-13:31",
+   "pack_cards": [
+    "Yargle, Glutton of Urborg",
+    "Graft Surgeon",
+    "Undulating Witness"
+   ],
+   "taken": "Undulating Witness",
+   "reasoning": "A landcycler: 'we have a cycler, mana got a little bit better'. Deck 25 to 26.",
+   "considered": {},
+   "plan": "Blue-white.",
+   "quotes": [
+    "Oh, okay. Never mind. We have a cycler.",
+    "All right. Mana got a little bit better."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 13,
+   "time": "13:32-13:33",
+   "pack_cards": [
+    "Fateshaper Aspirant",
+    "Solve for Disappointment"
+   ],
+   "taken": "Fateshaper Aspirant",
+   "reasoning": "Taken to the sideboard (13 to 14 to 15); the sideboard holds two Fateshaper Aspirant. No comment.",
+   "considered": {},
+   "plan": "Blue-white.",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 14,
+   "time": "13:34-13:35",
+   "pack_cards": [
+    "unreadable (unseen (waiting screen; last card of the P3p6 pack))"
+   ],
+   "taken": "Plains",
+   "reasoning": "Unseen. The sideboard accounts for 15 cards and the main for 27 with one card more than the named picks, so the last card is a main-deck basic land, most likely the Plains of the P3p6 pack (the other cards there are not in the sideboard or main). Marked uncertain; recorded as Plains.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  }
+ ],
+ "player_note": "Alex Nikolic (Limited Level-Ups; on-screen name Alex Nikolic, Arena name Chord_O_Calls)"
+}
