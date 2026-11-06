@@ -1,0 +1,545 @@
+{
+ "video": "VTU-DlQTMXA",
+ "player": "NicolaiBolas",
+ "set": "FRA",
+ "source": "YouTube auto-caption transcript 0:00-18:46 (tools/video_draft.py transcript VTU-DlQTMXA --start 0 --end 1125), card names corrected against data/Sets/FRA_PremierDraft_All_Data.json; nothing past 18:46 read. 'type' marks each idea as claim, heuristic or one-off pick; 'repeats' lists ideas of earlier videos it restates; 'related' lists looser topic matches.",
+ "ideas": [
+  {
+   "id": "VTU-01",
+   "time": 15,
+   "phase": "draft",
+   "claim": "Ajani Unrelenting is completely busted: every loyalty activation (including his Jaces') makes a 2/2 Cadet, and the minus three deals four to each creature except his tokens, so it is a one-sided sweeper; he wants to build around it.",
+   "quote": "But the real meat is the minus three. You deal four damage to each creature except for tokens you control.",
+   "cards": [
+    "Ajani Unrelenting"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Ajani Unrelenting; its win rate in decks with Jace-token makers.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "VTU-02",
+   "time": 55,
+   "phase": "draft",
+   "claim": "Ajani Resolute is cutesy in life-gain decks and really hard to get going; a two-mana planeswalker that is hard to use.",
+   "quote": "This Ajani is kind of cutesy in life gain decks I think but it's kind of like it's really hard to use.",
+   "cards": [
+    "Ajani Resolute"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Ajani Resolute.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "VTU-03",
+   "time": 70,
+   "phase": "draft",
+   "claim": "Warrior's Blades is a card he likes but splashes into red or white decks rather than playing a red-white deck for it.",
+   "quote": "I really like Warriors Blades, but I've kind of just been splashing it in my like red decks or white decks.",
+   "cards": [
+    "Warrior's Blades"
+   ],
+   "kind": "splash / mana",
+   "engine_area": "builder",
+   "test_idea": "Splash win rate of Warrior's Blades.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "mqZ-13",
+    "XSY-33"
+   ]
+  },
+  {
+   "id": "VTU-04",
+   "time": 110,
+   "phase": "draft",
+   "claim": "Take more powerful cards early over the way-of-the-X enchantment: Your Fate Ends Here (hard removal with surveil) over Way of the Warlord and Yoshimaru, Scrappy Stray, which needs more setup.",
+   "quote": "I would rather just take like a more powerful cards early on. And I think your fate ends here is a very powerful card.",
+   "cards": [
+    "Your Fate Ends Here",
+    "Way of the Warlord",
+    "Yoshimaru, Scrappy Stray"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Your Fate Ends Here against Yoshimaru, Scrappy Stray and Way of the Warlord.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "9nA-29"
+   ]
+  },
+  {
+   "id": "VTU-05",
+   "time": 150,
+   "phase": "draft",
+   "claim": "Four paired cards in a pack mean three pairs plus one standing in for a foil card, so a missing partner is weaker evidence than it looks.",
+   "quote": "The reason there's four instead of three is because one of them represents like a foil card.",
+   "cards": [],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "How often a pack with four pair cards fits the three-pair-plus-foil structure.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "97Z-03",
+    "XSY-18"
+   ]
+  },
+  {
+   "id": "VTU-06",
+   "time": 205,
+   "phase": "draft",
+   "claim": "Gold-card pick at P1p3: Proctor of Potential (blue-white) over Mindseeker Oculus, abandoning the Ajani plan; later he calls it a misstep and says Oculus would have kept blue-red.",
+   "quote": "Maybe a mis misstep with the Mindseker Oculus pick.",
+   "cards": [
+    "Proctor of Potential",
+    "Mindseeker Oculus"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Proctor of Potential against Mindseeker Oculus; how often a P1p3 gold pick ends in the final deck.",
+   "type": "heuristic",
+   "repeats": [
+    "9nA-17",
+    "97Z-25",
+    "XSY-04"
+   ],
+   "related": [
+    "n6s-01",
+    "97Z-06"
+   ]
+  },
+  {
+   "id": "VTU-07",
+   "time": 215,
+   "phase": "draft",
+   "claim": "Passing Oculus costs a lot: he says 'my kingdom for the Oculus' twice as blue cards go by and the Oculus does not wheel; Oculus is one of his favourite cards.",
+   "quote": "Oh, my kingdom for the Oculus. I've made a terrible mistake.",
+   "cards": [
+    "Mindseeker Oculus"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "Whether top-drafter win rate for Mindseeker Oculus decks beats alternatives at pick 3.",
+   "type": "claim",
+   "repeats": [
+    "9nA-17"
+   ],
+   "related": [
+    "97Z-04",
+    "XSY-03"
+   ]
+  },
+  {
+   "id": "VTU-08",
+   "time": 245,
+   "phase": "draft",
+   "claim": "Clash of Elements is a great removal spell and pulls him back to blue-red so that Ajani Unrelenting can be played.",
+   "quote": "Clash of Elements. Very strong card, great removal spell.",
+   "cards": [
+    "Clash of Elements"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Clash of Elements against other removal at pick 4.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "55a-30",
+    "pdI-05"
+   ]
+  },
+  {
+   "id": "VTU-09",
+   "time": 258,
+   "phase": "draft",
+   "claim": "Way of the Pyromancer is worth trying with Ajani: a Jace taken up gives a 2/2 and mana; it also ramps towards the Ajani.",
+   "quote": "Pretty cool with an Ajani let you like if you have a Jace you can take it up to get a two two get some mana.",
+   "cards": [
+    "Way of the Pyromancer"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Way of the Pyromancer; play rate at 2 copies.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "VTU-10",
+   "time": 290,
+   "phase": "draft",
+   "claim": "Good two-drops are not worth a high pick, but a random red two-drop (Eardrum Rattler) is taken over Tomik, Izzet Sparkmage because Tomik does not block; he hopes none of the cards in that pack make his deck.",
+   "quote": "I'll just take a random two drop in red. Maybe set myself up a little bit.",
+   "cards": [
+    "Eardrum Rattler",
+    "Tomik, Izzet Sparkmage"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Eardrum Rattler against Tomik, Izzet Sparkmage.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "n6s-12",
+    "uoy-29"
+   ]
+  },
+  {
+   "id": "VTU-11",
+   "time": 335,
+   "phase": "draft",
+   "claim": "Loyal Tutor can fetch the planeswalker (Ajani) but is not very good normally; he takes the Way of the Pyromancer instead.",
+   "quote": "Loyal tutor. Search for a planeswalker card, reveal it and put it on top. I can go get my Ajani on... Interesting. Not very good normally.",
+   "cards": [
+    "Loyal Tutor",
+    "Way of the Pyromancer"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Loyal Tutor.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "VTU-12",
+   "time": 378,
+   "phase": "draft",
+   "claim": "Unsummon works great in a tempo start and goes with a blue-red deck of planeswalkers and bounce; he later caps himself at two.",
+   "quote": "Unsummon works great with this kind of tempo start that we have.",
+   "cards": [
+    "Unsummon"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Unsummon with 1 and 2 copies.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "55a-24",
+    "CWs-35"
+   ]
+  },
+  {
+   "id": "VTU-13",
+   "time": 420,
+   "phase": "draft",
+   "claim": "A card that survives your own sweeper has extra value: Tether Technician is taken over Afterthought Sentry because it survives the Ajani minus three.",
+   "quote": "I'll take the technician. It survives through my Ajani, which is nice.",
+   "cards": [
+    "Tether Technician",
+    "Afterthought Sentry"
+   ],
+   "kind": "synergy",
+   "engine_area": "picker",
+   "test_idea": "Value of tokens and sweeper-proof creatures in Ajani Unrelenting decks.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "VTU-14",
+   "time": 460,
+   "phase": "draft",
+   "claim": "Garruk, Veiled Butcher is powerful enough to take over a blue-red pick and try red-black with a splash: 'such a messed up card'; he gives up Protege's Awakening and Unsummon for it.",
+   "quote": "Garruk is like incredibly powerful. Like it's such a messed up card.",
+   "cards": [
+    "Garruk, Veiled Butcher",
+    "Unsummon",
+    "Protege's Awakening"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Garruk, Veiled Butcher; how often a P2p1 bomb outside the main colours ends in the deck.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "n6s-01",
+    "97Z-06"
+   ]
+  },
+  {
+   "id": "VTU-15",
+   "time": 510,
+   "phase": "draft",
+   "claim": "Violent Echoes is a really good kill spell that also empowers Jace.",
+   "quote": "Violent Echoes really good kill spell that also empowers Jace.",
+   "cards": [
+    "Violent Echoes"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Violent Echoes against other red removal.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "55a-05",
+    "Uy4-02"
+   ]
+  },
+  {
+   "id": "VTU-16",
+   "time": 540,
+   "phase": "draft",
+   "claim": "Plan for All Outcomes gives lots of empowering and combines with Way of the Pyromancer to reset a Jace token over and over.",
+   "quote": "Plan for all outcomes. Gives me a lot of empowering. Goes well with like way of the pyromancer.",
+   "cards": [
+    "Plan for All Outcomes",
+    "Way of the Pyromancer"
+   ],
+   "kind": "synergy",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Plan for All Outcomes in decks with Way of the Pyromancer.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "55a-35",
+    "994-13"
+   ]
+  },
+  {
+   "id": "VTU-17",
+   "time": 620,
+   "phase": "draft",
+   "claim": "Cap yourself at two Unsummons when the deck has card draw and empower Jace; two is fine.",
+   "quote": "I think I would kind of cap myself at two unsummons, but I think two is fine.",
+   "cards": [
+    "Unsummon"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "Win rate of decks by Unsummon copies.",
+   "type": "heuristic",
+   "related": [
+    "55a-24",
+    "CWs-35"
+   ]
+  },
+  {
+   "id": "VTU-18",
+   "time": 655,
+   "phase": "draft",
+   "claim": "A dual land that enters untapped with planeswalkers is worth taking over Heartstring Puller, since he will have many planeswalkers; Heartstring Puller is his second pick and Room of Refuge third.",
+   "quote": "I'm going to have a lot of planeswalkers, so it'll come in untapped a lot of the time.",
+   "cards": [
+    "Innovative Commons",
+    "Heartstring Puller",
+    "Room of Refuge"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Play rate of Innovative Commons in decks with planeswalkers; GIH WR of Heartstring Puller.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "CWs-12",
+    "55a-21",
+    "XSY-17"
+   ]
+  },
+  {
+   "id": "VTU-19",
+   "time": 705,
+   "phase": "draft",
+   "claim": "Splash a white land in case he wants Proctor of Potential: he takes the Dedicated Commons over Sphinx's Approach, being pretty locked into red.",
+   "quote": "Maybe I'll just take the white land in case I want to splash the proctor of potential or something.",
+   "cards": [
+    "Dedicated Commons",
+    "Proctor of Potential"
+   ],
+   "kind": "splash / mana",
+   "engine_area": "picker",
+   "test_idea": "Whether dual lands taken for a splash card at pick 9 ever reach a deck.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "55a-21",
+    "mqZ-16"
+   ]
+  },
+  {
+   "id": "VTU-20",
+   "time": 770,
+   "phase": "draft",
+   "claim": "Opening two black mythics can jump you into a colour: Overwrite the Multiverse at P3p1 moves him back to black, splashing blue for one or two cards.",
+   "quote": "Opening two black mythics can really jump you into a color, can't it?",
+   "cards": [
+    "Overwrite the Multiverse",
+    "Garruk, Veiled Butcher"
+   ],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "How often bombs taken in pack 3 change a drafter's colours; GIH WR of Overwrite the Multiverse.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "VTU-21",
+   "time": 830,
+   "phase": "draft",
+   "claim": "Winter, Tormented Loner is not good in a deck that wants to keep its planeswalkers and does little non-combat damage; he takes Extended Absence, which also improves Grim Repriser.",
+   "quote": "we kind of want to keep our planeswalkers around. So, it's not as good in our deck.",
+   "cards": [
+    "Winter, Tormented Loner",
+    "Extended Absence",
+    "Grim Repriser"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Winter, Tormented Loner by colour pair; Grim Repriser with Extended Absence.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "XSY-26",
+    "n6s-10",
+    "97Z-22"
+   ]
+  },
+  {
+   "id": "VTU-22",
+   "time": 880,
+   "phase": "draft",
+   "claim": "A strong card in your colours before going 'too deep off the deep end': Pia, Determined Rebuilder over a land that would ease a blue splash, because the deck needs real playables.",
+   "quote": "Let's just take the really good card for my deck in my colors before we go too deep off the deep end here.",
+   "cards": [
+    "Pia, Determined Rebuilder",
+    "Stingerquill Annex"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Pia, Determined Rebuilder against splash-fixing lands.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "n6s-18",
+    "Uy4-08",
+    "55a-09"
+   ]
+  },
+  {
+   "id": "VTU-23",
+   "time": 895,
+   "phase": "draft",
+   "claim": "Splinter Twin combos with one blue card; he would have tried the combo if he had taken it earlier.",
+   "quote": "Splinter Twin is super cool with like there's the one blue card that combos with it.",
+   "cards": [
+    "Splinter Twin"
+   ],
+   "kind": "synergy",
+   "engine_area": "picker",
+   "test_idea": "Not testable on 17Lands data (a two-card combo); record only.",
+   "type": "one-off pick",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "VTU-24",
+   "time": 965,
+   "phase": "draft",
+   "claim": "Counting creatures during the draft: nine creatures is low, so he does not want a combat trick; he takes a creature at P3p8 and a kill spell at P3p9 because he already has five two-drops.",
+   "quote": "My creature count seems low. Yeah, I have nine creatures, so I don't really want a combat trick.",
+   "cards": [
+    "Theorix Metamage",
+    "Silence the Echo"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Creature count at pick 8 of pack 3 and final win rate.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "n6s-22",
+    "9nA-23"
+   ]
+  },
+  {
+   "id": "VTU-25",
+   "time": 1050,
+   "phase": "draft",
+   "claim": "Wheeled Grim Repriser is not good in his deck: he has too few ways to ping the opponent, so he takes the land (Room of Refuge) so that he can play his cards.",
+   "quote": "We don't have that many ways to ping them. So Heartstring puller might just be better.",
+   "cards": [
+    "Grim Repriser",
+    "Room of Refuge"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Grim Repriser by number of ping sources.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "VTU-26",
+   "time": 1075,
+   "phase": "build",
+   "claim": "A blue splash of three cards (Plan for All Outcomes, Saheeli, Clash of Elements) with one Island is too light: three blue sources for three cards is not enough; he counts and settles on a few Islands.",
+   "quote": "Four sources for three cards is not enough.",
+   "cards": [
+    "Plan for All Outcomes",
+    "Saheeli, Jewel of Avishkar",
+    "Clash of Elements"
+   ],
+   "kind": "splash / mana",
+   "engine_area": "builder",
+   "test_idea": "Win rate of three-card splashes by number of sources (3, 4, 5).",
+   "type": "claim",
+   "repeats": [
+    "mqZ-60",
+    "CWs-42"
+   ],
+   "related": [
+    "994-29",
+    "XSY-33"
+   ]
+  },
+  {
+   "id": "VTU-27",
+   "time": 1090,
+   "phase": "build",
+   "claim": "Splash only three blue cards and play one Island plus dual lands: red and black have ten sources each, with 17 lands.",
+   "quote": "So, this gives us five, six, seven, eight, nine, 10 red sources.",
+   "cards": [
+    "Island",
+    "Innovative Commons",
+    "Stingerquill Annex"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Source counts (10 / 9 / 4) against win rate in two-base-colour decks with a light splash.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "Uy4-13",
+    "re7-29"
+   ]
+  },
+  {
+   "id": "VTU-28",
+   "time": 1105,
+   "phase": "build",
+   "claim": "He says twice that he does not really want Eardrum Rattler, yet it is still in the 40 at 18:46: the two-drop slot is kept for curve even though the card is the weakest.",
+   "quote": "I don't really want eardrum rattler.",
+   "cards": [
+    "Eardrum Rattler"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Eardrum Rattler play rate and win rate.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "uoy-29"
+   ]
+  }
+ ]
+}

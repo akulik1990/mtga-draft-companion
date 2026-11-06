@@ -1,0 +1,1054 @@
+{
+ "id": "VTU-DlQTMXA",
+ "url": "https://youtu.be/VTU-DlQTMXA",
+ "title": "UNDEFEATED in Reality Fracture Draft!!!",
+ "player": "NicolaiBolas",
+ "set": "FRA",
+ "event": "FRA live Arena draft (a 'best of one' event: 'I'm playing best of one right now'); Premier / Quick not named on screen",
+ "dataset": "FRA_PremierDraft_All_Data.json",
+ "recorded": null,
+ "source": "frames read from data/videos/raw/VTU-DlQTMXA (banner, pack title strips every pick; pool at P3p1; the 40/40 deck screen at 1126 s); every pack list read from images that loaded except two hidden cards in P2p10; takes confirmed by the pool at P3p1 (22 deck + 6 sideboard), the deck screen and his words, with P3p13 settled by elimination from the wheel; P1p14 and P2p14 were never displayed (taken null); transcript from YouTube auto captions, card names corrected; nothing past 18:46 read; the cut-off is 1130 s",
+ "colour_path": [
+  {
+   "after": "P1p1",
+   "main": "R (Ajani Unrelenting)",
+   "quote": "a Johnny unrelenting just a very strong card in red."
+  },
+  {
+   "after": "P1p3",
+   "main": "blue-white or red",
+   "quote": "I'm just going to take the Proctor of Potential, be willing to give up on my Ajani."
+  },
+  {
+   "after": "P1p4",
+   "main": "blue-red",
+   "quote": "Maybe more move towards blue red. That would let me play my Ajani on relenting."
+  },
+  {
+   "after": "P2p1",
+   "main": "red-black splash blue (bold)",
+   "quote": "I might just go for the bold play here and just take Garruk and try to play red black and then get a little blue in there."
+  },
+  {
+   "after": "P2p3",
+   "main": "blue-red, black option open",
+   "quote": "I'll just stick to my blue red deck. And if the black path presents itself, we'll go for it maybe."
+  },
+  {
+   "after": "P2p9",
+   "main": "red base",
+   "quote": "At this point, I think I'm pretty locked into red."
+  },
+  {
+   "after": "P3p1",
+   "main": "red-black splash blue",
+   "quote": "I'm just going to go back into black now ... And then I try to splash blue for like one or two cards."
+  },
+  {
+   "after": "deck",
+   "main": "RB + blue splash (Plan for All Outcomes, Saheeli, Clash of Elements, Theorix Metamage)",
+   "quote": "I think splashing the three blue cards makes the most sense."
+  }
+ ],
+ "picks": [
+  {
+   "pack": 1,
+   "pick": 1,
+   "time": "1:00-1:17",
+   "pack_cards": [
+    "Ajani Resolute",
+    "Ajani Unrelenting",
+    "Cruel Calculations",
+    "Hapatra, the Desert Frost",
+    "Rewrite Regrets",
+    "Hunter's Axe",
+    "Warrior's Blades",
+    "Unsummon",
+    "Theoretical Necromancer",
+    "Tether Technician",
+    "Greenhouse Propagator",
+    "Emergency Phytomedic",
+    "Living Library",
+    "Plains"
+   ],
+   "taken": "Ajani Unrelenting",
+   "reasoning": "Ajani Unrelenting: 'completely busted' (every loyalty activation makes a 2/2 Cadet, minus three deals four to each creature except your tokens, so with a Jace token it is a one-sided sweeper). He wants to build around it and bias towards red, over Warrior's Blades (which he usually just splashes).",
+   "considered": {
+    "Ajani Resolute": "cutesy in life-gain decks, really hard to get going",
+    "Warrior's Blades": "really likes it but only as a splash",
+    "Hapatra, the Desert Frost": "paired card, no information"
+   },
+   "plan": "Red, built around Ajani Unrelenting.",
+   "quotes": [
+    "a Johnny Unrelenting really good pickup here.",
+    "So we have an Ajani Unrelenting which means we really do want to bias towards green if we can [sic: red]."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 2,
+   "time": "1:17-2:40",
+   "pack_cards": [
+    "Ghalta the Immovable",
+    "Your Fate Ends Here",
+    "Way of the Warlord",
+    "Ghalta the Unstoppable",
+    "Yoshimaru, Scrappy Stray",
+    "Stingerquill Voxmancer",
+    "Graft Surgeon",
+    "Protege's Awakening",
+    "Rampart Hunter",
+    "Greenhouse Propagator",
+    "Konstrari Improviser",
+    "Keeper of the Quiet Hour",
+    "Island"
+   ],
+   "taken": "Your Fate Ends Here",
+   "reasoning": "Your Fate Ends Here over Way of the Warlord and Yoshimaru: a very powerful removal that surveils; Yoshimaru (fight plus a 1/1) needs more setup; he would rather take more powerful cards early than Way of the Warlord, and maybe wheel the Warlord.",
+   "considered": {
+    "Yoshimaru, Scrappy Stray": "very strong fight spell plus a 1/1 but a bit worse and needs setup",
+    "Way of the Warlord": "fine, but he would rather take a more powerful card",
+    "Ghalta the Immovable": "likes the big green one better than the white one but loves neither"
+   },
+   "plan": "Red, flexible.",
+   "quotes": [
+    "I think your fate ends here is a very powerful card. Destroy a creature or planeswalker with mana value three or greater, surveil."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 3,
+   "time": "2:40-3:20",
+   "pack_cards": [
+    "Proctor of Potential",
+    "Command the Stage",
+    "Gallia, the Merrymaker",
+    "Fblthp, Knows the Way",
+    "Desperate Futurescribe",
+    "Hexhaven Battalion",
+    "Mindseeker Oculus",
+    "Silence the Echo",
+    "Solve for Disappointment",
+    "Eardrum Rattler",
+    "Greenhouse Propagator",
+    "Island"
+   ],
+   "taken": "Proctor of Potential",
+   "reasoning": "Proctor of Potential (blue-white gold) over Mindseeker Oculus, after wavering: it is very strong and he just took Your Fate Ends Here; none of the red cards are good, but taking it gives up the Ajani plan. Later he calls it a misstep: 'Oh, my kingdom for the Oculus. I've made a terrible mistake.'",
+   "considered": {
+    "Mindseeker Oculus": "fantastic; the pick that keeps blue-red; he later regrets passing it",
+    "Hexhaven Battalion": "also likes it"
+   },
+   "plan": "Torn between blue-white and red with Ajani.",
+   "quotes": [
+    "I think I'm just going to take the Proctor of Potential, be willing to give up on my Ajani, which is sad, but sometimes you got to do it.",
+    "Maybe a misstep with the Mindseeker Oculus pick."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 4,
+   "time": "3:20-4:09",
+   "pack_cards": [
+    "Fblthp, Impossibly Lost",
+    "Fblthp, Knows the Way",
+    "Hunter's Axe",
+    "Clash of Elements",
+    "Academic Ascent",
+    "Arcane Amphisbaena",
+    "Theorix Metamage",
+    "Twinned Vision",
+    "Afterthought Sentry",
+    "Murmuring Volume",
+    "Transformative Commons"
+   ],
+   "taken": "Clash of Elements",
+   "reasoning": "Clash of Elements, a great removal spell, back towards blue-red so the Ajani can be played; Fblthp is cutesy and not his favourite; Fblthp, Knows the Way he likes a lot as it goes by.",
+   "considered": {
+    "Fblthp, Impossibly Lost": "cutesy, hard to like without a way to attack; two mana 1/1 is a pretty big downside",
+    "Fblthp, Knows the Way": "likes it a lot"
+   },
+   "plan": "Blue-red again.",
+   "quotes": [
+    "we'll take Clash of Elements here. Maybe more move towards blue red. That would let me play my Ajani on relenting."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 5,
+   "time": "4:09-4:35",
+   "pack_cards": [
+    "Extrapolate the Impossible",
+    "Rewrite Regrets",
+    "Way of the Pyromancer",
+    "Graft Surgeon",
+    "Divining Duelist",
+    "Rank Rat",
+    "Tether Technician",
+    "Blessed Ghoul",
+    "Afterthought Sentry",
+    "Vigorbloom Annex"
+   ],
+   "taken": "Way of the Pyromancer",
+   "reasoning": "Way of the Pyromancer: pretty cool with an Ajani (a Jace taken up gives a 2/2 and mana); he wants to try it; he rates Rewrite Regrets fine but not his favourite and Rank Rat not for him. He says he has moved back towards red.",
+   "considered": {
+    "Rewrite Regrets": "fine, not his favourite",
+    "Rank Rat": "mentioned"
+   },
+   "plan": "Red, with blue.",
+   "quotes": [
+    "think way of the pyromancer is worth trying.",
+    "So, we've moved back towards red"
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 6,
+   "time": "4:35-5:30",
+   "pack_cards": [
+    "Extrapolate the Impossible",
+    "Ghalta the Immovable",
+    "Refute Destiny",
+    "Consign to Memory",
+    "Tomik, Izzet Sparkmage",
+    "Sphinx's Approach",
+    "Blazing Crescendo",
+    "Eardrum Rattler",
+    "Swamp"
+   ],
+   "taken": "Eardrum Rattler",
+   "reasoning": "Eardrum Rattler, a random red two-drop over Tomik, Izzet Sparkmage: Tomik does not block well; he hopes none of these cards make the deck; the Ghaltas are flying round the table but he does not rate them. A lesson to himself about Oculus: 'if this was a Mindseeker Oculus I'd feel a lot better'.",
+   "considered": {
+    "Tomik, Izzet Sparkmage": "not very good, a two-one prowess that does not block well",
+    "Blazing Crescendo": "a sideboard card, he plays best of one",
+    "Ghalta the Immovable": "does not think they are very good"
+   },
+   "plan": "Red.",
+   "quotes": [
+    "I'll just take a random two drop in red. Maybe set myself up a little bit. But none of these cards are hope I'm hoping none of these cards make my deck."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 7,
+   "time": "5:30-5:58",
+   "pack_cards": [
+    "Loyal Tutor",
+    "Essence Burn",
+    "Way of the Pyromancer",
+    "Flourishing Grapple",
+    "Campus Crier",
+    "Rampart Hunter",
+    "Living Library",
+    "Mountain"
+   ],
+   "taken": "Way of the Pyromancer",
+   "reasoning": "Way of the Pyromancer again: 'I really want to try a way of the pyromancer to see if it's good', and it ramps towards Ajani; Loyal Tutor can fetch the Ajani but is not very good; Campus Crier is good; red has felt open.",
+   "considered": {
+    "Loyal Tutor": "can go get the Ajani, not very good",
+    "Campus Crier": "good"
+   },
+   "plan": "Red, maybe blue.",
+   "quotes": [
+    "I really want to try a way of the pyromancer to see if it's good. And it does ramp me up towards an Ajani."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 8,
+   "time": "5:58-6:13",
+   "pack_cards": [
+    "Saheeli, Jewel of Avishkar",
+    "Grim Repriser",
+    "Campus Crier",
+    "Hallway Heckler",
+    "Ferocity of the Hunt",
+    "Murmuring Volume",
+    "Theorix Annex"
+   ],
+   "taken": "Saheeli, Jewel of Avishkar",
+   "reasoning": "Saheeli, Jewel of Avishkar: a bit of a mover down for him, but it works with mana ramp and Hallway Heckler; he takes it for now.",
+   "considered": {
+    "Campus Crier": "another in the pack"
+   },
+   "plan": "Blue-red.",
+   "quotes": [
+    "we'll just take the Saheeli for now."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 9,
+   "time": "6:13-6:38",
+   "pack_cards": [
+    "Hunter's Axe",
+    "Unsummon",
+    "Theoretical Necromancer",
+    "Tether Technician",
+    "Living Library",
+    "Plains"
+   ],
+   "taken": "Unsummon",
+   "reasoning": "Unsummon, which works great with the tempo start; and again 'Oh, my kingdom for the Oculus': the Oculus did not wheel.",
+   "considered": {
+    "Theoretical Necromancer": "in the pack"
+   },
+   "plan": "Blue-red.",
+   "quotes": [
+    "Unsummon works great with this kind of tempo start that we have.",
+    "Oh, my kingdom for the Oculus. I've made a terrible mistake."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 10,
+   "time": "6:38-7:00",
+   "pack_cards": [
+    "Ghalta the Immovable",
+    "Protege's Awakening",
+    "Rampart Hunter",
+    "Keeper of the Quiet Hour",
+    "Island"
+   ],
+   "taken": "Protege's Awakening",
+   "reasoning": "Protege's Awakening over Keeper of the Quiet Hour (Keeper may be good with Way of the Pyromancer as a non-creature but he has not loved it); the Gas wheels around the table.",
+   "considered": {
+    "Keeper of the Quiet Hour": "may be good with Way of the Pyromancer, not loved"
+   },
+   "plan": "Blue-red.",
+   "quotes": [
+    "Now, we get a Protege's awakening."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 11,
+   "time": "7:00-7:13",
+   "pack_cards": [
+    "Gallia, the Merrymaker",
+    "Solve for Disappointment",
+    "Eardrum Rattler",
+    "Island"
+   ],
+   "taken": "Eardrum Rattler",
+   "reasoning": "Eardrum Rattler over Gallia, the Merrymaker: he does not love Rattler but thinks Gallia is not very good either; two of the three red cards from that pack wheeled.",
+   "considered": {
+    "Gallia, the Merrymaker": "not very good"
+   },
+   "plan": "Blue-red.",
+   "quotes": [
+    "I don't love Eardrum Rattler, but I don't think Gallia is very good either. I think I'd rather have the Eardrum Rattler."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 12,
+   "time": "7:13-7:25",
+   "pack_cards": [
+    "Fblthp, Impossibly Lost",
+    "Hunter's Axe",
+    "Twinned Vision"
+   ],
+   "taken": "Twinned Vision",
+   "reasoning": "Twinned Vision over Fblthp: Fblthp is better in more aggressive decks, Twinned Vision with things like Saheeli; Saheeli works well with Ajani.",
+   "considered": {
+    "Fblthp, Impossibly Lost": "better if you are doing more aggressive attacky things"
+   },
+   "plan": "Blue-red.",
+   "quotes": [
+    "So, I think I'll take the twin vision."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 13,
+   "time": "7:25-7:32",
+   "pack_cards": [
+    "Afterthought Sentry",
+    "Tether Technician"
+   ],
+   "taken": "Tether Technician",
+   "reasoning": "Tether Technician over Afterthought Sentry: it survives through his Ajani (the Cadet tokens are not hurt by the minus three).",
+   "considered": {
+    "Afterthought Sentry": "the alternative"
+   },
+   "plan": "Blue-red.",
+   "quotes": [
+    "I'll take the technician. It survives through my Ajani, which is nice."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 14,
+   "time": "7:32-7:35",
+   "pack_cards": [
+    "unreadable (last card never displayed; one of the nine cards of the pick-6 pack)"
+   ],
+   "taken": null,
+   "reasoning": "Last card auto-selected and never shown: taken is unknown (it is one of the cards of the pick-6 pack).",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 1,
+   "time": "7:35-8:25",
+   "pack_cards": [
+    "Garruk, Veiled Butcher",
+    "Garruk, Curse Breaker",
+    "Stinging Vitriol",
+    "Essence Burn",
+    "Tetsuko Umezawa, Pursuer",
+    "Desperate Futurescribe",
+    "Semester Foreseer",
+    "Sphinx's Approach",
+    "Screeching Soulbreaker",
+    "Budding Insurgent",
+    "Blessed Ghoul",
+    "Konstrari Improviser",
+    "Afterthought Sentry",
+    "Dedicated Commons"
+   ],
+   "taken": "Garruk, Veiled Butcher",
+   "reasoning": "Garruk, Veiled Butcher over every blue-red option: incredibly powerful, 'such a messed up card'; he gives up Protege's Awakening and Unsummon and will try to splash; it is still pack two and black can still come. The alternative for his blue-red deck was nothing great (Tetsuko, Konstrari).",
+   "considered": {
+    "Garruk, Curse Breaker": "the other Garruk, not his colour",
+    "Tetsuko Umezawa, Pursuer": "not even a great card for him",
+    "Konstrari Improviser": "same"
+   },
+   "plan": "Bold: red-black with a little blue.",
+   "quotes": [
+    "Can I just play the Garruk? I might just go for the bold play here and just take Garruk and try to play red black and then get a little blue in there.",
+    "this card is really strong and it is still pack two."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 2,
+   "time": "8:25-8:50",
+   "pack_cards": [
+    "Solitary Cell",
+    "Traxos, Academy Guardian",
+    "Teyo, Diamondblade Mage",
+    "Violent Echoes",
+    "Fatehold Charm",
+    "Traxos, Scourge Eternal",
+    "Surveillance Phantasm",
+    "Skilled Battlecarver",
+    "Blessed Ghoul",
+    "Twinned Vision",
+    "Keeper of the Quiet Hour",
+    "Medic's Kitesail",
+    "Forest"
+   ],
+   "taken": "Violent Echoes",
+   "reasoning": "Violent Echoes, a really good kill spell that also empowers Jace; he is now taking black cards and may play red-black splashing blue; he passes a blue-black land and Traxos.",
+   "considered": {
+    "Traxos, Academy Guardian": "also fantastic; he passes it here and takes it next pick"
+   },
+   "plan": "Red-black, splash blue.",
+   "quotes": [
+    "And now I just get Violent Echoes really good kill spell that also empowers Jace.",
+    "now I'm just going to take black cards and maybe try to play a black red deck."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 3,
+   "time": "8:50-9:16",
+   "pack_cards": [
+    "Teyo, Lightshield Expert",
+    "Traxos, Academy Guardian",
+    "Teyo, Diamondblade Mage",
+    "Fatehold Charm",
+    "Primal Witchstalker",
+    "Academic Ascent",
+    "Undulating Witness",
+    "Cast Away Doubt",
+    "Chandra's Emberling",
+    "Konstrari Improviser",
+    "Tam's Resistance",
+    "Formidable Commons"
+   ],
+   "taken": "Traxos, Academy Guardian",
+   "reasoning": "Traxos, Academy Guardian: he sticks to his blue-red deck and takes the very strong card; if the black path appears he will go for it; he could just not play the Garruk.",
+   "considered": {
+    "Konstrari Improviser": "in the pack",
+    "Undulating Witness": "mentioned"
+   },
+   "plan": "Blue-red, black option open.",
+   "quotes": [
+    "I'm just going to take the Traxos. I'll just stick to my blue red deck. And if the black path presents itself, we'll go for it maybe. This card's just so good."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 4,
+   "time": "9:16-10:04",
+   "pack_cards": [
+    "Geist of Saint Thalia",
+    "Plan for All Outcomes",
+    "Way of the Cryomancer",
+    "Massacre Girl, Most Wanted",
+    "Grim Repriser",
+    "Surveillance Phantasm",
+    "Rampart Hunter",
+    "Skilled Battlecarver",
+    "Inspired Tethermage",
+    "Charge the Sanctum",
+    "Konstrari Annex"
+   ],
+   "taken": "Plan for All Outcomes",
+   "reasoning": "Plan for All Outcomes: lots of empowering, goes well with Way of the Pyromancer as a way to reset his Jace over and over; Way of the Cryomancer could be good in this deck. He thinks this will be a really good blue-red deck and regrets the Proctor pick a little.",
+   "considered": {
+    "Way of the Cryomancer": "could be good in this deck",
+    "Geist of Saint Thalia": "in the pack"
+   },
+   "plan": "Blue-red.",
+   "quotes": [
+    "I think this is going to be a really good blue red deck.",
+    "Plan for all outcomes. Gives me a lot of empowering."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 5,
+   "time": "10:04-10:26",
+   "pack_cards": [
+    "Generous Revival",
+    "Tomik, Izzet Sparkmage",
+    "Stingerquill Charm",
+    "Mind Meanderer",
+    "Academic Ascent",
+    "Icy Reception",
+    "Theoretical Necromancer",
+    "Awaken the Inferno",
+    "Sureshot Sower",
+    "Swamp"
+   ],
+   "taken": "Awaken the Inferno",
+   "reasoning": "Awaken the Inferno over Stingerquill Charm (a counter-magic charm) and Mind Meanderer: another five-drop that is pretty strong; he will not tank the whole draft for a Garruk.",
+   "considered": {
+    "Stingerquill Charm": "counter magic thing",
+    "Mind Meanderer": "not discussed"
+   },
+   "plan": "Blue-red.",
+   "quotes": [
+    "I think awaken the Inferno is pretty strong.",
+    "I don't think I'm going to tank my whole draft for a Garruk."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 6,
+   "time": "10:26-10:48",
+   "pack_cards": [
+    "Teyo, Lightshield Expert",
+    "Hexhaven Dueling Arena",
+    "Unsummon",
+    "Void Extrapolator",
+    "Vinelasher Adept",
+    "Ferocity of the Hunt",
+    "Charge the Sanctum",
+    "Keeper of the Quiet Hour",
+    "Plains"
+   ],
+   "taken": "Unsummon",
+   "reasoning": "Unsummon (second copy): he would cap himself at two Unsummons with some card draw and empower Jace; he does not love Keeper of the Quiet Hour; Tether Technician is too much card disadvantage in an Unsummon deck.",
+   "considered": {
+    "Keeper of the Quiet Hour": "does not love it"
+   },
+   "plan": "Blue-red tempo.",
+   "quotes": [
+    "I think I would kind of cap myself at two unsummons, but I think two is fine, especially when I have some card draw and some empower Jace."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 7,
+   "time": "10:48-11:16",
+   "pack_cards": [
+    "Gallia, the Merrymaker",
+    "Desperate Futurescribe",
+    "Undulating Witness",
+    "Heartstring Puller",
+    "Vinelasher Adept",
+    "Emergency Phytomedic",
+    "Room of Refuge",
+    "Innovative Commons"
+   ],
+   "taken": "Innovative Commons",
+   "reasoning": "Innovative Commons (blue-red land) over Heartstring Puller: he will have lots of planeswalkers so it enters untapped; Heartstring Puller is probably his second pick, then Room of Refuge, but he likes getting the land.",
+   "considered": {
+    "Heartstring Puller": "solid, probably second pick",
+    "Room of Refuge": "also considered"
+   },
+   "plan": "Blue-red.",
+   "quotes": [
+    "Boom. Now we get a blue red land. I'm going to take that over the heartstring puller.",
+    "I'm going to have a lot of planeswalkers, so it'll come in untapped a lot of the time."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 8,
+   "time": "11:16-11:38",
+   "pack_cards": [
+    "Prudent Fateseer",
+    "Traxos, Scourge Eternal",
+    "Protege's Awakening",
+    "Budding Insurgent",
+    "Keeper of the Quiet Hour",
+    "Murmuring Volume",
+    "Stingerquill Annex"
+   ],
+   "taken": "Stingerquill Annex",
+   "reasoning": "Stingerquill Annex, a black-red land: he does not want Prudent Fateseer in this deck and does not care about Keeper or Protege; the black deck is back on the menu; 'maybe blue white was open'.",
+   "considered": {
+    "Prudent Fateseer": "does not want to play it in this deck",
+    "Protege's Awakening": "does not care about it"
+   },
+   "plan": "Red-black or blue-red.",
+   "quotes": [
+    "Maybe I go for the Stingerquill Annex. Black deck back on the menu."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 9,
+   "time": "11:38-11:54",
+   "pack_cards": [
+    "Essence Burn",
+    "Desperate Futurescribe",
+    "Sphinx's Approach",
+    "Screeching Soulbreaker",
+    "Afterthought Sentry",
+    "Dedicated Commons"
+   ],
+   "taken": "Dedicated Commons",
+   "reasoning": "Dedicated Commons (white-red land) in case he wants to splash Proctor of Potential; he does not want Sphinx's Approach; he is pretty locked into red.",
+   "considered": {
+    "Sphinx's Approach": "certainly does not want it"
+   },
+   "plan": "Red base.",
+   "quotes": [
+    "At this point, I think I'm pretty locked into red.",
+    "Maybe I'll just take the white land in case I want to splash the proctor of potential or something."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 10,
+   "time": "11:54-12:13",
+   "pack_cards": [
+    "Fatehold Charm",
+    "Skilled Battlecarver",
+    "Twinned Vision",
+    "unreadable (hidden by a hover popup)",
+    "unreadable (hidden by a hover popup)"
+   ],
+   "taken": "Skilled Battlecarver",
+   "reasoning": "Skilled Battlecarver, a two-drop: he needs a two-drop creature and already has one Twinned Vision; 'if way of the pyromancer isn't good this draft is not going well'. Blue-white may have been open and he was blinded by red cards.",
+   "considered": {
+    "Twinned Vision": "already has one",
+    "Fatehold Charm": "in the pack"
+   },
+   "plan": "Red base.",
+   "quotes": [
+    "I think I need a two drop creature. I already have one twin vision."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 11,
+   "time": "12:13-12:30",
+   "pack_cards": [
+    "Teyo, Diamondblade Mage",
+    "Academic Ascent",
+    "Cast Away Doubt",
+    "Formidable Commons"
+   ],
+   "taken": "Formidable Commons",
+   "reasoning": "Formidable Commons, a random land he will not use; Eardrum Rattler is looking more likely to make the cut.",
+   "considered": {},
+   "plan": "Red.",
+   "quotes": [
+    "Okay, I'll just take my random land that I'm not going to use."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 12,
+   "time": "12:30-12:44",
+   "pack_cards": [
+    "Way of the Cryomancer",
+    "Grim Repriser",
+    "Konstrari Annex"
+   ],
+   "taken": "Grim Repriser",
+   "reasoning": "Grim Repriser over Way of the Cryomancer: he is never playing Cryomancer, and his black deck is back on the menu. 'Garruk, get in. Oh my gosh I feel so smart now.'",
+   "considered": {
+    "Way of the Cryomancer": "never playing it",
+    "Konstrari Annex": "another green splash card he does not need"
+   },
+   "plan": "Red-black.",
+   "quotes": [
+    "I kind of want to just take Grim Repriser. Yeah, my black deck is back on the menu."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 13,
+   "time": "12:44-12:50",
+   "pack_cards": [
+    "Theoretical Necromancer",
+    "Swamp"
+   ],
+   "taken": "Theoretical Necromancer",
+   "reasoning": "Theoretical Necromancer over a Swamp; no comment on the pick; the take is confirmed by the pool at P3p1.",
+   "considered": {},
+   "plan": "Red-black.",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 14,
+   "time": "12:50-12:54",
+   "pack_cards": [
+    "unreadable (last card never displayed; one of the nine cards of the pick-6 pack)"
+   ],
+   "taken": null,
+   "reasoning": "Last card auto-selected and never shown: taken is unknown (it is one of the cards of the pick-6 pack).",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 1,
+   "time": "12:54-13:26",
+   "pack_cards": [
+    "Overwrite the Multiverse",
+    "Prophesied End",
+    "Tomik, Orzhov Lawmage",
+    "Gallia, Tragic Host",
+    "Multiply by Zero",
+    "Tomik, Izzet Sparkmage",
+    "Hexhaven Battalion",
+    "Infinite Coursework",
+    "Sphinx's Approach",
+    "Silence the Echo",
+    "Skilled Battlecarver",
+    "Bestial Incursion",
+    "Ferocity of the Hunt",
+    "Meticulous Commons"
+   ],
+   "taken": "Overwrite the Multiverse",
+   "reasoning": "Overwrite the Multiverse: very strong; opening two black mythics can jump you into a colour. He decides to go back into black and splash blue for one or two cards; he will be short on playables a little but can play random cards; crazy top end from the rares.",
+   "considered": {
+    "Tomik, Orzhov Lawmage": "in the pack",
+    "Multiply by Zero": "in the pack"
+   },
+   "plan": "Red-black, splash blue.",
+   "quotes": [
+    "I think overwrite the multiverse is very strong. Opening two black mythics can really jump you into a color, can't it?",
+    "I'm just going to go back into black now, which is kind of crazy. Kind of works. And then I try to splash blue for like one or two cards."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 2,
+   "time": "13:26-14:06",
+   "pack_cards": [
+    "Cruel Calculations",
+    "Winter, Tormented Loner",
+    "Winter, Team Player",
+    "Ruric Thar, Magecrusher",
+    "Desperate Futurescribe",
+    "Grim Repriser",
+    "Surveillance Phantasm",
+    "Extended Absence",
+    "Heartstring Puller",
+    "Vinelasher Adept",
+    "Fatehold Chronologist",
+    "Room of Refuge",
+    "Mountain"
+   ],
+   "taken": "Extended Absence",
+   "reasoning": "Extended Absence over Winter, Tormented Loner and Heartstring Puller: it makes the Grim Repriser he has better (like a No Admittance); Winter is not good in the deck because the planeswalkers should stay and there is little non-combat damage; he also tries to wheel the second Grim Repriser, and it does come back.",
+   "considered": {
+    "Winter, Tormented Loner": "not as good in a deck that wants to keep its planeswalkers and has no non-combat damage",
+    "Grim Repriser": "tries to wheel it; it comes back at pick 10",
+    "Warrior's Blades": "good, not for him right now"
+   },
+   "plan": "Red-black.",
+   "quotes": [
+    "we're just going to take the absence, which will actually make the current Grim Repriser we have better. Oh, yeah. Like a no admittance."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 3,
+   "time": "14:06-14:20",
+   "pack_cards": [
+    "Thalia, the Survivor",
+    "Marwyn, the Clearcutter",
+    "Marwyn, the Preserver",
+    "Theorix Charm",
+    "Warrior's Blades",
+    "Archive Arbiter",
+    "Campus Crier",
+    "Awaken the Inferno",
+    "No Admittance",
+    "Fatehold Chronologist",
+    "Afterthought Sentry",
+    "Fatehold Annex"
+   ],
+   "taken": "No Admittance",
+   "reasoning": "No Admittance over Warrior's Blades and the rest of the pack: 'warriors blades is good, but not for me right now'. He says the deck has really gone through the wringer; some blue cards would help but he does not currently have the fixing.",
+   "considered": {
+    "Warrior's Blades": "good, not for him right now"
+   },
+   "plan": "Red-black splashing blue.",
+   "quotes": [
+    "Warriors Blades is good, but not for me right now.",
+    "I think some blue cards would make this deck go a little better, but we don't currently have the fixing for them."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 4,
+   "time": "14:20-15:02",
+   "pack_cards": [
+    "Splinter Twin",
+    "Tenured Tethermage",
+    "Essence Burn",
+    "Gallia, the Merrymaker",
+    "Pia, Determined Rebuilder",
+    "Pia, Aether Ascetic",
+    "Primal Witchstalker",
+    "Bestial Incursion",
+    "Whiplash Wordsmith",
+    "Keeper of the Quiet Hour",
+    "Stingerquill Annex"
+   ],
+   "taken": "Pia, Determined Rebuilder",
+   "reasoning": "Pia, Determined Rebuilder over a land (which would make the blue splash easier): the really good card in his colours; he would have tried the Splinter Twin combo with a blue card if he had it earlier; the draft was weird and with an exact finishing point he could have had a better deck.",
+   "considered": {
+    "Splinter Twin": "super cool, one blue card combos with it; he would have tried it earlier",
+    "Stingerquill Annex": "the land option"
+   },
+   "plan": "Red-black splashing blue.",
+   "quotes": [
+    "Let's just take the really good card for my deck in my colors before we go too deep off the deep end here.",
+    "this was a weird draft. If I had known my exact finishing point, I could have ended up with a better deck."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 5,
+   "time": "15:02-15:25",
+   "pack_cards": [
+    "Tetsuko Umezawa, Fugitive",
+    "Edgar, Moonlit Sovereign",
+    "Heartwood Crafter",
+    "Edgar, Ancient Bloodlord",
+    "Graft Surgeon",
+    "Hexhaven Battalion",
+    "Semester Foreseer",
+    "Sphinx's Approach",
+    "Konstrari Improviser",
+    "Forest"
+   ],
+   "taken": "Konstrari Improviser",
+   "reasoning": "Konstrari Improviser, a two-drop that ramps, over Hexhaven Battalion (which could be a landcycler in his deck): not great, but fine.",
+   "considered": {
+    "Hexhaven Battalion": "could just be a land cycler in his deck",
+    "Tetsuko Umezawa, Fugitive": "in the pack"
+   },
+   "plan": "Red-black splashing blue.",
+   "quotes": [
+    "There's the improviser. Two drop that ramps me. Um, yeah, we'll take it. It's not great"
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 6,
+   "time": "15:25-15:55",
+   "pack_cards": [
+    "Haunted Ridge",
+    "Gallia, the Merrymaker",
+    "Desperate Futurescribe",
+    "Solve for Disappointment",
+    "Void Extrapolator",
+    "Chandra's Emberling",
+    "Skilled Battlecarver",
+    "Sureshot Sower",
+    "Forest"
+   ],
+   "taken": "Haunted Ridge",
+   "reasoning": "Haunted Ridge (land) over Solve for Disappointment: every land makes the splash easier; the deck wants about eight black and eight red sources, so five Mountains and six Swamps leave room for a few blue lands.",
+   "considered": {
+    "Solve for Disappointment": "the alternative",
+    "Void Extrapolator": "in the pack"
+   },
+   "plan": "Red-black splashing blue.",
+   "quotes": [
+    "Every land we get makes it easier to splash our blue cards."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 7,
+   "time": "15:55-16:05",
+   "pack_cards": [
+    "Overgrown Farmland",
+    "Desperate Futurescribe",
+    "Craftwork Crusher",
+    "Shatterwing Pegasus",
+    "Heartstring Puller",
+    "Something Worth Saving",
+    "Wrecking Gecko",
+    "Mountain"
+   ],
+   "taken": "Heartstring Puller",
+   "reasoning": "Heartstring Puller over Craftwork Crusher: the solid card; he has a couple of green lands but would rather take the solid card; the draft was weird and the rares threw him for a loop.",
+   "considered": {
+    "Craftwork Crusher": "a couple of green lands, not his colours"
+   },
+   "plan": "Red-black splashing blue.",
+   "quotes": [
+    "I think we just take the solid card though."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 8,
+   "time": "16:05-16:22",
+   "pack_cards": [
+    "Edgar, Ancient Bloodlord",
+    "Hexhaven Battalion",
+    "Blazing Crescendo",
+    "Inspired Tethermage",
+    "Theorix Metamage",
+    "Medic's Kitesail",
+    "Plains"
+   ],
+   "taken": "Theorix Metamage",
+   "reasoning": "Theorix Metamage as a creature: his creature count seems low (nine creatures), so he does not want a combat trick; the take (Theorix Metamage) is inferred from the deck screen, he only says 'I guess this is just a black creature' and does not name it.",
+   "considered": {
+    "Blazing Crescendo": "combat trick, does not want it",
+    "Edgar, Ancient Bloodlord": "in the pack"
+   },
+   "plan": "Red-black splashing blue.",
+   "quotes": [
+    "My creature count seems low. Yeah, I have nine creatures, so I don't really want a combat trick."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 9,
+   "time": "16:22-16:35",
+   "pack_cards": [
+    "Tomik, Izzet Sparkmage",
+    "Sphinx's Approach",
+    "Silence the Echo",
+    "Skilled Battlecarver",
+    "Bestial Incursion",
+    "Meticulous Commons"
+   ],
+   "taken": "Silence the Echo",
+   "reasoning": "Silence the Echo, another kill spell: he has five two-drops already and does not need more.",
+   "considered": {},
+   "plan": "Red-black splashing blue.",
+   "quotes": [
+    "One, two, three, four, five, two drops. I kind of already have two drops. Let's get another kill spell."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 10,
+   "time": "16:35-16:50",
+   "pack_cards": [
+    "Winter, Team Player",
+    "Grim Repriser",
+    "Heartstring Puller",
+    "Room of Refuge",
+    "Mountain"
+   ],
+   "taken": "Room of Refuge",
+   "reasoning": "Room of Refuge (the land) over Heartstring Puller, Winter and the wheeled Grim Repriser (which is not great in the deck: few ways to ping the opponent).",
+   "considered": {
+    "Grim Repriser": "not looking that good in our deck, few ways to ping them",
+    "Heartstring Puller": "might be better"
+   },
+   "plan": "Red-black splashing blue.",
+   "quotes": [
+    "Let's just take the land honestly so that we can play our cards more."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 11,
+   "time": "16:50-16:57",
+   "pack_cards": [
+    "Marwyn, the Clearcutter",
+    "Awaken the Inferno",
+    "Fatehold Chronologist",
+    "Afterthought Sentry"
+   ],
+   "taken": "Awaken the Inferno",
+   "reasoning": "Awaken the Inferno, a second one: 'beautiful', the blue cards are back on the menu.",
+   "considered": {},
+   "plan": "Red-black splashing blue.",
+   "quotes": [
+    "Oh, beautiful. We get another awaken the inferno. Our blue cards are back on the menu."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 12,
+   "time": "16:57-17:00",
+   "pack_cards": [
+    "Essence Burn",
+    "Gallia, the Merrymaker",
+    "Stingerquill Annex"
+   ],
+   "taken": "Stingerquill Annex",
+   "reasoning": "Stingerquill Annex, the black-red land: 'and we got the stinger quill annex. Oh yeah.'",
+   "considered": {},
+   "plan": "Red-black splashing blue.",
+   "quotes": [
+    "And we got the stinger quillax. Oh yeah, this deck may be a bit of a pile, but it kind of got there."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 13,
+   "time": "17:00-17:10",
+   "pack_cards": [
+    "Sphinx's Approach",
+    "Forest"
+   ],
+   "taken": "Sphinx's Approach",
+   "reasoning": "Sphinx's Approach or Forest: the pick is not stated and Sphinx's Approach is inferred (the pack left Forest for the last pick).",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 14,
+   "time": "17:10-17:14",
+   "pack_cards": [
+    "Forest"
+   ],
+   "taken": "Forest",
+   "reasoning": "Last card, Forest, auto-selected.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  }
+ ]
+}
