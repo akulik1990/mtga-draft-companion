@@ -1,0 +1,101 @@
+games 552428, decks 126902, drafts 100076; decks with a splash flag 61340, single-colour splash 45678; skill missing 49
+main-colour string length of the splash decks (2 or 3 colours): {1: 37, 2: 14005, 3: 23923, 4: 7713}
+splash decks with a splashed card 34274: single-pip only 33550, with a double-pip 724; games 148497; drafts 28247
+sources of the splash colour (lands in deck): single-pip decks mean 2.64, double-pip decks mean 3.67; share 8+: 0.000 / 0.000; DP decks per source count: {0: 1, 1: 7, 2: 52, 3: 260, 4: 275, 5: 111, 6: 12, 7: 6}
+# Part (a): deck level. Outcome = deck win rate (points), weights = games, no game-count term; skill = user_game_win_rate_bucket of the deck's player.
+Spec A (primary): skill only. Spec B: skill + mean GIH WR of the deck's spells + lands in deck. Sources = lands in the deck producing the splash colour (basics incl. snow, colour list of others).
+
+### Spec A, all
+
+| term | win-rate points | SE (draft-clustered) | 95% interval | z | decks |
+|---|---|---|---|---|---|
+| slope per source, double-pip decks | +0.01 | 0.89 | [-1.72, +1.75] | +0.0 | 724 |
+| slope per source, single-pip decks (control) | -0.18 | 0.12 | [-0.41, +0.04] | -1.6 | 33550 |
+| slope difference (DP minus single-pip) | +0.18 | 0.90 | [-1.58, +1.94] | +0.2 | 34274 |
+| 8+ sources dummy | not estimable: decks with 8+ sources, double-pip 0, single-pip 6 (minimum 30 each) | | | | |
+
+### Spec A, half 0
+
+| term | win-rate points | SE (draft-clustered) | 95% interval | z | decks |
+|---|---|---|---|---|---|
+| slope per source, double-pip decks | +1.52 | 1.22 | [-0.87, +3.90] | +1.2 | 352 |
+| slope per source, single-pip decks (control) | -0.22 | 0.17 | [-0.54, +0.11] | -1.3 | 16741 |
+| slope difference (DP minus single-pip) | +1.71 | 1.24 | [-0.73, +4.15] | +1.4 | 17093 |
+| 8+ sources dummy | not estimable: decks with 8+ sources, double-pip 0, single-pip 0 (minimum 30 each) | | | | |
+
+### Spec A, half 1
+
+| term | win-rate points | SE (draft-clustered) | 95% interval | z | decks |
+|---|---|---|---|---|---|
+| slope per source, double-pip decks | -1.85 | 1.28 | [-4.36, +0.67] | -1.4 | 372 |
+| slope per source, single-pip decks (control) | -0.15 | 0.16 | [-0.47, +0.17] | -0.9 | 16809 |
+| slope difference (DP minus single-pip) | -1.70 | 1.29 | [-4.23, +0.82] | -1.3 | 17181 |
+| 8+ sources dummy | not estimable: decks with 8+ sources, double-pip 0, single-pip 6 (minimum 30 each) | | | | |
+
+### Spec B, all
+
+| term | win-rate points | SE (draft-clustered) | 95% interval | z | decks |
+|---|---|---|---|---|---|
+| slope per source, double-pip decks | +0.52 | 0.89 | [-1.23, +2.26] | +0.6 | 724 |
+| slope per source, single-pip decks (control) | +0.13 | 0.12 | [-0.10, +0.36] | +1.1 | 33550 |
+| slope difference (DP minus single-pip) | +0.32 | 0.89 | [-1.42, +2.06] | +0.4 | 34274 |
+| 8+ sources dummy | not estimable: decks with 8+ sources, double-pip 0, single-pip 6 (minimum 30 each) | | | | |
+
+## By player skill: good >= 0.60, average 0.52-0.58, weak < 0.52 (bucket); spec A (skill kept as control)
+
+### Spec A, good
+
+| term | win-rate points | SE (draft-clustered) | 95% interval | z | decks |
+|---|---|---|---|---|---|
+| slope per source, double-pip decks | +1.49 | 1.83 | [-2.10, +5.08] | +0.8 | 98 |
+| slope per source, single-pip decks (control) | -0.42 | 0.24 | [-0.89, +0.04] | -1.8 | 6561 |
+| slope difference (DP minus single-pip) | +2.02 | 1.78 | [-1.47, +5.51] | +1.1 | 6659 |
+| 8+ sources dummy | not estimable: decks with 8+ sources, double-pip 0, single-pip 0 (minimum 30 each) | | | | |
+
+### Spec A, average
+
+| term | win-rate points | SE (draft-clustered) | 95% interval | z | decks |
+|---|---|---|---|---|---|
+| slope per source, double-pip decks | -0.35 | 1.33 | [-2.95, +2.25] | -0.3 | 337 |
+| slope per source, single-pip decks (control) | -0.27 | 0.17 | [-0.60, +0.06] | -1.6 | 15236 |
+| slope difference (DP minus single-pip) | -0.06 | 1.34 | [-2.68, +2.57] | -0.0 | 15573 |
+| 8+ sources dummy | not estimable: decks with 8+ sources, double-pip 0, single-pip 0 (minimum 30 each) | | | | |
+
+### Spec A, weak
+
+| term | win-rate points | SE (draft-clustered) | 95% interval | z | decks |
+|---|---|---|---|---|---|
+| slope per source, double-pip decks | -0.62 | 1.52 | [-3.60, +2.36] | -0.4 | 289 |
+| slope per source, single-pip decks (control) | +0.13 | 0.21 | [-0.29, +0.55] | +0.6 | 11753 |
+| slope difference (DP minus single-pip) | -0.53 | 1.58 | [-3.62, +2.57] | -0.3 | 12042 |
+| 8+ sources dummy | not estimable: decks with 8+ sources, double-pip 0, single-pip 6 (minimum 30 each) | | | | |
+
+| good minus weak (independent groups, SE = hypot) | diff | SE | 95% interval |
+|---|---|---|---|
+| slope difference (DP minus single-pip) | +2.55 | 2.38 | [-2.11, +7.21] |
+| slope per source, double-pip decks | +2.11 | 2.38 | [-2.55, +6.78] |
+
+## Sensitivity (post hoc, labelled)
+
+### Spec A, Evolving Wilds counted as a source
+
+| term | win-rate points | SE (draft-clustered) | 95% interval | z | decks |
+|---|---|---|---|---|---|
+| slope per source, double-pip decks | +0.51 | 0.80 | [-1.05, +2.07] | +0.6 | 724 |
+| slope per source, single-pip decks (control) | -0.15 | 0.11 | [-0.35, +0.06] | -1.4 | 33550 |
+| slope difference (DP minus single-pip) | +0.64 | 0.81 | [-0.95, +2.23] | +0.8 | 34274 |
+| 8+ sources dummy | not estimable: decks with 8+ sources, double-pip 2, single-pip 25 (minimum 30 each) | | | | |
+
+### games-weighted mean deck win rate by source count (no model)
+
+| sources | SP decks | SP WR | DP decks | DP WR |
+|---|---|---|---|---|
+| 2 | 10361 | 55.30 | 52 | 55.33 |
+| 3 | 12014 | 54.64 | 260 | 53.82 |
+| 4 | 5209 | 54.47 | 275 | 52.83 |
+| 5 | 1154 | 54.13 | 111 | 55.37 |
+| 6 | 140 | 50.83 | 12 | 56.60 |
+| 7 | 27 | 57.98 | 6 | 48.15 |
+| 8 | 5 | 28.57 | 0 | - |
+| 9 | 0 | - | 0 | - |
+| 10+ | 1 | 0.00 | 0 | - |
