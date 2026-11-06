@@ -1,0 +1,56 @@
+{
+ "id": "n6sAkoTAN8w",
+ "time": "20:37-23:56 (build; no later change shown before 24:00)",
+ "main": {
+  "Void Extrapolator": 1,
+  "Master of Barbs": 1,
+  "Skilled Battlecarver": 4,
+  "Grim Repriser": 1,
+  "Hallway Heckler": 2,
+  "Koth, the Geomancer": 1,
+  "Pia, Determined Rebuilder": 1,
+  "Ingris Stingerquill": 1,
+  "Rampart Hunter": 1,
+  "Teyo, Diamondblade Mage": 1,
+  "Winter, Team Player": 2,
+  "Lich's Relic": 1,
+  "No Admittance": 1,
+  "Stingerquill Charm": 1,
+  "Fulminous Forte": 2,
+  "Way of the Warlord": 1,
+  "Extended Absence": 1
+ },
+ "lands": {
+  "Mountain": 9,
+  "Swamp": 7,
+  "Stingerquill Annex": 1
+ },
+ "sideboard": {
+  "Blossom-Blessed Angel": 1,
+  "Arni, Humble Scribe": 1,
+  "Void Extrapolator": 1,
+  "Cast Away Doubt": 1,
+  "Rampart Hunter": 1,
+  "Yargle, Glutton of Urborg": 2,
+  "Artifist Acumen": 1,
+  "Way of the Warlord": 1,
+  "Arni, Renowned Champion": 1,
+  "Ferocity of the Hunt": 1,
+  "Vraska, the Cutting Glare": 1,
+  "Konstrari Annex": 2,
+  "Charge the Sanctum": 1,
+  "Emergency Phytomedic": 1,
+  "Eye of Ugin": 1,
+  "Murmuring Volume": 1
+ },
+ "spells": 23,
+ "land_count": 17,
+ "landcyclers_in_main": [],
+ "colours": "R/b: red base, black second, no splash",
+ "notes": [
+  "Deck screen at t=1420 s (23:40), 40/40: 23 spells, Stingerquill Annex, 9 Mountain, 7 Swamp. The 16 basics are free, so 24 main non-basic cards + 18 sideboard cards = 42 takes (sideboard: 14 columns in the top row plus Eye of Ugin and Murmuring Volume; the Yargle and Konstrari Annex columns show two copies).",
+  "Count check against the picks: Skilled Battlecarver x4 (P1p3, P2p4, P3p4, P3p11), Hallway Heckler x2 (P1p8, P2p10), Fulminous Forte x2 (P2p2, P3p7), Winter x2 (P1p9, P2p3), Way of the Warlord x2 (P2p5, P3p8), Rampart Hunter x2 (P1p10, P2p9), Void Extrapolator x2 (P2p11, P3p5), Yargle Glutton x2 (P1p11, P3p13), Konstrari Annex x2 (P2p6, P2p12). Emergency Phytomedic and Charge the Sanctum are the only two cards not sourced from a seen pick: P2p13 and P2p14 (inferred).",
+  "He cuts every card and adds back the known-good ones: removal, two-drops, Pia, Teyo, Winter, then fills creatures. 'Sometimes adding the cards in over time can be pretty helpful.'",
+  "Final build: seven two-drops with one Void Extrapolator ('eight might be a bit much'), one Rampart Hunter, one Hallway Heckler first then a second in the last slot over Artifist Acumen and Cast Away Doubt, one Way of the Warlord, one extra Mountain over a Swamp for the red bias."
+ ]
+}
