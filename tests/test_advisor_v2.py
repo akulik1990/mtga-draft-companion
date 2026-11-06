@@ -358,3 +358,21 @@ def test_three_lanes_moves_a_share_to_the_triple(monkeypatch):
     assert out["UB"] == pytest.approx(0.4) and out["UBG"] == pytest.approx(0.4) and out["WU"] == 0.2
     monkeypatch.setattr(DraftAdvisorV2, "THREE_LANES", 0.0)
     assert a._three({"UB": 0.8, "WU": 0.2}) == {"UB": 0.8, "WU": 0.2}
+
+
+def test_splash_sources_switches(monkeypatch):
+    from companion.advisor_v2 import deckbuilder as db
+
+    plains = [{"name": f"P{i}", "mana_cost": "{1}{W}", "cmc": 2, "types": ["Creature"]} for i in range(10)]
+    single = {"name": "S", "mana_cost": "{3}{B}", "cmc": 4, "types": ["Creature"]}
+    double = {"name": "D", "mana_cost": "{4}{B}{B}", "cmc": 6, "types": ["Creature"]}
+    dual = {"name": "WB dual", "types": ["Land"], "colors": ["W", "B"]}
+    assert not db.splashable(double, "WU", "B")
+    # one splash card wants 3 sources: a dual and a landcycler leave 1 basic; lands only, 2
+    assert db.lands_for(plains + [single], "WU", [dual], "B", fixers=1)["Swamp"] == 1
+    monkeypatch.setattr(db, "SPLASH_LANDS_ONLY", True)
+    assert db.lands_for(plains + [single], "WU", [dual], "B", fixers=1)["Swamp"] == 2
+    monkeypatch.setattr(db, "DP_SPLASH_SOURCES", 7)
+    assert db.splashable(double, "WU", "B") and not db.splashable({**double, "mana_cost": "{4}{B}{R}"}, "WU", "B")
+    basics = db.lands_for(plains + [double], "WU", [dual], "B")
+    assert basics["Swamp"] == 6 and sum(basics.values()) == db.LANDS - 1

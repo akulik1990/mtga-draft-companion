@@ -44,6 +44,9 @@ MIN_BASICS_THREE = 4  # ...and of each colour of a three-colour deck
 MAX_SPLASH = 3  # splash cards; more and it is a third main colour
 MIN_SPLASH_CMC = 3  # splash late, impactful cards, not early drops
 MAX_SPLASH_BASICS = 4  # basics of the splash colour before the main colours suffer
+SPLASH_LANDS_ONLY = False  # lands_for: the splash colour's sources count lands only (no landcyclers or any-colour mana makers): a splash card is cast off lands (docs/b5-splash-cast-FRA.md, within deck)
+SPLASH_RULE_LANDS_ONLY = False  # the same for the splash colour choice and the fitted splash rule's fixing input (the rule was fit with mana makers counted: refit before relying on it)
+DP_SPLASH_SOURCES = 0  # allow a double-pip splash card ({4}{W}{W} splashed) and give the deck this many land sources of the colour; 0 = off. 7: P(2+ seen) matches P(1+ of 3) for a single-pip splash, turns 5-8 (docs/engine-comparison-2026-11-03.md)
 OWN_FIXING = True  # splash and three-colour rule inputs count fixing without basic landcyclers (colour_fixing); refit the rules when switching
 THREE_AT = 0.5  # go three colours when the fitted three rule gives at least this chance
 SPLASH_FORCE = False  # when the fitted rule says splash, splash even if the splash build scores below the plain pair
@@ -114,8 +117,10 @@ def lands_for(spells, lane, nonbasics=(), splash="", fixers=0, lands=None):
     if splash:
         n_splash = sum(1 for c in spells if not castable(c, lane))
         want = 0 if not n_splash else 3 if n_splash == 1 else 4
-        have = fixers + sum(1 for c in nonbasics if splash in (c.get("colors") or []) or not c.get("colors"))  # colourless nonbasics here tap for a chosen colour
-        splash_basics = max(0, want - have)
+        have = sum(1 for c in nonbasics if splash in (c.get("colors") or []) or not c.get("colors"))  # colourless nonbasics here tap for a chosen colour
+        splash_basics = max(0, want - have - (0 if SPLASH_LANDS_ONLY else fixers))
+        if DP_SPLASH_SOURCES and any(len(off_pips(c, lane)) >= 2 for c in spells if not castable(c, lane)):
+            splash_basics = max(splash_basics, DP_SPLASH_SOURCES - have)
     basics_n = (lands or LANDS) - len(nonbasics) - splash_basics
     total = sum(weight[c] for c in lane) or 1.0
     floor = MIN_BASICS if len(lane) == 2 else MIN_BASICS_THREE
@@ -149,7 +154,7 @@ def splash_features(pool, lane):
             if len(off) == 1:
                 for col in off[0]:
                     best[col] = max(best.get(col, 0.0), _wr(c, "All Decks"))
-    fix = colour_fixing(pool, lane)
+    fix = colour_fixing(pool, lane, splash=True)
     if not best:
         return -10.0, 0, len(on), None, 0, 0, cut, 0.0, 0
     col = max(best, key=lambda k: best[k] - cut + 0.5 * min(fix[k], 6))
@@ -165,9 +170,12 @@ def splash_features(pool, lane):
             float("removal" in config.tags(top)), min(int(top.get("cmc") or 0), 7))
 
 
-def colour_fixing(pool, lane):
+def colour_fixing(pool, lane, splash=False):
     """Sources per off-lane colour for the splash and three-colour rules. OWN_FIXING: lanes.pool_fixing (nonbasic lands by
-    colour, fetches, any-colour mana); off: the old count, which also took basic landcyclers as sources of every colour."""
+    colour, fetches, any-colour mana); off: the old count, which also took basic landcyclers as sources of every colour.
+    splash and SPLASH_RULE_LANDS_ONLY: lands only (the three-colour rule, which the picker reads too, keeps its count)."""
+    if splash and SPLASH_RULE_LANDS_ONLY:
+        pool = [c for c in pool if "Land" in (c.get("types") or [])]
     if OWN_FIXING:
         return {col: (0 if col in lane else n) for col, n in pool_fixing(pool).items()}
     fix = dict.fromkeys("WUBRG", 0)
@@ -232,11 +240,12 @@ def splash_chance(rule, pool, lane):
 
 
 def splashable(card, lane, splash):
-    """One off-colour pip, of the splash colour, on a card worth waiting for (3+ mana): the guides' splash rule."""
+    """One off-colour pip, of the splash colour, on a card worth waiting for (3+ mana): the guides' splash rule.
+    DP_SPLASH_SOURCES: two pips of the splash colour too (lands_for then gives the deck that many sources)."""
     if "Land" in (card.get("types") or []) or castable(card, lane) or (card.get("cmc") or 0) < MIN_SPLASH_CMC:
         return False
     off = off_pips(card, lane)
-    return len(off) == 1 and splash in off[0]
+    return (len(off) == 1 or (DP_SPLASH_SOURCES and len(off) == 2)) and all(splash in o for o in off)
 
 
 def needs(card, colour, lane):
