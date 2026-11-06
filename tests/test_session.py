@@ -100,3 +100,13 @@ def test_course_pool_takes_latest_draft():
                                    course("PremierDraft_B", [2, 3], "2026-02-01")]})
     assert course_pool(f"junk\n{line}\nmore") == ([2, 3], "PremierDraft_B")
     assert course_pool("no courses") == ([], None)
+
+
+def test_yardstick_is_deckmodel_v2_for_fra(monkeypatch):
+    from companion.advisor_v2 import config
+    from tools import deck_model
+    from tools.deck_model import DeckModel
+
+    monkeypatch.setattr(deck_model, "card_facts", lambda s: {})
+    assert DeckModel("FRA").m == config.fitted("FRA", "deckmodel_v2")
+    assert DeckModel("FRA").m.get("version") == 2

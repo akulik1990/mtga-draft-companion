@@ -253,7 +253,7 @@ def upstream_cache_dir(set_code):
     vendor = subprocess.run(["git", "-C", str(ROOT), "rev-parse", "HEAD:vendor/mtga_draft_17lands"], capture_output=True, text=True).stdout.strip()
     parts = [_sha(DATA_DIR / "Sets" / f"{set_code}_PremierDraft_All_Data.json"), vendor or "no-git",
              _sha(ROOT / "companion" / "mock.py"), _sha(ROOT / "companion" / "advisor_v2" / "deckbuilder.py"),
-             json.dumps([config.fitted(set_code, k) for k in ("deckmodel", "decks", "splash")], sort_keys=True),
+             json.dumps([config.fitted(set_code, k) for k in ("deckmodel", "deckmodel_v2", "decks", "splash")], sort_keys=True),
              json.dumps({k: v for k, v in config.resolve(set_code)[0].items() if k.startswith("deckbuilder.")}, sort_keys=True),
              str(UPSTREAM_CACHE_VERSION)]
     key = hashlib.sha256("|".join(parts).encode()).hexdigest()[:16]

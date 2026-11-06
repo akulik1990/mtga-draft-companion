@@ -67,7 +67,7 @@ OBJECTIVE = "model"  # "model": maximise the fitted deck model; "gihwr": GIH_SLO
 # contradict the card data, docs/engine-comparison-2026-11-03.md)
 GIH_SLOPE = 1.72  # deck WR points per +1 mean spell GIH WR (FRA decks of 100+ games players, 2026-11-05)
 SPLASH_TERM = 4.07  # WR points for a splash under "gihwr" (the deck model's splash term)
-MODEL = "deckmodel"  # fitted.json section of the deck model the builder maximises (the mock yardstick stays "deckmodel")
+MODEL = "deckmodel"  # fitted.json section of the deck model the builder maximises (the mock yardstick is deckmodel_v2 where the set has it, else deckmodel)
 SPLASH_AT = 0.5  # splash when the fitted splash rule gives at least this chance
 # Structure first (STRUCTURE): every category (creatures, removal, card advantage, evasion) and curve slot has a min,
 # best and max per pair from 60%+ players' decks (the "structure" section of the set's fitted.json, tools/deck_shapes.py).

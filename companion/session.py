@@ -534,7 +534,7 @@ def deckbuilder_basics():
 
 
 @lru_cache(maxsize=8)
-def _deck_model(set_code, section="deckmodel"):
+def _deck_model(set_code, section=None):
     import sys
     from pathlib import Path
 
