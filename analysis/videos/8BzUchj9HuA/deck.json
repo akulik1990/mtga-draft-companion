@@ -1,0 +1,60 @@
+{
+ "id": "8BzUchj9HuA",
+ "time": "26:00-33:35 (build; final 40/40 screen at 2012 s, 45/40 at 1640 s; cut-off 2020 s)",
+ "main": {
+  "Liliana the Faultless": 1,
+  "Surgical Precision": 1,
+  "Teyo, Lightshield Expert": 1,
+  "Unflinching Hortimancer": 1,
+  "Arcane Amphisbaena": 1,
+  "Carnivorous Cultivator": 1,
+  "Something Worth Saving": 1,
+  "Sureshot Sower": 1,
+  "Generous Revival": 1,
+  "Koth of the Homestead": 1,
+  "Memory Trap": 1,
+  "Pia, Aether Ascetic": 1,
+  "Simulacrum Shaper": 1,
+  "Prudent Fateseer": 2,
+  "Blossom-Blessed Angel": 1,
+  "Way of the Healer": 2,
+  "Bestial Incursion": 1,
+  "Twisted Fates": 2,
+  "Guiding Hydra": 1,
+  "Vinelasher Adept": 1
+ },
+ "lands": {
+  "Plains": 7,
+  "Swamp": 1,
+  "Forest": 7,
+  "Meticulous Commons": 1,
+  "Overgrown Farmland": 1
+ },
+ "sideboard": {
+  "Recursive Recruitment": 1,
+  "Primal Witchstalker": 1,
+  "Fateshaper Aspirant": 1,
+  "Innovative Commons": 1,
+  "Konstrari Annex": 1,
+  "Transformative Commons": 1,
+  "Afterthought Sentry": 1,
+  "Apex Witchstalker": 1,
+  "Ferocity of the Hunt": 1,
+  "Teyo, Diamondblade Mage": 1,
+  "Cast Away Doubt": 1,
+  "Restore with Empathy": 1,
+  "Titanbones, Towering Heart": 1
+ },
+ "spells": 23,
+ "land_count": 17,
+ "landcyclers_in_main": [
+  "Vinelasher Adept"
+ ],
+ "colours": "GW with a light black splash: Plains x7, Forest x7, Swamp x1, Meticulous Commons (white-black), Overgrown Farmland (green-black). Black cards: Twisted Fates x2; Cultivator and Vinelasher Adept fetch the Swamp / dual.",
+ "notes": [
+  "The 45/40 screen at 1640 s shows the cards he pulled aside (Ferocity of the Hunt, Afterthought Sentry, Pia, Restore with Empathy, Titanbones, Fateshaper Aspirant); the final 40/40 screen at 2012 s has Pia back in and the other five out.",
+  "26:30 cuts Restore with Empathy; 28:14 the first cut is Fateshaper Aspirant; Titanbones 'probably going to go'; 31:37 the Afterthought Sentry is cut ('I don't mind cutting another two drop'); creature count 15 before the last cuts.",
+  "26:43 the aim is one Swamp ('we have double green, double whites, and a swamp in there'); 24:20 four black sources for two cards plus the Cultivator makes five.",
+  "The sideboard row was never on screen: it is derived by accounting (every pick not in the 40; the picked Swamp (P1p14) is a free basic). P3p6, P3p10 and P3p12 are unknown picks and so three sideboard cards are not named; those three are not in the deck's 40."
+ ]
+}
