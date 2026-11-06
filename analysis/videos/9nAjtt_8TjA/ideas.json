@@ -1,0 +1,719 @@
+{
+ "video": "9nAjtt_8TjA",
+ "player": "NicolaiBolas",
+ "set": "FRA",
+ "source": "YouTube auto-caption transcript 0:00-16:05 (tools/video_draft.py transcript 9nAjtt_8TjA --start 0 --end 965), card names corrected against data/Sets/FRA_PremierDraft_All_Data.json; nothing past 16:05 read. 'type' marks each idea as claim, heuristic or one-off pick; 'repeats' lists ideas of earlier videos it restates, 'related' same card or topic with a different claim.",
+ "ideas": [
+  {
+   "id": "9nA-01",
+   "time": 57,
+   "phase": "draft",
+   "claim": "Mindseeker Oculus is a strong first pick (Empower Jace 4 is a lot of value and it is hard to deal with) over Memory Trap, Jiang Yanggu and Gideon the Oathless.",
+   "quote": "I've been very impressed with this card. It's just really irritating to deal with. Empower Jace 4 is just really a lot of value.",
+   "cards": [
+    "Mindseeker Oculus",
+    "Memory Trap",
+    "Jiang Yanggu, Never Alone",
+    "Gideon the Oathless"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR and ALSA of Mindseeker Oculus against Memory Trap and Jiang Yanggu, skill-split.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-37",
+    "CWs-38"
+   ]
+  },
+  {
+   "id": "9nA-02",
+   "time": 72,
+   "phase": "draft",
+   "claim": "Gideon the Oathless is a fun card but only does damage when the opponent enters or uses loyalty abilities against it; he ranks it behind Mindseeker Oculus, Memory Trap and Jiang Yanggu.",
+   "quote": "Gideon's kind of fun to try but like he's not doing anything crazy unless they try to kill him. And other than that, he's just a damage output thing.",
+   "cards": [
+    "Gideon the Oathless"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Gideon the Oathless by skill group against the other cards of the pack.",
+   "type": "claim",
+   "repeats": []
+  },
+  {
+   "id": "9nA-03",
+   "time": 84,
+   "phase": "draft",
+   "claim": "Variable Chaser is a solid three-mana 2/3 flier with prowess; the Ark of Fortune half only sometimes does something.",
+   "quote": "So just like a three mana 2/3 with prowess and flying is already just like a solid card. And then sometimes you'll cast Ark of Fortune and it'll do some stuff.",
+   "cards": [
+    "Variable Chaser"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Variable Chaser against other three-drop fliers.",
+   "type": "claim",
+   "repeats": [
+    "CWs-01"
+   ]
+  },
+  {
+   "id": "9nA-04",
+   "time": 98,
+   "phase": "draft",
+   "claim": "Cheap card draw that is decent late (Fblthp) is a good pick when the deck has fliers to connect with.",
+   "quote": "I think cheap plays that are decent late. This thing definitely decent late. I feel like flyers are really good. So that makes it easier to connect and draw some cards with this.",
+   "cards": [
+    "Fblthp, Impossibly Lost"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "Within-deck win rate of Fblthp by the number of fliers in the deck.",
+   "type": "heuristic",
+   "repeats": []
+  },
+  {
+   "id": "9nA-05",
+   "time": 130,
+   "phase": "draft",
+   "claim": "Emergency Phytomedic has some utility but is a low-impact card most of the time.",
+   "quote": "Feels like Phytomedic has some utility sometimes, but just kind of a low impact card a lot of the time as well.",
+   "cards": [
+    "Emergency Phytomedic"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Emergency Phytomedic relative to other uncommon creatures.",
+   "type": "claim",
+   "repeats": []
+  },
+  {
+   "id": "9nA-06",
+   "time": 160,
+   "phase": "draft",
+   "claim": "Do not move into a second colour early unless the card is crazy good; he stays mono-blue for now at P1p3.",
+   "quote": "I don't really want to dip into a second color is the thing, but it's not like I'm like sticking to blue for anything crazy good.",
+   "cards": [
+    "Way of the Wildspeaker"
+   ],
+   "kind": "colours / signals",
+   "engine_area": "lanes",
+   "test_idea": "Win rate of decks that stayed in one colour through pick 3 against those that moved, controlling for card quality.",
+   "type": "heuristic",
+   "repeats": []
+  },
+  {
+   "id": "9nA-07",
+   "time": 187,
+   "phase": "draft",
+   "claim": "Protege's Awakening is a really good card (Empower Jace 6 and draw a card) that he has been undervaluing; take it over Way of the Wildspeaker because it is cheaper and easier to use.",
+   "quote": "I think Protege's Awakening is a really good card and I have not been taking it highly enough. I'm just going to take the Protege's Awakening. It's a little cheaper, a little easier to use.",
+   "cards": [
+    "Protege's Awakening",
+    "Way of the Wildspeaker"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR and ALSA of Protege's Awakening against Way of the Wildspeaker.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-57",
+    "CWs-39",
+    "CWs-44"
+   ]
+  },
+  {
+   "id": "9nA-08",
+   "time": 205,
+   "phase": "draft",
+   "claim": "With nothing in colour, take the engine card that can run by itself (Koth of the Homestead gains life each landfall) over Campus Crier.",
+   "quote": "I might just take Koth of the Homestead. I like this card. It can like be kind of an engine all by itself. Gains you some life.",
+   "cards": [
+    "Koth of the Homestead",
+    "Campus Crier"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Koth of the Homestead in decks with 17 lands against Campus Crier.",
+   "type": "one-off pick",
+   "repeats": [],
+   "related": [
+    "mqZ-04",
+    "mqZ-36",
+    "mqZ-09"
+   ]
+  },
+  {
+   "id": "9nA-09",
+   "time": 232,
+   "phase": "draft",
+   "claim": "Arni, Humble Scribe is taken over Infinite Coursework for flexibility; he stays blue.",
+   "quote": "I also like Infinite Coursework, but I think Arni is a little bit better maybe. Just gives myself some flexibility.",
+   "cards": [
+    "Arni, Humble Scribe",
+    "Infinite Coursework"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Arni, Humble Scribe against Infinite Coursework.",
+   "type": "one-off pick",
+   "repeats": [],
+   "related": [
+    "mqZ-49"
+   ]
+  },
+  {
+   "id": "9nA-10",
+   "time": 259,
+   "phase": "draft",
+   "claim": "A two-drop flier (Tomik, Orzhov Lawmage) is taken over a great removal spell (Last Gasp) when a similar legend is already in the pool and the deck wants cheap evasive creatures.",
+   "quote": "I think it's between Last Gasp and Tomik. And since we already have the Koth, I think we're going to just take the Tomik. Two ones for two are just good when they have flying.",
+   "cards": [
+    "Tomik, Orzhov Lawmage",
+    "Last Gasp"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Tomik, Orzhov Lawmage against Last Gasp at pick 6.",
+   "type": "one-off pick",
+   "repeats": [],
+   "related": [
+    "n6s-12"
+   ]
+  },
+  {
+   "id": "9nA-11",
+   "time": 287,
+   "phase": "draft",
+   "claim": "Staying in colour through weaker picks is rewarded when the colour's good cards arrive (Desperate Futurescribe at P1p7): do not abandon a colour early.",
+   "quote": "Beautiful. We get a Desperate Futurescribe. We are off to the races. Getting really rewarded for kind of sticking to my guns here.",
+   "cards": [
+    "Desperate Futurescribe"
+   ],
+   "kind": "colours / signals",
+   "engine_area": "lanes",
+   "test_idea": "Does staying in the pick-1 to 3 colour raise the pick-7 colour match?",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "CWs-15"
+   ]
+  },
+  {
+   "id": "9nA-12",
+   "time": 308,
+   "phase": "draft",
+   "claim": "Protege's Awakening followed by Unsummon is a good line: draw several cards, then bounce a blocker to buy time.",
+   "quote": "It's nice when you can go like Protege's Awakening and then Unsummon. That's like a good little you draw a bunch of cards and then you bounce one of their things.",
+   "cards": [
+    "Unsummon",
+    "Protege's Awakening"
+   ],
+   "kind": "synergy",
+   "engine_area": "picker",
+   "test_idea": "Co-occurrence win rate of Unsummon with Protege's Awakening.",
+   "type": "one-off pick",
+   "repeats": [],
+   "related": [
+    "mqZ-64",
+    "mqZ-22"
+   ]
+  },
+  {
+   "id": "9nA-13",
+   "time": 340,
+   "phase": "draft",
+   "claim": "With only three white cards and no commitment, the land that keeps a green dip open is taken over Emergency Phytomedic.",
+   "quote": "We aren't committed fully to white. We only have three white cards. So yeah, let's take the land in case we want to dip into green.",
+   "cards": [
+    "Transformative Commons",
+    "Emergency Phytomedic"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Value of an early dual land by the number of splash-worthy cards that arrive later.",
+   "type": "heuristic",
+   "repeats": [
+    "CWs-12"
+   ],
+   "related": [
+    "mqZ-16"
+   ]
+  },
+  {
+   "id": "9nA-14",
+   "time": 383,
+   "phase": "draft",
+   "claim": "Late-pack playables he is unlikely to play (Eye of Jace, Sphinx's Approach) go in a speculative pile; they cost nothing when the alternative is a basic.",
+   "quote": "Going to put these in the speculative pile with the land. Sometimes you'll use this card.",
+   "cards": [
+    "Eye of Jace",
+    "Sphinx's Approach"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "How often wheel-pick speculative cards end up in the main deck.",
+   "type": "heuristic",
+   "repeats": [
+    "n6s-27"
+   ]
+  },
+  {
+   "id": "9nA-15",
+   "time": 413,
+   "phase": "draft",
+   "claim": "Prefers a proactive, aggressive drop (Tetsuko Umezawa, Fugitive) to a removal spell in the same pack when the deck is not short of interaction.",
+   "quote": "There's also a removal spell, but I'd rather just focus on being proactive than reactive right now.",
+   "cards": [
+    "Tetsuko Umezawa, Fugitive"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Tetsuko Umezawa, Fugitive against the removal spell of the same pack.",
+   "type": "one-off pick",
+   "repeats": [],
+   "related": [
+    "n6s-14"
+   ]
+  },
+  {
+   "id": "9nA-16",
+   "time": 432,
+   "phase": "draft",
+   "claim": "Blessed Ghoul combos with Arni, Humble Scribe: discard it repeatedly and get it back.",
+   "quote": "Blessed Ghoul is a bit of a combo with Arni. You just like keep discarding the Blessed Ghoul over and over and over.",
+   "cards": [
+    "Blessed Ghoul",
+    "Arni, Humble Scribe"
+   ],
+   "kind": "synergy",
+   "engine_area": "picker",
+   "test_idea": "Win rate of Blessed Ghoul in decks with Arni.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-18",
+    "CWs-26"
+   ]
+  },
+  {
+   "id": "9nA-17",
+   "time": 450,
+   "phase": "draft",
+   "claim": "Take every Mindseeker Oculus: it is so strong that extra copies are worth taking over the next-best card.",
+   "quote": "And now I think I'm just going to keep taking Mindseeker Oculuses whenever I see them. This card is so so strong.",
+   "cards": [
+    "Mindseeker Oculus"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of the second copy of Mindseeker Oculus in a deck.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "mqZ-37",
+    "mqZ-09"
+   ]
+  },
+  {
+   "id": "9nA-18",
+   "time": 455,
+   "phase": "draft",
+   "claim": "Only one Fateshaper Aspirant is wanted; a second copy does not make the deck even with several legendaries (later: definitely not more than one).",
+   "quote": "Another Fateshaper which I think I'll only stick with the one.",
+   "cards": [
+    "Fateshaper Aspirant"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "Second-copy value of Fateshaper Aspirant by the number of legendary creatures in the deck.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-21"
+   ]
+  },
+  {
+   "id": "9nA-19",
+   "time": 480,
+   "phase": "draft",
+   "claim": "Kindred Judgment is strong (choose a type and destroy everything else) but a seven-drop; Prudent Fateseer is taken over it because he surveils a lot and can bin the lands.",
+   "quote": "That's pretty strong, but it's a seven drop. And I'm going to be surveilling a lot. So I think I can surveil away those lands. And then Prudent Fateseer here just seems like a really good card for my deck.",
+   "cards": [
+    "Prudent Fateseer",
+    "Kindred Judgment"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Kindred Judgment and Prudent Fateseer by skill group.",
+   "type": "claim",
+   "repeats": [
+    "mqZ-08"
+   ]
+  },
+  {
+   "id": "9nA-20",
+   "time": 495,
+   "phase": "draft",
+   "claim": "One copy of each legendary is fine in a legend deck: Teyo, Lightshield Expert is taken over Cryotheory Adept, Blessed Ghoul and Twinned Vision.",
+   "quote": "Now we'll take Teyo over Cryotheory Adept. I don't have multiple copies of any legendary. Just like one copy of each one is pretty nice.",
+   "cards": [
+    "Teyo, Lightshield Expert",
+    "Cryotheory Adept"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Teyo, Lightshield Expert against Cryotheory Adept.",
+   "type": "one-off pick",
+   "repeats": []
+  },
+  {
+   "id": "9nA-21",
+   "time": 518,
+   "phase": "draft",
+   "claim": "Danitha, Sword of Hope needs equipment or targeting spells; a deck whose spells do not target should pass it.",
+   "quote": "Yeah, the works if I have equipment. I don't have any of those. But do I have any things to target? ... So my spells aren't the ones that are targeting really.",
+   "cards": [
+    "Danitha, Sword of Hope",
+    "Semester Foreseer"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "Win rate of Danitha, Sword of Hope by the number of equipment or targeting spells in the deck.",
+   "type": "claim",
+   "repeats": []
+  },
+  {
+   "id": "9nA-22",
+   "time": 545,
+   "phase": "draft",
+   "claim": "Repurposed Enforcer is a great proactive two-drop in an Empower Jace deck: every attack empowers Jace.",
+   "quote": "Repurposed Enforcer helps me be proactive. When I attack, I empower Jace. Great, great card. Really good two drop here.",
+   "cards": [
+    "Repurposed Enforcer"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Repurposed Enforcer in decks with at least three Empower Jace cards.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "n6s-12"
+   ]
+  },
+  {
+   "id": "9nA-23",
+   "time": 592,
+   "phase": "draft",
+   "claim": "Counting playables early (18 halfway through pack two) shows how much more selective he can be in the rest of the draft.",
+   "quote": "I've got 18 playables so far and it's only halfway through pack two.",
+   "cards": [],
+   "kind": "deck building",
+   "engine_area": "none",
+   "test_idea": "None; a process note.",
+   "type": "heuristic",
+   "repeats": [
+    "n6s-22"
+   ]
+  },
+  {
+   "id": "9nA-24",
+   "time": 618,
+   "phase": "draft",
+   "claim": "Traxos, Academy Guardian is a great pickup: a four-mana vigilance flier with prowess that gets cheaper after a noncreature spell.",
+   "quote": "Even as a four drop is pretty nice if I can put some counters on. It's just a huge vigilance flyer with prowess like that.",
+   "cards": [
+    "Traxos, Academy Guardian"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Traxos, Academy Guardian by deck archetype.",
+   "type": "claim",
+   "repeats": [
+    "mqZ-35"
+   ]
+  },
+  {
+   "id": "9nA-25",
+   "time": 632,
+   "phase": "draft",
+   "claim": "Unsummon is good in a tempo deck and can even protect his own Mindseeker Oculus by bouncing it.",
+   "quote": "Feel like this could be a perfect Unsummon deck. I could even balance my own Mindseeker Oculus.",
+   "cards": [
+    "Unsummon",
+    "Mindseeker Oculus"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "Win rate of Unsummon in decks with five or more ETB creatures.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-22",
+    "CWs-35"
+   ]
+  },
+  {
+   "id": "9nA-26",
+   "time": 645,
+   "phase": "draft",
+   "claim": "Kindred Judgment improves with a dominant creature type: he counts Scouts, Wizards and Humans before taking it, then leaves it out because of the seven mana cost.",
+   "quote": "Choose a creature type. Scout. How many scouts do I have? Two scouts. I have four wizards. I have eight humans.",
+   "cards": [
+    "Kindred Judgment"
+   ],
+   "kind": "synergy",
+   "engine_area": "picker",
+   "test_idea": "Win rate of Kindred Judgment by the share of the deck's creatures that are Humans.",
+   "type": "one-off pick",
+   "repeats": [],
+   "related": [
+    "mqZ-08"
+   ]
+  },
+  {
+   "id": "9nA-27",
+   "time": 667,
+   "phase": "draft",
+   "claim": "Plan for pack three: after two packs the deck is done; take one or two hard removal spells, then raise the power level through synergy.",
+   "quote": "So, this deck is done after two packs. I want like one or two hard removal spells, then just like boost my power level through synergy and such.",
+   "cards": [],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Share of pack-three picks by removal count among strong drafters.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "n6s-14",
+    "n6s-22"
+   ]
+  },
+  {
+   "id": "9nA-28",
+   "time": 677,
+   "phase": "draft",
+   "claim": "Plan for All Outcomes is taken over Blossom-Blessed Angel: any noncreature spell empowers Jace, and he already has several big four-mana fliers.",
+   "quote": "Anytime I cast a non-creature spell, I'll get to get my Jace going and then I can use that to surveil. Other than that, it's a Blossom-Blessed Angel and I already have a few big flyers already at four mana.",
+   "cards": [
+    "Plan for All Outcomes",
+    "Blossom-Blessed Angel"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Plan for All Outcomes against Blossom-Blessed Angel in blue decks.",
+   "type": "one-off pick",
+   "repeats": [],
+   "related": [
+    "n6s-05"
+   ]
+  },
+  {
+   "id": "9nA-29",
+   "time": 696,
+   "phase": "draft",
+   "claim": "Your Fate Ends Here (kill plus surveil) is taken over Ruric Thar, Biomagus: hard removal that surveils is what the deck wants.",
+   "quote": "Kill spell plus surveil. Just perfect card for my deck. There's a Ruric Thar, which I definitely would play as a giant flyer at the top end, but kill spell that surveils is just what my deck wants.",
+   "cards": [
+    "Your Fate Ends Here",
+    "Ruric Thar, Biomagus"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Your Fate Ends Here against Ruric Thar, Biomagus.",
+   "type": "claim",
+   "repeats": [
+    "mqZ-43"
+   ],
+   "related": [
+    "mqZ-14"
+   ]
+  },
+  {
+   "id": "9nA-30",
+   "time": 735,
+   "phase": "draft",
+   "claim": "Countersculpt is a good counter spell for an Empower Jace deck (it empowers Jace too); he cuts a clunky creature for it.",
+   "quote": "Seems like a good counter spell for my deck. I'll add the Countersculpt. I'll maybe cut the Semester Foreseer here.",
+   "cards": [
+    "Countersculpt",
+    "Semester Foreseer"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Countersculpt in decks with Empower Jace cards.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-10",
+    "CWs-29",
+    "CWs-34"
+   ]
+  },
+  {
+   "id": "9nA-31",
+   "time": 742,
+   "phase": "draft",
+   "claim": "At 16 creatures he is happy to cut a clunky creature: the curve has about six two-drops that can be played on turn two.",
+   "quote": "Creature count is at 16, so I feel okay about cutting a clunky creature. I have one, two, three, four, five, like six two drops that I can play on turn two pretty happily.",
+   "cards": [],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Creature count against win rate among two-colour decks.",
+   "type": "heuristic",
+   "repeats": [
+    "CWs-45"
+   ],
+   "related": [
+    "mqZ-52"
+   ]
+  },
+  {
+   "id": "9nA-32",
+   "time": 762,
+   "phase": "draft",
+   "claim": "Way of the Healer is a good four-mana card in a synergy deck: it makes a 2/2 and surveils, and it triggers his Empower payoffs.",
+   "quote": "Love Way of the Healer. Minus two, create a two two and surveil one for four mana. It's pretty good. And this triggers my synergy pieces, too.",
+   "cards": [
+    "Way of the Healer"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Way of the Healer in decks with Empower Jace cards.",
+   "type": "claim",
+   "repeats": []
+  },
+  {
+   "id": "9nA-33",
+   "time": 790,
+   "phase": "draft",
+   "claim": "A second Eye of Jace is not wanted (later: only one, you never really want multiples), and Way of the Cryomancer is skipped for having too few instants and sorceries.",
+   "quote": "Think only one Eye of Jace is probably where you want to be. You never really want multiples, I don't think.",
+   "cards": [
+    "Eye of Jace",
+    "Way of the Cryomancer"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "Win rate of decks with two Eye of Jace against one.",
+   "type": "claim",
+   "repeats": []
+  },
+  {
+   "id": "9nA-34",
+   "time": 817,
+   "phase": "draft",
+   "claim": "Shatterwing Pegasus (buffs the whole team) is taken over Hapatra, the Desert Frost after hesitating.",
+   "quote": "Maybe that's not right, though. Maybe I'd rather have the Pegasus. Let's take the Pegasus. I think buffing my whole team could be pretty good.",
+   "cards": [
+    "Shatterwing Pegasus",
+    "Hapatra, the Desert Frost"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Shatterwing Pegasus against Hapatra, the Desert Frost.",
+   "type": "one-off pick",
+   "repeats": [],
+   "related": [
+    "CWs-18"
+   ]
+  },
+  {
+   "id": "9nA-35",
+   "time": 823,
+   "phase": "draft",
+   "claim": "Icy Reception is not wanted in this deck; Tam's Resistance (draw, surveil, one-turn buff) is preferred.",
+   "quote": "I don't really want Icy Reception in this deck. And I think this card could be pretty good. Draws me a card and then surveils buffs one of my creatures temporarily.",
+   "cards": [
+    "Tam's Resistance",
+    "Icy Reception"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Icy Reception against Tam's Resistance in blue decks.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-55"
+   ]
+  },
+  {
+   "id": "9nA-36",
+   "time": 834,
+   "phase": "draft",
+   "claim": "With enough two-drops in the pool, take the bigger top-end card (Ruric Thar, Biomagus) over another two-drop (Surveillance Phantasm); a slightly more mid-range deck is fine.",
+   "quote": "I think I have enough two drops. I'm just going to take the Ruric Thar. I think getting a little bit more midrange is fine.",
+   "cards": [
+    "Ruric Thar, Biomagus",
+    "Surveillance Phantasm"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Marginal win rate of a seventh two-drop against a top-end flier.",
+   "type": "heuristic",
+   "related": [
+    "mqZ-14",
+    "mqZ-52",
+    "mqZ-59"
+   ]
+  },
+  {
+   "id": "9nA-37",
+   "time": 860,
+   "phase": "draft",
+   "claim": "Undulating Witness (basic landcycler) is not played in a two-colour deck with no splash.",
+   "quote": "I did get a land cycler, but I don't think I want to play it.",
+   "cards": [
+    "Undulating Witness"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "builder",
+   "test_idea": "Win rate of Undulating Witness in two-colour decks with no splash.",
+   "type": "one-off pick",
+   "repeats": [],
+   "related": [
+    "CWs-13",
+    "mqZ-66"
+   ]
+  },
+  {
+   "id": "9nA-38",
+   "time": 887,
+   "phase": "build",
+   "claim": "A deck with a full pool and many playables can keep the curve and cut the low-impact cards; he cuts Protege's Awakening, Tam's Resistance and a second Eye of Jace.",
+   "quote": "I think I'll just like keep my curve kind of looking like this generally speaking though and then cut some of the low impact cards like play one Eye of Jace to test. Don't need a Tam's Resistance I don't think.",
+   "cards": [
+    "Protege's Awakening",
+    "Tam's Resistance",
+    "Eye of Jace"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Win rate of low-impact cards in the 23rd slot against basics.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "CWs-41",
+    "CWs-45"
+   ]
+  },
+  {
+   "id": "9nA-39",
+   "time": 927,
+   "phase": "build",
+   "claim": "A deck with enough card draw and cheap spells can play fewer lands: he considers a build where a spell replaces a land (he shows 16 basics at 16:04).",
+   "quote": "I feel like I have card draw and stuff, so this will probably be better. And I can play this instead of a land.",
+   "cards": [],
+   "kind": "land count",
+   "engine_area": "builder",
+   "test_idea": "Win rate of 16-land decks with 6+ cheap card-draw spells against 17-land decks.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "5aM-22",
+    "uoy-32"
+   ]
+  }
+ ]
+}

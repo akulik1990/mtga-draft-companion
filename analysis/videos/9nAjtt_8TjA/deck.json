@@ -1,0 +1,57 @@
+{
+ "id": "9nAjtt_8TjA",
+ "time": "14:40-16:04 (build; screen read at 40/40 cards at 16:04, he is still deciding; nothing past 16:05 read)",
+ "main": {
+  "Unsummon": 2,
+  "Eye of Jace": 1,
+  "Repurposed Enforcer": 1,
+  "Teyo, Lightshield Expert": 1,
+  "Tomik, Orzhov Lawmage": 1,
+  "Cryotheory Adept": 2,
+  "Fblthp, Impossibly Lost": 1,
+  "Tetsuko Umezawa, Fugitive": 1,
+  "Countersculpt": 1,
+  "Koth of the Homestead": 1,
+  "Shatterwing Pegasus": 1,
+  "Your Fate Ends Here": 1,
+  "Arni, Humble Scribe": 1,
+  "Mindseeker Oculus": 2,
+  "Prudent Fateseer": 1,
+  "Way of the Healer": 1,
+  "Plan for All Outcomes": 1,
+  "Traxos, Academy Guardian": 1,
+  "Desperate Futurescribe": 2,
+  "Ruric Thar, Biomagus": 1
+ },
+ "lands": {
+  "Plains": 8,
+  "Island": 8
+ },
+ "sideboard": {
+  "Prophesied End": 1,
+  "Fateshaper Aspirant": 2,
+  "Kindred Judgment": 1,
+  "Sphinx's Approach": 2,
+  "Protege's Awakening": 1,
+  "Semester Foreseer": 1,
+  "Undulating Witness": 1,
+  "Inspired Tethermage": 1,
+  "Blessed Ghoul": 2,
+  "Transformative Commons": 1,
+  "Tam's Resistance": 1,
+  "Eye of Jace": 1
+ },
+ "spells": 24,
+ "land_count": 16,
+ "landcyclers_in_main": [],
+ "colours": "WU, no splash. Not a 17-land build: 24 spells and 8 Plains + 8 Island at 16:04.",
+ "notes": [
+  "The deck builder opened at 47/40 (30 spells, 17 basics: Plains 8, Island 9) at about 14:40; at 16:04 the screen shows 40/40: 24 spells and 16 basics. His cuts by then: Protege's Awakening, Tam's Resistance, both Fateshaper Aspirants, Undulating Witness and one Eye of Jace went to the sideboard, one Island came out.",
+  "14:34: 'we kind of have the world as our oyster. We could go more mid-rangey and play like Kindred Judgment. I think I'll just keep my curve kind of looking like this generally speaking though and then cut some of the low impact cards.' He plays one Eye of Jace to test ('only one Eye of Jace is probably where you want to be. You never really want multiples') and does not need Tam's Resistance.",
+  "14:51: counts seven cheap creatures but says Fblthp is 'not really a two drop'; 'Pegasus seems fine'. 15:06: 'I don't know if I need Protege's Awakening. I definitely don't want more than one Fateshaper Aspirant.'",
+  "15:27: 'Maybe I just go super aggro and do it like this. I feel like I have card draw and stuff, so this will probably be better. And I can play this instead of a land.' (a build with fewer lands; the final screen has 16 basics).",
+  "15:56: 'probably just cutting creatures here'; 16:04: 'There's so many decisions.' The build is not final in what he shows before the cut-off.",
+  "The saved record has the sideboard from the 16:04 screen (15 cards read) plus the three picked basics (Plains, Mountain, Swamp) that the builder hides; with the 24 main spells that is 15 + 3 + 24 = 42 picked cards; the 16 basics in the 40 are free ones.",
+  "Pool accounting: the 47-card screen at 14:44 shows 30 spells plus 17 free basics; the 30 spells are the 24 main spells plus Protege's Awakening, Tam's Resistance, Fateshaper Aspirant x2, Undulating Witness and the second Eye of Jace. The other 12 picks (Prophesied End, Kindred Judgment, Sphinx's Approach x2, Semester Foreseer, Inspired Tethermage, Blessed Ghoul x2, Transformative Commons, Plains, Mountain, Swamp) make 42. The picked basics are not visible on screen; their presence follows from the count."
+ ]
+}
