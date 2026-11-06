@@ -13,6 +13,8 @@ import { api, IDEA_STATUSES, type EngineDeck, type Idea, type IdeaStatus, type V
 	let showEng = $state(true);
 	let showTbl = $state(false);
 	let showPacks = $state(false);
+	let showTl = $state(true);
+	const setTl = () => { try { localStorage.setItem('videoTimeline', showTl ? '1' : '0'); } catch { /* private mode */ } };
 	const setPacks = () => { try { localStorage.setItem('videoPacks', showPacks ? '1' : '0'); } catch { /* private mode */ } };
 	const setEng = () => { try { localStorage.setItem('videoEngine', showEng ? '1' : '0'); } catch { /* private mode */ } };
 	let statusFilter = $state('');
@@ -66,6 +68,7 @@ import { api, IDEA_STATUSES, type EngineDeck, type Idea, type IdeaStatus, type V
 	onMount(async () => {
 		try { showEng = localStorage.getItem('videoEngine') !== '0'; } catch { /* default on */ }
 		try { showPacks = localStorage.getItem('videoPacks') === '1'; } catch { /* default closed */ }
+		try { showTl = localStorage.getItem('videoTimeline') !== '0'; } catch { /* default shown */ }
 		try { showTbl = localStorage.getItem('videoPicksTable') === '1'; } catch { /* default closed */ }
 		if (yt()?.Player) attach();
 		else {
@@ -95,6 +98,25 @@ import { api, IDEA_STATUSES, type EngineDeck, type Idea, type IdeaStatus, type V
 	const active = $derived(rows.reduce((a, { p }, i) => (p.time && secs(p.time) <= now ? i : a), -1));
 	let box = $state<HTMLElement>();
 	let playerBox = $state<HTMLElement>();
+	let col = $state<HTMLElement>();
+	let hd = $state<HTMLElement>();
+	let bar = $state<HTMLElement>();
+	let tl = $state(0); // desktop timeline box height in px: one tallest row, capped at 30vh
+	let top = $state(0); // px above the player: page offset + header + gap
+	function measure() {
+		if (!col || !hd || !bar) return;
+		const h = Math.max(0, ...[...(box?.querySelectorAll<HTMLElement>('[data-i]') ?? [])].map((r) => r.offsetHeight));
+		tl = showTl && box ? Math.floor(Math.min(h + 2, innerHeight * 0.3)) : 0; // +2 = box border
+		top = Math.ceil(col.getBoundingClientRect().top + scrollY + hd.offsetHeight + 12 + bar.offsetHeight + 4); // header + gap + toggle bar + gap
+	}
+	$effect(() => { // re-measure on load, resize, rewrap, toggles (rows/showEng/showPacks are read so the observer is rebuilt)
+		rows; showEng; showPacks; showTl;
+		if (!hd || !bar) return;
+		const ro = new ResizeObserver(measure);
+		for (const el of [hd, bar, ...(box ? [box, ...box.querySelectorAll('[data-i]')] : [])]) ro.observe(el);
+		measure();
+		return () => ro.disconnect();
+	});
 	let kick = $state(0); // bumped on a click so the box re-aligns even when the active row did not change
 	let pausedUntil = 0; // set by the user's own scrolling of the box
 	const hold = () => { pausedUntil = Date.now() + 4000; };
@@ -144,20 +166,22 @@ import { api, IDEA_STATUSES, type EngineDeck, type Idea, type IdeaStatus, type V
 {#if !data}
 	<p class="text-zinc-500">loading…</p>
 {:else}
-	<div class="col" style="--tl: {showEng ? '40vh' : '24vh'}">
-	<div class="mb-3 flex flex-wrap items-baseline gap-x-4 gap-y-1 text-sm">
+	<div bind:this={col} class="col" style={top ? `--tl: ${tl}px; --top: ${top}px` : ''}>
+	<div bind:this={hd} class="mb-3 flex justify-center flex-wrap items-baseline gap-x-4 gap-y-1 text-sm">
 		<a href="." class="text-zinc-400 hover:text-zinc-100">&larr; all videos</a>
 		<h1 class="text-lg font-semibold">{data.video.title}</h1>
 		<span class="text-zinc-400">{data.video.player} · {data.video.set}</span>
 		<label class="text-zinc-300"><input type="checkbox" bind:checked={showEng} onchange={setEng} /> Engine output</label>
-		<label class="text-zinc-300"><input type="checkbox" bind:checked={showPacks} onchange={setPacks} /> Packs open on all rows</label>
+		<label class="text-zinc-300"><input type="checkbox" bind:checked={showPacks} onchange={setPacks} /> Packs</label>
 {#if engine && showEng}<span class="text-zinc-500">v2 {engine.commit} ({engine.date}): top-1 {engine.top1}/{engine.n}, top-3 {engine.top3}/{engine.n}</span>{/if}
 	</div>
 
 	<section class="mb-6">
-		<div bind:this={playerBox} class="aspect-video w-full">
+		<div bind:this={playerBox} class="pw aspect-video w-full">
 			<iframe bind:this={frame} class="h-full w-full rounded" {src} title={data.video.title} allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
 		</div>
+		<div bind:this={bar} class="mb-1 text-xs"><button type="button" class="rounded px-1 py-0.5 text-zinc-300 hover:text-zinc-100" onclick={() => { showTl = !showTl; setTl(); }}>Timeline {showTl ? '▾' : '▸'}</button></div>
+		{#if showTl}
 		<div bind:this={box} role="list" onwheel={hold} ontouchmove={hold} class="tl relative max-h-[40vh] overflow-y-auto overflow-x-hidden rounded border border-zinc-800 text-xs">
 			{#each rows as { p, e }, i (key(p))}
 				{@const miss = showEng && !!e && e.top3[0]?.name !== p.taken}
@@ -170,8 +194,8 @@ import { api, IDEA_STATUSES, type EngineDeck, type Idea, type IdeaStatus, type V
 						<span class="text-sm font-medium break-words">{p.taken}</span>
 						{#if showEng && e && e.scored !== false}<span class={miss ? 'text-amber-400' : 'text-emerald-400'}>{miss ? `v2 ranked it #${e.his_rank ?? '?'}` : 'v2 agrees ✓'}</span>{/if}
 					</div>
-					<div class="mt-1 lg:flex lg:items-start lg:gap-3">
-					<div class="border-l-2 border-sky-700 pl-2 text-zinc-300 {showEng ? 'lg:w-[58%]' : 'lg:w-full'}">
+					<div class="mt-1 lg:flex lg:items-start lg:gap-6">
+					<div class="border-l-2 border-sky-700 pl-2 text-zinc-300 {showEng ? 'lg:w-[55%]' : 'lg:w-full'}">
 						<span class="font-semibold text-sky-400">{nick}</span>
 						{#if unquote(p.plan)}<div class="break-words"><span class="text-zinc-500">plan:</span> {unquote(p.plan)}</div>{/if}
 						{#if unquote(p.reasoning)}<div class="break-words">{unquote(p.reasoning)}</div>{/if}
@@ -179,7 +203,7 @@ import { api, IDEA_STATUSES, type EngineDeck, type Idea, type IdeaStatus, type V
 							{@const cons = Object.entries(p.considered)}
 							{@const inline = cons.length <= 3 && cons.every(([c, w]) => c.length + unquote(w).length <= 40)}
 							{#if inline}
-								<div class="break-words"><span class="text-zinc-500">considered:</span> {#each cons as [card, why], j}{#if j} · {/if}<span class="text-zinc-100">{card}</span>{unquote(why) ? `: ${unquote(why)}` : ''}{/each}</div>
+								<div class="break-words"><span class="text-zinc-500">considered:</span> {#each cons as [card, why], j}<span class="mr-2 inline-block">{#if j}<span class="mr-2 text-zinc-600">·</span>{/if}<span class="text-zinc-100">{card}</span>{unquote(why) ? `: ${unquote(why)}` : ''}</span>{/each}</div>
 							{:else}
 								<div class="text-zinc-500">considered:</div>
 								{#each cons as [card, why]}<div class="break-words"><span class="text-zinc-100">{card}</span>{unquote(why) ? `: ${unquote(why)}` : ''}</div>{/each}
@@ -187,12 +211,12 @@ import { api, IDEA_STATUSES, type EngineDeck, type Idea, type IdeaStatus, type V
 						{/if}
 					</div>
 					{#if showEng}
-<div class="mt-1 border-l-2 border-amber-600 pl-2 text-zinc-400 lg:mt-0 lg:w-[42%]">
+<div class="mt-1 border-l-2 border-amber-600 pl-2 text-zinc-400 lg:mt-0 lg:w-[45%]">
 						<span class="font-semibold text-amber-400">ENGINE</span>
 						{#if !e || e.scored === false}
 							<div>engine: not scored</div>
 						{:else}
-							<div class="break-words">{#each e.top3 as c, k}{#if k} · {/if}<span class={c.name === p.taken ? 'font-semibold text-emerald-400' : ''}>{k + 1}. {c.name} <span class="text-zinc-500 tabular-nums">{c.score.toFixed(1)}</span></span>{/each}</div>
+							<div class="break-words">{#each e.top3 as c, k}<span class="mr-2 inline-block">{#if k}<span class="mr-2 text-zinc-600">·</span>{/if}<span class={c.name === p.taken ? 'font-semibold text-emerald-400' : ''}>{k + 1}. {c.name} <span class="text-zinc-500 tabular-nums">{c.score.toFixed(1)}</span></span></span>{/each}</div>
 							{#if !inTop}<div class="break-words text-emerald-400">their card: rank {e.his_rank ?? '?'}, score {e.his_score?.toFixed(1) ?? '?'}</div>{/if}
 							{#if miss && e.his_score != null && e.top3[0]}<div class="text-amber-400">gap to #1: −{(e.top3[0].score - e.his_score).toFixed(1)}</div>{/if}
 							{#if e.reasons_top.length}<div class="break-words"><span class="text-zinc-500">why #1:</span> {e.reasons_top.join(' · ')}</div>{/if}
@@ -202,9 +226,9 @@ import { api, IDEA_STATUSES, type EngineDeck, type Idea, type IdeaStatus, type V
 </div>
 {/if}
 					</div>
-{#if p.pack_cards?.length}
+{#if showPacks && p.pack_cards?.length}
 						<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_noninteractive_element_interactions -->
-						<details class="mt-1 text-zinc-500" open={showPacks} onclick={(ev) => ev.stopPropagation()}>
+						<details class="mt-1 text-zinc-500" open onclick={(ev) => ev.stopPropagation()}>
 							<summary class="cursor-pointer">pack ({p.pack_cards.length})</summary>
 							<div class="break-words">{p.pack_cards.join(', ')}</div>
 						</details>
@@ -215,6 +239,7 @@ import { api, IDEA_STATUSES, type EngineDeck, type Idea, type IdeaStatus, type V
 			{/each}
 			<div class="h-[calc(40vh-4rem)] lg:h-[20vh]" aria-hidden="true"></div> <!-- lets the last rows reach the top of the box -->
 		</div>
+		{/if}
 	</section>
 	</div>
 
@@ -372,17 +397,20 @@ import { api, IDEA_STATUSES, type EngineDeck, type Idea, type IdeaStatus, type V
 {/if}
 
 <style>
-	/* desktop: one centred column; player width is capped so player + timeline minimum (--tl) fit the viewport (5rem = page padding + header) */
+	/* desktop: timeline is full width; player is centred, width capped so header + player + one-row timeline fit the viewport (--top and --tl are measured in measure()) */
 	@media (min-width: 1024px) {
 		.col {
 			container-type: inline-size;
+			--pw: min(100cqw, calc((100vh - var(--top, 5rem) - var(--tl, 34vh)) * 16 / 9));
+		}
+		.pw {
 			margin-inline: auto;
-			max-width: min(100%, calc((100vh - 5rem - var(--tl)) * 16 / 9));
+			max-width: var(--pw);
 			transition: max-width 0.3s;
 		}
 		.col .tl {
 			max-height: none;
-			height: max(var(--tl), calc(100vh - 5rem - 56.25cqw));
+			height: var(--tl, 34vh);
 		}
 	}
 </style>
