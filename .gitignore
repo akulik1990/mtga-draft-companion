@@ -14,3 +14,7 @@ analysis/out/*.csv.gz
 analysis/out/*.json.gz
 analysis/out/*.json
 analysis/out/twodrop_partA.csv
+
+# notes, docs and handovers stay local and private (repo is public); vendor/ keeps upstream docs
+*.md
+!vendor/**/*.md
