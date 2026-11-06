@@ -1,0 +1,2 @@
+opp_rank is 'None' in all 297964 games of game_data_public.FRA.PremierDraft.csv.gz (also Trad and Pick-Two): the pre-registered split by opponent rank cannot be run.
+The player's own `rank` column is populated; run `run own` for that proxy (a different question, see docs/heldout-leads-FRA.md).

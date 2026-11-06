@@ -1,0 +1,54 @@
+rank source: own; games 297964, decks 69846, drafts 55469; opponent rank groups: BS 78866, GP 184617, DM 34394, NA 87; raw opp_rank: {'platinum': 113244, 'gold': 71373, 'silver': 53383, 'diamond': 25544, 'bronze': 25483, 'mythic': 8850, '': 87}
+class sizes: counter 4, unconditional 12
+
+## counter: adjusted pts per card in hand (SE) [95% CI]; games n / decks n in brackets for the raw cell
+| skill | all ranks | Bronze-Silver | Gold-Platinum | Diamond-Mythic | BS minus DM | GP minus DM |
+|---|---|---|---|---|---|---|
+| all | +1.61 (0.64) [+0.35, +2.86] [91591g/18468d] | +3.45 (1.08) [+1.33, +5.56] [21348g/4490d] | +0.98 (0.92) [-0.82, +2.78] [57776g/12057d] | -0.24 (1.47) [-3.12, +2.64] [12087g/2553d] | +3.69 (1.81) [+0.14, +7.24] | +1.22 (1.72) [-2.15, +4.59] |
+| good | -0.04 (0.98) [-1.96, +1.88] [27929g/5050d] | +1.46 (1.27) [-1.02, +3.94] [7507g/1398d] | +0.10 (1.05) [-1.95, +2.15] [15969g/3051d] | -2.25 (2.95) [-8.03, +3.54] [4311g/866d] | +3.71 (3.25) [-2.66, +10.08] | +2.35 (3.13) [-3.77, +8.48] |
+| avg | +1.80 (0.81) [+0.20, +3.40] [36265g/7159d] | +4.70 (1.83) [+1.11, +8.29] [6556g/1363d] | +0.98 (1.49) [-1.94, +3.90] [23350g/4715d] | -0.32 (1.26) [-2.78, +2.14] [6217g/1320d] | +5.02 (2.20) [+0.72, +9.32] | +1.30 (1.95) [-2.52, +5.13] |
+| weak | +2.41 (0.85) [+0.74, +4.07] [27337g/6247d] | +4.37 (1.97) [+0.50, +8.24] [7240g/1720d] | +1.78 (0.92) [-0.03, +3.59] [18443g/4287d] | +4.09 (3.96) [-3.66, +11.85] [1559g/367d] | +0.27 (4.45) [-8.46, +9.00] | -2.31 (4.04) [-10.24, +5.61] |
+
+## unconditional: adjusted pts per card in hand (SE) [95% CI]; games n / decks n in brackets for the raw cell
+| skill | all ranks | Bronze-Silver | Gold-Platinum | Diamond-Mythic | BS minus DM | GP minus DM |
+|---|---|---|---|---|---|---|
+| all | +1.99 (0.77) [+0.49, +3.50] [189483g/38742d] | +2.64 (0.60) [+1.45, +3.82] [48077g/10204d] | +1.78 (0.88) [+0.06, +3.49] [118078g/24998d] | +1.56 (1.03) [-0.46, +3.57] [22491g/4793d] | +1.08 (1.19) [-1.25, +3.41] | +0.22 (1.35) [-2.42, +2.86] |
+| good | +2.03 (0.88) [+0.30, +3.76] [52975g/9613d] | +1.92 (1.06) [-0.16, +4.00] [15492g/2925d] | +2.09 (1.19) [-0.25, +4.43] [30014g/5732d] | +3.14 (1.53) [+0.14, +6.13] [7185g/1439d] | -1.22 (1.87) [-4.88, +2.44] | -1.04 (1.95) [-4.86, +2.77] |
+| avg | +2.07 (0.77) [+0.56, +3.57] [72772g/14469d] | +3.28 (1.00) [+1.33, +5.24] [14860g/3075d] | +2.27 (0.78) [+0.74, +3.80] [45919g/9389d] | -0.03 (1.30) [-2.57, +2.51] [11694g/2483d] | +3.31 (1.64) [+0.10, +6.52] | +2.30 (1.51) [-0.65, +5.25] |
+| weak | +1.69 (0.76) [+0.21, +3.17] [63614g/14629d] | +2.30 (0.99) [+0.36, +4.23] [17631g/4182d] | +1.46 (0.72) [+0.05, +2.86] [42119g/9868d] | +2.66 (1.97) [-1.19, +6.52] [3612g/871d] | -0.37 (2.20) [-4.68, +3.95] | -1.21 (2.08) [-5.29, +2.88] |
+
+Raw (unadjusted) estimates and placebo means: (skill, rank, class): est / placebo mean
+  ('all', 'all ranks', 'counter'): +0.84 / -0.77 (placebo SD 0.55)
+  ('all', 'all ranks', 'unconditional'): +1.38 / -0.62 (placebo SD 0.75)
+  ('all', 'BS', 'counter'): +1.80 / -1.65 (placebo SD 0.90)
+  ('all', 'BS', 'unconditional'): +1.81 / -0.82 (placebo SD 0.50)
+  ('all', 'GP', 'counter'): +0.90 / -0.08 (placebo SD 0.82)
+  ('all', 'GP', 'unconditional'): +1.29 / -0.49 (placebo SD 0.85)
+  ('all', 'DM', 'counter'): -0.91 / -0.67 (placebo SD 1.20)
+  ('all', 'DM', 'unconditional'): +1.05 / -0.50 (placebo SD 0.90)
+  ('good', 'all ranks', 'counter'): -0.28 / -0.24 (placebo SD 0.85)
+  ('good', 'all ranks', 'unconditional'): +1.56 / -0.47 (placebo SD 0.83)
+  ('good', 'BS', 'counter'): +0.68 / -0.78 (placebo SD 0.88)
+  ('good', 'BS', 'unconditional'): +1.43 / -0.49 (placebo SD 0.90)
+  ('good', 'GP', 'counter'): +0.01 / -0.09 (placebo SD 0.82)
+  ('good', 'GP', 'unconditional'): +1.53 / -0.56 (placebo SD 1.12)
+  ('good', 'DM', 'counter'): -3.03 / -0.78 (placebo SD 2.60)
+  ('good', 'DM', 'unconditional'): +2.34 / -0.80 (placebo SD 1.28)
+  ('avg', 'all ranks', 'counter'): +1.23 / -0.57 (placebo SD 0.68)
+  ('avg', 'all ranks', 'unconditional'): +1.35 / -0.72 (placebo SD 0.72)
+  ('avg', 'BS', 'counter'): +2.37 / -2.33 (placebo SD 1.43)
+  ('avg', 'BS', 'unconditional'): +2.32 / -0.97 (placebo SD 0.78)
+  ('avg', 'GP', 'counter'): +1.36 / +0.38 (placebo SD 1.36)
+  ('avg', 'GP', 'unconditional'): +1.53 / -0.75 (placebo SD 0.71)
+  ('avg', 'DM', 'counter'): -0.80 / -0.48 (placebo SD 0.66)
+  ('avg', 'DM', 'unconditional'): -0.28 / -0.25 (placebo SD 1.09)
+  ('weak', 'all ranks', 'counter'): +1.58 / -0.82 (placebo SD 0.59)
+  ('weak', 'all ranks', 'unconditional'): +1.26 / -0.43 (placebo SD 0.69)
+  ('weak', 'BS', 'counter'): +2.56 / -1.80 (placebo SD 1.64)
+  ('weak', 'BS', 'unconditional'): +1.74 / -0.55 (placebo SD 0.81)
+  ('weak', 'GP', 'counter'): +1.17 / -0.61 (placebo SD 0.51)
+  ('weak', 'GP', 'unconditional'): +0.83 / -0.63 (placebo SD 0.61)
+  ('weak', 'DM', 'counter'): +4.77 / +0.68 (placebo SD 3.16)
+  ('weak', 'DM', 'unconditional'): +2.93 / +0.27 (placebo SD 1.48)
+
+Note: the BS and DM cells are disjoint game sets sharing decks (a deck must have 2+ games in the cell); the difference CI uses the joint bootstrap (shared draft multiplicities) plus placebo noise.
