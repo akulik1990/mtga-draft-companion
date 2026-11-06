@@ -547,12 +547,20 @@ def _deck_model(set_code, section=None):
         return None
 
 
+def deck_counts(deck: list[dict]) -> dict:
+    """Copies per name; a deck may list one name twice (a pool 'Island' beside the basic ones)."""
+    counts: dict = {}
+    for c in deck:
+        counts[c["name"]] = counts.get(c["name"], 0) + c.get("count", 1)
+    return counts
+
+
 def deck_win_rate(set_code: str, build: dict) -> float | None:
     """Predicted game win rate of the 40 for an average player (tools/deck_model.py), or None without a model."""
     model = _deck_model(set_code) if set_code else None
     if not model or not build.get("deck"):
         return None
-    counts = {c["name"]: c.get("count", 1) for c in build["deck"]}
+    counts = deck_counts(build["deck"])
     return round(float(model.win_rate(counts, build.get("main", ""), build.get("splash", ""))), 2)
 
 
@@ -617,13 +625,13 @@ def own_builds(set_code, taken):
         side = grouped(b["sideboard"])
         creatures = sum(1 for c in b["spells"] if "Creature" in (c.get("types") or []))
         builds.append({
-            "label": b["lane"] + (f" + {b['splash']}" if b.get("splash") else "") + (f" ({b['variant']})" if b["variant"] else ""), "variant": b["variant"],
+            "label": b["lane"] + "".join(f" + {c.lower()}" for c in b.get("splash") or "") + (f" ({b['variant']})" if b["variant"] and b["variant"] not in deckbuilder.DISPLAY_VARIANTS else ""), "variant": b["variant"],
             "rating": None, "record": None, "colors": list(b["lane"]), "breakdown": None, "stats": None,
             "note": "companion/advisor_v2/deckbuilder.py", "deck": deck, "sideboard": side, "arena_export": copy_deck(deck, side),
             **mana_identity(deck), "deck_wr": round(b["predicted"], 2), "creatures": creatures, "realistic": True,
         })
         # The yardstick for every build, so builds compare like for like (deck_wr is the builder's own objective, which ignores a ruled build's splash cost).
-        builds[-1]["model_wr"] = deck_win_rate(set_code, builds[-1])
+        builds[-1]["model_wr"] = b.get("yardstick") or deck_win_rate(set_code, builds[-1])
         if b["variant"] in deckbuilder.DISPLAY_VARIANTS:
             builds[-1]["deck_wr"] = None  # display-only: sorts after the defaults
     return builds

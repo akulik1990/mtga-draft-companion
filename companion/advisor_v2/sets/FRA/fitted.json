@@ -16,6 +16,7 @@
   "PREF_WEIGHT": 6.0,
   "LANE_FLAT": "4:1,14:0.7,45:0.8",
   "KEEP_ANY": true,
+  "deckbuilder.DEFAULT_BEST": true,
   "deckbuilder.MIN_SPLASH_CMC": 1,
   "REMOVAL_POINTS": 6.0,
   "FINISHER_POINTS": 2.0,

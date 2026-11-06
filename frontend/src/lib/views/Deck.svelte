@@ -31,7 +31,7 @@
 	});
 	const BASIC: Record<string, string> = { Plains: 'W', Island: 'U', Swamp: 'B', Mountain: 'R', Forest: 'G' };
 	const basics = $derived((b?.deck ?? []).filter((c) => !c.image?.[0]));
-	const label = (x: Build) => (x.main ? `${x.main}${x.splash ? ` + ${x.splash} splash` : ''}${x.variant && x.note?.startsWith('companion') ? ` (${x.variant})` : ''}` : x.label);
+	const label = (x: Build) => (x.main && !x.note?.startsWith('companion') ? `${x.main}${x.splash ? ` + ${x.splash} splash` : ''}${x.variant && x.note?.startsWith('companion') ? ` (${x.variant})` : ''}` : x.label);
 	const wr = (x: Build) => x.model_wr ?? x.deck_wr;
 	const record = (x: Build) => x.record ?? x.label.match(/\[Est: ([^\]]+)\]/)?.[1] ?? '';
 	async function copy() {

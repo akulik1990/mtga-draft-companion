@@ -743,29 +743,64 @@ def yardstick_wr(b, model):
     return float(model.win_rate(dict(counts), b["lane"], b["splash"]))
 
 
-DISPLAY_VARIANTS = ("model's colours", "multi-splash")
+DISPLAY_VARIANTS = ("colours", "rule build")
+DEFAULT_BEST = False  # the first build is the best by the yardstick among every candidate and the rule build (labelled "rule build" when it is not first); False = the rule build first, candidates after
+DISPLAY_WITHIN = 3.0  # yardstick points below the best candidate or default that a display build may sit
+DISPLAY_MAX = 8  # display builds beside the defaults
+BASE_WITHIN = 6.0  # speed: a base is built with splashes only when its plain build is this close to the best plain base
 
 
 def extra_variants(pool, model, targets, shown, yardstick):
-    """Display-only builds beside the default ones, each only when it differs (spells or colours) from every build already shown.
-    "model's colours": no splash/three rules; over every pair, the plain build and each single-splash build with the model's real
-    splash cost, the best by the yardstick. "multi-splash": a pair plus two splash colours, when each has 3 land sources
-    and a splashable card; the best by the yardstick."""
+    """Display-only builds beside the default ones: every pair with no, one or two splash colours and every three-colour base with no
+    or one splash colour (targets decide which bases exist), within DISPLAY_WITHIN of the best build by the yardstick, at most
+    DISPLAY_MAX, best first, none identical (spells and colours) to a shown build.
+    Pruned before building: a main colour needs MIN_PER_COLOUR spells (pair) / MIN_PER_COLOUR_THREE (three) only it pays for, and the
+    base 23 castable spells; a splash colour needs 3 sources (fixing + landcyclers) and a splashable card that beats the base's 23rd spell."""
     key = lambda b: (Counter(c["name"] for c in b["spells"]), b["lane"], b["splash"])
     fix = pool_fixing(pool)
     landcyclers = sum(1 for c in pool if "Basic landcycling" in (c.get("keywords") or []))
-    best = lambda bs: max((b for b in bs if b and b["penalty"] <= 3 * PENALTY), key=lambda b: yardstick_wr(b, yardstick), default=None)
-    lanes = [lane for lane in LANES if (targets or {}).get(lane)]
-    single = [build_pair(pool, lane, model, targets[lane], splash=col) for lane in lanes for col in [""] + [c for c in "WUBRG" if c not in lane]]
-    multi = []
-    for lane in lanes:
-        cols = [c for c in "WUBRG" if c not in lane and fix[c] + landcyclers >= 3 and any(splashable(x, lane, c) for x in pool)]  # 3 sources: duals, any-colour lands, landcyclers
-        multi += [build_pair(pool, lane, model, targets[lane], splash=a + b) for i, a in enumerate(cols) for b in cols[i + 1:]]
+    spells = [c for c in pool if "Land" not in (c.get("types") or [])]
+    bases = []
+    for lane, t in (targets or {}).items():
+        if not t or len(lane) not in (2, 3):
+            continue
+        on = sorted((_wr(c, lane[:2]) for c in spells if castable(c, lane)), reverse=True)
+        least = MIN_PER_COLOUR if len(lane) == 2 else MIN_PER_COLOUR_THREE
+        if any(sum(1 for c in spells if castable(c, lane) and needs(c, col, lane)) < least for col in lane):
+            continue
+        cut = on[SPELLS - 1] if len(on) >= SPELLS else 0.0  # a pair short of 23 castable spells fills up from its splash cards
+        cols = [c for c in "WUBRG" if c not in lane and fix[c] + landcyclers >= 3
+                and any(splashable(x, lane, c) and _wr(x, lane[:2]) > cut for x in spells)]
+        options = ([""] if len(on) >= SPELLS else []) + cols + ([a + b for i, a in enumerate(cols) for b in cols[i + 1:]] if len(lane) == 2 else [])
+        options = [sp for sp in options if sum(1 for c in spells if castable(c, lane) or any(splashable(c, lane, x) for x in sp)) >= SPELLS]
+        if not options:
+            continue
+        bases.append((lane, t, options))
+    plain = {lane: build_pair(pool, lane, model, t) for lane, t, _ in bases}
+    scores = {lane: yardstick_wr(b, yardstick) for lane, b in plain.items() if b}
+    cands = []
+    for lane, t, options in bases:  # splash builds only for bases whose plain build is within BASE_WITHIN of the best plain base
+        if lane not in scores or scores[lane] >= max(scores.values()) - BASE_WITHIN:  # no plain build (short of 23 without a splash): always tried
+            cands += [plain[lane] if sp == "" else build_pair(pool, lane, model, t, splash=sp) for sp in options]
+    cands = [b for b in cands if b and b["penalty"] <= 3 * PENALTY]
+    for b in cands:
+        b["yardstick"] = round(yardstick_wr(b, yardstick), 2)
+    top = max([b["yardstick"] for b in cands] + [yardstick_wr(b, yardstick) for b in shown], default=0.0)
     out = []
-    for v, name in ((best(single), "model's colours"), (best(multi), "multi-splash")):
-        if v and all(key(v) != key(b) for b in shown + out):
-            out.append({**v, "variant": name})
-    return out
+    for b in sorted(cands, key=lambda b: -b["yardstick"]):
+        if b["yardstick"] >= top - DISPLAY_WITHIN and all(key(b) != key(x) for x in shown + out):
+            out.append({**b, "variant": DISPLAY_VARIANTS[0]})
+    out = out[:DISPLAY_MAX]
+    if not (DEFAULT_BEST and shown):
+        return shown + out
+    for b in shown:
+        b["yardstick"] = round(yardstick_wr(b, yardstick), 2)
+    allb = sorted(shown + out, key=lambda b: -b["yardstick"])
+    allb[0]["variant"] = allb[0]["variant"] if allb[0] in shown else ""
+    for b in allb[1:]:
+        if b in shown and not b["variant"]:
+            b["variant"] = DISPLAY_VARIANTS[1]  # today's rule build, now one candidate among the rest
+    return allb
 
 
 def build(pool, model, targets, top=3, splash_pairs=2, rule=None, three=None, yardstick=None):
@@ -797,7 +832,7 @@ def build(pool, model, targets, top=3, splash_pairs=2, rule=None, three=None, ya
         if triples:
             best = max(triples, key=lambda b: b["objective"])
             best["three_chance"] = None
-            return [best] + (extra_variants(pool, model, targets, [best], yardstick) if yardstick else [])
+            return extra_variants(pool, model, targets, [best], yardstick) if yardstick else [best]
     if not plain:
         return []
 
@@ -852,5 +887,5 @@ def build(pool, model, targets, top=3, splash_pairs=2, rule=None, three=None, ya
         out.insert(1, more)
     out = out[:top]
     if yardstick:
-        out += extra_variants(pool, model, targets, out, yardstick)
+        out = extra_variants(pool, model, targets, out, yardstick)
     return out

@@ -3,6 +3,7 @@
 import math
 import re
 from collections import Counter
+from functools import lru_cache
 
 LANES = ["WU", "WB", "WR", "WG", "UB", "UR", "UG", "BR", "BG", "RG"]
 USE_PIPS = True  # round 2: on together with land fixing (it was contested alone in round 1). Castability from mana-cost pips (hybrid aware); False = every colour of the card must be in the lane
@@ -22,12 +23,14 @@ def pips(card):
     either face needs (as upstream's mana_base.is_castable judges it), but only as many pips
     of each as the hungrier face: {1}{B} // {B} is a one-pip splash, not two.
     """
-    cost = card.get("mana_cost") or ""
-    if "Land" in (card.get("types") or []):
+    return [list(o) for o in _pips(card.get("mana_cost") or "", "Land" in (card.get("types") or []), tuple(card.get("colors") or ()))]  # parsing cached (immutable), fresh lists out: the builder asks per card per swap
+
+
+@lru_cache(maxsize=None)
+def _pips(cost, land, colors):
+    if land or not cost:
         # A land's colours are what it produces; it belongs in a lane only when all of them fit (a WU dual is not a WB card).
-        return [[c] for c in card.get("colors") or [] if c in "WUBRG"]
-    if not cost:
-        return [[c] for c in card.get("colors") or [] if c in "WUBRG"]
+        return tuple((c,) for c in colors if c in "WUBRG")
     need = Counter()
     for face in cost.split("//"):
         face_need = Counter()
@@ -39,7 +42,7 @@ def pips(card):
             if options:
                 face_need[options] += 1
         need |= face_need  # per pip type, the larger of the faces
-    return [list(o) for o, n in need.items() for _ in range(n)]
+    return tuple(o for o, n in need.items() for _ in range(n))
 
 
 def off_pips(card, lane):
