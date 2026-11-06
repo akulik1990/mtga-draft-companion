@@ -1,0 +1,561 @@
+{
+ "video": "pdITCHUnEa8",
+ "player": "NicolaiBolas",
+ "set": "FRA",
+ "source": "YouTube auto-caption transcript 0:00-22:40 (tools/video_draft.py transcript pdITCHUnEa8 --start 0 --end 1360), card names corrected against data/Sets/FRA_PremierDraft_All_Data.json; nothing past 22:40 read. 'type' marks each idea as claim, heuristic or one-off pick; 'repeats' lists ideas of earlier videos it restates; 'related' lists looser topic matches.",
+ "ideas": [
+  {
+   "id": "pdI-01",
+   "time": 13,
+   "phase": "draft",
+   "claim": "Stingcaster Mage is a great two-for-one (enters, flashes back an instant or sorcery) and is taken over the rare Liliana the Faultless in P1p1; Liliana was strong against him only because of a Lyra angel deck.",
+   "quote": "I think Stingcaster Mage is great. It enters and floods you flashback in his inner sorcery.",
+   "cards": [
+    "Stingcaster Mage",
+    "Liliana the Faultless"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR and ALSA of Stingcaster Mage against Liliana the Faultless; within-deck value by number of instants and sorceries.",
+   "type": "claim",
+   "repeats": []
+  },
+  {
+   "id": "pdI-02",
+   "time": 66,
+   "phase": "draft",
+   "claim": "Sideboard-quality cards (Arcane Amphisbaena, Way of the Necromancer) are never really playable main-deck; they are cards you see in post-board games.",
+   "quote": "These kind of sideboard cards are like never playable really outside of this like postboard games",
+   "cards": [
+    "Arcane Amphisbaena",
+    "Way of the Necromancer"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "Main-deck play rate and GIH WR of Arcane Amphisbaena and Way of the Necromancer.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "CWs-40"
+   ]
+  },
+  {
+   "id": "pdI-03",
+   "time": 130,
+   "phase": "draft",
+   "claim": "Early in pack 1 take the bigger body without committing to a colour: Marwyn, the Preserver (2-mana 3/2) over the two-drop Skilled Battlecarver, 'trying not to bias too much'.",
+   "quote": "I just kind of like getting stats out there. Not trying to bias too much",
+   "cards": [
+    "Marwyn, the Preserver",
+    "Skilled Battlecarver"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Early-pick value of a mono-coloured stats card against a flexible two-drop, by pick number.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "CWs-06"
+   ]
+  },
+  {
+   "id": "pdI-04",
+   "time": 215,
+   "phase": "draft",
+   "claim": "Marwyn, the Clearcutter is only an aggro 2-for-1 and he does not prioritise it: you rarely want to sacrifice a land and there are few artifacts. (Later he takes it as a late-game engine next to two Marwyn the Preservers.)",
+   "quote": "I don't like prioritizing it too highly because you don't usually end up in spots where you feel good sacrificing a land and there's not a ton of artifacts running around.",
+   "cards": [
+    "Marwyn, the Clearcutter"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Marwyn, the Clearcutter by deck artifact count.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "uoy-09"
+   ]
+  },
+  {
+   "id": "pdI-05",
+   "time": 263,
+   "phase": "draft",
+   "claim": "Easiest No Admittance of his life at P1p7: he has been trying to play Eye of Jace, but No Admittance is the easy pick, good with Stingcaster Mage.",
+   "quote": "Easiest no admittance of my life.",
+   "cards": [
+    "No Admittance",
+    "Eye of Jace"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "ALSA and GIH WR of No Admittance against Eye of Jace.",
+   "type": "claim",
+   "repeats": [
+    "n6s-02"
+   ]
+  },
+  {
+   "id": "pdI-06",
+   "time": 285,
+   "phase": "draft",
+   "claim": "Wrath of the Bloodmane is really good with Stingcaster Mage and cheap because of the legendary creatures already in the pool; cheap legends make the cost reduction work.",
+   "quote": "Wrath of the blood mane really good with stinger caster mage. It's a cheap card. I already have some cheap legendaries to go with it.",
+   "cards": [
+    "Wrath of the Bloodmane",
+    "Stingcaster Mage"
+   ],
+   "kind": "synergy",
+   "engine_area": "picker",
+   "test_idea": "Win rate of Wrath of the Bloodmane by number of legendary creatures in the deck.",
+   "type": "claim",
+   "repeats": []
+  },
+  {
+   "id": "pdI-07",
+   "time": 330,
+   "phase": "draft",
+   "claim": "Heartstring Puller over Tetsuko Umezawa, Pursuer: Tetsuko is better if it lives, but Puller is the better card; red looks wide open from the packs wheeling.",
+   "quote": "Tetsuko is like if it lives, it's better than the Polar, but Polar is just a better card. And red looks wide open in this draft.",
+   "cards": [
+    "Heartstring Puller",
+    "Tetsuko Umezawa, Pursuer"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Heartstring Puller against Tetsuko Umezawa, Pursuer.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "CWs-15"
+   ]
+  },
+  {
+   "id": "pdI-08",
+   "time": 392,
+   "phase": "draft",
+   "claim": "Speculating on a card that was not taken over anything good is free: Tetsuko Umezawa, Fugitive at P1p12 and the blue-red land at P1p13 cost nothing, and he keeps blue as an option.",
+   "quote": "I think here was probably fine. I mean, we weren't passing up much.",
+   "cards": [
+    "Tetsuko Umezawa, Fugitive",
+    "Innovative Commons"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Late-pick speculation value: win rate of last-picked cards by colour that ends up in the deck.",
+   "type": "heuristic",
+   "repeats": [
+    "n6s-27"
+   ]
+  },
+  {
+   "id": "pdI-09",
+   "time": 454,
+   "phase": "draft",
+   "claim": "Some formats reward bobbing and weaving and some reward finding a lane; here he stays flexible (red definite, green or blue second) and keeps speculative cards in a pile.",
+   "quote": "Sometimes it's about bobbing and weaving. Some formats really reward you for just finding a lane, sticking to it",
+   "cards": [
+    "Innovative Commons"
+   ],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "Win rate of decks that changed second colour after pick 8 against decks that did not.",
+   "type": "heuristic",
+   "repeats": []
+  },
+  {
+   "id": "pdI-10",
+   "time": 500,
+   "phase": "draft",
+   "claim": "Take the swingy bomb over the on-plan grind card: a card like Lyra that must be answered wins a game or two over a run, whereas Tetsuko and Heartstring Puller grind and lose to a Lyra you cannot answer.",
+   "quote": "having a card like Lyra is going to win me like one or two games over the course of my run potentially",
+   "cards": [
+    "Lyra, Tolarian Archangel"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Win rate of decks with a must-answer rare against decks without, controlling for skill.",
+   "type": "claim",
+   "repeats": []
+  },
+  {
+   "id": "pdI-11",
+   "time": 600,
+   "phase": "draft",
+   "claim": "Ruric Thar, Biomagus over Frostbite Pyromental: a giant flier is better than a hard-to-cast four-damage-and-draw-two card that does not help attack planeswalkers.",
+   "quote": "I think the giant flyer might be better.",
+   "cards": [
+    "Ruric Thar, Biomagus",
+    "Frostbite Pyromental"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Ruric Thar, Biomagus against Frostbite Pyromental.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-14"
+   ]
+  },
+  {
+   "id": "pdI-12",
+   "time": 670,
+   "phase": "draft",
+   "claim": "Draconic Visitor is a fine five-mana 5/5 flier even with no artifact tokens: 'you don't need the extra text to be relevant'; taken over Awaken the Inferno.",
+   "quote": "It's also just a five five for five flying anyway. So we're going to take it for sure over awaken the inferno.",
+   "cards": [
+    "Draconic Visitor",
+    "Awaken the Inferno"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Draconic Visitor by number of Heartwood or artifact token makers in the deck.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "5aM-01"
+   ]
+  },
+  {
+   "id": "pdI-13",
+   "time": 728,
+   "phase": "draft",
+   "claim": "Undulating Witness is 'kind of terrible'; he takes it over Rockfall Vale only as a green splash hedge, and does not want to splash the blue-green or red-green cards.",
+   "quote": "An undulating witness doesn't seem terrible. I mean, it doesn't seem great. It actually does seem kind of terrible",
+   "cards": [
+    "Undulating Witness",
+    "Rockfall Vale"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Undulating Witness against the other basic landcyclers.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "CWs-13",
+    "mqZ-45"
+   ]
+  },
+  {
+   "id": "pdI-14",
+   "time": 765,
+   "phase": "draft",
+   "claim": "Traxos, Academy Guardian is a very strong card: annoying at four mana, scary cast alongside a three-drop on turn five.",
+   "quote": "Traxxas is so sweet. You even just cast him for four is pretty annoying.",
+   "cards": [
+    "Traxos, Academy Guardian"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Traxos, Academy Guardian.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-35"
+   ]
+  },
+  {
+   "id": "pdI-15",
+   "time": 790,
+   "phase": "draft",
+   "claim": "Hapatra, the Desert Frost is better than Chandra's Emberling: a four-mana 4/3 that taps their permanents buys a lot of time and can give pseudo-haste.",
+   "quote": "I think this card is just way better though. 4 three buys you a lot of time by tapping their stuff.",
+   "cards": [
+    "Hapatra, the Desert Frost",
+    "Chandra's Emberling"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Hapatra, the Desert Frost against Chandra's Emberling.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "CWs-18"
+   ]
+  },
+  {
+   "id": "pdI-16",
+   "time": 841,
+   "phase": "draft",
+   "claim": "A curve into Protege's Awakening is strong in a deck with Lyra: Lyra into Awakening draws three cards in a turn and makes a 3/3 angel; the synergy justifies a fifth four-drop.",
+   "quote": "You curve Lyra into the uh awakening and then immediately draw a card and then you've drawn three cards and you get another three three",
+   "cards": [
+    "Protege's Awakening",
+    "Lyra, Tolarian Archangel"
+   ],
+   "kind": "synergy",
+   "engine_area": "picker",
+   "test_idea": "Win rate of Protege's Awakening with Lyra in the deck; draws per turn.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "CWs-44",
+    "mqZ-57"
+   ]
+  },
+  {
+   "id": "pdI-17",
+   "time": 870,
+   "phase": "draft",
+   "claim": "Frostbite Pyromental over Cryotheory Adept: the Adept needs non-creature spells and the deck has few.",
+   "quote": "I don't have that many non-creatures.",
+   "cards": [
+    "Frostbite Pyromental",
+    "Cryotheory Adept"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Cryotheory Adept by number of noncreature spells.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-59"
+   ]
+  },
+  {
+   "id": "pdI-18",
+   "time": 880,
+   "phase": "draft",
+   "claim": "Craftwork Crusher still coming around at pick 11 shows red-green would have been open and would have paid off; he is committed to blue-red anyway.",
+   "quote": "the fact that craft work crusher is still coming around is crazy. We're we're committed at this point.",
+   "cards": [
+    "Craftwork Crusher"
+   ],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "ALSA of Craftwork Crusher; later-pick appearances as a signal for the colour pair.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "CWs-15",
+    "re7-06"
+   ]
+  },
+  {
+   "id": "pdI-19",
+   "time": 920,
+   "phase": "draft",
+   "claim": "Fulminous Forte is good but not great in a creature-heavy deck: it needs non-creature spells and surveil for Proft, but an instant-speed removal spell is worth taking and flashes back with Stingcaster Mage.",
+   "quote": "Another good instant speed removal spell is going to be great for our deck.",
+   "cards": [
+    "Fulminous Forte",
+    "Stingcaster Mage"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Fulminous Forte by number of noncreature spells in the deck.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "n6s-29"
+   ]
+  },
+  {
+   "id": "pdI-20",
+   "time": 985,
+   "phase": "draft",
+   "claim": "Sphinx of False Conclusions is 'messed up' and a near-forced take at P3p3 over No Admittance, Unsummon and Heartstring Puller, with the expectation that the others wheel (No Admittance did wheel).",
+   "quote": "I think this card is just messed up, so we got to take it pretty much.",
+   "cards": [
+    "Sphinx of False Conclusions",
+    "No Admittance",
+    "Heartstring Puller"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Sphinx of False Conclusions; wheel rate of No Admittance at pick 11.",
+   "type": "claim",
+   "repeats": []
+  },
+  {
+   "id": "pdI-21",
+   "time": 1010,
+   "phase": "draft",
+   "claim": "With a high curve, tempo (Unsummon) was tempting, but another kill spell (Wrath of the Bloodmane) is the pick; at six or so removal spells he is comfortable.",
+   "quote": "Maybe I am supposed to just take Wrath. Let's get another kill spell.",
+   "cards": [
+    "Wrath of the Bloodmane",
+    "Unsummon"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Win rate by removal count in UR decks; Unsummon against Wrath of the Bloodmane in pick order.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "994-27",
+    "n6s-14"
+   ]
+  },
+  {
+   "id": "pdI-22",
+   "time": 1030,
+   "phase": "draft",
+   "claim": "Variable Chaser over a cheap two-drop (Eardrum Rattler): the two-drop is 'much worse', take the high-quality 2/3 flying prowess body.",
+   "quote": "Let's just take the high quality card, the prowess creature.",
+   "cards": [
+    "Variable Chaser",
+    "Eardrum Rattler"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Variable Chaser against Eardrum Rattler.",
+   "type": "claim",
+   "related": [
+    "CWs-01"
+   ]
+  },
+  {
+   "id": "pdI-23",
+   "time": 1065,
+   "phase": "draft",
+   "claim": "A guaranteed kill spell (Awaken the Inferno #2) over finicky cards (Fblthp, Impossibly Lost) when he already has two Wraths.",
+   "quote": "I'd rather just get a good kill spell. Guaranteed.",
+   "cards": [
+    "Awaken the Inferno",
+    "Fblthp, Impossibly Lost"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Awaken the Inferno against Fblthp, Impossibly Lost.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "994-07"
+   ]
+  },
+  {
+   "id": "pdI-24",
+   "time": 1135,
+   "phase": "draft",
+   "claim": "Twinned Vision is really good in a deck with discard outlets; one copy, and the two-drop (Eardrum Rattler) is not needed once two-drops came back.",
+   "quote": "I think one twin division is really good in this sort of deck. I have some ways to discard it.",
+   "cards": [
+    "Twinned Vision",
+    "Eardrum Rattler"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Twinned Vision by number of discard outlets.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "re7-10"
+   ]
+  },
+  {
+   "id": "pdI-25",
+   "time": 1139,
+   "phase": "draft",
+   "claim": "The red cards wheel in this table: No Admittance at pick 11 'is huge' and Frostbite Pyromental also wheels; he expects red to flow from the right.",
+   "quote": "Oh my gosh, we got no admittance to come around. That's huge.",
+   "cards": [
+    "No Admittance",
+    "Frostbite Pyromental"
+   ],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "Wheel rate of No Admittance at pick 11 or later against its ALSA.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "CWs-15"
+   ]
+  },
+  {
+   "id": "pdI-26",
+   "time": 1196,
+   "phase": "build",
+   "claim": "Build technique: start from the end and work backwards, adding the bombs first (both Sphinxes, Stingcaster Mage, Lyra), then good removal, then the curve fillers.",
+   "quote": "This is going to be a deck, I think, where I start from the end and work my way backward.",
+   "cards": [
+    "Sphinx of False Conclusions",
+    "Lyra, Tolarian Archangel",
+    "Stingcaster Mage"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Compare the builder's deck with a premium-first build on mock pools.",
+   "type": "heuristic",
+   "repeats": [
+    "n6s-33"
+   ]
+  },
+  {
+   "id": "pdI-27",
+   "time": 1226,
+   "phase": "build",
+   "claim": "Add a two-drop when the two-drop slot is thin: three creatures he wants on turn two plus Skilled Battlecarver; four two-drops plus two No Admittances are 'maybe good enough'.",
+   "quote": "My two drop slot has three creatures in it that I want to cast on turn two now. So, let's add skilled battle carver.",
+   "cards": [
+    "Skilled Battlecarver"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Win rate by two-drop count in UR decks.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "mqZ-52",
+    "n6s-34"
+   ]
+  },
+  {
+   "id": "pdI-28",
+   "time": 1290,
+   "phase": "build",
+   "claim": "Play one Infinite Coursework early in the build, then cut it for an aggressive threat: with all the No Admittances he does not need more removal and wants to pressure the opponent.",
+   "quote": "I have all these no admittances that do something very similar. And I want to make sure I have enough ways to pressure them.",
+   "cards": [
+    "Infinite Coursework",
+    "Way of the Warlord",
+    "Jiang Yanggu, Alone"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Win rate of Infinite Coursework and Way of the Warlord by removal count.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "mqZ-62"
+   ]
+  },
+  {
+   "id": "pdI-29",
+   "time": 1330,
+   "phase": "build",
+   "claim": "Protege's Awakening is cut for a prowess flier because it is the deck's only Empower Jace card besides the No Admittances, so there is little reason to protect Jaces.",
+   "quote": "It is kind of my only empower Jace card other than the no admittances though.",
+   "cards": [
+    "Protege's Awakening"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Protege's Awakening win rate by number of Empower Jace cards.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "CWs-44",
+    "mqZ-57"
+   ]
+  },
+  {
+   "id": "pdI-30",
+   "time": 1356,
+   "phase": "build",
+   "claim": "A 12-creature count is too low for this deck, so he adds another threat (Jiang Yanggu, Alone) in the last slot.",
+   "quote": "I only have 12 creatures now.",
+   "cards": [
+    "Jiang Yanggu, Alone"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Win rate by creature count in UR decks.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "mqZ-46",
+    "CWs-45"
+   ]
+  }
+ ]
+}

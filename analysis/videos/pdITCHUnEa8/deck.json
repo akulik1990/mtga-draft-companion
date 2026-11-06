@@ -1,0 +1,61 @@
+{
+ "id": "pdITCHUnEa8",
+ "time": "19:46-22:40 (build; cut-off 22:40, the deck is not finished: 39 of 40 cards at 22:35 with Jiang Yanggu, Alone about to be added)",
+ "main": {
+  "Cryotheory Adept": 1,
+  "Tetsuko Umezawa, Fugitive": 2,
+  "No Admittance": 2,
+  "Skilled Battlecarver": 1,
+  "Stingcaster Mage": 1,
+  "Twinned Vision": 1,
+  "Variable Chaser": 1,
+  "Lyra, Tolarian Archangel": 1,
+  "Fulminous Forte": 2,
+  "Wrath of the Bloodmane": 2,
+  "Traxos, Academy Guardian": 1,
+  "Sphinx of False Conclusions": 2,
+  "Heartstring Puller": 1,
+  "Awaken the Inferno": 2,
+  "Draconic Visitor": 1,
+  "Ruric Thar, Biomagus": 1,
+  "Jiang Yanggu, Alone": 1
+ },
+ "lands": {
+  "Island": 8,
+  "Mountain": 8,
+  "Innovative Commons": 1
+ },
+ "sideboard": {
+  "Infinite Coursework": 2,
+  "Hapatra, the Desert Frost": 1,
+  "Protege's Awakening": 1,
+  "Undulating Witness": 1,
+  "Marwyn, the Clearcutter": 1,
+  "Eardrum Rattler": 1,
+  "Hallway Heckler": 1,
+  "Way of the Warlord": 1,
+  "Tether Technician": 1,
+  "Flourishing Grapple": 1,
+  "Heartwood Crafter": 1,
+  "Marwyn, the Preserver": 2,
+  "Frostbite Pyromental": 2,
+  "Vigorbloom Charm": 1
+ },
+ "spells": 23,
+ "land_count": 17,
+ "landcyclers_in_main": [
+  "Awaken the Inferno"
+ ],
+ "colours": "UR, no splash. Sources: Island 8 + Innovative Commons, Mountain 8 + Innovative Commons.",
+ "notes": [
+  "Build seen from the frame at 22:35 (39/40 main: 22 spells + 17 lands). At 22:38 he says 'put Jiang Yanggu alone in', so the 23rd spell is Jiang from the sideboard (the hover popup is on it at 22:36); the video is cut at 22:40 before the deck screen is final.",
+  "19:56 'I start from the end and work my way backward'; 20:05 'play all my bombs': both Sphinxes, Stingcaster Mage, Lyra; Traxos 'is going to be great'; both Tetsukos; Heartstring Puller; Skilled Battlecarver added because 'my two drop slot has three creatures I want to cast on turn two'.",
+  "20:51-21:03 adds the Wraths, the Awakens ('Ruric Thar is huge as a big flyer'); 36 cards at 21:03. 21:07 'two four six removal spells with the six red ones'.",
+  "21:12-21:25 one Infinite Coursework ('we might be able to find good use for that'); one Way of the Warlord is 'probably not' because No Admittances do something similar and he wants pressure; 11 creatures: adds Cryotheory Adept.",
+  "22:00-22:38 swaps: Frostbite Pyromental is good, 'maybe I want that over the coursework'; 12 creatures only; Protege's Awakening 'seems pretty good' but is his only Empower Jace card besides the No Admittances, so he plays a two-three prowess flyer instead; cuts Infinite Coursework 'for another aggressive threat' and puts Jiang Yanggu in.",
+  "Pool accounting: 42 picks = 22 spells + Innovative Commons in the main, 17 in the sideboard counted by pick (two Infinite Coursework, two Frostbite Pyromental, two Marwyn the Preserver), Jiang Yanggu is in the sideboard row at the cut; the picked Forest is not shown (free basics Island 8 and Mountain 8 are added by the builder). Coursework and Pyromental x2 are inferred from the picks; the sideboard row shows them stacked with small markers I could not read."
+ ],
+ "inferred_from_speech": [
+  "Jiang Yanggu, Alone (22:38 'put Jiang Yanggu alone in'; the 39-card build at 22:35 is the last frame)"
+ ]
+}
