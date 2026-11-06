@@ -1,0 +1,59 @@
+{
+ "id": "iGzTA_-eFbw",
+ "time": "19:10-19:15 (the final 40/40 screen at 1151 s with the sideboard row on screen; cut-off 1155 s)",
+ "main": {
+  "Artifist Acumen": 2,
+  "Cryotheory Adept": 1,
+  "Fblthp, Impossibly Lost": 2,
+  "Geist of Saint Thalia": 1,
+  "Samut, Hazoret's Champion": 1,
+  "Skilled Battlecarver": 1,
+  "Fatehold Chronologist": 1,
+  "Twinned Vision": 1,
+  "Tam's Resistance": 1,
+  "Mindseeker Oculus": 1,
+  "Chandra's Emberling": 2,
+  "Pia, Determined Rebuilder": 1,
+  "Wrath of the Bloodmane": 1,
+  "Clash of Elements": 2,
+  "Frostbite Pyromental": 1,
+  "Hapatra, the Desert Frost": 1,
+  "Traxos, Academy Guardian": 1,
+  "Curse-Marred Demon": 1,
+  "Saheeli, Jewel of Avishkar": 1,
+  "Awaken the Inferno": 1
+ },
+ "lands": {
+  "Island": 8,
+  "Mountain": 8
+ },
+ "sideboard": {
+  "Jace, Reality Sculptor": 1,
+  "Undulating Witness": 1,
+  "Yargle, Goliath of Otaria": 1,
+  "Rank Rat": 1,
+  "Way of the Deathbringer": 1,
+  "Yargle, Glutton of Urborg": 1,
+  "Blazing Crescendo": 1,
+  "Koth, the Geomancer": 1,
+  "Tether Technician": 1,
+  "Inspired Tethermage": 1,
+  "Woodwork Prodigy": 1,
+  "Transformative Commons": 1,
+  "Entrust the Spark": 1,
+  "Mind Meanderer": 2,
+  "Keeper of the Quiet Hour": 1,
+  "Murmuring Volume": 1
+ },
+ "spells": 24,
+ "land_count": 16,
+ "landcyclers_in_main": [
+  "Awaken the Inferno"
+ ],
+ "colours": "Blue-red tempo, no splash: Island 8, Mountain 8 (16 lands plus Awaken the Inferno).",
+ "notes": [
+  "He says he builds a deliberately tempo version first ('I know it's worse than the other version, but I want to see what it looks like'); the 1151 s screen shows that build with the weirder cards (two Chandra's Emberling, two Artifist Acumen, Cryotheory Adept).",
+  "The sideboard row at 1151 s shows 17 cards if Mind Meanderer counts twice (the row card at the right end carries a count icon not fully legible); 16 distinct names are listed.",
+  "Picks not in deck or sideboard are the basic lands (not shown) and nine unidentified takes: P1p13, P1p14, P2p13, P2p14, P3p8, P3p10-P3p14."
+ ]
+}

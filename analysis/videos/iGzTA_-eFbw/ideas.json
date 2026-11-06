@@ -1,0 +1,350 @@
+{
+ "video": "iGzTA_-eFbw",
+ "player": "NicolaiBolas",
+ "set": "FRA",
+ "source": "YouTube auto-caption transcript 0:00-19:15 (tools/video_draft.py transcript iGzTA_-eFbw --start 0 --end 1155); nothing past 19:15 read. 'type' marks each idea as claim, heuristic or one-off pick; 'repeats' lists ideas of earlier videos it restates; 'related' lists looser topic matches. Solo draft: every idea is the host's (speaker field kept for the schema).",
+ "ideas": [
+  {
+   "id": "iGz-01",
+   "time": 60,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Fatehold Chronologist is a middle ground between power level and flexibility (hybrid), and he takes it over Last Gasp, the best card in the pack, to get more reps with it.",
+   "quote": "I think it's kind of like a nice little middle ground between power level and flexibility.",
+   "cards": [
+    "Fatehold Chronologist",
+    "Last Gasp"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Fatehold Chronologist against Last Gasp.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "XSY-09",
+    "I_C-01"
+   ]
+  },
+  {
+   "id": "iGz-02",
+   "time": 88,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Rise of the Deathbringer would be better in a faster format: the minus three, minus three kills few relevant creatures; Fblthp, Impossibly Lost is really good with Chronologist.",
+   "quote": "I think it'd be better if the format was faster because like the minus three, minus three doesn't kill as many relevant creatures.",
+   "cards": [
+    "Rise of the Deathbringer",
+    "Fblthp, Impossibly Lost"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Rise of the Deathbringer by game length.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "iGz-03",
+   "time": 150,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Mind Meanderer is heavy blue, easy to play in blue-green decks and very splashable; it is the best card in a weak pack and the dual land is not helpful.",
+   "quote": "I think this is the best card, and it's very splashable.",
+   "cards": [
+    "Mind Meanderer"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Mind Meanderer as a splash.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "XSY-17"
+   ]
+  },
+  {
+   "id": "iGz-04",
+   "time": 210,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Landcyclers are being taken higher and higher: he used to wheel them at picks eight and nine but that now happens less often; Undulating Witness is taken for flexibility (a blue any-colour deck splashing green).",
+   "quote": "I've been finding that the land cyclers are getting taken higher and higher and higher.",
+   "cards": [
+    "Undulating Witness"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Average pick position of landcyclers over time.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "Uy4-04",
+    "994-07",
+    "8Bz-09"
+   ]
+  },
+  {
+   "id": "iGz-05",
+   "time": 265,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Saheeli, Jewel of Avishkar is good if you can build around it with plenty of spells, but it tends to eat removal.",
+   "quote": "It does like tend to eat removal spells, so like no admittance is a very good card.",
+   "cards": [
+    "Saheeli, Jewel of Avishkar",
+    "No Admittance"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Saheeli, Jewel of Avishkar by noncreature count.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "VTU-18"
+   ]
+  },
+  {
+   "id": "iGz-06",
+   "time": 300,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Samut, Hazoret's Champion is very strong when building a more tempo deck: giving random fliers haste.",
+   "quote": "Samut's very strong when you're building like a more tempo deck.",
+   "cards": [
+    "Samut, Hazoret's Champion"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Samut, Hazoret's Champion in tempo decks.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "uoy-01",
+    "7Yc-10"
+   ]
+  },
+  {
+   "id": "iGz-07",
+   "time": 335,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "A pair of colours showing up together (all the blue-red cards at pick seven) is the signal that blue-red is open; he does not need to splash the Meanderer.",
+   "quote": "Bang, we're getting all the blue red cards now.",
+   "cards": [
+    "Clash of Elements"
+   ],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "Whether a cluster of pair cards at picks 5-7 predicts the pair's flow.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "5aM-03",
+    "97Z-03"
+   ]
+  },
+  {
+   "id": "iGz-08",
+   "time": 360,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Traxos, Academy Guardian is really good with cheap interaction: play it after an Unsummon and get a three-drop effect.",
+   "quote": "You play this after like an unsummon, you get like a three drop effect.",
+   "cards": [
+    "Traxos, Academy Guardian",
+    "Unsummon"
+   ],
+   "kind": "synergy",
+   "engine_area": "picker",
+   "test_idea": "Win rate of Traxos, Academy Guardian with Unsummon in the deck.",
+   "type": "claim",
+   "repeats": [
+    "55a-10",
+    "mqZ-35",
+    "pdI-14",
+    "9nA-24",
+    "97Z-14"
+   ],
+   "related": [
+    "VTU-23"
+   ]
+  },
+  {
+   "id": "iGz-09",
+   "time": 395,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "He does not think Artifist Acumen is very good, but with a few two-drops and prowess it might work with two copies and a Blazing Crescendo.",
+   "quote": "I really don't think artifist acumen is very good.",
+   "cards": [
+    "Artifist Acumen"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Artifist Acumen.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "iGz-10",
+   "time": 490,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Mindseeker Oculus is better than Clash of Elements pound for pound: when you cast it on turn three the game is just so good for you.",
+   "quote": "I kind of just don't ever want to pass Mindseeker Oculus. It's just so strong.",
+   "cards": [
+    "Mindseeker Oculus",
+    "Clash of Elements"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Mindseeker Oculus against Clash of Elements.",
+   "type": "heuristic",
+   "repeats": [
+    "9nA-17",
+    "97Z-25",
+    "VTU-07",
+    "kMo-05",
+    "9Db-03",
+    "7Yc-02"
+   ],
+   "related": []
+  },
+  {
+   "id": "iGz-11",
+   "time": 540,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Commit to splashing green for a heavy-blue card: take the second Mind Meanderer; with the Heartwood token makers or an Improviser you can get green mana.",
+   "quote": "Let's just take the Mind Meanderer and just commit to splashing green for him.",
+   "cards": [
+    "Mind Meanderer"
+   ],
+   "kind": "splash / mana",
+   "engine_area": "picker",
+   "test_idea": "Win rate of green splashes for Mind Meanderer.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "CWs-22"
+   ]
+  },
+  {
+   "id": "iGz-12",
+   "time": 560,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "The power level tends to be worth pursuing in this format: he prefers power over staying in colours.",
+   "quote": "I find that the power level tends to be something worth pursuing a lot of the time in this format.",
+   "cards": [],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Does early pick power predict deck win rate better than colour consistency?",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "CWs-06"
+   ]
+  },
+  {
+   "id": "iGz-13",
+   "time": 620,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "He does not want the double-green splash: Awaken the Inferno over Craftwork Crusher to stay blue-red; he has done the double splash too often.",
+   "quote": "Let's just not go for the double green splash. I've been doing that a lot.",
+   "cards": [
+    "Awaken the Inferno",
+    "Craftwork Crusher"
+   ],
+   "kind": "splash / mana",
+   "engine_area": "picker",
+   "test_idea": "Win rate of double-pip off-colour splashes.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "mqZ-32",
+    "mqZ-61"
+   ]
+  },
+  {
+   "id": "iGz-14",
+   "time": 690,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Frostbite Pyromental is the perfect deck for it: card draw deals damage, works well with Fblthp.",
+   "quote": "This is actually the perfect deck for Frostbite Pyromancer. Card draw deals damage.",
+   "cards": [
+    "Frostbite Pyromental",
+    "Fblthp, Impossibly Lost"
+   ],
+   "kind": "synergy",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Frostbite Pyromental by card-draw count.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "iGz-15",
+   "time": 715,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Pia, Determined Rebuilder is much better than Chandra's Emberling, even when he would otherwise take the Emberling: pack 2 pick 9.",
+   "quote": "I would take the Chandra's Emberling, but Pia's just so much better.",
+   "cards": [
+    "Pia, Determined Rebuilder",
+    "Chandra's Emberling"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Pia, Determined Rebuilder against Chandra's Emberling.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "55a-09",
+    "kMo-14"
+   ]
+  },
+  {
+   "id": "iGz-16",
+   "time": 1010,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Wrath of the Bloodmane over a pack of cheaper cards: 'okay, but Wrath is like actually good'; not a Darklight Phoenix deck.",
+   "quote": "This card's like okay. But Wrath is like actually good.",
+   "cards": [
+    "Wrath of the Bloodmane",
+    "Darklight Phoenix"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Wrath of the Bloodmane against Darklight Phoenix.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "iGz-17",
+   "time": 1125,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "build",
+   "claim": "He builds a tempo version of the deck first, knowing it is worse than the other version, to see what it looks like, then puts in the better version; the weird cards (Emberling, Crescendo) he wants to try are the ones the better version cuts.",
+   "quote": "Let's just build a tempo version of the deck and then make the better version.",
+   "cards": [
+    "Chandra's Emberling",
+    "Blazing Crescendo"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Win rate of tempo against value builds on the same pool.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "pdI-26",
+    "n6s-33"
+   ]
+  }
+ ]
+}
