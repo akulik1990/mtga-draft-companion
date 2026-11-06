@@ -1,0 +1,107 @@
+sample: picks scored {'sp3': 3900, 'two': 3744}  drafts {'sp3': 100, 'two': 96}  kinds {'splash': 60, 'three': 40, 'two': 96}
+
+== 1. top-1 / top-3, pick-weighted, CI = bootstrap over drafts ==
+  splash               top-1  0.617  [0.593, 0.641]  drafts=60
+  splash               top-3  0.905  [0.894, 0.915]  drafts=60
+  three                top-1  0.544  [0.517, 0.570]  drafts=40
+  three                top-3  0.860  [0.842, 0.877]  drafts=40
+  splash+three         top-1  0.587  [0.568, 0.607]  drafts=100
+  splash+three         top-3  0.887  [0.876, 0.897]  drafts=100
+  two-colour control   top-1  0.594  [0.570, 0.618]  drafts=96
+  two-colour control   top-3  0.901  [0.887, 0.915]  drafts=96
+  diff splash minus control top-1: +0.023  [-0.011, +0.056]  (two independent draft sets, so unpaired)
+  diff three minus control top-1: -0.050  [-0.087, -0.016]  (two independent draft sets, so unpaired)
+  diff splash+three minus control top-1: -0.007  [-0.037, +0.025]  (two independent draft sets, so unpaired)
+  diff splash minus control top-3: +0.004  [-0.015, +0.021]  (two independent draft sets, so unpaired)
+  diff three minus control top-3: -0.042  [-0.063, -0.019]  (two independent draft sets, so unpaired)
+  diff splash+three minus control top-3: -0.015  [-0.032, +0.003]  (two independent draft sets, so unpaired)
+
+== 2. top-1 by class of the taken card (class from final deck); CI over drafts ==
+  sp3      fixer                      n=  266 drafts= 95 top-1 0.395 [0.329,0.458]  top-3 0.756  mean rank 2.47
+  sp3      splash/third colour card   n=  738 drafts=100 top-1 0.484 [0.445,0.524]  top-3 0.806  mean rank 2.27
+  sp3      on-pair card               n= 2441 drafts=100 top-1 0.644 [0.618,0.669]  top-3 0.925  mean rank 1.66
+  sp3      other                      n=  455 drafts= 95 top-1 0.565 [0.511,0.621]  top-3 0.890  mean rank 1.85
+  splash   fixer                      n=  142 drafts= 56 top-1 0.394 [0.311,0.487]  top-3 0.768  mean rank 2.47
+  splash   splash/third colour card   n=  330 drafts= 60 top-1 0.533 [0.483,0.585]  top-3 0.833  mean rank 2.09
+  splash   on-pair card               n= 1563 drafts= 60 top-1 0.662 [0.630,0.694]  top-3 0.934  mean rank 1.62
+  splash   other                      n=  305 drafts= 58 top-1 0.577 [0.507,0.647]  top-3 0.895  mean rank 1.80
+  three    fixer                      n=  124 drafts= 39 top-1 0.395 [0.294,0.488]  top-3 0.742  mean rank 2.47
+  three    splash/third colour card   n=  408 drafts= 40 top-1 0.444 [0.386,0.498]  top-3 0.784  mean rank 2.42
+  three    on-pair card               n=  878 drafts= 40 top-1 0.612 [0.570,0.653]  top-3 0.908  mean rank 1.75
+  three    other                      n=  150 drafts= 37 top-1 0.540 [0.452,0.639]  top-3 0.880  mean rank 1.97
+  control  on-pair card               n= 2884 drafts= 96 top-1 0.628 [0.601,0.655]  top-3 0.913  mean rank 1.76
+  control  other                      n=  860 drafts= 96 top-1 0.481 [0.452,0.511]  top-3 0.863  mean rank 2.12
+  -- only taken cards that made the final deck (sp3):
+  sp3-deck fixer                      n=  244 drafts= 93 top-1 0.377 [0.312,0.444]  top-3 0.754  mean rank 2.47
+  sp3-deck splash/third colour card   n=  448 drafts=100 top-1 0.442 [0.391,0.494]  top-3 0.763  mean rank 2.45
+  sp3-deck on-pair card               n= 1895 drafts=100 top-1 0.659 [0.629,0.688]  top-3 0.925  mean rank 1.64
+  sp3-deck other                      n=   77 drafts= 54 top-1 0.792 [0.701,0.878]  top-3 0.987  mean rank 1.31
+  top-1 on-pair minus (fixer+splash/third) in the same drafts: +0.184 [+0.135, +0.232]
+
+== 2b. misses on fixer / splash-third picks: what v2 took instead ==
+  misses n=542
+    on final pair, in v2 top lane               299  55%
+    card of final splash/third colour           108  20%
+    other colour, outside v2 top lane            81  15%
+    fixer (final S)                              32  6%
+    on final pair, outside v2 top lane           11  2%
+    other colour, in v2 top lane                 11  2%
+   fixer: v2 took on-pair or its own top lane in 107/161; median gap to v2's top score 8.1 pts, median human rank 3
+   splash/third colour card: v2 took on-pair or its own top lane in 214/381; median gap to v2's top score 9.3 pts, median human rank 3
+
+== 3. timing: v2's lane weight on the player's final configuration ==
+  mean weight at the pick (v2 lanes before the pick is made): config = pair + a final third/splash colour; pair_only = exactly the final pair; any3 = any three-colour lane
+  pick  | sp3 config  pair_only  any3 | control any3
+     5  | 0.000      0.380      0.000 | 0.000   (n=100/96)
+    10  | 0.000      0.536      0.000 | 0.000   (n=100/96)
+    15  | 0.224      0.424      0.358 | 0.252   (n=100/96)
+    20  | 0.339      0.478      0.423 | 0.222   (n=100/96)
+    25  | 0.397      0.478      0.460 | 0.215   (n=100/96)
+    30  | 0.443      0.451      0.509 | 0.234   (n=100/96)
+    35  | 0.474      0.467      0.519 | 0.141   (n=100/96)
+    40  | 0.452      0.502      0.480 | 0.090   (n=100/96)
+  all sp3  n=100 v2 reaches config>=0.1: 90 drafts, median pick 15.0; player first takes S-colour card: 100, median 5.0; first fixer: 95, median 15; v2 minus player (both): median 13.0, n=90, v2 never reaches 10
+           median lag CI [11.0, 14.0]; v2 later than player in 90/90, same pick 0
+  splash   n=60 v2 reaches config>=0.1: 50 drafts, median pick 15.0; player first takes S-colour card: 60, median 7.0; first fixer: 56, median 16.5; v2 minus player (both): median 11.0, n=50, v2 never reaches 10
+           median lag CI [10.0, 13.5]; v2 later than player in 50/50, same pick 0
+  three    n=40 v2 reaches config>=0.1: 40 drafts, median pick 15.0; player first takes S-colour card: 40, median 2.5; first fixer: 39, median 12; v2 minus player (both): median 13.0, n=40, v2 never reaches 0
+           median lag CI [12.0, 14.0]; v2 later than player in 40/40, same pick 0
+  peak config weight over the draft: median 0.72, share of drafts never above 0.1: 10%, above 0.5: 61%
+  weight at last pick (45th): mean 0.438, median 0.297
+
+== 4. five examples (worst summed score gap on fixer/splash/third picks that the player put in the deck; illustrative, picked on the outcome) ==
+
+  draft ce87b35f  skill 0.6  final UBG+WR  (three); pair GU, third/splash BRW; summed gap 144
+   final deck non-basic cards of S / fixers: Formidable Commons, Hapatra, the Desert Fang, Heartwood Crafter, Hexhaven Battalion, Innovative Commons, Kiora of Fire and Ashes, Last Gasp, Memory Trap, Meticulous Commons, Mountain, Murmuring Volume, Plains, Recursive Recruitment, Rewrite Regrets, Stingerquill Annex, Swamp, Vraska, the Cutting Glare
+   P2p10 took Stingerquill Annex [fixer] (v2 rank 3, 26.9 pts under); v2 took Countersculpt [on final pair, in v2 top lane]; v2 top lane URG 0.39, config weight 0.66
+   P2p7  took Last Gasp [splash/third colour card] (v2 rank 6, 24.8 pts under); v2 took Awaken the Inferno [card of final splash/third colour]; v2 top lane URG 0.50, config weight 0.56
+   P2p11 took Formidable Commons [fixer] (v2 rank 4, 20.5 pts under); v2 took Surveillance Phantasm [on final pair, in v2 top lane]; v2 top lane UBR 0.41, config weight 0.28
+   P3p10 took Innovative Commons [fixer] (v2 rank 4, 16.5 pts under); v2 took Hapatra, the Desert Fang [card of final splash/third colour]; v2 top lane UBG 0.98, config weight 0.98
+
+  draft 047a97b2  skill 0.74  final UG+WBR  (splash); pair GU, third/splash BRW; summed gap 125
+   final deck non-basic cards of S / fixers: Formidable Commons, Hapatra, the Desert Fang, Heartwood Crafter, Meticulous Commons, Paradox Shaper, Plains, Room of Refuge, Swamp, Theoretical Necromancer, Theorix Annex, Vigorbloom Annex, Way of the Healer, Woodwork Prodigy, Your Fate Ends Here
+   P3p9  took Theoretical Necromancer [splash/third colour card] (v2 rank 6, 26.5 pts under); v2 took Surveillance Phantasm [on final pair, in v2 top lane]; v2 top lane UG 0.86, config weight 0.14
+   P3p1  took Hapatra, the Desert Fang [splash/third colour card] (v2 rank 9, 24.5 pts under); v2 took Ajani Unrelenting [card of final splash/third colour]; v2 top lane UG 0.92, config weight 0.08
+   P2p5  took Your Fate Ends Here [splash/third colour card] (v2 rank 3, 18.2 pts under); v2 took Surveillance Phantasm [on final pair, in v2 top lane]; v2 top lane UG 0.86, config weight 0.09
+   P3p4  took Theorix Annex [fixer] (v2 rank 4, 15.3 pts under); v2 took Protege's Awakening [on final pair, in v2 top lane]; v2 top lane UG 0.87, config weight 0.13
+
+  draft f87b58c8  skill 0.64  final URG+W  (three); pair RU, third/splash GW; summed gap 112
+   final deck non-basic cards of S / fixers: Deserted Beach, Forest, Hexhaven Battalion, Konstrari Annex, Konstrari Improviser, Mind Meanderer, Pia, Aether Ascetic, Plains, Room of Refuge, Vinelasher Adept, Vraska, Soul of Stone, Way of the Healer, Way of the Wildspeaker, Yoshimaru, Scrappy Stray
+   P2p1  took Way of the Wildspeaker [splash/third colour card] (v2 rank 6, 22.2 pts under); v2 took Plan for All Outcomes [on final pair, in v2 top lane]; v2 top lane WUR 0.53, config weight 0.61
+   P2p10 took Deserted Beach [fixer] (v2 rank 4, 19.9 pts under); v2 took Surveillance Phantasm [on final pair, in v2 top lane]; v2 top lane URG 0.79, config weight 0.79
+   P2p5  took Pia, Aether Ascetic [splash/third colour card] (v2 rank 7, 17.9 pts under); v2 took Way of the Healer [card of final splash/third colour]; v2 top lane WUR 0.44, config weight 0.70
+   P2p4  took Hexhaven Battalion [splash/third colour card] (v2 rank 5, 16.1 pts under); v2 took Awaken the Inferno [on final pair, in v2 top lane]; v2 top lane URG 0.67, config weight 0.73
+
+  draft 462a9ddc  skill 0.6  final WRG+B  (three); pair GR, third/splash BW; summed gap 107
+   final deck non-basic cards of S / fixers: Bloombrute, Danitha, Sword of Hope, Dedicated Commons, Edgar, Ancient Bloodlord, Formidable Commons, Generous Revival, Hexhaven Battalion, Memory Trap, Meticulous Commons, Plains, Stingerquill Charm, Swamp, Tomik, Orzhov Lawmage, Vigorbloom Annex, Warrior's Blades
+   P3p9  took Edgar, Ancient Bloodlord [splash/third colour card] (v2 rank 6, 22.8 pts under); v2 took Tam's Resistance [other colour, outside v2 top lane]; v2 top lane WRG 0.97, config weight 0.97
+   P3p7  took Stingerquill Charm [splash/third colour card] (v2 rank 6, 17.7 pts under); v2 took Vigorbloom Charm [card of final splash/third colour]; v2 top lane WRG 0.92, config weight 0.92
+   P2p9  took Meticulous Commons [fixer] (v2 rank 5, 15.7 pts under); v2 took Arcane Amphisbaena [on final pair, in v2 top lane]; v2 top lane WRG 0.78, config weight 0.78
+   P2p7  took Dedicated Commons [fixer] (v2 rank 3, 8.6 pts under); v2 took Konstrari Improviser [on final pair, in v2 top lane]; v2 top lane WRG 0.81, config weight 0.81
+
+  draft 37deb9b5  skill 0.66  final UB+G  (splash); pair BU, third/splash G; summed gap 74
+   final deck non-basic cards of S / fixers: Forest, Hapatra, the Desert Fang, Kiora of Salt and Sand, Room of Refuge, Tam's Resistance, Transformative Commons
+   P3p3  took Hapatra, the Desert Fang [splash/third colour card] (v2 rank 4, 25.0 pts under); v2 took Diviner of Victory [on final pair, in v2 top lane]; v2 top lane UB 0.92, config weight 0.00
+   P3p6  took Kiora of Salt and Sand [splash/third colour card] (v2 rank 4, 20.3 pts under); v2 took Gallia, Tragic Host [on final pair, in v2 top lane]; v2 top lane UB 0.87, config weight 0.13
+   P3p5  took Transformative Commons [fixer] (v2 rank 4, 13.0 pts under); v2 took Ruric Thar, Biomagus [on final pair, in v2 top lane]; v2 top lane UB 0.90, config weight 0.10
+   P1p10 took Kiora of Salt and Sand [splash/third colour card] (v2 rank 3, 9.9 pts under); v2 took Arni, Humble Scribe [on final pair, in v2 top lane]; v2 top lane WU 0.50, config weight 0.00

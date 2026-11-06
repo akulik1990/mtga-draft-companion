@@ -1,0 +1,52 @@
+drafts 100, with both builds 100; v2 decks not 40 cards: 55, player-pool builds: 53; mean pool overlap v2/player 20.9 of 42
+
+== ALL (yardstick WR, percentage points) ==
+  mean WR: v2 build 63.48, player-pool build 61.11, registered deck 57.70
+  PRIMARY v2 build - player-pool build         n=100 mean +2.37 [+1.60, +3.18]  >=0 in 74%  >0 in 74%  sd 4.00
+  (b) v2 build - player registered deck        n=100 mean +5.78 [+4.91, +6.65]  >=0 in 89%  >0 in 89%  sd 4.43
+  player-pool build - registered deck          n=100 mean +3.41 [+2.89, +3.94]  >=0 in 94%  >0 in 94%  sd 2.61
+
+== splash drafts (yardstick WR, percentage points) ==
+  mean WR: v2 build 64.07, player-pool build 61.60, registered deck 57.81
+  PRIMARY v2 build - player-pool build         n= 60 mean +2.47 [+1.57, +3.42]  >=0 in 78%  >0 in 78%  sd 3.57
+  (b) v2 build - player registered deck        n= 60 mean +6.26 [+5.23, +7.28]  >=0 in 93%  >0 in 93%  sd 4.22
+  player-pool build - registered deck          n= 60 mean +3.79 [+3.13, +4.38]  >=0 in 97%  >0 in 97%  sd 2.47
+
+== three-colour drafts (yardstick WR, percentage points) ==
+  mean WR: v2 build 62.59, player-pool build 60.37, registered deck 57.53
+  PRIMARY v2 build - player-pool build         n= 40 mean +2.22 [+0.81, +3.72]  >=0 in 68%  >0 in 68%  sd 4.57
+  (b) v2 build - player registered deck        n= 40 mean +5.05 [+3.65, +6.48]  >=0 in 82%  >0 in 82%  sd 4.64
+  player-pool build - registered deck          n= 40 mean +2.84 [+2.02, +3.68]  >=0 in 90%  >0 in 90%  sd 2.72
+
+== colours of the built / registered deck ==
+ ALL
+   player registered (decks file lane/splash)   splash 60/100  three-base 27/100  three-basesplash 13/100
+   player registered (mana_identity)            splash 99/100  two-colour 1/100
+   player-pool build (builder label)            splash 11/100  three-base 41/100  three-basesplash 2/100  two-colour 46/100
+   v2-pool build (builder label)                splash 7/100  three-base 11/100  three-basesplash 1/100  two-colour 81/100
+   player-pool build (mana_identity)            splash 54/100  two-colour 46/100
+   v2-pool build (mana_identity)                splash 19/100  two-colour 81/100
+   any colour beyond the pair, mana_identity: v2 19/100, player-pool 54/100, registered 99/100
+ splash drafts
+   player registered (decks file lane/splash)   splash 60/60
+   player registered (mana_identity)            splash 59/60  two-colour 1/60
+   player-pool build (builder label)            splash 9/60  three-base 15/60  two-colour 36/60
+   v2-pool build (builder label)                splash 6/60  three-base 6/60  two-colour 48/60
+   player-pool build (mana_identity)            splash 24/60  two-colour 36/60
+   v2-pool build (mana_identity)                splash 12/60  two-colour 48/60
+   any colour beyond the pair, mana_identity: v2 12/60, player-pool 24/60, registered 59/60
+ three-colour drafts
+   player registered (decks file lane/splash)   three-base 27/40  three-basesplash 13/40
+   player registered (mana_identity)            splash 40/40
+   player-pool build (builder label)            splash 2/40  three-base 26/40  three-basesplash 2/40  two-colour 10/40
+   v2-pool build (builder label)                splash 1/40  three-base 5/40  three-basesplash 1/40  two-colour 33/40
+   player-pool build (mana_identity)            splash 30/40  two-colour 10/40
+   v2-pool build (mana_identity)                splash 7/40  two-colour 33/40
+   any colour beyond the pair, mana_identity: v2 7/40, player-pool 30/40, registered 40/40
+
+== v2 pool composition vs the player's registered main colours ==
+  v2 build main pair equals registered pair (mana_identity): 43/100; player-pool build: 89/100
+
+== primary difference by whether v2's build splashes (post hoc, descriptive) ==
+  v2 build has splash/third                    n= 19 mean +1.67 [-0.24, +3.39]  >=0 in 74%  >0 in 74%  sd 4.05
+  v2 build plain pair                          n= 81 mean +2.53 [+1.68, +3.40]  >=0 in 74%  >0 in 74%  sd 3.97

@@ -1,0 +1,6 @@
+(1) builder's own yardstick (model_wr):
+  v2 build - player-pool build: n=100 mean +2.56 [+1.79, +3.39], v2>=player in 74%
+  v2 build - registered deck (registered via deck_win_rate): n=100 mean +5.15 [+4.26, +6.03], v2>=player in 86%
+(2) wheel duplicates; pack sizes at picks 1, 9: [(14, 100), (6, 100)]
+  v2 pools with a wheel-impossible extra copy: 56/100, extra copies total 83 (of 4199 picks); examples [('191d756a', 2, 1, 'Fblthp, Knows the Way'), ('191d756a', 2, 2, 'Murmuring Volume'), ('191d756a', 2, 5, 'Bestial Incursion')]
+  pools with any repeated card name at all: 100/100
