@@ -100,7 +100,7 @@
 	<p class="text-zinc-500">loading…</p>
 {:else}
 	<div class="mb-3 flex flex-wrap items-baseline gap-x-4 gap-y-1 text-sm">
-		<a href="/videos" class="text-zinc-400 hover:text-zinc-100">&larr; all videos</a>
+		<a href="." class="text-zinc-400 hover:text-zinc-100">&larr; all videos</a>
 		<h1 class="text-lg font-semibold">{data.video.title}</h1>
 		<span class="text-zinc-400">{data.video.player} · {data.video.set}</span>
 		{#if engine}<span class="text-zinc-500">v2 {engine.commit} ({engine.date}): top-1 {engine.top1}/{engine.n}, top-3 {engine.top3}/{engine.n}</span>{/if}
@@ -243,7 +243,7 @@
 						<td class="pr-3 whitespace-nowrap">{i.phase}</td>
 						<td class="max-w-xl pr-3" title={i.quote}>{i.claim}</td>
 						<td class="pr-3">
-							<select class="rounded bg-zinc-900 px-1 py-0.5" value={s.status} onchange={(e) => setStatus(i, e.currentTarget.value)}>
+							<select class="rounded bg-zinc-900 px-1 py-0.5" disabled={data.readonly} value={s.status} onchange={(e) => setStatus(i, e.currentTarget.value)}>
 								{#each IDEA_STATUSES as st}<option value={st}>{st}</option>{/each}
 							</select>
 						</td>
