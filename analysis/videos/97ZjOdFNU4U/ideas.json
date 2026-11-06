@@ -1,0 +1,686 @@
+{
+ "video": "97ZjOdFNU4U",
+ "player": "NicolaiBolas",
+ "set": "FRA",
+ "source": "YouTube auto-caption transcript 0:00-17:50 (tools/video_draft.py transcript 97ZjOdFNU4U --start 0 --end 1075; text printed to 17:50), card names corrected against data/Sets/FRA_PremierDraft_All_Data.json; nothing past 17:50 read. 'type' marks each idea as claim, heuristic or one-off pick; 'repeats' lists ideas of earlier videos it restates; 'related' lists looser topic matches.",
+ "ideas": [
+  {
+   "id": "97Z-01",
+   "time": 75,
+   "phase": "draft",
+   "claim": "Null Summoner is excellent: it does not scale into the late game, but the opponent usually holds something, so you take their best card and trade the 4/2 for one creature, a clean two-for-one.",
+   "quote": "You take their best card and trade this for one other creature. Really, really strong.",
+   "cards": [
+    "Null Summoner"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Null Summoner by skill group; its win rate on turns it is cast versus the cards exiled.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "CWs-27",
+    "55a-29"
+   ]
+  },
+  {
+   "id": "97Z-02",
+   "time": 115,
+   "phase": "draft",
+   "claim": "In this format he wants to be the one asking the questions rather than answering them, so he takes the proactive gold rare and a locked-up kill spell (Memory Trap) over the flexible creature.",
+   "quote": "I want to be the one asking the questions rather than trying to answer them a lot of the time.",
+   "cards": [
+    "Memory Trap",
+    "Vigorbloom Vanguard"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Whether proactive cards outperform reactive ones at equal GIH WR by games-in-hand.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "97Z-03",
+   "time": 125,
+   "phase": "draft",
+   "claim": "Read the neighbour from the gold-pair partners missing in the first packs: the blue Traxos missing means a blue or red card was taken from the pack; Teyo (black) and Marwyn (green) paired in the next pack show a black or green card gone.",
+   "quote": "I think that Traxos might have been their pick. And that's a blue card. So, they took either a blue or a red card here, I think, based on the way the pairs are lining up.",
+   "cards": [
+    "Traxos, Scourge Eternal",
+    "Teyo, Lightshield Expert",
+    "Marwyn, the Clearcutter"
+   ],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "Whether the missing gold partner predicts the colours the upstream drafter takes (pack-to-pack colour flow in 17Lands pick data).",
+   "type": "heuristic",
+   "repeats": [
+    "5aM-03"
+   ],
+   "related": []
+  },
+  {
+   "id": "97Z-04",
+   "time": 180,
+   "phase": "draft",
+   "claim": "Mindseeker Oculus is the pick: super good every time he has played it; he takes it over Compel Brutality and Teyo, Lightshield Expert and accepts a neighbour may cut blue.",
+   "quote": "I think the Oculus is just the pick. Just super good card. Every time I've played it, I've been very impressed.",
+   "cards": [
+    "Mindseeker Oculus",
+    "Compel Brutality"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Mindseeker Oculus against Compel Brutality and Teyo, Lightshield Expert; skill split.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "9nA-01",
+    "mqZ-37"
+   ]
+  },
+  {
+   "id": "97Z-05",
+   "time": 205,
+   "phase": "draft",
+   "claim": "Icy Reception is a card you want one copy of: it may improve as formats speed up, but games have stalled out and it has been hard to use.",
+   "quote": "I think it's like a card you want one copy of.",
+   "cards": [
+    "Icy Reception"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Icy Reception by copy count and skill.",
+   "type": "claim",
+   "repeats": [
+    "55a-19"
+   ],
+   "related": [
+    "9nA-35",
+    "mqZ-55"
+   ]
+  },
+  {
+   "id": "97Z-06",
+   "time": 245,
+   "phase": "draft",
+   "claim": "Take multicoloured cards highly early: Grim Repriser and Hapatra, the Desert Fang are the best card in the pack or in your deck, worth speculating on, and he stays flexible and dabbles.",
+   "quote": "I'm just going to take the multicolored cards pretty highly right now. In my experience, they're just so strong and they can be like the best card in your deck or one of them.",
+   "cards": [
+    "Grim Repriser",
+    "Hapatra, the Desert Fang"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of gold uncommons and rares by whether they end up in the final deck colours; how often early gold picks reach the deck.",
+   "type": "heuristic",
+   "repeats": [
+    "n6s-01"
+   ],
+   "related": [
+    "CWs-02",
+    "994-10"
+   ]
+  },
+  {
+   "id": "97Z-07",
+   "time": 275,
+   "phase": "draft",
+   "claim": "He has come down on Arni, Humble Scribe: a three-drop you do not want to block with is a liability, and that was costing him games.",
+   "quote": "I've come down on Arni because like playing a three drop that you don't want to block with is just kind of a liability sometimes.",
+   "cards": [
+    "Arni, Humble Scribe"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Arni, Humble Scribe against other blue three-drops; skill split.",
+   "type": "claim",
+   "repeats": [
+    "mqZ-49",
+    "55a-03"
+   ],
+   "related": []
+  },
+  {
+   "id": "97Z-08",
+   "time": 295,
+   "phase": "draft",
+   "claim": "Extended Absence arriving at pick 7 ('the late extended absence') tells him black is open and blue-black could simply be played.",
+   "quote": "it's looking like black is open here. We got the late extended absence. We could just play blue black.",
+   "cards": [
+    "Extended Absence"
+   ],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "Whether late arrival of a colour's removal predicts a better pack 2 and 3 flow in that colour.",
+   "type": "heuristic",
+   "repeats": [
+    "CWs-15"
+   ],
+   "related": [
+    "mqZ-05",
+    "55a-13"
+   ]
+  },
+  {
+   "id": "97Z-09",
+   "time": 300,
+   "phase": "draft",
+   "claim": "He will not splash red for Grim Repriser: a card he took for power is left in the sideboard once the colours are set.",
+   "quote": "I don't really want to splash red for Grim Repriser.",
+   "cards": [
+    "Grim Repriser"
+   ],
+   "kind": "splash / mana",
+   "engine_area": "builder",
+   "test_idea": "Win rate of splashed gold cards against their on-colour replacements.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "mqZ-30",
+    "CWs-33"
+   ]
+  },
+  {
+   "id": "97Z-10",
+   "time": 305,
+   "phase": "draft",
+   "claim": "He needs more two-drops and has no good one, so Paradox Shaper (fills the graveyard, fine) is taken over Undulating Witness and Silence the Echo.",
+   "quote": "Think I need more twos. I don't really have a good one.",
+   "cards": [
+    "Paradox Shaper",
+    "Silence the Echo"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Two-drop count against win rate for graveyard decks; GIH WR of Paradox Shaper.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "n6s-12",
+    "5aM-09",
+    "uoy-07",
+    "mqZ-52"
+   ]
+  },
+  {
+   "id": "97Z-11",
+   "time": 352,
+   "phase": "draft",
+   "claim": "Solve for Disappointment has been obnoxious, so he will try it as an Empower Jace 1 discard effect; later it is cut because Null Summoner already does a similar thing and those effects do not stack.",
+   "quote": "Solve for disappointment has been a little bit obnoxious though. So maybe we'll try that.",
+   "cards": [
+    "Solve for Disappointment",
+    "Null Summoner"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Solve for Disappointment with and without Null Summoner in the deck.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "CWs-11"
+   ]
+  },
+  {
+   "id": "97Z-12",
+   "time": 385,
+   "phase": "draft",
+   "claim": "At the start of pack 2 he reads colours from what he saw: white and red did not seem open (he took Grim Repriser and Memory Trap and saw no good red or white cards after), black looks open, and he does not have to be blue.",
+   "quote": "White didn't seem that open. Red didn't seem that open. We took the Grim Repriser, but didn't see any good red cards.",
+   "cards": [
+    "Grim Repriser",
+    "Memory Trap"
+   ],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "Whether no strong cards of a colour in the next pack after taking one predicts a closed colour.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "5aM-03",
+    "uoy-21"
+   ]
+  },
+  {
+   "id": "97Z-13",
+   "time": 425,
+   "phase": "draft",
+   "claim": "Diviner of Victory is an okay rare: not great, maybe just a cheap play to get on board early.",
+   "quote": "This card seems like it's an okay rare. It's not great, but it'll be okay.",
+   "cards": [
+    "Diviner of Victory"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Diviner of Victory against its rarity slot.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "97Z-14",
+   "time": 440,
+   "phase": "draft",
+   "claim": "Traxos, Academy Guardian is very strong: he takes it over Codie, Ravenous Codex and Traxos, Scourge Eternal in pick 2 of pack 2.",
+   "quote": "Love me the Traxos. ... Traxos has been very very strong.",
+   "cards": [
+    "Traxos, Academy Guardian"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Traxos, Academy Guardian by skill; compare with Traxos, Scourge Eternal.",
+   "type": "claim",
+   "repeats": [
+    "55a-10",
+    "mqZ-35",
+    "pdI-14",
+    "9nA-24"
+   ],
+   "related": []
+  },
+  {
+   "id": "97Z-15",
+   "time": 480,
+   "phase": "draft",
+   "claim": "Eye of Jace was pretty good in a blue-white surveil tempo aggro deck where surveilling every turn mattered: 'this card's really strong'.",
+   "quote": "I actually had a Jace deck where Eye of Jace was pretty good like a blue white surveil tempo aggro deck",
+   "cards": [
+    "Eye of Jace"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Eye of Jace in decks with many surveil effects.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "9nA-14"
+   ]
+  },
+  {
+   "id": "97Z-16",
+   "time": 490,
+   "phase": "draft",
+   "claim": "Mabel, Bitter Recluse is a very strong deathtoucher that can sometimes kill planeswalker tokens (Jace); he takes it as the first copy.",
+   "quote": "Mabel very strong death toucher that can sometimes kill Jaces.",
+   "cards": [
+    "Mabel, Bitter Recluse"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Mabel, Bitter Recluse; its value against Jace tokens.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "97Z-17",
+   "time": 510,
+   "phase": "draft",
+   "claim": "Take the flexible spell over the dual land: Vraska's Final Mercy is a draw two for two mana or a kill spell for two mana, picked over a blue-black land.",
+   "quote": "I think I'm just happy you're getting the flexible spell.",
+   "cards": [
+    "Vraska's Final Mercy",
+    "Theorix Annex"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Vraska's Final Mercy against a dual land's play value in two-colour decks.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "CWs-12",
+    "55a-21",
+    "uoy-17"
+   ]
+  },
+  {
+   "id": "97Z-18",
+   "time": 528,
+   "phase": "draft",
+   "claim": "Recursive Recruitment does a lot of work in the late game; he takes it over Gallia, Tragic Host and a second copy later.",
+   "quote": "this card really just does a lot of work in the late game.",
+   "cards": [
+    "Recursive Recruitment"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Recursive Recruitment with 1 and 2 copies; its late-game win rate.",
+   "type": "claim",
+   "repeats": [
+    "5aM-02"
+   ],
+   "related": [
+    "mqZ-05"
+   ]
+  },
+  {
+   "id": "97Z-19",
+   "time": 545,
+   "phase": "draft",
+   "claim": "He has not been impressed by Protege's Awakening but suspects he may be misvaluing it, so he takes the three-drop (Theoretical Necromancer) first.",
+   "quote": "I've not been that impressed by the Protege's Awakening, but maybe it's just that I'm misvaluing things.",
+   "cards": [
+    "Protege's Awakening",
+    "Theoretical Necromancer"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Protege's Awakening against Theoretical Necromancer in graveyard decks.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "9nA-07",
+    "mqZ-57",
+    "55a-28"
+   ]
+  },
+  {
+   "id": "97Z-20",
+   "time": 575,
+   "phase": "draft",
+   "claim": "He takes a cheaper card over a stronger one in a deck he wants to be defensive: Recursive Recruitment number two now, and Mabel for 'more defensive options'.",
+   "quote": "I'm glad I took a cheaper card there. I'm also glad I took this Mabel and just more defensive options.",
+   "cards": [
+    "Recursive Recruitment",
+    "Mabel, Bitter Recluse"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Does the cheaper of two equal cards win more in graveyard decks?",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "5aM-17"
+   ]
+  },
+  {
+   "id": "97Z-21",
+   "time": 636,
+   "phase": "draft",
+   "claim": "Undulating Witness has not impressed him: he passes it for the tap land that can help a Memory Trap splash.",
+   "quote": "I've not been very impressed by the Undulating Witness, honestly.",
+   "cards": [
+    "Undulating Witness"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Undulating Witness against other basic landcyclers.",
+   "type": "claim",
+   "repeats": [
+    "pdI-13"
+   ],
+   "related": [
+    "CWs-13"
+   ]
+  },
+  {
+   "id": "97Z-22",
+   "time": 648,
+   "phase": "draft",
+   "claim": "A white-black tap land is taken because it could keep a Memory Trap splash open if needed.",
+   "quote": "And the tap land could help me splash for um Memory Trap if I need it.",
+   "cards": [
+    "Meticulous Commons",
+    "Memory Trap"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "How often a splash-enabling land taken at pick 11 ends up played.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "CWs-12",
+    "55a-21",
+    "mqZ-16"
+   ]
+  },
+  {
+   "id": "97Z-23",
+   "time": 675,
+   "phase": "draft",
+   "claim": "Seasoned Cryomancer is great both if milled over and if just played: an awesome card for the deck.",
+   "quote": "Seasoned Cryomancer is great if we mill it over. It's great if we just play it.",
+   "cards": [
+    "Seasoned Cryomancer"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Seasoned Cryomancer in graveyard decks.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "97Z-24",
+   "time": 690,
+   "phase": "draft",
+   "claim": "Winter, Tormented Loner is very strong but better in black-white than in his deck.",
+   "quote": "Winter is also very strong. I think it's better in like Black White.",
+   "cards": [
+    "Winter, Tormented Loner"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Winter, Tormented Loner by colour pair.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "55a-25",
+    "n6s-10"
+   ]
+  },
+  {
+   "id": "97Z-25",
+   "time": 724,
+   "phase": "draft",
+   "claim": "Keep taking Mindseeker Oculus when you see them; it is the plan of the deck.",
+   "quote": "I'm just going to keep taking Oculus while I see them. It's kind of like my deck's plan.",
+   "cards": [
+    "Mindseeker Oculus"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Win rate of decks by number of Mindseeker Oculus copies (1, 2, 3).",
+   "type": "heuristic",
+   "repeats": [
+    "9nA-17"
+   ],
+   "related": []
+  },
+  {
+   "id": "97Z-26",
+   "time": 735,
+   "phase": "draft",
+   "claim": "He takes the cheaper card (Theorix Charm, an early kill spell) over a more expensive alternative.",
+   "quote": "I think I just want the cheaper card. So the charm is going to work perfectly here.",
+   "cards": [
+    "Theorix Charm",
+    "Extended Absence"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Theorix Charm against Extended Absence in UB.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "5aM-17"
+   ]
+  },
+  {
+   "id": "97Z-27",
+   "time": 756,
+   "phase": "draft",
+   "claim": "The more playables he has, the less he wants to splash: in a self-milled deck with double black, double blue and blue-black cards, splashing is dicey and drawing a Plains would be punishing.",
+   "quote": "the more playables I get, the less likely I am to want to splash because especially in a self-milled deck, sometimes splashing is a little bit just dicey.",
+   "cards": [
+    "Theorix Charm"
+   ],
+   "kind": "splash / mana",
+   "engine_area": "builder",
+   "test_idea": "Win rate of splash decks by number of on-colour playables and double-pip cards.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "CWs-46",
+    "mqZ-32",
+    "mqZ-61"
+   ]
+  },
+  {
+   "id": "97Z-28",
+   "time": 800,
+   "phase": "draft",
+   "claim": "Blessed Ghoul is better than Fatehold Chronologist as an annoying early play; the Chronologist has been unimpressive.",
+   "quote": "Think Ghoul's been a little bit better as an annoying early play.",
+   "cards": [
+    "Blessed Ghoul",
+    "Fatehold Chronologist"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Blessed Ghoul against Fatehold Chronologist.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "55a-27"
+   ]
+  },
+  {
+   "id": "97Z-29",
+   "time": 820,
+   "phase": "draft",
+   "claim": "Paradox Shaper over Protege's Awakening: with little self-mill in the deck, the consistent Paradox Shaping is nice.",
+   "quote": "I don't have that much self mill, so the consistent paradox shaping is going to be pretty nice, I think.",
+   "cards": [
+    "Paradox Shaper",
+    "Protege's Awakening"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Paradox Shaper in decks with few self-mill effects.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "CWs-17"
+   ]
+  },
+  {
+   "id": "97Z-30",
+   "time": 845,
+   "phase": "draft",
+   "claim": "Tetsuko Umezawa, Fugitive is very strong and plays really well with Mindseeker Oculus.",
+   "quote": "Tetsuko is very strong. He plays really well with Mindseeker Oculus, too.",
+   "cards": [
+    "Tetsuko Umezawa, Fugitive",
+    "Mindseeker Oculus"
+   ],
+   "kind": "synergy",
+   "engine_area": "picker",
+   "test_idea": "Win rate of decks with Tetsuko Umezawa, Fugitive and Mindseeker Oculus together.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "pdI-07"
+   ]
+  },
+  {
+   "id": "97Z-31",
+   "time": 930,
+   "phase": "build",
+   "claim": "Average cost 2.6 is a good curve for this deck: he likes it and keeps Apex Witchstalker as the top end.",
+   "quote": "what's our average curve here in this deck? 2.6. I like it.",
+   "cards": [
+    "Apex Witchstalker"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Deck average cmc against win rate; 2.6 against 3.1 and 3.6.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "55a-37"
+   ]
+  },
+  {
+   "id": "97Z-32",
+   "time": 951,
+   "phase": "build",
+   "claim": "He keeps Protege's Awakening although he feels he is always cutting it: he wants to try it, and later calls it maybe a little hard to use and says he would rather have a cheap play.",
+   "quote": "I feel like I'm always cutting the Protege's Awakening, but I kind of want to try it. So, we'll keep it.",
+   "cards": [
+    "Protege's Awakening"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Main-deck rate and GIH WR of Protege's Awakening in UB decks.",
+   "type": "claim",
+   "repeats": [
+    "55a-40"
+   ],
+   "related": [
+    "CWs-44",
+    "9nA-38"
+   ]
+  },
+  {
+   "id": "97Z-33",
+   "time": 973,
+   "phase": "build",
+   "claim": "Cut Solve for Disappointment because Null Summoner does a very similar thing and those effects do not stack well.",
+   "quote": "I'm going to cut solve for disappointment cuz I already have null summoner which does a very similar thing",
+   "cards": [
+    "Solve for Disappointment",
+    "Null Summoner"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Win rate of decks with both Solve for Disappointment and Null Summoner.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "CWs-11"
+   ]
+  },
+  {
+   "id": "97Z-34",
+   "time": 1011,
+   "phase": "build",
+   "claim": "At 16 creatures he can cut another creature; he is left choosing between Yuriko and Surveillance Phantasm and keeps Yuriko.",
+   "quote": "creature count at 16. So, I can probably cut another creature here.",
+   "cards": [
+    "Yuriko, Hope from the Shadows",
+    "Surveillance Phantasm"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Creature count (15, 16, 17) against win rate in UB graveyard decks.",
+   "type": "heuristic",
+   "repeats": [
+    "9nA-31",
+    "CWs-45"
+   ],
+   "related": [
+    "55a-11"
+   ]
+  },
+  {
+   "id": "97Z-35",
+   "time": 1040,
+   "phase": "build",
+   "claim": "Theoretical Necromancer is kind of okay and good with Paradox Shaper.",
+   "quote": "the theoretical necromancer is kind of okay. Good with paradox shaper stuff.",
+   "cards": [
+    "Theoretical Necromancer",
+    "Paradox Shaper"
+   ],
+   "kind": "synergy",
+   "engine_area": "builder",
+   "test_idea": "Win rate of Theoretical Necromancer with Paradox Shaper in the deck.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  }
+ ]
+}
