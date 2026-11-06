@@ -71,6 +71,8 @@
   "deckbuilder.GIH_SLOPE": 5.5,
   "deckbuilder.SPLASH_TERM": 3.1,
   "lanes.TOKEN_FIX": false,
+  "deckbuilder.REMOVAL_SKIP": "Essence Burn;Gideon's Memorial;Infinite Coursework;Konstrari Charm;Living Library;Refute Destiny;Solitary Cell;Sureshot Sower;Surgical Precision;Terminal Criticism;Vraska, the Cutting Glare;Your Fate Ends Here",
+  "deckbuilder.SPLASH_LANDS_ONLY": true,
   "REMOVAL_SKIP": "Essence Burn;Gideon's Memorial;Infinite Coursework;Konstrari Charm;Living Library;Refute Destiny;Solitary Cell;Sureshot Sower;Surgical Precision;Terminal Criticism;Vraska, the Cutting Glare;Your Fate Ends Here"
  },
  "pairs": {
