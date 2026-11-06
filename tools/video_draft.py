@@ -122,7 +122,38 @@ def replay(vid):
     report = render(rec, rows, commit, pool)
     out = OUT / vid / f"replay-{commit}.md"
     out.write_text(report, encoding="utf-8")
+    write_engine(vid, rec, rows, commit, pool)
     print(f"{vid}: top-1 {sum(r['rank'] == 1 for r in rows)}/{len(rows)}, top-3 {sum((r['rank'] or 99) <= 3 for r in rows)}/{len(rows)} -> {out}")
+
+
+def write_engine(vid, rec, rows, commit, pool):
+    """engine/<commit>.json and engine/latest.json, read by the /videos page (companion/api/videos.py)."""
+    import datetime
+
+    def deck(d):
+        return {"main": d.get("main"), "splash": d.get("splash"), "deck_wr": d["deck_wr"], "label": d.get("label"),
+                "cards": [{"name": c["name"], "count": c["count"]} for c in d["deck"]]}
+
+    picks = []
+    for r in rows:
+        p, o, h, la = r["p"], r["order"], r["his"], r["lanes_after"]
+        picks.append({"pack": p["pack"], "pick": p["pick"], "taken": p["taken"],
+                      "top3": [{"name": x.card_name, "score": round(x.contextual_score, 2)} for x in o[:3]],
+                      "his_score": h and round(h.contextual_score, 2), "his_rank": r["rank"],
+                      "reasons_top": list(o[0].reasoning) if o else [], "reasons_his": list(h.reasoning) if h else [],
+                      "lanes_after": {k: round(v, 3) for k, v in sorted(la.items(), key=lambda kv: -kv[1])[:4]}})
+    try:
+        deck_rec = json.loads((OUT / vid / "deck.json").read_text(encoding="utf-8"))
+    except FileNotFoundError:
+        deck_rec = None
+    ours, his = builds(pool, deck_rec)
+    data = {"commit": commit, "date": datetime.date.today().isoformat(), "dataset": rec.get("dataset"),
+            "top1": sum(r["rank"] == 1 for r in rows), "top3": sum((r["rank"] or 99) <= 3 for r in rows), "n": len(rows),
+            "picks": picks, "builder": [deck({**b, "deck_wr": b["model_wr"]}) for b in ours], "his_deck": his and deck(his)}
+    d = OUT / vid / "engine"
+    d.mkdir(exist_ok=True)
+    for name in (commit, "latest"):
+        (d / f"{name}.json").write_text(json.dumps(data, indent=1), encoding="utf-8")
 
 
 def builds(pool, deck_rec):
@@ -207,7 +238,7 @@ def render(rec, rows, commit, pool):
 
 
 def cmd_replay(a):
-    ids = sorted(p.name for p in OUT.iterdir() if (p / "picks.json").exists()) if a.all else [a.id]
+    ids = [v["id"] for v in json.loads((OUT / "index.json").read_text(encoding="utf-8"))] if a.all else [a.id]
     for vid in ids:
         replay(vid)
 

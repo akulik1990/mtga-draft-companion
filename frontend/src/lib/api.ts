@@ -110,5 +110,28 @@ export const api = {
 	tiers: () => call<TierFile[]>('/api/tiers'),
 	importTier: (url: string, label = '') => post<TierFile[]>('/api/tiers', { url, label }),
 	deleteTier: (file: string) => call<TierFile[]>(`/api/tiers/${encodeURIComponent(file)}`, { method: 'DELETE' }),
-	cards: (q: string) => call<Card[]>(`/api/cards?q=${encodeURIComponent(q)}`)
+	cards: (q: string) => call<Card[]>(`/api/cards?q=${encodeURIComponent(q)}`),
+	videos: () => call<VideoRow[]>('/api/videos'),
+	video: (id: string) => call<VideoData>(`/api/videos/${id}`),
+	videoEngine: (id: string, commit: string) => call<VideoEngine>(`/api/videos/${id}/engine/${commit}`),
+	setIdea: (id: string, idea: string, body: IdeaStatus) =>
+		call<IdeaStatus>(`/api/videos/${id}/ideas/${encodeURIComponent(idea)}`, { method: 'PUT', body: JSON.stringify(body) })
+};
+
+export const IDEA_STATUSES = ['untested', 'testing', 'confirmed', 'rejected', 'shipped'] as const;
+export type IdeaStatus = { status: string; result: string; doc: string };
+export type VideoRow = { id: string; title: string; player: string; set: string; url: string; added: string; top1: number | null; top3: number | null; n: number | null; commit: string | null };
+export type VideoPick = { pack: number; pick: number; time: string; taken: string; reasoning: string; pack_cards: string[]; plan?: string };
+export type Idea = { id: string; time: string | number; phase: string; claim: string; quote?: string; cards?: string[]; kind?: string; engine_area?: string; test_idea?: string };
+export type EngineDeck = { main: string | null; splash: string | null; deck_wr: number | null; label: string | null; cards: { name: string; count: number }[] };
+export type EnginePick = {
+	pack: number; pick: number; taken: string; top3: { name: string; score: number }[]; his_score: number | null; his_rank: number | null;
+	reasons_top: string[]; reasons_his: string[]; lanes_after: Record<string, number>;
+};
+export type VideoEngine = { commit: string; date: string; top1: number; top3: number; n: number; picks: EnginePick[]; builder: EngineDeck[]; his_deck: EngineDeck | null };
+export type VideoData = {
+	video: VideoRow;
+	picks: { picks: VideoPick[]; colour_path: { after: string; main: string; quote?: string }[] };
+	deck: { main: Record<string, number>; lands: Record<string, number>; sideboard?: Record<string, number> } | null;
+	ideas: Idea[]; status: Record<string, IdeaStatus>; engine: VideoEngine | null; commits: string[];
 };

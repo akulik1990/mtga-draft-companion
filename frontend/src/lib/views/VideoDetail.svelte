@@ -1,0 +1,257 @@
+<script lang="ts">
+	import { onMount } from 'svelte';
+	import { api, IDEA_STATUSES, type EngineDeck, type Idea, type IdeaStatus, type VideoData, type VideoEngine } from '../api';
+
+	let { id }: { id: string } = $props();
+	let data = $state<VideoData | null>(null);
+	let error = $state('');
+	let commit = $state('latest');
+	let engine = $state<VideoEngine | null>(null);
+	let against = $state('');
+	let other = $state<VideoEngine | null>(null);
+	let build = $state(0);
+	let statusFilter = $state('');
+	let phaseFilter = $state('');
+
+	// ── player: the embed is a plain iframe; the IFrame API (loaded at runtime) only adds seekTo
+	// svelte-ignore state_referenced_locally (the page re-creates this component per id)
+	const BASE =`https://www.youtube.com/embed/${id}?enablejsapi=1`;
+	let src = $state(BASE);
+	let frame = $state<HTMLIFrameElement>();
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	let player: any = null;
+	const yt = () => (window as any).YT;
+	function attach() {
+		if (frame && yt()?.Player) player = new (yt().Player)(frame, {});
+	}
+	function seek(t: string | number) {
+		const s = secs(t);
+		if (player?.seekTo) { player.seekTo(s, true); player.playVideo?.(); }
+		else src = `${BASE}&start=${s}&autoplay=1`; // API unavailable: reload the iframe at the time
+		frame?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+	}
+	function secs(t: string | number) {
+		if (typeof t === 'number') return Math.floor(t);
+		return String(t).split(/[-–]/)[0].trim().split(':').reduce((a, p) => a * 60 + (parseInt(p) || 0), 0);
+	}
+	const mss = (t: string | number) => { const s = secs(t); return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`; };
+
+	onMount(async () => {
+		if (yt()?.Player) attach();
+		else {
+			const prev = (window as any).onYouTubeIframeAPIReady;
+			(window as any).onYouTubeIframeAPIReady = () => { prev?.(); attach(); };
+			const s = document.createElement('script');
+			s.src = 'https://www.youtube.com/iframe_api';
+			document.head.appendChild(s);
+		}
+		try { data = await api.video(id); engine = data.engine; } catch (e) { error = String(e); }
+	});
+
+	async function pick(which: 'engine' | 'other', c: string) {
+		try {
+			const e = c === 'latest' ? data!.engine : c ? await api.videoEngine(id, c) : null;
+			if (which === 'engine') engine = e; else other = e;
+		} catch (err) { error = String(err); }
+	}
+
+	// ── picks
+	const key = (p: { pack: number; pick: number }) => `${p.pack}-${p.pick}`;
+	const eMap = $derived(new Map((engine?.picks ?? []).map((p) => [key(p), p])));
+	const oMap = $derived(new Map((other?.picks ?? []).map((p) => [key(p), p])));
+	const rows = $derived((data?.picks.picks ?? []).map((p) => ({ p, e: eMap.get(key(p)), o: oMap.get(key(p)) })));
+
+	// ── colour path: his latest stated plan at each pick next to v2's top lane after the pick
+	const plans = $derived.by(() => {
+		const at = new Map((data?.picks.colour_path ?? []).map((c) => [c.after, c]));
+		let cur = '';
+		return rows.map(({ p }) => {
+			const c = at.get(`P${p.pack}p${p.pick}`);
+			const changed = !!c && c.main !== cur;
+			if (c) cur = c.main;
+			return { cur, changed };
+		});
+	});
+
+	// ── decks
+	const hisDeck = $derived(data?.deck ? Object.entries({ ...data.deck.main, ...data.deck.lands }).map(([name, count]) => ({ name, count })) : []);
+	const ours = $derived<EngineDeck | undefined>(engine?.builder[build]);
+	const names = (cs: { name: string }[]) => new Set(cs.map((c) => c.name));
+	const BASICS = ['Plains', 'Island', 'Swamp', 'Mountain', 'Forest'];
+	const order = (cs: { name: string; count: number }[]) =>
+		[...cs].sort((a, b) => Number(BASICS.includes(a.name)) - Number(BASICS.includes(b.name)) || a.name.localeCompare(b.name));
+
+	// ── ideas
+	const ideas = $derived(data?.ideas ?? []);
+	const phases = $derived([...new Set(ideas.map((i) => i.phase).filter(Boolean))]);
+	const stateOf = (i: Idea): IdeaStatus => data?.status[i.id] ?? { status: 'untested', result: '', doc: '' };
+	const shown = $derived(ideas.filter((i) => (!statusFilter || stateOf(i).status === statusFilter) && (!phaseFilter || i.phase === phaseFilter)));
+	async function setStatus(i: Idea, status: string) {
+		try {
+			const s = stateOf(i);
+			data!.status[i.id] = await api.setIdea(id, i.id, { ...s, status });
+		} catch (e) { error = String(e); }
+	}
+	const lanePct = (v: number) => `${Math.round(v * 100)}%`;
+</script>
+
+{#if error}<p class="mb-3 text-sm text-rose-400">{error}</p>{/if}
+{#if !data}
+	<p class="text-zinc-500">loading…</p>
+{:else}
+	<div class="mb-3 flex flex-wrap items-baseline gap-x-4 gap-y-1 text-sm">
+		<a href="/videos" class="text-zinc-400 hover:text-zinc-100">&larr; all videos</a>
+		<h1 class="text-lg font-semibold">{data.video.title}</h1>
+		<span class="text-zinc-400">{data.video.player} · {data.video.set}</span>
+		{#if engine}<span class="text-zinc-500">v2 {engine.commit} ({engine.date}): top-1 {engine.top1}/{engine.n}, top-3 {engine.top3}/{engine.n}</span>{/if}
+	</div>
+
+	<section class="mb-6 grid gap-4 lg:grid-cols-2">
+		<div class="aspect-video w-full">
+			<iframe bind:this={frame} class="h-full w-full rounded" {src} title={data.video.title} allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+		</div>
+		<div class="max-h-[28rem] overflow-auto text-xs lg:max-h-none lg:aspect-video">
+			<table class="w-full">
+				<thead class="sticky top-0 bg-zinc-950 text-left text-zinc-500">
+					<tr><th class="font-normal">Pick</th><th class="font-normal">His plan</th><th class="font-normal">v2 top lane after the pick</th></tr>
+				</thead>
+				<tbody>
+					{#each rows as { p, e }, i (key(p))}
+						{@const top = e && Object.entries(e.lanes_after)[0]}
+						<tr class="border-t border-zinc-900 {plans[i].changed ? 'text-zinc-100' : 'text-zinc-500'}">
+							<td class="pr-2 whitespace-nowrap">P{p.pack}p{p.pick}</td>
+							<td class="pr-2">{plans[i].changed ? plans[i].cur : '·'}</td>
+							<td class="whitespace-nowrap {top && plans[i].cur && !top[0].split('').some((c) => plans[i].cur.includes(c)) ? 'text-amber-400' : ''}">{top ? `${top[0]} ${lanePct(top[1])}` : '-'}</td>
+						</tr>
+					{/each}
+				</tbody>
+			</table>
+		</div>
+	</section>
+
+	<section class="mb-6">
+		<div class="mb-2 flex flex-wrap items-center gap-4 text-xs text-zinc-500">
+			<h2 class="text-sm font-semibold text-zinc-200">Picks</h2>
+			<label>engine
+				<select class="rounded bg-zinc-900 px-1 py-0.5 text-zinc-200" bind:value={commit} onchange={() => pick('engine', commit)}>
+					<option value="latest">latest{data.engine ? ` (${data.engine.commit})` : ''}</option>
+					{#each data.commits as c}<option value={c}>{c}</option>{/each}
+				</select>
+			</label>
+			<label>compare with
+				<select class="rounded bg-zinc-900 px-1 py-0.5 text-zinc-200" bind:value={against} onchange={() => pick('other', against)}>
+					<option value="">none</option>
+					{#each data.commits as c}<option value={c}>{c}</option>{/each}
+				</select>
+			</label>
+			{#if other}<span>{rows.filter((r) => r.e && r.o && r.e.top3[0]?.name !== r.o.top3[0]?.name).length} picks where v2's #1 changed</span>{/if}
+		</div>
+		<div class="overflow-x-auto">
+			<table class="w-full min-w-[80rem] text-sm">
+				<thead class="text-left text-xs text-zinc-500">
+					<tr>
+						<th class="pr-3 font-normal">Time</th><th class="pr-3 font-normal">Pick</th><th class="pr-3 font-normal">His pick</th>
+						<th class="pr-3 font-normal">v2 #1</th><th class="pr-3 font-normal">v2 #2</th><th class="pr-3 font-normal">v2 #3</th>
+						<th class="pr-3 font-normal">His reasoning</th><th class="font-normal">Our reasoning</th>
+					</tr>
+				</thead>
+				<tbody>
+					{#each rows as { p, e, o } (key(p))}
+						{@const miss = !!e && e.top3[0]?.name !== p.taken}
+						<tr class="border-t border-zinc-800 align-top {miss ? 'bg-amber-950/30' : ''}">
+							<td class="py-1 pr-3"><button class="text-sky-400 tabular-nums hover:underline" title={p.time} onclick={() => seek(p.time)}>{mss(p.time)}</button></td>
+							<td class="pr-3 whitespace-nowrap">P{p.pack}p{p.pick}</td>
+							<td class="pr-3 font-medium">{p.taken}</td>
+							{#each [0, 1, 2] as k}
+								{@const c = e?.top3[k]}
+								<td class="pr-3 {c?.name === p.taken ? 'font-semibold text-emerald-400' : ''}">
+									{#if c}
+										{c.name} <span class="text-xs text-zinc-500 tabular-nums">{c.score.toFixed(1)}</span>{c.name === p.taken ? ' ✓' : ''}
+										{#if k === 0 && o && o.top3[0]?.name !== c.name}<div class="text-xs text-amber-400">was {o.top3[0]?.name}</div>{/if}
+									{/if}
+								</td>
+							{/each}
+							<td class="max-w-sm pr-3 text-xs text-zinc-300">{p.reasoning}</td>
+							<td class="max-w-sm text-xs text-zinc-400">
+								{#if e}
+									{#if !miss}
+										{e.reasons_top.join(' · ')}
+									{:else}
+										<div>#1: {e.reasons_top.join(' · ')}</div>
+										<div class="mt-1 text-zinc-500">His{e.his_rank ? ` (rank ${e.his_rank}, ${e.his_score?.toFixed(1)})` : ''}: {e.reasons_his.join(' · ')}</div>
+									{/if}
+								{/if}
+							</td>
+						</tr>
+					{/each}
+				</tbody>
+			</table>
+		</div>
+	</section>
+
+	<section class="mb-6">
+		<div class="mb-2 flex items-center gap-4 text-xs text-zinc-500">
+			<h2 class="text-sm font-semibold text-zinc-200">Deck</h2>
+			{#if engine && engine.builder.length > 1}
+				<select class="rounded bg-zinc-900 px-1 py-0.5 text-zinc-200" bind:value={build}>
+					{#each engine.builder as b, i}<option value={i}>{b.label ?? `build ${i + 1}`}</option>{/each}
+				</select>
+			{/if}
+		</div>
+		<div class="grid gap-6 md:grid-cols-2">
+			{#each [{ title: `His 40${engine?.his_deck?.deck_wr ? ` · deck model ${engine.his_deck.deck_wr}` : ''}`, cards: hisDeck, vs: ours?.cards ?? [] }, { title: `Our builder's 40 from his pool${ours ? ` · ${ours.main ?? ''}${ours.splash ? ' + ' + ours.splash : ''} · deck model ${ours.deck_wr}` : ''}`, cards: ours?.cards ?? [], vs: hisDeck }] as d}
+				{@const mine = names(d.vs)}
+				<div>
+					<h3 class="mb-1 text-xs text-zinc-500">{d.title}</h3>
+					<ul class="text-sm">
+						{#each order(d.cards) as c (c.name)}
+							<li class={mine.has(c.name) || BASICS.includes(c.name) ? '' : 'text-amber-400'}>{c.count} {c.name}</li>
+						{:else}
+							<li class="text-zinc-500">none</li>
+						{/each}
+					</ul>
+				</div>
+			{/each}
+		</div>
+		<p class="mt-1 text-xs text-zinc-500">Amber: not in the other deck.</p>
+	</section>
+
+	<section>
+		<div class="mb-2 flex flex-wrap items-center gap-4 text-xs text-zinc-500">
+			<h2 class="text-sm font-semibold text-zinc-200">Ideas ({shown.length}/{ideas.length})</h2>
+			<label>status
+				<select class="rounded bg-zinc-900 px-1 py-0.5 text-zinc-200" bind:value={statusFilter}>
+					<option value="">all</option>{#each IDEA_STATUSES as s}<option value={s}>{s}</option>{/each}
+				</select>
+			</label>
+			<label>phase
+				<select class="rounded bg-zinc-900 px-1 py-0.5 text-zinc-200" bind:value={phaseFilter}>
+					<option value="">all</option>{#each phases as ph}<option value={ph}>{ph}</option>{/each}
+				</select>
+			</label>
+		</div>
+		{#if !ideas.length}<p class="text-sm text-zinc-500">No ideas recorded for this video yet.</p>{/if}
+		<table class="w-full text-sm">
+			<thead class="text-left text-xs text-zinc-500">
+				<tr><th class="pr-3 font-normal">Time</th><th class="pr-3 font-normal">Phase</th><th class="pr-3 font-normal">Claim</th><th class="pr-3 font-normal">Status</th><th class="pr-3 font-normal">Result</th><th class="font-normal">Doc</th></tr>
+			</thead>
+			<tbody>
+				{#each shown as i (i.id)}
+					{@const s = stateOf(i)}
+					<tr class="border-t border-zinc-800 align-top">
+						<td class="py-1 pr-3"><button class="text-sky-400 tabular-nums hover:underline" onclick={() => seek(i.time)}>{mss(i.time)}</button></td>
+						<td class="pr-3 whitespace-nowrap">{i.phase}</td>
+						<td class="max-w-xl pr-3" title={i.quote}>{i.claim}</td>
+						<td class="pr-3">
+							<select class="rounded bg-zinc-900 px-1 py-0.5" value={s.status} onchange={(e) => setStatus(i, e.currentTarget.value)}>
+								{#each IDEA_STATUSES as st}<option value={st}>{st}</option>{/each}
+							</select>
+						</td>
+						<td class="max-w-xs pr-3 text-xs text-zinc-300">{s.result}</td>
+						<td class="text-xs">{#if /^https?:/.test(s.doc)}<a class="text-sky-400 hover:underline" href={s.doc} target="_blank" rel="noreferrer">{s.doc}</a>{:else}<span class="text-zinc-400">{s.doc}</span>{/if}</td>
+					</tr>
+				{/each}
+			</tbody>
+		</table>
+	</section>
+{/if}
