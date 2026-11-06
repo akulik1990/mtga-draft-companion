@@ -1,0 +1,65 @@
+{
+ "id": "mqZsj4Vg2Es",
+ "time": "15:12-17:13 (build at 15:12-16:58, submitted at about 17:05)",
+ "main": {
+  "Unsummon": 1,
+  "Campus Crier": 2,
+  "Teyo, Lightshield Expert": 1,
+  "Proft, Consulting Detective": 1,
+  "Proctor of Potential": 1,
+  "Awaken the Inferno": 1,
+  "Your Fate Ends Here": 1,
+  "Mindseeker Oculus": 2,
+  "Loot, the Nexus": 1,
+  "Restore with Empathy": 1,
+  "Murmuring Volume": 1,
+  "The Theorist, Jace Beleren": 1,
+  "Jiang Yanggu, Never Alone": 1,
+  "Warrior's Blades": 2,
+  "Undulating Witness": 1,
+  "Way of the Mind Sculptor": 1,
+  "Twisted Fates": 2,
+  "Ruric Thar, Biomagus": 1,
+  "Kwia Vigorbloom": 1
+ },
+ "lands": {
+  "Plains": 2,
+  "Island": 5,
+  "Swamp": 1,
+  "Mountain": 1,
+  "Forest": 1,
+  "Fatehold Annex": 1,
+  "Meticulous Commons": 1,
+  "Konstrari Annex": 1,
+  "Dedicated Commons": 1,
+  "Vigorbloom Annex": 2,
+  "Room of Refuge": 1
+ },
+ "sideboard": {
+  "Fateshaper Aspirant": 1,
+  "Cryotheory Adept": 1,
+  "Surveillance Phantasm": 1,
+  "Protege's Awakening": 1,
+  "Rampart Hunter": 1,
+  "Artifist Acumen": 1,
+  "Skilled Battlecarver": 1,
+  "Hallway Heckler": 1,
+  "Vinelasher Adept": 2,
+  "Living Library": 1,
+  "Infinite Coursework": 1
+ },
+ "spells": 23,
+ "land_count": 17,
+ "landcyclers_in_main": [
+  "Awaken the Inferno",
+  "Undulating Witness"
+ ],
+ "colours": "WU base; splash G (Kwia Vigorbloom, Jiang Yanggu, Loot, Restore with Empathy), R (Warrior's Blades x2, Awaken the Inferno), B (Twisted Fates x2)",
+ "notes": [
+  "Counts 7 blue and 7 white sources, 'kind of three' black, 'kind of four' red, 'six green sources kind of'.",
+  "Cuts Cryotheory Adept, Protege's Awakening ('not going to be able to protect it very well'), Surveillance Phantasm, one Vinelasher Adept, then the other ('let's just cut our only double green card. That makes our mana a little bit more consistent').",
+  "Puts Undulating Witness back in and cuts Infinite Coursework, 'our on-colour removal spell, which is probably a dicey cut. We'll revisit after this game'.",
+  "'I probably shouldn't be splashing black, but we will anyway.'",
+  "During the draft: 'I'm going to probably play like 20 lands' and 'I think these two [landcyclers] will cumulatively account for a land'. Final: 17 lands plus 2 landcyclers."
+ ]
+}
