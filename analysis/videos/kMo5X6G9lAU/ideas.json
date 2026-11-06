@@ -1,0 +1,498 @@
+{
+ "video": "kMo5X6G9lAU",
+ "player": "NicolaiBolas",
+ "set": "FRA",
+ "source": "YouTube auto-caption transcript 0:00-19:45 (tools/video_draft.py transcript kMo5X6G9lAU --start 0 --end 1170), card names corrected against data/Sets/FRA_PremierDraft_All_Data.json; nothing past 19:45 read. 'type' marks each idea as claim, heuristic or one-off pick; 'repeats' lists ideas of earlier videos it restates; 'related' lists looser topic matches. Solo draft: every idea is the host's (speaker field kept for the schema).",
+ "ideas": [
+  {
+   "id": "kMo-01",
+   "time": 12,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Dark Matter Manipulator is a one-mana 3/2 a lot of the time because it is easy to reach seven cards with a free mill three, but it is worse than Plan for All Outcomes.",
+   "quote": "It's like a one mana 3-2 a lot of the time because it's pretty easy to get to seven cards when you're spotting yourself a free mill three.",
+   "cards": [
+    "Dark Matter Manipulator",
+    "Plan for All Outcomes"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Dark Matter Manipulator against Plan for All Outcomes.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "kMo-02",
+   "time": 24,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Plan for All Outcomes is a really strong kill spell that later lets you surveil on every noncreature spell, and works in blue-red, blue-white and blue-black Jace decks.",
+   "quote": "This card's really strong as a kill spell that then eventually lets you surveil every time you play a non-creature spell.",
+   "cards": [
+    "Plan for All Outcomes"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Plan for All Outcomes by colour pair.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "VTU-18",
+    "55a-35"
+   ]
+  },
+  {
+   "id": "kMo-03",
+   "time": 60,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Blue is a good colour for Jace decks: blue-red uses Plan for All Outcomes well, blue-white because it cares about surveil, and blue-black.",
+   "quote": "I do really like blue decks in this format. Blue Red uses this quite well. Blue White uses this quite well because it cares about surveilling.",
+   "cards": [
+    "Plan for All Outcomes"
+   ],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "Win rate of blue pairs against others by skill.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "8Bz-02"
+   ]
+  },
+  {
+   "id": "kMo-04",
+   "time": 86,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Recursive Recruitment is one of the best win conditions at common or uncommon for a graveyard strategy, and easy to splash from blue-green; he takes it over Stingcaster Mage (a 2/1 that draws a card).",
+   "quote": "It's one of the best like win conditions at common or uncommon for a graveyard strategy.",
+   "cards": [
+    "Recursive Recruitment",
+    "Stingcaster Mage"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Recursive Recruitment against Stingcaster Mage.",
+   "type": "claim",
+   "repeats": [
+    "5aM-02",
+    "97Z-18",
+    "8Bz-06"
+   ],
+   "related": [
+    "pdI-01"
+   ]
+  },
+  {
+   "id": "kMo-05",
+   "time": 150,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "He has a rule to almost never pass Mindseeker Oculus: even if he were not blue-black, he could use it; he prefers it to Proft or Your Fate Ends Here even in a blue-white deck.",
+   "quote": "I have a rule for myself and that's like almost never pass Mindseeker Oculus.",
+   "cards": [
+    "Mindseeker Oculus",
+    "Your Fate Ends Here",
+    "Proft, Consulting Detective"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Mindseeker Oculus against Your Fate Ends Here and Proft.",
+   "type": "heuristic",
+   "repeats": [
+    "9nA-17",
+    "97Z-25",
+    "VTU-07"
+   ],
+   "related": []
+  },
+  {
+   "id": "kMo-06",
+   "time": 185,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Pair signals: when a pack still has both halves of a pair, nothing is missing and there is no information.",
+   "quote": "I'm not getting any info from the pairings though because this pair is still here and this is half of a pair. So nothing's missing.",
+   "cards": [],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "How often a pack with all pair partners present predicts the upstream drafter's colours.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "97Z-03",
+    "I_C-05"
+   ]
+  },
+  {
+   "id": "kMo-07",
+   "time": 210,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "The basic landcyclers are very playable, and the black one (Apex Witchstalker) especially so with Rewrite Regrets: cycle on turn two, get back the 6/4 menace on turn four.",
+   "quote": "The cyclingers are very playable in this format. Like the black one is especially good to get back with this.",
+   "cards": [
+    "Apex Witchstalker",
+    "Rewrite Regrets"
+   ],
+   "kind": "synergy",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Rewrite Regrets by number of landcyclers; Apex Witchstalker win rate when cycled.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "994-07",
+    "re7-20"
+   ]
+  },
+  {
+   "id": "kMo-08",
+   "time": 240,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Twinned Vision is fine but not a card he wants more than one of; it is really good in the middle of the deck when he needs extra things to do.",
+   "quote": "Twin vision fine, but not a card I ever really want more than one of.",
+   "cards": [
+    "Twinned Vision"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Twinned Vision by copy count.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-20",
+    "55a-40"
+   ]
+  },
+  {
+   "id": "kMo-09",
+   "time": 276,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Extended Absence at pick five is a signal that black is open: it is the best black common and many uncommons were still in the pack, so few drafters upstream take black.",
+   "quote": "Extended options pick five is I think a signal to some degree that black might be open.",
+   "cards": [
+    "Extended Absence"
+   ],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "Whether Extended Absence arriving at pick 5 predicts black flow.",
+   "type": "heuristic",
+   "repeats": [
+    "97Z-08"
+   ],
+   "related": [
+    "CWs-15"
+   ]
+  },
+  {
+   "id": "kMo-10",
+   "time": 300,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Apex Witchstalker is a good combo with Rewrite Regrets and a card he does not mind casting at the top of the curve; he takes it over Icy Reception, a card he has gone up and down on.",
+   "quote": "I think this card's really a good combo with Rewrite Regrets and is also a card I don't mind casting at the top end of my curve.",
+   "cards": [
+    "Apex Witchstalker",
+    "Icy Reception"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Apex Witchstalker against Icy Reception.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "Uy4-10",
+    "re7-16"
+   ]
+  },
+  {
+   "id": "kMo-11",
+   "time": 360,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "In a graveyard deck he would rather splash green than red: green has Hapatra and the landcyclers help.",
+   "quote": "I would rather splash green than red. And so I'll just take this card.",
+   "cards": [
+    "Apex Witchstalker",
+    "Hapatra, the Desert Fang"
+   ],
+   "kind": "splash / mana",
+   "engine_area": "picker",
+   "test_idea": "Splash win rate by colour for blue-black graveyard decks.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "CWs-22"
+   ]
+  },
+  {
+   "id": "kMo-12",
+   "time": 402,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "A wheeled card is value: Dark Matter Manipulator wheeled from the first pick, and the Charm and the land wheeled in pack two; when you think a card can wheel, take the one that cannot.",
+   "quote": "When you think you can wheel cards, you get so much value.",
+   "cards": [
+    "Dark Matter Manipulator",
+    "Theorix Charm"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Wheel rate of gold uncommons in blue-black.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "n6s-15",
+    "n6s-11"
+   ]
+  },
+  {
+   "id": "kMo-13",
+   "time": 540,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Seasoned Cryomancer (mythic) over Theorix Charm: he would take the charm without a mythic that fits; he expects a Charm to wheel because nobody else is blue-black.",
+   "quote": "I would definitely take the charm if there wasn't a mythic rare that really fits my strategy well.",
+   "cards": [
+    "Seasoned Cryomancer",
+    "Theorix Charm"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Seasoned Cryomancer against Theorix Charm.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "VTU-15"
+   ]
+  },
+  {
+   "id": "kMo-14",
+   "time": 550,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Countersculpt is perfect for his control deck even with few Jace cards; he keeps taking it, because his deck wants the late game.",
+   "quote": "I think I'm just going to keep taking counter sculpts. It's a really strong card.",
+   "cards": [
+    "Countersculpt"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Countersculpt by number of Jace cards in the deck.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "55a-06",
+    "9nA-30",
+    "mqZ-10"
+   ]
+  },
+  {
+   "id": "kMo-15",
+   "time": 615,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Take the instant-speed kill spell for the deck over a good two-drop: Last Gasp over Proft, Consulting Detective.",
+   "quote": "I just need the kill spell, especially instant speed makes it...",
+   "cards": [
+    "Last Gasp",
+    "Proft, Consulting Detective"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Last Gasp against Proft, Consulting Detective.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "55a-30"
+   ]
+  },
+  {
+   "id": "kMo-16",
+   "time": 650,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Proft, Sinister Mastermind is an easy pick: the minus three minus one kills a lot of creatures and he can use it as a one-drop.",
+   "quote": "Prof minus three minus one kills a lot of creatures in this format.",
+   "cards": [
+    "Proft, Sinister Mastermind"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Proft, Sinister Mastermind.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "CWs-14",
+    "CWs-05"
+   ]
+  },
+  {
+   "id": "kMo-17",
+   "time": 690,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "One copy of Theoretical Necromancer is fine in a deck that mills itself; he never wants a second one.",
+   "quote": "I do like one copy of the necromancer in these decks if I'm milling myself.",
+   "cards": [
+    "Theoretical Necromancer"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Theoretical Necromancer by copy count.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "CWs-35"
+   ]
+  },
+  {
+   "id": "kMo-18",
+   "time": 752,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "He only ever wants one Unsummon in this type of deck, so he takes Gallia, Tragic Host (fits the mill plan, a two-drop that can come back) over it.",
+   "quote": "I only ever want one unsummon in this type of deck.",
+   "cards": [
+    "Gallia, Tragic Host",
+    "Unsummon"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Win rate of Unsummon by copy count in UB.",
+   "type": "heuristic",
+   "related": [
+    "55a-24",
+    "CWs-35",
+    "VTU-19"
+   ]
+  },
+  {
+   "id": "kMo-19",
+   "time": 850,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Infinite Coursework is honestly a marginal card but still makes his deck as an unconditional kill spell for many things.",
+   "quote": "Infinite coursework is honestly a card that's more marginal, but I still think it's going to make the cut.",
+   "cards": [
+    "Infinite Coursework"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "Main-deck rate and GIH WR of Infinite Coursework.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-22"
+   ]
+  },
+  {
+   "id": "kMo-20",
+   "time": 920,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Take a land for consistency when you will have many playables: Theorix Annex over Fblthp, Impossibly Lost, which is not as good in a deck not going hard on mill.",
+   "quote": "Getting a land to make my mana more consistent is going to be a really nice thing to have here.",
+   "cards": [
+    "Theorix Annex",
+    "Fblthp, Impossibly Lost"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Theorix Annex in blue-black decks.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "CLK-17",
+    "I_C-18"
+   ]
+  },
+  {
+   "id": "kMo-21",
+   "time": 1050,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Rank Rat is better than Tetsuko for a deck with one Mindseeker Oculus: the Rat trades with the opponent's resources, Tetsuko is an aggressive card.",
+   "quote": "Rat at least does a little bit of trading with their resources which we care about.",
+   "cards": [
+    "Rank Rat",
+    "Tetsuko Umezawa, Fugitive"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Rank Rat against Tetsuko Umezawa, Fugitive.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "XSY-12"
+   ]
+  },
+  {
+   "id": "kMo-22",
+   "time": 1155,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "build",
+   "claim": "17 lands with two eight-drops that are pretty good; he considers cutting a land because the landcyclers are break-in-case-of-emergency lands.",
+   "quote": "I think this is a 17 land deck. We have two eight drops that are pretty dang good.",
+   "cards": [
+    "Apex Witchstalker",
+    "Rewrite Regrets"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Land count against win rate in blue-black graveyard decks with landcyclers.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "Uy4-11",
+    "5aM-22"
+   ]
+  },
+  {
+   "id": "kMo-23",
+   "time": 1190,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "build",
+   "claim": "Cut Teyo, Keeper of the Quiet Hour, Necromancer and Afterthought Sentry; keep Theorix Metamage for the graveyard (milling it makes it a 3/2), Fblthp over Divining Duelist is the close call.",
+   "quote": "Theorix Metamage is probably better just for graveyard synergy stuff. Like milling one of these is really good.",
+   "cards": [
+    "Theorix Metamage",
+    "Fblthp, Impossibly Lost",
+    "Divining Duelist"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "GIH WR of Theorix Metamage by self-mill count.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "CWs-17"
+   ]
+  },
+  {
+   "id": "kMo-24",
+   "time": 1225,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "build",
+   "claim": "The mana wants equal numbers of both colours: lots of cheap black cards early but also double-blue cards; so he plays eight Island and eight Swamp with one dual.",
+   "quote": "We want to have equals of both because we have a lot of black cards early, but also double blue cards.",
+   "cards": [
+    "Island",
+    "Swamp",
+    "Theorix Annex"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Win rate of UB decks by source split.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "Uy4-13"
+   ]
+  }
+ ]
+}

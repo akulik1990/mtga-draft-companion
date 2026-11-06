@@ -1,0 +1,53 @@
+{
+ "id": "kMo5X6G9lAU",
+ "time": "19:00-20:55 (final 40/40 deck screen at 1251 s; the sideboard row is not shown; cut-off 1255 s)",
+ "main": {
+  "Dark Matter Manipulator": 2,
+  "Countersculpt": 2,
+  "Gallia, Tragic Host": 1,
+  "Last Gasp": 1,
+  "Rank Rat": 1,
+  "Theorix Charm": 2,
+  "Arni, Humble Scribe": 1,
+  "Divining Duelist": 1,
+  "Infinite Coursework": 1,
+  "Mindseeker Oculus": 1,
+  "Seasoned Cryomancer": 1,
+  "Proft, Sinister Mastermind": 1,
+  "Theorix Metamage": 1,
+  "Plan for All Outcomes": 1,
+  "Extended Absence": 1,
+  "Rewrite Regrets": 1,
+  "Recursive Recruitment": 2,
+  "Apex Witchstalker": 2
+ },
+ "lands": {
+  "Island": 8,
+  "Swamp": 8,
+  "Theorix Annex": 1
+ },
+ "sideboard": {
+  "Yuriko, Hope from the Shadows": 1,
+  "Afterthought Sentry": 1,
+  "Stingerquill Annex": 1,
+  "Vigorbloom Annex": 1,
+  "Stingerquill Charm": 1,
+  "Proft, Sinister Mastermind": 1,
+  "Theoretical Necromancer": 1,
+  "Formidable Commons": 1,
+  "Keeper of the Quiet Hour": 1,
+  "Fblthp, Impossibly Lost": 1,
+  "Medic's Kitesail": 1
+ },
+ "spells": 23,
+ "land_count": 17,
+ "landcyclers_in_main": [
+  "Apex Witchstalker x2"
+ ],
+ "colours": "Blue-black graveyard control, no splash: Island x8, Swamp x8, Theorix Annex; two eight-mana Recursive Recruitments with two Apex Witchstalker and Rewrite Regrets; cheap interaction: Last Gasp, Extended Absence, two Theorix Charm, two Countersculpt, Proft.",
+ "notes": [
+  "Sideboard is derived by accounting (picks not in the main 40: 11 cards; the basics and the picks he did not identify (P1p11, P2p13, P3p8, P3p13) are not shown).",
+  "19:00-20:40: 'we need to cut seven cards ... 17 land deck. We have two eight drops'; cuts the Keeper, the Necromancer, the Afterthought Sentry, Eureko; 'I want to try the Fibble but I don't want to play the Eureko'; Divining Duelist is tried instead of Fblthp ('let's just try the duelist ... Fibble is probably better'); 'I definitely want to play at least one Prof'.",
+  "19:20: 'we might also cut a land because we just want to be playing our land drops'; 20:46 'we want to have equals of both because we have a lot of black cards early, but also double blue cards'."
+ ]
+}
