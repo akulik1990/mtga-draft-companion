@@ -1,0 +1,128 @@
+Landcyclers counted as sources: ['Apex Witchstalker', 'Awaken the Inferno', 'Hexhaven Battalion', 'Undulating Witness', 'Vinelasher Adept']; Murmuring Volume; double-pip cards in set: 54
+
+## PRIMARY skill>=0.60
+
+### all drafts: 7595 decks, 5297 drafts, 29969 games
+groups (decks, mean WR %): A 4004 (65.8); B 3078 (64.3); C 333 (62.6); D 180 (66.9)
+
+vs clean two-colour (A), WR pts
+
+| group | pts | 95% CI | p |
+|---|---|---|---|
+| B splash, no DP | -2.66 | [-3.82, -1.50] | 6.68e-06 |
+| C DP splash, <7 sources | -4.54 | [-7.20, -1.87] | 0.000844 |
+| D DP splash, 7+ sources | -0.33 | [-4.05, +3.39] | 0.862 |
+
+D minus C: +4.20 [-0.19, +8.60] p 0.0609
+C minus B: -1.88 [-4.53, +0.78] p 0.166; D minus B: +2.33 [-1.40, +6.06] p 0.22
+
+per DP copy within splash decks (reference: splash decks with no DP copy), WR pts per copy; src = per extra source
+
+| term | pts | 95% CI | p |
+|---|---|---|---|
+| dp_lo | -1.90 | [-4.34, +0.54] | 0.128 |
+| dp_hi | +0.52 | [-2.38, +3.42] | 0.726 |
+| src | +0.36 | [-0.18, +0.89] | 0.189 |
+
+dp_hi minus dp_lo: +2.42 [-1.13, +5.97] p 0.182
+pooled per DP copy (comparable to -2.03): | dp | -1.02 | [-3.01, +0.97] | 0.317 |
+within DP-splash decks, 6+ vs <6 sources: | 6+ | -0.78 | [-5.31, +3.75] | 0.736 | (n 331 / 182)
+within DP-splash decks, 8+ vs <8 sources: | 8+ | +5.65 | [-0.57, +11.87] | 0.0751 | (n 86 / 427)
+
+### replication half 1: 3819 decks, 2649 drafts, 15001 games
+groups (decks, mean WR %): A 2039 (66.0); B 1529 (64.6); C 158 (61.5); D 93 (68.8)
+
+vs clean two-colour (A), WR pts
+
+| group | pts | 95% CI | p |
+|---|---|---|---|
+| B splash, no DP | -2.71 | [-4.35, -1.07] | 0.0012 |
+| C DP splash, <7 sources | -6.63 | [-10.33, -2.93] | 0.000449 |
+| D DP splash, 7+ sources | +1.49 | [-4.04, +7.01] | 0.598 |
+
+D minus C: +8.11 [+1.74, +14.49] p 0.0126
+C minus B: -3.92 [-7.60, -0.23] p 0.0373; D minus B: +4.20 [-1.34, +9.73] p 0.137
+
+per DP copy within splash decks (reference: splash decks with no DP copy), WR pts per copy; src = per extra source
+
+| term | pts | 95% CI | p |
+|---|---|---|---|
+| dp_lo | -3.20 | [-6.76, +0.37] | 0.0791 |
+| dp_hi | +1.78 | [-2.58, +6.15] | 0.423 |
+| src | +0.08 | [-0.68, +0.83] | 0.843 |
+
+dp_hi minus dp_lo: +4.98 [-0.27, +10.23] p 0.0631
+pooled per DP copy (comparable to -2.03): | dp | -1.47 | [-4.39, +1.46] | 0.326 |
+within DP-splash decks, 6+ vs <6 sources: | 6+ | -0.69 | [-7.97, +6.59] | 0.853 | (n 169 / 82)
+within DP-splash decks, 8+ vs <8 sources: | 8+ | +9.10 | [-1.18, +19.37] | 0.0827 | (n 42 / 209)
+
+### replication half 2: 3776 decks, 2648 drafts, 14968 games
+groups (decks, mean WR %): A 1965 (65.5); B 1549 (64.0); C 175 (63.6); D 87 (65.2)
+
+vs clean two-colour (A), WR pts
+
+| group | pts | 95% CI | p |
+|---|---|---|---|
+| B splash, no DP | -2.55 | [-4.19, -0.91] | 0.00233 |
+| C DP splash, <7 sources | -2.64 | [-6.47, +1.19] | 0.176 |
+| D DP splash, 7+ sources | -2.32 | [-7.39, +2.75] | 0.37 |
+
+D minus C: +0.32 [-5.82, +6.47] p 0.918
+C minus B: -0.09 [-3.90, +3.72] p 0.962; D minus B: +0.23 [-4.85, +5.31] p 0.929
+
+per DP copy within splash decks (reference: splash decks with no DP copy), WR pts per copy; src = per extra source
+
+| term | pts | 95% CI | p |
+|---|---|---|---|
+| dp_lo | -0.29 | [-3.62, +3.04] | 0.862 |
+| dp_hi | -1.19 | [-5.29, +2.91] | 0.569 |
+| src | +0.58 | [-0.18, +1.35] | 0.135 |
+
+dp_hi minus dp_lo: -0.90 [-5.91, +4.12] p 0.726
+pooled per DP copy (comparable to -2.03): | dp | -0.63 | [-3.33, +2.07] | 0.647 |
+within DP-splash decks, 6+ vs <6 sources: | 6+ | -2.30 | [-8.75, +4.15] | 0.485 | (n 162 / 100)
+within DP-splash decks, 8+ vs <8 sources: | 8+ | +2.01 | [-6.81, +10.84] | 0.655 | (n 44 / 218)
+
+## SENSITIVITY all skills
+
+### all drafts: 25227 decks, 19462 drafts, 99429 games
+groups (decks, mean WR %): A 13842 (57.7); B 9535 (56.8); C 1263 (55.3); D 587 (58.3)
+
+vs clean two-colour (A), WR pts
+
+| group | pts | 95% CI | p |
+|---|---|---|---|
+| B splash, no DP | -2.28 | [-2.88, -1.69] | 5.92e-14 |
+| C DP splash, <7 sources | -2.85 | [-4.19, -1.51] | 3.15e-05 |
+| D DP splash, 7+ sources | -1.16 | [-3.01, +0.69] | 0.22 |
+
+D minus C: +1.69 [-0.51, +3.89] p 0.132
+C minus B: -0.57 [-1.92, +0.78] p 0.411; D minus B: +1.12 [-0.74, +2.98] p 0.237
+
+per DP copy within splash decks (reference: splash decks with no DP copy), WR pts per copy; src = per extra source
+
+| term | pts | 95% CI | p |
+|---|---|---|---|
+| dp_lo | -0.78 | [-1.92, +0.36] | 0.181 |
+| dp_hi | +0.03 | [-1.34, +1.40] | 0.962 |
+| src | +0.10 | [-0.20, +0.40] | 0.503 |
+
+dp_hi minus dp_lo: +0.81 [-0.85, +2.47] p 0.339
+pooled per DP copy (comparable to -2.03): | dp | -0.50 | [-1.43, +0.44] | 0.297 |
+within DP-splash decks, 6+ vs <6 sources: | 6+ | -0.18 | [-2.35, +1.98] | 0.867 | (n 1090 / 760)
+within DP-splash decks, 8+ vs <8 sources: | 8+ | +5.53 | [+2.40, +8.66] | 0.000536 | (n 253 / 1597)
+
+## Selection: who splashes a double pip (all skills)
+
+| group | decks | skill | mean GIH of spells | creatures | splash-colour cards | sources of s | removal (REM48) in splash colour only / base |
+|---|---|---|---|---|---|---|---|
+| A | 13842 | 0.547 | 55.71 | 13.9 | - | - | 0.00 base |
+| B | 9535 | 0.555 | 56.20 | 13.3 | 2.6 | 4.7 | 0.38 / 4.87 |
+| C | 1263 | 0.544 | 55.95 | 13.9 | 3.2 | 5.1 | 0.47 / 4.77 |
+| D | 587 | 0.551 | 56.22 | 13.3 | 3.2 | 7.6 | 0.56 / 4.79 |
+
+splash decks with a DP copy: 0.162 of 11385; sources distribution of those (decks): {1: 1, 2: 9, 3: 55, 4: 250, 5: 445, 6: 503, 7: 334, 8: 164, 9: 64, 10: 19, 11: 6}
+splash decks without DP, sources: {1: 91, 2: 407, 3: 1415, 4: 2532, 5: 2530, 6: 1609, 7: 672, 8: 212, 9: 57, 10: 9, 11: 1}
+splash colour in DP decks: {'R': 947, 'B': 298, 'U': 270, 'W': 217, 'G': 118}; in other splash decks: {'B': 2706, 'G': 2355, 'W': 1699, 'U': 1432, 'R': 1343}
+mean GIH WR of the double-pip card(s) in C+D decks 61.32 vs mean GIH of the same decks' spells 56.03
+most splashed double-pip cards (decks, GIH WR %): Craftwork Crusher (442, 61.59), Kiora of Fire and Ashes (311, 60.91), Mind Meanderer (128, 57.17), Ajani Unrelenting (92, 73.29), Kindred Judgment (90, 61.32), Hapatra, the Desert Fang (89, 58.79), Violent Echoes (85, 58.95), Twisted Fates (63, 57.01), Uldaros Theorix (61, 68.72), Chandra, Torch of Defiance (57, 59.69), Overwrite the Multiverse (55, 64.79), The Theorist, Jace Beleren (49, 67.73)

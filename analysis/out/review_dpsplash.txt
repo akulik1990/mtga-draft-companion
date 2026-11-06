@@ -1,0 +1,83 @@
+# Review: double-pip splash and source count
+
+splash decks (single-colour splash): 11385; with DP copy 1850; formats {'PremierDraft': 7788, 'PickTwoDraft': 1988, 'TradDraft': 1609}
+
+sources distribution, DP decks vs single-pip decks (all skills):
+DP:  {3: 65, 4: 250, 5: 445, 6: 503, 7: 334, 8: 164, 9: 64, 10: 25}
+noDP:{3: 1913, 4: 2532, 5: 2530, 6: 1609, 7: 672, 8: 212, 9: 57, 10: 10}
+
+## ALL SKILLS
+
+DP-splash decks (the claim): 1850 decks; by sources vs <=4 (pts)
+
+| sources | n | pts | 95% CI | p |
+|---|---|---|---|---|
+| 5 | 445 | +1.53 | [-1.89, +4.96] | 0.38 |
+| 6 | 503 | -0.50 | [-3.73, +2.72] | 0.761 |
+| 7 | 334 | -0.71 | [-4.27, +2.84] | 0.694 |
+| 8 | 164 | +5.57 | [+1.23, +9.92] | 0.012 |
+| 9+ | 89 | +5.71 | [-0.50, +11.91] | 0.0714 |
+linear, per source (3..10 clipped): | srcc | +0.67 | [-0.10, +1.43] | 0.0864 |
+linear, per source, splashed-card quality (spq) also controlled: | srcc | +0.66 | [-0.10, +1.43] | 0.0885 |  spq: | spq | -0.33 | [-0.68, +0.03] | 0.0716 |
+
+single-pip splash decks (negative control: no DP castability mechanism): 9535 decks; by sources vs <=4 (pts)
+
+| sources | n | pts | 95% CI | p |
+|---|---|---|---|---|
+| 5 | 2530 | +1.09 | [-0.01, +2.18] | 0.0513 |
+| 6 | 1609 | +1.03 | [-0.24, +2.30] | 0.113 |
+| 7 | 672 | -0.79 | [-2.54, +0.96] | 0.376 |
+| 8 | 212 | +0.65 | [-2.79, +4.09] | 0.712 |
+| 9+ | 67 | +2.53 | [-2.47, +7.53] | 0.322 |
+linear, per source (3..10 clipped): | srcc | +0.07 | [-0.26, +0.41] | 0.666 |
+linear, per source, splashed-card quality (spq) also controlled: | srcc | +0.08 | [-0.26, +0.42] | 0.64 |  spq: | spq | -0.23 | [-0.44, -0.01] | 0.036 |
+
+interaction srcc x hasdp (extra per-source slope in DP decks): | srcc:hasdp | +0.54 | [-0.27, +1.35] | 0.193 |; main srcc | srcc | +0.08 | [-0.26, +0.42] | 0.63 |; hasdp | hasdp | -3.43 | [-8.23, +1.38] | 0.162 |
+8+ cut: s8 in single-pip decks | s8 | +0.75 | [-2.10, +3.61] | 0.604 |; extra in DP decks (s8:hasdp) | s8:hasdp | +4.42 | [+0.22, +8.61] | 0.0391 |
+
+## skill>=0.60
+
+DP-splash decks (the claim): 513 decks; by sources vs <=4 (pts)
+
+| sources | n | pts | 95% CI | p |
+|---|---|---|---|---|
+| 5 | 112 | +2.30 | [-4.92, +9.51] | 0.533 |
+| 6 | 151 | -2.00 | [-8.23, +4.24] | 0.53 |
+| 7 | 94 | +1.23 | [-5.73, +8.20] | 0.728 |
+| 8 | 51 | +2.33 | [-5.95, +10.62] | 0.581 |
+| 9+ | 35 | +12.96 | [+1.28, +24.65] | 0.0297 |
+linear, per source (3..10 clipped): | srcc | +1.12 | [-0.38, +2.63] | 0.143 |
+linear, per source, splashed-card quality (spq) also controlled: | srcc | +1.08 | [-0.45, +2.62] | 0.167 |  spq: | spq | -0.59 | [-1.32, +0.13] | 0.11 |
+
+single-pip splash decks (negative control: no DP castability mechanism): 3078 decks; by sources vs <=4 (pts)
+
+| sources | n | pts | 95% CI | p |
+|---|---|---|---|---|
+| 5 | 809 | +1.36 | [-0.71, +3.42] | 0.197 |
+| 6 | 568 | +1.55 | [-0.71, +3.82] | 0.179 |
+| 7 | 214 | -0.90 | [-4.03, +2.23] | 0.572 |
+| 8 | 80 | +2.38 | [-3.68, +8.44] | 0.441 |
+| 9+ | 25 | +5.92 | [-2.79, +14.63] | 0.183 |
+linear, per source (3..10 clipped): | srcc | +0.37 | [-0.24, +0.97] | 0.233 |
+linear, per source, splashed-card quality (spq) also controlled: | srcc | +0.38 | [-0.22, +0.98] | 0.211 |  spq: | spq | -0.56 | [-0.99, -0.13] | 0.0109 |
+
+interaction srcc x hasdp (extra per-source slope in DP decks): | srcc:hasdp | +0.83 | [-0.75, +2.40] | 0.303 |; main srcc | srcc | +0.37 | [-0.23, +0.97] | 0.231 |; hasdp | hasdp | -5.93 | [-15.43, +3.57] | 0.221 |
+8+ cut: s8 in single-pip decks | s8 | +2.70 | [-2.34, +7.73] | 0.294 |; extra in DP decks (s8:hasdp) | s8:hasdp | +2.93 | [-4.93, +10.79] | 0.465 |
+
+## Held-out by format (the 8 cut was chosen on all formats pooled)
+PremierDraft: DP decks 1294 (8+: 181); 8+ vs <8 | s8 | +4.47 | [+1.17, +7.78] | 0.00789 |; 7+ vs <7 | s7 | +1.16 | [-1.24, +3.56] | 0.342 |; per source | srcc | +0.46 | [-0.37, +1.29] | 0.28 |
+PremierDraft: single-pip control 6494 (8+: 171); 8+ vs <8 | s8 | +0.82 | [-2.18, +3.82] | 0.593 |
+Trad+PickTwo: DP decks 556 (8+: 72); 8+ vs <8 | s8 | +8.97 | [+1.00, +16.93] | 0.0273 |; 7+ vs <7 | s7 | +4.11 | [-1.27, +9.50] | 0.134 |; per source | srcc | +1.40 | [-0.29, +3.08] | 0.104 |
+Trad+PickTwo: single-pip control 3041 (8+: 108); 8+ vs <8 | s8 | -1.39 | [-7.53, +4.76] | 0.659 |
+
+## Selection: splashed-card quality and skill by sources (DP decks, all skills)
+        n  skill  quality     spq     wr
+srcc                                    
+3      65  0.514   55.058  57.248  0.397
+4     250  0.538   55.762  58.242  0.460
+5     445  0.542   56.030  58.561  0.477
+6     503  0.553   56.080  58.608  0.497
+7     334  0.548   56.252  58.780  0.498
+8     164  0.553   56.125  58.599  0.558
+9      64  0.554   56.180  58.735  0.561
+10     25  0.572   56.432  59.102  0.503

@@ -1,0 +1,307 @@
+# Sink list (derived, for review)
+
+| card | type | cost | tags | GIH WR % | rule matched |
+|---|---|---|---|---|---|
+| Aerid Konstrari | Creature | {1}{R}{G}{G} | ACT | 63.7 | {6}:  |
+| Afterthought Sentry | Creature/Artifact | {2} | ACT | 52.82 | {2}:  |
+| Ajani's Anguish | Enchantment | {X}{R} | X | 56.35 |  |
+| Bestial Incursion | Sorcery | {3}{G} | FB | 56.0 |  |
+| Bloombrute | Creature | {2}{G}{W} | ACT | 57.04 | {4}{g}{w}:  |
+| Edgar, Moonlit Sovereign | Creature | {3}{G}{G} | ACT | 49.48 | {4}{g}:  |
+| Eye of Ugin | Land | - | MAN | n/a |  |
+| Fblthp, Knows the Way | Creature | {X}{G}{G} | X | 57.62 |  |
+| Generous Revival | Sorcery | {2}{W} | FB | 57.14 |  |
+| Grim Repriser | Creature | {B}{R} | ACT | 53.31 | {b}{r}:  |
+| Guiding Hydra | Creature | {X}{W} | X | 57.46 |  |
+| Hall of Echoes | Land | - | ACT | 52.66 | {5}:  |
+| Hapatra, the Desert Frost | Creature | {3}{U} | ACT | 53.01 | {2}{u}:  |
+| Hexhaven Dueling Arena | Land | - | ACT | 50.0 | activate only as a sorcery |
+| Identity Echo | Enchantment | {2}{R} | ACT | n/a | {3}{r}:  |
+| Ingris Stingerquill | Creature | {B}{R}{R} | ACT | 57.35 | {4}:  |
+| Inspired Tethermage | Creature | {2}{G} | ACT | 51.42 | {6}:  |
+| Kiora of Fire and Ashes | Creature | {4}{R}{R} | ACT | 60.91 | {8}:  |
+| Lyra, Tolarian Archangel | Creature | {1}{U}{U} | ACT | 60.33 | {3}{u}{u}:  |
+| Marwyn, the Preserver | Creature | {1}{G} | ACT | 53.77 | {2}:  |
+| Mind Twist | Sorcery | {X}{B} | X | 65.21 |  |
+| Murmuring Volume | Artifact | {3} | MAN | 55.71 |  |
+| Paradox Shaper | Creature/Sorcery | {1}{U/B} // {U/B} | ACT | 54.6 | {2}:  |
+| Pia, Determined Rebuilder | Creature | {2}{R} | ACT | 56.11 | {5}{r}:  |
+| Predictive Preparations | Sorcery | {1}{W} | FB | 48.35 |  |
+| Proctor of Potential | Creature | {W}{U} | ACT | 59.63 | {w}{u}:  |
+| Puppet Crafting | Enchantment | {1}{G} | ACT | 51.36 | {4}{g}:  |
+| Recursive Recruitment | Sorcery | {2}{U}{B} | FB | 60.15 |  |
+| Shatterwing Pegasus | Creature | {2}{W} | ACT | 53.45 | {4}{w}:  |
+| Skilled Battlecarver | Creature | {1}{R} | ACT | 52.69 | {1}{r}:  |
+| Surveillance Phantasm | Creature | {1}{U} | ACT | 56.88 | {3}{u}:  |
+| Twinned Vision | Instant | {1}{U/R} | FB | 57.52 |  |
+| Undulating Witness | Creature | {4}{U} | ACT | 55.44 | {2}:  |
+| Wrecking Gecko | Creature/Artifact | {4}{G} | ACT | 54.28 | {6}{g}{g}:  |
+| Yoshimaru, Beloved Companion | Creature | {2}{W} | ACT | 49.77 | {6}:  |
+| Yoshimaru, Scrappy Stray | Creature | {1}{G} | ACT | 53.95 | {6}:  |
+
+36 cards: ACT 25, X 4, FB 5, MAN 2; dropped by FP1: ['Budding Insurgent', 'Cryotheory Adept', 'Liliana the Repentant', 'Room of Refuge', 'The Echoverse Fulcrum']
+
+## PRIMARY skill>=0.60
+
+### all drafts: 8301 decks, 5790 drafts, 32723 games
+sinks mean 3.76 (sd 1.95); buckets 0 / 1-2 / 3+: 268 / 1964 / 6069 decks; 5+ cmc spells mean 3.54
+
+per sink (all sink types)
+
+| term | pts/sink | 95% CI | p |
+|---|---|---|---|
+| sinks | -0.18 | [-0.48, +0.11] | 0.226 |
+| ACT only | -0.24 | [-0.62, +0.14] | 0.208 |
+| sinks, 5+ cmc count controlled | -0.18 | [-0.48, +0.12] | 0.237 |
+
+buckets vs 0 sinks (pts, 24.75 x coefficient)
+
+| bucket | pts | 95% CI | p |
+|---|---|---|---|
+| 1-2 | -0.66 | [-4.12, +2.81] | 0.711 |
+| 3+ | -1.49 | [-4.88, +1.90] | 0.389 |
+
+### replication half 1: 4137 decks, 2895 drafts, 16404 games
+sinks mean 3.77 (sd 1.97); buckets 0 / 1-2 / 3+: 139 / 963 / 3035 decks; 5+ cmc spells mean 3.53
+
+per sink (all sink types)
+
+| term | pts/sink | 95% CI | p |
+|---|---|---|---|
+| sinks | -0.20 | [-0.63, +0.22] | 0.352 |
+| ACT only | -0.43 | [-0.97, +0.11] | 0.119 |
+| sinks, 5+ cmc count controlled | -0.19 | [-0.62, +0.24] | 0.382 |
+
+buckets vs 0 sinks (pts, 24.75 x coefficient)
+
+| bucket | pts | 95% CI | p |
+|---|---|---|---|
+| 1-2 | -3.72 | [-9.05, +1.61] | 0.171 |
+| 3+ | -3.92 | [-9.18, +1.34] | 0.144 |
+
+### replication half 2: 4164 decks, 2895 drafts, 16319 games
+sinks mean 3.75 (sd 1.93); buckets 0 / 1-2 / 3+: 129 / 1001 / 3034 decks; 5+ cmc spells mean 3.55
+
+per sink (all sink types)
+
+| term | pts/sink | 95% CI | p |
+|---|---|---|---|
+| sinks | -0.15 | [-0.57, +0.26] | 0.471 |
+| ACT only | -0.04 | [-0.57, +0.49] | 0.883 |
+| sinks, 5+ cmc count controlled | -0.15 | [-0.57, +0.27] | 0.47 |
+
+buckets vs 0 sinks (pts, 24.75 x coefficient)
+
+| bucket | pts | 95% CI | p |
+|---|---|---|---|
+| 1-2 | +2.74 | [-1.72, +7.20] | 0.228 |
+| 3+ | +1.29 | [-3.03, +5.60] | 0.559 |
+
+## SENSITIVITY all skills
+
+### all drafts: 27196 decks, 20916 drafts, 106849 games
+sinks mean 3.64 (sd 1.89); buckets 0 / 1-2 / 3+: 869 / 6898 / 19429 decks; 5+ cmc spells mean 3.55
+
+per sink (all sink types)
+
+| term | pts/sink | 95% CI | p |
+|---|---|---|---|
+| sinks | -0.15 | [-0.31, +0.01] | 0.0595 |
+| ACT only | -0.14 | [-0.34, +0.06] | 0.164 |
+| sinks, 5+ cmc count controlled | -0.15 | [-0.31, +0.01] | 0.06 |
+
+buckets vs 0 sinks (pts, 24.75 x coefficient)
+
+| bucket | pts | 95% CI | p |
+|---|---|---|---|
+| 1-2 | -0.08 | [-1.75, +1.59] | 0.925 |
+| 3+ | -0.32 | [-1.97, +1.33] | 0.703 |
+
+## Flood x sinks, game level
+
+sink columns matched in game data: 36 of 36 tagged cards; games 297964, unmatched sinks 0
+
+### all skills: share of games with flood (>=5 opening lands) by sink bucket: b0 0.003 (n 5923), b12 0.002 (n 53039), b3p 0.003 (n 149211)
+
+all skills, bucket b0: effect of flood / screw vs 3-4 opening lands (within deck): 5923 games, 1047 decks, 1041 drafts
+
+| term | pts | 95% CI | p |
+|---|---|---|---|
+| flood | +2.96 | [-21.35, +27.27] | 0.811 |
+| screw | -2.99 | [-6.21, +0.23] | 0.0691 |
+| on_play | +3.04 | [+0.26, +5.82] | 0.0321 |
+
+all skills, bucket b12: effect of flood / screw vs 3-4 opening lands (within deck): 53039 games, 9314 decks, 9277 drafts
+
+| term | pts | 95% CI | p |
+|---|---|---|---|
+| flood | -9.64 | [-19.20, -0.08] | 0.048 |
+| screw | -4.07 | [-5.19, -2.95] | 9.97e-13 |
+| on_play | +3.81 | [+2.88, +4.74] | 8.92e-16 |
+
+all skills, bucket b3p: effect of flood / screw vs 3-4 opening lands (within deck): 149211 games, 26077 decks, 25998 drafts
+
+| term | pts | 95% CI | p |
+|---|---|---|---|
+| flood | -13.82 | [-19.50, -8.13] | 1.9e-06 |
+| screw | -3.45 | [-4.10, -2.80] | 2.53e-25 |
+| on_play | +5.35 | [+4.79, +5.90] | 2.99e-80 |
+
+all skills, pooled interaction (f12, f3p = extra flood cost vs 0 sinks): 208173 games, 36438 decks, 36304 drafts
+
+| term | pts | 95% CI | p |
+|---|---|---|---|
+| flood | +2.80 | [-21.55, +27.14] | 0.822 |
+| f12 | -12.49 | [-38.65, +13.66] | 0.349 |
+| f3p | -16.59 | [-41.59, +8.40] | 0.193 |
+| screw | -3.01 | [-6.23, +0.21] | 0.0667 |
+| s12 | -1.04 | [-4.45, +2.37] | 0.55 |
+| s3p | -0.44 | [-3.73, +2.84] | 0.791 |
+| on_play | +4.89 | [+4.42, +5.36] | 3.49e-93 |
+
+all skills, flood x sinks as a count (fs = extra flood effect per sink): 208173 games, 36438 decks, 36304 drafts
+
+| term | pts | 95% CI | p |
+|---|---|---|---|
+| flood | -4.74 | [-15.01, +5.54] | 0.366 |
+| fs | -2.02 | [-4.44, +0.41] | 0.103 |
+| screw | -3.89 | [-5.12, -2.66] | 6.45e-10 |
+| ss | +0.08 | [-0.22, +0.38] | 0.595 |
+| on_play | +4.89 | [+4.42, +5.36] | 2.8e-93 |
+
+### skill>=0.60: share of games with flood (>=5 opening lands) by sink bucket: b0 0.003 (n 1773), b12 0.002 (n 15173), b3p 0.003 (n 46952)
+
+skill>=0.60, bucket b0: effect of flood / screw vs 3-4 opening lands (within deck): 1773 games, 289 decks, 285 drafts
+
+| term | pts | 95% CI | p |
+|---|---|---|---|
+| flood | -2.88 | [-38.78, +33.02] | 0.875 |
+| screw | +1.58 | [-4.13, +7.29] | 0.588 |
+| on_play | +0.55 | [-4.24, +5.33] | 0.823 |
+
+skill>=0.60, bucket b12: effect of flood / screw vs 3-4 opening lands (within deck): 15173 games, 2458 decks, 2442 drafts
+
+| term | pts | 95% CI | p |
+|---|---|---|---|
+| flood | -5.19 | [-21.15, +10.77] | 0.524 |
+| screw | -3.66 | [-5.64, -1.67] | 0.000309 |
+| on_play | +4.11 | [+2.50, +5.73] | 5.94e-07 |
+
+skill>=0.60, bucket b3p: effect of flood / screw vs 3-4 opening lands (within deck): 46952 games, 7693 decks, 7660 drafts
+
+| term | pts | 95% CI | p |
+|---|---|---|---|
+| flood | -15.21 | [-24.80, -5.62] | 0.00188 |
+| screw | -3.22 | [-4.31, -2.13] | 7.87e-09 |
+| on_play | +4.89 | [+3.99, +5.80] | 3.22e-26 |
+
+skill>=0.60, pooled interaction (f12, f3p = extra flood cost vs 0 sinks): 63898 games, 10440 decks, 10381 drafts
+
+| term | pts | 95% CI | p |
+|---|---|---|---|
+| flood | -3.42 | [-39.48, +32.65] | 0.853 |
+| f12 | -1.77 | [-41.22, +37.68] | 0.93 |
+| f3p | -11.78 | [-49.10, +25.54] | 0.536 |
+| screw | +1.60 | [-4.10, +7.29] | 0.583 |
+| s12 | -5.24 | [-11.28, +0.79] | 0.0884 |
+| s3p | -4.82 | [-10.62, +0.98] | 0.103 |
+| on_play | +4.58 | [+3.81, +5.36] | 8.76e-31 |
+
+skill>=0.60, flood x sinks as a count (fs = extra flood effect per sink): 63898 games, 10440 decks, 10381 drafts
+
+| term | pts | 95% CI | p |
+|---|---|---|---|
+| flood | -13.88 | [-30.36, +2.60] | 0.0987 |
+| fs | +0.32 | [-3.67, +4.31] | 0.874 |
+| screw | -3.26 | [-5.39, -1.14] | 0.00265 |
+| ss | +0.02 | [-0.48, +0.52] | 0.939 |
+| on_play | +4.58 | [+3.81, +5.36] | 8.85e-31 |
+
+## Exploratory whole-game flood (lands seen minus deck_lands/40 x cards seen), games with >= 8 draws: 168312 games; excess mean -0.31, sd 1.39
+Caveats: drawn_* has no turn stamp; games with >= 8 draws are a post-outcome selection (length depends on the game going the long way); 'seen' is controlled but is itself a consequence of play. Descriptive only.
+
+all skills: per extra land seen above expectation (excess), by sink bucket (e12, e3p = difference vs 0 sinks); WR pts per land: 168312 games, 36386 decks, 36252 drafts
+
+| term | pts | 95% CI | p |
+|---|---|---|---|
+| excess | -5.34 | [-6.55, -4.14] | 3.65e-18 |
+| e12 | -0.42 | [-1.68, +0.85] | 0.518 |
+| e3p | +0.45 | [-0.78, +1.67] | 0.477 |
+| seen | +0.44 | [+0.38, +0.51] | 5.39e-38 |
+| on_play | -0.02 | [-0.55, +0.51] | 0.941 |
+
+all skills: excess x sink count (es = change in the per-land effect per extra sink): 168312 games, 36386 decks, 36252 drafts
+
+| term | pts | 95% CI | p |
+|---|---|---|---|
+| excess | -6.06 | [-6.48, -5.63] | 3.38e-168 |
+| es | +0.25 | [+0.15, +0.36] | 1.87e-06 |
+| seen | +0.44 | [+0.38, +0.51] | 5.39e-38 |
+| on_play | -0.02 | [-0.55, +0.51] | 0.937 |
+
+all skills, bucket b0: 4707 games, 1045 decks, 1039 drafts
+
+| term | pts | 95% CI | p |
+|---|---|---|---|
+| excess | -5.61 | [-6.83, -4.38] | 2.41e-19 |
+| seen | -0.30 | [-0.75, +0.15] | 0.192 |
+| on_play | -2.62 | [-5.83, +0.59] | 0.109 |
+
+all skills, bucket b12: 42827 games, 9302 decks, 9265 drafts
+
+| term | pts | 95% CI | p |
+|---|---|---|---|
+| excess | -5.82 | [-6.21, -5.43] | 2.76e-188 |
+| seen | +0.30 | [+0.16, +0.44] | 1.74e-05 |
+| on_play | -1.07 | [-2.12, -0.02] | 0.0468 |
+
+all skills, bucket b3p: 120778 games, 26039 decks, 25960 drafts
+
+| term | pts | 95% CI | p |
+|---|---|---|---|
+| excess | -4.86 | [-5.10, -4.63] | 0 |
+| seen | +0.52 | [+0.44, +0.60] | 5.91e-38 |
+| on_play | +0.45 | [-0.18, +1.07] | 0.161 |
+
+skill>=0.60: per extra land seen above expectation (excess), by sink bucket (e12, e3p = difference vs 0 sinks); WR pts per land: 52115 games, 10431 decks, 10372 drafts
+
+| term | pts | 95% CI | p |
+|---|---|---|---|
+| excess | -6.50 | [-8.50, -4.49] | 2.13e-10 |
+| e12 | +1.52 | [-0.60, +3.64] | 0.159 |
+| e3p | +1.54 | [-0.50, +3.57] | 0.14 |
+| seen | +0.44 | [+0.33, +0.55] | 1.58e-14 |
+| on_play | +0.03 | [-0.85, +0.92] | 0.941 |
+
+skill>=0.60: excess x sink count (es = change in the per-land effect per extra sink): 52115 games, 10431 decks, 10372 drafts
+
+| term | pts | 95% CI | p |
+|---|---|---|---|
+| excess | -5.55 | [-6.30, -4.80] | 7.93e-48 |
+| es | +0.14 | [-0.03, +0.32] | 0.104 |
+| seen | +0.44 | [+0.33, +0.55] | 1.66e-14 |
+| on_play | +0.03 | [-0.85, +0.91] | 0.944 |
+
+skill>=0.60, bucket b0: 1420 games, 289 decks, 285 drafts
+
+| term | pts | 95% CI | p |
+|---|---|---|---|
+| excess | -6.58 | [-8.64, -4.53] | 3.47e-10 |
+| seen | +0.08 | [-0.72, +0.89] | 0.839 |
+| on_play | -2.23 | [-7.72, +3.25] | 0.424 |
+
+skill>=0.60, bucket b12: 12294 games, 2456 decks, 2440 drafts
+
+| term | pts | 95% CI | p |
+|---|---|---|---|
+| excess | -5.06 | [-5.78, -4.35] | 3.23e-44 |
+| seen | +0.21 | [-0.03, +0.45] | 0.0858 |
+| on_play | -0.16 | [-1.99, +1.67] | 0.865 |
+
+skill>=0.60, bucket b3p: 38401 games, 7686 decks, 7653 drafts
+
+| term | pts | 95% CI | p |
+|---|---|---|---|
+| excess | -4.92 | [-5.31, -4.53] | 2.93e-136 |
+| seen | +0.52 | [+0.39, +0.65] | 1.77e-15 |
+| on_play | +0.17 | [-0.85, +1.19] | 0.745 |

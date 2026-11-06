@@ -1,0 +1,168 @@
+
+## PRIMARY skill>=0.60
+
+### all drafts: 8301 decks, 5790 drafts, 32723 games
+mean cards/deck: unconditional 1.73, damage 2.02, conditional 0.99, bite 0.52, other 0.48, b_low 2.35, b_mid 2.48, b_high 0.93
+
+Total removal count (baseline)
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| rem | +0.19 | [-0.11, +0.48] | 0.22 |
+
+(a) per class
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| unconditional | +0.14 | [-0.31, +0.60] | 0.536 |
+| damage | -0.11 | [-0.53, +0.32] | 0.629 |
+| conditional | +0.60 | [+0.03, +1.16] | 0.0393 |
+| bite | +0.14 | [-0.61, +0.88] | 0.72 |
+| other | +0.76 | [-0.02, +1.55] | 0.0565 |
+
+Wald equality of 5 coefficients: chi2(4) = 6.90, p 0.142
+
+(b) per cmc band (<=2, 3-4, 5+)
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| b_low | +0.12 | [-0.28, +0.52] | 0.555 |
+| b_mid | +0.17 | [-0.22, +0.57] | 0.385 |
+| b_high | +0.36 | [-0.22, +0.95] | 0.223 |
+
+Wald equality of 3 coefficients: chi2(2) = 0.51, p 0.774
+
+(c) unconditional+damage vs conditional+bite vs other
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| uncd | +0.01 | [-0.33, +0.35] | 0.963 |
+| cond | +0.43 | [-0.03, +0.90] | 0.0667 |
+| other | +0.76 | [-0.02, +1.55] | 0.0575 |
+
+Wald equality of 3 coefficients: chi2(2) = 5.12, p 0.0775
+
+### replication half 1: 4137 decks, 2895 drafts, 16404 games
+mean cards/deck: unconditional 1.68, damage 2.04, conditional 1.01, bite 0.51, other 0.49, b_low 2.35, b_mid 2.46, b_high 0.91
+
+Total removal count (baseline)
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| rem | +0.13 | [-0.29, +0.55] | 0.534 |
+
+(a) per class
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| unconditional | -0.16 | [-0.81, +0.49] | 0.63 |
+| damage | -0.41 | [-1.01, +0.19] | 0.179 |
+| conditional | +1.19 | [+0.38, +2.00] | 0.00388 |
+| bite | +0.22 | [-0.81, +1.26] | 0.67 |
+| other | +1.01 | [-0.06, +2.09] | 0.0644 |
+
+Wald equality of 5 coefficients: chi2(4) = 15.15, p 0.0044
+
+(b) per cmc band (<=2, 3-4, 5+)
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| b_low | +0.02 | [-0.54, +0.57] | 0.956 |
+| b_mid | +0.12 | [-0.44, +0.68] | 0.668 |
+| b_high | +0.44 | [-0.36, +1.25] | 0.277 |
+
+Wald equality of 3 coefficients: chi2(2) = 0.85, p 0.652
+
+(c) unconditional+damage vs conditional+bite vs other
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| uncd | -0.29 | [-0.77, +0.19] | 0.232 |
+| cond | +0.86 | [+0.19, +1.52] | 0.0113 |
+| other | +1.00 | [-0.07, +2.07] | 0.0679 |
+
+Wald equality of 3 coefficients: chi2(2) = 12.49, p 0.00194
+
+### replication half 2: 4164 decks, 2895 drafts, 16319 games
+mean cards/deck: unconditional 1.78, damage 2.00, conditional 0.98, bite 0.54, other 0.48, b_low 2.34, b_mid 2.50, b_high 0.94
+
+Total removal count (baseline)
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| rem | +0.26 | [-0.17, +0.68] | 0.235 |
+
+(a) per class
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| unconditional | +0.38 | [-0.27, +1.02] | 0.249 |
+| damage | +0.23 | [-0.39, +0.84] | 0.47 |
+| conditional | +0.07 | [-0.72, +0.87] | 0.858 |
+| bite | +0.13 | [-0.93, +1.20] | 0.806 |
+| other | +0.47 | [-0.69, +1.63] | 0.423 |
+
+Wald equality of 5 coefficients: chi2(4) = 0.63, p 0.959
+
+(b) per cmc band (<=2, 3-4, 5+)
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| b_low | +0.26 | [-0.33, +0.85] | 0.384 |
+| b_mid | +0.23 | [-0.33, +0.78] | 0.423 |
+| b_high | +0.32 | [-0.54, +1.17] | 0.467 |
+
+Wald equality of 3 coefficients: chi2(2) = 0.04, p 0.982
+
+(c) unconditional+damage vs conditional+bite vs other
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| uncd | +0.30 | [-0.19, +0.78] | 0.228 |
+| cond | +0.09 | [-0.56, +0.74] | 0.781 |
+| other | +0.48 | [-0.68, +1.64] | 0.42 |
+
+Wald equality of 3 coefficients: chi2(2) = 0.48, p 0.785
+
+## SENSITIVITY all skills
+
+### all drafts: 27196 decks, 20916 drafts, 106849 games
+mean cards/deck: unconditional 1.69, damage 2.00, conditional 1.00, bite 0.53, other 0.43, b_low 2.39, b_mid 2.38, b_high 0.89
+
+Total removal count (baseline)
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| rem | +0.25 | [+0.10, +0.40] | 0.00141 |
+
+(a) per class
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| unconditional | +0.24 | [+0.01, +0.48] | 0.0449 |
+| damage | +0.17 | [-0.05, +0.39] | 0.134 |
+| conditional | +0.34 | [+0.05, +0.63] | 0.0224 |
+| bite | +0.21 | [-0.17, +0.59] | 0.272 |
+| other | +0.53 | [+0.10, +0.95] | 0.0157 |
+
+Wald equality of 5 coefficients: chi2(4) = 2.91, p 0.573
+
+(b) per cmc band (<=2, 3-4, 5+)
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| b_low | +0.29 | [+0.08, +0.50] | 0.00655 |
+| b_mid | +0.21 | [+0.00, +0.41] | 0.0477 |
+| b_high | +0.26 | [-0.05, +0.57] | 0.095 |
+
+Wald equality of 3 coefficients: chi2(2) = 0.39, p 0.821
+
+(c) unconditional+damage vs conditional+bite vs other
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| uncd | +0.20 | [+0.03, +0.38] | 0.0245 |
+| cond | +0.29 | [+0.05, +0.53] | 0.0162 |
+| other | +0.52 | [+0.10, +0.95] | 0.0162 |
+
+Wald equality of 3 coefficients: chi2(2) = 2.33, p 0.312

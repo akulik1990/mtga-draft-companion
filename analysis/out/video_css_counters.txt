@@ -1,0 +1,384 @@
+Counter cards in the engine removal tag: none; in REM48: none
+REM48 48 cards, REMENG 51 cards (REMENG includes Theorix Charm: True)
+
+## PRIMARY skill>=0.60
+
+### all drafts: 8301 decks, 5790 drafts, 32723 games
+mean per deck: rem48 5.75, remeng 5.83, ctr(core) 0.612, ctr(wide) 1.047; share with >=1 core counter 0.372; remeng<6 0.454, remeng+ctr<6 0.327; rem48<6 0.468
+
+(A) REM48 + counter(core) as own term
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| rem48 | +0.15 | [-0.16, +0.45] | 0.336 |
+| ctr | -0.38 | [-1.12, +0.36] | 0.318 |
+
+removal minus counter: +0.53 [-0.20, +1.26] p 0.158
+
+(A) REM48 + counter(wide) as own term
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| rem48 | +0.18 | [-0.13, +0.49] | 0.262 |
+| ctrw | -0.04 | [-0.62, +0.54] | 0.885 |
+
+removal minus counter: +0.22 [-0.35, +0.79] p 0.444
+
+(A) REMENG + counter(core) as own term
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| remeng | +0.20 | [-0.11, +0.51] | 0.2 |
+| ctr | -0.35 | [-1.09, +0.40] | 0.362 |
+
+removal minus counter: +0.55 [-0.18, +1.28] p 0.143
+
+(A) REMENG + counter(wide) as own term
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| remeng | +0.23 | [-0.08, +0.55] | 0.145 |
+| ctrw | -0.01 | [-0.59, +0.58] | 0.981 |
+
+removal minus counter: +0.24 [-0.33, +0.81] p 0.404
+
+(B) shortfall (below 6 vs 6+), pts for being short, REMENG count
+
+| definition | pts | 95% CI | p |
+|---|---|---|---|
+| removal only | -1.40 | [-2.59, -0.20] | 0.0217 |
+| removal + core counters | -1.13 | [-2.37, +0.11] | 0.0733 |
+| removal + wide counters | -0.99 | [-2.32, +0.34] | 0.144 |
+
+(B') same, REM48 count
+
+| definition | pts | 95% CI | p |
+|---|---|---|---|
+| REM48 only | -1.22 | [-2.39, -0.04] | 0.0429 |
+| REM48 + core counters | -0.83 | [-2.05, +0.38] | 0.179 |
+
+### replication half 1: 4137 decks, 2895 drafts, 16404 games
+mean per deck: rem48 5.72, remeng 5.80, ctr(core) 0.598, ctr(wide) 1.022; share with >=1 core counter 0.363; remeng<6 0.457, remeng+ctr<6 0.331; rem48<6 0.473
+
+(A) REM48 + counter(core) as own term
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| rem48 | +0.04 | [-0.39, +0.47] | 0.842 |
+| ctr | -0.87 | [-1.93, +0.18] | 0.105 |
+
+removal minus counter: +0.92 [-0.12, +1.96] p 0.0843
+
+(A) REM48 + counter(wide) as own term
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| rem48 | +0.11 | [-0.33, +0.55] | 0.629 |
+| ctrw | -0.14 | [-0.96, +0.68] | 0.738 |
+
+removal minus counter: +0.25 [-0.55, +1.04] p 0.541
+
+(A) REMENG + counter(core) as own term
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| remeng | +0.05 | [-0.38, +0.48] | 0.835 |
+| ctr | -0.87 | [-1.93, +0.19] | 0.107 |
+
+removal minus counter: +0.92 [-0.12, +1.96] p 0.0836
+
+(A) REMENG + counter(wide) as own term
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| remeng | +0.11 | [-0.33, +0.56] | 0.614 |
+| ctrw | -0.14 | [-0.96, +0.69] | 0.747 |
+
+removal minus counter: +0.25 [-0.54, +1.04] p 0.538
+
+(B) shortfall (below 6 vs 6+), pts for being short, REMENG count
+
+| definition | pts | 95% CI | p |
+|---|---|---|---|
+| removal only | -1.30 | [-2.98, +0.38] | 0.129 |
+| removal + core counters | -1.41 | [-3.16, +0.33] | 0.112 |
+| removal + wide counters | -1.15 | [-3.03, +0.73] | 0.23 |
+
+(B') same, REM48 count
+
+| definition | pts | 95% CI | p |
+|---|---|---|---|
+| REM48 only | -1.16 | [-2.81, +0.49] | 0.167 |
+| REM48 + core counters | -1.09 | [-2.80, +0.61] | 0.209 |
+
+### replication half 2: 4164 decks, 2895 drafts, 16319 games
+mean per deck: rem48 5.78, remeng 5.86, ctr(core) 0.626, ctr(wide) 1.072; share with >=1 core counter 0.381; remeng<6 0.451, remeng+ctr<6 0.324; rem48<6 0.464
+
+(A) REM48 + counter(core) as own term
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| rem48 | +0.26 | [-0.17, +0.69] | 0.238 |
+| ctr | +0.06 | [-0.98, +1.10] | 0.908 |
+
+removal minus counter: +0.20 [-0.83, +1.23] p 0.705
+
+(A) REM48 + counter(wide) as own term
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| rem48 | +0.26 | [-0.18, +0.70] | 0.247 |
+| ctrw | +0.03 | [-0.79, +0.86] | 0.938 |
+
+removal minus counter: +0.23 [-0.58, +1.04] p 0.581
+
+(A) REMENG + counter(core) as own term
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| remeng | +0.36 | [-0.08, +0.80] | 0.109 |
+| ctr | +0.12 | [-0.93, +1.16] | 0.823 |
+
+removal minus counter: +0.24 [-0.79, +1.27] p 0.65
+
+(A) REMENG + counter(wide) as own term
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| remeng | +0.36 | [-0.08, +0.81] | 0.112 |
+| ctrw | +0.10 | [-0.73, +0.93] | 0.817 |
+
+removal minus counter: +0.27 [-0.54, +1.08] p 0.52
+
+(B) shortfall (below 6 vs 6+), pts for being short, REMENG count
+
+| definition | pts | 95% CI | p |
+|---|---|---|---|
+| removal only | -1.55 | [-3.25, +0.15] | 0.0734 |
+| removal + core counters | -0.89 | [-2.65, +0.87] | 0.321 |
+| removal + wide counters | -0.90 | [-2.79, +0.98] | 0.346 |
+
+(B') same, REM48 count
+
+| definition | pts | 95% CI | p |
+|---|---|---|---|
+| REM48 only | -1.33 | [-3.01, +0.35] | 0.121 |
+| REM48 + core counters | -0.62 | [-2.35, +1.10] | 0.478 |
+
+### lane WU (lane control dropped): 1331 decks, 970 drafts, 5470 games
+mean per deck: rem48 3.91, remeng 3.92, ctr(core) 1.076, ctr(wide) 2.291; share with >=1 core counter 0.662; remeng<6 0.829, remeng+ctr<6 0.606; rem48<6 0.830
+
+(A) REM48 + counter(core) as own term
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| rem48 | +0.19 | [-0.73, +1.11] | 0.681 |
+| ctr | +0.22 | [-1.22, +1.67] | 0.76 |
+
+removal minus counter: -0.03 [-1.45, +1.39] p 0.965
+
+(A) REM48 + counter(wide) as own term
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| rem48 | -0.12 | [-1.10, +0.85] | 0.802 |
+| ctrw | -0.70 | [-1.76, +0.35] | 0.191 |
+
+removal minus counter: +0.58 [-0.48, +1.64] p 0.285
+
+(A) REMENG + counter(core) as own term
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| remeng | +0.21 | [-0.71, +1.13] | 0.651 |
+| ctr | +0.23 | [-1.21, +1.68] | 0.75 |
+
+removal minus counter: -0.02 [-1.44, +1.40] p 0.976
+
+(A) REMENG + counter(wide) as own term
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| remeng | -0.10 | [-1.08, +0.87] | 0.834 |
+| ctrw | -0.69 | [-1.75, +0.36] | 0.198 |
+
+removal minus counter: +0.59 [-0.47, +1.65] p 0.277
+
+(B) shortfall (below 6 vs 6+), pts for being short, REMENG count
+
+| definition | pts | 95% CI | p |
+|---|---|---|---|
+| removal only | -3.23 | [-6.98, +0.51] | 0.0908 |
+| removal + core counters | -1.36 | [-4.33, +1.62] | 0.371 |
+| removal + wide counters | +0.61 | [-2.50, +3.71] | 0.702 |
+
+(B') same, REM48 count
+
+| definition | pts | 95% CI | p |
+|---|---|---|---|
+| REM48 only | -3.30 | [-7.08, +0.47] | 0.0866 |
+| REM48 + core counters | -1.28 | [-4.24, +1.69] | 0.398 |
+
+### lane UB (lane control dropped): 1681 decks, 1187 drafts, 6667 games
+mean per deck: rem48 5.69, remeng 5.76, ctr(core) 1.193, ctr(wide) 1.765; share with >=1 core counter 0.707; remeng<6 0.458, remeng+ctr<6 0.223; rem48<6 0.474
+
+(A) REM48 + counter(core) as own term
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| rem48 | -0.05 | [-0.74, +0.64] | 0.889 |
+| ctr | -1.19 | [-2.43, +0.06] | 0.0624 |
+
+removal minus counter: +1.14 [-0.07, +2.34] p 0.064
+
+(A) REM48 + counter(wide) as own term
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| rem48 | +0.02 | [-0.70, +0.75] | 0.952 |
+| ctrw | -0.49 | [-1.58, +0.61] | 0.382 |
+
+removal minus counter: +0.51 [-0.50, +1.52] p 0.323
+
+(A) REMENG + counter(core) as own term
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| remeng | -0.01 | [-0.71, +0.69] | 0.973 |
+| ctr | -1.16 | [-2.42, +0.09] | 0.0687 |
+
+removal minus counter: +1.15 [-0.05, +2.35] p 0.0602
+
+(A) REMENG + counter(wide) as own term
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| remeng | +0.07 | [-0.67, +0.81] | 0.858 |
+| ctrw | -0.46 | [-1.56, +0.64] | 0.416 |
+
+removal minus counter: +0.52 [-0.49, +1.54] p 0.309
+
+(B) shortfall (below 6 vs 6+), pts for being short, REMENG count
+
+| definition | pts | 95% CI | p |
+|---|---|---|---|
+| removal only | +0.51 | [-1.82, +2.84] | 0.667 |
+| removal + core counters | +1.45 | [-1.46, +4.35] | 0.329 |
+| removal + wide counters | +1.20 | [-2.60, +5.00] | 0.536 |
+
+(B') same, REM48 count
+
+| definition | pts | 95% CI | p |
+|---|---|---|---|
+| REM48 only | +0.76 | [-1.56, +3.08] | 0.522 |
+| REM48 + core counters | +1.74 | [-1.13, +4.62] | 0.235 |
+
+### lane UR (lane control dropped): 962 decks, 676 drafts, 3888 games
+mean per deck: rem48 5.75, remeng 5.89, ctr(core) 1.093, ctr(wide) 1.817; share with >=1 core counter 0.675; remeng<6 0.441, remeng+ctr<6 0.212; rem48<6 0.473
+
+(A) REM48 + counter(core) as own term
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| rem48 | -0.42 | [-1.37, +0.52] | 0.379 |
+| ctr | -0.69 | [-2.51, +1.12] | 0.454 |
+
+removal minus counter: +0.27 [-1.49, +2.03] p 0.763
+
+(A) REM48 + counter(wide) as own term
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| rem48 | -0.25 | [-1.24, +0.75] | 0.63 |
+| ctrw | +0.22 | [-1.26, +1.71] | 0.769 |
+
+removal minus counter: -0.47 [-1.85, +0.92] p 0.508
+
+(A) REMENG + counter(core) as own term
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| remeng | -0.27 | [-1.23, +0.69] | 0.588 |
+| ctr | -0.61 | [-2.45, +1.22] | 0.514 |
+
+removal minus counter: +0.35 [-1.40, +2.10] p 0.698
+
+(A) REMENG + counter(wide) as own term
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| remeng | -0.06 | [-1.08, +0.96] | 0.91 |
+| ctrw | +0.33 | [-1.18, +1.83] | 0.669 |
+
+removal minus counter: -0.39 [-1.76, +0.99] p 0.58
+
+(B) shortfall (below 6 vs 6+), pts for being short, REMENG count
+
+| definition | pts | 95% CI | p |
+|---|---|---|---|
+| removal only | -2.00 | [-5.34, +1.33] | 0.239 |
+| removal + core counters | -1.22 | [-5.27, +2.83] | 0.554 |
+| removal + wide counters | +0.46 | [-4.37, +5.28] | 0.853 |
+
+(B') same, REM48 count
+
+| definition | pts | 95% CI | p |
+|---|---|---|---|
+| REM48 only | -1.57 | [-4.90, +1.77] | 0.357 |
+| REM48 + core counters | +0.30 | [-3.71, +4.31] | 0.883 |
+
+## SENSITIVITY all skills
+
+### all drafts: 27196 decks, 20916 drafts, 106849 games
+mean per deck: rem48 5.66, remeng 5.73, ctr(core) 0.524, ctr(wide) 0.922; share with >=1 core counter 0.326; remeng<6 0.472, remeng+ctr<6 0.369; rem48<6 0.486
+
+(A) REM48 + counter(core) as own term
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| rem48 | +0.22 | [+0.06, +0.38] | 0.00622 |
+| ctr | -0.36 | [-0.77, +0.05] | 0.0832 |
+
+removal minus counter: +0.58 [+0.18, +0.98] p 0.00492
+
+(A) REM48 + counter(wide) as own term
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| rem48 | +0.21 | [+0.05, +0.38] | 0.00881 |
+| ctrw | -0.24 | [-0.55, +0.08] | 0.141 |
+
+removal minus counter: +0.45 [+0.14, +0.76] p 0.00416
+
+(A) REMENG + counter(core) as own term
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| remeng | +0.30 | [+0.14, +0.45] | 0.000225 |
+| ctr | -0.31 | [-0.72, +0.10] | 0.136 |
+
+removal minus counter: +0.61 [+0.20, +1.01] p 0.00314
+
+(A) REMENG + counter(wide) as own term
+
+| term | pts/card | 95% CI | p |
+|---|---|---|---|
+| remeng | +0.30 | [+0.13, +0.46] | 0.000323 |
+| ctrw | -0.18 | [-0.50, +0.13] | 0.251 |
+
+removal minus counter: +0.48 [+0.17, +0.79] p 0.0022
+
+(B) shortfall (below 6 vs 6+), pts for being short, REMENG count
+
+| definition | pts | 95% CI | p |
+|---|---|---|---|
+| removal only | -1.29 | [-1.91, -0.66] | 5.11e-05 |
+| removal + core counters | -1.15 | [-1.78, -0.51] | 0.000371 |
+| removal + wide counters | -0.85 | [-1.50, -0.19] | 0.0119 |
+
+(B') same, REM48 count
+
+| definition | pts | 95% CI | p |
+|---|---|---|---|
+| REM48 only | -1.05 | [-1.67, -0.43] | 0.000843 |
+| REM48 + core counters | -0.89 | [-1.51, -0.27] | 0.00504 |

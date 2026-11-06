@@ -1,0 +1,59 @@
+# Lands seen and winning, within deck, by game length and play/draw (kept 7-card hands only, num_mulligans = 0)
+games 297964; mean cards seen 18.5; deck lands mode 17
+
+Pts vs the band's modal lands-seen, dummies per lands seen (k), deck fixed effects, bootstrap over drafts (100).
+
+play, turns <=6: games 11794, decks 1168, cards seen 12, ref 5 lands: 2: -68.6±7.4; 3: -32.7±4.1; 4: -3.6±2.9; 6: -2.6±2.5; 7: -7.1±3.9; 8: -29.1±7.6
+play, turns 7-8: games 32808, decks 6230, cards seen 14, ref 6 lands: 3: -36.7±3.8; 4: -13.6±1.8; 5: -3.9±1.5; 7: -3.9±1.2; 8: -11.7±1.8; 9: -23.4±2.9; 10: -31.8±5.0
+play, turns 9-10: games 38147, decks 7653, cards seen 17, ref 7 lands: 4: -10.7±3.0; 5: +2.6±1.6; 6: +4.4±1.4; 8: -2.0±1.5; 9: -9.0±1.7; 10: -14.2±2.3; 11: -9.4±3.2; 12: -5.5±5.2
+play, turns 11-12: games 27217, decks 4368, cards seen 19, ref 8 lands: 4: +1.2±7.2; 5: +6.7±3.6; 6: +7.4±2.6; 7: +4.6±2.1; 9: -2.7±2.1; 10: -6.5±2.3; 11: -4.8±2.9; 12: +2.7±4.0
+play, turns 13-14: games 14401, decks 1502, cards seen 22, ref 9 lands: 5: +7.1±8.3; 6: +2.5±5.3; 7: +10.0±4.5; 8: +2.2±3.8; 10: -4.7±3.9; 11: -7.3±4.1; 12: -2.3±5.4
+play, turns 15+: games 10844, decks 946, cards seen 26, ref 10 lands: 7: +2.1±6.8; 8: +4.4±5.9; 9: -1.2±5.2; 11: -0.9±4.2; 12: +3.3±4.3
+draw, turns <=6: games 10940, decks 854, cards seen 13, ref 5 lands: 2: -41.5±7.0; 3: -22.2±5.9; 4: -4.6±4.8; 6: -2.7±4.4; 7: -7.3±5.6; 8: -18.1±8.9
+draw, turns 7-8: games 32226, decks 5819, cards seen 15, ref 6 lands: 3: -41.6±4.4; 4: -17.7±2.1; 5: -4.9±1.8; 7: -3.1±1.6; 8: -11.6±2.2; 9: -18.9±2.8; 10: -33.1±5.2
+draw, turns 9-10: games 38805, decks 7890, cards seen 17, ref 7 lands: 4: -15.5±3.4; 5: -6.1±1.9; 6: -1.5±1.5; 8: -6.8±1.5; 9: -14.1±1.6; 10: -15.0±2.4; 11: -13.5±3.3; 12: -2.6±5.8
+draw, turns 11-12: games 27750, decks 4597, cards seen 20, ref 8 lands: 5: -1.6±3.9; 6: +10.5±2.5; 7: +6.5±2.1; 9: -2.2±2.0; 10: -3.9±2.6; 11: -2.1±2.4; 12: -5.9±3.9
+draw, turns 13-14: games 14607, decks 1541, cards seen 23, ref 9 lands: 6: +3.8±5.6; 7: +11.3±4.2; 8: +7.6±3.2; 10: +0.6±3.4; 11: -1.4±4.0; 12: -1.5±4.2
+draw, turns 15+: games 10608, decks 928, cards seen 26, ref 10 lands: 7: +25.5±5.4; 8: +7.3±5.7; 9: +11.3±4.9; 11: +0.6±4.1; 12: +2.4±4.4
+
+## 18 vs 17 lands priced by the hypergeometric shift of lands seen (40 cards, n = median cards seen in the band), per band and pooled by game share
+play, turns <=6: D18 = +0.79 pts (n seen 12)
+play, turns 7-8: D18 = +0.04 pts (n seen 14)
+play, turns 9-10: D18 = -1.06 pts (n seen 17)
+play, turns 11-12: D18 = -1.07 pts (n seen 19)
+play, turns 13-14: D18 = -1.15 pts (n seen 22)
+play, turns 15+: D18 = +0.54 pts (n seen 26)
+draw, turns <=6: D18 = -0.12 pts (n seen 13)
+draw, turns 7-8: D18 = -0.41 pts (n seen 15)
+draw, turns 9-10: D18 = -0.84 pts (n seen 17)
+draw, turns 11-12: D18 = -1.05 pts (n seen 20)
+draw, turns 13-14: D18 = -0.94 pts (n seen 23)
+draw, turns 15+: D18 = -0.50 pts (n seen 26)
+Pooled D18 (games-share weighted): -0.61 pts per game. The hand-only method gave +0.00 [-0.04, +0.04]. Not a causal estimate: holds game length fixed, and
+the 18th land replaces a spell whose draw value is not priced here; it is the flood/screw side of the trade only.
+
+## Sinks x flood: pts per land seen above expectation (Lh - deck_lands/40 x cards seen), within deck, by sink bucket, inside turn bands
+sink cards in deck (copies, spells only; land sinks not in the spell matrix): 0: 9142 games, 1-2: 78452, 3+: 210370
+
+| turns | sinks | games | decks | pts per excess land |
+|---|---|---|---|---|
+| all | 0 | 8318 | 1755 | -4.59 ± 0.48 |
+| all | 1-2 | 70936 | 14928 | -4.49 ± 0.16 |
+| all | 3+ | 190893 | 39602 | -4.01 ± 0.09 |
+| <=8 | 0 | 2710 | 747 | -1.74 ± 1.29 |
+| <=8 | 1-2 | 22816 | 6279 | -0.62 ± 0.36 |
+| <=8 | 3+ | 62242 | 17291 | -0.18 ± 0.24 |
+| 9-12 | 0 | 3965 | 1109 | -7.01 ± 0.71 |
+| 9-12 | 1-2 | 34322 | 9652 | -6.66 ± 0.25 |
+| 9-12 | 3+ | 93632 | 26311 | -5.57 ± 0.14 |
+| 13+ | 0 | 1643 | 387 | -6.43 ± 1.52 |
+| 13+ | 1-2 | 13798 | 3241 | -7.14 ± 0.46 |
+| 13+ | 3+ | 35019 | 8184 | -5.53 ± 0.34 |
+
+all games, excess land x sink count (0..6): per excess land at 0 sinks -4.93 ± 0.22; change per sink +0.220 ± 0.059 (decks 56285)
+turns <=8: per excess land at 0 sinks -1.02 ± 0.48; change per sink +0.190 ± 0.125
+turns 9-12: per excess land at 0 sinks -7.22 ± 0.29; change per sink +0.374 ± 0.071
+turns 13+: per excess land at 0 sinks -7.58 ± 0.66; change per sink +0.454 ± 0.165
+
+The sink count here is a deck property, so 'change per sink' compares decks (not within deck); only the excess-land slope is within deck. A placebo
+(random spell sets of the same size) would be needed before reading the per-sink term as a sink effect rather than a deck-type effect.

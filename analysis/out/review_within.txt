@@ -1,0 +1,69 @@
+games 297964, decks 69846, spells 269; mean turns 10.1; on play 0.500
+
+# (a) GIH WR minus deck WR by cmc band (pts). Deck WR = win rate of games where the card is in the deck.
+
+| games | cmc <=2 | cmc 3 | cmc 4 | cmc 5 | cmc 6+ |
+|---|---|---|---|---|---|
+| all games | +0.98 (n 100) | +1.04 (n 68) | +1.87 (n 38) | +1.45 (n 21) | +3.29 (n 24) |
+| short games (<= 8 turns) | +1.19 (n 92) | -0.03 (n 66) | +0.90 (n 35) | -0.97 (n 20) | +0.18 (n 19) |
+| long games (>= 11 turns) | +1.28 (n 96) | +1.75 (n 67) | +2.22 (n 37) | +2.87 (n 20) | +4.38 (n 21) |
+| fast decks (cmc tercile 1) | +0.56 (n 95) | +0.72 (n 67) | +1.45 (n 34) | +1.22 (n 20) | +3.01 (n 15) |
+| slow decks (tercile 3) | +1.44 (n 87) | +1.48 (n 65) | +2.00 (n 36) | +1.98 (n 20) | +3.43 (n 20) |
+Reading: a positive gap = a card wins more when drawn than its decks do on average (the usual 'drawn' premium); the spread across cmc
+bands inside one row is the up-time bias (expensive cards sit in hand longer and in short games never get cast). Rows by game length show
+the game-length bias: in short games all drawn cards sit below deck WR for aggressive decks and above for slow ones.
+
+# (b) Within deck: removal card in hand, pts per card, cards and lands in hand fixed (decks that run >= 1 card of the class)
+
+| class | decks | pts per card in hand | placebo (20 sets) | z vs placebo |
+|---|---|---|---|---|
+| all removal (REM48) | 58320 | +0.96 ± 0.10 | -0.56 ± 0.32 | +4.5 |
+| unconditional | 38789 | +1.40 ± 0.17 | -0.26 ± 0.62 | +2.6 |
+| damage | 39421 | +0.67 ± 0.15 | +0.05 ± 0.53 | +1.1 |
+| conditional | 35568 | -0.46 ± 0.21 | -0.36 ± 0.63 | -0.1 |
+| bite | 19567 | -0.19 ± 0.30 | -0.50 ± 0.76 | +0.4 |
+| other | 18945 | +1.43 ± 0.31 | -0.04 ± 0.84 | +1.6 |
+
+Same, by game length (short <= 8 turns / long >= 11), no placebo:
+
+| class | games | decks | pts per card |
+|---|---|---|---|
+| unconditional | short | 17163 | +2.24 ± 0.42 |
+| unconditional | long | 22303 | +0.28 ± 0.28 |
+| damage | short | 18307 | +3.27 ± 0.35 |
+| damage | long | 21521 | -0.04 ± 0.32 |
+| conditional | short | 16348 | +1.34 ± 0.45 |
+| conditional | long | 19898 | -1.50 ± 0.46 |
+
+# (c) Within deck: CORE counter in hand vs unconditional removal in hand, by opponent colour and game length
+
+| cards | split | decks | pts per card in hand |
+|---|---|---|---|
+| counter (CORE) | all | 18470 | +0.84 ± 0.30 |
+| counter (CORE) | on play | 13121 | +0.08 ± 0.42 |
+| counter (CORE) | on draw | 13270 | +1.81 ± 0.56 |
+| counter (CORE) | short <= 8 turns | 7428 | +2.84 ± 0.88 |
+| counter (CORE) | long >= 11 turns | 11380 | +0.89 ± 0.53 |
+| counter (CORE) | opp plays W | 12340 | +0.72 ± 0.54 |
+| counter (CORE) | opp plays U | 12963 | +0.91 ± 0.49 |
+| counter (CORE) | opp plays B | 12217 | +0.31 ± 0.49 |
+| counter (CORE) | opp plays R | 12416 | +1.59 ± 0.50 |
+| counter (CORE) | opp plays G | 12683 | +1.61 ± 0.49 |
+| unconditional removal | all | 38789 | +1.40 ± 0.17 |
+| unconditional removal | on play | 27145 | +0.72 ± 0.24 |
+| unconditional removal | on draw | 27654 | +2.00 ± 0.31 |
+| unconditional removal | short <= 8 turns | 17163 | +2.24 ± 0.37 |
+| unconditional removal | long >= 11 turns | 22303 | +0.28 ± 0.28 |
+| unconditional removal | opp plays W | 25591 | +2.23 ± 0.28 |
+| unconditional removal | opp plays U | 26707 | +0.84 ± 0.30 |
+| unconditional removal | opp plays B | 25386 | +0.01 ± 0.34 |
+| unconditional removal | opp plays R | 25729 | +1.49 ± 0.27 |
+| unconditional removal | opp plays G | 26332 | +1.79 ± 0.27 |
+
+# (d) Within deck: any Way in hand, by whether the opponent is in B or R (removal-heavy)
+
+| split | decks | pts per Way in hand |
+|---|---|---|
+| all | 30236 | -1.10 ± 0.25 |
+| opp in B or R | 27152 | -0.84 ± 0.30 |
+| opp not in B or R | 10657 | -2.14 ± 0.65 |

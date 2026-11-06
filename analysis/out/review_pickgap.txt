@@ -1,0 +1,13 @@
+picks 23399; top-1 minus top-2 score gap: median 5.91, quartiles 2.37 / 11.93
+
+| bonus b (pts) | share of all picks with gap < b | gap < b and removal (REM48) differs | gap < b and cmc >= 5 differs | gap < b and gold differs | gap < b and counter (CORE) differs | gap < b and Way differs | gap < b and land differs |
+|---|---|---|---|---|---|---|---|
+| 0.1 | 0.026 | 0.008 | 0.008 | 0.012 | 0.002 | 0.001 | 0.003 |
+| 0.2 | 0.062 | 0.020 | 0.018 | 0.030 | 0.004 | 0.003 | 0.007 |
+| 0.3 | 0.069 | 0.022 | 0.020 | 0.032 | 0.004 | 0.003 | 0.009 |
+| 0.5 | 0.089 | 0.028 | 0.024 | 0.040 | 0.005 | 0.004 | 0.011 |
+| 1.0 | 0.134 | 0.040 | 0.035 | 0.058 | 0.006 | 0.006 | 0.016 |
+| 2.0 | 0.219 | 0.064 | 0.055 | 0.093 | 0.010 | 0.011 | 0.027 |
+
+Share of picks where the trait differs between top-1 and top-2 at all: removal (REM48) 0.282, cmc >= 5 0.232, gold 0.397, counter (CORE) 0.038, Way 0.048, land 0.160
+One pick on the 600 train drafts (about 25,000 picks) is 0.004 top-1 points; the replay noise floor on a 100-draft slice is about 0.3 top-1 points (docs/spec.md).

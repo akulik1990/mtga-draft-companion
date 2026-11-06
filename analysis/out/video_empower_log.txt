@@ -1,0 +1,206 @@
+Ways 10 ['Way of the Cryomancer', 'Way of the Deathbringer', 'Way of the Healer', 'Way of the Mentor', 'Way of the Mind Sculptor', 'Way of the Necromancer', 'Way of the Paradox', 'Way of the Pyromancer', 'Way of the Warlord', 'Way of the Wildspeaker']
+Empower (non-Way, non-land) 24 ['Academic Ascent', 'Arcane Amphisbaena', 'Avatar of Burgeoning Echoes', 'Campus Crier', 'Countersculpt', 'Fatehold Charm', 'Hexhaven Battalion', 'Inspired Tethermage', "Jace's Machinations", 'Jace, Reality Sculptor', 'Keeper of the Quiet Hour', 'Mindseeker Oculus', 'No Admittance', 'Overwrite the Multiverse', 'Plan for All Outcomes', "Protege's Awakening", 'Repurposed Enforcer', 'Rewrite Regrets', 'Sanctum Lurker', 'Solve for Disappointment', "Tam's Resistance", "Theorist's Proxy", 'Violent Echoes', "Vraska's Final Mercy"]
+Premier decks 23889 drafts 19199 games 104706
+E distribution {0: 1071, 1: 2856, 2: 4029, 3: 4475, 4: 3937, 5: 3084, 6: 2001, 7: 1213, 8: 672, 9: 333, 10: 142, 11: 51, 12: 20, 13: 4, 14: 1}
+W distribution {0: 11902, 1: 7363, 2: 3152, 3: 1077, 4: 311, 5: 66, 6: 15, 7: 1, 8: 2}
+A Way present vs none        all    E 0-2: Way(s) vs none (n with Way) n=  3565  +0.24 [ -0.65, +1.13] p=0.593
+A Way present vs none        all    E 3-4: Way(s) vs none (n with Way) n=  4351  -0.16 [ -1.01, +0.68] p=0.706
+A Way present vs none        all    E 5-7: Way(s) vs none (n with Way) n=  3399  +1.11 [ +0.14, +2.08] p=0.025
+A Way present vs none        all    E 8+: Way(s) vs none (n with Way)  n=   672  +1.21 [ -1.13, +3.56] p=0.311
+A interaction vs E 0-2       all    E 3-4 minus E 0-2                  n=  4351  -0.40 [ -1.62, +0.81] p=0.514
+A interaction vs E 0-2       all    E 5-7 minus E 0-2                  n=  3399  +0.87 [ -0.44, +2.18] p=0.193
+A interaction vs E 0-2       all    E 8+ minus E 0-2                   n=   672  +0.97 [ -1.54, +3.48] p=0.448
+A slope per empower card     all    Way present x E (extra WR pts per card) n= 11987  +0.24 [ +0.00, +0.48] p=0.050
+A slope per empower card     all    E main effect, no Way              n= 11902  -0.18 [ -0.37, +0.00] p=0.054
+A Way present vs none        h0     E 0-2: Way(s) vs none (n with Way) n=  1801  +0.36 [ -0.89, +1.62] p=0.571
+A Way present vs none        h0     E 3-4: Way(s) vs none (n with Way) n=  2170  +0.75 [ -0.44, +1.94] p=0.214
+A Way present vs none        h0     E 5-7: Way(s) vs none (n with Way) n=  1669  +1.06 [ -0.29, +2.41] p=0.123
+A Way present vs none        h0     E 8+: Way(s) vs none (n with Way)  n=   325  +1.30 [ -1.91, +4.51] p=0.427
+A interaction vs E 0-2       h0     E 3-4 minus E 0-2                  n=  2170  +0.39 [ -1.32, +2.11] p=0.655
+A interaction vs E 0-2       h0     E 5-7 minus E 0-2                  n=  1669  +0.70 [ -1.13, +2.53] p=0.455
+A interaction vs E 0-2       h0     E 8+ minus E 0-2                   n=   325  +0.94 [ -2.50, +4.38] p=0.593
+A slope per empower card     h0     Way present x E (extra WR pts per card) n=  5965  +0.13 [ -0.20, +0.46] p=0.438
+A slope per empower card     h0     E main effect, no Way              n=  5932  -0.25 [ -0.51, +0.00] p=0.052
+A Way present vs none        h1     E 0-2: Way(s) vs none (n with Way) n=  1764  +0.15 [ -1.12, +1.42] p=0.818
+A Way present vs none        h1     E 3-4: Way(s) vs none (n with Way) n=  2181  -1.06 [ -2.27, +0.15] p=0.085
+A Way present vs none        h1     E 5-7: Way(s) vs none (n with Way) n=  1730  +1.23 [ -0.16, +2.63] p=0.083
+A Way present vs none        h1     E 8+: Way(s) vs none (n with Way)  n=   347  +0.99 [ -2.45, +4.44] p=0.572
+A interaction vs E 0-2       h1     E 3-4 minus E 0-2                  n=  2181  -1.21 [ -2.94, +0.52] p=0.172
+A interaction vs E 0-2       h1     E 5-7 minus E 0-2                  n=  1730  +1.09 [ -0.79, +2.96] p=0.256
+A interaction vs E 0-2       h1     E 8+ minus E 0-2                   n=   347  +0.84 [ -2.83, +4.51] p=0.652
+A slope per empower card     h1     Way present x E (extra WR pts per card) n=  6022  +0.34 [ -0.00, +0.69] p=0.050
+A slope per empower card     h1     E main effect, no Way              n=  5970  -0.11 [ -0.38, +0.16] p=0.425
+B Healer                     all    E 0-2: has vs not                  n=   653  -0.32 [ -1.97, +1.33] p=0.704
+B Healer                     all    E 3-4: has vs not                  n=   876  -1.32 [ -2.69, +0.05] p=0.058
+B Healer                     all    E 5-7: has vs not                  n=   971  +0.71 [ -0.66, +2.07] p=0.310
+B Healer                     all    E 8+: has vs not                   n=   264  +0.22 [ -2.62, +3.07] p=0.877
+B Healer                     all    interaction: E>=5 minus E<=4       n=  1235  +1.63 [ +0.05, +3.22] p=0.043
+B Healer                     h0     E 0-2: has vs not                  n=   305  +0.01 [ -2.44, +2.46] p=0.994
+B Healer                     h0     E 3-4: has vs not                  n=   423  -0.71 [ -2.72, +1.31] p=0.492
+B Healer                     h0     E 5-7: has vs not                  n=   474  +1.26 [ -0.72, +3.24] p=0.212
+B Healer                     h0     E 8+: has vs not                   n=   141  +2.72 [ -1.25, +6.68] p=0.180
+B Healer                     h0     interaction: E>=5 minus E<=4       n=   615  +2.09 [ -0.22, +4.41] p=0.076
+B Healer                     h1     E 0-2: has vs not                  n=   348  -0.67 [ -2.92, +1.58] p=0.559
+B Healer                     h1     E 3-4: has vs not                  n=   453  -1.88 [ -3.75, -0.01] p=0.049
+B Healer                     h1     E 5-7: has vs not                  n=   497  +0.19 [ -1.68, +2.07] p=0.842
+B Healer                     h1     E 8+: has vs not                   n=   123  -2.40 [ -6.44, +1.65] p=0.245
+B Healer                     h1     interaction: E>=5 minus E<=4       n=   620  +1.19 [ -0.99, +3.37] p=0.284
+B Mind Sculptor              all    E 0-2: has vs not                  n=   594  -1.97 [ -3.60, -0.33] p=0.018
+B Mind Sculptor              all    E 3-4: has vs not                  n=  1380  -0.71 [ -1.88, +0.45] p=0.230
+B Mind Sculptor              all    E 5-7: has vs not                  n=  1402  +0.82 [ -0.35, +1.99] p=0.168
+B Mind Sculptor              all    E 8+: has vs not                   n=   298  +2.67 [ -0.16, +5.50] p=0.064
+B Mind Sculptor              all    interaction: E>=5 minus E<=4       n=  1700  +2.37 [ +0.93, +3.80] p=0.001
+B Mind Sculptor              h0     E 0-2: has vs not                  n=   277  -2.34 [ -4.69, +0.01] p=0.051
+B Mind Sculptor              h0     E 3-4: has vs not                  n=   692  +0.25 [ -1.47, +1.97] p=0.777
+B Mind Sculptor              h0     E 5-7: has vs not                  n=   682  +0.03 [ -1.58, +1.64] p=0.969
+B Mind Sculptor              h0     E 8+: has vs not                   n=   138  +2.00 [ -2.01, +6.02] p=0.329
+B Mind Sculptor              h0     interaction: E>=5 minus E<=4       n=   820  +0.94 [ -1.11, +2.99] p=0.369
+B Mind Sculptor              h1     E 0-2: has vs not                  n=   317  -1.69 [ -3.98, +0.60] p=0.147
+B Mind Sculptor              h1     E 3-4: has vs not                  n=   688  -1.65 [ -3.23, -0.07] p=0.040
+B Mind Sculptor              h1     E 5-7: has vs not                  n=   720  +1.64 [ -0.06, +3.34] p=0.059
+B Mind Sculptor              h1     E 8+: has vs not                   n=   160  +2.98 [ -1.04, +7.01] p=0.146
+B Mind Sculptor              h1     interaction: E>=5 minus E<=4       n=   880  +3.71 [ +1.69, +5.73] p=0.000
+B Paradox                    all    E 0-2: has vs not                  n=   686  +1.47 [ -0.11, +3.05] p=0.068
+B Paradox                    all    E 3-4: has vs not                  n=   665  +2.07 [ +0.34, +3.80] p=0.019
+B Paradox                    all    E 5-7: has vs not                  n=   423  +0.28 [ -1.68, +2.24] p=0.778
+B Paradox                    all    E 8+: has vs not                   n=    69  +6.90 [ +1.50,+12.29] p=0.012
+B Paradox                    all    interaction: E>=5 minus E<=4       n=   492  -0.75 [ -2.93, +1.43] p=0.498
+B Paradox                    h0     E 0-2: has vs not                  n=   366  +1.03 [ -1.03, +3.09] p=0.325
+B Paradox                    h0     E 3-4: has vs not                  n=   324  +1.89 [ -0.52, +4.30] p=0.124
+B Paradox                    h0     E 5-7: has vs not                  n=   199  -0.27 [ -3.16, +2.63] p=0.856
+B Paradox                    h0     E 8+: has vs not                   n=    30  +9.72 [ +2.12,+17.31] p=0.012
+B Paradox                    h0     interaction: E>=5 minus E<=4       n=   229  -0.44 [ -3.58, +2.71] p=0.785
+B Paradox                    h1     E 0-2: has vs not                  n=   320  +2.10 [ -0.34, +4.54] p=0.091
+B Paradox                    h1     E 3-4: has vs not                  n=   341  +2.10 [ -0.39, +4.58] p=0.099
+B Paradox                    h1     E 5-7: has vs not                  n=   224  +0.89 [ -1.79, +3.57] p=0.515
+B Paradox                    h1     E 8+: has vs not                   n=    39  +4.03 [ -3.53,+11.60] p=0.296
+B Paradox                    h1     interaction: E>=5 minus E<=4       n=   263  -0.94 [ -3.99, +2.12] p=0.548
+C Way count vs 0             all    1 Ways                             n=  7363  +0.44 [ -0.14, +1.02] p=0.137
+C Way count vs 0             all    2 Ways                             n=  3152  +0.01 [ -0.79, +0.81] p=0.986
+C Way count vs 0             all    3 Ways                             n=  1077  +0.83 [ -0.38, +2.05] p=0.180
+C Way count vs 0             all    4+ Ways                            n=   395  +0.23 [ -1.79, +2.25] p=0.823
+C marginal Way               all    2 minus 1                          n=  3152  -0.43 [ -1.27, +0.40] p=0.312
+C marginal Way               all    3 minus 2                          n=  1077  +0.82 [ -0.52, +2.17] p=0.231
+C marginal Way               all    4+ minus 3                         n=   395  -0.60 [ -2.88, +1.68] p=0.606
+C slope                      all    per Way, 0 to 3                    n= 11987  +0.17 [ -0.12, +0.47] p=0.251
+C slope                      all    per Way beyond 3                   n=   395  -0.30 [ -1.90, +1.30] p=0.718
+C Way count vs 0             h0     1 Ways                             n=  3710  +0.93 [ +0.11, +1.74] p=0.026
+C Way count vs 0             h0     2 Ways                             n=  1523  +0.34 [ -0.78, +1.46] p=0.552
+C Way count vs 0             h0     3 Ways                             n=   539  +0.52 [ -1.21, +2.25] p=0.557
+C Way count vs 0             h0     4+ Ways                            n=   193  +0.04 [ -2.82, +2.91] p=0.976
+C marginal Way               h0     2 minus 1                          n=  1523  -0.59 [ -1.76, +0.59] p=0.328
+C marginal Way               h0     3 minus 2                          n=   539  +0.18 [ -1.73, +2.08] p=0.854
+C marginal Way               h0     4+ minus 3                         n=   193  -0.47 [ -3.72, +2.78] p=0.775
+C slope                      h0     per Way, 0 to 3                    n=  5965  +0.23 [ -0.19, +0.65] p=0.287
+C slope                      h0     per Way beyond 3                   n=   193  -0.08 [ -2.35, +2.20] p=0.947
+C Way count vs 0             h1     1 Ways                             n=  3653  -0.03 [ -0.86, +0.79] p=0.939
+C Way count vs 0             h1     2 Ways                             n=  1629  -0.30 [ -1.45, +0.85] p=0.604
+C Way count vs 0             h1     3 Ways                             n=   538  +1.17 [ -0.55, +2.88] p=0.183
+C Way count vs 0             h1     4+ Ways                            n=   202  +0.41 [ -2.43, +3.25] p=0.776
+C marginal Way               h1     2 minus 1                          n=  1629  -0.27 [ -1.46, +0.92] p=0.654
+C marginal Way               h1     3 minus 2                          n=   538  +1.47 [ -0.45, +3.39] p=0.133
+C marginal Way               h1     4+ minus 3                         n=   202  -0.76 [ -3.95, +2.44] p=0.643
+C slope                      h1     per Way, 0 to 3                    n=  6022  +0.13 [ -0.29, +0.56] p=0.535
+C slope                      h1     per Way beyond 3                   n=   202  -0.55 [ -2.79, +1.69] p=0.630
+loading games ...
+games 297964 spell cols 269
+W1 empower in hand | Way in hand all    any Way                                  decks=22743  +0.59 ±0.23  placebo -0.23±0.43 z +1.7
+W1 empower in hand | Way in hand all    Healer                                   decks= 4684  +0.24 ±0.47  placebo -0.32±0.54 z +0.8
+W1 empower in hand | Way in hand all    Mind Sculptor                            decks= 6123  -0.04 ±0.44  placebo +0.21±0.41 z -0.4
+W1 empower in hand | Way in hand all    Paradox                                  decks= 3098  +0.69 ±0.72  placebo +0.23±0.69 z +0.5
+W1 empower in hand | Way in hand h0     any Way                                  decks=11347  +0.57 ±0.32  placebo -0.25±0.58 z +1.2
+W1 empower in hand | Way in hand h0     Healer                                   decks= 2332  +0.40 ±0.69  placebo -0.56±0.76 z +0.9
+W1 empower in hand | Way in hand h0     Mind Sculptor                            decks= 2973  -0.20 ±0.62  placebo +0.25±0.57 z -0.5
+W1 empower in hand | Way in hand h0     Paradox                                  decks= 1573  +2.00 ±1.07  placebo -0.12±0.90 z +1.5
+W1 empower in hand | Way in hand h1     any Way                                  decks=11396  +0.60 ±0.33  placebo -0.25±0.43 z +1.6
+W1 empower in hand | Way in hand h1     Healer                                   decks= 2352  +0.08 ±0.68  placebo +0.15±0.50 z -0.1
+W1 empower in hand | Way in hand h1     Mind Sculptor                            decks= 3150  +0.12 ±0.57  placebo +0.23±0.56 z -0.1
+W1 empower in hand | Way in hand h1     Paradox                                  decks= 1525  -0.67 ±1.03  placebo -0.31±1.01 z -0.2
+W2 interaction E_hand x Way_hand all    any Way                                  decks=30236  +1.04 ±0.19  placebo +0.94±0.28 z +0.3
+W2 (E_hand slope w/o Way in hand) all    any Way                                  decks=30236  -0.02 ±0.20
+W2 interaction E_hand x Way_hand all    Healer                                   decks= 6778  +0.56 ±0.37  placebo +0.61±0.55 z -0.1
+W2 (E_hand slope w/o Way in hand) all    Healer                                   decks= 6778  +0.09 ±0.39
+W2 interaction E_hand x Way_hand all    Mind Sculptor                            decks= 8546  +0.72 ±0.35  placebo +1.31±0.28 z -1.3
+W2 (E_hand slope w/o Way in hand) all    Mind Sculptor                            decks= 8546  +0.10 ±0.36
+W2 interaction E_hand x Way_hand all    Paradox                                  decks= 4675  +0.55 ±0.50  placebo +0.16±0.64 z +0.5
+W2 (E_hand slope w/o Way in hand) all    Paradox                                  decks= 4675  -0.49 ±0.50
+W2 interaction E_hand x Way_hand h0     any Way                                  decks=15063  +1.20 ±0.29  placebo +0.77±0.36 z +0.9
+W2 (E_hand slope w/o Way in hand) h0     any Way                                  decks=15063  -0.09 ±0.29
+W2 interaction E_hand x Way_hand h0     Healer                                   decks= 3366  +0.55 ±0.53  placebo +0.03±0.63 z +0.6
+W2 (E_hand slope w/o Way in hand) h0     Healer                                   decks= 3366  +0.29 ±0.54
+W2 interaction E_hand x Way_hand h0     Mind Sculptor                            decks= 4195  +0.77 ±0.43  placebo +1.12±0.38 z -0.6
+W2 (E_hand slope w/o Way in hand) h0     Mind Sculptor                            decks= 4195  +0.00 ±0.44
+W2 interaction E_hand x Way_hand h0     Paradox                                  decks= 2333  +1.63 ±0.70  placebo +0.99±0.77 z +0.6
+W2 (E_hand slope w/o Way in hand) h0     Paradox                                  decks= 2333  -0.77 ±0.70
+W2 interaction E_hand x Way_hand h1     any Way                                  decks=15173  +0.89 ±0.27  placebo +1.01±0.28 z -0.3
+W2 (E_hand slope w/o Way in hand) h1     any Way                                  decks=15173  +0.06 ±0.29
+W2 interaction E_hand x Way_hand h1     Healer                                   decks= 3412  +0.57 ±0.52  placebo +0.82±0.54 z -0.3
+W2 (E_hand slope w/o Way in hand) h1     Healer                                   decks= 3412  -0.13 ±0.54
+W2 interaction E_hand x Way_hand h1     Mind Sculptor                            decks= 4351  +0.69 ±0.45  placebo +1.61±0.36 z -1.6
+W2 (E_hand slope w/o Way in hand) h1     Mind Sculptor                            decks= 4351  +0.20 ±0.45
+W2 interaction E_hand x Way_hand h1     Paradox                                  decks= 2342  -0.53 ±0.72  placebo -0.37±0.80 z -0.1
+W2 (E_hand slope w/o Way in hand) h1     Paradox                                  decks= 2342  -0.20 ±0.68
+W3 empower in hand | Way in hand all    any Way, deck E<=4                       decks=18953  +0.62 ±0.28
+W3 empower in hand | Way in hand all    any Way, deck E>=5                       decks= 3790  +0.17 ±0.47
+W3b Way in hand vs not         all    any Way, deck E<=4                       decks=25559  -1.82 ±0.35
+W3b Way in hand vs not         all    any Way, deck E>=5                       decks= 4677  -1.71 ±0.82
+W3 empower in hand | Way in hand all    Healer, deck E<=4                        decks= 3610  +0.03 ±0.67
+W3 empower in hand | Way in hand all    Healer, deck E>=5                        decks= 1074  +1.28 ±0.90
+W3b Way in hand vs not         all    Healer, deck E<=4                        decks= 5362  +1.59 ±0.72
+W3b Way in hand vs not         all    Healer, deck E>=5                        decks= 1416  +1.82 ±1.39
+W3 empower in hand | Way in hand all    Mind Sculptor, deck E<=4                 decks= 4512  +0.37 ±0.53
+W3 empower in hand | Way in hand all    Mind Sculptor, deck E>=5                 decks= 1611  -0.47 ±0.72
+W3b Way in hand vs not         all    Mind Sculptor, deck E<=4                 decks= 6422  -3.19 ±0.70
+W3b Way in hand vs not         all    Mind Sculptor, deck E>=5                 decks= 2124  -3.61 ±1.09
+W3 empower in hand | Way in hand all    Paradox, deck E<=4                       decks= 2729  +0.59 ±0.81
+W3 empower in hand | Way in hand all    Paradox, deck E>=5                       decks=  369  -0.66 ±1.70
+W3b Way in hand vs not         all    Paradox, deck E<=4                       decks= 4177  +0.53 ±0.83
+W3b Way in hand vs not         all    Paradox, deck E>=5                       decks=  498  +2.37 ±2.44
+W3 empower in hand | Way in hand h0     any Way, deck E<=4                       decks= 9426  +0.47 ±0.39
+W3 empower in hand | Way in hand h0     any Way, deck E>=5                       decks= 1921  +0.50 ±0.62
+W3b Way in hand vs not         h0     any Way, deck E<=4                       decks=12715  -1.94 ±0.49
+W3b Way in hand vs not         h0     any Way, deck E>=5                       decks= 2348  -1.76 ±1.15
+W3 empower in hand | Way in hand h0     Healer, deck E<=4                        decks= 1804  -0.25 ±0.93
+W3 empower in hand | Way in hand h0     Healer, deck E>=5                        decks=  528  +2.34 ±1.02
+W3b Way in hand vs not         h0     Healer, deck E<=4                        decks= 2679  +2.80 ±1.00
+W3b Way in hand vs not         h0     Healer, deck E>=5                        decks=  687  +0.93 ±1.76
+W3 empower in hand | Way in hand h0     Mind Sculptor, deck E<=4                 decks= 2167  +0.26 ±0.76
+W3 empower in hand | Way in hand h0     Mind Sculptor, deck E>=5                 decks=  806  -0.52 ±1.01
+W3b Way in hand vs not         h0     Mind Sculptor, deck E<=4                 decks= 3136  -3.72 ±1.05
+W3b Way in hand vs not         h0     Mind Sculptor, deck E>=5                 decks= 1059  -3.39 ±1.56
+W3 empower in hand | Way in hand h0     Paradox, deck E<=4                       decks= 1382  +2.22 ±1.23
+W3 empower in hand | Way in hand h0     Paradox, deck E>=5                       decks=  191  -0.01 ±2.11
+W3b Way in hand vs not         h0     Paradox, deck E<=4                       decks= 2086  +0.53 ±1.25
+W3b Way in hand vs not         h0     Paradox, deck E>=5                       decks=  247  +6.53 ±3.32
+W3 empower in hand | Way in hand h1     any Way, deck E<=4                       decks= 9527  +0.76 ±0.39
+W3 empower in hand | Way in hand h1     any Way, deck E>=5                       decks= 1869  -0.16 ±0.67
+W3b Way in hand vs not         h1     any Way, deck E<=4                       decks=12844  -1.70 ±0.49
+W3b Way in hand vs not         h1     any Way, deck E>=5                       decks= 2329  -1.59 ±1.07
+W3 empower in hand | Way in hand h1     Healer, deck E<=4                        decks= 1806  +0.31 ±0.92
+W3 empower in hand | Way in hand h1     Healer, deck E>=5                        decks=  546  +0.15 ±1.14
+W3b Way in hand vs not         h1     Healer, deck E<=4                        decks= 2683  +0.36 ±1.00
+W3b Way in hand vs not         h1     Healer, deck E>=5                        decks=  729  +2.74 ±1.93
+W3 empower in hand | Way in hand h1     Mind Sculptor, deck E<=4                 decks= 2345  +0.46 ±0.75
+W3 empower in hand | Way in hand h1     Mind Sculptor, deck E>=5                 decks=  805  -0.38 ±0.99
+W3b Way in hand vs not         h1     Mind Sculptor, deck E<=4                 decks= 3286  -2.71 ±0.95
+W3b Way in hand vs not         h1     Mind Sculptor, deck E>=5                 decks= 1065  -3.92 ±1.63
+W3 empower in hand | Way in hand h1     Paradox, deck E<=4                       decks= 1347  -1.09 ±1.10
+W3 empower in hand | Way in hand h1     Paradox, deck E>=5                       decks=  178  -1.15 ±2.68
+W3b Way in hand vs not         h1     Paradox, deck E<=4                       decks= 2091  +0.50 ±1.27
+W3b Way in hand vs not         h1     Paradox, deck E>=5                       decks=  251  -1.82 ±3.08
+W4 Ways in hand vs 0 (decks >=3 Ways) all    1 Way in hand                            decks= 2439  -3.13 ±1.78
+W4 Ways in hand vs 0 (decks >=3 Ways) all    2 Ways in hand                           decks= 2439  -3.43 ±1.91
+W4 Ways in hand vs 0 (decks >=3 Ways) all    3+ Ways in hand                          decks= 2439  -3.95 ±2.07
+W4 marginal Way in hand        all    2 minus 1                                decks= 2439  -0.30 ±1.35
+W4 marginal Way in hand        all    3+ minus 2                               decks= 2439  -0.52 ±1.36
+W4 Ways in hand vs 0 (decks >=3 Ways) h0     1 Way in hand                            decks= 1202  -6.39 ±2.42
+W4 Ways in hand vs 0 (decks >=3 Ways) h0     2 Ways in hand                           decks= 1202  -5.88 ±2.63
+W4 Ways in hand vs 0 (decks >=3 Ways) h0     3+ Ways in hand                          decks= 1202  -5.64 ±3.24
+W4 marginal Way in hand        h0     2 minus 1                                decks= 1202  +0.51 ±1.84
+W4 marginal Way in hand        h0     3+ minus 2                               decks= 1202  +0.24 ±2.21
+W4 Ways in hand vs 0 (decks >=3 Ways) h1     1 Way in hand                            decks= 1237  +0.03 ±2.42
+W4 Ways in hand vs 0 (decks >=3 Ways) h1     2 Ways in hand                           decks= 1237  -1.09 ±2.61
+W4 Ways in hand vs 0 (decks >=3 Ways) h1     3+ Ways in hand                          decks= 1237  -2.32 ±3.08
+W4 marginal Way in hand        h1     2 minus 1                                decks= 1237  -1.12 ±1.84
+W4 marginal Way in hand        h1     3+ minus 2                               decks= 1237  -1.22 ±2.16
+done
