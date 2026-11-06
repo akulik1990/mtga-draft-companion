@@ -11,6 +11,9 @@ import { api, IDEA_STATUSES, type EngineDeck, type Idea, type IdeaStatus, type V
 	let other = $state<VideoEngine | null>(null);
 	let build = $state(0);
 	let showEng = $state(true);
+	let showTbl = $state(false);
+	let showPacks = $state(false);
+	const setPacks = () => { try { localStorage.setItem('videoPacks', showPacks ? '1' : '0'); } catch { /* private mode */ } };
 	const setEng = () => { try { localStorage.setItem('videoEngine', showEng ? '1' : '0'); } catch { /* private mode */ } };
 	let statusFilter = $state('');
 	let phaseFilter = $state('');
@@ -62,6 +65,8 @@ import { api, IDEA_STATUSES, type EngineDeck, type Idea, type IdeaStatus, type V
 
 	onMount(async () => {
 		try { showEng = localStorage.getItem('videoEngine') !== '0'; } catch { /* default on */ }
+		try { showPacks = localStorage.getItem('videoPacks') === '1'; } catch { /* default closed */ }
+		try { showTbl = localStorage.getItem('videoPicksTable') === '1'; } catch { /* default closed */ }
 		if (yt()?.Player) attach();
 		else {
 			const prev = (window as any).onYouTubeIframeAPIReady;
@@ -145,6 +150,7 @@ import { api, IDEA_STATUSES, type EngineDeck, type Idea, type IdeaStatus, type V
 		<h1 class="text-lg font-semibold">{data.video.title}</h1>
 		<span class="text-zinc-400">{data.video.player} · {data.video.set}</span>
 		<label class="text-zinc-300"><input type="checkbox" bind:checked={showEng} onchange={setEng} /> Engine output</label>
+		<label class="text-zinc-300"><input type="checkbox" bind:checked={showPacks} onchange={setPacks} /> Packs open on all rows</label>
 {#if engine && showEng}<span class="text-zinc-500">v2 {engine.commit} ({engine.date}): top-1 {engine.top1}/{engine.n}, top-3 {engine.top3}/{engine.n}</span>{/if}
 	</div>
 
@@ -164,22 +170,29 @@ import { api, IDEA_STATUSES, type EngineDeck, type Idea, type IdeaStatus, type V
 						<span class="text-sm font-medium break-words">{p.taken}</span>
 						{#if showEng && e && e.scored !== false}<span class={miss ? 'text-amber-400' : 'text-emerald-400'}>{miss ? `v2 ranked it #${e.his_rank ?? '?'}` : 'v2 agrees ✓'}</span>{/if}
 					</div>
-					<div class="mt-1 border-l-2 border-sky-700 pl-2 text-zinc-300">
+					<div class="mt-1 lg:flex lg:items-start lg:gap-3">
+					<div class="border-l-2 border-sky-700 pl-2 text-zinc-300 {showEng ? 'lg:w-[58%]' : 'lg:w-full'}">
 						<span class="font-semibold text-sky-400">{nick}</span>
 						{#if unquote(p.plan)}<div class="break-words"><span class="text-zinc-500">plan:</span> {unquote(p.plan)}</div>{/if}
 						{#if unquote(p.reasoning)}<div class="break-words">{unquote(p.reasoning)}</div>{/if}
 						{#if p.considered && Object.keys(p.considered).length}
-							<div class="text-zinc-500">considered:</div>
-							{#each Object.entries(p.considered) as [card, why]}<div class="break-words"><span class="text-zinc-100">{card}</span>{unquote(why) ? `: ${unquote(why)}` : ''}</div>{/each}
+							{@const cons = Object.entries(p.considered)}
+							{@const inline = cons.length <= 3 && cons.every(([c, w]) => c.length + unquote(w).length <= 40)}
+							{#if inline}
+								<div class="break-words"><span class="text-zinc-500">considered:</span> {#each cons as [card, why], j}{#if j} · {/if}<span class="text-zinc-100">{card}</span>{unquote(why) ? `: ${unquote(why)}` : ''}{/each}</div>
+							{:else}
+								<div class="text-zinc-500">considered:</div>
+								{#each cons as [card, why]}<div class="break-words"><span class="text-zinc-100">{card}</span>{unquote(why) ? `: ${unquote(why)}` : ''}</div>{/each}
+							{/if}
 						{/if}
 					</div>
 					{#if showEng}
-<div class="mt-1 border-l-2 border-amber-600 pl-2 text-zinc-400">
+<div class="mt-1 border-l-2 border-amber-600 pl-2 text-zinc-400 lg:mt-0 lg:w-[42%]">
 						<span class="font-semibold text-amber-400">ENGINE</span>
 						{#if !e || e.scored === false}
 							<div>engine: not scored</div>
 						{:else}
-							{#each e.top3 as c, k}<div class="break-words {c.name === p.taken ? 'font-semibold text-emerald-400' : ''}">{k + 1}. {c.name} <span class="text-zinc-500 tabular-nums">{c.score.toFixed(1)}</span></div>{/each}
+							<div class="break-words">{#each e.top3 as c, k}{#if k} · {/if}<span class={c.name === p.taken ? 'font-semibold text-emerald-400' : ''}>{k + 1}. {c.name} <span class="text-zinc-500 tabular-nums">{c.score.toFixed(1)}</span></span>{/each}</div>
 							{#if !inTop}<div class="break-words text-emerald-400">their card: rank {e.his_rank ?? '?'}, score {e.his_score?.toFixed(1) ?? '?'}</div>{/if}
 							{#if miss && e.his_score != null && e.top3[0]}<div class="text-amber-400">gap to #1: −{(e.top3[0].score - e.his_score).toFixed(1)}</div>{/if}
 							{#if e.reasons_top.length}<div class="break-words"><span class="text-zinc-500">why #1:</span> {e.reasons_top.join(' · ')}</div>{/if}
@@ -188,9 +201,10 @@ import { api, IDEA_STATUSES, type EngineDeck, type Idea, type IdeaStatus, type V
 						{/if}
 </div>
 {/if}
+					</div>
 {#if p.pack_cards?.length}
 						<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_noninteractive_element_interactions -->
-						<details class="mt-1 text-zinc-500" onclick={(ev) => ev.stopPropagation()}>
+						<details class="mt-1 text-zinc-500" open={showPacks} onclick={(ev) => ev.stopPropagation()}>
 							<summary class="cursor-pointer">pack ({p.pack_cards.length})</summary>
 							<div class="break-words">{p.pack_cards.join(', ')}</div>
 						</details>
@@ -204,6 +218,8 @@ import { api, IDEA_STATUSES, type EngineDeck, type Idea, type IdeaStatus, type V
 	</section>
 	</div>
 
+	<details class="mb-6" open={showTbl} ontoggle={(ev) => { showTbl = ev.currentTarget.open; try { localStorage.setItem('videoPicksTable', showTbl ? '1' : '0'); } catch { /* private mode */ } }}>
+	<summary class="mb-2 cursor-pointer text-sm font-semibold text-zinc-200">Picks table</summary>
 	<section class="mb-6">
 		<div class="mb-2 flex flex-wrap items-center gap-4 text-xs text-zinc-500">
 			<h2 class="text-sm font-semibold text-zinc-200">Picks</h2>
@@ -284,6 +300,7 @@ import { api, IDEA_STATUSES, type EngineDeck, type Idea, type IdeaStatus, type V
 			</table>
 		</div>
 	</section>
+	</details>
 
 	<section class="mb-6">
 		<div class="mb-2 flex items-center gap-4 text-xs text-zinc-500">
@@ -312,6 +329,7 @@ import { api, IDEA_STATUSES, type EngineDeck, type Idea, type IdeaStatus, type V
 		{#if showEng}<p class="mt-1 text-xs text-zinc-500">Amber: not in the other deck.</p>{/if}
 	</section>
 
+	{#if showEng}
 	<section>
 		<div class="mb-2 flex flex-wrap items-center gap-4 text-xs text-zinc-500">
 			<h2 class="text-sm font-semibold text-zinc-200">Ideas ({shown.length}/{ideas.length})</h2>
@@ -350,6 +368,7 @@ import { api, IDEA_STATUSES, type EngineDeck, type Idea, type IdeaStatus, type V
 			</tbody>
 		</table>
 	</section>
+	{/if}
 {/if}
 
 <style>

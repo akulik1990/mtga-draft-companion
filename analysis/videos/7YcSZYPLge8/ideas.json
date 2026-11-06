@@ -1,0 +1,459 @@
+{
+ "video": "7YcSZYPLge8",
+ "player": "NicolaiBolas",
+ "set": "FRA",
+ "source": "YouTube auto-caption transcript 0:00-19:10 (tools/video_draft.py transcript 7YcSZYPLge8 --start 0 --end 1150); nothing past 19:10 read. 'type' marks each idea as claim, heuristic or one-off pick; 'repeats' lists ideas of earlier videos it restates; 'related' lists looser topic matches. Solo draft: every idea is the host's (speaker field kept for the schema).",
+ "ideas": [
+  {
+   "id": "7Yc-01",
+   "time": 36,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Kiora of Fire and Ashes is completely messed up; it is chosen over Vraska, the Cutting Glare, a gold uncommon that might wheel, and with six mana he would rather play Kiora.",
+   "quote": "Kiora is so good though. It's like really, really good.",
+   "cards": [
+    "Kiora of Fire and Ashes",
+    "Vraska, the Cutting Glare"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Kiora of Fire and Ashes against Vraska, the Cutting Glare.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "XSY-31",
+    "994-03",
+    "I_C-19"
+   ]
+  },
+  {
+   "id": "7Yc-02",
+   "time": 84,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "A rule not to pass Mindseeker Oculus: you can break it but you need a really good reason.",
+   "quote": "I have a rule, don't pass Mind Seeker Oculus. You can break rules sometimes but you really should have a really good reason to do that.",
+   "cards": [
+    "Mindseeker Oculus"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Mindseeker Oculus.",
+   "type": "heuristic",
+   "repeats": [
+    "9nA-17",
+    "97Z-25",
+    "VTU-07",
+    "kMo-05",
+    "9Db-03"
+   ],
+   "related": []
+  },
+  {
+   "id": "7Yc-03",
+   "time": 138,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Arni, Humble Scribe has been a journey card for him: he started really high on it, went much lower, then came back; Extended Absence is better.",
+   "quote": "Arni was a journey card for me. I started off really high on it, then I went really much lower on it, then I came back on it.",
+   "cards": [
+    "Arni, Humble Scribe",
+    "Extended Absence"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Arni, Humble Scribe.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-49",
+    "97Z-07",
+    "55a-03"
+   ]
+  },
+  {
+   "id": "7Yc-04",
+   "time": 155,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Extended Absence is really strong and easily splashed a lot of the time; he takes it over Twinned Vision, which he would not third-pick.",
+   "quote": "Very easily to splash a lot of the time.",
+   "cards": [
+    "Extended Absence",
+    "Twinned Vision"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "Splash win rate of Extended Absence.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "97Z-08",
+    "kMo-08",
+    "994-17"
+   ]
+  },
+  {
+   "id": "7Yc-05",
+   "time": 176,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Blue-black with Kiora: you can sometimes splash double red cards in this format.",
+   "quote": "Blue black with a Kiora. You can sometimes splash double red cards in this format.",
+   "cards": [
+    "Kiora of Fire and Ashes",
+    "Last Gasp"
+   ],
+   "kind": "splash / mana",
+   "engine_area": "picker",
+   "test_idea": "Win rate of splashed double-pip cards.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-32",
+    "mqZ-61"
+   ]
+  },
+  {
+   "id": "7Yc-06",
+   "time": 260,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "A couple of colourless cards help you delay the colour decision, which is a good term sometimes: the longer you can wait the more you can get from a signal like a seventh-pick great card.",
+   "quote": "Getting a couple colorless cards just helps you delay the decision.",
+   "cards": [
+    "Keeper of the Quiet Hour"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Final-colour agreement by number of colourless picks in pack 1.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "8Bz-11"
+   ]
+  },
+  {
+   "id": "7Yc-07",
+   "time": 343,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Vraska did not wheel: someone took the green-black Vraska and the Jeskai one, a sign those colours are being drafted by the players upstream.",
+   "quote": "We wheel Vraska. No. Good to know. So, somebody took the green black Vraska.",
+   "cards": [
+    "Vraska, the Cutting Glare",
+    "Vraska, Soul of Stone"
+   ],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "Wheel rate of gold uncommons in packs with two gold uncommons.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "97Z-03",
+    "kMo-10"
+   ]
+  },
+  {
+   "id": "7Yc-08",
+   "time": 380,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "A land over a mediocre playable when playables are plentiful: Transformative Commons over Hallway Heckler; he just likes taking lands when he sees them in weird spots.",
+   "quote": "I just like taking lands when I see them in weird spots.",
+   "cards": [
+    "Transformative Commons",
+    "Hallway Heckler"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Play rate of lands taken at picks 9-11.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "CWs-12",
+    "9Db-15",
+    "CLK-17"
+   ]
+  },
+  {
+   "id": "7Yc-09",
+   "time": 480,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Recursive Recruitment is much easier to splash than a double-blue card like Chandra, Chill of Compliance; Murmuring Volume is his favourite card in the set right now and he hates passing it.",
+   "quote": "I hate passing Murmuring Volumes. It's like my favorite card in the set right now.",
+   "cards": [
+    "Recursive Recruitment",
+    "Chandra, Chill of Compliance",
+    "Murmuring Volume"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Recursive Recruitment against Chandra, Chill of Compliance; Murmuring Volume ALSA.",
+   "type": "claim",
+   "repeats": [
+    "5aM-02",
+    "97Z-18",
+    "8Bz-06",
+    "kMo-04"
+   ],
+   "related": [
+    "9Db-10"
+   ]
+  },
+  {
+   "id": "7Yc-10",
+   "time": 560,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Samut, Hazoret's Champion is still a good card even if he is not aggressive: giving all his stuff haste after Kiora makes a real threat, and it is good against slow match-ups.",
+   "quote": "Giving all your stuff haste is like you play your Kiora, Fire and Ashes, and all of a sudden you have a real threat on them.",
+   "cards": [
+    "Samut, Hazoret's Champion",
+    "Kiora of Fire and Ashes"
+   ],
+   "kind": "synergy",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Samut, Hazoret's Champion.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "uoy-01",
+    "CLK-21"
+   ]
+  },
+  {
+   "id": "7Yc-11",
+   "time": 610,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Face Yourself is a card he wants to play even outside Empower Jace: good with his legendaries; he takes it over Room of Refuge.",
+   "quote": "I really want to play face yourself a bit. Feel like it could be good in this deck.",
+   "cards": [
+    "Face Yourself"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Face Yourself.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "CLK-10"
+   ]
+  },
+  {
+   "id": "7Yc-12",
+   "time": 650,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Land over the card made for his deck: Stingerquill Annex over Stingerquill Charm (three damage to anything), because he already has five removal spells and the land fixes both splashes.",
+   "quote": "The land is going to be really helpful for this blue splash and this green splash is getting my mana more consistent.",
+   "cards": [
+    "Stingerquill Annex",
+    "Stingerquill Charm"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Stingerquill Charm; play rate of Stingerquill Annex.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "I_C-18",
+    "CLK-17",
+    "55a-32"
+   ]
+  },
+  {
+   "id": "7Yc-13",
+   "time": 670,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Craftwork Crusher is fine at pick eight and a second one at pick eight in pack three: 'oh my gosh'; the red-green uncommon appears late.",
+   "quote": "Another crusher pick eight. Oh my gosh.",
+   "cards": [
+    "Craftwork Crusher"
+   ],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "Average pick position of Craftwork Crusher.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "I_C-13",
+    "9Db-11"
+   ]
+  },
+  {
+   "id": "7Yc-14",
+   "time": 715,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Murmuring Volume is so good it helps with every splash, gives every colour and ramps toward the big cards; he prefers it to a red-green land.",
+   "quote": "Murmuring volume is so good. It just helps with every splash, gives me every color, and ramps me towards my big stuff.",
+   "cards": [
+    "Murmuring Volume",
+    "Konstrari Annex"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Murmuring Volume by number of colours.",
+   "type": "claim",
+   "repeats": [
+    "8Bz-03"
+   ],
+   "related": [
+    "9Db-10",
+    "I_C-12"
+   ]
+  },
+  {
+   "id": "7Yc-15",
+   "time": 780,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Plenty of playables already, so take the land: Formidable Commons over Stingerquill Charm; the count is 18 playables after two packs and he needs five more.",
+   "quote": "I'm going to have plenty of playables here, like just looking at this deck.",
+   "cards": [
+    "Formidable Commons",
+    "Stingerquill Charm"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Playables at pick one of pack 3 and final win rate.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "kMo-18",
+    "9Db-19"
+   ]
+  },
+  {
+   "id": "7Yc-16",
+   "time": 830,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Twinned Vision in a red-base deck splashing blue: flashing it back is easy; Keeper of the Quiet Hour is also good but he likes having one.",
+   "quote": "We are playing red base and splashing blue so it should be pretty easy to splash back the card.",
+   "cards": [
+    "Twinned Vision",
+    "Keeper of the Quiet Hour"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Twinned Vision in decks with a blue splash.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "XSY-32",
+    "re7-10",
+    "I_C-21"
+   ]
+  },
+  {
+   "id": "7Yc-17",
+   "time": 870,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Hungering Puppetbeast is a brilliant card: play it next turn, play Grapple with the Past with the bent mana, even though it is another double-green card.",
+   "quote": "Puppet Beast is just a brilliant card.",
+   "cards": [
+    "Hungering Puppetbeast"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Hungering Puppetbeast.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "re7-01"
+   ]
+  },
+  {
+   "id": "7Yc-18",
+   "time": 900,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Free-slot lands: he would take a 3/2 here, but because he took lands earlier he has plenty of playables, so Innovative Commons.",
+   "quote": "These lands in like freebie slots like I would be taking like a 3-2 here, but because we took these earlier we have plenty of playables.",
+   "cards": [
+    "Innovative Commons"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Play rate of dual lands taken at pick five of pack three.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "9Db-15",
+    "CLK-17"
+   ]
+  },
+  {
+   "id": "7Yc-19",
+   "time": 950,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Pack 3 pick 7 and 8: another Hapatra and another Crusher; with 18 lands in a deck of expensive cards.",
+   "quote": "We're just going to place I think 18 lands in this deck.",
+   "cards": [
+    "Hapatra, the Desert Fang",
+    "Craftwork Crusher"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Win rate of 17 vs 18 lands in decks with many 5+ drops.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "Uy4-11",
+    "5aM-22"
+   ]
+  },
+  {
+   "id": "7Yc-20",
+   "time": 990,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "build",
+   "claim": "The blue might not be necessary: Recursive Recruitment is so good and he has lands for it, so he cuts the Oculus and plays it off three sources; he cuts Samut, Paradox Shaper and Heartstring Puller for an extra land.",
+   "quote": "So maybe we'll cut the Oculus and just play this off of one, two, three sources and not play any basics for it.",
+   "cards": [
+    "Recursive Recruitment",
+    "Mindseeker Oculus",
+    "Samut, Hazoret's Champion"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Win rate of light splashes with only land sources.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-60",
+    "CWs-42",
+    "9Db-23"
+   ]
+  },
+  {
+   "id": "7Yc-21",
+   "time": 1075,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "build",
+   "claim": "Source counts for an 18-land three-colour-plus deck: seven to eight black, six to eight red, five to six green (with one land cut); 'my mana is kind of bad, that's okay'.",
+   "quote": "Six, seven, eight black sources, six, seven, eight red sources, four, five green sources.",
+   "cards": [
+    "Swamp",
+    "Mountain",
+    "Forest"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Source counts against win rate in splash decks.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "Uy4-13",
+    "9Db-23"
+   ]
+  }
+ ]
+}
