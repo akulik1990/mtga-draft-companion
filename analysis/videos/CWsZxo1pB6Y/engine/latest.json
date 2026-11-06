@@ -1,5 +1,5 @@
 {
- "commit": "cbef5b9",
+ "commit": "6a31baa",
  "date": "2026-11-06",
  "dataset": "FRA_PremierDraft_All_Data.json",
  "top1": 27,
@@ -15,24 +15,24 @@
    "top3": [
     {
      "name": "Variable Chaser",
-     "score": 65.04
+     "score": 65.05
     },
     {
      "name": "Hapatra, the Desert Fang",
-     "score": 59.03
+     "score": 59.01
     },
     {
      "name": "No Admittance",
-     "score": 58.47
+     "score": 58.45
     }
    ],
-   "his_score": 59.03,
+   "his_score": 59.01,
    "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #2",
-    "WU 10% \u2192 58.9 (n=5153)",
+    "WU 10% \u2192 58.8 (n=5239)",
     "WB 10% \u2192 off-colour",
     "castable in 40% of likely lanes"
    ],
@@ -43,7 +43,7 @@
     "castable in 25% of likely lanes"
    ],
    "lanes_after": {
-    "BG": 0.453,
+    "BG": 0.452,
     "WU": 0.061,
     "WB": 0.061,
     "WR": 0.061
@@ -56,31 +56,31 @@
    "top3": [
     {
      "name": "Rewrite Regrets",
-     "score": 66.88
+     "score": 66.82
     },
     {
      "name": "Compel Brutality",
-     "score": 56.36
+     "score": 56.35
     },
     {
      "name": "Wrath of the Bloodmane",
-     "score": 56.02
+     "score": 56.05
     }
    ],
-   "his_score": 66.88,
+   "his_score": 66.82,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "BG 45% \u2192 58.9 (n=9757)"
+    "BG 45% \u2192 58.8 (n=9828)"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "BG 45% \u2192 58.9 (n=9757)"
+    "BG 45% \u2192 58.8 (n=9828)"
    ],
    "lanes_after": {
-    "BG": 0.685,
+    "BG": 0.684,
     "WB": 0.085,
     "UB": 0.085,
     "BR": 0.085
@@ -93,32 +93,32 @@
    "top3": [
     {
      "name": "Arcane Amphisbaena",
-     "score": 58.53
+     "score": 58.54
     },
     {
      "name": "Proft, Consulting Detective",
-     "score": 57.74
+     "score": 57.71
     },
     {
      "name": "Theoretical Necromancer",
-     "score": 55.06
+     "score": 55.05
     }
    ],
-   "his_score": 57.74,
+   "his_score": 57.71,
    "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #2",
-    "BG 69% \u2192 55.1 (n=16835)"
+    "BG 68% \u2192 55.1 (n=17031)"
    ],
    "reasons_his": [
     "Fit #2 \u00b7 Power #1",
-    "BG 69% \u2192 off-colour",
-    "castable in 11% of likely lanes"
+    "BG 68% \u2192 off-colour",
+    "castable in 12% of likely lanes"
    ],
    "lanes_after": {
-    "BG": 0.473,
+    "BG": 0.472,
     "UB": 0.302,
     "WB": 0.054,
     "BR": 0.054
@@ -135,31 +135,31 @@
     },
     {
      "name": "Arcane Amphisbaena",
-     "score": 56.45
+     "score": 56.47
     },
     {
      "name": "Mabel, Bitter Recluse",
-     "score": 55.05
+     "score": 55.08
     }
    ],
-   "his_score": 55.05,
+   "his_score": 55.08,
    "his_rank": 3,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
     "BG 47% \u2192 off-colour",
-    "UB 30% \u2192 59.4 (n=37063)",
+    "UB 30% \u2192 59.5 (n=37401)",
     "castable in 40% of likely lanes"
    ],
    "reasons_his": [
     "Fit #3 \u00b7 Power #6",
-    "BG 47% \u2192 54.2 (n=5538)",
-    "UB 30% \u2192 55.1 (n=9838)"
+    "BG 47% \u2192 54.2 (n=5557)",
+    "UB 30% \u2192 55.2 (n=9911)"
    ],
    "lanes_after": {
     "BG": 0.405,
-    "UB": 0.292,
+    "UB": 0.293,
     "BR": 0.086,
     "WB": 0.084
    }
@@ -171,33 +171,33 @@
    "top3": [
     {
      "name": "Dark Matter Manipulator",
-     "score": 64.34
+     "score": 64.36
     },
     {
      "name": "Paradox Shaper",
-     "score": 58.21
+     "score": 58.24
     },
     {
      "name": "Vinelasher Adept",
-     "score": 53.75
+     "score": 53.73
     }
    ],
-   "his_score": 64.34,
+   "his_score": 64.36,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "BG 42% \u2192 57.1 (n=2257)",
-    "UB 30% \u2192 58.3 (n=7828)"
+    "BG 42% \u2192 57.2 (n=2280)",
+    "UB 30% \u2192 58.3 (n=7891)"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "BG 42% \u2192 57.1 (n=2257)",
-    "UB 30% \u2192 58.3 (n=7828)"
+    "BG 42% \u2192 57.2 (n=2280)",
+    "UB 30% \u2192 58.3 (n=7891)"
    ],
    "lanes_after": {
-    "BG": 0.461,
+    "BG": 0.46,
     "UB": 0.329,
     "BR": 0.092,
     "WB": 0.09
@@ -210,34 +210,34 @@
    "top3": [
     {
      "name": "Void Extrapolator",
-     "score": 54.18
+     "score": 54.2
     },
     {
      "name": "Unsummon",
-     "score": 49.25
+     "score": 49.27
     },
     {
      "name": "Clash of Elements",
      "score": 48.17
     }
    ],
-   "his_score": 54.18,
+   "his_score": 54.2,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #4",
-    "UB 41% \u2192 56.1 (n=36204)",
-    "BG 39% \u2192 55.1 (n=9323)"
+    "UB 41% \u2192 56.1 (n=36499)",
+    "BG 39% \u2192 55.1 (n=9396)"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #4",
-    "UB 41% \u2192 56.1 (n=36204)",
-    "BG 39% \u2192 55.1 (n=9323)"
+    "UB 41% \u2192 56.1 (n=36499)",
+    "BG 39% \u2192 55.1 (n=9396)"
    ],
    "lanes_after": {
     "UB": 0.417,
-    "BG": 0.404,
+    "BG": 0.403,
     "BR": 0.091,
     "WB": 0.075
    }
@@ -249,35 +249,35 @@
    "top3": [
     {
      "name": "Silence the Echo",
-     "score": 54.41
+     "score": 54.4
     },
     {
      "name": "Arni, Humble Scribe",
-     "score": 45.51
+     "score": 45.52
     },
     {
      "name": "Shatterwing Pegasus",
-     "score": 33.36
+     "score": 33.35
     }
    ],
-   "his_score": 45.51,
+   "his_score": 45.52,
    "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #2",
-    "UB 45% \u2192 54.9 (n=24820)",
-    "BG 38% \u2192 52.0 (n=11218)"
+    "UB 45% \u2192 54.9 (n=24958)",
+    "BG 38% \u2192 51.9 (n=11278)"
    ],
    "reasons_his": [
     "Fit #2 \u00b7 Power #1",
-    "UB 45% \u2192 55.0 (n=11939)",
+    "UB 45% \u2192 55.0 (n=12016)",
     "BG 38% \u2192 off-colour",
     "castable in 46% of likely lanes"
    ],
    "lanes_after": {
-    "UB": 0.63,
-    "BG": 0.257,
+    "UB": 0.631,
+    "BG": 0.256,
     "BR": 0.053,
     "WB": 0.046
    }
@@ -293,7 +293,7 @@
     },
     {
      "name": "Sphinx's Approach",
-     "score": 44.87
+     "score": 44.88
     },
     {
      "name": "Stinging Vitriol",
@@ -317,8 +317,8 @@
     "castable in 4% of likely lanes"
    ],
    "lanes_after": {
-    "UB": 0.623,
-    "BG": 0.256,
+    "UB": 0.624,
+    "BG": 0.255,
     "BR": 0.063,
     "WB": 0.044
    }
@@ -330,33 +330,33 @@
    "top3": [
     {
      "name": "Undulating Witness",
-     "score": 59.47
+     "score": 59.5
     },
     {
      "name": "Murmuring Volume",
-     "score": 54.06
+     "score": 54.14
     },
     {
      "name": "Yuriko, Hope from the Shadows",
-     "score": 52.2
+     "score": 52.23
     }
    ],
-   "his_score": 59.47,
+   "his_score": 59.5,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "UB 69% \u2192 56.3 (n=37025)",
-    "BG 23% \u2192 off-colour"
+    "UB 69% \u2192 56.3 (n=37337)",
+    "BG 22% \u2192 off-colour"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "UB 69% \u2192 56.3 (n=37025)",
-    "BG 23% \u2192 off-colour"
+    "UB 69% \u2192 56.3 (n=37337)",
+    "BG 22% \u2192 off-colour"
    ],
    "lanes_after": {
-    "UB": 0.857,
+    "UB": 0.858,
     "BG": 0.097,
     "BR": 0.017,
     "WB": 0.012
@@ -369,32 +369,32 @@
    "top3": [
     {
      "name": "Apex Witchstalker",
-     "score": 62.71
+     "score": 62.74
     },
     {
      "name": "Proft, Sinister Mastermind",
-     "score": 62.0
+     "score": 62.01
     },
     {
      "name": "Theorix Metamage",
-     "score": 57.05
+     "score": 57.07
     }
    ],
-   "his_score": 62.0,
+   "his_score": 62.01,
    "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "UB 88% \u2192 56.8 (n=40648)"
+    "UB 88% \u2192 56.8 (n=41004)"
    ],
    "reasons_his": [
     "Fit #2 \u00b7 Power #2",
-    "UB 88% \u2192 55.4 (n=15436)"
+    "UB 88% \u2192 55.5 (n=15571)"
    ],
    "lanes_after": {
-    "UB": 0.888,
-    "BG": 0.085,
+    "UB": 0.889,
+    "BG": 0.084,
     "BR": 0.014,
     "WB": 0.01
    }
@@ -406,30 +406,30 @@
    "top3": [
     {
      "name": "Murmuring Volume",
-     "score": 52.59
+     "score": 52.65
     },
     {
      "name": "Ferocity of the Hunt",
-     "score": 47.39
+     "score": 47.38
     },
     {
      "name": "Arcane Amphisbaena",
-     "score": 45.3
+     "score": 45.31
     }
    ],
-   "his_score": 45.3,
+   "his_score": 45.31,
    "his_rank": 3,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #3",
-    "UB 80% \u2192 56.1 (n=13716)",
-    "BG 18% \u2192 56.1 (n=6283)"
+    "UB 80% \u2192 56.2 (n=13870)",
+    "BG 18% \u2192 56.2 (n=6350)"
    ],
    "reasons_his": [
     "Fit #3 \u00b7 Power #1",
     "UB 80% \u2192 splash G (fixing 1) 44.5",
-    "BG 18% \u2192 55.1 (n=16835)",
+    "BG 18% \u2192 55.1 (n=17031)",
     "castable in 18% of likely lanes"
    ],
    "lanes_after": {
@@ -446,39 +446,39 @@
    "top3": [
     {
      "name": "Generous Revival",
-     "score": 54.57
+     "score": 54.67
     },
     {
      "name": "Afterthought Sentry",
-     "score": 54.47
+     "score": 54.57
     },
     {
      "name": "Konstrari Annex",
      "score": 48.77
     }
    ],
-   "his_score": 54.57,
+   "his_score": 54.67,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Branch: +28.7 over Afterthought Sentry, above the 23.3 top drafters switch at",
+    "Branch: +28.7 over Afterthought Sentry, above the 23.2 top drafters switch at",
     "Fit #2 \u00b7 Power #1",
     "UB 60% \u2192 splash W (fixing 2) 49.4",
     "BG 37% \u2192 splash W (fixing 2) 46.6",
     "castable in 2% of likely lanes"
    ],
    "reasons_his": [
-    "Branch: +28.7 over Afterthought Sentry, above the 23.3 top drafters switch at",
+    "Branch: +28.7 over Afterthought Sentry, above the 23.2 top drafters switch at",
     "Fit #2 \u00b7 Power #1",
     "UB 60% \u2192 splash W (fixing 2) 49.4",
     "BG 37% \u2192 splash W (fixing 2) 46.6",
     "castable in 2% of likely lanes"
    ],
    "lanes_after": {
-    "UB": 0.57,
+    "UB": 0.571,
     "BG": 0.348,
-    "WB": 0.067,
+    "WB": 0.066,
     "BR": 0.008
    }
   },
@@ -489,31 +489,31 @@
    "top3": [
     {
      "name": "Theorix Metamage",
-     "score": 80.74
+     "score": 80.73
     },
     {
      "name": "Island",
      "score": 0.0
     }
    ],
-   "his_score": 80.74,
+   "his_score": 80.73,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "UB 64% \u2192 55.0 (n=39177)",
-    "BG 29% \u2192 53.6 (n=5989)"
+    "UB 64% \u2192 55.0 (n=39500)",
+    "BG 29% \u2192 53.6 (n=6047)"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "UB 64% \u2192 55.0 (n=39177)",
-    "BG 29% \u2192 53.6 (n=5989)"
+    "UB 64% \u2192 55.0 (n=39500)",
+    "BG 29% \u2192 53.6 (n=6047)"
    ],
    "lanes_after": {
-    "UB": 0.646,
+    "UB": 0.647,
     "BG": 0.289,
-    "WB": 0.054,
+    "WB": 0.053,
     "BR": 0.007
    }
   },
@@ -524,10 +524,10 @@
    "top3": [
     {
      "name": "Tether Technician",
-     "score": 47.01
+     "score": 47.02
     }
    ],
-   "his_score": 47.01,
+   "his_score": 47.02,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
@@ -547,7 +547,7 @@
     "UB": 0.505,
     "UBG": 0.285,
     "BG": 0.158,
-    "WB": 0.041
+    "WB": 0.04
    }
   },
   {
@@ -574,13 +574,13 @@
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #5",
-    "UB 44% \u2192 55.7 (n=25832)",
-    "UBG 29% \u2192 55.6 (n=4932)"
+    "UB 44% \u2192 55.7 (n=26045)",
+    "UBG 29% \u2192 55.6 (n=4994)"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #5",
-    "UB 44% \u2192 55.7 (n=25832)",
-    "UBG 29% \u2192 55.6 (n=4932)"
+    "UB 44% \u2192 55.7 (n=26045)",
+    "UBG 29% \u2192 55.6 (n=4994)"
    ],
    "lanes_after": {
     "UB": 0.454,
@@ -596,30 +596,30 @@
    "top3": [
     {
      "name": "Murmuring Volume",
-     "score": 59.01
+     "score": 59.07
     },
     {
      "name": "Room of Refuge",
-     "score": 55.85
+     "score": 55.87
     },
     {
      "name": "Cryotheory Adept",
-     "score": 48.43
+     "score": 48.42
     }
    ],
-   "his_score": 55.85,
+   "his_score": 55.87,
    "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #5",
-    "UB 45% \u2192 56.1 (n=13716)",
-    "UBG 27% \u2192 56.3 (n=8306)"
+    "UB 45% \u2192 56.2 (n=13870)",
+    "UBG 27% \u2192 56.3 (n=8407)"
    ],
    "reasons_his": [
     "Fit #2 \u00b7 Power #3",
-    "UB 45% \u2192 57.7 (n=19796)",
-    "UBG 27% \u2192 56.5 (n=8661)"
+    "UB 45% \u2192 57.7 (n=19972)",
+    "UBG 27% \u2192 56.5 (n=8756)"
    ],
    "lanes_after": {
     "UB": 0.417,
@@ -635,7 +635,7 @@
    "top3": [
     {
      "name": "Multiply by Zero",
-     "score": 73.76
+     "score": 73.84
     },
     {
      "name": "Semester Foreseer",
@@ -643,27 +643,27 @@
     },
     {
      "name": "Something Worth Saving",
-     "score": 49.13
+     "score": 49.12
     }
    ],
-   "his_score": 73.76,
+   "his_score": 73.84,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "UB 42% \u2192 60.9 (n=21919)",
-    "UBG 34% \u2192 59.9 (n=5142)"
+    "UB 42% \u2192 61.0 (n=22148)",
+    "UBG 34% \u2192 60.0 (n=5204)"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "UB 42% \u2192 60.9 (n=21919)",
-    "UBG 34% \u2192 59.9 (n=5142)"
+    "UB 42% \u2192 61.0 (n=22148)",
+    "UBG 34% \u2192 60.0 (n=5204)"
    ],
    "lanes_after": {
     "UB": 0.432,
     "UBG": 0.313,
-    "BG": 0.181,
+    "BG": 0.182,
     "WB": 0.029
    }
   },
@@ -674,34 +674,34 @@
    "top3": [
     {
      "name": "Jace, Reality Sculptor",
-     "score": 67.78
+     "score": 67.79
     },
     {
      "name": "Prudent Fateseer",
-     "score": 60.76
+     "score": 61.6
     },
     {
      "name": "Compel Brutality",
-     "score": 49.86
+     "score": 49.87
     }
    ],
-   "his_score": 67.78,
+   "his_score": 67.79,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "UB 58% \u2192 59.3 (n=5788)",
-    "UBG 29% \u2192 53.9 (n=1039)"
+    "UB 59% \u2192 59.3 (n=5874)",
+    "UBG 29% \u2192 53.9 (n=1047)"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "UB 58% \u2192 59.3 (n=5788)",
-    "UBG 29% \u2192 53.9 (n=1039)"
+    "UB 59% \u2192 59.3 (n=5874)",
+    "UBG 29% \u2192 53.9 (n=1047)"
    ],
    "lanes_after": {
     "UB": 0.727,
-    "UBG": 0.241,
+    "UBG": 0.242,
     "BG": 0.025,
     "WB": 0.005
    }
@@ -713,30 +713,30 @@
    "top3": [
     {
      "name": "Geist of Saint Thalia",
-     "score": 62.94
+     "score": 62.97
     },
     {
      "name": "Protege's Awakening",
-     "score": 61.89
+     "score": 61.92
     },
     {
      "name": "Formidable Commons",
-     "score": 49.07
+     "score": 49.05
     }
    ],
-   "his_score": 49.07,
+   "his_score": 49.05,
    "his_rank": 3,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #2",
-    "UB 73% \u2192 57.2 (n=14932)",
-    "UBG 24% \u2192 55.2 (n=2001)"
+    "UB 73% \u2192 57.2 (n=15078)",
+    "UBG 24% \u2192 55.3 (n=2026)"
    ],
    "reasons_his": [
     "Fit #3 \u00b7 Power #3",
     "UB 73% \u2192 splash G (fixing 2) 45.5",
-    "UBG 24% \u2192 56.4 (n=10686)",
+    "UBG 24% \u2192 56.4 (n=10802)",
     "castable in 27% of likely lanes"
    ],
    "lanes_after": {
@@ -753,33 +753,33 @@
    "top3": [
     {
      "name": "Twinned Vision",
-     "score": 64.8
+     "score": 64.83
     },
     {
      "name": "Unsummon",
-     "score": 60.17
+     "score": 60.18
     },
     {
      "name": "Tetsuko Umezawa, Fugitive",
-     "score": 55.06
+     "score": 55.04
     }
    ],
-   "his_score": 50.37,
+   "his_score": 50.42,
    "his_rank": 4,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "UB 66% \u2192 58.6 (n=30776)",
-    "UBG 32% \u2192 57.7 (n=6040)"
+    "UB 66% \u2192 58.7 (n=31071)",
+    "UBG 32% \u2192 57.7 (n=6119)"
    ],
    "reasons_his": [
     "Fit #4 \u00b7 Power #6",
-    "UB 66% \u2192 54.4 (n=8387)",
-    "UBG 32% \u2192 54.3 (n=1211)"
+    "UB 66% \u2192 54.4 (n=8472)",
+    "UBG 32% \u2192 54.4 (n=1220)"
    ],
    "lanes_after": {
-    "UB": 0.68,
+    "UB": 0.681,
     "UBG": 0.294,
     "BG": 0.021,
     "WB": 0.003
@@ -792,31 +792,31 @@
    "top3": [
     {
      "name": "Null Summoner",
-     "score": 87.67
+     "score": 87.64
     },
     {
      "name": "Surveillance Phantasm",
-     "score": 66.27
+     "score": 66.26
     },
     {
      "name": "Screeching Soulbreaker",
-     "score": 54.17
+     "score": 54.16
     }
    ],
-   "his_score": 87.67,
+   "his_score": 87.64,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "UB 70% \u2192 63.8 (n=12600)",
-    "UBG 30% \u2192 63.3 (n=3287)",
+    "UB 70% \u2192 63.9 (n=12680)",
+    "UBG 30% \u2192 63.1 (n=3303)",
     "open: U"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "UB 70% \u2192 63.8 (n=12600)",
-    "UBG 30% \u2192 63.3 (n=3287)",
+    "UB 70% \u2192 63.9 (n=12680)",
+    "UBG 30% \u2192 63.1 (n=3303)",
     "open: U"
    ],
    "lanes_after": {
@@ -833,7 +833,7 @@
    "top3": [
     {
      "name": "Theoretical Necromancer",
-     "score": 61.48
+     "score": 61.54
     },
     {
      "name": "Fatehold Annex",
@@ -844,19 +844,19 @@
      "score": 42.46
     }
    ],
-   "his_score": 61.48,
+   "his_score": 61.54,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #4",
-    "UB 72% \u2192 55.9 (n=36135)",
-    "UBG 28% \u2192 55.3 (n=8589)"
+    "UB 72% \u2192 56.0 (n=36485)",
+    "UBG 28% \u2192 55.3 (n=8694)"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #4",
-    "UB 72% \u2192 55.9 (n=36135)",
-    "UBG 28% \u2192 55.3 (n=8589)"
+    "UB 72% \u2192 56.0 (n=36485)",
+    "UBG 28% \u2192 55.3 (n=8694)"
    ],
    "lanes_after": {
     "UB": 0.743,
@@ -876,27 +876,27 @@
     },
     {
      "name": "Bestial Incursion",
-     "score": 46.37
+     "score": 46.36
     },
     {
      "name": "Greenhouse Propagator",
-     "score": 38.87
+     "score": 38.89
     }
    ],
-   "his_score": 46.37,
+   "his_score": 46.36,
    "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "UB 74% \u2192 58.7 (n=40164)",
-    "UBG 26% \u2192 57.1 (n=7981)",
+    "UB 74% \u2192 58.7 (n=40572)",
+    "UBG 26% \u2192 57.1 (n=8098)",
     "open: U"
    ],
    "reasons_his": [
     "Fit #2 \u00b7 Power #2",
     "UB 74% \u2192 splash G (fixing 3) 46.4",
-    "UBG 26% \u2192 56.5 (n=9274)",
+    "UBG 26% \u2192 56.5 (n=9364)",
     "castable in 26% of likely lanes"
    ],
    "lanes_after": {
@@ -913,30 +913,30 @@
    "top3": [
     {
      "name": "Murmuring Volume",
-     "score": 66.29
+     "score": 66.32
     },
     {
      "name": "Cryotheory Adept",
-     "score": 52.71
+     "score": 52.69
     },
     {
      "name": "Meticulous Commons",
      "score": 47.96
     }
    ],
-   "his_score": 66.29,
+   "his_score": 66.32,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "UB 60% \u2192 56.1 (n=13716)",
-    "UBG 40% \u2192 56.3 (n=8306)"
+    "UB 60% \u2192 56.2 (n=13870)",
+    "UBG 40% \u2192 56.3 (n=8407)"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "UB 60% \u2192 56.1 (n=13716)",
-    "UBG 40% \u2192 56.3 (n=8306)"
+    "UB 60% \u2192 56.2 (n=13870)",
+    "UBG 40% \u2192 56.3 (n=8407)"
    ],
    "lanes_after": {
     "UB": 0.528,
@@ -956,11 +956,11 @@
     },
     {
      "name": "Kiora of Salt and Sand",
-     "score": 40.04
+     "score": 39.99
     },
     {
      "name": "Whiplash Wordsmith",
-     "score": 39.79
+     "score": 39.8
     }
    ],
    "his_score": 47.56,
@@ -993,31 +993,31 @@
    "top3": [
     {
      "name": "Compel Brutality",
-     "score": 51.48
+     "score": 51.5
     },
     {
      "name": "Graft Surgeon",
-     "score": 37.8
+     "score": 37.79
     },
     {
      "name": "Tam, the Possibility",
      "score": 0.0
     }
    ],
-   "his_score": 51.48,
+   "his_score": 51.5,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
     "UB 53% \u2192 splash G (fixing 5) 44.7",
-    "UBG 47% \u2192 56.6 (n=5753)",
+    "UBG 47% \u2192 56.6 (n=5809)",
     "castable in 47% of likely lanes"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
     "UB 53% \u2192 splash G (fixing 5) 44.7",
-    "UBG 47% \u2192 56.6 (n=5753)",
+    "UBG 47% \u2192 56.6 (n=5809)",
     "castable in 47% of likely lanes"
    ],
    "lanes_after": {
@@ -1034,26 +1034,26 @@
    "top3": [
     {
      "name": "Way of the Necromancer",
-     "score": 60.7
+     "score": 60.71
     },
     {
      "name": "Blazing Crescendo",
-     "score": 37.36
+     "score": 37.35
     }
    ],
-   "his_score": 60.7,
+   "his_score": 60.71,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #2",
     "UBG 69% \u2192 39.2 (rarely played there)",
-    "UB 31% \u2192 43.8 (n=967)"
+    "UB 31% \u2192 43.9 (n=970)"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #2",
     "UBG 69% \u2192 39.2 (rarely played there)",
-    "UB 31% \u2192 43.8 (n=967)"
+    "UB 31% \u2192 43.9 (n=970)"
    ],
    "lanes_after": {
     "UBG": 0.646,
@@ -1096,30 +1096,30 @@
    "top3": [
     {
      "name": "Multiply by Zero",
-     "score": 79.0
+     "score": 79.1
     },
     {
      "name": "Mindseeker Oculus",
-     "score": 76.81
+     "score": 76.82
     },
     {
      "name": "Way of the Mind Sculptor",
-     "score": 74.77
+     "score": 74.72
     }
    ],
-   "his_score": 79.0,
+   "his_score": 79.1,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "UBG 64% \u2192 59.9 (n=5142)",
-    "UB 35% \u2192 60.9 (n=21919)"
+    "UBG 64% \u2192 60.0 (n=5204)",
+    "UB 35% \u2192 61.0 (n=22148)"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "UBG 64% \u2192 59.9 (n=5142)",
-    "UB 35% \u2192 60.9 (n=21919)"
+    "UBG 64% \u2192 60.0 (n=5204)",
+    "UB 35% \u2192 61.0 (n=22148)"
    ],
    "lanes_after": {
     "UBG": 0.604,
@@ -1135,30 +1135,30 @@
    "top3": [
     {
      "name": "Theorix Charm",
-     "score": 67.99
+     "score": 68.04
     },
     {
      "name": "Void Extrapolator",
-     "score": 60.14
+     "score": 60.2
     },
     {
      "name": "Sphinx's Approach",
-     "score": 56.17
+     "score": 56.13
     }
    ],
-   "his_score": 67.99,
+   "his_score": 68.04,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #3",
-    "UBG 60% \u2192 56.9 (n=5858)",
-    "UB 39% \u2192 57.3 (n=35175)"
+    "UBG 60% \u2192 56.9 (n=5921)",
+    "UB 39% \u2192 57.4 (n=35496)"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #3",
-    "UBG 60% \u2192 56.9 (n=5858)",
-    "UB 39% \u2192 57.3 (n=35175)"
+    "UBG 60% \u2192 56.9 (n=5921)",
+    "UB 39% \u2192 57.4 (n=35496)"
    ],
    "lanes_after": {
     "UBG": 0.567,
@@ -1174,30 +1174,30 @@
    "top3": [
     {
      "name": "Protege's Awakening",
-     "score": 67.72
+     "score": 67.71
     },
     {
      "name": "Theorix Charm",
-     "score": 66.64
+     "score": 66.69
     },
     {
      "name": "Tinybones, Pocket Nuisance",
-     "score": 63.12
+     "score": 63.19
     }
    ],
-   "his_score": 66.64,
+   "his_score": 66.69,
    "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #2",
-    "UBG 57% \u2192 58.4 (n=9542)",
-    "UB 43% \u2192 59.4 (n=37063)"
+    "UBG 57% \u2192 58.5 (n=9646)",
+    "UB 43% \u2192 59.5 (n=37401)"
    ],
    "reasons_his": [
     "Fit #2 \u00b7 Power #4",
-    "UBG 57% \u2192 56.9 (n=5858)",
-    "UB 43% \u2192 57.3 (n=35175)"
+    "UBG 57% \u2192 56.9 (n=5921)",
+    "UB 43% \u2192 57.4 (n=35496)"
    ],
    "lanes_after": {
     "UBG": 0.53,
@@ -1213,7 +1213,7 @@
    "top3": [
     {
      "name": "Null Summoner",
-     "score": 85.04
+     "score": 84.97
     },
     {
      "name": "Countersculpt",
@@ -1221,22 +1221,22 @@
     },
     {
      "name": "Ruric Thar, Biomagus",
-     "score": 63.69
+     "score": 63.76
     }
    ],
-   "his_score": 85.04,
+   "his_score": 84.97,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "UBG 53% \u2192 63.3 (n=3287)",
-    "UB 47% \u2192 63.8 (n=12600)"
+    "UBG 53% \u2192 63.1 (n=3303)",
+    "UB 47% \u2192 63.9 (n=12680)"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "UBG 53% \u2192 63.3 (n=3287)",
-    "UB 47% \u2192 63.8 (n=12600)"
+    "UBG 53% \u2192 63.1 (n=3303)",
+    "UB 47% \u2192 63.9 (n=12680)"
    ],
    "lanes_after": {
     "UB": 0.505,
@@ -1256,26 +1256,26 @@
     },
     {
      "name": "Gallia, Tragic Host",
-     "score": 62.8
+     "score": 62.86
     },
     {
      "name": "Rank Rat",
-     "score": 58.65
+     "score": 58.71
     }
    ],
-   "his_score": 62.8,
+   "his_score": 62.86,
    "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "UB 51% \u2192 60.8 (n=25555)",
-    "UBG 49% \u2192 58.0 (n=4386)"
+    "UB 51% \u2192 60.8 (n=25776)",
+    "UBG 49% \u2192 58.0 (n=4412)"
    ],
    "reasons_his": [
     "Fit #2 \u00b7 Power #3",
-    "UB 51% \u2192 55.4 (n=15987)",
-    "UBG 49% \u2192 55.2 (n=2749)"
+    "UB 51% \u2192 55.4 (n=16101)",
+    "UBG 49% \u2192 55.3 (n=2792)"
    ],
    "lanes_after": {
     "UB": 0.54,
@@ -1291,34 +1291,34 @@
    "top3": [
     {
      "name": "Unsummon",
-     "score": 61.28
+     "score": 61.25
     },
     {
      "name": "Theoretical Necromancer",
-     "score": 56.85
+     "score": 56.89
     },
     {
      "name": "Meticulous Commons",
      "score": 46.76
     }
    ],
-   "his_score": 61.28,
+   "his_score": 61.25,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #2",
-    "UB 54% \u2192 57.5 (n=36075)",
-    "UBG 46% \u2192 57.3 (n=7353)"
+    "UB 54% \u2192 57.5 (n=36398)",
+    "UBG 46% \u2192 57.2 (n=7432)"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #2",
-    "UB 54% \u2192 57.5 (n=36075)",
-    "UBG 46% \u2192 57.3 (n=7353)"
+    "UB 54% \u2192 57.5 (n=36398)",
+    "UBG 46% \u2192 57.2 (n=7432)"
    ],
    "lanes_after": {
-    "UB": 0.576,
-    "UBG": 0.424,
+    "UB": 0.575,
+    "UBG": 0.425,
     "BG": 0.0,
     "WB": 0.0
    }
@@ -1330,34 +1330,34 @@
    "top3": [
     {
      "name": "Icy Reception",
-     "score": 62.22
+     "score": 62.21
     },
     {
      "name": "Room of Refuge",
-     "score": 61.25
+     "score": 61.27
     },
     {
      "name": "Infinite Coursework",
      "score": 60.47
     }
    ],
-   "his_score": 61.25,
+   "his_score": 61.27,
    "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "UB 58% \u2192 58.7 (n=40164)",
-    "UBG 42% \u2192 57.1 (n=7981)"
+    "UB 57% \u2192 58.7 (n=40572)",
+    "UBG 43% \u2192 57.1 (n=8098)"
    ],
    "reasons_his": [
     "Fit #2 \u00b7 Power #3",
-    "UB 58% \u2192 57.7 (n=19796)",
-    "UBG 42% \u2192 56.5 (n=8661)"
+    "UB 57% \u2192 57.7 (n=19972)",
+    "UBG 43% \u2192 56.5 (n=8756)"
    ],
    "lanes_after": {
-    "UBG": 0.525,
-    "UB": 0.475,
+    "UBG": 0.526,
+    "UB": 0.474,
     "BG": 0.0,
     "WB": 0.0
    }
@@ -1369,11 +1369,11 @@
    "top3": [
     {
      "name": "Sphinx's Approach",
-     "score": 52.73
+     "score": 52.74
     },
     {
      "name": "Eye of Jace",
-     "score": 43.92
+     "score": 43.91
     },
     {
      "name": "Dedicated Commons",
@@ -1386,15 +1386,15 @@
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #2",
-    "UBG 53% \u2192 55.3 (n=2505)",
-    "UB 47% \u2192 56.7 (n=17935)"
+    "UBG 53% \u2192 55.3 (n=2530)",
+    "UB 47% \u2192 56.7 (n=18117)"
    ],
    "reasons_his": [
     "No data"
    ],
    "lanes_after": {
-    "UBG": 0.521,
-    "UB": 0.479,
+    "UBG": 0.522,
+    "UB": 0.478,
     "BG": 0.0,
     "WB": 0.0
    }
@@ -1406,30 +1406,30 @@
    "top3": [
     {
      "name": "Mindseeker Oculus",
-     "score": 72.12
+     "score": 72.13
     },
     {
      "name": "Way of the Mind Sculptor",
-     "score": 69.98
+     "score": 69.91
     },
     {
      "name": "Last Gasp",
-     "score": 66.78
+     "score": 66.75
     }
    ],
-   "his_score": 72.12,
+   "his_score": 72.13,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "UBG 52% \u2192 59.0 (n=12052)",
-    "UB 48% \u2192 60.4 (n=48495)"
+    "UBG 52% \u2192 59.0 (n=12180)",
+    "UB 48% \u2192 60.5 (n=48900)"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "UBG 52% \u2192 59.0 (n=12052)",
-    "UB 48% \u2192 60.4 (n=48495)"
+    "UBG 52% \u2192 59.0 (n=12180)",
+    "UB 48% \u2192 60.5 (n=48900)"
    ],
    "lanes_after": {
     "UB": 0.657,
@@ -1445,7 +1445,7 @@
    "top3": [
     {
      "name": "Void Extrapolator",
-     "score": 55.01
+     "score": 55.05
     },
     {
      "name": "Sphinx's Approach",
@@ -1453,22 +1453,22 @@
     },
     {
      "name": "Way of the Necromancer",
-     "score": 40.32
+     "score": 40.37
     }
    ],
-   "his_score": 55.01,
+   "his_score": 55.05,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "UB 66% \u2192 56.1 (n=36204)",
-    "UBG 34% \u2192 55.0 (n=5008)"
+    "UB 66% \u2192 56.1 (n=36499)",
+    "UBG 34% \u2192 55.1 (n=5069)"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "UB 66% \u2192 56.1 (n=36204)",
-    "UBG 34% \u2192 55.0 (n=5008)"
+    "UB 66% \u2192 56.1 (n=36499)",
+    "UBG 34% \u2192 55.1 (n=5069)"
    ],
    "lanes_after": {
     "UB": 0.681,
@@ -1492,7 +1492,7 @@
     },
     {
      "name": "Living Library",
-     "score": 42.89
+     "score": 42.86
     }
    ],
    "his_score": 64.36,
@@ -1501,13 +1501,13 @@
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "UB 68% \u2192 59.4 (n=37063)",
-    "UBG 32% \u2192 58.4 (n=9542)"
+    "UB 68% \u2192 59.5 (n=37401)",
+    "UBG 32% \u2192 58.5 (n=9646)"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "UB 68% \u2192 59.4 (n=37063)",
-    "UBG 32% \u2192 58.4 (n=9542)"
+    "UB 68% \u2192 59.5 (n=37401)",
+    "UBG 32% \u2192 58.5 (n=9646)"
    ],
    "lanes_after": {
     "UB": 0.706,
@@ -1523,7 +1523,7 @@
    "top3": [
     {
      "name": "Countersculpt",
-     "score": 89.02
+     "score": 89.03
     },
     {
      "name": "Shatterwing Pegasus",
@@ -1534,25 +1534,25 @@
      "score": 38.06
     }
    ],
-   "his_score": 89.02,
+   "his_score": 89.03,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "UB 71% \u2192 60.8 (n=25555)",
-    "UBG 29% \u2192 58.0 (n=4386)",
+    "UB 71% \u2192 60.8 (n=25776)",
+    "UBG 29% \u2192 58.0 (n=4412)",
     "open: U"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "UB 71% \u2192 60.8 (n=25555)",
-    "UBG 29% \u2192 58.0 (n=4386)",
+    "UB 71% \u2192 60.8 (n=25776)",
+    "UBG 29% \u2192 58.0 (n=4412)",
     "open: U"
    ],
    "lanes_after": {
-    "UB": 0.728,
-    "UBG": 0.272,
+    "UB": 0.834,
+    "UBG": 0.166,
     "BG": 0.0,
     "WU": 0.0
    }
@@ -1577,19 +1577,19 @@
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "UB 73% \u2192 splash R (fixing 6) 45.5",
-    "UBG 27% \u2192 splash R (fixing 6) 45.5",
+    "UB 83% \u2192 splash R (fixing 6) 45.5",
+    "UBG 17% \u2192 splash R (fixing 6) 45.5",
     "castable in 0% of likely lanes"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "UB 73% \u2192 splash R (fixing 6) 45.5",
-    "UBG 27% \u2192 splash R (fixing 6) 45.5",
+    "UB 83% \u2192 splash R (fixing 6) 45.5",
+    "UBG 17% \u2192 splash R (fixing 6) 45.5",
     "castable in 0% of likely lanes"
    ],
    "lanes_after": {
-    "UB": 0.731,
-    "UBG": 0.269,
+    "UB": 0.836,
+    "UBG": 0.164,
     "BG": 0.0,
     "WU": 0.0
    }
@@ -1601,248 +1601,32 @@
    "top3": [
     {
      "name": "Way of the Necromancer",
-     "score": 63.22
+     "score": 63.77
     }
    ],
-   "his_score": 63.22,
+   "his_score": 63.77,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "UB 73% \u2192 43.8 (n=967)",
-    "UBG 27% \u2192 39.2 (rarely played there)"
+    "UB 84% \u2192 43.9 (n=970)",
+    "UBG 16% \u2192 39.2 (rarely played there)"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "UB 73% \u2192 43.8 (n=967)",
-    "UBG 27% \u2192 39.2 (rarely played there)"
+    "UB 84% \u2192 43.9 (n=970)",
+    "UBG 16% \u2192 39.2 (rarely played there)"
    ],
    "lanes_after": {
-    "UB": 0.752,
-    "UBG": 0.248,
+    "UB": 0.85,
+    "UBG": 0.15,
     "BG": 0.0,
     "WU": 0.0
    }
   }
  ],
  "builder": [
-  {
-   "main": "UB",
-   "splash": "W",
-   "deck_wr": 59.88,
-   "label": "UB + W",
-   "cards": [
-    {
-     "name": "Meticulous Commons",
-     "count": 1
-    },
-    {
-     "name": "Room of Refuge",
-     "count": 2
-    },
-    {
-     "name": "Dark Matter Manipulator",
-     "count": 1
-    },
-    {
-     "name": "Mabel, Bitter Recluse",
-     "count": 1
-    },
-    {
-     "name": "Unsummon",
-     "count": 1
-    },
-    {
-     "name": "Countersculpt",
-     "count": 1
-    },
-    {
-     "name": "Gallia, Tragic Host",
-     "count": 1
-    },
-    {
-     "name": "Multiply by Zero",
-     "count": 2
-    },
-    {
-     "name": "Paradox Shaper",
-     "count": 1
-    },
-    {
-     "name": "Proft, Consulting Detective",
-     "count": 1
-    },
-    {
-     "name": "Theorix Charm",
-     "count": 2
-    },
-    {
-     "name": "Void Extrapolator",
-     "count": 2
-    },
-    {
-     "name": "Generous Revival",
-     "count": 1
-    },
-    {
-     "name": "Mindseeker Oculus",
-     "count": 1
-    },
-    {
-     "name": "Murmuring Volume",
-     "count": 1
-    },
-    {
-     "name": "Proft, Sinister Mastermind",
-     "count": 1
-    },
-    {
-     "name": "Theoretical Necromancer",
-     "count": 1
-    },
-    {
-     "name": "Theorix Metamage",
-     "count": 1
-    },
-    {
-     "name": "Null Summoner",
-     "count": 2
-    },
-    {
-     "name": "Protege's Awakening",
-     "count": 1
-    },
-    {
-     "name": "Rewrite Regrets",
-     "count": 1
-    },
-    {
-     "name": "Jace, Reality Sculptor",
-     "count": 1
-    },
-    {
-     "name": "Undulating Witness",
-     "count": 1
-    },
-    {
-     "name": "Island",
-     "count": 6
-    },
-    {
-     "name": "Swamp",
-     "count": 6
-    }
-   ]
-  },
-  {
-   "main": "UB",
-   "splash": "G",
-   "deck_wr": 60.82,
-   "label": "UB + G",
-   "cards": [
-    {
-     "name": "Formidable Commons",
-     "count": 1
-    },
-    {
-     "name": "Room of Refuge",
-     "count": 2
-    },
-    {
-     "name": "Dark Matter Manipulator",
-     "count": 1
-    },
-    {
-     "name": "Mabel, Bitter Recluse",
-     "count": 1
-    },
-    {
-     "name": "Unsummon",
-     "count": 1
-    },
-    {
-     "name": "Countersculpt",
-     "count": 1
-    },
-    {
-     "name": "Gallia, Tragic Host",
-     "count": 1
-    },
-    {
-     "name": "Multiply by Zero",
-     "count": 2
-    },
-    {
-     "name": "Paradox Shaper",
-     "count": 1
-    },
-    {
-     "name": "Proft, Consulting Detective",
-     "count": 1
-    },
-    {
-     "name": "Theorix Charm",
-     "count": 2
-    },
-    {
-     "name": "Void Extrapolator",
-     "count": 2
-    },
-    {
-     "name": "Mindseeker Oculus",
-     "count": 1
-    },
-    {
-     "name": "Murmuring Volume",
-     "count": 1
-    },
-    {
-     "name": "Proft, Sinister Mastermind",
-     "count": 1
-    },
-    {
-     "name": "Theoretical Necromancer",
-     "count": 1
-    },
-    {
-     "name": "Theorix Metamage",
-     "count": 1
-    },
-    {
-     "name": "Null Summoner",
-     "count": 2
-    },
-    {
-     "name": "Protege's Awakening",
-     "count": 1
-    },
-    {
-     "name": "Rewrite Regrets",
-     "count": 1
-    },
-    {
-     "name": "Hapatra, the Desert Fang",
-     "count": 1
-    },
-    {
-     "name": "Jace, Reality Sculptor",
-     "count": 1
-    },
-    {
-     "name": "Undulating Witness",
-     "count": 1
-    },
-    {
-     "name": "Island",
-     "count": 6
-    },
-    {
-     "name": "Swamp",
-     "count": 6
-    }
-   ]
-  },
   {
    "main": "UB",
    "splash": "",
@@ -1940,6 +1724,338 @@
     {
      "name": "Island",
      "count": 7
+    },
+    {
+     "name": "Swamp",
+     "count": 6
+    }
+   ]
+  },
+  {
+   "main": "UB",
+   "splash": "G",
+   "deck_wr": 60.82,
+   "label": "UB + g",
+   "cards": [
+    {
+     "name": "Formidable Commons",
+     "count": 1
+    },
+    {
+     "name": "Room of Refuge",
+     "count": 2
+    },
+    {
+     "name": "Dark Matter Manipulator",
+     "count": 1
+    },
+    {
+     "name": "Mabel, Bitter Recluse",
+     "count": 1
+    },
+    {
+     "name": "Unsummon",
+     "count": 1
+    },
+    {
+     "name": "Countersculpt",
+     "count": 1
+    },
+    {
+     "name": "Gallia, Tragic Host",
+     "count": 1
+    },
+    {
+     "name": "Multiply by Zero",
+     "count": 2
+    },
+    {
+     "name": "Paradox Shaper",
+     "count": 1
+    },
+    {
+     "name": "Proft, Consulting Detective",
+     "count": 1
+    },
+    {
+     "name": "Theorix Charm",
+     "count": 2
+    },
+    {
+     "name": "Void Extrapolator",
+     "count": 2
+    },
+    {
+     "name": "Mindseeker Oculus",
+     "count": 1
+    },
+    {
+     "name": "Murmuring Volume",
+     "count": 1
+    },
+    {
+     "name": "Proft, Sinister Mastermind",
+     "count": 1
+    },
+    {
+     "name": "Theoretical Necromancer",
+     "count": 1
+    },
+    {
+     "name": "Theorix Metamage",
+     "count": 1
+    },
+    {
+     "name": "Null Summoner",
+     "count": 2
+    },
+    {
+     "name": "Protege's Awakening",
+     "count": 1
+    },
+    {
+     "name": "Rewrite Regrets",
+     "count": 1
+    },
+    {
+     "name": "Hapatra, the Desert Fang",
+     "count": 1
+    },
+    {
+     "name": "Jace, Reality Sculptor",
+     "count": 1
+    },
+    {
+     "name": "Undulating Witness",
+     "count": 1
+    },
+    {
+     "name": "Island",
+     "count": 6
+    },
+    {
+     "name": "Swamp",
+     "count": 6
+    }
+   ]
+  },
+  {
+   "main": "UB",
+   "splash": "G",
+   "deck_wr": 60.77,
+   "label": "UBG",
+   "cards": [
+    {
+     "name": "Formidable Commons",
+     "count": 1
+    },
+    {
+     "name": "Room of Refuge",
+     "count": 2
+    },
+    {
+     "name": "Dark Matter Manipulator",
+     "count": 1
+    },
+    {
+     "name": "Unsummon",
+     "count": 1
+    },
+    {
+     "name": "Arcane Amphisbaena",
+     "count": 1
+    },
+    {
+     "name": "Compel Brutality",
+     "count": 1
+    },
+    {
+     "name": "Countersculpt",
+     "count": 1
+    },
+    {
+     "name": "Gallia, Tragic Host",
+     "count": 1
+    },
+    {
+     "name": "Multiply by Zero",
+     "count": 2
+    },
+    {
+     "name": "Paradox Shaper",
+     "count": 1
+    },
+    {
+     "name": "Proft, Consulting Detective",
+     "count": 1
+    },
+    {
+     "name": "Theorix Charm",
+     "count": 2
+    },
+    {
+     "name": "Mindseeker Oculus",
+     "count": 1
+    },
+    {
+     "name": "Murmuring Volume",
+     "count": 1
+    },
+    {
+     "name": "Proft, Sinister Mastermind",
+     "count": 1
+    },
+    {
+     "name": "Theoretical Necromancer",
+     "count": 1
+    },
+    {
+     "name": "Theorix Metamage",
+     "count": 1
+    },
+    {
+     "name": "Bestial Incursion",
+     "count": 1
+    },
+    {
+     "name": "Null Summoner",
+     "count": 2
+    },
+    {
+     "name": "Protege's Awakening",
+     "count": 1
+    },
+    {
+     "name": "Rewrite Regrets",
+     "count": 1
+    },
+    {
+     "name": "Hapatra, the Desert Fang",
+     "count": 1
+    },
+    {
+     "name": "Jace, Reality Sculptor",
+     "count": 1
+    },
+    {
+     "name": "Undulating Witness",
+     "count": 1
+    },
+    {
+     "name": "Island",
+     "count": 4
+    },
+    {
+     "name": "Swamp",
+     "count": 4
+    },
+    {
+     "name": "Forest",
+     "count": 4
+    }
+   ]
+  },
+  {
+   "main": "UB",
+   "splash": "W",
+   "deck_wr": 59.88,
+   "label": "UB + w",
+   "cards": [
+    {
+     "name": "Meticulous Commons",
+     "count": 1
+    },
+    {
+     "name": "Room of Refuge",
+     "count": 2
+    },
+    {
+     "name": "Dark Matter Manipulator",
+     "count": 1
+    },
+    {
+     "name": "Mabel, Bitter Recluse",
+     "count": 1
+    },
+    {
+     "name": "Unsummon",
+     "count": 1
+    },
+    {
+     "name": "Countersculpt",
+     "count": 1
+    },
+    {
+     "name": "Gallia, Tragic Host",
+     "count": 1
+    },
+    {
+     "name": "Multiply by Zero",
+     "count": 2
+    },
+    {
+     "name": "Paradox Shaper",
+     "count": 1
+    },
+    {
+     "name": "Proft, Consulting Detective",
+     "count": 1
+    },
+    {
+     "name": "Theorix Charm",
+     "count": 2
+    },
+    {
+     "name": "Void Extrapolator",
+     "count": 2
+    },
+    {
+     "name": "Generous Revival",
+     "count": 1
+    },
+    {
+     "name": "Mindseeker Oculus",
+     "count": 1
+    },
+    {
+     "name": "Murmuring Volume",
+     "count": 1
+    },
+    {
+     "name": "Proft, Sinister Mastermind",
+     "count": 1
+    },
+    {
+     "name": "Theoretical Necromancer",
+     "count": 1
+    },
+    {
+     "name": "Theorix Metamage",
+     "count": 1
+    },
+    {
+     "name": "Null Summoner",
+     "count": 2
+    },
+    {
+     "name": "Protege's Awakening",
+     "count": 1
+    },
+    {
+     "name": "Rewrite Regrets",
+     "count": 1
+    },
+    {
+     "name": "Jace, Reality Sculptor",
+     "count": 1
+    },
+    {
+     "name": "Undulating Witness",
+     "count": 1
+    },
+    {
+     "name": "Island",
+     "count": 6
     },
     {
      "name": "Swamp",

@@ -1,5 +1,5 @@
 {
- "commit": "cbef5b9",
+ "commit": "6a31baa",
  "date": "2026-11-06",
  "dataset": "FRA_PremierDraft_All_Data.json",
  "top1": 17,
@@ -15,18 +15,18 @@
    "top3": [
     {
      "name": "Kwia Vigorbloom",
-     "score": 65.68
+     "score": 65.72
     },
     {
      "name": "Recursive Recruitment",
-     "score": 64.71
+     "score": 64.73
     },
     {
      "name": "Chandra, Chill of Compliance",
-     "score": 63.15
+     "score": 63.17
     }
    ],
-   "his_score": 65.68,
+   "his_score": 65.72,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
@@ -43,8 +43,8 @@
     "castable in 25% of likely lanes"
    ],
    "lanes_after": {
-    "WG": 0.85,
-    "WU": 0.051,
+    "WG": 0.851,
+    "WU": 0.05,
     "WB": 0.012,
     "WR": 0.012
    }
@@ -56,34 +56,34 @@
    "top3": [
     {
      "name": "Craftwork Crusher",
-     "score": 61.25
+     "score": 61.24
     },
     {
      "name": "Teyo, Lightshield Expert",
-     "score": 61.15
+     "score": 61.14
     },
     {
      "name": "Arcane Amphisbaena",
-     "score": 58.67
+     "score": 58.75
     }
    ],
-   "his_score": 61.15,
+   "his_score": 61.14,
    "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Branch: +13.1 over Teyo, Lightshield Expert, above the -29.9 top drafters switch at",
+    "Branch: +13.3 over Teyo, Lightshield Expert, above the -29.9 top drafters switch at",
     "Fit #5 \u00b7 Power #1",
-    "RG 64% \u2192 62.6 (n=25208)",
+    "RG 64% \u2192 62.6 (n=25431)",
     "WG 31% \u2192 off-colour"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #2",
-    "WG 85% \u2192 55.4 (n=8886)"
+    "WG 85% \u2192 55.4 (n=8977)"
    ],
    "lanes_after": {
-    "WG": 0.913,
-    "WU": 0.049,
+    "WG": 0.914,
+    "WU": 0.048,
     "WB": 0.011,
     "WR": 0.011
    }
@@ -95,28 +95,28 @@
    "top3": [
     {
      "name": "Ruric Thar, Magecrusher",
-     "score": 57.78
+     "score": 57.8
     },
     {
      "name": "Campus Crier",
-     "score": 57.29
+     "score": 57.27
     },
     {
      "name": "Vigorbloom Annex",
-     "score": 55.41
+     "score": 55.38
     }
    ],
-   "his_score": 57.29,
+   "his_score": 57.27,
    "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #4",
-    "WG 97% \u2192 52.6 (n=6236)"
+    "WG 97% \u2192 52.6 (n=6267)"
    ],
    "reasons_his": [
     "Fit #2 \u00b7 Power #6",
-    "WG 91% \u2192 53.6 (n=15954)"
+    "WG 91% \u2192 53.6 (n=16081)"
    ],
    "lanes_after": {
     "WG": 0.933,
@@ -132,29 +132,29 @@
    "top3": [
     {
      "name": "Surgical Precision",
-     "score": 62.56
+     "score": 62.65
     },
     {
      "name": "Arcane Amphisbaena",
-     "score": 58.84
+     "score": 58.92
     },
     {
      "name": "Loot, the Nexus",
-     "score": 53.92
+     "score": 53.93
     }
    ],
-   "his_score": 42.19,
+   "his_score": 42.18,
    "his_rank": 7,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #2",
-    "WG 92% \u2192 55.9 (n=24083)"
+    "WG 92% \u2192 56.0 (n=24379)"
    ],
    "reasons_his": [
     "Fit #7 \u00b7 Power #3",
     "WG 69% \u2192 off-colour",
-    "WU 29% \u2192 54.7 (n=10621)",
+    "WU 29% \u2192 54.7 (n=10709)",
     "castable in 30% of likely lanes"
    ],
    "lanes_after": {
@@ -171,25 +171,25 @@
    "top3": [
     {
      "name": "Blossom-Blessed Angel",
-     "score": 58.34
+     "score": 58.35
     },
     {
      "name": "Twisted Fates",
-     "score": 55.93
+     "score": 55.94
     },
     {
      "name": "Danitha, Sword of Hope",
-     "score": 51.36
+     "score": 51.4
     }
    ],
-   "his_score": 55.93,
+   "his_score": 55.94,
    "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #3",
-    "WG 68% \u2192 55.5 (n=24887)",
-    "WU 25% \u2192 57.0 (n=23322)"
+    "WG 68% \u2192 55.6 (n=25147)",
+    "WU 25% \u2192 57.0 (n=23587)"
    ],
    "reasons_his": [
     "Fit #2 \u00b7 Power #1",
@@ -198,10 +198,10 @@
     "castable in 3% of likely lanes"
    ],
    "lanes_after": {
-    "WG": 0.646,
+    "WG": 0.647,
     "WU": 0.224,
-    "WB": 0.078,
-    "WR": 0.021
+    "WB": 0.077,
+    "WR": 0.02
    }
   },
   {
@@ -211,7 +211,7 @@
    "top3": [
     {
      "name": "Fatehold Chronologist",
-     "score": 61.92
+     "score": 61.96
     },
     {
      "name": "Meticulous Commons",
@@ -219,7 +219,7 @@
     },
     {
      "name": "Rockfall Vale",
-     "score": 48.15
+     "score": 48.14
     }
    ],
    "his_score": 50.5,
@@ -228,8 +228,8 @@
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #2",
-    "WG 57% \u2192 53.8 (n=7483)",
-    "WU 31% \u2192 57.6 (n=41431)"
+    "WG 57% \u2192 53.9 (n=7562)",
+    "WU 31% \u2192 57.5 (n=41784)"
    ],
    "reasons_his": [
     "Fit #2 \u00b7 Power #5",
@@ -238,9 +238,9 @@
     "castable in 7% of likely lanes"
    ],
    "lanes_after": {
-    "WG": 0.568,
+    "WG": 0.569,
     "WU": 0.311,
-    "WB": 0.068,
+    "WB": 0.067,
     "WR": 0.022
    }
   },
@@ -251,18 +251,18 @@
    "top3": [
     {
      "name": "Primal Witchstalker",
-     "score": 57.21
+     "score": 57.19
     },
     {
      "name": "Campus Crier",
-     "score": 57.11
+     "score": 57.09
     },
     {
      "name": "Vinelasher Adept",
-     "score": 54.19
+     "score": 54.2
     }
    ],
-   "his_score": 57.11,
+   "his_score": 57.09,
    "his_rank": 2,
    "scored": true,
    "dropped": 0,
@@ -274,13 +274,13 @@
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #2",
-    "WG 72% \u2192 53.6 (n=15954)",
-    "WU 19% \u2192 57.7 (n=38843)"
+    "WG 72% \u2192 53.6 (n=16081)",
+    "WU 19% \u2192 57.6 (n=39194)"
    ],
    "lanes_after": {
-    "WG": 0.744,
-    "WU": 0.184,
-    "WB": 0.053,
+    "WG": 0.745,
+    "WU": 0.183,
+    "WB": 0.052,
     "WR": 0.011
    }
   },
@@ -291,7 +291,7 @@
    "top3": [
     {
      "name": "Blessed Ghoul",
-     "score": 51.66
+     "score": 51.68
     },
     {
      "name": "Konstrari Annex",
@@ -299,7 +299,7 @@
     },
     {
      "name": "Theorix Charm",
-     "score": 43.4
+     "score": 43.43
     }
    ],
    "his_score": 47.45,
@@ -308,8 +308,8 @@
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #4",
-    "WG 62% \u2192 55.1 (n=8585)",
-    "WU 26% \u2192 54.1 (n=4259)"
+    "WG 62% \u2192 55.1 (n=8699)",
+    "WU 26% \u2192 54.1 (n=4317)"
    ],
    "reasons_his": [
     "Fit #2 \u00b7 Power #2",
@@ -331,18 +331,18 @@
    "top3": [
     {
      "name": "Recursive Recruitment",
-     "score": 56.91
+     "score": 56.97
     },
     {
      "name": "Twinned Vision",
-     "score": 54.0
+     "score": 53.99
     },
     {
      "name": "Murmuring Volume",
-     "score": 50.79
+     "score": 50.8
     }
    ],
-   "his_score": 50.79,
+   "his_score": 50.8,
    "his_rank": 3,
    "scored": true,
    "dropped": 0,
@@ -355,13 +355,13 @@
    ],
    "reasons_his": [
     "Fit #3 \u00b7 Power #4",
-    "WU 56% \u2192 54.8 (n=7483)",
-    "WG 26% \u2192 54.4 (n=3826)"
+    "WU 56% \u2192 54.8 (n=7551)",
+    "WG 26% \u2192 54.4 (n=3885)"
    ],
    "lanes_after": {
     "WU": 0.562,
     "WG": 0.273,
-    "WB": 0.115,
+    "WB": 0.114,
     "UB": 0.027
    }
   },
@@ -372,7 +372,7 @@
    "top3": [
     {
      "name": "Unsummon",
-     "score": 53.45
+     "score": 53.44
     },
     {
      "name": "Infinite Coursework",
@@ -380,27 +380,27 @@
     },
     {
      "name": "Ferocity of the Hunt",
-     "score": 38.01
+     "score": 38.0
     }
    ],
-   "his_score": 53.45,
+   "his_score": 53.44,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "WU 71% \u2192 57.6 (n=31488)",
+    "WU 71% \u2192 57.6 (n=31748)",
     "WG 17% \u2192 splash U (fixing 2) 46.4",
     "open: U"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "WU 71% \u2192 57.6 (n=31488)",
+    "WU 71% \u2192 57.6 (n=31748)",
     "WG 17% \u2192 splash U (fixing 2) 46.4",
     "open: U"
    ],
    "lanes_after": {
-    "WU": 0.873,
+    "WU": 0.872,
     "WG": 0.053,
     "UB": 0.035,
     "WB": 0.018
@@ -413,11 +413,11 @@
    "top3": [
     {
      "name": "Ruric Thar, Biomagus",
-     "score": 63.97
+     "score": 63.99
     },
     {
      "name": "Theorix Charm",
-     "score": 46.86
+     "score": 46.89
     },
     {
      "name": "Vigorbloom Annex",
@@ -430,7 +430,7 @@
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "WU 90% \u2192 54.7 (n=10621)",
+    "WU 90% \u2192 54.7 (n=10709)",
     "open: U"
    ],
    "reasons_his": [
@@ -439,8 +439,8 @@
     "castable in 2% of likely lanes"
    ],
    "lanes_after": {
-    "WU": 0.888,
-    "UB": 0.055,
+    "WU": 0.886,
+    "UB": 0.057,
     "WG": 0.023,
     "WB": 0.012
    }
@@ -452,18 +452,18 @@
    "top3": [
     {
      "name": "Innovative Commons",
-     "score": 63.19
+     "score": 63.21
     },
     {
      "name": "Warrior's Blades",
-     "score": 45.44
+     "score": 45.38
     },
     {
      "name": "Flourishing Grapple",
-     "score": 26.42
+     "score": 26.41
     }
    ],
-   "his_score": 45.44,
+   "his_score": 45.38,
    "his_rank": 2,
    "scored": true,
    "dropped": 0,
@@ -479,9 +479,9 @@
     "castable in 0% of likely lanes"
    ],
    "lanes_after": {
-    "WU": 0.908,
+    "WU": 0.907,
     "WG": 0.033,
-    "UB": 0.027,
+    "UB": 0.028,
     "WB": 0.014
    }
   },
@@ -514,9 +514,9 @@
     "castable in 1% of likely lanes"
    ],
    "lanes_after": {
-    "WU": 0.904,
+    "WU": 0.903,
     "WG": 0.044,
-    "UB": 0.021,
+    "UB": 0.022,
     "WB": 0.015
    }
   },
@@ -527,21 +527,21 @@
    "top3": [
     {
      "name": "Cryotheory Adept",
-     "score": 71.54
+     "score": 71.49
     }
    ],
-   "his_score": 71.54,
+   "his_score": 71.49,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "WU 90% \u2192 53.0 (n=8814)",
+    "WU 90% \u2192 53.0 (n=8896)",
     "open: U"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "WU 90% \u2192 53.0 (n=8814)",
+    "WU 90% \u2192 53.0 (n=8896)",
     "open: U"
    ],
    "lanes_after": {
@@ -558,33 +558,33 @@
    "top3": [
     {
      "name": "The Theorist, Jace Beleren",
-     "score": 80.82
+     "score": 80.83
     },
     {
      "name": "Mindseeker Oculus",
-     "score": 70.93
+     "score": 70.9
     },
     {
      "name": "Way of the Healer",
-     "score": 69.27
+     "score": 69.23
     }
    ],
-   "his_score": 80.82,
+   "his_score": 80.83,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "WU 40% \u2192 69.1 (n=2941)",
+    "WU 40% \u2192 69.1 (n=2966)",
     "WUR 36% \u2192 63.6 (rarely played there)"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "WU 40% \u2192 69.1 (n=2941)",
+    "WU 40% \u2192 69.1 (n=2966)",
     "WUR 36% \u2192 63.6 (rarely played there)"
    ],
    "lanes_after": {
-    "WU": 0.556,
+    "WU": 0.555,
     "WUR": 0.441,
     "UB": 0.002,
     "WG": 0.0
@@ -597,25 +597,25 @@
    "top3": [
     {
      "name": "Fatehold Chronologist",
-     "score": 64.26
+     "score": 64.27
     },
     {
      "name": "Protege's Awakening",
-     "score": 59.3
+     "score": 59.26
     },
     {
      "name": "Recursive Recruitment",
-     "score": 57.34
+     "score": 57.38
     }
    ],
-   "his_score": 44.36,
+   "his_score": 44.37,
    "his_rank": 6,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #4",
-    "WU 56% \u2192 57.6 (n=41431)",
-    "WUR 44% \u2192 56.6 (n=4064)"
+    "WU 56% \u2192 57.5 (n=41784)",
+    "WUR 44% \u2192 56.7 (n=4106)"
    ],
    "reasons_his": [
     "Fit #6 \u00b7 Power #5",
@@ -637,29 +637,29 @@
    "top3": [
     {
      "name": "Twinned Vision",
-     "score": 58.67
+     "score": 58.61
     },
     {
      "name": "Room of Refuge",
-     "score": 55.37
+     "score": 55.29
     },
     {
      "name": "Icy Reception",
-     "score": 54.02
+     "score": 53.92
     }
    ],
-   "his_score": 46.34,
+   "his_score": 46.32,
    "his_rank": 6,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #2",
-    "WUG 56% \u2192 54.7 (n=1130)",
-    "WU 44% \u2192 56.9 (n=17559)"
+    "WUG 56% \u2192 54.7 (n=1132)",
+    "WU 44% \u2192 56.8 (n=17715)"
    ],
    "reasons_his": [
     "Fit #6 \u00b7 Power #8",
-    "WUG 56% \u2192 51.7 (n=823)",
+    "WUG 56% \u2192 51.7 (n=826)",
     "WU 44% \u2192 splash G (fixing 4) 43.5",
     "castable in 56% of likely lanes"
    ],
@@ -677,30 +677,30 @@
    "top3": [
     {
      "name": "Variable Chaser",
-     "score": 64.33
+     "score": 64.29
     },
     {
      "name": "Surveillance Phantasm",
-     "score": 56.79
+     "score": 56.69
     },
     {
      "name": "Extended Absence",
-     "score": 53.78
+     "score": 53.77
     }
    ],
-   "his_score": 56.79,
+   "his_score": 56.69,
    "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #2",
     "WUG 80% \u2192 53.3 (rarely played there)",
-    "WU 20% \u2192 58.9 (n=5153)"
+    "WU 20% \u2192 58.8 (n=5239)"
    ],
    "reasons_his": [
     "Fit #2 \u00b7 Power #3",
-    "WUG 80% \u2192 53.6 (n=2392)",
-    "WU 20% \u2192 58.2 (n=42907)"
+    "WUG 80% \u2192 53.5 (n=2422)",
+    "WU 20% \u2192 58.2 (n=43235)"
    ],
    "lanes_after": {
     "WUG": 0.754,
@@ -716,30 +716,30 @@
    "top3": [
     {
      "name": "Jace's Machinations",
-     "score": 62.62
+     "score": 62.55
     },
     {
      "name": "Koth of the Homestead",
-     "score": 59.02
+     "score": 59.1
     },
     {
      "name": "Archive Arbiter",
-     "score": 56.8
+     "score": 56.83
     }
    ],
-   "his_score": 54.75,
+   "his_score": 54.65,
    "his_rank": 6,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "WUG 76% \u2192 54.0 (n=615)",
-    "WU 24% \u2192 57.5 (n=4928)"
+    "WUG 76% \u2192 54.0 (n=622)",
+    "WU 24% \u2192 57.6 (n=4978)"
    ],
    "reasons_his": [
     "Fit #6 \u00b7 Power #4",
-    "WUG 76% \u2192 54.5 (n=2372)",
-    "WU 24% \u2192 57.0 (n=15384)"
+    "WUG 76% \u2192 54.4 (n=2390)",
+    "WU 24% \u2192 57.0 (n=15488)"
    ],
    "lanes_after": {
     "WUG": 0.89,
@@ -755,15 +755,15 @@
    "top3": [
     {
      "name": "Variable Chaser",
-     "score": 63.58
+     "score": 63.57
     },
     {
      "name": "Twinned Vision",
-     "score": 59.37
+     "score": 59.34
     },
     {
      "name": "Paradox Shaper",
-     "score": 51.83
+     "score": 51.85
     }
    ],
    "his_score": 44.83,
@@ -773,7 +773,7 @@
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
     "WUG 89% \u2192 53.3 (rarely played there)",
-    "WU 11% \u2192 58.9 (n=5153)",
+    "WU 11% \u2192 58.8 (n=5239)",
     "open: U"
    ],
    "reasons_his": [
@@ -796,31 +796,31 @@
    "top3": [
     {
      "name": "Mindseeker Oculus",
-     "score": 68.27
+     "score": 68.25
     },
     {
      "name": "Sphinx's Approach",
-     "score": 48.13
+     "score": 48.0
     },
     {
      "name": "Something Worth Saving",
-     "score": 44.37
+     "score": 44.35
     }
    ],
-   "his_score": 68.27,
+   "his_score": 68.25,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "WUG 88% \u2192 57.2 (n=3819)",
-    "WU 11% \u2192 60.5 (n=41402)",
+    "WUG 88% \u2192 57.2 (n=3844)",
+    "WU 11% \u2192 60.4 (n=41775)",
     "open: U"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "WUG 88% \u2192 57.2 (n=3819)",
-    "WU 11% \u2192 60.5 (n=41402)",
+    "WUG 88% \u2192 57.2 (n=3844)",
+    "WU 11% \u2192 60.4 (n=41775)",
     "open: U"
    ],
    "lanes_after": {
@@ -837,30 +837,30 @@
    "top3": [
     {
      "name": "Countersculpt",
-     "score": 68.38
+     "score": 68.43
     },
     {
      "name": "Vigorbloom Annex",
-     "score": 51.99
+     "score": 51.92
     },
     {
      "name": "Divining Duelist",
-     "score": 48.41
+     "score": 48.4
     }
    ],
-   "his_score": 51.99,
+   "his_score": 51.92,
    "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "WUG 84% \u2192 57.0 (n=1230)",
-    "WU 16% \u2192 60.1 (n=19958)",
+    "WUG 84% \u2192 57.1 (n=1243)",
+    "WU 16% \u2192 60.0 (n=20112)",
     "open: U"
    ],
    "reasons_his": [
     "Fit #2 \u00b7 Power #2",
-    "WUG 84% \u2192 52.4 (n=2981)",
+    "WUG 84% \u2192 52.3 (n=3019)",
     "WU 16% \u2192 splash G (fixing 5) 45.5"
    ],
    "lanes_after": {
@@ -881,7 +881,7 @@
     },
     {
      "name": "Graft Surgeon",
-     "score": 44.58
+     "score": 44.55
     },
     {
      "name": "Theorix Annex",
@@ -894,12 +894,12 @@
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "WUG 99% \u2192 57.2 (n=3819)",
+    "WUG 99% \u2192 57.2 (n=3844)",
     "open: U"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "WUG 99% \u2192 57.2 (n=3819)",
+    "WUG 99% \u2192 57.2 (n=3844)",
     "open: U"
    ],
    "lanes_after": {
@@ -916,33 +916,33 @@
    "top3": [
     {
      "name": "Restore with Empathy",
-     "score": 45.82
+     "score": 45.83
     },
     {
      "name": "Something Worth Saving",
-     "score": 44.68
+     "score": 44.66
     },
     {
      "name": "Tinybones, Pocket Nuisance",
-     "score": 37.83
+     "score": 37.87
     }
    ],
-   "his_score": 45.82,
+   "his_score": 45.83,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #3",
-    "WUG 94% \u2192 55.1 (n=816)"
+    "WUG 94% \u2192 55.1 (n=821)"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #3",
-    "WUG 94% \u2192 55.1 (n=816)"
+    "WUG 94% \u2192 55.1 (n=821)"
    ],
    "lanes_after": {
     "WUG": 0.987,
     "UG": 0.007,
-    "UB": 0.005,
+    "UB": 0.006,
     "UR": 0.0
    }
   },
@@ -953,24 +953,24 @@
    "top3": [
     {
      "name": "Twinned Vision",
-     "score": 66.74
+     "score": 66.73
     },
     {
      "name": "Meticulous Commons",
-     "score": 46.79
+     "score": 46.8
     },
     {
      "name": "Void Extrapolator",
      "score": 37.95
     }
    ],
-   "his_score": 37.58,
+   "his_score": 37.54,
    "his_rank": 4,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "WUG 99% \u2192 54.7 (n=1130)",
+    "WUG 99% \u2192 54.7 (n=1132)",
     "open: U"
    ],
    "reasons_his": [
@@ -979,8 +979,8 @@
     "castable in 0% of likely lanes"
    ],
    "lanes_after": {
-    "WUG": 0.991,
-    "UB": 0.004,
+    "WUG": 0.99,
+    "UB": 0.005,
     "UG": 0.004,
     "UR": 0.001
    }
@@ -992,32 +992,32 @@
    "top3": [
     {
      "name": "Icy Reception",
-     "score": 81.9
+     "score": 81.83
     },
     {
      "name": "Fateshaper Aspirant",
-     "score": 70.75
+     "score": 70.66
     },
     {
      "name": "Chandra's Emberling",
      "score": 41.01
     }
    ],
-   "his_score": 70.75,
+   "his_score": 70.66,
    "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "WUG 99% \u2192 52.5 (n=2025)",
+    "WUG 99% \u2192 52.5 (n=2046)",
     "open: U"
    ],
    "reasons_his": [
     "Fit #2 \u00b7 Power #2",
-    "WUG 99% \u2192 49.4 (n=553)"
+    "WUG 99% \u2192 49.3 (n=555)"
    ],
    "lanes_after": {
-    "WUG": 0.995,
+    "WUG": 0.994,
     "UB": 0.003,
     "UG": 0.003,
     "UR": 0.0
@@ -1054,7 +1054,7 @@
    "lanes_after": {
     "WUG": 0.994,
     "UG": 0.003,
-    "UB": 0.002,
+    "UB": 0.003,
     "UR": 0.001
    }
   },
@@ -1083,9 +1083,9 @@
     "castable in 0% of likely lanes"
    ],
    "lanes_after": {
-    "WUG": 0.995,
+    "WUG": 0.994,
     "UG": 0.003,
-    "UB": 0.002,
+    "UB": 0.003,
     "UR": 0.001
    }
   },
@@ -1096,29 +1096,29 @@
    "top3": [
     {
      "name": "Proctor of Potential",
-     "score": 71.8
+     "score": 71.65
     },
     {
      "name": "Mindseeker Oculus",
-     "score": 65.73
+     "score": 65.68
     },
     {
      "name": "Campus Crier",
-     "score": 59.38
+     "score": 59.35
     }
    ],
-   "his_score": 71.8,
+   "his_score": 71.65,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "WUG 99% \u2192 55.1 (n=791)",
+    "WUG 99% \u2192 55.0 (n=797)",
     "open: U"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "WUG 99% \u2192 55.1 (n=791)",
+    "WUG 99% \u2192 55.0 (n=797)",
     "open: U"
    ],
    "lanes_after": {
@@ -1135,28 +1135,28 @@
    "top3": [
     {
      "name": "Your Fate Ends Here",
-     "score": 71.31
+     "score": 71.33
     },
     {
      "name": "Way of the Mind Sculptor",
-     "score": 68.59
+     "score": 68.43
     },
     {
      "name": "Undulating Witness",
-     "score": 60.66
+     "score": 60.5
     }
    ],
-   "his_score": 71.31,
+   "his_score": 71.33,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #2",
-    "WUG 100% \u2192 55.4 (n=1604)"
+    "WUG 100% \u2192 55.4 (n=1634)"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #2",
-    "WUG 100% \u2192 55.4 (n=1604)"
+    "WUG 100% \u2192 55.4 (n=1634)"
    ],
    "lanes_after": {
     "WUG": 1.0,
@@ -1172,15 +1172,15 @@
    "top3": [
     {
      "name": "Icy Reception",
-     "score": 57.83
+     "score": 57.71
     },
     {
      "name": "Vinelasher Adept",
-     "score": 53.76
+     "score": 53.66
     },
     {
      "name": "Traxos, Scourge Eternal",
-     "score": 48.41
+     "score": 48.4
     }
    ],
    "his_score": 43.94,
@@ -1189,7 +1189,7 @@
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #2",
-    "WUG 100% \u2192 52.5 (n=2025)",
+    "WUG 100% \u2192 52.5 (n=2046)",
     "open: U"
    ],
    "reasons_his": [
@@ -1211,24 +1211,24 @@
    "top3": [
     {
      "name": "Way of the Cryomancer",
-     "score": 53.55
+     "score": 53.65
     },
     {
      "name": "Divining Duelist",
-     "score": 47.55
+     "score": 47.72
     },
     {
      "name": "Twisted Fates",
-     "score": 43.0
+     "score": 42.98
     }
    ],
-   "his_score": 43.0,
+   "his_score": 42.98,
    "his_rank": 3,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #4",
-    "WUR 100% \u2192 50.1 (n=863)",
+    "WUR 100% \u2192 50.3 (n=879)",
     "open: U"
    ],
    "reasons_his": [
@@ -1250,29 +1250,29 @@
    "top3": [
     {
      "name": "Proft, Consulting Detective",
-     "score": 69.13
+     "score": 69.1
     },
     {
      "name": "Surveillance Phantasm",
-     "score": 64.55
+     "score": 64.49
     },
     {
      "name": "Fatehold Annex",
-     "score": 53.73
+     "score": 53.72
     }
    ],
-   "his_score": 69.13,
+   "his_score": 69.1,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "WUR 100% \u2192 56.1 (n=1855)",
+    "WUR 100% \u2192 56.1 (n=1875)",
     "open: U"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "WUR 100% \u2192 56.1 (n=1855)",
+    "WUR 100% \u2192 56.1 (n=1875)",
     "open: U"
    ],
    "lanes_after": {
@@ -1289,29 +1289,29 @@
    "top3": [
     {
      "name": "Protege's Awakening",
-     "score": 66.32
+     "score": 66.31
     },
     {
      "name": "Arni, Humble Scribe",
-     "score": 59.02
+     "score": 59.15
     },
     {
      "name": "Fatehold Annex",
-     "score": 54.58
+     "score": 54.57
     }
    ],
-   "his_score": 54.58,
+   "his_score": 54.57,
    "his_rank": 3,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "WUR 100% \u2192 56.2 (n=3068)",
+    "WUR 100% \u2192 56.2 (n=3126)",
     "open: U"
    ],
    "reasons_his": [
     "Fit #3 \u00b7 Power #3",
-    "WUR 100% \u2192 53.7 (n=4195)",
+    "WUR 100% \u2192 53.7 (n=4239)",
     "open: U"
    ],
    "lanes_after": {
@@ -1328,29 +1328,29 @@
    "top3": [
     {
      "name": "Geist of Saint Thalia",
-     "score": 64.87
+     "score": 64.98
     },
     {
      "name": "Undulating Witness",
-     "score": 61.92
+     "score": 61.94
     },
     {
      "name": "Medic's Kitesail",
-     "score": 46.33
+     "score": 46.38
     }
    ],
-   "his_score": 61.92,
+   "his_score": 61.94,
    "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "WUR 100% \u2192 54.9 (n=1636)",
+    "WUR 100% \u2192 55.0 (n=1652)",
     "open: U"
    ],
    "reasons_his": [
     "Fit #2 \u00b7 Power #3",
-    "WUR 100% \u2192 53.6 (n=3718)",
+    "WUR 100% \u2192 53.7 (n=3747)",
     "open: U"
    ],
    "lanes_after": {
@@ -1367,29 +1367,29 @@
    "top3": [
     {
      "name": "Infinite Coursework",
-     "score": 65.36
+     "score": 65.25
     },
     {
      "name": "Danitha, Sword of Hope",
-     "score": 51.08
+     "score": 51.11
     },
     {
      "name": "Konstrari Annex",
      "score": 46.26
     }
    ],
-   "his_score": 65.36,
+   "his_score": 65.25,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "WUR 100% \u2192 55.1 (n=2773)",
+    "WUR 100% \u2192 55.0 (n=2785)",
     "open: U"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "WUR 100% \u2192 55.1 (n=2773)",
+    "WUR 100% \u2192 55.0 (n=2785)",
     "open: U"
    ],
    "lanes_after": {
@@ -1406,11 +1406,11 @@
    "top3": [
     {
      "name": "Blessed Ghoul",
-     "score": 50.06
+     "score": 50.07
     },
     {
      "name": "Danitha, Sword of Hope",
-     "score": 49.06
+     "score": 49.08
     },
     {
      "name": "Vinelasher Adept",
@@ -1444,29 +1444,29 @@
    "top3": [
     {
      "name": "Way of the Mind Sculptor",
-     "score": 72.03
+     "score": 71.93
     },
     {
      "name": "Living Library",
-     "score": 40.04
+     "score": 40.02
     },
     {
      "name": "Chandra's Emberling",
-     "score": 35.18
+     "score": 35.19
     }
    ],
-   "his_score": 72.03,
+   "his_score": 71.93,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "WUG 100% \u2192 56.5 (n=1770)",
+    "WUG 100% \u2192 56.4 (n=1788)",
     "open: U"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "WUG 100% \u2192 56.5 (n=1770)",
+    "WUG 100% \u2192 56.4 (n=1788)",
     "open: U"
    ],
    "lanes_after": {
@@ -1483,29 +1483,29 @@
    "top3": [
     {
      "name": "Icy Reception",
-     "score": 59.5
+     "score": 59.46
     },
     {
      "name": "Vinelasher Adept",
-     "score": 58.53
+     "score": 58.84
     },
     {
      "name": "Academic Ascent",
-     "score": 42.12
+     "score": 42.11
     }
    ],
-   "his_score": 58.53,
+   "his_score": 58.84,
    "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "WUG 100% \u2192 52.5 (n=2025)",
+    "WUG 100% \u2192 52.5 (n=2046)",
     "open: U"
    ],
    "reasons_his": [
     "Fit #2 \u00b7 Power #2",
-    "WUG 100% \u2192 54.5 (n=2797)"
+    "WUG 100% \u2192 54.4 (n=2834)"
    ],
    "lanes_after": {
     "WUG": 1.0,
@@ -1521,18 +1521,18 @@
    "top3": [
     {
      "name": "Divining Duelist",
-     "score": 66.75
+     "score": 66.41
     },
     {
      "name": "Living Library",
-     "score": 57.58
+     "score": 57.56
     },
     {
      "name": "Mountain",
      "score": 0.0
     }
    ],
-   "his_score": 57.58,
+   "his_score": 57.56,
    "his_rank": 2,
    "scored": true,
    "dropped": 0,
@@ -1543,7 +1543,7 @@
    ],
    "reasons_his": [
     "Fit #2 \u00b7 Power #2",
-    "WUG 100% \u2192 48.6 (rarely played there)"
+    "WUG 100% \u2192 48.5 (rarely played there)"
    ],
    "lanes_after": {
     "WUG": 1.0,
@@ -1559,14 +1559,14 @@
    "top3": [
     {
      "name": "Hallway Heckler",
-     "score": 51.43
+     "score": 51.46
     },
     {
      "name": "Rampart Hunter",
      "score": 34.99
     }
    ],
-   "his_score": 51.43,
+   "his_score": 51.46,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
@@ -1594,21 +1594,21 @@
    "top3": [
     {
      "name": "Protege's Awakening",
-     "score": 84.61
+     "score": 84.29
     }
    ],
-   "his_score": 84.61,
+   "his_score": 84.29,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "WUG 100% \u2192 54.9 (n=2752)",
+    "WUG 100% \u2192 54.9 (n=2780)",
     "open: U"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "WUG 100% \u2192 54.9 (n=2752)",
+    "WUG 100% \u2192 54.9 (n=2780)",
     "open: U"
    ],
    "lanes_after": {
@@ -1620,6 +1620,262 @@
   }
  ],
  "builder": [
+  {
+   "main": "WU",
+   "splash": "RG",
+   "deck_wr": 63.28,
+   "label": "WUR + g",
+   "cards": [
+    {
+     "name": "Dedicated Commons",
+     "count": 1
+    },
+    {
+     "name": "Fatehold Annex",
+     "count": 1
+    },
+    {
+     "name": "Konstrari Annex",
+     "count": 1
+    },
+    {
+     "name": "Room of Refuge",
+     "count": 1
+    },
+    {
+     "name": "Vigorbloom Annex",
+     "count": 2
+    },
+    {
+     "name": "Artifist Acumen",
+     "count": 1
+    },
+    {
+     "name": "Unsummon",
+     "count": 1
+    },
+    {
+     "name": "Campus Crier",
+     "count": 2
+    },
+    {
+     "name": "Cryotheory Adept",
+     "count": 1
+    },
+    {
+     "name": "Proctor of Potential",
+     "count": 1
+    },
+    {
+     "name": "Proft, Consulting Detective",
+     "count": 1
+    },
+    {
+     "name": "Skilled Battlecarver",
+     "count": 1
+    },
+    {
+     "name": "Surveillance Phantasm",
+     "count": 1
+    },
+    {
+     "name": "Teyo, Lightshield Expert",
+     "count": 1
+    },
+    {
+     "name": "Hallway Heckler",
+     "count": 1
+    },
+    {
+     "name": "Infinite Coursework",
+     "count": 1
+    },
+    {
+     "name": "Mindseeker Oculus",
+     "count": 2
+    },
+    {
+     "name": "Murmuring Volume",
+     "count": 1
+    },
+    {
+     "name": "Your Fate Ends Here",
+     "count": 1
+    },
+    {
+     "name": "Protege's Awakening",
+     "count": 1
+    },
+    {
+     "name": "The Theorist, Jace Beleren",
+     "count": 1
+    },
+    {
+     "name": "Warrior's Blades",
+     "count": 2
+    },
+    {
+     "name": "Awaken the Inferno",
+     "count": 1
+    },
+    {
+     "name": "Undulating Witness",
+     "count": 1
+    },
+    {
+     "name": "Way of the Mind Sculptor",
+     "count": 1
+    },
+    {
+     "name": "Kwia Vigorbloom",
+     "count": 1
+    },
+    {
+     "name": "Ruric Thar, Biomagus",
+     "count": 1
+    },
+    {
+     "name": "Plains",
+     "count": 3
+    },
+    {
+     "name": "Island",
+     "count": 3
+    },
+    {
+     "name": "Mountain",
+     "count": 3
+    }
+   ]
+  },
+  {
+   "main": "WU",
+   "splash": "RG",
+   "deck_wr": 62.65,
+   "label": "WUG + r",
+   "cards": [
+    {
+     "name": "Dedicated Commons",
+     "count": 1
+    },
+    {
+     "name": "Fatehold Annex",
+     "count": 1
+    },
+    {
+     "name": "Konstrari Annex",
+     "count": 1
+    },
+    {
+     "name": "Room of Refuge",
+     "count": 1
+    },
+    {
+     "name": "Vigorbloom Annex",
+     "count": 2
+    },
+    {
+     "name": "Unsummon",
+     "count": 1
+    },
+    {
+     "name": "Campus Crier",
+     "count": 2
+    },
+    {
+     "name": "Proctor of Potential",
+     "count": 1
+    },
+    {
+     "name": "Proft, Consulting Detective",
+     "count": 1
+    },
+    {
+     "name": "Surveillance Phantasm",
+     "count": 1
+    },
+    {
+     "name": "Teyo, Lightshield Expert",
+     "count": 1
+    },
+    {
+     "name": "Infinite Coursework",
+     "count": 1
+    },
+    {
+     "name": "Mindseeker Oculus",
+     "count": 2
+    },
+    {
+     "name": "Murmuring Volume",
+     "count": 1
+    },
+    {
+     "name": "Restore with Empathy",
+     "count": 1
+    },
+    {
+     "name": "Your Fate Ends Here",
+     "count": 1
+    },
+    {
+     "name": "Jiang Yanggu, Never Alone",
+     "count": 1
+    },
+    {
+     "name": "Protege's Awakening",
+     "count": 1
+    },
+    {
+     "name": "The Theorist, Jace Beleren",
+     "count": 1
+    },
+    {
+     "name": "Warrior's Blades",
+     "count": 2
+    },
+    {
+     "name": "Fateshaper Aspirant",
+     "count": 1
+    },
+    {
+     "name": "Undulating Witness",
+     "count": 1
+    },
+    {
+     "name": "Way of the Mind Sculptor",
+     "count": 1
+    },
+    {
+     "name": "Kwia Vigorbloom",
+     "count": 1
+    },
+    {
+     "name": "Ruric Thar, Biomagus",
+     "count": 1
+    },
+    {
+     "name": "Vinelasher Adept",
+     "count": 2
+    },
+    {
+     "name": "Plains",
+     "count": 2
+    },
+    {
+     "name": "Island",
+     "count": 3
+    },
+    {
+     "name": "Mountain",
+     "count": 1
+    },
+    {
+     "name": "Forest",
+     "count": 3
+    }
+   ]
+  },
   {
    "main": "WU",
    "splash": "R",
@@ -1742,9 +1998,253 @@
   },
   {
    "main": "WU",
+   "splash": "RG",
+   "deck_wr": 61.18,
+   "label": "WU + r + g",
+   "cards": [
+    {
+     "name": "Dedicated Commons",
+     "count": 1
+    },
+    {
+     "name": "Fatehold Annex",
+     "count": 1
+    },
+    {
+     "name": "Room of Refuge",
+     "count": 1
+    },
+    {
+     "name": "Vigorbloom Annex",
+     "count": 2
+    },
+    {
+     "name": "Unsummon",
+     "count": 1
+    },
+    {
+     "name": "Campus Crier",
+     "count": 2
+    },
+    {
+     "name": "Cryotheory Adept",
+     "count": 1
+    },
+    {
+     "name": "Living Library",
+     "count": 1
+    },
+    {
+     "name": "Proctor of Potential",
+     "count": 1
+    },
+    {
+     "name": "Proft, Consulting Detective",
+     "count": 1
+    },
+    {
+     "name": "Surveillance Phantasm",
+     "count": 1
+    },
+    {
+     "name": "Teyo, Lightshield Expert",
+     "count": 1
+    },
+    {
+     "name": "Infinite Coursework",
+     "count": 1
+    },
+    {
+     "name": "Mindseeker Oculus",
+     "count": 2
+    },
+    {
+     "name": "Murmuring Volume",
+     "count": 1
+    },
+    {
+     "name": "Your Fate Ends Here",
+     "count": 1
+    },
+    {
+     "name": "Protege's Awakening",
+     "count": 1
+    },
+    {
+     "name": "The Theorist, Jace Beleren",
+     "count": 1
+    },
+    {
+     "name": "Warrior's Blades",
+     "count": 2
+    },
+    {
+     "name": "Fateshaper Aspirant",
+     "count": 1
+    },
+    {
+     "name": "Undulating Witness",
+     "count": 1
+    },
+    {
+     "name": "Way of the Mind Sculptor",
+     "count": 1
+    },
+    {
+     "name": "Kwia Vigorbloom",
+     "count": 1
+    },
+    {
+     "name": "Ruric Thar, Biomagus",
+     "count": 1
+    },
+    {
+     "name": "Plains",
+     "count": 5
+    },
+    {
+     "name": "Island",
+     "count": 5
+    },
+    {
+     "name": "Mountain",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "main": "WU",
+   "splash": "BG",
+   "deck_wr": 62.27,
+   "label": "WUG + b",
+   "cards": [
+    {
+     "name": "Fatehold Annex",
+     "count": 1
+    },
+    {
+     "name": "Meticulous Commons",
+     "count": 1
+    },
+    {
+     "name": "Room of Refuge",
+     "count": 1
+    },
+    {
+     "name": "Vigorbloom Annex",
+     "count": 2
+    },
+    {
+     "name": "Unsummon",
+     "count": 1
+    },
+    {
+     "name": "Campus Crier",
+     "count": 2
+    },
+    {
+     "name": "Cryotheory Adept",
+     "count": 1
+    },
+    {
+     "name": "Proctor of Potential",
+     "count": 1
+    },
+    {
+     "name": "Proft, Consulting Detective",
+     "count": 1
+    },
+    {
+     "name": "Surveillance Phantasm",
+     "count": 1
+    },
+    {
+     "name": "Teyo, Lightshield Expert",
+     "count": 1
+    },
+    {
+     "name": "Infinite Coursework",
+     "count": 1
+    },
+    {
+     "name": "Loot, the Nexus",
+     "count": 1
+    },
+    {
+     "name": "Mindseeker Oculus",
+     "count": 2
+    },
+    {
+     "name": "Murmuring Volume",
+     "count": 1
+    },
+    {
+     "name": "Restore with Empathy",
+     "count": 1
+    },
+    {
+     "name": "Your Fate Ends Here",
+     "count": 1
+    },
+    {
+     "name": "Jiang Yanggu, Never Alone",
+     "count": 1
+    },
+    {
+     "name": "Protege's Awakening",
+     "count": 1
+    },
+    {
+     "name": "The Theorist, Jace Beleren",
+     "count": 1
+    },
+    {
+     "name": "Twisted Fates",
+     "count": 2
+    },
+    {
+     "name": "Undulating Witness",
+     "count": 1
+    },
+    {
+     "name": "Way of the Mind Sculptor",
+     "count": 1
+    },
+    {
+     "name": "Kwia Vigorbloom",
+     "count": 1
+    },
+    {
+     "name": "Ruric Thar, Biomagus",
+     "count": 1
+    },
+    {
+     "name": "Vinelasher Adept",
+     "count": 1
+    },
+    {
+     "name": "Plains",
+     "count": 2
+    },
+    {
+     "name": "Island",
+     "count": 3
+    },
+    {
+     "name": "Swamp",
+     "count": 2
+    },
+    {
+     "name": "Forest",
+     "count": 3
+    }
+   ]
+  },
+  {
+   "main": "WU",
    "splash": "R",
    "deck_wr": 60.53,
-   "label": "WU + R (model's colours)",
+   "label": "WU + r",
    "cards": [
     {
      "name": "Dedicated Commons",
@@ -1854,9 +2354,9 @@
   },
   {
    "main": "WU",
-   "splash": "RG",
-   "deck_wr": 61.18,
-   "label": "WU + RG (multi-splash)",
+   "splash": "BR",
+   "deck_wr": 61.72,
+   "label": "WUR + b",
    "cards": [
     {
      "name": "Dedicated Commons",
@@ -1867,12 +2367,136 @@
      "count": 1
     },
     {
+     "name": "Meticulous Commons",
+     "count": 1
+    },
+    {
      "name": "Room of Refuge",
      "count": 1
     },
     {
-     "name": "Vigorbloom Annex",
+     "name": "Unsummon",
+     "count": 1
+    },
+    {
+     "name": "Campus Crier",
      "count": 2
+    },
+    {
+     "name": "Cryotheory Adept",
+     "count": 1
+    },
+    {
+     "name": "Proctor of Potential",
+     "count": 1
+    },
+    {
+     "name": "Proft, Consulting Detective",
+     "count": 1
+    },
+    {
+     "name": "Skilled Battlecarver",
+     "count": 1
+    },
+    {
+     "name": "Surveillance Phantasm",
+     "count": 1
+    },
+    {
+     "name": "Teyo, Lightshield Expert",
+     "count": 1
+    },
+    {
+     "name": "Hallway Heckler",
+     "count": 1
+    },
+    {
+     "name": "Infinite Coursework",
+     "count": 1
+    },
+    {
+     "name": "Mindseeker Oculus",
+     "count": 2
+    },
+    {
+     "name": "Murmuring Volume",
+     "count": 1
+    },
+    {
+     "name": "Your Fate Ends Here",
+     "count": 1
+    },
+    {
+     "name": "Protege's Awakening",
+     "count": 1
+    },
+    {
+     "name": "The Theorist, Jace Beleren",
+     "count": 1
+    },
+    {
+     "name": "Warrior's Blades",
+     "count": 2
+    },
+    {
+     "name": "Awaken the Inferno",
+     "count": 1
+    },
+    {
+     "name": "Twisted Fates",
+     "count": 2
+    },
+    {
+     "name": "Undulating Witness",
+     "count": 1
+    },
+    {
+     "name": "Way of the Mind Sculptor",
+     "count": 1
+    },
+    {
+     "name": "Ruric Thar, Biomagus",
+     "count": 1
+    },
+    {
+     "name": "Plains",
+     "count": 3
+    },
+    {
+     "name": "Island",
+     "count": 3
+    },
+    {
+     "name": "Swamp",
+     "count": 2
+    },
+    {
+     "name": "Mountain",
+     "count": 3
+    }
+   ]
+  },
+  {
+   "main": "WU",
+   "splash": "BR",
+   "deck_wr": 60.77,
+   "label": "WUB + r",
+   "cards": [
+    {
+     "name": "Dedicated Commons",
+     "count": 1
+    },
+    {
+     "name": "Fatehold Annex",
+     "count": 1
+    },
+    {
+     "name": "Meticulous Commons",
+     "count": 1
+    },
+    {
+     "name": "Room of Refuge",
+     "count": 1
     },
     {
      "name": "Unsummon",
@@ -1927,6 +2551,10 @@
      "count": 1
     },
     {
+     "name": "Rampart Hunter",
+     "count": 1
+    },
+    {
      "name": "The Theorist, Jace Beleren",
      "count": 1
     },
@@ -1935,8 +2563,12 @@
      "count": 2
     },
     {
-     "name": "Fateshaper Aspirant",
+     "name": "Awaken the Inferno",
      "count": 1
+    },
+    {
+     "name": "Twisted Fates",
+     "count": 2
     },
     {
      "name": "Undulating Witness",
@@ -1947,20 +2579,20 @@
      "count": 1
     },
     {
-     "name": "Kwia Vigorbloom",
-     "count": 1
-    },
-    {
      "name": "Ruric Thar, Biomagus",
      "count": 1
     },
     {
      "name": "Plains",
-     "count": 5
+     "count": 3
     },
     {
      "name": "Island",
-     "count": 5
+     "count": 3
+    },
+    {
+     "name": "Swamp",
+     "count": 3
     },
     {
      "name": "Mountain",
