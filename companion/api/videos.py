@@ -19,6 +19,12 @@ def read(path: Path, default=None):
         return default
 
 
+def ideas(path: Path):
+    """ideas.json is a list, or {"video": ..., "ideas": [...]} with the extraction's metadata."""
+    data = read(path, [])
+    return data.get("ideas", []) if isinstance(data, dict) else data
+
+
 def videos_router(root: Path = VIDEOS) -> APIRouter:
     r = APIRouter(prefix="/api/videos")
 
@@ -41,7 +47,7 @@ def videos_router(root: Path = VIDEOS) -> APIRouter:
         engine = d / "engine"
         files = sorted((p for p in engine.glob("*.json") if p.stem != "latest"), key=lambda p: -p.stat().st_mtime) if engine.is_dir() else []
         return {"video": next(v for v in read(root / "index.json") if v["id"] == vid), "picks": read(d / "picks.json"), "deck": read(d / "deck.json"),
-                "ideas": read(d / "ideas.json", []), "status": read(d / "ideas-status.json", {}),
+                "ideas": ideas(d / "ideas.json"), "status": read(d / "ideas-status.json", {}),
                 "engine": read(engine / "latest.json"), "commits": [p.stem for p in files]}
 
     @r.get("/{vid}/engine/{commit}")
@@ -56,7 +62,7 @@ def videos_router(root: Path = VIDEOS) -> APIRouter:
         d = video_dir(vid)
         if status not in STATUSES:
             raise HTTPException(400, f"status must be one of {', '.join(STATUSES)}")
-        if idea_id not in {str(i["id"]) for i in read(d / "ideas.json", [])}:
+        if idea_id not in {str(i["id"]) for i in ideas(d / "ideas.json")}:
             raise HTTPException(404, f"No idea {idea_id}")
         all_ = read(d / "ideas-status.json", {})
         all_[idea_id] = {"status": status, "result": result or "", "doc": doc or ""}
