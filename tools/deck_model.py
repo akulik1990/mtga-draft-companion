@@ -74,7 +74,7 @@ def context_row(skill, games, on_play, mull, opp_mull):
 TYPICAL = {"skill": 0.56, "games": 100, "on_play": 0.5, "mull": 0, "opp_mull": 0}
 
 
-def read(set_code, facts, ids=False):
+def read(set_code, facts, ids=False, skills=False):
     path = DATA_DIR / "Temp" / "synergy" / f"game_data_public.{set_code}.PremierDraft.csv.gz"
     with gzip.open(path, "rt", newline="", encoding="utf-8") as f:
         reader = csv.reader(f)
@@ -82,7 +82,7 @@ def read(set_code, facts, ids=False):
         col = {h: i for i, h in enumerate(header)}
         deck_cols = [(i, h[len("deck_"):]) for i, h in enumerate(header) if h.startswith("deck_")]
         names = [n for _, n in deck_cols]
-        rows, cols, vals, X_ctx, X_shape, y, test, drafts = [], [], [], [], [], [], [], []
+        rows, cols, vals, X_ctx, X_shape, y, test, drafts, skill = [], [], [], [], [], [], [], [], []
         r = 0
         for row in reader:
             counts = {}
@@ -93,6 +93,7 @@ def read(set_code, facts, ids=False):
                     counts[name] = n
                     rows.append(r); cols.append(j); vals.append(n)
             sk = row[col["user_game_win_rate_bucket"]]
+            skill.append(float(sk) if sk not in ("", "None") else 0.0)
             gm = row[col["user_n_games_bucket"]]
             X_ctx.append(context_row(float(sk) if sk not in ("", "None") else None, float(gm) if gm not in ("", "None") else None,
                                      row[col["on_play"]] == "True", float(row[col["num_mulligans"]] or 0), float(row[col["opp_num_mulligans"]] or 0)))
@@ -104,7 +105,8 @@ def read(set_code, facts, ids=False):
             r += 1
     C = sparse.csr_matrix((np.array(vals, np.float32), (rows, cols)), shape=(r, len(names)))
     out = (names, C, np.array(X_ctx, np.float32), np.array(X_shape, np.float32), np.array(y, np.float32), np.array(test))
-    return out + (drafts,) if ids else out
+    out = out + (drafts,) if ids else out
+    return out + (np.array(skill),) if skills else out
 
 
 def fit_logistic(X, y, l2, sw=None):
@@ -140,7 +142,7 @@ def standardise(M):
 
 def cmd_fit(a):
     facts = card_facts(a.set)
-    names, C, ctx, shp, y, test = read(a.set, facts)
+    names, C, ctx, shp, y, test, skill = read(a.set, facts, skills=True)
     print(f"{len(y)} games, {C.shape[1]} card columns, {int(test.sum())} held out")
     mu_s, sd_s = standardise(shp[~test])
     S = (shp - mu_s) / sd_s
@@ -149,7 +151,9 @@ def cmd_fit(a):
     base = sparse.csr_matrix(ctx)
     tr, te = ~test, test
     # Games by 60%+ players count top_weight times (their card choices are the ones the builder copies).
-    top = ctx[:, [i for i, b in enumerate(SKILLS[1:]) if b >= 0.60 - 1e-9]].sum(axis=1) > 0
+    # From the raw bucket (2026-11-06): the skill dummies match within 0.02 of 0.60/0.64/0.68 only, so buckets 0.62, 0.66 and
+    # 0.72+ (about 42% of 60%+ players' games) were missing the weight. Not refit since.
+    top = skill >= 0.60 - 1e-9
     sw = np.where(top, a.top_weight, 1.0)
     w0 = fit_logistic(base[tr], y[tr], 1.0)
     print(f"held-out log-loss, context only: {logloss(w0, base[te], y[te]):.5f}")
