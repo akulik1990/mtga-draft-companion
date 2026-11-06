@@ -1,0 +1,57 @@
+{
+ "id": "I_Cdetq8Rhc",
+ "time": "17:00-18:50 (final 40/40 deck screen at 1108 s with the 16-card sideboard row; cut-off 1130 s)",
+ "main": {
+  "No Admittance": 1,
+  "Marwyn, the Preserver": 1,
+  "Something Worth Saving": 2,
+  "Konstrari Improviser": 3,
+  "Afterthought Sentry": 1,
+  "Fulminous Forte": 1,
+  "Greenhouse Propagator": 1,
+  "Loot, the Nexus": 1,
+  "Keeper of the Quiet Hour": 1,
+  "Murmuring Volume": 1,
+  "Heartstring Puller": 2,
+  "Jiang Yanggu, Never Alone": 1,
+  "Awaken the Inferno": 1,
+  "Kiora of Fire and Ashes": 1,
+  "Archive Arbiter": 1,
+  "Craterclaw Colossus": 1,
+  "Craftwork Crusher": 3
+ },
+ "lands": {
+  "Mountain": 8,
+  "Forest": 8,
+  "Konstrari Annex": 1
+ },
+ "sideboard": {
+  "Guiding Hydra": 1,
+  "Extrapolate the Impossible": 1,
+  "Way of the Deathbringer": 1,
+  "Apex Witchstalker": 1,
+  "Skilled Battlecarver": 1,
+  "Chandra's Emberling": 1,
+  "Hallway Heckler": 1,
+  "Identity Echo": 1,
+  "Hunter's Axe": 1,
+  "Wrecking Gecko": 1,
+  "Twinned Vision": 1,
+  "Formidable Commons": 1,
+  "Ferocity of the Hunt": 1,
+  "Eye of Jace": 1,
+  "Afterthought Sentry": 1,
+  "Keeper of the Quiet Hour": 1
+ },
+ "spells": 23,
+ "land_count": 17,
+ "landcyclers_in_main": [
+  "Awaken the Inferno"
+ ],
+ "colours": "Pure red-green, no splash: Mountain x8, Forest x8, Konstrari Annex. Artifact payoffs: Craterclaw Colossus, three Craftwork Crusher, Archive Arbiter; ramp: three Konstrari Improviser, Loot, Murmuring Volume, Greenhouse Propagator; filtering: two Something Worth Saving.",
+ "notes": [
+  "Sideboard row at 1108 s lists 16 cards; the 40 plus 16 is 56 cards displayed, of which the pool also holds the basics he picked, not shown.",
+  "16:50-18:50: cuts Keeper of the Quiet Hour, one Afterthought Sentry and Wrecking Gecko ('I really want to try Wrecking Gecko at some point'), keeps Loot ('maybe I cut the loot ... let's try it like this'); 'I might just cut the archive arbiter. These are seven drops though' and keeps it; 'we might even play 18 lands' at P3p3 but 17 lands plus a landcycler plus three mana rocks.",
+  "Unknown takes P1p12, P1p14, P2p13, P3p12, P3p13, P3p14: no spell of the 16-card sideboard row is left unaccounted except Extrapolate the Impossible, Way of the Deathbringer, Chandra's Emberling and Hunter's Axe, which belong to those picks."
+ ]
+}

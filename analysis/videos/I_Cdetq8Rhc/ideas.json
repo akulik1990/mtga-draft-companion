@@ -1,0 +1,472 @@
+{
+ "video": "I_Cdetq8Rhc",
+ "player": "NicolaiBolas",
+ "set": "FRA",
+ "source": "YouTube auto-caption transcript 0:00-19:45 (tools/video_draft.py transcript I_Cdetq8Rhc --start 0 --end 1170), card names corrected against data/Sets/FRA_PremierDraft_All_Data.json; nothing past 19:45 read. 'type' marks each idea as claim, heuristic or one-off pick; 'repeats' lists ideas of earlier videos it restates; 'related' lists looser topic matches. Solo draft: every idea is the host's (speaker field kept for the schema).",
+ "ideas": [
+  {
+   "id": "I_C-01",
+   "time": 14,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Guiding Hydra is a card to first-pick nearly every time: better than basically every common and uncommon, and monocoloured; but not a card he loves splashing because it fits aggressive two-colour decks.",
+   "quote": "Definitely a card that you should be first picking pretty much every time you see it in packs.",
+   "cards": [
+    "Guiding Hydra"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Guiding Hydra by skill group and by number of colours in the deck.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "8Bz-16"
+   ]
+  },
+  {
+   "id": "I_C-02",
+   "time": 36,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Mindseeker Oculus is an incredible common: every time you play it you feel you come out ahead.",
+   "quote": "Just incredible common and just like every time you play this, you feel like you come out ahead.",
+   "cards": [
+    "Mindseeker Oculus"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Mindseeker Oculus.",
+   "type": "claim",
+   "repeats": [
+    "9nA-17",
+    "97Z-04",
+    "VTU-07"
+   ],
+   "related": []
+  },
+  {
+   "id": "I_C-03",
+   "time": 46,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Stingerquill Voxmancer is really bad: every time an opponent played it he won, because it is inefficient and spending the Vicious Verse feels bad.",
+   "quote": "I think Stingerquil Voxmaner is really bad. Like every I feel like every time my opponent has played this card, I've won the game.",
+   "cards": [
+    "Stingerquill Voxmancer"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Stingerquill Voxmancer.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "I_C-04",
+   "time": 88,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Solarium Sentry is incredible if you know you play white (a two-mana 3/3 that gains life), but picking it first of a pack with no mono-white follow-up is not worth losing flexibility.",
+   "quote": "If I knew I was playing white, Solarium Sentry is incredible.",
+   "cards": [
+    "Solarium Sentry",
+    "No Admittance"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Solarium Sentry by colour pair; Sentry against No Admittance at P1p2.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "CLK-04",
+    "n6s-02"
+   ]
+  },
+  {
+   "id": "I_C-05",
+   "time": 125,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Prefer the more flexible card early, so you can still abandon the first pick: No Admittance over Solarium Sentry; the cost of that approach is that it sometimes gets you wrecked.",
+   "quote": "This card's more flexible and I could still abandon the guiding hydra if white doesn't end up being open. ... it ends up being a pretty like not good strategy for not getting like kind of wrecked here.",
+   "cards": [
+    "No Admittance",
+    "Solarium Sentry",
+    "Guiding Hydra"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Share of drafters who end in the colours of their P1p1 against their P1p2 pick.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "55a-04",
+    "CLK-05"
+   ]
+  },
+  {
+   "id": "I_C-06",
+   "time": 170,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Craterclaw Colossus is a card to build around at pick three, with Heartwood tokens, Afterthought Sentry and other artifacts; he picks it to learn about it.",
+   "quote": "Pick three is a time when we could build around it. Put a couple extra artifacts in our deck. And it is interesting to get experience with these cards.",
+   "cards": [
+    "Craterclaw Colossus"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Craterclaw Colossus by artifact count.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "I_C-07",
+   "time": 230,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Marwyn, the Preserver is the best card in a red-green-leaning pack, over the Wrecking Gecko, which he does not prioritise.",
+   "quote": "I think Marwin is the best card in this pack.",
+   "cards": [
+    "Marwyn, the Preserver",
+    "Wrecking Gecko"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Marwyn, the Preserver against Wrecking Gecko.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "XSY-07",
+    "pdI-03"
+   ]
+  },
+  {
+   "id": "I_C-08",
+   "time": 270,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Seeing a strong gold card sixth (Jiang Yanggu, Never Alone) is a nice signal for red-green.",
+   "quote": "Seeing one of these pick six is a nice little signal.",
+   "cards": [
+    "Jiang Yanggu, Never Alone"
+   ],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "Whether a Jiang Yanggu at P1p6 predicts red-green flow.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "CWs-15",
+    "97Z-08"
+   ]
+  },
+  {
+   "id": "I_C-09",
+   "time": 340,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Arni, Renowned Champion is horrifically bad usually, and he does not want it even as a last-pick option.",
+   "quote": "I don't want the Arie. Just think he's horrifically bad usually.",
+   "cards": [
+    "Arni, Renowned Champion"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Arni, Renowned Champion.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-49",
+    "97Z-07"
+   ]
+  },
+  {
+   "id": "I_C-10",
+   "time": 420,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Overwrite the Multiverse is one of the best bombs in the set, yet he does not take it: he plays red-green and passes it for Something Worth Saving to find the Colossus.",
+   "quote": "Overwrite the multiverse is one of the best bombs in the set.",
+   "cards": [
+    "Overwrite the Multiverse",
+    "Something Worth Saving"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "How often a P2p1 bomb outside the drafter's colours reaches the deck.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "VTU-15",
+    "n6s-01"
+   ]
+  },
+  {
+   "id": "I_C-11",
+   "time": 450,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Something Worth Saving is better in a deck with a payoff to find: every copy helps find the Colossus, so he takes it over random good cards.",
+   "quote": "Every copy of this helps us find it more consistently over like these random cards that are pretty good but not as interesting.",
+   "cards": [
+    "Something Worth Saving",
+    "Craterclaw Colossus"
+   ],
+   "kind": "synergy",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Something Worth Saving by number of artifact payoffs in the deck.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "8Bz-17",
+    "994-24"
+   ]
+  },
+  {
+   "id": "I_C-12",
+   "time": 500,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "The first copy of Murmuring Volume is much better than the second; mana rocks that give upside seem pretty decent.",
+   "quote": "Feel like the first copy of this way better than the second.",
+   "cards": [
+    "Murmuring Volume"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Murmuring Volume by copy count.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "8Bz-03",
+    "mqZ-34"
+   ]
+  },
+  {
+   "id": "I_C-13",
+   "time": 530,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Take removal over a second copy of a digging spell when removal is short: Fulminous Forte over Something Worth Saving.",
+   "quote": "We do need extra removal and we already have a something worth saving.",
+   "cards": [
+    "Fulminous Forte",
+    "Something Worth Saving"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Marginal value of the second Something Worth Saving against a removal spell.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "994-27",
+    "pdI-23"
+   ]
+  },
+  {
+   "id": "I_C-14",
+   "time": 600,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Craftwork Crusher is exactly the payoff he wants: an insane artifact that finishes games; he takes it over Bestial Incursion and a red-green land.",
+   "quote": "This card's insane. It's another great payoff. It's an artifact and finding that more often is also going to be great for us.",
+   "cards": [
+    "Craftwork Crusher",
+    "Bestial Incursion"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Craftwork Crusher.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "I_C-15",
+   "time": 645,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "A pack of two-drops: with six two-drops already he stops taking them (Greenhouse Propagator over Sureshot Sower, Skilled Battlecarver as filler).",
+   "quote": "We already have five two drops. Like this isn't the best two drop, but it's totally fine with our plan.",
+   "cards": [
+    "Greenhouse Propagator",
+    "Sureshot Sower"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Two-drop count against win rate in ramp decks.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "n6s-12",
+    "mqZ-52",
+    "uoy-07"
+   ]
+  },
+  {
+   "id": "I_C-16",
+   "time": 700,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "A rare in your colours at pick one of pack three is like getting a rare for your deck: Craftwork Crusher over Lyra, Archangel of Dawn, and no need to splash white.",
+   "quote": "This is like getting a rare for our deck.",
+   "cards": [
+    "Craftwork Crusher",
+    "Lyra, Archangel of Dawn"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Craftwork Crusher against Lyra, Archangel of Dawn.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "I_C-17",
+   "time": 740,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Kiora of Fire and Ashes and the two Jiang Yanggus are 'uncommons that are just extra rares in our deck': the uncommons in this set play as rares.",
+   "quote": "We have three uncommons that are just extra rares in our deck.",
+   "cards": [
+    "Kiora of Fire and Ashes",
+    "Jiang Yanggu, Never Alone"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of the red-green uncommons against the rares of the set.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "8Bz-02",
+    "CLK-02"
+   ]
+  },
+  {
+   "id": "I_C-18",
+   "time": 795,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "With 24 playables already, take the dual land to make the mana consistent (Konstrari Annex) over a third Improviser; he already has six two-drops.",
+   "quote": "I'm tempted to just take the dual land, make my deck more consistent. This is red, red, green, green, after all.",
+   "cards": [
+    "Konstrari Annex",
+    "Konstrari Improviser"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Play rate of Konstrari Annex in red-green decks.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "CLK-17",
+    "mqZ-16",
+    "CWs-12"
+   ]
+  },
+  {
+   "id": "I_C-19",
+   "time": 870,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "He does not splash the Hydra even with Overgrown Farmland and Dedicated Commons available: splashing adds risk to a deck with so much top end that only has to survive and get there.",
+   "quote": "I don't think we want to splash. Just seems risky.",
+   "cards": [
+    "Overgrown Farmland",
+    "Guiding Hydra"
+   ],
+   "kind": "splash / mana",
+   "engine_area": "picker",
+   "test_idea": "Win rate of the Hydra as a splash against its non-splash rate.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "CLK-10",
+    "CWs-46"
+   ]
+  },
+  {
+   "id": "I_C-20",
+   "time": 930,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Twinned Vision helps avoid flood in a deck with many mana rocks and top end, but a second copy is not needed with filtering already.",
+   "quote": "Twin Division again might not be the best in this deck because I already have a couple card filtering cards.",
+   "cards": [
+    "Twinned Vision"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Twinned Vision in ramp decks.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "XSY-32",
+    "re7-10"
+   ]
+  },
+  {
+   "id": "I_C-21",
+   "time": 1005,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "build",
+   "claim": "With about 22 creatures and many seven-drops, cut the cheap and aggressive cards (Battlecarver, Hallway Heckler) and keep the top end: he is a midrange deck winning the late game.",
+   "quote": "Battle Carver is much more of an aggressive card. I'm more of a mid-range like winning the late game.",
+   "cards": [
+    "Skilled Battlecarver",
+    "Hallway Heckler"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Average curve against win rate for ramp decks.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "55a-37"
+   ]
+  },
+  {
+   "id": "I_C-22",
+   "time": 1030,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "build",
+   "claim": "Do not cut a top-end card to make room: the Archive Arbiter is a seven-drop in this deck, not a six-drop, and he would rather cut an Afterthought Sentry and the Keeper.",
+   "quote": "I might just cut the archive arbiter. These are seven drops though. These are not six drops.",
+   "cards": [
+    "Archive Arbiter",
+    "Afterthought Sentry",
+    "Keeper of the Quiet Hour"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Top-end count (6+ mana) against win rate in ramp decks.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-24",
+    "55a-18"
+   ]
+  },
+  {
+   "id": "I_C-23",
+   "time": 1075,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "build",
+   "claim": "A dual land taken highly pays off at the build: he was already going to struggle to make cuts, so the Konstrari Annex improves the mana without costing a spell.",
+   "quote": "This is why I took this land so highly because I was already going to struggle to make cuts.",
+   "cards": [
+    "Konstrari Annex"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "GIH WR of Konstrari Annex in RG decks.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "CLK-17"
+   ]
+  }
+ ]
+}
