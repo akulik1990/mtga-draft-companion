@@ -1,0 +1,28 @@
+pools built 1200; errors A 0, B 0; no build A 7
+
+cell sizes (class x group) and mean deck-model rating: theirs / ours A (as configured) / ours B (model objective); gap = theirs - ours
+  1spl   good  n  200  theirs  59.61  ours A  60.74  ours B  61.62  gap A -1.13  gap B -2.01  their splash cols 1.00, our A splash 0.53
+  1spl   avg   n  200  theirs  57.43  ours A  59.40  ours B  60.21  gap A -1.96  gap B -2.78  their splash cols 1.00, our A splash 0.45
+  1spl   weak  n  188  theirs  56.60  ours A  58.66  ours B  59.65  gap A -2.07  gap B -3.06  their splash cols 1.00, our A splash 0.44
+  1spl   all   n  588  theirs  57.90  ours A  59.62  ours B  60.51  gap A -1.71  gap B -2.61  their splash cols 1.00, our A splash 0.47
+  2+spl  good  n  200  theirs  60.74  ours A  58.68  ours B  59.51  gap A +2.05  gap B +1.22  their splash cols 2.06, our A splash 0.66
+  2+spl  avg   n  212  theirs  59.40  ours A  57.95  ours B  59.03  gap A +1.40  gap B +0.32  their splash cols 2.09, our A splash 0.52
+  2+spl  weak  n  200  theirs  57.69  ours A  57.66  ours B  58.55  gap A +0.14  gap B -0.75  their splash cols 2.10, our A splash 0.49
+  2+spl  all   n  612  theirs  59.28  ours A  58.10  ours B  59.04  gap A +1.21  gap B +0.27  their splash cols 2.08, our A splash 0.55
+
+=== PRIMARY: gap(2+spl) - gap(1spl), variant A, WR points [95% CI by draft bootstrap]
+  all   +2.92 [+2.48, +3.34]
+  good  +3.18 [+2.48, +3.89]
+  avg   +3.36 [+2.63, +4.09]
+  weak  +2.21 [+1.40, +2.97]
+  good minus weak +0.98 (SE 0.56) [-0.11, +2.07]
+  half 0: +2.85 [+2.23, +3.46]
+  half 1: +3.00 [+2.41, +3.65]
+
+=== secondary (not adjusted)
+  variant A: gap(2+spl) - gap(1spl) +2.92 [+2.50, +3.35]
+  variant B: gap(2+spl) - gap(1spl) +2.88 [+2.46, +3.29]
+
+how much of the gap variant B (builder maximising the yardstick, limits unchanged) closes: mean gap A -> B by class
+  1spl   n 588  gap A -1.71  gap B -2.61  we splash/three A 0.63 B 0.61; our colours A 2.63 B 2.61 vs theirs 3.00
+  2+spl  n 605  gap A +1.21  gap B +0.27  we splash/three A 0.76 B 0.76; our colours A 2.76 B 2.76 vs theirs 4.08

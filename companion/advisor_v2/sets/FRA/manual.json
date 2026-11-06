@@ -770,25 +770,37 @@
    "synergy": false,
    "wants": "removal or token-making instants and sorceries to copy (7-8 of them)",
    "rule": "removal instants and sorceries",
-   "enabler_types": [
-    "Instant",
-    "Sorcery"
-   ],
-   "enabler_tags": [
-    "removal"
-   ],
-   "all_types_tags": true,
+   "match": {
+    "types": [
+     "Instant",
+     "Sorcery"
+    ],
+    "tags": [
+     "removal"
+    ]
+   },
    "source": "LLU #259 Buildarounds, Synergy (2026-10-17), pasted transcript",
    "extra": [
     {
      "name": "token spells",
      "rule": "instants and sorceries that make creature tokens",
-     "enabler": "create [^.]*creature tokens?",
-     "enabler_types": [
-      "Instant",
-      "Sorcery"
-     ],
-     "all": true
+     "match": {
+      "types": [
+       "Instant",
+       "Sorcery"
+      ],
+      "text": "create [^.]*creature tokens?"
+     }
+    },
+    {
+     "name": "empower Jace cards",
+     "rule": "cards that empower Jace (the empower x Way deck-level result, +0.5 per empower card with a Way in the deck)",
+     "match": {
+      "text": "empower jace",
+      "not": {
+       "text": "when way of the"
+      }
+     }
     }
    ]
   },
@@ -796,26 +808,40 @@
    "synergy": false,
    "wants": "many two- and four-drops (and medium empower numbers)",
    "rule": "two-mana creatures",
-   "enabler_types": [
-    "Creature"
-   ],
-   "enabler_min_cmc": 2,
-   "enabler_max_cmc": 2,
+   "match": {
+    "types": [
+     "Creature"
+    ],
+    "cmc_min": 2,
+    "cmc_max": 2
+   },
    "source": "LLU #259 Buildarounds, Synergy (2026-10-17), pasted transcript",
    "extra": [
     {
      "name": "four-drops",
      "rule": "four-mana cards",
-     "enabler_types": [
-      "Creature",
-      "Sorcery",
-      "Instant",
-      "Enchantment",
-      "Artifact",
-      "Planeswalker"
-     ],
-     "enabler_min_cmc": 4,
-     "enabler_max_cmc": 4
+     "match": {
+      "types": [
+       "Creature",
+       "Sorcery",
+       "Instant",
+       "Enchantment",
+       "Artifact",
+       "Planeswalker"
+      ],
+      "cmc_min": 4,
+      "cmc_max": 4
+     }
+    },
+    {
+     "name": "empower Jace cards",
+     "rule": "cards that empower Jace (the empower x Way deck-level result, +0.5 per empower card with a Way in the deck)",
+     "match": {
+      "text": "empower jace",
+      "not": {
+       "text": "when way of the"
+      }
+     }
     }
    ]
   },
@@ -835,11 +861,14 @@
   },
   "Ghalta the Unstoppable": {
    "synergy": false,
-   "wants": "creatures with power 4 or more so it costs about 5",
-   "rule": "creatures with power 4+, and 4/4 token makers",
-   "min_power": 4,
-   "enabler": "create a 4/4",
-   "source": "LLU #259 Buildarounds, Synergy (2026-10-17), pasted transcript"
+   "wants": "creatures with power 4 or more, and cards that make a 4/4 to 7/7 token, so it costs about 5",
+   "rule": "creatures with power 4+, or text creating a token with power 4 to 7 (spells, planeswalker and Way abilities)",
+   "match": {
+    "power_min": 4,
+    "text": "create [^.]*?\\b[4-7]/\\d",
+    "mode": "any"
+   },
+   "source": "Akshin's list 2026-11-06; rules text (replaces the min_power / 'create a 4/4' keys)"
   },
   "Bestial Incursion": {
    "synergy": false,
@@ -879,6 +908,145 @@
     ]
    },
    "source": "Akshin 2026-11-06; within-deck test analysis/skill_groups_fblthp.py: in hand vs not, 2 vs 3+ basic types in the deck, 3+ minus 2 +0.23 (SE 2.24) on P100 players; not supported"
+  },
+  "Way of the Deathbringer": {
+   "synergy": false,
+   "wants": "empower Jace cards: more loyalty on the Jace token for the Way's ability, and the empower x Way deck-level result",
+   "rule": "empower Jace cards",
+   "match": {
+    "text": "empower jace",
+    "not": {
+     "text": "when way of the"
+    }
+   },
+   "source": "Akshin's list 2026-11-06; rules text",
+   "extra": [
+    {
+     "name": "fodder",
+     "rule": "creatures with mana value 2 or less, to sacrifice to the -2 (Beast 4/4)",
+     "match": {
+      "types": [
+       "Creature"
+      ],
+      "cmc_max": 2
+     }
+    }
+   ]
+  },
+  "Way of the Healer": {
+   "synergy": false,
+   "wants": "empower Jace cards: more loyalty on the Jace token for the Way's ability, and the empower x Way deck-level result",
+   "rule": "empower Jace cards",
+   "match": {
+    "text": "empower jace",
+    "not": {
+     "text": "when way of the"
+    }
+   },
+   "source": "Akshin's list 2026-11-06; rules text"
+  },
+  "Way of the Mentor": {
+   "synergy": false,
+   "wants": "empower Jace cards: more loyalty on the Jace token for the Way's ability, and the empower x Way deck-level result; lifegain puts loyalty counters on planeswalkers",
+   "rule": "empower Jace cards",
+   "match": {
+    "text": "empower jace",
+    "not": {
+     "text": "when way of the"
+    }
+   },
+   "source": "Akshin's list 2026-11-06; rules text",
+   "extra": [
+    {
+     "name": "lifegain",
+     "rule": "cards that gain life or have lifelink",
+     "match": {
+      "text": "gain[s]? (?:\\d+|x|that much) life|gain life|lifelink"
+     }
+    }
+   ]
+  },
+  "Way of the Mind Sculptor": {
+   "synergy": false,
+   "wants": "empower Jace cards: more loyalty on the Jace token for the Way's ability, and the empower x Way deck-level result",
+   "rule": "empower Jace cards",
+   "match": {
+    "text": "empower jace",
+    "not": {
+     "text": "when way of the"
+    }
+   },
+   "source": "Akshin's list 2026-11-06; rules text"
+  },
+  "Way of the Necromancer": {
+   "synergy": false,
+   "wants": "empower Jace cards: more loyalty on the Jace token for the Way's ability, and the empower x Way deck-level result",
+   "rule": "empower Jace cards",
+   "match": {
+    "text": "empower jace",
+    "not": {
+     "text": "when way of the"
+    }
+   },
+   "source": "Akshin's list 2026-11-06; rules text"
+  },
+  "Way of the Warlord": {
+   "synergy": false,
+   "wants": "empower Jace cards: more loyalty on the Jace token for the Way's ability, and the empower x Way deck-level result",
+   "rule": "empower Jace cards",
+   "match": {
+    "text": "empower jace",
+    "not": {
+     "text": "when way of the"
+    }
+   },
+   "source": "Akshin's list 2026-11-06; rules text"
+  },
+  "Way of the Wildspeaker": {
+   "synergy": false,
+   "wants": "empower Jace cards: more loyalty on the Jace token for the Way's ability, and the empower x Way deck-level result",
+   "rule": "empower Jace cards",
+   "match": {
+    "text": "empower jace",
+    "not": {
+     "text": "when way of the"
+    }
+   },
+   "source": "Akshin's list 2026-11-06; rules text"
+  },
+  "Way of the Paradox": {
+   "synergy": false,
+   "wants": "an extra land drop whenever a loyalty ability is activated: landfall payoffs and land fetch; empower Jace cards for the activations",
+   "rule": "landfall, land search and landcycling cards",
+   "match": {
+    "text": "landfall|search your library for [^.]*land|landcycling"
+   },
+   "source": "Akshin's list 2026-11-06; rules text",
+   "extra": [
+    {
+     "name": "empower Jace cards",
+     "rule": "cards that empower Jace (the empower x Way deck-level result, +0.5 per empower card with a Way in the deck)",
+     "match": {
+      "text": "empower jace",
+      "not": {
+       "text": "when way of the"
+      }
+     }
+    }
+   ]
+  },
+  "Danitha, Spear of Agony": {
+   "synergy": false,
+   "wants": "instants and sorceries that target an opponent or a creature an opponent controls: removal, burn, tricks aimed at opposing creatures (each cast grows Danitha)",
+   "rule": "instants and sorceries (prepared spell halves included) whose rules text targets an opponent or a creature/permanent an opponent controls, or any target",
+   "match": {
+    "types": [
+     "Instant",
+     "Sorcery"
+    ],
+    "text": "target opponent|any target|target [^./•,\\\"]*?(?:an opponent controls|you don't control)|(?:destroy|exile|tap|return) target (?:creature|permanent|nonland permanent|creature or planeswalker)(?! (?:card|you control)| or planeswalker card)|target creature (?:gets|has) (?:-|base)|damage to target (?:creature|planeswalker|[a-z]+ or [a-z]+ creature)(?! you control)"
+   },
+   "source": "Akshin's list 2026-11-06; rules text"
   }
  },
  "sources": {

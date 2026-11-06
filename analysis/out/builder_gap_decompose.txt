@@ -1,0 +1,73 @@
+<11/06/2026 17:41:08> - INFO - Using local configuration file: /home/morris/Projects/mtga-draft-companion/data/config.json
+pool 42 builds ['WUB']
+builder settings: OBJECTIVE gihwr MODEL deckmodel_top3 MAX_SPLASH 2 MAX_SPLASH_BASICS 2
+his deck_win_rate 67.48  main WU splash BRG splash_cards 9
+ours WUB deck_win_rate 59.68 (builder predicted 316.58) main WU splash 'B'
+
+=== deckmodel: his 67.48  ours 59.68  gap 7.80  (logit gap 0.3379)
+piece                                              logit   WR points (x23.1)
+cards (sum of per-copy)                            +0.2106 +4.87
+shape creatures (his 13 / ours 15)                 -0.0160 -0.37
+shape cmc2 (his 5 / ours 8)                        +0.0702 +1.62
+shape cmc3 (his 6 / ours 5)                        -0.0222 -0.51
+shape cmc4 (his 4 / ours 3)                        +0.0251 +0.58
+shape cmc6p (his 2 / ours 1)                       +0.0518 +1.20
+shape removal (his 6 / ours 5)                     +0.0377 +0.87
+shape creatures^2 (his 13 / ours 15)               -0.0003 -0.01
+shape cmc2^2 (his 5 / ours 8)                      -0.0190 -0.44
+total                                              +0.3379 +7.82
+per card, his minus ours (logit; his count / our count), biggest first:
+  Rampart Hunter                           +0.1105 (+2.56 WR) 0/1
+  Kwia Vigorbloom                          +0.0750 (+1.73 WR) 1/0
+  Living Library                           +0.0580 (+1.34 WR) 0/1
+  Loot, the Nexus                          -0.0476 (-1.10 WR) 1/0
+  Fateshaper Aspirant                      +0.0382 (+0.88 WR) 0/1
+  Cryotheory Adept                         +0.0356 (+0.82 WR) 0/1
+  Jiang Yanggu, Never Alone                -0.0345 (-0.80 WR) 1/0
+  Vigorbloom Annex                         +0.0302 (+0.70 WR) 2/0
+  Plains                                   -0.0259 (-0.60 WR) 2/5
+  Dedicated Commons                        -0.0247 (-0.57 WR) 1/0
+  Infinite Coursework                      +0.0204 (+0.47 WR) 0/1
+  Konstrari Annex                          -0.0178 (-0.41 WR) 1/0
+  Awaken the Inferno                       -0.0136 (-0.31 WR) 1/0
+  Restore with Empathy                     +0.0123 (+0.29 WR) 1/0
+  Warrior's Blades                         -0.0090 (-0.21 WR) 2/0
+  Protege's Awakening                      +0.0056 (+0.13 WR) 0/1
+  Swamp                                    -0.0020 (-0.05 WR) 1/4
+  Mountain                                 +0.0017 (+0.04 WR) 1/0
+  Surveillance Phantasm                    -0.0010 (-0.02 WR) 0/1
+  Forest                                   -0.0007 (-0.02 WR) 1/0
+
+=== deckmodel_top3: his 68.01  ours 59.89  gap 8.12  (logit gap 0.3533)
+piece                                              logit   WR points (x23.0)
+cards (sum of per-copy)                            +0.2248 +5.18
+shape creatures (his 13 / ours 15)                 -0.0102 -0.23
+shape cmc2 (his 5 / ours 8)                        +0.0697 +1.60
+shape cmc3 (his 6 / ours 5)                        -0.0200 -0.46
+shape cmc4 (his 4 / ours 3)                        +0.0218 +0.50
+shape cmc6p (his 2 / ours 1)                       +0.0522 +1.20
+shape removal (his 6 / ours 5)                     +0.0344 +0.79
+shape creatures^2 (his 13 / ours 15)               -0.0012 -0.03
+shape cmc2^2 (his 5 / ours 8)                      -0.0180 -0.41
+total                                              +0.3533 +8.14
+per card, his minus ours (logit; his count / our count), biggest first:
+  Rampart Hunter                           +0.0969 (+2.23 WR) 0/1
+  Kwia Vigorbloom                          +0.0961 (+2.21 WR) 1/0
+  Vigorbloom Annex                         +0.0513 (+1.18 WR) 2/0
+  Living Library                           +0.0509 (+1.17 WR) 0/1
+  Fateshaper Aspirant                      +0.0493 (+1.14 WR) 0/1
+  Jiang Yanggu, Never Alone                -0.0426 (-0.98 WR) 1/0
+  Loot, the Nexus                          -0.0399 (-0.92 WR) 1/0
+  Cryotheory Adept                         +0.0350 (+0.81 WR) 0/1
+  Plains                                   -0.0335 (-0.77 WR) 2/5
+  Infinite Coursework                      +0.0241 (+0.55 WR) 0/1
+  Dedicated Commons                        -0.0205 (-0.47 WR) 1/0
+  Awaken the Inferno                       -0.0186 (-0.43 WR) 1/0
+  Konstrari Annex                          -0.0179 (-0.41 WR) 1/0
+  Swamp                                    -0.0121 (-0.28 WR) 1/4
+  Mountain                                 +0.0071 (+0.16 WR) 1/0
+  Restore with Empathy                     -0.0069 (-0.16 WR) 1/0
+  Protege's Awakening                      +0.0051 (+0.12 WR) 0/1
+  Surveillance Phantasm                    +0.0026 (+0.06 WR) 0/1
+  Warrior's Blades                         -0.0019 (-0.04 WR) 2/0
+  Forest                                   +0.0004 (+0.01 WR) 1/0

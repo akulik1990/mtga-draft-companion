@@ -75,9 +75,9 @@
   "doc": ""
  },
  "mqZ-16": {
-  "status": "untested",
-  "result": "",
-  "doc": ""
+  "status": "tested",
+  "result": "Supported in picks: fixer odds x2.2 with 2+ splash cards held (z 22, all skill groups), mostly when the fixer makes the needed colour. Engine already colour-matches fixing to splash cards held. Deck-level not shown.",
+  "doc": "docs/video-test-picks-FRA.md"
  },
  "mqZ-17": {
   "status": "untested",
@@ -110,9 +110,9 @@
   "doc": ""
  },
  "mqZ-23": {
-  "status": "untested",
-  "result": "",
-  "doc": ""
+  "status": "tested",
+  "result": "Opposite: late gold cards predict the pair open as well as or slightly better than mono (+0.031 [+0.012, +0.051]); placebo shows table-wide flow. No gold discount.",
+  "doc": "docs/video-test-picks-FRA.md"
  },
  "mqZ-24": {
   "status": "tested",
@@ -150,9 +150,9 @@
   "doc": "docs/spec.md; docs/engine-comparison-2026-11-03.md"
  },
  "mqZ-31": {
-  "status": "untested",
-  "result": "",
-  "doc": ""
+  "status": "tested",
+  "result": "Null: cheap (1-2) minus 5+ splash card in hand +0.31 [-1.86, +2.48]; rules out a cheap-card shortfall worse than -1.9. MIN_SPLASH_CMC 1 stays.",
+  "doc": "docs/video-test-splash-FRA.md"
  },
  "mqZ-32": {
   "status": "untested",
@@ -195,9 +195,9 @@
   "doc": ""
  },
  "mqZ-40": {
-  "status": "untested",
-  "result": "",
-  "doc": ""
+  "status": "tested",
+  "result": "Null: 2 vs 1 distinct splash cards +0.37 [-0.67, +1.42], what card quality predicts; no second-card premium above +1.4.",
+  "doc": "docs/video-test-splash-FRA.md"
  },
  "mqZ-41": {
   "status": "untested",
@@ -215,9 +215,9 @@
   "doc": ""
  },
  "mqZ-44": {
-  "status": "untested",
-  "result": "",
-  "doc": ""
+  "status": "tested",
+  "result": "Null overall -0.51 [-2.13, +1.11]; good players lean his way -2.09 [-4.90, +0.71] (Premier-only -4.33, z 2.37, lead). Builder already splashes one colour only.",
+  "doc": "docs/video-test-splash-FRA.md"
  },
  "mqZ-45": {
   "status": "untested",
@@ -235,9 +235,9 @@
   "doc": ""
  },
  "mqZ-48": {
-  "status": "untested",
-  "result": "",
-  "doc": ""
+  "status": "tested",
+  "result": "Not supported: no saturation at 6+ fixers in picks (good -0.01 [-0.26, +0.24]) or decks (thin: 272 decks).",
+  "doc": "docs/video-test-picks-FRA.md"
  },
  "mqZ-49": {
   "status": "untested",

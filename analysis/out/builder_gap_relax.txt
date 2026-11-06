@@ -1,0 +1,76 @@
+<11/06/2026 17:00:46> - INFO - Using local configuration file: /home/morris/Projects/mtga-draft-companion/data/config.json
+his 40 yardstick 67.48
+baseline (as configured)                                   WUB          yardstick  59.68  spells shared with his 16  in ours not his: Cryotheory Adept, Fateshaper Aspirant, Infinite Coursework, Living Library, Protege's Awakening, Rampart Hunter, Surveillance Phantasm  | in his not ours: Awaken the Inferno, Dedicated Commons, Jiang Yanggu, Never Alone, Konstrari Annex, Kwia Vigorbloom, Loot, the Nexus, Restore with Empathy, Vigorbloom Annex, Warrior's Blades
+OBJECTIVE=model (builder maximises the deck model)         WUR          yardstick  64.32  spells shared with his 17  in ours not his: Artifist Acumen, Cryotheory Adept, Fateshaper Aspirant, Hallway Heckler, Infinite Coursework, Protege's Awakening, Skilled Battlecarver, Surveillance Phantasm  | in his not ours: Jiang Yanggu, Never Alone, Konstrari Annex, Kwia Vigorbloom, Loot, the Nexus, Meticulous Commons, Restore with Empathy, Twisted Fates, Vigorbloom Annex
+OBJECTIVE=model, MODEL=deckmodel (the yardstick)           WUR          yardstick  64.32  spells shared with his 17  in ours not his: Artifist Acumen, Cryotheory Adept, Fateshaper Aspirant, Hallway Heckler, Infinite Coursework, Protege's Awakening, Skilled Battlecarver, Surveillance Phantasm  | in his not ours: Jiang Yanggu, Never Alone, Konstrari Annex, Kwia Vigorbloom, Loot, the Nexus, Meticulous Commons, Restore with Empathy, Twisted Fates, Vigorbloom Annex
+MAX_SPLASH 2 -> 5                                          WUB          yardstick  59.68  spells shared with his 16  in ours not his: Cryotheory Adept, Fateshaper Aspirant, Infinite Coursework, Living Library, Protege's Awakening, Rampart Hunter, Surveillance Phantasm  | in his not ours: Awaken the Inferno, Dedicated Commons, Jiang Yanggu, Never Alone, Konstrari Annex, Kwia Vigorbloom, Loot, the Nexus, Restore with Empathy, Vigorbloom Annex, Warrior's Blades
+MAX_SPLASH_BASICS 2 -> 4                                   WUB          yardstick  59.68  spells shared with his 16  in ours not his: Cryotheory Adept, Fateshaper Aspirant, Infinite Coursework, Living Library, Protege's Awakening, Rampart Hunter, Surveillance Phantasm  | in his not ours: Awaken the Inferno, Dedicated Commons, Jiang Yanggu, Never Alone, Konstrari Annex, Kwia Vigorbloom, Loot, the Nexus, Restore with Empathy, Vigorbloom Annex, Warrior's Blades
+SPLASH_MIN_GIH 56.5 -> 0                                   WUB          yardstick  59.68  spells shared with his 16  in ours not his: Cryotheory Adept, Fateshaper Aspirant, Infinite Coursework, Living Library, Protege's Awakening, Rampart Hunter, Surveillance Phantasm  | in his not ours: Awaken the Inferno, Dedicated Commons, Jiang Yanggu, Never Alone, Konstrari Annex, Kwia Vigorbloom, Loot, the Nexus, Restore with Empathy, Vigorbloom Annex, Warrior's Blades
+DP_BOMB_SPLASH off                                         WUB          yardstick  59.68  spells shared with his 16  in ours not his: Cryotheory Adept, Fateshaper Aspirant, Infinite Coursework, Living Library, Protege's Awakening, Rampart Hunter, Surveillance Phantasm  | in his not ours: Awaken the Inferno, Dedicated Commons, Jiang Yanggu, Never Alone, Konstrari Annex, Kwia Vigorbloom, Loot, the Nexus, Restore with Empathy, Vigorbloom Annex, Warrior's Blades
+SPLASH_LANDS_ONLY off                                      WUB          yardstick  59.68  spells shared with his 16  in ours not his: Cryotheory Adept, Fateshaper Aspirant, Infinite Coursework, Living Library, Protege's Awakening, Rampart Hunter, Surveillance Phantasm  | in his not ours: Awaken the Inferno, Dedicated Commons, Jiang Yanggu, Never Alone, Konstrari Annex, Kwia Vigorbloom, Loot, the Nexus, Restore with Empathy, Vigorbloom Annex, Warrior's Blades
+SPLASH_RULE_LANDS_ONLY off                                 WUB          yardstick  59.68  spells shared with his 16  in ours not his: Cryotheory Adept, Fateshaper Aspirant, Infinite Coursework, Living Library, Protege's Awakening, Rampart Hunter, Surveillance Phantasm  | in his not ours: Awaken the Inferno, Dedicated Commons, Jiang Yanggu, Never Alone, Konstrari Annex, Kwia Vigorbloom, Loot, the Nexus, Restore with Empathy, Vigorbloom Annex, Warrior's Blades
+shape penalty off (PENALTY 0)                              WUG          yardstick  64.47  spells shared with his 19  in ours not his: Cryotheory Adept, Fateshaper Aspirant, Infinite Coursework, Protege's Awakening, Surveillance Phantasm, Vinelasher Adept  | in his not ours: Awaken the Inferno, Dedicated Commons, Konstrari Annex, Meticulous Commons, Twisted Fates, Warrior's Blades
+SPLASH_FORCE off                                           WUB          yardstick  59.68  spells shared with his 16  in ours not his: Cryotheory Adept, Fateshaper Aspirant, Infinite Coursework, Living Library, Protege's Awakening, Rampart Hunter, Surveillance Phantasm  | in his not ours: Awaken the Inferno, Dedicated Commons, Jiang Yanggu, Never Alone, Konstrari Annex, Kwia Vigorbloom, Loot, the Nexus, Restore with Empathy, Vigorbloom Annex, Warrior's Blades
+splash rule ignored (SPLASH_AT 0, THREE_AT 9)              WUB          yardstick  59.68  spells shared with his 16  in ours not his: Cryotheory Adept, Fateshaper Aspirant, Infinite Coursework, Living Library, Protege's Awakening, Rampart Hunter, Surveillance Phantasm  | in his not ours: Awaken the Inferno, Dedicated Commons, Jiang Yanggu, Never Alone, Konstrari Annex, Kwia Vigorbloom, Loot, the Nexus, Restore with Empathy, Vigorbloom Annex, Warrior's Blades
+three-colour always (THREE_AT 0)                           WUB          yardstick  59.68  spells shared with his 16  in ours not his: Cryotheory Adept, Fateshaper Aspirant, Infinite Coursework, Living Library, Protege's Awakening, Rampart Hunter, Surveillance Phantasm  | in his not ours: Awaken the Inferno, Dedicated Commons, Jiang Yanggu, Never Alone, Konstrari Annex, Kwia Vigorbloom, Loot, the Nexus, Restore with Empathy, Vigorbloom Annex, Warrior's Blades
+all splash limits relaxed together                         WUB          yardstick  59.68  spells shared with his 16  in ours not his: Cryotheory Adept, Fateshaper Aspirant, Infinite Coursework, Living Library, Protege's Awakening, Rampart Hunter, Surveillance Phantasm  | in his not ours: Awaken the Inferno, Dedicated Commons, Jiang Yanggu, Never Alone, Konstrari Annex, Kwia Vigorbloom, Loot, the Nexus, Restore with Empathy, Vigorbloom Annex, Warrior's Blades
+all splash limits + shape penalty off                      WUG          yardstick  64.47  spells shared with his 19  in ours not his: Cryotheory Adept, Fateshaper Aspirant, Infinite Coursework, Protege's Awakening, Surveillance Phantasm, Vinelasher Adept  | in his not ours: Awaken the Inferno, Dedicated Commons, Konstrari Annex, Meticulous Commons, Twisted Fates, Warrior's Blades
+all splash limits + OBJECTIVE=model/yardstick              WUR          yardstick  64.32  spells shared with his 17  in ours not his: Artifist Acumen, Cryotheory Adept, Fateshaper Aspirant, Hallway Heckler, Infinite Coursework, Protege's Awakening, Skilled Battlecarver, Surveillance Phantasm  | in his not ours: Jiang Yanggu, Never Alone, Konstrari Annex, Kwia Vigorbloom, Loot, the Nexus, Meticulous Commons, Restore with Empathy, Twisted Fates, Vigorbloom Annex
+all of the above + PENALTY 0                               WUG          yardstick  64.47  spells shared with his 19  in ours not his: Cryotheory Adept, Fateshaper Aspirant, Infinite Coursework, Protege's Awakening, Surveillance Phantasm, Vinelasher Adept  | in his not ours: Awaken the Inferno, Dedicated Commons, Konstrari Annex, Meticulous Commons, Twisted Fates, Warrior's Blades
+same, three always                                         WUG          yardstick  64.47  spells shared with his 19  in ours not his: Cryotheory Adept, Fateshaper Aspirant, Infinite Coursework, Protege's Awakening, Surveillance Phantasm, Vinelasher Adept  | in his not ours: Awaken the Inferno, Dedicated Commons, Konstrari Annex, Meticulous Commons, Twisted Fates, Warrior's Blades
+
+=== yardstick search of his pool, base WU, splash colour set S (no builder objective; builder shape penalty on/off) ===
+
+-- shape penalty on, at most 2 splash cards
+  S=B    used=B    yardstick  59.74 penalty  3.6  splash cards 3: Rampart Hunter, Twisted Fates, Twisted Fates
+  S=R    used=R    yardstick  62.21 penalty  0.8  splash cards 3: Awaken the Inferno, Warrior's Blades, Warrior's Blades
+  S=G    used=G    yardstick  63.44 penalty  1.5  splash cards 3: Jiang Yanggu, Never Alone, Kwia Vigorbloom, Restore with Empathy
+  S=BR   used=BR   yardstick  62.51 penalty  3.6  splash cards 3: Twisted Fates, Twisted Fates, Warrior's Blades
+  S=BG   used=BG   yardstick  65.04 penalty  5.1  splash cards 3: Kwia Vigorbloom, Twisted Fates, Twisted Fates
+  S=RG   used=RG   yardstick  63.90 penalty  0.0  splash cards 3: Kwia Vigorbloom, Restore with Empathy, Warrior's Blades
+  S=BRG  used=BG   yardstick  64.77 penalty  5.1  splash cards 3: Kwia Vigorbloom, Twisted Fates, Twisted Fates
+
+-- shape penalty on, at most 3 splash cards
+  S=B    used=B    yardstick  59.74 penalty  3.6  splash cards 3: Rampart Hunter, Twisted Fates, Twisted Fates
+  S=R    used=R    yardstick  61.70 penalty  0.0  splash cards 3: Artifist Acumen, Warrior's Blades, Warrior's Blades
+  S=G    used=G    yardstick  63.44 penalty  1.5  splash cards 3: Jiang Yanggu, Never Alone, Kwia Vigorbloom, Restore with Empathy
+  S=BR   used=BR   yardstick  63.01 penalty  0.8  splash cards 3: Twisted Fates, Warrior's Blades, Warrior's Blades
+  S=BG   used=BG   yardstick  63.97 penalty  2.1  splash cards 3: Kwia Vigorbloom, Restore with Empathy, Twisted Fates
+  S=RG   used=RG   yardstick  65.45 penalty  0.0  splash cards 3: Kwia Vigorbloom, Warrior's Blades, Warrior's Blades
+  S=BRG  used=RG   yardstick  65.76 penalty  0.0  splash cards 3: Kwia Vigorbloom, Warrior's Blades, Warrior's Blades
+
+-- shape penalty on, at most 9 splash cards
+  S=B    used=B    yardstick  59.74 penalty  3.6  splash cards 3: Rampart Hunter, Twisted Fates, Twisted Fates
+  S=R    used=R    yardstick  63.47 penalty  0.0  splash cards 5: Artifist Acumen, Awaken the Inferno, Skilled Battlecarver, Warrior's Blades, Warrior's Blades
+  S=G    used=G    yardstick  63.44 penalty  1.5  splash cards 3: Jiang Yanggu, Never Alone, Kwia Vigorbloom, Restore with Empathy
+  S=BR   used=BR   yardstick  66.99 penalty  0.8  splash cards 7: Artifist Acumen, Awaken the Inferno, Skilled Battlecarver, Twisted Fates, Twisted Fates, Warrior's Blades, Warrior's Blades
+  S=BG   used=BG   yardstick  66.73 penalty  0.0  splash cards 5: Jiang Yanggu, Never Alone, Kwia Vigorbloom, Restore with Empathy, Twisted Fates, Twisted Fates
+  S=RG   used=RG   yardstick  68.98 penalty  0.0  splash cards 8: Artifist Acumen, Awaken the Inferno, Jiang Yanggu, Never Alone, Kwia Vigorbloom, Restore with Empathy, Skilled Battlecarver, Warrior's Blades, Warrior's Blades
+  S=BRG  used=BRG  yardstick  71.17 penalty  0.0  splash cards 8: Artifist Acumen, Jiang Yanggu, Never Alone, Kwia Vigorbloom, Restore with Empathy, Twisted Fates, Twisted Fates, Warrior's Blades, Warrior's Blades
+
+-- shape penalty off, at most 2 splash cards
+  S=B    used=B    yardstick  59.74 penalty  0.0  splash cards 3: Rampart Hunter, Twisted Fates, Twisted Fates
+  S=R    used=R    yardstick  62.21 penalty  0.0  splash cards 3: Awaken the Inferno, Warrior's Blades, Warrior's Blades
+  S=G    used=G    yardstick  63.44 penalty  0.0  splash cards 3: Jiang Yanggu, Never Alone, Kwia Vigorbloom, Restore with Empathy
+  S=BR   used=BR   yardstick  62.51 penalty  0.0  splash cards 3: Twisted Fates, Twisted Fates, Warrior's Blades
+  S=BG   used=BG   yardstick  65.04 penalty  0.0  splash cards 3: Kwia Vigorbloom, Twisted Fates, Twisted Fates
+  S=RG   used=RG   yardstick  63.90 penalty  0.0  splash cards 3: Kwia Vigorbloom, Restore with Empathy, Warrior's Blades
+  S=BRG  used=BG   yardstick  64.77 penalty  0.0  splash cards 3: Kwia Vigorbloom, Twisted Fates, Twisted Fates
+
+-- shape penalty off, at most 3 splash cards
+  S=B    used=B    yardstick  59.74 penalty  0.0  splash cards 3: Rampart Hunter, Twisted Fates, Twisted Fates
+  S=R    used=R    yardstick  62.21 penalty  0.0  splash cards 3: Awaken the Inferno, Warrior's Blades, Warrior's Blades
+  S=G    used=G    yardstick  63.44 penalty  0.0  splash cards 3: Jiang Yanggu, Never Alone, Kwia Vigorbloom, Restore with Empathy
+  S=BR   used=BR   yardstick  63.01 penalty  0.0  splash cards 3: Twisted Fates, Warrior's Blades, Warrior's Blades
+  S=BG   used=BG   yardstick  65.04 penalty  0.0  splash cards 3: Kwia Vigorbloom, Twisted Fates, Twisted Fates
+  S=RG   used=RG   yardstick  65.45 penalty  0.0  splash cards 3: Kwia Vigorbloom, Warrior's Blades, Warrior's Blades
+  S=BRG  used=RG   yardstick  65.76 penalty  0.0  splash cards 3: Kwia Vigorbloom, Warrior's Blades, Warrior's Blades
+
+-- shape penalty off, at most 9 splash cards
+  S=B    used=B    yardstick  59.74 penalty  0.0  splash cards 3: Rampart Hunter, Twisted Fates, Twisted Fates
+  S=R    used=R    yardstick  63.47 penalty  0.0  splash cards 5: Artifist Acumen, Awaken the Inferno, Skilled Battlecarver, Warrior's Blades, Warrior's Blades
+  S=G    used=G    yardstick  63.44 penalty  0.0  splash cards 3: Jiang Yanggu, Never Alone, Kwia Vigorbloom, Restore with Empathy
+  S=BR   used=BR   yardstick  66.99 penalty  0.0  splash cards 7: Artifist Acumen, Awaken the Inferno, Skilled Battlecarver, Twisted Fates, Twisted Fates, Warrior's Blades, Warrior's Blades
+  S=BG   used=BG   yardstick  66.90 penalty  0.0  splash cards 5: Jiang Yanggu, Never Alone, Kwia Vigorbloom, Restore with Empathy, Twisted Fates, Twisted Fates
+  S=RG   used=RG   yardstick  68.98 penalty  0.0  splash cards 8: Artifist Acumen, Awaken the Inferno, Jiang Yanggu, Never Alone, Kwia Vigorbloom, Restore with Empathy, Skilled Battlecarver, Warrior's Blades, Warrior's Blades
+  S=BRG  used=BRG  yardstick  71.71 penalty  0.0  splash cards 9: Artifist Acumen, Awaken the Inferno, Jiang Yanggu, Never Alone, Kwia Vigorbloom, Restore with Empathy, Twisted Fates, Twisted Fates, Warrior's Blades, Warrior's Blades
