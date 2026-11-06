@@ -176,6 +176,7 @@ class DraftAdvisorV2:
     FIX_CAP = 3.0  # most a land's fixing can add, in WR points
     LAND_DECK = False  # on-colour and colourless lands keep their lane value in the deck term instead of "replacement plus edge over an average card" (FRA train: on-pair duals lost ~6 points there; top drafters take them at ATA 6-9)
     LAND_PREF = False  # lands get no learnt preference: it is learnt on pack 1 picks 1-5, where nobody takes lands yet
+    LAND_PREF_POS = False  # with LAND_PREF, lands keep a positive learnt preference (Theorist's Sanctum) and lose only a negative one
     HALF_PIVOT = 0  # from this many spells in the pool, lanes sharing no colour with the pool's top pair get P = 0 (winners change one colour, not both); 0 = off
     # Neutral by default; for testing ideas from top players per set (sets/<SET>/manual.json, "values"):
     FIX_BONUS = 0.0  # WR points for a land that taps for the lane and makes another colour, on top of the splashes it enables
@@ -690,8 +691,11 @@ class DraftAdvisorV2:
         and, when switched on, the preference learnt from their choices (PREF_WEIGHT)."""
         fade = max(0.0, 1.0 - (pick - 1) / self.ORDER_FADE_BY) if self.ORDER_FADE_BY else 1.0
         out = self.ORDER_WEIGHT * self.order.get(name, 0.0) if self.ORDER_WEIGHT else 0.0
-        if self.PREF_WEIGHT and prefs and not (self.LAND_PREF and name in self.land_names):
-            out += self.PREF_WEIGHT * self.prefs.get(name, self.prefs.get(name.split(" // ")[0], 0.0))
+        if self.PREF_WEIGHT and prefs:
+            pref = self.prefs.get(name, self.prefs.get(name.split(" // ")[0], 0.0))
+            if self.LAND_PREF and name in self.land_names:
+                pref = max(0.0, pref) if self.LAND_PREF_POS else 0.0
+            out += self.PREF_WEIGHT * pref
         return out * fade
 
     def power(self, card, pick):

@@ -50,6 +50,7 @@
   "COLOURLESS_EARLY": 8.0,
   "LAND_DECK": true,
   "LAND_PREF": true,
+  "LAND_PREF_POS": true,
   "ORDER_WEIGHT": 1.0,
   "CARD_PAIRS_PULL": 0.5,
   "REMOVAL_SLACK_PICK": 0.0,

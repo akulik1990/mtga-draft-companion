@@ -48,6 +48,7 @@
   "LANDS": true,
   "LAND_DECK": false,
   "LAND_PREF": false,
+  "LAND_PREF_POS": false,
   "LANE_FLAT": "4:1,14:0.7,45:0.8",
   "N_SPARSE": 50,
   "OFF_PLAY": false,
