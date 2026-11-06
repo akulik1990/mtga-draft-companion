@@ -1,0 +1,362 @@
+{
+ "mqZ-01": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-02": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-03": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-04": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-05": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-06": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-07": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-08": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-09": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-10": {
+  "status": "tested",
+  "result": "Counterspells within deck +1.58 (z 2.5, below the line), carried by weaker players; good players about 0 (-0.04 / +0.12). No removal weight, consistent with his 'not taken highly'.",
+  "doc": "docs/b1-within-removal-FRA.md; docs/skill-groups-within-FRA.md"
+ },
+ "mqZ-11": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-12": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-13": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-14": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-15": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-16": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-17": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-18": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-19": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-20": {
+  "status": "tested",
+  "result": "Post hoc B5 sensitivity: counting Murmuring Volume, landcyclers and Heartwood makers as sources moves the 0-source cost from -5.6 to -10.7 and the 1-source stratum negative; a non-land fixer does not do what a land does. TOKEN_FIX off. Needs held-out confirmation.",
+  "doc": "docs/b5-splash-cast-FRA.md"
+ },
+ "mqZ-21": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-22": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-23": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-24": {
+  "status": "tested",
+  "result": "Top-end count is flat: no penalty for 5+ or 7+ expensive cards at equal quality (CIs about +-0.8); the second top-end card is not worth less at deck level.",
+  "doc": "docs/podcast-test-topend-FRA.md"
+ },
+ "mqZ-25": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-26": {
+  "status": "tested",
+  "result": "Conditional removal (Refute Destiny class) is at placebo within deck (+0.62, z 0.9); REMOVAL_SKIP on: it does not count toward the removal floor. Agrees with him.",
+  "doc": "docs/b1-within-removal-FRA.md"
+ },
+ "mqZ-27": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-28": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-29": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-30": {
+  "status": "tested",
+  "result": "Akshin's splash rules: builder SPLASH_MIN_GIH 56.5 (lowest quarter of 60%+ players' splash cards) on, part of the bundle deck_wr +0.28, deck_gih +1.38; the picker half was significantly worse (top-1 -0.36, top-3 -0.63) and is off.",
+  "doc": "docs/spec.md; docs/engine-comparison-2026-11-03.md"
+ },
+ "mqZ-31": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-32": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-33": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-34": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-35": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-36": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-37": {
+  "status": "tested",
+  "result": "A planeswalker-conditional tapped dual costs nothing detectable with or without walkers (P6), so there is no cost for Oculus / Jace to remove at deck level.",
+  "doc": "docs/b3b8-speed-tapped-FRA.md"
+ },
+ "mqZ-38": {
+  "status": "tested",
+  "result": "No evidence for more lands: 18-land decks too few to measure (26 at skill >= 0.60), no LAND_STEPS step up; tapped lands carry no detectable cost (P5 +0.47 [-0.09, +1.03] per land).",
+  "doc": "docs/podcast-test-lands18-FRA.md; docs/b3b8-speed-tapped-FRA.md"
+ },
+ "mqZ-39": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-40": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-41": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-42": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-43": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-44": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-45": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-46": {
+  "status": "tested",
+  "result": "Creature slope +0.05 [-0.09, +0.19] per creature; the creature bounds rest on matching top players only.",
+  "doc": "docs/foundations-check-FRA.md"
+ },
+ "mqZ-47": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-48": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-49": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-50": {
+  "status": "tested",
+  "result": "MAX_SPLASH 2 for FRA (splash cards per deck 2.6 -> 2.1, top players 2.1); agrees with stopping at two Twisted Fates. Copies vs distinct cards not separated.",
+  "doc": "docs/engine-comparison-2026-11-03.md"
+ },
+ "mqZ-51": {
+  "status": "tested",
+  "result": "Removal floor holds on all decks: decks under 6 removal lose about 0.6 points beyond their cards (REMOVAL_SLACK 2). Agrees with his on-colour kill spell pick.",
+  "doc": "docs/foundations-check-FRA.md"
+ },
+ "mqZ-52": {
+  "status": "tested",
+  "result": "Two-drop count null at deck level (re-checked on all decks); TWO_DROP_SLACK 99, no two-drop target in the builder.",
+  "doc": "docs/foundations-check-FRA.md; docs/podcast-test-twodrops-FRA.md"
+ },
+ "mqZ-53": {
+  "status": "tested",
+  "result": "LAND_STEPS: 17 lands, 16 with 1+ landcycler and 1+ dual, 15 with 2+ of each; 16 vs 17 never significantly worse in any landcycler x dual stratum (2+ cyclers +1.17). His 17 + 2 cyclers + 7 nonbasics would be 15 under our rule; he treats the pair as one land, we as two.",
+  "doc": "docs/engine-comparison-2026-11-03.md; docs/heldout-leads-FRA.md"
+ },
+ "mqZ-54": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-55": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-56": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-57": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-58": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-59": {
+  "status": "tested",
+  "result": "As mqZ-52: no two-drop count effect, so cutting surplus two-drops has no deck-level cost or gain beyond the cards.",
+  "doc": "docs/foundations-check-FRA.md"
+ },
+ "mqZ-60": {
+  "status": "tested",
+  "result": "Splash castability is carried by land sources: one land source restores a single-pip card to its rating, none costs -5.6 per card; counting landcyclers / Murmuring Volume as sources makes it worse (post hoc). SPLASH_LANDS_ONLY on, so our count differs from his 'kind of' sources.",
+  "doc": "docs/b5-splash-cast-FRA.md"
+ },
+ "mqZ-61": {
+  "status": "tested",
+  "result": "Double-pip splash cards with 2+ sources seen beat on-colour peers (+5.4 FRA, +8.3 TDM), but DP_BOMB_SPLASH allows them only for a set top-10 bomb with 5 sources; cutting a non-bomb GG card (Vinelasher Adept) agrees with the engine.",
+  "doc": "docs/b5-splash-cast-FRA.md; docs/b6-tdm-splash.md; docs/spec.md"
+ },
+ "mqZ-62": {
+  "status": "tested",
+  "result": "Same removal floor as mqZ-51: cutting the only on-colour removal spell is penalised by the builder's shape bound.",
+  "doc": "docs/foundations-check-FRA.md"
+ },
+ "mqZ-63": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-64": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-65": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-66": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-67": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-68": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-69": {
+  "status": "tested",
+  "result": "Not supported: on-colour tapped lands +0.47 [-0.09, +1.03] per card (rules out a cost beyond -0.09); 4+ tapped lands -2.33 [-10.55, +5.89], 35 decks, uninformative.",
+  "doc": "docs/b3b8-speed-tapped-FRA.md"
+ },
+ "mqZ-70": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-71": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ },
+ "mqZ-72": {
+  "status": "untested",
+  "result": "",
+  "doc": ""
+ }
+}
