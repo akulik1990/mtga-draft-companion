@@ -1,0 +1,23 @@
+picks 7800, with main-lane dual 462; beta (per 10 score pts) 1.433, gamma 1.045
+shift in final-score points = 7.29 (95% CI 5.79 to 8.76, 300 bootstrap draws over drafts)
+main-lane dual opportunities 467: taken 173 (37.0%), score-only model expects 100.6 (21.5%)
+main dual score gap to pack #1: median 6.9, mean 8.3; replacement median 42.5
+planeswalker dual, any lane, planeswalker in pool=False: opportunities 2585, taken 344 (13.3%, CI 12.1-14.5), score-model expects 12.6%
+planeswalker dual, any lane, planeswalker in pool=True: opportunities 360, taken 43 (11.9%, CI 9.4-14.9), score-model expects 12.5%
+observed main-dual take rate 37.0%  (opportunities 467)
+arm EDGE: expected take rate (score-only logit, beta fixed) / share where v2's #1 is a main dual: 0: 21.5% / 20.1%, 4: 21.5% / 20.1%, 8: 21.5% / 20.1%, 12: 22.5% / 21.4%, 24: 43.2% / 63.6%, 36: 66.7% / 89.3%
+EDGE by interpolation: 20.45 (95% CI 18.33 to 22.71; 0 of 300 draws above the largest arm)
+
+Held-out, 196 drafts, switch off vs e20
+196 drafts, 7644 picks
+all picks (n=7644): top-1 59.0 -> 58.3 (diff -0.67, CI -1.07 to -0.27); top-3 89.4 -> 89.4 (diff +0.04, CI -0.14 to +0.22)
+player took a dual land (n=424): top-1 38.9 -> 58.3 (diff +19.34, CI +15.37 to +23.04); top-3 79.2 -> 84.9 (diff +5.66, CI +3.50 to +8.05)
+player took any nonbasic land (n=542): top-1 41.9 -> 56.3 (diff +14.39, CI +11.17 to +17.35); top-3 81.4 -> 85.8 (diff +4.43, CI +2.76 to +6.26)
+player took a non-land (n=7102): top-1 60.3 -> 58.5 (diff -1.82, CI -2.14 to -1.49); top-3 90.0 -> 89.7 (diff -0.30, CI -0.42 to -0.18)
+
+Held-out, 196 drafts, switch off vs e16
+196 drafts, 7644 picks
+all picks (n=7644): top-1 59.0 -> 59.0 (diff +0.01, CI -0.21 to +0.24); top-3 89.4 -> 89.4 (diff +0.07, CI -0.03 to +0.18)
+player took a dual land (n=424): top-1 38.9 -> 47.4 (diff +8.49, CI +5.76 to +11.54); top-3 79.2 -> 81.8 (diff +2.59, CI +1.18 to +4.34)
+player took any nonbasic land (n=542): top-1 41.9 -> 48.0 (diff +6.09, CI +3.85 to +8.63); top-3 81.4 -> 83.4 (diff +2.03, CI +0.93 to +3.38)
+player took a non-land (n=7102): top-1 60.3 -> 59.8 (diff -0.45, CI -0.60 to -0.32); top-3 90.0 -> 89.9 (diff -0.08, CI -0.15 to -0.03)

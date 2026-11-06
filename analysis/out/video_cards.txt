@@ -1,0 +1,689 @@
+Videos: 11 recorded; picks read: 462; scored by v2 (engine/latest.json): 440.
+Players: Alex Nikolic, NicolaiBolas. v2 engine record keeps its top 3 per pick only.
+Decks: 11 deck.json files (pdITCHUnEa8 deck cut off at 22:40).
+
+====================================================================================================
+OVERRATED by v2
+====================================================================================================
+card                             offered  took  v2 #1  both  v2#1 not taken  taken, v2#1 other  in final 40  decks
+Murmuring Volume                      32     6     10     4               6                  2            4     11
+Stingerquill Annex                    19     6      4     3               1                  3            4     11
+Archive Arbiter                       10     1      2     0               2                  1            1     11
+Rescue Girl First Responder            3     0      0     0               0                  0            0     11
+Konstrari Annex                       14     4      1     1               0                  3            2     11
+Twinned Vision                        24     4     15     4              11                  0            3     11
+Geist of Saint Thalia                 13     2      5     1               4                  1            1     11
+Ruric Thar Biomagus                   13     5      2     1               1                  4            4     11
+Keeper of the Quiet Hour              25     1      3     1               2                  0            1     11
+Fatehold Chronologist                 15     2      4     2               2                  0            1     11
+Bestial Incursion                     20     2      2     1               1                  1            2     11
+Tetsuko Umezawa Fugitive              14     4      1     1               0                  3            3     11
+TOTAL offers                         202    37     49    19              30                 18           26
+(offers scored by v2: 202; 'in final 40' counts draft-deck pairs where the card is in the main, any copy)
+
+When v2 had the card #1 and it was in his pack: he took it 19/49 = 39% (CI 25-54%)   [17Lands players: 30-45%]
+Offers taken (any v2 rank): 37/202 = 18% (CI 13-24%)
+Offers where v2 had it #1 but he passed: 30; of those, what he took instead: 
+   mqZsj4Vg2Es P1p6: Fatehold Chronologist (v2 #1) -> he took Meticulous Commons
+   mqZsj4Vg2Es P1p11: Ruric Thar, Biomagus (v2 #1) -> he took Vigorbloom Annex
+   mqZsj4Vg2Es P2p2: Fatehold Chronologist (v2 #1) -> he took Jiang Yanggu, Never Alone
+   mqZsj4Vg2Es P2p3: Twinned Vision (v2 #1) -> he took Loot, the Nexus
+   mqZsj4Vg2Es P2p11: Twinned Vision (v2 #1) -> he took Warrior's Blades
+   mqZsj4Vg2Es P3p7: Geist of Saint Thalia (v2 #1) -> he took Undulating Witness
+   CWsZxo1pB6Y P1p11: Murmuring Volume (v2 #1) -> he took Arcane Amphisbaena
+   CWsZxo1pB6Y P2p2: Murmuring Volume (v2 #1) -> he took Room of Refuge
+   CWsZxo1pB6Y P2p5: Geist of Saint Thalia (v2 #1) -> he took Formidable Commons
+   CWsZxo1pB6Y P2p6: Twinned Vision (v2 #1) -> he took Blessed Ghoul
+   994X9PlPInQ P2p1: Twinned Vision (v2 #1) -> he took Room of Refuge
+   994X9PlPInQ P2p2: Twinned Vision (v2 #1) -> he took Plan for All Outcomes
+   994X9PlPInQ P3p6: Murmuring Volume (v2 #1) -> he took Something Worth Saving
+   re7j0kVSnUg P3p2: Twinned Vision (v2 #1) -> he took Vinelasher Adept
+   re7j0kVSnUg P3p3: Bestial Incursion (v2 #1) -> he took Extended Absence
+   re7j0kVSnUg P3p10: Twinned Vision (v2 #1) -> he took Archive Arbiter
+   uoyPQJ0NxO8 P3p1: Murmuring Volume (v2 #1) -> he took Heartstring Puller
+   Uy49kTqon4o P1p11: Keeper of the Quiet Hour (v2 #1) -> he took Stingerquill Annex
+   Uy49kTqon4o P2p3: Geist of Saint Thalia (v2 #1) -> he took Theorix Annex
+   n6sAkoTAN8w P1p5: Geist of Saint Thalia (v2 #1) -> he took Blossom-Blessed Angel
+   n6sAkoTAN8w P1p7: Stingerquill Annex (v2 #1) -> he took Teyo, Diamondblade Mage
+   n6sAkoTAN8w P2p6: Archive Arbiter (v2 #1) -> he took Konstrari Annex
+   n6sAkoTAN8w P3p5: Keeper of the Quiet Hour (v2 #1) -> he took Void Extrapolator
+   n6sAkoTAN8w P3p8: Twinned Vision (v2 #1) -> he took Way of the Warlord
+   pdITCHUnEa8 P1p6: Twinned Vision (v2 #1) -> he took Vigorbloom Charm
+   pdITCHUnEa8 P1p8: Twinned Vision (v2 #1) -> he took Wrath of the Bloodmane
+   pdITCHUnEa8 P2p8: Murmuring Volume (v2 #1) -> he took Hallway Heckler
+   pdITCHUnEa8 P3p1: Archive Arbiter (v2 #1) -> he took Tetsuko Umezawa, Fugitive
+   9nAjtt_8TjA P2p4: Twinned Vision (v2 #1) -> he took Teyo, Lightshield Expert
+   9nAjtt_8TjA P3p6: Murmuring Volume (v2 #1) -> he took Shatterwing Pegasus
+
+Per-offer rows (video pack/pick, card, taken?, v2 rank, v2 #1):
+   mqZsj4Vg2Es P1p1 Twinned Vision                 took=n v2rank=>3 v2#1=Kwia Vigorbloom  (he took: Kwia Vigorbloom)
+   mqZsj4Vg2Es P1p1 Murmuring Volume               took=n v2rank=>3 v2#1=Kwia Vigorbloom  (he took: Kwia Vigorbloom)
+   mqZsj4Vg2Es P1p1 Stingerquill Annex             took=n v2rank=>3 v2#1=Kwia Vigorbloom  (he took: Kwia Vigorbloom)
+   mqZsj4Vg2Es P1p3 Ruric Thar, Biomagus           took=n v2rank=>3 v2#1=Ruric Thar, Magecrusher  (he took: Campus Crier)
+   mqZsj4Vg2Es P1p3 Archive Arbiter                took=n v2rank=>3 v2#1=Ruric Thar, Magecrusher  (he took: Campus Crier)
+   mqZsj4Vg2Es P1p4 Ruric Thar, Biomagus           took=Y v2rank=7 v2#1=Surgical Precision  (he took: Ruric Thar, Biomagus)
+   mqZsj4Vg2Es P1p6 Fatehold Chronologist          took=n v2rank=1 v2#1=Fatehold Chronologist  (he took: Meticulous Commons)
+   mqZsj4Vg2Es P1p8 Konstrari Annex                took=Y v2rank=2 v2#1=Blessed Ghoul  (he took: Konstrari Annex)
+   mqZsj4Vg2Es P1p9 Twinned Vision                 took=n v2rank=2 v2#1=Recursive Recruitment  (he took: Murmuring Volume)
+   mqZsj4Vg2Es P1p9 Murmuring Volume               took=Y v2rank=3 v2#1=Recursive Recruitment  (he took: Murmuring Volume)
+   mqZsj4Vg2Es P1p9 Stingerquill Annex             took=n v2rank=>3 v2#1=Recursive Recruitment  (he took: Murmuring Volume)
+   mqZsj4Vg2Es P1p11 Ruric Thar, Biomagus           took=n v2rank=1 v2#1=Ruric Thar, Biomagus  (he took: Vigorbloom Annex)
+   mqZsj4Vg2Es P2p2 Fatehold Chronologist          took=n v2rank=1 v2#1=Fatehold Chronologist  (he took: Jiang Yanggu, Never Alone)
+   mqZsj4Vg2Es P2p3 Twinned Vision                 took=n v2rank=1 v2#1=Twinned Vision  (he took: Loot, the Nexus)
+   mqZsj4Vg2Es P2p5 Archive Arbiter                took=n v2rank=3 v2#1=Jace's Machinations  (he took: Room of Refuge)
+   mqZsj4Vg2Es P2p5 Murmuring Volume               took=n v2rank=>3 v2#1=Jace's Machinations  (he took: Room of Refuge)
+   mqZsj4Vg2Es P2p6 Twinned Vision                 took=n v2rank=2 v2#1=Variable Chaser  (he took: Dedicated Commons)
+   mqZsj4Vg2Es P2p11 Twinned Vision                 took=n v2rank=1 v2#1=Twinned Vision  (he took: Warrior's Blades)
+   mqZsj4Vg2Es P3p7 Geist of Saint Thalia          took=n v2rank=1 v2#1=Geist of Saint Thalia  (he took: Undulating Witness)
+   mqZsj4Vg2Es P3p8 Konstrari Annex                took=n v2rank=3 v2#1=Infinite Coursework  (he took: Infinite Coursework)
+   CWsZxo1pB6Y P1p1 Murmuring Volume               took=n v2rank=>3 v2#1=Variable Chaser  (he took: Hapatra, the Desert Fang)
+   CWsZxo1pB6Y P1p3 Murmuring Volume               took=n v2rank=>3 v2#1=Arcane Amphisbaena  (he took: Proft, Consulting Detective)
+   CWsZxo1pB6Y P1p4 Konstrari Annex                took=n v2rank=>3 v2#1=Protege's Awakening  (he took: Mabel, Bitter Recluse)
+   CWsZxo1pB6Y P1p5 Keeper of the Quiet Hour       took=n v2rank=>3 v2#1=Dark Matter Manipulator  (he took: Dark Matter Manipulator)
+   CWsZxo1pB6Y P1p6 Keeper of the Quiet Hour       took=n v2rank=>3 v2#1=Void Extrapolator  (he took: Void Extrapolator)
+   CWsZxo1pB6Y P1p9 Murmuring Volume               took=n v2rank=2 v2#1=Undulating Witness  (he took: Undulating Witness)
+   CWsZxo1pB6Y P1p11 Murmuring Volume               took=n v2rank=1 v2#1=Murmuring Volume  (he took: Arcane Amphisbaena)
+   CWsZxo1pB6Y P1p12 Konstrari Annex                took=n v2rank=3 v2#1=Generous Revival  (he took: Generous Revival)
+   CWsZxo1pB6Y P2p1 Bestial Incursion              took=n v2rank=3 v2#1=Paradox Shaper  (he took: Paradox Shaper)
+   CWsZxo1pB6Y P2p2 Murmuring Volume               took=n v2rank=1 v2#1=Murmuring Volume  (he took: Room of Refuge)
+   CWsZxo1pB6Y P2p5 Geist of Saint Thalia          took=n v2rank=1 v2#1=Geist of Saint Thalia  (he took: Formidable Commons)
+   CWsZxo1pB6Y P2p6 Tetsuko Umezawa, Fugitive      took=n v2rank=3 v2#1=Twinned Vision  (he took: Blessed Ghoul)
+   CWsZxo1pB6Y P2p6 Twinned Vision                 took=n v2rank=1 v2#1=Twinned Vision  (he took: Blessed Ghoul)
+   CWsZxo1pB6Y P2p9 Bestial Incursion              took=Y v2rank=2 v2#1=Icy Reception  (he took: Bestial Incursion)
+   CWsZxo1pB6Y P2p10 Murmuring Volume               took=Y v2rank=1 v2#1=Murmuring Volume  (he took: Murmuring Volume)
+   CWsZxo1pB6Y P3p1 Bestial Incursion              took=n v2rank=>3 v2#1=Multiply by Zero  (he took: Multiply by Zero)
+   CWsZxo1pB6Y P3p1 Fatehold Chronologist          took=n v2rank=>3 v2#1=Multiply by Zero  (he took: Multiply by Zero)
+   CWsZxo1pB6Y P3p4 Ruric Thar, Biomagus           took=n v2rank=3 v2#1=Null Summoner  (he took: Null Summoner)
+   CWsZxo1pB6Y P3p5 Stingerquill Annex             took=n v2rank=>3 v2#1=Countersculpt  (he took: Gallia, Tragic Host)
+   CWsZxo1pB6Y P3p13 Stingerquill Annex             took=Y v2rank=1 v2#1=Stingerquill Annex  (he took: Stingerquill Annex)
+   994X9PlPInQ P1p4 Bestial Incursion              took=Y v2rank=1 v2#1=Bestial Incursion  (he took: Bestial Incursion)
+   994X9PlPInQ P1p4 Fatehold Chronologist          took=n v2rank=3 v2#1=Bestial Incursion  (he took: Bestial Incursion)
+   994X9PlPInQ P1p4 Keeper of the Quiet Hour       took=n v2rank=>3 v2#1=Bestial Incursion  (he took: Bestial Incursion)
+   994X9PlPInQ P1p8 Konstrari Annex                took=Y v2rank=2 v2#1=Vinelasher Adept  (he took: Konstrari Annex)
+   994X9PlPInQ P2p1 Archive Arbiter                took=n v2rank=2 v2#1=Twinned Vision  (he took: Room of Refuge)
+   994X9PlPInQ P2p1 Twinned Vision                 took=n v2rank=1 v2#1=Twinned Vision  (he took: Room of Refuge)
+   994X9PlPInQ P2p2 Twinned Vision                 took=n v2rank=1 v2#1=Twinned Vision  (he took: Plan for All Outcomes)
+   994X9PlPInQ P2p4 Twinned Vision                 took=Y v2rank=1 v2#1=Twinned Vision  (he took: Twinned Vision)
+   994X9PlPInQ P2p4 Murmuring Volume               took=n v2rank=2 v2#1=Twinned Vision  (he took: Twinned Vision)
+   994X9PlPInQ P2p5 Stingerquill Annex             took=Y v2rank=3 v2#1=Inspired Tethermage  (he took: Stingerquill Annex)
+   994X9PlPInQ P2p6 Fatehold Chronologist          took=n v2rank=>3 v2#1=Awaken the Inferno  (he took: Break Under Pressure)
+   994X9PlPInQ P3p3 Konstrari Annex                took=n v2rank=2 v2#1=Awaken the Inferno  (he took: Awaken the Inferno)
+   994X9PlPInQ P3p6 Murmuring Volume               took=n v2rank=1 v2#1=Murmuring Volume  (he took: Something Worth Saving)
+   994X9PlPInQ P3p10 Murmuring Volume               took=Y v2rank=1 v2#1=Murmuring Volume  (he took: Murmuring Volume)
+   re7j0kVSnUg P1p2 Bestial Incursion              took=n v2rank=3 v2#1=Craftwork Crusher  (he took: Craftwork Crusher)
+   re7j0kVSnUg P1p3 Murmuring Volume               took=n v2rank=>3 v2#1=Mindseeker Oculus  (he took: Memory Trap)
+   re7j0kVSnUg P1p4 Ruric Thar, Biomagus           took=n v2rank=>3 v2#1=Ruric Thar, Magecrusher  (he took: Ruric Thar, Magecrusher)
+   re7j0kVSnUg P1p6 Geist of Saint Thalia          took=n v2rank=>3 v2#1=Vinelasher Adept  (he took: Konstrari Improviser)
+   re7j0kVSnUg P1p6 Stingerquill Annex             took=n v2rank=3 v2#1=Vinelasher Adept  (he took: Konstrari Improviser)
+   re7j0kVSnUg P1p8 Twinned Vision                 took=Y v2rank=1 v2#1=Twinned Vision  (he took: Twinned Vision)
+   re7j0kVSnUg P2p2 Tetsuko Umezawa, Fugitive      took=n v2rank=>3 v2#1=Wrath of the Bloodmane  (he took: Wrath of the Bloodmane)
+   re7j0kVSnUg P2p3 Fatehold Chronologist          took=n v2rank=3 v2#1=Something Worth Saving  (he took: Something Worth Saving)
+   re7j0kVSnUg P2p4 Tetsuko Umezawa, Fugitive      took=n v2rank=>3 v2#1=Tetsuko Umezawa, Pursuer  (he took: Ferocity of the Hunt)
+   re7j0kVSnUg P2p8 Murmuring Volume               took=n v2rank=2 v2#1=Arcane Amphisbaena  (he took: Arcane Amphisbaena)
+   re7j0kVSnUg P3p1 Murmuring Volume               took=n v2rank=2 v2#1=Chandra, Torch of Defiance  (he took: Chandra, Torch of Defiance)
+   re7j0kVSnUg P3p2 Archive Arbiter                took=n v2rank=3 v2#1=Twinned Vision  (he took: Vinelasher Adept)
+   re7j0kVSnUg P3p2 Twinned Vision                 took=n v2rank=1 v2#1=Twinned Vision  (he took: Vinelasher Adept)
+   re7j0kVSnUg P3p2 Keeper of the Quiet Hour       took=n v2rank=>3 v2#1=Twinned Vision  (he took: Vinelasher Adept)
+   re7j0kVSnUg P3p3 Bestial Incursion              took=n v2rank=1 v2#1=Bestial Incursion  (he took: Extended Absence)
+   re7j0kVSnUg P3p4 Fatehold Chronologist          took=n v2rank=>3 v2#1=Hapatra, the Desert Fang  (he took: Hapatra, the Desert Fang)
+   re7j0kVSnUg P3p9 Murmuring Volume               took=Y v2rank=1 v2#1=Murmuring Volume  (he took: Murmuring Volume)
+   re7j0kVSnUg P3p10 Archive Arbiter                took=Y v2rank=2 v2#1=Twinned Vision  (he took: Archive Arbiter)
+   re7j0kVSnUg P3p10 Twinned Vision                 took=n v2rank=1 v2#1=Twinned Vision  (he took: Archive Arbiter)
+   5aMQKjCukTc P1p1 Stingerquill Annex             took=n v2rank=>3 v2#1=Draconic Visitor  (he took: No Admittance)
+   5aMQKjCukTc P1p2 Geist of Saint Thalia          took=n v2rank=3 v2#1=Recursive Recruitment  (he took: Recursive Recruitment)
+   5aMQKjCukTc P1p2 Bestial Incursion              took=n v2rank=>3 v2#1=Recursive Recruitment  (he took: Recursive Recruitment)
+   5aMQKjCukTc P1p3 Bestial Incursion              took=n v2rank=>3 v2#1=Kindred Judgment  (he took: Kindred Judgment)
+   5aMQKjCukTc P1p3 Twinned Vision                 took=n v2rank=2 v2#1=Kindred Judgment  (he took: Kindred Judgment)
+   5aMQKjCukTc P1p4 Tetsuko Umezawa, Fugitive      took=n v2rank=>3 v2#1=Desperate Futurescribe  (he took: Desperate Futurescribe)
+   5aMQKjCukTc P1p9 Stingerquill Annex             took=n v2rank=>3 v2#1=Generous Revival  (he took: Tam's Resistance)
+   5aMQKjCukTc P2p1 Konstrari Annex                took=n v2rank=>3 v2#1=Desperate Futurescribe  (he took: Desperate Futurescribe)
+   5aMQKjCukTc P2p2 Fatehold Chronologist          took=n v2rank=2 v2#1=Theorist's Proxy  (he took: Theorist's Proxy)
+   5aMQKjCukTc P2p3 Bestial Incursion              took=n v2rank=>3 v2#1=Enlightened Confidant  (he took: Enlightened Confidant)
+   5aMQKjCukTc P2p4 Rescue Girl, First Responder   took=n v2rank=2 v2#1=Generous Revival  (he took: Generous Revival)
+   5aMQKjCukTc P2p5 Tetsuko Umezawa, Fugitive      took=Y v2rank=1 v2#1=Tetsuko Umezawa, Fugitive  (he took: Tetsuko Umezawa, Fugitive)
+   5aMQKjCukTc P2p5 Keeper of the Quiet Hour       took=n v2rank=2 v2#1=Tetsuko Umezawa, Fugitive  (he took: Tetsuko Umezawa, Fugitive)
+   5aMQKjCukTc P2p7 Fatehold Chronologist          took=Y v2rank=1 v2#1=Fatehold Chronologist  (he took: Fatehold Chronologist)
+   5aMQKjCukTc P3p1 Ruric Thar, Biomagus           took=n v2rank=2 v2#1=The Theorist, Jace Beleren  (he took: The Theorist, Jace Beleren)
+   5aMQKjCukTc P3p2 Bestial Incursion              took=n v2rank=>3 v2#1=Theorist's Sanctum  (he took: Theorist's Sanctum)
+   5aMQKjCukTc P3p4 Murmuring Volume               took=n v2rank=>3 v2#1=Memory Trap  (he took: Memory Trap)
+   5aMQKjCukTc P3p5 Stingerquill Annex             took=n v2rank=>3 v2#1=Blossom-Blessed Angel  (he took: Theorix Metamage)
+   uoyPQJ0NxO8 P1p2 Murmuring Volume               took=n v2rank=>3 v2#1=Dark Matter Manipulator  (he took: Dark Matter Manipulator)
+   uoyPQJ0NxO8 P1p6 Bestial Incursion              took=n v2rank=3 v2#1=Marwyn, the Clearcutter  (he took: Marwyn, the Clearcutter)
+   uoyPQJ0NxO8 P1p6 Keeper of the Quiet Hour       took=n v2rank=>3 v2#1=Marwyn, the Clearcutter  (he took: Marwyn, the Clearcutter)
+   uoyPQJ0NxO8 P2p1 Tetsuko Umezawa, Fugitive      took=n v2rank=>3 v2#1=Gideon the Oathless  (he took: Gideon the Oathless)
+   uoyPQJ0NxO8 P2p9 Tetsuko Umezawa, Fugitive      took=n v2rank=>3 v2#1=Memory Trap  (he took: Blazing Crescendo)
+   uoyPQJ0NxO8 P3p1 Murmuring Volume               took=n v2rank=1 v2#1=Murmuring Volume  (he took: Heartstring Puller)
+   uoyPQJ0NxO8 P3p2 Fatehold Chronologist          took=n v2rank=>3 v2#1=Stingerquill Charm  (he took: Stingerquill Charm)
+   uoyPQJ0NxO8 P3p4 Twinned Vision                 took=n v2rank=2 v2#1=Extended Absence  (he took: Extended Absence)
+   Uy49kTqon4o P1p1 Keeper of the Quiet Hour       took=n v2rank=>3 v2#1=Violent Echoes  (he took: Violent Echoes)
+   Uy49kTqon4o P1p2 Ruric Thar, Biomagus           took=n v2rank=3 v2#1=Rewrite Regrets  (he took: Rewrite Regrets)
+   Uy49kTqon4o P1p3 Bestial Incursion              took=n v2rank=>3 v2#1=No Admittance  (he took: No Admittance)
+   Uy49kTqon4o P1p3 Keeper of the Quiet Hour       took=n v2rank=>3 v2#1=No Admittance  (he took: No Admittance)
+   Uy49kTqon4o P1p3 Stingerquill Annex             took=n v2rank=3 v2#1=No Admittance  (he took: No Admittance)
+   Uy49kTqon4o P1p4 Fatehold Chronologist          took=n v2rank=2 v2#1=Violent Echoes  (he took: Violent Echoes)
+   Uy49kTqon4o P1p5 Konstrari Annex                took=n v2rank=>3 v2#1=Multiply by Zero  (he took: Multiply by Zero)
+   Uy49kTqon4o P1p6 Geist of Saint Thalia          took=Y v2rank=6 v2#1=Heartstring Puller  (he took: Geist of Saint Thalia)
+   Uy49kTqon4o P1p6 Fatehold Chronologist          took=n v2rank=>3 v2#1=Heartstring Puller  (he took: Geist of Saint Thalia)
+   Uy49kTqon4o P1p8 Keeper of the Quiet Hour       took=n v2rank=>3 v2#1=Marwyn, the Clearcutter  (he took: Sphinx's Approach)
+   Uy49kTqon4o P1p9 Keeper of the Quiet Hour       took=n v2rank=2 v2#1=Protege's Awakening  (he took: Protege's Awakening)
+   Uy49kTqon4o P1p11 Keeper of the Quiet Hour       took=n v2rank=1 v2#1=Keeper of the Quiet Hour  (he took: Stingerquill Annex)
+   Uy49kTqon4o P1p11 Stingerquill Annex             took=Y v2rank=2 v2#1=Keeper of the Quiet Hour  (he took: Stingerquill Annex)
+   Uy49kTqon4o P2p3 Geist of Saint Thalia          took=n v2rank=1 v2#1=Geist of Saint Thalia  (he took: Theorix Annex)
+   Uy49kTqon4o P2p4 Geist of Saint Thalia          took=Y v2rank=1 v2#1=Geist of Saint Thalia  (he took: Geist of Saint Thalia)
+   Uy49kTqon4o P2p8 Keeper of the Quiet Hour       took=Y v2rank=1 v2#1=Keeper of the Quiet Hour  (he took: Keeper of the Quiet Hour)
+   Uy49kTqon4o P3p3 Murmuring Volume               took=Y v2rank=3 v2#1=Fulminous Forte  (he took: Murmuring Volume)
+   Uy49kTqon4o P3p7 Stingerquill Annex             took=Y v2rank=1 v2#1=Stingerquill Annex  (he took: Stingerquill Annex)
+   n6sAkoTAN8w P1p1 Geist of Saint Thalia          took=n v2rank=2 v2#1=Craftwork Crusher  (he took: Ingris Stingerquill)
+   n6sAkoTAN8w P1p3 Tetsuko Umezawa, Fugitive      took=n v2rank=>3 v2#1=Tetsuko Umezawa, Pursuer  (he took: Skilled Battlecarver)
+   n6sAkoTAN8w P1p3 Bestial Incursion              took=n v2rank=>3 v2#1=Tetsuko Umezawa, Pursuer  (he took: Skilled Battlecarver)
+   n6sAkoTAN8w P1p5 Geist of Saint Thalia          took=n v2rank=1 v2#1=Geist of Saint Thalia  (he took: Blossom-Blessed Angel)
+   n6sAkoTAN8w P1p5 Keeper of the Quiet Hour       took=n v2rank=>3 v2#1=Geist of Saint Thalia  (he took: Blossom-Blessed Angel)
+   n6sAkoTAN8w P1p7 Stingerquill Annex             took=n v2rank=1 v2#1=Stingerquill Annex  (he took: Teyo, Diamondblade Mage)
+   n6sAkoTAN8w P2p2 Keeper of the Quiet Hour       took=n v2rank=>3 v2#1=Fulminous Forte  (he took: Fulminous Forte)
+   n6sAkoTAN8w P2p4 Konstrari Annex                took=n v2rank=>3 v2#1=Skilled Battlecarver  (he took: Skilled Battlecarver)
+   n6sAkoTAN8w P2p5 Twinned Vision                 took=n v2rank=2 v2#1=Way of the Warlord  (he took: Way of the Warlord)
+   n6sAkoTAN8w P2p5 Keeper of the Quiet Hour       took=n v2rank=3 v2#1=Way of the Warlord  (he took: Way of the Warlord)
+   n6sAkoTAN8w P2p6 Konstrari Annex                took=Y v2rank=4 v2#1=Archive Arbiter  (he took: Konstrari Annex)
+   n6sAkoTAN8w P2p6 Archive Arbiter                took=n v2rank=1 v2#1=Archive Arbiter  (he took: Konstrari Annex)
+   n6sAkoTAN8w P2p6 Keeper of the Quiet Hour       took=n v2rank=2 v2#1=Archive Arbiter  (he took: Konstrari Annex)
+   n6sAkoTAN8w P2p7 Archive Arbiter                took=n v2rank=2 v2#1=Extended Absence  (he took: Extended Absence)
+   n6sAkoTAN8w P2p10 Keeper of the Quiet Hour       took=n v2rank=2 v2#1=Winter, Tormented Loner  (he took: Hallway Heckler)
+   n6sAkoTAN8w P2p12 Konstrari Annex                took=Y v2rank=1 v2#1=Konstrari Annex  (he took: Konstrari Annex)
+   n6sAkoTAN8w P3p1 Murmuring Volume               took=n v2rank=>3 v2#1=Lich's Relic  (he took: Lich's Relic)
+   n6sAkoTAN8w P3p4 Murmuring Volume               took=n v2rank=2 v2#1=Room of Refuge  (he took: Skilled Battlecarver)
+   n6sAkoTAN8w P3p5 Bestial Incursion              took=n v2rank=>3 v2#1=Keeper of the Quiet Hour  (he took: Void Extrapolator)
+   n6sAkoTAN8w P3p5 Keeper of the Quiet Hour       took=n v2rank=1 v2#1=Keeper of the Quiet Hour  (he took: Void Extrapolator)
+   n6sAkoTAN8w P3p6 Stingerquill Annex             took=n v2rank=3 v2#1=Fulminous Forte  (he took: Master of Barbs)
+   n6sAkoTAN8w P3p8 Tetsuko Umezawa, Fugitive      took=n v2rank=>3 v2#1=Twinned Vision  (he took: Way of the Warlord)
+   n6sAkoTAN8w P3p8 Twinned Vision                 took=n v2rank=1 v2#1=Twinned Vision  (he took: Way of the Warlord)
+   n6sAkoTAN8w P3p8 Murmuring Volume               took=n v2rank=3 v2#1=Twinned Vision  (he took: Way of the Warlord)
+   n6sAkoTAN8w P3p12 Murmuring Volume               took=Y v2rank=1 v2#1=Murmuring Volume  (he took: Murmuring Volume)
+   n6sAkoTAN8w P3p14 Stingerquill Annex             took=Y v2rank=1 v2#1=Stingerquill Annex  (he took: Stingerquill Annex)
+   pdITCHUnEa8 P1p1 Tetsuko Umezawa, Fugitive      took=n v2rank=>3 v2#1=Liliana the Faultless  (he took: Stingcaster Mage)
+   pdITCHUnEa8 P1p4 Tetsuko Umezawa, Fugitive      took=n v2rank=>3 v2#1=Vinelasher Adept  (he took: Marwyn, the Preserver)
+   pdITCHUnEa8 P1p5 Archive Arbiter                took=n v2rank=>3 v2#1=Awaken the Inferno  (he took: Awaken the Inferno)
+   pdITCHUnEa8 P1p6 Twinned Vision                 took=n v2rank=1 v2#1=Twinned Vision  (he took: Vigorbloom Charm)
+   pdITCHUnEa8 P1p7 Murmuring Volume               took=n v2rank=2 v2#1=No Admittance  (he took: No Admittance)
+   pdITCHUnEa8 P1p8 Twinned Vision                 took=n v2rank=1 v2#1=Twinned Vision  (he took: Wrath of the Bloodmane)
+   pdITCHUnEa8 P1p12 Tetsuko Umezawa, Fugitive      took=Y v2rank=2 v2#1=Chandra's Emberling  (he took: Tetsuko Umezawa, Fugitive)
+   pdITCHUnEa8 P2p1 Keeper of the Quiet Hour       took=n v2rank=>3 v2#1=Konstrari Improviser  (he took: Lyra, Tolarian Archangel)
+   pdITCHUnEa8 P2p2 Ruric Thar, Biomagus           took=Y v2rank=1 v2#1=Ruric Thar, Biomagus  (he took: Ruric Thar, Biomagus)
+   pdITCHUnEa8 P2p3 Rescue Girl, First Responder   took=n v2rank=>3 v2#1=Sphinx of False Conclusions  (he took: Sphinx of False Conclusions)
+   pdITCHUnEa8 P2p3 Murmuring Volume               took=n v2rank=>3 v2#1=Sphinx of False Conclusions  (he took: Sphinx of False Conclusions)
+   pdITCHUnEa8 P2p4 Bestial Incursion              took=n v2rank=>3 v2#1=Draconic Visitor  (he took: Draconic Visitor)
+   pdITCHUnEa8 P2p5 Keeper of the Quiet Hour       took=n v2rank=2 v2#1=Undulating Witness  (he took: Undulating Witness)
+   pdITCHUnEa8 P2p5 Konstrari Annex                took=n v2rank=>3 v2#1=Undulating Witness  (he took: Undulating Witness)
+   pdITCHUnEa8 P2p8 Murmuring Volume               took=n v2rank=1 v2#1=Murmuring Volume  (he took: Hallway Heckler)
+   pdITCHUnEa8 P2p9 Keeper of the Quiet Hour       took=n v2rank=2 v2#1=Protege's Awakening  (he took: Protege's Awakening)
+   pdITCHUnEa8 P3p1 Tetsuko Umezawa, Fugitive      took=Y v2rank=2 v2#1=Archive Arbiter  (he took: Tetsuko Umezawa, Fugitive)
+   pdITCHUnEa8 P3p1 Archive Arbiter                took=n v2rank=1 v2#1=Archive Arbiter  (he took: Tetsuko Umezawa, Fugitive)
+   pdITCHUnEa8 P3p2 Twinned Vision                 took=n v2rank=>3 v2#1=Plan for All Outcomes  (he took: Fulminous Forte)
+   pdITCHUnEa8 P3p3 Geist of Saint Thalia          took=n v2rank=>3 v2#1=Sphinx of False Conclusions  (he took: Sphinx of False Conclusions)
+   pdITCHUnEa8 P3p3 Keeper of the Quiet Hour       took=n v2rank=>3 v2#1=Sphinx of False Conclusions  (he took: Sphinx of False Conclusions)
+   pdITCHUnEa8 P3p4 Geist of Saint Thalia          took=n v2rank=2 v2#1=Wrath of the Bloodmane  (he took: Wrath of the Bloodmane)
+   pdITCHUnEa8 P3p4 Murmuring Volume               took=n v2rank=>3 v2#1=Wrath of the Bloodmane  (he took: Wrath of the Bloodmane)
+   pdITCHUnEa8 P3p8 Ruric Thar, Biomagus           took=n v2rank=2 v2#1=Fulminous Forte  (he took: Fulminous Forte)
+   pdITCHUnEa8 P3p8 Keeper of the Quiet Hour       took=n v2rank=>3 v2#1=Fulminous Forte  (he took: Fulminous Forte)
+   pdITCHUnEa8 P3p10 Twinned Vision                 took=Y v2rank=1 v2#1=Twinned Vision  (he took: Twinned Vision)
+   9nAjtt_8TjA P1p1 Stingerquill Annex             took=n v2rank=>3 v2#1=Gideon the Oathless  (he took: Mindseeker Oculus)
+   9nAjtt_8TjA P1p2 Murmuring Volume               took=n v2rank=>3 v2#1=Fblthp, Impossibly Lost  (he took: Fblthp, Impossibly Lost)
+   9nAjtt_8TjA P1p6 Bestial Incursion              took=n v2rank=>3 v2#1=Last Gasp  (he took: Tomik, Orzhov Lawmage)
+   9nAjtt_8TjA P1p8 Archive Arbiter                took=n v2rank=2 v2#1=Unsummon  (he took: Unsummon)
+   9nAjtt_8TjA P1p9 Stingerquill Annex             took=n v2rank=2 v2#1=Cryotheory Adept  (he took: Cryotheory Adept)
+   9nAjtt_8TjA P2p1 Tetsuko Umezawa, Fugitive      took=Y v2rank=3 v2#1=Memory Trap  (he took: Tetsuko Umezawa, Fugitive)
+   9nAjtt_8TjA P2p1 Konstrari Annex                took=n v2rank=>3 v2#1=Memory Trap  (he took: Tetsuko Umezawa, Fugitive)
+   9nAjtt_8TjA P2p4 Twinned Vision                 took=n v2rank=1 v2#1=Twinned Vision  (he took: Teyo, Lightshield Expert)
+   9nAjtt_8TjA P3p2 Ruric Thar, Biomagus           took=n v2rank=2 v2#1=Your Fate Ends Here  (he took: Your Fate Ends Here)
+   9nAjtt_8TjA P3p4 Twinned Vision                 took=n v2rank=2 v2#1=Way of the Healer  (he took: Way of the Healer)
+   9nAjtt_8TjA P3p6 Murmuring Volume               took=n v2rank=1 v2#1=Murmuring Volume  (he took: Shatterwing Pegasus)
+   9nAjtt_8TjA P3p7 Murmuring Volume               took=n v2rank=2 v2#1=Icy Reception  (he took: Tam's Resistance)
+   9nAjtt_8TjA P3p8 Ruric Thar, Biomagus           took=Y v2rank=2 v2#1=Surveillance Phantasm  (he took: Ruric Thar, Biomagus)
+   9nAjtt_8TjA P3p8 Murmuring Volume               took=n v2rank=3 v2#1=Surveillance Phantasm  (he took: Ruric Thar, Biomagus)
+   55awKvGIxRE P1p1 Keeper of the Quiet Hour       took=n v2rank=>3 v2#1=Ajani's Anguish  (he took: Ajani's Anguish)
+   55awKvGIxRE P1p1 Stingerquill Annex             took=n v2rank=>3 v2#1=Ajani's Anguish  (he took: Ajani's Anguish)
+   55awKvGIxRE P1p2 Twinned Vision                 took=n v2rank=3 v2#1=Violent Echoes  (he took: Violent Echoes)
+   55awKvGIxRE P1p3 Bestial Incursion              took=n v2rank=>3 v2#1=Repurposed Enforcer  (he took: No Admittance)
+   55awKvGIxRE P1p4 Ruric Thar, Biomagus           took=Y v2rank=6 v2#1=Break Under Pressure  (he took: Ruric Thar, Biomagus)
+   55awKvGIxRE P1p9 Keeper of the Quiet Hour       took=n v2rank=>3 v2#1=Rewrite Regrets  (he took: Stingerquill Annex)
+   55awKvGIxRE P1p9 Stingerquill Annex             took=Y v2rank=3 v2#1=Rewrite Regrets  (he took: Stingerquill Annex)
+   55awKvGIxRE P2p1 Bestial Incursion              took=n v2rank=>3 v2#1=Sphinx of False Conclusions  (he took: Sphinx of False Conclusions)
+   55awKvGIxRE P2p2 Ruric Thar, Biomagus           took=Y v2rank=2 v2#1=Countersculpt  (he took: Ruric Thar, Biomagus)
+   55awKvGIxRE P2p2 Bestial Incursion              took=n v2rank=>3 v2#1=Countersculpt  (he took: Ruric Thar, Biomagus)
+   55awKvGIxRE P2p2 Fatehold Chronologist          took=n v2rank=3 v2#1=Countersculpt  (he took: Ruric Thar, Biomagus)
+   55awKvGIxRE P2p3 Konstrari Annex                took=n v2rank=>3 v2#1=Traxos, Academy Guardian  (he took: Traxos, Academy Guardian)
+   55awKvGIxRE P2p4 Rescue Girl, First Responder   took=n v2rank=>3 v2#1=Fblthp, Impossibly Lost  (he took: Innovative Commons)
+   55awKvGIxRE P2p6 Bestial Incursion              took=n v2rank=2 v2#1=Clash of Elements  (he took: Clash of Elements)
+   55awKvGIxRE P2p10 Fatehold Chronologist          took=Y v2rank=1 v2#1=Fatehold Chronologist  (he took: Fatehold Chronologist)
+   55awKvGIxRE P3p5 Fatehold Chronologist          took=n v2rank=2 v2#1=Twinned Vision  (he took: Twinned Vision)
+   55awKvGIxRE P3p5 Twinned Vision                 took=Y v2rank=1 v2#1=Twinned Vision  (he took: Twinned Vision)
+   55awKvGIxRE P3p6 Geist of Saint Thalia          took=n v2rank=2 v2#1=Plan for All Outcomes  (he took: Plan for All Outcomes)
+   55awKvGIxRE P3p7 Geist of Saint Thalia          took=n v2rank=2 v2#1=Mindseeker Oculus  (he took: Mindseeker Oculus)
+
+====================================================================================================
+UNDERRATED by v2
+====================================================================================================
+card                             offered  took  v2 #1  both  v2#1 not taken  taken, v2#1 other  in final 40  decks
+Precise Redaction                     20     3      2     2               0                  1            0     11
+Extrapolate the Impossible             4     0      0     0               0                  0            0     11
+Kiora of Salt and Sand                20     0      2     0               2                  0            0     11
+Edgar Ancient Bloodlord               12     0      0     0               0                  0            0     11
+Mabel Valley Hero                      7     2      0     0               0                  2            0     11
+Koth the Geomancer                    11     1      0     0               0                  1            1     11
+Transformative Commons                16     3      1     1               0                  2            0     11
+Warrior's Blades                      11     2      1     0               1                  2            1     11
+Stingerquill Annex                    19     6      4     3               1                  3            4     11
+Restore with Empathy                   7     1      1     1               0                  0            1     11
+Winter Team Player                    25     4      2     2               0                  2            1     11
+Cruel Calculations                     7     0      0     0               0                  0            0     11
+TOTAL offers                         159    22     13     9               4                 13            8
+(offers scored by v2: 158; 'in final 40' counts draft-deck pairs where the card is in the main, any copy)
+
+Offers taken: 22/159 = 14% (CI 9-20%)
+Taken while v2's #1 was a different card: 13/22 = 59% (CI 36-79%) of takes (scored takes only in numerator)
+Taken and v2 agreed (#1): 9/22 = 41% (CI 21-64%)
+   mqZsj4Vg2Es P1p12: took Warrior's Blades, v2 rank 2, v2 #1 = Innovative Commons
+   mqZsj4Vg2Es P2p10: took Restore with Empathy, v2 rank 1, v2 #1 = Restore with Empathy
+   mqZsj4Vg2Es P2p11: took Warrior's Blades, v2 rank 4, v2 #1 = Twinned Vision
+   CWsZxo1pB6Y P3p8: took Precise Redaction, v2 rank 7, v2 #1 = Sphinx's Approach
+   CWsZxo1pB6Y P3p13: took Stingerquill Annex, v2 rank 1, v2 #1 = Stingerquill Annex
+   994X9PlPInQ P2p5: took Stingerquill Annex, v2 rank 3, v2 #1 = Inspired Tethermage
+   re7j0kVSnUg P1p11: took Winter, Team Player, v2 rank 1, v2 #1 = Winter, Team Player
+   re7j0kVSnUg P1p13: took Winter, Team Player, v2 rank 1, v2 #1 = Winter, Team Player
+   re7j0kVSnUg P2p13: took Precise Redaction, v2 rank 1, v2 #1 = Precise Redaction
+   5aMQKjCukTc P2p6: took Transformative Commons, v2 rank 3, v2 #1 = Awaken the Inferno
+   uoyPQJ0NxO8 P1p8: took Mabel, Valley Hero, v2 rank 3, v2 #1 = Ferocity of the Hunt
+   uoyPQJ0NxO8 P2p6: took Mabel, Valley Hero, v2 rank 2, v2 #1 = Mind Meanderer
+   uoyPQJ0NxO8 P2p13: took Precise Redaction, v2 rank 1, v2 #1 = Precise Redaction
+   Uy49kTqon4o P1p10: took Transformative Commons, v2 rank 1, v2 #1 = Transformative Commons
+   Uy49kTqon4o P1p11: took Stingerquill Annex, v2 rank 2, v2 #1 = Keeper of the Quiet Hour
+   Uy49kTqon4o P3p7: took Stingerquill Annex, v2 rank 1, v2 #1 = Stingerquill Annex
+   n6sAkoTAN8w P1p4: took Koth, the Geomancer, v2 rank 2, v2 #1 = Mindseeker Oculus
+   n6sAkoTAN8w P1p9: took Winter, Team Player, v2 rank 3, v2 #1 = Greenhouse Propagator
+   n6sAkoTAN8w P2p3: took Winter, Team Player, v2 rank 8, v2 #1 = Winter, Tormented Loner
+   n6sAkoTAN8w P3p14: took Stingerquill Annex, v2 rank 1, v2 #1 = Stingerquill Annex
+   9nAjtt_8TjA P1p10: took Transformative Commons, v2 rank 2, v2 #1 = Emergency Phytomedic
+   55awKvGIxRE P1p9: took Stingerquill Annex, v2 rank 3, v2 #1 = Rewrite Regrets
+
+Per-offer rows (video pack/pick, card, taken?, v2 rank, v2 #1):
+   mqZsj4Vg2Es P1p1 Koth, the Geomancer            took=n v2rank=>3 v2#1=Kwia Vigorbloom  (he took: Kwia Vigorbloom)
+   mqZsj4Vg2Es P1p1 Stingerquill Annex             took=n v2rank=>3 v2#1=Kwia Vigorbloom  (he took: Kwia Vigorbloom)
+   mqZsj4Vg2Es P1p4 Warrior's Blades               took=n v2rank=>3 v2#1=Surgical Precision  (he took: Ruric Thar, Biomagus)
+   mqZsj4Vg2Es P1p5 Precise Redaction              took=n v2rank=>3 v2#1=Blossom-Blessed Angel  (he took: Twisted Fates)
+   mqZsj4Vg2Es P1p5 Transformative Commons         took=n v2rank=>3 v2#1=Blossom-Blessed Angel  (he took: Twisted Fates)
+   mqZsj4Vg2Es P1p7 Winter, Team Player            took=n v2rank=>3 v2#1=Primal Witchstalker  (he took: Campus Crier)
+   mqZsj4Vg2Es P1p9 Stingerquill Annex             took=n v2rank=>3 v2#1=Recursive Recruitment  (he took: Murmuring Volume)
+   mqZsj4Vg2Es P1p12 Warrior's Blades               took=Y v2rank=2 v2#1=Innovative Commons  (he took: Warrior's Blades)
+   mqZsj4Vg2Es P1p13 Precise Redaction              took=n v2rank=2 v2#1=Artifist Acumen  (he took: Artifist Acumen)
+   mqZsj4Vg2Es P2p2 Restore with Empathy           took=n v2rank=>3 v2#1=Fatehold Chronologist  (he took: Jiang Yanggu, Never Alone)
+   mqZsj4Vg2Es P2p3 Warrior's Blades               took=n v2rank=>3 v2#1=Twinned Vision  (he took: Loot, the Nexus)
+   mqZsj4Vg2Es P2p4 Koth, the Geomancer            took=n v2rank=>3 v2#1=Variable Chaser  (he took: Surveillance Phantasm)
+   mqZsj4Vg2Es P2p7 Cruel Calculations             took=n v2rank=>3 v2#1=Mindseeker Oculus  (he took: Mindseeker Oculus)
+   mqZsj4Vg2Es P2p10 Restore with Empathy           took=Y v2rank=1 v2#1=Restore with Empathy  (he took: Restore with Empathy)
+   mqZsj4Vg2Es P2p11 Warrior's Blades               took=Y v2rank=4 v2#1=Twinned Vision  (he took: Warrior's Blades)
+   mqZsj4Vg2Es P3p4 Winter, Team Player            took=n v2rank=>3 v2#1=Way of the Cryomancer  (he took: Twisted Fates)
+   CWsZxo1pB6Y P1p2 Transformative Commons         took=n v2rank=>3 v2#1=Rewrite Regrets  (he took: Rewrite Regrets)
+   CWsZxo1pB6Y P1p4 Mabel, Valley Hero             took=n v2rank=>3 v2#1=Protege's Awakening  (he took: Mabel, Bitter Recluse)
+   CWsZxo1pB6Y P2p2 Edgar, Ancient Bloodlord       took=n v2rank=>3 v2#1=Murmuring Volume  (he took: Room of Refuge)
+   CWsZxo1pB6Y P2p3 Koth, the Geomancer            took=n v2rank=>3 v2#1=Multiply by Zero  (he took: Multiply by Zero)
+   CWsZxo1pB6Y P2p3 Kiora of Salt and Sand         took=n v2rank=>3 v2#1=Multiply by Zero  (he took: Multiply by Zero)
+   CWsZxo1pB6Y P2p8 Kiora of Salt and Sand         took=n v2rank=>3 v2#1=Theoretical Necromancer  (he took: Theoretical Necromancer)
+   CWsZxo1pB6Y P2p11 Kiora of Salt and Sand         took=n v2rank=2 v2#1=Innovative Commons  (he took: Innovative Commons)
+   CWsZxo1pB6Y P3p1 Transformative Commons         took=n v2rank=>3 v2#1=Multiply by Zero  (he took: Multiply by Zero)
+   CWsZxo1pB6Y P3p2 Warrior's Blades               took=n v2rank=>3 v2#1=Theorix Charm  (he took: Theorix Charm)
+   CWsZxo1pB6Y P3p4 Warrior's Blades               took=n v2rank=>3 v2#1=Null Summoner  (he took: Null Summoner)
+   CWsZxo1pB6Y P3p5 Stingerquill Annex             took=n v2rank=>3 v2#1=Countersculpt  (he took: Gallia, Tragic Host)
+   CWsZxo1pB6Y P3p7 Edgar, Ancient Bloodlord       took=n v2rank=>3 v2#1=Icy Reception  (he took: Room of Refuge)
+   CWsZxo1pB6Y P3p8 Precise Redaction              took=Y v2rank=7 v2#1=Sphinx's Approach  (he took: Precise Redaction)
+   CWsZxo1pB6Y P3p9 Transformative Commons         took=n v2rank=>3 v2#1=Mindseeker Oculus  (he took: Mindseeker Oculus)
+   CWsZxo1pB6Y P3p13 Stingerquill Annex             took=Y v2rank=1 v2#1=Stingerquill Annex  (he took: Stingerquill Annex)
+   994X9PlPInQ P1p2 Edgar, Ancient Bloodlord       took=n v2rank=>3 v2#1=Kiora of Fire and Ashes  (he took: Kiora of Fire and Ashes)
+   994X9PlPInQ P1p2 Kiora of Salt and Sand         took=n v2rank=>3 v2#1=Kiora of Fire and Ashes  (he took: Kiora of Fire and Ashes)
+   994X9PlPInQ P1p7 Transformative Commons         took=n v2rank=2 v2#1=Awaken the Inferno  (he took: Awaken the Inferno)
+   994X9PlPInQ P1p10 Kiora of Salt and Sand         took=n v2rank=1 v2#1=Kiora of Salt and Sand  (he took: Eardrum Rattler)
+   994X9PlPInQ P2p5 Kiora of Salt and Sand         took=n v2rank=>3 v2#1=Inspired Tethermage  (he took: Stingerquill Annex)
+   994X9PlPInQ P2p5 Stingerquill Annex             took=Y v2rank=3 v2#1=Inspired Tethermage  (he took: Stingerquill Annex)
+   994X9PlPInQ P3p1 Edgar, Ancient Bloodlord       took=n v2rank=>3 v2#1=Kiora of Fire and Ashes  (he took: Kiora of Fire and Ashes)
+   994X9PlPInQ P3p1 Kiora of Salt and Sand         took=n v2rank=>3 v2#1=Kiora of Fire and Ashes  (he took: Kiora of Fire and Ashes)
+   994X9PlPInQ P3p7 Winter, Team Player            took=n v2rank=>3 v2#1=Room of Refuge  (he took: Room of Refuge)
+   994X9PlPInQ P3p9 Edgar, Ancient Bloodlord       took=n v2rank=>3 v2#1=Sureshot Sower  (he took: Sureshot Sower)
+   994X9PlPInQ P3p9 Kiora of Salt and Sand         took=n v2rank=>3 v2#1=Sureshot Sower  (he took: Sureshot Sower)
+   re7j0kVSnUg P1p1 Koth, the Geomancer            took=n v2rank=>3 v2#1=Hungering Puppetbeast  (he took: Hungering Puppetbeast)
+   re7j0kVSnUg P1p1 Kiora of Salt and Sand         took=n v2rank=>3 v2#1=Hungering Puppetbeast  (he took: Hungering Puppetbeast)
+   re7j0kVSnUg P1p3 Winter, Team Player            took=n v2rank=>3 v2#1=Mindseeker Oculus  (he took: Memory Trap)
+   re7j0kVSnUg P1p4 Restore with Empathy           took=n v2rank=3 v2#1=Ruric Thar, Magecrusher  (he took: Ruric Thar, Magecrusher)
+   re7j0kVSnUg P1p5 Winter, Team Player            took=n v2rank=>3 v2#1=Arcane Amphisbaena  (he took: Arcane Amphisbaena)
+   re7j0kVSnUg P1p6 Stingerquill Annex             took=n v2rank=3 v2#1=Vinelasher Adept  (he took: Konstrari Improviser)
+   re7j0kVSnUg P1p7 Cruel Calculations             took=n v2rank=>3 v2#1=Vinelasher Adept  (he took: Vinelasher Adept)
+   re7j0kVSnUg P1p9 Kiora of Salt and Sand         took=n v2rank=3 v2#1=Undulating Witness  (he took: Innovative Commons)
+   re7j0kVSnUg P1p11 Winter, Team Player            took=Y v2rank=1 v2#1=Winter, Team Player  (he took: Winter, Team Player)
+   re7j0kVSnUg P1p13 Winter, Team Player            took=Y v2rank=1 v2#1=Winter, Team Player  (he took: Winter, Team Player)
+   re7j0kVSnUg P2p5 Precise Redaction              took=n v2rank=>3 v2#1=Something Worth Saving  (he took: Primal Witchstalker)
+   re7j0kVSnUg P2p13 Precise Redaction              took=Y v2rank=1 v2#1=Precise Redaction  (he took: Precise Redaction)
+   re7j0kVSnUg P3p2 Koth, the Geomancer            took=n v2rank=>3 v2#1=Twinned Vision  (he took: Vinelasher Adept)
+   re7j0kVSnUg P3p3 Edgar, Ancient Bloodlord       took=n v2rank=>3 v2#1=Bestial Incursion  (he took: Extended Absence)
+   re7j0kVSnUg P3p7 Winter, Team Player            took=n v2rank=None v2#1=None  (he took: None)
+   5aMQKjCukTc P1p1 Stingerquill Annex             took=n v2rank=>3 v2#1=Draconic Visitor  (he took: No Admittance)
+   5aMQKjCukTc P1p3 Kiora of Salt and Sand         took=n v2rank=>3 v2#1=Kindred Judgment  (he took: Kindred Judgment)
+   5aMQKjCukTc P1p9 Stingerquill Annex             took=n v2rank=>3 v2#1=Generous Revival  (he took: Tam's Resistance)
+   5aMQKjCukTc P2p2 Kiora of Salt and Sand         took=n v2rank=>3 v2#1=Theorist's Proxy  (he took: Theorist's Proxy)
+   5aMQKjCukTc P2p3 Precise Redaction              took=n v2rank=>3 v2#1=Enlightened Confidant  (he took: Enlightened Confidant)
+   5aMQKjCukTc P2p4 Transformative Commons         took=n v2rank=>3 v2#1=Generous Revival  (he took: Generous Revival)
+   5aMQKjCukTc P2p5 Restore with Empathy           took=n v2rank=>3 v2#1=Tetsuko Umezawa, Fugitive  (he took: Tetsuko Umezawa, Fugitive)
+   5aMQKjCukTc P2p6 Precise Redaction              took=n v2rank=>3 v2#1=Awaken the Inferno  (he took: Transformative Commons)
+   5aMQKjCukTc P2p6 Transformative Commons         took=Y v2rank=3 v2#1=Awaken the Inferno  (he took: Transformative Commons)
+   5aMQKjCukTc P2p8 Extrapolate the Impossible     took=n v2rank=>3 v2#1=Prudent Fateseer  (he took: Prudent Fateseer)
+   5aMQKjCukTc P2p11 Precise Redaction              took=n v2rank=>3 v2#1=Meticulous Commons  (he took: Meticulous Commons)
+   5aMQKjCukTc P3p3 Edgar, Ancient Bloodlord       took=n v2rank=>3 v2#1=Fblthp, Impossibly Lost  (he took: Surgical Precision)
+   5aMQKjCukTc P3p5 Stingerquill Annex             took=n v2rank=>3 v2#1=Blossom-Blessed Angel  (he took: Theorix Metamage)
+   5aMQKjCukTc P3p11 Edgar, Ancient Bloodlord       took=n v2rank=3 v2#1=Way of the Mentor  (he took: Way of the Mentor)
+   uoyPQJ0NxO8 P1p2 Winter, Team Player            took=n v2rank=>3 v2#1=Dark Matter Manipulator  (he took: Dark Matter Manipulator)
+   uoyPQJ0NxO8 P1p2 Restore with Empathy           took=n v2rank=>3 v2#1=Dark Matter Manipulator  (he took: Dark Matter Manipulator)
+   uoyPQJ0NxO8 P1p3 Kiora of Salt and Sand         took=n v2rank=>3 v2#1=No Admittance  (he took: No Admittance)
+   uoyPQJ0NxO8 P1p8 Mabel, Valley Hero             took=Y v2rank=3 v2#1=Ferocity of the Hunt  (he took: Mabel, Valley Hero)
+   uoyPQJ0NxO8 P1p10 Winter, Team Player            took=n v2rank=2 v2#1=Ferocity of the Hunt  (he took: Blazing Crescendo)
+   uoyPQJ0NxO8 P1p11 Kiora of Salt and Sand         took=n v2rank=1 v2#1=Kiora of Salt and Sand  (he took: Shatterwing Pegasus)
+   uoyPQJ0NxO8 P2p5 Precise Redaction              took=n v2rank=>3 v2#1=Room of Refuge  (he took: Room of Refuge)
+   uoyPQJ0NxO8 P2p5 Warrior's Blades               took=n v2rank=>3 v2#1=Room of Refuge  (he took: Room of Refuge)
+   uoyPQJ0NxO8 P2p6 Mabel, Valley Hero             took=Y v2rank=2 v2#1=Mind Meanderer  (he took: Mabel, Valley Hero)
+   uoyPQJ0NxO8 P2p6 Kiora of Salt and Sand         took=n v2rank=>3 v2#1=Mind Meanderer  (he took: Mabel, Valley Hero)
+   uoyPQJ0NxO8 P2p7 Warrior's Blades               took=n v2rank=1 v2#1=Warrior's Blades  (he took: Blessed Ghoul)
+   uoyPQJ0NxO8 P2p13 Precise Redaction              took=Y v2rank=1 v2#1=Precise Redaction  (he took: Precise Redaction)
+   uoyPQJ0NxO8 P3p4 Transformative Commons         took=n v2rank=>3 v2#1=Extended Absence  (he took: Extended Absence)
+   uoyPQJ0NxO8 P3p6 Mabel, Valley Hero             took=n v2rank=>3 v2#1=Mabel, Bitter Recluse  (he took: Mabel, Bitter Recluse)
+   uoyPQJ0NxO8 P3p6 Warrior's Blades               took=n v2rank=2 v2#1=Mabel, Bitter Recluse  (he took: Mabel, Bitter Recluse)
+   Uy49kTqon4o P1p1 Winter, Team Player            took=n v2rank=>3 v2#1=Violent Echoes  (he took: Violent Echoes)
+   Uy49kTqon4o P1p2 Transformative Commons         took=n v2rank=>3 v2#1=Rewrite Regrets  (he took: Rewrite Regrets)
+   Uy49kTqon4o P1p3 Stingerquill Annex             took=n v2rank=3 v2#1=No Admittance  (he took: No Admittance)
+   Uy49kTqon4o P1p4 Extrapolate the Impossible     took=n v2rank=>3 v2#1=Violent Echoes  (he took: Violent Echoes)
+   Uy49kTqon4o P1p4 Restore with Empathy           took=n v2rank=>3 v2#1=Violent Echoes  (he took: Violent Echoes)
+   Uy49kTqon4o P1p4 Edgar, Ancient Bloodlord       took=n v2rank=>3 v2#1=Violent Echoes  (he took: Violent Echoes)
+   Uy49kTqon4o P1p5 Kiora of Salt and Sand         took=n v2rank=>3 v2#1=Multiply by Zero  (he took: Multiply by Zero)
+   Uy49kTqon4o P1p9 Winter, Team Player            took=n v2rank=>3 v2#1=Protege's Awakening  (he took: Protege's Awakening)
+   Uy49kTqon4o P1p10 Transformative Commons         took=Y v2rank=1 v2#1=Transformative Commons  (he took: Transformative Commons)
+   Uy49kTqon4o P1p11 Stingerquill Annex             took=Y v2rank=2 v2#1=Keeper of the Quiet Hour  (he took: Stingerquill Annex)
+   Uy49kTqon4o P2p1 Cruel Calculations             took=n v2rank=>3 v2#1=Garruk, Veiled Butcher  (he took: Garruk, Veiled Butcher)
+   Uy49kTqon4o P2p3 Precise Redaction              took=n v2rank=>3 v2#1=Geist of Saint Thalia  (he took: Theorix Annex)
+   Uy49kTqon4o P2p9 Cruel Calculations             took=n v2rank=>3 v2#1=Chandra's Emberling  (he took: Chandra's Emberling)
+   Uy49kTqon4o P3p3 Winter, Team Player            took=n v2rank=>3 v2#1=Fulminous Forte  (he took: Murmuring Volume)
+   Uy49kTqon4o P3p4 Edgar, Ancient Bloodlord       took=n v2rank=>3 v2#1=Rewrite Regrets  (he took: Rewrite Regrets)
+   Uy49kTqon4o P3p7 Precise Redaction              took=n v2rank=>3 v2#1=Stingerquill Annex  (he took: Stingerquill Annex)
+   Uy49kTqon4o P3p7 Stingerquill Annex             took=Y v2rank=1 v2#1=Stingerquill Annex  (he took: Stingerquill Annex)
+   n6sAkoTAN8w P1p1 Winter, Team Player            took=n v2rank=>3 v2#1=Craftwork Crusher  (he took: Ingris Stingerquill)
+   n6sAkoTAN8w P1p3 Cruel Calculations             took=n v2rank=>3 v2#1=Tetsuko Umezawa, Pursuer  (he took: Skilled Battlecarver)
+   n6sAkoTAN8w P1p4 Koth, the Geomancer            took=Y v2rank=2 v2#1=Mindseeker Oculus  (he took: Koth, the Geomancer)
+   n6sAkoTAN8w P1p7 Stingerquill Annex             took=n v2rank=1 v2#1=Stingerquill Annex  (he took: Teyo, Diamondblade Mage)
+   n6sAkoTAN8w P1p8 Restore with Empathy           took=n v2rank=>3 v2#1=Silence the Echo  (he took: Hallway Heckler)
+   n6sAkoTAN8w P1p9 Winter, Team Player            took=Y v2rank=3 v2#1=Greenhouse Propagator  (he took: Winter, Team Player)
+   n6sAkoTAN8w P1p11 Cruel Calculations             took=n v2rank=2 v2#1=Perfected Theory  (he took: Yargle, Glutton of Urborg)
+   n6sAkoTAN8w P2p2 Winter, Team Player            took=n v2rank=>3 v2#1=Fulminous Forte  (he took: Fulminous Forte)
+   n6sAkoTAN8w P2p3 Winter, Team Player            took=Y v2rank=8 v2#1=Winter, Tormented Loner  (he took: Winter, Team Player)
+   n6sAkoTAN8w P2p6 Extrapolate the Impossible     took=n v2rank=>3 v2#1=Archive Arbiter  (he took: Konstrari Annex)
+   n6sAkoTAN8w P2p7 Edgar, Ancient Bloodlord       took=n v2rank=>3 v2#1=Extended Absence  (he took: Extended Absence)
+   n6sAkoTAN8w P2p8 Precise Redaction              took=n v2rank=>3 v2#1=Pia, Determined Rebuilder  (he took: Pia, Determined Rebuilder)
+   n6sAkoTAN8w P3p1 Koth, the Geomancer            took=n v2rank=3 v2#1=Lich's Relic  (he took: Lich's Relic)
+   n6sAkoTAN8w P3p6 Stingerquill Annex             took=n v2rank=3 v2#1=Fulminous Forte  (he took: Master of Barbs)
+   n6sAkoTAN8w P3p14 Stingerquill Annex             took=Y v2rank=1 v2#1=Stingerquill Annex  (he took: Stingerquill Annex)
+   pdITCHUnEa8 P1p1 Precise Redaction              took=n v2rank=>3 v2#1=Liliana the Faultless  (he took: Stingcaster Mage)
+   pdITCHUnEa8 P1p1 Transformative Commons         took=n v2rank=>3 v2#1=Liliana the Faultless  (he took: Stingcaster Mage)
+   pdITCHUnEa8 P1p2 Precise Redaction              took=n v2rank=>3 v2#1=Way of the Healer  (he took: Marwyn, the Preserver)
+   pdITCHUnEa8 P1p8 Winter, Team Player            took=n v2rank=>3 v2#1=Twinned Vision  (he took: Wrath of the Bloodmane)
+   pdITCHUnEa8 P1p9 Precise Redaction              took=n v2rank=>3 v2#1=Heartstring Puller  (he took: Heartstring Puller)
+   pdITCHUnEa8 P1p9 Transformative Commons         took=n v2rank=3 v2#1=Heartstring Puller  (he took: Heartstring Puller)
+   pdITCHUnEa8 P1p10 Precise Redaction              took=n v2rank=>3 v2#1=Marwyn, the Clearcutter  (he took: Marwyn, the Clearcutter)
+   pdITCHUnEa8 P3p1 Kiora of Salt and Sand         took=n v2rank=>3 v2#1=Archive Arbiter  (he took: Tetsuko Umezawa, Fugitive)
+   pdITCHUnEa8 P3p1 Transformative Commons         took=n v2rank=>3 v2#1=Archive Arbiter  (he took: Tetsuko Umezawa, Fugitive)
+   pdITCHUnEa8 P3p5 Winter, Team Player            took=n v2rank=3 v2#1=Variable Chaser  (he took: Variable Chaser)
+   pdITCHUnEa8 P3p9 Transformative Commons         took=n v2rank=2 v2#1=Tetsuko Umezawa, Pursuer  (he took: Skilled Battlecarver)
+   9nAjtt_8TjA P1p1 Stingerquill Annex             took=n v2rank=>3 v2#1=Gideon the Oathless  (he took: Mindseeker Oculus)
+   9nAjtt_8TjA P1p2 Precise Redaction              took=n v2rank=>3 v2#1=Fblthp, Impossibly Lost  (he took: Fblthp, Impossibly Lost)
+   9nAjtt_8TjA P1p2 Transformative Commons         took=n v2rank=>3 v2#1=Fblthp, Impossibly Lost  (he took: Fblthp, Impossibly Lost)
+   9nAjtt_8TjA P1p3 Koth, the Geomancer            took=n v2rank=>3 v2#1=Protege's Awakening  (he took: Protege's Awakening)
+   9nAjtt_8TjA P1p4 Koth, the Geomancer            took=n v2rank=>3 v2#1=No Admittance  (he took: Koth of the Homestead)
+   9nAjtt_8TjA P1p9 Stingerquill Annex             took=n v2rank=2 v2#1=Cryotheory Adept  (he took: Cryotheory Adept)
+   9nAjtt_8TjA P1p10 Precise Redaction              took=n v2rank=>3 v2#1=Emergency Phytomedic  (he took: Transformative Commons)
+   9nAjtt_8TjA P1p10 Transformative Commons         took=Y v2rank=2 v2#1=Emergency Phytomedic  (he took: Transformative Commons)
+   9nAjtt_8TjA P2p7 Kiora of Salt and Sand         took=n v2rank=>3 v2#1=Desperate Futurescribe  (he took: Desperate Futurescribe)
+   9nAjtt_8TjA P3p3 Winter, Team Player            took=n v2rank=>3 v2#1=Countersculpt  (he took: Countersculpt)
+   9nAjtt_8TjA P3p6 Mabel, Valley Hero             took=n v2rank=>3 v2#1=Murmuring Volume  (he took: Shatterwing Pegasus)
+   55awKvGIxRE P1p1 Stingerquill Annex             took=n v2rank=>3 v2#1=Ajani's Anguish  (he took: Ajani's Anguish)
+   55awKvGIxRE P1p2 Extrapolate the Impossible     took=n v2rank=>3 v2#1=Violent Echoes  (he took: Violent Echoes)
+   55awKvGIxRE P1p3 Koth, the Geomancer            took=n v2rank=>3 v2#1=Repurposed Enforcer  (he took: No Admittance)
+   55awKvGIxRE P1p4 Koth, the Geomancer            took=n v2rank=3 v2#1=Break Under Pressure  (he took: Ruric Thar, Biomagus)
+   55awKvGIxRE P1p5 Precise Redaction              took=n v2rank=>3 v2#1=Pia, Determined Rebuilder  (he took: Pia, Determined Rebuilder)
+   55awKvGIxRE P1p6 Mabel, Valley Hero             took=n v2rank=>3 v2#1=Traxos, Academy Guardian  (he took: Traxos, Academy Guardian)
+   55awKvGIxRE P1p9 Stingerquill Annex             took=Y v2rank=3 v2#1=Rewrite Regrets  (he took: Stingerquill Annex)
+   55awKvGIxRE P2p1 Kiora of Salt and Sand         took=n v2rank=>3 v2#1=Sphinx of False Conclusions  (he took: Sphinx of False Conclusions)
+   55awKvGIxRE P2p2 Winter, Team Player            took=n v2rank=>3 v2#1=Countersculpt  (he took: Ruric Thar, Biomagus)
+   55awKvGIxRE P2p5 Winter, Team Player            took=n v2rank=>3 v2#1=Mind Meanderer  (he took: Cryotheory Adept)
+   55awKvGIxRE P2p6 Cruel Calculations             took=n v2rank=>3 v2#1=Clash of Elements  (he took: Clash of Elements)
+   55awKvGIxRE P2p6 Mabel, Valley Hero             took=n v2rank=>3 v2#1=Clash of Elements  (he took: Clash of Elements)
+   55awKvGIxRE P2p7 Winter, Team Player            took=n v2rank=>3 v2#1=Skilled Battlecarver  (he took: Theorix Annex)
+   55awKvGIxRE P2p7 Edgar, Ancient Bloodlord       took=n v2rank=>3 v2#1=Skilled Battlecarver  (he took: Theorix Annex)
+   55awKvGIxRE P2p8 Winter, Team Player            took=n v2rank=2 v2#1=Unsummon  (he took: Unsummon)
+   55awKvGIxRE P2p9 Kiora of Salt and Sand         took=n v2rank=3 v2#1=Clash of Elements  (he took: Clash of Elements)
+   55awKvGIxRE P2p10 Winter, Team Player            took=n v2rank=3 v2#1=Fatehold Chronologist  (he took: Fatehold Chronologist)
+   55awKvGIxRE P3p4 Warrior's Blades               took=n v2rank=>3 v2#1=Paradox Shaper  (he took: Shipwreck Marsh)
+   55awKvGIxRE P3p8 Warrior's Blades               took=n v2rank=>3 v2#1=Arni, Humble Scribe  (he took: Arni, Humble Scribe)
+
+====================================================================================================
+Flagged cards in final 40 / sideboard, per draft
+====================================================================================================
+mqZsj4Vg2Es OVERR: main ['Murmuring Volume', 'Konstrari Annex', 'Ruric Thar Biomagus']; side -
+mqZsj4Vg2Es UNDER: main ["Warrior's Blades x2", 'Restore with Empathy']; side -
+CWsZxo1pB6Y OVERR: main ['Bestial Incursion']; side ['Murmuring Volume', 'Stingerquill Annex']
+CWsZxo1pB6Y UNDER: main -; side ['Precise Redaction', 'Stingerquill Annex']
+994X9PlPInQ OVERR: main ['Murmuring Volume', 'Stingerquill Annex', 'Konstrari Annex', 'Twinned Vision', 'Bestial Incursion']; side -
+994X9PlPInQ UNDER: main ['Stingerquill Annex']; side -
+re7j0kVSnUg OVERR: main ['Murmuring Volume', 'Archive Arbiter', 'Twinned Vision']; side -
+re7j0kVSnUg UNDER: main -; side ['Precise Redaction', 'Winter Team Player']
+5aMQKjCukTc OVERR: main ['Fatehold Chronologist', 'Tetsuko Umezawa Fugitive']; side -
+5aMQKjCukTc UNDER: main -; side ['Transformative Commons']
+uoyPQJ0NxO8 OVERR: main -; side -
+uoyPQJ0NxO8 UNDER: main -; side ['Precise Redaction', 'Mabel Valley Hero']
+Uy49kTqon4o OVERR: main ['Murmuring Volume', 'Stingerquill Annex x2', 'Geist of Saint Thalia x2', 'Keeper of the Quiet Hour']; side -
+Uy49kTqon4o UNDER: main ['Stingerquill Annex x2']; side ['Transformative Commons']
+n6sAkoTAN8w OVERR: main ['Stingerquill Annex']; side ['Murmuring Volume', 'Konstrari Annex']
+n6sAkoTAN8w UNDER: main ['Koth the Geomancer', 'Stingerquill Annex', 'Winter Team Player x2']; side -
+pdITCHUnEa8 OVERR: main ['Twinned Vision', 'Ruric Thar Biomagus', 'Tetsuko Umezawa Fugitive x2']; side -
+pdITCHUnEa8 UNDER: main -; side -
+9nAjtt_8TjA OVERR: main ['Ruric Thar Biomagus', 'Tetsuko Umezawa Fugitive']; side -
+9nAjtt_8TjA UNDER: main -; side ['Transformative Commons']
+55awKvGIxRE OVERR: main ['Stingerquill Annex', 'Ruric Thar Biomagus']; side ['Twinned Vision', 'Ruric Thar Biomagus', 'Fatehold Chronologist']
+55awKvGIxRE UNDER: main ['Stingerquill Annex']; side -
+
+====================================================================================================
+His stated reasons mentioning flagged cards (pick reasoning and ideas.json quotes)
+====================================================================================================
+[mqZsj4Vg2Es 0:14-1:16] P1p1 Koth, the Geomancer (UNDER, passed, took Kwia Vigorbloom): does things in RB, but ranked below Koth of the Homestead
+[mqZsj4Vg2Es 2:16-2:38] P1p3 Archive Arbiter (OVER, passed, took Campus Crier): 'I just don't love taking seven drops too highly'
+[mqZsj4Vg2Es 2:40-3:24] P1p4 Ruric Thar, Biomagus (OVER, took): Sees blue. Weighs Countersculpt, Loot, the Nexus (ramps into his big cards and splashes) and Warrior's Blades (the pick if splashing). Takes Ruric Thar, Biomagus, a card he is impressed with every time, explicitly to avoid committing to green.
+[mqZsj4Vg2Es 2:40-3:24] P1p4 Warrior's Blades (UNDER, passed, took Ruric Thar, Biomagus): 'if I did want to splash, Warrior's Blades could be the pick'
+[mqZsj4Vg2Es 4:20-4:50] P1p8 Konstrari Annex (OVER, took): Blessed Ghoul wants enchantments he does not have; maybe he will splash green; takes the land. Notes UB cards flowing. Rates Pia low.
+[mqZsj4Vg2Es 4:54-5:10] P1p9 Murmuring Volume (OVER, took): Does not usually like Murmuring Volume but likes Fateshaper Aspirant less, even with a couple of legendaries. Notes a UB gold card wheeling as a signal. The Pick tag sat on Fateshaper Aspirant first; the deck list confirms Murmuring Volume.
+[mqZsj4Vg2Es 5:38-5:54] P1p11 Ruric Thar, Biomagus (OVER, passed, took Vigorbloom Annex): already has one; 'another second top end card'
+[mqZsj4Vg2Es 5:56-6:06] P1p12 Warrior's Blades (UNDER, took): Has no red cards to splash other than Warrior's Blades; takes the card worth splashing before the land.
+[mqZsj4Vg2Es 6:44-7:26] P2p2 Restore with Empathy (UNDER, passed, took Jiang Yanggu, Never Alone): 'pretty interesting... you gain four life'
+[mqZsj4Vg2Es 7:28-7:50] P2p3 Warrior's Blades (UNDER, passed, took Loot, the Nexus): 'also pretty good'
+[mqZsj4Vg2Es 8:40-9:18] P2p5 Murmuring Volume (OVER, passed, took Room of Refuge): the alternative; hopes another comes later
+[mqZsj4Vg2Es 10:30-10:38] P2p10 Restore with Empathy (UNDER, took): Wants lifegain. Maybe will not splash black.
+[mqZsj4Vg2Es 10:40-10:50] P2p11 Warrior's Blades (UNDER, took): Maybe not even red, but a green splash feels good; with a second Warrior's Blades, splashing red becomes worth it. Decides to 'go for it all'.
+[mqZsj4Vg2Es 13:08-13:28] P3p7 Geist of Saint Thalia (OVER, passed, took Undulating Witness): considered
+[mqZsj4Vg2Es 13:30-14:26] P3p8 Konstrari Annex (OVER, passed, took Infinite Coursework): 'This does help me splash, but I think I would like an on color kill spell.'
+[CWsZxo1pB6Y 3:26-4:20] P1p4 Mabel, Valley Hero (UNDER, passed, took Mabel, Bitter Recluse): reasonable RW one-drop, not taking it
+[CWsZxo1pB6Y 5:08-5:50] P1p6 Keeper of the Quiet Hour (OVER, passed, took Void Extrapolator): hopes to get it a bit later
+[CWsZxo1pB6Y 7:06-7:34] P1p9 Murmuring Volume (OVER, passed, took Undulating Witness): fixing, passed
+[CWsZxo1pB6Y 7:58-8:16] P1p11 Murmuring Volume (OVER, passed, took Arcane Amphisbaena): three-mana rock; the pick tag sat on it before the pick
+[CWsZxo1pB6Y 8:16-8:30] P1p12 Konstrari Annex (OVER, passed, took Generous Revival): pick tag on it at one point, not taken
+[CWsZxo1pB6Y 9:40-10:32] P2p2 Murmuring Volume (OVER, passed, took Room of Refuge): might wheel
+[CWsZxo1pB6Y 12:01-12:55] P2p5 Geist of Saint Thalia (OVER, passed, took Formidable Commons): 'I don't really want a one two flyer for two'
+[CWsZxo1pB6Y 12:55-13:12] P2p6 Tetsuko Umezawa, Fugitive (OVER, passed, took Blessed Ghoul): 'a two mana one three blocker is not huge' but works with a lot of his cards (makes power-one creatures unblockable); 'it's okay'
+[CWsZxo1pB6Y 12:55-13:12] P2p6 Twinned Vision (OVER, passed, took Blessed Ghoul): 'fine' as a card to mill over for value
+[CWsZxo1pB6Y 14:05-14:30] P2p9 Bestial Incursion (OVER, took): First leans to the cheap counter spell (Icy Reception, the pick tag sits on it), then changes his mind: he already has a couple of one- and two-drops and his deck does not hold mana up (mostly sorcery speed), so another good green card for self-mill (flashback Bestial Incursion) seems better. Confir
+[CWsZxo1pB6Y 14:30-14:48] P2p10 Murmuring Volume (OVER, took): 'I'm going to take murmuring volume now. We'll see if we want that.' Fixing for the splash; Meticulous Commons (white-black land) left in the pack.
+[CWsZxo1pB6Y 14:48-14:58] P2p11 Kiora of Salt and Sand (UNDER, passed, took Innovative Commons): 'doesn't seem great'
+[CWsZxo1pB6Y 19:08-19:34] P3p8 Precise Redaction (UNDER, took): No pick is announced. He says the counter spell is 'a sideboard counter spell, I'm not going to be able to use it', the draw spell (Sphinx's Approach) he cannot use either, and of another card 'I don't think this one's very good'. The pick tag ended on Sphinx's Approach in the last frames, but the d
+[CWsZxo1pB6Y 20:19-20:23] P3p13 Stingerquill Annex (OVER/UNDER, took): No comment; takes the land. Confirmed by the deck screen (Stingerquill Annex in the pool, no Skilled Battlecarver).
+[CWsZxo1pB6Y 20:19-20:23] P3p13 Stingerquill Annex (OVER/UNDER, took): No comment; takes the land. Confirmed by the deck screen (Stingerquill Annex in the pool, no Skilled Battlecarver).
+[994X9PlPInQ 1:09-1:45] P1p2 Edgar, Ancient Bloodlord (UNDER, passed, took Kiora of Fire and Ashes): pretty solid
+[994X9PlPInQ 1:09-1:45] P1p2 Kiora of Salt and Sand (UNDER, passed, took Kiora of Fire and Ashes): can do some stuff; seen once in play, the opponent made an 8/8
+[994X9PlPInQ 2:55-3:55] P1p4 Bestial Incursion (OVER, took): Likes Bestial Incursion (4/4 trampler, flashback for six); has no removal yet and is wary of it. Considers a sacrifice-removal spell in the pack for a splash ('splashing is pretty doable in this format'), but takes the green card and says he liked specing down the removal later. Traxos, Scourge Eter
+[994X9PlPInQ 5:36-6:05] P1p8 Konstrari Annex (OVER, took): Lacking two-drops but chooses the fixing land: another fixer. Vinelasher Adept is a fine filler two-drop he hovered; the land Konstrari Annex (red-green dual, enters tapped unless you control a planeswalker) was picked (confirmed by the pool in the next pick). All the landcyclers are good.
+[994X9PlPInQ 6:37-7:02] P1p10 Kiora of Salt and Sand (UNDER, passed, took Eardrum Rattler): not a very good Kiora deck, no Empower Jace cards in the pile
+[994X9PlPInQ 7:25-8:40] P2p1 Archive Arbiter (OVER, passed, took Room of Refuge): likes it a decent amount, not the worst card
+[994X9PlPInQ 7:25-8:40] P2p1 Twinned Vision (OVER, passed, took Room of Refuge): pretty solid
+[994X9PlPInQ 9:55-10:35] P2p4 Twinned Vision (OVER, took): Murmuring Volume ramps and fixes but he prefers Twinned Vision: card advantage and cheap, 'we just don't have that right now', in a splashy rampy deck you want it. Would take one of the three-mana rocks but not a huge priority. (Pick tag sat on Murmuring Volume while hovering; the next frame's pool 
+[994X9PlPInQ 9:55-10:35] P2p4 Murmuring Volume (OVER, passed, took Twinned Vision): ramps, fixes, filters; would not mind it
+[994X9PlPInQ 10:35-11:05] P2p5 Stingerquill Annex (OVER/UNDER, took): Takes a black-red dual: 'now I can take a black Redland maybe'. Holy Heckler is a fairly medium card; land seems better here. (Pick tag on Stingerquill Annex; confirmed by the deck screen.)
+[994X9PlPInQ 10:35-11:05] P2p5 Stingerquill Annex (OVER/UNDER, took): Takes a black-red dual: 'now I can take a black Redland maybe'. Holy Heckler is a fairly medium card; land seems better here. (Pick tag on Stingerquill Annex; confirmed by the deck screen.)
+[994X9PlPInQ 14:55-15:26] P3p3 Konstrari Annex (OVER, passed, took Awaken the Inferno): a land, tap lands hurt at some point
+[994X9PlPInQ 16:51-17:07] P3p7 Winter, Team Player (UNDER, passed, took Room of Refuge): good with many prepared spells (creatures that trigger noncreature stuff)
+[994X9PlPInQ 17:38-17:57] P3p10 Murmuring Volume (OVER, took): 'This volume comes back. We didn't actually pick up too much ramp ... I don't mind a murmuring volume at this point. We play it right here.'
+[re7j0kVSnUg 5:25-5:48] P1p8 Twinned Vision (OVER, took): Card draw is nice in ramp decks; with the black card he would take the land instead.
+[re7j0kVSnUg 6:12-6:20] P1p11 Winter, Team Player (UNDER, took): Probably not playing any of these cards; takes the Winter.
+[re7j0kVSnUg 6:25-6:40] P1p13 Winter, Team Player (UNDER, took): Filler; wait on other players before the last card.
+[re7j0kVSnUg 11:50-11:52] P2p13 Precise Redaction (UNDER, took): Filler.
+[re7j0kVSnUg 15:48-15:57] P3p9 Murmuring Volume (OVER, took): Plays it.
+[re7j0kVSnUg 15:57-16:08] P3p10 Archive Arbiter (OVER, took): One more card draw (Twinned Vision) or Arbiter: "we're kind of good on value"; takes the Arbiter.
+[5aMQKjCukTc 0:34-1:17] P1p2 Geist of Saint Thalia (OVER, passed, took Recursive Recruitment): a pet card; 'really really good in blue red' too
+[5aMQKjCukTc 5:34-6:05] P2p2 Fatehold Chronologist (OVER, passed, took Theorist's Proxy): the alternative; wheels later (P2p7)
+[5aMQKjCukTc 7:04-7:19] P2p5 Tetsuko Umezawa, Fugitive (OVER, took): 'Okay, there's Tetsuko.' He notes the draft has been on rails: few real options per pick.
+[5aMQKjCukTc 7:20-7:55] P2p6 Transformative Commons (UNDER, took): A second Blessed Ghoul is 'kind of rough' and he has 'basically never' wanted one. He considers speccing on a land (not usually a splashing blue-white deck, and he cannot name a green card to splash; Bloom Brute at most). Transformative Commons is taken; the pick tag sat on Blessed Ghoul. Confirmed 
+[5aMQKjCukTc 7:56-8:09] P2p7 Fatehold Chronologist (OVER, took): Chronologist wheeled from the P2p2 pack. No pick comment; he remarks on Tetsuko (already in the pool) being 'right in that sweet spot of not great in every deck, really good in the right deck'. Confirmed by the pick-8 pool.
+[uoyPQJ0NxO8 3:00-3:43] P1p8 Mabel, Valley Hero (UNDER, took): Mabel, Valley Hero ("not thrilled about it") over Divining Duelist. Red-white looks natural but "white is the colour I least pair with my red cards": most white cards do not synergise with the red ones. The co-host asks whether he trusts the deck to come together; he says aggro decks need that trust
+[uoyPQJ0NxO8 4:04-4:33] P1p10 Winter, Team Player (UNDER, passed, took Blazing Crescendo): "high upside if that works out" but "the kind of card you want to take when you already have the deck for it, not speculatively"
+[uoyPQJ0NxO8 6:52-7:09] P2p5 Warrior's Blades (UNDER, passed, took Room of Refuge): regret at 7:18: "we ought to have gotten the Warrior's Blades"
+[uoyPQJ0NxO8 7:10-7:27] P2p6 Mabel, Valley Hero (UNDER, took): A second Mabel, Valley Hero, as a "take her here still, I'm not playing anything else": not amazing, but few good three-drops compete. He says this would have been a fine draft for red-white and entertains "a weird pivot".
+[uoyPQJ0NxO8 7:28-7:41] P2p7 Warrior's Blades (UNDER, passed, took Blessed Ghoul): in the pack; not discussed
+[uoyPQJ0NxO8 8:48-8:58] P2p13 Precise Redaction (UNDER, took): Precise Redaction, no comment (sideboard).
+[uoyPQJ0NxO8 10:14-10:29] P3p4 Twinned Vision (OVER, passed, took Extended Absence): "I would love this ... but got to take Absence"
+[uoyPQJ0NxO8 10:46-11:03] P3p6 Mabel, Valley Hero (UNDER, passed, took Mabel, Bitter Recluse): a third copy; not taken
+[uoyPQJ0NxO8 10:46-11:03] P3p6 Warrior's Blades (UNDER, passed, took Mabel, Bitter Recluse): in the pack; not taken
+[Uy49kTqon4o None] P1p6 Geist of Saint Thalia (OVER, took): Geist of Saint Thalia: 'I'm a big fan of Geist', all non-creature deck; Icy Reception is a close second ('very similar power level').
+[Uy49kTqon4o None] P1p10 Transformative Commons (UNDER, took): Transformative Commons: always take the land unless the alternative is far above replacement; 'you're always going to get 23' playables.
+[Uy49kTqon4o None] P2p4 Geist of Saint Thalia (OVER, took): Geist of Saint Thalia again: 'I'd play up to two Geists at most'.
+[Uy49kTqon4o None] P2p8 Keeper of the Quiet Hour (OVER, took): Keeper of the Quiet Hour: 'I don't mind the four drop', 'it's passable'.
+[Uy49kTqon4o None] P3p3 Murmuring Volume (OVER, took): Murmuring Volume ('monolith') over Apex Witchstalker and Fulminous Forte: 'we're so flush on good removal'; Apex is regretted a pick later.
+[n6sAkoTAN8w 2:22-3:26] P1p3 Cruel Calculations (UNDER, passed, took Skilled Battlecarver): needs a mill deck, not great
+[n6sAkoTAN8w 2:22-3:26] P1p3 Tetsuko Umezawa, Fugitive (OVER, passed, took Skilled Battlecarver): 'a very strong uncommon'
+[n6sAkoTAN8w 3:26-4:20] P1p4 Koth, the Geomancer (UNDER, took): Takes Koth (landfall ping); still not seeing black, 'really seeing red', so blue-red may be the open lane.
+[n6sAkoTAN8w 4:20-5:05] P1p5 Keeper of the Quiet Hour (OVER, passed, took Blossom-Blessed Angel): the alternative that sticks to his colours; 'I don't think I'll miss the Keeper'
+[n6sAkoTAN8w 5:47-6:22] P1p7 Stingerquill Annex (OVER/UNDER, passed, took Teyo, Diamondblade Mage): 'the land would be good if I was like super committed to black red, but I just don't love it'
+[n6sAkoTAN8w 5:47-6:22] P1p7 Stingerquill Annex (OVER/UNDER, passed, took Teyo, Diamondblade Mage): 'the land would be good if I was like super committed to black red, but I just don't love it'
+[n6sAkoTAN8w 6:22-6:53] P1p8 Restore with Empathy (UNDER, passed, took Hallway Heckler): life gain, good with self-mill
+[n6sAkoTAN8w 6:53-7:12] P1p9 Winter, Team Player (UNDER, took): Winter looks like a perfect card for a deck with both creatures and non-creature spells (Vicious Verse); he admits he waffled with the Arni and the Angel, neither over a great card.
+[n6sAkoTAN8w 9:39-10:05] P2p3 Winter, Team Player (UNDER, took): Short on two-drops, but takes the second Winter and hopes the Void Extrapolator wheels (it does, pick 11).
+[n6sAkoTAN8w 10:05-10:28] P2p4 Konstrari Annex (OVER, passed, took Skilled Battlecarver): 'I wouldn't mind a Konstrari, but I'm not even that sure I'm going to splash the Vraska'
+[n6sAkoTAN8w 11:20-11:52] P2p6 Extrapolate the Impossible (UNDER, passed, took Konstrari Annex): 'If we do want to splash Vasa, it could help'
+[n6sAkoTAN8w 11:20-11:52] P2p6 Konstrari Annex (OVER, took): Takes the land because it could help splash Vraska.
+[n6sAkoTAN8w 11:20-11:52] P2p6 Keeper of the Quiet Hour (OVER, passed, took Konstrari Annex): not high on it, few empower Jace cards
+[n6sAkoTAN8w 14:03-14:28] P2p12 Konstrari Annex (OVER, took): The second Konstrari Annex wheels: with one Forest he can probably splash Vraska now.
+[n6sAkoTAN8w 20:29-20:37] P3p14 Stingerquill Annex (OVER/UNDER, took): Last pick red-black land: 'so good, especially with my restrictive colour requirements'.
+[n6sAkoTAN8w 20:29-20:37] P3p14 Stingerquill Annex (OVER/UNDER, took): Last pick red-black land: 'so good, especially with my restrictive colour requirements'.
+[pdITCHUnEa8 0:10-1:14] P1p1 Tetsuko Umezawa, Fugitive (OVER, passed, took Stingcaster Mage): really strong; expects someone to take it
+[pdITCHUnEa8 4:42-5:24] P1p8 Winter, Team Player (UNDER, passed, took Wrath of the Bloodmane): not insane
+[pdITCHUnEa8 6:39-7:25] P1p12 Tetsuko Umezawa, Fugitive (OVER, took): Speculates on the best card in the pack: only three green cards so far, so maybe blue-red; her ability is good with all his one-toughness creatures. Caption says 'we'll take Emberling' but the pool strip at P1p13 shows Tetsuko Fugitive and no Emberling.
+[pdITCHUnEa8 9:35-10:28] P2p2 Ruric Thar, Biomagus (OVER, took): Rare for blue-red in the pack. Frostbite Pyromental (deal damage, draw two) is good but hard to cast and does not help attack a planeswalker; he would rather have the giant flier.
+[pdITCHUnEa8 13:30-13:56] P2p8 Murmuring Volume (OVER, passed, took Hallway Heckler): does not want it
+[pdITCHUnEa8 14:57-15:20] P3p1 Tetsuko Umezawa, Fugitive (OVER, took): Another Tetsuko: a lot of his cards work with it (many 2/1 and 3/1 creatures). Hopes to wheel a red card.
+[pdITCHUnEa8 17:59-18:07] P3p8 Ruric Thar, Biomagus (OVER, passed, took Fulminous Forte): another top-end flier, passed
+[pdITCHUnEa8 18:36-18:59] P3p10 Twinned Vision (OVER, took): One Twinned Vision is really good in this deck: some ways to discard it, likes the effect; does not need the two-drop (Rattler) much since two-drops came back.
+[9nAjtt_8TjA 4:00-4:30] P1p6 Bestial Incursion (OVER, passed, took Tomik, Orzhov Lawmage): an option; blue does not feel the most open but he has four really good blue cards
+[9nAjtt_8TjA 5:35-5:55] P1p10 Transformative Commons (UNDER, took): Takes the land over Emergency Phytomedic: not fully committed to white (only three white cards) and Phytomedic is not crazy in white-blue, so the green land keeps a green dip open. He does not expect to miss the Phytomedic.
+[9nAjtt_8TjA 6:48-7:25] P2p1 Tetsuko Umezawa, Fugitive (OVER, took): Tetsuko plays well with Mindseeker Oculus, Tomik and Cryotheory Adept: a really nice aggressive drop. There is a removal spell in the pack but he would rather be proactive than reactive right now. Blessed Ghoul is a bit of a combo with Arni (discard it over and over). He would not mind Memory Trap.
+[9nAjtt_8TjA 8:10-8:28] P2p4 Twinned Vision (OVER, passed, took Teyo, Lightshield Expert): Teyo is better
+[9nAjtt_8TjA 11:35-12:02] P3p2 Ruric Thar, Biomagus (OVER, passed, took Your Fate Ends Here): would definitely play as a giant flier at the top end, but removal that surveils is what the deck wants
+[9nAjtt_8TjA 13:54-14:08] P3p8 Ruric Thar, Biomagus (OVER, took): Ruric Thar wheels from the second pick at the end of the day. Surveillance Phantasm is also there, but he has enough two-drops; getting a little more midrange is fine.
+[55awKvGIxRE 2:20-3:07] P1p3 Bestial Incursion (OVER, passed, took No Admittance): green option
+[55awKvGIxRE 3:07-3:57] P1p4 Ruric Thar, Biomagus (OVER, took): Ruric Thar, Biomagus over Koth, the Geomancer, Vraska's Final Mercy and Break Under Pressure: he already has kill effects and wants a top-end card. Koth is guaranteed to make his deck but Ruric matters more: it felt amazing when he cast it and bad when the opponent did. 'We'll live a little' (blue).
+[55awKvGIxRE 3:07-3:57] P1p4 Koth, the Geomancer (UNDER, passed, took Ruric Thar, Biomagus): solid, ping damage and ramp, guaranteed to make the deck
+[55awKvGIxRE 4:27-4:45] P1p6 Mabel, Valley Hero (UNDER, passed, took Traxos, Academy Guardian): pretty good, still in the pack; could have built red-white
+[55awKvGIxRE 6:42-7:05] P1p9 Stingerquill Annex (OVER/UNDER, took): Stingerquill Annex (land) over Surveillance Phantasm, Rewrite Regrets and Campus Crier on the wheel: he would rather take the Phantasm, but the land could help splash Extended Absence, and he suspects he will end up splashing because he is getting cut and black looks wide open.
+[55awKvGIxRE 6:42-7:05] P1p9 Stingerquill Annex (OVER/UNDER, took): Stingerquill Annex (land) over Surveillance Phantasm, Rewrite Regrets and Campus Crier on the wheel: he would rather take the Phantasm, but the land could help splash Extended Absence, and he suspects he will end up splashing because he is getting cut and black looks wide open.
+[55awKvGIxRE 8:20-8:59] P2p2 Ruric Thar, Biomagus (OVER, took): Ruric Thar, Biomagus again: only two black cards so far, so he keeps taking blue; he wants to lock up his finishers because he sometimes takes too many cheap cards and lacks them. Winter is pretty good; he sees another Countersculpt.
+[55awKvGIxRE 10:34-11:23] P2p6 Mabel, Valley Hero (UNDER, passed, took Clash of Elements): in the pack
+[55awKvGIxRE 10:34-11:23] P2p6 Bestial Incursion (OVER, passed, took Clash of Elements): in the pack
+[55awKvGIxRE 11:23-11:58] P2p7 Winter, Team Player (UNDER, passed, took Theorix Annex): mentioned later, not for him
+[55awKvGIxRE 11:23-11:58] P2p7 Edgar, Ancient Bloodlord (UNDER, passed, took Theorix Annex): in the pack
+[55awKvGIxRE 11:58-12:24] P2p8 Winter, Team Player (UNDER, passed, took Unsummon): 'fine', hard to find a deck that convokes and has a lot of non-creatures
+[55awKvGIxRE 12:24-13:07] P2p9 Kiora of Salt and Sand (UNDER, passed, took Clash of Elements): in the pack
+[55awKvGIxRE 13:07-13:22] P2p10 Fatehold Chronologist (OVER, took): could be good; not the biggest fan though
+[55awKvGIxRE 16:59-17:14] P3p5 Fatehold Chronologist (OVER, passed, took Twinned Vision): does not want two
+[55awKvGIxRE 16:59-17:14] P3p5 Twinned Vision (OVER, took): Twinned Vision over Perfected Theory and Apex Witchstalker: he says he will never cast the one card so he does not want it as a landcycler; Perfected Theory is fine. Maybe he wants Twinned Vision or not; he does not want two Chronologists.
+
+-- ideas.json (time = seconds into video) --
+[mqZsj4Vg2Es 1:00] Koth, the Geomancer (UNDER): "and then I think that this Koth has been pretty nice. This Koth also does some stuff in like red, black, but I think that the counter matters a little bit more than the mana mode."
+[mqZsj4Vg2Es 2:26] Archive Arbiter (OVER): "I just don't love taking seven drops too highly."
+[mqZsj4Vg2Es 3:02] Warrior's Blades (UNDER): "Warrior's Blades is pretty good. If I did want to splash, Warrior's Blades could be the pick."
+[mqZsj4Vg2Es 3:15] Ruric Thar, Biomagus (OVER): "I also love this Ruric Thar. Kind of want to take this one honestly. It's like a card that I'm very impressed with every time I play it. Yeah, I don't want to get too committed to green."
+[mqZsj4Vg2Es 6:01] Warrior's Blades (UNDER): "I don't have any red cards to splash other than the Warrior's Blades. So, let's take the card that's like worthy of splashing before we go too off the deep end."
+[mqZsj4Vg2Es 5:00] Murmuring Volume (OVER): "I don't love Murmuring Volume generally speaking, but I really don't like the Fateshaper even though I have a couple cards."
+[mqZsj4Vg2Es 5:41] Ruric Thar, Biomagus (OVER): "We already have one Ruric Thar. We already have another second top end card."
+[mqZsj4Vg2Es 7:00] Restore with Empathy (UNDER): "this card's pretty interesting. Like, you gain four life."
+[mqZsj4Vg2Es 8:28] Ruric Thar, Biomagus (OVER): "I kind of forgot that green wasn't a base color because I do have these double blue cards to to play."
+[mqZsj4Vg2Es 8:44] Murmuring Volume (OVER): "Murmuring Volume or Room of Refuge. Let's take the Room of Refuge and try to get another Murmuring Volume a little bit later."
+[mqZsj4Vg2Es 10:41] Warrior's Blades (UNDER): "And now that I have a second one of these, I feel like splashing red will be very good at least."
+[mqZsj4Vg2Es 13:49] Konstrari Annex (OVER): "This does help me splash, but I think I would like an on color kill spell."
+[mqZsj4Vg2Es 16:15] Murmuring Volume (OVER): "So I have five, six, seven blue sources. One, two, three, four, five, six, seven white sources. One, two, kind of three black sources. One, two, three, kind of four red One, two, three, four, five, six green sources kind of."
+[mqZsj4Vg2Es 17:51] Murmuring Volume (OVER): "Okay, we'll keep it. ... We're going to get white mana with this. We are just missing green, but this will get us our green"
+[mqZsj4Vg2Es 19:20] Ruric Thar, Biomagus (OVER): "I'm just going to hold back and use Unsummon here probably and then I'll play Ruric Thar and then I will use Twisted Fates on whatever I unsummoned most likely."
+[mqZsj4Vg2Es 25:58] Murmuring Volume (OVER): "I feel like I was pretty happy having like the five-color stuff and the the the mana rock thing definitely carried me a bit."
+[mqZsj4Vg2Es 44:35] Ruric Thar, Biomagus (OVER): "Yeah, let's try to get Ruric Thar down first. None of their creatures are particularly scary, and Ruric Thar is going to be a huge issue. or at least demand an answer from them."
+[CWsZxo1pB6Y 4:06] Mabel, Valley Hero (UNDER): "that's pretty good as a defensive body as well for maybe my defensive black green blue kind of space deck."
+[CWsZxo1pB6Y 5:30] Keeper of the Quiet Hour (OVER): "Clash of Elements is very strong, but I don't really want necessarily want to go splashing this direction."
+[CWsZxo1pB6Y 8:30] Murmuring Volume (OVER): "Blue black is looking fairly open. I don't mind passing up on the like three mana mana rock"
+[CWsZxo1pB6Y 9:46] Murmuring Volume (OVER): "I think I'm just going to take the land here. There's nothing crazy for me here."
+[CWsZxo1pB6Y 9:52] Edgar, Ancient Bloodlord (UNDER): "I don't get any information cuz there's all three still in the pack."
+[CWsZxo1pB6Y 12:45] Precise Redaction (UNDER): "There's a whole cycle of these cards that are sideboard cards essentially."
+[CWsZxo1pB6Y 13:00] Tetsuko Umezawa, Fugitive (OVER): "I think I might just take the blessed ghoul though. I have a lot of self mill."
+[CWsZxo1pB6Y 14:10] Bestial Incursion (OVER): "My deck doesn't really hold its mana up particularly well because I'm mostly playing at sorcery speed"
+[CWsZxo1pB6Y 14:22] Bestial Incursion (OVER): "once I got a beastial incursion, splashing green over white is just kind of a no-brainer"
+[CWsZxo1pB6Y 19:30] Precise Redaction (UNDER): "This is like a sideboard counter spell. I'm not going to be able to use it though."
+[CWsZxo1pB6Y 20:41] Bestial Incursion (OVER): "So six green sources for one, two, three cards. That's totally enough."
+[994X9PlPInQ 6:52] Kiora of Salt and Sand (UNDER): "we're not a very good Kiora deck and that is to say we're not very good at empowering Jace as evidenced by zero Empower Jace cards in our pile."
+[994X9PlPInQ 8:12] Archive Arbiter (OVER): "I am happy to just like take some flexible fixing. ... we're not doing anything in particular aside from just like casting these big things. So, we might want to splash some offcolor spells."
+[994X9PlPInQ 9:00] Murmuring Volume (OVER): "You don't want to take a bunch of fixing then just be like actually we're not playing any of that, you know."
+[994X9PlPInQ 9:50] Twinned Vision (OVER), Murmuring Volume (OVER): "in this kind of like splish splashy rampy deck, you kind of want that [card advantage]."
+[994X9PlPInQ 15:00] Konstrari Annex (OVER): "I think like that helps the fixing. I mean, so does this of course, but we have a lot of lands and can't have too many tap lands."
+[994X9PlPInQ 17:00] Winter, Team Player (UNDER): "Let's take another land."
+[994X9PlPInQ 20:00] Stingerquill Annex (OVER/UNDER), Konstrari Annex (OVER): "five tap plans is just a lot. Don't really want that many."
+[re7j0kVSnUg 1:45] Bestial Incursion (OVER): "Beast Steel Incursion, honestly, I liked it more than Jong because ... you can discard it, you can mill it."
+[re7j0kVSnUg 5:30] Twinned Vision (OVER): "card draw is pretty nice in these ramp decks. You just want to be able to hit your lands, find your ramp targets."
+[re7j0kVSnUg 15:55] Archive Arbiter (OVER), Twinned Vision (OVER): "I think we're actually kind of good on value. I'll take Arbiter."
+[5aMQKjCukTc 0:41] Geist of Saint Thalia (OVER): "I think it's a pretty easy recursive recruitment here. This card is just excellent."
+[5aMQKjCukTc 5:41] Fatehold Chronologist (OVER): "one thing with this deck is we do be needing creatures. Ideally, creatures that can attack."
+[5aMQKjCukTc 7:39] Transformative Commons (UNDER): "I haven't really found I want second ghoul basically ever."
+[5aMQKjCukTc 8:02] Tetsuko Umezawa, Fugitive (OVER): "Like she's right in that sweet spot of not great in every deck."
+[uoyPQJ0NxO8 3:04] Mabel, Valley Hero (UNDER): "Kind of strangely enough white is the colour I least pair with my red cards. Like you would think that red white aggro is good. But like a lot of the white cards don't synergize very well with the red cards."
+[uoyPQJ0NxO8 4:28] Winter, Team Player (UNDER): "I think Winter's the kind of card you want to take when you already have the deck for it, not when you're like, oh, I take it speculatively."
+[uoyPQJ0NxO8 7:03] Warrior's Blades (UNDER): "I think I just take a Room of Refuge."
+[uoyPQJ0NxO8 7:10] Mabel, Valley Hero (UNDER), Warrior's Blades (UNDER): "Not that Mabel's amazing but there's not a ton of awesome three drops, so she doesn't have a lot of competition."
+[uoyPQJ0NxO8 10:18] Twinned Vision (OVER): "I would love this Twinned Vision, but got to take Absence."
+[uoyPQJ0NxO8 10:59] Warrior's Blades (UNDER): "All right, I guess we're taking Black Mabel and hopefully not playing her."
+[Uy49kTqon4o 6:40] Edgar, Ancient Bloodlord (UNDER): "at five that is rough. That's a tough sell."
+[Uy49kTqon4o 9:00] Transformative Commons (UNDER), Keeper of the Quiet Hour (OVER): "I think it's just you just always take the land unless it's like so above replacement. Like you're going to get 23."
+[Uy49kTqon4o 17:50] Geist of Saint Thalia (OVER): "I'd play up to two Geists at most."
+[n6sAkoTAN8w 4:42] Keeper of the Quiet Hour (OVER): "Blossom Blessed Angel seems quite good to me. That's just a big flyer."
+[n6sAkoTAN8w 6:55] Winter, Team Player (UNDER): "winter team player seems like a perfect card for this sort of deck because I I'm going to have creatures and I'm gonna have non-creatures"
+[n6sAkoTAN8w 10:00] Winter, Team Player (UNDER): "Maybe I can try to wheel this and just take winter."
+[n6sAkoTAN8w 11:40] Konstrari Annex (OVER): "I'll just take the land because maybe I could splash the Vasa if I get enough stuff."
+[n6sAkoTAN8w 17:15] Konstrari Annex (OVER): "I don't want to just put a random forest in my deck as much if I can't like search it up as well because it is a downside to have tap lands in your aggro deck"
+[n6sAkoTAN8w 20:20] Stingerquill Annex (OVER/UNDER): "last pick black red land for my black red deck is so good, especially with what my restrictive color requirements on some of my stuff."
+[pdITCHUnEa8 6:32] Tetsuko Umezawa, Fugitive (OVER): "I think here was probably fine. I mean, we weren't passing up much."
+[pdITCHUnEa8 10:00] Ruric Thar, Biomagus (OVER): "I think the giant flyer might be better."
+[pdITCHUnEa8 18:55] Twinned Vision (OVER): "I think one twin division is really good in this sort of deck. I have some ways to discard it."
+[9nAjtt_8TjA 5:40] Transformative Commons (UNDER): "We aren't committed fully to white. We only have three white cards. So yeah, let's take the land in case we want to dip into green."
+[9nAjtt_8TjA 6:53] Tetsuko Umezawa, Fugitive (OVER): "There's also a removal spell, but I'd rather just focus on being proactive than reactive right now."
+[9nAjtt_8TjA 11:36] Ruric Thar, Biomagus (OVER): "Kill spell plus surveil. Just perfect card for my deck. There's a Ruric Thar, which I definitely would play as a giant flyer at the top end, but kill spell that surveils is just what my deck wants."
+[9nAjtt_8TjA 13:54] Ruric Thar, Biomagus (OVER): "I think I have enough two drops. I'm just going to take the Ruric Thar. I think getting a little bit more midrange is fine."
+[55awKvGIxRE 3:55] Ruric Thar, Biomagus (OVER), Koth, the Geomancer (UNDER): "I feel like every time I cast this card, I felt amazing when my opponent cast it, I feel pretty bad. Let's take Ruric Thar. We'll live a little."
+[55awKvGIxRE 4:30] Mabel, Valley Hero (UNDER): "You just play like no admittance into Traxos on turn four, you've really done it."
+[55awKvGIxRE 6:55] Stingerquill Annex (OVER/UNDER): "I'm suspecting that I might end up having to splash because it's looking like I'm getting a little bit cut here and black is looking wide open."
+[55awKvGIxRE 8:55] Ruric Thar, Biomagus (OVER): "I think sometimes I take too many cheap cards and I don't have enough finishers."
+[55awKvGIxRE 12:18] Winter, Team Player (UNDER): "it's hard to find a deck that is simultaneously convoking and has a lot of non-creatures."
+[55awKvGIxRE 13:10] Fatehold Chronologist (OVER): "I'm not the biggest fan of chronologist, though."
+[55awKvGIxRE 14:15] Stingerquill Annex (OVER/UNDER): "Because we took the fixing lands, we get to take null summoner on the splash."
+[55awKvGIxRE 17:05] Twinned Vision (OVER): "I'm never going to be able to cast this, so I don't want this as a land cycler."
+[55awKvGIxRE 21:20] Fatehold Chronologist (OVER): "The one reason I added the two drop, guys, cuz it's like a two drop and a three drop combined in one."
+[55awKvGIxRE 21:25] Twinned Vision (OVER): "Oh man, I always feel like I'm cutting Protege's Awakening."
+
+Sample sizes: 11 drafts x 42 picks = 462 picks, from 2 players (NicolaiBolas x6, Alex Nikolic x5, one with a guest); offers include wheel re-offers of the same pack card, so they are not independent; each card is offered in the few packs listed above. Counts and exact CIs only; no test.

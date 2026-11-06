@@ -1,0 +1,37 @@
+7644 picks over 196 drafts; v2's #1 differs from the player's pick in 41%.
+
+OVERRATED: v2's #1, player took something else (min 12 times as #1)
+
+| Card | Events | Disagreed | Rate | GIH WR |
+|---|---|---|---|---|
+| Murmuring Volume | 135 | 94 | 70% | 55.71 |
+| Stingerquill Annex | 22 | 15 | 68% | 53.84 |
+| Archive Arbiter | 41 | 27 | 66% | 55.94 |
+| Rescue Girl, First Responder | 20 | 13 | 65% | 52.43 |
+| Konstrari Annex | 17 | 11 | 65% | 54.27 |
+| Twinned Vision | 190 | 119 | 63% | 57.51 |
+| Geist of Saint Thalia | 36 | 22 | 61% | 56.82 |
+| Ruric Thar, Biomagus | 32 | 19 | 59% | 55.3 |
+| Keeper of the Quiet Hour | 91 | 53 | 58% | 55.92 |
+| Fatehold Chronologist | 131 | 76 | 58% | 56.17 |
+| Bestial Incursion | 99 | 56 | 57% | 56.0 |
+| Tetsuko Umezawa, Fugitive | 32 | 18 | 56% | 54.65 |
+
+UNDERRATED: the player took it, v2's #1 was another card (min 12 times taken)
+
+| Card | Events | Disagreed | Rate | GIH WR |
+|---|---|---|---|---|
+| Precise Redaction | 21 | 20 | 95% | - |
+| Extrapolate the Impossible | 12 | 11 | 92% | 47.38 |
+| Kiora of Salt and Sand | 18 | 14 | 78% | 53.35 |
+| Edgar, Ancient Bloodlord | 22 | 17 | 77% | 52.76 |
+| Mabel, Valley Hero | 22 | 17 | 77% | 50.35 |
+| Koth, the Geomancer | 13 | 10 | 77% | 51.47 |
+| Transformative Commons | 43 | 33 | 77% | 55.67 |
+| Warrior's Blades | 17 | 13 | 76% | 54.45 |
+| Stingerquill Annex | 28 | 21 | 75% | 53.84 |
+| Restore with Empathy | 20 | 15 | 75% | 54.61 |
+| Winter, Team Player | 16 | 12 | 75% | 47.75 |
+| Cruel Calculations | 12 | 9 | 75% | 48.68 |
+
+Mean GIH WR: cards v2 overrates (miss rate >= 60%, n 7): 55.2; cards v2 underrates (n 43): 51.9; all well-sampled cards: 54.5

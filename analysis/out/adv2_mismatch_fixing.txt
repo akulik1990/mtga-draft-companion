@@ -1,0 +1,49 @@
+Picks with a v2 ranking: 3900; mismatches (player did not take v2's #1): 1609 (41%)
+
+Of the 1609 mismatches, the player took a fixing card in 345 (21%):
+
+| Kind the player took | Mismatches | Share of mismatches | Player took it in all picks | v2 matched it |
+|---|---|---|---|---|
+| dual land | 186 | 12% | 283 | 34% |
+| multi land | 25 | 2% | 48 | 48% |
+| other land | 10 | 1% | 26 | 62% |
+| landcycler | 77 | 5% | 193 | 60% |
+| mana source | 15 | 1% | 52 | 71% |
+| other fixing | 32 | 2% | 97 | 67% |
+
+By draft type:
+
+| Group | Mismatches | Of which fixing |
+|---|---|---|
+| splash | 897 | 177 (20%) |
+| three | 712 | 168 (24%) |
+
+By pack:
+
+| Pack | Mismatches | Of which fixing |
+|---|---|---|
+| 1 | 514 | 94 (18%) |
+| 2 | 518 | 111 (21%) |
+| 3 | 577 | 140 (24%) |
+
+In the 345 fixing mismatches, v2's #1 was: not fixing 288, landcycler 23, mana source 16, other fixing 11, multi land 4, dual land 2, other land 1
+
+Examples (draft, pick, player took, v2 #1, score gap, v2's rank of the player's card):
+- landcycler: e3e09588 P2p2: took Awaken the Inferno; v2 #1 Vraska, the Cutting Glare (gap 0.1, rank 2)
+- landcycler: 1221cf7a P2p12: took Apex Witchstalker; v2 #1 Shatterwing Pegasus (gap 1.3, rank 2)
+- landcycler: 191d756a P2p5: took Vinelasher Adept; v2 #1 Bestial Incursion (gap 3.6, rank 2)
+- dual land: e3e09588 P2p5: took Konstrari Annex; v2 #1 Bestial Incursion (gap 10.2, rank 5)
+- dual land: e3e09588 P3p1: took Innovative Commons; v2 #1 Awaken the Inferno (gap 21.5, rank 11)
+- dual land: e3e09588 P3p7: took Meticulous Commons; v2 #1 Sphinx's Approach (gap 0.0, rank 2)
+- other fixing: e3e09588 P2p9: took Konstrari Improviser; v2 #1 Way of the Paradox (gap 2.3, rank 2)
+- other fixing: 191d756a P1p4: took Konstrari Improviser; v2 #1 Bestial Incursion (gap 2.9, rank 2)
+- other fixing: 033ddfdd P1p3: took Fblthp, Knows the Way; v2 #1 Extended Absence (gap 14.3, rank 5)
+- multi land: 35ec76c8 P2p11: took Room of Refuge; v2 #1 Unsummon (gap 6.7, rank 2)
+- multi land: 5187d302 P3p9: took Room of Refuge; v2 #1 Geist of Saint Thalia (gap 5.4, rank 2)
+- multi land: 579a9a32 P1p11: took Room of Refuge; v2 #1 Theorix Metamage (gap 6.4, rank 2)
+- other land: 35ec76c8 P3p10: took Roiling Canopy; v2 #1 Emergency Phytomedic (gap 9.8, rank 2)
+- other land: 56dc2b97 P2p13: took Forest; v2 #1 Command the Stage (gap 54.5, rank 2)
+- other land: e712d73a P3p8: took Hall of Echoes; v2 #1 Room of Refuge (gap 2.2, rank 2)
+- mana source: 033ddfdd P2p1: took Vraska, the Cutting Glare; v2 #1 Denzilore Fatehold (gap 2.1, rank 3)
+- mana source: 0a287917 P2p1: took Vraska, the Cutting Glare; v2 #1 Sanctum Lurker (gap 2.3, rank 2)
+- mana source: 10e3f62b P2p2: took Murmuring Volume; v2 #1 Geist of Saint Thalia (gap 4.6, rank 2)

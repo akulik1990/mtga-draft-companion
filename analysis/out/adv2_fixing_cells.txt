@@ -1,0 +1,27 @@
+
+LANDS (any nonbasic land)
+
+| | Picks | Both took fixing | Player only | Engine only | Neither |
+|---|---|---|---|---|---|
+| All picks | 3900 | 3.7% (3.5% same card, 0.2% different) | 5.5% | 1.9% | 89.0% |
+| Pack 1 | 1300 | 3.8% (3.8% same card, 0.1% different) | 3.4% | 2.8% | 89.9% |
+| Pack 2 | 1300 | 3.8% (3.5% same card, 0.2% different) | 5.1% | 1.4% | 89.8% |
+| Pack 3 | 1300 | 3.4% (3.2% same card, 0.2% different) | 8.0% | 1.4% | 87.2% |
+| splash drafts | 2340 | 3.4% (3.2% same card, 0.2% different) | 4.9% | 1.9% | 89.8% |
+| three drafts | 1560 | 4.1% (3.9% same card, 0.2% different) | 6.4% | 1.8% | 87.7% |
+
+ALL FIXING (lands + landcyclers + any-colour mana + token/basic searchers)
+
+| | Picks | Both took fixing | Player only | Engine only | Neither |
+|---|---|---|---|---|---|
+| All picks | 3900 | 10.5% (9.1% same card, 1.5% different) | 7.4% | 5.1% | 77.0% |
+| Pack 1 | 1300 | 9.4% (8.5% same card, 0.8% different) | 6.4% | 6.1% | 78.2% |
+| Pack 2 | 1300 | 11.2% (10.2% same card, 1.1% different) | 7.5% | 4.9% | 76.4% |
+| Pack 3 | 1300 | 11.0% (8.5% same card, 2.5% different) | 8.3% | 4.2% | 76.5% |
+| splash drafts | 2340 | 10.5% (9.1% same card, 1.3% different) | 6.2% | 5.3% | 78.0% |
+| three drafts | 1560 | 10.6% (9.0% same card, 1.7% different) | 9.1% | 4.7% | 75.5% |
+
+When v2's #1 is a fixing card and the player took something else (engine only):
+  v2's #1 was: landcycler 69, dual land 57, mana source 33, other fixing 23, multi land 8, other land 8
+  the fixer v2 wanted ended in his final deck: 30.8%; his card was in his final deck: 57.1%
+  median score gap between v2's fixer and his card: 5.3 points

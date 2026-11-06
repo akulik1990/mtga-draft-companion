@@ -1,0 +1,63 @@
+Mismatches: 1609 (of 3,900 ranked picks)
+
+| Bucket | Picks | Share | Pack 1 | Pack 2 | Pack 3 | Median gap (pts) |
+|---|---|---|---|---|---|---|
+| 1 near-tie | 289 | 18% | 23% | 17% | 14% | 0.8 |
+| 2 fixing | 304 | 19% | 16% | 19% | 22% | 7.2 |
+| 3 not in his deck | 399 | 25% | 27% | 22% | 25% | 10.7 |
+| 4 engine off his colours | 108 | 7% | 10% | 7% | 4% | 6.8 |
+| 5 he went wide | 134 | 8% | 5% | 9% | 11% | 11.8 |
+| 6 same colours | 375 | 23% | 19% | 26% | 25% | 6.7 |
+
+Bucket 6 (same colours) detail:
+  he took gold: 70 (19%)
+  he took mono/colourless: 305 (81%)
+  his card cheaper: 137 (37%)
+  his card same/dearer: 238 (63%)
+  v2 creature, he creature: 96 (26%)
+  v2 creature, he other spell: 82 (22%)
+  v2 other spell, he creature: 118 (31%)
+  v2 other spell, he other spell: 79 (21%)
+  v2 took gold: 77 (21%)
+  v2 took mono/colourless: 298 (79%)
+
+Where in the pack each bucket sits (share of the bucket):
+  1 near-tie: early (p1-4) 38%, middle (p5-9) 38%, late (p10-14) 25%
+  2 fixing: early (p1-4) 30%, middle (p5-9) 54%, late (p10-14) 16%
+  3 not in his deck: early (p1-4) 13%, middle (p5-9) 38%, late (p10-14) 50%
+  4 engine off his colours: early (p1-4) 51%, middle (p5-9) 40%, late (p10-14) 9%
+  5 he went wide: early (p1-4) 47%, middle (p5-9) 44%, late (p10-14) 9%
+  6 same colours: early (p1-4) 47%, middle (p5-9) 44%, late (p10-14) 9%
+
+Bucket 3 (not in his deck): how highly v2 scored the card he took (score < 35 = v2 thought it was weak):
+  his card v2 score < 35: 102 (26%)
+  his card v2 score >= 35: 297 (74%)
+
+Bucket 6, cards he took most often instead:  Shatterwing Pegasus 9, Keeper of the Quiet Hour 8, Marwyn, the Preserver 8, Way of the Cryomancer 8, Infinite Coursework 8, Theoretical Necromancer 8, Protege's Awakening 7, Icy Reception 7
+Bucket 6, v2's #1 most often:  Murmuring Volume 14, Icy Reception 14, Fblthp, Impossibly Lost 13, Twinned Vision 13, Protege's Awakening 12, Bestial Incursion 11, Extended Absence 11, Surveillance Phantasm 10
+
+Examples:
+- 1 near-tie
+    e3e09588 P1p6: he took Twisted Fates, v2 #1 Theorix Annex (gap 1.5); his final RG+U
+    e3e09588 P2p1: he took Craftwork Crusher, v2 #1 Sphinx of False Conclusions (gap 0.1); his final RG+U
+    e3e09588 P2p2: he took Awaken the Inferno, v2 #1 Vraska, the Cutting Glare (gap 0.1); his final RG+U
+- 2 fixing
+    e3e09588 P2p5: he took Konstrari Annex, v2 #1 Bestial Incursion (gap 10.2); his final RG+U
+    e3e09588 P2p9: he took Konstrari Improviser, v2 #1 Way of the Paradox (gap 2.3); his final RG+U
+    e3e09588 P3p1: he took Innovative Commons, v2 #1 Awaken the Inferno (gap 21.5); his final RG+U
+- 3 not in his deck
+    e3e09588 P1p9: he took Unflinching Hortimancer, v2 #1 Vigorbloom Annex (gap 9.1); his final RG+U
+    e3e09588 P1p11: he took Afterthought Sentry, v2 #1 Winter, Team Player (gap 2.2); his final RG+U
+    e3e09588 P1p13: he took Yoshimaru, Beloved Companion, v2 #1 Meticulous Commons (gap 3.8); his final RG+U
+- 4 engine off his colours
+    e3e09588 P1p3: he took Puppet Crafting, v2 #1 Hexhaven Battalion (gap 20.9); his final RG+U
+    e3e09588 P3p10: he took Living Library, v2 #1 Vigorbloom Annex (gap 8.9); his final RG+U
+    191d756a P3p6: he took Restore with Empathy, v2 #1 Fatehold Chronologist (gap 5.4); his final WG+BR
+- 5 he went wide
+    e3e09588 P2p4: he took Way of the Mind Sculptor, v2 #1 Bestial Incursion (gap 18.8); his final RG+U
+    191d756a P2p1: he took Draconic Visitor, v2 #1 Fblthp, Knows the Way (gap 14.6); his final WG+BR
+    191d756a P2p4: he took Fulminous Forte, v2 #1 Arcane Amphisbaena (gap 6.0); his final WG+BR
+- 6 same colours
+    e3e09588 P1p5: he took Ghalta the Unstoppable, v2 #1 Arcane Amphisbaena (gap 3.4); his final RG+U
+    e3e09588 P3p2: he took Pia, Aether Ascetic, v2 #1 Pia, Determined Rebuilder (gap 21.1); his final RG+U
+    1221cf7a P2p11: he took Shatterwing Pegasus, v2 #1 Murmuring Volume (gap 9.0); his final WU+G

@@ -1,0 +1,105 @@
+baseline check sp3: land1 off top card equals adv1 log top card on 3887/3900 picks
+baseline check two: land1 off top card equals adv1 log top card on 3733/3744 picks
+picks compared: 7644 in 196 drafts
+
+== top-1/top-3 before -> after, difference (pp) with clustered bootstrap 95% CI over 196 drafts ==
+all          top-1: 58.97 -> 57.04  diff -1.94 [-2.43, -1.44]  n=7644
+all          top-3: 89.36 -> 88.32  diff -1.05 [-1.35, -0.75]  n=7644
+picks 1-10   top-1: 55.92 -> 48.62  diff -7.30 [-9.23, -5.36]  n=1960
+picks 1-10   top-3: 87.76 -> 83.72  diff -4.03 [-5.10, -2.91]  n=1960
+picks 11-42  top-1: 60.03 -> 59.94  diff -0.09 [-0.28, +0.11]  n=5684
+picks 11-42  top-3: 89.92 -> 89.90  diff -0.02 [-0.11, +0.07]  n=5684
+
+== third/splash colour cards (final colours from meta; third = splash, or for 3-colour decks the lane colour with fewest basics) ==
+card has third colour: n=678  rank#1 51.8->51.5  top3 83.2->82.9  mean rank(capped 15) 1.14->1.14
+   picks 1-10: n=162 top1 53.1->52.5 top3 86.4->84.6
+   picks 11-28: n=283 top1 56.9->56.5 top3 87.3->87.6
+   picks 29-42: n=233 top1 44.6->44.6 top3 76.0->76.0
+   top-1 diff -0.29 [-1.93,+1.36] over 94 drafts
+mono third-colour card: n=346  rank#1 51.4->52.6  top3 83.5->83.2  mean rank(capped 15) 1.13->1.13
+   picks 1-10: n=71 top1 56.3->60.6 top3 88.7->87.3
+   picks 11-28: n=145 top1 54.5->55.2 top3 84.8->84.8
+   picks 29-42: n=130 top1 45.4->45.4 top3 79.2->79.2
+   top-1 diff +1.16 [-1.19,+3.62] over 85 drafts
+
+== non-lane effects: non-land picks whose colours lie in the player's final top-2 colours ==
+in-colour non-land picks: n=4748 top1 64.70->61.67 top3 92.38->90.90
+   same, pick > 16 (ramp over): n=2930 top1 65.67->65.67
+engine top card changes on 6.3% of picks overall; for picks > 16: 0.0%
+   picks 1-5: top card changes 21.7%
+   picks 6-10: top card changes 23.1%
+   picks 11-16: top card changes 4.4%
+   picks 17-28: top card changes 0.0%
+   picks 29-42: top card changes 0.0%
+
+== lane weight on top two-colour pair, after N cards in pool (new = flattened, as scored) ==
+pool=0: before mean 0.100 (median 0.100)  after mean 0.100 (median 0.100)  n=196
+pool=1: before mean 0.305 (median 0.210)  after mean 0.100 (median 0.100)  n=196
+pool=3: before mean 0.581 (median 0.574)  after mean 0.100 (median 0.100)  n=196
+pool=6: before mean 0.637 (median 0.637)  after mean 0.149 (median 0.149)  n=196
+pool=10: before mean 0.749 (median 0.755)  after mean 0.395 (median 0.398)  n=196
+pool=16: before mean 0.621 (median 0.676)  after mean 0.621 (median 0.676)  n=196
+
+== first pool size at which lane mass >= 0.10 (splash/three drafts; uniform flatten makes this trivial early) ==
+final main pair: median pool size at first >=0.10: before (0.0, 100, 100), after (0.0, 100, 100) (median, n reached, n drafts)
+any lane containing the third colour: median pool size at first >=0.10: before (0, 99, 100), after (0, 99, 100) (median, n reached, n drafts)
+
+mean lane mass on the final main pair / on lanes containing the third colour, by pool size (splash+three drafts), before | after
+pool= 1 pair : 0.224 | 0.100  (n=100)
+pool= 1 third: 0.336 | 0.381  (n=100)
+pool= 3 pair : 0.351 | 0.100  (n=100)
+pool= 3 third: 0.296 | 0.381  (n=100)
+pool= 6 pair : 0.447 | 0.132  (n=100)
+pool= 6 third: 0.286 | 0.373  (n=100)
+pool=10 pair : 0.519 | 0.291  (n=100)
+pool=10 third: 0.303 | 0.347  (n=100)
+pool=14 pair : 0.401 | 0.344  (n=100)
+pool=14 third: 0.374 | 0.380  (n=100)
+pool=20 pair : 0.463 | 0.463  (n=100)
+pool=20 third: 0.419 | 0.419  (n=100)
+pool=30 pair : 0.447 | 0.447  (n=100)
+pool=30 third: 0.465 | 0.465  (n=100)
+
+== per-pick rank table (rank of player's pick: #1/#2/#3/other %, before | after) and off-colour cells ==
+| Pick | n | #1 | #2 | #3 | other | both-off | player-only | engine-only |
+|---|---|---|---|---|---|---|---|---|
+| P1p1 | 196 | 63>63 | 17>17 | 7>7 | 13>13 | - | - | - |
+| P1p2 | 196 | 57>47 | 18>19 | 7>9 | 18>24 | - | - | - |
+| P1p3 | 196 | 55>45 | 23>22 | 9>9 | 13>23 | - | - | - |
+| P1p4 | 196 | 60>51 | 18>20 | 12>16 | 11>13 | 31>36 | 9>4 | 11>22 |
+| P1p5 | 196 | 54>42 | 21>27 | 12>13 | 13>18 | 27>31 | 9>5 | 14>30 |
+| P1p6 | 196 | 52>43 | 24>21 | 12>18 | 12>17 | 25>29 | 9>5 | 17>28 |
+| P1p7 | 196 | 48>42 | 23>27 | 12>10 | 16>21 | 21>28 | 13>7 | 19>28 |
+| P1p8 | 196 | 59>53 | 19>26 | 11>9 | 11>13 | 24>26 | 8>7 | 8>19 |
+| P1p9 | 196 | 55>46 | 23>30 | 12>12 | 10>12 | 23>26 | 8>6 | 9>17 |
+| P1p10 | 196 | 57>53 | 26>26 | 13>14 | 5>8 | 20>21 | 14>13 | 13>18 |
+| P1p11 | 196 | 59>58 | 26>25 | 11>12 | 5>6 | 21>21 | 9>9 | 11>13 |
+| P1p12 | 196 | 67>66 | 29>30 | 4>4 | 0>0 | 34>33 | 8>9 | 8>8 |
+| P1p13 | 196 | 83>83 | 17>17 | 0>0 | 0>0 | 38>38 | 7>7 | 4>3 |
+| P2p1 | 196 | 57>59 | 19>18 | 11>11 | 13>13 | 18>18 | 9>9 | 12>12 |
+| P2p2 | 196 | 55>53 | 21>22 | 11>11 | 14>14 | 15>15 | 11>11 | 10>11 |
+| P2p3 | 196 | 55>55 | 17>17 | 14>14 | 14>14 | 16>16 | 12>12 | 7>7 |
+| P2p4 | 196 | 56>56 | 17>17 | 6>6 | 21>21 | 18>18 | 10>10 | 11>11 |
+| P2p5 | 196 | 49>49 | 22>22 | 16>16 | 13>13 | 15>15 | 10>10 | 13>13 |
+| P2p6 | 196 | 53>53 | 20>20 | 11>11 | 16>16 | 14>14 | 7>7 | 11>11 |
+| P2p7 | 196 | 60>60 | 20>20 | 10>10 | 11>11 | 13>13 | 8>8 | 8>8 |
+| P2p8 | 196 | 57>57 | 25>25 | 10>10 | 8>8 | 14>14 | 9>9 | 8>8 |
+| P2p9 | 196 | 59>59 | 19>19 | 10>10 | 12>12 | 13>13 | 13>13 | 10>10 |
+| P2p10 | 196 | 65>65 | 22>22 | 7>7 | 6>6 | 16>16 | 5>5 | 8>8 |
+| P2p11 | 196 | 61>61 | 27>27 | 8>8 | 4>4 | 23>23 | 10>10 | 6>6 |
+| P2p12 | 196 | 71>71 | 20>20 | 9>9 | 0>0 | 28>28 | 7>7 | 7>7 |
+| P2p13 | 196 | 88>88 | 12>12 | 0>0 | 0>0 | 36>36 | 3>3 | 3>3 |
+| P3p1 | 196 | 57>57 | 18>18 | 7>7 | 18>18 | 11>11 | 11>11 | 7>7 |
+| P3p2 | 196 | 54>54 | 23>23 | 8>8 | 15>15 | 9>9 | 8>8 | 12>12 |
+| P3p3 | 196 | 55>55 | 15>15 | 14>14 | 16>16 | 8>8 | 6>6 | 9>9 |
+| P3p4 | 196 | 51>51 | 21>21 | 12>12 | 15>15 | 11>11 | 11>11 | 8>8 |
+| P3p5 | 196 | 56>56 | 18>18 | 9>9 | 17>17 | 9>9 | 6>6 | 8>8 |
+| P3p6 | 196 | 54>54 | 24>24 | 11>11 | 11>11 | 8>8 | 12>12 | 8>8 |
+| P3p7 | 196 | 51>51 | 19>19 | 14>14 | 16>16 | 10>10 | 8>8 | 14>14 |
+| P3p8 | 196 | 58>58 | 21>21 | 12>12 | 9>9 | 14>14 | 6>6 | 9>9 |
+| P3p9 | 196 | 53>53 | 19>19 | 10>10 | 17>17 | 16>16 | 10>10 | 8>8 |
+| P3p10 | 196 | 50>50 | 27>27 | 9>9 | 14>14 | 20>20 | 11>11 | 15>15 |
+| P3p11 | 196 | 56>56 | 21>21 | 16>16 | 7>7 | 25>25 | 9>9 | 11>11 |
+| P3p12 | 196 | 71>71 | 21>21 | 7>7 | 0>0 | 28>28 | 8>8 | 5>5 |
+| P3p13 | 196 | 82>82 | 18>18 | 0>0 | 0>0 | 39>39 | 5>5 | 3>3 |
+| All | 7644 | 59>57 | 21>21 | 10>10 | 11>12 | 20>20 | 9>8 | 10>12 |
