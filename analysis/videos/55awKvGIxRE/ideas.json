@@ -1,0 +1,821 @@
+{
+ "video": "55awKvGIxRE",
+ "player": "NicolaiBolas",
+ "set": "FRA",
+ "source": "YouTube auto-caption transcript 0:00-23:19 (tools/video_draft.py transcript 55awKvGIxRE --start 0 --end 1400), card names corrected against data/Sets/FRA_PremierDraft_All_Data.json; nothing past 23:19 read. 'type' marks each idea as claim, heuristic or one-off pick; 'repeats' lists ideas of earlier videos it restates; 'related' lists looser topic matches.",
+ "ideas": [
+  {
+   "id": "55a-01",
+   "time": 70,
+   "phase": "draft",
+   "claim": "Ajani's Anguish over Campus Crier at P1p1: the X-damage-to-any-target rare is the more unique effect; Crier is the common he would otherwise take, and early X-burn is worse than a flat three-damage common.",
+   "quote": "between Campus Crier and Ajani's Anguish probably. Let's take the anguish. It feels like a more unique effect.",
+   "cards": [
+    "Ajani's Anguish",
+    "Campus Crier"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR and ALSA by top drafters for Ajani's Anguish against Campus Crier; skill-split.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "55a-02",
+   "time": 85,
+   "phase": "draft",
+   "claim": "Ajani's Anguish is not the most powerful early because a common that deals three and empowers Jace 1 is better in the first turns; its value is as a late-game finisher.",
+   "quote": "it's not the most powerful if you're just like doing it early game because you'd rather have the common that deals three and empowers Jace one.",
+   "cards": [
+    "Ajani's Anguish",
+    "No Admittance"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "Win rate of Ajani's Anguish when drawn early against late (turns seen); No Admittance as the comparison.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "55a-03",
+   "time": 138,
+   "phase": "draft",
+   "claim": "He has been overrating Arni, Humble Scribe: he keeps taking it and losing games, and it is probably worse than Mindseeker Oculus because it wants to sit back instead of trading.",
+   "quote": "Arni, who I think I've been overrating. ... I feel like I keep taking it and then losing games.",
+   "cards": [
+    "Arni, Humble Scribe",
+    "Mindseeker Oculus"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Arni, Humble Scribe against Mindseeker Oculus and other blue creatures.",
+   "type": "claim",
+   "repeats": [
+    "mqZ-49"
+   ],
+   "related": []
+  },
+  {
+   "id": "55a-04",
+   "time": 164,
+   "phase": "draft",
+   "claim": "Why dip into a second colour when you do not have to: with two red cards already, No Admittance over Repurposed Enforcer locks him into red; he says he may be too greedy for the power card and takes the safe option.",
+   "quote": "like why would I dip into a second color when I don't have to?",
+   "cards": [
+    "No Admittance",
+    "Repurposed Enforcer"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Whether safe on-colour picks beat power picks at P1p3 once two cards of one colour are held; win rate by colours kept.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "9nA-06",
+    "n6s-02"
+   ]
+  },
+  {
+   "id": "55a-05",
+   "time": 165,
+   "phase": "draft",
+   "claim": "Second good card of the first pick's colour: after Ajani's Anguish he takes Violent Echoes (kill a three-toughness creature and draw) over Mindseeker Oculus, which he would take if Echoes were absent.",
+   "quote": "I think I'm just going to take Violent Echoes. If this wasn't in the pack, I would just take Mindseeker Oculus.",
+   "cards": [
+    "Violent Echoes",
+    "Mindseeker Oculus"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Pick-order check: Violent Echoes against Mindseeker Oculus by GIH WR and ALSA.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "Uy4-02"
+   ]
+  },
+  {
+   "id": "55a-06",
+   "time": 165,
+   "phase": "draft",
+   "claim": "Counter spells such as Countersculpt are worth less than their cousins from other formats: Empower Jace 1 is worse than getting a 1/1 (a mass-counter variant would be better), so Countersculpt is good but not high.",
+   "quote": "getting an Empower Jace one is a little bit worse than like getting like a 1-1.",
+   "cards": [
+    "Countersculpt"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Countersculpt against other blue instants; check whether the Empower value shows.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-10",
+    "9nA-30"
+   ]
+  },
+  {
+   "id": "55a-07",
+   "time": 180,
+   "phase": "draft",
+   "claim": "In this format he often takes another good card of the colour he has taken ('I took a good red card, let's take another good one'), which commits him early to red.",
+   "quote": "I feel like I've often been like, 'Okay, well, I took a good red card. Let's take another good one.'",
+   "cards": [
+    "Violent Echoes",
+    "Ajani's Anguish"
+   ],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "Does a same-colour bonus for the second pick improve agreement with the final deck colours?",
+   "type": "heuristic",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "55a-08",
+   "time": 235,
+   "phase": "draft",
+   "claim": "Ruric Thar, Biomagus over Koth, the Geomancer: with kill spells already in the pool he wants a top-end card, and Ruric felt great when he cast it and bad when the opponent did, so 'we'll live a little' on a card not guaranteed to make the deck.",
+   "quote": "I feel like every time I cast this card, I felt amazing when my opponent cast it, I feel pretty bad. Let's take Ruric Thar. We'll live a little.",
+   "cards": [
+    "Ruric Thar, Biomagus",
+    "Koth, the Geomancer"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR and games-in-hand win rate of Ruric Thar, Biomagus against Koth, the Geomancer; skill-split.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-14",
+    "pdI-11"
+   ]
+  },
+  {
+   "id": "55a-09",
+   "time": 262,
+   "phase": "draft",
+   "claim": "A card that is guaranteed to make the deck is preferred to a stronger card in a colour not yet chosen: Pia, Determined Rebuilder over Liliana the Repentant after he took a blue card.",
+   "quote": "Taking a black card when we could just take a card that's guaranteed to make our deck.",
+   "cards": [
+    "Pia, Determined Rebuilder",
+    "Liliana the Repentant"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Test the on-colour bonus: Pia against Liliana by GIH WR for players who are red-blue at that point.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "n6s-18",
+    "Uy4-08"
+   ]
+  },
+  {
+   "id": "55a-10",
+   "time": 270,
+   "phase": "draft",
+   "claim": "Traxos, Academy Guardian is so good that No Admittance into Traxos on turn four 'you've really done it'; he takes it over Mabel, Valley Hero and does not deviate to red-white.",
+   "quote": "You just play like no admittance into Traxos on turn four, you've really done it.",
+   "cards": [
+    "Traxos, Academy Guardian",
+    "No Admittance",
+    "Mabel, Valley Hero"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Traxos, Academy Guardian when cast on turn four after a noncreature spell; versus Mabel, Valley Hero.",
+   "type": "claim",
+   "repeats": [
+    "mqZ-35",
+    "pdI-14",
+    "9nA-24"
+   ],
+   "related": []
+  },
+  {
+   "id": "55a-11",
+   "time": 300,
+   "phase": "draft",
+   "claim": "Surveillance Phantasm is a nice two-drop with late-game utility that works with Empower Jace and can attack; he takes it over the situational legendary Yuriko and plays it as curve filler once the colours are set.",
+   "quote": "Surveillance Phantasm is just like a nice two drop creature. Gives you some late game utility.",
+   "cards": [
+    "Surveillance Phantasm",
+    "Yuriko, Hope from the Shadows"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Surveillance Phantasm in Empower Jace decks and its play rate.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-59"
+   ]
+  },
+  {
+   "id": "55a-12",
+   "time": 320,
+   "phase": "draft",
+   "claim": "Once the deck has four great red cards and three good blue cards he does not need to worry about playables: he fills the curve and takes cheap interchangeable cards over the strongest off-colour card (Mabel, Bitter Recluse is best in the pack).",
+   "quote": "we're not going to have to worry about like getting playables at this point.",
+   "cards": [
+    "Mabel, Bitter Recluse",
+    "Surveillance Phantasm"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "How often the best card in the pack outperforms an on-colour filler for decks with 7 core cards at pick 7.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "55a-13",
+   "time": 340,
+   "phase": "draft",
+   "claim": "Passing signal read: red wheeling late (Whiplash Wordsmith at P1p8) means the neighbour passing pack 1 is not red; he may be blue, so pack 2 (opposite direction) should be good to him and pack 3 may get tough.",
+   "quote": "I imagine the first store left probably isn't in red. They might have gotten into blue. Pack two should be good to us. And then pack three might be a little bit tough.",
+   "cards": [
+    "Whiplash Wordsmith"
+   ],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "Whether late red cards in pack 1 predict a better red pack 2; correlate colour flow across pack directions.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "5aM-03",
+    "CWs-15"
+   ]
+  },
+  {
+   "id": "55a-14",
+   "time": 415,
+   "phase": "draft",
+   "claim": "A land that could splash Extended Absence over Surveillance Phantasm at P1p9, even though he does not really want to splash it: the pool is getting cut and black looks open.",
+   "quote": "I'm suspecting that I might end up having to splash because it's looking like I'm getting a little bit cut here and black is looking wide open.",
+   "cards": [
+    "Stingerquill Annex",
+    "Extended Absence",
+    "Surveillance Phantasm"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Fixing-land value rises with off-colour cards held; GIH WR of Stingerquill Annex in two-colour decks.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "CWs-12",
+    "mqZ-16"
+   ]
+  },
+  {
+   "id": "55a-15",
+   "time": 430,
+   "phase": "draft",
+   "claim": "Countersculpt over Arni, Humble Scribe at P1p10: he says he has learned the lesson that Arni is a little worse than he thinks (the same point as at P1p2; later he still takes Arni at P3p8 for his thin three-drop slot over Hallway Heckler).",
+   "quote": "Let's take the counter sculpt over the Arni. I think I'm just going to learn that lesson",
+   "cards": [
+    "Countersculpt",
+    "Arni, Humble Scribe",
+    "Hallway Heckler"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Countersculpt against Arni, Humble Scribe and Hallway Heckler.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "mqZ-49"
+   ]
+  },
+  {
+   "id": "55a-16",
+   "time": 470,
+   "phase": "draft",
+   "claim": "Sphinx of False Conclusions is great: flash it in to block, then you have another creature as a 4/2 flier; even if they kill one body you are up a resource.",
+   "quote": "You flash this in, block a thing, and then you just have like another creature that's just like really good as a 4-2 flyer.",
+   "cards": [
+    "Sphinx of False Conclusions"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Sphinx of False Conclusions; its blocking value if flashed in.",
+   "type": "claim",
+   "repeats": [
+    "pdI-20"
+   ],
+   "related": []
+  },
+  {
+   "id": "55a-17",
+   "time": 495,
+   "phase": "draft",
+   "claim": "He took Ajani's Anguish first and says that without it he would have left red sooner: a first pick keeps a colour alive longer than it should.",
+   "quote": "if I hadn't first picked a Ajani's Anguish, I probably would have moved off of red a little sooner.",
+   "cards": [
+    "Ajani's Anguish"
+   ],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "Measure sunk-cost drift: how often drafters who open with a colour's rare end in that colour.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "55a-18",
+   "time": 535,
+   "phase": "draft",
+   "claim": "Lock up finishers: with only two black cards he keeps taking blue and takes a second Ruric Thar, because he sometimes takes too many cheap cards and lacks finishers.",
+   "quote": "I think sometimes I take too many cheap cards and I don't have enough finishers.",
+   "cards": [
+    "Ruric Thar, Biomagus"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Number of top-end (5+ mana) cards in 17Lands winning decks; marginal value of the second.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "mqZ-24"
+   ]
+  },
+  {
+   "id": "55a-19",
+   "time": 550,
+   "phase": "draft",
+   "claim": "Icy Reception: he does not really want more than one, ever, so he passes a second copy for the Traxos.",
+   "quote": "I don't really want more than one icy reception really ever",
+   "cards": [
+    "Icy Reception",
+    "Traxos, Academy Guardian"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Icy Reception with 0/1/2 copies in the deck.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "CWs-35",
+    "mqZ-55",
+    "9nA-35"
+   ]
+  },
+  {
+   "id": "55a-20",
+   "time": 555,
+   "phase": "draft",
+   "claim": "He does not want many Traxos copies because they are legendary: two is enough.",
+   "quote": "We have a couple copies now. I don't want too many more because they're a legendary.",
+   "cards": [
+    "Traxos, Academy Guardian",
+    "Traxos, Scourge Eternal"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "Win rate of decks with 1, 2, 3 Traxos (Academy Guardian) copies.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "9nA-18",
+    "uoy-20"
+   ]
+  },
+  {
+   "id": "55a-21",
+   "time": 595,
+   "phase": "draft",
+   "claim": "Take the splash land early when a splash is certain: lands fill a unique role in limited because you cannot get them in other spots; Innovative Commons over Protege's Awakening and Fblthp.",
+   "quote": "Lands fill a very unique role in limited. You just can't get them in other spots.",
+   "cards": [
+    "Innovative Commons",
+    "Protege's Awakening"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "How the first splash land's pick position affects splash success; GIH WR of Innovative Commons in splash decks.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "CWs-12",
+    "CWs-24",
+    "mqZ-16",
+    "uoy-17"
+   ]
+  },
+  {
+   "id": "55a-22",
+   "time": 625,
+   "phase": "draft",
+   "claim": "A two-drop for the curve over a splash top-end card (Mind Meanderer): his top end is already sorted; he did not expect Cryotheory Adept to be good but the prowess goes a long way.",
+   "quote": "I thought it would be kind of meh, but the prowess goes a long way.",
+   "cards": [
+    "Cryotheory Adept",
+    "Mind Meanderer"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Cryotheory Adept in non-creature-heavy decks.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "n6s-12",
+    "5aM-09",
+    "uoy-07",
+    "mqZ-52"
+   ]
+  },
+  {
+   "id": "55a-23",
+   "time": 690,
+   "phase": "draft",
+   "claim": "Every black source helps a black splash play extra splash cards: he takes Theorix Annex (blue-black land) over Frostbite Pyromental because pack 3 might get dicey and it helps play extra Theorix Charms and Extended Absences.",
+   "quote": "every black source just helps me play like extra Theorix charms, extra extended absences.",
+   "cards": [
+    "Theorix Annex",
+    "Frostbite Pyromental",
+    "Theorix Charm",
+    "Extended Absence"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Splash-card play rate against number of fixing lands; GIH WR of Theorix Annex.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "mqZ-16",
+    "mqZ-48",
+    "CWs-24"
+   ]
+  },
+  {
+   "id": "55a-24",
+   "time": 730,
+   "phase": "draft",
+   "claim": "With two Unsummons he can prioritise card draw higher: a bounce spell is a tempo buffer that lets him choose draw spells over cheap creatures.",
+   "quote": "when you have two unsummons, you then just can prioritize card draw a little bit higher.",
+   "cards": [
+    "Unsummon",
+    "Protege's Awakening"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Unsummon with a second copy; interaction between Unsummon and card draw.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "CWs-35",
+    "9nA-25"
+   ]
+  },
+  {
+   "id": "55a-25",
+   "time": 738,
+   "phase": "draft",
+   "claim": "Winter, Team Player is fine but hard to fit: it wants both convoke creatures and many noncreature spells in the same deck.",
+   "quote": "it's hard to find a deck that is simultaneously convoking and has a lot of non-creatures.",
+   "cards": [
+    "Winter, Team Player"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "Win rate of Winter, Team Player by creature and noncreature counts.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "n6s-10"
+   ]
+  },
+  {
+   "id": "55a-26",
+   "time": 765,
+   "phase": "draft",
+   "claim": "Counting playables at the middle of pack 2 (18 playables, none bad) shows how selective he can be for the rest of the draft.",
+   "quote": "currently just blue, red, 18 playables here. None of these cards are bad.",
+   "cards": [],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Playables at the middle of pack 2 against final deck quality for a skill-split.",
+   "type": "heuristic",
+   "repeats": [
+    "9nA-23"
+   ],
+   "related": []
+  },
+  {
+   "id": "55a-27",
+   "time": 790,
+   "phase": "draft",
+   "claim": "Fatehold Chronologist is only 'could be good': he is not the biggest fan, and he does not want two.",
+   "quote": "I'm not the biggest fan of chronologist, though.",
+   "cards": [
+    "Fatehold Chronologist"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Fatehold Chronologist, play rate when taken late.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "55a-28",
+   "time": 835,
+   "phase": "draft",
+   "claim": "Protege's Awakening is a card he can afford only late: he takes it over Fblthp at P2p12 despite not having creatures to pressure with, expecting to bounce their stuff to draw.",
+   "quote": "I think I can afford to take now over Fibble. I might not have the creatures to pressure to draw with this",
+   "cards": [
+    "Protege's Awakening",
+    "Fblthp, Impossibly Lost"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Protege's Awakening against Fblthp, Impossibly Lost.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "9nA-07",
+    "mqZ-57"
+   ]
+  },
+  {
+   "id": "55a-29",
+   "time": 855,
+   "phase": "draft",
+   "claim": "Taking fixing early pays off with the bomb-level gold card: because he took the fixing lands, he can take Null Summoner as a splash, which he thinks is really strong; two Swamps are enough with the blue-black lens.",
+   "quote": "Because we took the fixing lands, we get to take null summoner on the splash.",
+   "cards": [
+    "Null Summoner",
+    "Theorix Annex",
+    "Stingerquill Annex"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Null Summoner in UB-based decks with and without black fixing; its splash win rate.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "CWs-27",
+    "CWs-24"
+   ]
+  },
+  {
+   "id": "55a-30",
+   "time": 895,
+   "phase": "draft",
+   "claim": "A cheap two-drop over another kill spell once the kill count is four: with two Clash of Elements, No Admittance and Violent Echoes he does not need more kill spells, especially splashed ones.",
+   "quote": "I don't really need more kill spells, especially splashed ones.",
+   "cards": [
+    "Surveillance Phantasm",
+    "Break Under Pressure"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Marginal value of the fifth removal spell against a two-drop at P3p2.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "994-27",
+    "n6s-14"
+   ]
+  },
+  {
+   "id": "55a-31",
+   "time": 920,
+   "phase": "draft",
+   "claim": "Awaken the Inferno over Saheeli, Jewel of Avishkar: Saheeli is good, but he is not chaining spells and Awaken is a kill spell that fetches black for Null Summoner; he even tries to float Saheeli for the wheel.",
+   "quote": "I think I might just want awaken the Inferno more as a kill spell. That also helps me get my black cards in order to get my null summoner more consistently.",
+   "cards": [
+    "Awaken the Inferno",
+    "Saheeli, Jewel of Avishkar"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Awaken the Inferno against Saheeli, Jewel of Avishkar in Empower Jace decks.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "994-07",
+    "mqZ-45"
+   ]
+  },
+  {
+   "id": "55a-32",
+   "time": 965,
+   "phase": "draft",
+   "claim": "Fixing land over a strong card once playables are covered: Shipwreck Marsh over Hapatra, the Desert Fang because he is already there on playables, his four-drop slot is crowded and the land helps the splash.",
+   "quote": "I could take Hapatra, but I'm going to get there on playables already.",
+   "cards": [
+    "Shipwreck Marsh",
+    "Hapatra, the Desert Fang"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Picks of fixing lands over playables by number of playables already in the pool at P3p4.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "994-25",
+    "uoy-17",
+    "CWs-02"
+   ]
+  },
+  {
+   "id": "55a-33",
+   "time": 995,
+   "phase": "draft",
+   "claim": "Count splash sources: with one Swamp he has five (later six) black sources for two black cards, which is enough.",
+   "quote": "If I play one swamp, I have five black sources for my two black cards. It's pretty good.",
+   "cards": [
+    "Null Summoner",
+    "Extended Absence"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Win rate of splash cards against number of black sources (5, 6, 7) in two-card splashes.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-60",
+    "CWs-42",
+    "994-29"
+   ]
+  },
+  {
+   "id": "55a-34",
+   "time": 1025,
+   "phase": "draft",
+   "claim": "A landcycler he can never cast is not worth taking as a land: Apex Witchstalker is passed, Twinned Vision taken.",
+   "quote": "I'm never going to be able to cast this, so I don't want this as a land cycler.",
+   "cards": [
+    "Apex Witchstalker",
+    "Twinned Vision"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "Play rate and cast rate of basic landcyclers when they are cycled.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "mqZ-53",
+    "mqZ-66",
+    "mqZ-72"
+   ]
+  },
+  {
+   "id": "55a-35",
+   "time": 1040,
+   "phase": "draft",
+   "claim": "Plan for All Outcomes is strong in a deck with many four-drops because it later turns into a five-drop double-spell turn.",
+   "quote": "Hopefully I can cast this a little bit later sometimes. Like five drop double spell thing.",
+   "cards": [
+    "Plan for All Outcomes"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Plan for All Outcomes in UR; compare with 994-13.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "994-13"
+   ]
+  },
+  {
+   "id": "55a-36",
+   "time": 1075,
+   "phase": "build",
+   "claim": "Build technique: cut every card, then add back the ones you definitely want first (premium removal, both Clash of Elements, both Traxos, the Oculus, Plan for All Outcomes, Ruric Thar, Null Summoner, Awaken the Inferno), then fill the rest by what the curve lacks.",
+   "quote": "I just have been finding it very helpful, and that's just cutting all my cards and then adding in the ones that I really want.",
+   "cards": [],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Compare builder output against a 'bombs first' build on the same pool.",
+   "type": "heuristic",
+   "repeats": [
+    "n6s-33"
+   ],
+   "related": [
+    "pdI-26"
+   ]
+  },
+  {
+   "id": "55a-37",
+   "time": 1230,
+   "phase": "build",
+   "claim": "A deck average cost of 3.6 is too high: he needs to lower it significantly and adds cheap cards (two Unsummons, two Surveillance Phantasm) until the average is 3.1.",
+   "quote": "My curve average cost is 3.6. So I need to lower that quite significantly, I would say.",
+   "cards": [
+    "Unsummon",
+    "Surveillance Phantasm"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Deck average cmc against win rate, controlling for skill; 3.1 against 3.6.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "55a-38",
+   "time": 1250,
+   "phase": "build",
+   "claim": "Splash Extended Absence because he is already playing black for Null Summoner: the black splash is two cards (Null Summoner and Extended Absence) and relies on Swamp plus lands.",
+   "quote": "I'm going to splash this card because I'm already playing black.",
+   "cards": [
+    "Extended Absence",
+    "Null Summoner"
+   ],
+   "kind": "splash / mana",
+   "engine_area": "builder",
+   "test_idea": "Win rate of a two-card black splash in UR with 6 sources.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "994-17",
+    "mqZ-40",
+    "CWs-30"
+   ]
+  },
+  {
+   "id": "55a-39",
+   "time": 1280,
+   "phase": "build",
+   "claim": "Cut Fatehold Chronologist and Paradox Shaper-type cards for better early plays; he does not love the Chronologist and later puts Paradox Shaper in as 'a two drop and a three drop combined in one'.",
+   "quote": "The one reason I added the two drop, guys, cuz it's like a two drop and a three drop combined in one.",
+   "cards": [
+    "Fatehold Chronologist",
+    "Paradox Shaper"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Play rate and win rate of Paradox Shaper by slot; GIH WR against Fatehold Chronologist.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "mqZ-52",
+    "CWs-17"
+   ]
+  },
+  {
+   "id": "55a-40",
+   "time": 1285,
+   "phase": "build",
+   "claim": "Cutting Twinned Vision and Protege's Awakening: he does not want Twinned Vision even with Unsummons, and says he always feels like he is cutting Protege's Awakening.",
+   "quote": "Oh man, I always feel like I'm cutting Protege's Awakening.",
+   "cards": [
+    "Protege's Awakening",
+    "Twinned Vision"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Main-deck rate and GIH WR of Protege's Awakening in UR and UB decks.",
+   "type": "claim",
+   "repeats": [
+    "CWs-44"
+   ],
+   "related": [
+    "mqZ-57",
+    "9nA-38"
+   ]
+  },
+  {
+   "id": "55a-41",
+   "time": 1340,
+   "phase": "build",
+   "claim": "Colour sources check at the end: nine blue sources and eight red, with a few black for the splash; he accepts being short on some aspect and says it will teach him as he plays.",
+   "quote": "Definitely have your blue. So, I have six, seven, eight, nine blues. Six, seven, eight red.",
+   "cards": [],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Source counts (9 blue, 8 red) against win rate for UR splash black decks in 17Lands data.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "Uy4-13",
+    "mqZ-60"
+   ]
+  },
+  {
+   "id": "55a-42",
+   "time": 1355,
+   "phase": "build",
+   "claim": "Unsummon plus Traxos is a good line: bounce something on turn three, play Traxos; even though he is down a card, Traxos catches him back up.",
+   "quote": "I think like turn three, bounce something with Unsummon, play a Traxos is a really good play line",
+   "cards": [
+    "Unsummon",
+    "Traxos, Academy Guardian"
+   ],
+   "kind": "synergy",
+   "engine_area": "builder",
+   "test_idea": "Win rate when Unsummon and Traxos are both in the opening nine; synergy value in the builder.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-64",
+    "9nA-25"
+   ]
+  }
+ ]
+}

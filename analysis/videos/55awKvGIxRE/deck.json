@@ -1,0 +1,62 @@
+{
+ "id": "55awKvGIxRE",
+ "time": "19:41-23:03 (build; the 40 is final on the deck screen at 22:20, 'Draft Deck 40/40')",
+ "main": {
+  "Unsummon": 2,
+  "Cryotheory Adept": 1,
+  "Icy Reception": 1,
+  "Surveillance Phantasm": 2,
+  "No Admittance": 1,
+  "Mindseeker Oculus": 1,
+  "Pia, Determined Rebuilder": 1,
+  "Clash of Elements": 2,
+  "Plan for All Outcomes": 1,
+  "Traxos, Academy Guardian": 2,
+  "Sphinx of False Conclusions": 1,
+  "Extended Absence": 1,
+  "Heartstring Puller": 1,
+  "Violent Echoes": 1,
+  "Null Summoner": 1,
+  "Awaken the Inferno": 1,
+  "Ajani's Anguish": 1,
+  "Ruric Thar, Biomagus": 1,
+  "Paradox Shaper": 1
+ },
+ "lands": {
+  "Island": 6,
+  "Mountain": 6,
+  "Swamp": 1,
+  "Shipwreck Marsh": 1,
+  "Theorix Annex": 1,
+  "Innovative Commons": 1,
+  "Stingerquill Annex": 1
+ },
+ "sideboard": {
+  "Perfected Theory": 1,
+  "Countersculpt": 1,
+  "Arni, Humble Scribe": 1,
+  "Divining Duelist": 1,
+  "Protege's Awakening": 2,
+  "Undulating Witness": 1,
+  "Ruric Thar, Biomagus": 1,
+  "Fatehold Annex": 1,
+  "Fatehold Chronologist": 1,
+  "Theorix Charm": 1,
+  "Twinned Vision": 1,
+  "Traxos, Scourge Eternal": 1
+ },
+ "spells": 23,
+ "land_count": 17,
+ "landcyclers_in_main": [
+  "Awaken the Inferno"
+ ],
+ "colours": "UR base; B splash (Null Summoner, Extended Absence). Blue sources: Island x6 + Shipwreck Marsh, Theorix Annex (+ Innovative Commons per the deck screen); red: Mountain x6 + Innovative Commons, Stingerquill Annex; black: Swamp, Shipwreck Marsh, Theorix Annex, Stingerquill Annex. He counts 'six, seven, eight, nine blues. Six, seven, eight red' at 22:21 and six black sources at 19:47.",
+ "notes": [
+  "Deck builder frame at 22:00 (1320s): 39/40 cards, sideboard row of 13 cards above the main deck; at 22:14 he hovers Paradox Shaper and says he is putting it in ('I think I want a two drop. Honestly, I'm going to put this guy in'); deck screen at 22:20 is 12 creatures and 11 noncreatures, 17 lands, 3.0 average.",
+  "19:52-20:30 build technique: cut everything and add back what he wants: No Admittance, both Clash of Elements, both Traxos, Mindseeker Oculus, Plan for All Outcomes, Ruric Thar, Null Summoner, Awaken the Inferno; 'I have seven creatures, seven non-creatures; average cost 3.6, I need to lower that quite significantly'.",
+  "20:51 'I'm going to splash this card because I'm already playing black' (Extended Absence). 20:55-21:01 adds two Unsummons and two Surveillance Phantasm for the early game; average cost 3.1 at 21:31.",
+  "21:09 'I don't really love the chronologist. I'd almost rather play the paradox shaper'; 21:59 'I don't want the Twinned Vision, I don't think'; 22:14 adds a two-drop (Paradox Shaper) last.",
+  "Protege's Awakening x2, Countersculpt, Arni, Divining Duelist, Perfected Theory, Undulating Witness, the second Ruric Thar and Traxos, Scourge Eternal are in the sideboard; the main deck keeps one Ruric Thar although at 20:21 he says 'I probably want to play both'.",
+  "Basics are the free auto-added ones: Island x6, Mountain x6, Swamp x1 (the Island and Mountain he picked at P2p14 and P3p14 are among them)."
+ ]
+}
