@@ -883,5 +883,19 @@
    "card_advantage",
    "mana"
   ]
+ },
+ "fixing_cards": {
+  "_why": "Akshin 2026-11-06: non-land mana sources listed by name instead of matched from rules text; not counted as splash sources (lanes.TOKEN_FIX off) because lands, not mana makers, decide whether a splash card gets cast (docs/b5-splash-cast-FRA.md: counting them makes a stuck splash card cost -10.7 instead of -5.6). Kept as data for a later per-pair synergy note.",
+  "heartwood_makers": [
+   "Heartwood Crafter",
+   "Hungering Puppetbeast",
+   "Aerid Konstrari",
+   "Konstrari Improviser",
+   "Tenured Tethermage",
+   "Woodwork Prodigy"
+  ],
+  "basic_searchers": {
+   "Fblthp, Knows the Way": "uncommon, {X}{G}{G}, ATA 4.58: finds up to X basics with different names (domain); colour-pair note for green decks with a splash or three colours, not a fixing source"
+  }
  }
 }

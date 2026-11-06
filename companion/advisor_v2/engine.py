@@ -207,6 +207,7 @@ class DraftAdvisorV2:
     REMOVAL_SLACK_PICK = -1.0  # removal spells below top players' count before the picker's removal need starts; -1 = the builder's REMOVAL_SLACK
     REMOVAL_POINTS = 0.0  # WR points for a removal spell when the pool, projected to 23 spells, is fully short of its top pair's removal floor (top players' count there minus deckbuilder.REMOVAL_SLACK); 0 = off
     REMOVAL_FROM = 8  # spells in the pool before the removal need applies
+    REMOVAL_SKIP = ""  # ";"-separated removal cards the removal need neither counts nor rewards (FRA: conditional removal, worth about 0 in hand within deck, docs/b1-within-removal-FRA.md)
     REMOVAL_FLAT = 0.0  # WR points for every removal spell at any count (FRA games: removal pays on, no ceiling: +0.8 per spell in the deck model, drafted not built); 0 = off
     FINISHER_POINTS = 0.0  # WR points for a finisher (cmc 5+, GIH WR one SD over the format mean) in proportion to how far the pool, projected to 23 spells, is under FINISHER_UP_TO castable finishers (FRA games: 1-2 +1.4, 3+ +4.0 points; decks hold what they drafted); 0 = off
     FINISHER_UP_TO = 3  # finishers a deck wants
@@ -293,8 +294,8 @@ class DraftAdvisorV2:
             from companion.advisor_v2 import deckbuilder  # deckbuilder imports this module
             target = ((config.fitted(set_code_of(self.pool), "decks") or {}).get("pairs") or {}).get(self.top_lane) or {}
             slack = deckbuilder.REMOVAL_SLACK if self.REMOVAL_SLACK_PICK < 0 else self.REMOVAL_SLACK_PICK
-            floor = max(0.0, target.get("removal", 6.0 + slack) - slack)
-            removal = sum(1 for c in self.pool if "Land" not in (c.get("types") or []) and "removal" in config.tags(c))
+            floor = max(0.0, target.get("removal", 6.0 + slack) - slack - (deckbuilder.skip_mean(self.top_lane) if self.REMOVAL_SKIP else 0.0))
+            removal = sum(1 for c in self.pool if "Land" not in (c.get("types") or []) and self.counts_as_removal(c))
             self.removal_need = max(0.0, floor - removal * 23.0 / spells) / floor if floor else 0.0
         self.finisher_need = 0.0
         if self.FINISHER_POINTS and spells >= self.REMOVAL_FROM:
@@ -456,6 +457,9 @@ class DraftAdvisorV2:
         cols = card.get("colors") or []
         return sum(shift.get(c, 0.0) for c in cols) / len(cols) if cols else 0.0
 
+    def counts_as_removal(self, card):
+        return "removal" in config.tags(card) and card.get("name") not in self.REMOVAL_SKIP.split(";")
+
     def is_finisher(self, card):
         """A spell of mana value 5+ whose GIH WR is a standard deviation over the format mean (the finisher field of the deck tables)."""
         if "Land" in (card.get("types") or []) or (card.get("cmc") or 0) < 5:
@@ -483,7 +487,7 @@ class DraftAdvisorV2:
             rate = all_decks(card).get("play_rate")
             if rate is not None:
                 a -= self.PLAY_RATE_POINTS * max(0.0, self.PLAY_RATE_FROM - float(rate)) / self.PLAY_RATE_FROM
-        if self.removal_need and "removal" in config.tags(card) and kind != "land":
+        if self.removal_need and self.counts_as_removal(card) and kind != "land":
             a += self.REMOVAL_POINTS * self.removal_need
         if self.REMOVAL_FLAT and "removal" in config.tags(card) and kind != "land":
             a += self.REMOVAL_FLAT

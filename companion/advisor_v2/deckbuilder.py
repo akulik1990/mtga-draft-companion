@@ -35,6 +35,7 @@ TOP_END_SLACK = 2.0  # five-plus drops above the target
 CURVE_SLACK = 2.0  # per mana value, either way
 CURVE_SKIP = ""  # comma-separated curve slots left out of the curve check ("2": two-drop shortages do not lose, docs/podcast-test-twodrops-FRA.md)
 REMOVAL_SLACK = 2.0  # removal spells below the target before the penalty starts (FRA: decks under 6 removal lose ~0.6 WR points beyond their cards, docs/synergy-2026-11-02.md); 99 = off
+REMOVAL_SKIP = ""  # ";"-separated removal cards the removal bounds do not count; the pair's target drops by top players' mean count of them (fitted "removal_skip", tools/removal_skip.py). FRA: conditional removal, about 0 in hand within deck (docs/b1-within-removal-FRA.md)
 PENALTY = 1.5  # predicted win-rate points per card outside the bounds
 MIN_PER_COLOUR = 5  # spells that need each main colour; fewer and the "pair" is a mono-colour deck with a stray card
 MIN_PER_COLOUR_THREE = 3  # the same for each colour of a three-colour deck
@@ -366,6 +367,11 @@ def support(set_code, lane, spells):
     return int(m.sum()), float(100 * (wins[m].sum() - pred[m].sum()) / games[m].sum())
 
 
+def skip_mean(lane):
+    """Top players' mean count of the REMOVAL_SKIP cards in the pair (fitted "removal_skip" of the active set); 0 when unknown."""
+    return float(((config.fitted(config.ACTIVE["set"], "removal_skip") or {}).get("pairs") or {}).get(lane, 0.0)) if config.ACTIVE["set"] else 0.0
+
+
 def shape_penalty(spells, target, lane="", min_creatures_slack=None, scale=1.0, colours_only=False):
     """Win-rate points lost for straying outside top players' shape in the pair.
     scale < 1 judges a part-built deck against the same share of the target (the engine's deck-aware picks)."""
@@ -384,7 +390,12 @@ def shape_penalty(spells, target, lane="", min_creatures_slack=None, scale=1.0, 
     over += max(0.0, lo - creatures) + max(0.0, creatures - hi)
     over += max(0.0, f * (target["two_drops"] - TWO_DROP_SLACK) - r["two_drops"])
     if "removal" in target:
-        over += max(0.0, f * (target["removal"] - REMOVAL_SLACK) - r["removal"])
+        removal, want = r["removal"], target["removal"]
+        if REMOVAL_SKIP:
+            skip = REMOVAL_SKIP.split(";")
+            removal -= sum(1 for c in spells if c.get("name") in skip and "removal" in roles(c))
+            want -= skip_mean(lane)
+        over += max(0.0, f * (want - REMOVAL_SLACK) - removal)
     over += max(0.0, r["five_plus"] - f * (target["five_plus"] + TOP_END_SLACK))
     for k in CURVE:
         if k in CURVE_SKIP.split(","):

@@ -1,0 +1,222 @@
+# B3 / B8: deck speed and enters-tapped lands (FRA Premier)
+
+## Card sets (fixed from oracle text / Scryfall before outcomes)
+
+Lands that enter tapped (class, colours):
+  ALW   Roiling Canopy           G   | This land enters tapped.
+  ALW   Room of Refuge           -   | This land enters tapped. As it enters, choose a color.
+  ALW   Theorist's Sanctum       U   | ({T}: Add {U}.)
+  PW    Dedicated Commons        RW   | This land enters tapped unless you control a planeswalker.
+  PW    Fatehold Annex           UW   | This land enters tapped unless you control a planeswalker.
+  PW    Formidable Commons       BG   | This land enters tapped unless you control a planeswalker.
+  PW    Innovative Commons       RU   | This land enters tapped unless you control a planeswalker.
+  PW    Konstrari Annex          GR   | This land enters tapped unless you control a planeswalker.
+  PW    Meticulous Commons       BW   | This land enters tapped unless you control a planeswalker.
+  PW    Stingerquill Annex       BR   | This land enters tapped unless you control a planeswalker.
+  PW    Theorix Annex            BU   | This land enters tapped unless you control a planeswalker.
+  PW    Transformative Commons   GU   | This land enters tapped unless you control a planeswalker.
+  PW    Vigorbloom Annex         GW   | This land enters tapped unless you control a planeswalker.
+  SLOW  Deserted Beach           UW   | This land enters tapped unless you control two or more other lands.
+  SLOW  Haunted Ridge            BR   | This land enters tapped unless you control two or more other lands.
+  SLOW  Overgrown Farmland       GW   | This land enters tapped unless you control two or more other lands.
+  SLOW  Rockfall Vale            GR   | This land enters tapped unless you control two or more other lands.
+  SLOW  Shipwreck Marsh          BU   | This land enters tapped unless you control two or more other lands.
+Non-basic lands that do not enter tapped: Eye of Ugin, Hall of Echoes, Hexhaven Dueling Arena
+
+AGG (34): Afterthought Sentry, Avatar of Burgeoning Echoes, Bloodline Recollector, Campus Crier, Carnivorous Cultivator, Chandra's Emberling, Cryotheory Adept, Eardrum Rattler, Edgar, Ancient Bloodlord, Enlightened Confidant, Frostbite Pyromental, Gallia, Tragic Host, Gallia, the Merrymaker, Grim Repriser, Konstrari Improviser, Liliana the Repentant, Marwyn, the Preserver, Master of Barbs, Primal Witchstalker, Proctor of Potential, Proft, Consulting Detective, Proft, Sinister Mastermind, Repurposed Enforcer, Samut, Hazoret's Champion, Samut, Tyrant of Naktamun, Skilled Battlecarver, Solarium Sentry, Stingcaster Mage, Sureshot Sower, Surveillance Phantasm, Tomik, Orzhov Lawmage, Unflinching Hortimancer, Vigorbloom Vanguard, Void Extrapolator
+WALK (41): Academic Ascent, Ajani Resolute, Ajani Unrelenting, Arcane Amphisbaena, Avatar of Burgeoning Echoes, Campus Crier, Chandra, Chill of Compliance, Chandra, Torch of Defiance, Countersculpt, Fatehold Charm, Garruk, Curse Breaker, Garruk, Veiled Butcher, Hexhaven Battalion, Inspired Tethermage, Jace's Machinations, Jace, Reality Sculptor, Keeper of the Quiet Hour, Mindseeker Oculus, No Admittance, Overwrite the Multiverse, Plan for All Outcomes, Protege's Awakening, Repurposed Enforcer, Rewrite Regrets, Sanctum Lurker, Solve for Disappointment, Tam's Resistance, The Theorist, Jace Beleren, Theorist's Proxy, Violent Echoes, Vraska's Final Mercy, Way of the Cryomancer, Way of the Deathbringer, Way of the Healer, Way of the Mentor, Way of the Mind Sculptor, Way of the Necromancer, Way of the Paradox, Way of the Pyromancer, Way of the Warlord, Way of the Wildspeaker
+
+Decks: 35646; Premier 23889; two-colour lane 27196
+
+# B3 deck speed inside a pair
+
+B3 population: 18749 decks (Premier, two-colour lane), 15136 drafts; mc mean 3.07 (pooled within-pair SD 0.279); two-drop share mean 0.364 (within-pair SD 0.085); AGG per deck mean 3.18, SD 1.66
+corr(mc, qA) +0.10; corr(mc, two) -0.51; corr(mc, agg) -0.26
+
+## P1: mean cmc within pair, linear + squared (pts: linear = per +1 SD; ends-minus-middle = squared term, i.e. WR at +-1 SD minus WR at the pair mean)
+  mc linear, Q(a) n=18749            all          +0.10 [-0.24, +0.44] p=0.569
+  mc ends-minus-middle, Q(a)         all          +0.04 [-0.19, +0.27] p=0.728
+  mc linear, Q(a) n=9418             half 0       +0.11 [-0.37, +0.59] p=0.642
+  mc ends-minus-middle, Q(a)         half 0       -0.06 [-0.39, +0.26] p=0.695
+  mc linear, Q(a) n=9331             half 1       +0.08 [-0.41, +0.57] p=0.747
+  mc ends-minus-middle, Q(a)         half 1       +0.16 [-0.16, +0.48] p=0.338
+  mc linear, Q(b) n=18749            all          +0.80 [+0.47, +1.14] p=0.000
+  mc ends-minus-middle, Q(b)         all          +0.02 [-0.21, +0.25] p=0.878
+  mc linear, Q(b) n=9418             half 0       +0.83 [+0.35, +1.30] p=0.001
+  mc ends-minus-middle, Q(b)         half 0       -0.08 [-0.41, +0.24] p=0.626
+  mc linear, Q(b) n=9331             half 1       +0.78 [+0.30, +1.26] p=0.001
+  mc ends-minus-middle, Q(b)         half 1       +0.12 [-0.20, +0.45] p=0.457
+  mc linear, Q(none) n=18749         all          +1.03 [+0.70, +1.37] p=0.000
+  mc ends-minus-middle, Q(none)      all          -0.04 [-0.27, +0.18] p=0.715
+  mc linear, Q(none) n=9418          half 0       +1.08 [+0.60, +1.55] p=0.000
+  mc ends-minus-middle, Q(none)      half 0       -0.15 [-0.46, +0.17] p=0.368
+  mc linear, Q(none) n=9331          half 1       +0.99 [+0.51, +1.47] p=0.000
+  mc ends-minus-middle, Q(none)      half 1       +0.07 [-0.26, +0.39] p=0.682
+  terciles within pair (mc), middle = reference; ends minus middle = mean of the two outer terciles minus middle
+  mc terciles Q(a)  ends-mid         all          +0.37 [-0.31, +1.06] p=0.286
+  mc terciles Q(a)  hi-lo            all          +0.35 [-0.48, +1.19] p=0.408
+  mc terciles Q(b)  ends-mid         all          +0.40 [-0.29, +1.09] p=0.258
+  mc terciles Q(b)  hi-lo            all          +1.86 [+1.04, +2.69] p=0.000
+
+## P2: two-drop share within pair, linear + squared (pts: linear = per +1 SD; ends-minus-middle = squared term, i.e. WR at +-1 SD minus WR at the pair mean)
+  two linear, Q(a) n=18749           all          -0.05 [-0.39, +0.28] p=0.753
+  two ends-minus-middle, Q(a)        all          -0.14 [-0.37, +0.08] p=0.220
+  two linear, Q(a) n=9418            half 0       -0.08 [-0.56, +0.39] p=0.732
+  two ends-minus-middle, Q(a)        half 0       -0.21 [-0.53, +0.12] p=0.208
+  two linear, Q(a) n=9331            half 1       -0.01 [-0.48, +0.46] p=0.974
+  two ends-minus-middle, Q(a)        half 1       -0.07 [-0.39, +0.24] p=0.649
+  two linear, Q(b) n=18749           all          +0.97 [+0.49, +1.46] p=0.000
+  two ends-minus-middle, Q(b)        all          +0.00 [-0.23, +0.24] p=0.970
+  two linear, Q(b) n=9418            half 0       +0.92 [+0.23, +1.61] p=0.009
+  two ends-minus-middle, Q(b)        half 0       -0.06 [-0.39, +0.27] p=0.707
+  two linear, Q(b) n=9331            half 1       +1.03 [+0.33, +1.72] p=0.004
+  two ends-minus-middle, Q(b)        half 1       +0.07 [-0.25, +0.40] p=0.668
+  two linear, Q(none) n=18749        all          -0.44 [-0.77, -0.11] p=0.010
+  two ends-minus-middle, Q(none)     all          -0.16 [-0.39, +0.07] p=0.167
+  two linear, Q(none) n=9418         half 0       -0.49 [-0.97, -0.01] p=0.044
+  two ends-minus-middle, Q(none)     half 0       -0.23 [-0.56, +0.09] p=0.161
+  two linear, Q(none) n=9331         half 1       -0.39 [-0.86, +0.07] p=0.098
+  two ends-minus-middle, Q(none)     half 1       -0.09 [-0.41, +0.23] p=0.585
+  terciles within pair (two), middle = reference; ends minus middle = mean of the two outer terciles minus middle
+  two terciles Q(a)  ends-mid        all          -0.48 [-1.17, +0.22] p=0.178
+  two terciles Q(a)  hi-lo           all          -0.40 [-1.22, +0.41] p=0.329
+  two terciles Q(b)  ends-mid        all          -0.27 [-0.97, +0.42] p=0.442
+  two terciles Q(b)  hi-lo           all          +1.12 [+0.06, +2.17] p=0.038
+
+## P3: AGG x mean cmc (within-pair SD units). AGG main = pts per AGG card at the average speed; interaction = change per +1 SD of mc (trap claim: negative)
+  AGG main, Q(a) n=18749             all          +0.08 [-0.14, +0.30] p=0.481
+  AGG x mc, Q(a)                     all          -0.11 [-0.30, +0.07] p=0.242
+  AGG main, Q(a) n=9418              half 0       +0.21 [-0.10, +0.52] p=0.183
+  AGG x mc, Q(a)                     half 0       +0.01 [-0.25, +0.28] p=0.940
+  AGG main, Q(a) n=9331              half 1       -0.05 [-0.36, +0.26] p=0.746
+  AGG x mc, Q(a)                     half 1       -0.24 [-0.50, +0.02] p=0.071
+  AGG main, Q(b) n=18749             all          +0.15 [-0.08, +0.38] p=0.198
+  AGG x mc, Q(b)                     all          -0.13 [-0.32, +0.06] p=0.172
+  AGG main, Q(b) n=9418              half 0       +0.22 [-0.10, +0.55] p=0.182
+  AGG x mc, Q(b)                     half 0       -0.01 [-0.28, +0.25] p=0.933
+  AGG main, Q(b) n=9331              half 1       +0.08 [-0.25, +0.41] p=0.618
+  AGG x mc, Q(b)                     half 1       -0.25 [-0.52, +0.01] p=0.056
+  AGG main, Q(none) n=18749          all          -0.13 [-0.35, +0.09] p=0.257
+  AGG x mc, Q(none)                  all          -0.06 [-0.24, +0.13] p=0.550
+  AGG main, Q(none) n=9418           half 0       +0.01 [-0.30, +0.33] p=0.941
+  AGG x mc, Q(none)                  half 0       +0.09 [-0.18, +0.35] p=0.523
+  AGG main, Q(none) n=9331           half 1       -0.27 [-0.59, +0.05] p=0.093
+  AGG x mc, Q(none)                  half 1       -0.20 [-0.46, +0.06] p=0.127
+  AGG slope by mc tercile (secondary)
+  AGG per card in lo-speed tercile, Q(a) all          +0.20 [-0.13, +0.53] p=0.243
+  AGG per card in mid-speed tercile, Q(a) all          -0.02 [-0.38, +0.34] p=0.930
+  AGG per card in hi-speed tercile, Q(a) all          +0.08 [-0.32, +0.49] p=0.681
+  AGG per card in lo-speed tercile, Q(b) all          +0.29 [-0.05, +0.63] p=0.091
+  AGG per card in mid-speed tercile, Q(b) all          +0.06 [-0.31, +0.42] p=0.767
+  AGG per card in hi-speed tercile, Q(b) all          +0.13 [-0.28, +0.53] p=0.547
+
+Sensitivity, all formats (27196 decks), format dummy added:
+  mc ends-minus-middle, Q(a), all formats all          +0.05 [-0.15, +0.25] p=0.609
+  mc linear, Q(a), all formats       all          +0.19 [-0.11, +0.49] p=0.212
+  two ends-minus-middle, Q(a), all formats all          -0.18 [-0.38, +0.02] p=0.085
+  two linear, Q(a), all formats      all          -0.17 [-0.47, +0.13] p=0.258
+  AGG x mc, Q(a), all formats        all          -0.10 [-0.27, +0.06] p=0.221
+
+# B8 (b)(c) deck level: enters-tapped lands in clean two-colour decks (Premier, no splash)
+
+Population: 9656 decks, 7892 drafts. Per deck means: PW-on 0.48, SLOW-on 0.08, ALW-on 0.27, off-colour duals 0.01; WALK 4.38 (SD 2.42); WALK>=4 60.30%
+Distribution of counts (decks): pw_on: 0:5540, 1:3601, 2:509, 3:6; slow_on: 0:8949, 1:670, 2:36, 3:1; alw_on: 0:7375, 1:2007, 2:255, 3:19; off: 0:9595, 1:50, 2:6, 3:4, 4:1; tap_on: 0:3856, 1:3971, 2:1542, 3:252, 4:30, 5:5
+
+## P4 / P5: per-card effect (pts) of land classes, all entered together (replaces a basic; land count controlled)
+  on-colour PW dual, Q(a) n=9656     all          +0.22 [-0.53, +0.98] p=0.561
+  on-colour SLOW dual, Q(a) n=9656   all          +0.55 [-1.08, +2.18] p=0.510
+  on-colour ALW tapped, Q(a) n=9656  all          +0.77 [-0.11, +1.65] p=0.084
+  off-colour dual (P4), Q(a) n=9656  all          -0.88 [-5.44, +3.68] p=0.705
+  on-colour PW dual, Q(a) n=4782     half 0       +0.05 [-1.06, +1.17] p=0.924
+  on-colour SLOW dual, Q(a) n=4782   half 0       +0.79 [-1.46, +3.04] p=0.491
+  on-colour ALW tapped, Q(a) n=4782  half 0       +0.64 [-0.61, +1.89] p=0.314
+  off-colour dual (P4), Q(a) n=4782  half 0       -3.65 [-11.02, +3.72] p=0.331
+  on-colour PW dual, Q(a) n=4874     half 1       +0.36 [-0.68, +1.40] p=0.495
+  on-colour SLOW dual, Q(a) n=4874   half 1       +0.25 [-2.11, +2.61] p=0.836
+  on-colour ALW tapped, Q(a) n=4874  half 1       +0.89 [-0.35, +2.13] p=0.159
+  off-colour dual (P4), Q(a) n=4874  half 1       +1.10 [-5.30, +7.51] p=0.736
+  on-colour PW dual, Q(none) n=9656  all          +0.41 [-0.36, +1.18] p=0.294
+  on-colour SLOW dual, Q(none) n=9656 all          +0.61 [-1.05, +2.27] p=0.470
+  on-colour ALW tapped, Q(none) n=9656 all          +0.80 [-0.08, +1.69] p=0.076
+  off-colour dual (P4), Q(none) n=9656 all          -0.33 [-4.83, +4.18] p=0.887
+  on-colour PW dual, Q(none) n=4782  half 0       +0.16 [-0.96, +1.29] p=0.778
+  on-colour SLOW dual, Q(none) n=4782 half 0       +1.00 [-1.27, +3.28] p=0.389
+  on-colour ALW tapped, Q(none) n=4782 half 0       +0.81 [-0.45, +2.06] p=0.209
+  off-colour dual (P4), Q(none) n=4782 half 0       -4.01 [-11.18, +3.16] p=0.273
+  on-colour PW dual, Q(none) n=4874  half 1       +0.63 [-0.42, +1.68] p=0.242
+  on-colour SLOW dual, Q(none) n=4874 half 1       +0.19 [-2.23, +2.61] p=0.878
+  on-colour ALW tapped, Q(none) n=4874 half 1       +0.80 [-0.45, +2.05] p=0.212
+  off-colour dual (P4), Q(none) n=4874 half 1       +2.24 [-4.20, +8.67] p=0.496
+
+  P5: on-colour tapped lands pooled (PW + SLOW + ALW) with off-colour duals separate
+  tap_on pooled (P5), Q(a)           all          +0.47 [-0.09, +1.03] p=0.099
+  tap_on pooled (P5), Q(a)           half 0       +0.36 [-0.45, +1.17] p=0.383
+  tap_on pooled (P5), Q(a)           half 1       +0.55 [-0.22, +1.32] p=0.164
+  tap_on pooled (P5), Q(none)        all          +0.58 [+0.02, +1.14] p=0.043
+  tap_on pooled (P5), Q(none)        half 0       +0.50 [-0.32, +1.32] p=0.229
+  tap_on pooled (P5), Q(none)        half 1       +0.64 [-0.14, +1.42] p=0.109
+
+## P6: PW-on duals x WALK (centred walker count): interaction per extra walker card (positive = walkers offset the cost); and PW-on slope by WALK >= 4
+  PW x WALK (P6), Q(a) n=9656        all          +0.03 [-0.28, +0.34] p=0.856
+  PW x WALK (P6), Q(a) n=4782        half 0       +0.01 [-0.45, +0.47] p=0.950
+  PW x WALK (P6), Q(a) n=4874        half 1       +0.06 [-0.35, +0.48] p=0.768
+  PW slope, WALK<4, Q(a)             all          -0.22 [-1.44, +1.01] p=0.728
+  PW slope, WALK>=4, Q(a)            all          +0.49 [-0.47, +1.45] p=0.317
+  PW slope diff (>=4 minus <4), Q(a) all          +0.71 [-0.85, +2.26] p=0.373
+  PW x WALK (P6), Q(b) n=9656        all          -0.01 [-0.31, +0.30] p=0.973
+  PW x WALK (P6), Q(b) n=4782        half 0       -0.03 [-0.49, +0.43] p=0.896
+  PW x WALK (P6), Q(b) n=4874        half 1       +0.04 [-0.38, +0.46] p=0.852
+  PW slope, WALK<4, Q(b)             all          -0.12 [-1.34, +1.11] p=0.851
+  PW slope, WALK>=4, Q(b)            all          +0.52 [-0.45, +1.49] p=0.290
+  PW slope diff (>=4 minus <4), Q(b) all          +0.64 [-0.92, +2.20] p=0.421
+
+## P7: on-colour tapped lands x deck speed (mcw, within-pair SD): interaction per card per +1 SD of mc (cost grows in fast decks = positive on slow)
+  tap_on x mc (P7), Q(a) n=9656      all          +0.58 [+0.04, +1.13] p=0.037
+  tap_on x mc (P7), Q(a) n=4782      half 0       +0.06 [-0.73, +0.86] p=0.876
+  tap_on x mc (P7), Q(a) n=4874      half 1       +1.09 [+0.32, +1.86] p=0.005
+  tap_on main at average speed, Q(a) all          +0.43 [-0.13, +0.99] p=0.128
+  tap_on x mc (P7), Q(none) n=9656   all          +0.47 [-0.08, +1.01] p=0.092
+  tap_on x mc (P7), Q(none) n=4782   half 0       -0.06 [-0.85, +0.72] p=0.875
+  tap_on x mc (P7), Q(none) n=4874   half 1       +0.99 [+0.23, +1.76] p=0.011
+  tap_on main at average speed, Q(none) all          +0.52 [-0.05, +1.08] p=0.074
+  tap_on slope by mc tercile (secondary)
+  tap_on per card, lo-speed tercile  all          -0.29 [-1.29, +0.70] p=0.563
+  tap_on per card, mid-speed tercile all          +1.05 [+0.07, +2.02] p=0.037
+  tap_on per card, hi-speed tercile  all          +0.60 [-0.32, +1.51] p=0.199
+
+  Secondary: the 4th+ tapped land (tap_on >= 4 vs <= 3), unit change
+  decks with tap_on >= 4: 35
+  tap_on >= 4 dummy, Q(a)            all          -2.33 [-10.55, +5.89] p=0.579
+  tap_on >= 4 dummy x WALK>=4        all          -2.27 [-17.90, +13.35] p=0.776
+
+# B8 (a) within deck: lane-colour PW / SLOW dual in the opening hand vs another land (Premier games)
+
+games 297964, decks 69846, drafts 55469; clean two-colour games 128682; on play 0.500
+on-colour dual in opening hand: PW 0.092 per game, SLOW 0.017; decks with a lane PW dual 12964, SLOW 2470
+(pts of win rate per tapped dual in the opening hand instead of another land; lands in the opening hand and mulligans held; deck FE)
+
+## P8 primary and splits
+  P8 PW + SLOW, all games                        decks 12339 games  61770  +1.26 [+0.22, +2.31] p=0.018   placebo -0.21 (0.31)  adjusted +1.47 [+0.26, +2.69] z +2.4
+  PW only (decks with a PW dual)                 decks 11074 games  55400  +1.41 [+0.28, +2.54] p=0.015   placebo -0.29 (0.36)  adjusted +1.70 [+0.37, +3.04] z +2.5
+  SLOW only (decks with a SLOW dual)             decks  2131 games  10802  +0.52 [-2.15, +3.19] p=0.704   placebo -0.19 (0.66)  adjusted +0.71 [-2.26, +3.68] z +0.5
+  PW + SLOW, on the play                         decks  8840 games  28292  +0.77 [-0.87, +2.40] p=0.358   placebo +0.00 (0.43)  adjusted +0.77 [-1.07, +2.60] z +0.8
+  PW + SLOW, on the draw                         decks  8992 games  28362  +1.47 [-0.21, +3.15] p=0.087   placebo -0.26 (0.41)  adjusted +1.72 [-0.14, +3.59] z +1.8
+  PW + SLOW, half 0                              decks  6048 games  30285  +2.11 [+0.61, +3.61] p=0.006   placebo -0.42 (0.39)  adjusted +2.53 [+0.85, +4.21] z +3.0
+  PW + SLOW, half 1                              decks  6291 games  31485  +0.45 [-1.02, +1.92] p=0.548   placebo -0.02 (0.38)  adjusted +0.47 [-1.17, +2.11] z +0.6
+  PW + SLOW, skill >= 0.60                       decks  2894 games  16475  +1.18 [-0.69, +3.05] p=0.218   placebo -0.20 (0.57)  adjusted +1.38 [-0.80, +3.55] z +1.2
+deck-speed tercile cuts (mean cmc of games' decks with the class): 2.88, 3.13
+  PW + SLOW, fast tercile                        decks  4223 games  20948  +0.33 [-1.45, +2.11] p=0.716   placebo -0.23 (0.51)  adjusted +0.56 [-1.48, +2.60] z +0.5
+  PW + SLOW, fast tercile, on the play           decks  3004 games   9632  -0.88 [-3.68, +1.92] p=0.538   placebo +0.06 (0.74)  adjusted -0.94 [-4.09, +2.21] z -0.6
+  PW + SLOW, middle tercile                      decks  4144 games  20635  +2.11 [+0.28, +3.94] p=0.023   placebo -0.40 (0.49)  adjusted +2.52 [+0.45, +4.58] z +2.4
+  PW + SLOW, middle tercile, on the play         decks  2953 games   9379  +3.10 [+0.24, +5.96] p=0.034   placebo -0.37 (0.75)  adjusted +3.47 [+0.25, +6.69] z +2.1
+  PW + SLOW, slow tercile                        decks  3972 games  20187  +1.33 [-0.49, +3.16] p=0.153   placebo -0.30 (0.49)  adjusted +1.63 [-0.43, +3.69] z +1.6
+  PW + SLOW, slow tercile, on the play           decks  2883 games   9281  +0.04 [-2.77, +2.85] p=0.978   placebo -0.09 (0.76)  adjusted +0.13 [-3.06, +3.32] z +0.1
+  PW only, WALK < 4                              decks  4584 games  22475  +0.66 [-1.15, +2.46] p=0.474   placebo -0.32 (0.50)  adjusted +0.98 [-1.08, +3.04] z +0.9
+  PW + SLOW, WALK < 4                            decks  5096 games  25067  +0.83 [-0.83, +2.49] p=0.327   placebo -0.25 (0.42)  adjusted +1.08 [-0.77, +2.92] z +1.1
+  PW only, WALK >= 4                             decks  6490 games  32925  +1.91 [+0.46, +3.37] p=0.010   placebo -0.14 (0.43)  adjusted +2.05 [+0.37, +3.73] z +2.4
+  PW + SLOW, WALK >= 4                           decks  7243 games  36703  +1.56 [+0.21, +2.91] p=0.024   placebo -0.17 (0.36)  adjusted +1.73 [+0.20, +3.25] z +2.2
+
+  Room of Refuge (always tapped, any lane) in the opening hand vs another land, clean two-colour decks containing it (secondary)
+  Room of Refuge, all games                      decks  4718 games  23780  +0.72 [-0.97, +2.41] p=0.404
+  Room of Refuge, on the play                    decks  3388 games  10927  +0.67 [-1.94, +3.29] p=0.613
+  Room of Refuge, on the draw                    decks  3433 games  10879  +0.62 [-2.14, +3.39] p=0.660

@@ -70,7 +70,8 @@
   "deckbuilder.COMP_SLACK": 2.0,
   "deckbuilder.GIH_SLOPE": 5.5,
   "deckbuilder.SPLASH_TERM": 3.1,
-  "lanes.TOKEN_FIX": true
+  "lanes.TOKEN_FIX": false,
+  "REMOVAL_SKIP": "Essence Burn;Gideon's Memorial;Infinite Coursework;Konstrari Charm;Living Library;Refute Destiny;Solitary Cell;Sureshot Sower;Surgical Precision;Terminal Criticism;Vraska, the Cutting Glare;Your Fate Ends Here"
  },
  "pairs": {
   "k": 4,
@@ -614,6 +615,11 @@
    "how": "analysis/strategy_plan.py: median enablers / payoffs / top payoffs in one-deck Premier trophy decks per pair, with the pair's plan from docs/archetypes-FRA.md",
    "date": "2026-11-05",
    "commit": "d369d87"
+  },
+  "removal_skip": {
+   "how": "tools/removal_skip.py: mean count of the listed removal cards in 60%+ players' decks per pair",
+   "date": "2026-11-06",
+   "commit": "b88d733"
   }
  },
  "prefs": {
@@ -10206,6 +10212,44 @@
     "payoff": 1,
     "top_payoff": 1
    }
+  }
+ },
+ "removal_skip": {
+  "cards": [
+   "Essence Burn",
+   "Gideon's Memorial",
+   "Infinite Coursework",
+   "Konstrari Charm",
+   "Living Library",
+   "Refute Destiny",
+   "Solitary Cell",
+   "Sureshot Sower",
+   "Surgical Precision",
+   "Terminal Criticism",
+   "Vraska, the Cutting Glare",
+   "Your Fate Ends Here"
+  ],
+  "pairs": {
+   "BG": 0.84,
+   "BR": 0.09,
+   "BRG": 0.88,
+   "RG": 1.06,
+   "UB": 0.61,
+   "UBG": 0.83,
+   "UBR": 0.32,
+   "UG": 1.12,
+   "UR": 0.55,
+   "URG": 0.91,
+   "WB": 1.19,
+   "WBG": 1.36,
+   "WBR": 1.02,
+   "WG": 1.54,
+   "WR": 1.22,
+   "WRG": 1.41,
+   "WU": 1.75,
+   "WUB": 1.14,
+   "WUG": 1.36,
+   "WUR": 1.26
   }
  }
 }
