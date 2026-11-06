@@ -23,6 +23,8 @@ from companion.advisor_v2 import config
 SPELLS = 23
 LANDS = 17
 LAND_STEPS = False  # Akshin's rule: one land fewer with 1+ landcycler and 1+ dual in the deck, two fewer with 2+ of each
+CANTRIP_STEP = False  # one land fewer with 2+ cheap cantrips (is_cantrip); held out 16 vs 17 lands there +1.97 [+0.66, +3.27] (docs/heldout-leads-FRA.md)
+MIN_LANDS = 15  # the land steps together never go below this
 BASIC = {"W": "Plains", "U": "Island", "B": "Swamp", "R": "Mountain", "G": "Forest"}
 CURVE = ("1", "2", "3", "4", "5", "6+")
 
@@ -43,10 +45,20 @@ MIN_BASICS = 6  # basics of each colour of a pair
 MIN_BASICS_THREE = 4  # ...and of each colour of a three-colour deck
 MAX_SPLASH = 3  # splash cards; more and it is a third main colour
 MIN_SPLASH_CMC = 3  # splash late, impactful cards, not early drops
-MAX_SPLASH_BASICS = 4  # basics of the splash colour before the main colours suffer
+SPLASH_MIN_GIH = 0.0  # Akshin's rule: a card is splashable only at this GIH WR or more (in the pair, All Decks where the pair has none); 0 = off. 56.5: lowest quarter of 60%+ players' splash cards (FRA, 6,012 cards: median 57.4, lowest tenth 54.5; set median playable 55.0)
+MAX_SPLASH_BASICS = 4  # most basics of the splash colour, a hard cap since 2026-11-06 (was 1.5 points per basic over it): a splash needing more stays out. Akshin: a good deck never runs more than 1-2 (60%+ players: 0 4.8%, 1 44.6%, 2 36.1%, 3 12.7%, 4+ 1.8%)
 SPLASH_LANDS_ONLY = False  # lands_for: the splash colour's sources count lands only (no landcyclers or any-colour mana makers): a splash card is cast off lands (docs/b5-splash-cast-FRA.md, within deck)
-SPLASH_RULE_LANDS_ONLY = False  # the same for the splash colour choice and the fitted splash rule's fixing input (the rule was fit with mana makers counted: refit before relying on it)
-DP_SPLASH_SOURCES = 0  # allow a double-pip splash card ({4}{W}{W} splashed) and give the deck this many land sources of the colour; 0 = off. 7: P(2+ seen) matches P(1+ of 3) for a single-pip splash, turns 5-8 (docs/engine-comparison-2026-11-03.md)
+SPLASH_RULE_LANDS_ONLY = False  # the same for the splash colour choice and the fitted splash rule's fixing input; the rule is then the "splash_lands" section (tools/fit_splash.py --lands-only)
+# Double off-colour pips are never splashed (Akshin, 2026-11-06), except a bomb (Akshin's rule, DP_BOMB_SPLASH): the card is among
+# the set's DP_BOMB_TOP non-land cards by All Decks GIH WR (DP_BOMB_MIN_GIH+ games in hand), and the deck reaches DP_SPLASH_SOURCES
+# splash sources (one more than a single-pip splash's 3-4) from duals making the splash colour and a main colour, any-colour lands
+# and landcyclers that fetch the splash basic, plus at most MAX_SPLASH_BASICS basics; one fewer is accepted when the last would
+# need a basic over that cap. Short of that, the card stays out. Mana makers that are not lands do not count; the main colours
+# keep their basics (nothing beyond the cap goes to the splash).
+DP_BOMB_SPLASH = False
+DP_BOMB_TOP = 10
+DP_BOMB_MIN_GIH = 500
+DP_SPLASH_SOURCES = 5
 OWN_FIXING = True  # splash and three-colour rule inputs count fixing without basic landcyclers (colour_fixing); refit the rules when switching
 THREE_AT = 0.5  # go three colours when the fitted three rule gives at least this chance
 SPLASH_FORCE = False  # when the fitted rule says splash, splash even if the splash build scores below the plain pair
@@ -119,8 +131,9 @@ def lands_for(spells, lane, nonbasics=(), splash="", fixers=0, lands=None):
         want = 0 if not n_splash else 3 if n_splash == 1 else 4
         have = sum(1 for c in nonbasics if splash in (c.get("colors") or []) or not c.get("colors"))  # colourless nonbasics here tap for a chosen colour
         splash_basics = max(0, want - have - (0 if SPLASH_LANDS_ONLY else fixers))
-        if DP_SPLASH_SOURCES and any(len(off_pips(c, lane)) >= 2 for c in spells if not castable(c, lane)):
-            splash_basics = max(splash_basics, DP_SPLASH_SOURCES - have)
+        if DP_BOMB_SPLASH and has_dp(spells, lane):
+            need = DP_SPLASH_SOURCES - dp_fixing(spells, lane, nonbasics, splash)
+            splash_basics = max(splash_basics, min(MAX_SPLASH_BASICS, need))
     basics_n = (lands or LANDS) - len(nonbasics) - splash_basics
     total = sum(weight[c] for c in lane) or 1.0
     floor = MIN_BASICS if len(lane) == 2 else MIN_BASICS_THREE
@@ -132,6 +145,43 @@ def lands_for(spells, lane, nonbasics=(), splash="", fixers=0, lands=None):
     if splash_basics:
         counts[splash] = splash_basics
     return {BASIC[c]: n for c, n in counts.items() if n}
+
+
+@lru_cache(maxsize=8)
+def dp_bombs(set_code):
+    """The set's DP_BOMB_TOP non-land cards by All Decks GIH WR with DP_BOMB_MIN_GIH+ games in hand ("samples")."""
+    import json
+
+    from companion import DATA_DIR
+
+    path = DATA_DIR / "Sets" / f"{set_code}_PremierDraft_All_Data.json"
+    if not set_code or not path.exists():
+        return frozenset()
+    wr = {}
+    for c in json.loads(path.read_text())["card_ratings"].values():
+        a = (c.get("deck_colors") or {}).get("All Decks") or {}
+        if "Land" not in (c.get("types") or []) and (a.get("samples") or 0) >= DP_BOMB_MIN_GIH and a.get("gihwr"):
+            wr[c["name"]] = a["gihwr"]
+    return frozenset(sorted(wr, key=lambda k: -wr[k])[:DP_BOMB_TOP])
+
+
+def has_dp(spells, lane):
+    return any(len(off_pips(c, lane)) >= 2 for c in spells if not castable(c, lane))
+
+
+def dp_fixing(spells, lane, nonbasics, splash):
+    """Splash sources besides basics for a double-pip bomb: nonbasics making the splash colour (build_pair's nonbasics with a splash
+    each make a main colour too) or any colour, and the deck's landcyclers that can fetch the splash basic. Not mana makers."""
+    lands = sum(1 for n in nonbasics if splash in (n.get("colors") or []) or not n.get("colors"))
+    fetch = ("basic landcycling", BASIC[splash].lower() + "cycling")
+    return lands + sum(1 for c in spells if any(f in (c.get("oracle_text") or "").lower() for f in fetch))
+
+
+def dp_short(chosen, lane, nonbasics, basics, splash):
+    """A double-pip bomb in the deck short of DP_SPLASH_SOURCES - 1 splash sources (lands_for gives it at most MAX_SPLASH_BASICS basics)."""
+    if not splash or not has_dp(chosen, lane):
+        return False
+    return dp_fixing(chosen, lane, nonbasics, splash) + basics.get(BASIC[splash], 0) < DP_SPLASH_SOURCES - 1
 
 
 def _wr(card, lane):
@@ -241,11 +291,13 @@ def splash_chance(rule, pool, lane):
 
 def splashable(card, lane, splash):
     """One off-colour pip, of the splash colour, on a card worth waiting for (3+ mana): the guides' splash rule.
-    DP_SPLASH_SOURCES: two pips of the splash colour too (lands_for then gives the deck that many sources)."""
-    if "Land" in (card.get("types") or []) or castable(card, lane) or (card.get("cmc") or 0) < MIN_SPLASH_CMC:
+    Never two (Akshin, 2026-11-06: double off-colour pips are not splashable), except a DP_BOMB_SPLASH bomb (build_pair then checks its mana)."""
+    if "Land" in (card.get("types") or []) or castable(card, lane) or (card.get("cmc") or 0) < MIN_SPLASH_CMC or _wr(card, lane[:2]) < SPLASH_MIN_GIH:
         return False
     off = off_pips(card, lane)
-    return (len(off) == 1 or (DP_SPLASH_SOURCES and len(off) == 2)) and all(splash in o for o in off)
+    if len(off) >= 2 and DP_BOMB_SPLASH:
+        return all(splash in o for o in off) and card.get("name") in dp_bombs(card.get("set") or "")
+    return len(off) == 1 and splash in off[0]
 
 
 def needs(card, colour, lane):
@@ -509,12 +561,22 @@ def cycler(card, lane):
 
 
 def land_count(chosen, nonbasics, lane):
-    """LANDS, less LAND_STEPS' steps for the landcyclers and duals (multicolour or any-colour non-basics) the deck plays."""
-    if not LAND_STEPS:
-        return LANDS
-    cyc = sum(1 for c in chosen if cycler(c, lane))
-    duals = sum(1 for c in nonbasics if len(c.get("colors") or []) >= 2 or not c.get("colors"))
-    return LANDS - (cyc >= 1 and duals >= 1) - (cyc >= 2 and duals >= 2)
+    """LANDS, less LAND_STEPS' steps for the landcyclers and duals (multicolour or any-colour non-basics) the deck plays, less
+    CANTRIP_STEP's one for 2+ cheap cantrips; the steps add up, never below MIN_LANDS (both at full, 17 - 2 - 1 = 14, play 15)."""
+    steps = 0
+    if LAND_STEPS:
+        cyc = sum(1 for c in chosen if cycler(c, lane))
+        duals = sum(1 for c in nonbasics if len(c.get("colors") or []) >= 2 or not c.get("colors"))
+        steps += (cyc >= 1 and duals >= 1) + (cyc >= 2 and duals >= 2)
+    if CANTRIP_STEP and sum(1 for c in chosen if is_cantrip(c)) >= 2:
+        steps += 1
+    return max(MIN_LANDS, LANDS - steps) if steps else LANDS
+
+
+def is_cantrip(card):
+    """A cheap cantrip as analysis/podcast_lands18.py defines it: a spell of mana value 2 or less whose text draws a card, scries or surveils."""
+    t = (card.get("oracle_text") or "").lower()
+    return "Land" not in (card.get("types") or []) and (card.get("cmc") or 0) <= 2 and bool(re.search(r"draw a card|scry|surveil", t))
 
 
 def build_pair(pool, lane, model, target, min_creatures_slack=None, variant="", splash="", splash_cost=None, force=False, lands=None):
@@ -545,15 +607,17 @@ def build_pair(pool, lane, model, target, min_creatures_slack=None, variant="", 
         if splash:
             n = sum(1 for c in chosen if not castable(c, lane))
             p += PENALTY * max(0, n - MAX_SPLASH)
-            p += PENALTY * max(0, mana(chosen).get(BASIC[splash], 0) - MAX_SPLASH_BASICS)
         return p
 
     set_code = next((c.get("set") for c in pool if c.get("set")), None)
     extras = make_extras(spells, lane, target, set_code)
 
     def score(chosen, idx=None):
+        basics = mana(chosen)
+        if splash and (basics.get(BASIC[splash], 0) > MAX_SPLASH_BASICS or (DP_BOMB_SPLASH and dp_short(chosen, lane, nonbasics, basics, splash))):
+            return -1e9  # over the splash basics cap, or a double-pip bomb short of sources: the card stays out
         counts = Counter(c["name"] for c in chosen)
-        counts.update(mana(chosen))
+        counts.update(basics)
         counts.update(Counter(c["name"] for c in nonbasics))
         used = splash if splash and any(not castable(c, lane) for c in chosen) else ""
         return predicted(counts, used) - penalty(chosen) + (extras(idx) if idx is not None else 0.0)
@@ -595,6 +659,7 @@ def build_pair(pool, lane, model, target, min_creatures_slack=None, variant="", 
         # The fitted rule decided to splash: bring in the splash card whose best swap costs least.
         trials = [(score([spells[k] for k in (deck - {i}) | {j}], (deck - {i}) | {j}), i, j)
                   for j in side if not castable(spells[j], lane) for i in deck if castable(spells[i], lane)]
+        trials = [t for t in trials if t[0] > -1e8]  # not a double-pip bomb the mana cannot carry
         if trials:
             _, i, j = max(trials)
             deck, side = (deck - {i}) | {j}, (side - {j}) | {i}
@@ -676,7 +741,11 @@ def build(pool, model, targets, top=3, splash_pairs=2, rule=None, three=None):
     three colours if top players would go three colours with this pool at least half the time, else a splash if they
     would splash, else the plain pair. The deck model then only picks the cards: ruled builds are scored without its
     colour-count and splash terms, which mostly say that weaker decks add colours. Without rules, every variant
-    competes on the model's score as before."""
+    competes on the model's score as before.
+    SPLASH_RULE_LANDS_ONLY: the splash rule is the set's "splash_lands" (fitted on lands-only fixing) when it has one."""
+    if rule and SPLASH_RULE_LANDS_ONLY:
+        set_code = next((c.get("set") for c in pool if c.get("set")), None)
+        rule = (config.fitted(set_code, "splash_lands") if set_code else None) or rule
     plain = []
     for lane in LANES:
         t = (targets or {}).get(lane)

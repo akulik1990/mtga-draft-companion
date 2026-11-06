@@ -66,7 +66,11 @@ def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     p.add_argument("set")
     p.add_argument("--n", type=int, default=8000)
+    p.add_argument("--lands-only", action="store_true", help="refit the splash rule on lands-only fixing (deckbuilder.SPLASH_RULE_LANDS_ONLY) "
+                   "into the \"splash_lands\" section; prints the old inputs' accuracy on the same pools; leaves splash and three alone")
     a = p.parse_args(argv)
+    if a.lands_only:
+        return refit_lands_only(a)
 
     data = json.loads((DATA_DIR / "Sets" / f"{a.set}_PremierDraft_All_Data.json").read_text())["card_ratings"]
     by = {}
@@ -111,6 +115,38 @@ def main(argv=None):
     names3, best3 = (w3, ext3) if ext3[3] >= base3[3] + 0.005 else (n3, base3)
     record(a.set, "three", names3, *best3, y3,
            f"tools/fit_splash.py: when 60%+ players play three main colours (17Lands game data), logistic on {', '.join(names3)}")
+
+
+def refit_lands_only(a):
+    """The splash rule with its inputs as the current "splash" rule names them, fixing counted from lands only; the same pools
+    and held-out rows with the old fixing for comparison. Writes "splash_lands"."""
+    from companion.advisor_v2 import deckbuilder
+
+    old = config.fitted(a.set, "splash") or {}
+    names = old.get("inputs", NAMES)
+    data = json.loads((DATA_DIR / "Sets" / f"{a.set}_PremierDraft_All_Data.json").read_text())["card_ratings"]
+    by = {}
+    for c in data.values():
+        for n in (c["name"], c["name"].split(" // ")[0]):
+            by.setdefault(n, c)
+    X0, X1, y, lanes = [], [], [], []
+    for lane, splash, deck, pool in sample(a.set, a.n, buckets=(CHECK[1], 1000), colours=(2, 3)):  # main()'s sample, two-colour builds
+        if len(lane) != 2:
+            continue
+        cards = [by[n] for n, k in pool.items() if n in by for _ in range(k)]
+        deckbuilder.SPLASH_RULE_LANDS_ONLY = False
+        X0.append(splash_features(cards, lane))
+        deckbuilder.SPLASH_RULE_LANDS_ONLY = True
+        X1.append(splash_features(cards, lane))
+        y.append(1.0 if splash else 0.0)
+        lanes.append(lane)
+    rate = old.get("pair_rate") or {}
+    pick = lambda X: [[{**dict(zip(SPLASH_INPUTS, x)), "pair": rate.get(l, old.get("rate", 0.5))}[k] for k in names] for x, l in zip(X, lanes)]
+    f0, f1 = fit(pick(X0), y), fit(pick(X1), y)
+    print(f"splash rule on {names}: held-out accuracy with mana makers counted {f0[3]:.3f}, lands only {f1[3]:.3f}")
+    record(a.set, "splash_lands", names, *f1, y, f"tools/fit_splash.py --lands-only: the splash rule's inputs ({', '.join(names)}) "
+           "with fixing from lands only (deckbuilder.SPLASH_RULE_LANDS_ONLY reads this section)",
+           extra={"pair_rate": rate, "heldout_accuracy_old_fixing": round(f0[3], 3)} if "pair" in names else {"heldout_accuracy_old_fixing": round(f0[3], 3)})
 
 
 if __name__ == "__main__":

@@ -23,7 +23,7 @@ sys.path.insert(0, str(ROOT))
 import companion  # noqa: E402,F401
 from companion import DATA_DIR  # noqa: E402
 from companion.advisor_v2 import composition, config, deckbuilder  # noqa: E402
-from companion.advisor_v2.lanes import castable  # noqa: E402
+from companion.advisor_v2.lanes import castable, off_pips  # noqa: E402
 from tools.deck_model import DeckModel  # noqa: E402
 from tools.mock_draft import apply_overrides  # noqa: E402
 
@@ -98,7 +98,10 @@ def one(item):
     top = ARGS["top"]
     their_bombs = [n for n in theirs if n in top]
     kept = sum(1 for n in their_bombs if n in ours)
-    return {"bombs": len(their_bombs), "bombs_kept": kept, "bombs_missed": [n for n in their_bombs if n not in ours], "predicted": b["predicted"], "our_removal": removal(b["spells"]), "their_removal": removal(their_cards),
+    off = [c for c in b["spells"] if not castable(c, b["lane"])]
+    pair_wr = lambda c: ((c.get("deck_colors") or {}).get(b["lane"][:2]) or {}).get("gihwr")
+    return {"fallback": [c["name"] for c in off if not pair_wr(c)], "double_pip": [c["name"] for c in off if len(off_pips(c, b["lane"])) >= 2],
+            "bombs": len(their_bombs), "bombs_kept": kept, "bombs_missed": [n for n in their_bombs if n not in ours], "predicted": b["predicted"], "our_removal": removal(b["spells"]), "their_removal": removal(their_cards),
             "our_creatures": sum(composition.is_creature(c) for c in b["spells"]), "their_creatures": sum(composition.is_creature(c) for c in their_cards), "lane": lane, "our_lane": b["lane"], "splash": splash, "our_splash": b["splash"], "overlap": overlap,
             "their_splash_cards": their_splash_cards, "our_splash_cards": sum(1 for c in b["spells"] if not castable(c, b["lane"])),
             "our_dev": deckbuilder.structure_dev(b["spells"], ARGS["targets"][b["lane"]], b["lane"], ARGS["set"]),
@@ -156,6 +159,12 @@ def main(argv=None):
           f"{', '.join(sorted({m for r in same_rows for m in r['bombs_missed']}))})")
     print(f"  splash cards per splash deck: they {sum(r['their_splash_cards'] for r in real) / max(1, len(real)):.1f}, "
           f"we {sum(r['our_splash_cards'] for r in rows if r['our_splash']) / max(1, we):.1f}")
+    fb, dp = Counter(n for r in rows for n in r["fallback"]), Counter(n for r in rows for n in r["double_pip"])
+    print(f"  our splash cards with no GIH WR in the deck's pair (scored on All Decks): {sum(fb.values())} of "
+          f"{sum(r['our_splash_cards'] for r in rows if r['our_splash'])}, in {sum(bool(r['fallback']) for r in rows)} decks: "
+          f"{', '.join(f'{n} {k}' for n, k in fb.most_common())}")
+    print(f"  double-pip splash cards: {sum(dp.values())} in {sum(bool(r['double_pip']) for r in rows)} decks: "
+          f"{', '.join(f'{n} {k}' for n, k in dp.most_common())}")
 
 
 if __name__ == "__main__":
