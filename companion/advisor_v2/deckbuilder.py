@@ -23,7 +23,7 @@ from companion.advisor_v2 import config
 SPELLS = 23
 LANDS = 17
 LAND_STEPS = False  # Akshin's rule: one land fewer with 1+ landcycler and 1+ dual in the deck, two fewer with 2+ of each
-CANTRIP_STEP = False  # one land fewer with 2+ cheap cantrips (is_cantrip); held out 16 vs 17 lands there +1.97 [+0.66, +3.27] (docs/heldout-leads-FRA.md)
+CANTRIP_STEP = False  # one land fewer with 2+ card-flow cards (is_cantrip: cmc <= 2 with draw / scry / surveil in the text, empower Jace included on purpose: in FRA the Jace token is card flow, Akshin 2026-11-06); held out 16 vs 17 lands there +1.97 [+0.66, +3.27] (docs/heldout-leads-FRA.md); FRA on
 MIN_LANDS = 15  # the land steps together never go below this
 BASIC = {"W": "Plains", "U": "Island", "B": "Swamp", "R": "Mountain", "G": "Forest"}
 CURVE = ("1", "2", "3", "4", "5", "6+")
