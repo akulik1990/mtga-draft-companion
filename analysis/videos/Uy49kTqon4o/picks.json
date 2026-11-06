@@ -1,0 +1,814 @@
+{
+ "id": "Uy49kTqon4o",
+ "url": "https://youtu.be/Uy49kTqon4o",
+ "title": "I Drafted With the #1 Arena Direct Box Winner | Reality Fracture Draft (Ft. Veveil)",
+ "player": "Alex Nikolic",
+ "player_note": "Alex Nikolic (Limited Level-Ups) drafts on the account Chord_O_Calls; the guest Veveil (Brian, 29 collector boxes from Fractured Directs) co-drafts by voice and advises each pick.",
+ "set": "FRA",
+ "event": "Reality Fracture draft on Arena, 8-seat pod with pick timer; the event list shows Premier Draft, Traditional Draft and a Sealed event; which one he queued is not stated (Premier assumed). Not sealed: Pack 1 | Pick 1 banner, 3 packs of 14.",
+ "dataset": "FRA_PremierDraft_All_Data.json",
+ "recorded": null,
+ "source": "frames read from data/videos/raw/Uy49kTqon4o and stacked pack crops in data/videos/scribe/work/Uy49kTqon4o; transcript 0:00-28:19 (cut-off 1699 s = first game, mulligan screen); nothing past 28:19 read. Many image reads returned 'request limit' placeholders during the work; pack lists in this file are only the ones transcribed from images that loaded (P1p1-p4, P2p1-p2, P2p12-13, P3p1, P3p8-p14 re-checked on reload; the other picks were transcribed in a first pass and not re-verified). Taken cards confirmed against the final 40/40 deck screen and the 10-card sideboard.",
+ "colour_path": [
+  {
+   "after": "P1p2",
+   "main": "none",
+   "quote": "I'm not going to take it over rewrite obviously."
+  },
+  {
+   "after": "P1p7",
+   "main": "UR, black possible",
+   "quote": "now we can go actual three colors, I guess, for the black Garrick."
+  },
+  {
+   "after": "P2p1",
+   "main": "UR splash B (Garruk)",
+   "quote": "you can just be three colors if you're willing to spend picks on lands and cyclers."
+  },
+  {
+   "after": "P3p5",
+   "main": "UR splash B",
+   "quote": "We hopefully get the witch stalker back. I'd play like three cyclers with two two [Rewrites]."
+  },
+  {
+   "after": "deck",
+   "main": "UB-R three colours, 8 Island / 6 Swamp / 8 Mountain-ish sources",
+   "quote": "having eight eight bases is always the goal and clearly we have more blue and red cards than black ones."
+  }
+ ],
+ "picks": [
+  {
+   "pack": 1,
+   "pick": 1,
+   "pack_cards": [
+    "Draconic Visitor",
+    "Yoshimaru, Beloved Companion",
+    "Violent Echoes",
+    "Winter, Team Player",
+    "Yoshimaru, Scrappy Stray",
+    "Desperate Futurescribe",
+    "Hexhaven Battalion",
+    "Protege's Awakening",
+    "Blazing Crescendo",
+    "Ferocity of the Hunt",
+    "Charge the Sanctum",
+    "Keeper of the Quiet Hour",
+    "Room of Refuge",
+    "Formidable Commons"
+   ],
+   "taken": "Violent Echoes",
+   "reasoning": "Violent Echoes over Hexhaven Battalion / Protege's Awakening: 'the data would say take Fading Echoes' (Violent Echoes); a removal spell good in every red deck, while Draconic Visitor is a build-around and killable.",
+   "considered": {},
+   "plan": "Open.",
+   "quotes": []
+  },
+  {
+   "pack": 1,
+   "pick": 2,
+   "pack_cards": [
+    "Generous Revival",
+    "Ruric Thar, Biomagus",
+    "Loot, the Anomaly",
+    "Mabel, Bitter Recluse",
+    "Rewrite Regrets",
+    "Ruric Thar, Magecrusher",
+    "Unflinching Hortimancer",
+    "Undulating Witness",
+    "Rampart Hunter",
+    "Artifist Acumen",
+    "Arcane Amphisbaena",
+    "Sureshot Sower",
+    "Transformative Commons"
+   ],
+   "taken": "Rewrite Regrets",
+   "reasoning": "Rewrite Regrets over Generous Revival: 'I'm not going to take it over rewrite'; Rewrite goes in every deck and has black/green cyclers to buy back.",
+   "considered": {},
+   "plan": "Rewrite Regrets as the graveyard card; no colours yet.",
+   "quotes": []
+  },
+  {
+   "pack": 1,
+   "pick": 3,
+   "pack_cards": [
+    "Entrust the Spark",
+    "Generous Revival",
+    "Yuriko, Blade of the Mighty",
+    "Yuriko, Hope from the Shadows",
+    "Undulating Witness",
+    "Last Gasp",
+    "No Admittance",
+    "Bestial Incursion",
+    "Blessed Ghoul",
+    "Keeper of the Quiet Hour",
+    "Room of Refuge",
+    "Stingerquill Annex"
+   ],
+   "taken": "No Admittance",
+   "reasoning": "",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 1,
+   "pick": 4,
+   "pack_cards": [
+    "Extrapolate the Impossible",
+    "Violent Echoes",
+    "Edgar, Moonlit Sovereign",
+    "Restore with Empathy",
+    "Edgar, Ancient Bloodlord",
+    "Unsummon",
+    "Cast Away Doubt",
+    "Tether Technician",
+    "Budding Insurgent",
+    "Fatehold Chronologist",
+    "Mountain"
+   ],
+   "taken": "Violent Echoes",
+   "reasoning": "",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 1,
+   "pick": 5,
+   "pack_cards": [
+    "Multiply by Zero",
+    "Command the Stage",
+    "Kiora of Salt and Sand",
+    "Blossom-Blessed Angel",
+    "Surveillance Phantasm",
+    "Cast Away Doubt",
+    "Blazing Crescendo",
+    "Vinelasher Adept",
+    "Afterthought Sentry",
+    "Konstrari Annex"
+   ],
+   "taken": "Multiply by Zero",
+   "reasoning": "Multiply by Zero: 'this pick's kind of easy'; Commander's Sphere style cards are not worth the effort.",
+   "considered": {},
+   "plan": "Red-black cards in the pile; he does not want to be the 'pink deck' without a reason.",
+   "quotes": []
+  },
+  {
+   "pack": 1,
+   "pick": 6,
+   "pack_cards": [
+    "Geist of Saint Thalia",
+    "Loot, the Nexus",
+    "Icy Reception",
+    "Screeching Soulbreaker",
+    "Silence the Echo",
+    "Heartstring Puller",
+    "Greenhouse Propagator",
+    "Fatehold Chronologist",
+    "Innovative Commons"
+   ],
+   "taken": "Geist of Saint Thalia",
+   "reasoning": "Geist of Saint Thalia: 'I'm a big fan of Geist', all non-creature deck; Icy Reception is a close second ('very similar power level').",
+   "considered": {},
+   "plan": "Blue-red non-creature shell.",
+   "quotes": []
+  },
+  {
+   "pack": 1,
+   "pick": 7,
+   "pack_cards": [
+    "Way of the Pyromancer",
+    "Titanbones, Towering Heart",
+    "Titanbones, Towering Heart",
+    "Clash of Elements",
+    "Sureshot Sower",
+    "Theorix Metamage",
+    "Afterthought Sentry",
+    "Fatehold Annex"
+   ],
+   "taken": "Clash of Elements",
+   "reasoning": "Clash of Elements: a snap pick, a blue-red gold card.",
+   "considered": {},
+   "plan": "Blue-red; black as a splash.",
+   "quotes": []
+  },
+  {
+   "pack": 1,
+   "pick": 8,
+   "pack_cards": [
+    "Marwyn, the Clearcutter",
+    "Prudent Fateseer",
+    "Semester Foreseer",
+    "Sphinx's Approach",
+    "Rank Rat",
+    "Keeper of the Quiet Hour",
+    "Dedicated Commons"
+   ],
+   "taken": "Sphinx's Approach",
+   "reasoning": "Sphinx's Approach over Keeper of the Quiet Hour: he likes it a decent amount, 'a guy who's just trying to draw cards'.",
+   "considered": {},
+   "plan": "Blue-red.",
+   "quotes": []
+  },
+  {
+   "pack": 1,
+   "pick": 9,
+   "pack_cards": [
+    "Winter, Team Player",
+    "Protege's Awakening",
+    "Ferocity of the Hunt",
+    "Charge the Sanctum",
+    "Keeper of the Quiet Hour",
+    "Formidable Commons"
+   ],
+   "taken": "Protege's Awakening",
+   "reasoning": "Protege's Awakening over Keeper and the land: the land (Formidable Commons) is 'a hedge' for a splash that already exists.",
+   "considered": {},
+   "plan": "Now three colours possible.",
+   "quotes": []
+  },
+  {
+   "pack": 1,
+   "pick": 10,
+   "pack_cards": [
+    "Loot, the Anomaly",
+    "Unflinching Hortimancer",
+    "Rampart Hunter",
+    "Artifist Acumen",
+    "Transformative Commons"
+   ],
+   "taken": "Transformative Commons",
+   "reasoning": "Transformative Commons: always take the land unless the alternative is far above replacement; 'you're always going to get 23' playables.",
+   "considered": {},
+   "plan": "Three colours with lands and cyclers.",
+   "quotes": []
+  },
+  {
+   "pack": 1,
+   "pick": 11,
+   "pack_cards": [
+    "Generous Revival",
+    "Blessed Ghoul",
+    "Keeper of the Quiet Hour",
+    "Stingerquill Annex"
+   ],
+   "taken": "Stingerquill Annex",
+   "reasoning": "",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 1,
+   "pick": 12,
+   "pack_cards": [
+    "Cast Away Doubt",
+    "Tether Technician",
+    "unreadable (probably Mountain)"
+   ],
+   "taken": "Tether Technician",
+   "reasoning": "UNCERTAIN: third card never seen clearly",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 1,
+   "pick": 13,
+   "pack_cards": [
+    "Command the Stage",
+    "Afterthought Sentry"
+   ],
+   "taken": "Command the Stage",
+   "reasoning": "UNCERTAIN: Pick tag sat on Afterthought Sentry; taken card confirmed from deck builder sideboard (Command the Stage)",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 1,
+   "pick": 14,
+   "pack_cards": [
+    "Heartstring Puller"
+   ],
+   "taken": "Heartstring Puller",
+   "reasoning": "",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 1,
+   "pack_cards": [
+    "Garruk, Veiled Butcher",
+    "Garruk, Curse Breaker",
+    "Cruel Calculations",
+    "Prophesied End",
+    "Arni, Renowned Champion",
+    "Graft Surgeon",
+    "Infinite Coursework",
+    "Sphinx's Approach",
+    "Solve for Disappointment",
+    "Chandra's Emberling",
+    "Wrecking Gecko",
+    "Emergency Phytomedic",
+    "Afterthought Sentry",
+    "Plains"
+   ],
+   "taken": "Garruk, Veiled Butcher",
+   "reasoning": "Garruk, Veiled Butcher: the black planeswalker, 'hello', worth going three colours for.",
+   "considered": {},
+   "plan": "Blue-red-black, three colours 'if you're willing to spend picks on lands and cyclers'.",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 2,
+   "pack_cards": [
+    "Pyre Rhymer",
+    "Ghalta the Immovable",
+    "Pia, Determined Rebuilder",
+    "Ghalta the Unstoppable",
+    "Graft Surgeon",
+    "Memory Trap",
+    "Cryotheory Adept",
+    "Solve for Disappointment",
+    "Hallway Heckler",
+    "Arcane Amphisbaena",
+    "Tam's Resistance",
+    "Medic's Kitesail",
+    "Island"
+   ],
+   "taken": "Pia, Determined Rebuilder",
+   "reasoning": "Pia, Determined Rebuilder over Pyre Rhymer: 'maybe we just need a creature'; one of the better creatures available.",
+   "considered": {},
+   "plan": "Blue-red with Garruk.",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 3,
+   "pack_cards": [
+    "Ghalta the Immovable",
+    "Geist of Saint Thalia",
+    "Precise Redaction",
+    "Gallia, the Merrymaker",
+    "Ghalta the Unstoppable",
+    "Hunter's Axe",
+    "Memory Trap",
+    "Unsummon",
+    "Solve for Disappointment",
+    "Sureshot Sower",
+    "Tethermage's Advantage",
+    "Theorix Annex"
+   ],
+   "taken": "Theorix Annex",
+   "reasoning": "Theorix Annex (the land): 'I think you just always take the land'; Geist is the alternative (he gets the second Geist next pick).",
+   "considered": {},
+   "plan": "Taking lands over cards.",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 4,
+   "pack_cards": [
+    "Gardenize",
+    "Ghalta the Immovable",
+    "Geist of Saint Thalia",
+    "Stingerquill Voxmancer",
+    "Bloombrute",
+    "Academic Ascent",
+    "Sphinx's Approach",
+    "Undulating Witness",
+    "Rampart Hunter",
+    "Arcane Amphisbaena",
+    "Vigorbloom Annex"
+   ],
+   "taken": "Geist of Saint Thalia",
+   "reasoning": "Geist of Saint Thalia again: 'I'd play up to two Geists at most'.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 5,
+   "pack_cards": [
+    "Teyo, Lightshield Expert",
+    "Teyo, Diamondblade Mage",
+    "Jiang Yanggu, Never Alone",
+    "Clash of Elements",
+    "Fateshaper Aspirant",
+    "Rampart Hunter",
+    "Blazing Crescendo",
+    "Greenhouse Propagator",
+    "Afterthought Sentry",
+    "Forest"
+   ],
+   "taken": "Clash of Elements",
+   "reasoning": "",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 6,
+   "pack_cards": [
+    "Yuriko, Blade of the Mighty",
+    "Yuriko, Hope from the Shadows",
+    "Tinybones, Pocket Nuisance",
+    "Grim Repriser",
+    "Divining Duelist",
+    "Infinite Coursework",
+    "Extended Absence",
+    "Hallway Heckler",
+    "Swamp"
+   ],
+   "taken": "Extended Absence",
+   "reasoning": "Extended Absence: last off-colour-ish card; 'a little low on fixing' going into the rest of the pack.",
+   "considered": {},
+   "plan": "Needs fixing in pack 3.",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 7,
+   "pack_cards": [
+    "Deserted Beach",
+    "Way of the Necromancer",
+    "Pia, Aether Ascetic",
+    "Prudent Fateseer",
+    "Campus Crier",
+    "Eardrum Rattler",
+    "Tethermage's Advantage",
+    "Meticulous Commons"
+   ],
+   "taken": "Deserted Beach",
+   "reasoning": "Deserted Beach over Way of the Necromancer and the blue-blue three-drop: 'those things are all terrible'.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 8,
+   "pack_cards": [
+    "Yargle, Goliath of Otaria",
+    "Yargle, Glutton of Urborg",
+    "Essence Burn",
+    "Academic Ascent",
+    "Semester Foreseer",
+    "Keeper of the Quiet Hour",
+    "Mountain"
+   ],
+   "taken": "Keeper of the Quiet Hour",
+   "reasoning": "Keeper of the Quiet Hour: 'I don't mind the four drop', 'it's passable'.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 9,
+   "pack_cards": [
+    "Cruel Calculations",
+    "Arni, Renowned Champion",
+    "Solve for Disappointment",
+    "Chandra's Emberling",
+    "Afterthought Sentry",
+    "Plains"
+   ],
+   "taken": "Chandra's Emberling",
+   "reasoning": "Chandra's Emberling: 'our entire deck is non-creature spell', it scales to five.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 10,
+   "pack_cards": [
+    "Graft Surgeon",
+    "Solve for Disappointment",
+    "Hallway Heckler",
+    "Medic's Kitesail",
+    "Island"
+   ],
+   "taken": "Hallway Heckler",
+   "reasoning": "Hallway Heckler: 'one of the better black red centric cards in the format'; Solve for Disappointment is a 'winter silence card'.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 11,
+   "pack_cards": [
+    "unreadable (only waiting screens at 17:00-17:14)"
+   ],
+   "taken": "Rampart Hunter",
+   "reasoning": "UNCERTAIN: pack screen not captured (waiting screens at 17:00-17:14); taken card deduced from sideboard accounting, not seen",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 12,
+   "pack_cards": [
+    "Gardenize",
+    "Ghalta the Immovable",
+    "Rampart Hunter"
+   ],
+   "taken": "Gardenize",
+   "reasoning": "UNCERTAIN: tag on Gardenize; confirmed by sideboard",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 13,
+   "pack_cards": [
+    "Forest"
+   ],
+   "taken": "Forest",
+   "reasoning": "",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 14,
+   "pack_cards": [
+    "unreadable (not captured)"
+   ],
+   "taken": null,
+   "reasoning": "Pick 14 of pack 2 was not captured (the screen after P2p13 goes straight to Pack 3 Pick 1 within the frames read); the card is unknown, probably an auto-select of the last card.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 1,
+   "pack_cards": [
+    "Master of Barbs",
+    "Rewrite Regrets",
+    "Tinybones, Pocket Nuisance",
+    "Essence Burn",
+    "Jiang Yanggu, Alone",
+    "Titanbones, Towering Heart",
+    "Vigorbloom Charm",
+    "Predictive Preparations",
+    "Protege's Awakening",
+    "Eardrum Rattler",
+    "Ferocity of the Hunt",
+    "Konstrari Improviser",
+    "Medic's Kitesail",
+    "Theorix Annex"
+   ],
+   "taken": "Theorix Annex",
+   "reasoning": "Theorix Annex over Rewrite Regrets: he is 'worried about the Garruk's right now, double black'; 19 playables already, but 'a little too conservative' to take the land? Decided the land is fine; Rewrite comes back at 3.4.",
+   "considered": {},
+   "plan": "Mana first.",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 2,
+   "pack_cards": [
+    "Karn, Argent Defender",
+    "Roiling Canopy",
+    "Generous Revival",
+    "Gallia, Tragic Host",
+    "Tinybones, Pocket Nuisance",
+    "Gallia, the Merrymaker",
+    "Clash of Elements",
+    "Graft Surgeon",
+    "Undulating Witness",
+    "Unsummon",
+    "Void Extrapolator",
+    "Sureshot Sower",
+    "Forest"
+   ],
+   "taken": "Undulating Witness",
+   "reasoning": "Undulating Witness over a third Clash: 'we don't have a single cycler', and Clash may wheel in pack three.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 3,
+   "pack_cards": [
+    "Frostbite Pyromental",
+    "Way of the Deathbringer",
+    "Fulminous Forte",
+    "Winter, Team Player",
+    "Graft Surgeon",
+    "Semester Foreseer",
+    "Apex Witchstalker",
+    "Wrath of the Bloodmane",
+    "Emergency Phytomedic",
+    "Tam's Resistance",
+    "Murmuring Volume",
+    "Plains"
+   ],
+   "taken": "Murmuring Volume",
+   "reasoning": "Murmuring Volume ('monolith') over Apex Witchstalker and Fulminous Forte: 'we're so flush on good removal'; Apex is regretted a pick later.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 4,
+   "pack_cards": [
+    "Arni, Humble Scribe",
+    "Rewrite Regrets",
+    "Edgar, Ancient Bloodlord",
+    "Hexhaven Dueling Arena",
+    "Campus Crier",
+    "Sphinx's Approach",
+    "Solve for Disappointment",
+    "Skilled Battlecarver",
+    "Whiplash Wordsmith",
+    "Emergency Phytomedic",
+    "Plains"
+   ],
+   "taken": "Rewrite Regrets",
+   "reasoning": "Rewrite Regrets again: two is 'the perfect number'; Sphinx's Approach would be greedy.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 5,
+   "pack_cards": [
+    "Way of the Healer",
+    "Way of the Necromancer",
+    "Arni, Renowned Champion",
+    "Academic Ascent",
+    "Divining Duelist",
+    "Undulating Witness",
+    "Solve for Disappointment",
+    "Blazing Crescendo",
+    "Arcane Amphisbaena",
+    "Swamp"
+   ],
+   "taken": "Undulating Witness",
+   "reasoning": "UNCERTAIN: pack read from a frame; taken deduced from deck count (second Undulating Witness) and his words Undulating Witness: 'there you go, boom, the exact card we want'; planning three cyclers with two Rewrites.",
+   "considered": {},
+   "plan": "Perfect mana; maybe 16 lands.",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 6,
+   "pack_cards": [
+    "Winter, Tormented Loner",
+    "Ruric Thar, Magecrusher",
+    "Semester Foreseer",
+    "Rank Rat",
+    "Blazing Crescendo",
+    "Heartstring Puller",
+    "Vinelasher Adept",
+    "Theorix Metamage",
+    "Forest"
+   ],
+   "taken": "Heartstring Puller",
+   "reasoning": "Heartstring Puller: 'that card's great', two bodies for a low creature count.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 7,
+   "pack_cards": [
+    "Pyre Rhymer",
+    "Precise Redaction",
+    "Primal Witchstalker",
+    "Graft Surgeon",
+    "Semester Foreseer",
+    "Sureshot Sower",
+    "Medic's Kitesail",
+    "Stingerquill Annex"
+   ],
+   "taken": "Stingerquill Annex",
+   "reasoning": "",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 8,
+   "pack_cards": [
+    "Haunted Ridge",
+    "Way of the Mentor",
+    "Fblthp, Impossibly Lost",
+    "Semester Foreseer",
+    "Tethermage's Advantage",
+    "Whiplash Wordsmith",
+    "Swamp"
+   ],
+   "taken": "Haunted Ridge",
+   "reasoning": "Haunted Ridge: the fifth land, 'those lands are even more free than any other land we could play'.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 9,
+   "pack_cards": [
+    "Essence Burn",
+    "Titanbones, Towering Heart",
+    "Protege's Awakening",
+    "Eardrum Rattler",
+    "Ferocity of the Hunt",
+    "Medic's Kitesail"
+   ],
+   "taken": "Protege's Awakening",
+   "reasoning": "Protege's Awakening: 'a good card, take it over the land'.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 10,
+   "pack_cards": [
+    "Tinybones, Pocket Nuisance",
+    "Clash of Elements",
+    "Graft Surgeon",
+    "Void Extrapolator",
+    "Forest"
+   ],
+   "taken": "Clash of Elements",
+   "reasoning": "",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 11,
+   "pack_cards": [
+    "Graft Surgeon",
+    "Emergency Phytomedic",
+    "Tam's Resistance",
+    "Plains"
+   ],
+   "taken": "Tam's Resistance",
+   "reasoning": "",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 12,
+   "pack_cards": [
+    "Solve for Disappointment",
+    "Whiplash Wordsmith",
+    "Plains"
+   ],
+   "taken": "Solve for Disappointment",
+   "reasoning": "",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 13,
+   "pack_cards": [
+    "Solve for Disappointment",
+    "Swamp"
+   ],
+   "taken": "Swamp",
+   "reasoning": "UNCERTAIN: basic land",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 14,
+   "pack_cards": [
+    "Forest"
+   ],
+   "taken": "Forest",
+   "reasoning": "",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  }
+ ]
+}

@@ -389,14 +389,15 @@
    "pick": 14,
    "time": "4:56-5:01",
    "pack_cards": [
-    "Plains"
+    "unreadable (last card, not shown; not a Plains)"
    ],
-   "taken": "Plains",
+   "taken": null,
    "status": "inferred: the pack held one card and the pick is automatic; the picked basic does not appear on the deck screen, which accounts for 39 of the 42 picks by name (the three last picks of each pack are the unseen basics: Plains, Plains, Forest). The pack was read at 4:56; the card could not be confirmed by the pool.",
    "reasoning": "Last card of the pack (auto pick).",
    "considered": {},
    "plan": "",
-   "quotes": []
+   "quotes": [],
+   "taken_note": "was recorded as 'Plains' (inferred auto-pick); impossible: the P1p6 pack held no Plains (wheel check)"
   },
   {
    "pack": 2,

@@ -1,12 +1,12 @@
 {
- "commit": "cbef5b9",
+ "commit": "71133aa",
  "date": "2026-11-06",
  "dataset": "FRA_PremierDraft_All_Data.json",
  "top1": 20,
  "top3": 35,
  "n": 39,
  "not_scored": 3,
- "dropped_cards": 2,
+ "dropped_cards": 3,
  "picks": [
   {
    "pack": 1,
@@ -525,27 +525,18 @@
   {
    "pack": 1,
    "pick": 14,
-   "taken": "Plains",
-   "top3": [
-    {
-     "name": "Plains",
-     "score": 0.0
-    }
-   ],
-   "his_score": 0.0,
+   "taken": null,
+   "top3": [],
+   "his_score": null,
    "his_rank": null,
    "scored": false,
-   "dropped": 0,
-   "reasons_top": [
-    "No data"
-   ],
-   "reasons_his": [
-    "No data"
-   ],
+   "dropped": 1,
+   "reasons_top": [],
+   "reasons_his": [],
    "lanes_after": {
-    "BR": 0.493,
-    "WR": 0.22,
-    "RG": 0.182,
+    "BR": 0.481,
+    "WR": 0.226,
+    "RG": 0.187,
     "UR": 0.085
    }
   },
@@ -1114,7 +1105,7 @@
     "WBR 34% \u2192 52.8 (n=997)"
    ],
    "lanes_after": {
-    "BR": 0.687,
+    "BR": 0.686,
     "WBR": 0.313,
     "WR": 0.0,
     "RG": 0.0
@@ -1127,7 +1118,7 @@
    "top3": [
     {
      "name": "Stingerquill Charm",
-     "score": 72.12
+     "score": 72.11
     },
     {
      "name": "Way of the Warlord",
@@ -1138,7 +1129,7 @@
      "score": 60.49
     }
    ],
-   "his_score": 72.12,
+   "his_score": 72.11,
    "his_rank": 1,
    "scored": true,
    "dropped": 1,
