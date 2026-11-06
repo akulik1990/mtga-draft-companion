@@ -1,0 +1,680 @@
+{
+ "video": "XSY4dH0hZ8Y",
+ "player": "NicolaiBolas",
+ "set": "FRA",
+ "player_note": "NicolaiBolas drafts; the guest Ethan Sack (Lords of Limited) advises. 'speaker' on each idea is the guest, the host or both (captions are unlabelled, so attribution rests on content such as first-person experiences).",
+ "source": "YouTube auto-caption transcript 0:00-27:20 (tools/video_draft.py transcript XSY4dH0hZ8Y --start 0 --end 1640), card names corrected against data/Sets/FRA_PremierDraft_All_Data.json; nothing past 27:20 read. 'type' marks each idea as claim, heuristic or one-off pick; 'repeats' lists ideas of earlier videos it restates; 'related' lists looser topic matches.",
+ "ideas": [
+  {
+   "id": "XSY-01",
+   "time": 40,
+   "speaker": "Ethan Sack (guest)",
+   "phase": "draft",
+   "claim": "Colour power rankings do not matter in this format: he is happy to draft any colour or colour combination, with only slight ideas about what leads and what trails.",
+   "quote": "that color power rankings, which we usually love to do, don't really matter.",
+   "cards": [],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "Spread of deck win rate across colour pairs (skill-split) against the spread within a pair.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "re7-03",
+    "uoy-21"
+   ]
+  },
+  {
+   "id": "XSY-02",
+   "time": 135,
+   "speaker": "Ethan Sack (guest)",
+   "phase": "draft",
+   "claim": "Black is the colour he ranks last, but he has had a lot of success with black-white and blue-black decks, and thinks Way of the Necromancer and Way of the Deathbringer are being slept on.",
+   "quote": "black I think would still be the color that I have in last place, but I have had a lot of success so far with a couple black white decks or the black blue deck.",
+   "cards": [
+    "Way of the Necromancer",
+    "Way of the Deathbringer"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Way of the Deathbringer and Way of the Necromancer; black pairs by colour pair.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "pdI-02",
+    "CWs-40"
+   ]
+  },
+  {
+   "id": "XSY-03",
+   "time": 215,
+   "speaker": "Ethan Sack (guest)",
+   "phase": "draft",
+   "claim": "Without the rare, the first pick would be Mindseeker Oculus: the best common, and the uncommons in the pack only pull into their colours with a specific plan (counters / life gain, black sacrifice).",
+   "quote": "I think that's the best common that we've got here. And the uncommons don't pull me into those colors particularly.",
+   "cards": [
+    "Mindseeker Oculus",
+    "Koth of the Homestead",
+    "Winter, Tormented Loner"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Mindseeker Oculus against Koth of the Homestead and Winter, Tormented Loner.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "9nA-01",
+    "9nA-17",
+    "97Z-04"
+   ]
+  },
+  {
+   "id": "XSY-04",
+   "time": 262,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "He started winning a lot in the early access event once he decided to take Mindseeker Oculus every time he saw it.",
+   "quote": "I started winning a lot in the early access event once I was just like, oh, I will just take Oculus every time I see it in the pack pretty much.",
+   "cards": [
+    "Mindseeker Oculus"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Win rate of decks by number of Mindseeker Oculus copies.",
+   "type": "heuristic",
+   "repeats": [
+    "9nA-17"
+   ],
+   "related": [
+    "97Z-25"
+   ]
+  },
+  {
+   "id": "XSY-05",
+   "time": 325,
+   "speaker": "Ethan Sack (guest)",
+   "phase": "draft",
+   "claim": "Konstrari Improviser fits a green-first start, and the Kraken makes them extraordinarily incentivised to play green, so he does not take a hidden-power common (Fatehold Chronologist) that might move him off it.",
+   "quote": "We are extraordinarily incentivized to play green. I don't think that I want to take like a hidden power and take chronologist there and potentially move off of drafting the Kraken.",
+   "cards": [
+    "Konstrari Improviser",
+    "Fatehold Chronologist",
+    "Verdant Kraken"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Whether a first-pick bomb's colour should raise on-colour picks over a flexible common.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "55a-04"
+   ]
+  },
+  {
+   "id": "XSY-06",
+   "time": 345,
+   "speaker": "both",
+   "phase": "draft",
+   "claim": "Fatehold Chronologist is a card that is great against you and disappointing when you play it: the host never finds time to use the ability; the guest says it is flexible and you must build the deck to use it (fewer mana sinks).",
+   "quote": "when my opponents played it, it was great and when I played it, it was just like I never found time to use the ability.",
+   "cards": [
+    "Fatehold Chronologist"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Fatehold Chronologist and its play rate.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "55a-27"
+   ]
+  },
+  {
+   "id": "XSY-07",
+   "time": 390,
+   "speaker": "Ethan Sack (guest)",
+   "phase": "draft",
+   "claim": "Red-black is the guest's least favourite pair, and the host is in the same boat, so a red-black gold card (Stingerquill Charm) is passed even as the best card in the pack.",
+   "quote": "Red Black is probably the deck I am most dubious of, like least excited.",
+   "cards": [
+    "Stingerquill Charm"
+   ],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "Win rate of red-black decks against other pairs by skill group.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "XSY-08",
+   "time": 405,
+   "speaker": "Ethan Sack (guest)",
+   "phase": "draft",
+   "claim": "Marwyn, the Preserver is a really good two-drop that surveils lands into the graveyard with Jace and synergises with Something Worth Saving.",
+   "quote": "It's a really good two drop. It has synergy with surveilling for lands into the bin from Jace.",
+   "cards": [
+    "Marwyn, the Preserver",
+    "Something Worth Saving"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Marwyn, the Preserver in decks with Jace surveil.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "pdI-03"
+   ]
+  },
+  {
+   "id": "XSY-09",
+   "time": 420,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "He expected Marwyn's ability to be trinket text, but it comes up and helps hit land drops towards Verdant Kraken.",
+   "quote": "I thought its ability would be like trinket text like not really come up that often, but then it just comes up and it helps you hit your land drops.",
+   "cards": [
+    "Marwyn, the Preserver",
+    "Verdant Kraken"
+   ],
+   "kind": "synergy",
+   "engine_area": "picker",
+   "test_idea": "Land-drop hit rate with Marwyn, the Preserver on turn two.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "pdI-04"
+   ]
+  },
+  {
+   "id": "XSY-10",
+   "time": 455,
+   "speaker": "both",
+   "phase": "draft",
+   "claim": "A bad pair repeated in a pack (many Arnis at once) is a glaring bald spot in the packs; they have seen about ten Arnis by pick five.",
+   "quote": "Yarles when it's like the same pair that's a real glaring bald spot in your packs.",
+   "cards": [
+    "Arni, Humble Scribe",
+    "Arni, Renowned Champion"
+   ],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "Frequency of same-pair gold cards per pack and their effect on pick quality.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "XSY-11",
+   "time": 500,
+   "speaker": "Ethan Sack (guest)",
+   "phase": "draft",
+   "claim": "Gallia, the Merrymaker is not a good card: ground two/ones are not where it is at; the host adds it was only strong paired with a big flier.",
+   "quote": "I don't think Galia of the Merry Maker is a good card. I think ground ground two ones are not where it's at.",
+   "cards": [
+    "Gallia, the Merrymaker"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Gallia, the Merrymaker.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "XSY-12",
+   "time": 560,
+   "speaker": "Ethan Sack (guest)",
+   "phase": "draft",
+   "claim": "A Vigorbloom Charm at pick seven hopefully shows green-white is open; green is a little dry but should be open in pack 2.",
+   "quote": "this vigor bloom charm pick seven hopefully is indicative of green white being open.",
+   "cards": [
+    "Vigorbloom Charm"
+   ],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "Whether a gold card late in pack 1 predicts its pair's flow in pack 2.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "mqZ-23",
+    "CWs-15"
+   ]
+  },
+  {
+   "id": "XSY-13",
+   "time": 598,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Late in pack one, take the colourless-flexible card (Loot, the Nexus) rather than a removal spell: taking a red or black removal spell could push you off a colour you are not yet sure of.",
+   "quote": "we take a red card, we might get pushed off red. We take a black removal spell, we might get pushed off a black.",
+   "cards": [
+    "Loot, the Nexus"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "How often a pick-eight removal spell in a second colour reaches the final deck.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "mqZ-17"
+   ]
+  },
+  {
+   "id": "XSY-14",
+   "time": 660,
+   "speaker": "Ethan Sack (guest)",
+   "phase": "draft",
+   "claim": "Rank Rat turned out good: he expected discard to be weak because of flashback and Jace-token draws, but it has felt very good every time it was cast against him.",
+   "quote": "I thought that because of like flashback being in the set and because everybody is drawing cards off their Jace tokens that the discard would not be that good. But it's felt very good every time it's been cast against me.",
+   "cards": [
+    "Rank Rat"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Rank Rat.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "XSY-15",
+   "time": 670,
+   "speaker": "both",
+   "phase": "draft",
+   "claim": "A good general rule is to take the land when you need one late in a pack, since you never know when you find something.",
+   "quote": "That's a good like general rule to just take the lands when you when you need.",
+   "cards": [
+    "Theorix Annex"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Play rate of dual lands taken at picks 10 to 12.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "CWs-12",
+    "55a-21",
+    "uoy-17"
+   ]
+  },
+  {
+   "id": "XSY-16",
+   "time": 690,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Something Worth Saving gets exponentially better with a card like Verdant Kraken, because finding the one card feels amazing.",
+   "quote": "this card gets exponentially better when you have a card like Verdant Kraken because every time you find it, you just feel like amazing",
+   "cards": [
+    "Something Worth Saving",
+    "Verdant Kraken"
+   ],
+   "kind": "synergy",
+   "engine_area": "picker",
+   "test_idea": "Win rate of Something Worth Saving by number of bombs and top-end cards in the deck.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "994-24"
+   ]
+  },
+  {
+   "id": "XSY-17",
+   "time": 755,
+   "speaker": "Ethan Sack (guest)",
+   "phase": "draft",
+   "claim": "With green something splashing something, Fblthp, Knows the Way is perfect and the sweet spot is splashing so it can be a 3/2 or bigger (domain).",
+   "quote": "I've also been like I think a lot of the time like the sweet spot is you kind of do want to splash when you have fibble tip so he can be a 3-2.",
+   "cards": [
+    "Fblthp, Knows the Way"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "Win rate of Fblthp, Knows the Way by number of basic land types in the deck.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "re7-24"
+   ]
+  },
+  {
+   "id": "XSY-18",
+   "time": 780,
+   "speaker": "both",
+   "phase": "draft",
+   "claim": "Passing signal read from a missing pair partner: the first Fblthp was probably taken by the player passing to them, which makes a green neighbour unlikely and a white or Way card the likely take; they conclude the neighbour is probably white.",
+   "quote": "that was kind of an interesting spot cuz you can actually get some information like okay, the person passing us is probably playing white.",
+   "cards": [
+    "Fblthp, Knows the Way",
+    "Way of the Necromancer"
+   ],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "Whether a missing pair partner in the pack predicts what the upstream drafter took.",
+   "type": "heuristic",
+   "repeats": [
+    "97Z-03",
+    "5aM-03"
+   ],
+   "related": []
+  },
+  {
+   "id": "XSY-19",
+   "time": 845,
+   "speaker": "Ethan Sack (guest)",
+   "phase": "draft",
+   "claim": "Suspect the player passing in pack one was blue because no good blue cards were seen and good ones now arrive from the other direction, while the person next to them could not get into blue.",
+   "quote": "I'm suspecting the person passing to us in pack one was playing blue because we didn't see like any good blue cards and now they're coming this way.",
+   "cards": [
+    "Mindseeker Oculus",
+    "Plan for All Outcomes"
+   ],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "Whether a colour absent in pack 1 shows up in pack 2 (colour flow across directions).",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "55a-13",
+    "97Z-12"
+   ]
+  },
+  {
+   "id": "XSY-20",
+   "time": 870,
+   "speaker": "Ethan Sack (guest)",
+   "phase": "draft",
+   "claim": "Medic's Kitesail is quite good in sealed and could be main-decked sometimes; evasion and life gain is no joke, and some decks really want it.",
+   "quote": "having evasion and life gain is no joke and some decks really want it.",
+   "cards": [
+    "Medic's Kitesail"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "Main-deck play rate and GIH WR of Medic's Kitesail.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "uoy-03",
+    "uoy-06"
+   ]
+  },
+  {
+   "id": "XSY-21",
+   "time": 895,
+   "speaker": "Ethan Sack (guest)",
+   "phase": "draft",
+   "claim": "Twisted Fates is pretty nuts; with Vigorbloom Charm already in the pool a green splash with white or black would be possible.",
+   "quote": "I think you should take Twisted Fates. I think Twisted Fates is pretty nuts.",
+   "cards": [
+    "Twisted Fates"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Twisted Fates as a splash against on-colour four-drops.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-15",
+    "mqZ-41"
+   ]
+  },
+  {
+   "id": "XSY-22",
+   "time": 930,
+   "speaker": "both",
+   "phase": "draft",
+   "claim": "Paradox Shaper can stack the deck again and again; both have won games by putting the best cards back on top.",
+   "quote": "I have I have stacked my deck multiple times with the Paradox Shaper.",
+   "cards": [
+    "Paradox Shaper"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Paradox Shaper by games length.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "CWs-17"
+   ]
+  },
+  {
+   "id": "XSY-23",
+   "time": 985,
+   "speaker": "Ethan Sack (guest)",
+   "phase": "draft",
+   "claim": "Titanbones, Towering Heart is a life-gain card they do not need: with few life-gain cards in a multicolour deck, Arcane Amphisbaena is the pick; the host recalls an opponent saving a game with a Titanbones discard.",
+   "quote": "I think I would be inclined to take a bayana but uh I have not played with titan bones.",
+   "cards": [
+    "Titanbones, Towering Heart",
+    "Arcane Amphisbaena"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Titanbones, Towering Heart against Arcane Amphisbaena.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "XSY-24",
+   "time": 1005,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Rescue Girl, First Responder is so good in their deck (with Fblthp and Ajani's Anguish) that he would splash it; a game glitch auto-picked another card in its place at pick 7 of pack 2.",
+   "quote": "Oh, we totally would have splashed it, too. I don't know what happened that pick.",
+   "cards": [
+    "Rescue Girl, First Responder",
+    "Ajani's Anguish",
+    "Fblthp, Knows the Way"
+   ],
+   "kind": "synergy",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Rescue Girl, First Responder in splash decks; synergy with Ajani's Anguish.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "XSY-25",
+   "time": 1125,
+   "speaker": "Ethan Sack (guest)",
+   "phase": "draft",
+   "claim": "Kiora of Fire and Ashes is pretty nuts and worth taking over Way of the Wildspeaker (the pick without her) especially with Fblthp to hit land drops; it is a good ramp target.",
+   "quote": "Kiora is pretty nuts and I think is probably worth taking here.",
+   "cards": [
+    "Kiora of Fire and Ashes",
+    "Way of the Wildspeaker"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Kiora of Fire and Ashes in ramp decks.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "994-03"
+   ]
+  },
+  {
+   "id": "XSY-26",
+   "time": 1170,
+   "speaker": "Ethan Sack (guest)",
+   "phase": "draft",
+   "claim": "Take the card in the colour you know you are playing over a card in an undecided second colour: Bestial Incursion (a mid-range and late-game threat) over Way of the Warlord and a black kill spell.",
+   "quote": "we know we're playing green, whereas we're still kind of undecided on our second color.",
+   "cards": [
+    "Bestial Incursion",
+    "Way of the Warlord"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Pick value of an on-colour card against an off-colour card at pick two of pack 3.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "55a-04",
+    "9nA-06"
+   ]
+  },
+  {
+   "id": "XSY-27",
+   "time": 1215,
+   "speaker": "Ethan Sack (guest)",
+   "phase": "draft",
+   "claim": "Fulminous Forte is the pick when ready to commit: green-red splashing Vigorbloom Charm or Last Gasp.",
+   "quote": "I think now I'm ready. We take the fulminous forte here.",
+   "cards": [
+    "Fulminous Forte",
+    "Vigorbloom Charm",
+    "Last Gasp"
+   ],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Fulminous Forte against Yuriko, Hope from the Shadows.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "n6s-29",
+    "pdI-19"
+   ]
+  },
+  {
+   "id": "XSY-28",
+   "time": 1250,
+   "speaker": "Ethan Sack (guest)",
+   "phase": "draft",
+   "claim": "Ghalta, the Immovable is fine, not busted: a five-mana 8/8 trample; he would take the Awaken the Inferno landcycler.",
+   "quote": "it's just not that it doesn't feel that busted to me. Yeah, I do think I would take the Land Cycler",
+   "cards": [
+    "Ghalta the Immovable",
+    "Awaken the Inferno"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Ghalta the Immovable against Awaken the Inferno.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "994-07",
+    "mqZ-45"
+   ]
+  },
+  {
+   "id": "XSY-29",
+   "time": 1330,
+   "speaker": "Ethan Sack (guest)",
+   "phase": "draft",
+   "claim": "Heartstring Puller looks better than it plays: not a bad card, but he would never take it over one of the red removal spells.",
+   "quote": "I think Heartstring Puller looks better than it actually plays out ... I would never take it over one of the red removal spells.",
+   "cards": [
+    "Heartstring Puller",
+    "Wrath of the Bloodmane"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Heartstring Puller against red removal commons.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "pdI-07"
+   ]
+  },
+  {
+   "id": "XSY-30",
+   "time": 1340,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "The red removal spells are all pretty good: Awaken the Inferno, the two-mana deal-three, Wrath.",
+   "quote": "the red removal spells are just all pretty good.",
+   "cards": [
+    "Awaken the Inferno",
+    "Wrath of the Bloodmane"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of red removal spells as a group against other colours.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "XSY-31",
+   "time": 1390,
+   "speaker": "Ethan Sack (guest)",
+   "phase": "draft",
+   "claim": "Way of the Mind Sculptor is not crazy as a splash in a ramp deck with little card draw; he takes it over Flourishing Grapple.",
+   "quote": "Way of the Mind Sculptor isn't crazy as a splash. Like you have a lot of ramp but not a lot of card draw.",
+   "cards": [
+    "Way of the Mind Sculptor"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Way of the Mind Sculptor in decks that splash blue.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "mqZ-54"
+   ]
+  },
+  {
+   "id": "XSY-32",
+   "time": 1418,
+   "speaker": "both",
+   "phase": "draft",
+   "claim": "Twinned Vision is so good in a ramp deck: it solves the problem of having a ton of mana and needing something to do with it, which helps against flood.",
+   "quote": "Twin Vision is so good. Like again, it solves the problem of like you're going to have a ton of mana and hopeful you need stuff to do with it.",
+   "cards": [
+    "Twinned Vision",
+    "Wrecking Gecko"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Twinned Vision in ramp decks.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "re7-10",
+    "pdI-24"
+   ]
+  },
+  {
+   "id": "XSY-33",
+   "time": 1500,
+   "speaker": "Ethan Sack (guest)",
+   "phase": "build",
+   "claim": "Cut Marwyn, Hunter's Axe, Tam's Resistance, Way of the Warlord and Blazing Crescendo; keep Tether Technician as something to ramp into; the guest says 16 lands is possible with a landcycler and two Something Worth Saving, but the deck ran 17.",
+   "quote": "You could also run 16 lands because you've got the land cycler. You've got double something worth saving.",
+   "cards": [
+    "Tether Technician",
+    "Something Worth Saving",
+    "Awaken the Inferno"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Land count (16 vs 17) against win rate with landcyclers and filter spells.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "Uy4-11",
+    "5aM-22",
+    "5aM-25"
+   ]
+  },
+  {
+   "id": "XSY-34",
+   "time": 1515,
+   "speaker": "Ethan Sack (guest)",
+   "phase": "build",
+   "claim": "Bring Way of the Mind Sculptor in from the sideboard against a reindeer matchup, even though it is left out of the main deck.",
+   "quote": "I think it's worth thinking about out of the sideboard like reindeer matchup. I would definitely try and bring it in.",
+   "cards": [
+    "Way of the Mind Sculptor"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Not testable on 17Lands data (best-of-one); record only.",
+   "type": "one-off pick",
+   "repeats": [],
+   "related": []
+  }
+ ]
+}
