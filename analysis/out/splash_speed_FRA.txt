@@ -1,0 +1,30 @@
+decks 23889 extended share 0.596 games 104706
+       n    cmc     lo     hi    ext  splash_only     wr
+t                                                       
+T1  7977  2.776  1.958  2.958  0.416        0.314  0.555
+T2  8001  3.112  2.960  3.250  0.629        0.413  0.562
+T3  7911  3.460  3.261  4.458  0.743        0.415  0.567
+
+extended vs clean (primary) (n 23889): pts, lo, hi, p
+  T1 (np.float64(-1.66), np.float64(-2.59), np.float64(-0.74), np.float64(0.0004))
+  T2 (np.float64(-1.58), np.float64(-2.53), np.float64(-0.63), np.float64(0.0011))
+  T3 (np.float64(-1.68), np.float64(-2.73), np.float64(-0.64), np.float64(0.0016))
+  T1-T3 (np.float64(0.02), np.float64(-1.34), np.float64(1.37), np.float64(0.9777))
+
+extended vs clean, + deck quality (n 23889): pts, lo, hi, p
+  T1 (np.float64(-2.81), np.float64(-3.74), np.float64(-1.87), np.float64(0.0))
+  T2 (np.float64(-2.58), np.float64(-3.53), np.float64(-1.63), np.float64(0.0))
+  T3 (np.float64(-2.92), np.float64(-3.97), np.float64(-1.87), np.float64(0.0))
+  T1-T3 (np.float64(0.11), np.float64(-1.24), np.float64(1.46), np.float64(0.8678))
+
+splash-only vs clean (n 18749): pts, lo, hi, p
+  T1 (np.float64(-1.68), np.float64(-2.66), np.float64(-0.69), np.float64(0.0009))
+  T2 (np.float64(-1.74), np.float64(-2.74), np.float64(-0.74), np.float64(0.0006))
+  T3 (np.float64(-1.54), np.float64(-2.64), np.float64(-0.45), np.float64(0.0056))
+  T1-T3 (np.float64(-0.13), np.float64(-1.6), np.float64(1.32), np.float64(0.8584))
+
+splash-only vs clean, + deck quality (n 18749): pts, lo, hi, p
+  T1 (np.float64(-2.81), np.float64(-3.8), np.float64(-1.82), np.float64(0.0))
+  T2 (np.float64(-2.71), np.float64(-3.71), np.float64(-1.71), np.float64(0.0))
+  T3 (np.float64(-2.78), np.float64(-3.88), np.float64(-1.69), np.float64(0.0))
+  T1-T3 (np.float64(-0.03), np.float64(-1.48), np.float64(1.41), np.float64(0.9692))

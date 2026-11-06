@@ -1,0 +1,44 @@
+(a) kept hands 220334, decks 40797; hand-land weights vs 3 lands (pts): le1 -11.35, l2 -4.24, l4 -2.82, l5 -12.49
+[all decks] D18 vs 17 (empirical; kept games 1791 / 170500): D = +0.00 pts/game [-0.04, +0.04] 
+[all decks] D18 vs 17 hypergeometric (sensitivity): D = +0.04 pts/game [-0.21, +0.30] 
+[all decks] D16 vs 17 (empirical; kept games 45827 / 170500): D = -0.15 pts/game [-0.21, -0.09] 
+[all decks] D16 vs 17 hypergeometric (sensitivity): D = -0.13 pts/game [-0.42, +0.17] 
+[deck_big>=3] D18 vs 17 (empirical; kept games 1479 / 127654): D = +0.01 pts/game [-0.02, +0.05] 
+[deck_big>=3] D16 vs 17 (empirical; kept games 31731 / 127654): D = -0.15 pts/game [-0.21, -0.09] 
+[deck_big<=2] D18 vs 17 (empirical; kept games 312 / 42846): D = -0.05 pts/game [-0.13, +0.02] 
+[deck_big<=2] D16 vs 17 (empirical; kept games 14096 / 42846): D = -0.13 pts/game [-0.19, -0.07] 
+[deck_lc>=1] D18 vs 17 (empirical; kept games 1273 / 129704): D = +0.03 pts/game [+0.00, +0.06] 
+[deck_lc>=1] D16 vs 17 (empirical; kept games 37628 / 129704): D = -0.15 pts/game [-0.21, -0.10] 
+18-land decks (4+ games): 345, games 1953; with deck_big>=3: 279
+note: D18 prices the hand distribution only; the spell lost for the 18th land (and flood late) is not priced.
+
+(c) derived cantrip list (33): Academic Ascent; Arcane Amphisbaena; Artifist Acumen; Avatar of Burgeoning Echoes; Campus Crier; Consider; Countersculpt; Diviner of Victory; Enlightened Confidant; Eye of Jace; Fatehold Charm; Fatehold Chronologist; Marwyn, the Clearcutter; No Admittance; Pompous Battlemage; Proctor of Potential; Proft, Consulting Detective; Refute Destiny; Repurposed Enforcer; Solitary Cell; Solve for Disappointment; Surgical Precision; Surveillance Phantasm; Tam's Resistance; The Echoverse Fulcrum; Theorist's Proxy; Theorix Charm; Twinned Vision; Vigorbloom Charm; Vraska's Final Mercy; Way of the Necromancer; Way of the Pyromancer; Yuriko, Hope from the Shadows
+
+(b) deck GLM, skill >= 0.6: decks 7647; lands 16/17/18: 1704/5917/26
+  all                          18 vs 17: n 26 (too few)
+  cmc>=5 spells 0-2            18 vs 17: n 10 (too few)
+  cmc>=5 spells 3+             18 vs 17: n 16 (too few)
+(c) cantrip strata, skill >= 0.6
+  cantrips 0                   16 vs 17: -0.28 pts [-6.03, +5.47] p 0.924; n 88 vs 353
+  cantrips 0                   18 vs 17: n 1 (too few)
+  cantrips 1                   16 vs 17: +1.51 pts [-2.79, +5.82] p 0.491; n 156 vs 672
+  cantrips 1                   18 vs 17: n 3 (too few)
+  cantrips 2+                  16 vs 17: +1.10 pts [-0.37, +2.58] p 0.142; n 1460 vs 4892
+  cantrips 2+                  18 vs 17: n 22 (too few)
+  cantrips 1+                  16 vs 17: +1.09 pts [-0.30, +2.48] p 0.124; n 1616 vs 5564
+  cantrips 1+                  18 vs 17: n 25 (too few)
+  18-land decks by cmc>=5 count: {1: 2, 2: 8, 3: 5, 4: 5, 5: 1, 6: 3, 7: 1, 9: 1}
+
+(b) deck GLM, skill >= 0.0: decks 24976; lands 16/17/18: 5409/19420/147
+  all                          18 vs 17: +1.20 pts [-2.47, +4.86] p 0.521; n 147 vs 19420
+  cmc>=5 spells 0-2            18 vs 17: +3.11 pts [-4.44, +10.66] p 0.420; n 37 vs 5508
+  cmc>=5 spells 3+             18 vs 17: +0.57 pts [-3.59, +4.73] p 0.788; n 110 vs 13912
+(c) cantrip strata, skill >= 0.0
+  cantrips 0                   16 vs 17: -0.33 pts [-3.36, +2.69] p 0.829; n 307 vs 1199
+  cantrips 0                   18 vs 17: n 13 (too few)
+  cantrips 1                   16 vs 17: +0.62 pts [-1.39, +2.63] p 0.543; n 590 vs 2444
+  cantrips 1                   18 vs 17: n 27 (too few)
+  cantrips 2+                  16 vs 17: +0.74 pts [-0.02, +1.51] p 0.057; n 4512 vs 15777
+  cantrips 2+                  18 vs 17: +1.50 pts [-2.86, +5.86] p 0.501; n 107 vs 15777
+  cantrips 1+                  16 vs 17: +0.70 pts [-0.02, +1.41] p 0.055; n 5102 vs 18221
+  cantrips 1+                  18 vs 17: +0.88 pts [-2.92, +4.68] p 0.650; n 134 vs 18221

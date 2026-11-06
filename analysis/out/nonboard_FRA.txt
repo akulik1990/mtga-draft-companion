@@ -1,0 +1,57 @@
+
+## draw: 10 cards
+ - Artifist Acumen (1; ['card_advantage']; 'creatures you control gain first strike until end of turn.\ndraw a card')
+ - Cast Away Doubt (3; []; 'draw two cards. cast away doubt deals 2 damage to each player.')
+ - Consider (1; []; 'surveil 1. \ndraw a card.')
+ - Cruel Calculations (3; []; 'draw x cards, where x is the number of cards that were put into target')
+ - Extrapolate the Impossible (2; []; 'you may reveal exactly two cards you own with different names from out')
+ - Eye of Jace (1; ['card_advantage', 'lifegain']; 'at the beginning of your upkeep, surveil 1. then if there are seven or')
+ - Necrodominance (3; []; 'skip your draw step.\nat the beginning of your end step, you may pay an')
+ - Restore with Empathy (3; ['card_advantage', 'lifegain']; 'return target permanent card from your graveyard to your hand. you gai')
+ - Sphinx's Approach (3; ['card_advantage']; 'draw two cards. then you may exile this spell and four cards named sph')
+ - Twinned Vision (2; ['card_advantage']; "draw a card. if this spell wasn't cast from your hand, draw two cards ")
+
+## life: 1 cards
+ - Something Worth Saving (2; ['lifegain']; 'mill four cards. you may put a permanent card from among them into you')
+
+## aura: 5 cards
+ - Ferocity of the Hunt (2; ['combat_trick']; 'flash\nenchant creature\nenchanted creature gets +1/+0 and has deathtouc')
+ - Hunter's Axe (1; []; 'equipped creature gets +2/+0 and has "whenever this creature attacks, ')
+ - Medic's Kitesail (2; ['lifegain']; 'equipped creature gets +1/+0 and has flying and "whenever this creatur')
+ - Puppet Crafting (2; ['card_advantage']; 'enchant artifact or non-aura enchantment\nenchanted permanent is a cons')
+ - Splinter Twin (4; []; 'enchant creature\nenchanted creature has "{t}: create a token that\'s a ')
+
+## trick: 6 cards
+ - Academic Ascent (2; ['card_advantage', 'combat_trick']; 'target creature gets +2/+2 and gains flying until end of turn.\nempower')
+ - Blazing Crescendo (2; ['combat_trick']; 'target creature gets +3/+1 until end of turn.\nexile the top card of yo')
+ - Charge the Sanctum (3; ['combat_trick']; 'choose one —\n• creatures you control get +2/+0 until end of turn.\n• ta')
+ - Fatehold Charm (2; ['card_advantage', 'combat_trick']; 'choose one —\n• draw a card. empower jace 2.\n• return target spell or c')
+ - Perfected Theory (1; ['combat_trick']; 'choose one —\n• target creature has base power and toughness 1/1 until ')
+ - Tethermage's Advantage (1; ['combat_trick']; 'target creature gets +2/+2 and gains reach until end of turn. untap it')
+
+decks 8301, drafts 5790, games 32723
+      draw  life  aura  trick    nb    rem    cre
+mean  0.64  0.16   0.2   0.25  1.26   7.65  13.37
+std   0.86  0.48   0.5   0.59  1.14   2.49   2.34
+max   6.00  5.00   4.0   5.00  8.00  18.00  22.00
+share of decks with >=1: {'draw': np.float64(0.446), 'life': np.float64(0.123), 'aura': np.float64(0.167), 'trick': np.float64(0.183), 'nb': np.float64(0.703)}
+
+PRIMARY total non-board:
+  nb           -0.04 pts/spell [-0.55, +0.47] p 0.885
+
+classes together:
+  draw         +0.10 pts/spell [-0.60, +0.80] p 0.786
+  life         -1.33 pts/spell [-2.58, -0.08] p 0.0366
+  aura         +0.13 pts/spell [-1.06, +1.32] p 0.832
+  trick        +0.31 pts/spell [-0.67, +1.29] p 0.531
+
+trick x removal (removal centred; main = trick effect at mean removal):
+  trick        +0.22 pts/spell [-1.04, +1.48] p 0.733
+  remc         +0.27 pts/spell [-0.03, +0.57] p 0.074
+  trick:remc   -0.05 pts/spell [-0.44, +0.34] p 0.801
+
+without quality control (descriptive; ratings already hold some of the effect):
+  nb           -0.38 pts/spell [-0.90, +0.13] p 0.146
+
+robustness: >=1 non-board vs 0 :
+  any_nb +0.95 p 0.128
