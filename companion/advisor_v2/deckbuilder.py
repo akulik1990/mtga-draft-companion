@@ -125,16 +125,16 @@ def lands_for(spells, lane, nonbasics=(), splash="", fixers=0, lands=None):
             if col in lane:
                 early = 1.5 if (c.get("cmc") or 0) <= 3 else 1.0
                 weight[col] += n * (1.5 if n >= 2 else 1.0) * early
-    splash_basics = 0
-    if splash:
-        n_splash = sum(1 for c in spells if not castable(c, lane))
+    splash_basics = {}
+    for col in splash:  # one or two splash colours (a second is the "multi-splash" variant)
+        n_splash = sum(1 for c in spells if not castable(c, lane) and any(col in o for o in off_pips(c, lane)))
         want = 0 if not n_splash else 3 if n_splash == 1 else 4
-        have = sum(1 for c in nonbasics if splash in (c.get("colors") or []) or not c.get("colors"))  # colourless nonbasics here tap for a chosen colour
-        splash_basics = max(0, want - have - (0 if SPLASH_LANDS_ONLY else fixers))
+        have = sum(1 for c in nonbasics if col in (c.get("colors") or []) or not c.get("colors"))  # colourless nonbasics here tap for a chosen colour
+        splash_basics[col] = max(0, want - have - (0 if SPLASH_LANDS_ONLY else fixers))
         if DP_BOMB_SPLASH and has_dp(spells, lane):
-            need = DP_SPLASH_SOURCES - dp_fixing(spells, lane, nonbasics, splash)
-            splash_basics = max(splash_basics, min(MAX_SPLASH_BASICS, need))
-    basics_n = (lands or LANDS) - len(nonbasics) - splash_basics
+            need = DP_SPLASH_SOURCES - dp_fixing(spells, lane, nonbasics, col)
+            splash_basics[col] = max(splash_basics[col], min(MAX_SPLASH_BASICS, need))
+    basics_n = (lands or LANDS) - len(nonbasics) - sum(splash_basics.values())
     total = sum(weight[c] for c in lane) or 1.0
     floor = MIN_BASICS if len(lane) == 2 else MIN_BASICS_THREE
     counts = {c: max(floor, round(basics_n * weight[c] / total)) for c in lane}
@@ -142,8 +142,7 @@ def lands_for(spells, lane, nonbasics=(), splash="", fixers=0, lands=None):
         counts[max(counts, key=counts.get)] -= 1
     while sum(counts.values()) < basics_n:
         counts[max(lane, key=lambda c: weight[c])] += 1
-    if splash_basics:
-        counts[splash] = splash_basics
+    counts.update({col: n for col, n in splash_basics.items() if n})
     return {BASIC[c]: n for c, n in counts.items() if n}
 
 
@@ -581,7 +580,7 @@ def is_cantrip(card):
 
 def build_pair(pool, lane, model, target, min_creatures_slack=None, variant="", splash="", splash_cost=None, force=False, lands=None):
     """The best 23 spells for one pair (and optional splash colour), with lands; None when the pool cannot make a deck."""
-    spells = [c for c in pool if "Land" not in (c.get("types") or []) and (castable(c, lane) or (splash and splashable(c, lane, splash)))]
+    spells = [c for c in pool if "Land" not in (c.get("types") or []) and (castable(c, lane) or any(splashable(c, lane, col) for col in splash))]
     by_name = {c["name"]: c for c in pool}
     legends = legendary(next((c.get("set") for c in pool if c.get("set")), "")) if LEGEND_DUP else set()
     lane_colours = lane + splash
@@ -612,14 +611,18 @@ def build_pair(pool, lane, model, target, min_creatures_slack=None, variant="", 
     set_code = next((c.get("set") for c in pool if c.get("set")), None)
     extras = make_extras(spells, lane, target, set_code)
 
+    def used_of(chosen):
+        """The splash colours some chosen spell needs."""
+        return "".join(col for col in splash if any(not castable(c, lane) and any(col in o for o in off_pips(c, lane)) for c in chosen))
+
     def score(chosen, idx=None):
         basics = mana(chosen)
-        if splash and (basics.get(BASIC[splash], 0) > MAX_SPLASH_BASICS or (DP_BOMB_SPLASH and dp_short(chosen, lane, nonbasics, basics, splash))):
+        if any(basics.get(BASIC[col], 0) > MAX_SPLASH_BASICS or (DP_BOMB_SPLASH and dp_short(chosen, lane, nonbasics, basics, col)) for col in splash):
             return -1e9  # over the splash basics cap, or a double-pip bomb short of sources: the card stays out
         counts = Counter(c["name"] for c in chosen)
         counts.update(basics)
         counts.update(Counter(c["name"] for c in nonbasics))
-        used = splash if splash and any(not castable(c, lane) for c in chosen) else ""
+        used = used_of(chosen)
         return predicted(counts, used) - penalty(chosen) + (extras(idx) if idx is not None else 0.0)
 
     cost = SPLASH_COST if splash_cost is None else splash_cost
@@ -664,9 +667,9 @@ def build_pair(pool, lane, model, target, min_creatures_slack=None, variant="", 
             _, i, j = max(trials)
             deck, side = (deck - {i}) | {j}, (side - {j}) | {i}
     chosen = [spells[i] for i in deck]
-    used = splash if splash and any(not castable(c, lane) for c in chosen) else ""
-    if splash and not used:
-        return None  # the splash did not pay: the plain pair covers it
+    used = used_of(chosen)
+    if splash and len(used) < len(splash):
+        return None  # the splash (every splash colour) did not pay: the plain pair or the single splash covers it
     swaps = close_calls(spells, deck, side, score, best) if SWAP_MARGIN else []
     want = land_count(chosen, nonbasics, lane)
     if lands is None and want != lands_n:  # rebuild once at the rule's count; keep it only if the deck still qualifies
@@ -733,7 +736,39 @@ def _structured(spells, deck, side, score, target, set_code, lane):
     return deck, side, plain
 
 
-def build(pool, model, targets, top=3, splash_pairs=2, rule=None, three=None):
+def yardstick_wr(b, model):
+    """The model's win rate for a build's 40 (spells, nonbasics, basics) with its own colours."""
+    counts = Counter(c["name"] for c in b["spells"] + b["nonbasics"])
+    counts.update(b["basics"])
+    return float(model.win_rate(dict(counts), b["lane"], b["splash"]))
+
+
+DISPLAY_VARIANTS = ("model's colours", "multi-splash")
+
+
+def extra_variants(pool, model, targets, shown, yardstick):
+    """Display-only builds beside the default ones, each only when it differs (spells or colours) from every build already shown.
+    "model's colours": no splash/three rules; over every pair, the plain build and each single-splash build with the model's real
+    splash cost, the best by the yardstick. "multi-splash": a pair plus two splash colours, when each has 3 land sources
+    and a splashable card; the best by the yardstick."""
+    key = lambda b: (Counter(c["name"] for c in b["spells"]), b["lane"], b["splash"])
+    fix = pool_fixing(pool)
+    landcyclers = sum(1 for c in pool if "Basic landcycling" in (c.get("keywords") or []))
+    best = lambda bs: max((b for b in bs if b and b["penalty"] <= 3 * PENALTY), key=lambda b: yardstick_wr(b, yardstick), default=None)
+    lanes = [lane for lane in LANES if (targets or {}).get(lane)]
+    single = [build_pair(pool, lane, model, targets[lane], splash=col) for lane in lanes for col in [""] + [c for c in "WUBRG" if c not in lane]]
+    multi = []
+    for lane in lanes:
+        cols = [c for c in "WUBRG" if c not in lane and fix[c] + landcyclers >= 3 and any(splashable(x, lane, c) for x in pool)]  # 3 sources: duals, any-colour lands, landcyclers
+        multi += [build_pair(pool, lane, model, targets[lane], splash=a + b) for i, a in enumerate(cols) for b in cols[i + 1:]]
+    out = []
+    for v, name in ((best(single), "model's colours"), (best(multi), "multi-splash")):
+        if v and all(key(v) != key(b) for b in shown + out):
+            out.append({**v, "variant": name})
+    return out
+
+
+def build(pool, model, targets, top=3, splash_pairs=2, rule=None, three=None, yardstick=None):
     """Best builds across the pairs the pool supports, best first: each pair plain, the best pairs also with a splash
     or a third colour, plus a creature-heavier take on the first build.
 
@@ -762,7 +797,7 @@ def build(pool, model, targets, top=3, splash_pairs=2, rule=None, three=None):
         if triples:
             best = max(triples, key=lambda b: b["objective"])
             best["three_chance"] = None
-            return [best]
+            return [best] + (extra_variants(pool, model, targets, [best], yardstick) if yardstick else [])
     if not plain:
         return []
 
@@ -815,4 +850,7 @@ def build(pool, model, targets, top=3, splash_pairs=2, rule=None, three=None):
                       splash_cost=0.0 if ruled else None)
     if more and Counter(c["name"] for c in more["spells"]) != Counter(c["name"] for c in out[0]["spells"]):
         out.insert(1, more)
-    return out[:top]
+    out = out[:top]
+    if yardstick:
+        out += extra_variants(pool, model, targets, out, yardstick)
+    return out

@@ -31,7 +31,8 @@
 	});
 	const BASIC: Record<string, string> = { Plains: 'W', Island: 'U', Swamp: 'B', Mountain: 'R', Forest: 'G' };
 	const basics = $derived((b?.deck ?? []).filter((c) => !c.image?.[0]));
-	const label = (x: Build) => (x.main ? `${x.main}${x.splash ? ` + ${x.splash} splash` : ''}` : x.label);
+	const label = (x: Build) => (x.main ? `${x.main}${x.splash ? ` + ${x.splash} splash` : ''}${x.variant && x.note?.startsWith('companion') ? ` (${x.variant})` : ''}` : x.label);
+	const wr = (x: Build) => x.model_wr ?? x.deck_wr;
 	const record = (x: Build) => x.record ?? x.label.match(/\[Est: ([^\]]+)\]/)?.[1] ?? '';
 	async function copy() {
 		await navigator.clipboard.writeText(b.arena_export);
@@ -52,7 +53,7 @@
 		<button class="flex items-center gap-1.5 rounded px-2 py-1 text-sm {i === active ? 'bg-zinc-700' : 'text-zinc-400 hover:bg-zinc-800 hover:text-zinc-200'}" onclick={() => (active = i)} title={x.label}>
 			<Pips colors={x.main || x.colors} />
 			<span>{label(x)}</span>
-			{#if x.deck_wr != null}<span class="font-mono {i === 0 ? 'text-emerald-300' : 'text-zinc-300'}" title="Predicted game win rate for an average player, from 17Lands games (tools/deck_model.py)">{x.deck_wr.toFixed(1)}%</span>{/if}
+			{#if wr(x) != null}<span class="font-mono {i === 0 ? 'text-emerald-300' : 'text-zinc-300'}" title="Predicted game win rate for an average player, from 17Lands games (tools/deck_model.py)">{wr(x)!.toFixed(1)}%</span>{/if}
 			{#if x.realistic === false}<span class="text-amber-400" title="{x.creatures} creatures: fewer than real decks run, so the predicted win rate is outside the model's evidence">{x.creatures} creatures ⚠</span>{/if}
 			<span class="font-mono text-xs text-zinc-500" title="upstream's estimate and Power rating">{record(x)}{x.rating != null ? ` · ${x.rating.toFixed(0)}` : ''}</span>
 		</button>
@@ -64,7 +65,7 @@
 	<div class="grid gap-6 xl:grid-cols-[minmax(0,1fr)_22rem]">
 		<section>
 			<h3 class="mb-2 text-sm font-semibold text-zinc-400">
-				Deck ({count(b.deck)}) · {label(b)}{b.deck_wr != null ? ` · predicted win rate ${b.deck_wr.toFixed(1)}%` : ''}{b.splash ? ` (${b.splash_cards} card${b.splash_cards === 1 ? '' : 's'})` : ''} · upstream: {b.label}
+				Deck ({count(b.deck)}) · {label(b)}{wr(b) != null ? ` · predicted win rate ${wr(b)!.toFixed(1)}%` : ''}{b.splash ? ` (${b.splash_cards} card${b.splash_cards === 1 ? '' : 's'})` : ''} · upstream: {b.label}
 			</h3>
 			<div class="flex gap-2 overflow-x-auto pb-2">
 				{#each columns as col (col.label)}

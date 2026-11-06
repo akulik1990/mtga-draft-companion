@@ -408,3 +408,29 @@ def test_splash_sources_switches(monkeypatch):
     basics = db.lands_for(plains + [double], "WU", [dual, room], "B")
     assert basics["Swamp"] == 2 and not db.dp_short(plains + [double], "WU", [dual, room], basics, "B")
     assert not db.dp_short(plains + [single], "WU", [], {"Swamp": 0}, "B")  # single pip: not checked
+
+
+def test_extra_variants_only_when_different_and_supported(monkeypatch):
+    from companion.advisor_v2 import deckbuilder as db
+
+    def fake_build_pair(pool, lane, model, target, splash="", **kw):
+        return {"lane": lane, "splash": splash, "spells": [{"name": f"s{len(splash)}"}], "nonbasics": [], "basics": {}, "penalty": 0.0}
+
+    class Fake:
+        def win_rate(self, counts, main, splash):
+            return 50.0 + len(splash)  # more splash colours score higher, so the best is always the widest
+
+    monkeypatch.setattr(db, "build_pair", fake_build_pair)
+    monkeypatch.setattr(db, "LANES", ["WU"])
+    dual = lambda cols: {"name": "d" + cols, "types": ["Land"], "colors": list(cols), "oracle_text": ""}
+    card = lambda col: {"name": "c" + col, "mana_cost": "{3}{%s}" % col, "cmc": 4, "types": ["Creature"]}
+    cards = [card("B"), card("R")]
+    short = cards + [dual("BR")] * 2  # 2 sources each: multi-splash unsupported
+    ok = cards + [dual("BR")] * 3
+    default = {"lane": "WU", "splash": "", "spells": [{"name": "s0"}], "nonbasics": [], "basics": {}, "penalty": 0.0}
+    names = lambda pool, shown: [v["variant"] for v in db.extra_variants(pool, None, {"WU": {"x": 1}}, shown, Fake())]
+    assert names(short, [default]) == ["model's colours"]  # the best single splash; no multi-splash
+    assert names(ok, [default]) == ["model's colours", "multi-splash"]
+    # a variant identical (spells and colours) to a shown build is dropped
+    same = {**default, "splash": "B", "spells": [{"name": "s1"}]}
+    assert names(ok, [default, same]) == ["multi-splash"]

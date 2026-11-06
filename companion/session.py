@@ -608,7 +608,8 @@ def own_builds(set_code, taken):
         return sorted(out.values(), key=lambda e: (e.get("cmc") or 0, e["name"]))
 
     builds = []
-    for b in deckbuilder.build(taken, model, targets, rule=config.fitted(set_code, "splash"), three=config.fitted(set_code, "three")):
+    yardstick = _deck_model(set_code)
+    for b in deckbuilder.build(taken, model, targets, rule=config.fitted(set_code, "splash"), three=config.fitted(set_code, "three"), yardstick=yardstick):
         deck = grouped(b["spells"] + b["nonbasics"])
         for col, name in deckbuilder.BASIC.items():
             if b["basics"].get(name):
@@ -621,6 +622,10 @@ def own_builds(set_code, taken):
             "note": "companion/advisor_v2/deckbuilder.py", "deck": deck, "sideboard": side, "arena_export": copy_deck(deck, side),
             **mana_identity(deck), "deck_wr": round(b["predicted"], 2), "creatures": creatures, "realistic": True,
         })
+        # The yardstick for every build, so builds compare like for like (deck_wr is the builder's own objective, which ignores a ruled build's splash cost).
+        builds[-1]["model_wr"] = deck_win_rate(set_code, builds[-1])
+        if b["variant"] in deckbuilder.DISPLAY_VARIANTS:
+            builds[-1]["deck_wr"] = None  # display-only: sorts after the defaults
     return builds
 
 
