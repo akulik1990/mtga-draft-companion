@@ -8,6 +8,7 @@ DIMS are the deck-shape counts top players' decks are measured on (tools/deck_ta
 import json
 import math
 import re
+from collections import Counter
 from functools import lru_cache
 
 from companion.advisor_v2 import config
@@ -101,7 +102,37 @@ def power(card):
     return stat(card, "power")
 
 
+def matches(card, m):
+    """Does the card satisfy the "match" object m? Keys (all optional; mode "all" (default) needs every one present, "any" one):
+    text (regex over rules text, reminder text stripped), types, subtypes, colours, tags, keywords, names (any of),
+    cmc_min / cmc_max, power_min / power_max, toughness_min (creatures with the stat), not (nested match that must fail)."""
+    text = re.sub(r"\([^)]*\)", "", (card.get("oracle_text") or "").lower())
+    p, t, cmc = power(card), stat(card, "toughness"), card.get("cmc") or 0
+    tests = []
+    if "text" in m:
+        tests.append(bool(re.search(m["text"], text)))
+    for key, have in (("types", card.get("types")), ("subtypes", card.get("subtypes")), ("colours", card.get("colors")),
+                      ("tags", config.tags(card)), ("keywords", card.get("keywords")), ("names", [card.get("name")])):
+        if key in m:
+            tests.append(any(x in (have or []) for x in m[key]))
+    if "cmc_min" in m:
+        tests.append(cmc >= m["cmc_min"])
+    if "cmc_max" in m:
+        tests.append(cmc <= m["cmc_max"])
+    if "power_min" in m:
+        tests.append(p is not None and p >= m["power_min"])
+    if "power_max" in m:
+        tests.append(p is not None and p <= m["power_max"])
+    if "toughness_min" in m:
+        tests.append(t is not None and t >= m["toughness_min"])
+    if "not" in m:
+        tests.append(not matches(card, m["not"]))
+    return (any if m.get("mode") == "any" else all)(tests)
+
+
 def is_enabler(card, spec):
+    if "match" in spec:
+        return matches(card, spec["match"])
     text = re.sub(r"\([^)]*\)", "", (card.get("oracle_text") or "").lower())
     types, tags = card.get("types") or [], config.tags(card)
     by_text = bool(spec.get("enabler") and re.search(spec["enabler"], text))
@@ -126,8 +157,8 @@ def is_enabler(card, spec):
 
 
 @lru_cache(maxsize=4)
-def synergy_lists(set_code):
-    """[(card, enabler names)] for every list in the set's manual.json card_wants (main and extra, not "poor targets")."""
+def synergy_lists(set_code, every=False):
+    """[(card, enabler names)] for every list of a card_wants entry with "synergy": true, or all with every (main and extra, not "poor targets")."""
     from companion import DATA_DIR
     from companion.advisor_v2 import config
 
@@ -137,11 +168,30 @@ def synergy_lists(set_code):
         cards.setdefault(c["name"], c)
     out = []
     for name, spec in (config.layer(set_code, "manual").get("card_wants") or {}).items():
-        if name.startswith("_"):
+        if name.startswith("_") or not (every or spec.get("synergy")):  # off unless the card says "synergy": true (every: the tests)
             continue
         for s in [spec] + [x for x in spec.get("extra") or [] if x.get("name") != "poor targets"]:
             out.append((name, frozenset(n for n, c in cards.items() if n != name and "Basic" not in (c.get("types") or []) and is_enabler(c, s))))
     return out
+
+
+@lru_cache(maxsize=4)
+def synergy_deck(set_code):
+    """{card: deck condition} for the synergy-on card_wants entries with a "deck" object."""
+    from companion.advisor_v2 import config
+
+    return {k: v["deck"] for k, v in (config.layer(set_code, "manual").get("card_wants") or {}).items()
+            if isinstance(v, dict) and v.get("synergy") and v.get("deck")}
+
+
+def deck_ok(cond, cards, basics=None):
+    """Does the deck (or pool) meet an entry's "deck" condition? colours_min: colours with at least colour_spells (default 2) spells,
+    main and splash alike; basic_types_min: distinct basic land types among basics {name: count} when given, else the colours count."""
+    n = cond.get("colour_spells", 2)
+    counts = Counter(c for card in cards if "Land" not in (card.get("types") or []) for c in card.get("colors") or [])
+    colours = sum(v >= n for v in counts.values())
+    types = sum(1 for v in basics.values() if v) if basics is not None else colours
+    return colours >= cond.get("colours_min", 0) and types >= cond.get("basic_types_min", 0)
 
 
 def card_synergy(card, pool, set_code):
@@ -150,7 +200,10 @@ def card_synergy(card, pool, set_code):
     name = card["name"]
     held = {c["name"] for c in pool}
     total = 0.0
+    conds = synergy_deck(set_code)
     for payoff, enablers in synergy_lists(set_code):
+        if payoff in conds and not deck_ok(conds[payoff], list(pool) + [card] if payoff == name else pool):
+            continue
         if payoff == name:
             total += math.log1p(sum(1 for c in pool if c["name"] in enablers))
         elif payoff in held and name in enablers:

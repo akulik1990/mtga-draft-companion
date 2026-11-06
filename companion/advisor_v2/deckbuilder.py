@@ -446,6 +446,7 @@ def make_extras(spells, lane, target, set_code):
         for payoff, enablers in deck_needs.synergy_lists(set_code):
             if payoff in names:
                 lists.append((payoff, [i for i, x in enumerate(names) if x in enablers]))
+        conds = deck_needs.synergy_deck(set_code)
     dims_of, want = [], {}
     if DIM_PENALTY and target.get("dims"):
         mean, sd = deck_needs.set_wr(set_code)
@@ -479,7 +480,7 @@ def make_extras(spells, lane, target, set_code):
         if lists:
             chosen = set(idx)
             for payoff, en in lists:
-                if any(names[i] == payoff for i in chosen):
+                if any(names[i] == payoff for i in chosen) and (payoff not in conds or deck_needs.deck_ok(conds[payoff], [spells[i] for i in chosen])):
                     out += SYN_CARDS * math.log1p(sum(1 for i in en if i in chosen))
         if want:
             have = Counter(d for i in idx for d in dims_of[i])

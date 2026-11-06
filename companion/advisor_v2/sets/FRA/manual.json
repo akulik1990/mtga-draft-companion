@@ -488,6 +488,7 @@
   }
  },
  "card_wants": {
+  "_rules": "Per card: \"synergy\": true switches the card's lists on for the picker (card_synergy) and the builder (SYN_CARDS); absent or false = off (wants, rule and source stay as review text). What to look for: a \"match\" object (new format) or the older keys (enabler regex, enabler_types with enabler_min_cmc / enabler_max_cmc, min_power, names, cheap, enabler_tags, multi_type, all_types_tags, all). match keys, all optional: text (regex over rules text, reminder stripped), types, subtypes, colours, tags, keywords, names (each: any of the listed), cmc_min, cmc_max, power_min, power_max, toughness_min, not (a nested match that must fail), mode (\"all\" = every key present holds, the default; \"any\" = one holds). An entry's \"extra\" lists take the same keys. Optional \"deck\" object on an entry: the entry's synergy applies only while the pool/deck meets it (colours_min: colours with at least colour_spells (default 2) spells, main and splash; basic_types_min: distinct basic land types where a basics count is passed to needs.deck_ok, else the colours count; neither caller passes one yet).",
   "_how": "Top 30 FRA cards by All Decks GIH WR (2026-11-03), read by Claude from their rules text for review by the user: what each depends on and which cards enable it, as patterns over rules text (reminder text stripped), tags, or types. tools/card_needs.py matches the enablers and tests each card against the game data. Cards listed under standalone need nothing to shine.",
   "_standalone": [
    "Sublime Epiphany",
@@ -503,6 +504,7 @@
    "Overwrite the Multiverse"
   ],
   "Uldaros Theorix": {
+   "synergy": false,
    "wants": "a graveyard filled by milling, and in it strong spells (mana value 6 or less in total) worth casting free; the second part is read from the cards top players' decks hold with him",
    "enabler": "\\bmills?\\b",
    "rule": "cards that mill",
@@ -534,18 +536,21 @@
    ]
   },
   "Null Summoner": {
+   "synergy": false,
    "wants": "mostly self-sufficient (the hand disruption is value on its own); a little mill helps reach threshold to cast the exiled card",
    "rule": "cards that mill",
    "enabler": "\\bmills?\\b",
    "source": "user review 2026-11-03"
   },
   "Recursive Recruitment": {
+   "synergy": false,
    "wants": "a big graveyard when flashed back (+1/+1 counter per three cards)",
    "enabler": "\\bmills?\\b",
    "rule": "cards that mill",
    "source": "user review 2026-11-03; narrowed to mill 2026-11-03 (the wider list of mill, surveil, discard and graveyard cards tested -0.4 per enabler, z -2.0)"
   },
   "Kwia Vigorbloom": {
+   "synergy": false,
    "wants": "gaining life each turn for Lotus tokens",
    "enabler": "gains? (\\d+ |x )?life|lifelink",
    "enabler_tags": [
@@ -555,18 +560,21 @@
    "source": "user review 2026-11-03: reading confirmed"
   },
   "Denzilore Fatehold": {
+   "synergy": false,
    "wants": "scrying or surveilling often",
    "enabler": "\\bscry|surveil|empower jace",
    "rule": "cards that scry, surveil, or empower Jace (the Jace token's −1 surveils)",
    "source": "user review 2026-11-03: reading confirmed"
   },
   "Proctor of Potential": {
+   "synergy": false,
    "wants": "creatures entering (surveil each) and a scry/surveil turn to return it",
    "enabler": "create .*creature token|\\bscry|surveil",
    "rule": "cards that create creature tokens, scry or surveil",
    "source": "user review 2026-11-03: reading confirmed"
   },
   "Splinter Twin": {
+   "synergy": false,
    "wants": "a creature with a strong enters effect to copy every turn",
    "enabler": "when (this creature|.+) enters",
    "enabler_types": [
@@ -577,6 +585,7 @@
    "source": "user review 2026-11-03: reading confirmed"
   },
   "Hungering Puppetbeast": {
+   "synergy": false,
    "wants": "other artifacts to sacrifice",
    "enabler": "heartwood|treasure|lotus|artifact token",
    "enabler_types": [
@@ -586,6 +595,7 @@
    "source": "user review 2026-11-03: reading confirmed"
   },
   "Sanctum Lurker": {
+   "synergy": false,
    "wants": "planeswalkers (Jace tokens) to keep and to give +2",
    "enabler": "empower jace",
    "enabler_types": [
@@ -595,6 +605,7 @@
    "source": "user review 2026-11-03: reading confirmed"
   },
   "Avatar of Burgeoning Echoes": {
+   "synergy": false,
    "wants": "lands entering and planeswalkers",
    "enabler": "empower jace|search your library for .*land|landfall",
    "enabler_types": [
@@ -604,6 +615,7 @@
    "source": "user review 2026-11-03: reading confirmed"
   },
   "Countersculpt": {
+   "synergy": false,
    "wants": "a Jace to behold, else it costs one more",
    "enabler": "empower jace|\\bjace\\b",
    "enabler_types": [
@@ -613,6 +625,7 @@
    "source": "user review 2026-11-03: reading confirmed"
   },
   "Garruk, Curse Breaker": {
+   "synergy": false,
    "wants": "creatures with power 4 or more (each draws a card), creature tokens for his −4 attack boost, and, like Garruk, Veiled Butcher, boosts for his 4/4 Beasts and Ajani Unrelenting",
    "rule": "creatures with power 4 or more (Scryfall power), and cards that create power 4+ creature tokens",
    "enabler": "create[^.]*\\b([4-9]|\\d\\d)/\\d+",
@@ -639,6 +652,7 @@
    "source": "user review 2026-11-03"
   },
   "Vraska, the Cutting Glare": {
+   "synergy": false,
    "wants": "six or more lands for the removal: ramp and a long game",
    "enabler": "add \\{|search your library for .*land|treasure|heartwood|lotus",
    "enabler_tags": [
@@ -648,6 +662,7 @@
    "source": "user review 2026-11-03: reading confirmed"
   },
   "Lyra, Tolarian Archangel": {
+   "synergy": false,
    "wants": "drawing three or more cards in a turn",
    "enabler": "draws? (two|three|\\d+|x) cards|draw a card",
    "enabler_tags": [
@@ -657,12 +672,21 @@
    "source": "user review 2026-11-03: reading confirmed"
   },
   "Fblthp, Impossibly Lost": {
-   "wants": "cards in the graveyard: mill",
-   "enabler": "\\bmills?\\b",
-   "rule": "cards that mill",
-   "source": "user review 2026-11-03"
+   "synergy": false,
+   "wants": "an empty library to win (mill, card draw) and combat damage to the opponent on your turn to draw two (evasion)",
+   "rule": "cards that mill, cards that draw (tag card_advantage or draw text), and evasive cards (tag evasion)",
+   "match": {
+    "mode": "any",
+    "text": "\\bmills?\\b|\\bdraws? (a|an|two|three|x|\\d+) (additional )?cards?",
+    "tags": [
+     "card_advantage",
+     "evasion"
+    ]
+   },
+   "source": "user review 2026-11-03 (mill only); widened 2026-11-06 at Akshin's call to all three kinds, tested as pre-registered sub-tests by analysis/skill_groups_fblthp_il.py"
   },
   "Ajani Unrelenting": {
+   "synergy": false,
    "wants": "other planeswalkers (each loyalty ability makes a Cadet), many creatures (+1 buffs them all, −2 draws a card per creature) and creature tokens, best made again and again, since −3 wipes everything but your tokens",
    "rule": "planeswalkers, cards that create creature tokens (copies of creatures included), and cards that empower Jace (the Jace token is a planeswalker); repeatable creature-token makers first",
    "enabler": "create[^.]*creature tokens?|create[^.]*\\d+/\\d+[^.]*tokens?|create[^.]*tokens? that's a copy of[^.]*creature|empower jace",
@@ -673,6 +697,7 @@
    "source": "user review 2026-11-03"
   },
   "The Theorist, Jace Beleren": {
+   "synergy": false,
    "wants": "a game ender once set up: a wide board of creatures and a full hand. Card draw (−6 counts cards in hand), many creatures (−6 puts counters on each), cheap cards to keep the board growing, extra loyalty to reach −6",
    "rule": "cards that draw two or more at once, or draw again and again (on a trigger, each turn, or an activated ability)",
    "enabler": "draws? (two|three|four|x|\\d+) cards|(whenever|at the beginning|\\{t\\}|: )[^.]*draws? (a|two|three|x|\\d+) cards?",
@@ -711,6 +736,7 @@
    "Mindseeker Oculus": "standalone (user review 2026-11-03: confirmed)"
   },
   "Garruk, Veiled Butcher": {
+   "synergy": false,
    "wants": "recurring removal on its own (+2 shrinks, −2 edict); better with creature tokens to sacrifice to his −2 and with boosts for his 4/4 Beast tokens; super with Ajani Unrelenting (+1 gives the Beasts +1/+0 and haste)",
    "rule": "cards that create creature tokens (fodder for his −2)",
    "enabler": "create[^.]*creature tokens?|create[^.]*\\d+/\\d+[^.]*tokens?|create[^.]*tokens? that's a copy of[^.]*creature",
@@ -731,6 +757,7 @@
    "source": "user review 2026-11-03"
   },
   "Aerid Konstrari": {
+   "synergy": false,
    "wants": "mostly an enabler itself (Heartwood mana and artifacts); more artifacts make its {6} ability hit harder",
    "rule": "artifacts, and cards that make Heartwood, Treasure, Lotus or other artifact tokens",
    "enabler": "heartwood|treasure|lotus|artifact token",
@@ -740,6 +767,7 @@
    "source": "user review 2026-11-03"
   },
   "Way of the Cryomancer": {
+   "synergy": false,
    "wants": "removal or token-making instants and sorceries to copy (7-8 of them)",
    "rule": "removal instants and sorceries",
    "enabler_types": [
@@ -765,6 +793,7 @@
    ]
   },
   "Way of the Pyromancer": {
+   "synergy": false,
    "wants": "many two- and four-drops (and medium empower numbers)",
    "rule": "two-mana creatures",
    "enabler_types": [
@@ -791,18 +820,21 @@
    ]
   },
   "Kiora of Salt and Sand": {
+   "synergy": true,
    "wants": "big empower Jace numbers (Tam's Resistance, Protege's Awakening, Jace's Machinations, Repurposed Enforcer)",
    "rule": "empower Jace 4 or more, or X",
    "enabler": "empower jace ([4-9]|x)",
    "source": "LLU #259 Buildarounds, Synergy (2026-10-17), pasted transcript"
   },
   "Rescue Girl, First Responder": {
+   "synergy": false,
    "wants": "permanents whose entering kills something, to return and replay (mostly rares: Lich's Relic, Ajani's Anguish, Vraska; Hapatra)",
    "rule": "enters-the-battlefield removal",
    "enabler": "when [^.]*?enters[^.]*?(destroy target|deals? (x|\\d+) damage to (any target|target creature)|-1/-1 counters on|exile target)",
    "source": "LLU #259 Buildarounds, Synergy (2026-10-17), pasted transcript"
   },
   "Ghalta the Unstoppable": {
+   "synergy": false,
    "wants": "creatures with power 4 or more so it costs about 5",
    "rule": "creatures with power 4+, and 4/4 token makers",
    "min_power": 4,
@@ -810,6 +842,7 @@
    "source": "LLU #259 Buildarounds, Synergy (2026-10-17), pasted transcript"
   },
   "Bestial Incursion": {
+   "synergy": false,
    "wants": "Heartwood Crafter: its mana pays the flashback (turn 3 Incursion, turn 4 flashback)",
    "rule": "Heartwood Crafter",
    "names": [
@@ -818,12 +851,34 @@
    "source": "LLU #259 Buildarounds, Synergy (2026-10-17), pasted transcript"
   },
   "Marwyn, the Preserver": {
+   "synergy": false,
    "wants": "Room of Refuge to sacrifice and return every turn (late game)",
    "rule": "Room of Refuge",
    "names": [
     "Room of Refuge"
    ],
    "source": "LLU #259 Buildarounds, Synergy (2026-10-17), pasted transcript"
+  },
+  "Fblthp, Knows the Way": {
+   "synergy": false,
+   "wants": "a deck with basics of three or more types (a splash or three colours): domain power, and X basics with different names to search for. Duals have no basic land types (only Theorist's Sanctum is an Island) and Heartwood tokens are not lands, so neither counts. The main need is a deck-level condition (a spell colour outside the main pair), which a card list cannot state; the list holds the only non-basic land with a basic type",
+   "rule": "lands with a basic land type other than Forest",
+   "deck": {
+    "colours_min": 3,
+    "basic_types_min": 3
+   },
+   "match": {
+    "types": [
+     "Land"
+    ],
+    "subtypes": [
+     "Plains",
+     "Island",
+     "Swamp",
+     "Mountain"
+    ]
+   },
+   "source": "Akshin 2026-11-06; within-deck test analysis/skill_groups_fblthp.py: in hand vs not, 2 vs 3+ basic types in the deck, 3+ minus 2 +0.23 (SE 2.24) on P100 players; not supported"
   }
  },
  "sources": {
