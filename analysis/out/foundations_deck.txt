@@ -1,0 +1,270 @@
+# Foundations check, deck-level (FRA)
+
+## 0. Diagnostics that set the design
+
+decks_FRA.json.gz: 35646 decks. Share of decks with games_bucket == deck_games: 1.0000 (cross-tab is diagonal). Mean deck WR by games_bucket: 1: 0.383, 2: 0.378, 3: 0.398, 4: 0.526, 5: 0.578, 6: 0.611, 7: 0.678, 8: 0.719, 9: 0.723
+Raw Premier game file: user_n_games_bucket takes [1, 5, 10, 50, 100, 500] over 69846 decks. Matching decks_FRA Premier decks (draft, game count) to it gives user_n_games_bucket in [100, 500] only (unmatched 0): decks_FRA holds 100+ games players only, and its `games_bucket` column is the deck's own game count.
+So 'games bucket 7-9' is 'the deck played 7-9 games', which under the 7-win / 3-loss stop means a winning run (mean deck WR 0.68-0.72), and C(gb) conditions on the number of games, a function of the outcome.
+
+Simulation (200,000 events, no skill leak, 7 wins / 3 losses stop, true logit slope 0.1): slope with all decks and no games term 0.096; all decks with C(games) 0.023; games 7-9 with C(games) 0.040. corr(skill, y) given n games: n=7: +0.29, n=8: +0.26, n=9: +0.14 (observed in decks_FRA: +0.20, +0.16, +0.04). The fall of corr(skill, y) with games, read as a skill leak in review-tests-2026-11-06 s1.1, is reproduced with no leak; conditioning on games removes about three quarters of a true slope.
+Consequence: O is the original; Ia/Ib/Is60 are the test plan's 7-9 sample (reported because it was asked for, biased towards zero by construction); Ca/Cb/Cns/CA/CB are the corrected leak-free estimates and carry the verdicts. Verdict rule fixed now: basis holds if Ca and Cb keep the sign with a CI excluding 0 (or, for a null, if no effect beyond the stated bound); weakened if the point estimate falls by more than half or the CI includes 0 while O excluded it; gone if both estimates are within noise of 0; reversed if the CI excludes 0 on the other side.
+
+Populations: two-colour, >=20 priced spells (family 1) 27196 decks; every deck (family 2) 35646; Premier 23889. Games 7-9 in family 1: 4466.
+
+## R1. REMOVAL_SLACK 2 / REMOVAL_POINTS 6 (removal)
+
+Original: 'decks under 6 removal lose ~0.6 WR points beyond their cards' (synergy-2026-11-02.md, deck tables, different spec); review_deckglm s4 primary dummy -1.22; podcast_removal total +0.19 [-0.11, +0.48]. O here = review_deckglm spec (REM48, skill>=0.60, C(gb)).
+
+**REM48 count, pts per card**
+
+| term | O | Ia | Ib | Is60 | Ca | Cb | Cns | CA | CB |
+|---|---|---|---|---|---|---|---|---|---|
+| rem | +0.19 [-0.11, +0.48] | -0.01 [-0.24, +0.22] | +0.14 [-0.09, +0.36] | -0.20 [-0.62, +0.23] | +0.30 [+0.13, +0.46]* | +0.60 [+0.43, +0.76]* | +0.28 [+0.11, +0.44]* | +0.31 [+0.08, +0.54]* | +0.28 [+0.05, +0.52]* |
+| n decks | 8301 | 4466 | 4466 | 1556 | 27196 | 27196 | 27196 | 13698 | 13498 |
+
+**fewer than 6 REM48 (dummy), pts**
+
+| term | O | Ia | Ib | Is60 | Ca | Cb | Cns | CA | CB |
+|---|---|---|---|---|---|---|---|---|---|
+| short6 | -1.22 [-2.39, -0.04]* | -0.54 [-1.46, +0.38] | -0.95 [-1.87, -0.02]* | -0.31 [-2.03, +1.41] | -1.11 [-1.77, -0.44]* | -1.99 [-2.65, -1.32]* | -1.04 [-1.71, -0.36]* | -1.23 [-2.16, -0.30]* | -0.96 [-1.91, -0.01]* |
+| n decks | 8301 | 4466 | 4466 | 1556 | 27196 | 27196 | 27196 | 13698 | 13498 |
+
+**shortfall against the pair's top-player target minus 2 (what the builder uses): pts per card short**
+
+| term | O | Ia | Ib | Is60 | Ca | Cb | Cns | CA | CB |
+|---|---|---|---|---|---|---|---|---|---|
+| sfall | -0.38 [-1.64, +0.88] | +0.11 [-0.88, +1.10] | -0.25 [-1.24, +0.74] | +0.95 [-1.41, +3.31] | -0.64 [-1.33, +0.05] | -1.37 [-2.06, -0.67]* | -0.58 [-1.27, +0.12] | -0.17 [-1.14, +0.79] | -1.08 [-2.07, -0.10]* |
+| n decks | 8301 | 4466 | 4466 | 1556 | 27196 | 27196 | 27196 | 13698 | 13498 |
+
+**any shortfall against that target (dummy), pts** (13% of decks short; targets come from fitted.json decks.pairs, built from the same 60%+ players, so the shortfall is not an independent yardstick)
+
+| term | O | Ia | Ib | Is60 | Ca | Cb | Cns | CA | CB |
+|---|---|---|---|---|---|---|---|---|---|
+| sfd | -1.24 [-2.82, +0.35] | -0.06 [-1.31, +1.19] | -0.58 [-1.83, +0.67] | +0.94 [-1.52, +3.39] | -1.11 [-1.99, -0.22]* | -2.13 [-3.01, -1.25]* | -0.90 [-1.81, -0.00]* | -0.94 [-2.18, +0.30] | -1.27 [-2.53, -0.01]* |
+| n decks | 8301 | 4466 | 4466 | 1556 | 27196 | 27196 | 27196 | 13698 | 13498 |
+
+## R2. Two-drop floor off, curve check skips 2-drops (TWO_DROP_SLACK 99, CURVE_SKIP 2)
+
+Original (podcast_twodrop.py, docs/podcast-test-twodrops-FRA.md): 35,646 decks, buckets of cmc-2 creatures against 5: 0-2 +1.15 [+0.26, +2.04], 3 -0.65 [-1.41, +0.12], 4 -0.07, 6+ -0.57; no shortfall, floor off. O here: all decks, skill and C(gb) as in that script.
+
+**two-drop creature buckets vs 5, pts**
+
+| term | O | Ia | Ib | Is60 | Ca | Cb | Cns | CA | CB |
+|---|---|---|---|---|---|---|---|---|---|
+| 0-2 | +1.15 [+0.26, +2.04]* | -0.51 [-1.90, +0.88] | -0.55 [-1.97, +0.86] | -0.19 [-2.97, +2.59] | +1.00 [+0.05, +1.95]* | +0.79 [-0.18, +1.76] | +0.13 [-0.84, +1.09] | +0.32 [-1.01, +1.65] | +1.71 [+0.35, +3.08]* |
+| 3 | -0.65 [-1.41, +0.12] | -0.78 [-1.96, +0.40] | -0.83 [-2.01, +0.36] | -1.48 [-3.64, +0.68] | -0.49 [-1.32, +0.34] | -0.68 [-1.52, +0.15] | -0.85 [-1.69, +0.00] | -0.81 [-1.97, +0.35] | -0.16 [-1.34, +1.03] |
+| 4 | -0.07 [-0.76, +0.62] | -1.12 [-2.20, -0.05]* | -1.16 [-2.23, -0.09]* | -1.83 [-3.93, +0.26] | +0.12 [-0.64, +0.87] | -0.01 [-0.76, +0.74] | -0.23 [-0.99, +0.53] | -0.02 [-1.08, +1.03] | +0.27 [-0.80, +1.34] |
+| 6+ | -0.57 [-1.25, +0.11] | -0.61 [-1.68, +0.46] | -0.44 [-1.52, +0.65] | -1.78 [-3.78, +0.23] | -0.42 [-1.16, +0.32] | -0.01 [-0.76, +0.75] | -0.24 [-1.00, +0.51] | -0.65 [-1.68, +0.38] | -0.19 [-1.25, +0.87] |
+| n decks | 35646 | 5606 | 5606 | 1985 | 35646 | 35646 | 35646 | 17949 | 17697 |
+
+## R3. TOP_END_SLACK 2 / FINISHER_UP_TO (top end)
+
+Original (podcast_topend.py, docs/podcast-test-topend-FRA.md): cmc>=5 count buckets against 2: 0-1 +0.21, 3 +0.58, 4 +0.14, 5+ +0.44, all n.s.; no saturation. 'No saturation' is the basis for the loose top-end slack.
+
+**cmc>=5 spell count buckets vs 2, pts (plus a separate cmc>=7 count)**
+
+| term | O | Ia | Ib | Is60 | Ca | Cb | Cns | CA | CB |
+|---|---|---|---|---|---|---|---|---|---|
+| 0-1 | +0.21 [-0.72, +1.15] | +0.32 [-1.10, +1.75] | +0.04 [-1.38, +1.47] | -0.75 [-3.34, +1.85] | +0.46 [-0.57, +1.48] | -0.02 [-1.05, +1.00] | +1.47 [+0.43, +2.51]* | -0.22 [-1.67, +1.23] | +1.14 [-0.31, +2.59] |
+| 3 | +0.60 [-0.20, +1.39] | +0.38 [-0.84, +1.61] | +0.63 [-0.60, +1.87] | -0.07 [-2.43, +2.28] | +0.49 [-0.38, +1.36] | +0.94 [+0.07, +1.82]* | +0.40 [-0.48, +1.29] | +0.49 [-0.72, +1.71] | +0.50 [-0.74, +1.74] |
+| 4 | +0.13 [-0.67, +0.94] | -0.10 [-1.33, +1.12] | +0.40 [-0.84, +1.65] | +0.48 [-1.86, +2.81] | +0.16 [-0.72, +1.04] | +1.10 [+0.21, +1.99]* | -0.01 [-0.91, +0.89] | +0.06 [-1.16, +1.28] | +0.29 [-0.98, +1.56] |
+| 5+ | +0.44 [-0.36, +1.24] | +0.42 [-0.80, +1.65] | +1.48 [+0.19, +2.76]* | +0.39 [-1.95, +2.72] | +0.76 [-0.11, +1.63] | +2.75 [+1.84, +3.66]* | +0.73 [-0.16, +1.62] | +0.68 [-0.55, +1.91] | +0.87 [-0.37, +2.11] |
+| per cmc>=7 card | +0.34 [-0.05, +0.72] | +0.36 [-0.23, +0.95] | +0.54 [-0.06, +1.14] | +0.07 [-1.09, +1.23] | +0.20 [-0.21, +0.61] | +0.60 [+0.20, +1.01]* | +0.04 [-0.37, +0.45] | +0.30 [-0.25, +0.85] | +0.08 [-0.51, +0.68] |
+| n decks | 35646 | 5606 | 5606 | 1985 | 35646 | 35646 | 35646 | 17949 | 17697 |
+
+**five-plus drops above the pair's target + 2 (the builder's TOP_END_SLACK penalty), pts per card over** (new spec for the shipped rule, family-1 sample)
+
+| term | O | Ia | Ib | Is60 | Ca | Cb | Cns | CA | CB |
+|---|---|---|---|---|---|---|---|---|---|
+| bigx | +0.50 [-0.18, +1.18] | -0.29 [-1.37, +0.79] | -0.04 [-1.13, +1.04] | -0.18 [-2.05, +1.70] | +0.33 [-0.38, +1.04] | +0.95 [+0.24, +1.66]* | +0.25 [-0.48, +0.98] | -0.20 [-1.21, +0.81] | +0.87 [-0.12, +1.87] |
+| n decks | 27196 | 4466 | 4466 | 1556 | 27196 | 27196 | 27196 | 13698 | 13498 |
+
+## R4. MIN_PER_COLOUR 4 (deep main / thin second colour)
+
+Original (podcast_split.py): +0.37 pts per +0.1 main share [-0.06, +0.80], p 0.094 (all skills, C(gb) in the model, no splash, 22-24 spells). The test never found a penalty for lopsided decks; the 4-card floor rests on that plus conformity to top players. Quality (a) = All Decks mean and top-10 of all spells; (b) = the same over the non-mono-coloured spells (gold and colourless), so the main/thin mono split is outside the control.
+split sample: 12893 decks, 10250 drafts; thin second colour (<4 mono cards): 336 decks (2.6%); mean minmono 7.41
+
+**main share, pts per +0.1**
+
+| term | O | Ia | Ib | Is60 | Ca | Cb | Cns | CA | CB |
+|---|---|---|---|---|---|---|---|---|---|
+| per +0.1 main share | +0.35 [-0.09, +0.79] | +0.01 [-0.64, +0.65] | -0.05 [-0.70, +0.60] | +0.88 [-0.48, +2.25] | +0.32 [-0.15, +0.79] | +0.34 [-0.13, +0.82] | +0.31 [-0.17, +0.78] | +0.60 [-0.06, +1.26] | +0.06 [-0.60, +0.73] |
+| n decks | 12893 | 2224 | 2224 | 719 | 12893 | 12893 | 12893 | 6427 | 6466 |
+
+**thin second colour (<4 mono-coloured cards) vs 4+, pts (the shipped floor; new spec)**
+
+| term | O | Ia | Ib | Is60 | Ca | Cb | Cns | CA | CB |
+|---|---|---|---|---|---|---|---|---|---|
+| thin | +1.28 [-1.16, +3.71] | +1.69 [-1.67, +5.04] | +1.32 [-2.15, +4.79] | -0.97 [-8.00, +6.06] | +1.68 [-0.94, +4.30] | +1.56 [-1.09, +4.20] | +1.66 [-0.99, +4.30] | +2.05 [-1.59, +5.69] | +1.26 [-2.50, +5.01] |
+| n decks | 12893 | 2224 | 2224 | 719 | 12893 | 12893 | 12893 | 6427 | 6466 |
+
+## R5. Land counts / LAND_STEPS (Akshin's rule; data reported, not a revert test)
+
+Original (land_count_check.py, 60%+, two-colour, 40 cards, 15-17 lands): 16 vs 17 not significantly worse in any landcycler x dual stratum (0 cyclers +0.24, 1 cycler +1.72, 2+ +1.17; CIs about +-2 to +-8). Strata and quality (All Decks mean of spells) as original; (b) = quality without landcyclers.
+decks 25101; lands 15/16/17: 272/5409/19420; games 7-9: 4230 decks, 16-land 880, 15-land 46
+
+**lands vs 17 by stratum, pts (n/a: under 30 decks at that count)**
+
+| term | O | Ia | Ib | Ca | Cb | Cns | CA | CB |
+|---|---|---|---|---|---|---|---|---|
+| cyc 0, duals 0-1: 16 vs 17 | +0.26 [-2.95, +3.48] | -0.34 [-2.85, +2.17] | -0.34 [-2.85, +2.17] | +0.32 [-1.37, +2.01] | +0.32 [-1.37, +2.01] | +0.64 [-1.08, +2.36] | +0.71 [-1.68, +3.10] | -0.14 [-2.52, +2.25] |
+| cyc 0, duals 0-1: 15 vs 17 | n/a | n/a | n/a | +6.37 [-1.30, +14.04] | +6.37 [-1.30, +14.04] | +7.30 [-0.22, +14.81] | +6.13 [-3.24, +15.49] | +7.29 [-5.38, +19.96] |
+| cyc 0, duals 2+: 16 vs 17 | n/a | n/a | n/a | -0.72 [-6.60, +5.15] | -0.72 [-6.60, +5.15] | -2.24 [-8.24, +3.77] | -1.41 [-10.24, +7.41] | +0.37 [-7.84, +8.57] |
+| cyc 0, duals 2+: 15 vs 17 | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a |
+| cyc 1, duals 0-1: 16 vs 17 | +1.76 [-0.96, +4.48] | +1.43 [-0.52, +3.38] | +1.43 [-0.52, +3.38] | +1.04 [-0.38, +2.46] | +1.03 [-0.39, +2.45] | +1.23 [-0.22, +2.67] | +0.52 [-1.53, +2.56] | +1.54 [-0.43, +3.51] |
+| cyc 1, duals 0-1: 15 vs 17 | n/a | n/a | n/a | +5.20 [-0.68, +11.07] | +5.15 [-0.73, +11.03] | +5.67 [-0.24, +11.59] | +5.60 [-1.85, +13.05] | n/a |
+| cyc 1, duals 2+: 16 vs 17 | -4.92 [-13.07, +3.23] | n/a | n/a | +1.00 [-3.82, +5.83] | +0.93 [-3.89, +5.76] | +1.58 [-3.25, +6.42] | +0.61 [-6.25, +7.47] | +2.35 [-4.81, +9.50] |
+| cyc 1, duals 2+: 15 vs 17 | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a |
+| cyc 2+, duals 0-1: 16 vs 17 | +1.17 [-0.81, +3.15] | +2.42 [+0.84, +4.01]* | +2.41 [+0.82, +4.00]* | +1.28 [+0.11, +2.45]* | +1.25 [+0.08, +2.42]* | +1.61 [+0.43, +2.79]* | +0.87 [-0.78, +2.52] | +1.66 [-0.01, +3.33] |
+| cyc 2+, duals 0-1: 15 vs 17 | +4.24 [-3.61, +12.09] | n/a | n/a | +2.72 [-2.03, +7.47] | +2.72 [-2.05, +7.49] | +2.79 [-2.09, +7.67] | +1.54 [-5.12, +8.20] | +3.91 [-2.89, +10.72] |
+| cyc 2+, duals 2+: 16 vs 17 | -1.10 [-7.97, +5.77] | -0.45 [-5.18, +4.27] | -0.46 [-5.18, +4.27] | -0.30 [-3.90, +3.30] | -0.35 [-3.95, +3.25] | +0.95 [-2.84, +4.74] | -3.53 [-8.43, +1.37] | +4.28 [-1.13, +9.69] |
+| cyc 2+, duals 2+: 15 vs 17 | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a |
+| n decks | 1635 | 942 | 942 | 5737 | 5737 | 5737 | 2907 | 2830 |
+
+**pooled over strata (not in the original)**
+
+| term | O | Ia | Ib | Ca | Cb | Cns | CA | CB |
+|---|---|---|---|---|---|---|---|---|
+| 16 vs 17, all strata pooled | +0.96 [-0.39, +2.31] | +1.49 [+0.45, +2.53]* | +1.48 [+0.44, +2.51]* | +0.81 [+0.05, +1.56]* | +0.78 [+0.02, +1.53]* | +1.11 [+0.35, +1.88]* | +0.48 [-0.59, +1.54] | +1.12 [+0.05, +2.19]* |
+| 15 vs 17, all strata pooled | +1.19 [-4.63, +7.01] | +8.11 [+2.91, +13.31]* | +8.13 [+2.92, +13.34]* | +4.33 [+1.08, +7.59]* | +4.33 [+1.06, +7.59]* | +4.63 [+1.29, +7.97]* | +3.63 [-0.53, +7.78] | +5.32 [+0.20, +10.43]* |
+| n decks | 7680 | 4230 | 4230 | 25101 | 25101 | 25101 | 12684 | 12417 |
+
+## R6. GIH_SLOPE 1.72 (deck WR points per +1 mean spell GIH WR)
+
+Origin: deckbuilder.py comment 'FRA decks of 100+ games players, 2026-11-05' and the 'gihwr' objective commit 156b7cc; no script or doc in the repo contains the fit, so the original is NOT reproducible from the repo. Candidate specs below (family-1 decks, lane GIH mean, coefficient x 24.75).
+
+**Deck WR points per +1 GIH WR point of the mean spell**
+
+| sample / controls | n | slope [95% CI] |
+|---|---|---|
+| all 2-colour decks, no controls | 27196 | +2.11 [+1.93, +2.28] |
+| + lane | 27196 | +7.65 [+7.24, +8.06] |
+| + lane + splash | 27196 | +7.93 [+7.52, +8.35] |
+| + lane + skill | 27196 | +5.95 [+5.55, +6.36] |
+| + lane + skill + C(gb) [original-style controls] | 27196 | +3.54 [+3.16, +3.93] |
+| skill>=0.60, + C(gb) + lane + skill | 8301 | +4.53 [+3.79, +5.27] |
+| games 7-9 (Ia), + C(gb) + lane + skill | 4466 | +2.88 [+2.31, +3.45] |
+| games 7-9, no controls | 4466 | +1.08 [+0.83, +1.32] |
+| half A, + lane + skill | 13698 | +6.10 [+5.53, +6.67] |
+| half B, + lane + skill | 13498 | +5.79 [+5.21, +6.37] |
+| Premier only, + lane + skill | 18749 | +6.32 [+5.84, +6.80] |
+| skill>=0.60, + lane + skill, no C(gb) | 8301 | +5.93 [+5.17, +6.68] |
+Caveats fixed in advance: (1) the card GIH ratings are computed from the same games as the deck win rates (circular: a deck's mean GIH contains its own games, so the slope is inflated by construction, most for rare cards); (2) conditioning on games or keeping skill moves it, so 1.72 has no unique controls; (3) mean GIH is an error-ridden measure of power (attenuation) and contains the game-length bias (review s1.5).
+
+## R7. SPLASH_TERM 4.07 and the B9 splash cost
+
+Original (podcast_splash_speed.py, B9): extended minus clean -1.66 / -1.58 / -1.68 by speed tercile (no quality control), -2.8 / -2.6 / -2.9 with deck quality; splash-only -1.7 / -1.7 / -1.5. SPLASH_TERM 4.07 is the deck model's splash term, used next to a GIH-based quality score, so the comparable number is the equal-quality splash cost. O = Premier, skill + C(gb) + lane, splash-only vs clean, pooled across terciles; Onq = original without quality. (b) = quality of the non-splashed spells (cards outside the lane colours removed).
+
+**splash-only vs clean 2-colour, pts**
+
+| term | Onq | O | Ia | Ib | Is60 | Ca | Cb | Cns | CA | CB |
+|---|---|---|---|---|---|---|---|---|---|---|
+| splash | -1.45 [-2.03, -0.87]* | -2.73 [-3.33, -2.13]* | -1.93 [-2.76, -1.10]* | -1.58 [-2.39, -0.76]* | -3.05 [-4.65, -1.45]* | -3.92 [-4.61, -3.23]* | -3.05 [-3.72, -2.37]* | -3.73 [-4.44, -3.03]* | -3.81 [-4.78, -2.84]* | -4.03 [-5.01, -3.04]* |
+| n decks | 18749 | 18749 | 4242 | 4242 | 1395 | 18749 | 18749 | 18749 | 9418 | 9331 |
+
+**extended (splash or 3+ colours) vs clean, pts**
+
+| term | Onq | O | Ia | Ib | Is60 | Ca | Cb | Cns | CA | CB |
+|---|---|---|---|---|---|---|---|---|---|---|
+| extended | -1.44 [-2.03, -0.86]* | -2.73 [-3.32, -2.14]* | -1.93 [-2.75, -1.11]* | -1.57 [-2.39, -0.76]* | -3.18 [-4.78, -1.57]* | -3.96 [-4.64, -3.27]* | -3.07 [-3.74, -2.40]* | -3.81 [-4.51, -3.10]* | -3.86 [-4.82, -2.90]* | -4.04 [-5.02, -3.06]* |
+| n decks | 23889 | 23889 | 5311 | 5311 | 1765 | 23889 | 23889 | 23889 | 12004 | 11885 |
+
+## R8. FINISHER_POINTS 2 (finishers)
+
+Original (pick-level-FRA.md, fra_step2.py): pool-deck (best pair, top 23 castable by GIH), event match record, n=23, 100+ games players: finishers +2.05 [+1.77, +2.33] with the skill bucket (M1); +2.43 all drafts M0. Finisher = cmc>=5 and GIH >= format mean + 1 SD. Pool-level rows use the real user_n_games_bucket (100+ players are the leak-free stratum there); the deck-level analogue uses decks_FRA.
+
+**Pool-level (event match record), pts per extra card**
+
+| sample / model | drafts | finishers | removal | duals |
+|---|---|---|---|---|
+| n=23, all players, M1 (original row 3) | 26023 | +1.73 [+1.56, +1.90]* | +0.21 [+0.15, +0.28]* | +0.20 [+0.12, +0.27]* |
+| n=23, 100+ players, M1 (original row 4) | 9177 | +2.05 [+1.77, +2.33]* | +0.24 [+0.13, +0.34]* | +0.25 [+0.13, +0.37]* |
+| n=23, 100+ players, M0 (no skill) | 9177 | +2.04 [+1.75, +2.33]* | +0.20 [+0.09, +0.31]* | +0.68 [+0.56, +0.80]* |
+| n=23, 100+, M1, half A | 4631 | +2.17 [+1.79, +2.55]* | -0.01 [-0.16, +0.14] | +0.01 [-0.16, +0.18] |
+| n=23, 100+, M1, half B | 4546 | +1.91 [+1.50, +2.32]* | +0.48 [+0.33, +0.63]* | +0.50 [+0.33, +0.67]* |
+| n=23, 100+, M0, half A | 4631 | +2.18 [+1.78, +2.57]* | -0.06 [-0.21, +0.09] | +0.51 [+0.34, +0.68]* |
+| n=23, 100+, M0, half B | 4546 | +1.90 [+1.47, +2.32]* | +0.45 [+0.29, +0.60]* | +0.85 [+0.68, +1.03]* |
+Pool-level (b) quality (pool-deck quality without finishers) needs the pool-deck selection loop of fra_step2.py (about 54k drafts x 10 pairs) and was not rerun; the deck-level analogue below carries control (b).
+
+**deck-level analogue: finisher count in the final deck, pts per card (removal and creatures controlled)**
+
+| term | O | Ia | Ib | Is60 | Ca | Cb | Cns | CA | CB |
+|---|---|---|---|---|---|---|---|---|---|
+| fin | +1.02 [+0.27, +1.78]* | +0.18 [-0.39, +0.74] | +1.21 [+0.68, +1.74]* | +0.11 [-0.99, +1.21] | +1.47 [+1.05, +1.89]* | +3.40 [+3.01, +3.80]* | +1.10 [+0.68, +1.53]* | +1.19 [+0.61, +1.78]* | +1.75 [+1.15, +2.36]* |
+| n decks | 8301 | 4466 | 4466 | 1556 | 27196 | 27196 | 27196 | 13698 | 13498 |
+
+## R9. Creature count (CREATURE_BELOW 2 / CREATURE_POINTS 3)
+
+Original: the coefficient on `cre` in every deck GLM of this family (it is a control there, not a finding); the creature floor itself rests on conformity to top players. Spec: creature count with quality (a) all spells or (b) non-creature spells; splash controlled.
+
+**creature count, pts per creature**
+
+| term | O | Ia | Ib | Is60 | Ca | Cb | Cns | CA | CB |
+|---|---|---|---|---|---|---|---|---|---|
+| cre | +0.09 [-0.16, +0.35] | +0.12 [-0.08, +0.32] | -0.11 [-0.31, +0.08] | +0.04 [-0.33, +0.40] | +0.05 [-0.09, +0.19] | -0.39 [-0.53, -0.26]* | +0.02 [-0.12, +0.16] | +0.06 [-0.14, +0.26] | +0.05 [-0.15, +0.25] |
+| n decks | 8301 | 4466 | 4466 | 1556 | 27196 | 27196 | 27196 | 13698 | 13498 |
+
+**creatures short of the pair's target minus 2 (builder penalty), pts per creature short**
+
+| term | O | Ia | Ib | Is60 | Ca | Cb | Cns | CA | CB |
+|---|---|---|---|---|---|---|---|---|---|
+| csf | -0.13 [-0.62, +0.37] | -0.13 [-0.52, +0.27] | +0.19 [-0.20, +0.58] | -0.30 [-0.98, +0.38] | +0.08 [-0.21, +0.36] | +0.73 [+0.45, +1.01]* | +0.18 [-0.10, +0.46] | +0.20 [-0.20, +0.60] | -0.04 [-0.45, +0.36] |
+| n decks | 8301 | 4466 | 4466 | 1556 | 27196 | 27196 | 27196 | 13698 | 13498 |
+
+## R10. Deck-level nulls of 2026-11-06, rerun
+
+Same families as the original scripts; B2 top end is R3; the weak-pool test is pool-level (needs final pools) and its overall extended-vs-clean cost is R7.
+
+**B4 non-board spells (draw-only, lifegain-only, aura/equipment, tricks), pts per spell; removal (engine tags) and creatures controlled**
+
+| term | O | Ia | Ib | Is60 | Ca | Cb | Cns | CA | CB |
+|---|---|---|---|---|---|---|---|---|---|
+| nb | -0.04 [-0.55, +0.47] | +0.14 [-0.25, +0.53] | -0.03 [-0.42, +0.36] | -0.01 [-0.75, +0.73] | +0.06 [-0.23, +0.34] | -0.28 [-0.56, -0.00]* | +0.19 [-0.10, +0.47] | +0.02 [-0.38, +0.42] | +0.09 [-0.31, +0.49] |
+| n decks | 8301 | 4466 | 4466 | 1556 | 27196 | 27196 | 27196 | 13698 | 13498 |
+
+**counterspells (CORE 4 cards) next to REM48, pts per card; (b) quality without both sets**
+
+| term | O | Ia | Ib | Is60 | Ca | Cb | Cns | CA | CB |
+|---|---|---|---|---|---|---|---|---|---|
+| ctr | -0.38 [-1.12, +0.36] | +0.00 [-0.58, +0.59] | +0.26 [-0.32, +0.84] | -0.17 [-1.25, +0.91] | -0.54 [-0.98, -0.11]* | -0.03 [-0.46, +0.40] | -0.38 [-0.82, +0.06] | -0.49 [-1.08, +0.11] | -0.61 [-1.24, +0.02] |
+| rem48 | +0.15 [-0.16, +0.45] | -0.01 [-0.24, +0.22] | +0.15 [-0.08, +0.38] | -0.22 [-0.65, +0.22] | +0.25 [+0.08, +0.42]* | +0.57 [+0.41, +0.74]* | +0.24 [+0.07, +0.42]* | +0.27 [+0.03, +0.51]* | +0.23 [-0.01, +0.47] |
+| n decks | 8301 | 4466 | 4466 | 1556 | 27196 | 27196 | 27196 | 13698 | 13498 |
+
+**mana sinks (36-card tag), pts per sink**
+
+| term | O | Ia | Ib | Is60 | Ca | Cb | Cns | CA | CB |
+|---|---|---|---|---|---|---|---|---|---|
+| sink | -0.20 [-0.50, +0.10] | -0.11 [-0.34, +0.13] | -0.12 [-0.35, +0.12] | -0.24 [-0.68, +0.20] | -0.23 [-0.39, -0.06]* | -0.23 [-0.39, -0.06]* | -0.10 [-0.27, +0.07] | -0.26 [-0.50, -0.03]* | -0.19 [-0.42, +0.05] |
+| n decks | 8301 | 4466 | 4466 | 1556 | 27196 | 27196 | 27196 | 13698 | 13498 |
+double-pip splash decks (single-colour splash with a DP copy): 1847; games 7-9: 282; skill>=0.60: 515
+
+**double-pip splash decks: pts per source (3..10, linear; the review's pre-specifiable estimate); (b) quality without the DP cards** (original = review_dpsplash.py +0.67 [-0.10, +1.43] all skills, all games buckets)
+
+| term | O | Ia | Ib | Is60 | Ca | Cb | Cns | CA | CB |
+|---|---|---|---|---|---|---|---|---|---|
+| per source | +0.64 [-0.13, +1.40] | +0.67 [-0.50, +1.84] | +0.67 [-0.50, +1.84] | +0.96 [-1.24, +3.16] | +0.87 [+0.07, +1.67]* | +0.92 [+0.12, +1.72]* | +1.05 [+0.22, +1.87]* | +0.73 [-0.35, +1.81] | +0.94 [-0.26, +2.14] |
+| n decks | 1847 | 282 | 282 | 88 | 1847 | 1847 | 1847 | 951 | 896 |
+
+**double-pip splash: 8+ sources vs fewer (post hoc cut, winner's curse; reported for the slope's sake only)**
+
+| term | O | Ia | Ib | Is60 | Ca | Cb | Cns | CA | CB |
+|---|---|---|---|---|---|---|---|---|---|
+| 8+ vs <8 | +5.48 [+2.35, +8.62]* | +3.50 [-0.61, +7.60] | +3.33 [-0.78, +7.44] | +4.61 [-4.50, +13.72] | +6.15 [+3.00, +9.30]* | +6.07 [+2.91, +9.23]* | +6.42 [+3.16, +9.69]* | +7.21 [+2.78, +11.63]* | +4.93 [+0.38, +9.48]* |
+| n decks | 1847 | 282 | 282 | 88 | 1847 | 1847 | 1847 | 951 | 896 |
+
+**empower Jace: extra WR pts per empower card when a Way is present (original +0.24 [0.00, +0.48]) and per empower card with no Way (original -0.18); (b) quality without Ways and empower cards**
+
+| term | O | Ia | Ib | Is60 | Ca | Cb | Cns | CA | CB |
+|---|---|---|---|---|---|---|---|---|---|
+| Way present x E | +0.24 [-0.00, +0.48] | +0.39 [+0.06, +0.73]* | +0.40 [+0.06, +0.73]* | +0.21 [-0.42, +0.85] | +0.52 [+0.24, +0.79]* | +0.56 [+0.28, +0.83]* | +0.54 [+0.26, +0.82]* | +0.29 [-0.09, +0.68] | +0.73 [+0.34, +1.12]* |
+| E, no Way | -0.18 [-0.37, +0.00] | -0.14 [-0.41, +0.12] | +0.17 [-0.11, +0.45] | -0.18 [-0.63, +0.28] | -0.36 [-0.57, -0.14]* | +0.40 [+0.18, +0.63]* | -0.25 [-0.46, -0.03]* | -0.33 [-0.62, -0.03]* | -0.39 [-0.70, -0.09]* |
+| n decks | 23889 | 5311 | 5311 | 1765 | 23889 | 23889 | 23889 | 12004 | 11885 |
+
+**Way count vs 0 (original 3 minus 2: +0.82 [-0.52, +2.17]); contrasts**
+
+| term | O | Ia | Ib | Is60 | Ca | Cb | Cns | CA | CB |
+|---|---|---|---|---|---|---|---|---|---|
+| 2 minus 1 | -0.42 [-1.25, +0.42] | -0.10 [-1.30, +1.10] | -0.03 [-1.24, +1.18] | -0.85 [-3.25, +1.54] | -1.00 [-1.97, -0.02]* | -0.85 [-1.82, +0.13] | -0.94 [-1.94, +0.06] | -0.55 [-1.92, +0.83] | -1.45 [-2.82, -0.07]* |
+| 3 minus 2 | +0.81 [-0.54, +2.16] | -0.59 [-2.48, +1.29] | -0.49 [-2.38, +1.41] | -0.75 [-4.34, +2.84] | +2.34 [+0.77, +3.90]* | +2.53 [+0.97, +4.10]* | +3.13 [+1.52, +4.74]* | +2.28 [+0.02, +4.55]* | +2.36 [+0.20, +4.52]* |
+| 4+ minus 3 | -0.62 [-2.90, +1.67] | +0.42 [-3.00, +3.85] | +0.63 [-2.82, +4.08] | +3.80 [-4.11, +11.71] | -1.43 [-4.11, +1.26] | -1.22 [-3.91, +1.46] | -1.86 [-4.54, +0.83] | -1.20 [-5.18, +2.77] | -1.47 [-5.14, +2.20] |
+| n decks | 23889 | 5311 | 5311 | 1765 | 23889 | 23889 | 23889 | 12004 | 11885 |
