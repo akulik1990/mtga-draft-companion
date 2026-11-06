@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 	import { api, IDEA_STATUSES, type EngineDeck, type Idea, type IdeaStatus, type VideoData, type VideoEngine } from '../api';
 
 	let { id }: { id: string } = $props();
@@ -21,14 +21,30 @@
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	let player: any = null;
 	const yt = () => (window as any).YT;
+	let now = $state(-1); // current video time in seconds, -1 until the player reports one
+	let timer: ReturnType<typeof setInterval> | undefined;
+	const tick = () => { const t = player?.getCurrentTime?.(); if (typeof t === 'number') now = t; };
 	function attach() {
-		if (frame && yt()?.Player) player = new (yt().Player)(frame, {});
+		if (!frame || !yt()?.Player) return;
+		player = new (yt().Player)(frame, {
+			events: {
+				// state 1 = playing: poll every 500 ms; any other state: stop, one last read so seeks while paused show
+				onStateChange: (ev: { data: number }) => {
+					clearInterval(timer);
+					tick();
+					if (ev.data === 1) timer = setInterval(tick, 500);
+				},
+			},
+		});
 	}
+	onDestroy(() => clearInterval(timer));
 	function seek(t: string | number) {
 		const s = secs(t);
+		now = s;
 		if (player?.seekTo) { player.seekTo(s, true); player.playVideo?.(); }
 		else src = `${BASE}&start=${s}&autoplay=1`; // API unavailable: reload the iframe at the time
-		frame?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+		kick++; pausedUntil = 0;
+		playerBox?.scrollIntoView({ block: 'start', behavior: 'smooth' });
 	}
 	function secs(t: string | number) {
 		if (typeof t === 'number') return Math.floor(t);
@@ -60,6 +76,20 @@
 	const eMap = $derived(new Map((engine?.picks ?? []).map((p) => [key(p), p])));
 	const oMap = $derived(new Map((other?.picks ?? []).map((p) => [key(p), p])));
 	const rows = $derived((data?.picks.picks ?? []).map((p) => ({ p, e: eMap.get(key(p)), o: oMap.get(key(p)) })));
+
+	// ── timeline: last pick whose timestamp is <= now (rows without a timestamp are skipped, so the nearest earlier one stays lit)
+	const active = $derived(rows.reduce((a, { p }, i) => (p.time && secs(p.time) <= now ? i : a), -1));
+	let box = $state<HTMLElement>();
+	let playerBox = $state<HTMLElement>();
+	let kick = $state(0); // bumped on a click so the box re-aligns even when the active row did not change
+	let pausedUntil = 0; // set by the user's own scrolling of the box
+	const hold = () => { pausedUntil = Date.now() + 4000; };
+	$effect(() => {
+		kick;
+		if (Date.now() < pausedUntil) return;
+		const row = active >= 0 ? box?.querySelector<HTMLElement>(`[data-i="${active}"]`) : null;
+		if (box && row) box.scrollTo({ top: row.offsetTop, behavior: 'smooth' }); // own box only, never the page
+	});
 
 	// ── colour path: his latest stated plan at each pick next to v2's top lane after the pick
 	const plans = $derived.by(() => {
@@ -106,26 +136,33 @@
 		{#if engine}<span class="text-zinc-500">v2 {engine.commit} ({engine.date}): top-1 {engine.top1}/{engine.n}, top-3 {engine.top3}/{engine.n}</span>{/if}
 	</div>
 
-	<section class="mb-6 grid gap-4 lg:grid-cols-2">
-		<div class="aspect-video w-full">
+	<section class="mb-6 lg:max-w-4xl">
+		<div bind:this={playerBox} class="aspect-video w-full">
 			<iframe bind:this={frame} class="h-full w-full rounded" {src} title={data.video.title} allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
 		</div>
-		<div class="max-h-[28rem] overflow-auto text-xs lg:max-h-none lg:aspect-video">
-			<table class="w-full">
-				<thead class="sticky top-0 bg-zinc-950 text-left text-zinc-500">
-					<tr><th class="font-normal">Pick</th><th class="font-normal">His plan</th><th class="font-normal">v2 top lane after the pick</th></tr>
-				</thead>
-				<tbody>
-					{#each rows as { p, e }, i (key(p))}
-						{@const top = e && Object.entries(e.lanes_after)[0]}
-						<tr class="border-t border-zinc-900 {plans[i].changed ? 'text-zinc-100' : 'text-zinc-500'}">
-							<td class="pr-2 whitespace-nowrap">P{p.pack}p{p.pick}</td>
-							<td class="pr-2">{plans[i].changed ? plans[i].cur : '·'}</td>
-							<td class="whitespace-nowrap {top && plans[i].cur && !top[0].split('').some((c) => plans[i].cur.includes(c)) ? 'text-amber-400' : ''}">{top ? `${top[0]} ${lanePct(top[1])}` : '-'}</td>
-						</tr>
-					{/each}
-				</tbody>
-			</table>
+		<div bind:this={box} role="list" onwheel={hold} ontouchmove={hold} class="relative max-h-[40vh] overflow-y-auto overflow-x-hidden rounded border border-zinc-800 text-xs">
+			{#each rows as { p, e }, i (key(p))}
+				{@const top = e && Object.entries(e.lanes_after)[0]}
+				{@const miss = !!e && e.top3[0]?.name !== p.taken}
+				<div data-i={i} role="presentation" onclick={() => p.time && seek(p.time)} class="{p.time ? 'cursor-pointer ' : ''}border-t border-zinc-900 px-2 py-1 first:border-t-0 {i === active ? 'bg-sky-950 ring-1 ring-inset ring-sky-600' : miss ? 'bg-amber-950/30' : ''}">
+					<div class="flex flex-wrap items-baseline gap-x-2">
+						{#if p.time}<span class="text-sky-400 tabular-nums">{mss(p.time)}</span>{/if}
+						<span class="text-zinc-500">P{p.pack}p{p.pick}</span>
+						<span class="text-sm font-medium">{p.taken}</span>
+						{#if e}<span class={miss ? 'text-amber-400' : 'text-emerald-400'}>{miss ? `v2 rank ${e.his_rank ?? '?'}` : 'v2 #1 ✓'}</span>{/if}
+						{#if top}<span class="ml-auto text-zinc-500">lane {top[0]} {lanePct(top[1])}</span>{/if}
+					</div>
+					{#if e}
+						<div class="text-zinc-400">
+							{#each e.top3 as c, k}<span class="mr-2 whitespace-nowrap {c.name === p.taken ? 'text-emerald-400' : ''}">{k + 1}. {c.name} <span class="text-zinc-500 tabular-nums">{c.score.toFixed(1)}</span></span>{/each}
+						</div>
+					{/if}
+					{#if p.reasoning || p.plan}<div class="text-zinc-300">{p.plan ? `[${p.plan}] ` : ''}{p.reasoning}</div>{/if}
+				</div>
+			{:else}
+				<p class="p-2 text-zinc-500">no picks recorded</p>
+			{/each}
+			<div class="h-[calc(40vh-4rem)]" aria-hidden="true"></div> <!-- lets the last rows reach the top of the box -->
 		</div>
 	</section>
 
@@ -158,8 +195,8 @@
 				<tbody>
 					{#each rows as { p, e, o } (key(p))}
 						{@const miss = !!e && e.top3[0]?.name !== p.taken}
-						<tr class="border-t border-zinc-800 align-top {miss ? 'bg-amber-950/30' : ''}">
-							<td class="py-1 pr-3"><button class="text-sky-400 tabular-nums hover:underline" title={p.time} onclick={() => seek(p.time)}>{mss(p.time)}</button></td>
+						<tr onclick={() => p.time && seek(p.time)} class="{p.time ? 'cursor-pointer ' : ''}border-t border-zinc-800 align-top {miss ? 'bg-amber-950/30' : ''}">
+							<td class="py-1 pr-3"><button class="text-sky-400 tabular-nums hover:underline" title={p.time}>{mss(p.time)}</button></td>
 							<td class="pr-3 whitespace-nowrap">P{p.pack}p{p.pick}</td>
 							<td class="pr-3 font-medium">{p.taken}</td>
 							{#each [0, 1, 2] as k}
@@ -182,6 +219,27 @@
 									{/if}
 								{/if}
 							</td>
+						</tr>
+					{/each}
+				</tbody>
+			</table>
+		</div>
+	</section>
+
+	<section class="mb-6">
+		<h2 class="mb-2 text-sm font-semibold text-zinc-200">Colour plan by pick</h2>
+		<div class="max-h-[28rem] overflow-auto text-xs">
+			<table class="w-full">
+				<thead class="sticky top-0 bg-zinc-950 text-left text-zinc-500">
+					<tr><th class="font-normal">Pick</th><th class="font-normal">His plan</th><th class="font-normal">v2 top lane after the pick</th></tr>
+				</thead>
+				<tbody>
+					{#each rows as { p, e }, i (key(p))}
+						{@const top = e && Object.entries(e.lanes_after)[0]}
+						<tr class="border-t border-zinc-900 {plans[i].changed ? 'text-zinc-100' : 'text-zinc-500'}">
+							<td class="pr-2 whitespace-nowrap">P{p.pack}p{p.pick}</td>
+							<td class="pr-2">{plans[i].changed ? plans[i].cur : '·'}</td>
+							<td class="whitespace-nowrap {top && plans[i].cur && !top[0].split('').some((c) => plans[i].cur.includes(c)) ? 'text-amber-400' : ''}">{top ? `${top[0]} ${lanePct(top[1])}` : '-'}</td>
 						</tr>
 					{/each}
 				</tbody>
