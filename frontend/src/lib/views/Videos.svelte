@@ -17,7 +17,7 @@
 	<tbody>
 		{#each rows as v (v.id)}
 			<tr class="border-t border-zinc-800">
-				<td class="py-1 pr-6"><a class="text-sky-400 hover:underline" href="/videos/{v.id}">{v.title}</a></td>
+				<td class="py-1 pr-6"><a class="text-sky-400 hover:underline" href="?v={v.id}">{v.title}</a></td>
 				<td class="pr-6">{v.player}</td>
 				<td class="pr-6">{v.set}</td>
 				<td class="pr-6 tabular-nums">{pct(v.top1, v.n)}</td>

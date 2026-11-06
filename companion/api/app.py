@@ -8,7 +8,7 @@ from pathlib import Path
 
 from fastapi import Body, FastAPI, HTTPException, WebSocket, WebSocketDisconnect
 from fastapi.encoders import jsonable_encoder
-from fastapi.responses import FileResponse, HTMLResponse
+from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 
 from companion import ROOT
@@ -386,11 +386,6 @@ def create_app(session: DraftSession, *, run_scanner: bool = True, frontend: Pat
         return response
 
     if frontend.is_dir():
-        @app.get("/videos/{rest:path}")
-        @app.get("/videos")
-        def videos_page(rest: str = ""):  # client-side routes of the prerendered shell
-            return FileResponse(frontend / "200.html")
-
         app.mount("/", StaticFiles(directory=frontend, html=True), name="frontend")
     else:
         @app.get("/", response_class=HTMLResponse)

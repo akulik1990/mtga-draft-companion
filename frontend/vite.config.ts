@@ -16,7 +16,7 @@ export default defineConfig({
 				runes: ({ filename }) =>
 					filename.split(/[/\\]/).includes('node_modules') ? undefined : true
 			},
-			adapter: adapter({ fallback: '200.html' }) // served by FastAPI for /videos/*
+			adapter: adapter()
 		})
 	]
 });

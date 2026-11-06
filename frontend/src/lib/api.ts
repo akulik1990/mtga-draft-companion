@@ -111,12 +111,43 @@ export const api = {
 	importTier: (url: string, label = '') => post<TierFile[]>('/api/tiers', { url, label }),
 	deleteTier: (file: string) => call<TierFile[]>(`/api/tiers/${encodeURIComponent(file)}`, { method: 'DELETE' }),
 	cards: (q: string) => call<Card[]>(`/api/cards?q=${encodeURIComponent(q)}`),
-	videos: () => call<VideoRow[]>('/api/videos'),
-	video: (id: string) => call<VideoData>(`/api/videos/${id}`),
-	videoEngine: (id: string, commit: string) => call<VideoEngine>(`/api/videos/${id}/engine/${commit}`),
+	isStatic,
+	videos: async () => (await isStatic() ? staticVideos() : call<VideoRow[]>('/api/videos')),
+	video: async (id: string) => (await isStatic() ? staticVideo(id) : call<VideoData>(`/api/videos/${id}`)),
+	videoEngine: (id: string, commit: string) => call<VideoEngine>(`/api/videos/${id}/engine/${commit}`).catch(() => getJson<VideoEngine>(`${id}/engine/${commit}.json`)),
 	setIdea: (id: string, idea: string, body: IdeaStatus) =>
 		call<IdeaStatus>(`/api/videos/${id}/ideas/${encodeURIComponent(idea)}`, { method: 'PUT', body: JSON.stringify(body) })
 };
+
+// Static site (GitHub Pages, tools/video_site.py): no API, so the video records are read as files next to the page
+// (videos/index.html -> ../data/videos/...). The checklist is then read-only.
+let staticMode: Promise<boolean> | undefined;
+function isStatic() {
+	return (staticMode ??= fetch('/api/health').then((r) => !r.ok, () => true).catch(() => true));
+}
+async function getJson<T>(path: string, fallback?: T): Promise<T> {
+	const r = await fetch(new URL(`../data/videos/${path}`, location.href));
+	if (r.ok) return r.json();
+	if (fallback !== undefined) return fallback;
+	throw new Error(`${r.status} ${path}`);
+}
+async function staticVideos(): Promise<VideoRow[]> {
+	const rows = await getJson<VideoRow[]>('index.json');
+	return Promise.all(rows.map(async (v) => {
+		const e = await getJson<Partial<VideoEngine>>(`${v.id}/engine/latest.json`, {});
+		return { ...v, top1: e.top1 ?? null, top3: e.top3 ?? null, n: e.n ?? null, commit: e.commit ?? null };
+	}));
+}
+async function staticVideo(id: string): Promise<VideoData> {
+	const video = (await getJson<VideoRow[]>('index.json')).find((v) => v.id === id);
+	if (!video) throw new Error(`No video ${id}`);
+	const [picks, deck, ideas, status, engine, commits] = await Promise.all([
+		getJson<VideoData['picks']>(`${id}/picks.json`), getJson<VideoData['deck']>(`${id}/deck.json`, null),
+		getJson<Idea[]>(`${id}/ideas.json`, []), getJson<VideoData['status']>(`${id}/ideas-status.json`, {}),
+		getJson<VideoEngine | null>(`${id}/engine/latest.json`, null), getJson<string[]>(`${id}/engine/commits.json`, [])
+	]);
+	return { video, picks, deck, ideas, status, engine, commits, readonly: true };
+}
 
 export const IDEA_STATUSES = ['untested', 'testing', 'confirmed', 'rejected', 'shipped'] as const;
 export type IdeaStatus = { status: string; result: string; doc: string };
@@ -133,5 +164,5 @@ export type VideoData = {
 	video: VideoRow;
 	picks: { picks: VideoPick[]; colour_path: { after: string; main: string; quote?: string }[] };
 	deck: { main: Record<string, number>; lands: Record<string, number>; sideboard?: Record<string, number> } | null;
-	ideas: Idea[]; status: Record<string, IdeaStatus>; engine: VideoEngine | null; commits: string[];
+	ideas: Idea[]; status: Record<string, IdeaStatus>; engine: VideoEngine | null; commits: string[]; readonly?: boolean;
 };
