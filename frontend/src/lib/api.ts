@@ -146,7 +146,8 @@ async function staticVideo(id: string): Promise<VideoData> {
 		getJson<Idea[]>(`${id}/ideas.json`, []), getJson<VideoData['status']>(`${id}/ideas-status.json`, {}),
 		getJson<VideoEngine | null>(`${id}/engine/latest.json`, null), getJson<string[]>(`${id}/engine/commits.json`, [])
 	]);
-	return { video, picks, deck, ideas, status, engine, commits, readonly: true };
+	const list = Array.isArray(ideas) ? ideas : ((ideas as { ideas?: Idea[] } | null)?.ideas ?? []); // ideas.json may carry its metadata
+	return { video, picks, deck, ideas: list, status, engine, commits, readonly: true };
 }
 
 export const IDEA_STATUSES = ['untested', 'testing', 'confirmed', 'rejected', 'shipped'] as const;
