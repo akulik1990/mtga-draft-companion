@@ -47,6 +47,8 @@
   "K_TOP": 300.0,
   "LANDS": true,
   "LAND_DECK": false,
+  "LAND_MAIN_DUAL": false,
+  "LAND_MAIN_DUAL_EDGE": 3.0,
   "LAND_PREF": false,
   "LAND_PREF_POS": false,
   "LANE_FLAT": "4:1,14:0.7,45:0.8",

@@ -177,6 +177,8 @@ class DraftAdvisorV2:
     FIX_CAP = 3.0  # most a land's fixing can add, in WR points
     LAND_DECK = False  # on-colour and colourless lands keep their lane value in the deck term instead of "replacement plus edge over an average card" (FRA train: on-pair duals lost ~6 points there; top drafters take them at ATA 6-9)
     LAND_PREF = False  # lands get no learnt preference: it is learnt on pack 1 picks 1-5, where nobody takes lands yet
+    LAND_MAIN_DUAL = False  # a nonbasic land making two or more colours of the lane is worth at least replacement + LAND_MAIN_DUAL_EDGE (top players take main-pair duals mid-pack)
+    LAND_MAIN_DUAL_EDGE = 3.0
     LAND_PREF_POS = False  # with LAND_PREF, lands keep a positive learnt preference (Theorist's Sanctum) and lose only a negative one
     HALF_PIVOT = 0  # from this many spells in the pool, lanes sharing no colour with the pool's top pair get P = 0 (winners change one colour, not both); 0 = off
     # Neutral by default; for testing ideas from top players per set (sets/<SET>/manual.json, "values"):
@@ -519,7 +521,10 @@ class DraftAdvisorV2:
         if self.LANDS and "Land" in (card.get("types") or []):
             colours = card.get("colors") or []
             if not colours or all(c in lane for c in colours):
-                return self.shrunk_wr(card, lane)[0]  # colourless or on-lane: its own win rate
+                v = self.shrunk_wr(card, lane)[0]  # colourless or on-lane: its own win rate
+                if self.LAND_MAIN_DUAL and len(colours) >= 2 and "Basic" not in (card.get("types") or []):
+                    v = max(v, self.replacement + self.LAND_MAIN_DUAL_EDGE)
+                return v
             if any(c in lane for c in colours):
                 return self.replacement + self.fixing_gain(card, lane) + self.FIX_BONUS  # taps for the lane and fixes a splash
             return self.replacement

@@ -25,6 +25,12 @@ def test_layers_resolve_runtime_manual_fitted_baseline(tmp_path, monkeypatch):
     assert tables["pairs"] == {"UB": 1.0} and tables["cards"] == {"Foo": 2.0}
 
 
+def test_fra_main_dual_land_switch_on_other_sets_off():
+    values, _, _ = config.resolve("FRA")
+    assert values["LAND_MAIN_DUAL"] is True and values["LAND_MAIN_DUAL_EDGE"] == 16
+    assert config.resolve("XYZ")[0]["LAND_MAIN_DUAL"] is False and DraftAdvisorV2.LAND_MAIN_DUAL is False
+
+
 def test_activate_sets_and_restores(tmp_path, monkeypatch):
     monkeypatch.setattr(config, "SETS", tmp_path)
     monkeypatch.setattr(config, "ACTIVE", {"set": None, "tables": {}, "source": {}, "applied": set()})
