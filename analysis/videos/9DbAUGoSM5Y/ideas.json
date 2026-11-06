@@ -1,0 +1,486 @@
+{
+ "video": "9DbAUGoSM5Y",
+ "player": "NicolaiBolas",
+ "set": "FRA",
+ "source": "YouTube auto-caption transcript 0:00-16:45 (tools/video_draft.py transcript 9DbAUGoSM5Y --start 0 --end 1005); nothing past 16:45 read. 'type' marks each idea as claim, heuristic or one-off pick; 'repeats' lists ideas of earlier videos it restates; 'related' lists looser topic matches. Solo draft: every idea is the host's (speaker field kept for the schema).",
+ "ideas": [
+  {
+   "id": "9Db-01",
+   "time": 20,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Return to the Light Realms is a mythic that is not particularly good, but the neat card he likes to try out to see whether building around it is worth playing.",
+   "quote": "It's not particularly good, but it's the exact sort of kind of fun neat card that I like trying out.",
+   "cards": [
+    "Return to the Light Realms"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Return to the Light Realms.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "CLK-14"
+   ]
+  },
+  {
+   "id": "9Db-02",
+   "time": 45,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "To win the Pro Tour from this pack: Fblthp, Knows the Way, then Break Under Pressure, then Fblthp, Impossibly Lost; premium removal is harder to find than card draw.",
+   "quote": "I think that card draw is a little easier to find than premium removal sometimes.",
+   "cards": [
+    "Fblthp, Knows the Way",
+    "Break Under Pressure",
+    "Fblthp, Impossibly Lost"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Fblthp, Knows the Way against Break Under Pressure.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "XSY-17",
+    "re7-24"
+   ]
+  },
+  {
+   "id": "9Db-03",
+   "time": 103,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "He has a rule not to pass Mindseeker Oculus, and every time he passes one he regrets it; he takes it over Your Fate Ends Here, even though it is awkward with a white Return to the Light Realms.",
+   "quote": "Every time I pass a Mind Seeker Oculus, I regret it.",
+   "cards": [
+    "Mindseeker Oculus",
+    "Your Fate Ends Here"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Mindseeker Oculus against Your Fate Ends Here.",
+   "type": "heuristic",
+   "repeats": [
+    "9nA-17",
+    "97Z-25",
+    "VTU-07",
+    "kMo-05"
+   ],
+   "related": []
+  },
+  {
+   "id": "9Db-04",
+   "time": 120,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Do not bias picks towards a colour early because of one strong late-game card: he refuses to go white just because he has Return to the Light Realms.",
+   "quote": "I don't like to bias my picks that much early.",
+   "cards": [
+    "Return to the Light Realms",
+    "Mindseeker Oculus"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Share of drafters ending in the colour of their first rare.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "55a-04",
+    "CLK-05"
+   ]
+  },
+  {
+   "id": "9Db-05",
+   "time": 131,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Multiply by Zero is a really good kill spell that kills a lot of things, but has to be careful of prowess and +1/+1 counters; an Esper control deck with Return to the Light Realms would be good.",
+   "quote": "You just have to be careful they don't have prowess or plus and plus and counters, that sort of thing.",
+   "cards": [
+    "Multiply by Zero"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Multiply by Zero; win rate by opposing creature type.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "CWs-21"
+   ]
+  },
+  {
+   "id": "9Db-06",
+   "time": 160,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "No Admittance is miles ahead of the next best card in its pack, and a fourth colour in four picks does not worry him.",
+   "quote": "No Admittance is like miles ahead of the next best card.",
+   "cards": [
+    "No Admittance"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of No Admittance against its P1p4 alternatives.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "n6s-02",
+    "pdI-05"
+   ]
+  },
+  {
+   "id": "9Db-07",
+   "time": 190,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Undulating Witness over Proft, Sinister Mastermind: in a Return to the Light Realms deck he wants landcyclers (especially the creature ones) rather than more removal.",
+   "quote": "I feel like I'm going to want some land cyclers in my return to the light realms deck.",
+   "cards": [
+    "Undulating Witness",
+    "Proft, Sinister Mastermind"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Undulating Witness in decks with Return to the Light Realms.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "pdI-13",
+    "97Z-21"
+   ]
+  },
+  {
+   "id": "9Db-08",
+   "time": 240,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "He would rather his top end be land-cycling creatures than the Archive Arbiter: they fix and can be brought back with Return to the Light Realms.",
+   "quote": "I'd rather my top end be land cyclers is what I meant. Like the land cycling creatures really help.",
+   "cards": [
+    "Archive Arbiter",
+    "Apex Witchstalker",
+    "Undulating Witness"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "GIH WR of Archive Arbiter against landcycler creatures.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "I_C-14",
+    "8Bz-01"
+   ]
+  },
+  {
+   "id": "9Db-09",
+   "time": 290,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Fblthp, Knows the Way wheels at pick 9 in a five-colour-ish pack: nobody else wants it, which he reads as proof a multicolour fixing legend is undervalued.",
+   "quote": "Five-color Fblthp knows the way. Nobody wants it. It's all mine.",
+   "cards": [
+    "Fblthp, Knows the Way"
+   ],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "ALSA and wheel rate of Fblthp, Knows the Way.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "XSY-17",
+    "re7-24"
+   ]
+  },
+  {
+   "id": "9Db-10",
+   "time": 333,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "The deck that wants Murmuring Volume more than any card is a five-colour late-game deck: he passes lands for it.",
+   "quote": "I don't like passing lands, but I will pass them for murmuring volumes. This is like priority numero uno for me.",
+   "cards": [
+    "Murmuring Volume"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Murmuring Volume by number of colours in the deck.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "8Bz-03",
+    "I_C-12",
+    "mqZ-34"
+   ]
+  },
+  {
+   "id": "9Db-11",
+   "time": 420,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Craftwork Crusher is another top-end card: with double white, double green and double red already, he will splash lightly for removal and base in green.",
+   "quote": "Crusher, let's go. Another top end card.",
+   "cards": [
+    "Craftwork Crusher"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Craftwork Crusher in decks with fewer than three colours.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "I_C-13"
+   ]
+  },
+  {
+   "id": "9Db-12",
+   "time": 480,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Vinelasher Adept is a better landcycler than Hexhaven Battalion for a Return to the Light Realms deck because Return can bring it back; he takes Extended Absence anyway to keep a dip into black for removal.",
+   "quote": "I'm just going to take Extended Absence, keep my dip into black for some removal intact.",
+   "cards": [
+    "Extended Absence",
+    "Vinelasher Adept",
+    "Hexhaven Battalion"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Extended Absence against Hexhaven Battalion.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "97Z-08",
+    "kMo-08"
+   ]
+  },
+  {
+   "id": "9Db-13",
+   "time": 516,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "He wants his five-drops to be landcyclers when he can: Awaken the Inferno over Wrecking Gecko.",
+   "quote": "I just want my five drops to be land cyclers when I can.",
+   "cards": [
+    "Awaken the Inferno",
+    "Wrecking Gecko"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Awaken the Inferno against Wrecking Gecko.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "994-07",
+    "mqZ-45"
+   ]
+  },
+  {
+   "id": "9Db-14",
+   "time": 554,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Any white land helps a Return to the Light Realms deck: lands are good pickups for him, so Fatehold Annex over Grim Repriser (which lacks ways to ping).",
+   "quote": "Lands are good pickups for me.",
+   "cards": [
+    "Fatehold Annex",
+    "Grim Repriser"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Play rate of dual lands in five-colour decks.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "CWs-12",
+    "CLK-17"
+   ]
+  },
+  {
+   "id": "9Db-15",
+   "time": 600,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Semester Foreseer is a bigger body to bring back than Fatehold Chronologist, so he takes it for the Return plan.",
+   "quote": "I'd rather have Semester Foreseer cuz it's just like a bigger body to bring back.",
+   "cards": [
+    "Semester Foreseer",
+    "Fatehold Chronologist"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Semester Foreseer.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "9Db-16",
+   "time": 610,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Karn, Gilded Guardian wheels: 'Mabel would almost certainly be a better pickup, but we have to try this' in the Warrior's Blades five-colour deck.",
+   "quote": "Mabel would almost certainly be a better pick up, but we have to try this if we're playing the Warriors Blades deck.",
+   "cards": [
+    "Karn, Gilded Guardian",
+    "Mabel, Valley Hero"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Karn, Gilded Guardian in 4-5 colour decks.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "9Db-17",
+   "time": 692,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Violent Echoes is a card he will take even though it is double red: kill something, draw a card, and he needs card draw to reach nine mana.",
+   "quote": "I like this kill spell a lot. Kill something, draw a card. I need card draw to make sure I can get to nine mana.",
+   "cards": [
+    "Violent Echoes"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Violent Echoes by number of red sources.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "55a-05",
+    "VTU-14",
+    "CLK-11"
+   ]
+  },
+  {
+   "id": "9Db-18",
+   "time": 720,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Something Worth Saving is counterintuitive in a Return to the Light Realms deck because milling the mythic away loses it.",
+   "quote": "Something worth saving doesn't like if I mill my Return to Light realms I can't get it. Um which does worry me.",
+   "cards": [
+    "Something Worth Saving",
+    "Return to the Light Realms"
+   ],
+   "kind": "synergy",
+   "engine_area": "picker",
+   "test_idea": "Win rate of Something Worth Saving by presence of Return to the Light Realms.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "I_C-11",
+    "8Bz-17"
+   ]
+  },
+  {
+   "id": "9Db-19",
+   "time": 727,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Recursive Recruitment is a late-game graveyard payoff bomb and a backup Return to the Light Realms, and also an artifact for Karn.",
+   "quote": "Recruitment's just exactly what I want. Late game graveyard payoff bomb.",
+   "cards": [
+    "Recursive Recruitment"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Recursive Recruitment.",
+   "type": "claim",
+   "repeats": [
+    "5aM-02",
+    "97Z-18",
+    "8Bz-06",
+    "kMo-04"
+   ],
+   "related": []
+  },
+  {
+   "id": "9Db-20",
+   "time": 776,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "A land over a good playable late in pack 3 when playables are plentiful: Theorix Annex and Konstrari Annex over Vinelasher Adept and others, because the deck wants lots of lands.",
+   "quote": "I haven't started taking lands here. I have plenty of playables.",
+   "cards": [
+    "Theorix Annex",
+    "Konstrari Annex",
+    "Vinelasher Adept"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Play rate of lands taken in pack 3.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "CLK-17",
+    "I_C-18",
+    "kMo-18"
+   ]
+  },
+  {
+   "id": "9Db-21",
+   "time": 845,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Hapatra, the Desert Frost is better than Stingerquill Charm for a slow deck: it buys time, and Stingerquill Charm needs two particular colours.",
+   "quote": "It buys me time, though. And I was slow deck, so probably better than Stingerquill Charm, which requires two unique colors.",
+   "cards": [
+    "Hapatra, the Desert Frost",
+    "Stingerquill Charm"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Hapatra, the Desert Frost against Stingerquill Charm.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "pdI-15"
+   ]
+  },
+  {
+   "id": "9Db-22",
+   "time": 905,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "build",
+   "claim": "He builds a five-colour 'pile': four or five colours on a few green cards, Murmuring Volumes and Fblthp for fixing, and he cuts the cheap cards (Gallia, Campus Crier, Afterthought Sentries, Semester Foreseer) and Traxos.",
+   "quote": "This is what you get when you're like, 'Well, I'll try Return to Light Realms.'",
+   "cards": [
+    "Gallia, Tragic Host",
+    "Campus Crier",
+    "Traxos, Scourge Eternal",
+    "Semester Foreseer"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Win rate of 4-5 colour decks by fixing count.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-65",
+    "mqZ-44"
+   ]
+  },
+  {
+   "id": "9Db-23",
+   "time": 955,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "build",
+   "claim": "Count sources by colour in the five-colour mana: six green, three or four red; double-pip cards are single in white and blue, none in black; 'a pile of cards'.",
+   "quote": "Four, five, six green sources. Three, four red sources.",
+   "cards": [
+    "Mind Meanderer",
+    "Craftwork Crusher"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Win rate by source counts in 5-colour decks.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "Uy4-13",
+    "re7-29"
+   ]
+  }
+ ]
+}
