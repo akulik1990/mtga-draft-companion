@@ -1,0 +1,122 @@
+games 297964, decks 69846, drafts 55469, spells 269; on play 0.500; skill missing 0.001; games with any tutored spell 0.0219
+class sizes: sweeper 4, unconditional 12, conditional 12, tempo 2, damage 13, bite/fight 5, counter 4
+
+# Results (win-rate points per card of the class in hand; adjusted = estimate minus placebo mean)
+
+### all decks
+
+| class | decks | pts per card in hand (SE) [95% boot CI] | placebo mean (SD), 40 sets | adjusted (SE) | z | rules out beyond (95%) |
+|---|---|---|---|---|---|---|
+| unconditional | 38742 | +1.38 (0.17) [+1.04, +1.72] | -0.68 (0.78) | +2.06 (0.80) | +2.6 | adjusted outside [+0.49, +3.63] |
+| damage | 39362 | +0.67 (0.16) [+0.37, +1.00] | -0.36 (0.73) | +1.04 (0.74) | +1.4 | adjusted outside [-0.42, +2.49] |
+| conditional | 35547 | -0.47 (0.22) [-0.94, -0.11] | -1.10 (0.64) | +0.62 (0.68) | +0.9 | adjusted outside [-0.70, +1.95] |
+| tempo | 12614 | +0.61 (0.37) [-0.05, +1.34] | +0.73 (2.60) | -0.12 (2.63) | -0.0 | adjusted outside [-5.27, +5.03] |
+| counter | 18468 | +0.84 (0.30) [+0.25, +1.39] | -0.74 (0.55) | +1.58 (0.63) | +2.5 | adjusted outside [+0.34, +2.81] |
+
+### skill >= 0.60
+
+| class | decks | pts per card in hand (SE) [95% boot CI] | placebo mean (SD), 40 sets | adjusted (SE) | z | rules out beyond (95%) |
+|---|---|---|---|---|---|---|
+| unconditional | 9613 | +1.56 (0.32) [+0.93, +2.18] | -0.21 (0.68) | +1.77 (0.75) | +2.4 | adjusted outside [+0.30, +3.24] |
+| damage | 9796 | +0.75 (0.26) [+0.28, +1.25] | -0.53 (0.62) | +1.28 (0.67) | +1.9 | adjusted outside [-0.04, +2.60] |
+| conditional | 8575 | -1.14 (0.39) [-1.95, -0.46] | -0.55 (0.95) | -0.59 (1.03) | -0.6 | adjusted outside [-2.60, +1.43] |
+| tempo | 3541 | +0.20 (0.67) [-1.06, +1.33] | +1.11 (3.00) | -0.91 (3.08) | -0.3 | adjusted outside [-6.94, +5.12] |
+| counter | 5050 | -0.28 (0.47) [-1.19, +0.64] | -0.08 (0.88) | -0.19 (1.00) | -0.2 | adjusted outside [-2.16, +1.77] |
+
+### on the play
+
+| class | decks | pts per card in hand (SE) [95% boot CI] | placebo mean (SD), 40 sets | adjusted (SE) | z | rules out beyond (95%) |
+|---|---|---|---|---|---|---|
+| unconditional | 27076 | +0.68 (0.26) [+0.19, +1.19] | -0.27 (0.91) | +0.95 (0.94) | +1.0 | adjusted outside [-0.90, +2.80] |
+| damage | 27625 | +0.16 (0.25) [-0.33, +0.61] | -0.05 (0.81) | +0.21 (0.84) | +0.3 | adjusted outside [-1.44, +1.87] |
+| conditional | 24986 | -0.77 (0.34) [-1.47, -0.16] | -0.86 (1.01) | +0.10 (1.07) | +0.1 | adjusted outside [-2.00, +2.19] |
+| tempo | 8998 | -0.71 (0.63) [-1.88, +0.49] | +0.05 (3.26) | -0.76 (3.32) | -0.2 | adjusted outside [-7.26, +5.74] |
+| counter | 13117 | +0.10 (0.47) [-0.85, +0.88] | -0.49 (1.24) | +0.58 (1.33) | +0.4 | adjusted outside [-2.02, +3.19] |
+
+### on the draw
+
+| class | decks | pts per card in hand (SE) [95% boot CI] | placebo mean (SD), 40 sets | adjusted (SE) | z | rules out beyond (95%) |
+|---|---|---|---|---|---|---|
+| unconditional | 27591 | +1.99 (0.26) [+1.48, +2.48] | -0.90 (0.64) | +2.90 (0.69) | +4.2 | adjusted outside [+1.54, +4.25] |
+| damage | 27888 | +1.09 (0.25) [+0.62, +1.59] | -0.75 (0.72) | +1.84 (0.76) | +2.4 | adjusted outside [+0.35, +3.33] |
+| conditional | 25302 | +0.10 (0.34) [-0.53, +0.80] | -0.90 (0.72) | +1.00 (0.80) | +1.2 | adjusted outside [-0.57, +2.57] |
+| tempo | 9062 | +0.54 (0.61) [-0.67, +1.73] | -0.57 (3.76) | +1.10 (3.80) | +0.3 | adjusted outside [-6.35, +8.56] |
+| counter | 13266 | +1.77 (0.47) [+0.93, +2.71] | -1.15 (1.51) | +2.93 (1.58) | +1.8 | adjusted outside [-0.18, +6.03] |
+
+### half 0 (draft hash)
+
+| class | decks | pts per card in hand (SE) [95% boot CI] | placebo mean (SD), 40 sets | adjusted (SE) | z | rules out beyond (95%) |
+|---|---|---|---|---|---|---|
+| unconditional | 19438 | +1.24 (0.25) [+0.80, +1.74] | -0.66 (0.85) | +1.89 (0.89) | +2.1 | adjusted outside [+0.16, +3.63] |
+| damage | 19675 | +1.03 (0.20) [+0.71, +1.44] | -0.91 (0.66) | +1.94 (0.69) | +2.8 | adjusted outside [+0.59, +3.30] |
+| conditional | 17935 | -0.29 (0.32) [-0.86, +0.36] | -1.10 (0.66) | +0.81 (0.73) | +1.1 | adjusted outside [-0.62, +2.24] |
+| tempo | 6356 | +0.87 (0.54) [-0.17, +1.91] | +1.16 (4.85) | -0.29 (4.88) | -0.1 | adjusted outside [-9.85, +9.27] |
+| counter | 9269 | +0.49 (0.44) [-0.38, +1.29] | -0.52 (0.83) | +1.01 (0.94) | +1.1 | adjusted outside [-0.84, +2.85] |
+
+### half 1 (draft hash)
+
+| class | decks | pts per card in hand (SE) [95% boot CI] | placebo mean (SD), 40 sets | adjusted (SE) | z | rules out beyond (95%) |
+|---|---|---|---|---|---|---|
+| unconditional | 19304 | +1.52 (0.23) [+1.08, +2.00] | -0.51 (0.65) | +2.03 (0.69) | +2.9 | adjusted outside [+0.68, +3.38] |
+| damage | 19687 | +0.32 (0.23) [-0.10, +0.77] | -0.38 (0.62) | +0.70 (0.66) | +1.1 | adjusted outside [-0.60, +1.99] |
+| conditional | 17612 | -0.66 (0.30) [-1.28, -0.09] | -0.72 (0.70) | +0.07 (0.76) | +0.1 | adjusted outside [-1.43, +1.56] |
+| tempo | 6258 | +0.34 (0.50) [-0.58, +1.35] | -0.57 (3.05) | +0.91 (3.09) | +0.3 | adjusted outside [-5.15, +6.97] |
+| counter | 9199 | +1.19 (0.42) [+0.40, +1.98] | -0.71 (0.69) | +1.90 (0.81) | +2.4 | adjusted outside [+0.32, +3.49] |
+
+### no mulligan
+
+| class | decks | pts per card in hand (SE) [95% boot CI] | placebo mean (SD), 40 sets | adjusted (SE) | z | rules out beyond (95%) |
+|---|---|---|---|---|---|---|
+| unconditional | 37259 | +1.39 (0.18) [+1.01, +1.75] | -0.63 (0.84) | +2.02 (0.86) | +2.4 | adjusted outside [+0.34, +3.70] |
+| damage | 37817 | +0.83 (0.17) [+0.47, +1.17] | -0.33 (0.74) | +1.16 (0.76) | +1.5 | adjusted outside [-0.33, +2.64] |
+| conditional | 34199 | -0.38 (0.23) [-0.86, +0.01] | -0.91 (0.57) | +0.54 (0.62) | +0.9 | adjusted outside [-0.67, +1.74] |
+| tempo | 12149 | +0.76 (0.39) [+0.08, +1.61] | -0.29 (3.16) | +1.05 (3.18) | +0.3 | adjusted outside [-5.18, +7.29] |
+| counter | 17831 | +0.82 (0.31) [+0.19, +1.36] | -0.73 (0.58) | +1.54 (0.66) | +2.3 | adjusted outside [+0.24, +2.84] |
+
+# Weights: class effect as a ratio to unconditional removal (adjusted = placebo mean subtracted from numerator and denominator)
+
+| split | class | raw ratio [95% CI] | adjusted ratio [95% CI] |
+|---|---|---|---|
+| all decks | damage | +0.49 [+0.25, +0.77] | +0.50 [-0.05, +2.38] |
+| all decks | conditional | -0.34 [-0.70, -0.07] | +0.30 [-0.60, +1.57] |
+| all decks | tempo | +0.44 [-0.04, +0.97] | -0.06 [-4.07, +3.16] |
+| all decks | counter | +0.61 [+0.19, +1.16] | +0.77 [+0.02, +3.53] |
+| skill >= 0.60 | damage | +0.48 [+0.16, +1.03] | +0.72 [+0.04, +2.96] |
+| skill >= 0.60 | conditional | -0.73 [-1.50, -0.25] | -0.33 [-2.04, +0.95] |
+| skill >= 0.60 | tempo | +0.13 [-0.72, +0.97] | -0.52 [-7.15, +3.55] |
+| skill >= 0.60 | counter | -0.18 [-0.89, +0.41] | -0.11 [-1.59, +1.40] |
+| on the play | damage | +0.24 [-0.73, +1.43] | +0.22 [-3.85, +5.31] |
+| on the play | conditional | -1.13 [-3.96, -0.15] | +0.10 [-5.37, +8.03] |
+| on the play | tempo | -1.05 [-4.45, +0.85] | -0.80 [-24.49, +11.76] |
+| on the play | counter | +0.14 [-1.71, +2.06] | +0.62 [-11.90, +8.48] |
+| on the draw | damage | +0.55 [+0.31, +0.86] | +0.64 [+0.16, +1.47] |
+| on the draw | conditional | +0.05 [-0.31, +0.42] | +0.34 [-0.15, +1.15] |
+| on the draw | tempo | +0.27 [-0.34, +0.84] | +0.38 [-2.46, +3.26] |
+| on the draw | counter | +0.89 [+0.44, +1.46] | +1.01 [+0.02, +2.96] |
+| half 0 (draft hash) | damage | +0.84 [+0.52, +1.46] | +1.03 [+0.30, +5.41] |
+| half 0 (draft hash) | conditional | -0.23 [-0.80, +0.29] | +0.43 [-0.24, +2.36] |
+| half 0 (draft hash) | tempo | +0.70 [-0.15, +1.68] | -0.15 [-11.73, +4.61] |
+| half 0 (draft hash) | counter | +0.40 [-0.30, +1.21] | +0.53 [-0.72, +4.09] |
+| half 1 (draft hash) | damage | +0.21 [-0.07, +0.55] | +0.34 [-0.34, +1.41] |
+| half 1 (draft hash) | conditional | -0.43 [-0.93, -0.07] | +0.03 [-0.82, +0.84] |
+| half 1 (draft hash) | tempo | +0.22 [-0.42, +0.87] | +0.45 [-2.91, +4.19] |
+| half 1 (draft hash) | counter | +0.78 [+0.24, +1.43] | +0.94 [+0.07, +3.29] |
+| no mulligan | damage | +0.59 [+0.33, +0.93] | +0.57 [-0.24, +2.63] |
+| no mulligan | conditional | -0.27 [-0.65, +0.01] | +0.26 [-0.41, +1.50] |
+| no mulligan | tempo | +0.55 [+0.05, +1.15] | +0.52 [-3.70, +6.58] |
+| no mulligan | counter | +0.59 [+0.13, +1.13] | +0.76 [-0.08, +3.28] |
+
+Ratio CIs are percentile intervals; when the denominator interval spans 0 they are unbounded and uninformative (read the absolute table).
+
+# Differences from unconditional removal (pts per card, adjusted, joint bootstrap + placebo noise), all decks
+damage minus unconditional: -1.02 +/- 1.09  (z -0.9)
+conditional minus unconditional: -1.44 +/- 1.05  (z -1.4)
+tempo minus unconditional: -2.18 +/- 2.74  (z -0.8)
+counter minus unconditional: -0.48 +/- 1.02  (z -0.5)
+
+# Halves: adjusted estimates
+unconditional: half 0 +1.89 (se 0.89), half 1 +2.03 (se 0.69)
+damage: half 0 +1.94 (se 0.69), half 1 +0.70 (se 0.66)
+conditional: half 0 +0.81 (se 0.73), half 1 +0.07 (se 0.76)
+tempo: half 0 -0.29 (se 4.88), half 1 +0.91 (se 3.09)
+counter: half 0 +1.01 (se 0.94), half 1 +1.90 (se 0.81)

@@ -61,9 +61,13 @@ def any_colour_fixer(card):
     return "Basic landcycling" in (card.get("keywords") or []) or "mana of any color" in (card.get("oracle_text") or "")
 
 
+TOKEN_FIX = False  # pool_fixing also counts Heartwood-token makers (R and G) and basic-land searchers of different names (Fblthp, Knows the Way: any colour); the fitted splash and three-colour rules were fit without them
+
+
 def pool_fixing(pool):
     """Sources per colour a splash can count on: nonbasic lands by the colours they make, plus any-colour lands
-    (fetches) and any-colour mana. Basic landcyclers are not sources: they find a basic the deck already plays."""
+    (fetches) and any-colour mana. Basic landcyclers are not sources: they find a basic the deck already plays.
+    TOKEN_FIX adds mana tokens and searchers that find any basic."""
     fix = dict.fromkeys("WUBRG", 0)
     for c in pool:
         types, text = c.get("types") or [], (c.get("oracle_text") or "").lower()
@@ -75,6 +79,11 @@ def pool_fixing(pool):
                 cols = list(fix)
         else:
             cols = list(fix) if "mana of any color" in text else []
+            if TOKEN_FIX and not cols:
+                if "heartwood token" in text:
+                    cols = ["R", "G"]
+                elif "basic land cards with different names" in text:
+                    cols = list(fix)
         for col in cols:
             fix[col] += 1
     return fix

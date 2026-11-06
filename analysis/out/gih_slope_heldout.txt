@@ -1,0 +1,68 @@
+games 297964, decks 69846, spell columns 269
+decks total 69846; two-colour 54253; 100+ players 24929
+
+=== HEADLINE: two-colour, 100+ games players, lane rating (threshold 100) ===
+decks 19267, games 84701, mean y 0.5641
+ratings A -> decks B held-out : slope 4.970 [4.333, 5.607] WR pts per GIH pt; splash -3.19 [-4.11, -2.28]; decks 9589, drafts 7710, sd(m) 1.80
+ratings A -> decks A in-sample: slope 7.199 [6.589, 7.809] WR pts per GIH pt; splash -3.26 [-4.15, -2.36]; decks 9678, drafts 7823, sd(m) 1.81
+ratings B -> decks A held-out : slope 5.481 [4.868, 6.094] WR pts per GIH pt; splash -3.05 [-3.96, -2.13]; decks 9678, drafts 7823, sd(m) 1.73
+ratings B -> decks B in-sample: slope 6.308 [5.705, 6.911] WR pts per GIH pt; splash -3.66 [-4.57, -2.76]; decks 9589, drafts 7710, sd(m) 1.73
+POOLED held-out : slope 5.235 [4.794, 5.677]; splash -3.12 [-3.77, -2.47]; directions 4.97 / 5.48 (overlap)
+POOLED in-sample: slope 6.748 [6.319, 7.177]; splash -3.46 [-4.10, -2.82]; directions 7.20 / 6.31 (overlap)
+reliability ratings A -> decks B: conditional 0.842 [0.832, 0.850] (quarter corr 0.727; unconditional SB 0.959; decks 9589)
+   disattenuated slope 5.905 [5.149, 6.662]; with reliability CI ends 5.849 .. 5.970 (point)
+reliability ratings B -> decks A: conditional 0.845 [0.837, 0.853] (quarter corr 0.732; unconditional SB 0.879; decks 9678)
+   disattenuated slope 6.485 [5.760, 7.210]; with reliability CI ends 6.426 .. 6.549 (point)
+POOLED reliability 0.843; disattenuated slope 6.208 [5.684, 6.731]
+SPLASH_TERM 4.07 in GIH points: at 1.72 2.37; at held-out slope 0.78; at disattenuated 0.66; at in-sample 0.60
+model splash cost -3.12 WR pts = 0.60 GIH pts at held-out slope, 0.50 at disattenuated
+
+=== sens: threshold 30 (threshold 30) ===
+decks 19267, games 84701, mean y 0.5641
+ratings A -> decks B held-out : slope 4.806 [4.201, 5.411] WR pts per GIH pt; splash -2.94 [-3.85, -2.03]; decks 9589, drafts 7710, sd(m) 1.83
+ratings A -> decks A in-sample: slope 7.228 [6.640, 7.817] WR pts per GIH pt; splash -2.88 [-3.77, -1.99]; decks 9678, drafts 7823, sd(m) 1.84
+ratings B -> decks A held-out : slope 5.201 [4.603, 5.799] WR pts per GIH pt; splash -2.65 [-3.56, -1.74]; decks 9678, drafts 7823, sd(m) 1.76
+ratings B -> decks B in-sample: slope 6.315 [5.733, 6.897] WR pts per GIH pt; splash -3.34 [-4.23, -2.44]; decks 9589, drafts 7710, sd(m) 1.77
+POOLED held-out : slope 5.006 [4.580, 5.431]; splash -2.80 [-3.44, -2.15]; directions 4.81 / 5.20 (overlap)
+POOLED in-sample: slope 6.766 [6.352, 7.180]; splash -3.11 [-3.74, -2.47]; directions 7.23 / 6.32 (overlap)
+reliability ratings A -> decks B: conditional 0.808 [0.797, 0.818] (quarter corr 0.677; unconditional SB 0.954; decks 9589)
+   disattenuated slope 5.952 [5.202, 6.701]; with reliability CI ends 5.879 .. 6.029 (point)
+reliability ratings B -> decks A: conditional 0.803 [0.790, 0.815] (quarter corr 0.671; unconditional SB 0.866; decks 9678)
+   disattenuated slope 6.478 [5.733, 7.223]; with reliability CI ends 6.380 .. 6.584 (point)
+POOLED reliability 0.805; disattenuated slope 6.217 [5.689, 6.745]
+SPLASH_TERM 4.07 in GIH points: at 1.72 2.37; at held-out slope 0.81; at disattenuated 0.65; at in-sample 0.60
+model splash cost -2.80 WR pts = 0.56 GIH pts at held-out slope, 0.45 at disattenuated
+
+=== sens: threshold 300 (threshold 300) ===
+decks 19267, games 84701, mean y 0.5641
+ratings A -> decks B held-out : slope 5.149 [4.501, 5.798] WR pts per GIH pt; splash -3.55 [-4.48, -2.63]; decks 9589, drafts 7710, sd(m) 1.74
+ratings A -> decks A in-sample: slope 6.988 [6.362, 7.614] WR pts per GIH pt; splash -3.55 [-4.46, -2.65]; decks 9678, drafts 7823, sd(m) 1.74
+ratings B -> decks A held-out : slope 5.726 [5.086, 6.366] WR pts per GIH pt; splash -3.22 [-4.14, -2.31]; decks 9678, drafts 7823, sd(m) 1.64
+ratings B -> decks B in-sample: slope 6.112 [5.483, 6.741] WR pts per GIH pt; splash -3.77 [-4.68, -2.85]; decks 9589, drafts 7710, sd(m) 1.64
+POOLED held-out : slope 5.442 [4.986, 5.897]; splash -3.39 [-4.04, -2.74]; directions 5.15 / 5.73 (overlap)
+POOLED in-sample: slope 6.552 [6.108, 6.996]; splash -3.66 [-4.30, -3.02]; directions 6.99 / 6.11 (overlap)
+reliability ratings A -> decks B: conditional 0.888 [0.882, 0.893] (quarter corr 0.799; unconditional SB 0.968; decks 9589)
+   disattenuated slope 5.797 [5.068, 6.527]; with reliability CI ends 5.766 .. 5.836 (point)
+reliability ratings B -> decks A: conditional 0.888 [0.882, 0.895] (quarter corr 0.799; unconditional SB 0.910; decks 9678)
+   disattenuated slope 6.448 [5.728, 7.169]; with reliability CI ends 6.401 .. 6.491 (point)
+POOLED reliability 0.888; disattenuated slope 6.127 [5.614, 6.640]
+SPLASH_TERM 4.07 in GIH points: at 1.72 2.37; at held-out slope 0.75; at disattenuated 0.66; at in-sample 0.62
+model splash cost -3.39 WR pts = 0.62 GIH pts at held-out slope, 0.55 at disattenuated
+
+=== sens: all skill-bucket players (skill bucket contains own games, see doc) (threshold 100) ===
+decks 54253, games 233412, mean y 0.5568
+ratings A -> decks B held-out : slope 4.509 [4.168, 4.850] WR pts per GIH pt; splash -2.87 [-3.40, -2.34]; decks 27017, drafts 21670, sd(m) 1.83
+ratings A -> decks A in-sample: slope 5.715 [5.387, 6.042] WR pts per GIH pt; splash -2.95 [-3.47, -2.44]; decks 27168, drafts 21828, sd(m) 1.83
+ratings B -> decks A held-out : slope 4.534 [4.207, 4.862] WR pts per GIH pt; splash -2.83 [-3.36, -2.31]; decks 27168, drafts 21828, sd(m) 1.76
+ratings B -> decks B in-sample: slope 5.578 [5.250, 5.907] WR pts per GIH pt; splash -3.30 [-3.83, -2.78]; decks 27017, drafts 21670, sd(m) 1.76
+POOLED held-out : slope 4.522 [4.286, 4.758]; splash -2.85 [-3.22, -2.48]; directions 4.51 / 4.53 (overlap)
+POOLED in-sample: slope 5.647 [5.415, 5.879]; splash -3.13 [-3.49, -2.76]; directions 5.71 / 5.58 (overlap)
+
+=== sens: two- and three-colour mains, 100+ players (lane[:2] for 3-colour is not the builder's pair, so not used for lookup beyond All Decks) (threshold 100) ===
+decks 24562, games 107592, mean y 0.5615
+ratings A -> decks B held-out : slope 5.104 [4.530, 5.677] WR pts per GIH pt; splash -3.06 [-3.91, -2.22]; decks 12211, drafts 9784, sd(m) 1.65
+ratings A -> decks A in-sample: slope 7.157 [6.610, 7.705] WR pts per GIH pt; splash -3.28 [-4.11, -2.44]; decks 12351, drafts 9919, sd(m) 1.65
+ratings B -> decks A held-out : slope 5.645 [5.098, 6.192] WR pts per GIH pt; splash -3.10 [-3.94, -2.25]; decks 12351, drafts 9919, sd(m) 1.59
+ratings B -> decks B in-sample: slope 6.292 [5.747, 6.838] WR pts per GIH pt; splash -3.48 [-4.32, -2.65]; decks 12211, drafts 9784, sd(m) 1.59
+POOLED held-out : slope 5.387 [4.991, 5.783]; splash -3.08 [-3.68, -2.48]; directions 5.10 / 5.64 (overlap)
+POOLED in-sample: slope 6.723 [6.337, 7.110]; splash -3.38 [-3.97, -2.79]; directions 7.16 / 6.29 (overlap)

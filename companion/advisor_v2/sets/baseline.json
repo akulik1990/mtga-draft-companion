@@ -146,6 +146,7 @@
   "lanes.LANE_WR_COMMIT": 0.0,
   "lanes.LANE_WR_MIN": 150,
   "lanes.SPLASH_COMMIT": 0.0,
+  "lanes.TOKEN_FIX": false,
   "lanes.USE_PIPS": true,
   "signals.DIRECTIONAL": true,
   "signals.QUALITY_POWER": 1,

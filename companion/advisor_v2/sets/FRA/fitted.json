@@ -67,7 +67,10 @@
   "deckbuilder.MIN_PER_COLOUR": 4,
   "deckbuilder.SWAP_MARGIN": 0.3,
   "deckbuilder.BEST_POINTS": 0.5,
-  "deckbuilder.COMP_SLACK": 2.0
+  "deckbuilder.COMP_SLACK": 2.0,
+  "deckbuilder.GIH_SLOPE": 5.5,
+  "deckbuilder.SPLASH_TERM": 3.1,
+  "lanes.TOKEN_FIX": true
  },
  "pairs": {
   "k": 4,

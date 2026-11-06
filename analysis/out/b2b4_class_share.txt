@@ -1,0 +1,133 @@
+class 6+ drops: 25 cards
+class non-board spells: 22 cards
+class conditional removal: 12 cards
+class unconditional removal: 12 cards
+class damage removal: 13 cards
+class counterspells (CORE): 4 cards
+class Ways: 10 cards
+class landcyclers: 5 cards
+non-board list: ['Academic Ascent', 'Artifist Acumen', 'Blazing Crescendo', 'Cast Away Doubt', 'Charge the Sanctum', 'Consider', 'Cruel Calculations', 'Extrapolate the Impossible', 'Eye of Jace', 'Fatehold Charm', 'Ferocity of the Hunt', "Hunter's Axe", "Medic's Kitesail", 'Necrodominance', 'Perfected Theory', 'Puppet Crafting', 'Restore with Empathy', 'Something Worth Saving', "Sphinx's Approach", 'Splinter Twin', "Tethermage's Advantage", 'Twinned Vision']
+log picks 23399, matched 23399, unmatched 0; drafts 600
+human or v2 pick not a non-basic card in the pack: 28
+
+## P1 picks 1-5: 2999 picks, 600 drafts. Shares in %, SE clustered by draft (ratio estimator). Diff = v2 minus human, points, 95% CI.
+class                      pack  human     v2    v2-human             CI95  human-pack             CI95
+6+ drops                   5.14   9.07   8.77       -0.30 [ -1.19, +0.59]       +3.93 [ +2.90, +4.96] 
+non-board spells          11.39   2.90   3.50       +0.60 [ -0.07, +1.27]       -8.49 [ -9.13, -7.84] 
+conditional removal        5.30   3.73   3.97       +0.23 [ -0.47, +0.93]       -1.57 [ -2.27, -0.87] 
+unconditional removal      3.61  10.10  13.14       +3.03 [ +2.02, +4.05]       +6.50 [ +5.44, +7.56] FLAG
+damage removal             5.27  11.34  11.54       +0.20 [ -0.81, +1.21]       +6.06 [ +4.87, +7.25] 
+counterspells (CORE)       1.63   2.57   3.10       +0.53 [ -0.01, +1.08]       +0.94 [ +0.39, +1.48] 
+Ways                       2.76   4.17   3.50       -0.67 [ -1.29, -0.05]       +1.41 [ +0.74, +2.08] 
+landcyclers                3.80   4.07   3.60       -0.47 [ -1.22, +0.28]       +0.27 [ -0.41, +0.95] 
+
+## P1 picks 6-10: 3000 picks, 600 drafts. Shares in %, SE clustered by draft (ratio estimator). Diff = v2 minus human, points, 95% CI.
+class                      pack  human     v2    v2-human             CI95  human-pack             CI95
+6+ drops                   3.84   6.60   6.83       +0.23 [ -0.62, +1.08]       +2.76 [ +1.98, +3.55] 
+non-board spells          16.19   9.47   8.37       -1.10 [ -2.10, -0.10]       -6.72 [ -7.73, -5.71] 
+conditional removal        5.71   4.30   3.40       -0.90 [ -1.53, -0.27]       -1.41 [ -2.11, -0.71] 
+unconditional removal      1.62   3.40   3.63       +0.23 [ -0.29, +0.76]       +1.78 [ +1.19, +2.36] 
+damage removal             3.34   5.63   6.03       +0.40 [ -0.29, +1.09]       +2.29 [ +1.52, +3.07] 
+counterspells (CORE)       1.60   2.13   3.03       +0.90 [ +0.39, +1.41]       +0.53 [ +0.02, +1.04] 
+Ways                       1.79   1.77   2.10       +0.33 [ -0.13, +0.79]       -0.03 [ -0.48, +0.42] 
+landcyclers                3.39   6.53   8.03       +1.50 [ +0.65, +2.35]       +3.15 [ +2.36, +3.94] 
+
+## P2-3 picks 1-5 (secondary): 6000 picks, 600 drafts. Shares in %, SE clustered by draft (ratio estimator). Diff = v2 minus human, points, 95% CI.
+class                      pack  human     v2    v2-human             CI95  human-pack             CI95
+6+ drops                   5.16   8.58  10.20       +1.62 [ +0.92, +2.31]       +3.42 [ +2.72, +4.12] 
+non-board spells          10.99   3.03   4.62       +1.58 [ +1.02, +2.14]       -7.95 [ -8.44, -7.47] 
+conditional removal        5.03   3.62   3.75       +0.13 [ -0.35, +0.62]       -1.41 [ -1.89, -0.94] 
+unconditional removal      3.68   8.35   8.35       +0.00 [ -0.59, +0.59]       +4.67 [ +3.90, +5.45] 
+damage removal             5.47   9.12  10.47       +1.35 [ +0.67, +2.03]       +3.65 [ +2.81, +4.48] 
+counterspells (CORE)       1.39   2.00   2.40       +0.40 [ +0.09, +0.71]       +0.61 [ +0.26, +0.96] 
+Ways                       2.99   3.35   3.32       -0.03 [ -0.51, +0.44]       +0.36 [ -0.09, +0.81] 
+landcyclers                3.75   4.48   5.65       +1.17 [ +0.58, +1.75]       +0.73 [ +0.23, +1.23] 
+
+## P2-3 picks 6-10 (secondary): 5998 picks, 600 drafts. Shares in %, SE clustered by draft (ratio estimator). Diff = v2 minus human, points, 95% CI.
+class                      pack  human     v2    v2-human             CI95  human-pack             CI95
+6+ drops                   3.92   6.49   7.54       +1.05 [ +0.42, +1.68]       +2.57 [ +2.01, +3.13] 
+non-board spells          14.85   8.65   9.15       +0.50 [ -0.25, +1.25]       -6.20 [ -6.88, -5.51] 
+conditional removal        5.60   4.52   3.93       -0.58 [ -1.06, -0.11]       -1.08 [ -1.60, -0.57] 
+unconditional removal      2.02   3.80   3.68       -0.12 [ -0.53, +0.29]       +1.78 [ +1.31, +2.25] 
+damage removal             3.81   5.65   5.39       -0.27 [ -0.74, +0.21]       +1.84 [ +1.24, +2.45] 
+counterspells (CORE)       1.49   1.97   2.50       +0.53 [ +0.21, +0.85]       +0.47 [ +0.14, +0.81] 
+Ways                       2.28   2.77   2.55       -0.22 [ -0.62, +0.19]       +0.48 [ +0.10, +0.87] 
+landcyclers                3.15   5.52   6.87       +1.35 [ +0.81, +1.89]       +2.37 [ +1.86, +2.87] 
+
+## B4 P1 picks 1-5: conditional logit, picks human 2999 / v2 2999. Coefficients in log-odds; rating = GIH WR in SD units (SD 4.15 pts; cards without a GIH WR (about 20 in FRA, e.g. Precise Redaction) get z 0 plus a dummy). SE clustered by draft.
+rating term: human +2.173, v2 +4.106
+class                      human             CI95      v2             CI95  human-v2             CI95
+rating                    +2.173 [+2.046,+2.301]  +4.106 [+3.953,+4.259]    -1.933 [-2.112,-1.753]
+no-rating card            -3.524 [-5.497,-1.551] -27.623 [-27.830,-27.416]   +24.098 [+22.131,+26.066]
+6+ drops                  +0.135 [-0.076,+0.345]  -0.159 [-0.411,+0.092]    +0.294 [+0.019,+0.569]
+non-board spells          -1.110 [-1.343,-0.877]  -0.976 [-1.196,-0.757]    -0.133 [-0.397,+0.130]
+conditional removal       -0.358 [-0.579,-0.137]  -0.224 [-0.479,+0.031]    -0.134 [-0.415,+0.146]
+unconditional removal     +0.461 [+0.281,+0.640]  +0.781 [+0.570,+0.992]    -0.320 [-0.542,-0.098]
+damage removal            +0.552 [+0.389,+0.714]  +0.729 [+0.551,+0.907]    -0.177 [-0.355,-0.000]
+counterspells (CORE)      -0.695 [-0.962,-0.429]  -1.282 [-1.574,-0.991]    +0.587 [+0.280,+0.893]
+Ways                      +1.208 [+0.969,+1.447]  +1.439 [+1.130,+1.748]    -0.231 [-0.538,+0.075]
+landcyclers               -0.399 [-0.635,-0.162]  -0.277 [-0.552,-0.002]    -0.122 [-0.424,+0.181]
+
+## B4 P1 picks 1-10: conditional logit, picks human 5999 / v2 5999. Coefficients in log-odds; rating = GIH WR in SD units (SD 4.15 pts; cards without a GIH WR (about 20 in FRA, e.g. Precise Redaction) get z 0 plus a dummy). SE clustered by draft.
+rating term: human +1.836, v2 +3.410
+class                      human             CI95      v2             CI95  human-v2             CI95
+rating                    +1.836 [+1.738,+1.934]  +3.410 [+3.303,+3.518]    -1.575 [-1.699,-1.450]
+no-rating card            -2.340 [-2.888,-1.793] -28.458 [-28.947,-27.969]   +26.118 [+25.404,+26.833]
+6+ drops                  +0.224 [+0.069,+0.378]  -0.081 [-0.260,+0.097]    +0.305 [+0.113,+0.497]
+non-board spells          -0.740 [-0.858,-0.622]  -0.908 [-1.049,-0.768]    +0.169 [+0.022,+0.315]
+conditional removal       -0.306 [-0.456,-0.156]  -0.384 [-0.560,-0.208]    +0.078 [-0.106,+0.262]
+unconditional removal     +0.597 [+0.444,+0.749]  +0.841 [+0.666,+1.016]    -0.244 [-0.416,-0.073]
+damage removal            +0.511 [+0.379,+0.643]  +0.591 [+0.457,+0.725]    -0.080 [-0.214,+0.054]
+counterspells (CORE)      -0.437 [-0.637,-0.236]  -0.743 [-0.952,-0.533]    +0.306 [+0.073,+0.539]
+Ways                      +1.031 [+0.830,+1.231]  +1.414 [+1.178,+1.650]    -0.384 [-0.630,-0.137]
+landcyclers               -0.249 [-0.407,-0.092]  -0.005 [-0.182,+0.172]    -0.245 [-0.432,-0.057]
+
+## B4 P1 picks 6-10: conditional logit, picks human 3000 / v2 3000. Coefficients in log-odds; rating = GIH WR in SD units (SD 4.15 pts; cards without a GIH WR (about 20 in FRA, e.g. Precise Redaction) get z 0 plus a dummy). SE clustered by draft.
+rating term: human +1.443, v2 +2.730
+class                      human             CI95      v2             CI95  human-v2             CI95
+rating                    +1.443 [+1.337,+1.549]  +2.730 [+2.600,+2.859]    -1.287 [-1.429,-1.145]
+no-rating card            -2.088 [-2.647,-1.530] -28.968 [-29.295,-28.640]   +26.879 [+26.229,+27.529]
+6+ drops                  +0.206 [-0.025,+0.437]  -0.109 [-0.367,+0.149]    +0.315 [+0.035,+0.596]
+non-board spells          -0.558 [-0.693,-0.423]  -0.812 [-0.975,-0.649]    +0.254 [+0.084,+0.423]
+conditional removal       -0.295 [-0.501,-0.090]  -0.564 [-0.808,-0.319]    +0.269 [+0.042,+0.496]
+unconditional removal     +0.660 [+0.382,+0.939]  +0.739 [+0.377,+1.102]    -0.079 [-0.404,+0.246]
+damage removal            +0.369 [+0.173,+0.565]  +0.378 [+0.174,+0.581]    -0.009 [-0.212,+0.194]
+counterspells (CORE)      -0.115 [-0.462,+0.231]  +0.009 [-0.353,+0.372]    -0.125 [-0.550,+0.300]
+Ways                      +0.675 [+0.323,+1.027]  +1.435 [+1.062,+1.808]    -0.760 [-1.171,-0.350]
+landcyclers               +0.047 [-0.178,+0.273]  +0.373 [+0.127,+0.619]    -0.326 [-0.587,-0.065]
+
+## B4 all picks: conditional logit, picks human 23371 / v2 23371. Coefficients in log-odds; rating = GIH WR in SD units (SD 4.15 pts; cards without a GIH WR (about 20 in FRA, e.g. Precise Redaction) get z 0 plus a dummy). SE clustered by draft.
+rating term: human +1.367, v2 +2.358
+class                      human             CI95      v2             CI95  human-v2             CI95
+rating                    +1.367 [+1.305,+1.429]  +2.358 [+2.298,+2.419]    -0.991 [-1.045,-0.937]
+no-rating card            -1.189 [-1.365,-1.014] -31.972 [-32.447,-31.496]   +30.782 [+30.275,+31.290]
+6+ drops                  +0.117 [+0.027,+0.206]  -0.048 [-0.149,+0.054]    +0.164 [+0.064,+0.264]
+non-board spells          -0.667 [-0.726,-0.608]  -0.616 [-0.687,-0.546]    -0.050 [-0.125,+0.025]
+conditional removal       -0.360 [-0.443,-0.276]  -0.463 [-0.557,-0.368]    +0.103 [+0.006,+0.200]
+unconditional removal     +0.459 [+0.357,+0.561]  +0.362 [+0.245,+0.479]    +0.097 [+0.006,+0.188]
+damage removal            +0.252 [+0.152,+0.352]  +0.239 [+0.131,+0.346]    +0.013 [-0.060,+0.087]
+counterspells (CORE)      -0.301 [-0.426,-0.175]  -0.355 [-0.492,-0.217]    +0.054 [-0.075,+0.183]
+Ways                      +0.758 [+0.650,+0.867]  +1.011 [+0.896,+1.125]    -0.252 [-0.375,-0.129]
+landcyclers               -0.091 [-0.181,-0.000]  +0.258 [+0.166,+0.350]    -0.349 [-0.449,-0.250]
+
+## Side counts
+human picks of cards without GIH WR: 191  v2 top-1: 4  of 23371
+Precise Redaction: human picks 50  v2 1  in pack 976
+top-1 agreement v2 = human, picks 1-10 of P1: 55.5 %
+counterspells (CORE) cards: ['Countersculpt', 'Icy Reception', 'Precise Redaction', 'Sublime Epiphany']
+landcyclers cards: ['Apex Witchstalker', 'Awaken the Inferno', 'Hexhaven Battalion', 'Undulating Witness', 'Vinelasher Adept']
+unconditional removal cards: ['Break Under Pressure', 'Extended Absence', 'Hapatra, the Desert Fang', "Lich's Relic", 'Memory Trap', 'Multiply by Zero', 'Prophesied End', 'Silence the Echo', 'Twisted Fates', 'Vindictive Triumph', "Vraska's Final Mercy", 'Winter, Tormented Loner']
+
+## Unconditional removal by card, P1 picks 1-5 (post hoc, descriptive): card, in pack, human picks, v2 picks, GIH WR
+  Extended Absence             pack  209  human  83  v2 145  GIH 59.0
+  Multiply by Zero             pack   81  human  45  v2  63  GIH 58.7
+  Break Under Pressure         pack   79  human  36  v2  61  GIH 59.4
+  Memory Trap                  pack  194  human  41  v2  46  GIH 55.8
+  Hapatra, the Desert Fang     pack   85  human  39  v2  33  GIH 58.8
+  Twisted Fates                pack  111  human  18  v2  12  GIH 57.0
+  Prophesied End               pack   78  human  11  v2  11  GIH 55.0
+  Lich's Relic                 pack   10  human   9  v2  10  GIH 62.4
+  Vraska's Final Mercy         pack   25  human   7  v2   5  GIH 54.1
+  Winter, Tormented Loner      pack  116  human   6  v2   5  GIH 53.3
+  Silence the Echo             pack  248  human   7  v2   3  GIH 52.4
+  Vindictive Triumph           pack   31  human   1  v2   0  GIH 54.2
