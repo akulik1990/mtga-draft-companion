@@ -1,0 +1,204 @@
+# Deck-level results by skill group (FRA)
+family-1 decks (two-colour, >=20 priced): 27196; groups good/avg/weak: 8301/11339/7556; all decks 35646: 10865/14819/9962
+lands table 25101: 7680/10435/6986
+
+## 3b. Lands 16 / 15 vs 17 (R5, pooled over the landcycler x dual strata)
+
+**lands vs 17 (decks with 40 cards and 15-17 lands)** (pts of deck WR; * p<0.05; n decks per group in the last row)
+
+| term | spec | all decks | good (>=0.60) | average (0.52-0.58) | weak (<0.52) | good minus weak |
+|---|---|---|---|---|---|---|
+| 16 vs 17 | Ca | +0.81 [+0.05, +1.56]* | +0.71 [-0.68, +2.09] | +1.29 [+0.13, +2.45]* | +0.32 [-1.11, +1.76] | +0.38 [-1.61, +2.38] |
+| 16 vs 17 | Cb | +0.78 [+0.02, +1.53]* | +0.66 [-0.73, +2.04] | +1.27 [+0.11, +2.43]* | +0.31 [-1.12, +1.74] | +0.35 [-1.64, +2.34] |
+| 15 vs 17 | Ca | +4.33 [+1.08, +7.59]* | +2.41 [-3.46, +8.28] | +7.60 [+2.60, +12.59]* | +1.56 [-4.54, +7.67] | +0.85 [-7.62, +9.31] |
+| 15 vs 17 | Cb | +4.33 [+1.06, +7.59]* | +2.34 [-3.51, +8.20] | +7.59 [+2.58, +12.60]* | +1.60 [-4.51, +7.71] | +0.74 [-7.72, +9.21] |
+| n decks | | 25101 | 7680 | 10435 | 6986 | |
+
+**shortfall against the builder's removal target minus 2, per card short** (pts of deck WR; * p<0.05; n decks per group in the last row)
+
+| term | spec | all decks | good (>=0.60) | average (0.52-0.58) | weak (<0.52) | good minus weak |
+|---|---|---|---|---|---|---|
+| sfall | Ca | -0.64 [-1.33, +0.05] | -0.73 [-2.06, +0.60] | -0.42 [-1.51, +0.68] | -0.80 [-1.99, +0.39] | +0.07 [-1.71, +1.85] |
+| sfall | Cb | -1.37 [-2.06, -0.67]* | -1.41 [-2.73, -0.09]* | -1.21 [-2.30, -0.12]* | -1.48 [-2.69, -0.27]* | +0.07 [-1.72, +1.86] |
+| n decks | | 27196 | 8301 | 11339 | 7556 | |
+
+## 3d. Creatures (R9)
+
+**creature count, pts per creature** (pts of deck WR; * p<0.05; n decks per group in the last row)
+
+| term | spec | all decks | good (>=0.60) | average (0.52-0.58) | weak (<0.52) | good minus weak |
+|---|---|---|---|---|---|---|
+| cre | Ca | +0.05 [-0.09, +0.19] | +0.06 [-0.20, +0.32] | +0.13 [-0.08, +0.34] | -0.08 [-0.36, +0.20] | +0.14 [-0.24, +0.52] |
+| cre | Cb | -0.39 [-0.53, -0.26]* | -0.39 [-0.65, -0.14]* | -0.32 [-0.53, -0.12]* | -0.51 [-0.78, -0.24]* | +0.12 [-0.25, +0.49] |
+| n decks | | 27196 | 8301 | 11339 | 7556 | |
+
+**creatures short of target minus 2, pts per creature short** (pts of deck WR; * p<0.05; n decks per group in the last row)
+
+| term | spec | all decks | good (>=0.60) | average (0.52-0.58) | weak (<0.52) | good minus weak |
+|---|---|---|---|---|---|---|
+| csf | Ca | +0.08 [-0.21, +0.36] | -0.08 [-0.58, +0.42] | +0.12 [-0.30, +0.54] | +0.17 [-0.42, +0.76] | -0.25 [-1.02, +0.53] |
+| csf | Cb | +0.73 [+0.45, +1.01]* | +0.57 [+0.07, +1.06]* | +0.78 [+0.37, +1.20]* | +0.79 [+0.21, +1.38]* | -0.23 [-0.99, +0.54] |
+| n decks | | 27196 | 8301 | 11339 | 7556 | |
+
+## 2. Removal (R1)
+
+**REM48 count, pts per card** (pts of deck WR; * p<0.05; n decks per group in the last row)
+
+| term | spec | all decks | good (>=0.60) | average (0.52-0.58) | weak (<0.52) | good minus weak |
+|---|---|---|---|---|---|---|
+| rem | Ca | +0.30 [+0.13, +0.46]* | +0.16 [-0.14, +0.46] | +0.32 [+0.07, +0.58]* | +0.39 [+0.07, +0.70]* | -0.23 [-0.66, +0.21] |
+| rem | Cb | +0.60 [+0.43, +0.76]* | +0.44 [+0.13, +0.74]* | +0.64 [+0.39, +0.90]* | +0.67 [+0.35, +0.98]* | -0.23 [-0.67, +0.21] |
+| n decks | | 27196 | 8301 | 11339 | 7556 | |
+
+**fewer than 6 REM48 (dummy)** (pts of deck WR; * p<0.05; n decks per group in the last row)
+
+| term | spec | all decks | good (>=0.60) | average (0.52-0.58) | weak (<0.52) | good minus weak |
+|---|---|---|---|---|---|---|
+| short6 | Ca | -1.11 [-1.77, -0.44]* | -0.99 [-2.19, +0.21] | -1.31 [-2.33, -0.29]* | -0.86 [-2.15, +0.42] | -0.12 [-1.88, +1.64] |
+| short6 | Cb | -1.99 [-2.65, -1.32]* | -1.77 [-2.97, -0.56]* | -2.28 [-3.30, -1.26]* | -1.73 [-3.02, -0.44]* | -0.04 [-1.80, +1.72] |
+| n decks | | 27196 | 8301 | 11339 | 7556 | |
+
+## 3a. Finishers (R8, deck-level analogue)
+
+**finisher count, pts per card (removal, creatures, splash controlled)** (pts of deck WR; * p<0.05; n decks per group in the last row)
+
+| term | spec | all decks | good (>=0.60) | average (0.52-0.58) | weak (<0.52) | good minus weak |
+|---|---|---|---|---|---|---|
+| fin | Ca | +1.47 [+1.05, +1.89]* | +1.15 [+0.38, +1.92]* | +1.70 [+1.07, +2.33]* | +1.44 [+0.62, +2.26]* | -0.29 [-1.42, +0.83] |
+| fin | Cb | +3.40 [+3.01, +3.80]* | +3.06 [+2.34, +3.79]* | +3.62 [+3.03, +4.21]* | +3.43 [+2.65, +4.20]* | -0.36 [-1.42, +0.70] |
+| n decks | | 27196 | 8301 | 11339 | 7556 | |
+
+## 3c. Two-drops (R2)
+
+**cmc-2 creature count buckets vs 5** (pts of deck WR; * p<0.05; n decks per group in the last row)
+
+| term | spec | all decks | good (>=0.60) | average (0.52-0.58) | weak (<0.52) | good minus weak |
+|---|---|---|---|---|---|---|
+| 0-2 | Ca | +1.00 [+0.05, +1.95]* | +0.28 [-1.56, +2.12] | +1.12 [-0.28, +2.53] | +1.58 [-0.28, +3.45] | -1.30 [-3.92, +1.32] |
+| 0-2 | Cb | +0.79 [-0.18, +1.76] | +0.39 [-1.48, +2.27] | +0.66 [-0.77, +2.08] | +1.45 [-0.45, +3.35] | -1.05 [-3.72, +1.62] |
+| 3 | Ca | -0.49 [-1.32, +0.34] | -0.85 [-2.39, +0.68] | -0.58 [-1.85, +0.68] | +0.06 [-1.54, +1.66] | -0.91 [-3.13, +1.31] |
+| 3 | Cb | -0.68 [-1.52, +0.15] | -0.83 [-2.38, +0.71] | -0.94 [-2.21, +0.33] | -0.10 [-1.71, +1.52] | -0.74 [-2.97, +1.50] |
+| 4 | Ca | +0.12 [-0.64, +0.87] | -0.62 [-2.05, +0.80] | +0.34 [-0.78, +1.47] | +0.53 [-0.91, +1.96] | -1.15 [-3.17, +0.87] |
+| 4 | Cb | -0.01 [-0.76, +0.74] | -0.66 [-2.09, +0.78] | +0.13 [-1.00, +1.26] | +0.45 [-0.99, +1.89] | -1.11 [-3.13, +0.92] |
+| 6+ | Ca | -0.42 [-1.16, +0.32] | -2.06 [-3.43, -0.69]* | -0.11 [-1.23, +1.01] | +0.88 [-0.55, +2.30] | -2.94 [-4.91, -0.97]* |
+| 6+ | Cb | -0.01 [-0.76, +0.75] | -1.85 [-3.24, -0.46]* | +0.48 [-0.66, +1.62] | +1.24 [-0.21, +2.68] | -3.08 [-5.09, -1.08]* |
+| n decks | | 35646 | 10865 | 14819 | 9962 | |
+
+## 3a'. Finishers, pool level (event match record, n=23 pool-deck, 100+ players, M1)
+
+| group | drafts | finishers [CI] |
+|---|---|---|
+| all | 9177 | +2.05 [+1.77, +2.33]* |
+| good | 2101 | +2.12 [+1.55, +2.68]* |
+| avg | 3948 | +2.50 [+2.08, +2.91]* |
+| weak | 3128 | +1.33 [+0.83, +1.83]* |
+| good minus weak | | +0.79 [+0.04, +1.54]* |
+
+## 1. GIH_SLOPE held out and splash at equal quality (gih_slope_heldout.py headline: two-colour, 100+ games players, lane ratings from the other half, threshold 100)
+
+Ratings always come from all players of the rating half; only the scored decks are split. Slope = deck WR pts per +1 mean-GIH pt; splash = WR pts at equal quality; threshold = -splash/slope in GIH pts (95% interval by simulation from the two CIs, assuming independence).
+
+### HEADLINE two-colour 100+ players
+
+
+| held-out | all | good | average | weak | good minus weak |
+|---|---|---|---|---|---|
+| slope | +5.24 [+4.79, +5.68] | +5.26 [+4.41, +6.11] | +5.22 [+4.54, +5.90] | +5.22 [+4.42, +6.02] | +0.04 [-1.13, +1.20] |
+| splash | -3.12 [-3.77, -2.47] | -3.22 [-4.45, -1.98] | -2.31 [-3.29, -1.33] | -4.20 [-5.40, -2.99] | +0.98 [-0.75, +2.71] |
+| threshold (GIH pts) | 0.60 [0.46, 0.73] | 0.61 [0.37, 0.89] | 0.44 [0.25, 0.65] | 0.80 [0.56, 1.09] | |
+
+| in-sample | all | good | average | weak | good minus weak |
+|---|---|---|---|---|---|
+| slope | +6.75 [+6.32, +7.18] | +6.65 [+5.81, +7.49] | +6.99 [+6.33, +7.65] | +6.51 [+5.74, +7.27] | +0.14 [-1.00, +1.28] |
+| splash | -3.46 [-4.10, -2.82] | -3.55 [-4.77, -2.32] | -2.71 [-3.68, -1.74] | -4.45 [-5.64, -3.26] | +0.90 [-0.80, +2.61] |
+| threshold (GIH pts) | 0.51 [0.41, 0.61] | 0.53 [0.34, 0.74] | 0.39 [0.25, 0.54] | 0.68 [0.49, 0.90] | |
+
+### secondary: all players (skill bucket then contains the deck's own games; a poor control and a circular grouping)
+
+
+| held-out | all | good | average | weak | good minus weak |
+|---|---|---|---|---|---|
+| slope | +4.52 [+4.29, +4.76] | +4.44 [+3.99, +4.89] | +4.94 [+4.53, +5.34] | +4.23 [+3.84, +4.61] | +0.21 [-0.38, +0.80] |
+| splash | -2.85 [-3.22, -2.48] | -2.63 [-3.32, -1.93] | -2.70 [-3.32, -2.08] | -3.14 [-3.76, -2.52] | +0.51 [-0.42, +1.45] |
+| threshold (GIH pts) | 0.63 [0.55, 0.72] | 0.59 [0.43, 0.77] | 0.55 [0.41, 0.69] | 0.74 [0.59, 0.91] | |
+
+| in-sample | all | good | average | weak | good minus weak |
+|---|---|---|---|---|---|
+| slope | +5.65 [+5.41, +5.88] | +5.72 [+5.27, +6.16] | +6.24 [+5.85, +6.64] | +5.08 [+4.71, +5.46] | +0.63 [+0.05, +1.21]* |
+| splash | -3.13 [-3.49, -2.76] | -2.99 [-3.68, -2.30] | -3.03 [-3.64, -2.42] | -3.31 [-3.93, -2.69] | +0.32 [-0.60, +1.25] |
+| threshold (GIH pts) | 0.55 [0.49, 0.62] | 0.52 [0.40, 0.65] | 0.49 [0.38, 0.59] | 0.65 [0.52, 0.79] | |
+
+---- gih_slope_heldout run output ----
+games 297964, decks 69846, spell columns 269
+
+=== HEADLINE two-colour 100+ players: all (threshold 100) ===
+decks 19267, games 84701, mean y 0.5641
+ratings A -> decks B held-out : slope 4.970 [4.333, 5.607] WR pts per GIH pt; splash -3.19 [-4.11, -2.28]; decks 9589, drafts 7710, sd(m) 1.80
+ratings A -> decks A in-sample: slope 7.199 [6.589, 7.809] WR pts per GIH pt; splash -3.26 [-4.15, -2.36]; decks 9678, drafts 7823, sd(m) 1.81
+ratings B -> decks A held-out : slope 5.481 [4.868, 6.094] WR pts per GIH pt; splash -3.05 [-3.96, -2.13]; decks 9678, drafts 7823, sd(m) 1.73
+ratings B -> decks B in-sample: slope 6.308 [5.705, 6.911] WR pts per GIH pt; splash -3.66 [-4.57, -2.76]; decks 9589, drafts 7710, sd(m) 1.73
+POOLED held-out : slope 5.235 [4.794, 5.677]; splash -3.12 [-3.77, -2.47]; directions 4.97 / 5.48 (overlap)
+POOLED in-sample: slope 6.748 [6.319, 7.177]; splash -3.46 [-4.10, -2.82]; directions 7.20 / 6.31 (overlap)
+
+=== HEADLINE two-colour 100+ players: good (threshold 100) ===
+decks 4403, games 21901, mean y 0.6449
+ratings A -> decks B held-out : slope 4.689 [3.472, 5.907] WR pts per GIH pt; splash -3.62 [-5.38, -1.86]; decks 2148, drafts 1752, sd(m) 1.72
+ratings A -> decks A in-sample: slope 7.222 [6.021, 8.422] WR pts per GIH pt; splash -3.08 [-4.81, -1.36]; decks 2255, drafts 1829, sd(m) 1.77
+ratings B -> decks A held-out : slope 5.801 [4.609, 6.992] WR pts per GIH pt; splash -2.83 [-4.56, -1.09]; decks 2255, drafts 1829, sd(m) 1.69
+ratings B -> decks B in-sample: slope 6.095 [4.920, 7.269] WR pts per GIH pt; splash -4.02 [-5.76, -2.28]; decks 2148, drafts 1752, sd(m) 1.64
+POOLED held-out : slope 5.257 [4.405, 6.108]; splash -3.22 [-4.45, -1.98]; directions 4.69 / 5.80 (overlap)
+POOLED in-sample: slope 6.646 [5.806, 7.486]; splash -3.55 [-4.77, -2.32]; directions 7.22 / 6.09 (overlap)
+
+=== HEADLINE two-colour 100+ players: avg (threshold 100) ===
+decks 8415, games 37830, mean y 0.5721
+ratings A -> decks B held-out : slope 5.335 [4.329, 6.341] WR pts per GIH pt; splash -1.91 [-3.31, -0.52]; decks 4237, drafts 3409, sd(m) 1.80
+ratings A -> decks A in-sample: slope 7.159 [6.245, 8.072] WR pts per GIH pt; splash -2.93 [-4.28, -1.57]; decks 4178, drafts 3405, sd(m) 1.81
+ratings B -> decks A held-out : slope 5.124 [4.206, 6.042] WR pts per GIH pt; splash -2.70 [-4.08, -1.32]; decks 4178, drafts 3405, sd(m) 1.74
+ratings B -> decks B in-sample: slope 6.797 [5.843, 7.751] WR pts per GIH pt; splash -2.49 [-3.87, -1.10]; decks 4237, drafts 3409, sd(m) 1.72
+POOLED held-out : slope 5.220 [4.542, 5.898]; splash -2.31 [-3.29, -1.33]; directions 5.33 / 5.12 (overlap)
+POOLED in-sample: slope 6.986 [6.326, 7.646]; splash -2.71 [-3.68, -1.74]; directions 7.16 / 6.80 (overlap)
+
+=== HEADLINE two-colour 100+ players: weak (threshold 100) ===
+decks 6449, games 24970, mean y 0.4811
+ratings A -> decks B held-out : slope 4.681 [3.566, 5.796] WR pts per GIH pt; splash -4.59 [-6.28, -2.90]; decks 3204, drafts 2549, sd(m) 1.81
+ratings A -> decks A in-sample: slope 7.248 [6.115, 8.380] WR pts per GIH pt; splash -3.91 [-5.60, -2.22]; decks 3245, drafts 2589, sd(m) 1.76
+ratings B -> decks A held-out : slope 5.797 [4.645, 6.949] WR pts per GIH pt; splash -3.78 [-5.51, -2.05]; decks 3245, drafts 2589, sd(m) 1.68
+ratings B -> decks B in-sample: slope 5.885 [4.847, 6.923] WR pts per GIH pt; splash -4.98 [-6.65, -3.30]; decks 3204, drafts 2549, sd(m) 1.75
+POOLED held-out : slope 5.221 [4.420, 6.022]; splash -4.20 [-5.40, -2.99]; directions 4.68 / 5.80 (overlap)
+POOLED in-sample: slope 6.507 [5.742, 7.272]; splash -4.45 [-5.64, -3.26]; directions 7.25 / 5.89 (overlap)
+
+=== secondary: all players (skill bucket then contains the deck's own games; a poor control and a circular grouping): all (threshold 100) ===
+decks 54185, games 233267, mean y 0.5565
+ratings A -> decks B held-out : slope 4.509 [4.168, 4.850] WR pts per GIH pt; splash -2.87 [-3.40, -2.34]; decks 27017, drafts 21670, sd(m) 1.83
+ratings A -> decks A in-sample: slope 5.715 [5.387, 6.042] WR pts per GIH pt; splash -2.95 [-3.47, -2.44]; decks 27168, drafts 21828, sd(m) 1.83
+ratings B -> decks A held-out : slope 4.534 [4.207, 4.862] WR pts per GIH pt; splash -2.83 [-3.36, -2.31]; decks 27168, drafts 21828, sd(m) 1.76
+ratings B -> decks B in-sample: slope 5.578 [5.250, 5.907] WR pts per GIH pt; splash -3.30 [-3.83, -2.78]; decks 27017, drafts 21670, sd(m) 1.76
+POOLED held-out : slope 4.522 [4.286, 4.758]; splash -2.85 [-3.22, -2.48]; directions 4.51 / 4.53 (overlap)
+POOLED in-sample: slope 5.647 [5.415, 5.879]; splash -3.13 [-3.49, -2.76]; directions 5.71 / 5.58 (overlap)
+
+=== secondary: all players (skill bucket then contains the deck's own games; a poor control and a circular grouping): good (threshold 100) ===
+decks 12796, games 63436, mean y 0.6578
+ratings A -> decks B held-out : slope 4.418 [3.760, 5.077] WR pts per GIH pt; splash -3.12 [-4.13, -2.12]; decks 6284, drafts 5085, sd(m) 1.78
+ratings A -> decks A in-sample: slope 5.646 [5.034, 6.258] WR pts per GIH pt; splash -2.33 [-3.29, -1.37]; decks 6512, drafts 5246, sd(m) 1.79
+ratings B -> decks A held-out : slope 4.458 [3.847, 5.070] WR pts per GIH pt; splash -2.17 [-3.13, -1.20]; decks 6512, drafts 5246, sd(m) 1.72
+ratings B -> decks B in-sample: slope 5.791 [5.156, 6.426] WR pts per GIH pt; splash -3.69 [-4.68, -2.70]; decks 6284, drafts 5085, sd(m) 1.69
+POOLED held-out : slope 4.440 [3.992, 4.888]; splash -2.63 [-3.32, -1.93]; directions 4.42 / 4.46 (overlap)
+POOLED in-sample: slope 5.716 [5.275, 6.157]; splash -2.99 [-3.68, -2.30]; directions 5.65 / 5.79 (overlap)
+
+=== secondary: all players (skill bucket then contains the deck's own games; a poor control and a circular grouping): avg (threshold 100) ===
+decks 19623, games 87955, mean y 0.5700
+ratings A -> decks B held-out : slope 5.057 [4.473, 5.642] WR pts per GIH pt; splash -2.67 [-3.55, -1.79]; decks 9854, drafts 7952, sd(m) 1.82
+ratings A -> decks A in-sample: slope 6.447 [5.889, 7.005] WR pts per GIH pt; splash -2.96 [-3.82, -2.10]; decks 9769, drafts 7924, sd(m) 1.82
+ratings B -> decks A held-out : slope 4.825 [4.265, 5.385] WR pts per GIH pt; splash -2.73 [-3.60, -1.85]; decks 9769, drafts 7924, sd(m) 1.75
+ratings B -> decks B in-sample: slope 6.039 [5.479, 6.598] WR pts per GIH pt; splash -3.10 [-3.98, -2.23]; decks 9854, drafts 7952, sd(m) 1.75
+POOLED held-out : slope 4.936 [4.532, 5.341]; splash -2.70 [-3.32, -2.08]; directions 5.06 / 4.83 (overlap)
+POOLED in-sample: slope 6.243 [5.848, 6.638]; splash -3.03 [-3.64, -2.42]; directions 6.45 / 6.04 (overlap)
+
+=== secondary: all players (skill bucket then contains the deck's own games; a poor control and a circular grouping): weak (threshold 100) ===
+decks 21766, games 81876, mean y 0.4635
+ratings A -> decks B held-out : slope 4.100 [3.552, 4.648] WR pts per GIH pt; splash -2.87 [-3.75, -1.99]; decks 10879, drafts 8633, sd(m) 1.81
+ratings A -> decks A in-sample: slope 5.091 [4.551, 5.631] WR pts per GIH pt; splash -3.39 [-4.27, -2.52]; decks 10887, drafts 8658, sd(m) 1.80
+ratings B -> decks A held-out : slope 4.352 [3.813, 4.892] WR pts per GIH pt; splash -3.41 [-4.30, -2.53]; decks 10887, drafts 8658, sd(m) 1.73
+ratings B -> decks B in-sample: slope 5.077 [4.547, 5.607] WR pts per GIH pt; splash -3.22 [-4.10, -2.35]; decks 10879, drafts 8633, sd(m) 1.75
+POOLED held-out : slope 4.228 [3.843, 4.613]; splash -3.14 [-3.76, -2.52]; directions 4.10 / 4.35 (overlap)
+POOLED in-sample: slope 5.084 [4.706, 5.462]; splash -3.31 [-3.93, -2.69]; directions 5.09 / 5.08 (overlap)

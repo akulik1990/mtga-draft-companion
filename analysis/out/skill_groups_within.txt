@@ -1,0 +1,227 @@
+games 297964, decks 69846, drafts 55469, spells 269; on play 0.500; skill missing 0.001; games with any tutored spell 0.0219
+class sizes: sweeper 4, unconditional 12, conditional 12, tempo 2, damage 13, bite/fight 5, counter 4
+
+# Results (win-rate points per card of the class in hand; adjusted = estimate minus placebo mean)
+
+### all decks
+
+| class | decks | pts per card in hand (SE) [95% boot CI] | placebo mean (SD), 40 sets | adjusted (SE) | z | rules out beyond (95%) |
+|---|---|---|---|---|---|---|
+| unconditional | 38742 | +1.38 (0.17) [+1.04, +1.72] | -0.68 (0.78) | +2.06 (0.80) | +2.6 | adjusted outside [+0.49, +3.63] |
+| damage | 39362 | +0.67 (0.16) [+0.37, +1.00] | -0.36 (0.73) | +1.04 (0.74) | +1.4 | adjusted outside [-0.42, +2.49] |
+| conditional | 35547 | -0.47 (0.22) [-0.94, -0.11] | -1.10 (0.64) | +0.62 (0.68) | +0.9 | adjusted outside [-0.70, +1.95] |
+| tempo | 12614 | +0.61 (0.37) [-0.05, +1.34] | +0.73 (2.60) | -0.12 (2.63) | -0.0 | adjusted outside [-5.27, +5.03] |
+| counter | 18468 | +0.84 (0.30) [+0.25, +1.39] | -0.74 (0.55) | +1.58 (0.63) | +2.5 | adjusted outside [+0.34, +2.81] |
+
+### ng>=100 good (>=0.60)
+
+| class | decks | pts per card in hand (SE) [95% boot CI] | placebo mean (SD), 40 sets | adjusted (SE) | z | rules out beyond (95%) |
+|---|---|---|---|---|---|---|
+| unconditional | 3439 | +1.62 (0.52) [+0.59, +2.55] | -0.16 (0.93) | +1.78 (1.07) | +1.7 | adjusted outside [-0.32, +3.87] |
+| damage | 3434 | +0.40 (0.49) [-0.56, +1.43] | -0.44 (0.67) | +0.84 (0.83) | +1.0 | adjusted outside [-0.79, +2.48] |
+| conditional | 2938 | -0.06 (0.68) [-1.29, +1.22] | -0.39 (0.71) | +0.33 (0.99) | +0.3 | adjusted outside [-1.60, +2.26] |
+| tempo | 1368 | +1.29 (1.12) [-0.97, +3.30] | +2.51 (1.63) | -1.22 (1.98) | -0.6 | adjusted outside [-5.10, +2.66] |
+| counter | 1926 | -1.54 (0.85) [-3.04, +0.23] | -1.49 (1.39) | -0.04 (1.63) | -0.0 | adjusted outside [-3.23, +3.14] |
+
+### ng>=100 average (0.52-0.58)
+
+| class | decks | pts per card in hand (SE) [95% boot CI] | placebo mean (SD), 40 sets | adjusted (SE) | z | rules out beyond (95%) |
+|---|---|---|---|---|---|---|
+| unconditional | 6388 | +0.82 (0.41) [+0.07, +1.58] | -0.63 (0.78) | +1.45 (0.89) | +1.6 | adjusted outside [-0.29, +3.18] |
+| damage | 6428 | +0.43 (0.40) [-0.39, +1.25] | -0.36 (0.84) | +0.79 (0.93) | +0.9 | adjusted outside [-1.03, +2.61] |
+| conditional | 5622 | -0.08 (0.57) [-1.19, +1.01] | -0.97 (0.95) | +0.89 (1.11) | +0.8 | adjusted outside [-1.28, +3.06] |
+| tempo | 2174 | +0.84 (0.90) [-0.81, +2.61] | -0.91 (4.66) | +1.75 (4.75) | +0.4 | adjusted outside [-7.56, +11.06] |
+| counter | 3272 | +1.95 (0.67) [+0.61, +3.16] | -0.65 (0.76) | +2.60 (1.01) | +2.6 | adjusted outside [+0.62, +4.58] |
+
+### ng>=100 weak (<0.52)
+
+| class | decks | pts per card in hand (SE) [95% boot CI] | placebo mean (SD), 40 sets | adjusted (SE) | z | rules out beyond (95%) |
+|---|---|---|---|---|---|---|
+| unconditional | 4476 | +1.13 (0.49) [+0.32, +2.20] | -0.71 (0.98) | +1.84 (1.09) | +1.7 | adjusted outside [-0.31, +3.98] |
+| damage | 4554 | +0.67 (0.48) [-0.30, +1.60] | -0.66 (0.73) | +1.33 (0.88) | +1.5 | adjusted outside [-0.39, +3.05] |
+| conditional | 4149 | -0.47 (0.67) [-1.85, +0.89] | -1.18 (0.99) | +0.71 (1.19) | +0.6 | adjusted outside [-1.63, +3.05] |
+| tempo | 1322 | +0.93 (1.34) [-1.57, +3.43] | -0.19 (6.98) | +1.12 (7.10) | +0.2 | adjusted outside [-12.80, +15.04] |
+| counter | 1888 | +1.63 (1.05) [-0.40, +3.65] | -0.50 (1.48) | +2.14 (1.82) | +1.2 | adjusted outside [-1.42, +5.70] |
+
+### all players good (>=0.60)
+
+| class | decks | pts per card in hand (SE) [95% boot CI] | placebo mean (SD), 40 sets | adjusted (SE) | z | rules out beyond (95%) |
+|---|---|---|---|---|---|---|
+| unconditional | 9613 | +1.56 (0.32) [+0.93, +2.18] | -0.50 (0.83) | +2.06 (0.89) | +2.3 | adjusted outside [+0.32, +3.79] |
+| damage | 9796 | +0.75 (0.26) [+0.28, +1.25] | -0.59 (0.66) | +1.33 (0.71) | +1.9 | adjusted outside [-0.06, +2.73] |
+| conditional | 8575 | -1.14 (0.39) [-1.95, -0.46] | -0.67 (0.90) | -0.47 (0.98) | -0.5 | adjusted outside [-2.40, +1.46] |
+| tempo | 3541 | +0.20 (0.67) [-1.06, +1.33] | +0.29 (6.47) | -0.10 (6.51) | -0.0 | adjusted outside [-12.85, +12.66] |
+| counter | 5050 | -0.28 (0.47) [-1.19, +0.64] | -0.39 (0.99) | +0.12 (1.10) | +0.1 | adjusted outside [-2.04, +2.27] |
+
+### all players average (0.52-0.58)
+
+| class | decks | pts per card in hand (SE) [95% boot CI] | placebo mean (SD), 40 sets | adjusted (SE) | z | rules out beyond (95%) |
+|---|---|---|---|---|---|---|
+| unconditional | 14469 | +1.35 (0.25) [+0.83, +1.80] | -0.82 (0.78) | +2.17 (0.82) | +2.7 | adjusted outside [+0.57, +3.77] |
+| damage | 14579 | +0.69 (0.27) [+0.20, +1.22] | -0.69 (0.60) | +1.38 (0.66) | +2.1 | adjusted outside [+0.10, +2.67] |
+| conditional | 13032 | +0.02 (0.37) [-0.72, +0.69] | -1.10 (0.78) | +1.12 (0.86) | +1.3 | adjusted outside [-0.57, +2.81] |
+| tempo | 4863 | +0.54 (0.61) [-0.63, +1.68] | -0.59 (4.18) | +1.13 (4.23) | +0.3 | adjusted outside [-7.15, +9.41] |
+| counter | 7159 | +1.23 (0.49) [+0.22, +2.12] | -0.61 (0.67) | +1.84 (0.83) | +2.2 | adjusted outside [+0.21, +3.47] |
+
+### all players weak (<0.52)
+
+| class | decks | pts per card in hand (SE) [95% boot CI] | placebo mean (SD), 40 sets | adjusted (SE) | z | rules out beyond (95%) |
+|---|---|---|---|---|---|---|
+| unconditional | 14629 | +1.26 (0.32) [+0.64, +1.86] | -0.87 (0.65) | +2.13 (0.72) | +2.9 | adjusted outside [+0.71, +3.54] |
+| damage | 14956 | +0.58 (0.29) [+0.06, +1.13] | -0.57 (0.70) | +1.15 (0.75) | +1.5 | adjusted outside [-0.32, +2.63] |
+| conditional | 13909 | -0.47 (0.39) [-1.25, +0.27] | -1.31 (0.64) | +0.84 (0.75) | +1.1 | adjusted outside [-0.62, +2.31] |
+| tempo | 4202 | +1.21 (0.81) [-0.27, +2.83] | -0.03 (3.05) | +1.24 (3.16) | +0.4 | adjusted outside [-4.95, +7.43] |
+| counter | 6247 | +1.58 (0.60) [+0.37, +2.76] | -0.81 (0.54) | +2.40 (0.80) | +3.0 | adjusted outside [+0.82, +3.97] |
+
+### ng>=100 good, on the play
+
+| class | decks | pts per card in hand (SE) [95% boot CI] | placebo mean (SD), 40 sets | adjusted (SE) | z | rules out beyond (95%) |
+|---|---|---|---|---|---|---|
+| unconditional | 2632 | +0.86 (0.80) [-0.80, +2.41] | +0.03 (1.31) | +0.83 (1.54) | +0.5 | adjusted outside [-2.19, +3.84] |
+| damage | 2608 | +0.43 (0.74) [-0.87, +1.88] | -0.46 (1.01) | +0.89 (1.25) | +0.7 | adjusted outside [-1.56, +3.35] |
+| conditional | 2258 | -0.98 (1.05) [-3.04, +1.05] | -0.19 (1.19) | -0.78 (1.59) | -0.5 | adjusted outside [-3.89, +2.33] |
+| tempo | 1062 | +1.78 (1.70) [-1.56, +4.68] | +2.24 (2.13) | -0.46 (2.72) | -0.2 | adjusted outside [-5.80, +4.88] |
+| counter | 1480 | -2.93 (1.19) [-4.97, -0.43] | -1.62 (2.36) | -1.31 (2.64) | -0.5 | adjusted outside [-6.49, +3.87] |
+
+### ng>=100 good, on the draw
+
+| class | decks | pts per card in hand (SE) [95% boot CI] | placebo mean (SD), 40 sets | adjusted (SE) | z | rules out beyond (95%) |
+|---|---|---|---|---|---|---|
+| unconditional | 2655 | +2.03 (0.77) [+0.61, +3.59] | -0.85 (1.09) | +2.88 (1.33) | +2.2 | adjusted outside [+0.27, +5.49] |
+| damage | 2632 | +0.31 (0.75) [-1.19, +1.68] | -0.92 (0.85) | +1.22 (1.14) | +1.1 | adjusted outside [-1.00, +3.45] |
+| conditional | 2235 | +1.06 (1.05) [-1.17, +3.07] | -0.21 (1.31) | +1.27 (1.68) | +0.8 | adjusted outside [-2.03, +4.58] |
+| tempo | 1032 | +0.01 (1.84) [-3.38, +3.73] | +1.24 (3.86) | -1.23 (4.27) | -0.3 | adjusted outside [-9.60, +7.14] |
+| counter | 1494 | -0.33 (1.34) [-2.99, +2.05] | -2.64 (1.76) | +2.31 (2.21) | +1.0 | adjusted outside [-2.02, +6.65] |
+
+# Weights: class effect as a ratio to unconditional removal (adjusted = placebo mean subtracted from numerator and denominator)
+
+| split | class | raw ratio [95% CI] | adjusted ratio [95% CI] |
+|---|---|---|---|
+| all decks | damage | +0.49 [+0.25, +0.77] | +0.50 [-0.23, +2.93] |
+| all decks | conditional | -0.34 [-0.70, -0.07] | +0.30 [-0.41, +1.68] |
+| all decks | tempo | +0.44 [-0.04, +0.97] | -0.06 [-3.07, +3.23] |
+| all decks | counter | +0.61 [+0.19, +1.16] | +0.77 [+0.09, +2.57] |
+| ng>=100 good (>=0.60) | damage | +0.25 [-0.45, +1.16] | +0.48 [-6.32, +4.77] |
+| ng>=100 good (>=0.60) | conditional | -0.04 [-1.08, +0.90] | +0.18 [-2.63, +3.49] |
+| ng>=100 good (>=0.60) | tempo | +0.80 [-0.65, +3.36] | -0.69 [-18.63, +4.94] |
+| ng>=100 good (>=0.60) | counter | -0.95 [-3.13, +0.18] | -0.02 [-6.19, +5.68] |
+| ng>=100 average (0.52-0.58) | damage | +0.53 [-1.17, +5.05] | +0.55 [-2.37, +3.62] |
+| ng>=100 average (0.52-0.58) | conditional | -0.10 [-2.83, +4.39] | +0.61 [-2.92, +3.69] |
+| ng>=100 average (0.52-0.58) | tempo | +1.03 [-2.08, +8.51] | +1.21 [-10.99, +14.94] |
+| ng>=100 average (0.52-0.58) | counter | +2.38 [+0.45, +21.32] | +1.80 [-3.79, +12.52] |
+| ng>=100 weak (<0.52) | damage | +0.59 [-0.23, +3.25] | +0.72 [-2.51, +5.82] |
+| ng>=100 weak (<0.52) | conditional | -0.42 [-2.91, +1.12] | +0.38 [-1.25, +4.17] |
+| ng>=100 weak (<0.52) | tempo | +0.82 [-1.53, +5.99] | +0.61 [-16.05, +18.01] |
+| ng>=100 weak (<0.52) | counter | +1.45 [-0.33, +7.24] | +1.16 [-3.35, +10.03] |
+| all players good (>=0.60) | damage | +0.48 [+0.16, +1.03] | +0.65 [-0.30, +2.49] |
+| all players good (>=0.60) | conditional | -0.73 [-1.50, -0.25] | -0.23 [-2.04, +0.76] |
+| all players good (>=0.60) | tempo | +0.13 [-0.72, +0.97] | -0.05 [-7.11, +5.66] |
+| all players good (>=0.60) | counter | -0.18 [-0.89, +0.41] | +0.06 [-1.15, +1.65] |
+| all players average (0.52-0.58) | damage | +0.52 [+0.13, +1.07] | +0.64 [+0.11, +2.17] |
+| all players average (0.52-0.58) | conditional | +0.02 [-0.62, +0.58] | +0.52 [-0.26, +1.73] |
+| all players average (0.52-0.58) | tempo | +0.40 [-0.55, +1.51] | +0.52 [-4.69, +4.83] |
+| all players average (0.52-0.58) | counter | +0.91 [+0.15, +2.00] | +0.85 [+0.02, +3.01] |
+| all players weak (<0.52) | damage | +0.46 [+0.04, +1.33] | +0.54 [-0.15, +2.10] |
+| all players weak (<0.52) | conditional | -0.37 [-1.31, +0.21] | +0.40 [-0.58, +2.51] |
+| all players weak (<0.52) | tempo | +0.96 [-0.20, +2.56] | +0.58 [-4.97, +5.11] |
+| all players weak (<0.52) | counter | +1.26 [+0.27, +2.93] | +1.13 [+0.40, +3.28] |
+| ng>=100 good, on the play | damage | +0.50 [-6.14, +14.67] | +1.08 [-8.90, +8.32] |
+| ng>=100 good, on the play | conditional | -1.14 [-14.76, +13.26] | -0.95 [-22.03, +5.79] |
+| ng>=100 good, on the play | tempo | +2.08 [-18.46, +41.41] | -0.56 [-15.89, +14.08] |
+| ng>=100 good, on the play | counter | -3.42 [-53.59, +26.81] | -1.59 [-10.50, +16.67] |
+| ng>=100 good, on the draw | damage | +0.15 [-0.86, +1.19] | +0.43 [-0.42, +2.55] |
+| ng>=100 good, on the draw | conditional | +0.52 [-0.59, +2.69] | +0.44 [-0.78, +3.31] |
+| ng>=100 good, on the draw | tempo | +0.01 [-1.98, +2.29] | -0.43 [-6.19, +5.16] |
+| ng>=100 good, on the draw | counter | -0.16 [-2.16, +1.41] | +0.80 [-0.86, +5.15] |
+
+Ratio CIs are percentile intervals; when the denominator interval spans 0 they are unbounded and uninformative (read the absolute table).
+
+# SKILL GROUPS: summary
+
+# Good minus weak, ng>=100 (adjusted pts per card; 95% CI = +/-1.96 SE)
+
+| class | good adj (SE) | average adj (SE) | weak adj (SE) | good minus weak | SE | 95% CI | z |
+|---|---|---|---|---|---|---|---|
+| unconditional | +1.78 (1.07) | +1.45 (0.89) | +1.84 (1.09) | -0.06 | 1.52 | [-3.04, +2.92] | -0.0 |
+| damage | +0.84 (0.83) | +0.79 (0.93) | +1.33 (0.88) | -0.48 | 1.22 | [-2.88, +1.91] | -0.4 |
+| conditional | +0.33 (0.99) | +0.89 (1.11) | +0.71 (1.19) | -0.38 | 1.56 | [-3.44, +2.68] | -0.2 |
+| tempo | -1.22 (1.98) | +1.75 (4.75) | +1.12 (7.10) | -2.34 | 7.36 | [-16.77, +12.09] | -0.3 |
+| counter | -0.04 (1.63) | +2.60 (1.01) | +2.14 (1.82) | -2.18 | 2.46 | [-7.01, +2.64] | -0.9 |
+
+# Good minus weak, all players (adjusted pts per card; 95% CI = +/-1.96 SE)
+
+| class | good adj (SE) | average adj (SE) | weak adj (SE) | good minus weak | SE | 95% CI | z |
+|---|---|---|---|---|---|---|---|
+| unconditional | +2.06 (0.89) | +2.17 (0.82) | +2.13 (0.72) | -0.07 | 1.14 | [-2.30, +2.17] | -0.1 |
+| damage | +1.33 (0.71) | +1.38 (0.66) | +1.15 (0.75) | +0.18 | 1.04 | [-1.86, +2.22] | +0.2 |
+| conditional | -0.47 (0.98) | +1.12 (0.86) | +0.84 (0.75) | -1.32 | 1.24 | [-3.74, +1.11] | -1.1 |
+| tempo | -0.10 (6.51) | +1.13 (4.23) | +1.24 (3.16) | -1.33 | 7.23 | [-15.51, +12.84] | -0.2 |
+| counter | +0.12 (1.10) | +1.84 (0.83) | +2.40 (0.80) | -2.28 | 1.37 | [-4.96, +0.39] | -1.7 |games total 297964; with a splash flag 118872; single-colour splash 102215; multi-colour splash 16657
+selected games 102215, decks 24169, drafts 19920; skill not used (within deck)
+landcyclers [np.str_('Apex Witchstalker'), np.str_('Awaken the Inferno'), np.str_('Hexhaven Battalion'), np.str_('Undulating Witness'), np.str_('Vinelasher Adept')]; heartwood makers [np.str_('Aerid Konstrari'), np.str_('Heartwood Crafter'), np.str_('Hungering Puppetbeast'), np.str_('Konstrari Improviser'), np.str_('Tenured Tethermage'), np.str_('Woodwork Prodigy')]; spells without a GIH rating 10
+speed (mean cmc of the base non-land spells) tercile cuts over splash decks: 2.952, 3.217; decks with a splash card 23113 of 24169
+games with a single-pip splash card in hand 0.556, double-pip 0.092; source strata 0/1/2+ of games: 0.190/0.372/0.439
+decks with a single-pip splash card 21365, with a double-pip 4335
+
+drawing 40 placebo sets ...
+placebo cards unmatched (share of splash cards): 0.0000
+
+# SKILL GROUPS: B5 summary (adjusted = estimate minus placebo mean; games and decks per cell in the log header)
+cell all: games 102215, decks 24169, games with single-pip splash card 56823, double-pip 9410
+cell ng>=100 good (>=0.60): games 11217, decks 2229, games with single-pip splash card 6498, double-pip 993
+cell ng>=100 average (0.52-0.58): games 18164, decks 4036, games with single-pip splash card 10325, double-pip 1737
+cell ng>=100 weak (<0.52): games 10349, decks 2794, games with single-pip splash card 5586, double-pip 967
+cell all players good (>=0.60): games 29656, decks 6089, games with single-pip splash card 16864, double-pip 2610
+cell all players average (0.52-0.58): games 39663, decks 8947, games with single-pip splash card 22311, double-pip 3661
+cell all players weak (<0.52): games 32841, decks 9111, games with single-pip splash card 17619, double-pip 3131
+
+## all: adjusted pts per splashed card in hand (SE), by splash-colour land sources in hand
+
+| term | all | good minus weak [95% CI] |
+|---|---|---|
+| single, 0 sources | -5.64 (0.70) |  |
+| single, 1 source | +0.94 (0.50) |  |
+| single, 2+ sources | +0.86 (0.47) |  |
+| double, 0 sources | -1.65 (2.06) |  |
+| double, 1 source | +0.69 (1.24) |  |
+| double, 2+ sources | +5.43 (0.87) |  |
+| single: 1 source minus 0 | +6.58 (0.79) |  |
+| single: 2+ sources minus 1 | -0.07 (0.61) |  |
+| single: 2+ sources minus 0 | +6.51 (0.81) |  |
+| double: 1 source minus 0 | +2.34 (2.18) |  |
+| double: 2+ sources minus 1 | +4.74 (1.33) |  |
+| double: 2+ sources minus 0 | +7.08 (2.08) |  |
+
+## ng>=100: adjusted pts per splashed card in hand (SE), by splash-colour land sources in hand
+
+| term | ng>=100 good (>=0.60) | ng>=100 average (0.52-0.58) | ng>=100 weak (<0.52) | good minus weak [95% CI] |
+|---|---|---|---|---|
+| single, 0 sources | -6.68 (2.02) | -8.03 (1.81) | -4.16 (2.49) | -2.51 [-8.85, +3.82] |
+| single, 1 source | +2.18 (1.28) | -0.63 (1.20) | +1.97 (1.68) | +0.21 [-3.94, +4.35] |
+| single, 2+ sources | +2.65 (1.18) | +0.92 (1.09) | +3.26 (1.46) | -0.60 [-4.24, +3.03] |
+| double, 0 sources | -1.49 (6.49) | -2.26 (4.18) | +3.47 (6.71) | -4.96 [-22.09, +12.17] |
+| double, 1 source | +2.74 (3.80) | -2.73 (2.80) | -2.10 (4.06) | +4.84 [-5.82, +15.50] |
+| double, 2+ sources | +9.15 (2.64) | +3.82 (2.38) | +7.82 (2.90) | +1.33 [-6.55, +9.22] |
+| single: 1 source minus 0 | +8.85 (2.23) | +7.39 (1.87) | +6.13 (2.82) | +2.72 [-4.46, +9.89] |
+| single: 2+ sources minus 1 | +0.48 (1.50) | +1.55 (1.43) | +1.29 (1.88) | -0.81 [-5.55, +3.93] |
+| single: 2+ sources minus 0 | +9.33 (2.19) | +8.94 (1.85) | +7.42 (2.85) | +1.91 [-5.08, +8.90] |
+| double: 1 source minus 0 | +4.22 (7.13) | -0.46 (4.26) | -5.58 (7.15) | +9.80 [-8.97, +28.57] |
+| double: 2+ sources minus 1 | +6.41 (4.04) | +6.55 (2.86) | +9.92 (4.17) | -3.51 [-14.75, +7.74] |
+| double: 2+ sources minus 0 | +10.64 (6.41) | +6.09 (4.25) | +4.34 (6.71) | +6.29 [-10.96, +23.55] |
+
+## all players: adjusted pts per splashed card in hand (SE), by splash-colour land sources in hand
+
+| term | all players good (>=0.60) | all players average (0.52-0.58) | all players weak (<0.52) | good minus weak [95% CI] |
+|---|---|---|---|---|
+| single, 0 sources | -5.54 (1.25) | -6.02 (1.28) | -5.27 (1.42) | -0.27 [-4.01, +3.48] |
+| single, 1 source | +1.21 (0.81) | +0.53 (0.75) | +1.15 (0.98) | +0.06 [-2.36, +2.49] |
+| single, 2+ sources | +0.85 (0.78) | +1.22 (0.71) | +0.38 (0.89) | +0.46 [-1.81, +2.74] |
+| double, 0 sources | -2.89 (3.73) | -0.52 (3.16) | -1.85 (3.66) | -1.04 [-11.18, +9.10] |
+| double, 1 source | +3.55 (2.25) | -0.96 (1.96) | +0.35 (2.20) | +3.21 [-2.96, +9.38] |
+| double, 2+ sources | +7.78 (1.55) | +4.43 (1.54) | +4.52 (1.76) | +3.26 [-1.46, +7.98] |
+| single: 1 source minus 0 | +6.75 (1.34) | +6.55 (1.33) | +6.42 (1.62) | +0.33 [-3.68, +4.34] |
+| single: 2+ sources minus 1 | -0.36 (1.04) | +0.69 (0.93) | -0.76 (1.12) | +0.40 [-2.50, +3.30] |
+| single: 2+ sources minus 0 | +6.39 (1.43) | +7.24 (1.34) | +5.66 (1.59) | +0.73 [-3.53, +4.99] |
+| double: 1 source minus 0 | +6.45 (4.05) | -0.44 (3.18) | +2.20 (3.83) | +4.25 [-6.43, +14.93] |
+| double: 2+ sources minus 1 | +4.23 (2.30) | +5.39 (1.93) | +4.17 (2.45) | +0.05 [-6.73, +6.84] |
+| double: 2+ sources minus 0 | +10.68 (3.84) | +4.95 (3.27) | +6.38 (3.86) | +4.30 [-6.56, +15.16] |

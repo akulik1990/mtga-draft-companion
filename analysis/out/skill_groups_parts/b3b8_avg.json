@@ -1,0 +1,72 @@
+{
+"b3b8|B3 slowness premium, linear per +1 SD mean cmc, Q(b) (post hoc)": {
+"avg": [
+1.017626622156905,
+0.25868485368487726,
+8196
+]
+},
+"b3b8|B3 P1 mean cmc ends-minus-middle, Q(a)": {
+"avg": [
+-0.012902144978772134,
+0.1779310408016937,
+8196
+]
+},
+"b3b8|B3 P2 two-drop share ends-minus-middle, Q(a)": {
+"avg": [
+-0.018048837092699787,
+0.17401756530789325,
+8196
+]
+},
+"b3b8|B3 P3 aggressive cards x mean cmc, Q(a)": {
+"avg": [
+-0.11345863073203097,
+0.1411997814580995,
+8196
+]
+},
+"b3b8|B8 P4 off-colour dual, per card, Q(a)": {
+"avg": [
+-5.3664560244866175,
+4.084095090374177,
+4154
+]
+},
+"b3b8|B8 P5 on-colour tapped lands pooled, per card, Q(a)": {
+"avg": [
+0.6842285595178818,
+0.4321384752722584,
+4154
+]
+},
+"b3b8|B8 P6 PW dual x walker count, Q(a)": {
+"avg": [
+0.32539288947692674,
+0.243216350007065,
+4154
+]
+},
+"b3b8|B8 P7 on-colour tapped x deck speed, Q(a)": {
+"avg": [
+1.0725318899376906,
+0.4191148852384193,
+4154
+]
+},
+"b3b8|B8 P8 tapped dual in opening hand (placebo-adjusted), games": {
+"avg": [
+0.94,
+1.0204081632653061,
+22777
+]
+},
+"b3b8|_log": {
+"avg": [
+"B3 population: 8196 decks (Premier, two-colour lane), 6641 drafts; mc mean 3.07 (pooled within-pair SD 0.277); two-drop share mean 0.366 (within-pair SD 0.085); AGG per deck mean 3.16, SD 1.65",
+"Population: 4154 decks, 3376 drafts. Per deck means: PW-on 0.47, SLOW-on 0.07, ALW-on 0.27, off-colour duals 0.01; WALK 4.44 (SD 2.45); WALK>=4 60.98%",
+"games 297964, decks 69846, drafts 55469; clean two-colour games 47404; on play 0.500"
+]
+}
+}

@@ -1,0 +1,95 @@
+Rows (tests): 34. Bonferroni: good-minus-weak p < 0.0015; a single group p < 0.00049. Nominal flag: p < 0.05.
+
+| test | original | all 100+ | good (>=0.60) | average (0.52-0.59) | weak (<0.52) | good minus weak | p(diff) | verdict |
+|---|---|---|---|---|---|---|---|---|
+| B3 slowness premium, linear per +1 SD mean cmc, Q(b) (post hoc) | +0.80 [+0.47, +1.14] | +0.80 [+0.47, +1.14] | +0.96 [+0.28, +1.64] | +1.02 [+0.51, +1.52] | +0.37 [-0.23, +0.96] | +0.59 [-0.31, +1.50] | 0.199 | same effect in every group (pooled p 3.0e-06); no group-specific effect |
+| B3 P1 mean cmc ends-minus-middle, Q(a) | - | +0.04 [-0.19, +0.27] | +0.04 [-0.42, +0.50] | -0.01 [-0.36, +0.34] | +0.17 [-0.22, +0.55] | -0.13 [-0.73, +0.47] | 0.672 | null in every group |
+| B3 P2 two-drop share ends-minus-middle, Q(a) | - | -0.14 [-0.37, +0.08] | -0.27 [-0.74, +0.20] | -0.02 [-0.36, +0.32] | -0.20 [-0.60, +0.20] | -0.07 [-0.69, +0.55] | 0.822 | null in every group |
+| B3 P3 aggressive cards x mean cmc, Q(a) | - | -0.11 [-0.30, +0.07] | -0.12 [-0.48, +0.25] | -0.11 [-0.39, +0.16] | -0.12 [-0.47, +0.22] | +0.01 [-0.50, +0.51] | 0.978 | null in every group |
+| B8 P4 off-colour dual, per card, Q(a) | - | -0.88 [-5.44, +3.68] | +8.07 [-4.91, +21.05] | -5.37 [-13.37, +2.64] | -3.99 [-11.60, +3.61] | +12.06 [-2.98, +27.11] | 0.116 | null in every group |
+| B8 P5 on-colour tapped lands pooled, per card, Q(a) | - | +0.47 [-0.09, +1.03] | +1.36 [+0.21, +2.51] | +0.68 [-0.16, +1.53] | -0.46 [-1.44, +0.52] | +1.82 [+0.31, +3.33] | 0.018 | nominal only (good; diff p<.05), none survives |
+| B8 P6 PW dual x walker count, Q(a) | - | +0.03 [-0.28, +0.34] | -0.29 [-0.87, +0.29] | +0.33 [-0.15, +0.80] | -0.20 [-0.78, +0.37] | -0.09 [-0.91, +0.73] | 0.828 | null in every group |
+| B8 P7 on-colour tapped x deck speed, Q(a) | +0.58 [+0.04, +1.13] p .037 | +0.58 [+0.04, +1.13] | +0.30 [-0.81, +1.42] | +1.07 [+0.25, +1.89] | +0.16 [-0.85, +1.17] | +0.14 [-1.36, +1.65] | 0.853 | nominal only (avg; pooled p<.05), none survives |
+| B8 P8 tapped dual in opening hand (placebo-adjusted), games | +1.47 [+0.26, +2.69] | +1.48 [+0.27, +2.69] | +1.44 [-0.69, +3.57] | +0.94 [-1.06, +2.94] | +2.03 [+0.01, +4.04] | -0.59 [-3.52, +2.34] | 0.693 | nominal only (weak; pooled p<.05), none survives |
+| B2 cmc>=5 count 0-1 vs 2 | - | +0.46 [-0.57, +1.48] | -0.64 [-2.50, +1.23] | +0.90 [-0.66, +2.46] | +0.99 [-1.00, +2.97] | -1.62 [-4.35, +1.10] | 0.243 | null in every group |
+| B2 cmc>=5 count 5+ vs 2 | - | +0.76 [-0.12, +1.63] | +1.37 [-0.28, +3.02] | +1.03 [-0.29, +2.35] | -0.41 [-2.06, +1.24] | +1.78 [-0.55, +4.11] | 0.134 | null in every group |
+| B2 per cmc>=7 card (beyond bucket) | - | +0.20 [-0.20, +0.61] | -0.07 [-0.86, +0.73] | -0.01 [-0.61, +0.59] | +0.74 [-0.01, +1.50] | -0.81 [-1.91, +0.28] | 0.147 | null in every group |
+| B4 non-board spells, per spell | - | +0.06 [-0.23, +0.34] | +0.04 [-0.49, +0.57] | +0.12 [-0.30, +0.54] | -0.06 [-0.61, +0.49] | +0.09 [-0.67, +0.86] | 0.812 | null in every group |
+| B4 trick x removal (per trick per removal card) | - | -0.06 [-0.28, +0.17] | -0.15 [-0.56, +0.25] | -0.01 [-0.37, +0.34] | -0.02 [-0.43, +0.40] | -0.14 [-0.71, +0.44] | 0.647 | null in every group |
+| B7 16 vs 17 lands, 2+ cantrips | +0.74 [-0.02, +1.51] (60%+) | +0.96 [+0.13, +1.79] | +0.89 [-0.62, +2.41] | +1.17 [-0.12, +2.45] | +0.83 [-0.75, +2.41] | +0.06 [-2.13, +2.25] | 0.957 | nominal only (no single group; pooled p<.05), none survives |
+| B7 16 vs 17 lands, 0-1 cantrips | - | +0.38 [-1.44, +2.19] | +0.11 [-3.43, +3.65] | +2.19 [-0.53, +4.91] | -1.98 [-5.45, +1.48] | +2.10 [-2.86, +7.05] | 0.407 | null in every group |
+| B1 18 vs 17 lands (deck GLM, all) | - | -3.05 [-6.91, +0.81] | -11.11 [-22.56, +0.34] | -1.73 [-7.29, +3.84] | -1.26 [-6.55, +4.02] | -9.84 [-22.45, +2.76] | 0.126 | null in every group |
+| B9 extended vs clean, fast tercile (T1) | - | -2.40 [-3.49, -1.31] | -2.87 [-4.99, -0.75] | -0.84 [-2.45, +0.77] | -4.47 [-6.51, -2.42] | +1.60 [-1.34, +4.54] | 0.286 | same effect in every group (pooled p 1.6e-05); no group-specific effect |
+| B9 extended-vs-clean cost, fast minus slow tercile (T1-T3) | - | +0.38 [-1.20, +1.96] | +0.10 [-3.26, +3.46] | +2.17 [-0.20, +4.54] | -2.03 [-4.83, +0.77] | +2.13 [-2.24, +6.50] | 0.340 | null in every group |
+| B9 extended vs clean, weakest pool quartile (Q1) | - | -1.92 [-3.32, -0.51] | -4.34 [-7.40, -1.28] | -0.73 [-2.94, +1.49] | -1.92 [-4.19, +0.35] | -2.42 [-6.23, +1.39] | 0.213 | nominal only (good; pooled p<.05), none survives |
+| B9 extended-vs-clean cost, Q1 minus Q4 | - | -0.63 [-2.50, +1.24] | -2.73 [-6.55, +1.09] | -0.07 [-2.96, +2.82] | +0.61 [-2.77, +4.00] | -3.34 [-8.44, +1.75] | 0.199 | null in every group |
+| Mana sinks, per sink (ACT+X+FB+MAN) | -0.23 [-0.39, -0.06] | -0.22 [-0.38, -0.05] | -0.18 [-0.49, +0.12] | -0.16 [-0.41, +0.09] | -0.36 [-0.68, -0.04] | +0.17 [-0.27, +0.61] | 0.445 | nominal only (weak; pooled p<.05), none survives |
+| Counterspells (core 4), per card beyond removal count | - | -0.50 [-0.93, -0.06] | -0.64 [-1.40, +0.11] | -0.35 [-1.01, +0.31] | -0.68 [-1.58, +0.22] | +0.04 [-1.14, +1.21] | 0.952 | nominal only (no single group; pooled p<.05), none survives |
+| Counterspell vs removal card, removal minus counter | - | +0.82 [+0.39, +1.25] | +0.78 [+0.04, +1.53] | +0.72 [+0.07, +1.37] | +1.09 [+0.21, +1.98] | -0.31 [-1.47, +0.85] | 0.600 | same effect in every group (pooled p 1.7e-04); no group-specific effect |
+| Short of 6 removal+counters (pts for being short) | - | -1.21 [-1.89, -0.52] | -0.72 [-2.00, +0.56] | -1.23 [-2.27, -0.18] | -1.65 [-2.94, -0.35] | +0.92 [-0.89, +2.74] | 0.319 | same effect in every group (pooled p 5.4e-04); no group-specific effect |
+| Flyers beyond rating, per flying creature | - | -0.15 [-0.36, +0.06] | -0.02 [-0.42, +0.37] | -0.16 [-0.48, +0.16] | -0.26 [-0.66, +0.13] | +0.24 [-0.32, +0.80] | 0.398 | null in every group |
+| Two-colour split, per +0.1 main-colour share (quality controlled) | +0.37, p 0.094 (all) | +0.34 [-0.13, +0.80] | -0.05 [-0.97, +0.87] | +0.47 [-0.22, +1.16] | +0.53 [-0.33, +1.39] | -0.58 [-1.84, +0.69] | 0.371 | null in every group |
+| older: creatures <= 9 | +2.0 (SE 0.4) | +0.34 [-1.73, +2.41] | -1.78 [-5.33, +1.78] | +0.16 [-2.76, +3.08] | +3.21 [-1.78, +8.21] | -4.99 [-11.12, +1.14] | 0.111 | null in every group |
+| older: removal <= 2 | -2.1 (SE 0.4) | -2.88 [-4.24, -1.52] | -4.13 [-6.99, -1.26] | -1.99 [-4.00, +0.03] | -3.12 [-5.52, -0.72] | -1.00 [-4.74, +2.73] | 0.598 | same effect in every group (pooled p 3.2e-05); no group-specific effect |
+| older: no top-40 card | -2.5 | -3.88 [-5.13, -2.63] | -2.95 [-5.82, -0.08] | -4.51 [-6.40, -2.62] | -3.68 [-5.72, -1.65] | +0.73 [-2.79, +4.25] | 0.685 | same effect in every group (pooled p 1.1e-09); no group-specific effect |
+| older: lands not 16-17 | no effect | -0.13 [-2.19, +1.93] | -1.48 [-5.64, +2.68] | +0.63 [-2.61, +3.87] | +0.04 [-3.38, +3.47] | -1.53 [-6.91, +3.86] | 0.579 | null in every group |
+| older: two-drops <= 4 | no effect | +0.15 [-1.61, +1.91] | +1.56 [-2.13, +5.25] | -1.59 [-4.34, +1.16] | +1.64 [-1.28, +4.56] | -0.08 [-4.78, +4.63] | 0.974 | null in every group |
+| older: finishers, per card (capped at 3) | large low/high bands, flat mid | +3.30 [+2.89, +3.70] | +3.04 [+2.24, +3.85] | +3.37 [+2.78, +3.97] | +3.43 [+2.66, +4.20] | -0.39 [-1.50, +0.72] | 0.490 | same effect in every group (pooled p 3.6e-57); no group-specific effect |
+| older: finishers 3+ vs 0-2 | - | +8.11 [+6.48, +9.74] | +6.16 [+3.05, +9.27] | +9.43 [+7.10, +11.75] | +7.19 [+3.92, +10.46] | -1.03 [-5.54, +3.48] | 0.655 | same effect in every group (pooled p 1.7e-22); no group-specific effect |
+
+Older finisher bands (100+ games decks, per finisher capped at 3, no game-count term):
+  band low <0.45: +3.11 [+1.66, +4.56]  decks 2507
+  band mid 0.45-0.59: +3.45 [+2.96, +3.95]  decks 15788
+  band high 0.60+: +3.04 [+2.24, +3.85]  decks 5454
+
+Sample sizes (decks; games for P8):
+  B3 slowness premium, linear per +1 SD mean cmc, Q(b) (post hoc)          all:18749  good:4269  avg:8196  weak:6284
+  B3 P1 mean cmc ends-minus-middle, Q(a)                                   all:18749  good:4269  avg:8196  weak:6284
+  B3 P2 two-drop share ends-minus-middle, Q(a)                             all:18749  good:4269  avg:8196  weak:6284
+  B3 P3 aggressive cards x mean cmc, Q(a)                                  all:18749  good:4269  avg:8196  weak:6284
+  B8 P4 off-colour dual, per card, Q(a)                                    all:9656  good:2021  avg:4154  weak:3481
+  B8 P5 on-colour tapped lands pooled, per card, Q(a)                      all:9656  good:2021  avg:4154  weak:3481
+  B8 P6 PW dual x walker count, Q(a)                                       all:9656  good:2021  avg:4154  weak:3481
+  B8 P7 on-colour tapped x deck speed, Q(a)                                all:9656  good:2021  avg:4154  weak:3481
+  B8 P8 tapped dual in opening hand (placebo-adjusted), games              all:61729  good:16475  avg:22777  weak:22477
+  B2 cmc>=5 count 0-1 vs 2                                                 all:35646  good:10865  avg:14819  weak:9962
+  B2 cmc>=5 count 5+ vs 2                                                  all:35646  good:10865  avg:14819  weak:9962
+  B2 per cmc>=7 card (beyond bucket)                                       all:35646  good:10865  avg:14819  weak:9962
+  B4 non-board spells, per spell                                           all:27196  good:8301  avg:11339  weak:7556
+  B4 trick x removal (per trick per removal card)                          all:27196  good:8301  avg:11339  weak:7556
+  B7 16 vs 17 lands, 2+ cantrips                                           all:24976  good:7647  avg:10390  weak:6939
+  B7 16 vs 17 lands, 0-1 cantrips                                          all:24976  good:7647  avg:10390  weak:6939
+  B1 18 vs 17 lands (deck GLM, all)                                        all:24976  good:7647  avg:10390  weak:6939
+  B9 extended vs clean, fast tercile (T1)                                  all:23889  good:5486  avg:10485  weak:7918
+  B9 extended-vs-clean cost, fast minus slow tercile (T1-T3)               all:23889  good:5486  avg:10485  weak:7918
+  B9 extended vs clean, weakest pool quartile (Q1)                         all:20124  good:4582  avg:8715  weak:6827
+  B9 extended-vs-clean cost, Q1 minus Q4                                   all:20124  good:4582  avg:8715  weak:6827
+  Mana sinks, per sink (ACT+X+FB+MAN)                                      all:27196  good:8301  avg:11339  weak:7556
+  Counterspells (core 4), per card beyond removal count                    all:27196  good:8301  avg:11339  weak:7556
+  Counterspell vs removal card, removal minus counter                      all:27196  good:8301  avg:11339  weak:7556
+  Short of 6 removal+counters (pts for being short)                        all:27196  good:8301  avg:11339  weak:7556
+  Flyers beyond rating, per flying creature                                all:27196  good:8301  avg:11339  weak:7556
+  Two-colour split, per +0.1 main-colour share (quality controlled)        all:13272  good:3834  avg:5446  weak:3992
+  older: creatures <= 9                                                    all:23749  good:5454  avg:10410  weak:7885
+  older: removal <= 2                                                      all:23749  good:5454  avg:10410  weak:7885
+  older: no top-40 card                                                    all:23749  good:5454  avg:10410  weak:7885
+  older: lands not 16-17                                                   all:23749  good:5454  avg:10410  weak:7885
+  older: two-drops <= 4                                                    all:23749  good:5454  avg:10410  weak:7885
+  older: finishers, per card (capped at 3)                                 all:23749  good:5454  avg:10410  weak:7885
+  older: finishers 3+ vs 0-2                                               all:23749  good:5454  avg:10410  weak:7885
+
+B7 cell sizes (16-land cantrip-2+ decks / 17-land cantrip-2+ decks / all decks): {'all': [4512, 15777, 24976], 'good': [1460, 4892, 7647], 'avg': [1780, 6664, 10390], 'weak': [1272, 4221, 6939]}
+
+b3b8 logs:
+  all: B3 population: 18749 decks (Premier, two-colour lane), 15136 drafts; mc mean 3.07 (pooled within-pair SD 0.279); two-drop share mean 0.364 (within-pair SD 0.085); AGG per deck mean 3.18, SD 1.66
+  all: Population: 9656 decks, 7892 drafts. Per deck means: PW-on 0.48, SLOW-on 0.08, ALW-on 0.27, off-colour duals 0.01; WALK 4.38 (SD 2.42); WALK>=4 60.30%
+  all: games 297964, decks 69846, drafts 55469; clean two-colour games 128586; on play 0.500
+  avg: B3 population: 8196 decks (Premier, two-colour lane), 6641 drafts; mc mean 3.07 (pooled within-pair SD 0.277); two-drop share mean 0.366 (within-pair SD 0.085); AGG per deck mean 3.16, SD 1.65
+  avg: Population: 4154 decks, 3376 drafts. Per deck means: PW-on 0.47, SLOW-on 0.07, ALW-on 0.27, off-colour duals 0.01; WALK 4.44 (SD 2.45); WALK>=4 60.98%
+  avg: games 297964, decks 69846, drafts 55469; clean two-colour games 47404; on play 0.500
+  good: B3 population: 4269 decks (Premier, two-colour lane), 3475 drafts; mc mean 3.06 (pooled within-pair SD 0.283); two-drop share mean 0.370 (within-pair SD 0.086); AGG per deck mean 3.22, SD 1.71
+  good: Population: 2021 decks, 1650 drafts. Per deck means: PW-on 0.51, SLOW-on 0.09, ALW-on 0.28, off-colour duals 0.01; WALK 4.71 (SD 2.53); WALK>=4 66.01%
+  good: games 297964, decks 69846, drafts 55469; clean two-colour games 32832; on play 0.500
+  weak: B3 population: 6284 decks (Premier, two-colour lane), 5020 drafts; mc mean 3.09 (pooled within-pair SD 0.278); two-drop share mean 0.358 (within-pair SD 0.084); AGG per deck mean 3.17, SD 1.64
+  weak: Population: 3481 decks, 2866 drafts. Per deck means: PW-on 0.47, SLOW-on 0.08, ALW-on 0.25, off-colour duals 0.01; WALK 4.11 (SD 2.27); WALK>=4 56.19%
+  weak: games 297964, decks 69846, drafts 55469; clean two-colour games 48350; on play 0.500

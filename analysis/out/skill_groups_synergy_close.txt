@@ -1,0 +1,48 @@
+games 297964, drafts 55469, decks (draft x build) 69846; skill missing 0.0007; ngames>=100 share 0.366
+  P100: all 109117 games / 19967 drafts, good 28424 games / 4640 drafts, average 48922 games / 8803 drafts, weak 31771 games / 6524 drafts
+  ALL: all 297964 games / 55469 drafts, good 81345 games / 13224 drafts, average 112385 games / 20250 drafts, weak 104017 games / 21912 drafts
+within-deck tests available: 59
+
+### S1 within-deck synergy (with payoff in hand minus alone), WR points per enabler, population P100
+
+| test | all-skill (orig) | good | average | weak | good minus weak (SE) z | with-payoff effect: good / weak, diff z |
+|---|---|---|---|---|---|---|
+| Way of the Cryomancer | +0.21 (1.91) [928] | +1.31 (3.64) [223] | -3.01 (2.71) [447] | +6.75 (3.70) [258] | -5.43 (5.38) z -1.0 | +2.36 / +7.44, diff z -1.3 |
+| Way of the Cryomancer (list 2) | -0.14 (2.41) [928] | -6.40 (4.70) [223] | +1.59 (3.51) [447] | +2.39 (5.05) [258] | -8.79 (7.02) z -1.3 | -2.86 / +5.59, diff z -1.7 |
+| Kiora of Salt and Sand | +3.76 (2.36) [577] | +8.50 (5.10) [137] | +0.93 (3.04) [270] | +3.44 (4.92) [170] | +5.06 (7.16) z +0.7 | +5.63 / +0.96, diff z +1.1 |
+
+### S1 within-deck synergy (with payoff in hand minus alone), WR points per enabler, population ALL
+
+| test | all-skill (orig) | good | average | weak | good minus weak (SE) z | with-payoff effect: good / weak, diff z |
+|---|---|---|---|---|---|---|
+| Way of the Cryomancer | +0.30 (1.14) [2472] | -1.50 (2.18) [608] | +0.95 (1.90) [947] | +1.52 (1.92) [917] | -3.03 (2.89) z -1.0 | +0.50 / +2.73, diff z -1.1 |
+| Way of the Cryomancer (list 2) | -2.27 (1.50) [2472] | -3.87 (2.84) [608] | -3.46 (2.31) [947] | +0.47 (2.84) [917] | -4.34 (4.02) z -1.1 | -0.62 / +2.45, diff z -1.2 |
+| Kiora of Salt and Sand | +3.30 (1.44) [1633] | +6.38 (2.61) [431] | +5.20 (2.22) [605] | -1.94 (2.65) [597] | +8.32 (3.72) z +2.2 | +5.72 / +0.05, diff z +2.5 |
+
+deck file: 23889 Premier decks; games_bucket values {1: 3515, 4: 3312, 3: 3205, 5: 3076, 2: 2748, 6: 2722, 7: 2430, 8: 1819, 9: 1062} (the deck's own game count, no games term used)
+
+### S3 deck level (foundations rule 10 spec a: quality = mean + top-10 GIH, skill and lane and splash controlled, no games term), WR points; [n decks]
+
+| test | all-skill | good | average | weak | good minus weak [95% CI] |
+|---|---|---|---|---|---|
+| empower x Way (extra pts per empower card with a Way present) | +0.51 (0.14) [23889] | +0.48 (0.27) [5486] | +0.55 (0.21) [10485] | +0.43 (0.27) [7918] | +0.06 [-0.70, +0.81] z +0.1 |
+| empower, no Way (pts per card) | -0.35 (0.11) [23889] | -0.33 (0.20) [5486] | -0.42 (0.16) [10485] | -0.26 (0.21) [7918] | -0.06 [-0.64, +0.52] z -0.2 |
+| Way count 2 minus 1 | -1.05 (0.50) [23889] | -1.66 (1.04) [5486] | -1.14 (0.75) [10485] | -0.50 (0.87) [7918] | -1.17 [-3.83, +1.49] z -0.9 |
+| Way count 3 minus 2 (post hoc lead) | +2.36 (0.80) [23889] | +2.43 (1.61) [5486] | +3.10 (1.21) [10485] | +1.28 (1.43) [7918] | +1.14 [-3.07, +5.36] z +0.5 |
+| Way count 4+ minus 3 | -1.38 (1.37) [23889] | +0.05 (3.03) [5486] | -3.62 (1.85) [10485] | +0.84 (2.73) [7918] | -0.79 [-8.78, +7.20] z -0.2 |
+
+### S3 within-deck, population P100 [n decks (draft x build)]; joint draft bootstrap
+
+| test | all-skill | good | average | weak | good minus weak [95% CI] |
+|---|---|---|---|---|---|
+| W2 within-deck: empower in hand x Way in hand (pts per card) | +0.88 (0.33) [10678] | +0.59 (0.57) [2434] | +1.13 (0.46) [4698] | +0.74 (0.63) [3546] | -0.14 [-1.72, +1.44] z -0.2 |
+| W4 within-deck: 3+ Ways in hand minus 2 | -1.07 (2.46) [880] | +0.33 (4.99) [181] | -4.16 (3.81) [390] | +2.54 (4.82) [309] | -2.21 [-16.09, +11.67] z -0.3 |
+| W4 within-deck: 2 Ways in hand minus 1 | +1.30 (2.06) [880] | +3.32 (4.19) [181] | -1.47 (3.14) [390] | +3.48 (3.62) [309] | -0.16 [-10.87, +10.54] z -0.0 |
+
+### S3 within-deck, population ALL [n decks (draft x build)]; joint draft bootstrap
+
+| test | all-skill | good | average | weak | good minus weak [95% CI] |
+|---|---|---|---|---|---|
+| W2 within-deck: empower in hand x Way in hand (pts per card) | +1.04 (0.20) [30236] | +0.87 (0.34) [7102] | +1.07 (0.32) [10951] | +1.14 (0.38) [12162] | -0.27 [-1.26, +0.73] z -0.5 |
+| W4 within-deck: 3+ Ways in hand minus 2 | -0.52 (1.49) [2439] | -0.21 (3.11) [507] | -1.41 (2.34) [873] | +0.38 (2.72) [1059] | -0.59 [-8.56, +7.38] z -0.1 |
+| W4 within-deck: 2 Ways in hand minus 1 | -0.30 (1.29) [2439] | -0.68 (2.69) [507] | -1.89 (2.04) [873] | +1.54 (2.15) [1059] | -2.22 [-9.16, +4.72] z -0.6 |

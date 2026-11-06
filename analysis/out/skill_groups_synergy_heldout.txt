@@ -1,0 +1,23 @@
+games 297964, drafts 55469, decks (draft x build) 69846; skill missing 0.0007; ngames>=100 share 0.366
+  LT100: all 188847 games / 35502 drafts, good 52921 games / 8584 drafts, average 63463 games / 11447 drafts, weak 72246 games / 15388 drafts
+within-deck tests available: 59
+
+### S1 within-deck synergy (with payoff in hand minus alone), WR points per enabler, population LT100
+
+| test | all-skill (orig) | good | average | weak | good minus weak (SE) z | with-payoff effect: good / weak, diff z |
+|---|---|---|---|---|---|---|
+| Way of the Cryomancer | +0.33 (1.44) [1544] | -3.10 (2.71) [385] | +4.60 (2.62) [500] | -0.37 (2.31) [659] | -2.73 (3.54) z -0.8 | -0.53 / +1.10, diff z -0.7 |
+| Way of the Cryomancer (list 2) | -3.58 (1.98) [1544] | -2.61 (3.51) [385] | -7.82 (3.40) [500] | -0.39 (3.41) [659] | -2.22 (4.89) z -0.5 | +0.58 / +1.14, diff z -0.2 |
+| Kiora of Salt and Sand | +3.19 (1.85) [1056] | +5.61 (3.12) [294] | +8.80 (3.28) [335] | -4.02 (3.06) [427] | +9.63 (4.38) z +2.2 | +5.85 / -0.23, diff z +2.1 |
+| Rescue Girl, First Responder | +0.05 (1.77) [2091] | -0.40 (3.60) [501] | +1.72 (3.02) [675] | -1.26 (3.09) [915] | +0.86 (4.84) z +0.2 | +0.93 / +1.16, diff z -0.1 |
+| Ghalta the Unstoppable | -0.12 (1.15) [1889] | +2.31 (2.40) [380] | -0.33 (2.05) [616] | -1.30 (1.91) [891] | +3.60 (3.10) z +1.2 | +3.12 / +2.11, diff z +0.4 |
+
+### S1b within-deck effect with the payoff in hand (the 'with payoff' column of docs/within-deck-FRA.md), WR points per enabler (SE), population LT100
+
+| test | all-skill | good | average | weak | good minus weak z |
+|---|---|---|---|---|---|
+| Way of the Cryomancer | +0.43 (0.96) | -0.53 (1.76) | +0.68 (1.73) | +1.10 (1.63) | -1.63 z -0.7 |
+| Way of the Cryomancer (list 2) | +0.22 (1.33) | +0.58 (2.32) | -1.04 (2.67) | +1.14 (2.28) | -0.56 z -0.2 |
+| Kiora of Salt and Sand | +3.42 (1.16) | +5.85 (1.98) | +5.45 (1.95) | -0.23 (2.08) | +6.08 z +2.1 |
+| Rescue Girl, First Responder | +1.56 (1.32) | +0.93 (2.65) | +2.33 (2.23) | +1.16 (2.14) | -0.24 z -0.1 |
+| Ghalta the Unstoppable | +2.24 (0.94) | +3.12 (1.95) | +1.90 (1.65) | +2.11 (1.44) | +1.01 z +0.4 |
