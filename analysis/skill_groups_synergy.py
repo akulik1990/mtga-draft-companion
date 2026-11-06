@@ -88,7 +88,7 @@ def syn_rows(Pc, Ec, mask):
 
 def build_tests():
     from companion.advisor_v2 import needs, config
-    tests = [(card, [nidx[card]] if card in nidx else [], set(en)) for card, en in needs.synergy_lists("FRA")]
+    tests = [(card, [nidx[card]] if card in nidx else [], set(en)) for card, en in needs.synergy_lists("FRA", every=True)]
     fit = config.fitted("FRA", "synergy") or {}
     for name, t in (fit.get("themes") or {}).items():
         if t.get("enablers") and t.get("payoffs"):

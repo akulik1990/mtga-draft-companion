@@ -98,7 +98,7 @@ def main(argv=None):
     a = p.parse_args(argv)
     data = json.loads((DATA_DIR / "Sets" / f"{a.set}_PremierDraft_All_Data.json").read_text())["card_ratings"]
     lands = {c["name"] for c in data.values() if "Land" in (c.get("types") or [])}
-    tests = [(card, {card}, set(en)) for card, en in needs.synergy_lists(a.set)]
+    tests = [(card, {card}, set(en)) for card, en in needs.synergy_lists(a.set, every=True)]
     for name, t in ((config.fitted(a.set, "synergy") or {}).get("themes") or {}).items():
         if t.get("enablers") and t.get("payoffs"):
             tests.append((f"theme: {name}", set(t["payoffs"]), set(t["enablers"]) - set(t["payoffs"])))

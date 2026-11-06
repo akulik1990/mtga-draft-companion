@@ -1,0 +1,47 @@
+warning: Nix search path entry '/nix/var/nix/profiles/per-user/root/channels' does not exist, ignoring
+games 297964; Fblthp in deck 37828; basic types among those: {np.int64(1): np.int64(14), np.int64(2): np.int64(9221), np.int64(3): np.int64(22423), np.int64(4): np.int64(5194), np.int64(5): np.int64(976)}
+in hand (copies) among deck games: 0.485
+
+== P100 ==
+-- all
+2 basic types                       -2.23 (SE 1.94, z -1.2)  decks 611, games 3032
+3+ basic types                      -2.00 (SE 1.07, z -1.9)  decks 2217, games 10776
+3+ minus 2                          +0.23 (SE 2.24, z +0.1)
+-- good
+2 basic types                       -2.05 (SE 4.16, z -0.5)  decks 114, games 616
+3+ basic types                      -0.75 (SE 1.78, z -0.4)  decks 612, games 3279
+3+ minus 2                          +1.31 (SE 4.40, z +0.3)
+-- average
+2 basic types                       -2.17 (SE 3.04, z -0.7)  decks 254, games 1268
+3+ basic types                      -1.68 (SE 1.55, z -1.1)  decks 979, games 4767
+3+ minus 2                          +0.49 (SE 3.54, z +0.1)
+-- weak
+2 basic types                       -2.47 (SE 3.24, z -0.8)  decks 243, games 1148
+3+ basic types                      -4.40 (SE 2.04, z -2.2)  decks 626, games 2730
+3+ minus 2                          -1.93 (SE 3.87, z -0.5)
+-- good minus weak (3+ types / 2 types / 3+ minus 2)
+3+ types                            +3.65 (SE 2.59, z +1.4)
+2 types                             +0.42 (SE 5.22, z +0.1)
+3+ minus 2, good minus weak         +3.23 (SE 5.76, z +0.6)
+
+== ALL ==
+-- all
+2 basic types                       -1.36 (SE 1.11, z -1.2)  decks 1808, games 8880
+3+ basic types                      -0.59 (SE 0.65, z -0.9)  decks 5619, games 27409
+3+ minus 2                          +0.77 (SE 1.33, z +0.6)
+-- good
+2 basic types                       -0.18 (SE 2.30, z -0.1)  decks 386, games 2104
+3+ basic types                      +0.42 (SE 1.13, z +0.4)  decks 1584, games 8703
+3+ minus 2                          +0.60 (SE 2.51, z +0.2)
+-- average
+2 basic types                       -0.32 (SE 1.88, z -0.2)  decks 637, games 3105
+3+ basic types                      -2.45 (SE 1.02, z -2.4)  decks 2137, games 10539
+3+ minus 2                          -2.13 (SE 2.18, z -1.0)
+-- weak
+2 basic types                       -3.01 (SE 1.80, z -1.7)  decks 784, games 3669
+3+ basic types                      +0.85 (SE 1.24, z +0.7)  decks 1887, games 8124
+3+ minus 2                          +3.86 (SE 2.27, z +1.7)
+-- good minus weak (3+ types / 2 types / 3+ minus 2)
+3+ types                            -0.43 (SE 1.62, z -0.3)
+2 types                             +2.84 (SE 2.98, z +1.0)
+3+ minus 2, good minus weak         -3.26 (SE 3.33, z -1.0)

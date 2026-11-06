@@ -1,0 +1,50 @@
+warning: Nix search path entry '/nix/var/nix/profiles/per-user/root/channels' does not exist, ignoring
+games 297964; Fblthp in deck 38087, in hand 20799
+
+=== any: 139 enablers ===
+P100  all      with  -0.46 (SE 0.53, z -0.9) | alone  +0.10 (SE 0.66, z +0.1) | synergy  -0.56 (SE 0.86, z -0.7)  decks 2169/1961
+P100  good     with  +0.53 (SE 0.91, z +0.6) | alone  +0.64 (SE 1.20, z +0.5) | synergy  -0.10 (SE 1.48, z -0.1)  decks 624/540
+P100  average  with  -0.45 (SE 0.80, z -0.6) | alone  +1.15 (SE 0.98, z +1.2) | synergy  -1.60 (SE 1.30, z -1.2)  decks 999/882
+P100  weak     with  -1.71 (SE 1.17, z -1.5) | alone  -2.35 (SE 1.29, z -1.8) | synergy  +0.65 (SE 1.81, z +0.4)  decks 546/539
+P100  good minus weak synergy  -0.75 (SE 2.35, z -0.3)
+ALL   all      with  -0.57 (SE 0.35, z -1.6) | alone  -0.40 (SE 0.43, z -0.9) | synergy  -0.17 (SE 0.54, z -0.3)  decks 5559/4998
+ALL   good     with  -0.15 (SE 0.55, z -0.3) | alone  -0.28 (SE 0.72, z -0.4) | synergy  +0.14 (SE 0.97, z +0.1)  decks 1653/1461
+ALL   average  with  -0.63 (SE 0.58, z -1.1) | alone  +0.77 (SE 0.76, z +1.0) | synergy  -1.41 (SE 0.94, z -1.5)  decks 2101/1855
+ALL   weak     with  -0.89 (SE 0.65, z -1.4) | alone  -1.91 (SE 0.68, z -2.8) | synergy  +1.03 (SE 0.91, z +1.1)  decks 1801/1677
+ALL   good minus weak synergy  -0.89 (SE 1.39, z -0.6)
+
+=== mill: 8 enablers ===
+P100  all      with  +0.62 (SE 1.11, z +0.6) | alone  +0.13 (SE 1.31, z +0.1) | synergy  +0.49 (SE 1.63, z +0.3)  decks 2169/1961
+P100  good     with  -0.94 (SE 1.95, z -0.5) | alone  -1.95 (SE 2.72, z -0.7) | synergy  +1.01 (SE 3.41, z +0.3)  decks 624/540
+P100  average  with  +1.66 (SE 1.52, z +1.1) | alone  +2.47 (SE 1.79, z +1.4) | synergy  -0.81 (SE 2.35, z -0.3)  decks 999/882
+P100  weak     with  -0.19 (SE 2.97, z -0.1) | alone  -2.88 (SE 2.93, z -1.0) | synergy  +2.69 (SE 3.99, z +0.7)  decks 546/539
+P100  good minus weak synergy  -1.67 (SE 5.34, z -0.3)
+ALL   all      with  +0.24 (SE 0.70, z +0.3) | alone  -0.31 (SE 0.89, z -0.3) | synergy  +0.55 (SE 1.13, z +0.5)  decks 5559/4998
+ALL   good     with  +0.91 (SE 1.17, z +0.8) | alone  -1.29 (SE 1.61, z -0.8) | synergy  +2.20 (SE 1.94, z +1.1)  decks 1653/1461
+ALL   average  with  -0.00 (SE 1.15, z -0.0) | alone  +0.73 (SE 1.32, z +0.6) | synergy  -0.73 (SE 1.85, z -0.4)  decks 2101/1855
+ALL   weak     with  -0.17 (SE 1.45, z -0.1) | alone  -0.80 (SE 1.63, z -0.5) | synergy  +0.63 (SE 2.14, z +0.3)  decks 1801/1677
+ALL   good minus weak synergy  +1.57 (SE 2.93, z +0.5)
+
+=== evasion: 46 enablers ===
+P100  all      with  +0.15 (SE 0.69, z +0.2) | alone  -0.51 (SE 0.81, z -0.6) | synergy  +0.66 (SE 1.09, z +0.6)  decks 2169/1961
+P100  good     with  +0.02 (SE 1.14, z +0.0) | alone  +2.08 (SE 1.48, z +1.4) | synergy  -2.06 (SE 1.89, z -1.1)  decks 624/540
+P100  average  with  +0.80 (SE 1.06, z +0.8) | alone  -1.14 (SE 1.18, z -1.0) | synergy  +1.94 (SE 1.59, z +1.2)  decks 999/882
+P100  weak     with  -0.97 (SE 1.47, z -0.7) | alone  -2.33 (SE 1.68, z -1.4) | synergy  +1.36 (SE 2.16, z +0.6)  decks 546/539
+P100  good minus weak synergy  -3.42 (SE 2.82, z -1.2)
+ALL   all      with  +0.27 (SE 0.44, z +0.6) | alone  -0.31 (SE 0.50, z -0.6) | synergy  +0.58 (SE 0.68, z +0.9)  decks 5559/4998
+ALL   good     with  +0.56 (SE 0.72, z +0.8) | alone  +1.20 (SE 0.84, z +1.4) | synergy  -0.64 (SE 1.09, z -0.6)  decks 1653/1461
+ALL   average  with  +0.47 (SE 0.71, z +0.7) | alone  -0.69 (SE 0.81, z -0.9) | synergy  +1.16 (SE 1.09, z +1.1)  decks 2101/1855
+ALL   weak     with  -0.29 (SE 0.77, z -0.4) | alone  -1.42 (SE 0.94, z -1.5) | synergy  +1.13 (SE 1.19, z +0.9)  decks 1801/1677
+ALL   good minus weak synergy  -1.77 (SE 1.61, z -1.1)
+
+=== draw: 103 enablers ===
+P100  all      with  -0.76 (SE 0.51, z -1.5) | alone  -0.11 (SE 0.61, z -0.2) | synergy  -0.65 (SE 0.81, z -0.8)  decks 2169/1961
+P100  good     with  +0.55 (SE 0.86, z +0.6) | alone  +0.78 (SE 1.12, z +0.7) | synergy  -0.23 (SE 1.44, z -0.2)  decks 624/540
+P100  average  with  -1.47 (SE 0.77, z -1.9) | alone  +0.75 (SE 0.91, z +0.8) | synergy  -2.21 (SE 1.23, z -1.8)  decks 999/882
+P100  weak     with  -1.08 (SE 1.18, z -0.9) | alone  -2.43 (SE 1.19, z -2.0) | synergy  +1.35 (SE 1.71, z +0.8)  decks 546/539
+P100  good minus weak synergy  -1.57 (SE 2.26, z -0.7)
+ALL   all      with  -0.77 (SE 0.34, z -2.3) | alone  -0.19 (SE 0.41, z -0.5) | synergy  -0.58 (SE 0.50, z -1.2)  decks 5559/4998
+ALL   good     with  -0.23 (SE 0.54, z -0.4) | alone  -0.21 (SE 0.74, z -0.3) | synergy  -0.03 (SE 0.93, z -0.0)  decks 1653/1461
+ALL   average  with  -1.06 (SE 0.56, z -1.9) | alone  +0.85 (SE 0.67, z +1.3) | synergy  -1.91 (SE 0.85, z -2.2)  decks 2101/1855
+ALL   weak     with  -0.90 (SE 0.67, z -1.3) | alone  -1.35 (SE 0.64, z -2.1) | synergy  +0.45 (SE 0.90, z +0.5)  decks 1801/1677
+ALL   good minus weak synergy  -0.48 (SE 1.34, z -0.4)
