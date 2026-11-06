@@ -146,6 +146,7 @@ class DraftAdvisorV2:
     SPLASH = 0.85  # one off-colour pip with a fixer for it in the pool: shrunk WR × SPLASH (0 = off)
     SPEC_SPLASH = 1.0  # early-draft splash before any fixing exists: shrunk WR × SPEC_SPLASH × (1 − commitment progress); 0 = off
     OFF_PLAY = False  # a card a lane cannot cast is worth replacement + (its value - replacement) x the chance top players play such a card outside their core pair, by its strength and off-colour pips (fitted.json "offcolour", tools/fit_offcolour.py); replaces SPLASH and SPEC_SPLASH for those cards
+    SPLASH_MIN_GIH = 0.0  # Akshin's rule: off-colour cards get splash value (OFF_PLAY, SPLASH, SPEC_SPLASH / SPEC_ALL, and the fixing gain lands get from them) only at this GIH WR or more, in the lane, else All Decks; 0 = off. 56.5: lowest quarter of 60%+ players' splash cards (FRA, 6,012 cards; median 57.4)
     SPEC_ALL = False  # False: only cards castable in no two-colour lane (three-colour cards) get it; True: any card one pip off
     SPEC_ALL_PULL = True  # with SPEC_ALL: a one-pip-off card also pulls P(lane) toward the lanes it could splash into; False = it pulls only toward its own colours (and three-colour cards as before)
     SPLIT = True  # two orders: Power (best card if you end up in its colours) and Fit (best for the colours you are in); branch to Power above a learnt gap
@@ -406,14 +407,22 @@ class DraftAdvisorV2:
         Narrow by default: only cards no two-colour lane can cast (three-colour cards), so a
         mono-colour card keeps pulling v2 into its own colours early (round 1's main gain).
         """
-        if self.SPEC_SPLASH <= 0 or self.progress >= 1 or len(off_pips(card, lane)) != 1:
+        if self.SPEC_SPLASH <= 0 or self.progress >= 1 or len(off_pips(card, lane)) != 1 or not self.splash_worthy(card, lane):
             return False
         wide = self.SPEC_ALL and (self.SPEC_ALL_PULL or not pull)
         return wide or not any(castable(card, other) for other in LANES)
 
+    def splash_worthy(self, card, lane):
+        """SPLASH_MIN_GIH: the card's GIH WR in the lane (All Decks where the lane has none) reaches the floor; True when off."""
+        if self.SPLASH_MIN_GIH <= 0:
+            return True
+        from companion.advisor_v2 import deckbuilder  # deckbuilder imports this module
+
+        return deckbuilder._wr(card, lane[:2]) >= self.SPLASH_MIN_GIH
+
     def splash_colour(self, card, lane):
         """The colour a one-pip splash needs, when splashing is on and the pool has a fixer for it; else None."""
-        if self.SPLASH <= 0:
+        if self.SPLASH <= 0 or not self.splash_worthy(card, lane):
             return None
         off = off_pips(card, lane)
         if len(off) != 1:
@@ -428,7 +437,7 @@ class DraftAdvisorV2:
             if "Land" in (spell.get("types") or []):
                 continue
             off = off_pips(spell, lane)
-            if len(off) == 1 and any(c in off[0] for c in new):
+            if len(off) == 1 and any(c in off[0] for c in new) and self.splash_worthy(spell, lane):
                 gain += max(0.0, self.shrunk_wr(spell, lane)[0] * self.SPLASH - self.replacement)
         return min(self.FIX_CAP, self.FIX_WEIGHT * gain)
 
@@ -446,7 +455,7 @@ class DraftAdvisorV2:
             if "Land" in (spell.get("types") or []):
                 continue
             off = off_pips(spell, lane)
-            if len(off) == 1 and any(c in off[0] for c in new):
+            if len(off) == 1 and any(c in off[0] for c in new) and self.splash_worthy(spell, lane):
                 gain += max(0.0, self.shrunk_wr(spell, lane)[0] * self.SPLASH - self.replacement)
         return min(self.FIX_CAP, self.FIX_WEIGHT * gain)
 
@@ -515,6 +524,8 @@ class DraftAdvisorV2:
                 return self.replacement + self.fixing_gain(card, lane) + self.FIX_BONUS  # taps for the lane and fixes a splash
             return self.replacement
         if not castable(card, lane):
+            if not self.splash_worthy(card, lane):
+                return self.replacement
             if self.OFF_PLAY and self.offcolour:
                 return self.replacement + max(0.0, self.shrunk_wr(card, lane)[0] - self.replacement) * self.off_play(card, lane)
             if self.splash_colour(card, lane):

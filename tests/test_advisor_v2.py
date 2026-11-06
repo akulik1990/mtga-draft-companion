@@ -367,12 +367,44 @@ def test_splash_sources_switches(monkeypatch):
     single = {"name": "S", "mana_cost": "{3}{B}", "cmc": 4, "types": ["Creature"]}
     double = {"name": "D", "mana_cost": "{4}{B}{B}", "cmc": 6, "types": ["Creature"]}
     dual = {"name": "WB dual", "types": ["Land"], "colors": ["W", "B"]}
-    assert not db.splashable(double, "WU", "B")
+    # 2+ off-lane pips are never splashable; a hybrid pip the lane pays does not count
+    assert db.splashable(single, "WU", "B")
+    assert not db.splashable(double, "WU", "B") and not db.splashable({**double, "mana_cost": "{3}{B}{B}{B}"}, "WU", "B")
+    assert db.splashable({**double, "mana_cost": "{4}{W/B}{B}"}, "WU", "B")
+    assert not db.splashable({**double, "mana_cost": "{4}{R/B}{B}"}, "WU", "B")
+    # CANTRIP_STEP with LAND_STEPS: 17 - 2 - 1 is clamped to 15
+    opt = {"name": "Opt", "mana_cost": "{U}", "cmc": 1, "types": ["Instant"], "oracle_text": "Scry 1. Draw a card."}
+    cyc = {"name": "Cyc", "mana_cost": "{4}{W}", "cmc": 5, "types": ["Creature"], "oracle_text": "Basic landcycling {1}"}
+    wu = [{"name": "WU dual", "types": ["Land"], "colors": ["W", "U"]}] * 2
+    assert db.is_cantrip(opt) and not db.is_cantrip(single)
+    monkeypatch.setattr(db, "CANTRIP_STEP", True)
+    assert db.land_count([opt, opt], [], "WU") == 16 and db.land_count([opt], [], "WU") == 17
+    monkeypatch.setattr(db, "LAND_STEPS", True)
+    assert db.land_count([opt, opt, cyc, cyc], wu, "WU") == 15 and db.land_count([cyc, cyc], wu, "WU") == 15
+    monkeypatch.setattr(db, "CANTRIP_STEP", False)
+    monkeypatch.setattr(db, "LAND_STEPS", False)
+    # SPLASH_MIN_GIH: the pair's GIH WR, All Decks where the pair has none
+    rated = {**single, "deck_colors": {"All Decks": {"gihwr": 57.0}, "WU": {"gihwr": 55.0}}}
+    monkeypatch.setattr(db, "SPLASH_MIN_GIH", 56.5)
+    assert not db.splashable(rated, "WU", "B") and db.splashable({**rated, "deck_colors": {"All Decks": {"gihwr": 57.0}}}, "WU", "B")
+    monkeypatch.setattr(db, "SPLASH_MIN_GIH", 0.0)
     # one splash card wants 3 sources: a dual and a landcycler leave 1 basic; lands only, 2
     assert db.lands_for(plains + [single], "WU", [dual], "B", fixers=1)["Swamp"] == 1
     monkeypatch.setattr(db, "SPLASH_LANDS_ONLY", True)
     assert db.lands_for(plains + [single], "WU", [dual], "B", fixers=1)["Swamp"] == 2
-    monkeypatch.setattr(db, "DP_SPLASH_SOURCES", 7)
-    assert db.splashable(double, "WU", "B") and not db.splashable({**double, "mana_cost": "{4}{B}{R}"}, "WU", "B")
+    # DP_BOMB_SPLASH: a top-list bomb with 2 splash pips is splashable; its mana must pass Akshin's rule
+    monkeypatch.setattr(db, "DP_BOMB_SPLASH", True)
+    monkeypatch.setattr(db, "dp_bombs", lambda s: frozenset({"D"}))
+    assert db.splashable(double, "WU", "B") and not db.splashable({**double, "name": "D2"}, "WU", "B")
+    room = {"name": "Room", "types": ["Land"], "colors": []}
+    cycler = {"name": "C", "mana_cost": "{3}{W}", "cmc": 4, "types": ["Creature"], "oracle_text": "Swampcycling {2}"}
+    # 5 sources: a dual, Room and a Swampcycler leave 2 basics
+    assert db.dp_fixing(plains + [double, cycler], "WU", [dual, room], "B") == 3
+    assert db.lands_for(plains + [double, cycler], "WU", [dual, room], "B")["Swamp"] == 2
+    # one dual: 4 basics wanted; cap 2 gives 3 sources, short of 4: stays out; with Room, 4 sources at the cap is accepted
+    monkeypatch.setattr(db, "MAX_SPLASH_BASICS", 2)
     basics = db.lands_for(plains + [double], "WU", [dual], "B")
-    assert basics["Swamp"] == 6 and sum(basics.values()) == db.LANDS - 1
+    assert basics["Swamp"] == 2 and db.dp_short(plains + [double], "WU", [dual], basics, "B")
+    basics = db.lands_for(plains + [double], "WU", [dual, room], "B")
+    assert basics["Swamp"] == 2 and not db.dp_short(plains + [double], "WU", [dual, room], basics, "B")
+    assert not db.dp_short(plains + [single], "WU", [], {"Swamp": 0}, "B")  # single pip: not checked

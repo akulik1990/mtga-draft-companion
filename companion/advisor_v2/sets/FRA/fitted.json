@@ -622,6 +622,11 @@
    "how": "tools/removal_skip.py: mean count of the listed removal cards in 60%+ players' decks per pair",
    "date": "2026-11-06",
    "commit": "b88d733"
+  },
+  "splash_lands": {
+   "how": "tools/fit_splash.py --lands-only: the splash rule's inputs (edge, fixing, playables, above, duals, depth, removal, cmc) with fixing from lands only (deckbuilder.SPLASH_RULE_LANDS_ONLY reads this section)",
+   "date": "2026-11-06",
+   "commit": "92a3904"
   }
  },
  "prefs": {
@@ -10253,5 +10258,52 @@
    "WUG": 1.36,
    "WUR": 1.26
   }
+ },
+ "splash_lands": {
+  "inputs": [
+   "edge",
+   "fixing",
+   "playables",
+   "above",
+   "duals",
+   "depth",
+   "removal",
+   "cmc"
+  ],
+  "w": [
+   0.0905,
+   1.1782,
+   1.2826,
+   -0.5341,
+   0.0174,
+   0.7868,
+   0.4701,
+   0.0313,
+   0.2068
+  ],
+  "mu": [
+   4.4264,
+   1.9105,
+   30.7858,
+   2.2161,
+   1.5125,
+   53.3436,
+   0.3828,
+   3.2459
+  ],
+  "sd": [
+   4.6019,
+   1.6104,
+   3.4701,
+   1.6757,
+   1.4551,
+   2.0236,
+   0.4861,
+   1.2451
+  ],
+  "n": 6355,
+  "rate": 0.494,
+  "heldout_accuracy": 0.867,
+  "heldout_accuracy_old_fixing": 0.873
  }
 }
