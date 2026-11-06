@@ -248,7 +248,13 @@ def render(rec, rows, commit, pool):
     for b in ours:
         L += ["", f"Builder: {b['label']}, deck model WR {b['model_wr']} (builder objective {b['deck_wr']}), {b['creatures']} creatures. {fmt_deck(b['deck'])}"]
         if his:
-            mine, theirs = ({c["name"]: c["count"] for c in d if "Basic" not in (c.get("types") or [])} for d in (b["deck"], his["deck"]))
+            def counts(d):
+                out = {}
+                for c in d:  # the same name can be listed twice (e.g. typed Land and Basic): sum, don't overwrite
+                    if "Basic" not in (c.get("types") or []):
+                        out[c["name"]] = out.get(c["name"], 0) + c["count"]
+                return out
+            mine, theirs = counts(b["deck"]), counts(his["deck"])
             only_b = sorted(n for n in mine if n not in theirs)
             only_h = sorted(n for n in theirs if n not in mine)
             L.append(f"Only in the builder's: {', '.join(only_b) or '-'}. Only in his: {', '.join(only_h) or '-'}.")
