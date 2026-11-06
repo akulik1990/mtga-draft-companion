@@ -92,6 +92,9 @@ def load_set(dataset_name):
     return SetMetrics(ds), cards
 
 
+BASICS = {"Plains", "Island", "Swamp", "Mountain", "Forest"}
+
+
 def lanes_text(lanes, k=3):
     return ", ".join(f"{l} {p:.0%}" for l, p in sorted(lanes.items(), key=lambda kv: -kv[1])[:k])
 
@@ -104,26 +107,33 @@ def replay(vid):
     commit = subprocess.run(["git", "-C", str(REPO), "rev-parse", "--short", "HEAD"], capture_output=True, text=True).stdout.strip()
     pool, seen, rows = [], [], []
     for p in rec["picks"]:
-        pack = cards(p["pack_cards"])
+        names = [n for n in p["pack_cards"] if not n.lower().startswith("unreadable")]  # unreadable gaps; other unknown names still raise
+        pack = cards(names)
         # Packs seen so far including this one, as the replay harness (tools/replay/run.py) and the live session pass them.
-        seen.append((p["pack"], p["pick"], pack))
+        if pack:
+            seen.append((p["pack"], p["pick"], pack))
         adv = DraftAdvisorV2(metrics, list(pool), seen_packs=list(seen))
-        recs = adv.evaluate_pack(pack, p["pick"], current_pack=p["pack"])
+        recs = adv.evaluate_pack(pack, p["pick"], current_pack=p["pack"]) if pack else []
         scores = {}
         for r in recs:
             scores.setdefault(r.card_name, r)
         order = sorted(scores.values(), key=lambda r: -r.contextual_score)
         names = [r.card_name for r in order]
         his = scores.get(p["taken"])
-        pool.append(cards([p["taken"]])[0])
+        t = p["taken"]
+        scored = bool(t) and not t.lower().startswith("unreadable") and t not in BASICS
+        if scored:
+            pool.append(cards([t])[0])
         after = DraftAdvisorV2(metrics, list(pool), seen_packs=list(seen))
-        rows.append({"p": p, "order": order, "his": his, "rank": names.index(p["taken"]) + 1 if p["taken"] in names else None,
+        rows.append({"p": p, "order": order, "his": his, "rank": names.index(t) + 1 if scored and t in names else None,
+                     "scored": scored, "dropped": len(p["pack_cards"]) - len(names),
                      "lanes_before": adv.lanes, "lanes_after": after.lanes})
+    rows_s = [r for r in rows if r["scored"]]
     report = render(rec, rows, commit, pool)
     out = OUT / vid / f"replay-{commit}.md"
     out.write_text(report, encoding="utf-8")
     write_engine(vid, rec, rows, commit, pool)
-    print(f"{vid}: top-1 {sum(r['rank'] == 1 for r in rows)}/{len(rows)}, top-3 {sum((r['rank'] or 99) <= 3 for r in rows)}/{len(rows)} -> {out}")
+    print(f"{vid}: top-1 {sum(r['rank'] == 1 for r in rows_s)}/{len(rows_s)}, top-3 {sum((r['rank'] or 99) <= 3 for r in rows_s)}/{len(rows_s)}, not scored {len(rows) - len(rows_s)}, dropped cards {sum(r['dropped'] for r in rows)} -> {out}")
 
 
 def write_engine(vid, rec, rows, commit, pool):
@@ -135,11 +145,12 @@ def write_engine(vid, rec, rows, commit, pool):
                 "cards": [{"name": c["name"], "count": c["count"]} for c in d["deck"]]}
 
     picks = []
+    scored = [r for r in rows if r["scored"]]
     for r in rows:
         p, o, h, la = r["p"], r["order"], r["his"], r["lanes_after"]
         picks.append({"pack": p["pack"], "pick": p["pick"], "taken": p["taken"],
                       "top3": [{"name": x.card_name, "score": round(x.contextual_score, 2)} for x in o[:3]],
-                      "his_score": h and round(h.contextual_score, 2), "his_rank": r["rank"],
+                      "his_score": h and round(h.contextual_score, 2), "his_rank": r["rank"], "scored": r["scored"], "dropped": r["dropped"],
                       "reasons_top": list(o[0].reasoning) if o else [], "reasons_his": list(h.reasoning) if h else [],
                       "lanes_after": {k: round(v, 3) for k, v in sorted(la.items(), key=lambda kv: -kv[1])[:4]}})
     try:
@@ -148,7 +159,8 @@ def write_engine(vid, rec, rows, commit, pool):
         deck_rec = None
     ours, his = builds(pool, deck_rec)
     data = {"commit": commit, "date": datetime.date.today().isoformat(), "dataset": rec.get("dataset"),
-            "top1": sum(r["rank"] == 1 for r in rows), "top3": sum((r["rank"] or 99) <= 3 for r in rows), "n": len(rows),
+            "top1": sum(r["rank"] == 1 for r in scored), "top3": sum((r["rank"] or 99) <= 3 for r in scored), "n": len(scored),
+            "not_scored": len(rows) - len(scored), "dropped_cards": sum(r["dropped"] for r in rows),
             "picks": picks, "builder": [deck({**b, "deck_wr": b["model_wr"]}) for b in ours], "his_deck": his and deck(his)}
     d = OUT / vid / "engine"
     d.mkdir(exist_ok=True)
@@ -188,12 +200,15 @@ def render(rec, rows, commit, pool):
          f"Engine: DraftAdvisorV2 at {commit}, dataset {rec.get('dataset')}. His pool rebuilt pick by pick; seen_packs = every pack so far including the current one.", ""]
     L += ["## Agreement", "", "| Pack | Picks | v2 top-1 | v2 top-3 |", "|---|---|---|---|"]
     for pk in (1, 2, 3, None):
-        rs = [r for r in rows if pk is None or r["p"]["pack"] == pk]
+        rs = [r for r in rows if r["scored"] and (pk is None or r["p"]["pack"] == pk)]
+        if not rs:
+            continue
         n, t1, t3 = len(rs), sum(r["rank"] == 1 for r in rs), sum((r["rank"] or 99) <= 3 for r in rs)
         L.append(f"| {pk or 'all'} | {n} | {t1} ({t1 / n:.0%}) | {t3} ({t3 / n:.0%}) |")
-    forced = [r for r in rows if len(r["p"]["pack_cards"]) <= 2]
-    rs = [r for r in rows if len(r["p"]["pack_cards"]) > 2]
-    L += ["", f"Without the {len(forced)} picks from packs of one or two cards: top-1 {sum(r['rank'] == 1 for r in rs)}/{len(rs)}, "
+    forced = [r for r in rows if r["scored"] and len(r["p"]["pack_cards"]) <= 2]
+    rs = [r for r in rows if r["scored"] and len(r["p"]["pack_cards"]) > 2]
+    L += ["", f"{sum(not r['scored'] for r in rows)} picks not scored (unreadable or basic land taken), {sum(r['dropped'] for r in rows)} pack cards dropped as unreadable. "
+              f"Without the {len(forced)} picks from packs of one or two cards: top-1 {sum(r['rank'] == 1 for r in rs)}/{len(rs)}, "
               f"top-3 {sum((r['rank'] or 99) <= 3 for r in rs)}/{len(rs)}.", ""]
 
     L += ["## Colour path", "",
@@ -210,6 +225,9 @@ def render(rec, rows, commit, pool):
           "|---|---|---|---|---|---|---|---|---|---|"]
     for r in rows:
         p, o, h = r["p"], r["order"], r["his"]
+        if not r["scored"]:
+            L.append(f"| P{p['pack']}p{p['pick']} | {p['taken'] or '-'} | not scored (unreadable) |" + " - |" * 6 + f" {p['reasoning'].replace('|', '/')} |")
+            continue
         top = [f"{x.card_name} {x.contextual_score:.2f}" for x in o[:3]] + ["-"] * 3
         gap = f"{o[0].contextual_score - h.contextual_score:.2f}" if h else "-"
         reason = (o[0].reasoning[0] if o and o[0].reasoning else "").replace("|", "/")
