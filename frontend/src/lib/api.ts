@@ -153,12 +153,12 @@ async function staticVideo(id: string): Promise<VideoData> {
 export const IDEA_STATUSES = ['untested', 'testing', 'confirmed', 'rejected', 'shipped'] as const;
 export type IdeaStatus = { status: string; result: string; doc: string };
 export type VideoRow = { id: string; title: string; player: string; set: string; url: string; added: string; top1: number | null; top3: number | null; n: number | null; commit: string | null };
-export type VideoPick = { pack: number; pick: number; time: string; taken: string; reasoning: string; pack_cards: string[]; plan?: string };
+export type VideoPick = { pack: number; pick: number; time: string; taken: string; reasoning: string; pack_cards: string[]; plan?: string; considered?: Record<string, string> };
 export type Idea = { id: string; time: string | number; phase: string; claim: string; quote?: string; cards?: string[]; kind?: string; engine_area?: string; test_idea?: string };
 export type EngineDeck = { main: string | null; splash: string | null; deck_wr: number | null; label: string | null; cards: { name: string; count: number }[] };
 export type EnginePick = {
 	pack: number; pick: number; taken: string; top3: { name: string; score: number }[]; his_score: number | null; his_rank: number | null;
-	reasons_top: string[]; reasons_his: string[]; lanes_after: Record<string, number>;
+	reasons_top: string[]; reasons_his: string[]; lanes_after: Record<string, number>; scored?: boolean;
 };
 export type VideoEngine = { commit: string; date: string; top1: number; top3: number; n: number; picks: EnginePick[]; builder: EngineDeck[]; his_deck: EngineDeck | null };
 export type VideoData = {

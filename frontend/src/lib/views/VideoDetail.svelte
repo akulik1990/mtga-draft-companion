@@ -50,6 +50,12 @@
 		if (typeof t === 'number') return Math.floor(t);
 		return String(t).split(/[-–]/)[0].trim().split(':').reduce((a, p) => a * 60 + (parseInt(p) || 0), 0);
 	}
+	// display only: drop verbatim quoted speech (a quote opens at a word boundary, closes with the same mark before punctuation/end)
+	const unquote = (t: string | undefined) => {
+		let cut = false;
+		const out = (t ?? '').replace(/(^|\W)(['"])(.+?)\2(?=[\s.,;:!?)]|$)/g, (_, pre, _q, body) => (body.trim().split(/\s+/).length >= 4 ? ((cut = true), pre) : pre + body)).replace(/\s+/g, ' ').trim();
+		return cut ? out.replace(/([;,:]\s*){2,}/g, '; ').replace(/^[\s;:,.\-]+|[\s;:,.\-]+$/g, '').replace(/\s+([.,;:])/g, '$1') : out;
+	};
 	const mss = (t: string | number) => { const s = secs(t); return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`; };
 
 	onMount(async () => {
@@ -142,22 +148,45 @@
 		</div>
 		<div bind:this={box} role="list" onwheel={hold} ontouchmove={hold} class="relative max-h-[40vh] overflow-y-auto overflow-x-hidden rounded border border-zinc-800 text-xs">
 			{#each rows as { p, e }, i (key(p))}
-				{@const top = e && Object.entries(e.lanes_after)[0]}
 				{@const miss = !!e && e.top3[0]?.name !== p.taken}
-				<div data-i={i} role="presentation" onclick={() => p.time && seek(p.time)} class="{p.time ? 'cursor-pointer ' : ''}border-t border-zinc-900 px-2 py-1 first:border-t-0 {i === active ? 'bg-sky-950 ring-1 ring-inset ring-sky-600' : miss ? 'bg-amber-950/30' : ''}">
+				{@const inTop = !!e && e.top3.some((c) => c.name === p.taken)}
+				{@const lanes = e ? Object.entries(e.lanes_after).slice(0, 3) : []}
+				<div data-i={i} role="presentation" onclick={() => p.time && seek(p.time)} class="{p.time ? 'cursor-pointer ' : ''}border-t border-zinc-900 px-2 py-1.5 first:border-t-0 {i === active ? 'bg-sky-950 ring-1 ring-inset ring-sky-600' : miss ? 'bg-amber-950/30' : ''}">
 					<div class="flex flex-wrap items-baseline gap-x-2">
 						{#if p.time}<span class="text-sky-400 tabular-nums">{mss(p.time)}</span>{/if}
 						<span class="text-zinc-500">P{p.pack}p{p.pick}</span>
-						<span class="text-sm font-medium">{p.taken}</span>
-						{#if e}<span class={miss ? 'text-amber-400' : 'text-emerald-400'}>{miss ? `v2 rank ${e.his_rank ?? '?'}` : 'v2 #1 ✓'}</span>{/if}
-						{#if top}<span class="ml-auto text-zinc-500">lane {top[0]} {lanePct(top[1])}</span>{/if}
+						<span class="text-sm font-medium break-words">{p.taken}</span>
+						{#if e && e.scored !== false}<span class={miss ? 'text-amber-400' : 'text-emerald-400'}>{miss ? `v2 ranked it #${e.his_rank ?? '?'}` : 'v2 agrees ✓'}</span>{/if}
 					</div>
-					{#if e}
-						<div class="text-zinc-400">
-							{#each e.top3 as c, k}<span class="mr-2 whitespace-nowrap {c.name === p.taken ? 'text-emerald-400' : ''}">{k + 1}. {c.name} <span class="text-zinc-500 tabular-nums">{c.score.toFixed(1)}</span></span>{/each}
-						</div>
+					<div class="mt-1 border-l-2 border-sky-700 pl-2 text-zinc-300">
+						<span class="font-semibold text-sky-400">HIM</span>
+						{#if unquote(p.plan)}<div class="break-words"><span class="text-zinc-500">plan:</span> {unquote(p.plan)}</div>{/if}
+						{#if unquote(p.reasoning)}<div class="break-words">{unquote(p.reasoning)}</div>{/if}
+						{#if p.considered && Object.keys(p.considered).length}
+							<div class="text-zinc-500">considered:</div>
+							{#each Object.entries(p.considered) as [card, why]}<div class="break-words"><span class="text-zinc-100">{card}</span>{unquote(why) ? `: ${unquote(why)}` : ''}</div>{/each}
+						{/if}
+					</div>
+					<div class="mt-1 border-l-2 border-amber-600 pl-2 text-zinc-400">
+						<span class="font-semibold text-amber-400">ENGINE</span>
+						{#if !e || e.scored === false}
+							<div>engine: not scored</div>
+						{:else}
+							{#each e.top3 as c, k}<div class="break-words {c.name === p.taken ? 'font-semibold text-emerald-400' : ''}">{k + 1}. {c.name} <span class="text-zinc-500 tabular-nums">{c.score.toFixed(1)}</span></div>{/each}
+							{#if !inTop}<div class="break-words text-emerald-400">his card: rank {e.his_rank ?? '?'}, score {e.his_score?.toFixed(1) ?? '?'}</div>{/if}
+							{#if miss && e.his_score != null && e.top3[0]}<div class="text-amber-400">gap to #1: −{(e.top3[0].score - e.his_score).toFixed(1)}</div>{/if}
+							{#if e.reasons_top.length}<div class="break-words"><span class="text-zinc-500">why #1:</span> {e.reasons_top.join(' · ')}</div>{/if}
+							{#if miss && e.reasons_his.length}<div class="break-words"><span class="text-zinc-500">why his card:</span> {e.reasons_his.join(' · ')}</div>{/if}
+							{#if lanes.length}<div><span class="text-zinc-500">lanes after the pick:</span> {lanes.map(([l, v]) => `${l} ${lanePct(v)}`).join(' · ')}</div>{/if}
+						{/if}
+					</div>
+					{#if p.pack_cards?.length}
+						<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_noninteractive_element_interactions -->
+						<details class="mt-1 text-zinc-500" onclick={(ev) => ev.stopPropagation()}>
+							<summary class="cursor-pointer">pack ({p.pack_cards.length})</summary>
+							<div class="break-words">{p.pack_cards.join(', ')}</div>
+						</details>
 					{/if}
-					{#if p.reasoning || p.plan}<div class="text-zinc-300">{p.plan ? `[${p.plan}] ` : ''}{p.reasoning}</div>{/if}
 				</div>
 			{:else}
 				<p class="p-2 text-zinc-500">no picks recorded</p>
@@ -208,7 +237,7 @@
 									{/if}
 								</td>
 							{/each}
-							<td class="max-w-sm pr-3 text-xs text-zinc-300">{p.reasoning}</td>
+							<td class="max-w-sm pr-3 text-xs text-zinc-300">{unquote(p.reasoning)}</td>
 							<td class="max-w-sm text-xs text-zinc-400">
 								{#if e}
 									{#if !miss}
