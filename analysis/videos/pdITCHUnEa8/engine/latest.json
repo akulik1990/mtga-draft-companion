@@ -1,5 +1,5 @@
 {
- "commit": "6a31baa",
+ "commit": "e6a9d84",
  "date": "2026-11-06",
  "dataset": "FRA_PremierDraft_All_Data.json",
  "top1": 25,
@@ -78,7 +78,7 @@
     "castable in 32% of likely lanes"
    ],
    "reasons_his": [
-    "Fit #6 \u00b7 Power #5",
+    "Fit #6 \u00b7 Power #6",
     "WR 18% \u2192 off-colour",
     "UR 18% \u2192 off-colour",
     "castable in 32% of likely lanes"
@@ -154,12 +154,12 @@
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #3",
+    "Fit #1 \u00b7 Power #4",
     "RG 59% \u2192 55.6 (n=21835)",
     "WG 13% \u2192 53.6 (n=14545)"
    ],
    "reasons_his": [
-    "Fit #2 \u00b7 Power #5",
+    "Fit #2 \u00b7 Power #6",
     "RG 50% \u2192 54.7 (n=9174)",
     "WG 11% \u2192 52.0 (n=4860)"
    ],
@@ -342,7 +342,7 @@
     },
     {
      "name": "Transformative Commons",
-     "score": 48.58
+     "score": 48.59
     }
    ],
    "his_score": 57.01,
@@ -350,12 +350,12 @@
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #1",
+    "Fit #1 \u00b7 Power #2",
     "RG 73% \u2192 54.4 (n=17070)",
     "UR 13% \u2192 56.2 (n=14286)"
    ],
    "reasons_his": [
-    "Fit #1 \u00b7 Power #1",
+    "Fit #1 \u00b7 Power #2",
     "RG 73% \u2192 54.4 (n=17070)",
     "UR 13% \u2192 56.2 (n=14286)"
    ],
@@ -491,14 +491,14 @@
    "top3": [
     {
      "name": "Innovative Commons",
-     "score": 69.71
+     "score": 70.36
     },
     {
      "name": "Artifist Acumen",
      "score": 58.24
     }
    ],
-   "his_score": 69.71,
+   "his_score": 70.36,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
@@ -571,7 +571,7 @@
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #7",
+    "Fit #1 \u00b7 Power #8",
     "RG 80% \u2192 54.9 (n=29150)",
     "UR 11% \u2192 54.7 (n=7404)"
    ],
@@ -720,7 +720,7 @@
     },
     {
      "name": "Rockfall Vale",
-     "score": 47.92
+     "score": 48.75
     }
    ],
    "his_score": 58.24,
@@ -728,12 +728,12 @@
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #3",
+    "Fit #1 \u00b7 Power #5",
     "UR 68% \u2192 54.9 (n=17734)",
     "URG 31% \u2192 54.4 (n=5314)"
    ],
    "reasons_his": [
-    "Fit #1 \u00b7 Power #3",
+    "Fit #1 \u00b7 Power #5",
     "UR 68% \u2192 54.9 (n=17734)",
     "URG 31% \u2192 54.4 (n=5314)"
    ],
@@ -1110,12 +1110,12 @@
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #3",
+    "Fit #1 \u00b7 Power #4",
     "UR 85% \u2192 55.5 (n=2963)",
     "URG 15% \u2192 56.7 (n=851)"
    ],
    "reasons_his": [
-    "Fit #2 \u00b7 Power #6",
+    "Fit #2 \u00b7 Power #7",
     "UR 85% \u2192 54.9 (n=6788)",
     "URG 15% \u2192 50.5 (rarely played there)"
    ],
@@ -1406,7 +1406,7 @@
     },
     {
      "name": "Transformative Commons",
-     "score": 51.48
+     "score": 51.56
     },
     {
      "name": "Divining Duelist",

@@ -1,8 +1,8 @@
 {
- "commit": "6a31baa",
+ "commit": "e6a9d84",
  "date": "2026-11-06",
  "dataset": "FRA_PremierDraft_All_Data.json",
- "top1": 34,
+ "top1": 33,
  "top3": 40,
  "n": 41,
  "not_scored": 1,
@@ -219,29 +219,31 @@
    "taken": "Thalia, the Survivor",
    "top3": [
     {
+     "name": "Vigorbloom Annex",
+     "score": 53.84
+    },
+    {
      "name": "Thalia, the Survivor",
      "score": 53.74
     },
     {
      "name": "Silence the Echo",
      "score": 47.91
-    },
-    {
-     "name": "Vigorbloom Annex",
-     "score": 46.59
     }
    ],
    "his_score": 53.74,
-   "his_rank": 1,
+   "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #1",
-    "UB 26% \u2192 off-colour",
-    "WU 23% \u2192 56.7 (n=8155)"
+    "Branch: +1.6 over Thalia, the Survivor, above the -0.4 top drafters switch at",
+    "Fit #3 \u00b7 Power #1",
+    "UB 26% \u2192 fixes a splash (+1.0)",
+    "WU 23% \u2192 off-colour",
+    "castable in 6% of likely lanes"
    ],
    "reasons_his": [
-    "Fit #1 \u00b7 Power #1",
+    "Fit #1 \u00b7 Power #2",
     "UB 26% \u2192 off-colour",
     "WU 23% \u2192 56.7 (n=8155)"
    ],
@@ -263,7 +265,7 @@
     },
     {
      "name": "Formidable Commons",
-     "score": 46.38
+     "score": 46.4
     },
     {
      "name": "Winter, Tormented Loner",
@@ -304,7 +306,7 @@
     },
     {
      "name": "Innovative Commons",
-     "score": 49.09
+     "score": 49.1
     },
     {
      "name": "Sphinx's Approach",
@@ -357,7 +359,7 @@
     "WU 95% \u2192 58.7 (n=11908)"
    ],
    "reasons_his": [
-    "Fit #2 \u00b7 Power #3",
+    "Fit #2 \u00b7 Power #4",
     "WU 95% \u2192 56.5 (n=15376)"
    ],
    "lanes_after": {
@@ -712,12 +714,12 @@
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #4",
+    "Fit #1 \u00b7 Power #5",
     "WU 51% \u2192 56.1 (n=10848)",
     "WUR 49% \u2192 54.5 (n=932)"
    ],
    "reasons_his": [
-    "Fit #1 \u00b7 Power #4",
+    "Fit #1 \u00b7 Power #5",
     "WU 51% \u2192 56.1 (n=10848)",
     "WUR 49% \u2192 54.5 (n=932)"
    ],
@@ -1024,13 +1026,13 @@
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #2",
+    "Fit #1 \u00b7 Power #1",
     "WU 70% \u2192 splash B (fixing 1) 45.5",
     "WUR 30% \u2192 splash B (fixing 1) 45.5",
     "castable in 0% of likely lanes"
    ],
    "reasons_his": [
-    "Fit #1 \u00b7 Power #2",
+    "Fit #1 \u00b7 Power #1",
     "WU 70% \u2192 splash B (fixing 1) 45.5",
     "WUR 30% \u2192 splash B (fixing 1) 45.5",
     "castable in 0% of likely lanes"
@@ -1254,7 +1256,7 @@
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #2",
+    "Fit #1 \u00b7 Power #3",
     "WU 75% \u2192 57.0 (n=23587)",
     "WUB 25% \u2192 56.1 (n=3245)"
    ],
@@ -1359,7 +1361,7 @@
     },
     {
      "name": "Fatehold Annex",
-     "score": 59.6
+     "score": 61.59
     },
     {
      "name": "Arni, Humble Scribe",

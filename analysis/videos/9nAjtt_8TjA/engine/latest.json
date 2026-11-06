@@ -1,8 +1,8 @@
 {
- "commit": "6a31baa",
+ "commit": "e6a9d84",
  "date": "2026-11-06",
  "dataset": "FRA_PremierDraft_All_Data.json",
- "top1": 25,
+ "top1": 24,
  "top3": 36,
  "n": 39,
  "not_scored": 3,
@@ -330,12 +330,12 @@
    "taken": "Cryotheory Adept",
    "top3": [
     {
-     "name": "Cryotheory Adept",
-     "score": 49.91
+     "name": "Stingerquill Annex",
+     "score": 50.01
     },
     {
-     "name": "Stingerquill Annex",
-     "score": 46.71
+     "name": "Cryotheory Adept",
+     "score": 49.91
     },
     {
      "name": "Hall of Echoes",
@@ -343,12 +343,14 @@
     }
    ],
    "his_score": 49.91,
-   "his_rank": 1,
+   "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #4",
-    "WU 88% \u2192 53.0 (n=8896)"
+    "Branch: +12.8 over Cryotheory Adept, above the 9.1 top drafters switch at",
+    "Fit #2 \u00b7 Power #1",
+    "WU 88% \u2192 off-colour",
+    "castable in 0% of likely lanes"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #4",
@@ -372,14 +374,14 @@
     },
     {
      "name": "Transformative Commons",
-     "score": 49.04
+     "score": 49.1
     },
     {
      "name": "Hexhaven Dueling Arena",
      "score": 32.02
     }
    ],
-   "his_score": 49.04,
+   "his_score": 49.1,
    "his_rank": 2,
    "scored": true,
    "dropped": 0,
@@ -560,7 +562,7 @@
     "WU 93% \u2192 58.0 (n=37758)"
    ],
    "reasons_his": [
-    "Fit #3 \u00b7 Power #6",
+    "Fit #3 \u00b7 Power #7",
     "WU 93% \u2192 56.1 (n=10848)"
    ],
    "lanes_after": {
@@ -1095,7 +1097,7 @@
     },
     {
      "name": "Fatehold Annex",
-     "score": 59.62
+     "score": 61.45
     }
    ],
    "his_score": 72.62,
@@ -1292,7 +1294,7 @@
     "WU 100% \u2192 57.2 (n=31079)"
    ],
    "reasons_his": [
-    "Fit #3 \u00b7 Power #4",
+    "Fit #3 \u00b7 Power #5",
     "WU 100% \u2192 56.5 (n=15376)"
    ],
    "lanes_after": {

@@ -1,5 +1,5 @@
 {
- "commit": "6a31baa",
+ "commit": "e6a9d84",
  "date": "2026-11-06",
  "dataset": "FRA_PremierDraft_All_Data.json",
  "top1": 28,
@@ -344,10 +344,10 @@
     },
     {
      "name": "Stingerquill Annex",
-     "score": 52.79
+     "score": 55.28
     }
    ],
-   "his_score": 52.79,
+   "his_score": 55.28,
    "his_rank": 3,
    "scored": true,
    "dropped": 0,
@@ -701,7 +701,7 @@
      "score": 64.12
     }
    ],
-   "his_score": 54.37,
+   "his_score": 56.66,
    "his_rank": 4,
    "scored": true,
    "dropped": 0,
@@ -711,7 +711,7 @@
     "UBR 28% \u2192 60.6 (n=2766)"
    ],
    "reasons_his": [
-    "Fit #4 \u00b7 Power #6",
+    "Fit #4 \u00b7 Power #5",
     "UR 66% \u2192 56.1 (n=17673)",
     "UBR 28% \u2192 56.0 (n=5880)"
    ],
@@ -737,7 +737,7 @@
     },
     {
      "name": "Fatehold Annex",
-     "score": 43.97
+     "score": 43.98
     }
    ],
    "his_score": 50.18,
@@ -819,7 +819,7 @@
      "score": 52.6
     }
    ],
-   "his_score": 49.4,
+   "his_score": 50.0,
    "his_rank": 4,
    "scored": true,
    "dropped": 0,
@@ -829,7 +829,7 @@
     "UBR 18% \u2192 50.2 (n=1486)"
    ],
    "reasons_his": [
-    "Fit #4 \u00b7 Power #2",
+    "Fit #4 \u00b7 Power #1",
     "UR 80% \u2192 splash B (fixing 1) 45.5",
     "UBR 18% \u2192 55.4 (n=5277)",
     "castable in 20% of likely lanes"
@@ -1236,26 +1236,26 @@
    "taken": "Shipwreck Marsh",
    "top3": [
     {
-     "name": "Paradox Shaper",
-     "score": 56.83
+     "name": "Innovative Commons",
+     "score": 57.89
     },
     {
-     "name": "Innovative Commons",
-     "score": 55.43
+     "name": "Paradox Shaper",
+     "score": 56.83
     },
     {
      "name": "Sphinx's Approach",
      "score": 53.49
     }
    ],
-   "his_score": 50.7,
+   "his_score": 51.25,
    "his_rank": 4,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #3",
-    "UR 53% \u2192 54.5 (n=3094)",
-    "UBR 47% \u2192 54.1 (n=2198)",
+    "UR 53% \u2192 56.1 (n=17673)",
+    "UBR 47% \u2192 56.0 (n=5880)",
     "open: U"
    ],
    "reasons_his": [
@@ -1418,13 +1418,13 @@
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #2",
+    "Fit #1 \u00b7 Power #3",
     "UR 60% \u2192 54.1 (n=6776)",
     "UBR 40% \u2192 54.5 (n=1355)",
     "open: U"
    ],
    "reasons_his": [
-    "Fit #1 \u00b7 Power #2",
+    "Fit #1 \u00b7 Power #3",
     "UR 60% \u2192 54.1 (n=6776)",
     "UBR 40% \u2192 54.5 (n=1355)",
     "open: U"

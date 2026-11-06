@@ -1,8 +1,8 @@
 {
- "commit": "6a31baa",
+ "commit": "e6a9d84",
  "date": "2026-11-06",
  "dataset": "FRA_PremierDraft_All_Data.json",
- "top1": 18,
+ "top1": 19,
  "top3": 33,
  "n": 39,
  "not_scored": 3,
@@ -23,7 +23,7 @@
     },
     {
      "name": "Innovative Commons",
-     "score": 53.05
+     "score": 53.78
     }
    ],
    "his_score": 68.9,
@@ -113,7 +113,7 @@
     "RG 98% \u2192 55.7 (n=3267)"
    ],
    "reasons_his": [
-    "Fit #2 \u00b7 Power #4",
+    "Fit #2 \u00b7 Power #5",
     "RG 98% \u2192 52.3 (n=12419)"
    ],
    "lanes_after": {
@@ -246,7 +246,7 @@
     },
     {
      "name": "Transformative Commons",
-     "score": 48.93
+     "score": 48.95
     },
     {
      "name": "Infinite Coursework",
@@ -278,28 +278,28 @@
    "taken": "Konstrari Annex",
    "top3": [
     {
-     "name": "Vinelasher Adept",
-     "score": 60.51
+     "name": "Konstrari Annex",
+     "score": 62.03
     },
     {
-     "name": "Konstrari Annex",
-     "score": 57.64
+     "name": "Vinelasher Adept",
+     "score": 60.51
     },
     {
      "name": "Surveillance Phantasm",
      "score": 46.02
     }
    ],
-   "his_score": 57.64,
-   "his_rank": 2,
+   "his_score": 62.03,
+   "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #4",
-    "RG 99% \u2192 55.6 (n=21835)"
+    "Fit #1 \u00b7 Power #2",
+    "RG 98% \u2192 54.0 (n=17084)"
    ],
    "reasons_his": [
-    "Fit #2 \u00b7 Power #5",
+    "Fit #1 \u00b7 Power #2",
     "RG 98% \u2192 54.0 (n=17084)"
    ],
    "lanes_after": {
@@ -392,7 +392,7 @@
    "top3": [
     {
      "name": "Formidable Commons",
-     "score": 49.32
+     "score": 49.33
     },
     {
      "name": "Blazing Crescendo",
@@ -403,7 +403,7 @@
      "score": 38.25
     }
    ],
-   "his_score": 49.32,
+   "his_score": 49.33,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
@@ -692,16 +692,16 @@
      "score": 50.14
     },
     {
-     "name": "Hallway Heckler",
-     "score": 47.08
+     "name": "Stingerquill Annex",
+     "score": 47.79
     },
     {
-     "name": "Stingerquill Annex",
-     "score": 46.27
+     "name": "Hallway Heckler",
+     "score": 47.08
     }
    ],
-   "his_score": 46.27,
-   "his_rank": 3,
+   "his_score": 47.79,
+   "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
@@ -710,7 +710,7 @@
     "BRG 38% \u2192 53.4 (n=1906)"
    ],
    "reasons_his": [
-    "Fit #3 \u00b7 Power #3",
+    "Fit #2 \u00b7 Power #1",
     "RG 62% \u2192 splash B (fixing 3) 45.5",
     "BRG 38% \u2192 54.5 (n=6460)",
     "castable in 38% of likely lanes"
@@ -1119,7 +1119,7 @@
     },
     {
      "name": "Konstrari Annex",
-     "score": 55.95
+     "score": 60.2
     },
     {
      "name": "Inspired Tethermage",
@@ -1193,7 +1193,7 @@
     },
     {
      "name": "Rockfall Vale",
-     "score": 57.09
+     "score": 61.83
     },
     {
      "name": "Budding Insurgent",

@@ -1,0 +1,2042 @@
+{
+ "commit": "e6a9d84",
+ "date": "2026-11-06",
+ "dataset": "FRA_PremierDraft_All_Data.json",
+ "top1": 26,
+ "top3": 35,
+ "n": 38,
+ "not_scored": 4,
+ "dropped_cards": 4,
+ "picks": [
+  {
+   "pack": 1,
+   "pick": 1,
+   "taken": "Carnivorous Cultivator",
+   "top3": [
+    {
+     "name": "Carnivorous Cultivator",
+     "score": 70.08
+    },
+    {
+     "name": "Memory Trap",
+     "score": 60.53
+    },
+    {
+     "name": "Clash of Elements",
+     "score": 58.38
+    }
+   ],
+   "his_score": 70.08,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 10% \u2192 off-colour",
+    "WB 10% \u2192 off-colour",
+    "castable in 40% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 10% \u2192 off-colour",
+    "WB 10% \u2192 off-colour",
+    "castable in 40% of likely lanes"
+   ],
+   "lanes_after": {
+    "WG": 0.205,
+    "UG": 0.205,
+    "BG": 0.205,
+    "RG": 0.205
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 2,
+   "taken": "Recursive Recruitment",
+   "top3": [
+    {
+     "name": "Recursive Recruitment",
+     "score": 58.28
+    },
+    {
+     "name": "Emergency Phytomedic",
+     "score": 52.63
+    },
+    {
+     "name": "Rescue Girl, First Responder",
+     "score": 51.86
+    }
+   ],
+   "his_score": 58.28,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UG 36% \u2192 off-colour",
+    "BG 36% \u2192 off-colour",
+    "castable in 5% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "UG 36% \u2192 off-colour",
+    "BG 36% \u2192 off-colour",
+    "castable in 5% of likely lanes"
+   ],
+   "lanes_after": {
+    "UB": 0.536,
+    "WG": 0.099,
+    "UG": 0.099,
+    "BG": 0.099
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 3,
+   "taken": "Primal Witchstalker",
+   "top3": [
+    {
+     "name": "Primal Witchstalker",
+     "score": 60.57
+    },
+    {
+     "name": "Way of the Healer",
+     "score": 58.11
+    },
+    {
+     "name": "Unsummon",
+     "score": 57.31
+    }
+   ],
+   "his_score": 60.57,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #3",
+    "UB 56% \u2192 off-colour",
+    "WG 10% \u2192 off-colour",
+    "castable in 10% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #3",
+    "UB 56% \u2192 off-colour",
+    "WG 10% \u2192 off-colour",
+    "castable in 10% of likely lanes"
+   ],
+   "lanes_after": {
+    "BG": 0.462,
+    "UB": 0.33,
+    "WG": 0.057,
+    "UG": 0.057
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 4,
+   "taken": "Simulacrum Shaper",
+   "top3": [
+    {
+     "name": "Simulacrum Shaper",
+     "score": 74.25
+    },
+    {
+     "name": "Vinelasher Adept",
+     "score": 59.68
+    },
+    {
+     "name": "Violent Echoes",
+     "score": 54.03
+    }
+   ],
+   "his_score": 74.25,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "BG 66% \u2192 60.3 (n=3189)",
+    "RG 17% \u2192 58.7 (n=4135)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "BG 66% \u2192 60.3 (n=3189)",
+    "RG 17% \u2192 58.7 (n=4135)"
+   ],
+   "lanes_after": {
+    "BG": 0.529,
+    "RG": 0.198,
+    "WG": 0.116,
+    "UG": 0.116
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 5,
+   "taken": "Vinelasher Adept",
+   "top3": [
+    {
+     "name": "Vinelasher Adept",
+     "score": 59.81
+    },
+    {
+     "name": "Fatehold Chronologist",
+     "score": 54.81
+    },
+    {
+     "name": "Pia, Determined Rebuilder",
+     "score": 51.36
+    }
+   ],
+   "his_score": 59.81,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #5",
+    "BG 46% \u2192 56.6 (n=16477)",
+    "WG 19% \u2192 53.6 (n=14545)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #5",
+    "BG 46% \u2192 56.6 (n=16477)",
+    "WG 19% \u2192 53.6 (n=14545)"
+   ],
+   "lanes_after": {
+    "BG": 0.47,
+    "WG": 0.186,
+    "RG": 0.169,
+    "UG": 0.149
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 6,
+   "taken": "Generous Revival",
+   "top3": [
+    {
+     "name": "No Admittance",
+     "score": 57.72
+    },
+    {
+     "name": "Generous Revival",
+     "score": 54.73
+    },
+    {
+     "name": "Geist of Saint Thalia",
+     "score": 47.22
+    }
+   ],
+   "his_score": 54.73,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "BG 38% \u2192 splash R (fixing 1) 47.3",
+    "WG 22% \u2192 splash R (fixing 1) 45.7",
+    "castable in 21% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #3",
+    "BG 38% \u2192 splash W (fixing 1) 46.6",
+    "WG 22% \u2192 56.7 (n=7468)",
+    "castable in 23% of likely lanes"
+   ],
+   "lanes_after": {
+    "WG": 0.51,
+    "BG": 0.238,
+    "RG": 0.119,
+    "UG": 0.097
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 7,
+   "taken": "Bestial Incursion",
+   "top3": [
+    {
+     "name": "Bestial Incursion",
+     "score": 61.26
+    },
+    {
+     "name": "Vigorbloom Charm",
+     "score": 53.16
+    },
+    {
+     "name": "Transformative Commons",
+     "score": 48.15
+    }
+   ],
+   "his_score": 61.26,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WG 57% \u2192 54.6 (n=14538)",
+    "BG 23% \u2192 57.3 (n=19236)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WG 57% \u2192 54.6 (n=14538)",
+    "BG 23% \u2192 57.3 (n=19236)"
+   ],
+   "lanes_after": {
+    "WG": 0.58,
+    "BG": 0.239,
+    "RG": 0.097,
+    "UG": 0.078
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 8,
+   "taken": "Transformative Commons",
+   "top3": [
+    {
+     "name": "Bloombrute",
+     "score": 59.87
+    },
+    {
+     "name": "Paradox Shaper",
+     "score": 55.54
+    },
+    {
+     "name": "Ferocity of the Hunt",
+     "score": 50.21
+    }
+   ],
+   "his_score": 49.05,
+   "his_rank": 4,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WG 64% \u2192 58.3 (n=23792)",
+    "BG 23% \u2192 splash W (fixing 1) 47.4"
+   ],
+   "reasons_his": [
+    "Fit #4 \u00b7 Power #2",
+    "WG 64% \u2192 splash U (fixing 1) 45.5",
+    "BG 23% \u2192 splash U (fixing 1) 45.5",
+    "castable in 6% of likely lanes"
+   ],
+   "lanes_after": {
+    "WG": 0.637,
+    "BG": 0.229,
+    "RG": 0.066,
+    "UG": 0.063
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 9,
+   "taken": "Konstrari Annex",
+   "top3": [
+    {
+     "name": "Konstrari Annex",
+     "score": 48.59
+    },
+    {
+     "name": "Hallway Heckler",
+     "score": 37.18
+    },
+    {
+     "name": "Screeching Soulbreaker",
+     "score": 36.07
+    }
+   ],
+   "his_score": 48.59,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WG 56% \u2192 splash R (fixing 1) 45.5",
+    "BG 31% \u2192 splash R (fixing 1) 45.5",
+    "castable in 7% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WG 56% \u2192 splash R (fixing 1) 45.5",
+    "BG 31% \u2192 splash R (fixing 1) 45.5",
+    "castable in 7% of likely lanes"
+   ],
+   "lanes_after": {
+    "WG": 0.56,
+    "BG": 0.305,
+    "RG": 0.068,
+    "UG": 0.062
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 10,
+   "taken": "Surgical Precision",
+   "top3": [
+    {
+     "name": "Surgical Precision",
+     "score": 53.13
+    },
+    {
+     "name": "Warrior's Blades",
+     "score": 42.77
+    },
+    {
+     "name": "Way of the Pyromancer",
+     "score": 42.32
+    }
+   ],
+   "his_score": 53.13,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WG 74% \u2192 56.0 (n=24379)",
+    "BG 16% \u2192 splash W (fixing 1) 46.6"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WG 74% \u2192 56.0 (n=24379)",
+    "BG 16% \u2192 splash W (fixing 1) 46.6"
+   ],
+   "lanes_after": {
+    "WG": 0.921,
+    "BG": 0.048,
+    "RG": 0.017,
+    "UG": 0.009
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 11,
+   "taken": "Way of the Healer",
+   "top3": [
+    {
+     "name": "Way of the Healer",
+     "score": 63.56
+    },
+    {
+     "name": "Charge the Sanctum",
+     "score": 40.7
+    },
+    {
+     "name": "Rank Rat",
+     "score": 39.99
+    }
+   ],
+   "his_score": 63.56,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WG 95% \u2192 53.2 (n=8143)",
+    "open: W"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WG 95% \u2192 53.2 (n=8143)",
+    "open: W"
+   ],
+   "lanes_after": {
+    "WG": 0.985,
+    "BG": 0.008,
+    "WR": 0.002,
+    "RG": 0.002
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 12,
+   "taken": "Fateshaper Aspirant",
+   "top3": [
+    {
+     "name": "Fateshaper Aspirant",
+     "score": 70.96
+    },
+    {
+     "name": "Tether Technician",
+     "score": 36.43
+    },
+    {
+     "name": "Plains",
+     "score": 0.0
+    }
+   ],
+   "his_score": 70.96,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WG 98% \u2192 51.4 (n=6460)",
+    "open: W"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WG 98% \u2192 51.4 (n=6460)",
+    "open: W"
+   ],
+   "lanes_after": {
+    "WG": 0.988,
+    "BG": 0.006,
+    "WR": 0.002,
+    "WB": 0.001
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 13,
+   "taken": "Innovative Commons",
+   "top3": [
+    {
+     "name": "Heartstring Puller",
+     "score": 46.48
+    },
+    {
+     "name": "Innovative Commons",
+     "score": 45.7
+    }
+   ],
+   "his_score": 45.7,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "WG 98% \u2192 splash R (fixing 2) 44.6",
+    "castable in 1% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #1",
+    "WG 98% \u2192 off-colour",
+    "castable in 0% of likely lanes"
+   ],
+   "lanes_after": {
+    "WG": 0.985,
+    "BG": 0.007,
+    "WR": 0.003,
+    "RG": 0.002
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 14,
+   "taken": "Swamp",
+   "top3": [
+    {
+     "name": "Swamp",
+     "score": 0.0
+    }
+   ],
+   "his_score": 0.0,
+   "his_rank": null,
+   "scored": false,
+   "dropped": 0,
+   "reasons_top": [
+    "No data"
+   ],
+   "reasons_his": [
+    "No data"
+   ],
+   "lanes_after": {
+    "WG": 0.983,
+    "BG": 0.008,
+    "WR": 0.003,
+    "RG": 0.002
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 1,
+   "taken": "Guiding Hydra",
+   "top3": [
+    {
+     "name": "Guiding Hydra",
+     "score": 76.35
+    },
+    {
+     "name": "Your Fate Ends Here",
+     "score": 66.26
+    },
+    {
+     "name": "Saheeli, Consul of Oversight",
+     "score": 61.22
+    }
+   ],
+   "his_score": 76.35,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WG 94% \u2192 57.8 (n=3938)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WG 94% \u2192 57.8 (n=3938)"
+   ],
+   "lanes_after": {
+    "WG": 0.993,
+    "BG": 0.004,
+    "WU": 0.001,
+    "WB": 0.001
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 2,
+   "taken": "Memory Trap",
+   "top3": [
+    {
+     "name": "Memory Trap",
+     "score": 63.31
+    },
+    {
+     "name": "Fatehold Chronologist",
+     "score": 60.85
+    },
+    {
+     "name": "Rewrite Regrets",
+     "score": 59.88
+    }
+   ],
+   "his_score": 63.31,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "WG 99% \u2192 54.8 (n=22899)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #2",
+    "WG 99% \u2192 54.8 (n=22899)"
+   ],
+   "lanes_after": {
+    "WG": 0.997,
+    "BG": 0.001,
+    "WU": 0.001,
+    "WB": 0.001
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 3,
+   "taken": "Prudent Fateseer",
+   "top3": [
+    {
+     "name": "Prudent Fateseer",
+     "score": 59.95
+    },
+    {
+     "name": "Tetsuko Umezawa, Pursuer",
+     "score": 45.6
+    },
+    {
+     "name": "Ferocity of the Hunt",
+     "score": 45.05
+    }
+   ],
+   "his_score": 59.95,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WG 100% \u2192 51.2 (n=2306)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WG 100% \u2192 51.2 (n=2306)"
+   ],
+   "lanes_after": {
+    "WG": 0.998,
+    "WU": 0.001,
+    "WB": 0.001,
+    "WR": 0.001
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 4,
+   "taken": "Sureshot Sower",
+   "top3": [
+    {
+     "name": "Variable Chaser",
+     "score": 50.64
+    },
+    {
+     "name": "Sureshot Sower",
+     "score": 50.54
+    },
+    {
+     "name": "Graft Surgeon",
+     "score": 44.91
+    }
+   ],
+   "his_score": 50.54,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Branch: +18.7 over Sureshot Sower, above the 10.3 top drafters switch at",
+    "Fit #2 \u00b7 Power #1",
+    "WG 100% \u2192 splash U (fixing 3) 47.6",
+    "castable in 0% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #6",
+    "WG 100% \u2192 51.9 (n=9918)"
+   ],
+   "lanes_after": {
+    "WG": 0.999,
+    "WU": 0.0,
+    "WB": 0.0,
+    "WR": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 5,
+   "taken": "Teyo, Lightshield Expert",
+   "top3": [
+    {
+     "name": "Teyo, Lightshield Expert",
+     "score": 61.41
+    },
+    {
+     "name": "Fatehold Chronologist",
+     "score": 60.9
+    },
+    {
+     "name": "Konstrari Improviser",
+     "score": 56.42
+    }
+   ],
+   "his_score": 61.41,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #3",
+    "WG 100% \u2192 55.4 (n=8977)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #3",
+    "WG 100% \u2192 55.4 (n=8977)"
+   ],
+   "lanes_after": {
+    "WG": 0.999,
+    "WU": 0.001,
+    "WB": 0.0,
+    "WR": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 6,
+   "taken": "Something Worth Saving",
+   "top3": [
+    {
+     "name": "Yoshimaru, Scrappy Stray",
+     "score": 58.02
+    },
+    {
+     "name": "Way of the Paradox",
+     "score": 57.78
+    },
+    {
+     "name": "Something Worth Saving",
+     "score": 56.39
+    }
+   ],
+   "his_score": 56.39,
+   "his_rank": 3,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #3",
+    "WG 100% \u2192 53.6 (n=8486)"
+   ],
+   "reasons_his": [
+    "Fit #3 \u00b7 Power #5",
+    "WG 100% \u2192 54.8 (n=10351)"
+   ],
+   "lanes_after": {
+    "WG": 1.0,
+    "WU": 0.0,
+    "WB": 0.0,
+    "BG": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 7,
+   "taken": "Blossom-Blessed Angel",
+   "top3": [
+    {
+     "name": "Blossom-Blessed Angel",
+     "score": 61.99
+    },
+    {
+     "name": "Apex Witchstalker",
+     "score": 42.39
+    },
+    {
+     "name": "Vraska, Soul of Stone",
+     "score": 41.69
+    }
+   ],
+   "his_score": 61.99,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #3",
+    "WG 100% \u2192 55.6 (n=25147)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #3",
+    "WG 100% \u2192 55.6 (n=25147)"
+   ],
+   "lanes_after": {
+    "WG": 1.0,
+    "WU": 0.0,
+    "WB": 0.0,
+    "WR": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 8,
+   "taken": "Afterthought Sentry",
+   "top3": [
+    {
+     "name": "Grim Repriser",
+     "score": 43.08
+    },
+    {
+     "name": "Afterthought Sentry",
+     "score": 41.26
+    },
+    {
+     "name": "Winter, Tormented Loner",
+     "score": 37.82
+    }
+   ],
+   "his_score": 41.26,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "WG 100% \u2192 off-colour",
+    "castable in 0% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #6",
+    "WG 100% \u2192 49.9 (n=1210)"
+   ],
+   "lanes_after": {
+    "WG": 1.0,
+    "WU": 0.0,
+    "WB": 0.0,
+    "WR": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 9,
+   "taken": "Arcane Amphisbaena",
+   "top3": [
+    {
+     "name": "Arcane Amphisbaena",
+     "score": 63.26
+    },
+    {
+     "name": "Budding Insurgent",
+     "score": 46.54
+    },
+    {
+     "name": "Stingerquill Charm",
+     "score": 42.64
+    }
+   ],
+   "his_score": 63.26,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WG 100% \u2192 53.1 (n=17084)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WG 100% \u2192 53.1 (n=17084)"
+   ],
+   "lanes_after": {
+    "WG": 1.0,
+    "WU": 0.0,
+    "WB": 0.0,
+    "BG": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 10,
+   "taken": "Apex Witchstalker",
+   "top3": [
+    {
+     "name": "Way of the Mentor",
+     "score": 54.86
+    },
+    {
+     "name": "Apex Witchstalker",
+     "score": 46.38
+    },
+    {
+     "name": "Void Extrapolator",
+     "score": 42.87
+    }
+   ],
+   "his_score": 46.38,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #4",
+    "WG 100% \u2192 51.1 (n=6109)"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #1",
+    "WG 100% \u2192 off-colour",
+    "castable in 0% of likely lanes"
+   ],
+   "lanes_after": {
+    "WG": 0.875,
+    "WBG": 0.125,
+    "WB": 0.0,
+    "BG": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 11,
+   "taken": "Ferocity of the Hunt",
+   "top3": [
+    {
+     "name": "Ferocity of the Hunt",
+     "score": 52.47
+    },
+    {
+     "name": "Heartstring Puller",
+     "score": 36.93
+    },
+    {
+     "name": "Tetsuko Umezawa, Fugitive",
+     "score": 36.52
+    }
+   ],
+   "his_score": 52.47,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #4",
+    "WG 87% \u2192 51.4 (n=5195)",
+    "WBG 12% \u2192 50.6 (n=979)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #4",
+    "WG 87% \u2192 51.4 (n=5195)",
+    "WBG 12% \u2192 50.6 (n=979)"
+   ],
+   "lanes_after": {
+    "WG": 0.886,
+    "WBG": 0.114,
+    "BG": 0.0,
+    "WB": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 12,
+   "taken": "Teyo, Diamondblade Mage",
+   "top3": [
+    {
+     "name": "Teyo, Diamondblade Mage",
+     "score": 39.42
+    },
+    {
+     "name": "Artifist Acumen",
+     "score": 34.54
+    },
+    {
+     "name": "Mountain",
+     "score": 0.0
+    }
+   ],
+   "his_score": 39.42,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WG 89% \u2192 splash B (fixing 2) 41.5",
+    "WBG 11% \u2192 46.8 (rarely played there)",
+    "castable in 11% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WG 89% \u2192 splash B (fixing 2) 41.5",
+    "WBG 11% \u2192 46.8 (rarely played there)",
+    "castable in 11% of likely lanes"
+   ],
+   "lanes_after": {
+    "WG": 0.811,
+    "WBG": 0.189,
+    "WB": 0.0,
+    "BG": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 13,
+   "taken": "Meticulous Commons",
+   "top3": [
+    {
+     "name": "Meticulous Commons",
+     "score": 67.85
+    },
+    {
+     "name": "Theorix Metamage",
+     "score": 49.17
+    }
+   ],
+   "his_score": 67.85,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WG 81% \u2192 splash B (fixing 2) 45.5",
+    "WBG 19% \u2192 53.1 (n=3395)",
+    "castable in 19% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WG 81% \u2192 splash B (fixing 2) 45.5",
+    "WBG 19% \u2192 53.1 (n=3395)",
+    "castable in 19% of likely lanes"
+   ],
+   "lanes_after": {
+    "WG": 0.75,
+    "WBG": 0.25,
+    "WB": 0.0,
+    "BG": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 14,
+   "taken": "Cast Away Doubt",
+   "top3": [
+    {
+     "name": "Cast Away Doubt",
+     "score": 38.55
+    }
+   ],
+   "his_score": 38.55,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WG 75% \u2192 splash B (fixing 3) 41.4",
+    "WBG 25% \u2192 51.7 (n=655)",
+    "castable in 25% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WG 75% \u2192 splash B (fixing 3) 41.4",
+    "WBG 25% \u2192 51.7 (n=655)",
+    "castable in 25% of likely lanes"
+   ],
+   "lanes_after": {
+    "WG": 0.604,
+    "WBG": 0.395,
+    "WB": 0.0,
+    "BG": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 1,
+   "taken": "Liliana the Faultless",
+   "top3": [
+    {
+     "name": "Liliana the Faultless",
+     "score": 75.05
+    },
+    {
+     "name": "Surgical Precision",
+     "score": 65.13
+    },
+    {
+     "name": "Primal Witchstalker",
+     "score": 53.09
+    }
+   ],
+   "his_score": 75.05,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #3",
+    "WG 60% \u2192 59.0 (n=4761)",
+    "WBG 39% \u2192 58.5 (n=574)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #3",
+    "WG 60% \u2192 59.0 (n=4761)",
+    "WBG 39% \u2192 58.5 (n=574)"
+   ],
+   "lanes_after": {
+    "WG": 0.634,
+    "WBG": 0.366,
+    "WB": 0.0,
+    "WR": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 2,
+   "taken": "Koth of the Homestead",
+   "top3": [
+    {
+     "name": "Way of the Wildspeaker",
+     "score": 67.89
+    },
+    {
+     "name": "Koth of the Homestead",
+     "score": 63.19
+    },
+    {
+     "name": "Unflinching Hortimancer",
+     "score": 59.32
+    }
+   ],
+   "his_score": 63.19,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "WG 63% \u2192 53.3 (n=6756)",
+    "WBG 37% \u2192 53.9 (n=965)"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #3",
+    "WG 63% \u2192 55.3 (n=11334)",
+    "WBG 37% \u2192 50.8 (n=955)"
+   ],
+   "lanes_after": {
+    "WG": 0.661,
+    "WBG": 0.339,
+    "WB": 0.0,
+    "WR": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 3,
+   "taken": "Twisted Fates",
+   "top3": [
+    {
+     "name": "Compel Brutality",
+     "score": 66.55
+    },
+    {
+     "name": "Fatehold Chronologist",
+     "score": 63.75
+    },
+    {
+     "name": "Vigorbloom Annex",
+     "score": 57.88
+    }
+   ],
+   "his_score": 51.88,
+   "his_rank": 5,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #5",
+    "WG 66% \u2192 53.2 (n=20216)",
+    "WBG 34% \u2192 53.0 (n=2128)"
+   ],
+   "reasons_his": [
+    "Fit #5 \u00b7 Power #2",
+    "WG 66% \u2192 splash B (fixing 3) 52.0",
+    "WBG 34% \u2192 55.0 (n=3486)",
+    "castable in 34% of likely lanes"
+   ],
+   "lanes_after": {
+    "WBG": 0.52,
+    "WG": 0.48,
+    "WB": 0.0,
+    "WR": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 4,
+   "taken": "Unflinching Hortimancer",
+   "top3": [
+    {
+     "name": "Something Worth Saving",
+     "score": 58.95
+    },
+    {
+     "name": "Unflinching Hortimancer",
+     "score": 56.71
+    },
+    {
+     "name": "Way of the Mentor",
+     "score": 50.75
+    }
+   ],
+   "his_score": 56.71,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "WBG 52% \u2192 56.2 (n=2420)",
+    "WG 48% \u2192 54.8 (n=10351)"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #3",
+    "WBG 52% \u2192 53.5 (n=2889)",
+    "WG 48% \u2192 54.8 (n=30615)"
+   ],
+   "lanes_after": {
+    "WG": 0.515,
+    "WBG": 0.484,
+    "WB": 0.001,
+    "WR": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 5,
+   "taken": "Way of the Healer",
+   "top3": [
+    {
+     "name": "Way of the Healer",
+     "score": 68.5
+    },
+    {
+     "name": "Bloombrute",
+     "score": 68.07
+    },
+    {
+     "name": "Overgrown Farmland",
+     "score": 60.18
+    }
+   ],
+   "his_score": 68.5,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WG 52% \u2192 53.2 (n=8143)",
+    "WBG 48% \u2192 55.5 (n=1333)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WG 52% \u2192 53.2 (n=8143)",
+    "WBG 48% \u2192 55.5 (n=1333)"
+   ],
+   "lanes_after": {
+    "WG": 0.549,
+    "WBG": 0.451,
+    "WB": 0.0,
+    "WR": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 6,
+   "taken": null,
+   "top3": [
+    {
+     "name": "Vigorbloom Annex",
+     "score": 59.75
+    },
+    {
+     "name": "Unflinching Hortimancer",
+     "score": 56.09
+    },
+    {
+     "name": "Titanbones, Towering Heart",
+     "score": 54.77
+    }
+   ],
+   "his_score": null,
+   "his_rank": null,
+   "scored": false,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "WG 55% \u2192 53.3 (n=14892)",
+    "WBG 45% \u2192 52.1 (n=3237)"
+   ],
+   "reasons_his": [],
+   "lanes_after": {
+    "WG": 0.549,
+    "WBG": 0.451,
+    "WB": 0.0,
+    "WR": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 7,
+   "taken": "Prudent Fateseer",
+   "top3": [
+    {
+     "name": "Prudent Fateseer",
+     "score": 60.42
+    },
+    {
+     "name": "Stingerquill Charm",
+     "score": 46.21
+    },
+    {
+     "name": "Graft Surgeon",
+     "score": 44.55
+    }
+   ],
+   "his_score": 60.42,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WG 55% \u2192 51.2 (n=2306)",
+    "WBG 45% \u2192 51.4 (rarely played there)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WG 55% \u2192 51.2 (n=2306)",
+    "WBG 45% \u2192 51.4 (rarely played there)"
+   ],
+   "lanes_after": {
+    "WG": 0.568,
+    "WBG": 0.432,
+    "WB": 0.0,
+    "WR": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 8,
+   "taken": "Twisted Fates",
+   "top3": [
+    {
+     "name": "Fatehold Chronologist",
+     "score": 61.72
+    },
+    {
+     "name": "Unflinching Hortimancer",
+     "score": 56.13
+    },
+    {
+     "name": "Apex Witchstalker",
+     "score": 52.0
+    }
+   ],
+   "his_score": 51.25,
+   "his_rank": 4,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "WG 57% \u2192 53.9 (n=7562)",
+    "WBG 43% \u2192 55.3 (n=929)"
+   ],
+   "reasons_his": [
+    "Fit #4 \u00b7 Power #1",
+    "WG 57% \u2192 splash B (fixing 3) 50.8",
+    "WBG 43% \u2192 55.0 (n=3486)",
+    "castable in 43% of likely lanes"
+   ],
+   "lanes_after": {
+    "WBG": 0.641,
+    "WG": 0.355,
+    "WB": 0.004,
+    "WR": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 9,
+   "taken": "Pia, Aether Ascetic",
+   "top3": [
+    {
+     "name": "Primal Witchstalker",
+     "score": 48.41
+    },
+    {
+     "name": "Medic's Kitesail",
+     "score": 48.14
+    },
+    {
+     "name": "Pia, Aether Ascetic",
+     "score": 46.43
+    }
+   ],
+   "his_score": 46.43,
+   "his_rank": 3,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WBG 64% \u2192 56.0 (n=3086)",
+    "WG 36% \u2192 splash B (fixing 3) 48.9"
+   ],
+   "reasons_his": [
+    "Fit #3 \u00b7 Power #4",
+    "WBG 64% \u2192 45.7 (rarely played there)",
+    "WG 36% \u2192 50.3 (n=2295)"
+   ],
+   "lanes_after": {
+    "WBG": 0.609,
+    "WG": 0.387,
+    "WB": 0.004,
+    "WR": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 10,
+   "taken": null,
+   "top3": [
+    {
+     "name": "Wrecking Gecko",
+     "score": 50.77
+    },
+    {
+     "name": "Predictive Preparations",
+     "score": 41.01
+    },
+    {
+     "name": "Tethermage's Advantage",
+     "score": 39.04
+    }
+   ],
+   "his_score": null,
+   "his_rank": null,
+   "scored": false,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WBG 61% \u2192 52.2 (n=1101)",
+    "WG 39% \u2192 52.4 (n=7584)"
+   ],
+   "reasons_his": [],
+   "lanes_after": {
+    "WBG": 0.609,
+    "WG": 0.387,
+    "WB": 0.003,
+    "WR": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 11,
+   "taken": "Restore with Empathy",
+   "top3": [
+    {
+     "name": "Restore with Empathy",
+     "score": 55.69
+    },
+    {
+     "name": "Awaken the Inferno",
+     "score": 47.23
+    },
+    {
+     "name": "Rank Rat",
+     "score": 38.94
+    }
+   ],
+   "his_score": 55.69,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #3",
+    "WBG 61% \u2192 53.4 (n=1074)",
+    "WG 39% \u2192 52.7 (n=5653)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #3",
+    "WBG 61% \u2192 53.4 (n=1074)",
+    "WG 39% \u2192 52.7 (n=5653)"
+   ],
+   "lanes_after": {
+    "WBG": 0.572,
+    "WG": 0.427,
+    "WB": 0.001,
+    "WR": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 12,
+   "taken": null,
+   "top3": [],
+   "his_score": null,
+   "his_rank": null,
+   "scored": false,
+   "dropped": 3,
+   "reasons_top": [],
+   "reasons_his": [],
+   "lanes_after": {
+    "WBG": 0.572,
+    "WG": 0.427,
+    "WB": 0.001,
+    "WR": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 13,
+   "taken": "Overgrown Farmland",
+   "top3": [
+    {
+     "name": "Overgrown Farmland",
+     "score": 82.25
+    }
+   ],
+   "his_score": 82.25,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 1,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WBG 57% \u2192 52.4 (n=978)",
+    "WG 43% \u2192 51.2 (n=3938)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WBG 57% \u2192 52.4 (n=978)",
+    "WG 43% \u2192 51.2 (n=3938)"
+   ],
+   "lanes_after": {
+    "WBG": 0.567,
+    "WG": 0.432,
+    "WB": 0.001,
+    "WR": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 14,
+   "taken": "Titanbones, Towering Heart",
+   "top3": [
+    {
+     "name": "Titanbones, Towering Heart",
+     "score": 78.52
+    }
+   ],
+   "his_score": 78.52,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WBG 57% \u2192 49.8 (n=1266)",
+    "WG 43% \u2192 53.3 (n=12601)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WBG 57% \u2192 49.8 (n=1266)",
+    "WG 43% \u2192 53.3 (n=12601)"
+   ],
+   "lanes_after": {
+    "WBG": 0.531,
+    "WG": 0.468,
+    "WB": 0.001,
+    "WR": 0.0
+   }
+  }
+ ],
+ "builder": [
+  {
+   "main": "WG",
+   "splash": "",
+   "deck_wr": 62.71,
+   "label": "WG",
+   "cards": [
+    {
+     "name": "Overgrown Farmland",
+     "count": 1
+    },
+    {
+     "name": "Guiding Hydra",
+     "count": 1
+    },
+    {
+     "name": "Liliana the Faultless",
+     "count": 1
+    },
+    {
+     "name": "Afterthought Sentry",
+     "count": 1
+    },
+    {
+     "name": "Arcane Amphisbaena",
+     "count": 1
+    },
+    {
+     "name": "Carnivorous Cultivator",
+     "count": 1
+    },
+    {
+     "name": "Ferocity of the Hunt",
+     "count": 1
+    },
+    {
+     "name": "Something Worth Saving",
+     "count": 1
+    },
+    {
+     "name": "Sureshot Sower",
+     "count": 1
+    },
+    {
+     "name": "Surgical Precision",
+     "count": 1
+    },
+    {
+     "name": "Teyo, Lightshield Expert",
+     "count": 1
+    },
+    {
+     "name": "Unflinching Hortimancer",
+     "count": 1
+    },
+    {
+     "name": "Generous Revival",
+     "count": 1
+    },
+    {
+     "name": "Koth of the Homestead",
+     "count": 1
+    },
+    {
+     "name": "Memory Trap",
+     "count": 1
+    },
+    {
+     "name": "Prudent Fateseer",
+     "count": 2
+    },
+    {
+     "name": "Restore with Empathy",
+     "count": 1
+    },
+    {
+     "name": "Simulacrum Shaper",
+     "count": 1
+    },
+    {
+     "name": "Bestial Incursion",
+     "count": 1
+    },
+    {
+     "name": "Blossom-Blessed Angel",
+     "count": 1
+    },
+    {
+     "name": "Titanbones, Towering Heart",
+     "count": 1
+    },
+    {
+     "name": "Way of the Healer",
+     "count": 2
+    },
+    {
+     "name": "Fateshaper Aspirant",
+     "count": 1
+    },
+    {
+     "name": "Vinelasher Adept",
+     "count": 1
+    },
+    {
+     "name": "Plains",
+     "count": 8
+    },
+    {
+     "name": "Forest",
+     "count": 6
+    }
+   ]
+  },
+  {
+   "main": "WG",
+   "splash": "B",
+   "deck_wr": 62.61,
+   "label": "WBG",
+   "cards": [
+    {
+     "name": "Meticulous Commons",
+     "count": 1
+    },
+    {
+     "name": "Overgrown Farmland",
+     "count": 1
+    },
+    {
+     "name": "Guiding Hydra",
+     "count": 1
+    },
+    {
+     "name": "Liliana the Faultless",
+     "count": 1
+    },
+    {
+     "name": "Arcane Amphisbaena",
+     "count": 1
+    },
+    {
+     "name": "Carnivorous Cultivator",
+     "count": 1
+    },
+    {
+     "name": "Ferocity of the Hunt",
+     "count": 1
+    },
+    {
+     "name": "Something Worth Saving",
+     "count": 1
+    },
+    {
+     "name": "Surgical Precision",
+     "count": 1
+    },
+    {
+     "name": "Teyo, Lightshield Expert",
+     "count": 1
+    },
+    {
+     "name": "Unflinching Hortimancer",
+     "count": 1
+    },
+    {
+     "name": "Generous Revival",
+     "count": 1
+    },
+    {
+     "name": "Koth of the Homestead",
+     "count": 1
+    },
+    {
+     "name": "Memory Trap",
+     "count": 1
+    },
+    {
+     "name": "Primal Witchstalker",
+     "count": 1
+    },
+    {
+     "name": "Prudent Fateseer",
+     "count": 1
+    },
+    {
+     "name": "Restore with Empathy",
+     "count": 1
+    },
+    {
+     "name": "Simulacrum Shaper",
+     "count": 1
+    },
+    {
+     "name": "Bestial Incursion",
+     "count": 1
+    },
+    {
+     "name": "Blossom-Blessed Angel",
+     "count": 1
+    },
+    {
+     "name": "Titanbones, Towering Heart",
+     "count": 1
+    },
+    {
+     "name": "Way of the Healer",
+     "count": 2
+    },
+    {
+     "name": "Twisted Fates",
+     "count": 2
+    },
+    {
+     "name": "Apex Witchstalker",
+     "count": 1
+    },
+    {
+     "name": "Vinelasher Adept",
+     "count": 1
+    },
+    {
+     "name": "Plains",
+     "count": 4
+    },
+    {
+     "name": "Swamp",
+     "count": 4
+    },
+    {
+     "name": "Forest",
+     "count": 5
+    }
+   ]
+  },
+  {
+   "main": "WG",
+   "splash": "B",
+   "deck_wr": 60.38,
+   "label": "WG + b",
+   "cards": [
+    {
+     "name": "Meticulous Commons",
+     "count": 1
+    },
+    {
+     "name": "Overgrown Farmland",
+     "count": 1
+    },
+    {
+     "name": "Guiding Hydra",
+     "count": 1
+    },
+    {
+     "name": "Liliana the Faultless",
+     "count": 1
+    },
+    {
+     "name": "Arcane Amphisbaena",
+     "count": 1
+    },
+    {
+     "name": "Carnivorous Cultivator",
+     "count": 1
+    },
+    {
+     "name": "Ferocity of the Hunt",
+     "count": 1
+    },
+    {
+     "name": "Something Worth Saving",
+     "count": 1
+    },
+    {
+     "name": "Sureshot Sower",
+     "count": 1
+    },
+    {
+     "name": "Surgical Precision",
+     "count": 1
+    },
+    {
+     "name": "Teyo, Lightshield Expert",
+     "count": 1
+    },
+    {
+     "name": "Unflinching Hortimancer",
+     "count": 1
+    },
+    {
+     "name": "Generous Revival",
+     "count": 1
+    },
+    {
+     "name": "Koth of the Homestead",
+     "count": 1
+    },
+    {
+     "name": "Memory Trap",
+     "count": 1
+    },
+    {
+     "name": "Primal Witchstalker",
+     "count": 1
+    },
+    {
+     "name": "Prudent Fateseer",
+     "count": 2
+    },
+    {
+     "name": "Restore with Empathy",
+     "count": 1
+    },
+    {
+     "name": "Simulacrum Shaper",
+     "count": 1
+    },
+    {
+     "name": "Bestial Incursion",
+     "count": 1
+    },
+    {
+     "name": "Blossom-Blessed Angel",
+     "count": 1
+    },
+    {
+     "name": "Titanbones, Towering Heart",
+     "count": 1
+    },
+    {
+     "name": "Way of the Healer",
+     "count": 2
+    },
+    {
+     "name": "Fateshaper Aspirant",
+     "count": 1
+    },
+    {
+     "name": "Vinelasher Adept",
+     "count": 1
+    },
+    {
+     "name": "Plains",
+     "count": 5
+    },
+    {
+     "name": "Swamp",
+     "count": 2
+    },
+    {
+     "name": "Forest",
+     "count": 6
+    }
+   ]
+  }
+ ],
+ "his_deck": {
+  "main": "WG",
+  "splash": "B",
+  "deck_wr": 58.92,
+  "label": null,
+  "cards": [
+   {
+    "name": "Liliana the Faultless",
+    "count": 1
+   },
+   {
+    "name": "Surgical Precision",
+    "count": 1
+   },
+   {
+    "name": "Teyo, Lightshield Expert",
+    "count": 1
+   },
+   {
+    "name": "Unflinching Hortimancer",
+    "count": 1
+   },
+   {
+    "name": "Arcane Amphisbaena",
+    "count": 1
+   },
+   {
+    "name": "Carnivorous Cultivator",
+    "count": 1
+   },
+   {
+    "name": "Something Worth Saving",
+    "count": 1
+   },
+   {
+    "name": "Sureshot Sower",
+    "count": 1
+   },
+   {
+    "name": "Generous Revival",
+    "count": 1
+   },
+   {
+    "name": "Koth of the Homestead",
+    "count": 1
+   },
+   {
+    "name": "Memory Trap",
+    "count": 1
+   },
+   {
+    "name": "Pia, Aether Ascetic",
+    "count": 1
+   },
+   {
+    "name": "Simulacrum Shaper",
+    "count": 1
+   },
+   {
+    "name": "Prudent Fateseer",
+    "count": 2
+   },
+   {
+    "name": "Blossom-Blessed Angel",
+    "count": 1
+   },
+   {
+    "name": "Way of the Healer",
+    "count": 2
+   },
+   {
+    "name": "Bestial Incursion",
+    "count": 1
+   },
+   {
+    "name": "Twisted Fates",
+    "count": 2
+   },
+   {
+    "name": "Guiding Hydra",
+    "count": 1
+   },
+   {
+    "name": "Vinelasher Adept",
+    "count": 1
+   },
+   {
+    "name": "Plains",
+    "count": 7
+   },
+   {
+    "name": "Swamp",
+    "count": 1
+   },
+   {
+    "name": "Forest",
+    "count": 7
+   },
+   {
+    "name": "Meticulous Commons",
+    "count": 1
+   },
+   {
+    "name": "Overgrown Farmland",
+    "count": 1
+   }
+  ]
+ }
+}

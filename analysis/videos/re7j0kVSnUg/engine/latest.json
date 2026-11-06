@@ -1,5 +1,5 @@
 {
- "commit": "6a31baa",
+ "commit": "e6a9d84",
  "date": "2026-11-06",
  "dataset": "FRA_PremierDraft_All_Data.json",
  "top1": 24,
@@ -212,7 +212,7 @@
     },
     {
      "name": "Stingerquill Annex",
-     "score": 48.38
+     "score": 48.39
     }
    ],
    "his_score": 59.04,
@@ -220,12 +220,12 @@
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #5",
+    "Fit #1 \u00b7 Power #6",
     "RG 75% \u2192 55.6 (n=21835)",
     "WG 10% \u2192 53.6 (n=14545)"
    ],
    "reasons_his": [
-    "Fit #2 \u00b7 Power #7",
+    "Fit #2 \u00b7 Power #8",
     "RG 75% \u2192 54.9 (n=29150)",
     "WG 10% \u2192 51.6 (n=6696)"
    ],
@@ -321,24 +321,24 @@
     },
     {
      "name": "Innovative Commons",
-     "score": 49.8
+     "score": 49.81
     },
     {
      "name": "Kiora of Salt and Sand",
      "score": 39.54
     }
    ],
-   "his_score": 49.8,
+   "his_score": 49.81,
    "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #1",
+    "Fit #1 \u00b7 Power #2",
     "RG 88% \u2192 splash U (fixing 1) 45.6",
     "castable in 10% of likely lanes"
    ],
    "reasons_his": [
-    "Fit #2 \u00b7 Power #2",
+    "Fit #2 \u00b7 Power #1",
     "RG 88% \u2192 splash U (fixing 1) 45.5",
     "castable in 0% of likely lanes"
    ],
@@ -364,21 +364,21 @@
     },
     {
      "name": "Vigorbloom Annex",
-     "score": 49.74
+     "score": 49.79
     }
    ],
-   "his_score": 49.74,
+   "his_score": 49.79,
    "his_rank": 3,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #1",
+    "Fit #1 \u00b7 Power #2",
     "RG 85% \u2192 54.5 (n=7416)",
     "UG 13% \u2192 54.5 (n=8633)",
     "open: U"
    ],
    "reasons_his": [
-    "Fit #3 \u00b7 Power #2",
+    "Fit #3 \u00b7 Power #1",
     "RG 85% \u2192 splash W (fixing 1) 45.5",
     "UG 13% \u2192 splash W (fixing 1) 45.5",
     "castable in 1% of likely lanes"
@@ -753,17 +753,17 @@
      "score": 52.06
     }
    ],
-   "his_score": 46.21,
+   "his_score": 46.33,
    "his_rank": 4,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #3",
+    "Fit #1 \u00b7 Power #4",
     "RG 75% \u2192 55.0 (n=24108)",
     "WRG 21% \u2192 50.6 (n=3002)"
    ],
    "reasons_his": [
-    "Fit #4 \u00b7 Power #4",
+    "Fit #4 \u00b7 Power #3",
     "RG 75% \u2192 splash B (fixing 1) 45.5",
     "WRG 21% \u2192 splash B (fixing 1) 45.5",
     "castable in 3% of likely lanes"
@@ -1129,7 +1129,7 @@
     "BRG 20% \u2192 58.4 (n=3312)"
    ],
    "reasons_his": [
-    "Fit #2 \u00b7 Power #3",
+    "Fit #2 \u00b7 Power #4",
     "RG 79% \u2192 55.6 (n=21835)",
     "BRG 20% \u2192 56.4 (n=7138)"
    ],
@@ -1244,12 +1244,12 @@
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #5",
+    "Fit #1 \u00b7 Power #6",
     "BRG 68% \u2192 52.9 (n=2399)",
     "RG 26% \u2192 54.7 (n=9174)"
    ],
    "reasons_his": [
-    "Fit #4 \u00b7 Power #7",
+    "Fit #4 \u00b7 Power #3",
     "BRG 68% \u2192 splash W (fixing 3) 45.5",
     "RG 26% \u2192 splash W (fixing 3) 45.5",
     "castable in 0% of likely lanes"

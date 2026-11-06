@@ -1,9 +1,9 @@
 {
- "commit": "6a31baa",
+ "commit": "e6a9d84",
  "date": "2026-11-06",
  "dataset": "FRA_PremierDraft_All_Data.json",
  "top1": 23,
- "top3": 38,
+ "top3": 39,
  "n": 42,
  "not_scored": 0,
  "dropped_cards": 2,
@@ -176,7 +176,7 @@
     },
     {
      "name": "Vigorbloom Annex",
-     "score": 44.48
+     "score": 44.62
     },
     {
      "name": "Blossom-Blessed Angel",
@@ -194,7 +194,7 @@
     "castable in 30% of likely lanes"
    ],
    "reasons_his": [
-    "Fit #3 \u00b7 Power #3",
+    "Fit #3 \u00b7 Power #4",
     "WR 23% \u2192 54.9 (n=7339)",
     "RG 19% \u2192 off-colour",
     "castable in 41% of likely lanes"
@@ -212,12 +212,12 @@
    "taken": "Arni, Humble Scribe",
    "top3": [
     {
-     "name": "Theorix Annex",
-     "score": 44.75
+     "name": "Overgrown Farmland",
+     "score": 45.02
     },
     {
-     "name": "Overgrown Farmland",
-     "score": 44.65
+     "name": "Theorix Annex",
+     "score": 44.02
     },
     {
      "name": "Tam's Resistance",
@@ -229,14 +229,13 @@
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Branch: +5.3 over Overgrown Farmland, above the 4.6 top drafters switch at",
-    "Fit #2 \u00b7 Power #1",
+    "Fit #1 \u00b7 Power #1",
     "BR 28% \u2192 off-colour",
-    "WR 24% \u2192 fixes a splash (+0.7)",
-    "castable in 3% of likely lanes"
+    "WR 24% \u2192 off-colour",
+    "castable in 5% of likely lanes"
    ],
    "reasons_his": [
-    "Fit #4 \u00b7 Power #3",
+    "Fit #4 \u00b7 Power #4",
     "BR 28% \u2192 off-colour",
     "WR 24% \u2192 off-colour",
     "castable in 28% of likely lanes"
@@ -255,7 +254,7 @@
    "top3": [
     {
      "name": "Stingerquill Annex",
-     "score": 47.67
+     "score": 49.29
     },
     {
      "name": "Theorix Metamage",
@@ -770,21 +769,21 @@
      "score": 49.08
     },
     {
-     "name": "Undulating Witness",
-     "score": 47.76
+     "name": "Konstrari Annex",
+     "score": 47.85
     }
    ],
-   "his_score": 47.68,
-   "his_rank": 4,
+   "his_score": 47.85,
+   "his_rank": 3,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #2",
+    "Fit #1 \u00b7 Power #3",
     "BR 46% \u2192 53.6 (n=1091)",
     "WBR 16% \u2192 51.8 (rarely played there)"
    ],
    "reasons_his": [
-    "Fit #4 \u00b7 Power #5",
+    "Fit #3 \u00b7 Power #2",
     "BR 46% \u2192 splash G (fixing 2) 45.5",
     "WBR 16% \u2192 splash G (fixing 2) 45.5",
     "castable in 4% of likely lanes"
@@ -999,7 +998,7 @@
    "top3": [
     {
      "name": "Konstrari Annex",
-     "score": 68.63
+     "score": 69.04
     },
     {
      "name": "Terminal Criticism",
@@ -1010,7 +1009,7 @@
      "score": 38.67
     }
    ],
-   "his_score": 68.63,
+   "his_score": 69.04,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
@@ -1306,7 +1305,7 @@
     },
     {
      "name": "Stingerquill Annex",
-     "score": 54.89
+     "score": 61.2
     }
    ],
    "his_score": 68.06,
@@ -1599,10 +1598,10 @@
    "top3": [
     {
      "name": "Stingerquill Annex",
-     "score": 75.44
+     "score": 81.86
     }
    ],
-   "his_score": 75.44,
+   "his_score": 81.86,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,

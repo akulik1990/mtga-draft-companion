@@ -1,5 +1,5 @@
 {
- "commit": "6a31baa",
+ "commit": "e6a9d84",
  "date": "2026-11-06",
  "dataset": "FRA_PremierDraft_All_Data.json",
  "top1": 20,
@@ -176,7 +176,7 @@
    "top3": [
     {
      "name": "Rockfall Vale",
-     "score": 49.69
+     "score": 50.11
     },
     {
      "name": "Ferocity of the Hunt",
@@ -192,7 +192,7 @@
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #2",
+    "Fit #1 \u00b7 Power #1",
     "BR 45% \u2192 off-colour",
     "WR 15% \u2192 off-colour",
     "castable in 13% of likely lanes"
@@ -255,7 +255,7 @@
    "top3": [
     {
      "name": "Dedicated Commons",
-     "score": 47.84
+     "score": 48.43
     },
     {
      "name": "Arcane Amphisbaena",
@@ -271,7 +271,7 @@
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #5",
+    "Fit #1 \u00b7 Power #4",
     "BR 45% \u2192 off-colour",
     "RG 28% \u2192 off-colour",
     "castable in 9% of likely lanes"
@@ -680,12 +680,12 @@
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #5",
+    "Fit #1 \u00b7 Power #6",
     "BR 83% \u2192 55.4 (n=7386)",
     "WBR 17% \u2192 50.9 (rarely played there)"
    ],
    "reasons_his": [
-    "Fit #1 \u00b7 Power #5",
+    "Fit #1 \u00b7 Power #6",
     "BR 83% \u2192 55.4 (n=7386)",
     "WBR 17% \u2192 50.9 (rarely played there)"
    ],
@@ -1095,7 +1095,7 @@
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #6",
+    "Fit #1 \u00b7 Power #7",
     "BR 66% \u2192 53.2 (n=1946)",
     "WBR 34% \u2192 53.1 (n=516)"
    ],

@@ -1,5 +1,5 @@
 {
- "commit": "6a31baa",
+ "commit": "e6a9d84",
  "date": "2026-11-06",
  "dataset": "FRA_PremierDraft_All_Data.json",
  "top1": 27,
@@ -289,7 +289,7 @@
    "top3": [
     {
      "name": "Meticulous Commons",
-     "score": 49.39
+     "score": 49.66
     },
     {
      "name": "Sphinx's Approach",
@@ -300,18 +300,18 @@
      "score": 42.79
     }
    ],
-   "his_score": 49.39,
+   "his_score": 49.66,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #3",
+    "Fit #1 \u00b7 Power #1",
     "UB 62% \u2192 off-colour",
     "BG 26% \u2192 off-colour",
     "castable in 4% of likely lanes"
    ],
    "reasons_his": [
-    "Fit #1 \u00b7 Power #3",
+    "Fit #1 \u00b7 Power #1",
     "UB 62% \u2192 off-colour",
     "BG 26% \u2192 off-colour",
     "castable in 4% of likely lanes"
@@ -573,12 +573,12 @@
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #5",
+    "Fit #1 \u00b7 Power #6",
     "UB 44% \u2192 55.7 (n=26045)",
     "UBG 29% \u2192 55.6 (n=4994)"
    ],
    "reasons_his": [
-    "Fit #1 \u00b7 Power #5",
+    "Fit #1 \u00b7 Power #6",
     "UB 44% \u2192 55.7 (n=26045)",
     "UBG 29% \u2192 55.6 (n=4994)"
    ],
@@ -612,12 +612,12 @@
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #5",
+    "Fit #1 \u00b7 Power #6",
     "UB 45% \u2192 56.2 (n=13870)",
     "UBG 27% \u2192 56.3 (n=8407)"
    ],
    "reasons_his": [
-    "Fit #2 \u00b7 Power #3",
+    "Fit #2 \u00b7 Power #4",
     "UB 45% \u2192 57.7 (n=19972)",
     "UBG 27% \u2192 56.5 (n=8756)"
    ],
@@ -721,10 +721,10 @@
     },
     {
      "name": "Formidable Commons",
-     "score": 49.05
+     "score": 49.66
     }
    ],
-   "his_score": 49.05,
+   "his_score": 49.66,
    "his_rank": 3,
    "scored": true,
    "dropped": 0,
@@ -929,12 +929,12 @@
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #1",
+    "Fit #1 \u00b7 Power #2",
     "UB 60% \u2192 56.2 (n=13870)",
     "UBG 40% \u2192 56.3 (n=8407)"
    ],
    "reasons_his": [
-    "Fit #1 \u00b7 Power #1",
+    "Fit #1 \u00b7 Power #2",
     "UB 60% \u2192 56.2 (n=13870)",
     "UBG 40% \u2192 56.3 (n=8407)"
    ],
@@ -1273,7 +1273,7 @@
     "UBG 49% \u2192 58.0 (n=4412)"
    ],
    "reasons_his": [
-    "Fit #2 \u00b7 Power #3",
+    "Fit #2 \u00b7 Power #4",
     "UB 51% \u2192 55.4 (n=16101)",
     "UBG 49% \u2192 55.3 (n=2792)"
    ],

@@ -1,0 +1,1751 @@
+{
+ "commit": "e6a9d84",
+ "date": "2026-11-06",
+ "dataset": "FRA_PremierDraft_All_Data.json",
+ "top1": 24,
+ "top3": 36,
+ "n": 39,
+ "not_scored": 3,
+ "dropped_cards": 0,
+ "picks": [
+  {
+   "pack": 1,
+   "pick": 1,
+   "taken": "Mindseeker Oculus",
+   "top3": [
+    {
+     "name": "Gideon the Oathless",
+     "score": 72.29
+    },
+    {
+     "name": "Mindseeker Oculus",
+     "score": 68.52
+    },
+    {
+     "name": "Memory Trap",
+     "score": 60.53
+    }
+   ],
+   "his_score": 68.52,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 10% \u2192 off-colour",
+    "WB 10% \u2192 60.6 (n=1903)",
+    "castable in 40% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #2",
+    "WU 10% \u2192 60.4 (n=41775)",
+    "WB 10% \u2192 off-colour",
+    "castable in 40% of likely lanes"
+   ],
+   "lanes_after": {
+    "WU": 0.214,
+    "UB": 0.214,
+    "UR": 0.214,
+    "UG": 0.214
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 2,
+   "taken": "Fblthp, Impossibly Lost",
+   "top3": [
+    {
+     "name": "Fblthp, Impossibly Lost",
+     "score": 68.64
+    },
+    {
+     "name": "Variable Chaser",
+     "score": 67.6
+    },
+    {
+     "name": "Undulating Witness",
+     "score": 55.7
+    }
+   ],
+   "his_score": 68.64,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 21% \u2192 59.9 (n=19573)",
+    "UB 21% \u2192 60.4 (n=28352)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 21% \u2192 59.9 (n=19573)",
+    "UB 21% \u2192 60.4 (n=28352)"
+   ],
+   "lanes_after": {
+    "WU": 0.299,
+    "UB": 0.299,
+    "UR": 0.299,
+    "UG": 0.096
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 3,
+   "taken": "Protege's Awakening",
+   "top3": [
+    {
+     "name": "Protege's Awakening",
+     "score": 64.79
+    },
+    {
+     "name": "Way of the Wildspeaker",
+     "score": 54.78
+    },
+    {
+     "name": "Blossom-Blessed Angel",
+     "score": 51.44
+    }
+   ],
+   "his_score": 64.79,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 30% \u2192 58.2 (n=28026)",
+    "UB 30% \u2192 59.5 (n=37401)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 30% \u2192 58.2 (n=28026)",
+    "UB 30% \u2192 59.5 (n=37401)"
+   ],
+   "lanes_after": {
+    "WU": 0.302,
+    "UB": 0.302,
+    "UR": 0.302,
+    "UG": 0.093
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 4,
+   "taken": "Koth of the Homestead",
+   "top3": [
+    {
+     "name": "No Admittance",
+     "score": 61.54
+    },
+    {
+     "name": "Awaken the Inferno",
+     "score": 56.04
+    },
+    {
+     "name": "Hapatra, the Desert Fang",
+     "score": 54.45
+    }
+   ],
+   "his_score": 53.28,
+   "his_rank": 4,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "UR 36% \u2192 58.5 (n=27523)",
+    "WU 29% \u2192 off-colour",
+    "castable in 36% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #4 \u00b7 Power #4",
+    "UR 36% \u2192 off-colour",
+    "WU 29% \u2192 54.2 (n=6891)",
+    "castable in 29% of likely lanes"
+   ],
+   "lanes_after": {
+    "WU": 0.415,
+    "UR": 0.268,
+    "UB": 0.218,
+    "UG": 0.093
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 5,
+   "taken": "Arni, Humble Scribe",
+   "top3": [
+    {
+     "name": "Infinite Coursework",
+     "score": 61.74
+    },
+    {
+     "name": "Arni, Humble Scribe",
+     "score": 58.62
+    },
+    {
+     "name": "Awaken the Inferno",
+     "score": 55.24
+    }
+   ],
+   "his_score": 58.62,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "WU 41% \u2192 56.5 (n=30807)",
+    "UR 28% \u2192 55.8 (n=17638)"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #3",
+    "WU 41% \u2192 54.1 (n=9386)",
+    "UR 28% \u2192 54.1 (n=6776)"
+   ],
+   "lanes_after": {
+    "WU": 0.413,
+    "UR": 0.281,
+    "UB": 0.215,
+    "UG": 0.089
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 6,
+   "taken": "Tomik, Orzhov Lawmage",
+   "top3": [
+    {
+     "name": "Last Gasp",
+     "score": 60.01
+    },
+    {
+     "name": "Tomik, Orzhov Lawmage",
+     "score": 52.93
+    },
+    {
+     "name": "Sphinx's Approach",
+     "score": 46.64
+    }
+   ],
+   "his_score": 52.93,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 38% \u2192 off-colour",
+    "UB 28% \u2192 58.7 (n=44400)",
+    "castable in 29% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #3",
+    "WU 38% \u2192 54.8 (n=11918)",
+    "UB 28% \u2192 off-colour",
+    "castable in 38% of likely lanes"
+   ],
+   "lanes_after": {
+    "WU": 0.534,
+    "UB": 0.216,
+    "UR": 0.168,
+    "UG": 0.08
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 7,
+   "taken": "Desperate Futurescribe",
+   "top3": [
+    {
+     "name": "Desperate Futurescribe",
+     "score": 64.38
+    },
+    {
+     "name": "Campus Crier",
+     "score": 56.83
+    },
+    {
+     "name": "Sphinx's Approach",
+     "score": 44.93
+    }
+   ],
+   "his_score": 64.38,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 66% \u2192 58.8 (n=36935)",
+    "UB 15% \u2192 off-colour"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 66% \u2192 58.8 (n=36935)",
+    "UB 15% \u2192 off-colour"
+   ],
+   "lanes_after": {
+    "WU": 0.89,
+    "UB": 0.049,
+    "UR": 0.046,
+    "UG": 0.014
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 8,
+   "taken": "Unsummon",
+   "top3": [
+    {
+     "name": "Unsummon",
+     "score": 62.2
+    },
+    {
+     "name": "Archive Arbiter",
+     "score": 49.01
+    },
+    {
+     "name": "Dedicated Commons",
+     "score": 48.43
+    }
+   ],
+   "his_score": 62.2,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 87% \u2192 57.6 (n=31748)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 87% \u2192 57.6 (n=31748)"
+   ],
+   "lanes_after": {
+    "WU": 0.882,
+    "UR": 0.053,
+    "UB": 0.046,
+    "UG": 0.018
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 9,
+   "taken": "Cryotheory Adept",
+   "top3": [
+    {
+     "name": "Stingerquill Annex",
+     "score": 50.01
+    },
+    {
+     "name": "Cryotheory Adept",
+     "score": 49.91
+    },
+    {
+     "name": "Hall of Echoes",
+     "score": 44.04
+    }
+   ],
+   "his_score": 49.91,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Branch: +12.8 over Cryotheory Adept, above the 9.1 top drafters switch at",
+    "Fit #2 \u00b7 Power #1",
+    "WU 88% \u2192 off-colour",
+    "castable in 0% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #4",
+    "WU 88% \u2192 53.0 (n=8896)"
+   ],
+   "lanes_after": {
+    "WU": 0.888,
+    "UR": 0.051,
+    "UB": 0.044,
+    "UG": 0.016
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 10,
+   "taken": "Transformative Commons",
+   "top3": [
+    {
+     "name": "Emergency Phytomedic",
+     "score": 55.89
+    },
+    {
+     "name": "Transformative Commons",
+     "score": 49.1
+    },
+    {
+     "name": "Hexhaven Dueling Arena",
+     "score": 32.02
+    }
+   ],
+   "his_score": 49.1,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "WU 90% \u2192 55.5 (n=6086)"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #1",
+    "WU 90% \u2192 off-colour",
+    "castable in 2% of likely lanes"
+   ],
+   "lanes_after": {
+    "WU": 0.904,
+    "UR": 0.04,
+    "UB": 0.039,
+    "UG": 0.017
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 11,
+   "taken": "Eye of Jace",
+   "top3": [
+    {
+     "name": "Eye of Jace",
+     "score": 34.54
+    },
+    {
+     "name": "Whiplash Wordsmith",
+     "score": 26.26
+    },
+    {
+     "name": "Tethermage's Advantage",
+     "score": 22.72
+    }
+   ],
+   "his_score": 34.54,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #3",
+    "WU 90% \u2192 52.3 (n=2918)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #3",
+    "WU 90% \u2192 52.3 (n=2918)"
+   ],
+   "lanes_after": {
+    "WU": 0.909,
+    "UR": 0.038,
+    "UB": 0.037,
+    "UG": 0.015
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 12,
+   "taken": "Sphinx's Approach",
+   "top3": [
+    {
+     "name": "Sphinx's Approach",
+     "score": 73.29
+    },
+    {
+     "name": "Cast Away Doubt",
+     "score": 30.71
+    },
+    {
+     "name": "Mountain",
+     "score": 0.0
+    }
+   ],
+   "his_score": 73.29,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 90% \u2192 56.1 (n=12400)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 90% \u2192 56.1 (n=12400)"
+   ],
+   "lanes_after": {
+    "WU": 0.909,
+    "UB": 0.042,
+    "UR": 0.036,
+    "UG": 0.014
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 13,
+   "taken": "Fateshaper Aspirant",
+   "top3": [
+    {
+     "name": "Fateshaper Aspirant",
+     "score": 71.99
+    },
+    {
+     "name": "Plains",
+     "score": 0.0
+    }
+   ],
+   "his_score": 71.99,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 92% \u2192 53.7 (n=9672)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 92% \u2192 53.7 (n=9672)"
+   ],
+   "lanes_after": {
+    "WU": 0.944,
+    "UB": 0.026,
+    "UR": 0.022,
+    "UG": 0.008
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 14,
+   "taken": "Plains",
+   "top3": [
+    {
+     "name": "Plains",
+     "score": 0.0
+    }
+   ],
+   "his_score": 0.0,
+   "his_rank": null,
+   "scored": false,
+   "dropped": 0,
+   "reasons_top": [
+    "No data"
+   ],
+   "reasons_his": [
+    "No data"
+   ],
+   "lanes_after": {
+    "WU": 0.943,
+    "UB": 0.026,
+    "UR": 0.023,
+    "UG": 0.008
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 1,
+   "taken": "Tetsuko Umezawa, Fugitive",
+   "top3": [
+    {
+     "name": "Memory Trap",
+     "score": 65.37
+    },
+    {
+     "name": "Unsummon",
+     "score": 63.02
+    },
+    {
+     "name": "Tetsuko Umezawa, Fugitive",
+     "score": 58.24
+    }
+   ],
+   "his_score": 58.24,
+   "his_rank": 3,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #3",
+    "WU 93% \u2192 58.0 (n=37758)"
+   ],
+   "reasons_his": [
+    "Fit #3 \u00b7 Power #7",
+    "WU 93% \u2192 56.1 (n=10848)"
+   ],
+   "lanes_after": {
+    "WU": 0.956,
+    "UB": 0.019,
+    "UR": 0.019,
+    "UG": 0.005
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 2,
+   "taken": "Mindseeker Oculus",
+   "top3": [
+    {
+     "name": "Mindseeker Oculus",
+     "score": 73.45
+    },
+    {
+     "name": "Teyo, Lightshield Expert",
+     "score": 63.96
+    },
+    {
+     "name": "Blessed Ghoul",
+     "score": 51.42
+    }
+   ],
+   "his_score": 73.45,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 96% \u2192 60.4 (n=41775)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 96% \u2192 60.4 (n=41775)"
+   ],
+   "lanes_after": {
+    "WU": 0.956,
+    "UB": 0.019,
+    "UR": 0.019,
+    "UG": 0.005
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 3,
+   "taken": "Prudent Fateseer",
+   "top3": [
+    {
+     "name": "Kindred Judgment",
+     "score": 78.87
+    },
+    {
+     "name": "Prudent Fateseer",
+     "score": 65.6
+    },
+    {
+     "name": "Undulating Witness",
+     "score": 58.89
+    }
+   ],
+   "his_score": 65.6,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 97% \u2192 64.1 (n=8503)"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #3",
+    "WU 97% \u2192 57.9 (n=25335)"
+   ],
+   "lanes_after": {
+    "WU": 0.965,
+    "UB": 0.015,
+    "UR": 0.015,
+    "UG": 0.004
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 4,
+   "taken": "Teyo, Lightshield Expert",
+   "top3": [
+    {
+     "name": "Twinned Vision",
+     "score": 64.53
+    },
+    {
+     "name": "Teyo, Lightshield Expert",
+     "score": 64.06
+    },
+    {
+     "name": "Blessed Ghoul",
+     "score": 51.79
+    }
+   ],
+   "his_score": 64.06,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 96% \u2192 56.8 (n=17715)"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #2",
+    "WU 96% \u2192 58.9 (n=13868)"
+   ],
+   "lanes_after": {
+    "WU": 0.992,
+    "UB": 0.003,
+    "UR": 0.003,
+    "UG": 0.001
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 5,
+   "taken": "Semester Foreseer",
+   "top3": [
+    {
+     "name": "Emergency Phytomedic",
+     "score": 55.45
+    },
+    {
+     "name": "Semester Foreseer",
+     "score": 54.35
+    },
+    {
+     "name": "Danitha, Sword of Hope",
+     "score": 50.28
+    }
+   ],
+   "his_score": 54.35,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #3",
+    "WU 99% \u2192 55.5 (n=6086)"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #4",
+    "WU 99% \u2192 54.6 (n=26556)"
+   ],
+   "lanes_after": {
+    "WU": 0.992,
+    "UB": 0.004,
+    "UR": 0.004,
+    "UG": 0.001
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 6,
+   "taken": "Repurposed Enforcer",
+   "top3": [
+    {
+     "name": "Repurposed Enforcer",
+     "score": 78.54
+    },
+    {
+     "name": "Prophesied End",
+     "score": 65.64
+    },
+    {
+     "name": "Hapatra, the Desert Frost",
+     "score": 54.97
+    }
+   ],
+   "his_score": 78.54,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 100% \u2192 60.7 (n=7353)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 100% \u2192 60.7 (n=7353)"
+   ],
+   "lanes_after": {
+    "WU": 1.0,
+    "UB": 0.0,
+    "UR": 0.0,
+    "UG": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 7,
+   "taken": "Desperate Futurescribe",
+   "top3": [
+    {
+     "name": "Desperate Futurescribe",
+     "score": 73.03
+    },
+    {
+     "name": "Yuriko, Blade of the Mighty",
+     "score": 55.57
+    },
+    {
+     "name": "Sphinx's Approach",
+     "score": 50.22
+    }
+   ],
+   "his_score": 73.03,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 100% \u2192 58.8 (n=36935)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 100% \u2192 58.8 (n=36935)"
+   ],
+   "lanes_after": {
+    "WU": 1.0,
+    "UB": 0.0,
+    "UR": 0.0,
+    "UG": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 8,
+   "taken": "Traxos, Academy Guardian",
+   "top3": [
+    {
+     "name": "Traxos, Academy Guardian",
+     "score": 67.21
+    },
+    {
+     "name": "Theorix Metamage",
+     "score": 57.04
+    },
+    {
+     "name": "Divining Duelist",
+     "score": 54.77
+    }
+   ],
+   "his_score": 67.21,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 100% \u2192 55.7 (n=10282)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 100% \u2192 55.7 (n=10282)"
+   ],
+   "lanes_after": {
+    "WU": 1.0,
+    "UB": 0.0,
+    "UR": 0.0,
+    "UG": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 9,
+   "taken": "Unsummon",
+   "top3": [
+    {
+     "name": "Unsummon",
+     "score": 65.48
+    },
+    {
+     "name": "Divining Duelist",
+     "score": 54.02
+    },
+    {
+     "name": "Tetsuko Umezawa, Pursuer",
+     "score": 44.79
+    }
+   ],
+   "his_score": 65.48,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 100% \u2192 57.6 (n=31748)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 100% \u2192 57.6 (n=31748)"
+   ],
+   "lanes_after": {
+    "WU": 1.0,
+    "UR": 0.0,
+    "UB": 0.0,
+    "UG": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 10,
+   "taken": "Fateshaper Aspirant",
+   "top3": [
+    {
+     "name": "Fateshaper Aspirant",
+     "score": 51.61
+    },
+    {
+     "name": "Sureshot Sower",
+     "score": 42.46
+    },
+    {
+     "name": "Hallway Heckler",
+     "score": 42.16
+    }
+   ],
+   "his_score": 51.61,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "WU 100% \u2192 53.7 (n=9672)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #2",
+    "WU 100% \u2192 53.7 (n=9672)"
+   ],
+   "lanes_after": {
+    "WU": 1.0,
+    "UR": 0.0,
+    "UB": 0.0,
+    "UG": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 11,
+   "taken": "Kindred Judgment",
+   "top3": [
+    {
+     "name": "Kindred Judgment",
+     "score": 90.85
+    },
+    {
+     "name": "Afterthought Sentry",
+     "score": 46.68
+    },
+    {
+     "name": "Artifist Acumen",
+     "score": 34.57
+    }
+   ],
+   "his_score": 90.85,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 100% \u2192 64.1 (n=8503)",
+    "open: W"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 100% \u2192 64.1 (n=8503)",
+    "open: W"
+   ],
+   "lanes_after": {
+    "WU": 1.0,
+    "UR": 0.0,
+    "UB": 0.0,
+    "UG": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 12,
+   "taken": "Blessed Ghoul",
+   "top3": [
+    {
+     "name": "Blessed Ghoul",
+     "score": 68.79
+    },
+    {
+     "name": "Terminal Criticism",
+     "score": 41.57
+    },
+    {
+     "name": "Swamp",
+     "score": 0.0
+    }
+   ],
+   "his_score": 68.79,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 100% \u2192 54.1 (n=4317)",
+    "open: W"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 100% \u2192 54.1 (n=4317)",
+    "open: W"
+   ],
+   "lanes_after": {
+    "WU": 1.0,
+    "UB": 0.0,
+    "UR": 0.0,
+    "UG": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 13,
+   "taken": "Inspired Tethermage",
+   "top3": [
+    {
+     "name": "Inspired Tethermage",
+     "score": 41.71
+    },
+    {
+     "name": "Plains",
+     "score": 0.0
+    }
+   ],
+   "his_score": 41.71,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 100% \u2192 splash G (fixing 1) 42.4",
+    "castable in 0% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 100% \u2192 splash G (fixing 1) 42.4",
+    "castable in 0% of likely lanes"
+   ],
+   "lanes_after": {
+    "WU": 1.0,
+    "UB": 0.0,
+    "UR": 0.0,
+    "UG": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 14,
+   "taken": "Mountain",
+   "top3": [
+    {
+     "name": "Mountain",
+     "score": 0.0
+    }
+   ],
+   "his_score": 0.0,
+   "his_rank": null,
+   "scored": false,
+   "dropped": 0,
+   "reasons_top": [
+    "No data"
+   ],
+   "reasons_his": [
+    "No data"
+   ],
+   "lanes_after": {
+    "WU": 1.0,
+    "UB": 0.0,
+    "UR": 0.0,
+    "UG": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 1,
+   "taken": "Plan for All Outcomes",
+   "top3": [
+    {
+     "name": "Plan for All Outcomes",
+     "score": 81.63
+    },
+    {
+     "name": "Teyo, Lightshield Expert",
+     "score": 65.29
+    },
+    {
+     "name": "Blossom-Blessed Angel",
+     "score": 60.22
+    }
+   ],
+   "his_score": 81.63,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 100% \u2192 59.0 (n=17682)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 100% \u2192 59.0 (n=17682)"
+   ],
+   "lanes_after": {
+    "WU": 1.0,
+    "UB": 0.0,
+    "UR": 0.0,
+    "UG": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 2,
+   "taken": "Your Fate Ends Here",
+   "top3": [
+    {
+     "name": "Your Fate Ends Here",
+     "score": 72.62
+    },
+    {
+     "name": "Ruric Thar, Biomagus",
+     "score": 63.31
+    },
+    {
+     "name": "Fatehold Annex",
+     "score": 61.45
+    }
+   ],
+   "his_score": 72.62,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "WU 100% \u2192 59.5 (n=18808)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #2",
+    "WU 100% \u2192 59.5 (n=18808)"
+   ],
+   "lanes_after": {
+    "WU": 1.0,
+    "UB": 0.0,
+    "UR": 0.0,
+    "UG": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 3,
+   "taken": "Countersculpt",
+   "top3": [
+    {
+     "name": "Countersculpt",
+     "score": 71.26
+    },
+    {
+     "name": "Blessed Ghoul",
+     "score": 51.49
+    },
+    {
+     "name": "Divining Duelist",
+     "score": 50.15
+    }
+   ],
+   "his_score": 71.26,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 100% \u2192 60.0 (n=20112)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 100% \u2192 60.0 (n=20112)"
+   ],
+   "lanes_after": {
+    "WU": 1.0,
+    "UB": 0.0,
+    "UR": 0.0,
+    "UG": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 4,
+   "taken": "Way of the Healer",
+   "top3": [
+    {
+     "name": "Way of the Healer",
+     "score": 71.27
+    },
+    {
+     "name": "Twinned Vision",
+     "score": 63.71
+    },
+    {
+     "name": "Undulating Witness",
+     "score": 59.58
+    }
+   ],
+   "his_score": 71.27,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 100% \u2192 60.7 (n=20766)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 100% \u2192 60.7 (n=20766)"
+   ],
+   "lanes_after": {
+    "WU": 1.0,
+    "UB": 0.0,
+    "UR": 0.0,
+    "UG": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 5,
+   "taken": "Eye of Jace",
+   "top3": [
+    {
+     "name": "Prophesied End",
+     "score": 66.4
+    },
+    {
+     "name": "Way of the Cryomancer",
+     "score": 55.58
+    },
+    {
+     "name": "Innovative Commons",
+     "score": 49.53
+    }
+   ],
+   "his_score": 46.45,
+   "his_rank": 6,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 100% \u2192 57.5 (n=15223)"
+   ],
+   "reasons_his": [
+    "Fit #6 \u00b7 Power #10",
+    "WU 100% \u2192 52.3 (n=2918)"
+   ],
+   "lanes_after": {
+    "WU": 1.0,
+    "UB": 0.0,
+    "UR": 0.0,
+    "UG": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 6,
+   "taken": "Shatterwing Pegasus",
+   "top3": [
+    {
+     "name": "Murmuring Volume",
+     "score": 59.75
+    },
+    {
+     "name": "Hapatra, the Desert Frost",
+     "score": 54.29
+    },
+    {
+     "name": "Emergency Phytomedic",
+     "score": 53.99
+    }
+   ],
+   "his_score": 50.95,
+   "his_rank": 4,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "WU 100% \u2192 54.8 (n=7551)"
+   ],
+   "reasons_his": [
+    "Fit #4 \u00b7 Power #7",
+    "WU 100% \u2192 55.1 (n=19041)"
+   ],
+   "lanes_after": {
+    "WU": 1.0,
+    "UB": 0.0,
+    "UR": 0.0,
+    "UG": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 7,
+   "taken": "Tam's Resistance",
+   "top3": [
+    {
+     "name": "Icy Reception",
+     "score": 60.98
+    },
+    {
+     "name": "Murmuring Volume",
+     "score": 59.73
+    },
+    {
+     "name": "Tam's Resistance",
+     "score": 57.13
+    }
+   ],
+   "his_score": 57.13,
+   "his_rank": 3,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "WU 100% \u2192 57.2 (n=31079)"
+   ],
+   "reasons_his": [
+    "Fit #3 \u00b7 Power #5",
+    "WU 100% \u2192 56.5 (n=15376)"
+   ],
+   "lanes_after": {
+    "WU": 1.0,
+    "UB": 0.0,
+    "UR": 0.0,
+    "UG": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 8,
+   "taken": "Ruric Thar, Biomagus",
+   "top3": [
+    {
+     "name": "Surveillance Phantasm",
+     "score": 64.64
+    },
+    {
+     "name": "Ruric Thar, Biomagus",
+     "score": 61.28
+    },
+    {
+     "name": "Murmuring Volume",
+     "score": 59.39
+    }
+   ],
+   "his_score": 61.28,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 100% \u2192 58.2 (n=43235)"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #2",
+    "WU 100% \u2192 54.7 (n=10709)"
+   ],
+   "lanes_after": {
+    "WU": 1.0,
+    "UB": 0.0,
+    "UR": 0.0,
+    "UG": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 9,
+   "taken": "Sphinx's Approach",
+   "top3": [
+    {
+     "name": "Sphinx's Approach",
+     "score": 52.2
+    },
+    {
+     "name": "Living Library",
+     "score": 41.5
+    },
+    {
+     "name": "Sureshot Sower",
+     "score": 38.49
+    }
+   ],
+   "his_score": 52.2,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 100% \u2192 56.1 (n=12400)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 100% \u2192 56.1 (n=12400)"
+   ],
+   "lanes_after": {
+    "WU": 1.0,
+    "UB": 0.0,
+    "UR": 0.0,
+    "UG": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 10,
+   "taken": "Cryotheory Adept",
+   "top3": [
+    {
+     "name": "Theorix Metamage",
+     "score": 52.29
+    },
+    {
+     "name": "Cryotheory Adept",
+     "score": 48.8
+    },
+    {
+     "name": "Ghalta the Immovable",
+     "score": 47.51
+    }
+   ],
+   "his_score": 48.8,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "WU 100% \u2192 52.7 (n=4374)"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #3",
+    "WU 100% \u2192 53.0 (n=8896)"
+   ],
+   "lanes_after": {
+    "WU": 1.0,
+    "UB": 0.0,
+    "UR": 0.0,
+    "UG": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 11,
+   "taken": "Blessed Ghoul",
+   "top3": [
+    {
+     "name": "Blessed Ghoul",
+     "score": 50.84
+    },
+    {
+     "name": "Divining Duelist",
+     "score": 49.21
+    },
+    {
+     "name": "Roiling Canopy",
+     "score": 44.44
+    }
+   ],
+   "his_score": 50.84,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 100% \u2192 54.1 (n=4317)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 100% \u2192 54.1 (n=4317)"
+   ],
+   "lanes_after": {
+    "WU": 1.0,
+    "UB": 0.0,
+    "UR": 0.0,
+    "UG": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 12,
+   "taken": "Undulating Witness",
+   "top3": [
+    {
+     "name": "Undulating Witness",
+     "score": 94.33
+    },
+    {
+     "name": "Chandra's Emberling",
+     "score": 49.78
+    },
+    {
+     "name": "Rampart Hunter",
+     "score": 44.82
+    }
+   ],
+   "his_score": 94.33,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 100% \u2192 55.7 (n=27161)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 100% \u2192 55.7 (n=27161)"
+   ],
+   "lanes_after": {
+    "WU": 1.0,
+    "UB": 0.0,
+    "UR": 0.0,
+    "UG": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 13,
+   "taken": "Prophesied End",
+   "top3": [
+    {
+     "name": "Prophesied End",
+     "score": 87.28
+    },
+    {
+     "name": "Inspired Tethermage",
+     "score": 42.24
+    }
+   ],
+   "his_score": 87.28,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 100% \u2192 57.5 (n=15223)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 100% \u2192 57.5 (n=15223)"
+   ],
+   "lanes_after": {
+    "WU": 1.0,
+    "UB": 0.0,
+    "UR": 0.0,
+    "UG": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 14,
+   "taken": "Swamp",
+   "top3": [
+    {
+     "name": "Swamp",
+     "score": 0.0
+    }
+   ],
+   "his_score": 0.0,
+   "his_rank": null,
+   "scored": false,
+   "dropped": 0,
+   "reasons_top": [
+    "No data"
+   ],
+   "reasons_his": [
+    "No data"
+   ],
+   "lanes_after": {
+    "WU": 1.0,
+    "UB": 0.0,
+    "UR": 0.0,
+    "UG": 0.0
+   }
+  }
+ ],
+ "builder": [
+  {
+   "main": "WU",
+   "splash": "",
+   "deck_wr": 61.86,
+   "label": "WU",
+   "cards": [
+    {
+     "name": "Eye of Jace",
+     "count": 1
+    },
+    {
+     "name": "Unsummon",
+     "count": 2
+    },
+    {
+     "name": "Countersculpt",
+     "count": 1
+    },
+    {
+     "name": "Fblthp, Impossibly Lost",
+     "count": 1
+    },
+    {
+     "name": "Prophesied End",
+     "count": 1
+    },
+    {
+     "name": "Repurposed Enforcer",
+     "count": 1
+    },
+    {
+     "name": "Tam's Resistance",
+     "count": 1
+    },
+    {
+     "name": "Teyo, Lightshield Expert",
+     "count": 1
+    },
+    {
+     "name": "Tomik, Orzhov Lawmage",
+     "count": 1
+    },
+    {
+     "name": "Arni, Humble Scribe",
+     "count": 1
+    },
+    {
+     "name": "Koth of the Homestead",
+     "count": 1
+    },
+    {
+     "name": "Mindseeker Oculus",
+     "count": 2
+    },
+    {
+     "name": "Prudent Fateseer",
+     "count": 1
+    },
+    {
+     "name": "Your Fate Ends Here",
+     "count": 1
+    },
+    {
+     "name": "Desperate Futurescribe",
+     "count": 2
+    },
+    {
+     "name": "Plan for All Outcomes",
+     "count": 1
+    },
+    {
+     "name": "Protege's Awakening",
+     "count": 1
+    },
+    {
+     "name": "Way of the Healer",
+     "count": 1
+    },
+    {
+     "name": "Undulating Witness",
+     "count": 1
+    },
+    {
+     "name": "Ruric Thar, Biomagus",
+     "count": 1
+    },
+    {
+     "name": "Kindred Judgment",
+     "count": 1
+    },
+    {
+     "name": "Plains",
+     "count": 7
+    },
+    {
+     "name": "Island",
+     "count": 9
+    }
+   ]
+  }
+ ],
+ "his_deck": {
+  "main": "WU",
+  "splash": "",
+  "deck_wr": 55.84,
+  "label": null,
+  "cards": [
+   {
+    "name": "Unsummon",
+    "count": 2
+   },
+   {
+    "name": "Eye of Jace",
+    "count": 1
+   },
+   {
+    "name": "Repurposed Enforcer",
+    "count": 1
+   },
+   {
+    "name": "Teyo, Lightshield Expert",
+    "count": 1
+   },
+   {
+    "name": "Tomik, Orzhov Lawmage",
+    "count": 1
+   },
+   {
+    "name": "Cryotheory Adept",
+    "count": 2
+   },
+   {
+    "name": "Fblthp, Impossibly Lost",
+    "count": 1
+   },
+   {
+    "name": "Tetsuko Umezawa, Fugitive",
+    "count": 1
+   },
+   {
+    "name": "Countersculpt",
+    "count": 1
+   },
+   {
+    "name": "Koth of the Homestead",
+    "count": 1
+   },
+   {
+    "name": "Shatterwing Pegasus",
+    "count": 1
+   },
+   {
+    "name": "Your Fate Ends Here",
+    "count": 1
+   },
+   {
+    "name": "Arni, Humble Scribe",
+    "count": 1
+   },
+   {
+    "name": "Mindseeker Oculus",
+    "count": 2
+   },
+   {
+    "name": "Prudent Fateseer",
+    "count": 1
+   },
+   {
+    "name": "Way of the Healer",
+    "count": 1
+   },
+   {
+    "name": "Plan for All Outcomes",
+    "count": 1
+   },
+   {
+    "name": "Traxos, Academy Guardian",
+    "count": 1
+   },
+   {
+    "name": "Desperate Futurescribe",
+    "count": 2
+   },
+   {
+    "name": "Ruric Thar, Biomagus",
+    "count": 1
+   },
+   {
+    "name": "Plains",
+    "count": 8
+   },
+   {
+    "name": "Island",
+    "count": 8
+   }
+  ]
+ }
+}

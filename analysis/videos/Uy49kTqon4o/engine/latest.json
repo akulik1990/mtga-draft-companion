@@ -1,8 +1,8 @@
 {
- "commit": "6a31baa",
+ "commit": "e6a9d84",
  "date": "2026-11-06",
  "dataset": "FRA_PremierDraft_All_Data.json",
- "top1": 26,
+ "top1": 27,
  "top3": 34,
  "n": 38,
  "not_scored": 4,
@@ -105,7 +105,7 @@
     },
     {
      "name": "Stingerquill Annex",
-     "score": 52.12
+     "score": 55.92
     }
    ],
    "his_score": 63.81,
@@ -303,7 +303,7 @@
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #2",
+    "Fit #1 \u00b7 Power #3",
     "UR 57% \u2192 56.1 (n=5931)",
     "BR 38% \u2192 55.4 (n=7386)"
    ],
@@ -365,7 +365,7 @@
    "top3": [
     {
      "name": "Transformative Commons",
-     "score": 48.82
+     "score": 48.83
     },
     {
      "name": "Unflinching Hortimancer",
@@ -376,17 +376,17 @@
      "score": 33.79
     }
    ],
-   "his_score": 48.82,
+   "his_score": 48.83,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #2",
+    "Fit #1 \u00b7 Power #1",
     "UR 92% \u2192 off-colour",
     "castable in 0% of likely lanes"
    ],
    "reasons_his": [
-    "Fit #1 \u00b7 Power #2",
+    "Fit #1 \u00b7 Power #1",
     "UR 92% \u2192 off-colour",
     "castable in 0% of likely lanes"
    ],
@@ -403,28 +403,29 @@
    "taken": "Stingerquill Annex",
    "top3": [
     {
-     "name": "Keeper of the Quiet Hour",
-     "score": 51.97
+     "name": "Stingerquill Annex",
+     "score": 52.12
     },
     {
-     "name": "Stingerquill Annex",
-     "score": 51.86
+     "name": "Keeper of the Quiet Hour",
+     "score": 51.97
     },
     {
      "name": "Generous Revival",
      "score": 46.59
     }
    ],
-   "his_score": 51.86,
-   "his_rank": 2,
+   "his_score": 52.12,
+   "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #4",
-    "UR 89% \u2192 57.2 (n=8720)"
+    "Fit #1 \u00b7 Power #2",
+    "UR 89% \u2192 fixes a splash (+3.0)",
+    "castable in 4% of likely lanes"
    ],
    "reasons_his": [
-    "Fit #2 \u00b7 Power #3",
+    "Fit #1 \u00b7 Power #2",
     "UR 89% \u2192 fixes a splash (+3.0)",
     "castable in 4% of likely lanes"
    ],
@@ -620,16 +621,16 @@
      "score": 58.89
     },
     {
-     "name": "Unsummon",
-     "score": 53.91
+     "name": "Theorix Annex",
+     "score": 54.59
     },
     {
-     "name": "Theorix Annex",
-     "score": 52.5
+     "name": "Unsummon",
+     "score": 53.91
     }
    ],
-   "his_score": 52.5,
-   "his_rank": 3,
+   "his_score": 54.59,
+   "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
@@ -638,7 +639,7 @@
     "BR 22% \u2192 splash U (fixing 1) 47.8"
    ],
    "reasons_his": [
-    "Fit #3 \u00b7 Power #5",
+    "Fit #2 \u00b7 Power #4",
     "UBR 69% \u2192 55.4 (n=5277)",
     "BR 22% \u2192 splash U (fixing 1) 45.5"
    ],
@@ -1035,7 +1036,7 @@
      "score": 62.91
     }
    ],
-   "his_score": 52.73,
+   "his_score": 55.51,
    "his_rank": 6,
    "scored": true,
    "dropped": 0,
@@ -1044,7 +1045,7 @@
     "UBR 91% \u2192 59.3 (n=5013)"
    ],
    "reasons_his": [
-    "Fit #6 \u00b7 Power #7",
+    "Fit #6 \u00b7 Power #5",
     "UBR 91% \u2192 55.4 (n=5277)"
    ],
    "lanes_after": {
@@ -1246,7 +1247,7 @@
    "top3": [
     {
      "name": "Stingerquill Annex",
-     "score": 56.24
+     "score": 59.92
     },
     {
      "name": "Pyre Rhymer",
@@ -1257,16 +1258,16 @@
      "score": 52.61
     }
    ],
-   "his_score": 56.24,
+   "his_score": 59.92,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #4",
+    "Fit #1 \u00b7 Power #2",
     "UBR 100% \u2192 54.8 (n=6043)"
    ],
    "reasons_his": [
-    "Fit #1 \u00b7 Power #4",
+    "Fit #1 \u00b7 Power #2",
     "UBR 100% \u2192 54.8 (n=6043)"
    ],
    "lanes_after": {
@@ -1287,14 +1288,14 @@
     },
     {
      "name": "Haunted Ridge",
-     "score": 60.31
+     "score": 62.14
     },
     {
      "name": "Semester Foreseer",
      "score": 52.61
     }
    ],
-   "his_score": 60.31,
+   "his_score": 62.14,
    "his_rank": 2,
    "scored": true,
    "dropped": 0,
