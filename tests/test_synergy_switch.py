@@ -24,6 +24,7 @@ def test_match_keys():
     assert not needs.matches(c(), {"power_min": 1})  # no power known
 
 
+@pytest.mark.skipif(not (DATA_DIR / "Sets" / "FRA_PremierDraft_All_Data.json").exists(), reason="no FRA data")
 def test_switch_defaults_off(tmp_path, monkeypatch):
     m = tmp_path / "manual.json"
     m.write_text(json.dumps({"card_wants": {"A": {"enabler": "x"}, "B": {"enabler": "x", "synergy": True}, "C": {"enabler": "x", "synergy": False}}}))
