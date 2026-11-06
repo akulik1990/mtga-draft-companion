@@ -8,13 +8,14 @@ from pathlib import Path
 
 from fastapi import Body, FastAPI, HTTPException, WebSocket, WebSocketDisconnect
 from fastapi.encoders import jsonable_encoder
-from fastapi.responses import HTMLResponse
+from fastapi.responses import FileResponse, HTMLResponse
 from fastapi.staticfiles import StaticFiles
 
 from companion import ROOT
 from companion.advisor_v2 import config
 from companion.advisor_v2.composition import ROLES, curve_slot, roles
 from companion.advisor_v2.lanes import castable, pips
+from companion.api.videos import VIDEOS, videos_router
 from companion.session import DraftSession
 
 log = logging.getLogger(__name__)
@@ -185,7 +186,7 @@ class Hub:
                 self.clients.discard(ws)
 
 
-def create_app(session: DraftSession, *, run_scanner: bool = True, frontend: Path = FRONTEND_BUILD) -> FastAPI:
+def create_app(session: DraftSession, *, run_scanner: bool = True, frontend: Path = FRONTEND_BUILD, videos: Path = VIDEOS) -> FastAPI:
     hub = Hub()
 
     def snapshot():
@@ -373,6 +374,8 @@ def create_app(session: DraftSession, *, run_scanner: bool = True, frontend: Pat
         finally:
             hub.clients.discard(websocket)
 
+    app.include_router(videos_router(videos))
+
     @app.middleware("http")
     async def revalidate_pages(request, call_next):
         # Hashed bundles under _app/immutable never change; the page itself must be re-checked after a rebuild.
@@ -383,6 +386,11 @@ def create_app(session: DraftSession, *, run_scanner: bool = True, frontend: Pat
         return response
 
     if frontend.is_dir():
+        @app.get("/videos/{rest:path}")
+        @app.get("/videos")
+        def videos_page(rest: str = ""):  # client-side routes of the prerendered shell
+            return FileResponse(frontend / "200.html")
+
         app.mount("/", StaticFiles(directory=frontend, html=True), name="frontend")
     else:
         @app.get("/", response_class=HTMLResponse)

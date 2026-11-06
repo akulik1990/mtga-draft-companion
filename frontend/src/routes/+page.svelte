@@ -59,6 +59,7 @@
 		{#each VIEWS as v}
 			<button class="rounded px-3 py-1 {view === v ? 'bg-zinc-800 text-zinc-100' : 'text-zinc-400 hover:text-zinc-100'}" onclick={() => (view = v)}>{v}</button>
 		{/each}
+		<a class="rounded px-3 py-1 text-zinc-400 hover:text-zinc-100" href="/videos">Videos</a>
 	</nav>
 </header>
 
