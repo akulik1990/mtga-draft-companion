@@ -1,0 +1,34 @@
+Rewrite Regrets: share of Premier decks that play it (23889 decks)
+
+good (>=0.60)
+  splash decks                         20.4% [18.8, 22.0] (519/2542)
+  non-splash decks                     12.8% [11.6, 14.0] (376/2944)
+  splash decks that play black         26.2% [24.3, 28.2] (519/1979)
+  non-splash decks that play black     25.8% [23.6, 28.1] (376/1456)
+  black is a main colour               31.1% [29.4, 32.9] (832/2672)
+  black is only the splash             8.3% [6.3, 10.2] (63/763)
+
+average (0.52-0.58)
+  splash decks                         16.0% [14.9, 17.1] (721/4511)
+  non-splash decks                     14.0% [13.1, 14.8] (834/5974)
+  splash decks that play black         21.3% [19.9, 22.7] (721/3387)
+  non-splash decks that play black     28.1% [26.5, 29.7] (833/2964)
+  black is a main colour               28.5% [27.3, 29.8] (1457/5110)
+  black is only the splash             7.8% [6.3, 9.3] (97/1241)
+
+weak (<0.52)
+  splash decks                         15.8% [14.5, 17.1] (483/3058)
+  non-splash decks                     12.6% [11.6, 13.5] (611/4860)
+  splash decks that play black         22.8% [21.0, 24.6] (483/2118)
+  non-splash decks that play black     27.1% [25.3, 29.0] (611/2253)
+  black is a main colour               29.1% [27.6, 30.6] (1021/3506)
+  black is only the splash             8.4% [6.6, 10.3] (73/865)
+
+all
+  splash decks                         17.0% [16.3, 17.8] (1723/10111)
+  non-splash decks                     13.2% [12.7, 13.8] (1821/13778)
+  splash decks that play black         23.0% [22.1, 24.0] (1723/7484)
+  non-splash decks that play black     27.3% [26.2, 28.3] (1820/6673)
+  black is a main colour               29.3% [28.5, 30.2] (3310/11288)
+  black is only the splash             8.1% [7.1, 9.1] (233/2869)
+

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { onDestroy, onMount } from 'svelte';
-	import { api, IDEA_STATUSES, type EngineDeck, type Idea, type IdeaStatus, type VideoData, type VideoEngine } from '../api';
+import { onDestroy, onMount } from 'svelte';
+import { api, IDEA_STATUSES, type EngineDeck, type Idea, type IdeaStatus, type VideoData, type VideoEngine } from '../api';
 
 	let { id }: { id: string } = $props();
 	let data = $state<VideoData | null>(null);
@@ -10,6 +10,8 @@
 	let against = $state('');
 	let other = $state<VideoEngine | null>(null);
 	let build = $state(0);
+	let showEng = $state(true);
+	const setEng = () => { try { localStorage.setItem('videoEngine', showEng ? '1' : '0'); } catch { /* private mode */ } };
 	let statusFilter = $state('');
 	let phaseFilter = $state('');
 
@@ -59,6 +61,7 @@
 	const mss = (t: string | number) => { const s = secs(t); return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`; };
 
 	onMount(async () => {
+		try { showEng = localStorage.getItem('videoEngine') !== '0'; } catch { /* default on */ }
 		if (yt()?.Player) attach();
 		else {
 			const prev = (window as any).onYouTubeIframeAPIReady;
@@ -97,7 +100,7 @@
 		if (box && row) box.scrollTo({ top: row.offsetTop, behavior: 'smooth' }); // own box only, never the page
 	});
 
-	// ── colour path: his latest stated plan at each pick next to v2's top lane after the pick
+	// ── colour path: the latest stated plan at each pick next to v2's top lane after the pick
 	const plans = $derived.by(() => {
 		const at = new Map((data?.picks.colour_path ?? []).map((c) => [c.after, c]));
 		let cur = '';
@@ -118,6 +121,7 @@
 		[...cs].sort((a, b) => Number(BASICS.includes(a.name)) - Number(BASICS.includes(b.name)) || a.name.localeCompare(b.name));
 
 	// ── ideas
+	const nick = $derived(data?.video.player || 'Player');
 	const ideas = $derived(data?.ideas ?? []);
 	const phases = $derived([...new Set(ideas.map((i) => i.phase).filter(Boolean))]);
 	const stateOf = (i: Idea): IdeaStatus => data?.status[i.id] ?? { status: 'untested', result: '', doc: '' };
@@ -135,31 +139,33 @@
 {#if !data}
 	<p class="text-zinc-500">loading…</p>
 {:else}
+	<div class="col" style="--tl: {showEng ? '40vh' : '24vh'}">
 	<div class="mb-3 flex flex-wrap items-baseline gap-x-4 gap-y-1 text-sm">
 		<a href="." class="text-zinc-400 hover:text-zinc-100">&larr; all videos</a>
 		<h1 class="text-lg font-semibold">{data.video.title}</h1>
 		<span class="text-zinc-400">{data.video.player} · {data.video.set}</span>
-		{#if engine}<span class="text-zinc-500">v2 {engine.commit} ({engine.date}): top-1 {engine.top1}/{engine.n}, top-3 {engine.top3}/{engine.n}</span>{/if}
+		<label class="text-zinc-300"><input type="checkbox" bind:checked={showEng} onchange={setEng} /> Engine output</label>
+{#if engine && showEng}<span class="text-zinc-500">v2 {engine.commit} ({engine.date}): top-1 {engine.top1}/{engine.n}, top-3 {engine.top3}/{engine.n}</span>{/if}
 	</div>
 
-	<section class="mb-6 lg:max-w-4xl">
+	<section class="mb-6">
 		<div bind:this={playerBox} class="aspect-video w-full">
 			<iframe bind:this={frame} class="h-full w-full rounded" {src} title={data.video.title} allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
 		</div>
-		<div bind:this={box} role="list" onwheel={hold} ontouchmove={hold} class="relative max-h-[40vh] overflow-y-auto overflow-x-hidden rounded border border-zinc-800 text-xs">
+		<div bind:this={box} role="list" onwheel={hold} ontouchmove={hold} class="tl relative max-h-[40vh] overflow-y-auto overflow-x-hidden rounded border border-zinc-800 text-xs">
 			{#each rows as { p, e }, i (key(p))}
-				{@const miss = !!e && e.top3[0]?.name !== p.taken}
-				{@const inTop = !!e && e.top3.some((c) => c.name === p.taken)}
+				{@const miss = showEng && !!e && e.top3[0]?.name !== p.taken}
+{@const inTop = !!e && e.top3.some((c) => c.name === p.taken)}
 				{@const lanes = e ? Object.entries(e.lanes_after).slice(0, 3) : []}
 				<div data-i={i} role="presentation" onclick={() => p.time && seek(p.time)} class="{p.time ? 'cursor-pointer ' : ''}border-t border-zinc-900 px-2 py-1.5 first:border-t-0 {i === active ? 'bg-sky-950 ring-1 ring-inset ring-sky-600' : miss ? 'bg-amber-950/30' : ''}">
 					<div class="flex flex-wrap items-baseline gap-x-2">
 						{#if p.time}<span class="text-sky-400 tabular-nums">{mss(p.time)}</span>{/if}
 						<span class="text-zinc-500">P{p.pack}p{p.pick}</span>
 						<span class="text-sm font-medium break-words">{p.taken}</span>
-						{#if e && e.scored !== false}<span class={miss ? 'text-amber-400' : 'text-emerald-400'}>{miss ? `v2 ranked it #${e.his_rank ?? '?'}` : 'v2 agrees ✓'}</span>{/if}
+						{#if showEng && e && e.scored !== false}<span class={miss ? 'text-amber-400' : 'text-emerald-400'}>{miss ? `v2 ranked it #${e.his_rank ?? '?'}` : 'v2 agrees ✓'}</span>{/if}
 					</div>
 					<div class="mt-1 border-l-2 border-sky-700 pl-2 text-zinc-300">
-						<span class="font-semibold text-sky-400">HIM</span>
+						<span class="font-semibold text-sky-400">{nick}</span>
 						{#if unquote(p.plan)}<div class="break-words"><span class="text-zinc-500">plan:</span> {unquote(p.plan)}</div>{/if}
 						{#if unquote(p.reasoning)}<div class="break-words">{unquote(p.reasoning)}</div>{/if}
 						{#if p.considered && Object.keys(p.considered).length}
@@ -167,20 +173,22 @@
 							{#each Object.entries(p.considered) as [card, why]}<div class="break-words"><span class="text-zinc-100">{card}</span>{unquote(why) ? `: ${unquote(why)}` : ''}</div>{/each}
 						{/if}
 					</div>
-					<div class="mt-1 border-l-2 border-amber-600 pl-2 text-zinc-400">
+					{#if showEng}
+<div class="mt-1 border-l-2 border-amber-600 pl-2 text-zinc-400">
 						<span class="font-semibold text-amber-400">ENGINE</span>
 						{#if !e || e.scored === false}
 							<div>engine: not scored</div>
 						{:else}
 							{#each e.top3 as c, k}<div class="break-words {c.name === p.taken ? 'font-semibold text-emerald-400' : ''}">{k + 1}. {c.name} <span class="text-zinc-500 tabular-nums">{c.score.toFixed(1)}</span></div>{/each}
-							{#if !inTop}<div class="break-words text-emerald-400">his card: rank {e.his_rank ?? '?'}, score {e.his_score?.toFixed(1) ?? '?'}</div>{/if}
+							{#if !inTop}<div class="break-words text-emerald-400">their card: rank {e.his_rank ?? '?'}, score {e.his_score?.toFixed(1) ?? '?'}</div>{/if}
 							{#if miss && e.his_score != null && e.top3[0]}<div class="text-amber-400">gap to #1: −{(e.top3[0].score - e.his_score).toFixed(1)}</div>{/if}
 							{#if e.reasons_top.length}<div class="break-words"><span class="text-zinc-500">why #1:</span> {e.reasons_top.join(' · ')}</div>{/if}
-							{#if miss && e.reasons_his.length}<div class="break-words"><span class="text-zinc-500">why his card:</span> {e.reasons_his.join(' · ')}</div>{/if}
+							{#if miss && e.reasons_his.length}<div class="break-words"><span class="text-zinc-500">why their card:</span> {e.reasons_his.join(' · ')}</div>{/if}
 							{#if lanes.length}<div><span class="text-zinc-500">lanes after the pick:</span> {lanes.map(([l, v]) => `${l} ${lanePct(v)}`).join(' · ')}</div>{/if}
 						{/if}
-					</div>
-					{#if p.pack_cards?.length}
+</div>
+{/if}
+{#if p.pack_cards?.length}
 						<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_noninteractive_element_interactions -->
 						<details class="mt-1 text-zinc-500" onclick={(ev) => ev.stopPropagation()}>
 							<summary class="cursor-pointer">pack ({p.pack_cards.length})</summary>
@@ -191,15 +199,16 @@
 			{:else}
 				<p class="p-2 text-zinc-500">no picks recorded</p>
 			{/each}
-			<div class="h-[calc(40vh-4rem)]" aria-hidden="true"></div> <!-- lets the last rows reach the top of the box -->
+			<div class="h-[calc(40vh-4rem)] lg:h-[20vh]" aria-hidden="true"></div> <!-- lets the last rows reach the top of the box -->
 		</div>
 	</section>
+	</div>
 
 	<section class="mb-6">
 		<div class="mb-2 flex flex-wrap items-center gap-4 text-xs text-zinc-500">
 			<h2 class="text-sm font-semibold text-zinc-200">Picks</h2>
-			<label>engine
-				<select class="rounded bg-zinc-900 px-1 py-0.5 text-zinc-200" bind:value={commit} onchange={() => pick('engine', commit)}>
+			{#if showEng}<label>engine
+<select class="rounded bg-zinc-900 px-1 py-0.5 text-zinc-200" bind:value={commit} onchange={() => pick('engine', commit)}>
 					<option value="latest">latest{data.engine ? ` (${data.engine.commit})` : ''}</option>
 					{#each data.commits as c}<option value={c}>{c}</option>{/each}
 				</select>
@@ -210,25 +219,25 @@
 					{#each data.commits as c}<option value={c}>{c}</option>{/each}
 				</select>
 			</label>
-			{#if other}<span>{rows.filter((r) => r.e && r.o && r.e.top3[0]?.name !== r.o.top3[0]?.name).length} picks where v2's #1 changed</span>{/if}
+			{#if other}<span>{rows.filter((r) => r.e && r.o && r.e.top3[0]?.name !== r.o.top3[0]?.name).length} picks where v2's #1 changed</span>{/if}{/if}
 		</div>
 		<div class="overflow-x-auto">
 			<table class="w-full min-w-[80rem] text-sm">
 				<thead class="text-left text-xs text-zinc-500">
 					<tr>
-						<th class="pr-3 font-normal">Time</th><th class="pr-3 font-normal">Pick</th><th class="pr-3 font-normal">His pick</th>
-						<th class="pr-3 font-normal">v2 #1</th><th class="pr-3 font-normal">v2 #2</th><th class="pr-3 font-normal">v2 #3</th>
-						<th class="pr-3 font-normal">His reasoning</th><th class="font-normal">Our reasoning</th>
+						<th class="pr-3 font-normal">Time</th><th class="pr-3 font-normal">Pick</th><th class="pr-3 font-normal">{nick} picked</th>
+						{#if showEng}<th class="pr-3 font-normal">v2 #1</th><th class="pr-3 font-normal">v2 #2</th><th class="pr-3 font-normal">v2 #3</th>{/if}
+						<th class="pr-3 font-normal">{nick} said</th>{#if showEng}<th class="font-normal">Our reasoning</th>{/if}
 					</tr>
 				</thead>
 				<tbody>
 					{#each rows as { p, e, o } (key(p))}
-						{@const miss = !!e && e.top3[0]?.name !== p.taken}
-						<tr onclick={() => p.time && seek(p.time)} class="{p.time ? 'cursor-pointer ' : ''}border-t border-zinc-800 align-top {miss ? 'bg-amber-950/30' : ''}">
+						{@const miss = showEng && !!e && e.top3[0]?.name !== p.taken}
+<tr onclick={() => p.time && seek(p.time)} class="{p.time ? 'cursor-pointer ' : ''}border-t border-zinc-800 align-top {miss ? 'bg-amber-950/30' : ''}">
 							<td class="py-1 pr-3"><button class="text-sky-400 tabular-nums hover:underline" title={p.time}>{mss(p.time)}</button></td>
 							<td class="pr-3 whitespace-nowrap">P{p.pack}p{p.pick}</td>
 							<td class="pr-3 font-medium">{p.taken}</td>
-							{#each [0, 1, 2] as k}
+							{#if showEng}{#each [0, 1, 2] as k}
 								{@const c = e?.top3[k]}
 								<td class="pr-3 {c?.name === p.taken ? 'font-semibold text-emerald-400' : ''}">
 									{#if c}
@@ -236,21 +245,21 @@
 										{#if k === 0 && o && o.top3[0]?.name !== c.name}<div class="text-xs text-amber-400">was {o.top3[0]?.name}</div>{/if}
 									{/if}
 								</td>
-							{/each}
-							<td class="max-w-sm pr-3 text-xs text-zinc-300">{unquote(p.reasoning)}</td>
-							<td class="max-w-sm text-xs text-zinc-400">
+							{/each}{/if}
+<td class="max-w-sm pr-3 text-xs text-zinc-300">{unquote(p.reasoning)}</td>
+							{#if showEng}<td class="max-w-sm text-xs text-zinc-400">
 								{#if e}
 									{#if !miss}
 										{e.reasons_top.join(' · ')}
 									{:else}
 										<div>#1: {e.reasons_top.join(' · ')}</div>
-										<div class="mt-1 text-zinc-500">His{e.his_rank ? ` (rank ${e.his_rank}, ${e.his_score?.toFixed(1)})` : ''}: {e.reasons_his.join(' · ')}</div>
+										<div class="mt-1 text-zinc-500">{nick}{e.his_rank ? ` (rank ${e.his_rank}, ${e.his_score?.toFixed(1)})` : ''}: {e.reasons_his.join(' · ')}</div>
 									{/if}
 								{/if}
-							</td>
-						</tr>
-					{/each}
-				</tbody>
+</td>{/if}
+</tr>
+{/each}
+</tbody>
 			</table>
 		</div>
 	</section>
@@ -260,7 +269,7 @@
 		<div class="max-h-[28rem] overflow-auto text-xs">
 			<table class="w-full">
 				<thead class="sticky top-0 bg-zinc-950 text-left text-zinc-500">
-					<tr><th class="font-normal">Pick</th><th class="font-normal">His plan</th><th class="font-normal">v2 top lane after the pick</th></tr>
+					<tr><th class="font-normal">Pick</th><th class="font-normal">{nick} plan</th>{#if showEng}<th class="font-normal">v2 top lane after the pick</th>{/if}</tr>
 				</thead>
 				<tbody>
 					{#each rows as { p, e }, i (key(p))}
@@ -268,7 +277,7 @@
 						<tr class="border-t border-zinc-900 {plans[i].changed ? 'text-zinc-100' : 'text-zinc-500'}">
 							<td class="pr-2 whitespace-nowrap">P{p.pack}p{p.pick}</td>
 							<td class="pr-2">{plans[i].changed ? plans[i].cur : '·'}</td>
-							<td class="whitespace-nowrap {top && plans[i].cur && !top[0].split('').some((c) => plans[i].cur.includes(c)) ? 'text-amber-400' : ''}">{top ? `${top[0]} ${lanePct(top[1])}` : '-'}</td>
+							{#if showEng}<td class="whitespace-nowrap {top && plans[i].cur && !top[0].split('').some((c) => plans[i].cur.includes(c)) ? 'text-amber-400' : ''}">{top ? `${top[0]} ${lanePct(top[1])}` : '-'}</td>{/if}
 						</tr>
 					{/each}
 				</tbody>
@@ -279,20 +288,20 @@
 	<section class="mb-6">
 		<div class="mb-2 flex items-center gap-4 text-xs text-zinc-500">
 			<h2 class="text-sm font-semibold text-zinc-200">Deck</h2>
-			{#if engine && engine.builder.length > 1}
+			{#if showEng && engine && engine.builder.length > 1}
 				<select class="rounded bg-zinc-900 px-1 py-0.5 text-zinc-200" bind:value={build}>
 					{#each engine.builder as b, i}<option value={i}>{b.label ?? `build ${i + 1}`}</option>{/each}
 				</select>
 			{/if}
 		</div>
 		<div class="grid gap-6 md:grid-cols-2">
-			{#each [{ title: `His 40${engine?.his_deck?.deck_wr ? ` · deck model ${engine.his_deck.deck_wr}` : ''}`, cards: hisDeck, vs: ours?.cards ?? [] }, { title: `Our builder's 40 from his pool${ours ? ` · ${ours.main ?? ''}${ours.splash ? ' + ' + ours.splash : ''} · deck model ${ours.deck_wr}` : ''}`, cards: ours?.cards ?? [], vs: hisDeck }] as d}
+			{#each [{ title: `${nick}'s 40${showEng && engine?.his_deck?.deck_wr ? ` · deck model ${engine.his_deck.deck_wr}` : ''}`, cards: hisDeck, vs: ours?.cards ?? [] }, { title: `Our builder's 40 from their pool${ours ? ` · ${ours.main ?? ''}${ours.splash ? ' + ' + ours.splash : ''} · deck model ${ours.deck_wr}` : ''}`, cards: ours?.cards ?? [], vs: hisDeck }].slice(0, showEng ? 2 : 1) as d}
 				{@const mine = names(d.vs)}
 				<div>
 					<h3 class="mb-1 text-xs text-zinc-500">{d.title}</h3>
 					<ul class="text-sm">
 						{#each order(d.cards) as c (c.name)}
-							<li class={mine.has(c.name) || BASICS.includes(c.name) ? '' : 'text-amber-400'}>{c.count} {c.name}</li>
+							<li class={!showEng || mine.has(c.name) || BASICS.includes(c.name) ? '' : 'text-amber-400'}>{c.count} {c.name}</li>
 						{:else}
 							<li class="text-zinc-500">none</li>
 						{/each}
@@ -300,7 +309,7 @@
 				</div>
 			{/each}
 		</div>
-		<p class="mt-1 text-xs text-zinc-500">Amber: not in the other deck.</p>
+		{#if showEng}<p class="mt-1 text-xs text-zinc-500">Amber: not in the other deck.</p>{/if}
 	</section>
 
 	<section>
@@ -342,3 +351,19 @@
 		</table>
 	</section>
 {/if}
+
+<style>
+	/* desktop: one centred column; player width is capped so player + timeline minimum (--tl) fit the viewport (5rem = page padding + header) */
+	@media (min-width: 1024px) {
+		.col {
+			container-type: inline-size;
+			margin-inline: auto;
+			max-width: min(100%, calc((100vh - 5rem - var(--tl)) * 16 / 9));
+			transition: max-width 0.3s;
+		}
+		.col .tl {
+			max-height: none;
+			height: max(var(--tl), calc(100vh - 5rem - 56.25cqw));
+		}
+	}
+</style>

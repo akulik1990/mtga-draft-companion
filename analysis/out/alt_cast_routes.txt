@@ -1,0 +1,54 @@
+## reanimate to battlefield: 9 cards
+- Darklight Phoenix (B, m): Flying, haste At the beginning of combat on your turn, if two or more creatures died this turn, return this card from your graveyard to the battlefiel
+- Gallia, Tragic Host (B, u): Menace (This creature can't be blocked except by two or more creatures.) {4}{B}, Exile another creature card from your graveyard: Return this card fro
+- Generous Revival (W, u): Return target creature card with mana value 3 or less from your graveyard to the battlefield with an additional +1/+1 counter on it. Flashback {4}{W} 
+- Grim Repriser (BR, u): Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) {B}{R}: Return this card from your graveyard to the battl
+- Liliana the Repentant (B, r): Whenever another creature or planeswalker you control enters, mill two cards. Exhaust — {5}{B}: Return target creature or planeswalker card from your 
+- Primal Witchstalker (BG, u): Menace (This creature can't be blocked except by two or more creatures.) When this creature enters, mill four cards. When you do, return target land c
+- Proctor of Potential (UW, r): Whenever this creature or another creature you control enters, surveil 1. (Look at the top card of your library. You may put it into your graveyard.) 
+- Return to the Light Realms (W, m): Return all nonland permanent cards from your graveyard to the battlefield.
+- Rewrite Regrets (B, u): Return target creature or planeswalker card with mana value 6 or less from your graveyard to the battlefield. Empower Jace 2. (Put two loyalty counter
+
+## free cast (no mana cost): 2 cards
+- Omnipresence (G, m): You may cast spells with mana value less than or equal to the number of creatures you control from your hand without paying their mana costs.
+- Uldaros Theorix (BU, m): Flying When Uldaros Theorix enters, if you cast him, exile up to one target nonland card of each card type from your graveyard. Copy those cards. You 
+
+## cast from graveyard or exile: 6 cards
+- Bestial Incursion (G, c): Create a 4/4 green Beast creature token with trample. Flashback {5}{G} (You may cast this card from your graveyard for its flashback cost. Then exile 
+- Generous Revival (W, u): Return target creature card with mana value 3 or less from your graveyard to the battlefield with an additional +1/+1 counter on it. Flashback {4}{W} 
+- Predictive Preparations (W, c): Put a +1/+1 counter on each of one or two target creatures. Flashback {3}{W} (You may cast this card from your graveyard for its flashback cost. Then 
+- Recursive Recruitment (BU, u): Create two 2/2 colorless Wizard Soldier creature tokens named Cadet. If this spell was cast from a graveyard, put a +1/+1 counter on each of them for 
+- Stingcaster Mage (R, m): Haste When this creature enters, target instant or sorcery card in your graveyard gains flashback until end of turn. The flashback cost is equal to it
+- Twinned Vision (RU, c): Draw a card. If this spell wasn't cast from your hand, draw two cards instead. Flashback—{1}{U/R}{U/R}, Discard a card. (You may cast this card from y
+
+## mana of any colour: 6 cards
+- Gideon's Memorial (W, r): Creature tokens you control get +1/+0 and have vigilance. {T}: Add one mana of any color. Spend this mana only to cast a planeswalker spell. {1}{W}, D
+- Kwia Vigorbloom (GW, m): Flying, vigilance, lifelink, ward {2} Whenever you gain life, create a colorless artifact token named Lotus with "{T}, Sacrifice this token: Add three
+- Murmuring Volume (C, c): {T}: Add one mana of any color. {2}, {T}, Discard a card: Draw a card.
+- Room of Refuge (C, c): This land enters tapped. As it enters, choose a color. {T}: Add one mana of the chosen color. {5}, {T}, Sacrifice this land: Put two +1/+1 counters on
+- Vraska, Soul of Stone (RUW, r): Artifact creatures you control have vigilance. Whenever you cast a noncreature spell, create a 1/1 colorless Sculpture Treasure artifact creature toke
+- Vraska, the Cutting Glare (BG, r): Deathtouch When Vraska enters, if you control six or more lands, destroy target permanent an opponent controls. They create a Treasure token. (It's an
+
+## treasure / mana token: 7 cards
+- Aerid Konstrari (GR, m): Flying When Aerid Konstrari enters or dies, create a Heartwood token. (It's a red and green artifact with "{T}: Add {R} or {G}.") {6}: Create a Heartw
+- Heartwood Crafter (GR, u): This creature enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.) {T}: Add {C}. This mana can't be spent
+- Hungering Puppetbeast (G, r): When this creature enters, create a Heartwood token. (It's a red and green artifact with "{T}: Add {R} or {G}.") {1}, Sacrifice another artifact: Put 
+- Konstrari Improviser (GR, c): This creature enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.) // Create a Heartwood token. (It's a r
+- Tenured Tethermage (GR, r): When this creature enters, you may sacrifice a land. If you do, create two tapped Heartwood tokens. (They're red and green artifacts with "{T}: Add {R
+- Vraska, the Cutting Glare (BG, r): Deathtouch When Vraska enters, if you control six or more lands, destroy target permanent an opponent controls. They create a Treasure token. (It's an
+- Woodwork Prodigy (GR, u): At the beginning of your upkeep, if this creature isn't prepared, it becomes prepared. (While it's prepared, you may cast a copy of its spell. Doing s
+
+## basic landcycling / land search: 7 cards
+- Apex Witchstalker (B, c): Menace (This creature can't be blocked except by two or more creatures.) When this creature enters or dies, you gain 2 life. Basic landcycling {2} ({2
+- Awaken the Inferno (R, c): Awaken the Inferno deals 6 damage to target creature or planeswalker an opponent controls. Put a +1/+1 counter on up to one target creature you contro
+- Fblthp, Knows the Way (G, u): Domain — Fblthp's power is equal to the number of basic land types among lands you control. When Fblthp enters, search your library for up to X basic 
+- Hexhaven Battalion (W, c): Create three 2/2 colorless Wizard Soldier creature tokens named Cadet. Empower Jace 2. (Put two loyalty counters on a Jace token you control. If you d
+- Simulacrum Shaper (G, r): When this creature enters, you may search your library for a basic land card, put that card onto the battlefield tapped, then shuffle. When this creat
+- Undulating Witness (U, c): Flying {2}: This creature gets +1/-1 until end of turn. Basic landcycling {2} ({2}, Discard this card: Search your library for a basic land card, reve
+- Vinelasher Adept (G, c): Reach When this creature enters, put three +1/+1 counters on target creature. Basic landcycling {2} ({2}, Discard this card: Search your library for a
+
+## copy a spell or permanent: 4 cards
+- Face Yourself (R, r): For each creature target player controls, create a token that's a copy of that creature, except it has haste and "At the beginning of the end step, if
+- Sphinx of False Conclusions (U, r): Flash Flying Whenever this creature attacks, draw a card, then discard a card. When this creature dies, if it isn't a token, create a token that's a c
+- Splinter Twin (R, r): Enchant creature Enchanted creature has "{T}: Create a token that's a copy of this creature, except it has haste. Exile that token at the beginning of
+- Sublime Epiphany (U, r): Choose one or more — • Counter target spell. • Counter target activated or triggered ability. • Return target nonland permanent to its owner's hand. •
