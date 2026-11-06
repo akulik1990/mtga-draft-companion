@@ -1,0 +1,57 @@
+{
+ "id": "CLKfTRiFbJA",
+ "time": "17:30-19:20 (final 40/40 deck screen at 1152 s, sideboard row on screen; cut-off 1160 s)",
+ "main": {
+  "Heartwood Crafter": 2,
+  "No Admittance": 1,
+  "Samut, Hazoret's Champion": 1,
+  "Compel Brutality": 1,
+  "Something Worth Saving": 1,
+  "Sureshot Sower": 1,
+  "Konstrari Improviser": 1,
+  "Fulminous Forte": 1,
+  "Wrath of the Bloodmane": 1,
+  "Inspired Tethermage": 1,
+  "Woodwork Prodigy": 1,
+  "Heartstring Puller": 1,
+  "Violent Echoes": 1,
+  "Jiang Yanggu, Never Alone": 2,
+  "Fblthp, Knows the Way": 1,
+  "Jiang Yanggu, Alone": 2,
+  "Edgar, Moonlit Sovereign": 1,
+  "Kiora of Fire and Ashes": 1,
+  "Vinelasher Adept": 1,
+  "Emrakul, the Exigent Doom": 1
+ },
+ "lands": {
+  "Mountain": 7,
+  "Forest": 8,
+  "Konstrari Annex": 1,
+  "Rockfall Vale": 1
+ },
+ "sideboard": {
+  "Hallway Heckler": 1,
+  "Tether Technician": 1,
+  "Flourishing Grapple": 1,
+  "Budding Insurgent": 1,
+  "Restore with Empathy": 1,
+  "Wrecking Gecko": 1,
+  "Vinelasher Adept": 1,
+  "Stingerquill Annex": 1,
+  "Mabel, Valley Hero": 1,
+  "Vigorbloom Annex": 1,
+  "Tam's Resistance": 1,
+  "Hexhaven Dueling Arena": 1
+ },
+ "spells": 23,
+ "land_count": 17,
+ "landcyclers_in_main": [
+  "Vinelasher Adept"
+ ],
+ "colours": "Pure red-green, no splash: Mountain x7, Forest x8, Konstrari Annex, Rockfall Vale. Emrakul, the Exigent Doom is the 'poster child'; 17 creatures.",
+ "notes": [
+  "Sideboard row at 1152 s lists 12 cards: Hallway Heckler, Tether Technician, Flourishing Grapple, Budding Insurgent, Restore with Empathy, Wrecking Gecko, Vinelasher Adept, Stingerquill Annex, Mabel Valley Hero, Vigorbloom Annex, Tam's Resistance, Hexhaven Dueling Arena; basic lands picked (the Island at P1p14 and others) are not shown.",
+  "18:00-19:30: eight cuts; Tam's Resistance first; two-drop slot has 'one, two, three, four, five, kind of six things to do early'; he does not like Hallway Heckler or Budding Insurgent, 'kind of don't love tether technician', 'don't love wrecking gecko'; maybe cuts one Vinelasher Adept and Restore with Empathy; creature count 17.",
+  "P3p8, P3p10, P3p12 and P3p13 take unknown: no spell from those packs is in the pool or sideboard row, so the takes are probably basic lands (Plains / Swamp / Island), which the sideboard row does not show."
+ ]
+}
