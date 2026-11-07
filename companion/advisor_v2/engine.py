@@ -164,7 +164,8 @@ class DraftAdvisorV2:
     POWER_EARLY_BY = 18
     SPLASH_EARLY = 1.0  # a splashable off-colour card counts at least this share of its value above replacement at pick 1, fading to 0 by SPLASH_EARLY_BY spells (over the fitted off-colour play rate); Akshin's call 2026-11-07, untested
     SPLASH_EARLY_BY = 18
-    COLOUR_PACE = 12.0  # cards of one colour per 23 spells in a two-main-colour deck; a mono-coloured card of a colour ahead of that pace loses points
+    COLOUR_PACE = 11.0  # cards of one colour per 23 spells in a two-colour lane; a mono-coloured card of a colour ahead of its pace loses points (Akshin: 11 keeps splashes open; trophy decks average 14.2 / 10.1, analysis/colour_split.py)
+    COLOUR_PACE_THREE = "7,6,5"  # the same in a three-colour lane, for the pool's most, second and third most held colour
     COLOUR_PACE_POINTS = 4.0  # up to this many WR points, in proportion to how far ahead (100% ahead = all); 0 = off. Akshin's call 2026-11-07, untested
     FIT_WEIGHTS_LANES = True  # per-pick fitted weights averaged over the likely pairs (p >= 0.05) instead of choice.top_lane's one pair; Akshin's call 2026-11-07, untested
     THREE_OPEN = 0.5  # share of each likely pair's chance moved to its three-colour bases at pick 1, fading to 0 by THREE_OPEN_BY spells; Akshin's call 2026-11-07, untested
@@ -349,6 +350,22 @@ class DraftAdvisorV2:
         if self.HALF_PIVOT and spells >= self.HALF_PIVOT:
             self.anchor = self.top_lane
         self.lanes = self._lanes(self.commit)  # pool only; what the Analyst shows and what Fit uses
+        # Per-colour ceiling for COLOUR_PACE: COLOUR_PACE in a pair; COLOUR_PACE_THREE by the pool's count order in a triple;
+        # averaged over the lanes holding the colour, by their chance.
+        three = [float(v) for v in self.COLOUR_PACE_THREE.split(",")]
+        self.colour_pace = {}
+        for x in "WUBRG":
+            num = den = 0.0
+            for lane, p in self.lanes.items():
+                if x not in lane or p <= 0:
+                    continue
+                if len(lane) == 3:
+                    order = sorted(lane, key=lambda y: (-self.colour_count[y], "WUBRG".index(y)))
+                    num += p * three[order.index(x)]
+                else:
+                    num += p * self.COLOUR_PACE
+                den += p
+            self.colour_pace[x] = num / den if den else self.COLOUR_PACE
         self.spells = spells
         self.decks = {}  # lane -> [(value, card)] of the pool's castable spells, best first; built on demand
         self.split = None
@@ -567,7 +584,7 @@ class DraftAdvisorV2:
         cols = [c for c in (card.get("colors") or []) if c in "WUBRG"]
         if self.COLOUR_PACE_POINTS and kind != "land" and len(cols) == 1:
             # Akshin, 2026-11-07: two main colours, not one; a colour ahead of COLOUR_PACE cards per 23 spells wants less.
-            due = self.COLOUR_PACE * getattr(self, "spells", 0) / 23.0
+            due = getattr(self, "colour_pace", {}).get(cols[0], self.COLOUR_PACE) * getattr(self, "spells", 0) / 23.0
             have = getattr(self, "colour_count", {}).get(cols[0], 0)
             if due > 0 and have > due:
                 a -= self.COLOUR_PACE_POINTS * min(1.0, (have - due) / due)
