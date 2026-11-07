@@ -1,0 +1,62 @@
+{
+ "id": "97ZjOdFNU4U",
+ "time": "15:28-17:50 (build; the 40 is final on the deck screen at 17:48, 'Draft Deck 40/40'; cut-off 17:55)",
+ "main": {
+  "Diviner of Victory": 1,
+  "Unsummon": 1,
+  "Yuriko, Hope from the Shadows": 1,
+  "Mabel, Bitter Recluse": 1,
+  "Tetsuko Umezawa, Fugitive": 1,
+  "Void Extrapolator": 1,
+  "Vraska's Final Mercy": 1,
+  "Paradox Shaper": 2,
+  "Theorix Charm": 2,
+  "Mindseeker Oculus": 3,
+  "Seasoned Cryomancer": 1,
+  "Theoretical Necromancer": 1,
+  "Protege's Awakening": 1,
+  "Traxos, Academy Guardian": 1,
+  "Extended Absence": 1,
+  "Null Summoner": 1,
+  "Recursive Recruitment": 2,
+  "Apex Witchstalker": 1
+ },
+ "lands": {
+  "Island": 8,
+  "Swamp": 8,
+  "Theorix Annex": 1
+ },
+ "sideboard": {
+  "Refute Destiny": 1,
+  "Memory Trap": 1,
+  "Shatterwing Pegasus": 1,
+  "Perfected Theory": 1,
+  "Surveillance Phantasm": 1,
+  "Tetsuko Umezawa, Fugitive": 1,
+  "Divining Duelist": 1,
+  "Extrapolate the Impossible": 1,
+  "Solve for Disappointment": 1,
+  "Rampart Hunter": 1,
+  "Bestial Incursion": 1,
+  "Meticulous Commons": 1,
+  "Blessed Ghoul": 1,
+  "Grim Repriser": 1,
+  "Hapatra, the Desert Fang": 1,
+  "Craftwork Crusher": 1,
+  "Keeper of the Quiet Hour": 1
+ },
+ "spells": 23,
+ "land_count": 17,
+ "landcyclers_in_main": [
+  "Apex Witchstalker"
+ ],
+ "colours": "UB, no splash: Island x8, Swamp x8, Theorix Annex (blue-black). Average cost 2.6 at 15:36 before the cuts.",
+ "notes": [
+  "At 16:50 (frame 990 s) the deck builder opened at 42/40 with 16 free basics auto-added (Island x8, Swamp x8); the final screen at 1068 s is 40/40: 23 spells, Theorix Annex, 8 Island, 8 Swamp.",
+  "15:46-15:59: 'I kind of like having the Apex Witchstalker at the top end. Traxos is nice. I feel like I'm always cutting the Protege's Awakening, but I kind of want to try it. So, we'll keep it. Yuriko ('Euro') could definitely be the cut. Perfected Theory could be a cut.'",
+  "16:13 'I'm going to cut Solve for Disappointment cuz I already have Null Summoner which does a very similar thing and those effects don't stack very (well)'; 16:24-16:36 cuts and un-cuts Yuriko; 16:47 cuts the Surveillance Phantasm; 16:51 'creature count at 16. So, I can probably cut another creature here.'",
+  "17:13 'do I would rather have Euro or Surveillance Phantasm? Probably Euro' (Yuriko stays); 17:20 'the theoretical necromancer is kind of okay. Good with paradox shaper stuff'; 17:39 'Protege's Awakening is maybe a little hard to use. Maybe I'd rather just have a cheap play. Let's try it though.' It is still in the 40 at 17:48.",
+  "Hapatra, Memory Trap, Grim Repriser, Bestial Incursion, Keeper of the Quiet Hour, Craftwork Crusher and Meticulous Commons stay in the sideboard: no splash.",
+  "The Mountain picked at P1p14 is among the free basics (not shown in the sideboard row); P3p14 (Perfected Theory) was never displayed and is inferred."
+ ]
+}

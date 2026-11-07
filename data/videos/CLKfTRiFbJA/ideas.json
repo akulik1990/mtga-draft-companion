@@ -1,0 +1,488 @@
+{
+ "video": "CLKfTRiFbJA",
+ "player": "NicolaiBolas",
+ "set": "FRA",
+ "source": "YouTube auto-caption transcript 0:00-19:45 (tools/video_draft.py transcript CLKfTRiFbJA --start 0 --end 1170), card names corrected against data/Sets/FRA_PremierDraft_All_Data.json; nothing past 19:45 read. 'type' marks each idea as claim, heuristic or one-off pick; 'repeats' lists ideas of earlier videos it restates; 'related' lists looser topic matches. Solo draft: every idea is the host's (speaker field kept for the schema).",
+ "ideas": [
+  {
+   "id": "CLK-01",
+   "time": 50,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Heartwood Crafter keeps beating him when opponents play it: a turn-one Crafter plus the soul-tether token lets them cast giant creatures fast with a 1/1 that pays for activated abilities.",
+   "quote": "They go this turn one, turn two, they get the soul tether going and then they just start like casting giant creatures pretty fast.",
+   "cards": [
+    "Heartwood Crafter"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Heartwood Crafter in ramp decks.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "CLK-02",
+   "time": 80,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Kiora of Fire and Ashes is an easy pick in a ramp deck: Crafter ramps to Kiora and leaves the extra mana for her activated ability.",
+   "quote": "Kiora is pretty easy pick. I do also like Rescue Girl.",
+   "cards": [
+    "Kiora of Fire and Ashes",
+    "Heartwood Crafter"
+   ],
+   "kind": "synergy",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Kiora of Fire and Ashes with Heartwood Crafter or other ramp.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "XSY-31",
+    "994-03"
+   ]
+  },
+  {
+   "id": "CLK-03",
+   "time": 120,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Thalia, the Survivor is obnoxious: it adds cost to your curve and the opponent does not always see the impact.",
+   "quote": "It just adds a lot of costs to your curve and it's deceptive because you don't always see the impact it has on your opponent.",
+   "cards": [
+    "Thalia, the Survivor"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Thalia, the Survivor and win rate against it.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "5aM-05"
+   ]
+  },
+  {
+   "id": "CLK-04",
+   "time": 190,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Take the top-end card and save the two-drops for later: Edgar, Moonlit Sovereign over Vigorbloom Vanguard, because Edgar can hold mana and grow.",
+   "quote": "I'm going to try taking the Edgar. Get a like nice top end card. Save the two drops for later.",
+   "cards": [
+    "Edgar, Moonlit Sovereign",
+    "Vigorbloom Vanguard"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Edgar, Moonlit Sovereign against Vigorbloom Vanguard.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "n6s-12",
+    "5aM-09"
+   ]
+  },
+  {
+   "id": "CLK-05",
+   "time": 215,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Pick the colour you want to bias towards: Wrath of the Bloodmane over Rescue Girl because he wants to end up in red, even though Rescue Girl works with Kiora.",
+   "quote": "I would love to just bias towards red if I can. And so, I'm going to do that by taking the Wrath of the Blood Mane.",
+   "cards": [
+    "Wrath of the Bloodmane",
+    "Rescue Girl, First Responder"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Whether biasing towards the open colour beats the stronger off-colour card at pick 4.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "55a-04",
+    "XSY-05"
+   ]
+  },
+  {
+   "id": "CLK-06",
+   "time": 230,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Read missing cards in a pack: three cards are gone and two must have been a pair, so the black Rescue Girl or Massacre Girl went; no good black cards seen.",
+   "quote": "There's three cards missing in this pack and two of them must have been part of a pair.",
+   "cards": [
+    "Rescue Girl, First Responder",
+    "Massacre Girl, Most Wanted"
+   ],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "Whether the missing pair partner predicts what the upstream drafter took.",
+   "type": "heuristic",
+   "repeats": [
+    "97Z-03",
+    "XSY-18",
+    "5aM-03"
+   ],
+   "related": []
+  },
+  {
+   "id": "CLK-07",
+   "time": 255,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "No Admittance is just fantastic and a sign red is open: a few good red cards arrive in a row.",
+   "quote": "No Admittance is just fantastic. Easy pick up. I think red is looking to be open here.",
+   "cards": [
+    "No Admittance"
+   ],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "Whether a P1p5 No Admittance predicts red decks.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "n6s-02",
+    "pdI-05"
+   ]
+  },
+  {
+   "id": "CLK-08",
+   "time": 335,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "He has not had a two-drop; a 'one, two, three, four, five, six' curve of rares is rare; take the two-drop (Sureshot Sower) over an ambitious splash, because splashing too ambitiously is his usual mistake.",
+   "quote": "I feel like I've been like a bit too ambitious with trying to splash.",
+   "cards": [
+    "Sureshot Sower"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Splash play rate by pick position of the first splash card.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "CWs-33",
+    "mqZ-30"
+   ]
+  },
+  {
+   "id": "CLK-09",
+   "time": 410,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Splashing too much is a drafting habit: when a very good two-colour deck shows itself, speculative greedy picks into other colours lead to over-splashing (a Stark / LSV story).",
+   "quote": "it's like the way your draft and like your approach is leaning towards that a little bit much.",
+   "cards": [
+    "Hallway Heckler",
+    "Puppet Crafting"
+   ],
+   "kind": "splash / mana",
+   "engine_area": "picker",
+   "test_idea": "Win rate of two-colour decks against decks with a splash, controlling for skill.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "CWs-46",
+    "XSY-22"
+   ]
+  },
+  {
+   "id": "CLK-10",
+   "time": 465,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "When nothing in the pack matters to a settled red-green deck, take a speculative card: he does not love Keeper of the Quiet Hour or Blazing Crescendo and has ten good cards already.",
+   "quote": "I do think I'm kind of set on red green and I don't really mind just being like okay I have 10 good cards. I'm just going to take this as a speculative.",
+   "cards": [
+    "Vigorbloom Annex",
+    "Keeper of the Quiet Hour",
+    "Blazing Crescendo"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Not testable.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "9nA-14",
+    "n6s-27"
+   ]
+  },
+  {
+   "id": "CLK-11",
+   "time": 530,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Face Yourself needs a planeswalker he will not control often, so it would not stick around; Jiang Yanggu, Alone is better because his creatures hold back on defense and it gets rid of extra lands.",
+   "quote": "I'm not going to control a planeswalker a ton. I don't have a ton of Empower Jace.",
+   "cards": [
+    "Face Yourself",
+    "Jiang Yanggu, Alone"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Face Yourself by number of Empower Jace cards.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "CLK-12",
+   "time": 560,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Violent Echoes is a really good removal spell that lets him empower Jace and may draw a card if it kills a three-toughness creature.",
+   "quote": "Really good removal spell that then will let me empower Jace. Maybe draw a card if I kill a three toughness thing.",
+   "cards": [
+    "Violent Echoes"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Violent Echoes.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "55a-05",
+    "VTU-14"
+   ]
+  },
+  {
+   "id": "CLK-13",
+   "time": 585,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Jiang Yanggu, Never Alone is better than Jiang Yanggu, Alone (four-drop versus five-drop, five-five of stats across two bodies), but the card gets worse in multiples because the bodies stick around.",
+   "quote": "This is the sort of card that gets worse in multiples because the bodies tend to stick around.",
+   "cards": [
+    "Jiang Yanggu, Never Alone",
+    "Jiang Yanggu, Alone"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Jiang Yanggu, Never Alone by copy count.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "CLK-14",
+   "time": 640,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Prefer the red-green land to an extra removal spell when early creatures are low-power: Rockfall Vale over Compel Brutality, because bad mana is one of the ways you lose and he already has three or four burn spells.",
+   "quote": "one of the ways you lose is by having bad mana. And I feel like this card is going to do a lot of work for me.",
+   "cards": [
+    "Rockfall Vale",
+    "Compel Brutality"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Rockfall Vale in red-green decks against Compel Brutality.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "CWs-12",
+    "mqZ-34"
+   ]
+  },
+  {
+   "id": "CLK-15",
+   "time": 660,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "A Konstrari Improviser is the ramp he hoped to see: it gets him to Kiora and the Yanggus and works with his artifact tokens.",
+   "quote": "I love the Constrai improviser. I was hoping to see some of these. Just get myself some ramp.",
+   "cards": [
+    "Konstrari Improviser"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Konstrari Improviser in ramp decks.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "CLK-16",
+   "time": 715,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "The question for a good card at pick 8 is not whether it is good but whether it beats the card you end up cutting, and whether it beats a basic land: he takes a land over Bestial Incursion.",
+   "quote": "the question is, is bestial incursion going to be better than the card I end up cutting",
+   "cards": [
+    "Konstrari Annex",
+    "Bestial Incursion"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Rate at which a pick-8 playable makes the 23 when the deck already has 20 playables.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "55a-32",
+    "994-25"
+   ]
+  },
+  {
+   "id": "CLK-17",
+   "time": 765,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Jiang Yanggu works in multiples because you can discard one to the other, so he keeps taking them.",
+   "quote": "They work well in multiples because you can discard the one to the other.",
+   "cards": [
+    "Jiang Yanggu, Alone"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "Win rate of decks with two Jiang Yanggu, Alone.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "CLK-18",
+   "time": 795,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Take a card you want to try over a better-fitting one when the deck is already strong: Emrakul, the Exigent Doom first pick of pack 3 over Konstrari Improviser.",
+   "quote": "I could take Constrampt Improviser. It might just be better for my deck, but I'm going to take this thing because I really want to try it out.",
+   "cards": [
+    "Emrakul, the Exigent Doom",
+    "Konstrari Improviser"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Emrakul, the Exigent Doom.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "CLK-19",
+   "time": 860,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Early acceleration over a fourth removal spell when removal is already sufficient (Wrath, Forte, Echoes, No Admittance, Sureshot): Heartwood Crafter again.",
+   "quote": "my removal suite is looking pretty reasonable right now. I would rather just get like early acceleration to get to my top end cards a little faster.",
+   "cards": [
+    "Heartwood Crafter",
+    "Wrath of the Bloodmane"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Marginal value of the fifth removal spell against a ramp creature.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "994-27",
+    "55a-30"
+   ]
+  },
+  {
+   "id": "CLK-20",
+   "time": 940,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "A third copy of Heartwood Crafter gets worse: he does not want to flood on that effect, and Compel Brutality fills out his removal suite as the fifth removal spell.",
+   "quote": "I think heartwood cracfter the third copy does get a little bit worse. You don't want to get too flooded on this sort of effect.",
+   "cards": [
+    "Heartwood Crafter",
+    "Compel Brutality"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Win rate of decks by Heartwood Crafter copy count.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "Uy4-10"
+   ]
+  },
+  {
+   "id": "CLK-21",
+   "time": 965,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "In best of three Flourishing Grapple would be a great sideboard card, but in best of one he takes a deck card.",
+   "quote": "If this was best of three, I would take flourishing grapple as a great sideboard card.",
+   "cards": [
+    "Flourishing Grapple",
+    "Tam's Resistance"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Not testable on best-of-one data; record only.",
+   "type": "one-off pick",
+   "repeats": [],
+   "related": [
+    "8Bz-22",
+    "uoy-27"
+   ]
+  },
+  {
+   "id": "CLK-22",
+   "time": 990,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "draft",
+   "claim": "Samut, Hazoret's Champion over No Admittance: even if a mistake, it makes his whole deck better (Yanggu can attack immediately), and it has done a lot of work against him.",
+   "quote": "I'm going to take this over no admittance. It might be a mistake honestly, but I feel like it's just done so much work in games against me.",
+   "cards": [
+    "Samut, Hazoret's Champion",
+    "No Admittance"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Samut, Hazoret's Champion against No Admittance in red-green.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "uoy-01"
+   ]
+  },
+  {
+   "id": "CLK-23",
+   "time": 1135,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "build",
+   "claim": "Cut Tam's Resistance first: the deck has enough two-drops and early things to do; Budding Insurgent, Hallway Heckler, Tether Technician and Wrecking Gecko are cut as he prefers Jiang Yanggu to get rid of extra lands; with 17 creatures he is comfortable.",
+   "quote": "I'd rather have Jiang Yangu to be my getting rid of extra lands card.",
+   "cards": [
+    "Tam's Resistance",
+    "Budding Insurgent",
+    "Hallway Heckler",
+    "Tether Technician",
+    "Wrecking Gecko"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Creature count (16 / 17 / 18) against win rate in ramp decks.",
+   "type": "heuristic",
+   "related": [
+    "97Z-34",
+    "9nA-31",
+    "CWs-45"
+   ]
+  },
+  {
+   "id": "CLK-24",
+   "time": 1155,
+   "speaker": "NicolaiBolas (host)",
+   "phase": "build",
+   "claim": "Not splashing: with a pure red-green value deck he keeps Emrakul as the poster child and biases towards green because the double-green Fblthp makes it easy to get the next colour.",
+   "quote": "It's just a pure red green kind of value deck.",
+   "cards": [
+    "Emrakul, the Exigent Doom",
+    "Fblthp, Knows the Way"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Win rate of two-colour against splash decks in red-green.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "XSY-22"
+   ]
+  }
+ ]
+}

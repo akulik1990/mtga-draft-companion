@@ -1,0 +1,2155 @@
+{
+ "commit": "ea1d9d7",
+ "date": "2026-11-07",
+ "dataset": "FRA_PremierDraft_All_Data.json",
+ "top1": 23,
+ "top3": 36,
+ "n": 39,
+ "not_scored": 3,
+ "dropped_cards": 0,
+ "picks": [
+  {
+   "pack": 1,
+   "pick": 1,
+   "taken": "Violent Echoes",
+   "top3": [
+    {
+     "name": "Violent Echoes",
+     "score": 62.36
+    },
+    {
+     "name": "Vigorbloom Vanguard",
+     "score": 61.65
+    },
+    {
+     "name": "Samut, Hazoret's Champion",
+     "score": 61.14
+    }
+   ],
+   "his_score": 62.36,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WR 24% \u2192 56.7 (n=4359)",
+    "UR 24% \u2192 60.4 (n=15138)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WR 24% \u2192 56.7 (n=4359)",
+    "UR 24% \u2192 60.4 (n=15138)"
+   ],
+   "lanes_after": {
+    "WU": 0.102,
+    "WB": 0.102,
+    "WG": 0.102,
+    "UB": 0.102
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 2,
+   "taken": "Verdant Kraken",
+   "top3": [
+    {
+     "name": "Verdant Kraken",
+     "score": 61.45
+    },
+    {
+     "name": "Memory Trap",
+     "score": 60.69
+    },
+    {
+     "name": "No Admittance",
+     "score": 57.46
+    }
+   ],
+   "his_score": 61.45,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WG 24% \u2192 58.8 (n=3540)",
+    "UG 24% \u2192 57.2 (n=2624)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WG 24% \u2192 58.8 (n=3540)",
+    "UG 24% \u2192 57.2 (n=2624)"
+   ],
+   "lanes_after": {
+    "WG": 0.13,
+    "BG": 0.128,
+    "RG": 0.126,
+    "UG": 0.123
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 3,
+   "taken": "Protege's Awakening",
+   "top3": [
+    {
+     "name": "Protege's Awakening",
+     "score": 60.49
+    },
+    {
+     "name": "Way of the Wildspeaker",
+     "score": 56.62
+    },
+    {
+     "name": "Compel Brutality",
+     "score": 55.36
+    }
+   ],
+   "his_score": 60.49,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "BG 13% \u2192 off-colour",
+    "WG 11% \u2192 off-colour",
+    "castable in 38% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "BG 13% \u2192 off-colour",
+    "WG 11% \u2192 off-colour",
+    "castable in 38% of likely lanes"
+   ],
+   "lanes_after": {
+    "BG": 0.129,
+    "WG": 0.111,
+    "RG": 0.108,
+    "WB": 0.107
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 4,
+   "taken": "Primal Witchstalker",
+   "top3": [
+    {
+     "name": "Primal Witchstalker",
+     "score": 59.27
+    },
+    {
+     "name": "Wrath of the Bloodmane",
+     "score": 58.41
+    },
+    {
+     "name": "Campus Crier",
+     "score": 55.94
+    }
+   ],
+   "his_score": 59.27,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "BG 16% \u2192 59.0 (n=20312)",
+    "RG 15% \u2192 off-colour",
+    "castable in 16% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "BG 16% \u2192 59.0 (n=20312)",
+    "RG 15% \u2192 off-colour",
+    "castable in 16% of likely lanes"
+   ],
+   "lanes_after": {
+    "UR": 0.217,
+    "WU": 0.214,
+    "WR": 0.204,
+    "BG": 0.057
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 5,
+   "taken": "Something Worth Saving",
+   "top3": [
+    {
+     "name": "Warrior's Blades",
+     "score": 54.97
+    },
+    {
+     "name": "Something Worth Saving",
+     "score": 54.73
+    },
+    {
+     "name": "Way of the Pyromancer",
+     "score": 53.38
+    }
+   ],
+   "his_score": 54.73,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 24% \u2192 off-colour",
+    "WU 24% \u2192 off-colour",
+    "castable in 23% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #2",
+    "UR 22% \u2192 off-colour",
+    "WU 21% \u2192 off-colour",
+    "castable in 20% of likely lanes"
+   ],
+   "lanes_after": {
+    "UR": 0.225,
+    "WU": 0.22,
+    "WR": 0.216,
+    "BG": 0.052
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 6,
+   "taken": "Vinelasher Adept",
+   "top3": [
+    {
+     "name": "Greenhouse Propagator",
+     "score": 53.44
+    },
+    {
+     "name": "Theoretical Necromancer",
+     "score": 53.32
+    },
+    {
+     "name": "Silence the Echo",
+     "score": 52.39
+    }
+   ],
+   "his_score": 46.4,
+   "his_rank": 7,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 21% \u2192 off-colour",
+    "WU 21% \u2192 off-colour",
+    "castable in 24% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #7 \u00b7 Power #6",
+    "UR 15% \u2192 off-colour",
+    "WU 14% \u2192 off-colour",
+    "castable in 48% of likely lanes"
+   ],
+   "lanes_after": {
+    "UR": 0.219,
+    "WU": 0.217,
+    "WR": 0.202,
+    "BG": 0.063
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 7,
+   "taken": "Sureshot Sower",
+   "top3": [
+    {
+     "name": "Medic's Kitesail",
+     "score": 51.93
+    },
+    {
+     "name": "Sureshot Sower",
+     "score": 49.48
+    },
+    {
+     "name": "Graft Surgeon",
+     "score": 47.57
+    }
+   ],
+   "his_score": 49.48,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 22% \u2192 49.7 (n=762)",
+    "WU 22% \u2192 52.6 (n=3441)"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #2",
+    "UR 22% \u2192 splash G (fixing 1) 46.0",
+    "WU 22% \u2192 splash G (fixing 1) 46.0",
+    "castable in 22% of likely lanes"
+   ],
+   "lanes_after": {
+    "BG": 0.259,
+    "RG": 0.244,
+    "WG": 0.221,
+    "UG": 0.19
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 8,
+   "taken": "Fatehold Annex",
+   "top3": [
+    {
+     "name": "Fatehold Annex",
+     "score": 55.02
+    },
+    {
+     "name": "Afterthought Sentry",
+     "score": 48.65
+    },
+    {
+     "name": "Eardrum Rattler",
+     "score": 45.72
+    }
+   ],
+   "his_score": 55.02,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "BG 26% \u2192 off-colour",
+    "RG 24% \u2192 off-colour",
+    "castable in 3% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "BG 26% \u2192 off-colour",
+    "RG 24% \u2192 off-colour",
+    "castable in 3% of likely lanes"
+   ],
+   "lanes_after": {
+    "BG": 0.257,
+    "RG": 0.243,
+    "WG": 0.221,
+    "UG": 0.189
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 9,
+   "taken": "Ferocity of the Hunt",
+   "top3": [
+    {
+     "name": "Ferocity of the Hunt",
+     "score": 53.1
+    },
+    {
+     "name": "Afterthought Sentry",
+     "score": 49.98
+    },
+    {
+     "name": "Academic Ascent",
+     "score": 48.82
+    }
+   ],
+   "his_score": 53.1,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "BG 28% \u2192 53.2 (n=7066)",
+    "RG 23% \u2192 53.2 (n=7193)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "BG 28% \u2192 53.2 (n=7066)",
+    "RG 23% \u2192 53.2 (n=7193)"
+   ],
+   "lanes_after": {
+    "RG": 0.27,
+    "WG": 0.253,
+    "BG": 0.211,
+    "UG": 0.207
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 10,
+   "taken": "Mabel, Bitter Recluse",
+   "top3": [
+    {
+     "name": "Void Extrapolator",
+     "score": 53.71
+    },
+    {
+     "name": "Mabel, Bitter Recluse",
+     "score": 53.55
+    },
+    {
+     "name": "Yuriko, Hope from the Shadows",
+     "score": 52.94
+    }
+   ],
+   "his_score": 53.55,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "BG 34% \u2192 55.1 (n=9396)",
+    "UG 33% \u2192 splash B (fixing 1) 50.3",
+    "castable in 36% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #2",
+    "BG 27% \u2192 54.2 (n=5557)",
+    "UG 26% \u2192 splash B (fixing 1) 49.1",
+    "castable in 28% of likely lanes"
+   ],
+   "lanes_after": {
+    "BG": 0.27,
+    "UG": 0.259,
+    "RG": 0.219,
+    "WG": 0.204
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 11,
+   "taken": "Void Extrapolator",
+   "top3": [
+    {
+     "name": "Ferocity of the Hunt",
+     "score": 53.21
+    },
+    {
+     "name": "Void Extrapolator",
+     "score": 52.33
+    },
+    {
+     "name": "Tomik, Orzhov Lawmage",
+     "score": 50.19
+    }
+   ],
+   "his_score": 52.33,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #3",
+    "BG 31% \u2192 53.2 (n=7066)",
+    "UG 26% \u2192 52.1 (n=2133)"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #1",
+    "BG 37% \u2192 55.1 (n=9396)",
+    "UG 31% \u2192 splash B (fixing 1) 50.0",
+    "castable in 38% of likely lanes"
+   ],
+   "lanes_after": {
+    "BG": 0.377,
+    "WG": 0.267,
+    "RG": 0.215,
+    "UG": 0.11
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 12,
+   "taken": null,
+   "top3": [
+    {
+     "name": "Loot, the Anomaly",
+     "score": 66.08
+    },
+    {
+     "name": "Predictive Preparations",
+     "score": 44.9
+    },
+    {
+     "name": "Mountain",
+     "score": 0.0
+    }
+   ],
+   "his_score": null,
+   "his_rank": null,
+   "scored": false,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "BG 36% \u2192 47.8 (n=524)",
+    "WG 27% \u2192 splash B (fixing 1) 39.6",
+    "castable in 37% of likely lanes"
+   ],
+   "reasons_his": [],
+   "lanes_after": {
+    "BG": 0.361,
+    "WG": 0.272,
+    "RG": 0.225,
+    "UG": 0.109
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 13,
+   "taken": "Yargle, Glutton of Urborg",
+   "top3": [
+    {
+     "name": "Yargle, Glutton of Urborg",
+     "score": 59.34
+    },
+    {
+     "name": "Forest",
+     "score": 0.0
+    }
+   ],
+   "his_score": 59.34,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "BG 35% \u2192 39.8 (rarely played there)",
+    "WG 28% \u2192 splash B (fixing 1) 42.5",
+    "castable in 36% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "BG 35% \u2192 39.8 (rarely played there)",
+    "WG 28% \u2192 splash B (fixing 1) 42.5",
+    "castable in 36% of likely lanes"
+   ],
+   "lanes_after": {
+    "BG": 0.715,
+    "WG": 0.116,
+    "RG": 0.099,
+    "UG": 0.044
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 14,
+   "taken": "Forest",
+   "top3": [
+    {
+     "name": "Forest",
+     "score": 0.0
+    }
+   ],
+   "his_score": 0.0,
+   "his_rank": null,
+   "scored": false,
+   "dropped": 0,
+   "reasons_top": [
+    "No data"
+   ],
+   "reasons_his": [
+    "No data"
+   ],
+   "lanes_after": {
+    "BG": 0.705,
+    "WG": 0.12,
+    "RG": 0.104,
+    "UG": 0.044
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 1,
+   "taken": "Last Gasp",
+   "top3": [
+    {
+     "name": "Bestial Incursion",
+     "score": 59.09
+    },
+    {
+     "name": "Plan for All Outcomes",
+     "score": 57.15
+    },
+    {
+     "name": "Last Gasp",
+     "score": 56.76
+    }
+   ],
+   "his_score": 56.76,
+   "his_rank": 3,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #3",
+    "BG 61% \u2192 57.3 (n=19236)",
+    "RG 16% \u2192 56.8 (n=24958)"
+   ],
+   "reasons_his": [
+    "Fit #3 \u00b7 Power #2",
+    "BG 61% \u2192 56.0 (n=18239)",
+    "RG 16% \u2192 splash B (fixing 1) 51.9"
+   ],
+   "lanes_after": {
+    "BG": 0.854,
+    "RG": 0.053,
+    "WG": 0.051,
+    "UG": 0.015
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 2,
+   "taken": "Aerid Konstrari",
+   "top3": [
+    {
+     "name": "Aerid Konstrari",
+     "score": 59.55
+    },
+    {
+     "name": "Tam's Resistance",
+     "score": 51.85
+    },
+    {
+     "name": "Arni, Humble Scribe",
+     "score": 49.76
+    }
+   ],
+   "his_score": 59.55,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "BG 82% \u2192 splash R (fixing 1) 59.5",
+    "castable in 10% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "BG 82% \u2192 splash R (fixing 1) 59.5",
+    "castable in 10% of likely lanes"
+   ],
+   "lanes_after": {
+    "BG": 0.877,
+    "RG": 0.075,
+    "WG": 0.035,
+    "UG": 0.009
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 3,
+   "taken": "Recursive Recruitment",
+   "top3": [
+    {
+     "name": "Recursive Recruitment",
+     "score": 55.76
+    },
+    {
+     "name": "Room of Refuge",
+     "score": 54.08
+    },
+    {
+     "name": "Twinned Vision",
+     "score": 53.06
+    }
+   ],
+   "his_score": 55.76,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "BG 89% \u2192 splash U (fixing 2) 56.4",
+    "castable in 0% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "BG 89% \u2192 splash U (fixing 2) 56.4",
+    "castable in 0% of likely lanes"
+   ],
+   "lanes_after": {
+    "BG": 0.904,
+    "RG": 0.054,
+    "WG": 0.036,
+    "WB": 0.004
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 4,
+   "taken": "Murmuring Volume",
+   "top3": [
+    {
+     "name": "Murmuring Volume",
+     "score": 55.87
+    },
+    {
+     "name": "Tinybones, Pocket Nuisance",
+     "score": 55.2
+    },
+    {
+     "name": "Woodwork Prodigy",
+     "score": 54.95
+    }
+   ],
+   "his_score": 55.87,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #3",
+    "BG 91% \u2192 56.2 (n=6350)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #3",
+    "BG 91% \u2192 56.2 (n=6350)"
+   ],
+   "lanes_after": {
+    "BG": 0.911,
+    "RG": 0.048,
+    "WG": 0.035,
+    "WB": 0.004
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 5,
+   "taken": "Arcane Amphisbaena",
+   "top3": [
+    {
+     "name": "Arcane Amphisbaena",
+     "score": 56.34
+    },
+    {
+     "name": "Protege's Awakening",
+     "score": 54.84
+    },
+    {
+     "name": "Cast Away Doubt",
+     "score": 47.62
+    }
+   ],
+   "his_score": 56.34,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "BG 91% \u2192 55.1 (n=17031)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #2",
+    "BG 91% \u2192 55.1 (n=17031)"
+   ],
+   "lanes_after": {
+    "BG": 0.915,
+    "RG": 0.046,
+    "WG": 0.037,
+    "WB": 0.001
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 6,
+   "taken": "Murmuring Volume",
+   "top3": [
+    {
+     "name": "Murmuring Volume",
+     "score": 55.87
+    },
+    {
+     "name": "Undulating Witness",
+     "score": 53.25
+    },
+    {
+     "name": "Twinned Vision",
+     "score": 53.21
+    }
+   ],
+   "his_score": 55.87,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #4",
+    "BG 90% \u2192 56.2 (n=6350)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #4",
+    "BG 90% \u2192 56.2 (n=6350)"
+   ],
+   "lanes_after": {
+    "BG": 0.906,
+    "RG": 0.058,
+    "WG": 0.034,
+    "UG": 0.001
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 7,
+   "taken": "Konstrari Improviser",
+   "top3": [
+    {
+     "name": "Konstrari Improviser",
+     "score": 56.65
+    },
+    {
+     "name": "Theorix Metamage",
+     "score": 56.64
+    },
+    {
+     "name": "Vraska, Soul of Stone",
+     "score": 44.62
+    }
+   ],
+   "his_score": 56.65,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Tie on power with Theorix Metamage: cheaper (2 vs 3 mana)",
+    "Fit #2 \u00b7 Power #2",
+    "BG 88% \u2192 52.2 (n=7697)"
+   ],
+   "reasons_his": [
+    "Tie on power with Theorix Metamage: cheaper (2 vs 3 mana)",
+    "Fit #2 \u00b7 Power #2",
+    "BG 88% \u2192 52.2 (n=7697)"
+   ],
+   "lanes_after": {
+    "BG": 0.925,
+    "WG": 0.039,
+    "RG": 0.034,
+    "UG": 0.001
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 8,
+   "taken": "Bestial Incursion",
+   "top3": [
+    {
+     "name": "Bestial Incursion",
+     "score": 61.76
+    },
+    {
+     "name": "Keeper of the Quiet Hour",
+     "score": 57.53
+    },
+    {
+     "name": "Theorix Metamage",
+     "score": 57.1
+    }
+   ],
+   "his_score": 61.76,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "BG 94% \u2192 57.3 (n=19236)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #2",
+    "BG 94% \u2192 57.3 (n=19236)"
+   ],
+   "lanes_after": {
+    "BG": 0.94,
+    "WG": 0.032,
+    "RG": 0.027,
+    "UG": 0.001
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 9,
+   "taken": "Theorix Annex",
+   "top3": [
+    {
+     "name": "Way of the Wildspeaker",
+     "score": 56.32
+    },
+    {
+     "name": "Cast Away Doubt",
+     "score": 53.36
+    },
+    {
+     "name": "Theorix Annex",
+     "score": 47.97
+    }
+   ],
+   "his_score": 47.97,
+   "his_rank": 3,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #5",
+    "BG 94% \u2192 53.0 (n=5056)"
+   ],
+   "reasons_his": [
+    "Fit #3 \u00b7 Power #1",
+    "BG 94% \u2192 splash U (fixing 6) 45.5",
+    "castable in 0% of likely lanes"
+   ],
+   "lanes_after": {
+    "BG": 0.944,
+    "WG": 0.028,
+    "RG": 0.026,
+    "UG": 0.001
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 10,
+   "taken": "Arni, Humble Scribe",
+   "top3": [
+    {
+     "name": "Solve for Disappointment",
+     "score": 54.03
+    },
+    {
+     "name": "Arni, Humble Scribe",
+     "score": 45.91
+    },
+    {
+     "name": "Hallway Heckler",
+     "score": 43.0
+    }
+   ],
+   "his_score": 45.91,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #3",
+    "BG 95% \u2192 52.9 (n=3035)"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #1",
+    "BG 95% \u2192 splash U (fixing 7) 49.5",
+    "castable in 0% of likely lanes"
+   ],
+   "lanes_after": {
+    "BG": 0.952,
+    "WG": 0.024,
+    "RG": 0.023,
+    "UG": 0.001
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 11,
+   "taken": "Shatterwing Pegasus",
+   "top3": [
+    {
+     "name": "Sphinx's Approach",
+     "score": 42.33
+    },
+    {
+     "name": "Shatterwing Pegasus",
+     "score": 40.16
+    },
+    {
+     "name": "Essence Burn",
+     "score": 37.7
+    }
+   ],
+   "his_score": 40.16,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "BG 95% \u2192 off-colour",
+    "castable in 0% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #1",
+    "BG 95% \u2192 splash W (fixing 6) 43.3",
+    "castable in 3% of likely lanes"
+   ],
+   "lanes_after": {
+    "BG": 0.947,
+    "WG": 0.03,
+    "RG": 0.022,
+    "UG": 0.002
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 12,
+   "taken": "Samut, Tyrant of Naktamun",
+   "top3": [
+    {
+     "name": "Skilled Battlecarver",
+     "score": 47.24
+    },
+    {
+     "name": "Samut, Tyrant of Naktamun",
+     "score": 39.82
+    },
+    {
+     "name": "Island",
+     "score": 0.0
+    }
+   ],
+   "his_score": 39.82,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "BG 94% \u2192 splash R (fixing 5) 48.0",
+    "castable in 3% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #2",
+    "BG 94% \u2192 splash U (fixing 7) 40.7",
+    "castable in 0% of likely lanes"
+   ],
+   "lanes_after": {
+    "BG": 0.849,
+    "UG": 0.095,
+    "WG": 0.027,
+    "RG": 0.023
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 13,
+   "taken": "Academic Ascent",
+   "top3": [
+    {
+     "name": "Academic Ascent",
+     "score": 40.27
+    },
+    {
+     "name": "Forest",
+     "score": 0.0
+    }
+   ],
+   "his_score": 40.27,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "BG 85% \u2192 splash W (fixing 6) 39.5",
+    "castable in 3% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "BG 85% \u2192 splash W (fixing 6) 39.5",
+    "castable in 3% of likely lanes"
+   ],
+   "lanes_after": {
+    "BG": 0.855,
+    "UG": 0.087,
+    "WG": 0.03,
+    "RG": 0.022
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 14,
+   "taken": "Forest",
+   "top3": [
+    {
+     "name": "Forest",
+     "score": 0.0
+    }
+   ],
+   "his_score": 0.0,
+   "his_rank": null,
+   "scored": false,
+   "dropped": 0,
+   "reasons_top": [
+    "No data"
+   ],
+   "reasons_his": [
+    "No data"
+   ],
+   "lanes_after": {
+    "BG": 0.862,
+    "UG": 0.081,
+    "WG": 0.03,
+    "RG": 0.022
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 1,
+   "taken": "Paradox Shaper",
+   "top3": [
+    {
+     "name": "Paradox Shaper",
+     "score": 59.35
+    },
+    {
+     "name": "Mabel, Bitter Recluse",
+     "score": 55.76
+    },
+    {
+     "name": "Keeper of the Quiet Hour",
+     "score": 55.1
+    }
+   ],
+   "his_score": 59.35,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #3",
+    "BG 93% \u2192 53.3 (n=4264)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #3",
+    "BG 93% \u2192 53.3 (n=4264)"
+   ],
+   "lanes_after": {
+    "BG": 0.475,
+    "UBG": 0.475,
+    "UG": 0.036,
+    "WG": 0.007
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 2,
+   "taken": "Primal Witchstalker",
+   "top3": [
+    {
+     "name": "Extended Absence",
+     "score": 72.9
+    },
+    {
+     "name": "Primal Witchstalker",
+     "score": 66.2
+    },
+    {
+     "name": "Keeper of the Quiet Hour",
+     "score": 56.33
+    }
+   ],
+   "his_score": 66.2,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "BG 47% \u2192 58.7 (n=19081)",
+    "UBG 47% \u2192 60.4 (n=12411)"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #3",
+    "BG 47% \u2192 59.0 (n=20312)",
+    "UBG 47% \u2192 59.0 (n=12217)"
+   ],
+   "lanes_after": {
+    "BG": 0.994,
+    "UG": 0.004,
+    "WG": 0.001,
+    "UB": 0.001
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 3,
+   "taken": "Proft, Sinister Mastermind",
+   "top3": [
+    {
+     "name": "Proft, Sinister Mastermind",
+     "score": 67.88
+    },
+    {
+     "name": "Void Extrapolator",
+     "score": 57.41
+    },
+    {
+     "name": "Medic's Kitesail",
+     "score": 53.2
+    }
+   ],
+   "his_score": 67.88,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #3",
+    "BG 99% \u2192 55.3 (n=6922)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #3",
+    "BG 99% \u2192 55.3 (n=6922)"
+   ],
+   "lanes_after": {
+    "BG": 0.997,
+    "UG": 0.002,
+    "UB": 0.001,
+    "WG": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 4,
+   "taken": "Formidable Commons",
+   "top3": [
+    {
+     "name": "Yoshimaru, Scrappy Stray",
+     "score": 63.52
+    },
+    {
+     "name": "Formidable Commons",
+     "score": 62.15
+    },
+    {
+     "name": "Tam's Resistance",
+     "score": 56.62
+    }
+   ],
+   "his_score": 62.15,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "BG 100% \u2192 54.2 (n=5631)"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #3",
+    "BG 100% \u2192 54.4 (n=13248)"
+   ],
+   "lanes_after": {
+    "BG": 0.997,
+    "UG": 0.002,
+    "UB": 0.001,
+    "WG": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 5,
+   "taken": "Primal Witchstalker",
+   "top3": [
+    {
+     "name": "Primal Witchstalker",
+     "score": 63.43
+    },
+    {
+     "name": "Theoretical Necromancer",
+     "score": 57.36
+    },
+    {
+     "name": "Sureshot Sower",
+     "score": 56.99
+    }
+   ],
+   "his_score": 63.43,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "BG 100% \u2192 59.0 (n=20312)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "BG 100% \u2192 59.0 (n=20312)"
+   ],
+   "lanes_after": {
+    "BG": 1.0,
+    "UG": 0.0,
+    "UB": 0.0,
+    "WG": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 6,
+   "taken": "Innovative Commons",
+   "top3": [
+    {
+     "name": "Danitha, Spear of Agony",
+     "score": 48.02
+    },
+    {
+     "name": "Eye of Jace",
+     "score": 46.46
+    },
+    {
+     "name": "Flourishing Grapple",
+     "score": 43.05
+    }
+   ],
+   "his_score": 42.68,
+   "his_rank": 5,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #6",
+    "BG 100% \u2192 48.7 (n=2016)"
+   ],
+   "reasons_his": [
+    "Fit #5 \u00b7 Power #1",
+    "BG 100% \u2192 off-colour",
+    "castable in 0% of likely lanes"
+   ],
+   "lanes_after": {
+    "BG": 1.0,
+    "UG": 0.0,
+    "UB": 0.0,
+    "WG": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 7,
+   "taken": "Sureshot Sower",
+   "top3": [
+    {
+     "name": "Sureshot Sower",
+     "score": 54.86
+    },
+    {
+     "name": "Solve for Disappointment",
+     "score": 50.1
+    },
+    {
+     "name": "Vigorbloom Annex",
+     "score": 48.13
+    }
+   ],
+   "his_score": 54.86,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #3",
+    "BG 100% \u2192 53.3 (n=9640)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #3",
+    "BG 100% \u2192 53.3 (n=9640)"
+   ],
+   "lanes_after": {
+    "BG": 1.0,
+    "UG": 0.0,
+    "WG": 0.0,
+    "UB": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 8,
+   "taken": "Hapatra, the Desert Frost",
+   "top3": [
+    {
+     "name": "Medic's Kitesail",
+     "score": 50.53
+    },
+    {
+     "name": "Hexhaven Dueling Arena",
+     "score": 44.2
+    },
+    {
+     "name": "Saheeli, Consul of Oversight",
+     "score": 43.99
+    }
+   ],
+   "his_score": 41.93,
+   "his_rank": 4,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "BG 100% \u2192 52.8 (n=1592)"
+   ],
+   "reasons_his": [
+    "Fit #4 \u00b7 Power #3",
+    "BG 100% \u2192 splash U (fixing 8) 47.9",
+    "castable in 0% of likely lanes"
+   ],
+   "lanes_after": {
+    "BG": 1.0,
+    "UG": 0.0,
+    "UB": 0.0,
+    "WG": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 9,
+   "taken": "Keeper of the Quiet Hour",
+   "top3": [
+    {
+     "name": "Keeper of the Quiet Hour",
+     "score": 53.55
+    },
+    {
+     "name": "Rampart Hunter",
+     "score": 46.54
+    },
+    {
+     "name": "Mabel, Valley Hero",
+     "score": 41.44
+    }
+   ],
+   "his_score": 53.55,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "BG 100% \u2192 54.5 (n=4687)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "BG 100% \u2192 54.5 (n=4687)"
+   ],
+   "lanes_after": {
+    "BG": 1.0,
+    "UG": 0.0,
+    "UB": 0.0,
+    "WG": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 10,
+   "taken": "Transformative Commons",
+   "top3": [
+    {
+     "name": "Ferocity of the Hunt",
+     "score": 53.5
+    },
+    {
+     "name": "Transformative Commons",
+     "score": 48.14
+    },
+    {
+     "name": "Eye of Jace",
+     "score": 47.82
+    }
+   ],
+   "his_score": 48.14,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "BG 100% \u2192 53.2 (n=7066)"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #1",
+    "BG 100% \u2192 splash U (fixing 8) 45.5",
+    "castable in 0% of likely lanes"
+   ],
+   "lanes_after": {
+    "BG": 1.0,
+    "UG": 0.0,
+    "UB": 0.0,
+    "WG": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 11,
+   "taken": "Mind Meanderer",
+   "top3": [
+    {
+     "name": "Void Extrapolator",
+     "score": 56.13
+    },
+    {
+     "name": "Living Library",
+     "score": 50.57
+    },
+    {
+     "name": "Mind Meanderer",
+     "score": 48.58
+    }
+   ],
+   "his_score": 48.58,
+   "his_rank": 3,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "BG 100% \u2192 55.1 (n=9396)"
+   ],
+   "reasons_his": [
+    "Fit #3 \u00b7 Power #1",
+    "BG 100% \u2192 off-colour",
+    "castable in 0% of likely lanes"
+   ],
+   "lanes_after": {
+    "BG": 0.996,
+    "UG": 0.004,
+    "UB": 0.0,
+    "WG": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 12,
+   "taken": "Afterthought Sentry",
+   "top3": [
+    {
+     "name": "Afterthought Sentry",
+     "score": 66.48
+    },
+    {
+     "name": "Rampart Hunter",
+     "score": 65.74
+    },
+    {
+     "name": "Tetsuko Umezawa, Pursuer",
+     "score": 48.47
+    }
+   ],
+   "his_score": 66.48,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "BG 100% \u2192 52.4 (n=1199)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #2",
+    "BG 100% \u2192 52.4 (n=1199)"
+   ],
+   "lanes_after": {
+    "BG": 0.997,
+    "UG": 0.003,
+    "UB": 0.0,
+    "WG": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 13,
+   "taken": "Living Library",
+   "top3": [
+    {
+     "name": "Living Library",
+     "score": 66.47
+    },
+    {
+     "name": "Mountain",
+     "score": 0.0
+    }
+   ],
+   "his_score": 66.47,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "BG 100% \u2192 52.2 (n=738)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "BG 100% \u2192 52.2 (n=738)"
+   ],
+   "lanes_after": {
+    "BG": 0.997,
+    "UG": 0.003,
+    "UB": 0.0,
+    "WG": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 14,
+   "taken": "Charge the Sanctum",
+   "top3": [
+    {
+     "name": "Charge the Sanctum",
+     "score": 44.73
+    }
+   ],
+   "his_score": 44.73,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "BG 100% \u2192 splash R (fixing 6) 41.5",
+    "castable in 0% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "BG 100% \u2192 splash R (fixing 6) 41.5",
+    "castable in 0% of likely lanes"
+   ],
+   "lanes_after": {
+    "BG": 0.997,
+    "UG": 0.003,
+    "UB": 0.0,
+    "WG": 0.0
+   }
+  }
+ ],
+ "builder": [
+  {
+   "main": "BG",
+   "splash": "UR",
+   "deck_wr": 53.39,
+   "label": "UBG + r",
+   "cards": [
+    {
+     "name": "Formidable Commons",
+     "count": 1
+    },
+    {
+     "name": "Innovative Commons",
+     "count": 1
+    },
+    {
+     "name": "Theorix Annex",
+     "count": 1
+    },
+    {
+     "name": "Transformative Commons",
+     "count": 1
+    },
+    {
+     "name": "Mabel, Bitter Recluse",
+     "count": 1
+    },
+    {
+     "name": "Arcane Amphisbaena",
+     "count": 1
+    },
+    {
+     "name": "Ferocity of the Hunt",
+     "count": 1
+    },
+    {
+     "name": "Konstrari Improviser",
+     "count": 1
+    },
+    {
+     "name": "Last Gasp",
+     "count": 1
+    },
+    {
+     "name": "Paradox Shaper",
+     "count": 1
+    },
+    {
+     "name": "Something Worth Saving",
+     "count": 1
+    },
+    {
+     "name": "Sureshot Sower",
+     "count": 1
+    },
+    {
+     "name": "Void Extrapolator",
+     "count": 1
+    },
+    {
+     "name": "Arni, Humble Scribe",
+     "count": 1
+    },
+    {
+     "name": "Keeper of the Quiet Hour",
+     "count": 1
+    },
+    {
+     "name": "Murmuring Volume",
+     "count": 2
+    },
+    {
+     "name": "Primal Witchstalker",
+     "count": 3
+    },
+    {
+     "name": "Proft, Sinister Mastermind",
+     "count": 1
+    },
+    {
+     "name": "Aerid Konstrari",
+     "count": 1
+    },
+    {
+     "name": "Bestial Incursion",
+     "count": 1
+    },
+    {
+     "name": "Protege's Awakening",
+     "count": 1
+    },
+    {
+     "name": "Recursive Recruitment",
+     "count": 1
+    },
+    {
+     "name": "Mind Meanderer",
+     "count": 1
+    },
+    {
+     "name": "Vinelasher Adept",
+     "count": 1
+    },
+    {
+     "name": "Verdant Kraken",
+     "count": 1
+    },
+    {
+     "name": "Island",
+     "count": 3
+    },
+    {
+     "name": "Swamp",
+     "count": 3
+    },
+    {
+     "name": "Mountain",
+     "count": 2
+    },
+    {
+     "name": "Forest",
+     "count": 4
+    }
+   ]
+  },
+  {
+   "main": "BG",
+   "splash": "U",
+   "deck_wr": 49.53,
+   "label": "UBG",
+   "cards": [
+    {
+     "name": "Formidable Commons",
+     "count": 1
+    },
+    {
+     "name": "Theorix Annex",
+     "count": 1
+    },
+    {
+     "name": "Transformative Commons",
+     "count": 1
+    },
+    {
+     "name": "Mabel, Bitter Recluse",
+     "count": 1
+    },
+    {
+     "name": "Arcane Amphisbaena",
+     "count": 1
+    },
+    {
+     "name": "Ferocity of the Hunt",
+     "count": 1
+    },
+    {
+     "name": "Konstrari Improviser",
+     "count": 1
+    },
+    {
+     "name": "Last Gasp",
+     "count": 1
+    },
+    {
+     "name": "Paradox Shaper",
+     "count": 1
+    },
+    {
+     "name": "Something Worth Saving",
+     "count": 1
+    },
+    {
+     "name": "Sureshot Sower",
+     "count": 2
+    },
+    {
+     "name": "Void Extrapolator",
+     "count": 1
+    },
+    {
+     "name": "Arni, Humble Scribe",
+     "count": 1
+    },
+    {
+     "name": "Keeper of the Quiet Hour",
+     "count": 1
+    },
+    {
+     "name": "Murmuring Volume",
+     "count": 2
+    },
+    {
+     "name": "Primal Witchstalker",
+     "count": 3
+    },
+    {
+     "name": "Proft, Sinister Mastermind",
+     "count": 1
+    },
+    {
+     "name": "Bestial Incursion",
+     "count": 1
+    },
+    {
+     "name": "Protege's Awakening",
+     "count": 1
+    },
+    {
+     "name": "Recursive Recruitment",
+     "count": 1
+    },
+    {
+     "name": "Mind Meanderer",
+     "count": 1
+    },
+    {
+     "name": "Vinelasher Adept",
+     "count": 1
+    },
+    {
+     "name": "Verdant Kraken",
+     "count": 1
+    },
+    {
+     "name": "Island",
+     "count": 4
+    },
+    {
+     "name": "Swamp",
+     "count": 4
+    },
+    {
+     "name": "Forest",
+     "count": 5
+    }
+   ]
+  },
+  {
+   "main": "BG",
+   "splash": "U",
+   "deck_wr": 48.4,
+   "label": "BG + u",
+   "cards": [
+    {
+     "name": "Formidable Commons",
+     "count": 1
+    },
+    {
+     "name": "Theorix Annex",
+     "count": 1
+    },
+    {
+     "name": "Transformative Commons",
+     "count": 1
+    },
+    {
+     "name": "Mabel, Bitter Recluse",
+     "count": 1
+    },
+    {
+     "name": "Afterthought Sentry",
+     "count": 1
+    },
+    {
+     "name": "Arcane Amphisbaena",
+     "count": 1
+    },
+    {
+     "name": "Ferocity of the Hunt",
+     "count": 1
+    },
+    {
+     "name": "Konstrari Improviser",
+     "count": 1
+    },
+    {
+     "name": "Last Gasp",
+     "count": 1
+    },
+    {
+     "name": "Paradox Shaper",
+     "count": 1
+    },
+    {
+     "name": "Something Worth Saving",
+     "count": 1
+    },
+    {
+     "name": "Sureshot Sower",
+     "count": 2
+    },
+    {
+     "name": "Void Extrapolator",
+     "count": 1
+    },
+    {
+     "name": "Keeper of the Quiet Hour",
+     "count": 1
+    },
+    {
+     "name": "Murmuring Volume",
+     "count": 2
+    },
+    {
+     "name": "Primal Witchstalker",
+     "count": 3
+    },
+    {
+     "name": "Proft, Sinister Mastermind",
+     "count": 1
+    },
+    {
+     "name": "Bestial Incursion",
+     "count": 1
+    },
+    {
+     "name": "Protege's Awakening",
+     "count": 1
+    },
+    {
+     "name": "Recursive Recruitment",
+     "count": 1
+    },
+    {
+     "name": "Yargle, Glutton of Urborg",
+     "count": 1
+    },
+    {
+     "name": "Vinelasher Adept",
+     "count": 1
+    },
+    {
+     "name": "Verdant Kraken",
+     "count": 1
+    },
+    {
+     "name": "Island",
+     "count": 2
+    },
+    {
+     "name": "Swamp",
+     "count": 5
+    },
+    {
+     "name": "Forest",
+     "count": 6
+    }
+   ]
+  },
+  {
+   "main": "BG",
+   "splash": "",
+   "deck_wr": 47.96,
+   "label": "BG",
+   "cards": [
+    {
+     "name": "Formidable Commons",
+     "count": 1
+    },
+    {
+     "name": "Mabel, Bitter Recluse",
+     "count": 1
+    },
+    {
+     "name": "Afterthought Sentry",
+     "count": 1
+    },
+    {
+     "name": "Arcane Amphisbaena",
+     "count": 1
+    },
+    {
+     "name": "Ferocity of the Hunt",
+     "count": 1
+    },
+    {
+     "name": "Konstrari Improviser",
+     "count": 1
+    },
+    {
+     "name": "Last Gasp",
+     "count": 1
+    },
+    {
+     "name": "Living Library",
+     "count": 1
+    },
+    {
+     "name": "Paradox Shaper",
+     "count": 1
+    },
+    {
+     "name": "Something Worth Saving",
+     "count": 1
+    },
+    {
+     "name": "Sureshot Sower",
+     "count": 2
+    },
+    {
+     "name": "Void Extrapolator",
+     "count": 1
+    },
+    {
+     "name": "Keeper of the Quiet Hour",
+     "count": 1
+    },
+    {
+     "name": "Murmuring Volume",
+     "count": 2
+    },
+    {
+     "name": "Primal Witchstalker",
+     "count": 3
+    },
+    {
+     "name": "Proft, Sinister Mastermind",
+     "count": 1
+    },
+    {
+     "name": "Bestial Incursion",
+     "count": 1
+    },
+    {
+     "name": "Yargle, Glutton of Urborg",
+     "count": 1
+    },
+    {
+     "name": "Vinelasher Adept",
+     "count": 1
+    },
+    {
+     "name": "Verdant Kraken",
+     "count": 1
+    },
+    {
+     "name": "Swamp",
+     "count": 6
+    },
+    {
+     "name": "Forest",
+     "count": 10
+    }
+   ]
+  }
+ ],
+ "his_deck": {
+  "main": "BG",
+  "splash": "UR",
+  "deck_wr": 52.36,
+  "label": null,
+  "cards": [
+   {
+    "name": "Mabel, Bitter Recluse",
+    "count": 1
+   },
+   {
+    "name": "Void Extrapolator",
+    "count": 1
+   },
+   {
+    "name": "Arcane Amphisbaena",
+    "count": 1
+   },
+   {
+    "name": "Sureshot Sower",
+    "count": 1
+   },
+   {
+    "name": "Paradox Shaper",
+    "count": 1
+   },
+   {
+    "name": "Konstrari Improviser",
+    "count": 1
+   },
+   {
+    "name": "Arni, Humble Scribe",
+    "count": 1
+   },
+   {
+    "name": "Proft, Sinister Mastermind",
+    "count": 1
+   },
+   {
+    "name": "Primal Witchstalker",
+    "count": 3
+   },
+   {
+    "name": "Keeper of the Quiet Hour",
+    "count": 1
+   },
+   {
+    "name": "Bestial Incursion",
+    "count": 1
+   },
+   {
+    "name": "Recursive Recruitment",
+    "count": 1
+   },
+   {
+    "name": "Aerid Konstrari",
+    "count": 1
+   },
+   {
+    "name": "Vinelasher Adept",
+    "count": 1
+   },
+   {
+    "name": "Mind Meanderer",
+    "count": 1
+   },
+   {
+    "name": "Verdant Kraken",
+    "count": 1
+   },
+   {
+    "name": "Last Gasp",
+    "count": 1
+   },
+   {
+    "name": "Something Worth Saving",
+    "count": 1
+   },
+   {
+    "name": "Murmuring Volume",
+    "count": 2
+   },
+   {
+    "name": "Protege's Awakening",
+    "count": 1
+   },
+   {
+    "name": "Island",
+    "count": 2
+   },
+   {
+    "name": "Swamp",
+    "count": 4
+   },
+   {
+    "name": "Mountain",
+    "count": 1
+   },
+   {
+    "name": "Forest",
+    "count": 6
+   },
+   {
+    "name": "Theorix Annex",
+    "count": 1
+   },
+   {
+    "name": "Innovative Commons",
+    "count": 1
+   },
+   {
+    "name": "Formidable Commons",
+    "count": 1
+   },
+   {
+    "name": "Transformative Commons",
+    "count": 1
+   }
+  ]
+ }
+}

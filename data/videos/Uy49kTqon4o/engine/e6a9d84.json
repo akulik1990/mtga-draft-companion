@@ -1,0 +1,1803 @@
+{
+ "commit": "e6a9d84",
+ "date": "2026-11-06",
+ "dataset": "FRA_PremierDraft_All_Data.json",
+ "top1": 27,
+ "top3": 34,
+ "n": 38,
+ "not_scored": 4,
+ "dropped_cards": 4,
+ "picks": [
+  {
+   "pack": 1,
+   "pick": 1,
+   "taken": "Violent Echoes",
+   "top3": [
+    {
+     "name": "Violent Echoes",
+     "score": 58.29
+    },
+    {
+     "name": "Desperate Futurescribe",
+     "score": 58.19
+    },
+    {
+     "name": "Draconic Visitor",
+     "score": 56.72
+    }
+   ],
+   "his_score": 58.29,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Branch: +5.5 over Desperate Futurescribe, above the 0.9 top drafters switch at",
+    "Fit #2 \u00b7 Power #1",
+    "WR 25% \u2192 56.7 (n=4359)",
+    "UR 25% \u2192 60.4 (n=15138)"
+   ],
+   "reasons_his": [
+    "Branch: +5.5 over Desperate Futurescribe, above the 0.9 top drafters switch at",
+    "Fit #2 \u00b7 Power #1",
+    "WR 25% \u2192 56.7 (n=4359)",
+    "UR 25% \u2192 60.4 (n=15138)"
+   ],
+   "lanes_after": {
+    "WR": 0.21,
+    "UR": 0.21,
+    "BR": 0.21,
+    "RG": 0.21
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 2,
+   "taken": "Rewrite Regrets",
+   "top3": [
+    {
+     "name": "Rewrite Regrets",
+     "score": 59.52
+    },
+    {
+     "name": "Arcane Amphisbaena",
+     "score": 52.1
+    },
+    {
+     "name": "Ruric Thar, Biomagus",
+     "score": 52.02
+    }
+   ],
+   "his_score": 59.52,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WR 21% \u2192 off-colour",
+    "UR 21% \u2192 off-colour",
+    "castable in 29% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WR 21% \u2192 off-colour",
+    "UR 21% \u2192 off-colour",
+    "castable in 29% of likely lanes"
+   ],
+   "lanes_after": {
+    "BR": 0.569,
+    "WR": 0.069,
+    "UR": 0.069,
+    "RG": 0.069
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 3,
+   "taken": "No Admittance",
+   "top3": [
+    {
+     "name": "No Admittance",
+     "score": 63.81
+    },
+    {
+     "name": "Last Gasp",
+     "score": 62.48
+    },
+    {
+     "name": "Stingerquill Annex",
+     "score": 55.92
+    }
+   ],
+   "his_score": 63.81,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "BR 57% \u2192 55.1 (n=17172)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "BR 57% \u2192 55.1 (n=17172)"
+   ],
+   "lanes_after": {
+    "BR": 0.709,
+    "WR": 0.079,
+    "UR": 0.079,
+    "RG": 0.079
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 4,
+   "taken": "Violent Echoes",
+   "top3": [
+    {
+     "name": "Violent Echoes",
+     "score": 71.25
+    },
+    {
+     "name": "Fatehold Chronologist",
+     "score": 50.51
+    },
+    {
+     "name": "Edgar, Moonlit Sovereign",
+     "score": 45.54
+    }
+   ],
+   "his_score": 71.25,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "BR 75% \u2192 58.0 (n=8216)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "BR 75% \u2192 58.0 (n=8216)"
+   ],
+   "lanes_after": {
+    "BR": 0.611,
+    "WR": 0.124,
+    "UR": 0.124,
+    "RG": 0.124
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 5,
+   "taken": "Multiply by Zero",
+   "top3": [
+    {
+     "name": "Multiply by Zero",
+     "score": 69.28
+    },
+    {
+     "name": "Surveillance Phantasm",
+     "score": 53.28
+    },
+    {
+     "name": "Command the Stage",
+     "score": 51.19
+    }
+   ],
+   "his_score": 69.28,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "BR 77% \u2192 55.7 (n=7618)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "BR 77% \u2192 55.7 (n=7618)"
+   ],
+   "lanes_after": {
+    "BR": 0.93,
+    "UR": 0.017,
+    "WR": 0.016,
+    "RG": 0.016
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 6,
+   "taken": "Geist of Saint Thalia",
+   "top3": [
+    {
+     "name": "Heartstring Puller",
+     "score": 56.09
+    },
+    {
+     "name": "Screeching Soulbreaker",
+     "score": 50.69
+    },
+    {
+     "name": "Silence the Echo",
+     "score": 50.38
+    }
+   ],
+   "his_score": 46.33,
+   "his_rank": 6,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #6",
+    "BR 87% \u2192 54.6 (n=14704)"
+   ],
+   "reasons_his": [
+    "Fit #6 \u00b7 Power #2",
+    "BR 87% \u2192 off-colour",
+    "castable in 7% of likely lanes"
+   ],
+   "lanes_after": {
+    "BR": 0.768,
+    "UR": 0.127,
+    "UB": 0.053,
+    "WR": 0.018
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 7,
+   "taken": "Clash of Elements",
+   "top3": [
+    {
+     "name": "Clash of Elements",
+     "score": 57.61
+    },
+    {
+     "name": "Way of the Pyromancer",
+     "score": 56.1
+    },
+    {
+     "name": "Theorix Metamage",
+     "score": 51.36
+    }
+   ],
+   "his_score": 57.61,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 1,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "BR 75% \u2192 off-colour",
+    "UR 17% \u2192 58.6 (n=26866)",
+    "castable in 17% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "BR 75% \u2192 off-colour",
+    "UR 17% \u2192 58.6 (n=26866)",
+    "castable in 17% of likely lanes"
+   ],
+   "lanes_after": {
+    "UR": 0.478,
+    "BR": 0.468,
+    "UB": 0.025,
+    "RG": 0.011
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 8,
+   "taken": "Sphinx's Approach",
+   "top3": [
+    {
+     "name": "Marwyn, the Clearcutter",
+     "score": 55.68
+    },
+    {
+     "name": "Prudent Fateseer",
+     "score": 50.25
+    },
+    {
+     "name": "Rank Rat",
+     "score": 49.77
+    }
+   ],
+   "his_score": 41.88,
+   "his_rank": 7,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #3",
+    "UR 57% \u2192 56.1 (n=5931)",
+    "BR 38% \u2192 55.4 (n=7386)"
+   ],
+   "reasons_his": [
+    "Fit #7 \u00b7 Power #6",
+    "UR 75% \u2192 55.9 (n=10079)",
+    "BR 20% \u2192 off-colour"
+   ],
+   "lanes_after": {
+    "UR": 0.783,
+    "BR": 0.167,
+    "UB": 0.038,
+    "WR": 0.005
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 9,
+   "taken": "Protege's Awakening",
+   "top3": [
+    {
+     "name": "Protege's Awakening",
+     "score": 63.27
+    },
+    {
+     "name": "Keeper of the Quiet Hour",
+     "score": 51.59
+    },
+    {
+     "name": "Formidable Commons",
+     "score": 46.9
+    }
+   ],
+   "his_score": 63.27,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 83% \u2192 57.7 (n=18694)",
+    "BR 12% \u2192 off-colour"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 83% \u2192 57.7 (n=18694)",
+    "BR 12% \u2192 off-colour"
+   ],
+   "lanes_after": {
+    "UR": 0.928,
+    "UB": 0.046,
+    "BR": 0.023,
+    "WU": 0.001
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 10,
+   "taken": "Transformative Commons",
+   "top3": [
+    {
+     "name": "Transformative Commons",
+     "score": 48.83
+    },
+    {
+     "name": "Unflinching Hortimancer",
+     "score": 39.66
+    },
+    {
+     "name": "Artifist Acumen",
+     "score": 33.79
+    }
+   ],
+   "his_score": 48.83,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 92% \u2192 off-colour",
+    "castable in 0% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 92% \u2192 off-colour",
+    "castable in 0% of likely lanes"
+   ],
+   "lanes_after": {
+    "UR": 0.923,
+    "UB": 0.045,
+    "BR": 0.027,
+    "WU": 0.001
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 11,
+   "taken": "Stingerquill Annex",
+   "top3": [
+    {
+     "name": "Stingerquill Annex",
+     "score": 52.12
+    },
+    {
+     "name": "Keeper of the Quiet Hour",
+     "score": 51.97
+    },
+    {
+     "name": "Generous Revival",
+     "score": 46.59
+    }
+   ],
+   "his_score": 52.12,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "UR 89% \u2192 fixes a splash (+3.0)",
+    "castable in 4% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #2",
+    "UR 89% \u2192 fixes a splash (+3.0)",
+    "castable in 4% of likely lanes"
+   ],
+   "lanes_after": {
+    "UR": 0.895,
+    "UB": 0.058,
+    "BR": 0.039,
+    "WU": 0.004
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 12,
+   "taken": "Tether Technician",
+   "top3": [
+    {
+     "name": "Tether Technician",
+     "score": 70.65
+    },
+    {
+     "name": "Cast Away Doubt",
+     "score": 28.16
+    }
+   ],
+   "his_score": 70.65,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 1,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 89% \u2192 54.1 (n=5004)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 89% \u2192 54.1 (n=5004)"
+   ],
+   "lanes_after": {
+    "UR": 0.913,
+    "BR": 0.048,
+    "UB": 0.034,
+    "WR": 0.002
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 13,
+   "taken": "Command the Stage",
+   "top3": [
+    {
+     "name": "Command the Stage",
+     "score": 70.72
+    },
+    {
+     "name": "Afterthought Sentry",
+     "score": 55.51
+    }
+   ],
+   "his_score": 70.72,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 91% \u2192 49.7 (n=2728)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 91% \u2192 49.7 (n=2728)"
+   ],
+   "lanes_after": {
+    "UR": 0.919,
+    "BR": 0.047,
+    "UB": 0.03,
+    "WR": 0.002
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 14,
+   "taken": "Heartstring Puller",
+   "top3": [
+    {
+     "name": "Heartstring Puller",
+     "score": 81.07
+    }
+   ],
+   "his_score": 81.07,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 93% \u2192 56.2 (n=14286)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 93% \u2192 56.2 (n=14286)"
+   ],
+   "lanes_after": {
+    "UR": 0.667,
+    "UBR": 0.297,
+    "BR": 0.032,
+    "UB": 0.004
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 1,
+   "taken": "Garruk, Veiled Butcher",
+   "top3": [
+    {
+     "name": "Garruk, Veiled Butcher",
+     "score": 70.07
+    },
+    {
+     "name": "Infinite Coursework",
+     "score": 60.32
+    },
+    {
+     "name": "Garruk, Curse Breaker",
+     "score": 56.65
+    }
+   ],
+   "his_score": 70.07,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 65% \u2192 off-colour",
+    "UBR 33% \u2192 67.0 (n=600)",
+    "castable in 35% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 65% \u2192 off-colour",
+    "UBR 33% \u2192 67.0 (n=600)",
+    "castable in 35% of likely lanes"
+   ],
+   "lanes_after": {
+    "UBR": 0.794,
+    "BR": 0.137,
+    "UR": 0.067,
+    "BG": 0.002
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 2,
+   "taken": "Pia, Determined Rebuilder",
+   "top3": [
+    {
+     "name": "Pia, Determined Rebuilder",
+     "score": 65.5
+    },
+    {
+     "name": "Pyre Rhymer",
+     "score": 53.21
+    },
+    {
+     "name": "Hallway Heckler",
+     "score": 48.85
+    }
+   ],
+   "his_score": 65.5,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UBR 79% \u2192 56.5 (n=1904)",
+    "BR 14% \u2192 55.9 (n=7279)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "UBR 79% \u2192 56.5 (n=1904)",
+    "BR 14% \u2192 55.9 (n=7279)"
+   ],
+   "lanes_after": {
+    "UBR": 0.685,
+    "BR": 0.218,
+    "UR": 0.097,
+    "BG": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 3,
+   "taken": "Theorix Annex",
+   "top3": [
+    {
+     "name": "Geist of Saint Thalia",
+     "score": 58.89
+    },
+    {
+     "name": "Theorix Annex",
+     "score": 54.59
+    },
+    {
+     "name": "Unsummon",
+     "score": 53.91
+    }
+   ],
+   "his_score": 54.59,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "UBR 69% \u2192 57.4 (n=2226)",
+    "BR 22% \u2192 splash U (fixing 1) 47.8"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #4",
+    "UBR 69% \u2192 55.4 (n=5277)",
+    "BR 22% \u2192 splash U (fixing 1) 45.5"
+   ],
+   "lanes_after": {
+    "UBR": 0.815,
+    "BR": 0.109,
+    "UR": 0.076,
+    "BG": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 4,
+   "taken": "Geist of Saint Thalia",
+   "top3": [
+    {
+     "name": "Geist of Saint Thalia",
+     "score": 59.3
+    },
+    {
+     "name": "Undulating Witness",
+     "score": 58.9
+    },
+    {
+     "name": "Stingerquill Voxmancer",
+     "score": 58.78
+    }
+   ],
+   "his_score": 59.3,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "UBR 81% \u2192 57.4 (n=2226)",
+    "BR 11% \u2192 splash U (fixing 2) 47.8"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #2",
+    "UBR 81% \u2192 57.4 (n=2226)",
+    "BR 11% \u2192 splash U (fixing 2) 47.8"
+   ],
+   "lanes_after": {
+    "UBR": 0.791,
+    "UR": 0.208,
+    "BG": 0.0,
+    "WR": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 5,
+   "taken": "Clash of Elements",
+   "top3": [
+    {
+     "name": "Clash of Elements",
+     "score": 65.06
+    },
+    {
+     "name": "Teyo, Lightshield Expert",
+     "score": 45.29
+    },
+    {
+     "name": "Fateshaper Aspirant",
+     "score": 43.32
+    }
+   ],
+   "his_score": 65.06,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "UBR 79% \u2192 57.7 (n=5655)",
+    "UR 21% \u2192 58.6 (n=26866)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #2",
+    "UBR 79% \u2192 57.7 (n=5655)",
+    "UR 21% \u2192 58.6 (n=26866)"
+   ],
+   "lanes_after": {
+    "UBR": 0.559,
+    "UR": 0.441,
+    "BG": 0.0,
+    "RG": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 6,
+   "taken": "Extended Absence",
+   "top3": [
+    {
+     "name": "Extended Absence",
+     "score": 64.43
+    },
+    {
+     "name": "Infinite Coursework",
+     "score": 60.12
+    },
+    {
+     "name": "Divining Duelist",
+     "score": 52.47
+    }
+   ],
+   "his_score": 64.43,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UBR 63% \u2192 58.2 (n=6521)",
+    "UR 37% \u2192 splash B (fixing 2) 51.7"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "UBR 63% \u2192 58.2 (n=6521)",
+    "UR 37% \u2192 splash B (fixing 2) 51.7"
+   ],
+   "lanes_after": {
+    "UBR": 0.945,
+    "UR": 0.055,
+    "BG": 0.0,
+    "WB": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 7,
+   "taken": "Deserted Beach",
+   "top3": [
+    {
+     "name": "Prudent Fateseer",
+     "score": 64.3
+    },
+    {
+     "name": "Deserted Beach",
+     "score": 47.62
+    },
+    {
+     "name": "Meticulous Commons",
+     "score": 45.09
+    }
+   ],
+   "his_score": 47.62,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UBR 93% \u2192 51.4 (rarely played there)"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #3",
+    "UBR 93% \u2192 off-colour",
+    "castable in 0% of likely lanes"
+   ],
+   "lanes_after": {
+    "UBR": 0.926,
+    "UR": 0.074,
+    "BG": 0.0,
+    "WB": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 8,
+   "taken": "Keeper of the Quiet Hour",
+   "top3": [
+    {
+     "name": "Keeper of the Quiet Hour",
+     "score": 60.77
+    },
+    {
+     "name": "Semester Foreseer",
+     "score": 57.21
+    },
+    {
+     "name": "Academic Ascent",
+     "score": 32.32
+    }
+   ],
+   "his_score": 60.77,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UBR 92% \u2192 56.6 (n=2092)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "UBR 92% \u2192 56.6 (n=2092)"
+   ],
+   "lanes_after": {
+    "UBR": 0.906,
+    "UR": 0.094,
+    "BG": 0.0,
+    "WB": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 9,
+   "taken": "Chandra's Emberling",
+   "top3": [
+    {
+     "name": "Chandra's Emberling",
+     "score": 49.87
+    },
+    {
+     "name": "Afterthought Sentry",
+     "score": 46.84
+    },
+    {
+     "name": "Solve for Disappointment",
+     "score": 35.9
+    }
+   ],
+   "his_score": 49.87,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UBR 90% \u2192 52.0 (n=1352)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "UBR 90% \u2192 52.0 (n=1352)"
+   ],
+   "lanes_after": {
+    "UBR": 0.88,
+    "UR": 0.12,
+    "BG": 0.0,
+    "WB": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 10,
+   "taken": "Hallway Heckler",
+   "top3": [
+    {
+     "name": "Hallway Heckler",
+     "score": 51.64
+    },
+    {
+     "name": "Medic's Kitesail",
+     "score": 44.63
+    },
+    {
+     "name": "Solve for Disappointment",
+     "score": 35.93
+    }
+   ],
+   "his_score": 51.64,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "UBR 89% \u2192 52.7 (n=1282)",
+    "UR 11% \u2192 52.7 (n=7048)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #2",
+    "UBR 89% \u2192 52.7 (n=1282)",
+    "UR 11% \u2192 52.7 (n=7048)"
+   ],
+   "lanes_after": {
+    "UBR": 0.862,
+    "UR": 0.138,
+    "BG": 0.0,
+    "WB": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 11,
+   "taken": "Rampart Hunter",
+   "top3": [],
+   "his_score": null,
+   "his_rank": null,
+   "scored": true,
+   "dropped": 1,
+   "reasons_top": [],
+   "reasons_his": [],
+   "lanes_after": {
+    "UBR": 0.945,
+    "UR": 0.055,
+    "BG": 0.0,
+    "WB": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 12,
+   "taken": "Gardenize",
+   "top3": [
+    {
+     "name": "Ghalta the Immovable",
+     "score": 43.23
+    },
+    {
+     "name": "Rampart Hunter",
+     "score": 27.16
+    },
+    {
+     "name": "Gardenize",
+     "score": 0.0
+    }
+   ],
+   "his_score": 0.0,
+   "his_rank": 3,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UBR 94% \u2192 splash W (fixing 1) 41.1",
+    "castable in 0% of likely lanes"
+   ],
+   "reasons_his": [
+    "No data"
+   ],
+   "lanes_after": {
+    "UBR": 0.941,
+    "UR": 0.059,
+    "BG": 0.0,
+    "WB": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 13,
+   "taken": "Forest",
+   "top3": [
+    {
+     "name": "Forest",
+     "score": 0.0
+    }
+   ],
+   "his_score": 0.0,
+   "his_rank": null,
+   "scored": false,
+   "dropped": 0,
+   "reasons_top": [
+    "No data"
+   ],
+   "reasons_his": [
+    "No data"
+   ],
+   "lanes_after": {
+    "UBR": 0.94,
+    "UR": 0.06,
+    "BG": 0.0,
+    "WB": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 14,
+   "taken": null,
+   "top3": [],
+   "his_score": null,
+   "his_rank": null,
+   "scored": false,
+   "dropped": 1,
+   "reasons_top": [],
+   "reasons_his": [],
+   "lanes_after": {
+    "UBR": 0.94,
+    "UR": 0.06,
+    "BG": 0.0,
+    "WB": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 1,
+   "taken": "Theorix Annex",
+   "top3": [
+    {
+     "name": "Protege's Awakening",
+     "score": 68.49
+    },
+    {
+     "name": "Rewrite Regrets",
+     "score": 64.63
+    },
+    {
+     "name": "Master of Barbs",
+     "score": 62.91
+    }
+   ],
+   "his_score": 55.51,
+   "his_rank": 6,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "UBR 91% \u2192 59.3 (n=5013)"
+   ],
+   "reasons_his": [
+    "Fit #6 \u00b7 Power #5",
+    "UBR 91% \u2192 55.4 (n=5277)"
+   ],
+   "lanes_after": {
+    "UBR": 0.992,
+    "UR": 0.008,
+    "BG": 0.0,
+    "WB": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 2,
+   "taken": "Undulating Witness",
+   "top3": [
+    {
+     "name": "Clash of Elements",
+     "score": 66.79
+    },
+    {
+     "name": "Unsummon",
+     "score": 66.29
+    },
+    {
+     "name": "Undulating Witness",
+     "score": 65.78
+    }
+   ],
+   "his_score": 65.78,
+   "his_rank": 3,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "UBR 99% \u2192 57.7 (n=5655)"
+   ],
+   "reasons_his": [
+    "Fit #3 \u00b7 Power #6",
+    "UBR 99% \u2192 55.8 (n=5359)"
+   ],
+   "lanes_after": {
+    "UBR": 0.959,
+    "UR": 0.041,
+    "BG": 0.0,
+    "WB": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 3,
+   "taken": "Murmuring Volume",
+   "top3": [
+    {
+     "name": "Fulminous Forte",
+     "score": 73.14
+    },
+    {
+     "name": "Wrath of the Bloodmane",
+     "score": 68.19
+    },
+    {
+     "name": "Murmuring Volume",
+     "score": 66.27
+    }
+   ],
+   "his_score": 66.27,
+   "his_rank": 3,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UBR 96% \u2192 57.3 (n=2718)"
+   ],
+   "reasons_his": [
+    "Fit #3 \u00b7 Power #5",
+    "UBR 96% \u2192 56.9 (n=4094)"
+   ],
+   "lanes_after": {
+    "UBR": 1.0,
+    "BG": 0.0,
+    "WB": 0.0,
+    "WR": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 4,
+   "taken": "Rewrite Regrets",
+   "top3": [
+    {
+     "name": "Rewrite Regrets",
+     "score": 62.94
+    },
+    {
+     "name": "Arni, Humble Scribe",
+     "score": 60.38
+    },
+    {
+     "name": "Sphinx's Approach",
+     "score": 56.13
+    }
+   ],
+   "his_score": 62.94,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UBR 100% \u2192 59.4 (n=2980)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "UBR 100% \u2192 59.4 (n=2980)"
+   ],
+   "lanes_after": {
+    "UBR": 1.0,
+    "BG": 0.0,
+    "WB": 0.0,
+    "WR": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 5,
+   "taken": "Undulating Witness",
+   "top3": [
+    {
+     "name": "Undulating Witness",
+     "score": 48.28
+    },
+    {
+     "name": "Solve for Disappointment",
+     "score": 47.74
+    },
+    {
+     "name": "Blazing Crescendo",
+     "score": 39.71
+    }
+   ],
+   "his_score": 48.28,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #3",
+    "UBR 100% \u2192 55.8 (n=5359)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #3",
+    "UBR 100% \u2192 55.8 (n=5359)"
+   ],
+   "lanes_after": {
+    "UBR": 1.0,
+    "BG": 0.0,
+    "WB": 0.0,
+    "WU": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 6,
+   "taken": "Heartstring Puller",
+   "top3": [
+    {
+     "name": "Heartstring Puller",
+     "score": 55.79
+    },
+    {
+     "name": "Theorix Metamage",
+     "score": 54.13
+    },
+    {
+     "name": "Semester Foreseer",
+     "score": 52.8
+    }
+   ],
+   "his_score": 55.79,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #5",
+    "UBR 100% \u2192 54.4 (n=2660)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #5",
+    "UBR 100% \u2192 54.4 (n=2660)"
+   ],
+   "lanes_after": {
+    "UBR": 1.0,
+    "BG": 0.0,
+    "WB": 0.0,
+    "WR": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 7,
+   "taken": "Stingerquill Annex",
+   "top3": [
+    {
+     "name": "Stingerquill Annex",
+     "score": 59.92
+    },
+    {
+     "name": "Pyre Rhymer",
+     "score": 53.67
+    },
+    {
+     "name": "Semester Foreseer",
+     "score": 52.61
+    }
+   ],
+   "his_score": 59.92,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "UBR 100% \u2192 54.8 (n=6043)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #2",
+    "UBR 100% \u2192 54.8 (n=6043)"
+   ],
+   "lanes_after": {
+    "UBR": 1.0,
+    "BG": 0.0,
+    "WB": 0.0,
+    "WR": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 8,
+   "taken": "Haunted Ridge",
+   "top3": [
+    {
+     "name": "Fblthp, Impossibly Lost",
+     "score": 69.93
+    },
+    {
+     "name": "Haunted Ridge",
+     "score": 62.14
+    },
+    {
+     "name": "Semester Foreseer",
+     "score": 52.61
+    }
+   ],
+   "his_score": 62.14,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UBR 100% \u2192 60.6 (n=2766)"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #2",
+    "UBR 100% \u2192 56.6 (n=1624)"
+   ],
+   "lanes_after": {
+    "UBR": 1.0,
+    "BG": 0.0,
+    "WB": 0.0,
+    "WR": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 9,
+   "taken": "Protege's Awakening",
+   "top3": [
+    {
+     "name": "Protege's Awakening",
+     "score": 65.0
+    },
+    {
+     "name": "Medic's Kitesail",
+     "score": 43.77
+    },
+    {
+     "name": "Eardrum Rattler",
+     "score": 37.78
+    }
+   ],
+   "his_score": 65.0,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UBR 100% \u2192 59.3 (n=5013)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "UBR 100% \u2192 59.3 (n=5013)"
+   ],
+   "lanes_after": {
+    "UBR": 0.987,
+    "BR": 0.013,
+    "BG": 0.0,
+    "WB": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 10,
+   "taken": "Clash of Elements",
+   "top3": [
+    {
+     "name": "Clash of Elements",
+     "score": 62.44
+    },
+    {
+     "name": "Tinybones, Pocket Nuisance",
+     "score": 44.09
+    },
+    {
+     "name": "Void Extrapolator",
+     "score": 41.84
+    }
+   ],
+   "his_score": 62.44,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UBR 99% \u2192 57.7 (n=5655)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "UBR 99% \u2192 57.7 (n=5655)"
+   ],
+   "lanes_after": {
+    "UBR": 0.997,
+    "BR": 0.003,
+    "BG": 0.0,
+    "WB": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 11,
+   "taken": "Tam's Resistance",
+   "top3": [
+    {
+     "name": "Tam's Resistance",
+     "score": 56.83
+    },
+    {
+     "name": "Emergency Phytomedic",
+     "score": 35.69
+    },
+    {
+     "name": "Graft Surgeon",
+     "score": 33.81
+    }
+   ],
+   "his_score": 56.83,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UBR 100% \u2192 56.0 (n=1475)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "UBR 100% \u2192 56.0 (n=1475)"
+   ],
+   "lanes_after": {
+    "UBR": 0.999,
+    "BR": 0.001,
+    "BG": 0.0,
+    "WU": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 12,
+   "taken": "Solve for Disappointment",
+   "top3": [
+    {
+     "name": "Whiplash Wordsmith",
+     "score": 61.93
+    },
+    {
+     "name": "Solve for Disappointment",
+     "score": 41.17
+    },
+    {
+     "name": "Plains",
+     "score": 0.0
+    }
+   ],
+   "his_score": 41.17,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "UBR 100% \u2192 48.7 (n=569)"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #1",
+    "UBR 100% \u2192 54.2 (n=999)"
+   ],
+   "lanes_after": {
+    "UBR": 0.999,
+    "BR": 0.001,
+    "BG": 0.0,
+    "WU": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 13,
+   "taken": "Swamp",
+   "top3": [
+    {
+     "name": "Solve for Disappointment",
+     "score": 38.58
+    },
+    {
+     "name": "Swamp",
+     "score": 0.0
+    }
+   ],
+   "his_score": 0.0,
+   "his_rank": null,
+   "scored": false,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UBR 100% \u2192 54.2 (n=999)"
+   ],
+   "reasons_his": [
+    "No data"
+   ],
+   "lanes_after": {
+    "UBR": 0.999,
+    "BR": 0.001,
+    "BG": 0.0,
+    "WU": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 14,
+   "taken": "Forest",
+   "top3": [
+    {
+     "name": "Forest",
+     "score": 0.0
+    }
+   ],
+   "his_score": 0.0,
+   "his_rank": null,
+   "scored": false,
+   "dropped": 0,
+   "reasons_top": [
+    "No data"
+   ],
+   "reasons_his": [
+    "No data"
+   ],
+   "lanes_after": {
+    "UBR": 0.999,
+    "BR": 0.001,
+    "BG": 0.0,
+    "WU": 0.0
+   }
+  }
+ ],
+ "builder": [
+  {
+   "main": "UR",
+   "splash": "B",
+   "deck_wr": 59.19,
+   "label": "UBR",
+   "cards": [
+    {
+     "name": "Haunted Ridge",
+     "count": 1
+    },
+    {
+     "name": "Stingerquill Annex",
+     "count": 2
+    },
+    {
+     "name": "Theorix Annex",
+     "count": 2
+    },
+    {
+     "name": "Geist of Saint Thalia",
+     "count": 2
+    },
+    {
+     "name": "Multiply by Zero",
+     "count": 1
+    },
+    {
+     "name": "No Admittance",
+     "count": 1
+    },
+    {
+     "name": "Solve for Disappointment",
+     "count": 1
+    },
+    {
+     "name": "Tam's Resistance",
+     "count": 1
+    },
+    {
+     "name": "Chandra's Emberling",
+     "count": 1
+    },
+    {
+     "name": "Clash of Elements",
+     "count": 3
+    },
+    {
+     "name": "Keeper of the Quiet Hour",
+     "count": 1
+    },
+    {
+     "name": "Murmuring Volume",
+     "count": 1
+    },
+    {
+     "name": "Pia, Determined Rebuilder",
+     "count": 1
+    },
+    {
+     "name": "Sphinx's Approach",
+     "count": 1
+    },
+    {
+     "name": "Extended Absence",
+     "count": 1
+    },
+    {
+     "name": "Protege's Awakening",
+     "count": 2
+    },
+    {
+     "name": "Rewrite Regrets",
+     "count": 2
+    },
+    {
+     "name": "Violent Echoes",
+     "count": 2
+    },
+    {
+     "name": "Garruk, Veiled Butcher",
+     "count": 1
+    },
+    {
+     "name": "Tether Technician",
+     "count": 1
+    },
+    {
+     "name": "Undulating Witness",
+     "count": 2
+    },
+    {
+     "name": "Island",
+     "count": 3
+    },
+    {
+     "name": "Swamp",
+     "count": 3
+    },
+    {
+     "name": "Mountain",
+     "count": 4
+    }
+   ]
+  },
+  {
+   "main": "UR",
+   "splash": "",
+   "deck_wr": 53.3,
+   "label": "UR",
+   "cards": [
+    {
+     "name": "Geist of Saint Thalia",
+     "count": 2
+    },
+    {
+     "name": "No Admittance",
+     "count": 1
+    },
+    {
+     "name": "Tam's Resistance",
+     "count": 1
+    },
+    {
+     "name": "Chandra's Emberling",
+     "count": 1
+    },
+    {
+     "name": "Clash of Elements",
+     "count": 3
+    },
+    {
+     "name": "Command the Stage",
+     "count": 1
+    },
+    {
+     "name": "Hallway Heckler",
+     "count": 1
+    },
+    {
+     "name": "Keeper of the Quiet Hour",
+     "count": 1
+    },
+    {
+     "name": "Murmuring Volume",
+     "count": 1
+    },
+    {
+     "name": "Pia, Determined Rebuilder",
+     "count": 1
+    },
+    {
+     "name": "Sphinx's Approach",
+     "count": 1
+    },
+    {
+     "name": "Heartstring Puller",
+     "count": 2
+    },
+    {
+     "name": "Protege's Awakening",
+     "count": 2
+    },
+    {
+     "name": "Violent Echoes",
+     "count": 2
+    },
+    {
+     "name": "Tether Technician",
+     "count": 1
+    },
+    {
+     "name": "Undulating Witness",
+     "count": 2
+    },
+    {
+     "name": "Island",
+     "count": 8
+    },
+    {
+     "name": "Mountain",
+     "count": 9
+    }
+   ]
+  }
+ ],
+ "his_deck": {
+  "main": "UR",
+  "splash": "B",
+  "deck_wr": 59.94,
+  "label": null,
+  "cards": [
+   {
+    "name": "Geist of Saint Thalia",
+    "count": 2
+   },
+   {
+    "name": "Multiply by Zero",
+    "count": 1
+   },
+   {
+    "name": "No Admittance",
+    "count": 1
+   },
+   {
+    "name": "Tam's Resistance",
+    "count": 1
+   },
+   {
+    "name": "Undulating Witness",
+    "count": 2
+   },
+   {
+    "name": "Pia, Determined Rebuilder",
+    "count": 1
+   },
+   {
+    "name": "Clash of Elements",
+    "count": 3
+   },
+   {
+    "name": "Keeper of the Quiet Hour",
+    "count": 1
+   },
+   {
+    "name": "Murmuring Volume",
+    "count": 1
+   },
+   {
+    "name": "Protege's Awakening",
+    "count": 2
+   },
+   {
+    "name": "Extended Absence",
+    "count": 1
+   },
+   {
+    "name": "Rewrite Regrets",
+    "count": 2
+   },
+   {
+    "name": "Heartstring Puller",
+    "count": 2
+   },
+   {
+    "name": "Violent Echoes",
+    "count": 2
+   },
+   {
+    "name": "Garruk, Veiled Butcher",
+    "count": 1
+   },
+   {
+    "name": "Island",
+    "count": 6
+   },
+   {
+    "name": "Swamp",
+    "count": 1
+   },
+   {
+    "name": "Mountain",
+    "count": 5
+   },
+   {
+    "name": "Theorix Annex",
+    "count": 2
+   },
+   {
+    "name": "Haunted Ridge",
+    "count": 1
+   },
+   {
+    "name": "Stingerquill Annex",
+    "count": 2
+   }
+  ]
+ }
+}

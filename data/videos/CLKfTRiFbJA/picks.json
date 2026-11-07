@@ -1,0 +1,1011 @@
+{
+ "id": "CLKfTRiFbJA",
+ "url": "https://youtu.be/CLKfTRiFbJA",
+ "title": "Living the Dream in Reality Fracture Draft!!!",
+ "player": "NicolaiBolas",
+ "set": "FRA",
+ "event": "FRA live Arena draft streamed live on Twitch (he reads chat questions aloud); Premier / Quick not named on screen",
+ "dataset": "FRA_PremierDraft_All_Data.json",
+ "recorded": null,
+ "source": "frames read from data/videos/raw/CLKfTRiFbJA (banner strips for timing, pack title strips as per-pick medians over 3 to 5 frames to remove hover popups; the final deck screen at 1152 s with the sideboard row); takes from his words, the pool and the deck screen; packs of picks 10 to 14 of pack 3 and some pick-11 and pick-12 cards could not be read; transcript from YouTube auto captions, card names corrected; nothing past 19:45 read; cut-off 1160 s. A 30 s banner tile sheet ran to 1800 s: tiles after about 1140 s showed only the small crop of the game UI (no card text) and were not used.",
+ "colour_path": [
+  {
+   "after": "P1p1",
+   "main": "G ramp",
+   "quote": "I'd rather just get like a nice fast ramp start going."
+  },
+  {
+   "after": "P1p4",
+   "main": "RG",
+   "quote": "I would love to just bias towards red if I can."
+  },
+  {
+   "after": "P1p5",
+   "main": "RG, red open",
+   "quote": "I think red is looking to be open here."
+  },
+  {
+   "after": "P1p7",
+   "main": "RG, no splash",
+   "quote": "I feel like I've been like a bit too ambitious with trying to splash."
+  },
+  {
+   "after": "P2p3",
+   "main": "RG value",
+   "quote": "this is a dream draft"
+  },
+  {
+   "after": "deck",
+   "main": "RG, no splash",
+   "quote": "It's just a pure red green kind of value deck."
+  }
+ ],
+ "picks": [
+  {
+   "pack": 1,
+   "pick": 1,
+   "time": "0:30-1:18",
+   "pack_cards": [
+    "Puppet Crafting",
+    "Thalia, the Survivor",
+    "Geist of Saint Thalia",
+    "Gallia, the Merrymaker",
+    "Heartwood Crafter",
+    "Theorix Charm",
+    "Campus Crier",
+    "Shatterwing Pegasus",
+    "Infinite Coursework",
+    "Hallway Heckler",
+    "Arcane Amphisbaena",
+    "Ferocity of the Hunt",
+    "Murmuring Volume",
+    "Theorix Annex"
+   ],
+   "taken": "Heartwood Crafter",
+   "reasoning": "Heartwood Crafter: the rare (Puppet Crafting) is not great; he keeps getting beaten by Crafter when opponents play it (turn-one Crafter, soul-tether token, big creatures fast). He wants a fast ramp start rather than building around Puppet Crafting; Campus Crier is his favourite common in the pack.",
+   "considered": {
+    "Campus Crier": "his favourite common in the pack",
+    "Thalia, the Survivor": "likes the white one, obnoxious",
+    "Puppet Crafting": "cool, he would rather ramp"
+   },
+   "plan": "Green ramp.",
+   "quotes": [
+    "I think I would take the Heartwood Crafter.",
+    "I'd rather just get like a nice fast ramp start going."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 2,
+   "time": "1:18-2:22",
+   "pack_cards": [
+    "Rescue Girl, First Responder",
+    "Kiora of Fire and Ashes",
+    "Restore with Empathy",
+    "Fatehold Charm",
+    "Kiora of Salt and Sand",
+    "Rampart Hunter",
+    "Eardrum Rattler",
+    "Compel Brutality",
+    "Twinned Vision",
+    "Emergency Phytomedic",
+    "Living Library",
+    "Medic's Kitesail",
+    "Plains"
+   ],
+   "taken": "Kiora of Fire and Ashes",
+   "reasoning": "Kiora of Fire and Ashes: fantastic with the Crafter (ramps to Kiora, then one extra mana for her ability); Rescue Girl would be his second pick.",
+   "considered": {
+    "Rescue Girl, First Responder": "would be his second pick, really likes it",
+    "Compel Brutality": "pretty good",
+    "Fatehold Charm": "for a blue-white deck"
+   },
+   "plan": "Green ramp, red top end.",
+   "quotes": [
+    "Kiora is pretty easy pick. I do also like Rescue Girl."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 3,
+   "time": "2:22-3:20",
+   "pack_cards": [
+    "Cruel Calculations",
+    "Edgar, Moonlit Sovereign",
+    "Edgar, Ancient Bloodlord",
+    "Stingerquill Voxmancer",
+    "Vigorbloom Vanguard",
+    "Hexhaven Battalion",
+    "Rank Rat",
+    "Blazing Crescendo",
+    "Charge the Sanctum",
+    "Tam's Resistance",
+    "Keeper of the Quiet Hour",
+    "Vigorbloom Annex"
+   ],
+   "taken": "Edgar, Moonlit Sovereign",
+   "reasoning": "Edgar, Moonlit Sovereign over Vigorbloom Vanguard: he can hold mana to activate abilities and Edgar gets counters; wants a nice top-end card and saves the two-drops for later; no good red card to follow Kiora.",
+   "considered": {
+    "Vigorbloom Vanguard": "great in any green deck, locks in a good two-drop",
+    "Tam's Resistance": "fine, worse than the Vanguard",
+    "Stingerquill Voxmancer": "not a fan"
+   },
+   "plan": "Green with red.",
+   "quotes": [
+    "I'm going to try taking the Edgar. Get a like nice top end card. Save the two drops for later."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 4,
+   "time": "3:20-4:13",
+   "pack_cards": [
+    "Haunted Ridge",
+    "Rescue Girl, First Responder",
+    "Eye of Jace",
+    "Academic Ascent",
+    "Semester Foreseer",
+    "Wrath of the Bloodmane",
+    "Inspired Tethermage",
+    "Blessed Ghoul",
+    "Twinned Vision",
+    "Room of Refuge",
+    "Stingerquill Annex"
+   ],
+   "taken": "Wrath of the Bloodmane",
+   "reasoning": "Wrath of the Bloodmane over Rescue Girl: Rescue Girl works well with Kiora but he wants to bias towards red and the red was not giving him options last pack; he notes three cards missing from this pack, possibly the black Rescue Girl or Massacre Girl.",
+   "considered": {
+    "Rescue Girl, First Responder": "really nice with Kiora but he wants red",
+    "Twinned Vision": "he plays one sometimes"
+   },
+   "plan": "Red-green.",
+   "quotes": [
+    "I would love to just bias towards red if I can. And so I'm going to do that by taking the Wrath of the Bloodmane."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 5,
+   "time": "4:13-4:52",
+   "pack_cards": [
+    "Way of the Necromancer",
+    "Hunter's Axe",
+    "Hexhaven Dueling Arena",
+    "Fateshaper Aspirant",
+    "Infinite Coursework",
+    "Sphinx's Approach",
+    "Hallway Heckler",
+    "No Admittance",
+    "Ferocity of the Hunt",
+    "Swamp"
+   ],
+   "taken": "No Admittance",
+   "reasoning": "No Admittance: very strong; red looks open with a few good red cards in a row. Hallway Heckler is fine, Ferocity of the Hunt or Infinite Coursework next best.",
+   "considered": {
+    "Ferocity of the Hunt": "plays well with Heartwood Crafter",
+    "Hallway Heckler": "fine, not his favourite"
+   },
+   "plan": "Red-green.",
+   "quotes": [
+    "No Admittance is just fantastic. Easy pick up. I think red is looking to be open here."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 6,
+   "time": "4:52-5:30",
+   "pack_cards": [
+    "Roiling Canopy",
+    "Flourishing Grapple",
+    "Jiang Yanggu, Never Alone",
+    "Screeching Soulbreaker",
+    "Silence the Echo",
+    "Tether Technician",
+    "Vinelasher Adept",
+    "Living Library",
+    "Island"
+   ],
+   "taken": "Jiang Yanggu, Never Alone",
+   "reasoning": "Jiang Yanggu, Never Alone: red-green on the menu, and Yanggu works well with Heartwood tokens (pseudo vigilance); Vinelasher Adept also reasonable.",
+   "considered": {
+    "Vinelasher Adept": "pretty reasonable, he gets another later",
+    "Roiling Canopy": "almost a mono-green card",
+    "Hunter's Axe": "not a huge fan"
+   },
+   "plan": "Red-green.",
+   "quotes": [
+    "Jiang Yanggu fantastic card. Great to see this in the pack."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 7,
+   "time": "5:30-6:06",
+   "pack_cards": [
+    "Eye of Ugin",
+    "Gardenize",
+    "Eardrum Rattler",
+    "Sureshot Sower",
+    "Twinned Vision",
+    "Emergency Phytomedic",
+    "Living Library",
+    "Innovative Commons"
+   ],
+   "taken": "Sureshot Sower",
+   "reasoning": "Sureshot Sower: he has no two-drops except a kill spell (curve one, two, three, four, five, six); a blue splash for Saheeli is not exciting and he feels he has been too ambitious with splashing.",
+   "considered": {
+    "Twinned Vision": "in the pack",
+    "Eye of Ugin": "in the pack"
+   },
+   "plan": "Red-green, no splash.",
+   "quotes": [
+    "I'm just going to take sureshot sower here. Especially if red green is flowing this well."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 8,
+   "time": "6:06-6:36",
+   "pack_cards": [
+    "Tam, the Possibility",
+    "Shatterwing Pegasus",
+    "Cast Away Doubt",
+    "Chandra's Emberling",
+    "Hallway Heckler",
+    "Vinelasher Adept",
+    "unreadable (hidden)"
+   ],
+   "taken": "Vinelasher Adept",
+   "reasoning": "Vinelasher Adept: a nice top-end card that cycles early; white has more cards he would splash but he does not want to splash.",
+   "considered": {
+    "Tam, the Possibility": "in the pack"
+   },
+   "plan": "Red-green.",
+   "quotes": [
+    "I think I'm just going to take Vinelasher Adept. It's just a really nice card at the top end that you can cycle early when you need it to."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 9,
+   "time": "6:36-7:10",
+   "pack_cards": [
+    "Puppet Crafting",
+    "Gallia, the Merrymaker",
+    "Shatterwing Pegasus",
+    "Hallway Heckler",
+    "Murmuring Volume",
+    "unreadable (hidden)"
+   ],
+   "taken": "Hallway Heckler",
+   "reasoning": "Hallway Heckler over Puppet Crafting and Gallia: he does not like Gallia and Puppet Crafting is not very good; a land would be nice but one way to get into trouble is to splash greedily (he tells the Ben Stark / LSV story about splashing).",
+   "considered": {
+    "Puppet Crafting": "not very good",
+    "Gallia, the Merrymaker": "does not like"
+   },
+   "plan": "Red-green.",
+   "quotes": [
+    "I don't think puppet crafting is very good. So yeah, I'll take Hallway Heckler."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 10,
+   "time": "7:10-7:38",
+   "pack_cards": [
+    "Restore with Empathy",
+    "Rampart Hunter",
+    "Living Library",
+    "Medic's Kitesail",
+    "Plains"
+   ],
+   "taken": "Restore with Empathy",
+   "reasoning": "Restore with Empathy (pool shows it; the spoken pick is described as taking a Medic's Kitesail he would never play more than one of); he says he is set on red-green and takes a speculative card hoping for a crazy rare. The take is inferred from the sideboard.",
+   "considered": {
+    "Medic's Kitesail": "he does not love it and never wants more than one"
+   },
+   "plan": "Red-green.",
+   "quotes": [
+    "I don't love medics kite sail and I never want more than one. So I'll just take this and maybe not play it here."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 11,
+   "time": "7:38-7:57",
+   "pack_cards": [
+    "Rank Rat",
+    "Blazing Crescendo",
+    "Keeper of the Quiet Hour",
+    "Vigorbloom Annex"
+   ],
+   "taken": "Vigorbloom Annex",
+   "reasoning": "Vigorbloom Annex from Rank Rat, Blazing Crescendo and Keeper of the Quiet Hour; he does not love Keeper or Crescendo; the take is inferred from the sideboard.",
+   "considered": {
+    "Keeper of the Quiet Hour": "does not love it",
+    "Blazing Crescendo": "does not love it"
+   },
+   "plan": "Red-green.",
+   "quotes": [
+    "I don't love keeper of the quiet hour and I don't love blazing crescendo and I do think I'm kind of set on red green ... I'm just going to take this as a speculative. Maybe I get a crazy rare."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 12,
+   "time": "7:57-8:01",
+   "pack_cards": [
+    "Rescue Girl, First Responder",
+    "Eye of Jace",
+    "Stingerquill Annex"
+   ],
+   "taken": "Stingerquill Annex",
+   "reasoning": "Stingerquill Annex over Rescue Girl and Eye of Jace: he wonders whether he would splash Rescue Girl and decides he wants to play it on turn two, but maybe he would splash a black card; the take is inferred from the sideboard.",
+   "considered": {
+    "Rescue Girl, First Responder": "goes well with Kiora and Vinelasher Adept, not a splash for him"
+   },
+   "plan": "Red-green.",
+   "quotes": [
+    "I don't think I want to splash it. It's a card I want to be able to play on turn two."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 13,
+   "time": "8:01-8:04",
+   "pack_cards": [
+    "Hexhaven Dueling Arena",
+    "Swamp"
+   ],
+   "taken": "Hexhaven Dueling Arena",
+   "reasoning": "Hexhaven Dueling Arena over a Swamp (the white-blue-ish land card); no comment.",
+   "considered": {},
+   "plan": "Red-green.",
+   "quotes": []
+  },
+  {
+   "pack": 1,
+   "pick": 14,
+   "time": "8:04-8:06",
+   "pack_cards": [
+    "Island"
+   ],
+   "taken": "Island",
+   "reasoning": "Last card, Island, auto-selected.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 1,
+   "time": "8:06-9:06",
+   "pack_cards": [
+    "Face Yourself",
+    "Ghalta the Immovable",
+    "Gallia, Tragic Host",
+    "Jiang Yanggu, Alone",
+    "Ghalta the Unstoppable",
+    "Theorix Charm",
+    "Warrior's Blades",
+    "Hexhaven Battalion",
+    "Semester Foreseer",
+    "Sphinx's Approach",
+    "Last Gasp",
+    "Tether Technician",
+    "Wrecking Gecko",
+    "Island"
+   ],
+   "taken": "Jiang Yanggu, Alone",
+   "reasoning": "Jiang Yanggu, Alone over Face Yourself and Ghalta: Face Yourself needs a planeswalker he will rarely control; Yanggu will let his defensive creatures get rid of extra lands; he would rather take a five-drop than Gallia or Ghalta.",
+   "considered": {
+    "Face Yourself": "needs a planeswalker, he has few Empower Jace cards",
+    "Ghalta the Immovable": "can be discounted, he would rather get a five-drop",
+    "Gallia, Tragic Host": "does not love it"
+   },
+   "plan": "Red-green.",
+   "quotes": [
+    "I think I'd rather take Jiang Yanggu alone because I think a lot of my creatures are going to be holding back on defense."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 2,
+   "time": "9:06-9:23",
+   "pack_cards": [
+    "Loyal Tutor",
+    "Vraska, the Cutting Glare",
+    "Saheeli, Consul of Oversight",
+    "Violent Echoes",
+    "Saheeli, Jewel of Avishkar",
+    "Memory Trap",
+    "Protege's Awakening",
+    "Solve for Disappointment",
+    "Heartstring Puller",
+    "Whiplash Wordsmith",
+    "Tam's Resistance",
+    "Afterthought Sentry",
+    "Forest"
+   ],
+   "taken": "Violent Echoes",
+   "reasoning": "Violent Echoes: great card for his deck, a really good removal spell that empowers Jace; the card in the pack he cannot use is the double-black one (Vraska). He would not mind Heartstring Puller.",
+   "considered": {
+    "Heartstring Puller": "would not mind it, wheels",
+    "Vraska, the Cutting Glare": "too hard to use with double black"
+   },
+   "plan": "Red-green.",
+   "quotes": [
+    "But I can take Violent Echoes. Great card from my deck. Really good removal spell that then will let me empower Jace."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 3,
+   "time": "9:23-9:53",
+   "pack_cards": [
+    "Germinate Recruits",
+    "Saheeli, Consul of Oversight",
+    "Terminal Criticism",
+    "Jiang Yanggu, Alone",
+    "Jiang Yanggu, Never Alone",
+    "unreadable (hidden)",
+    "Divining Duelist",
+    "Rank Rat",
+    "Void Extrapolator",
+    "Budding Insurgent",
+    "Twinned Vision",
+    "Mountain"
+   ],
+   "taken": "Jiang Yanggu, Never Alone",
+   "reasoning": "Jiang Yanggu, Never Alone: gets worse in multiples because the bodies stick around, but he likes it better than Jiang Yanggu, Alone: four-drop versus five-drop, five-five of stats across two bodies for four mana, and one has pseudo-vigilance. He would play one Twinned Vision.",
+   "considered": {
+    "Twinned Vision": "would take one for the deck",
+    "Jiang Yanggu, Alone": "worse than the Never Alone"
+   },
+   "plan": "Red-green.",
+   "quotes": [
+    "I think this card is fantastic and I like it better than Jiang Yanggu alone. Just four drop versus five drop."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 4,
+   "time": "9:53-10:23",
+   "pack_cards": [
+    "Null Summoner",
+    "Fulminous Forte",
+    "Way of the Paradox",
+    "Primal Witchstalker",
+    "Blossom-Blessed Angel",
+    "Silence the Echo",
+    "Awaken the Inferno",
+    "Something Worth Saving",
+    "Theorix Metamage",
+    "Murmuring Volume",
+    "Fatehold Annex"
+   ],
+   "taken": "Fulminous Forte",
+   "reasoning": "Fulminous Forte over Null Summoner and Awaken the Inferno: he cannot use Null Summoner; Forte is fantastic; Awaken the Inferno is good but he is happy with his two-colour deck.",
+   "considered": {
+    "Null Summoner": "cannot take advantage of it",
+    "Awaken the Inferno": "likes it, does not need to prioritise landcyclers",
+    "Way of the Paradox": "sometimes okay, hard to use"
+   },
+   "plan": "Red-green.",
+   "quotes": [
+    "I think fulminous forte is fantastic though. Really good card."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 5,
+   "time": "10:23-11:00",
+   "pack_cards": [
+    "Gideon's Memorial",
+    "Rockfall Vale",
+    "Way of the Paradox",
+    "Stingerquill Voxmancer",
+    "Infinite Coursework",
+    "Solve for Disappointment",
+    "Tether Technician",
+    "Budding Insurgent",
+    "Compel Brutality",
+    "Dedicated Commons"
+   ],
+   "taken": "Rockfall Vale",
+   "reasoning": "Rockfall Vale over Compel Brutality: his early creatures are low in power so Compel Brutality is more of a late-game card, and the red-green land makes the double red and double green cards easier to cast; he already has three or four good burn spells.",
+   "considered": {
+    "Compel Brutality": "more like a late-game card, he has burn already"
+   },
+   "plan": "Red-green.",
+   "quotes": [
+    "one of the ways you lose is by having bad mana. And I feel like this card is going to do a lot of work for me."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 6,
+   "time": "11:00-11:18",
+   "pack_cards": [
+    "Fatehold Charm",
+    "Stingerquill Voxmancer",
+    "Mabel, Valley Hero",
+    "Cryotheory Adept",
+    "Rampart Hunter",
+    "Screeching Soulbreaker",
+    "Twinned Vision",
+    "Konstrari Improviser",
+    "Stingerquill Annex"
+   ],
+   "taken": "Konstrari Improviser",
+   "reasoning": "Konstrari Improviser: he loves it and hoped to see these; ramps up to Kiora and Yanggu, and works with his artifact tokens.",
+   "considered": {},
+   "plan": "Red-green ramp.",
+   "quotes": [
+    "I love the Konstrari Improviser. I was hoping to see some of these. Just get myself some ramp."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 7,
+   "time": "11:18-11:50",
+   "pack_cards": [
+    "Refute Destiny",
+    "Yargle, Goliath of Otaria",
+    "Hunter's Axe",
+    "Eye of Jace",
+    "Wrecking Gecko",
+    "Whiplash Wordsmith",
+    "Charge the Sanctum",
+    "Tam's Resistance"
+   ],
+   "taken": "Wrecking Gecko",
+   "reasoning": "Wrecking Gecko ('five for five') over Tam's Resistance and Hunter's Axe: he wants to get more reps with the Gecko; the counters in Tam's Resistance work with Edgar.",
+   "considered": {
+    "Tam's Resistance": "counters work well with Edgar",
+    "Hunter's Axe": "reasonable with Jiang Yanggu, Alone"
+   },
+   "plan": "Red-green.",
+   "quotes": [
+    "I'm just going to take a five five for five over the Tam's resistance. I kind of want to get more reps with that."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 8,
+   "time": "11:50-12:08",
+   "pack_cards": [
+    "Entrust the Spark",
+    "Kiora of Salt and Sand",
+    "Predictive Preparations",
+    "Screeching Soulbreaker",
+    "Eardrum Rattler",
+    "Bestial Incursion",
+    "Konstrari Annex"
+   ],
+   "taken": "Konstrari Annex",
+   "reasoning": "Konstrari Annex (land) over Bestial Incursion: the question is whether the Incursion is better than the card he ends up cutting or better than a basic land; he will make it on playables.",
+   "considered": {
+    "Bestial Incursion": "nice, but he already has a few four-drops"
+   },
+   "plan": "Red-green.",
+   "quotes": [
+    "I'm just going to take the land. Bestial Incursion is nice. I already have a few four drops though."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 9,
+   "time": "12:08-12:30",
+   "pack_cards": [
+    "Warrior's Blades",
+    "Sphinx's Approach",
+    "Last Gasp",
+    "Tether Technician",
+    "Wrecking Gecko",
+    "Island"
+   ],
+   "taken": "Tether Technician",
+   "reasoning": "Tether Technician over Warrior's Blades: he has been reasonably impressed and is trying to ramp; compared with a basic Forest it is much better.",
+   "considered": {
+    "Warrior's Blades": "would let him splash",
+    "Wrecking Gecko": "in the pack"
+   },
+   "plan": "Red-green.",
+   "quotes": [
+    "I kind of just want to take a tether technician though. I've been pretty reasonably impressed with this card."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 10,
+   "time": "12:30-12:47",
+   "pack_cards": [
+    "Protege's Awakening",
+    "Heartstring Puller",
+    "Whiplash Wordsmith",
+    "Afterthought Sentry",
+    "Forest"
+   ],
+   "taken": "Heartstring Puller",
+   "reasoning": "Heartstring Puller (the take is from his remark about cutting it later and the pool; no comment on the pick).",
+   "considered": {},
+   "plan": "Red-green.",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 11,
+   "time": "12:47-12:52",
+   "pack_cards": [
+    "Germinate Recruits",
+    "Terminal Criticism",
+    "Jiang Yanggu, Alone",
+    "Mountain"
+   ],
+   "taken": "Jiang Yanggu, Alone",
+   "reasoning": "Jiang Yanggu, Alone again: 'I'm getting all the Yangus'; they work in multiples because you can discard one to the other.",
+   "considered": {},
+   "plan": "Red-green.",
+   "quotes": [
+    "another yangu, I'm getting all the yangus. They work well in multiples because you can discard the one to the other."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 12,
+   "time": "12:52-13:02",
+   "pack_cards": [
+    "Something Worth Saving",
+    "Theorix Metamage",
+    "Murmuring Volume"
+   ],
+   "taken": "Something Worth Saving",
+   "reasoning": "Something Worth Saving: he does not have much graveyard synergy but this gives card selection to find Kiora of Fire and Ashes.",
+   "considered": {
+    "Theorix Metamage": "in the pack"
+   },
+   "plan": "Red-green.",
+   "quotes": [
+    "I'll take something worth saving. I don't have a ton of graveyard synergy but this is graveyard synergy it gives me card selection."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 13,
+   "time": "13:02-13:08",
+   "pack_cards": [
+    "Tether Technician",
+    "Budding Insurgent"
+   ],
+   "taken": "Budding Insurgent",
+   "reasoning": "Budding Insurgent over Tether Technician (the take is inferred from the sideboard).",
+   "considered": {},
+   "plan": "Red-green.",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 14,
+   "time": "13:08-13:12",
+   "pack_cards": [
+    "Mabel, Valley Hero"
+   ],
+   "taken": "Mabel, Valley Hero",
+   "reasoning": "Last card, Mabel, Valley Hero, auto-selected.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 1,
+   "time": "13:12-14:03",
+   "pack_cards": [
+    "Emrakul, the Exigent Doom",
+    "Karn, Gilded Guardian",
+    "Karn, Argent Defender",
+    "Countersculpt",
+    "Hapatra, the Desert Frost",
+    "Essence Burn",
+    "Twisted Fates",
+    "Fateshaper Aspirant",
+    "Rank Rat",
+    "Vinelasher Adept",
+    "Twinned Vision",
+    "Konstrari Improviser",
+    "Murmuring Volume",
+    "Forest"
+   ],
+   "taken": "Emrakul, the Exigent Doom",
+   "reasoning": "Emrakul, the Exigent Doom over Konstrari Improviser: he really wants to try it out (it works with the heartwood tokens: two different coloured artifacts), and the Improviser might be better for the deck; 'how many times do you get to have this card go off?'",
+   "considered": {
+    "Konstrari Improviser": "might be better for the deck",
+    "Twisted Fates": "in the pack"
+   },
+   "plan": "Red-green ramp.",
+   "quotes": [
+    "I'm going to take the emercle. Obviously, I could take Constrari Improviser. It might just be better for my deck, but I'm going to take this thing because I really want to try it out."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 2,
+   "time": "14:03-14:42",
+   "pack_cards": [
+    "Identity Echo",
+    "Hapatra, the Desert Frost",
+    "Heartwood Crafter",
+    "Stingerquill Charm",
+    "Hapatra, the Desert Fang",
+    "Campus Crier",
+    "Divining Duelist",
+    "Silence the Echo",
+    "Eardrum Rattler",
+    "Wrath of the Bloodmane",
+    "Budding Insurgent",
+    "Fatehold Chronologist",
+    "Swamp"
+   ],
+   "taken": "Heartwood Crafter",
+   "reasoning": "Heartwood Crafter (second copy): great for a deck with lots of expensive cards; his removal suite (Wrath, Forte, Echoes, No Admittance, Sureshot) is reasonable so he prefers early acceleration over another Wrath.",
+   "considered": {
+    "Wrath of the Bloodmane": "in the pack, he already has removal"
+   },
+   "plan": "Red-green ramp.",
+   "quotes": [
+    "Heartwood crafter is going to fit perfectly here. I would rather just get like early acceleration to get to my top end cards a little faster."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 3,
+   "time": "14:42-15:24",
+   "pack_cards": [
+    "Avatar of Burgeoning Echoes",
+    "Fblthp, Impossibly Lost",
+    "Koth, the Geomancer",
+    "Woodwork Prodigy",
+    "Archive Arbiter",
+    "Surgical Precision",
+    "Unsummon",
+    "unreadable (hidden)",
+    "Hallway Heckler",
+    "Inspired Tethermage",
+    "Tethermage's Advantage",
+    "Transformative Commons"
+   ],
+   "taken": "Woodwork Prodigy",
+   "reasoning": "Woodwork Prodigy over Archive Arbiter and Tethermage: the Prodigy helps build to his expensive top end; he does not need the Arbiter; Fblthp, Impossibly Lost is also seen.",
+   "considered": {
+    "Archive Arbiter": "does not need more top end",
+    "Inspired Tethermage": "good, but Prodigy is better with his top end"
+   },
+   "plan": "Red-green ramp.",
+   "quotes": [
+    "I don't need more top end, so I don't need the arbiter. And then I'm going to take the woodwork prodigy to just help me build up towards my really expensive top end."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 4,
+   "time": "15:24-15:39",
+   "pack_cards": [
+    "Teyo, Diamondblade Mage",
+    "Fblthp, Knows the Way",
+    "Cryotheory Adept",
+    "Cast Away Doubt",
+    "Bestial Incursion",
+    "Wrecking Gecko",
+    "Living Library",
+    "unreadable (hidden)",
+    "unreadable (hidden)",
+    "unreadable (hidden)",
+    "unreadable (hidden)"
+   ],
+   "taken": "Fblthp, Knows the Way",
+   "reasoning": "Fblthp, Knows the Way: better when splashing (a 3/2) but still a two-two that gets a land for three mana; he puts it in the four-drop slot.",
+   "considered": {
+    "Teyo, Diamondblade Mage": "in the pack",
+    "Bestial Incursion": "in the pack"
+   },
+   "plan": "Red-green ramp.",
+   "quotes": [
+    "Fibble knows the way. Put him in the four drop slot."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 5,
+   "time": "15:39-15:57",
+   "pack_cards": [
+    "Koth, the Geomancer",
+    "Heartwood Crafter",
+    "Kiora of Salt and Sand",
+    "Graft Surgeon",
+    "Apex Witchstalker",
+    "Tether Technician",
+    "Compel Brutality",
+    "Something Worth Saving",
+    "Whiplash Wordsmith",
+    "Island"
+   ],
+   "taken": "Compel Brutality",
+   "reasoning": "Compel Brutality over a third Heartwood Crafter: the third copy gets worse, he does not want to flood on that effect, and Compel fills out his removal suite as a fifth removal spell.",
+   "considered": {
+    "Heartwood Crafter": "third copy gets worse"
+   },
+   "plan": "Red-green.",
+   "quotes": [
+    "I think heartwood crafter the third copy does get a little bit worse. And I think compel brutality fills out my removal suite."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 6,
+   "time": "15:57-16:15",
+   "pack_cards": [
+    "Flourishing Grapple",
+    "Edgar, Ancient Bloodlord",
+    "unreadable (hidden)",
+    "Graft Surgeon",
+    "Tether Technician",
+    "Tethermage's Advantage",
+    "Whiplash Wordsmith",
+    "Tam's Resistance",
+    "Plains"
+   ],
+   "taken": "Tam's Resistance",
+   "reasoning": "Tam's Resistance over Flourishing Grapple: Flourishing Grapple would be the pick in best of three as a great sideboard card, but this is best of one; a little Empower Jace and counter synergy with Edgar.",
+   "considered": {
+    "Flourishing Grapple": "great sideboard card in best of three"
+   },
+   "plan": "Red-green.",
+   "quotes": [
+    "If this was best of three, I would take flourishing grapple as a great sideboard card, but I'm going to take Tam's resistance here."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 7,
+   "time": "16:15-16:39",
+   "pack_cards": [
+    "Samut, Hazoret's Champion",
+    "Hunter's Axe",
+    "Academic Ascent",
+    "Last Gasp",
+    "No Admittance",
+    "Arcane Amphisbaena",
+    "Living Library",
+    "Forest"
+   ],
+   "taken": "Samut, Hazoret's Champion",
+   "reasoning": "Samut, Hazoret's Champion over No Admittance: 'might be a mistake honestly' but it has done so much work against him, he wants to try it, and it makes Jiang Yanggu attack immediately; wide-open lanes.",
+   "considered": {
+    "No Admittance": "a very good kill spell, he may regret passing it"
+   },
+   "plan": "Red-green aggro-ramp.",
+   "quotes": [
+    "I'm going to take this over no admittance. It might be a mistake honestly."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 8,
+   "time": "16:39-16:58",
+   "pack_cards": [
+    "Gallia, Tragic Host",
+    "Gallia, the Merrymaker",
+    "Wrecking Gecko",
+    "Charge the Sanctum",
+    "Tam's Resistance",
+    "Living Library",
+    "Plains"
+   ],
+   "taken": null,
+   "reasoning": "Taken card not stated (pack: Gallia x2, Wrecking Gecko, Charge the Sanctum, Tam's Resistance, Living Library, Plains); the pool shows only basic lands still unaccounted, so the take is probably the Plains (not stated).",
+   "considered": {},
+   "plan": "Red-green.",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 9,
+   "time": "16:58-17:06",
+   "pack_cards": [
+    "Essence Burn",
+    "unreadable (hidden)",
+    "Vinelasher Adept",
+    "Twinned Vision",
+    "Murmuring Volume",
+    "Living Library"
+   ],
+   "taken": "Vinelasher Adept",
+   "reasoning": "Vinelasher Adept (second copy) over Twinned Vision: extra flexibility, makes it harder to flood out.",
+   "considered": {
+    "Twinned Vision": "passed"
+   },
+   "plan": "Red-green.",
+   "quotes": [
+    "There's another Vine Flasher Adept over Twin Division. I'm going to take the vine lash adept. Give myself extra flexibility here."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 10,
+   "time": "17:06-17:18",
+   "pack_cards": [
+    "Stingerquill Charm",
+    "Divining Duelist",
+    "Eardrum Rattler",
+    "unreadable (hidden)",
+    "Swamp"
+   ],
+   "taken": null,
+   "reasoning": "Taken card not stated (pack: Stingerquill Charm, Divining Duelist, Eardrum Rattler, Twinned Vision, Swamp); no spell is in his pool from it, so the take is probably the Swamp (not stated).",
+   "considered": {},
+   "plan": "Red-green.",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 11,
+   "time": "17:18-17:30",
+   "pack_cards": [
+    "Inspired Tethermage",
+    "unreadable (hidden)",
+    "unreadable (hidden)",
+    "unreadable (hidden)"
+   ],
+   "taken": "Inspired Tethermage",
+   "reasoning": "Inspired Tethermage: 'we did get the tether mage back, that's a great pickup'.",
+   "considered": {},
+   "plan": "Red-green.",
+   "quotes": [
+    "And we did get the tether mage back. That's a great pickup."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 12,
+   "time": "17:30-17:45",
+   "pack_cards": [
+    "unreadable (hidden)",
+    "unreadable (hidden)",
+    "unreadable (hidden)"
+   ],
+   "taken": null,
+   "reasoning": "Taken card not shown (the three cards of the pack were never readable).",
+   "considered": {},
+   "plan": "Red-green.",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 13,
+   "time": "17:45-17:48",
+   "pack_cards": [
+    "unreadable (hidden)",
+    "unreadable (hidden)"
+   ],
+   "taken": null,
+   "reasoning": "Taken card not shown (the two cards were never readable).",
+   "considered": {},
+   "plan": "Red-green.",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 14,
+   "time": "17:48-25:45",
+   "pack_cards": [
+    "Flourishing Grapple"
+   ],
+   "taken": "Flourishing Grapple",
+   "reasoning": "Last card, Flourishing Grapple, auto-selected (the sideboard card he passed at pick 6).",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  }
+ ]
+}

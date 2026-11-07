@@ -1,0 +1,778 @@
+{
+ "video": "CWsZxo1pB6Y",
+ "player": "NicolaiBolas",
+ "set": "FRA",
+ "source": "YouTube auto-caption transcript 0:00-24:30 (tools/video_draft.py transcript CWsZxo1pB6Y --start 0 --end 1470), card names corrected against data/Sets/FRA_PremierDraft_All_Data.json; nothing past 24:30 read. 'type' marks each idea as claim, heuristic or one-off pick; 'repeats' lists ideas of mqZsj4Vg2Es it repeats.",
+ "ideas": [
+  {
+   "id": "CWs-01",
+   "time": 32,
+   "phase": "draft",
+   "claim": "Variable Chaser is good mostly because it is a three-mana 2/3 flier with prowess; its Ark of Fortune half (each player discards and draws seven) is risky because the opponent gets seven cards with all their mana open.",
+   "quote": "making each player discard their hand to draw seven um is pretty risky cuz giving your opponent seven cards and then they'll have all of their mana untapped",
+   "cards": [
+    "Variable Chaser"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Variable Chaser against other rares and 3-drop fliers; skill-split.",
+   "type": "claim",
+   "repeats": []
+  },
+  {
+   "id": "CWs-02",
+   "time": 60,
+   "phase": "draft",
+   "claim": "Hapatra, the Desert Fang over No Admittance in P1p1: a two-for-one (3/3 plus a kill once the graveyard has a card) that is also splashable; a mono-coloured card is only a close second.",
+   "quote": "I think it's enough better than No Admittance that it's worth taking.",
+   "cards": [
+    "Hapatra, the Desert Fang",
+    "No Admittance"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR and ALSA by top drafters for both; within-deck value per game in hand.",
+   "type": "claim",
+   "repeats": []
+  },
+  {
+   "id": "CWs-03",
+   "time": 88,
+   "phase": "draft",
+   "claim": "A gold card with a basic landcycler in the deck is easier to splash: cycle the landcycler, the big card in the graveyard turns Hapatra on, and the cycler fetches the basic that makes the splash.",
+   "quote": "if you're playing like any black deck, you have the Hepatra. You play like an Apex Witch Stalker, you cycle it, that puts a big mana value card in your graveyard, and then you get your forest, and you can play Hapatra even if you're not playing black green specifically.",
+   "cards": [
+    "Hapatra, the Desert Fang",
+    "Apex Witchstalker",
+    "Undulating Witness"
+   ],
+   "kind": "synergy",
+   "engine_area": "builder",
+   "test_idea": "Win rate of Hapatra in decks with 0, 1, 2 basic landcyclers when it is a splash card.",
+   "type": "claim",
+   "repeats": []
+  },
+  {
+   "id": "CWs-04",
+   "time": 135,
+   "phase": "draft",
+   "claim": "Removal in a colour you are not playing is passed in favour of the graveyard engine card ('we don't have to be a green deck'); early picks go to power and synergy, not to the on-colour removal count.",
+   "quote": "I think I'm going to try this rewrite regrets thing and see if I can make a black potential graveyard deck work.",
+   "cards": [
+    "Rewrite Regrets",
+    "Compel Brutality",
+    "Surgical Precision"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Pick order of Rewrite Regrets versus removal among 60%+ drafters; GIH WR of Rewrite Regrets by number of self-mill cards.",
+   "type": "heuristic",
+   "repeats": []
+  },
+  {
+   "id": "CWs-05",
+   "time": 172,
+   "phase": "draft",
+   "claim": "Proft, Consulting Detective gets better with surveil effects, and Empower Jace cards that tick down by one feed it.",
+   "quote": "a lot of your empower Jace cards might not get all the way to three. So you can tick down minus one, get your prof going.",
+   "cards": [
+    "Proft, Consulting Detective"
+   ],
+   "kind": "synergy",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Proft by count of surveil/Empower Jace cards in the deck.",
+   "type": "claim",
+   "repeats": [
+    "mqZ-47"
+   ]
+  },
+  {
+   "id": "CWs-06",
+   "time": 210,
+   "phase": "draft",
+   "claim": "Prefer power level over the on-colour land early: 'I'm still taking power level cards', so the blue-black dual goes behind Proft and Amphisbaena.",
+   "quote": "I think there a blue black land. I'm not going to take that here. I'm still taking power level cards.",
+   "cards": [
+    "Theorix Annex",
+    "Proft, Consulting Detective"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Pick order of non-basic lands versus strong playables at P1p3 for 60%+ drafters; value of a dual land taken before pick 4.",
+   "type": "heuristic",
+   "repeats": []
+  },
+  {
+   "id": "CWs-07",
+   "time": 246,
+   "phase": "draft",
+   "claim": "Mabel, Bitter Recluse is a good defensive body that also answers counters (a Jace token, +1/+1 counters), preferred over an off-plan gold card.",
+   "quote": "that's pretty good as a defensive body as well for maybe my defensive black green blue kind of space deck.",
+   "cards": [
+    "Mabel, Bitter Recluse",
+    "Mabel, Valley Hero"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Mabel, Bitter Recluse.",
+   "type": "one-off pick",
+   "repeats": []
+  },
+  {
+   "id": "CWs-08",
+   "time": 260,
+   "phase": "draft",
+   "claim": "Seeing cards of a colour pair arrive in pack 1 pick 4 to 5 is the first sign that blue-black is open.",
+   "quote": "Okay, it's looking like blue black is open which is nice.",
+   "cards": [],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "Whether cards of the colour pair seen at picks 4-6 predict the pair's win rate for the drafter (signal strength by pick number).",
+   "type": "claim",
+   "related": [
+    "mqZ-23"
+   ]
+  },
+  {
+   "id": "CWs-09",
+   "time": 295,
+   "phase": "draft",
+   "claim": "Take the rare (Dark Matter Manipulator) for the experience rather than the uncommon in the same pack, staying in black.",
+   "quote": "I'm going to try taking the rare. We'll get some experience with the rare.",
+   "cards": [
+    "Dark Matter Manipulator",
+    "Paradox Shaper"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Dark Matter Manipulator vs Paradox Shaper vs Undulating Witness.",
+   "type": "one-off pick",
+   "repeats": []
+  },
+  {
+   "id": "CWs-10",
+   "time": 330,
+   "phase": "draft",
+   "claim": "Clash of Elements is very strong but not worth splashing for; he stays in colours and gets Keeper of the Quiet Hour later.",
+   "quote": "Clash of Elements is very strong, but I don't really want necessarily want to go splashing this direction.",
+   "cards": [
+    "Clash of Elements",
+    "Keeper of the Quiet Hour"
+   ],
+   "kind": "splash / mana",
+   "engine_area": "picker",
+   "test_idea": "Splash value of a strong gold or off-colour card versus its GIH WR gap to the on-colour alternative.",
+   "type": "heuristic",
+   "repeats": [
+    "mqZ-30"
+   ]
+  },
+  {
+   "id": "CWs-11",
+   "time": 376,
+   "phase": "draft",
+   "claim": "Only take one effect of a type: with one removal spell like Silence the Echo already worth having, the second is passed for card filtering.",
+   "quote": "I think I only really want one of this type of effect even though it's like pretty efficient at times",
+   "cards": [
+    "Silence the Echo",
+    "Arni, Humble Scribe"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Diminishing returns for duplicate sorcery-speed removal spells in a deck (marginal win rate by copy count).",
+   "type": "heuristic",
+   "repeats": []
+  },
+  {
+   "id": "CWs-12",
+   "time": 412,
+   "phase": "draft",
+   "claim": "A land that fixes a possible splash is worth taking over a mediocre playable early (white-black dual over Inspired Tethermage).",
+   "quote": "I might take the meticulous commons though because maybe I would want to splash white for something.",
+   "cards": [
+    "Meticulous Commons",
+    "Inspired Tethermage"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Value of an early dual land by the number of splash-worthy cards that arrive later.",
+   "type": "heuristic",
+   "repeats": [
+    "mqZ-16"
+   ]
+  },
+  {
+   "id": "CWs-13",
+   "time": 450,
+   "phase": "draft",
+   "claim": "Undulating Witness is a flier with basic landcycling that works with a splash and Hapatra.",
+   "quote": "It's a flyer. It has basic land cycling to work with my Hepatra or if I wanted to splash white or something like that.",
+   "cards": [
+    "Undulating Witness"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Undulating Witness by number of splash colours.",
+   "type": "claim",
+   "related": [
+    "mqZ-45"
+   ]
+  },
+  {
+   "id": "CWs-14",
+   "time": 470,
+   "phase": "draft",
+   "claim": "Proft, Sinister Mastermind is a scary card with a full graveyard and can be discarded for early interaction when it cannot be cast.",
+   "quote": "I can discard it for some early interaction.",
+   "cards": [
+    "Proft, Sinister Mastermind"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Proft, Sinister Mastermind by graveyard size (turn of play).",
+   "type": "claim",
+   "repeats": []
+  },
+  {
+   "id": "CWs-15",
+   "time": 483,
+   "phase": "draft",
+   "claim": "Cards of a colour coming back late in the pack (green at P1p11) suggest the colour is open; he moves back towards it.",
+   "quote": "We have gotten back some of these green cards, so that does make me think that maybe that deck will be open.",
+   "cards": [
+    "Arcane Amphisbaena"
+   ],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "Whether late (wheeled or low-pick) cards of a colour at picks 9-12 predict that colour's later flow.",
+   "type": "claim",
+   "repeats": [
+    "mqZ-05"
+   ]
+  },
+  {
+   "id": "CWs-16",
+   "time": 510,
+   "phase": "draft",
+   "claim": "A pack of blue-black cards coming last (Theorix Metamage as the last real card) means blue-black is fairly open, so a deck needs little splashing.",
+   "quote": "Blue black is looking fairly open. I don't mind passing up on the like three mana mana rock",
+   "cards": [
+    "Theorix Metamage",
+    "Murmuring Volume"
+   ],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "As the signal claim above; also pick order of Murmuring Volume versus on-colour playables.",
+   "type": "claim",
+   "related": [
+    "mqZ-23"
+   ]
+  },
+  {
+   "id": "CWs-17",
+   "time": 534,
+   "phase": "draft",
+   "claim": "Paradox Shaper is a late-game card worth exactly one copy in a self-mill deck: mill the whole deck and stack it; slow, but fine if the deck has early defence.",
+   "quote": "I really want to have one in this deck, I think, as kind of a nice cool late game card to maybe assemble.",
+   "cards": [
+    "Paradox Shaper"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Paradox Shaper (single copy) in decks with at least five self-mill sources.",
+   "type": "claim",
+   "repeats": []
+  },
+  {
+   "id": "CWs-18",
+   "time": 560,
+   "phase": "draft",
+   "claim": "Hapatra, the Desert Frost (stun counter, four-mana tempo play) matters most when the four-drop slot is empty; he still takes Paradox Shaper first.",
+   "quote": "How's my four drops slot looking? A little bit empty right now.",
+   "cards": [
+    "Hapatra, the Desert Frost",
+    "Paradox Shaper"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Curve-slot value: GIH WR of a card by whether the deck already has 2+ cards at its mana value.",
+   "type": "heuristic",
+   "repeats": []
+  },
+  {
+   "id": "CWs-19",
+   "time": 586,
+   "phase": "draft",
+   "claim": "A fixing land can be the pick when the pack holds nothing for the deck; he takes Room of Refuge over several playables and expects Murmuring Volume or another land to wheel.",
+   "quote": "I think I'm just going to take the land here. There's nothing crazy for me here.",
+   "cards": [
+    "Room of Refuge",
+    "Murmuring Volume",
+    "Meticulous Commons"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Pick order of Room of Refuge among 60%+ drafters; wheel rate of Murmuring Volume.",
+   "type": "heuristic",
+   "related": [
+    "mqZ-34"
+   ]
+  },
+  {
+   "id": "CWs-20",
+   "time": 592,
+   "phase": "draft",
+   "claim": "All three Echoverse cards still in the pack means there is no signal from the pair; a missing one would tell which colour pair was taken.",
+   "quote": "I don't get any information cuz there's all three still in the pack.",
+   "cards": [
+    "Arni, Renowned Champion",
+    "Edgar, Moonlit Sovereign",
+    "Edgar, Ancient Bloodlord"
+   ],
+   "kind": "colours / signals",
+   "engine_area": "none",
+   "test_idea": "Not testable with public data (the card removed upstream is not in the data).",
+   "type": "claim",
+   "related": [
+    "mqZ-06"
+   ]
+  },
+  {
+   "id": "CWs-21",
+   "time": 640,
+   "phase": "draft",
+   "claim": "Multiply by Zero is removal for any creature in his deck's matchup space except ones with +1/+1 counters or a boost; with no counters in his own deck it hits everything in a self-mirror.",
+   "quote": "Target creature has base power and toughness 0 until end of turn. So if they have a plus and plus encounter on it, it's going to be a little bit tricky.",
+   "cards": [
+    "Multiply by Zero"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Multiply by Zero against opponents' counter-heavy decks; compared to Last Gasp.",
+   "type": "claim",
+   "repeats": []
+  },
+  {
+   "id": "CWs-22",
+   "time": 648,
+   "phase": "draft",
+   "claim": "A splash colour is chosen by what it brings: green for Hapatra and later Bestial Incursion rather than white for Surgical Precision or Generous Revival.",
+   "quote": "if I do need to splash, I could splash like white instead of green for this sort of card, but I think Hpatra is going to be amazing in my deck.",
+   "cards": [
+    "Hapatra, the Desert Fang",
+    "Surgical Precision",
+    "Generous Revival"
+   ],
+   "kind": "splash / mana",
+   "engine_area": "builder",
+   "test_idea": "Compare the deck win rate of the two splash choices by the splash cards' GIH WR.",
+   "type": "heuristic",
+   "repeats": []
+  },
+  {
+   "id": "CWs-23",
+   "time": 680,
+   "phase": "draft",
+   "claim": "Jace, Reality Sculptor is good in a stable board position: plus one draws a card and it can take over; it is expensive but worth taking when the pack has nothing else for the deck.",
+   "quote": "he's like plus one to draw a card a lot of the time. So, if you're in a stable board position, he can kind of take over the game",
+   "cards": [
+    "Jace, Reality Sculptor"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Jace, Reality Sculptor by deck speed (average mana value).",
+   "type": "claim",
+   "repeats": []
+  },
+  {
+   "id": "CWs-24",
+   "time": 748,
+   "phase": "draft",
+   "claim": "A dual land that fixes the splash colour for the splash bomb is taken over a marginal Empower Jace card.",
+   "quote": "I'm just going to take the green black land. It makes it a little bit easier to play this Hatra.",
+   "cards": [
+    "Formidable Commons",
+    "Way of the Necromancer"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Win rate of Hapatra by number of green sources; pick order of Formidable Commons.",
+   "type": "heuristic",
+   "repeats": [
+    "mqZ-16"
+   ]
+  },
+  {
+   "id": "CWs-25",
+   "time": 765,
+   "phase": "draft",
+   "claim": "Terminal Criticism and the like are sideboard cards for best-of-three that are not main-deck material.",
+   "quote": "There's a whole cycle of these cards that are sideboard cards essentially.",
+   "cards": [
+    "Terminal Criticism",
+    "Precise Redaction"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "none",
+   "test_idea": "Not testable on Bo1 Premier data (sideboard cards).",
+   "type": "claim",
+   "repeats": []
+  },
+  {
+   "id": "CWs-26",
+   "time": 780,
+   "phase": "draft",
+   "claim": "A two-mana 1/3 that makes small creatures unblockable is only 'okay'; Blessed Ghoul is preferred in a self-mill deck because it comes back from the graveyard.",
+   "quote": "I think I might just take the blessed ghoul though. I have a lot of self mill.",
+   "cards": [
+    "Blessed Ghoul",
+    "Tetsuko Umezawa, Fugitive"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Blessed Ghoul by self-mill count (he later cuts it).",
+   "type": "one-off pick",
+   "related": [
+    "mqZ-18"
+   ]
+  },
+  {
+   "id": "CWs-27",
+   "time": 795,
+   "phase": "draft",
+   "claim": "Null Summoner is the best card in his deck and came seventh pick in pack two, so a strong gold card can arrive very late when its pair is not being drafted.",
+   "quote": "this card is going to be the best card in my deck. And I got it seventh pick in pack two.",
+   "cards": [
+    "Null Summoner"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR and ALSA of Null Summoner; pick-number distribution of gold cards of the pair.",
+   "type": "claim",
+   "repeats": []
+  },
+  {
+   "id": "CWs-28",
+   "time": 830,
+   "phase": "draft",
+   "claim": "With dual lands for two possible splashes in the pool he commits to only one splash colour and keeps taking power; Theoretical Necromancer gives an extra resource when milled.",
+   "quote": "I might just only try to splash one of the colors depending on which one of these seems like it'll be better for my deck.",
+   "cards": [
+    "Theoretical Necromancer"
+   ],
+   "kind": "splash / mana",
+   "engine_area": "builder",
+   "test_idea": "Deck win rate of one splash vs two given the number of fixers.",
+   "type": "heuristic",
+   "repeats": [
+    "mqZ-44"
+   ]
+  },
+  {
+   "id": "CWs-29",
+   "time": 850,
+   "phase": "draft",
+   "claim": "A deck that plays mostly at sorcery speed should not take a cheap counter spell; he already has enough one- and two-drops, so a flashback card for self-mill beats Icy Reception.",
+   "quote": "My deck doesn't really hold its mana up particularly well because I'm mostly playing at sorcery speed",
+   "cards": [
+    "Icy Reception",
+    "Bestial Incursion"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Icy Reception by deck's instant-speed share; pick order against Bestial Incursion.",
+   "type": "heuristic",
+   "repeats": []
+  },
+  {
+   "id": "CWs-30",
+   "time": 862,
+   "phase": "draft",
+   "claim": "Bestial Incursion (self-mill, flashback a 4/4 trampler) is worth it as the second green splash card; it makes green over white 'a no-brainer'.",
+   "quote": "once I got a beastial incursion, splashing green over white is just kind of a no-brainer",
+   "cards": [
+    "Bestial Incursion",
+    "Generous Revival"
+   ],
+   "kind": "splash / mana",
+   "engine_area": "builder",
+   "test_idea": "Splash value by the second splash card in a colour (marginal win rate of the 2nd vs 1st splash card).",
+   "type": "claim",
+   "repeats": [
+    "mqZ-40"
+   ]
+  },
+  {
+   "id": "CWs-31",
+   "time": 920,
+   "phase": "draft",
+   "claim": "Prefer the removal spell to extra card draw when the pool has plenty of draw; Multiply by Zero over Last Gasp and Mindseeker Oculus.",
+   "quote": "I have plenty of card draw. I've got good value. I just want more kill spells",
+   "cards": [
+    "Multiply by Zero",
+    "Last Gasp",
+    "Mindseeker Oculus"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Marginal value of the nth card-draw card versus the nth removal spell by deck composition.",
+   "type": "heuristic",
+   "related": [
+    "mqZ-51"
+   ]
+  },
+  {
+   "id": "CWs-32",
+   "time": 1018,
+   "phase": "draft",
+   "claim": "Theorix Charm is the on-colour blue-black card that does everything (counter, -2/-2, mill three and draw); two copies are taken over Tinybones.",
+   "quote": "This card's great though. I can mill three and draw or I can think minus two.",
+   "cards": [
+    "Theorix Charm",
+    "Tinybones, Pocket Nuisance"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Theorix Charm vs Tinybones, Pocket Nuisance.",
+   "type": "one-off pick",
+   "repeats": []
+  },
+  {
+   "id": "CWs-33",
+   "time": 1060,
+   "phase": "draft",
+   "claim": "Splash only 'the best of the best': a splash card in a pack with Null Summoner is declined.",
+   "quote": "only want to splash the best of the best.",
+   "cards": [
+    "Null Summoner"
+   ],
+   "kind": "splash / mana",
+   "engine_area": "builder",
+   "test_idea": "Deck value of a splash by the splash card's GIH WR edge over the deck's 23rd on-colour card.",
+   "type": "heuristic",
+   "repeats": [
+    "mqZ-30"
+   ]
+  },
+  {
+   "id": "CWs-34",
+   "time": 1090,
+   "phase": "draft",
+   "claim": "Prefer the graveyard-synergy card (Gallia) over a good counter spell (Countersculpt) when the plan is graveyard value.",
+   "quote": "I'd rather just get more cards that work with my graveyard. That's kind of my current plan.",
+   "cards": [
+    "Gallia, Tragic Host",
+    "Countersculpt"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Gallia vs Countersculpt; he later wheels Countersculpt at P3p12.",
+   "type": "one-off pick",
+   "repeats": []
+  },
+  {
+   "id": "CWs-35",
+   "time": 1110,
+   "phase": "draft",
+   "claim": "Unsummon is a nice interactive spell to have exactly one copy of; a second Theoretical Necromancer is not needed because one already covers the Generous Revival role.",
+   "quote": "unsummon's a nice a little interactive spell to have one copy of I think.",
+   "cards": [
+    "Unsummon",
+    "Theoretical Necromancer"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "Duplicate penalty for Theoretical Necromancer; GIH WR of Unsummon.",
+   "type": "claim",
+   "related": [
+    "mqZ-22"
+   ]
+  },
+  {
+   "id": "CWs-36",
+   "time": 1138,
+   "phase": "draft",
+   "claim": "The second fixing land (Room of Refuge) is taken over Icy Reception or Infinite Coursework because 'I just like getting my mana' better with a splash planned.",
+   "quote": "I just like getting my mana a little bit",
+   "cards": [
+    "Room of Refuge",
+    "Icy Reception",
+    "Infinite Coursework"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Pick order of Room of Refuge at P3p7 for splash decks; win rate by number of Room of Refuge copies.",
+   "type": "heuristic",
+   "related": [
+    "mqZ-48"
+   ]
+  },
+  {
+   "id": "CWs-37",
+   "time": 1170,
+   "phase": "draft",
+   "claim": "Counter spells and draw spells that do not fit his deck (Precise Redaction, Sphinx's Approach) are treated as sideboard cards; no pick is announced.",
+   "quote": "This is like a sideboard counter spell. I'm not going to be able to use it though.",
+   "cards": [
+    "Precise Redaction",
+    "Sphinx's Approach"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "none",
+   "test_idea": "none (no engine claim)",
+   "type": "one-off pick",
+   "repeats": []
+  },
+  {
+   "id": "CWs-38",
+   "time": 1192,
+   "phase": "draft",
+   "claim": "Wheeling Mindseeker Oculus, Way of the Mind Sculptor and Last Gasp in a pack of 14 shows how much of the pack comes back in this format; he calls wheeling Mindseeker Oculus 'wild'.",
+   "quote": "I kind of wield everything.",
+   "cards": [
+    "Mindseeker Oculus",
+    "Way of the Mind Sculptor",
+    "Last Gasp"
+   ],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "Wheel rates by card at pick 9 of a 14-card pack, by colour pair (what the engine's wheel expectation should be).",
+   "type": "claim",
+   "related": [
+    "mqZ-05"
+   ]
+  },
+  {
+   "id": "CWs-39",
+   "time": 1200,
+   "phase": "draft",
+   "claim": "Late picks of cheap card draw (Protege's Awakening, Void Extrapolator) are fine value even when not needed.",
+   "quote": "Perfect. I got a little bit more card draw anyway.",
+   "cards": [
+    "Protege's Awakening",
+    "Void Extrapolator"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "none",
+   "type": "one-off pick",
+   "repeats": []
+  },
+  {
+   "id": "CWs-40",
+   "time": 1224,
+   "phase": "draft",
+   "claim": "He says Way of the Necromancer is not great ('I'm not like in love with that') and plays neither copy.",
+   "quote": "I don't think way of necromancer is great.",
+   "cards": [
+    "Way of the Necromancer"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Way of the Necromancer.",
+   "type": "claim",
+   "repeats": []
+  },
+  {
+   "id": "CWs-41",
+   "time": 1233,
+   "phase": "build",
+   "claim": "The deck builder starts at 47 cards (auto-filled with 14 basics) and he makes seven cuts, preferring to cut the more expensive cards and keep a cheaper curve.",
+   "quote": "I have to make seven cuts though. ... I usually like to lean towards cutting the more expensive cards",
+   "cards": [],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Cut order of the builder against 17Lands deck data: does the cut card by mana value predict win rate.",
+   "type": "heuristic",
+   "repeats": []
+  },
+  {
+   "id": "CWs-42",
+   "time": 1241,
+   "phase": "build",
+   "claim": "A single Forest with several green sources (Formidable Commons, Room of Refuge x2) gives about six green sources for three splash cards, which he calls totally enough.",
+   "quote": "So six green sources for one, two, three cards. That's totally enough.",
+   "cards": [
+    "Hapatra, the Desert Fang",
+    "Bestial Incursion",
+    "Compel Brutality"
+   ],
+   "kind": "splash / mana",
+   "engine_area": "builder",
+   "test_idea": "Win rate of a splash card by number of sources (4/5/6) for single-pip cards.",
+   "type": "claim",
+   "repeats": [
+    "mqZ-60"
+   ]
+  },
+  {
+   "id": "CWs-43",
+   "time": 1260,
+   "phase": "build",
+   "claim": "A splash card that does not work with the graveyard plan (Compel Brutality) is cut even when it is removal; he plays only splash cards that mill-synergise.",
+   "quote": "Maybe I'll cut the compelled brutality because it doesn't like synergize with the graveyard.",
+   "cards": [
+    "Compel Brutality"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Deck win rate with and without a splash removal spell that has no synergy.",
+   "type": "heuristic",
+   "related": [
+    "mqZ-30"
+   ]
+  },
+  {
+   "id": "CWs-44",
+   "time": 1330,
+   "phase": "build",
+   "claim": "Cutting Protege's Awakening: a big card-draw spell with no Empower Jace synergy is cut when the deck already has card advantage.",
+   "quote": "I'd rather just uh it doesn't like I don't have tons of synergies with like empower J. It's just like a big draw card draw spell and I'm getting plenty of card advantage from other stuff",
+   "cards": [
+    "Protege's Awakening"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "GIH WR of Protege's Awakening by deck's other card-advantage count.",
+   "type": "claim",
+   "repeats": [
+    "mqZ-57"
+   ]
+  },
+  {
+   "id": "CWs-45",
+   "time": 1377,
+   "phase": "build",
+   "claim": "At 16 creatures he cuts one: with enough early plays, the more expensive (or weaker) creature goes and the deck keeps a cheaper curve.",
+   "quote": "My creature count is at 16. I think I can cut a creature here. ... I'd rather just have a cheaper curve.",
+   "cards": [
+    "Theorix Metamage",
+    "Void Extrapolator"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Creature count and curve: deck win rate by creature count (14-17) at constant quality.",
+   "type": "heuristic",
+   "related": [
+    "mqZ-46"
+   ]
+  },
+  {
+   "id": "CWs-46",
+   "time": 1426,
+   "phase": "build",
+   "claim": "He might drop the splash if the playables are there, but the splash bomb (Hapatra) justifies it; the deck stays flexible across the five rounds.",
+   "quote": "Maybe I decide not to splash because I do have plenty of playables, but I think Hapatra is going to be really really strong.",
+   "cards": [
+    "Hapatra, the Desert Fang"
+   ],
+   "kind": "splash / mana",
+   "engine_area": "builder",
+   "test_idea": "Splash value of one bomb with a conditional effect (graveyard) versus a deck without the splash.",
+   "type": "claim",
+   "related": [
+    "mqZ-30"
+   ]
+  }
+ ]
+}

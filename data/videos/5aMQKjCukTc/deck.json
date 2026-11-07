@@ -1,0 +1,62 @@
+{
+ "id": "5aMQKjCukTc",
+ "time": "13:35-17:41 (build; final 40/40 screen at about 17:40)",
+ "main": {
+  "Consider": 1,
+  "Blessed Ghoul": 1,
+  "Unsummon": 1,
+  "Enlightened Confidant": 1,
+  "Surgical Precision": 1,
+  "Tetsuko Umezawa, Fugitive": 1,
+  "Theorist's Proxy": 1,
+  "Fatehold Chronologist": 1,
+  "Fatehold Charm": 2,
+  "Memory Trap": 1,
+  "Shatterwing Pegasus": 1,
+  "Prudent Fateseer": 1,
+  "Theorix Metamage": 2,
+  "Sphinx's Approach": 1,
+  "Desperate Futurescribe": 2,
+  "Recursive Recruitment": 1,
+  "Saheeli, Consul of Oversight": 1,
+  "Undulating Witness": 1,
+  "The Theorist, Jace Beleren": 1,
+  "Kindred Judgment": 1
+ },
+ "lands": {
+  "Plains": 6,
+  "Island": 7,
+  "Theorist's Sanctum": 1,
+  "Swamp": 1,
+  "Meticulous Commons": 2
+ },
+ "sideboard": {
+  "Generous Revival": 1,
+  "Way of the Mentor": 1,
+  "Thalia, the Survivor": 1,
+  "Fateshaper Aspirant": 2,
+  "Yuriko, Hope from the Shadows": 1,
+  "Vraska's Final Mercy": 1,
+  "Yargle, Glutton of Urborg": 1,
+  "Master of Barbs": 1,
+  "No Admittance": 1,
+  "Tetsuko Umezawa, Pursuer": 1,
+  "Whiplash Wordsmith": 1,
+  "Transformative Commons": 1,
+  "Tam's Resistance": 1,
+  "Medic's Kitesail": 1
+ },
+ "spells": 23,
+ "land_count": 17,
+ "landcyclers_in_main": [
+  "Undulating Witness"
+ ],
+ "colours": "WU base; black splash for Recursive Recruitment (Meticulous Commons x2 and one Swamp).",
+ "notes": [
+  "13:31-13:54: 'I didn't consider this during the draft, but maybe we're supposed to splash recruitment as well' ... he forgets he has two duals: 'We're splashing this card.' (Meticulous Commons x2 are the white-black duals; one free Swamp.)",
+  "14:02-14:50: cuts to weigh: Generous Revival, Tam's Resistance, Tetsuko, Pegasus, Sphinx's Approach, Thalia (all 'on the chopping block'); he does not want to cut a two-mana card.",
+  "15:30-17:30: defends 17 lands against 16 in chat ('I never want to miss my land drops'); 16:21 creature count '13 plus recruitment'; cuts Generous Revival, Tam's Resistance and Thalia, keeps Sphinx's Approach ('slightly awkward mana be damned').",
+  "Final deck screen (17:40): 23 spells + 17 lands = 40. Sideboard holds Generous Revival, Tam's Resistance, Thalia, both Fateshaper Aspirant and the off-plan cards.",
+  "Pool accounting: 42 picks = 23 spells + Theorist's Sanctum + Meticulous Commons x2 in the main (26), 15 in the sideboard, and the last pick of pack 3 (an unseen basic, recorded as Plains) in the main; Plains 6, Island 7 and Swamp 1 are basics, 14 of them free basics plus the picked one."
+ ]
+}

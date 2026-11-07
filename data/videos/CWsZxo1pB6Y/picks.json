@@ -1,0 +1,1087 @@
+{
+ "id": "CWsZxo1pB6Y",
+ "url": "https://youtu.be/CWsZxo1pB6Y",
+ "title": "REALITY FRACTURE DRAFT IS AWESOME!!!",
+ "player": "NicolaiBolas",
+ "set": "FRA",
+ "event": "FRA early access event (he thanks Wizards for free preview access at 0:03-0:12 and says 'the early access event' at 21:18; first Reality Fracture draft on Arena; event name not shown on screen; he plans five rounds)",
+ "dataset": "FRA_PremierDraft_All_Data.json",
+ "recorded": null,
+ "source": "frames read from data/videos/raw/CWsZxo1pB6Y (tools/video_draft.py frames plus a 1 fps extract of the pack screens); the pack contents of every pick were read from frames, the taken card confirmed from the deck builder at the end (all 42 picks accounted for: 40-card main plus 15 sideboard, with 13 free basics added); transcript from YouTube auto captions, card names corrected; nothing past 24:30 read",
+ "colour_path": [
+  {
+   "after": "P1p1",
+   "main": "B (G gold)",
+   "quote": "I could totally just try to splash this card in a black deck"
+  },
+  {
+   "after": "P1p2",
+   "main": "B graveyard",
+   "quote": "remember, we don't have to be a green deck. We can just be like a black deck"
+  },
+  {
+   "after": "P1p4",
+   "main": "B base; U or G second",
+   "quote": "I want to lean towards being black base because I could be blue black splashing green or I could just be black green."
+  },
+  {
+   "after": "P1p7",
+   "main": "UB",
+   "quote": "a lot of our cards work best in blue black."
+  },
+  {
+   "after": "P1p11",
+   "main": "UB, G open?",
+   "quote": "maybe we do move back towards just green black if we're going to see cards that late."
+  },
+  {
+   "after": "P1p13",
+   "main": "UB, little splash",
+   "quote": "my deck is just looking like a fairly standard blue black deck at this point without needing to splash too much stuff."
+  },
+  {
+   "after": "P2p3",
+   "main": "UB splash G (maybe W)",
+   "quote": "I'm hoping to be able to just splash green and then maybe splash white as well for this generous revival."
+  },
+  {
+   "after": "P2p9",
+   "main": "UB splash G",
+   "quote": "I'm not going to play the amphisana because I'm playing definitely blue black, but I have the tools to splash either white ... or green"
+  },
+  {
+   "after": "P2p13",
+   "main": "UB splash G (white dropped)",
+   "quote": "I think splashing white is going to be a little bit worse."
+  },
+  {
+   "after": "P3p3",
+   "main": "UB splash G",
+   "quote": "splashing green over white is just kind of a no-brainer"
+  },
+  {
+   "after": "deck",
+   "main": "UB splash G (Hapatra, Bestial Incursion)",
+   "quote": "I think this deck's going to be pretty good ... Maybe I decide not to splash because I do have plenty of playables, but I think Hapatra is going to be really really strong."
+  }
+ ],
+ "picks": [
+  {
+   "pack": 1,
+   "pick": 1,
+   "time": "0:30-1:22",
+   "pack_cards": [
+    "Variable Chaser",
+    "Identity Echo",
+    "Prophesied End",
+    "Yuriko, Blade of the Mighty",
+    "Yuriko, Hope from the Shadows",
+    "Hapatra, the Desert Fang",
+    "Eye of Jace",
+    "Unflinching Hortimancer",
+    "Undulating Witness",
+    "Rampart Hunter",
+    "No Admittance",
+    "Something Worth Saving",
+    "Murmuring Volume",
+    "Swamp"
+   ],
+   "taken": "Hapatra, the Desert Fang",
+   "reasoning": "Hapatra is a two-for-one (3/3 plus a kill if the graveyard has something in it) and splashable; enough better than No Admittance to take. Synergy with basic landcyclers: cycle Apex Witchstalker, the big card in the graveyard powers Hapatra, and you get the Forest, so any black deck can splash it.",
+   "considered": {
+    "Variable Chaser": "the rare; good mostly as a three-mana 2/3 flier with prowess; Ark of Fortune (each player discards their hand and draws seven) is risky",
+    "No Admittance": "mono-coloured single red pip; would be his second pick, 'a little bit better than the three mana 2/3'"
+   },
+   "plan": "Open. Black-green gold card first, but framed as a splash in any black deck (via landcyclers).",
+   "quotes": [
+    "I think here I'm going to take the Hapatra. I think it's enough better than No Admittance that it's worth taking.",
+    "I could totally just try to splash this card in a black deck and it actually really does synergize well with the basic land cycling"
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 2,
+   "time": "1:22-2:26",
+   "pack_cards": [
+    "Gideon's Memorial",
+    "Loyal Tutor",
+    "Proft, Sinister Mastermind",
+    "Rewrite Regrets",
+    "Hexhaven Dueling Arena",
+    "Surgical Precision",
+    "Apex Witchstalker",
+    "Tether Technician",
+    "Wrath of the Bloodmane",
+    "Compel Brutality",
+    "Tethermage's Advantage",
+    "Theorix Metamage",
+    "Transformative Commons"
+   ],
+   "taken": "Rewrite Regrets",
+   "reasoning": "Wants to try a black graveyard deck around Hapatra; Rewrite Regrets returns a creature or planeswalker (mana value 6 or less) for four mana and empowers Jace. Enters trigger, so it also works with Hapatra.",
+   "considered": {
+    "Surgical Precision": "nice little white removal spell",
+    "Wrath of the Bloodmane": "red removal",
+    "Compel Brutality": "green removal; passed 'but we will try this out for now'"
+   },
+   "plan": "Black graveyard deck; 'we don't have to be a green deck, we can just be a black deck that tries to get this to work'.",
+   "quotes": [
+    "I think I'm going to try this rewrite regrets thing and see if I can make a black potential graveyard deck work.",
+    "remember, we don't have to be a green deck. We can just be like a black deck"
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 3,
+   "time": "2:26-3:26",
+   "pack_cards": [
+    "Way of the Mentor",
+    "Proft, Consulting Detective",
+    "Way of the Warlord",
+    "Titanbones, Towering Heart",
+    "Blossom-Blessed Angel",
+    "Cryotheory Adept",
+    "Theoretical Necromancer",
+    "Heartstring Puller",
+    "Arcane Amphisbaena",
+    "Ferocity of the Hunt",
+    "Murmuring Volume",
+    "Theorix Annex"
+   ],
+   "taken": "Proft, Consulting Detective",
+   "reasoning": "Likes the uncommon: every surveil lets him pay to put a +1/+1 counter on Proft and draw, and Empower Jace cards can tick down by one to get Proft going. Between Proft and Arcane Amphisbaena (also nice with Hapatra); still taking power level over the blue-black land.",
+   "considered": {
+    "Arcane Amphisbaena": "'mostly between the Proft and the Amphisbaena'; works with Hapatra, empowers Jace",
+    "Way of the Warlord": "'pretty nice', gives the Jace extra abilities",
+    "Heartstring Puller": "'pretty good as a red card'",
+    "Theorix Annex": "blue-black land, not taking it 'I'm still taking power level cards'"
+   },
+   "plan": "Black base, green or blue second.",
+   "quotes": [
+    "I'm still taking power level cards. Um, I think it's mostly between the Prof and the Amphisbaena."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 4,
+   "time": "3:26-4:20",
+   "pack_cards": [
+    "Generous Revival",
+    "Mabel, Bitter Recluse",
+    "Mabel, Valley Hero",
+    "Shatterwing Pegasus",
+    "Protege's Awakening",
+    "Cast Away Doubt",
+    "Wrath of the Bloodmane",
+    "Arcane Amphisbaena",
+    "Blessed Ghoul",
+    "Afterthought Sentry",
+    "Konstrari Annex"
+   ],
+   "taken": "Mabel, Bitter Recluse",
+   "reasoning": "Mabel, Bitter Recluse as a defensive body for a defensive black-green-blue deck (removes counters from a creature or planeswalker, so it answers a Jace token or a +1/+1 counter). Mabel, Valley Hero (RW) is reasonable but 'so far from what I'm doing'.",
+   "considered": {
+    "Mabel, Valley Hero": "reasonable RW one-drop, not taking it",
+    "Protege's Awakening": "'pretty reasonable', empowers Jace 6 and draws",
+    "Arcane Amphisbaena": "another copy, noted"
+   },
+   "plan": "'I want to lean towards being black base because I could be blue black splashing green or I could just be black green.' Sees red and white cards flowing; blue-black looks open.",
+   "quotes": [
+    "I think I want to lean towards being black base because I could be blue black splashing green or I could just be black green.",
+    "Okay, it's looking like blue black is open which is nice."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 5,
+   "time": "4:20-5:08",
+   "pack_cards": [
+    "Dark Matter Manipulator",
+    "Jiang Yanggu, Alone",
+    "Paradox Shaper",
+    "Undulating Witness",
+    "Heartstring Puller",
+    "Vinelasher Adept",
+    "Theorix Metamage",
+    "Charge the Sanctum",
+    "Keeper of the Quiet Hour",
+    "Island"
+   ],
+   "taken": "Dark Matter Manipulator",
+   "reasoning": "Takes the rare to get experience with it; it mills three on entering and grows by +2/+2 for every seven cards in the graveyard, so good in a self-mill deck. Sticks to black cards.",
+   "considered": {
+    "Paradox Shaper": "one-three that mills three and re-prepares itself; 'could be good', would like one copy later",
+    "Jiang Yanggu, Alone": "attack-alone looting; 'some card filtering'",
+    "Heartstring Puller": "'just good value for your card'",
+    "Undulating Witness": "'could be fine'"
+   },
+   "plan": "Black, self-mill; red is also flowing but he sticks to black.",
+   "quotes": [
+    "I'm going to try taking the rare. We'll get some experience with the rare.",
+    "I'm going to just stick to my black cards for now."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 6,
+   "time": "5:08-5:50",
+   "pack_cards": [
+    "Clash of Elements",
+    "Traxos, Scourge Eternal",
+    "Semester Foreseer",
+    "Unsummon",
+    "Void Extrapolator",
+    "Tether Technician",
+    "Wrecking Gecko",
+    "Keeper of the Quiet Hour",
+    "Vigorbloom Annex"
+   ],
+   "taken": "Void Extrapolator",
+   "reasoning": "Curve check (two one-drops already). Void Extrapolator is a two-two that mills three, so it is close to a one-mana 3/2 early and sets up Hapatra and the graveyard cards. Expects to get Keeper of the Quiet Hour later.",
+   "considered": {
+    "Clash of Elements": "'very strong' but he does not want to splash in that direction",
+    "Keeper of the Quiet Hour": "hopes to get it a bit later",
+    "Semester Foreseer": "mentioned"
+   },
+   "plan": "Black-blue graveyard; not splashing red.",
+   "quotes": [
+    "Let's try taking the void extrapolator. It kind of plays into this graveyard theme"
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 7,
+   "time": "5:50-6:32",
+   "pack_cards": [
+    "Arni, Humble Scribe",
+    "Arni, Renowned Champion",
+    "Shatterwing Pegasus",
+    "Silence the Echo",
+    "Blazing Crescendo",
+    "Tethermage's Advantage",
+    "Afterthought Sentry",
+    "Mountain"
+   ],
+   "taken": "Arni, Humble Scribe",
+   "reasoning": "Explains Echoverse pairs (the mirror-verse version and the main-universe version; often three of them in a pack). Takes the card-filtering Arni over Silence the Echo because he only wants one effect of that type.",
+   "considered": {
+    "Silence the Echo": "pretty efficient removal but 'I only really want one of this type of effect'",
+    "Arni, Renowned Champion": "the other half of the pair, not wanted"
+   },
+   "plan": "'We are pretty sure we're playing black, but I think a lot of our cards work best in blue black.'",
+   "quotes": [
+    "I'd rather just get the Arie Humble Scribe as a nice card filtering addition to my deck."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 8,
+   "time": "6:32-7:06",
+   "pack_cards": [
+    "Stinging Vitriol",
+    "Tomik, Izzet Sparkmage",
+    "Predictive Preparations",
+    "Sphinx's Approach",
+    "Inspired Tethermage",
+    "Whiplash Wordsmith",
+    "Meticulous Commons"
+   ],
+   "taken": "Meticulous Commons",
+   "reasoning": "Few blue cards in the pool so far; takes the white-black land to keep a white splash open ('maybe I would want to splash white for something') over Inspired Tethermage.",
+   "considered": {
+    "Inspired Tethermage": "'not that into'",
+    "Sphinx's Approach": "'not that into'"
+   },
+   "plan": "Still black with blue; could be RB or GB 'technically', but most cards work best in blue-black.",
+   "quotes": [
+    "I might take the meticulous commons though because maybe I would want to splash white for something.",
+    "I'm just going to take the land here over the tether mage, I think."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 9,
+   "time": "7:06-7:34",
+   "pack_cards": [
+    "Yuriko, Hope from the Shadows",
+    "Eye of Jace",
+    "Undulating Witness",
+    "Something Worth Saving",
+    "Murmuring Volume",
+    "Swamp"
+   ],
+   "taken": "Undulating Witness",
+   "reasoning": "A flier with basic landcycling: works with Hapatra and keeps a white splash open. Self-mill pieces and Murmuring Volume (fixing) also in the pack.",
+   "considered": {
+    "Something Worth Saving": "mill four, a permanent into the hand; 'good for selection, finding something like a Hapatra'",
+    "Murmuring Volume": "fixing, passed"
+   },
+   "plan": "Black-blue, Hapatra splash.",
+   "quotes": [
+    "I think that undulating Witness is nice. It's a flyer. It has basic land cycling to work with my Hepatra or if I wanted to splash white or something like that."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 10,
+   "time": "7:34-7:58",
+   "pack_cards": [
+    "Proft, Sinister Mastermind",
+    "Hexhaven Dueling Arena",
+    "Apex Witchstalker",
+    "Tethermage's Advantage",
+    "Theorix Metamage"
+   ],
+   "taken": "Proft, Sinister Mastermind",
+   "reasoning": "Cannot cast it until the graveyard is deep, but can discard it for early interaction; a scary card with a full graveyard.",
+   "considered": {
+    "Apex Witchstalker": "'totally fine', works with Rewrite Regrets",
+    "Theorix Metamage": "would work fine with the graveyard theme"
+   },
+   "plan": "Black-blue graveyard.",
+   "quotes": [
+    "I think Prof is going to be a pretty scary card if I can get my graveyard full, and I'm going to be trying to do that."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 11,
+   "time": "7:58-8:16",
+   "pack_cards": [
+    "Titanbones, Towering Heart",
+    "Arcane Amphisbaena",
+    "Ferocity of the Hunt",
+    "Murmuring Volume"
+   ],
+   "taken": "Arcane Amphisbaena",
+   "reasoning": "Green cards are coming back late ('we have gotten back some of these green cards'), which makes him think green could be open; Amphisbaena is a good combo with Hapatra and empowers Jace. Might move back towards green-black.",
+   "considered": {
+    "Murmuring Volume": "three-mana rock; the pick tag sat on it before the pick"
+   },
+   "plan": "'maybe we do move back towards just green black if we're going to see cards that late.'",
+   "quotes": [
+    "We have gotten back some of these green cards, so that does make me think that maybe that deck will be open.",
+    "Let's just take the ais bane and maybe we do move back towards just green black"
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 12,
+   "time": "8:16-8:30",
+   "pack_cards": [
+    "Generous Revival",
+    "Afterthought Sentry",
+    "Konstrari Annex"
+   ],
+   "taken": "Generous Revival",
+   "reasoning": "Returns a mana value 3 creature from the graveyard with an initial counter; 'honestly could be okay'. Keeps a white splash possible. The pick tag sat on Konstrari Annex while he decided; Generous Revival is confirmed by the sideboard.",
+   "considered": {
+    "Konstrari Annex": "pick tag on it at one point, not taken"
+   },
+   "plan": "Blue-black 'fairly standard' deck 'without needing to splash too much'.",
+   "quotes": [
+    "I already have the potential to splash white a little bit and we get the theorix metamage kind of last. Blue black is looking fairly open."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 13,
+   "time": "8:30-8:42",
+   "pack_cards": [
+    "Theorix Metamage",
+    "Island"
+   ],
+   "taken": "Theorix Metamage",
+   "reasoning": "Comes last in the pack, which he reads as blue-black being fairly open; does not mind having passed the three-mana mana rock.",
+   "considered": {},
+   "plan": "Blue-black, mostly standard, little splashing.",
+   "quotes": [
+    "I don't mind passing up on the like three mana mana rock for my cards here because mostly my deck is just looking like a fairly standard blue black deck at this point without needing to splash too much stuff."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 14,
+   "time": "8:42-8:44",
+   "pack_cards": [
+    "Tether Technician"
+   ],
+   "taken": "Tether Technician",
+   "reasoning": "Last card, auto-selected; no comment.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 1,
+   "time": "8:44-9:40",
+   "pack_cards": [
+    "Overgrown Farmland",
+    "Prophesied End",
+    "Hapatra, the Desert Frost",
+    "Jiang Yanggu, Alone",
+    "Jiang Yanggu, Never Alone",
+    "Paradox Shaper",
+    "Woodwork Prodigy",
+    "Unflinching Hortimancer",
+    "Icy Reception",
+    "Silence the Echo",
+    "Blazing Crescendo",
+    "Bestial Incursion",
+    "Greenhouse Propagator",
+    "Swamp"
+   ],
+   "taken": "Paradox Shaper",
+   "reasoning": "Wants one Paradox Shaper as a late-game card to assemble (fills the graveyard on turbo mode; mill the whole deck and stack it); also improves Dark Matter Manipulator and Proft. It is slow, but his deck has early defences already. Hapatra, the Desert Frost (stun counter, four-mana tempo play) is 'more important' in a four-drop slot that is empty, but he takes the Shaper.",
+   "considered": {
+    "Hapatra, the Desert Frost": "tempo play at four mana, four-drop slot 'a little bit empty'; 'I think this card might be more important though' (about the Shaper)",
+    "Icy Reception": "cheap counter spell that becomes a combat trick",
+    "Silence the Echo": "'I do need some removal at some point', but focuses on Paradox Shaper"
+   },
+   "plan": "Blue-black, self-mill.",
+   "quotes": [
+    "I really want to have one in this deck, I think, as kind of a nice cool late game card to maybe assemble.",
+    "I do need some removal at some point, but I think right now I'm just going to focus on getting my Paradox Shaper."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 2,
+   "time": "9:40-10:32",
+   "pack_cards": [
+    "Arni, Renowned Champion",
+    "Edgar, Moonlit Sovereign",
+    "Flourishing Grapple",
+    "Edgar, Ancient Bloodlord",
+    "Eye of Jace",
+    "Blossom-Blessed Angel",
+    "Cryotheory Adept",
+    "Wrath of the Bloodmane",
+    "Arcane Amphisbaena",
+    "Whiplash Wordsmith",
+    "Murmuring Volume",
+    "Room of Refuge",
+    "Meticulous Commons"
+   ],
+   "taken": "Room of Refuge",
+   "reasoning": "Takes the land: 'nothing crazy for me here'. The pack still holds all three Echoverse cards, so no information on which colours are open. Another white land is there too; thinks he could splash Hapatra and Generous Revival and hopes to wheel a land or Murmuring Volume.",
+   "considered": {
+    "Meticulous Commons": "another white land; hopes it wheels",
+    "Murmuring Volume": "might wheel",
+    "Arcane Amphisbaena": "another copy, 'I'm just going to try to stick to my blue black deck'"
+   },
+   "plan": "Blue-black base; splash Hapatra (green) and Generous Revival (white).",
+   "quotes": [
+    "I think I'm just going to take the land here. There's nothing crazy for me here.",
+    "Honestly, I could try to splash the Hatra and maybe splash the generous revival if I'm milling enough."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 3,
+   "time": "10:32-11:16",
+   "pack_cards": [
+    "Refute Destiny",
+    "Multiply by Zero",
+    "Koth, the Geomancer",
+    "Kiora of Salt and Sand",
+    "Surgical Precision",
+    "Semester Foreseer",
+    "Solve for Disappointment",
+    "Arcane Amphisbaena",
+    "Something Worth Saving",
+    "Whiplash Wordsmith",
+    "Medic's Kitesail",
+    "Innovative Commons"
+   ],
+   "taken": "Multiply by Zero",
+   "reasoning": "Lacked interaction. Multiply by Zero (target creature has base power and toughness 0 until end of turn) kills nearly every creature in his deck's matchup space because none of his cards has +1/+1 counters; cannot kill a card that gets a counter or threshold boost. 'Getting a removal spell is nice.'",
+   "considered": {
+    "Surgical Precision": "white removal, would be the splash if he needed white instead of green",
+    "Refute Destiny": "in the pack, not discussed"
+   },
+   "plan": "Blue-black; green splash for Hapatra, maybe white for Generous Revival.",
+   "quotes": [
+    "I was mentioning I was kind of lacking interaction.",
+    "I'm hoping to be able to just splash green and then maybe splash white as well for this generous revival."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 4,
+   "time": "11:16-12:01",
+   "pack_cards": [
+    "Jace, Reality Sculptor",
+    "Tam, the Possibility",
+    "Koth of the Homestead",
+    "Prudent Fateseer",
+    "Graft Surgeon",
+    "Surgical Precision",
+    "Cryotheory Adept",
+    "Cast Away Doubt",
+    "Awaken the Inferno",
+    "Compel Brutality",
+    "Greenhouse Propagator"
+   ],
+   "taken": "Jace, Reality Sculptor",
+   "reasoning": "'There's not really a card that I want here.' Could splash Compel Brutality but takes the Jace: kind of expensive, but plus one draws a card most of the time and in a stable position it takes over the game and threatens to win.",
+   "considered": {
+    "Compel Brutality": "'I could try to splash'; passed"
+   },
+   "plan": "Blue-black planeswalker/graveyard.",
+   "quotes": [
+    "there's not really a card that I want here I mean I could try to splash compel brutality, but I might as well try this Jace out. I think he looks reasonable. He is kind of expensive, but he's like plus one to draw a card a lot of the time."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 5,
+   "time": "12:01-12:55",
+   "pack_cards": [
+    "Geist of Saint Thalia",
+    "Terminal Criticism",
+    "Way of the Necromancer",
+    "Academic Ascent",
+    "Fateshaper Aspirant",
+    "Protege's Awakening",
+    "Solve for Disappointment",
+    "Blazing Crescendo",
+    "Medic's Kitesail",
+    "Formidable Commons"
+   ],
+   "taken": "Formidable Commons",
+   "reasoning": "Takes the green-black land because it makes Hapatra easier to play; the Empower Jace card (Way of the Necromancer) is also on his radar. Terminal Criticism is one of a cycle of sideboard cards. Does not want a 1/2 flier for two (Geist of Saint Thalia). Protege's Awakening 'is fine'.",
+   "considered": {
+    "Way of the Necromancer": "'My grand project unfolds', empowers Jace, loyalty counter when a creature dies; kept in mind",
+    "Protege's Awakening": "'fine'",
+    "Terminal Criticism": "sideboard card, not main-deck material",
+    "Geist of Saint Thalia": "'I don't really want a one two flyer for two'"
+   },
+   "plan": "Blue-black with green splash for Hapatra.",
+   "quotes": [
+    "I'm just going to take the green black land. It makes it a little bit easier to play this Hatra. And I am hoping to play the Hapatra because I think it's going to be pretty good in my deck."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 6,
+   "time": "12:55-13:12",
+   "pack_cards": [
+    "Tetsuko Umezawa, Fugitive",
+    "Shatterwing Pegasus",
+    "Unsummon",
+    "Eardrum Rattler",
+    "Greenhouse Propagator",
+    "Something Worth Saving",
+    "Blessed Ghoul",
+    "Twinned Vision",
+    "Forest"
+   ],
+   "taken": "Blessed Ghoul",
+   "reasoning": "'I have a lot of self mill': Blessed Ghoul comes back from the graveyard, so he wants the first copy; saw one earlier (P1p4). Twinned Vision is fine too, as a card to mill over for value.",
+   "considered": {
+    "Tetsuko Umezawa, Fugitive": "'a two mana one three blocker is not huge' but works with a lot of his cards (makes power-one creatures unblockable); 'it's okay'",
+    "Twinned Vision": "'fine' as a card to mill over for value"
+   },
+   "plan": "Self-mill graveyard value deck.",
+   "quotes": [
+    "I think I might just take the blessed ghoul though. I have a lot of self mill."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 7,
+   "time": "13:12-13:45",
+   "pack_cards": [
+    "Null Summoner",
+    "Jiang Yanggu, Alone",
+    "Surgical Precision",
+    "Surveillance Phantasm",
+    "Screeching Soulbreaker",
+    "Tether Technician",
+    "Sureshot Sower",
+    "Island"
+   ],
+   "taken": "Null Summoner",
+   "reasoning": "'Such a great pickup for my deck': hand disruption, exiles a nonland card he can later cast with threshold using mana of any type. 'This card is going to be the best card in my deck', seventh pick of pack two.",
+   "considered": {
+    "Surveillance Phantasm": "'just fine in my deck, better in other decks maybe'"
+   },
+   "plan": "Blue-black, graveyard/threshold.",
+   "quotes": [
+    "Ooh, baby. Null Summoner is such a great pickup for my deck.",
+    "this card is going to be the best card in my deck. And I got it seventh pick in pack two."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 8,
+   "time": "13:45-14:05",
+   "pack_cards": [
+    "Konstrari Charm",
+    "Kiora of Salt and Sand",
+    "Graft Surgeon",
+    "Theoretical Necromancer",
+    "Awaken the Inferno",
+    "Budding Insurgent",
+    "Fatehold Annex"
+   ],
+   "taken": "Theoretical Necromancer",
+   "reasoning": "Already has a couple of dual lands to help splash white or green, and might splash only one of the two. Necromancer is a bonus resource if milled (returns another creature from the graveyard to hand).",
+   "considered": {},
+   "plan": "Blue-black base; splash white (Generous Revival) or green (Hapatra); only one of them.",
+   "quotes": [
+    "I'm going to just take theoretical necromancer. I already have a couple of dual lands to maybe help splash white, maybe help splash green. I might just only try to splash one of the colors"
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 9,
+   "time": "14:05-14:30",
+   "pack_cards": [
+    "Unflinching Hortimancer",
+    "Icy Reception",
+    "Blazing Crescendo",
+    "Bestial Incursion",
+    "Greenhouse Propagator",
+    "Swamp"
+   ],
+   "taken": "Bestial Incursion",
+   "reasoning": "First leans to the cheap counter spell (Icy Reception, the pick tag sits on it), then changes his mind: he already has a couple of one- and two-drops and his deck does not hold mana up (mostly sorcery speed), so another good green card for self-mill (flashback Bestial Incursion) seems better. Confirmed by the deck screen (Bestial Incursion in the pool, Icy Reception not).",
+   "considered": {
+    "Icy Reception": "'a nice cheap counter spell', passed in the end; the pick tag stayed on it",
+    "Greenhouse Propagator": "'the two mana play would be fine'"
+   },
+   "plan": "Blue-black; green splash gets a second card (Bestial Incursion next to Hapatra); white splash (Generous Revival) now less likely.",
+   "quotes": [
+    "I changed my mind. I think the two mana play would be fine, but I already have a couple of two drops. I already have a couple one drops. My deck doesn't really hold its mana up particularly well because I'm mostly playing at sorcery speed",
+    "getting a another really good green card to help me with my self mill seems pretty reasonable."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 10,
+   "time": "14:30-14:48",
+   "pack_cards": [
+    "Flourishing Grapple",
+    "Eye of Jace",
+    "Cryotheory Adept",
+    "Murmuring Volume",
+    "Meticulous Commons"
+   ],
+   "taken": "Murmuring Volume",
+   "reasoning": "'I'm going to take murmuring volume now. We'll see if we want that.' Fixing for the splash; Meticulous Commons (white-black land) left in the pack.",
+   "considered": {
+    "Meticulous Commons": "left in the pack (second one in the same pack as Murmuring Volume, which wheeled from P2p2)"
+   },
+   "plan": "Blue-black with green splash.",
+   "quotes": [
+    "Okay, I'm going to take murmuring volume now. We'll see if we want that"
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 11,
+   "time": "14:48-14:58",
+   "pack_cards": [
+    "Refute Destiny",
+    "Kiora of Salt and Sand",
+    "Whiplash Wordsmith",
+    "Innovative Commons"
+   ],
+   "taken": "Innovative Commons",
+   "reasoning": "'Kiora doesn't seem great. Maybe we see a random red card we want.' Takes the blue-red land; no further comment.",
+   "considered": {
+    "Kiora of Salt and Sand": "'doesn't seem great'"
+   },
+   "plan": "Blue-black.",
+   "quotes": [
+    "yeah, and Kior doesn't seem great. Maybe we see a random red card we want."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 12,
+   "time": "14:58-15:10",
+   "pack_cards": [
+    "Tam, the Possibility",
+    "Graft Surgeon",
+    "Compel Brutality"
+   ],
+   "taken": "Compel Brutality",
+   "reasoning": "'Compel Brutality if I really need a removal spell.' Takes the green removal as a possible splash card; he says green is maybe looking open.",
+   "considered": {
+    "Tam, the Possibility": "hover at times; not taken"
+   },
+   "plan": "Blue-black; green splash.",
+   "quotes": [
+    "Okay, compel brutality if I really need a removal spell.",
+    "So, green is maybe looking kind of open"
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 13,
+   "time": "15:10-15:14",
+   "pack_cards": [
+    "Way of the Necromancer",
+    "Blazing Crescendo"
+   ],
+   "taken": "Way of the Necromancer",
+   "reasoning": "No separate comment for this pick; his next words are about the green splash ('splashing white is going to be a little bit worse'). Confirmed by the deck screen (two Way of the Necromancer in the pool, no Blazing Crescendo).",
+   "considered": {},
+   "plan": "Splash green rather than white: Bestial Incursion is 'a very similar vibe' to Generous Revival, a card to mill over for value.",
+   "quotes": [
+    "I think splashing white is going to be a little bit worse. Like generous revival is fine, but getting the beastial incursion is like a very similar vibe of like a card that I can mill over for some value"
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 14,
+   "time": "15:14-15:20",
+   "pack_cards": [
+    "Forest"
+   ],
+   "taken": "Forest",
+   "reasoning": "Last card, auto-selected.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 1,
+   "time": "15:24-16:08",
+   "pack_cards": [
+    "Theorist's Proxy",
+    "Ghalta the Immovable",
+    "Way of the Mind Sculptor",
+    "Multiply by Zero",
+    "Way of the Paradox",
+    "Mindseeker Oculus",
+    "Last Gasp",
+    "Theoretical Necromancer",
+    "Blazing Crescendo",
+    "Chandra's Emberling",
+    "Bestial Incursion",
+    "Fatehold Chronologist",
+    "Room of Refuge",
+    "Transformative Commons"
+   ],
+   "taken": "Multiply by Zero",
+   "reasoning": "Has plenty of card draw and wants more kill spells; Multiply by Zero is 'a little bit better than Last Gasp, though it's close'. Mindseeker Oculus is also great (he loves it).",
+   "considered": {
+    "Last Gasp": "close; -3/-3 removal",
+    "Mindseeker Oculus": "'great', 'I love that card' (wheels at P3p9)",
+    "Way of the Mind Sculptor": "'good card draw' (empower Jace 5, draw a card when removing two or more loyalty)",
+    "Way of the Paradox": "not taken; paired enchantment"
+   },
+   "plan": "Blue-black; green splash settled in his mind ('my green splash is looking pretty reasonable' at P3p2).",
+   "quotes": [
+    "I think I need I have plenty of card draw. I've got good value. I just want more kill spells and I think that's a little bit better than last gasp. Though it's close.",
+    "Mindseeker Oculus is also great. So I love that card."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 2,
+   "time": "16:08-16:44",
+   "pack_cards": [
+    "Identity Echo",
+    "Way of the Necromancer",
+    "Way of the Wildspeaker",
+    "Yoshimaru, Scrappy Stray",
+    "Theorix Charm",
+    "Warrior's Blades",
+    "Unflinching Hortimancer",
+    "Sphinx's Approach",
+    "Void Extrapolator",
+    "Wrath of the Bloodmane",
+    "Inspired Tethermage",
+    "Living Library",
+    "Island"
+   ],
+   "taken": "Theorix Charm",
+   "reasoning": "On-colour blue-black card with three modes (counter a creature spell unless its controller pays two, -2/-2, or mill three then draw). Liking the green splash; does not love Way of the Necromancer ('we could consider it').",
+   "considered": {
+    "Way of the Necromancer": "'I don't really love', could consider",
+    "Yoshimaru, Scrappy Stray": "good in a green deck",
+    "Way of the Wildspeaker": "mentioned"
+   },
+   "plan": "Blue-black with green splash.",
+   "quotes": [
+    "I'm honestly liking my uh I think my um green splash is looking pretty reasonable.",
+    "just taking the blue black on color card is going to be great"
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 3,
+   "time": "16:44-17:24",
+   "pack_cards": [
+    "Way of the Healer",
+    "Tinybones, Pocket Nuisance",
+    "Edgar, Moonlit Sovereign",
+    "Titanbones, Towering Heart",
+    "Theorix Charm",
+    "Surgical Precision",
+    "Protege's Awakening",
+    "Chandra's Emberling",
+    "Compel Brutality",
+    "Whiplash Wordsmith",
+    "Living Library",
+    "Innovative Commons"
+   ],
+   "taken": "Theorix Charm",
+   "reasoning": "Second Theorix Charm: mill three and draw, or -2/-2. Tinybones, Pocket Nuisance is 'pretty good' (three-drop that makes them discard) but the Charm is great. With Bestial Incursion in the pool, splashing green over white is 'a no-brainer'; does not expect to mill himself out because Theoretical Necromancer can return Paradox Shaper. The pick tag sat on Tinybones for a while, confirmed by the deck screen (two Theorix Charm).",
+   "considered": {
+    "Tinybones, Pocket Nuisance": "'pretty nice' as a discard three-drop with a reasonable body",
+    "Protege's Awakening": "in the pack"
+   },
+   "plan": "Blue-black with green splash (Hapatra, Bestial Incursion).",
+   "quotes": [
+    "This card's great though. I can mill three and draw or I can think minus two. I'm honestly feeling pretty good. I think once I got a beastial incursion, splashing green over white is just kind of a no-brainer"
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 4,
+   "time": "17:24-18:00",
+   "pack_cards": [
+    "Null Summoner",
+    "Countersculpt",
+    "Ruric Thar, Biomagus",
+    "Marwyn, the Preserver",
+    "Warrior's Blades",
+    "Shatterwing Pegasus",
+    "Unsummon",
+    "Cast Away Doubt",
+    "Something Worth Saving",
+    "Charge the Sanctum",
+    "Room of Refuge"
+   ],
+   "taken": "Null Summoner",
+   "reasoning": "'Oh my gosh, Null Summoner number two.' Also happy about the two Theorix Charms, which makes passing the blue counter spell (Icy Reception) for Bestial Incursion feel less bad. Says he will only splash 'the best of the best' and declines a splash card in this pack (not named on the caption).",
+   "considered": {
+    "Countersculpt": "'I also like Countersculpt' (wheels at P3p12)",
+    "a splash card in the pack": "'I don't think I'm going to play this card though. only want to splash the best of the best'; caption names no card, probably Ruric Thar, Biomagus or Marwyn"
+   },
+   "plan": "Blue-black with green splash.",
+   "quotes": [
+    "Oh my gosh, null summoner number two. Well, this deck's looking good.",
+    "I don't think I'm going to play this card though. only want to splash the best of the best."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 5,
+   "time": "18:00-18:28",
+   "pack_cards": [
+    "Countersculpt",
+    "Gallia, Tragic Host",
+    "Gallia, the Merrymaker",
+    "Hunter's Axe",
+    "Unflinching Hortimancer",
+    "Rank Rat",
+    "Eardrum Rattler",
+    "Skilled Battlecarver",
+    "Arcane Amphisbaena",
+    "Stingerquill Annex"
+   ],
+   "taken": "Gallia, Tragic Host",
+   "reasoning": "Takes the graveyard card (exile another creature from your graveyard, return it with a counter) over Countersculpt: 'I'd rather just get more cards that work with my graveyard. That's kind of my current plan.' Countersculpt is good though.",
+   "considered": {
+    "Countersculpt": "nice counter spell that empowers Jace 1; 'Counter sculpt is good though'; wheels at P3p12"
+   },
+   "plan": "Blue-black graveyard, green splash.",
+   "quotes": [
+    "I think I'd rather just get more cards that work with my graveyard. That's kind of my current plan.",
+    "Counter sculpt is good though."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 6,
+   "time": "18:28-18:52",
+   "pack_cards": [
+    "Puppet Crafting",
+    "Way of the Necromancer",
+    "Pia, Determined Rebuilder",
+    "Pia, Aether Ascetic",
+    "Shatterwing Pegasus",
+    "Unsummon",
+    "Theoretical Necromancer",
+    "Charge the Sanctum",
+    "Meticulous Commons"
+   ],
+   "taken": "Unsummon",
+   "reasoning": "'I'll take one Unsummon': a little interactive spell to have one copy of. Already has one Theoretical Necromancer, which also protects him from milling out (does what Generous Revival would do, returning a Paradox Shaper).",
+   "considered": {
+    "Theoretical Necromancer": "second copy in the pack; passed because he has one and it covers the same role"
+   },
+   "plan": "Blue-black with green splash.",
+   "quotes": [
+    "I think I'll take one unsummon. I already have one theoretical necromancer.",
+    "unsummon's a nice a little interactive spell to have one copy of I think."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 7,
+   "time": "18:52-19:08",
+   "pack_cards": [
+    "Yargle, Goliath of Otaria",
+    "Edgar, Ancient Bloodlord",
+    "Academic Ascent",
+    "Icy Reception",
+    "Infinite Coursework",
+    "Screeching Soulbreaker",
+    "Something Worth Saving",
+    "Room of Refuge"
+   ],
+   "taken": "Room of Refuge",
+   "reasoning": "'I just like getting my mana a little bit [better]': takes the second Room of Refuge (a fixing land that makes any chosen colour) over Icy Reception and Infinite Coursework.",
+   "considered": {
+    "Icy Reception": "could take",
+    "Infinite Coursework": "could take"
+   },
+   "plan": "Blue-black with green splash.",
+   "quotes": [
+    "I think I'm going to take the Room of Refuge. Get myself another green [source]",
+    "I could take Icy Reception. could take infinite coursework. I just like getting my mana a little bit"
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 8,
+   "time": "19:08-19:34",
+   "pack_cards": [
+    "Danitha, Sword of Hope",
+    "Precise Redaction",
+    "Eye of Jace",
+    "Sphinx's Approach",
+    "Hallway Heckler",
+    "Whiplash Wordsmith",
+    "Dedicated Commons"
+   ],
+   "taken": "Precise Redaction",
+   "reasoning": "No pick is announced. He says the counter spell is 'a sideboard counter spell, I'm not going to be able to use it', the draw spell (Sphinx's Approach) he cannot use either, and of another card 'I don't think this one's very good'. The pick tag ended on Sphinx's Approach in the last frames, but the deck screen (sideboard strip and pool) holds Precise Redaction and no Sphinx's Approach, so Precise Redaction is the pick by elimination (it is the only pack with it).",
+   "considered": {
+    "Sphinx's Approach": "a card-draw spell he cannot use; the pick tag sat on it",
+    "Hallway Heckler": "'I don't think this one's very good' (surveil one, threshold) [identification of 'this card' is a reading]"
+   },
+   "plan": "Nothing in the pack for the deck; takes a sideboard card.",
+   "quotes": [
+    "This is like a sideboard counter spell. I'm not going to be able to use it though.",
+    "I don't think this one's very good though."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 9,
+   "time": "19:34-19:52",
+   "pack_cards": [
+    "Ghalta the Immovable",
+    "Way of the Mind Sculptor",
+    "Mindseeker Oculus",
+    "Last Gasp",
+    "Blazing Crescendo",
+    "Transformative Commons"
+   ],
+   "taken": "Mindseeker Oculus",
+   "reasoning": "The pack wheels Last Gasp, Mindseeker Oculus and Way of the Mind Sculptor: 'I kind of wheel everything'. Short on kill spells and considers Last Gasp, but takes Mindseeker Oculus as the best card.",
+   "considered": {
+    "Last Gasp": "'my kill spells, I don't have a ton of kill spells, honestly. Maybe I should just take Last Gasp'",
+    "Way of the Mind Sculptor": "wheeled, passed"
+   },
+   "plan": "Blue-black with green splash.",
+   "quotes": [
+    "Maybe I should just take Last Gasp. I'm just going to take the Mindseeker Oculus. I think it's the best card there."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 10,
+   "time": "19:52-19:58",
+   "pack_cards": [
+    "Way of the Necromancer",
+    "Sphinx's Approach",
+    "Void Extrapolator",
+    "Inspired Tethermage",
+    "Island"
+   ],
+   "taken": "Void Extrapolator",
+   "reasoning": "'And then I get this guy.' Second Void Extrapolator.",
+   "considered": {},
+   "plan": "",
+   "quotes": [
+    "And then I get this guy."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 11,
+   "time": "19:58-20:06",
+   "pack_cards": [
+    "Protege's Awakening",
+    "Whiplash Wordsmith",
+    "Living Library",
+    "Innovative Commons"
+   ],
+   "taken": "Protege's Awakening",
+   "reasoning": "'Perfect. I got a little bit more card draw anyway.'",
+   "considered": {},
+   "plan": "",
+   "quotes": [
+    "Perfect. I got a little bit more card draw anyway."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 12,
+   "time": "20:06-20:19",
+   "pack_cards": [
+    "Countersculpt",
+    "Shatterwing Pegasus",
+    "Charge the Sanctum"
+   ],
+   "taken": "Countersculpt",
+   "reasoning": "'And I got a counter sculpt back. Perfect.' The Countersculpt from P3p4 and P3p5 wheeled.",
+   "considered": {},
+   "plan": "",
+   "quotes": [
+    "And I got a counter scope back. Perfect."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 13,
+   "time": "20:19-20:23",
+   "pack_cards": [
+    "Skilled Battlecarver",
+    "Stingerquill Annex"
+   ],
+   "taken": "Stingerquill Annex",
+   "reasoning": "No comment; takes the land. Confirmed by the deck screen (Stingerquill Annex in the pool, no Skilled Battlecarver).",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 14,
+   "time": "20:23-20:32",
+   "pack_cards": [
+    "Way of the Necromancer"
+   ],
+   "taken": "Way of the Necromancer",
+   "reasoning": "Last card, auto-selected. He says Way of the Necromancer is not great and he is not in love with it.",
+   "considered": {},
+   "plan": "",
+   "quotes": [
+    "I don't think way of necromancer is great. I'm not like in love with that."
+   ]
+  }
+ ]
+}

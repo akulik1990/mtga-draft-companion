@@ -1,0 +1,49 @@
+{
+ "id": "7YcSZYPLge8",
+ "time": "17:00-19:10 (final 40/40 deck screen at 1138 s; the sideboard is not shown; cut-off 1150 s)",
+ "main": {
+  "Mabel, Bitter Recluse": 2,
+  "Last Gasp": 1,
+  "Paradox Shaper": 1,
+  "Twinned Vision": 1,
+  "Konstrari Improviser": 1,
+  "Keeper of the Quiet Hour": 3,
+  "Murmuring Volume": 1,
+  "Extended Absence": 1,
+  "Violent Echoes": 1,
+  "Recursive Recruitment": 1,
+  "Garruk, Veiled Butcher": 1,
+  "Hungering Puppetbeast": 1,
+  "Hapatra, the Desert Fang": 2,
+  "Vraska, the Cutting Glare": 1,
+  "Kiora of Fire and Ashes": 1,
+  "Face Yourself": 1,
+  "Craftwork Crusher": 2
+ },
+ "lands": {
+  "Swamp": 5,
+  "Mountain": 5,
+  "Forest": 4,
+  "Innovative Commons": 1,
+  "Stingerquill Annex": 1,
+  "Formidable Commons": 1,
+  "Transformative Commons": 1
+ },
+ "sideboard": {
+  "Mindseeker Oculus": 1,
+  "Heartstring Puller": 1,
+  "Meticulous Commons": 1,
+  "Something Worth Saving": 1,
+  "Samut, Hazoret's Champion": 1,
+  "Rank Rat": 1
+ },
+ "spells": 22,
+ "land_count": 18,
+ "landcyclers_in_main": [],
+ "colours": "Red-black base with a green splash (Garruk, two Hapatra, Puppetbeast, Vraska) and a light blue splash (Recursive Recruitment, Twinned Vision, Paradox Shaper): Swamp 5, Mountain 5, Forest 4 plus four nonbasic lands; 18 lands with three Keeper and Murmuring Volume for fixing.",
+ "notes": [
+  "Mindseeker Oculus, Samut, Paradox-type extras and Heartstring Puller are cut ('cut Samut, a Paradox Shaper and a Heartstring Puller and then play an extra land' at 17:36; Paradox Shaper is still in the final screen). The sideboard dict lists cards he took and did not play, derived by accounting and not shown on screen.",
+  "17:45-18:54: 'six, seven, eight black sources, six, seven, eight red sources, four, five green sources ... there's 19 lands ... I'm going to cut one of the red sources ... 18 lands. I'm fine playing 18 here.'",
+  "19:06: the feature card is Face Yourself ('we will have to ...')."
+ ]
+}

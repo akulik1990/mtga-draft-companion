@@ -1,0 +1,1029 @@
+{
+ "id": "8BzUchj9HuA",
+ "url": "https://youtu.be/8BzUchj9HuA",
+ "title": "Pro Drafter Helps Me Dominate in Reality Fracture Draft!!! (ft. @limitedlevel-ups)",
+ "player": "NicolaiBolas",
+ "player_note": "NicolaiBolas drafts (his name is on the banner); the guest Alex Nikolic (Limited Level-Ups) advises. Captions are unlabelled; the idea `speaker` field credits the guest, the host or both from content.",
+ "set": "FRA",
+ "event": "FRA live Arena draft, best of three ('this is best of three, so if we see the sideboard cards, we can actually take them'); Premier / Traditional not named on screen",
+ "dataset": "FRA_PremierDraft_All_Data.json",
+ "recorded": null,
+ "source": "frames read from data/videos/raw/8BzUchj9HuA (banner and pack title strips; the pool at P2p1 (13 + 1 sideboard) and the 45/40 and 40/40 deck screens at 1640 and 2012 s); pack lists read from images that loaded; takes confirmed by the pool, the deck screens and the transcript, except P3p6, P3p10 and P3p12 (not shown; taken null); transcript from YouTube auto captions, card names corrected; nothing past 33:35 read; cut-off 2020 s",
+ "colour_path": [
+  {
+   "after": "P1p1",
+   "main": "G (Cultivator), open",
+   "quote": "we're going to diverge from our first pick probably"
+  },
+  {
+   "after": "P1p4",
+   "main": "G graveyard, sultai space",
+   "quote": "the sultai space is so much better for the graveyard stuff."
+  },
+  {
+   "after": "P1p11",
+   "main": "GW possible",
+   "quote": "it's looking like green white might be a good spot."
+  },
+  {
+   "after": "P2p2",
+   "main": "GW (white pushed)",
+   "quote": "the packs are pushing us enough in the direction of white that we should probably listen."
+  },
+  {
+   "after": "P2p3",
+   "main": "GW go-wide",
+   "quote": "we are getting into a bit of a go wide theme"
+  },
+  {
+   "after": "P3p3",
+   "main": "GW + Twisted Fates splash (B)",
+   "quote": "Huge fan of Twisted Fates ... We have the black fixing to be able to cast it."
+  },
+  {
+   "after": "deck",
+   "main": "GW with a light black splash (Twisted Fates x2, one Swamp)",
+   "quote": "I would like to definitely would like to not play a second swamp."
+  }
+ ],
+ "picks": [
+  {
+   "pack": 1,
+   "pick": 1,
+   "time": "5:09-5:34",
+   "pack_cards": [
+    "Carnivorous Cultivator",
+    "Yargle, Goliath of Otaria",
+    "Yargle, Glutton of Urborg",
+    "Clash of Elements",
+    "Mabel, Valley Hero",
+    "Memory Trap",
+    "Divining Duelist",
+    "Undulating Witness",
+    "Screeching Soulbreaker",
+    "Solve for Disappointment",
+    "Hallway Heckler",
+    "Greenhouse Propagator",
+    "Charge the Sanctum",
+    "Konstrari Annex"
+   ],
+   "taken": "Carnivorous Cultivator",
+   "reasoning": "Carnivorous Cultivator, the rare: a two-mana 2/3 deathtouch that can draw a land. The guest also likes Clash of Elements (gold removal) but monocoloured over gold is an upside if close; he would take Memory Trap if the rare were absent.",
+   "considered": {
+    "Clash of Elements": "guest: the other card he likes; strong gold removal, but monocolour over gold when close",
+    "Memory Trap": "white removal, the option if the rare were missing"
+   },
+   "plan": "Open; green rare first.",
+   "quotes": [
+    "as always, I think monocolored over gold is definitely an upside. So, if it's close, I like taking the monocolor card, but I'm not afraid of taking the strong gold cards."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 2,
+   "time": "5:34-6:36",
+   "pack_cards": [
+    "Solitary Cell",
+    "Rescue Girl, First Responder",
+    "Arni, Humble Scribe",
+    "Massacre Girl, Most Wanted",
+    "Way of the Pyromancer",
+    "Recursive Recruitment",
+    "Warrior's Blades",
+    "Surgical Precision",
+    "Cast Away Doubt",
+    "Tether Technician",
+    "Emergency Phytomedic",
+    "Keeper of the Quiet Hour",
+    "Stingerquill Annex"
+   ],
+   "taken": "Recursive Recruitment",
+   "reasoning": "Recursive Recruitment: guest calls it phenomenal (pretty good on four, really good late, can be self-milled to draw it free) and a card that plays with the Cultivator because any self-mill helps both. Nicolai notes no green card in the pack.",
+   "considered": {
+    "Carnivorous Cultivator": "guest: plays with Recruitment because any self-mill helps both"
+   },
+   "plan": "Green with a graveyard plan.",
+   "quotes": [
+    "I think this card is phenomenal. It's just, you know, pretty good on four, really good late."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 3,
+   "time": "6:36-7:32",
+   "pack_cards": [
+    "Prophesied End",
+    "Way of the Healer",
+    "Way of the Necromancer",
+    "Clash of Elements",
+    "Primal Witchstalker",
+    "Hexhaven Battalion",
+    "Unsummon",
+    "Rank Rat",
+    "Greenhouse Propagator",
+    "Charge the Sanctum",
+    "Afterthought Sentry",
+    "Forest"
+   ],
+   "taken": "Primal Witchstalker",
+   "reasoning": "Primal Witchstalker: the guest has been super impressed (three-mana 2/1 menace that ramps, sometimes a three-for-one). Clash of Elements is in the pack again.",
+   "considered": {
+    "Clash of Elements": "another copy",
+    "Prophesied End": "guest likes it more than the usual destroy-tapped removal"
+   },
+   "plan": "Green-black graveyard.",
+   "quotes": [
+    "the fact that it ramps you means you're totally fine with the body. And sometimes it's like a three for one almost."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 4,
+   "time": "7:32-8:23",
+   "pack_cards": [
+    "Simulacrum Shaper",
+    "Koth, the Geomancer",
+    "Tetsuko Umezawa, Pursuer",
+    "Violent Echoes",
+    "Theorix Charm",
+    "Fateshaper Aspirant",
+    "Void Extrapolator",
+    "Tether Technician",
+    "Vinelasher Adept",
+    "Murmuring Volume",
+    "Plains"
+   ],
+   "taken": "Simulacrum Shaper",
+   "reasoning": "Simulacrum Shaper: fits the self-mill pool and is 'a little bit surprising' to see fourth. The guest also calls out Violent Echoes (exceptional) and Theorix Charm; the pack is a mixed signal (three good red cards, Pia, a Vinelasher).",
+   "considered": {
+    "Violent Echoes": "guest: exceptional, kill a creature draw a card",
+    "Theorix Charm": "considered for the deck",
+    "Pia, Determined Rebuilder": "red signal"
+   },
+   "plan": "Sultai graveyard, signals unclear.",
+   "quotes": [
+    "Um I think we're probably taking it here for our deck. It seems like it fits."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 5,
+   "time": "8:23-9:14",
+   "pack_cards": [
+    "Hall of Echoes",
+    "Pia, Determined Rebuilder",
+    "Pia, Aether Ascetic",
+    "Desperate Futurescribe",
+    "Hexhaven Battalion",
+    "Rampart Hunter",
+    "Heartstring Puller",
+    "Vinelasher Adept",
+    "Fatehold Chronologist",
+    "Innovative Commons"
+   ],
+   "taken": "Vinelasher Adept",
+   "reasoning": "Vinelasher Adept, the green landcycler: the guest has been really high on landcyclers (good at fixing and good to cast). Red seems open with three good red cards in a row but they pull only into non-green red.",
+   "considered": {
+    "Pia, Determined Rebuilder": "red card seen",
+    "Heartstring Puller": "in the pack"
+   },
+   "plan": "Green base, flexible.",
+   "quotes": [
+    "I like the green land cyclinger. I've been really high on land cyclingers."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 6,
+   "time": "9:14-9:58",
+   "pack_cards": [
+    "Generous Revival",
+    "Thalia, the Survivor",
+    "Geist of Saint Thalia",
+    "Gallia, the Merrymaker",
+    "Winter, Team Player",
+    "Predictive Preparations",
+    "No Admittance",
+    "Blessed Ghoul",
+    "Swamp"
+   ],
+   "taken": "Generous Revival",
+   "reasoning": "Generous Revival over No Admittance: it plays nicely in the graveyard plan; the guest likes adding colours to layer synergies rather than for raw power ('adding white because we have a really nice tool for a graveyard deck'). Nicolai floated taking No Admittance.",
+   "considered": {
+    "No Admittance": "pick six, red open; Nicolai's alternative"
+   },
+   "plan": "Green-black graveyard with a white layer.",
+   "quotes": [
+    "one thing I like to do with drafting this set as I'm drafting a multicolor deck is I don't mind adding colors, not necessarily even for omega powerful cards, but to layer on your synergies."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 7,
+   "time": "9:58-10:34",
+   "pack_cards": [
+    "Grim Repriser",
+    "Vigorbloom Charm",
+    "Shatterwing Pegasus",
+    "Rampart Hunter",
+    "Bestial Incursion",
+    "Whiplash Wordsmith",
+    "Charge the Sanctum",
+    "Transformative Commons"
+   ],
+   "taken": "Bestial Incursion",
+   "reasoning": "Bestial Incursion over Vigorbloom Charm and a land: a nice synergy card, good on rate, and the guest has been taking good spells over fixing in pack one because there is plenty of fixing in the set.",
+   "considered": {
+    "Vigorbloom Charm": "white option",
+    "Transformative Commons": "land, passed here and taken next pick"
+   },
+   "plan": "Green graveyard.",
+   "quotes": [
+    "I've been taking good spells over fixing in pack one anyways."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 8,
+   "time": "10:34-11:12",
+   "pack_cards": [
+    "Arni, Renowned Champion",
+    "Tetsuko Umezawa, Pursuer",
+    "Paradox Shaper",
+    "Bloombrute",
+    "Blazing Crescendo",
+    "Ferocity of the Hunt",
+    "Transformative Commons"
+   ],
+   "taken": "Transformative Commons",
+   "reasoning": "Transformative Commons over Paradox Shaper and Bloombrute: the Shaper is tempting with the self-mill but there are better cards that help you mill; the guest also says the red cards do not play well with their green. Bloombrute would be green-white.",
+   "considered": {
+    "Paradox Shaper": "pretty tempting but better cards help you mill",
+    "Bloombrute": "green-white option"
+   },
+   "plan": "Sultai graveyard space.",
+   "quotes": [
+    "I think here is where I would take a land."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 9,
+   "time": "11:12-11:38",
+   "pack_cards": [
+    "Yargle, Glutton of Urborg",
+    "Screeching Soulbreaker",
+    "Solve for Disappointment",
+    "Hallway Heckler",
+    "Charge the Sanctum",
+    "Konstrari Annex"
+   ],
+   "taken": "Konstrari Annex",
+   "reasoning": "Konstrari Annex (land): agreed to take a land; the red cards 'don't really play all that well with our green cards'.",
+   "considered": {
+    "Hallway Heckler": "red option"
+   },
+   "plan": "Green-black-blue.",
+   "quotes": [
+    "Yeah, I agree. Yeah, let's take a land."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 10,
+   "time": "11:38-12:02",
+   "pack_cards": [
+    "Massacre Girl, Most Wanted",
+    "Way of the Pyromancer",
+    "Warrior's Blades",
+    "Surgical Precision",
+    "Tether Technician"
+   ],
+   "taken": "Surgical Precision",
+   "reasoning": "Surgical Precision: they have no removal and the guest is happy to splash fishing removal like this. Warrior's Blades and Massacre Girl in the pack.",
+   "considered": {
+    "Massacre Girl, Most Wanted": "in the pack",
+    "Warrior's Blades": "in the pack"
+   },
+   "plan": "Green with white removal.",
+   "quotes": [
+    "I like surgical precision. We don't have any removal right now and I've been happy to splash removal like this one."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 11,
+   "time": "12:02-12:28",
+   "pack_cards": [
+    "Way of the Healer",
+    "Rank Rat",
+    "Charge the Sanctum",
+    "Forest"
+   ],
+   "taken": "Way of the Healer",
+   "reasoning": "Way of the Healer, late: the guest finds it really good; a green-white lane may be forming, and Nicolai could 'totally see us pivoting to green white'.",
+   "considered": {
+    "Rank Rat": "in the pack"
+   },
+   "plan": "Green-white possible.",
+   "quotes": [
+    "way of healer is really good. I think I would take it here.",
+    "Yeah, I could totally see us pivoting to green white."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 12,
+   "time": "12:28-12:35",
+   "pack_cards": [
+    "Fateshaper Aspirant",
+    "Tether Technician",
+    "Plains"
+   ],
+   "taken": "Fateshaper Aspirant",
+   "reasoning": "Fateshaper Aspirant over Tether Technician; they note they could have two lands for a good red card. Not discussed further.",
+   "considered": {},
+   "plan": "Green-white or sultai.",
+   "quotes": []
+  },
+  {
+   "pack": 1,
+   "pick": 13,
+   "time": "12:35-12:43",
+   "pack_cards": [
+    "Heartstring Puller",
+    "Innovative Commons"
+   ],
+   "taken": "Innovative Commons",
+   "reasoning": "Innovative Commons (second land for a possible splash); Heartstring Puller was the other card.",
+   "considered": {
+    "Heartstring Puller": "the other card"
+   },
+   "plan": "Green-white.",
+   "quotes": []
+  },
+  {
+   "pack": 1,
+   "pick": 14,
+   "time": "12:43-12:49",
+   "pack_cards": [
+    "Swamp"
+   ],
+   "taken": "Swamp",
+   "reasoning": "Last card, Swamp, auto-selected.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 1,
+   "time": "12:49-13:54",
+   "pack_cards": [
+    "Guiding Hydra",
+    "Saheeli, Consul of Oversight",
+    "Your Fate Ends Here",
+    "Teyo, Diamondblade Mage",
+    "Saheeli, Jewel of Avishkar",
+    "Stingerquill Charm",
+    "Surgical Precision",
+    "Cryotheory Adept",
+    "Semester Foreseer",
+    "Rank Rat",
+    "Artifist Acumen",
+    "Arcane Amphisbaena",
+    "Budding Insurgent",
+    "Formidable Commons"
+   ],
+   "taken": "Guiding Hydra",
+   "reasoning": "Guiding Hydra over Your Fate Ends Here: the guest says they are really close, the Hydra is the higher-upside card and he could regret it if they do not see removal; Nicolai expects to get Surgical Precision back from the pack (three white cards there).",
+   "considered": {
+    "Your Fate Ends Here": "super strong removal; close",
+    "Surgical Precision": "expected to wheel as a removal consolation"
+   },
+   "plan": "Green-white.",
+   "quotes": [
+    "I would go for the higher upside card right now, but I could see us maybe regretting this if we maybe don't see as much removal as we'd like."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 2,
+   "time": "13:54-14:51",
+   "pack_cards": [
+    "Loyal Tutor",
+    "Way of the Mentor",
+    "Hapatra, the Desert Frost",
+    "Rewrite Regrets",
+    "Way of the Warlord",
+    "Prudent Fateseer",
+    "Memory Trap",
+    "Apex Witchstalker",
+    "Void Extrapolator",
+    "Blazing Crescendo",
+    "Fatehold Chronologist",
+    "Konstrari Improviser",
+    "Theorix Annex"
+   ],
+   "taken": "Memory Trap",
+   "reasoning": "Memory Trap over Rewrite Regrets: the graveyard theming has been minimal for a while and the packs keep pushing towards white; Memory Trap is the best white card they could take, and Rewrite Regrets is phenomenal with the landcyclers but they are moving away from it.",
+   "considered": {
+    "Rewrite Regrets": "guest: phenomenal with the landcyclers, but the graveyard theme is fading",
+    "Prudent Fateseer": "in the pack (taken next time round)"
+   },
+   "plan": "Green-white.",
+   "quotes": [
+    "I think the packs are pushing us enough in the direction of white that we should probably listen."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 3,
+   "time": "14:51-15:34",
+   "pack_cards": [
+    "Shipwreck Marsh",
+    "Tetsuko Umezawa, Fugitive",
+    "Tetsuko Umezawa, Pursuer",
+    "Prudent Fateseer",
+    "Predictive Preparations",
+    "Divining Duelist",
+    "Icy Reception",
+    "Theoretical Necromancer",
+    "Heartstring Puller",
+    "Budding Insurgent",
+    "Ferocity of the Hunt",
+    "Innovative Commons"
+   ],
+   "taken": "Prudent Fateseer",
+   "reasoning": "Prudent Fateseer over a blue-black land and Tetsuko: no green-white cards he loves; the guest finds the 1/4 decent and they are getting into a go-wide theme with the Hydra and Way of the Healer.",
+   "considered": {
+    "Shipwreck Marsh": "blue-black land",
+    "Tetsuko Umezawa, Fugitive": "flyer pick option"
+   },
+   "plan": "Green-white go-wide.",
+   "quotes": [
+    "I think I would take the fate seer here, the one four because I think that card is pretty decent and we are getting into a bit of a go wide theme."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 4,
+   "time": "15:34-16:14",
+   "pack_cards": [
+    "Variable Chaser",
+    "Teyo, Diamondblade Mage",
+    "Grim Repriser",
+    "Academic Ascent",
+    "Graft Surgeon",
+    "Unsummon",
+    "Rank Rat",
+    "Void Extrapolator",
+    "Artifist Acumen",
+    "Sureshot Sower",
+    "Mountain"
+   ],
+   "taken": "Sureshot Sower",
+   "reasoning": "Sureshot Sower, the two-drop green 3/1: a fine role-player, they are a little low on two-mana cards; Unsummon also considered (good against beast and dragon tokens).",
+   "considered": {
+    "Unsummon": "guest: really good against the big tokens",
+    "Variable Chaser": "playable, nothing exceptional"
+   },
+   "plan": "Green-white.",
+   "quotes": [
+    "I like the two drop the green three one there. It's a fine role player. We are a little bit low on two mana cards at this point."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 5,
+   "time": "16:14-16:59",
+   "pack_cards": [
+    "Vraska's Final Mercy",
+    "Tam, the Possibility",
+    "Teyo, Lightshield Expert",
+    "Desperate Futurescribe",
+    "Inspired Tethermage",
+    "Fatehold Chronologist",
+    "Theorix Metamage",
+    "Konstrari Improviser",
+    "Keeper of the Quiet Hour",
+    "Meticulous Commons"
+   ],
+   "taken": "Teyo, Lightshield Expert",
+   "reasoning": "Teyo, Lightshield Expert: great cheap flash spell, rarely cast on two but can trade a two-drop when on the back foot; over Fatehold Chronologist and Inspired Tethermage (which has impressed the guest).",
+   "considered": {
+    "Inspired Tethermage": "impressed, not a slam dunk",
+    "Fatehold Chronologist": "two-drop that works with the go-wide plan"
+   },
+   "plan": "Green-white.",
+   "quotes": [
+    "I like taking Teyo here. Teyo is just great. It's another cheap spell."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 6,
+   "time": "16:59-17:29",
+   "pack_cards": [
+    "Mabel, Bitter Recluse",
+    "Way of the Paradox",
+    "Yoshimaru, Scrappy Stray",
+    "Academic Ascent",
+    "Undulating Witness",
+    "Cast Away Doubt",
+    "Artifist Acumen",
+    "Something Worth Saving",
+    "Dedicated Commons"
+   ],
+   "taken": "Something Worth Saving",
+   "reasoning": "Something Worth Saving over Yoshimaru and a land: the guest wants it for the graveyard stuff they do have and to find their good cards (there is a decent gap between the great cards and the medium cards).",
+   "considered": {
+    "Yoshimaru, Scrappy Stray": "has been okay",
+    "Dedicated Commons": "land"
+   },
+   "plan": "Green-white with a little graveyard.",
+   "quotes": [
+    "just being able to find your good cards while binning flashback cards has been something I liked."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 7,
+   "time": "17:29-18:09",
+   "pack_cards": [
+    "Germinate Recruits",
+    "Vraska, Soul of Stone",
+    "Essence Burn",
+    "Blossom-Blessed Angel",
+    "Protege's Awakening",
+    "Apex Witchstalker",
+    "Rank Rat",
+    "Plains"
+   ],
+   "taken": "Blossom-Blessed Angel",
+   "reasoning": "Blossom-Blessed Angel over Germinate Recruits: the Recruits is really hard to do; they pass Bloombrute earlier, and note there is no life gain in the deck.",
+   "considered": {
+    "Germinate Recruits": "really hard to do, needs lifelinkers"
+   },
+   "plan": "Green-white.",
+   "quotes": [
+    "I think we take the blossom blessed angel."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 8,
+   "time": "18:09-18:21",
+   "pack_cards": [
+    "Winter, Tormented Loner",
+    "Grim Repriser",
+    "Semester Foreseer",
+    "Tether Technician",
+    "Theorix Metamage",
+    "Afterthought Sentry",
+    "Mountain"
+   ],
+   "taken": "Afterthought Sentry",
+   "reasoning": "Afterthought Sentry (colourless two-drop) 'has been playable'; it lets them take better expensive cards in pack three and is a sideboard card for best of three against recursive recruitments.",
+   "considered": {
+    "Winter, Tormented Loner": "in the pack"
+   },
+   "plan": "Green-white.",
+   "quotes": [
+    "this lets us take better expensive cards in pack three. And also this is best of three, so it could be a good sideboard card."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 9,
+   "time": "18:21-18:45",
+   "pack_cards": [
+    "Teyo, Diamondblade Mage",
+    "Stingerquill Charm",
+    "Cryotheory Adept",
+    "Artifist Acumen",
+    "Arcane Amphisbaena",
+    "Budding Insurgent"
+   ],
+   "taken": "Arcane Amphisbaena",
+   "reasoning": "Arcane Amphisbaena over Budding Insurgent: better in a slower deck, good even in an average midrange deck.",
+   "considered": {
+    "Budding Insurgent": "the three-three"
+   },
+   "plan": "Green-white.",
+   "quotes": [
+    "I like the Amphisbaena. It's better in a slower graveyard deck but even in your average midrange deck it's good."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 10,
+   "time": "18:45-19:08",
+   "pack_cards": [
+    "Loyal Tutor",
+    "Way of the Mentor",
+    "Hapatra, the Desert Frost",
+    "Apex Witchstalker",
+    "Void Extrapolator"
+   ],
+   "taken": "Apex Witchstalker",
+   "reasoning": "Apex Witchstalker over Way of the Mentor: they say it will not make the cut but something weird could happen in pack three (a great black card).",
+   "considered": {
+    "Way of the Mentor": "not very good with no lifegain"
+   },
+   "plan": "Green-white.",
+   "quotes": [
+    "I don't think it's going to make the cut here, but something weird could happen in pack three."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 11,
+   "time": "19:08-19:19",
+   "pack_cards": [
+    "Tetsuko Umezawa, Fugitive",
+    "Tetsuko Umezawa, Pursuer",
+    "Heartstring Puller",
+    "Ferocity of the Hunt"
+   ],
+   "taken": "Ferocity of the Hunt",
+   "reasoning": "Ferocity of the Hunt from the wheel pack; pack-one Tetsuko pair also there.",
+   "considered": {
+    "Tetsuko Umezawa, Fugitive": "in the pack"
+   },
+   "plan": "Green-white.",
+   "quotes": [
+    "Here I'll take ferocity of the hunt."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 12,
+   "time": "19:19-19:31",
+   "pack_cards": [
+    "Teyo, Diamondblade Mage",
+    "Artifist Acumen",
+    "Mountain"
+   ],
+   "taken": "Teyo, Diamondblade Mage",
+   "reasoning": "Teyo, Diamondblade Mage wheeled; 'Nice late'.",
+   "considered": {},
+   "plan": "Green-white.",
+   "quotes": [
+    "Nice late."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 13,
+   "time": "19:31-19:44",
+   "pack_cards": [
+    "Theorix Metamage",
+    "Meticulous Commons"
+   ],
+   "taken": "Meticulous Commons",
+   "reasoning": "Meticulous Commons over Theorix Metamage; no comment.",
+   "considered": {},
+   "plan": "Green-white.",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 14,
+   "time": "19:44-19:58",
+   "pack_cards": [
+    "Cast Away Doubt"
+   ],
+   "taken": "Cast Away Doubt",
+   "reasoning": "Last card, Cast Away Doubt, auto-selected.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 1,
+   "time": "19:58-20:36",
+   "pack_cards": [
+    "Liliana the Faultless",
+    "Jace's Machinations",
+    "Liliana the Repentant",
+    "Fulminous Forte",
+    "Pia, Aether Ascetic",
+    "Fatehold Charm",
+    "Primal Witchstalker",
+    "Surgical Precision",
+    "Unsummon",
+    "Solve for Disappointment",
+    "Heartstring Puller",
+    "Budding Insurgent",
+    "Medic's Kitesail",
+    "Mountain"
+   ],
+   "taken": "Liliana the Faultless",
+   "reasoning": "Liliana the Faultless (white one-mana 1/1 that gains life and protects another creature) over Liliana the Repentant: the guest likes both, takes the white one and is happy to stay on the white path; they may still open good black cards. Surgical Precision, Primal Witchstalker and a land are also in the pack; Nicolai guesses white drafters at the table took the white cards from the first pack.",
+   "considered": {
+    "Liliana the Repentant": "likes both",
+    "Surgical Precision": "in the pack"
+   },
+   "plan": "Green-white, black splash possible.",
+   "quotes": [
+    "I like both these Lilas. I think I would take the white one here."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 2,
+   "time": "20:36-21:21",
+   "pack_cards": [
+    "Rise of the Deathbringer",
+    "Koth of the Homestead",
+    "Flourishing Grapple",
+    "Way of the Wildspeaker",
+    "Hexhaven Dueling Arena",
+    "Predictive Preparations",
+    "Unflinching Hortimancer",
+    "Semester Foreseer",
+    "Apex Witchstalker",
+    "Skilled Battlecarver",
+    "Tethermage's Advantage",
+    "Wrecking Gecko",
+    "Mountain"
+   ],
+   "taken": "Koth of the Homestead",
+   "reasoning": "Koth of the Homestead over Wrecking Gecko and Flourishing Grapple: 'let's take Koth and get the burn white'; Nicolai likes the rare too. Now they have more life-gain cards.",
+   "considered": {
+    "Flourishing Grapple": "sideboard-type card, wheels",
+    "Wrecking Gecko": "sideboard-type card"
+   },
+   "plan": "Green-white.",
+   "quotes": [
+    "Koth has been okay. I also like the rare, but let's take Koth."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 3,
+   "time": "21:21-22:08",
+   "pack_cards": [
+    "Pia, Determined Rebuilder",
+    "Violent Echoes",
+    "Restore with Empathy",
+    "Twisted Fates",
+    "Traxos, Scourge Eternal",
+    "Rank Rat",
+    "Awaken the Inferno",
+    "Skilled Battlecarver",
+    "Compel Brutality",
+    "Tethermage's Advantage",
+    "Fatehold Chronologist",
+    "Vigorbloom Annex"
+   ],
+   "taken": "Twisted Fates",
+   "reasoning": "Twisted Fates over Restore with Empathy and Pia, Determined Rebuilder: the guest is a huge fan of it, they are low on removal and have a graveyard theme and black fixing (land) to cast it.",
+   "considered": {
+    "Restore with Empathy": "graveyard stuff, life gain",
+    "Pia, Determined Rebuilder": "in the pack"
+   },
+   "plan": "Green-white splash black.",
+   "quotes": [
+    "Huge fan of Twisted Fates and huge fan of it here where we're a little bit low on removal."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 4,
+   "time": "22:08-22:53",
+   "pack_cards": [
+    "Way of the Mentor",
+    "Yargle, Goliath of Otaria",
+    "Yargle, Glutton of Urborg",
+    "Predictive Preparations",
+    "Unflinching Hortimancer",
+    "Icy Reception",
+    "Screeching Soulbreaker",
+    "Tether Technician",
+    "Something Worth Saving",
+    "Whiplash Wordsmith",
+    "Forest"
+   ],
+   "taken": "Unflinching Hortimancer",
+   "reasoning": "Unflinching Hortimancer (two-mana 2/1) over Something Worth Saving: in a deck not super graveyard focused they only want one SWS; Hortimancer gives more life gain and can win games with Liliana.",
+   "considered": {
+    "Something Worth Saving": "only one wanted; two is the sweet spot at best"
+   },
+   "plan": "Green-white.",
+   "quotes": [
+    "In a deck like this where we're not super graveyard focused, I only want to play one. I think we take Hortimancer though."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 5,
+   "time": "22:53-23:23",
+   "pack_cards": [
+    "Samut, Hazoret's Champion",
+    "Overgrown Farmland",
+    "Way of the Healer",
+    "Bloombrute",
+    "Theoretical Necromancer",
+    "Hallway Heckler",
+    "Wrath of the Bloodmane",
+    "Emergency Phytomedic",
+    "Tam's Resistance",
+    "Island"
+   ],
+   "taken": "Way of the Healer",
+   "reasoning": "Way of the Healer over the green-white gold card Bloombrute: the deck is not doing the life-gain thing, and Healer helps them go wide.",
+   "considered": {
+    "Bloombrute": "green-white gold card, not for this deck"
+   },
+   "plan": "Green-white go-wide.",
+   "quotes": [
+    "I think way of the healer is great. This is a perfect example of what is your deck doing."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 6,
+   "time": "23:23-23:54",
+   "pack_cards": [
+    "Tenured Tethermage",
+    "Koth, the Geomancer",
+    "Flourishing Grapple",
+    "Titanbones, Towering Heart",
+    "Paradox Shaper",
+    "Unflinching Hortimancer",
+    "Wrecking Gecko",
+    "Charge the Sanctum",
+    "Vigorbloom Annex"
+   ],
+   "taken": null,
+   "reasoning": "Taken card unknown: the pack held Wrecking Gecko, Flourishing Grapple, Tenured Tethermage, Koth, Paradox Shaper and Vigorbloom Annex. The guest says it is close between the land and the sideboard card ('I take these sideboard cards pretty highly when I'm drafting best of three'), and picks the sideboard card (a huge upgrade over a game-one card); the card taken is not shown.",
+   "considered": {
+    "Wrecking Gecko": "sideboard-type card",
+    "Flourishing Grapple": "sideboard-type card",
+    "Vigorbloom Annex": "the land"
+   },
+   "plan": "Green-white.",
+   "quotes": [
+    "I take these sideboard cards pretty highly when I'm drafting best of three. So I would be on the sideboard card."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 7,
+   "time": "23:54-24:23",
+   "pack_cards": [
+    "Mabel, Bitter Recluse",
+    "Prudent Fateseer",
+    "Stingerquill Charm",
+    "Mabel, Valley Hero",
+    "Graft Surgeon",
+    "Undulating Witness",
+    "Screeching Soulbreaker",
+    "Swamp"
+   ],
+   "taken": "Prudent Fateseer",
+   "reasoning": "Prudent Fateseer again: 'that's great, nice with the plan'; Mabel is not as good as Mabel, Valley Hero.",
+   "considered": {
+    "Mabel, Bitter Recluse": "has not been that good"
+   },
+   "plan": "Green-white.",
+   "quotes": [
+    "Yep. I think that's great."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 8,
+   "time": "24:23-24:43",
+   "pack_cards": [
+    "Precise Redaction",
+    "Twisted Fates",
+    "Unflinching Hortimancer",
+    "Apex Witchstalker",
+    "Skilled Battlecarver",
+    "Fatehold Chronologist",
+    "Fatehold Annex"
+   ],
+   "taken": "Twisted Fates",
+   "reasoning": "Twisted Fates, second copy: with the Swamp, a dual land, the Aspirant and the Cultivator they have about five black sources for two cards.",
+   "considered": {
+    "Precise Redaction": "in the pack"
+   },
+   "plan": "Green-white splash black.",
+   "quotes": [
+    "we have four sources of fixing if you count the swamp we're going to play to find with the adept."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 9,
+   "time": "24:43-24:55",
+   "pack_cards": [
+    "Pia, Aether Ascetic",
+    "Primal Witchstalker",
+    "Heartstring Puller",
+    "Budding Insurgent",
+    "Medic's Kitesail",
+    "Mountain"
+   ],
+   "taken": "Pia, Aether Ascetic",
+   "reasoning": "Pia, Aether Ascetic over Primal Witchstalker (which wheeled) and Heartstring Puller: they have two Ways of the Healer, enough enchantments for Pia to return one and for Memory Trap.",
+   "considered": {
+    "Primal Witchstalker": "wheeled",
+    "Wrecking Gecko": "seen at the next pick, passed for going smaller"
+   },
+   "plan": "Green-white.",
+   "quotes": [
+    "when you have exactly this split, I would take Pia."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 10,
+   "time": "24:55-25:08",
+   "pack_cards": [
+    "Flourishing Grapple",
+    "Predictive Preparations",
+    "Tethermage's Advantage",
+    "Wrecking Gecko",
+    "Mountain"
+   ],
+   "taken": null,
+   "reasoning": "Taken card unknown (pack: Flourishing Grapple, Predictive Preparations, Tethermage's Advantage, Wrecking Gecko, Mountain). He says the sideboard card came back and Gecko has been better than he thought but they are going a little smaller than that.",
+   "considered": {
+    "Wrecking Gecko": "guest: better than expected, but too big for them"
+   },
+   "plan": "Green-white.",
+   "quotes": [
+    "I think Gecko has been better than I thought it would be, but I feel like we're just going a little smaller than that."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 11,
+   "time": "25:08-25:21",
+   "pack_cards": [
+    "Restore with Empathy",
+    "Rank Rat",
+    "Awaken the Inferno",
+    "Skilled Battlecarver"
+   ],
+   "taken": "Restore with Empathy",
+   "reasoning": "Restore with Empathy from the pack of Awaken the Inferno and Skilled Battlecarver; they would play it only in the graveyard deck, so it is a sideboard-level pick.",
+   "considered": {
+    "Awaken the Inferno": "in the pack"
+   },
+   "plan": "Green-white.",
+   "quotes": [
+    "If we were in the graveyard deck, I would play it, but not for this deck so much."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 12,
+   "time": "25:21-25:29",
+   "pack_cards": [
+    "unreadable (hidden)",
+    "unreadable (hidden)",
+    "unreadable (hidden)"
+   ],
+   "taken": null,
+   "reasoning": "Taken card unknown: the three cards left from the pick-4 pack were never readable; the pick is not shown.",
+   "considered": {},
+   "plan": "Green-white.",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 13,
+   "time": "25:29-25:37",
+   "pack_cards": [
+    "Overgrown Farmland",
+    "unreadable (hidden)"
+   ],
+   "taken": "Overgrown Farmland",
+   "reasoning": "Overgrown Farmland, the rare land with two cards in the pack: 'rare land with two cards in the pack is huge pickup for us'.",
+   "considered": {},
+   "plan": "Green-white.",
+   "quotes": [
+    "That's a nice pickup. Rare land with two cards in the pack."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 14,
+   "time": "25:37-25:45",
+   "pack_cards": [
+    "Titanbones, Towering Heart"
+   ],
+   "taken": "Titanbones, Towering Heart",
+   "reasoning": "Last card, Titanbones, Towering Heart, auto-selected; Nicolai tells how an opponent once discarded it to survive.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  }
+ ]
+}

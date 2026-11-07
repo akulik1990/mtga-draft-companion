@@ -1,0 +1,612 @@
+{
+ "video": "uoyPQJ0NxO8",
+ "player": "Alex Nikolic (Limited Level-Ups; Chord_O_Calls)",
+ "set": "FRA",
+ "source": "YouTube original-caption transcript 0:00-13:47 (tools/video_draft.py transcript uoyPQJ0NxO8 --start 0 --end 1270 was read to 21:10 by mistake; nothing after 13:47 is used, and the game starts from about 13:50), card names corrected against data/Sets/FRA_PremierDraft_All_Data.json. A co-host speaks too; lines from him are marked. 'type' marks each idea as claim, heuristic or one-off pick; 'repeats' lists earlier ideas it restates; 'related' lists same card or topic with a different claim.",
+ "ideas": [
+  {
+   "id": "uoy-01",
+   "time": 5,
+   "phase": "draft",
+   "claim": "Samut, Hazoret's Champion is a first-pick-level card for aggro: team haste; he takes it over No Admittance, Surveillance Phantasm and Traxos.",
+   "quote": "I love Samut.",
+   "cards": [
+    "Samut, Hazoret's Champion",
+    "No Admittance",
+    "Surveillance Phantasm"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR and ALSA of Samut, within-deck value per game in hand, aggro shells against the rest; second copy value (see the legend-duplicates idea).",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "n6s-08"
+   ]
+  },
+  {
+   "id": "uoy-02",
+   "time": 7,
+   "phase": "draft",
+   "claim": "Aggressive decks have been good lately and this pack is a chance to draft one (the video is titled \"finally aggro's time to shine\").",
+   "quote": "I have been liking drafting the aggressive decks lately. So, it seems like a good chance to do that.",
+   "cards": [],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "Win rate of low-curve decks (average mana value at most 2.5, 17 lands) against the format, by skill group; archetype card values for the aggro shell.",
+   "type": "claim",
+   "repeats": [
+    "5aM-21"
+   ],
+   "related": []
+  },
+  {
+   "id": "uoy-03",
+   "time": 46,
+   "phase": "draft",
+   "claim": "Medic's Kitesail is a near auto-take for aggro decks (\"if there was a kite sail here, I would just take it\") and scarce enough that one is wanted.",
+   "quote": "If there was a kite sail here, I would just take it.",
+   "cards": [
+    "Medic's Kitesail"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR and ALSA of Medic's Kitesail by archetype (red aggro, white weenie) and by number of copies in the deck.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "uoy-04",
+   "time": 60,
+   "phase": "draft",
+   "claim": "Dark Matter Manipulator is taken over Surveillance Phantasm; the Phantasm and Samut are not a combo on curve (the Phantasm has defender until surveil).",
+   "quote": "And phantasm I guess and Samut aren't exactly a combo. At least not on curve most times.",
+   "cards": [
+    "Dark Matter Manipulator",
+    "Surveillance Phantasm",
+    "Samut, Hazoret's Champion"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Dark Matter Manipulator and Surveillance Phantasm in red decks.",
+   "type": "one-off pick",
+   "repeats": [],
+   "related": [
+    "mqZ-59"
+   ]
+  },
+  {
+   "id": "uoy-05",
+   "time": 80,
+   "phase": "draft",
+   "claim": "No Admittance over Medic's Kitesail and Grim Repriser in P1p3: removal is hard to pass.",
+   "quote": "I do still think I'd take no admittance cuz uh hard to pass up a no admittance.",
+   "cards": [
+    "No Admittance",
+    "Medic's Kitesail",
+    "Grim Repriser"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "ALSA and GIH WR of No Admittance against Medic's Kitesail; v2's pick for this pack.",
+   "type": "one-off pick",
+   "repeats": [],
+   "related": [
+    "5aM-01"
+   ]
+  },
+  {
+   "id": "uoy-06",
+   "time": 100,
+   "phase": "draft",
+   "claim": "Multiple Medic's Kitesails are bad (\"drawing multiples is pretty bad\"); he would play two only if the 23rd card is weak. The co-host disagrees (three are fine, draw two). He then takes a second one at P3p3 and plays two.",
+   "quote": "I don't really want multiple kite sails. I would play two if maybe the 23rd, 24th playable in my deck was kind of whatever, but drawing multiples is pretty bad.",
+   "cards": [
+    "Medic's Kitesail"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "builder",
+   "test_idea": "Win rate of decks with 1, 2 and 3 Medic's Kitesails (within-deck, skill-controlled); marginal value of a second copy.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "uoy-07",
+   "time": 121,
+   "phase": "draft",
+   "claim": "In these aggro decks a good two-drop is taken over other cards, because there are very few two-drops you want (Skilled Battlecarver over Medic's Kitesail).",
+   "quote": "If you see a two drop, you should probably take it because there aren't very very many that you want.",
+   "cards": [
+    "Skilled Battlecarver",
+    "Medic's Kitesail"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Curve-need term: GIH WR of two-drops by how many two-drops the deck already holds; two-drop count in winning aggro decks.",
+   "type": "heuristic",
+   "repeats": [
+    "5aM-09",
+    "n6s-02"
+   ],
+   "related": [
+    "994-08",
+    "mqZ-33"
+   ]
+  },
+  {
+   "id": "uoy-08",
+   "time": 161,
+   "phase": "draft",
+   "claim": "Ferocity of the Hunt is taken over Tether Technician because it plays well with Skilled Battlecarver; by P1p9 he does not love it and it ends in the sideboard.",
+   "quote": "Take ferocity maybe. Like plays well with Battle Carver.",
+   "cards": [
+    "Ferocity of the Hunt",
+    "Tether Technician",
+    "Skilled Battlecarver"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Ferocity of the Hunt (all decks, aggro decks, with first strikers); Tether Technician against it.",
+   "type": "one-off pick",
+   "repeats": [],
+   "related": [
+    "994-19",
+    "re7-15",
+    "mqZ-22"
+   ]
+  },
+  {
+   "id": "uoy-09",
+   "time": 163,
+   "phase": "draft",
+   "claim": "Marwyn, the Clearcutter is a very good one-drop for these decks; he takes two and plays both.",
+   "quote": "Ooh, one drop. Hell yeah. Yeah, Marwyn's really nice in these decks.",
+   "cards": [
+    "Marwyn, the Clearcutter"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Marwyn, the Clearcutter in red decks, and of a second copy; one-drop value in aggro.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "uoy-10",
+   "time": 184,
+   "phase": "draft",
+   "claim": "Red-white aggro looks natural but white is the colour that pairs least with the red cards: most white cards do not synergise with them.",
+   "quote": "Kind of strangely enough white is the colour I least pair with my red cards. Like you would think that red white aggro is good. But like a lot of the white cards don't synergize very well with the red cards.",
+   "cards": [
+    "Mabel, Valley Hero",
+    "Repurposed Enforcer"
+   ],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "Pair win rates for RW, RB, RG and RU aggro decks; within-deck synergy of red cards with white cards.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "uoy-11",
+   "time": 206,
+   "phase": "draft",
+   "claim": "Aggro decks have to trust that the pieces arrive: most drafters take the generically strong cards, and the cards that go in aggro decks are not the generically strong ones, so they come late.",
+   "quote": "You kind of have to put some stock in the fact that you're just going to see the cards you want, because most people draft this format just taking the generically strong cards ... the cards that go in these decks aren't the generically strong ones.",
+   "cards": [
+    "Medic's Kitesail",
+    "Tether Technician",
+    "Hallway Heckler",
+    "Shatterwing Pegasus"
+   ],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "ALSA and wheel rate (picks 9 to 14) of aggro-shell cards against generically strong cards; his draft: Kitesail, Technician, Pegasus and Heckler all wheel.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "uoy-12",
+   "time": 240,
+   "phase": "draft",
+   "claim": "Traxos, Scourge Eternal is good in aggro, especially with Samut (haste), and is colourless: taken over Memory Trap so he does not have to play white.",
+   "quote": "I'm actually a fan of Traxos in these decks especially with Samut.",
+   "cards": [
+    "Traxos, Scourge Eternal",
+    "Samut, Hazoret's Champion",
+    "Memory Trap"
+   ],
+   "kind": "synergy",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Traxos, Scourge Eternal in decks with and without Samut; colourless card value early in pack.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "994-05"
+   ]
+  },
+  {
+   "id": "uoy-13",
+   "time": 268,
+   "phase": "draft",
+   "claim": "Do not take Winter speculatively: Winter is a card to take when the deck exists; Blazing Crescendo is taken over Winter, Team Player.",
+   "quote": "I think Winter's the kind of card you want to take when you already have the deck for it, not when you're like, oh, I take it speculatively.",
+   "cards": [
+    "Blazing Crescendo",
+    "Winter, Team Player"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Winter, Team Player against Blazing Crescendo; Winter's win rate by creature count and convoke support.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "n6s-06",
+    "994-25"
+   ]
+  },
+  {
+   "id": "uoy-14",
+   "time": 293,
+   "phase": "draft",
+   "claim": "These decks are ideally mono-red, or mono-red splashing only really, really good cards of other colours (Extended Absence, Overwrite); mono-colour means no mana problems.",
+   "quote": "Ideally with these decks, I think you're just mono-red or like mono-red splash some really, really good cards of the other colors.",
+   "cards": [
+    "Extended Absence",
+    "Overwrite the Multiverse"
+   ],
+   "kind": "splash / mana",
+   "engine_area": "builder",
+   "test_idea": "Win rate of mono-coloured, two-colour and splash decks among low-curve lists; his final deck is red-black with Room of Refuge.",
+   "type": "heuristic",
+   "repeats": [
+    "mqZ-30",
+    "CWs-33"
+   ],
+   "related": []
+  },
+  {
+   "id": "uoy-15",
+   "time": 332,
+   "phase": "draft",
+   "claim": "Gideon the Oathless is taken over the slightly better Repurposed Enforcer because he will not play white; the white cards go to the sideboard.",
+   "quote": "Repurposed Enforcer is a slightly better card, but Gideon's also really good. ... I think I'm going to put these white cards in the sideboard.",
+   "cards": [
+    "Gideon the Oathless",
+    "Repurposed Enforcer",
+    "Dark Matter Manipulator"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Gideon the Oathless against Repurposed Enforcer; the colour-commitment term for a gold card in P2p1.",
+   "type": "one-off pick",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "uoy-16",
+   "time": 360,
+   "phase": "draft",
+   "claim": "Overwrite the Multiverse is taken over Multiply by Zero even in an aggro deck: \"no matter how aggro my deck is\". The sweeper line is the co-host's; he comes around to it.",
+   "quote": "I'm taking Overwrite no matter how aggro my deck is.",
+   "cards": [
+    "Overwrite the Multiverse",
+    "Multiply by Zero"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Overwrite the Multiverse in low-curve decks against Multiply by Zero; sweeper value in aggro.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "CWs-21"
+   ]
+  },
+  {
+   "id": "uoy-17",
+   "time": 423,
+   "phase": "draft",
+   "claim": "Room of Refuge over Gallia (weak but playable) and Warrior's Blades: a flexible fixing land over a marginal playable; he plays the Room, and regrets passing Warrior's Blades.",
+   "quote": "I think I just take a Room of Refuge.",
+   "cards": [
+    "Room of Refuge",
+    "Gallia, the Merrymaker",
+    "Warrior's Blades"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Warrior's Blades and Gallia in red decks; value of Room of Refuge in two-colour decks.",
+   "type": "heuristic",
+   "repeats": [
+    "994-11",
+    "CWs-19"
+   ],
+   "related": []
+  },
+  {
+   "id": "uoy-18",
+   "time": 430,
+   "phase": "draft",
+   "claim": "Mabel, Valley Hero is a mediocre card taken because few good three-drops compete; this seat would have made a fine red-white draft and he considers a weird pivot, but ends up with two Mabels in the sideboard.",
+   "quote": "Not that Mabel's amazing but there's not a ton of awesome three drops, so she doesn't have a lot of competition.",
+   "cards": [
+    "Mabel, Valley Hero",
+    "Warrior's Blades"
+   ],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Mabel, Valley Hero; red-white aggro win rate; whether the engine would have switched lanes here.",
+   "type": "one-off pick",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "uoy-19",
+   "time": 470,
+   "phase": "draft",
+   "claim": "A second Samut over No Admittance was a mistake he returns to twice: with Overwrite already taken and the deck low on interaction, the removal spell should have been the pick.",
+   "quote": "I am regretting the No Admittance back, by the way, or pick. I wish I took that, because we were pretty low on interaction.",
+   "cards": [
+    "Samut, Hazoret's Champion",
+    "No Admittance",
+    "Pompous Battlemage"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of second Samut against No Admittance in red decks; removal count term in P2p3.",
+   "type": "one-off pick",
+   "repeats": [],
+   "related": [
+    "5aM-16",
+    "994-02",
+    "re7-21"
+   ]
+  },
+  {
+   "id": "uoy-20",
+   "time": 489,
+   "phase": "draft",
+   "claim": "Legendary duplicates: two copies is usually fine; drawing the legend more often and in the opening hand outweighs the legend rule, and good legends rarely stick around anyway.",
+   "quote": "My baseline for legends is like two is usually fine ... the benefits of drawing it more often, drawing it in your opening hand more often. I think those outweigh the downsides.",
+   "cards": [
+    "Samut, Hazoret's Champion",
+    "Marwyn, the Clearcutter"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Win rate of decks with two copies of a legendary creature against one; duplicate penalty in the engine for legends.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "uoy-21",
+   "time": 520,
+   "phase": "draft",
+   "claim": "The most open colour pair is not necessarily the best deck: red-white was the most open pair in this seat, but he does not follow it.",
+   "quote": "Drafting the most open color pair isn't always going to lead you to the best deck.",
+   "cards": [],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "Weight of openness against card quality in lane choice; pair win rates against pair openness (ALSA, wheel rate).",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "mqZ-23",
+    "CWs-15",
+    "5aM-03"
+   ]
+  },
+  {
+   "id": "uoy-22",
+   "time": 573,
+   "phase": "draft",
+   "claim": "Stay in a colour you have reasons to draft unless it is cut completely; no colour is \"mega open\", so do not over-read openness.",
+   "quote": "It's fine to draft the color as long as it's not getting completely cut. ... you could argue it maybe wasn't one of the more open colors, and I still think it is.",
+   "cards": [],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "How much lane flips cost; commitment after N cards of a colour against the openness signal.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "CWs-15",
+    "mqZ-23"
+   ]
+  },
+  {
+   "id": "uoy-23",
+   "time": 593,
+   "phase": "draft",
+   "claim": "Stingerquill Charm is taken over Face Yourself: a cool card, but he needs removal and the Charm is the better card.",
+   "quote": "Face yourself is cool, but I need removal. It's also just better, I think.",
+   "cards": [
+    "Stingerquill Charm",
+    "Face Yourself"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Stingerquill Charm against Face Yourself; removal-count term.",
+   "type": "one-off pick",
+   "repeats": [],
+   "related": [
+    "5aM-16",
+    "re7-21",
+    "994-02"
+   ]
+  },
+  {
+   "id": "uoy-24",
+   "time": 608,
+   "phase": "draft",
+   "claim": "Silence the Echo is pretty bad.",
+   "quote": "There's also silence, but Silence is pretty bad.",
+   "cards": [
+    "Silence the Echo"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Silence the Echo in black decks.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "CWs-11",
+    "re7-09"
+   ]
+  },
+  {
+   "id": "uoy-25",
+   "time": 618,
+   "phase": "draft",
+   "claim": "Extended Absence over Twinned Vision: removal over card draw when the deck is short of removal.",
+   "quote": "I would love this Twinned Vision, but got to take Absence.",
+   "cards": [
+    "Extended Absence",
+    "Twinned Vision"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Extended Absence against Twinned Vision; removal-count term in pack 3.",
+   "type": "one-off pick",
+   "repeats": [],
+   "related": [
+    "5aM-16",
+    "re7-10",
+    "994-15"
+   ]
+  },
+  {
+   "id": "uoy-26",
+   "time": 659,
+   "phase": "draft",
+   "claim": "Mabel, Bitter Recluse is taken as a black card he hopes not to play: nothing else in the pack is for the deck.",
+   "quote": "All right, I guess we're taking Black Mabel and hopefully not playing her.",
+   "cards": [
+    "Mabel, Bitter Recluse",
+    "Warrior's Blades"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "ALSA of Mabel, Bitter Recluse; what the engine prefers when nothing in the pack is on plan.",
+   "type": "one-off pick",
+   "repeats": [],
+   "related": [
+    "CWs-07"
+   ]
+  },
+  {
+   "id": "uoy-27",
+   "time": 667,
+   "phase": "draft",
+   "claim": "Hate cards (uncommon sideboard cards such as Refute Destiny and Terminal Criticism) are not main-deckable: too many matchups where they are dead, and a dead card is like a mulligan.",
+   "quote": "Are any of them main deckable? No. There's just going to be way too many matchups where they're dead. And a dead card is terrible.",
+   "cards": [
+    "Refute Destiny",
+    "Terminal Criticism"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Refute Destiny and Terminal Criticism in decks that main-deck them; pick value of such cards in a sideboard-less (best-of-one) model.",
+   "type": "claim",
+   "repeats": [
+    "CWs-25"
+   ],
+   "related": [
+    "994-28"
+   ]
+  },
+  {
+   "id": "uoy-28",
+   "time": 711,
+   "phase": "draft",
+   "claim": "A really bad 23rd card is worse than a land: \"what if you just put a land in that 23rd card slot\", it is probably better a lot of the time.",
+   "quote": "What if you just put a land in that 23rd card slot? Yeah, that's also probably going to be better a lot of the time.",
+   "cards": [],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Win rate of 17-land against 18-land builds when the 23rd card is below replacement; builder's land count rule.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "5aM-22",
+    "5aM-26"
+   ]
+  },
+  {
+   "id": "uoy-29",
+   "time": 717,
+   "phase": "draft",
+   "claim": "The co-host reads 17Lands: Eardrum Rattler is below 50% games-in-hand win rate on 17 lands. (The co-host's data statement, which he says \"your\" Rattler.)",
+   "quote": "Fun fact, your Eardrum Rattler has now dipped below the 50% line on 17 lands. Very impressive. Not many cards have that honor.",
+   "cards": [
+    "Eardrum Rattler"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "none",
+   "test_idea": "GIH WR of Eardrum Rattler in the dataset; check it is below 50%.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "uoy-30",
+   "time": 735,
+   "phase": "build",
+   "claim": "His rating of the finished aggro deck is 6 to 6.5 out of 10: it needs more removal and a few more quality cards; he again names No Admittance as the regret.",
+   "quote": "I think the deck ended up like a little bit not great. It's like a six out of 10. ... I would like a little more removal. ... Six might be a little bit harsh, 6.5.",
+   "cards": [
+    "No Admittance"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "v2 deck rating of his 40 (session.deck_win_rate) against his own grade; compare with the builder's deck from the same pool.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "uoy-31",
+   "time": 771,
+   "phase": "build",
+   "claim": "The last cut is between a second Crescendo, Soulbreaker and Tether Technician: with little removal he wants ways to keep creatures attacking, Tether Technician stays, and one Blazing Crescendo goes.",
+   "quote": "With the relative lack of removal, I kind of want just like ways to keep having my creatures attack. ... Maybe just one Crescendo.",
+   "cards": [
+    "Blazing Crescendo",
+    "Screeching Soulbreaker",
+    "Tether Technician"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Second-copy value of Blazing Crescendo; v2 cut choice for 41 to 40 from this pool.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "CWs-41",
+    "CWs-45"
+   ]
+  },
+  {
+   "id": "uoy-32",
+   "time": 810,
+   "phase": "build",
+   "claim": "Do not cut lands in aggro decks: he repeats the logic that an aggro deck keeps 17 lands, whatever chat says.",
+   "quote": "I'm happy to repeat my logic of why you shouldn't be cutting lands in aggro decks as many times as it takes.",
+   "cards": [],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Win rate by land count (16, 17, 18) in low-curve decks; builder's land count for aggro lists.",
+   "type": "claim",
+   "repeats": [
+    "5aM-22",
+    "5aM-25"
+   ],
+   "related": [
+    "5aM-26"
+   ]
+  }
+ ]
+}

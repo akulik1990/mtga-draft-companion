@@ -1,0 +1,61 @@
+{
+ "id": "VTU-DlQTMXA",
+ "time": "15:45-18:46 (build; 40/40 at 1100 and 1126 s, cut-off 1130 s)",
+ "main": {
+  "Eardrum Rattler": 1,
+  "No Admittance": 1,
+  "Skilled Battlecarver": 1,
+  "Way of the Pyromancer": 2,
+  "Twinned Vision": 1,
+  "Grim Repriser": 1,
+  "Konstrari Improviser": 1,
+  "Theoretical Necromancer": 1,
+  "Pia, Determined Rebuilder": 1,
+  "Theorix Metamage": 1,
+  "Clash of Elements": 1,
+  "Plan for All Outcomes": 1,
+  "Extended Absence": 1,
+  "Heartstring Puller": 1,
+  "Violent Echoes": 1,
+  "Saheeli, Jewel of Avishkar": 1,
+  "Silence the Echo": 1,
+  "Garruk, Veiled Butcher": 1,
+  "Awaken the Inferno": 2,
+  "Overwrite the Multiverse": 1,
+  "Ajani Unrelenting": 1
+ },
+ "lands": {
+  "Island": 3,
+  "Swamp": 4,
+  "Mountain": 5,
+  "Innovative Commons": 1,
+  "Haunted Ridge": 1,
+  "Stingerquill Annex": 2,
+  "Room of Refuge": 1
+ },
+ "sideboard": {
+  "Your Fate Ends Here": 1,
+  "Proctor of Potential": 1,
+  "Unsummon": 2,
+  "Protege's Awakening": 1,
+  "Traxos, Academy Guardian": 1,
+  "Tether Technician": 1,
+  "Dedicated Commons": 1,
+  "Formidable Commons": 1,
+  "Sphinx's Approach": 1,
+  "Eardrum Rattler": 1
+ },
+ "spells": 23,
+ "land_count": 17,
+ "landcyclers_in_main": [
+  "Awaken the Inferno x2"
+ ],
+ "colours": "RB base with a blue splash (Plan for All Outcomes, Saheeli, Clash of Elements, Theorix Metamage): Mountain x5, Swamp x4, Island x3, Innovative Commons (blue-red), Haunted Ridge, Stingerquill Annex x2, Room of Refuge.",
+ "notes": [
+  "The 1100 s screen is 40/40 with Mountain x4 and Swamp x5 and the 23 spells in a slightly different order; by 1126 s it reads Mountain x5, Swamp x4, with the same 23 spells (Silence the Echo and Garruk moved columns); the 1126 s screen is the one recorded and he is still adjusting, so later changes after the cut-off are not recorded.",
+  "17:07 'we're going to put in Saheeli, Plan for All Outcomes, Clash of Elements and Protege's Awakening. We're going to go a deep blue splash, maybe'; 17:25-17:34 lighter: Protege's Awakening and Tether Technician out, 'we've splashed three blue cards'; 17:37 'we just play one Island'; 17:43-17:57 counts ten red sources, nine black sources and one or two blue sources: 'we probably want a second blue source'.",
+  "18:09 'I don't really want eardrum rattler. Four sources for three cards is not enough.' 18:20 'so many of our red cards are early game'; 18:30 'I think splashing the three blue cards makes the most sense.' 18:35 'we got two black mythics that really shaped the whole thing.'",
+  "The sideboard was never on screen: it is derived from the pool at 782 s (22 deck + 6 sideboard cards) and elimination; Mountain / Swamp / Island are the free basics (the Forest picked at P3p14 is among the unused cards).",
+  "Eardrum Rattler appears twice in the pool (P1p6, P1p11): one in the main, one in the sideboard."
+ ]
+}

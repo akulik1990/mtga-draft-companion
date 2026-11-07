@@ -1,0 +1,975 @@
+{
+ "id": "iGzTA_-eFbw",
+ "url": "https://youtu.be/iGzTA_-eFbw",
+ "title": "This Strategy Actually Works Great in Reality Fracture Draft!!!",
+ "player": "NicolaiBolas",
+ "set": "FRA",
+ "event": "FRA live Arena draft, solo; the Arena pick timer is on and chat is not mentioned; Premier / Quick not named on screen",
+ "dataset": "FRA_PremierDraft_All_Data.json",
+ "recorded": null,
+ "source": "frames read from data/videos/raw/iGzTA_-eFbw (pack title rows and pool counter; layout pool-at-right to P1p6 then pack on top; pick start times from OCR (tesseract) of the Pack|Pick banner; the 40/40 deck screen at 1151 s with the 16-card sideboard row on screen); takes from the transcript, the pool and the deck screen; hover popups hid some cards; transcript from YouTube auto captions, card names corrected; cut-off 1155 s",
+ "colour_path": [
+  {
+   "after": "P1p1",
+   "main": "open",
+   "quote": "I think Last Gasp is the best of the cards."
+  },
+  {
+   "after": "P1p4",
+   "main": "blue, green splash",
+   "quote": "it opens me up to just playing like a blue any color deck, and then splashing the green very easily."
+  },
+  {
+   "after": "P1p7",
+   "main": "blue-red open",
+   "quote": "Bang, we're getting all the blue red cards now."
+  },
+  {
+   "after": "P2p4",
+   "main": "blue-red (no double-green splash)",
+   "quote": "Let's just not go for the double green splash."
+  },
+  {
+   "after": "deck",
+   "main": "blue-red, no splash",
+   "quote": "we're just playing a blue red deck at this point."
+  }
+ ],
+ "picks": [
+  {
+   "pack": 1,
+   "pick": 1,
+   "time": "0:12-1:14",
+   "pack_cards": [
+    "Codie, Ravenous Codex",
+    "Yargle, Goliath of Otaria",
+    "Yargle, Glutton of Urborg",
+    "Command the Stage",
+    "Koth, the Geomancer",
+    "Restore with Empathy",
+    "Ruric Thar, Magecrusher",
+    "Fateshaper Aspirant",
+    "Last Gasp",
+    "Artifist Acumen",
+    "Something Worth Saving",
+    "Fatehold Chronologist",
+    "Keeper of the Quiet Hour",
+    "Meticulous Commons"
+   ],
+   "taken": "Fatehold Chronologist",
+   "reasoning": "Fatehold Chronologist over Last Gasp and Keeper: the rare and the pair cards are unplayable; Last Gasp is the best card but he has wanted reps with Chronologist, a middle ground between power and flexibility (hybrid); Keeper is the weakest but colourless.",
+   "considered": {
+    "Last Gasp": "the best of the cards",
+    "Keeper of the Quiet Hour": "weakest of three, guaranteed to make the cut"
+   },
+   "plan": "Open.",
+   "quotes": [
+    "I think Last Gasp is the best of the cards. ... we'll take that one."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 2,
+   "time": "1:14-2:18",
+   "pack_cards": [
+    "Rise of the Deathbringer",
+    "Fblthp, Impossibly Lost",
+    "Fblthp, Knows the Way",
+    "Heartwood Crafter",
+    "Unflinching Hortimancer",
+    "Divining Duelist",
+    "Rampart Hunter",
+    "Artifist Acumen",
+    "Wrath of the Bloodmane",
+    "Inspired Tethermage",
+    "Blessed Ghoul",
+    "Tam's Resistance",
+    "Forest"
+   ],
+   "taken": "Fblthp, Impossibly Lost",
+   "reasoning": "Fblthp, Impossibly Lost: really good with Chronologist and cheap card draw; he rates Fblthp, Knows the Way (double green) and Hortimancer; Rise of the Deathbringer is good but the minus three, minus three kills few relevant creatures if the format is slow.",
+   "considered": {
+    "Rise of the Deathbringer": "pretty good, would be better in a faster format",
+    "Fblthp, Knows the Way": "really good in any green deck, helps splashing",
+    "Heartwood Crafter": "Hardwood crafter versus Wrath considered"
+   },
+   "plan": "Open.",
+   "quotes": [
+    "Let's just go with this Fblthp. I've been very impressed by it."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 3,
+   "time": "2:18-3:22",
+   "pack_cards": [
+    "Deserted Beach",
+    "Way of the Necromancer",
+    "Stingerquill Charm",
+    "Mind Meanderer",
+    "Predictive Preparations",
+    "Unsummon",
+    "Screeching Soulbreaker",
+    "Silence the Echo",
+    "Blazing Crescendo",
+    "Greenhouse Propagator",
+    "Medic's Kitesail",
+    "Formidable Commons"
+   ],
+   "taken": "Mind Meanderer",
+   "reasoning": "Mind Meanderer: the best card in the pack, heavy blue and easy to play in blue-green decks, very splashable; the dual land is not helpful; Unsummon is nice.",
+   "considered": {
+    "Unsummon": "nice",
+    "Stingerquill Charm": "far from what he is doing"
+   },
+   "plan": "Blue.",
+   "quotes": [
+    "I think this is the best card, and it's very splashable."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 4,
+   "time": "3:22-4:00",
+   "pack_cards": [
+    "Jiang Yanggu, Alone",
+    "Undulating Witness",
+    "Mountain",
+    "Jiang Yanggu, Never Alone",
+    "Cast Away Doubt",
+    "Titanbones, Towering Heart",
+    "Chandra's Emberling",
+    "Shatterwing Pegasus",
+    "Tether Technician",
+    "Semester Foreseer",
+    "Arcane Amphisbaena"
+   ],
+   "taken": "Undulating Witness",
+   "reasoning": "Undulating Witness over the green cards: more flexible, opens a blue-any-colour deck splashing green easily with a landcycler; he notes landcyclers get taken higher and higher and used to wheel at picks eight and nine.",
+   "considered": {
+    "Jiang Yanggu, Never Alone": "solid, would put him towards blue-green"
+   },
+   "plan": "Blue, green splash.",
+   "quotes": [
+    "I'd rather take Undulating Witness because it's more flexible."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 5,
+   "time": "4:00-4:34",
+   "pack_cards": [
+    "Way of the Deathbringer",
+    "No Admittance",
+    "Saheeli, Jewel of Avishkar",
+    "Something Worth Saving",
+    "Predictive Preparations",
+    "Wrecking Gecko",
+    "Last Gasp",
+    "Fatehold Chronologist",
+    "Void Extrapolator",
+    "Dedicated Commons"
+   ],
+   "taken": "Saheeli, Jewel of Avishkar",
+   "reasoning": "Saheeli, Jewel of Avishkar: wanted to play it for some time, really good with plenty of spells, but eats removal; No Admittance is a very good card, Last Gasp and another Chronologist are in the pack.",
+   "considered": {
+    "No Admittance": "very good card",
+    "Last Gasp": "pick five"
+   },
+   "plan": "Blue-red.",
+   "quotes": [
+    "I kind of want to play the Saheeli though, so let's take that."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 6,
+   "time": "4:34-5:18",
+   "pack_cards": [
+    "Samut, Hazoret's Champion",
+    "Stingerquill Annex",
+    "Edgar, Moonlit Sovereign",
+    "Edgar, Ancient Bloodlord",
+    "Kiora of Salt and Sand",
+    "Hexhaven Dueling Arena",
+    "Rank Rat",
+    "Inspired Tethermage",
+    "Charge the Sanctum"
+   ],
+   "taken": "Samut, Hazoret's Champion",
+   "reasoning": "Samut, Hazoret's Champion over Kiora of Salt and Sand and the land: very strong in a tempo deck (random fliers with haste); Kiora is hard to use.",
+   "considered": {
+    "Kiora of Salt and Sand": "a little hard to use"
+   },
+   "plan": "Blue-red tempo.",
+   "quotes": [
+    "Samut's very strong when you're building like a more tempo deck."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 7,
+   "time": "5:18-5:54",
+   "pack_cards": [
+    "Mabel, Bitter Recluse",
+    "Clash of Elements",
+    "Academic Ascent",
+    "Predictive Preparations",
+    "Sphinx's Approach",
+    "Hallway Heckler",
+    "Tam's Resistance",
+    "Konstrari Annex"
+   ],
+   "taken": "Clash of Elements",
+   "reasoning": "Clash of Elements: 'bang, we're getting all the blue red cards now'; he would second-pick the Annex to help with a Mind Meanderer splash but does not have to try to splash it; Tam's Resistance and Sphinx's Approach are fine in heavy-blue decks.",
+   "considered": {
+    "Konstrari Annex": "would second pick it",
+    "Tam's Resistance": "likes it"
+   },
+   "plan": "Blue-red.",
+   "quotes": [
+    "This is great, really strong pick up."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 8,
+   "time": "5:54-6:18",
+   "pack_cards": [
+    "Traxos, Academy Guardian",
+    "Gallia, Tragic Host",
+    "Terminal Criticism",
+    "Gallia, the Merrymaker",
+    "Sphinx's Approach",
+    "Rank Rat",
+    "Vigorbloom Annex"
+   ],
+   "taken": "Traxos, Academy Guardian",
+   "reasoning": "Traxos, Academy Guardian: really good with the cards he hopes to have in blue-red: play it after an Unsummon and get a three-drop; Gallia is a solid black card.",
+   "considered": {
+    "Gallia, Tragic Host": "solid, but blue-red looks open"
+   },
+   "plan": "Blue-red.",
+   "quotes": [
+    "Beautiful, we get a Traxos."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 9,
+   "time": "6:18-6:48",
+   "pack_cards": [
+    "Codie, Ravenous Codex",
+    "Yargle, Goliath of Otaria",
+    "Yargle, Glutton of Urborg",
+    "Fateshaper Aspirant",
+    "Artifist Acumen",
+    "Something Worth Saving"
+   ],
+   "taken": "Artifist Acumen",
+   "reasoning": "Artifist Acumen: he does not think it is very good (first strike and a card) but, with no Something Worth Saving in his plan, he tries it; with two Acumens and a Blazing Crescendo it works better.",
+   "considered": {
+    "Something Worth Saving": "not playing it"
+   },
+   "plan": "Blue-red.",
+   "quotes": [
+    "Maybe this is the chance to try the acumen, but I just don't think this card's very good."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 10,
+   "time": "6:48-7:16",
+   "pack_cards": [
+    "Rampart Hunter",
+    "Artifist Acumen",
+    "Inspired Tethermage",
+    "Blessed Ghoul",
+    "Forest"
+   ],
+   "taken": "Inspired Tethermage",
+   "reasoning": "Inspired Tethermage (inferred from the sideboard; no spoken comment): a card he is not otherwise interested in.",
+   "considered": {},
+   "plan": "Blue-red.",
+   "quotes": []
+  },
+  {
+   "pack": 1,
+   "pick": 11,
+   "time": "7:16-7:26",
+   "pack_cards": [
+    "Way of the Necromancer",
+    "Predictive Preparations",
+    "Silence the Echo",
+    "Blazing Crescendo"
+   ],
+   "taken": "Blazing Crescendo",
+   "reasoning": "Blazing Crescendo: makes random ground creatures hard to block; he jokes of a legendary Chandra's Emberling deck.",
+   "considered": {},
+   "plan": "Blue-red.",
+   "quotes": [
+    "Blazing crescendo does make like your random ground creatures hard to block."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 12,
+   "time": "7:26-7:36",
+   "pack_cards": [
+    "Cast Away Doubt",
+    "Chandra's Emberling",
+    "Mountain"
+   ],
+   "taken": "Chandra's Emberling",
+   "reasoning": "Chandra's Emberling: he says it is the sort of thing he will wheel (it wheels from pick 12).",
+   "considered": {
+    "Cast Away Doubt": "the other card"
+   },
+   "plan": "Blue-red.",
+   "quotes": [
+    "We will be wheeling the Emberling for sure."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 13,
+   "time": "7:36-7:40",
+   "pack_cards": [
+    "unreadable (hidden)",
+    "unreadable (hidden)"
+   ],
+   "taken": null,
+   "reasoning": "Taken card not identified; both cards were hidden.",
+   "considered": {},
+   "plan": "Blue-red.",
+   "quotes": []
+  },
+  {
+   "pack": 1,
+   "pick": 14,
+   "time": "7:40-7:42",
+   "pack_cards": [
+    "unreadable (hidden)"
+   ],
+   "taken": null,
+   "reasoning": "Last card, never displayed.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 1,
+   "time": "7:42-8:18",
+   "pack_cards": [
+    "Lich's Relic",
+    "Fblthp, Impossibly Lost",
+    "Pia, Determined Rebuilder",
+    "Fblthp, Knows the Way",
+    "Flourishing Grapple",
+    "Eye of Jace",
+    "Graft Surgeon",
+    "Memory Trap",
+    "Apex Witchstalker",
+    "Screeching Soulbreaker",
+    "Chandra's Emberling",
+    "Inspired Tethermage",
+    "Tam's Resistance",
+    "Vigorbloom Annex"
+   ],
+   "taken": "Fblthp, Impossibly Lost",
+   "reasoning": "Fblthp, Impossibly Lost (second): easy card draw for two mana; he rates Pia highly and would see it later; Lich's Relic is really good but not for this deck.",
+   "considered": {
+    "Pia, Determined Rebuilder": "really strong, works well with Saheeli; wheels at pick 9",
+    "Lich's Relic": "really good, deck does not want it"
+   },
+   "plan": "Blue-red.",
+   "quotes": [
+    "I kind of want to take Fblthp, just easy card draw."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 2,
+   "time": "8:18-8:36",
+   "pack_cards": [
+    "Koth of the Homestead",
+    "Mindseeker Oculus",
+    "Koth of the Homestead",
+    "Something Worth Saving",
+    "Yargle, Goliath of Otaria",
+    "Theorix Metamage",
+    "Rewrite Regrets",
+    "Whiplash Wordsmith",
+    "Yargle, Glutton of Urborg",
+    "Transformative Commons",
+    "Clash of Elements",
+    "Blossom-Blessed Angel",
+    "Hexhaven Battalion"
+   ],
+   "taken": "Mindseeker Oculus",
+   "reasoning": "Mindseeker Oculus over Clash of Elements: he does not want to pass Oculus; better pound for pound; casting it on turn three makes the game great.",
+   "considered": {
+    "Clash of Elements": "he would love it, Oculus better"
+   },
+   "plan": "Blue-red.",
+   "quotes": [
+    "I kind of just don't ever want to pass Mindseeker Oculus. It's just so strong."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 3,
+   "time": "8:36-10:06",
+   "pack_cards": [
+    "Proctor of Potential",
+    "Theoretical Necromancer",
+    "Yuriko, Hope from the Shadows",
+    "Fatehold Chronologist",
+    "Mabel, Bitter Recluse",
+    "Keeper of the Quiet Hour",
+    "Stingerquill Charm",
+    "Konstrari Annex",
+    "Mabel, Valley Hero",
+    "Mind Meanderer",
+    "Archive Arbiter",
+    "Blossom-Blessed Angel"
+   ],
+   "taken": "Mind Meanderer",
+   "reasoning": "Mind Meanderer (second): 'let's just take the Mind Meanderer and just commit to splashing green for him'; his two-drop slot is fine; Chronologist number two is not needed.",
+   "considered": {
+    "Fatehold Chronologist": "does not need a second",
+    "Yuriko, Hope from the Shadows": "does not love"
+   },
+   "plan": "Blue-red splashing green.",
+   "quotes": [
+    "Let's just take the Mind Meanderer and just commit to splashing green for him."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 4,
+   "time": "10:06-10:44",
+   "pack_cards": [
+    "Entrust the Spark",
+    "Sureshot Sower",
+    "Karn, Argent Defender",
+    "Living Library",
+    "Thalia, the Survivor",
+    "Mountain",
+    "Theorix Charm",
+    "Craftwork Crusher",
+    "Campus Crier",
+    "Cryotheory Adept",
+    "Awaken the Inferno"
+   ],
+   "taken": "Awaken the Inferno",
+   "reasoning": "Awaken the Inferno over Craftwork Crusher: he does not want the double-green splash and has done that too often; the Crusher is 'insane' but Awaken is a landcycler for a splash that works in a prowess deck; he decides to go blue-red.",
+   "considered": {
+    "Craftwork Crusher": "insane, but he does not want the double-green splash",
+    "Cryotheory Adept": "good with Artifist Acumen"
+   },
+   "plan": "Blue-red.",
+   "quotes": [
+    "Let's just not go for the double green splash. I've been doing that a lot."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 5,
+   "time": "10:44-11:08",
+   "pack_cards": [
+    "Avatar of Burgeoning Echoes",
+    "Ferocity of the Hunt",
+    "Geist of Saint Thalia",
+    "Swamp",
+    "Yargle, Goliath of Otaria",
+    "Academic Ascent",
+    "Fateshaper Aspirant",
+    "Chandra's Emberling",
+    "Sureshot Sower",
+    "Theorix Metamage"
+   ],
+   "taken": "Geist of Saint Thalia",
+   "reasoning": "Geist of Saint Thalia (inferred from the deck; Avatar of Burgeoning Echoes, Emberling in the pack): no spoken reason for this pick.",
+   "considered": {
+    "Chandra's Emberling": "in the pack"
+   },
+   "plan": "Blue-red.",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 6,
+   "time": "11:08-11:22",
+   "pack_cards": [
+    "Prophesied End",
+    "Island",
+    "Konstrari Charm",
+    "Infinite Coursework",
+    "Void Extrapolator",
+    "Heartstring Puller",
+    "Budding Insurgent",
+    "Inspired Tethermage",
+    "Murmuring Volume"
+   ],
+   "taken": "Murmuring Volume",
+   "reasoning": "Murmuring Volume over Infinite Coursework: a non-creature spell that helps cast the big cards.",
+   "considered": {
+    "Infinite Coursework": "alternative"
+   },
+   "plan": "Blue-red.",
+   "quotes": [
+    "Murmuring Volume is a non-creature spell that also helps me cast these big guys at the top."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 7,
+   "time": "11:22-11:36",
+   "pack_cards": [
+    "Ghalta the Immovable",
+    "Loot, the Anomaly",
+    "Infinite Coursework",
+    "Theoretical Necromancer",
+    "Blazing Crescendo",
+    "Twinned Vision",
+    "Living Library",
+    "Theorix Annex"
+   ],
+   "taken": "Twinned Vision",
+   "reasoning": "Twinned Vision: a cool double-spell card and filtering; Infinite Coursework in the pack.",
+   "considered": {
+    "Infinite Coursework": "the other option"
+   },
+   "plan": "Blue-red.",
+   "quotes": [
+    "Twin Division should be nice."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 8,
+   "time": "11:36-11:50",
+   "pack_cards": [
+    "Samut, Tyrant of Naktamun",
+    "Frostbite Pyromental",
+    "Titanbones, Towering Heart",
+    "Screeching Soulbreaker",
+    "Eardrum Rattler",
+    "Hallway Heckler",
+    "Medic's Kitesail"
+   ],
+   "taken": "Frostbite Pyromental",
+   "reasoning": "Frostbite Pyromental: 'this is actually the perfect deck for Frostbite Pyromancer. Card draw deals damage; it works well with Fblthp.'",
+   "considered": {
+    "Samut, Tyrant of Naktamun": "in the pack"
+   },
+   "plan": "Blue-red.",
+   "quotes": [
+    "Card draw deals damage. It works well with Fblthp."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 9,
+   "time": "11:50-12:02",
+   "pack_cards": [
+    "Pia, Determined Rebuilder",
+    "Flourishing Grapple",
+    "Eye of Jace",
+    "Graft Surgeon",
+    "Chandra's Emberling",
+    "Inspired Tethermage"
+   ],
+   "taken": "Pia, Determined Rebuilder",
+   "reasoning": "Pia, Determined Rebuilder wheeled: he would take the Emberling but Pia is so much better.",
+   "considered": {
+    "Chandra's Emberling": "would take it otherwise"
+   },
+   "plan": "Blue-red.",
+   "quotes": [
+    "I would take the Chandra's Emberling, but Pia's just so much better."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 10,
+   "time": "12:02-12:13",
+   "pack_cards": [
+    "Yargle, Goliath of Otaria",
+    "Yargle, Glutton of Urborg",
+    "Something Worth Saving",
+    "Whiplash Wordsmith",
+    "Transformative Commons"
+   ],
+   "taken": "Transformative Commons",
+   "reasoning": "Transformative Commons: a blue-green land to help with the Mind Meanderer splash; the two-drops he wants to be able to play on turn two.",
+   "considered": {},
+   "plan": "Blue-red splashing green.",
+   "quotes": [
+    "Let me get a blue green land to help with the Mind Meanderer."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 11,
+   "time": "12:13-12:28",
+   "pack_cards": [
+    "Yuriko, Hope from the Shadows",
+    "Mabel, Bitter Recluse",
+    "Archive Arbiter",
+    "Keeper of the Quiet Hour"
+   ],
+   "taken": "Keeper of the Quiet Hour",
+   "reasoning": "Keeper of the Quiet Hour from a weak pack (Yuriko, Mabel, Archive Arbiter).",
+   "considered": {},
+   "plan": "Blue-red.",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 12,
+   "time": "12:28-12:42",
+   "pack_cards": [
+    "Entrust the Spark",
+    "Living Library",
+    "Mountain"
+   ],
+   "taken": "Entrust the Spark",
+   "reasoning": "Entrust the Spark: the take is inferred from the sideboard.",
+   "considered": {},
+   "plan": "Blue-red.",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 13,
+   "time": "12:42-12:54",
+   "pack_cards": [
+    "unreadable (hidden)",
+    "unreadable (hidden)"
+   ],
+   "taken": null,
+   "reasoning": "Taken card not identified; the pack was never readable.",
+   "considered": {},
+   "plan": "Blue-red.",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 14,
+   "time": "12:54-12:56",
+   "pack_cards": [
+    "unreadable (hidden)"
+   ],
+   "taken": null,
+   "reasoning": "Last card, never displayed.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 1,
+   "time": "12:56-14:06",
+   "pack_cards": [
+    "Germinate Recruits",
+    "Liliana the Repentant",
+    "Tomik, Orzhov Lawmage",
+    "Tomik, Izzet Sparkmage",
+    "Theorix Charm",
+    "Woodwork Prodigy",
+    "Hexhaven Dueling Arena",
+    "Predictive Preparations",
+    "Semester Foreseer",
+    "Last Gasp",
+    "Artifist Acumen",
+    "Tam's Resistance",
+    "Living Library",
+    "Formidable Commons"
+   ],
+   "taken": "Tam's Resistance",
+   "reasoning": "Tam's Resistance: 'we could also take Woodwork Prodigy as a way to cast a non-creature spell each turn'; cheap spells and prowess; Last Gasp and Liliana the Repentant are in the pack.",
+   "considered": {
+    "Woodwork Prodigy": "a way to cast a noncreature spell each turn"
+   },
+   "plan": "Blue-red tempo.",
+   "quotes": [
+    "Okay, we'll take Tam's Resistance."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 2,
+   "time": "14:06-14:44",
+   "pack_cards": [
+    "Jace, Reality Sculptor",
+    "Rescue Girl, First Responder",
+    "Massacre Girl, Most Wanted",
+    "Ghalta the Unstoppable",
+    "Fatehold Charm",
+    "Konstrari Charm",
+    "Shatterwing Pegasus",
+    "Cryotheory Adept",
+    "Rank Rat",
+    "Awaken the Inferno",
+    "Emergency Phytomedic",
+    "Murmuring Volume",
+    "Transformative Commons"
+   ],
+   "taken": "Jace, Reality Sculptor",
+   "reasoning": "Jace, Reality Sculptor (inferred from the sideboard): the deck is established.",
+   "considered": {
+    "Awaken the Inferno": "in the pack",
+    "Rescue Girl, First Responder": "in the pack"
+   },
+   "plan": "Blue-red.",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 3,
+   "time": "14:44-15:28",
+   "pack_cards": [
+    "Curse-Marred Demon",
+    "Inspired Tethermage",
+    "Yargle, Glutton of Urborg",
+    "Saheeli, Jewel of Avishkar",
+    "Shatterwing Pegasus",
+    "Semester Foreseer",
+    "Extended Absence",
+    "Rampart Hunter",
+    "Artifist Acumen",
+    "Fatehold Chronologist",
+    "Living Library",
+    "Swamp"
+   ],
+   "taken": "Curse-Marred Demon",
+   "reasoning": "Curse-Marred Demon over Saheeli (a second): he wishes he could have the Saheeli but the Demon is just great; it can search up a Twinned Vision and be discarded when his hand is empty.",
+   "considered": {
+    "Saheeli, Jewel of Avishkar": "he thinks Saheeli with the artificer cards is better, he wishes he could get it"
+   },
+   "plan": "Blue-red.",
+   "quotes": [
+    "I'm going to take the Curse Marred Demon over Saheeli."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 4,
+   "time": "15:28-16:00",
+   "pack_cards": [
+    "Yuriko, Blade of the Mighty",
+    "Hapatra, the Desert Frost",
+    "Hapatra, the Desert Fang",
+    "Woodwork Prodigy",
+    "Blossom-Blessed Angel",
+    "Unsummon",
+    "Theoretical Necromancer",
+    "Tether Technician",
+    "Sureshot Sower",
+    "Living Library",
+    "Plains"
+   ],
+   "taken": "Hapatra, the Desert Frost",
+   "reasoning": "Hapatra, the Desert Frost: a very tempo card; he considers the Desert Fang too ('I kind of want Hapatra').",
+   "considered": {
+    "Hapatra, the Desert Fang": "considered"
+   },
+   "plan": "Blue-red.",
+   "quotes": [
+    "It's very tempo we card."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 5,
+   "time": "16:00-16:40",
+   "pack_cards": [
+    "Tam, the Possibility",
+    "Way of the Deathbringer",
+    "Way of the Wildspeaker",
+    "Clash of Elements",
+    "Chandra's Emberling",
+    "Arcane Amphisbaena",
+    "Keeper of the Quiet Hour",
+    "Predictive Preparations",
+    "Cryotheory Adept",
+    "Screeching Soulbreaker"
+   ],
+   "taken": "Clash of Elements",
+   "reasoning": "Clash of Elements (second): 'another clash plus another couple cards that I could wheel for the aggro aspect of this deck'; they are just playing a blue-red deck and will cut the medium cards.",
+   "considered": {},
+   "plan": "Blue-red.",
+   "quotes": [
+    "Ooh, another clash."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 6,
+   "time": "16:40-16:58",
+   "pack_cards": [
+    "Darklight Phoenix",
+    "Pompous Battlemage",
+    "Koth, the Geomancer",
+    "Fateshaper Aspirant",
+    "Rank Rat",
+    "Eardrum Rattler",
+    "Wrath of the Bloodmane",
+    "Greenhouse Propagator",
+    "Dedicated Commons"
+   ],
+   "taken": "Wrath of the Bloodmane",
+   "reasoning": "Wrath of the Bloodmane over Koth and Darklight Phoenix: 'this card's like okay but Wrath is like actually good'; not a Darklight Phoenix deck.",
+   "considered": {
+    "Darklight Phoenix": "not a Darklight Phoenix deck"
+   },
+   "plan": "Blue-red.",
+   "quotes": [
+    "We'll take Wrath of the Bloodmane. But Wrath is like actually good."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 7,
+   "time": "16:58-17:22",
+   "pack_cards": [
+    "Loot, the Anomaly",
+    "Fateshaper Aspirant",
+    "unreadable (hidden)",
+    "unreadable (hidden)",
+    "unreadable (hidden)",
+    "unreadable (hidden)",
+    "unreadable (hidden)",
+    "unreadable (hidden)"
+   ],
+   "taken": "Skilled Battlecarver",
+   "reasoning": "Skilled Battlecarver (inferred from the deck): 'could actually fit into this deck, a nice little attacker'; the pack was mostly hidden.",
+   "considered": {},
+   "plan": "Blue-red.",
+   "quotes": [
+    "Skilled Battle carver could actually fit into this deck. Nice little attacker."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 8,
+   "time": "17:22-17:38",
+   "pack_cards": [
+    "Yargle, Goliath of Otaria",
+    "Yargle, Glutton of Urborg",
+    "Pia, Aether Ascetic",
+    "Pia, Aether Ascetic",
+    "Screeching Soulbreaker",
+    "Blessed Ghoul",
+    "Living Library"
+   ],
+   "taken": null,
+   "reasoning": "Taken card not identified: the pack held Yargle x2, Pia, Aether Ascetic x2, Soulbreaker, Blessed Ghoul and Living Library; he says 'that pack was a blank. There was nothing to take there.'",
+   "considered": {},
+   "plan": "Blue-red.",
+   "quotes": [
+    "That pack was a blank. There was nothing to take there."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 9,
+   "time": "17:38-17:54",
+   "pack_cards": [
+    "Tomik, Izzet Sparkmage",
+    "Woodwork Prodigy",
+    "Hexhaven Dueling Arena",
+    "Predictive Preparations",
+    "Artifist Acumen",
+    "Living Library"
+   ],
+   "taken": "Woodwork Prodigy",
+   "reasoning": "Woodwork Prodigy: it helps cast the Mind Meanderers and the noncreature spells; he does not have enough pings to make it worthwhile.",
+   "considered": {},
+   "plan": "Blue-red.",
+   "quotes": [
+    "I'll take woodwork. Prodigy. It kind of helps cast the mind meanderers."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 10,
+   "time": "17:54-17:56",
+   "pack_cards": [
+    "unreadable (hidden)",
+    "unreadable (hidden)",
+    "unreadable (hidden)",
+    "unreadable (hidden)",
+    "unreadable (hidden)"
+   ],
+   "taken": null,
+   "reasoning": "Taken card not identified; the pack was never readable.",
+   "considered": {},
+   "plan": "Blue-red.",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 11,
+   "time": "17:56-18:00",
+   "pack_cards": [
+    "Rampart Hunter",
+    "Inspired Tethermage",
+    "Living Library",
+    "Swamp"
+   ],
+   "taken": null,
+   "reasoning": "Taken card not identified (pack: Rampart Hunter, Inspired Tethermage, Living Library, Swamp).",
+   "considered": {},
+   "plan": "Blue-red.",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 12,
+   "time": "18:00-18:02",
+   "pack_cards": [
+    "unreadable (hidden)",
+    "unreadable (hidden)",
+    "unreadable (hidden)"
+   ],
+   "taken": null,
+   "reasoning": "Taken card not identified; the pack was never readable.",
+   "considered": {},
+   "plan": "Blue-red.",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 13,
+   "time": "18:02-18:04",
+   "pack_cards": [
+    "unreadable (hidden)",
+    "unreadable (hidden)"
+   ],
+   "taken": null,
+   "reasoning": "Taken card not identified: 'Nice. We got the Emberling back' is said around here; the pack was never readable.",
+   "considered": {},
+   "plan": "Blue-red.",
+   "quotes": [
+    "Nice. We got the Emberling back"
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 14,
+   "time": "18:04-25:45",
+   "pack_cards": [
+    "unreadable (hidden)"
+   ],
+   "taken": null,
+   "reasoning": "Last card, never displayed.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  }
+ ]
+}

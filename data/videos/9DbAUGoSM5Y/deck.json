@@ -1,0 +1,57 @@
+{
+ "id": "9DbAUGoSM5Y",
+ "time": "15:00-16:45 (the deck builder at 940 and 985 s shows 41 cards; he then cuts Traxos, Scourge Eternal at 16:27; cut-off 1005 s)",
+ "main": {
+  "Multiply by Zero": 1,
+  "No Admittance": 1,
+  "Stingcaster Mage": 1,
+  "Something Worth Saving": 2,
+  "Twinned Vision": 1,
+  "Undulating Witness": 1,
+  "Awaken the Inferno": 1,
+  "Arni, Humble Scribe": 1,
+  "Mindseeker Oculus": 2,
+  "Murmuring Volume": 2,
+  "Hapatra, the Desert Frost": 1,
+  "Extended Absence": 1,
+  "Violent Echoes": 1,
+  "Recursive Recruitment": 1,
+  "Warrior's Blades": 1,
+  "Fblthp, Knows the Way": 1,
+  "Mind Meanderer": 1,
+  "Craftwork Crusher": 1,
+  "Return to the Light Realms": 1,
+  "Karn, Gilded Guardian": 1
+ },
+ "lands": {
+  "Plains": 2,
+  "Island": 2,
+  "Swamp": 1,
+  "Mountain": 3,
+  "Forest": 4,
+  "Fatehold Annex": 1,
+  "Meticulous Commons": 1,
+  "Theorix Annex": 1,
+  "Formidable Commons": 1,
+  "Konstrari Annex": 1
+ },
+ "sideboard": {
+  "Gallia, Tragic Host": 1,
+  "Afterthought Sentry": 1,
+  "Semester Foreseer": 1,
+  "Campus Crier": 1,
+  "Traxos, Scourge Eternal": 1
+ },
+ "spells": 23,
+ "land_count": 17,
+ "landcyclers_in_main": [
+  "Undulating Witness",
+  "Awaken the Inferno"
+ ],
+ "colours": "Five colours: green base (Fblthp, Knows the Way, Murmuring Volume x2 for fixing) with white (Return to the Light Realms, Warrior's Blades), red (Craftwork Crusher, No Admittance, Violent Echoes, Awaken), blue (Oculus x2) and black (Extended Absence, Stingcaster Mage, Multiply by Zero, Hapatra). Five nonbasic lands plus Forest 4, Mountain 3, Plains 2, Island 2, Swamp 1.",
+ "notes": [
+  "The 41-card screen at 985 s lists 24 spells, 5 nonbasic lands and 12 basics; he cuts Traxos, Scourge Eternal (16:27, 'let's cut Traxos') for 40. The 'sideboard' here is only what he says he cut (Gallia, Campus Crier, the Afterthought Sentry, Semester Foreseer, Traxos); the rest of the sideboard is not on screen.",
+  "15:19: 'Take the Afterthought Sentries out ... Cut the Gallia, the Campus Cryer, move all of my land cycles to the two drop slot ... cut Semester Foreseer. And Karn is pretty bad, but we're playing five colours. We'll just try it.'",
+  "15:45-16:11: 'one double blue card, one double white card, no double black ... some double red cards ... four, five, six green sources. Three, four red sources. This is a ... pile of cards.'"
+ ]
+}

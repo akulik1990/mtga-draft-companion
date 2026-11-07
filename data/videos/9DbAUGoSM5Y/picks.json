@@ -1,0 +1,1003 @@
+{
+ "id": "9DbAUGoSM5Y",
+ "url": "https://youtu.be/9DbAUGoSM5Y",
+ "title": "Drafting a MASTERPIECE in Reality Fracture Draft!!!",
+ "player": "NicolaiBolas",
+ "set": "FRA",
+ "event": "FRA live Arena draft, solo; the Arena pick timer is on and chat is not mentioned; Premier / Quick not named on screen",
+ "dataset": "FRA_PremierDraft_All_Data.json",
+ "recorded": null,
+ "source": "frames read from data/videos/raw/9DbAUGoSM5Y (banner and pack title rows; the layout is pool-at-right to about P1p9, then pack on top with the pool below; the deck builder at 940 and 985 s shows the cards of the main deck with the sideboard hidden); takes from the transcript and the pool in the deck builder; hover popups hid some cards; transcript from YouTube auto captions, card names corrected; cut-off 1005 s (title card at 1008)",
+ "colour_path": [
+  {
+   "after": "P1p1",
+   "main": "open (Return to the Light Realms)",
+   "quote": "I don't like to bias my picks that much early."
+  },
+  {
+   "after": "P1p4",
+   "main": "four colours of cards",
+   "quote": "fourth color worth of cards in four picks, but I'm not that worried."
+  },
+  {
+   "after": "P1p8",
+   "main": "five-colour late game",
+   "quote": "commit to this five-color late game deck."
+  },
+  {
+   "after": "P2p3",
+   "main": "green base splashing white and red",
+   "quote": "Looks like I'm going to be like a green teamer base splashing white and..."
+  },
+  {
+   "after": "deck",
+   "main": "five colours, Murmuring Volumes + Fblthp fixing",
+   "quote": "This is a what they like to call in the business a pile of cards."
+  }
+ ],
+ "picks": [
+  {
+   "pack": 1,
+   "pick": 1,
+   "time": "0:28-1:10",
+   "pack_cards": [
+    "Return to the Light Realms",
+    "Fatehold Charm",
+    "Ferocity of the Hunt",
+    "Ghalta the Immovable",
+    "Icy Reception",
+    "Konstrari Improviser",
+    "Fblthp, Impossibly Lost",
+    "Silence the Echo",
+    "Keeper of the Quiet Hour",
+    "Break Under Pressure",
+    "Eardrum Rattler",
+    "Plains",
+    "Fblthp, Knows the Way",
+    "Fatehold Chronologist"
+   ],
+   "taken": "Return to the Light Realms",
+   "reasoning": "Return to the Light Realms: a mythic that is 'not particularly good' but the neat card he likes to try out, to see whether building around it is worth it. If winning the Pro Tour he would take Fblthp, Knows the Way, then Break Under Pressure, then Fblthp, Impossibly Lost.",
+   "considered": {
+    "Fblthp, Knows the Way": "absolutely incredible, sets up multicolour green decks",
+    "Break Under Pressure": "great removal spell",
+    "Fblthp, Impossibly Lost": "quite nice card draw"
+   },
+   "plan": "Open; trying Return to the Light Realms.",
+   "quotes": [
+    "It's not particularly good, but it's the exact sort of kind of fun neat card that I like trying out."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 2,
+   "time": "1:10-2:14",
+   "pack_cards": [
+    "Bloodline Recollector",
+    "Kiora of Salt and Sand",
+    "Konstrari Improviser",
+    "Your Fate Ends Here",
+    "Surgical Precision",
+    "Keeper of the Quiet Hour",
+    "Gallia, Tragic Host",
+    "Mindseeker Oculus",
+    "Meticulous Commons",
+    "Gallia, the Merrymaker",
+    "Solve for Disappointment",
+    "Clash of Elements",
+    "Tethermage's Advantage"
+   ],
+   "taken": "Mindseeker Oculus",
+   "reasoning": "Mindseeker Oculus over Your Fate Ends Here: he has a rule not to pass it and says every time he passes one he regrets it; Your Fate Ends Here is fantastic and goes with Return to the Light Realms; he does not want to bias his picks to white early.",
+   "considered": {
+    "Your Fate Ends Here": "also fantastic, goes with Return to the Light Realms",
+    "Clash of Elements": "pretty solid"
+   },
+   "plan": "Open.",
+   "quotes": [
+    "Every time I pass a Mind Seeker Oculus, I regret it."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 3,
+   "time": "2:14-2:34",
+   "pack_cards": [
+    "Mabel, Bitter Recluse",
+    "Unsummon",
+    "Room of Refuge",
+    "Multiply by Zero",
+    "Awaken the Inferno",
+    "Forest",
+    "Mabel, Valley Hero",
+    "Wrecking Gecko",
+    "Eye of Jace",
+    "Whiplash Wordsmith",
+    "Unflinching Hortimancer",
+    "Afterthought Sentry"
+   ],
+   "taken": "Multiply by Zero",
+   "reasoning": "Multiply by Zero: a really good kill spell; he could see an Esper control deck with Return to the Light Realms; careful against prowess and +1/+1 counters. Awaken the Inferno, Room of Refuge, Mabel are also good.",
+   "considered": {
+    "Awaken the Inferno": "pretty good",
+    "Room of Refuge": "pretty good",
+    "Mabel, Valley Hero": "pretty good"
+   },
+   "plan": "Four colours of cards in three picks.",
+   "quotes": [
+    "Multiply by Zero, easy pick up here."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 4,
+   "time": "2:34-2:52",
+   "pack_cards": [
+    "Pompous Battlemage",
+    "Cryotheory Adept",
+    "Transformative Commons",
+    "Loot, the Anomaly",
+    "Rampart Hunter",
+    "Tetsuko Umezawa, Pursuer",
+    "Blazing Crescendo",
+    "Konstrari Charm",
+    "No Admittance",
+    "Fateshaper Aspirant",
+    "Sureshot Sower"
+   ],
+   "taken": "No Admittance",
+   "reasoning": "No Admittance: a really strong kill spell, miles ahead of the next best card; a fourth colour in four picks but he is not worried; green is the only colour he is not in.",
+   "considered": {},
+   "plan": "Open, five-colour pile.",
+   "quotes": [
+    "No admittance is like miles ahead of the next best card."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 5,
+   "time": "2:52-3:44",
+   "pack_cards": [
+    "Proft, Sinister Mastermind",
+    "Solve for Disappointment",
+    "Archive Arbiter",
+    "Void Extrapolator",
+    "Fateshaper Aspirant",
+    "Tethermage's Advantage",
+    "Unflinching Hortimancer",
+    "Living Library",
+    "Undulating Witness",
+    "Plains"
+   ],
+   "taken": "Undulating Witness",
+   "reasoning": "Undulating Witness over Proft, Consulting Detective-type options (Proft, Sinister Mastermind) and Archive Arbiter: close pick; he expects to want landcyclers in his Return deck, especially creature ones.",
+   "considered": {
+    "Proft, Sinister Mastermind": "the card he hoped to take most, a kill spell early",
+    "Archive Arbiter": "fine"
+   },
+   "plan": "Five-colour with landcyclers.",
+   "quotes": [
+    "I'm going to take the Witness. I feel like I'm going to want some land cyclers in my return to the light realms deck."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 6,
+   "time": "3:44-4:02",
+   "pack_cards": [
+    "Hall of Echoes",
+    "Rampart Hunter",
+    "Gallia, Tragic Host",
+    "Compel Brutality",
+    "Stingerquill Voxmancer",
+    "Archive Arbiter",
+    "Academic Ascent",
+    "unreadable (hidden)",
+    "unreadable (hidden)"
+   ],
+   "taken": "Gallia, Tragic Host",
+   "reasoning": "Gallia, Tragic Host: great; he would rather have land-cycling creatures at the top of his curve than the Archive Arbiter.",
+   "considered": {
+    "Archive Arbiter": "could play it, does not want to",
+    "Compel Brutality": "also fine"
+   },
+   "plan": "Five-colour.",
+   "quotes": [
+    "Gallia is just a great..."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 7,
+   "time": "4:02-4:28",
+   "pack_cards": [
+    "Tetsuko Umezawa, Pursuer",
+    "Eardrum Rattler",
+    "Warrior's Blades",
+    "Skilled Battlecarver",
+    "Blossom-Blessed Angel",
+    "Mountain",
+    "Divining Duelist",
+    "Solve for Disappointment"
+   ],
+   "taken": "Warrior's Blades",
+   "reasoning": "Warrior's Blades (inferred from the pool; his words: 'Warrior's Blades, if I'm playing a splashy deck anyway, could be just...'): he notes white has not felt that open.",
+   "considered": {
+    "Blossom-Blessed Angel": "pretty good"
+   },
+   "plan": "Splashy.",
+   "quotes": [
+    "Warrior's Blades, if I'm playing a splashy deck anyway, could be just"
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 8,
+   "time": "4:28-4:52",
+   "pack_cards": [
+    "Massacre Girl, Most Wanted",
+    "Ruric Thar, Magecrusher",
+    "Unsummon",
+    "Cast Away Doubt",
+    "Wrecking Gecko",
+    "Konstrari Improviser",
+    "Formidable Commons"
+   ],
+   "taken": "Formidable Commons",
+   "reasoning": "Formidable Commons over Konstrari Improviser and Bruvac: he will want to end up in green to some capacity; 'commit to this five-colour late game deck'; he hopes to wheel the Improviser.",
+   "considered": {
+    "Konstrari Improviser": "hopes to wheel it",
+    "Massacre Girl, Most Wanted": "in the pack"
+   },
+   "plan": "Five-colour late game.",
+   "quotes": [
+    "Let's just take the formidable commons, commit to this five-color late game deck."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 9,
+   "time": "4:52-5:00",
+   "pack_cards": [
+    "Ghalta the Immovable",
+    "Plains",
+    "Fblthp, Knows the Way",
+    "Eardrum Rattler",
+    "Ferocity of the Hunt",
+    "Keeper of the Quiet Hour"
+   ],
+   "taken": "Fblthp, Knows the Way",
+   "reasoning": "Fblthp, Knows the Way wheeled: 'I feel like a genius for taking [the land] now. Five-color Fblthp knows the way. Nobody wants it. It's all mine.'",
+   "considered": {},
+   "plan": "Five-colour.",
+   "quotes": [
+    "Five-color Fblthp knows the way. Nobody wants it. It's all mine."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 10,
+   "time": "5:00-5:18",
+   "pack_cards": [
+    "Gallia, Tragic Host",
+    "Gallia, the Merrymaker",
+    "Solve for Disappointment",
+    "Tethermage's Advantage",
+    "Meticulous Commons"
+   ],
+   "taken": "Meticulous Commons",
+   "reasoning": "Meticulous Commons: Gallia is good but he will be more controlling; he considers a colourless two-drop he can always play; 'we just want lots of lands'.",
+   "considered": {
+    "Gallia, Tragic Host": "good but he will be more controlling",
+    "Solve for Disappointment": "fills the graveyard for Return to the Light Realms"
+   },
+   "plan": "Five-colour.",
+   "quotes": [
+    "Yeah, we just want lots of lands. Gallia's good but we're kind of be more controlling."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 11,
+   "time": "5:18-5:36",
+   "pack_cards": [
+    "Eye of Jace",
+    "Whiplash Wordsmith",
+    "Afterthought Sentry",
+    "Forest"
+   ],
+   "taken": "Afterthought Sentry",
+   "reasoning": "Afterthought Sentry (inferred): a colourless two-drop he can always play; later he takes the Afterthought Sentries out of the deck. 'Fblthp is hard to cast, too. Keep that in mind.'",
+   "considered": {
+    "Eye of Jace": "not wanted"
+   },
+   "plan": "Five-colour.",
+   "quotes": []
+  },
+  {
+   "pack": 1,
+   "pick": 12,
+   "time": "5:36-5:44",
+   "pack_cards": [
+    "Loot, the Anomaly",
+    "Konstrari Charm",
+    "Blazing Crescendo"
+   ],
+   "taken": null,
+   "reasoning": "Taken card not identified: Loot, the Anomaly, Konstrari Charm and Blazing Crescendo were in the pack; none is in his pool shown in the deck builder. He says he wants a Consuming Charm (Konstrari Charm) to ramp out Return to the Light Realms one turn sooner and that this is the deck that wants Murmuring Volume most.",
+   "considered": {
+    "Konstrari Charm": "ramps out of Return to the Light Realms one turn sooner, he does not think he can use it"
+   },
+   "plan": "Five-colour.",
+   "quotes": [
+    "Consuming Charm, ramp out of Return to the Light Realms one turn sooner."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 13,
+   "time": "5:44-5:49",
+   "pack_cards": [
+    "unreadable (hidden)",
+    "unreadable (hidden)"
+   ],
+   "taken": null,
+   "reasoning": "Taken card not identified; the pack was never readable.",
+   "considered": {},
+   "plan": "Five-colour.",
+   "quotes": []
+  },
+  {
+   "pack": 1,
+   "pick": 14,
+   "time": "5:49-5:52",
+   "pack_cards": [
+    "unreadable (hidden)"
+   ],
+   "taken": null,
+   "reasoning": "Last card auto-selected; never displayed.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 1,
+   "time": "5:52-6:30",
+   "pack_cards": [
+    "Solarium Sentry",
+    "Karn, Gilded Guardian",
+    "Countersculpt",
+    "Mabel, Bitter Recluse",
+    "Fulminous Forte",
+    "Mabel, Valley Hero",
+    "Academic Ascent",
+    "Mindseeker Oculus",
+    "Theoretical Necromancer",
+    "Artifist Acumen",
+    "Bestial Incursion",
+    "Konstrari Improviser",
+    "Afterthought Sentry",
+    "Swamp"
+   ],
+   "taken": "Mindseeker Oculus",
+   "reasoning": "Mindseeker Oculus again: he wants to stick with his guns; Countersculpt is also great but he needs to hit land drops, which Oculus helps with; Karn is really sweet but bad, with a good chance to wheel (it does, at pick 9).",
+   "considered": {
+    "Countersculpt": "also great, but he needs land drops",
+    "Karn, Gilded Guardian": "sweet but bad; hopes to wheel it"
+   },
+   "plan": "Five-colour.",
+   "quotes": [
+    "I kind of want to stick with my guns and take Mind Seeker Oculus here."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 2,
+   "time": "6:30-6:50",
+   "pack_cards": [
+    "Perfected Theory",
+    "Proft, Consulting Detective",
+    "Way of the Deathbringer",
+    "Way of the Wildspeaker",
+    "Stingerquill Charm",
+    "Compel Brutality",
+    "Fatehold Chronologist",
+    "Theorix Metamage",
+    "Murmuring Volume",
+    "unreadable (hidden)",
+    "unreadable (hidden)",
+    "unreadable (hidden)",
+    "unreadable (hidden)"
+   ],
+   "taken": "Murmuring Volume",
+   "reasoning": "Murmuring Volume: a huge pickup that unlocks his deck; he does not like passing lands, but will for Volumes; 'priority numero uno'.",
+   "considered": {
+    "Theorix Metamage": "he would not mind a Necromancer, Metamage"
+   },
+   "plan": "Five-colour.",
+   "quotes": [
+    "I don't like passing lands, but I will pass them for murmuring volumes. This is like priority numero uno for me."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 3,
+   "time": "6:50-8:02",
+   "pack_cards": [
+    "Solarium Sentry",
+    "Fatehold Chronologist",
+    "Arni, Humble Scribe",
+    "Tam's Resistance",
+    "Hapatra, the Desert Frost",
+    "Afterthought Sentry",
+    "Perfected Theory",
+    "Swamp",
+    "Craftwork Crusher",
+    "Theoretical Necromancer",
+    "Wrath of the Bloodmane",
+    "Budding Insurgent"
+   ],
+   "taken": "Craftwork Crusher",
+   "reasoning": "Craftwork Crusher: another top-end card; he has double white, double green and double red already; he will splash Gallia-type early cards lightly for removal; 'a pile'.",
+   "considered": {
+    "Hapatra, the Desert Frost": "would have been good, 3/3 that gains life",
+    "Wrath of the Bloodmane": "pretty good"
+   },
+   "plan": "Green-led base splashing white and red.",
+   "quotes": [
+    "Crusher, let's go. Another top end card."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 4,
+   "time": "8:02-8:26",
+   "pack_cards": [
+    "Winter, Tormented Loner",
+    "Winter, Team Player",
+    "Desperate Futurescribe",
+    "Hexhaven Battalion",
+    "Divining Duelist",
+    "Icy Reception",
+    "Extended Absence",
+    "Vinelasher Adept",
+    "Konstrari Improviser",
+    "Afterthought Sentry",
+    "Island"
+   ],
+   "taken": "Extended Absence",
+   "reasoning": "Extended Absence over Hexhaven Battalion (best card in the pack, maybe) and Vinelasher Adept (a better landcycler for his deck since Return to the Light Realms can bring it back): he keeps his dip into black for removal.",
+   "considered": {
+    "Hexhaven Battalion": "maybe the best card in the pack",
+    "Vinelasher Adept": "better landcycler for this deck",
+    "Konstrari Improviser": "a card he would rather have for ramp"
+   },
+   "plan": "Light black splash for removal.",
+   "quotes": [
+    "I'm just going to take Extended Absence, keep my dip into black for some removal intact."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 5,
+   "time": "8:26-8:52",
+   "pack_cards": [
+    "Extrapolate the Impossible",
+    "Whiplash Wordsmith",
+    "Loot, the Anomaly",
+    "Stingerquill Annex",
+    "Gallia, the Merrymaker",
+    "Archive Arbiter",
+    "Academic Ascent",
+    "Fateshaper Aspirant",
+    "Sphinx's Approach",
+    "Awaken the Inferno"
+   ],
+   "taken": "Awaken the Inferno",
+   "reasoning": "Awaken the Inferno over a black-red land: probably the pick; another landcycler is nice; he does not care about the black-red land.",
+   "considered": {
+    "Stingerquill Annex": "not a land combo he cares about"
+   },
+   "plan": "Five-colour.",
+   "quotes": [
+    "Awaken the Inferno is probably the pick."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 6,
+   "time": "8:52-9:26",
+   "pack_cards": [
+    "Precise Redaction",
+    "Mountain",
+    "Saheeli, Jewel of Avishkar",
+    "Eye of Jace",
+    "Academic Ascent",
+    "Twinned Vision",
+    "unreadable (hidden)",
+    "unreadable (hidden)",
+    "unreadable (hidden)"
+   ],
+   "taken": "Twinned Vision",
+   "reasoning": "Twinned Vision: some card draw and filtering; Wrecking Gecko is a fine five-drop but he wants his five-drops to be landcyclers; Saheeli, Jewel of Avishkar is fine but he would rather Twinned Vision; the blue-white land is nice.",
+   "considered": {
+    "Saheeli, Jewel of Avishkar": "fine, he would rather have Twinned Vision",
+    "Wrecking Gecko": "fine top end five-drop"
+   },
+   "plan": "Five-colour.",
+   "quotes": [
+    "Sure, we get a Twin Vision, some card draw, some card filtering."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 7,
+   "time": "9:26-9:50",
+   "pack_cards": [
+    "Way of the Mentor",
+    "Grim Repriser",
+    "Graft Surgeon",
+    "Hexhaven Battalion",
+    "Unsummon",
+    "Artifist Acumen",
+    "Eardrum Rattler",
+    "Fatehold Annex"
+   ],
+   "taken": "Fatehold Annex",
+   "reasoning": "Fatehold Annex over Grim Repriser and Hexhaven Battalion: any white land helps this deck ('lands are good pickups for me'); Repriser will be fine but he lacks ways to ping.",
+   "considered": {
+    "Grim Repriser": "fine, few ways to ping",
+    "Hexhaven Battalion": "nice"
+   },
+   "plan": "Five-colour.",
+   "quotes": [
+    "Blue white land is nice though. Any white land to help with this card. Lands are good pickups for me."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 8,
+   "time": "9:50-10:12",
+   "pack_cards": [
+    "Way of the Cryomancer",
+    "Predictive Preparations",
+    "Semester Foreseer",
+    "Blazing Crescendo",
+    "Eardrum Rattler",
+    "Tethermage's Advantage",
+    "Fatehold Chronologist"
+   ],
+   "taken": "Semester Foreseer",
+   "reasoning": "Semester Foreseer: a bigger body to bring back with Return to the Light Realms than Fatehold Chronologist; he has not played it yet.",
+   "considered": {
+    "Fatehold Chronologist": "not really"
+   },
+   "plan": "Five-colour.",
+   "quotes": [
+    "I'd rather have Semester Foreseer cuz it's just like a bigger body to bring back."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 9,
+   "time": "10:12-10:22",
+   "pack_cards": [
+    "Karn, Gilded Guardian",
+    "unreadable (hidden)",
+    "unreadable (hidden)",
+    "unreadable (hidden)",
+    "unreadable (hidden)",
+    "unreadable (hidden)"
+   ],
+   "taken": "Karn, Gilded Guardian",
+   "reasoning": "Karn, Gilded Guardian wheeled: 'Bang! We got the Karn back. Living the dream.' Mabel would almost certainly be a better pickup, but he has to try Karn in the Warrior's Blades five-colour deck.",
+   "considered": {
+    "Mabel, Valley Hero": "almost certainly a better pickup"
+   },
+   "plan": "Five-colour.",
+   "quotes": [
+    "Bang! We got the Karn back. Living the dream."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 10,
+   "time": "10:22-10:36",
+   "pack_cards": [
+    "Perfected Theory",
+    "Stingerquill Charm",
+    "Campus Crier",
+    "Budding Insurgent",
+    "Theorix Metamage"
+   ],
+   "taken": "Campus Crier",
+   "reasoning": "Campus Crier: kind of a two-drop; Arni helps dig, he does not like Winter; Sentry number two is not great.",
+   "considered": {
+    "Stingerquill Charm": "another kill spell, or the Metamage",
+    "Theorix Metamage": "considered"
+   },
+   "plan": "Five-colour.",
+   "quotes": [
+    "Let's take the Campus Cryer here. Kind of a two drop."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 11,
+   "time": "10:36-10:46",
+   "pack_cards": [
+    "Arni, Humble Scribe",
+    "Tam's Resistance",
+    "Afterthought Sentry",
+    "Swamp"
+   ],
+   "taken": "Arni, Humble Scribe",
+   "reasoning": "Arni, Humble Scribe: helps him dig towards his good cards.",
+   "considered": {
+    "Afterthought Sentry": "not great"
+   },
+   "plan": "Five-colour.",
+   "quotes": [
+    "Arni's great here cuz it helps me dig towards my good cards."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 12,
+   "time": "10:46-10:54",
+   "pack_cards": [
+    "unreadable (hidden)",
+    "unreadable (hidden)",
+    "unreadable (hidden)"
+   ],
+   "taken": null,
+   "reasoning": "Taken card not identified; Winter and Sentry mentioned; the pack was never readable.",
+   "considered": {},
+   "plan": "Five-colour.",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 13,
+   "time": "10:54-10:58",
+   "pack_cards": [
+    "unreadable (hidden)",
+    "unreadable (hidden)"
+   ],
+   "taken": null,
+   "reasoning": "Taken card not identified; the pack was never readable.",
+   "considered": {},
+   "plan": "Five-colour.",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 14,
+   "time": "10:58-11:04",
+   "pack_cards": [
+    "unreadable (hidden)"
+   ],
+   "taken": null,
+   "reasoning": "Last card auto-selected; never displayed.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 1,
+   "time": "11:04-11:24",
+   "pack_cards": [
+    "Liliana the Faultless",
+    "Blazing Crescendo",
+    "Vraska's Final Mercy",
+    "Greenhouse Propagator",
+    "Traxos, Academy Guardian",
+    "Blessed Ghoul",
+    "Flourishing Grapple",
+    "Twinned Vision",
+    "Stingerquill Voxmancer",
+    "Murmuring Volume",
+    "Traxos, Scourge Eternal",
+    "Swamp",
+    "Unflinching Hortimancer",
+    "Surveillance Phantasm"
+   ],
+   "taken": "Murmuring Volume",
+   "reasoning": "Murmuring Volume (second): 'my wish is thy command'; 'really helping tie the room together'; each colour among other artifacts he controls (Karn); he would love Liliana the Faultless but will not have much white; Campus Crier may not make the cut.",
+   "considered": {
+    "Liliana the Faultless": "would love it, not enough white mana"
+   },
+   "plan": "Five-colour artifacts.",
+   "quotes": [
+    "Murmuring Volume number two really helping tie the room together."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 2,
+   "time": "11:24-11:54",
+   "pack_cards": [
+    "Codie, Ravenous Codex",
+    "Artifist Acumen",
+    "Ruric Thar, Biomagus",
+    "Tether Technician",
+    "Danitha, Spear of Agony",
+    "Something Worth Saving",
+    "Violent Echoes",
+    "Emergency Phytomedic",
+    "Ruric Thar, Magecrusher",
+    "Formidable Commons",
+    "Bloombrute",
+    "Fateshaper Aspirant",
+    "Void Extrapolator"
+   ],
+   "taken": "Violent Echoes",
+   "reasoning": "Violent Echoes: double red, but he has only one other double-red card; kill something and draw a card; he needs card draw to reach nine mana; Something Worth Saving is counterintuitive with Return to the Light Realms because milling it away loses it; Codie is not good.",
+   "considered": {
+    "Something Worth Saving": "counterintuitive with Return to the Light Realms",
+    "Codie, Ravenous Codex": "not good",
+    "Formidable Commons": "the green-black land"
+   },
+   "plan": "Five-colour.",
+   "quotes": [
+    "I like this kill spell a lot. Kill something, draw a card. I need card draw to make sure I can get to nine mana."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 3,
+   "time": "11:54-12:44",
+   "pack_cards": [
+    "Karn, Argent Defender",
+    "Theorix Metamage",
+    "Edgar, Ancient Bloodlord",
+    "Twinned Vision",
+    "Recursive Recruitment",
+    "Medic's Kitesail",
+    "Bloombrute",
+    "Forest",
+    "Blossom-Blessed Angel",
+    "Extended Absence",
+    "Arcane Amphisbaena",
+    "Something Worth Saving"
+   ],
+   "taken": "Recursive Recruitment",
+   "reasoning": "Recursive Recruitment: late-game graveyard payoff bomb, like a backup Return to the Light Realms and an artifact for Karn; Extended Absence is also good but Recruitment is exactly what he wants.",
+   "considered": {
+    "Extended Absence": "also good",
+    "Something Worth Saving": "counterintuitive with Return"
+   },
+   "plan": "Five-colour.",
+   "quotes": [
+    "Recruitment's just exactly what I want. Late game graveyard payoff bomb."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 4,
+   "time": "12:44-12:54",
+   "pack_cards": [
+    "Stingcaster Mage",
+    "Wrath of the Bloodmane",
+    "Yargle, Goliath of Otaria",
+    "Inspired Tethermage",
+    "Yargle, Glutton of Urborg",
+    "Transformative Commons",
+    "Way of the Warlord",
+    "Graft Surgeon",
+    "Divining Duelist",
+    "Apex Witchstalker",
+    "Cast Away Doubt"
+   ],
+   "taken": "Stingcaster Mage",
+   "reasoning": "Stingcaster Mage: he had said it would be perfect for the deck, so he 'kind of has to take it'; at eleven mana he can buy back Return to the Light Realms.",
+   "considered": {
+    "Transformative Commons": "probably a better pickup",
+    "Apex Witchstalker": "in the pack"
+   },
+   "plan": "Five-colour.",
+   "quotes": [
+    "I literally summoned this card into existence as a mythic rare, so might as well do that."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 5,
+   "time": "12:54-13:16",
+   "pack_cards": [
+    "Arni, Humble Scribe",
+    "Living Library",
+    "Arni, Renowned Champion",
+    "Theorix Annex",
+    "Essence Burn",
+    "Hallway Heckler",
+    "Wrath of the Bloodmane",
+    "Something Worth Saving",
+    "Fatehold Chronologist",
+    "Blessed Ghoul"
+   ],
+   "taken": "Theorix Annex",
+   "reasoning": "Theorix Annex (blue-black land): he has not started taking lands but has plenty of playables; with six kill spells he could use more but takes the land.",
+   "considered": {},
+   "plan": "Five-colour.",
+   "quotes": [
+    "I haven't started taking lands here. I have plenty of playables."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 6,
+   "time": "13:16-13:26",
+   "pack_cards": [
+    "Way of the Mentor",
+    "Meticulous Commons",
+    "Way of the Warlord",
+    "Mind Meanderer",
+    "Eye of Jace",
+    "Icy Reception",
+    "Cast Away Doubt",
+    "Artifist Acumen",
+    "Something Worth Saving"
+   ],
+   "taken": "Mind Meanderer",
+   "reasoning": "Mind Meanderer: 'let's just add double blue to the mix, why not'; a great top-end card.",
+   "considered": {},
+   "plan": "Five-colour.",
+   "quotes": [
+    "Okay, now there's a Mind Meanderer. Let's just add double blue to the mix. Why not?"
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 7,
+   "time": "13:26-14:00",
+   "pack_cards": [
+    "Ghalta the Immovable",
+    "Hapatra, the Desert Frost",
+    "Stingerquill Charm",
+    "Tether Technician",
+    "Budding Insurgent",
+    "Blessed Ghoul",
+    "Charge the Sanctum",
+    "Mountain"
+   ],
+   "taken": "Hapatra, the Desert Frost",
+   "reasoning": "Hapatra, the Desert Frost over Stingerquill Charm: it buys time in a slow deck and is probably better than Stingerquill Charm, which needs two particular colours; he does not want Gallia in this deck.",
+   "considered": {
+    "Stingerquill Charm": "requires two unique colours"
+   },
+   "plan": "Five-colour.",
+   "quotes": [
+    "It buys me time, though. And I was slow deck, so probably better than Stingerquill Charm."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 8,
+   "time": "14:00-14:14",
+   "pack_cards": [
+    "Thalia, the Survivor",
+    "Proft, Sinister Mastermind",
+    "Predictive Preparations",
+    "Rampart Hunter",
+    "Eardrum Rattler",
+    "Vinelasher Adept",
+    "Konstrari Annex"
+   ],
+   "taken": "Konstrari Annex",
+   "reasoning": "Konstrari Annex over Vinelasher Adept: he would love Vinelasher Adept, a great card, and needs stuff to bring back, but the land is going to be really nice; few green cards so far.",
+   "considered": {
+    "Vinelasher Adept": "a great card, he would love it"
+   },
+   "plan": "Five-colour.",
+   "quotes": [
+    "Take the land over the Vine Lasher Adept. I would love Vine Lasher Adept. It's a great card."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 9,
+   "time": "14:14-14:26",
+   "pack_cards": [
+    "Flourishing Grapple",
+    "Stingerquill Voxmancer",
+    "Traxos, Scourge Eternal",
+    "Blazing Crescendo",
+    "Blessed Ghoul",
+    "Swamp"
+   ],
+   "taken": "Traxos, Scourge Eternal",
+   "reasoning": "Traxos, Scourge Eternal: colourless four-drop 5/4, huge, 'just what the doctor ordered'; he cuts it at the end ('let's cut Traxos').",
+   "considered": {},
+   "plan": "Five-colour.",
+   "quotes": [
+    "Colorless four-drop 5/4, huge, just what the doctor ordered."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 10,
+   "time": "14:26-14:38",
+   "pack_cards": [
+    "Fateshaper Aspirant",
+    "Void Extrapolator",
+    "Artifist Acumen",
+    "Tether Technician",
+    "Something Worth Saving"
+   ],
+   "taken": "Something Worth Saving",
+   "reasoning": "Something Worth Saving over Tether Technician: another SWS, 'why not'; it is counterintuitive with Return to the Light Realms; a janky deck.",
+   "considered": {
+    "Tether Technician": "the alternative"
+   },
+   "plan": "Five-colour.",
+   "quotes": [
+    "Sure, another Something Worth Saving, why not?"
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 11,
+   "time": "14:38-14:56",
+   "pack_cards": [
+    "Edgar, Ancient Bloodlord",
+    "Something Worth Saving",
+    "Medic's Kitesail",
+    "Forest"
+   ],
+   "taken": "Something Worth Saving",
+   "reasoning": "Something Worth Saving again over the Medic's Kitesail and Edgar.",
+   "considered": {},
+   "plan": "Five-colour.",
+   "quotes": [
+    "Sure, another Something Worth Saving, why not?"
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 12,
+   "time": "14:56-15:04",
+   "pack_cards": [
+    "Yargle, Goliath of Otaria",
+    "Yargle, Glutton of Urborg",
+    "Graft Surgeon"
+   ],
+   "taken": null,
+   "reasoning": "Taken card not identified: the pack (Yargle x2, Graft Surgeon) held nothing he would play; he says he is not going to play either Yargle.",
+   "considered": {},
+   "plan": "Five-colour.",
+   "quotes": [
+    "Not going to play Yargle. Either one. I don't think."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 13,
+   "time": "15:04-15:10",
+   "pack_cards": [
+    "Essence Burn",
+    "unreadable (hidden)"
+   ],
+   "taken": null,
+   "reasoning": "Taken card not identified; one card of the pack was hidden.",
+   "considered": {},
+   "plan": "Five-colour.",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 14,
+   "time": "15:10-25:45",
+   "pack_cards": [
+    "unreadable (hidden)"
+   ],
+   "taken": null,
+   "reasoning": "Last card, never displayed.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  }
+ ]
+}

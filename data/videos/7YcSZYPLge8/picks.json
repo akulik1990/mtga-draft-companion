@@ -1,0 +1,991 @@
+{
+ "id": "7YcSZYPLge8",
+ "url": "https://youtu.be/7YcSZYPLge8",
+ "title": "This Strategy is Amazing in Reality Fracture Draft!!!",
+ "player": "NicolaiBolas",
+ "set": "FRA",
+ "event": "FRA live Arena draft, solo; the Arena pick timer is on and chat is not mentioned; Premier / Quick not named on screen",
+ "dataset": "FRA_PremierDraft_All_Data.json",
+ "recorded": null,
+ "source": "frames read from data/videos/raw/7YcSZYPLge8 (banner and pack title rows; layout pool-at-right to about P1p5, then pack on top with the pool below; the deck builder at 1138 s shows the 40/40 deck with the sideboard hidden); takes from the transcript and the deck builder; hover popups hid some cards; transcript from YouTube auto captions, card names corrected; cut-off 1150 s",
+ "colour_path": [
+  {
+   "after": "P1p1",
+   "main": "open (Kiora, Fire and Ashes)",
+   "quote": "Kiora is so good though."
+  },
+  {
+   "after": "P1p6",
+   "main": "four-colour spells deck, undecided",
+   "quote": "Getting a couple colorless cards just helps you delay the decision."
+  },
+  {
+   "after": "P2p1",
+   "main": "red-black splashing green",
+   "quote": "So, we're red black splashing green. Could be pretty doable."
+  },
+  {
+   "after": "P2p3",
+   "main": "red-black splashing blue and green",
+   "quote": "Our deck is going to be red, black ... splashing blue and green."
+  },
+  {
+   "after": "P3p3",
+   "main": "RB + G (Garruk, Hapatra, Puppetbeast)",
+   "quote": "Pick three Garruk. This is really coming together."
+  },
+  {
+   "after": "deck",
+   "main": "RB base, green and light blue splashes, 18 lands",
+   "quote": "I'm fine playing 18 here. I have lots of expensive stuff."
+  }
+ ],
+ "picks": [
+  {
+   "pack": 1,
+   "pick": 1,
+   "time": "0:40-1:20",
+   "pack_cards": [
+    "Hexhaven Invigorator",
+    "Woodwork Prodigy",
+    "Apex Witchstalker",
+    "Vraska, the Cutting Glare",
+    "Hexhaven Battalion",
+    "Blazing Crescendo",
+    "Vraska, Soul of Stone",
+    "Shatterwing Pegasus",
+    "Budding Insurgent",
+    "Prophesied End",
+    "Sphinx's Approach",
+    "Meticulous Commons",
+    "Kiora of Fire and Ashes",
+    "Unsummon"
+   ],
+   "taken": "Kiora of Fire and Ashes",
+   "reasoning": "Kiora of Fire and Ashes over Vraska, the Cutting Glare: 'completely messed up'; the pick is between the two; Vraska, the Cutting Glare might wheel, and with six mana he would rather play Kiora. Hexhaven Invigorator is quadruple green and cannot be taken; the commons are fine and Prophesied End is the best white common.",
+   "considered": {
+    "Vraska, the Cutting Glare": "fantastic, the other candidate; a gold uncommon that might wheel",
+    "Hexhaven Invigorator": "quadruple green, a money card in person"
+   },
+   "plan": "Open.",
+   "quotes": [
+    "I think the pick is between Kiora, Fire and Ashes and Vraska the Cutting Glare."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 2,
+   "time": "1:20-2:20",
+   "pack_cards": [
+    "Ghalta the Immovable",
+    "Vigorbloom Vanguard",
+    "Whiplash Wordsmith",
+    "Yargle, Goliath of Otaria",
+    "Blossom-Blessed Angel",
+    "Afterthought Sentry",
+    "Break Under Pressure",
+    "Mindseeker Oculus",
+    "Fatehold Annex",
+    "Yargle, Glutton of Urborg",
+    "Theoretical Necromancer",
+    "Clash of Elements",
+    "Something Worth Saving"
+   ],
+   "taken": "Mindseeker Oculus",
+   "reasoning": "Mindseeker Oculus: his rule is not to pass it; breaking rules needs a really good reason; Clash of Elements, Break Under Pressure and Something Worth Saving are good; he hopes to wheel Vraska from the first pack.",
+   "considered": {
+    "Clash of Elements": "pretty solid",
+    "Something Worth Saving": "nice"
+   },
+   "plan": "Open.",
+   "quotes": [
+    "I have a rule, don't pass Mind Seeker Oculus. You can break rules sometimes but you really should have a really good reason."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 3,
+   "time": "2:20-3:00",
+   "pack_cards": [
+    "Arni, Humble Scribe",
+    "Predictive Preparations",
+    "Ferocity of the Hunt",
+    "Way of the Deathbringer",
+    "Sphinx's Approach",
+    "Transformative Commons",
+    "Arni, Renowned Champion",
+    "Extended Absence",
+    "Stingerquill Voxmancer",
+    "Hallway Heckler",
+    "Vigorbloom Vanguard",
+    "Twinned Vision"
+   ],
+   "taken": "Extended Absence",
+   "reasoning": "Extended Absence over Arni, Humble Scribe and Twinned Vision: Arni has been a journey card for him; Twinned Vision is excellent and flexible; Absence is really strong and easily splashed a lot of the time.",
+   "considered": {
+    "Arni, Humble Scribe": "a journey card, liked lately",
+    "Twinned Vision": "excellent and flexible, he would not like to third-pick it"
+   },
+   "plan": "Open.",
+   "quotes": [
+    "I'm probably supposed to take Extended Absence. This card's really strong."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 4,
+   "time": "3:00-3:20",
+   "pack_cards": [
+    "Way of the Mentor",
+    "Infinite Coursework",
+    "Fatehold Annex",
+    "Massacre Girl, Most Wanted",
+    "Last Gasp",
+    "Way of the Warlord",
+    "Eye of Jace",
+    "Unflinching Hortimancer",
+    "Afterthought Sentry",
+    "unreadable (hidden)",
+    "unreadable (hidden)"
+   ],
+   "taken": "Last Gasp",
+   "reasoning": "Last Gasp: getting some good black cards; blue-black with a Kiora, he can sometimes splash double red cards in this format.",
+   "considered": {
+    "Infinite Coursework": "in the pack",
+    "Way of the Warlord": "in the pack"
+   },
+   "plan": "Black with blue / red.",
+   "quotes": [
+    "Getting some good black cards. Blue black with a Kiora. You can sometimes splash double red cards in this format."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 5,
+   "time": "3:20-3:40",
+   "pack_cards": [
+    "Root Maze",
+    "Fateshaper Aspirant",
+    "Terminal Criticism",
+    "Divining Duelist",
+    "Loot, the Nexus",
+    "Blessed Ghoul",
+    "Way of the Paradox",
+    "Keeper of the Quiet Hour",
+    "Warrior's Blades",
+    "Plains"
+   ],
+   "taken": "Keeper of the Quiet Hour",
+   "reasoning": "Keeper of the Quiet Hour over Warrior's Blades: Keeper is a great card, plays well with Oculus; he wants enough good playables; red has not seemed open; if he wheels Vraska he can play a four-colour spells deck.",
+   "considered": {
+    "Warrior's Blades": "pretty good; red has not seemed open"
+   },
+   "plan": "Four-colour spells.",
+   "quotes": [
+    "Let's take Keeper. We want to make sure we have enough good playables."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 6,
+   "time": "3:40-4:44",
+   "pack_cards": [
+    "Mabel, Bitter Recluse",
+    "Vigorbloom Annex",
+    "Academic Ascent",
+    "Graft Surgeon",
+    "Solve for Disappointment",
+    "Arcane Amphisbaena",
+    "Theorix Metamage",
+    "Konstrari Improviser",
+    "Keeper of the Quiet Hour"
+   ],
+   "taken": "Keeper of the Quiet Hour",
+   "reasoning": "Keeper of the Quiet Hour (second): a solid colourless card; he does not love Konstrari Improviser but it stacks; Mabel is all right; Arcane Amphisbaena is solid; green and white are not his colours; colourless cards help delay the decision.",
+   "considered": {
+    "Konstrari Improviser": "does not love or hate it",
+    "Mabel, Bitter Recluse": "all right",
+    "Arcane Amphisbaena": "solid"
+   },
+   "plan": "Open: black-red splashing blue, black-red, blue-black or blue-red splashing black.",
+   "quotes": [
+    "Getting a couple colorless cards just helps you delay the decision."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 7,
+   "time": "4:44-5:24",
+   "pack_cards": [
+    "Massacre Girl, Most Wanted",
+    "Paradox Shaper",
+    "Predictive Preparations",
+    "Unflinching Hortimancer",
+    "Screeching Soulbreaker",
+    "Blazing Crescendo",
+    "Something Worth Saving",
+    "Swamp"
+   ],
+   "taken": "Paradox Shaper",
+   "reasoning": "Paradox Shaper over Something Worth Saving: fine, and a direction the deck can go; SWS is a good card but not the direction right now.",
+   "considered": {
+    "Something Worth Saving": "pretty good, not the direction right now"
+   },
+   "plan": "Open.",
+   "quotes": [
+    "I'll probably take it over Something Worth Saving which is also a pretty good card, but not a direction I'm going right now."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 8,
+   "time": "5:24-5:56",
+   "pack_cards": [
+    "Danitha, Sword of Hope",
+    "Titanbones, Towering Heart",
+    "Silence the Echo",
+    "Eardrum Rattler",
+    "Heartstring Puller",
+    "Sureshot Sower",
+    "Forest"
+   ],
+   "taken": "Heartstring Puller",
+   "reasoning": "Heartstring Puller over Silence the Echo and Titanbones: Puller is better as a body and he would like to play Kiora; he currently has one blue card.",
+   "considered": {
+    "Silence the Echo": "fine, not very good"
+   },
+   "plan": "Black-red, Kiora.",
+   "quotes": [
+    "Heart String Puller is just better as a body and I would like to play this Kiora if I can."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 9,
+   "time": "5:56-6:20",
+   "pack_cards": [
+    "Hexhaven Invigorator",
+    "Woodwork Prodigy",
+    "Shatterwing Pegasus",
+    "Blazing Crescendo",
+    "Budding Insurgent",
+    "Meticulous Commons"
+   ],
+   "taken": "Meticulous Commons",
+   "reasoning": "Meticulous Commons over Woodwork Prodigy: he does not really want Prodigy and likes taking lands in weird spots, since you never know where these decks end up. The Vraska did not wheel (taken by someone).",
+   "considered": {
+    "Woodwork Prodigy": "does not really want it"
+   },
+   "plan": "Open.",
+   "quotes": [
+    "I just like taking lands when I see them in weird spots."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 10,
+   "time": "6:20-6:44",
+   "pack_cards": [
+    "Yargle, Goliath of Otaria",
+    "Yargle, Glutton of Urborg",
+    "Something Worth Saving",
+    "Whiplash Wordsmith",
+    "Afterthought Sentry"
+   ],
+   "taken": "Something Worth Saving",
+   "reasoning": "Something Worth Saving (a speculative); Afterthought Sentry would be a two-drop if he needed one, but he is a red-black deck right now taking speculative cards.",
+   "considered": {
+    "Afterthought Sentry": "if he really needed a two-drop"
+   },
+   "plan": "Red-black.",
+   "quotes": [
+    "I think I'm just a red black deck right now and I'm just taking like speculative cards now."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 11,
+   "time": "6:44-6:56",
+   "pack_cards": [
+    "Arni, Renowned Champion",
+    "Predictive Preparations",
+    "Hallway Heckler",
+    "Transformative Commons"
+   ],
+   "taken": "Transformative Commons",
+   "reasoning": "Transformative Commons (the blue-green land) over Hallway Heckler: he just likes taking lands when he sees them.",
+   "considered": {
+    "Hallway Heckler": "does not really like it"
+   },
+   "plan": "Red-black splashing.",
+   "quotes": [
+    "I just like taking lands when I see them in weird spots."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 12,
+   "time": "6:56-7:06",
+   "pack_cards": [
+    "Ferocity of the Hunt",
+    "Konstrari Improviser",
+    "Afterthought Sentry"
+   ],
+   "taken": "Konstrari Improviser",
+   "reasoning": "Konstrari Improviser: helps ramp up to Kiora, a fine two-drop.",
+   "considered": {},
+   "plan": "Red-black splashing green.",
+   "quotes": [
+    "Okay, Improviser's nice. Helps me ramp up to this. Fine two drop."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 13,
+   "time": "7:06-7:11",
+   "pack_cards": [
+    "unreadable (hidden)",
+    "unreadable (hidden)"
+   ],
+   "taken": null,
+   "reasoning": "Taken card not identified; the pack was never readable.",
+   "considered": {},
+   "plan": "Red-black.",
+   "quotes": []
+  },
+  {
+   "pack": 1,
+   "pick": 14,
+   "time": "7:11-7:14",
+   "pack_cards": [
+    "unreadable (hidden)"
+   ],
+   "taken": null,
+   "reasoning": "Last card auto-selected; never displayed.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 1,
+   "time": "7:14-7:58",
+   "pack_cards": [
+    "Omnipresence",
+    "Vraska, the Cutting Glare",
+    "Saheeli, Consul of Oversight",
+    "Paradox Shaper",
+    "Saheeli, Jewel of Avishkar",
+    "Vigorbloom Vanguard",
+    "Hexhaven Battalion",
+    "Shatterwing Pegasus",
+    "Mindseeker Oculus",
+    "Rank Rat",
+    "Eardrum Rattler",
+    "Wrath of the Bloodmane",
+    "Compel Brutality",
+    "Swamp"
+   ],
+   "taken": "Vraska, the Cutting Glare",
+   "reasoning": "Vraska, the Cutting Glare: he could have had two Vraskas; there is Mindseeker Oculus again but blue did not seem open; he is red-black splashing green, which is doable, easier with Improviser; white is the only colour not interesting.",
+   "considered": {
+    "Mindseeker Oculus": "blue did not seem open",
+    "Hexhaven Battalion": "white not interesting"
+   },
+   "plan": "Red-black splashing green.",
+   "quotes": [
+    "So, we're red black splashing green. Could be pretty doable."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 2,
+   "time": "7:58-8:32",
+   "pack_cards": [
+    "Chandra, Chill of Compliance",
+    "Apex Witchstalker",
+    "Skilled Battlecarver",
+    "Arcane Amphisbaena",
+    "Murmuring Volume",
+    "Recursive Recruitment",
+    "Unsummon",
+    "Konstrari Annex",
+    "unreadable (hidden)",
+    "unreadable (hidden)",
+    "unreadable (hidden)",
+    "unreadable (hidden)",
+    "unreadable (hidden)"
+   ],
+   "taken": "Recursive Recruitment",
+   "reasoning": "Recursive Recruitment over Chandra, Chill of Compliance (a double-blue card he cannot splash) and Murmuring Volume: Recruitment is much easier to splash; blue did not seem open in pack one; he loves Volume and hates passing it ('my favourite card in the set right now').",
+   "considered": {
+    "Chandra, Chill of Compliance": "a double blue card, cannot splash",
+    "Murmuring Volume": "hates passing it, favourite card in the set right now"
+   },
+   "plan": "Red-black splashing blue and green.",
+   "quotes": [
+    "I'm going to take the recruitment. I can't splash a double blue card here."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 3,
+   "time": "8:32-8:56",
+   "pack_cards": [
+    "Way of the Healer",
+    "Awaken the Inferno",
+    "Marwyn, the Clearcutter",
+    "Tether Technician",
+    "Violent Echoes",
+    "Inspired Tethermage",
+    "Marwyn, the Preserver",
+    "Mountain",
+    "Twisted Fates",
+    "Memory Trap",
+    "Undulating Witness",
+    "Silence the Echo"
+   ],
+   "taken": "Violent Echoes",
+   "reasoning": "Violent Echoes: a fantastic card; the deck will be red-black splashing blue and green, a weird combo of splashes.",
+   "considered": {
+    "Twisted Fates": "in the pack",
+    "Memory Trap": "in the pack"
+   },
+   "plan": "Red-black splashing blue and green.",
+   "quotes": [
+    "Violent Echoes is great."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 4,
+   "time": "8:56-9:46",
+   "pack_cards": [
+    "Samut, Tyrant of Naktamun",
+    "Greenhouse Propagator",
+    "Identity Echo",
+    "Theorix Metamage",
+    "Samut, Hazoret's Champion",
+    "Mountain",
+    "Way of the Paradox",
+    "Shatterwing Pegasus",
+    "Infinite Coursework",
+    "Chandra's Emberling",
+    "Skilled Battlecarver"
+   ],
+   "taken": "Samut, Hazoret's Champion",
+   "reasoning": "Samut, Hazoret's Champion: still a good card though he is not necessarily aggressive; giving everything haste after a Kiora is a real threat; if he is only splashing blue and green the other cards are not that good anyway.",
+   "considered": {
+    "Samut, Tyrant of Naktamun": "mentioned"
+   },
+   "plan": "Red-black splashing blue and green.",
+   "quotes": [
+    "Giving all your stuff haste is like you play your Kiora, Fire and Ashes and all of a sudden you have a real threat."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 5,
+   "time": "9:46-10:20",
+   "pack_cards": [
+    "Thalia, the Survivor",
+    "Medic's Kitesail",
+    "Restore with Empathy",
+    "Island",
+    "Hapatra, the Desert Fang",
+    "Icy Reception",
+    "Solve for Disappointment",
+    "Eardrum Rattler",
+    "Compel Brutality",
+    "Blessed Ghoul"
+   ],
+   "taken": "Hapatra, the Desert Fang",
+   "reasoning": "Hapatra, the Desert Fang: the green splash is looking nice; he has Hapatra and Vraska now, and could try to splash white too with the land; the mana fixing is the weak part.",
+   "considered": {
+    "Restore with Empathy": "in the pack",
+    "Compel Brutality": "in the pack"
+   },
+   "plan": "Red-black splashing green.",
+   "quotes": [
+    "Yeah, the green splash is looking pretty nice. I have Hapatra and Vraska now."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 6,
+   "time": "10:20-10:46",
+   "pack_cards": [
+    "Face Yourself",
+    "Island",
+    "Void Extrapolator",
+    "Skilled Battlecarver",
+    "Sureshot Sower",
+    "Room of Refuge",
+    "unreadable (hidden)",
+    "unreadable (hidden)",
+    "unreadable (hidden)"
+   ],
+   "taken": "Face Yourself",
+   "reasoning": "Face Yourself over Room of Refuge: he really wants to play Face Yourself; it could be good in this deck; he has some legendaries; he could splash double-blue cards but does not want to.",
+   "considered": {
+    "Room of Refuge": "also in the pack"
+   },
+   "plan": "Red-black splashing green and blue.",
+   "quotes": [
+    "I really want to play face yourself a bit. Feel like it could be good in this deck."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 7,
+   "time": "10:46-11:12",
+   "pack_cards": [
+    "Precise Redaction",
+    "Ghalta the Unstoppable",
+    "Stingerquill Charm",
+    "Hexhaven Dueling Arena",
+    "Artifist Acumen",
+    "Tether Technician",
+    "Tam's Resistance",
+    "Stingerquill Annex"
+   ],
+   "taken": "Stingerquill Annex",
+   "reasoning": "Stingerquill Annex over Stingerquill Charm: the Charm is like the card for his deck (three damage to anything) but he already has five removal spells; the land helps the blue and green splashes and makes his mana more consistent.",
+   "considered": {
+    "Stingerquill Charm": "the card for his deck, but he has five removal spells"
+   },
+   "plan": "Red-black splashing green and blue.",
+   "quotes": [
+    "The land is going to be really helpful for this blue splash and this green splash is getting my mana more consistent."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 8,
+   "time": "11:12-11:44",
+   "pack_cards": [
+    "Way of the Wildspeaker",
+    "Craftwork Crusher",
+    "Unflinching Hortimancer",
+    "Artifist Acumen",
+    "Greenhouse Propagator",
+    "Charge the Sanctum",
+    "Island"
+   ],
+   "taken": "Craftwork Crusher",
+   "reasoning": "Craftwork Crusher: 'Pick eight. Geez Louise'; he tries to get more Heartwood generators; the green splash is now becoming more than a splash.",
+   "considered": {},
+   "plan": "Red-black with green.",
+   "quotes": [
+    "Well, Craftwork Crusher it is. Pick eight."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 9,
+   "time": "11:44-12:04",
+   "pack_cards": [
+    "Paradox Shaper",
+    "Vigorbloom Vanguard",
+    "Shatterwing Pegasus",
+    "Rank Rat",
+    "Eardrum Rattler",
+    "Swamp"
+   ],
+   "taken": "Rank Rat",
+   "reasoning": "Rank Rat (inferred from the pool; his words: 'let's take the Rank Rat, one of those and one of these maybe is a good combination; Paradox Shaper is really good with Recursive Recruitment, maybe we should take the Shaper over the Rat').",
+   "considered": {
+    "Paradox Shaper": "really good with Recursive Recruitment"
+   },
+   "plan": "Red-black.",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 10,
+   "time": "12:04-12:24",
+   "pack_cards": [
+    "Unflinching Hortimancer",
+    "Apex Witchstalker",
+    "Skilled Battlecarver",
+    "Murmuring Volume",
+    "Konstrari Annex"
+   ],
+   "taken": "Murmuring Volume",
+   "reasoning": "Murmuring Volume wheeled: 'I would love a red-green land, don't get me wrong' but Volume is so good, helps with every splash, gives every colour and ramps; the pack was juiced (landcycler he could want and the red-green tap land).",
+   "considered": {
+    "Konstrari Annex": "red-green tap land, would love it"
+   },
+   "plan": "Red-black splashing.",
+   "quotes": [
+    "Murmuring volume is so good. It just helps with every splash, gives me every color, and ramps me towards my big stuff."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 11,
+   "time": "12:24-12:37",
+   "pack_cards": [
+    "Marwyn, the Clearcutter",
+    "Tether Technician",
+    "Inspired Tethermage",
+    "Mountain"
+   ],
+   "taken": null,
+   "reasoning": "Taken card not identified (pack: Marwyn, the Clearcutter, Tether Technician, Inspired Tethermage, Mountain); none of them is in the final deck screen.",
+   "considered": {},
+   "plan": "Red-black.",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 12,
+   "time": "12:37-12:44",
+   "pack_cards": [
+    "Way of the Paradox",
+    "Skilled Battlecarver",
+    "Mountain"
+   ],
+   "taken": null,
+   "reasoning": "Taken card not identified (pack: Way of the Paradox, Skilled Battlecarver, Mountain); none is in the final deck screen.",
+   "considered": {},
+   "plan": "Red-black.",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 13,
+   "time": "12:44-12:46",
+   "pack_cards": [
+    "Solve for Disappointment",
+    "Island"
+   ],
+   "taken": null,
+   "reasoning": "Taken card not identified (pack: Solve for Disappointment, Island).",
+   "considered": {},
+   "plan": "Red-black.",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 14,
+   "time": "12:46-12:50",
+   "pack_cards": [
+    "unreadable (hidden)"
+   ],
+   "taken": null,
+   "reasoning": "Last card auto-selected; never displayed.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 1,
+   "time": "12:50-13:28",
+   "pack_cards": [
+    "Enlightened Confidant",
+    "Protege's Awakening",
+    "Ghalta the Immovable",
+    "Rank Rat",
+    "Mabel, Bitter Recluse",
+    "Something Worth Saving",
+    "Winter, Tormented Loner",
+    "Charge the Sanctum",
+    "Winter, Team Player",
+    "Living Library",
+    "Stingerquill Charm",
+    "Formidable Commons",
+    "Vigorbloom Charm",
+    "Cryotheory Adept"
+   ],
+   "taken": "Formidable Commons",
+   "reasoning": "Formidable Commons over Stingerquill Charm: he is going to have plenty of playables, so a land for consistency; 21 cards less two lands is 19, 18 playables already and he wants five more; Tether Technician is a card he hopes to cut.",
+   "considered": {
+    "Stingerquill Charm": "passed again for the land"
+   },
+   "plan": "Red-black splashing blue and green.",
+   "quotes": [
+    "I'm going to have plenty of playables here, like just looking at this deck."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 2,
+   "time": "13:28-13:52",
+   "pack_cards": [
+    "Way of the Mentor",
+    "Bestial Incursion",
+    "Way of the Warlord",
+    "Twinned Vision",
+    "Flourishing Grapple",
+    "Keeper of the Quiet Hour",
+    "Ghalta the Unstoppable",
+    "Living Library",
+    "Warrior's Blades",
+    "Mountain",
+    "Memory Trap",
+    "Rampart Hunter",
+    "Blazing Crescendo"
+   ],
+   "taken": "Twinned Vision",
+   "reasoning": "Twinned Vision: he likes it, he is red base splashing blue so it is easy to cast and splashing it back; Keeper of the Quiet Hour is also good but he likes having one; Bestial Incursion in the splash would be fine but this is better in the main colours.",
+   "considered": {
+    "Keeper of the Quiet Hour": "likes having one, he has several",
+    "Bestial Incursion": "would be fine in the splash"
+   },
+   "plan": "Red-black splashing blue.",
+   "quotes": [
+    "We are playing red base and splashing blue so it should be pretty easy to splash back the card."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 3,
+   "time": "13:52-14:28",
+   "pack_cards": [
+    "Garruk, Veiled Butcher",
+    "Tether Technician",
+    "Tetsuko Umezawa, Fugitive",
+    "Arcane Amphisbaena",
+    "Way of the Necromancer",
+    "Medic's Kitesail",
+    "Tetsuko Umezawa, Pursuer",
+    "Dedicated Commons",
+    "Twisted Fates",
+    "Predictive Preparations",
+    "Surveillance Phantasm",
+    "Rampart Hunter"
+   ],
+   "taken": "Garruk, Veiled Butcher",
+   "reasoning": "Garruk, Veiled Butcher: 'this is a nice draft, this is really coming together'; 'I love it when a plan comes together'.",
+   "considered": {},
+   "plan": "Red-black splashing blue and green.",
+   "quotes": [
+    "Pick three Garruk. This is a nice draft. This is really coming together."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 4,
+   "time": "14:28-14:52",
+   "pack_cards": [
+    "Hungering Puppetbeast",
+    "Chandra's Emberling",
+    "Arni, Humble Scribe",
+    "Arcane Amphisbaena",
+    "Perfected Theory",
+    "Swamp",
+    "Arni, Renowned Champion",
+    "Hapatra, the Desert Fang",
+    "Predictive Preparations",
+    "Divining Duelist",
+    "Last Gasp"
+   ],
+   "taken": "Hungering Puppetbeast",
+   "reasoning": "Hungering Puppetbeast over Hypnotic Aura: a brilliant card; play Puppetbeast next turn, play Grapple with the Past with the bent mana; it is another double-green card but he already has one.",
+   "considered": {
+    "Hapatra, the Desert Fang": "seen in the pack, wheels"
+   },
+   "plan": "Red-black splashing green.",
+   "quotes": [
+    "Puppet Beast is just a brilliant card."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 5,
+   "time": "14:52-15:10",
+   "pack_cards": [
+    "Solitary Cell",
+    "Keeper of the Quiet Hour",
+    "Mabel, Bitter Recluse",
+    "Innovative Commons",
+    "Mabel, Valley Hero",
+    "Silence the Echo",
+    "Ferocity of the Hunt",
+    "Charge the Sanctum",
+    "Emergency Phytomedic",
+    "Afterthought Sentry"
+   ],
+   "taken": "Innovative Commons",
+   "reasoning": "Innovative Commons: blue-red land; 'these lands in like freebie slots like I would be taking like a 3-2 here, but because we took these earlier we have plenty of playables'.",
+   "considered": {
+    "Mabel, Bitter Recluse": "in the pack",
+    "Keeper of the Quiet Hour": "in the pack"
+   },
+   "plan": "Red-black splashing.",
+   "quotes": [
+    "These lands in like freebie slots ... because we took these earlier we have plenty of playables."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 6,
+   "time": "15:10-15:30",
+   "pack_cards": [
+    "Precise Redaction",
+    "Forest",
+    "Pia, Aether Ascetic",
+    "Graft Surgeon",
+    "Sphinx's Approach",
+    "Void Extrapolator",
+    "Skilled Battlecarver",
+    "Arcane Amphisbaena",
+    "Living Library"
+   ],
+   "taken": null,
+   "reasoning": "Taken card not identified: 'we'll just take this thing now. This can get an enchantment. What enchantment do we have? Any good ones? No, not really. Just get a black two-drop that has some graveyard synergy with Recursive Recruitment maybe.' Pia, Aether Ascetic and Void Extrapolator are in the pack; neither is in his deck.",
+   "considered": {
+    "Pia, Aether Ascetic": "can get an enchantment; he has none",
+    "Void Extrapolator": "black two-drop with graveyard synergy"
+   },
+   "plan": "Red-black.",
+   "quotes": [
+    "Just get a black two drop that has some graveyard synergy with our recursive recruitment maybe."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 7,
+   "time": "15:30-15:42",
+   "pack_cards": [
+    "Ghalta the Unstoppable",
+    "Paradox Shaper",
+    "Hapatra, the Desert Fang",
+    "Cast Away Doubt",
+    "Rank Rat",
+    "Chandra's Emberling",
+    "Skilled Battlecarver",
+    "Budding Insurgent"
+   ],
+   "taken": "Hapatra, the Desert Fang",
+   "reasoning": "Hapatra, the Desert Fang (second): 'wow, another Hapatra. Living the dream'.",
+   "considered": {},
+   "plan": "Red-black splashing green.",
+   "quotes": [
+    "Wow, another Hypatia. Living the dream."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 8,
+   "time": "15:42-15:45",
+   "pack_cards": [
+    "unreadable (hidden)",
+    "unreadable (hidden)",
+    "unreadable (hidden)",
+    "unreadable (hidden)",
+    "unreadable (hidden)",
+    "unreadable (hidden)",
+    "unreadable (hidden)"
+   ],
+   "taken": "Craftwork Crusher",
+   "reasoning": "Craftwork Crusher (second): 'Another crusher pick eight. Oh my gosh. We're just going to play I think 18 lands in this deck.'",
+   "considered": {},
+   "plan": "Red-black splashing green.",
+   "quotes": [
+    "Another crusher pick eight. Oh my gosh."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 9,
+   "time": "15:45-15:50",
+   "pack_cards": [
+    "Mabel, Bitter Recluse",
+    "Winter, Team Player",
+    "Rank Rat",
+    "Something Worth Saving",
+    "Charge the Sanctum",
+    "Living Library"
+   ],
+   "taken": "Mabel, Bitter Recluse",
+   "reasoning": "Mabel, Bitter Recluse (inferred; his words: 'Rank Rat, maybe we'll play Mabel. Give ourselves a defensive body early'); the pack was never readable.",
+   "considered": {},
+   "plan": "Red-black.",
+   "quotes": [
+    "Rat, maybe we'll play Mabel. Give ourselves a defensive body early."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 10,
+   "time": "15:50-16:09",
+   "pack_cards": [
+    "Rampart Hunter",
+    "Blazing Crescendo",
+    "Keeper of the Quiet Hour",
+    "Living Library",
+    "Mountain"
+   ],
+   "taken": "Keeper of the Quiet Hour",
+   "reasoning": "Keeper of the Quiet Hour (third): 'we're keeping things quiet'; the blue might not be necessary but Recursive Recruitment is so good and he already has the lands for it, so maybe cut the Oculus.",
+   "considered": {},
+   "plan": "Red-black splashing.",
+   "quotes": [
+    "Keeper of the quiet hour. We're keeping things quiet."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 11,
+   "time": "16:09-16:13",
+   "pack_cards": [
+    "Twisted Fates",
+    "Predictive Preparations",
+    "Rampart Hunter",
+    "Tether Technician"
+   ],
+   "taken": null,
+   "reasoning": "Taken card not identified; the pack was only partly readable.",
+   "considered": {},
+   "plan": "Red-black.",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 12,
+   "time": "16:13-16:32",
+   "pack_cards": [
+    "Arni, Renowned Champion",
+    "unreadable (hidden)",
+    "unreadable (hidden)"
+   ],
+   "taken": "Mabel, Bitter Recluse",
+   "reasoning": "Mabel, Bitter Recluse (second): 'Another Mabel, nice. I don't mind Mabel.'",
+   "considered": {},
+   "plan": "Red-black.",
+   "quotes": [
+    "Another Mabel, nice."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 13,
+   "time": "16:32-16:44",
+   "pack_cards": [
+    "unreadable (hidden)",
+    "unreadable (hidden)"
+   ],
+   "taken": null,
+   "reasoning": "Taken card not identified; the pack was never readable.",
+   "considered": {},
+   "plan": "Red-black.",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 14,
+   "time": "16:44-25:45",
+   "pack_cards": [
+    "unreadable (hidden)"
+   ],
+   "taken": null,
+   "reasoning": "Last card auto-selected; never displayed.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  }
+ ]
+}

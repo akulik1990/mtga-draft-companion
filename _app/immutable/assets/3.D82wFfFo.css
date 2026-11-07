@@ -1,0 +1,1 @@
+@media (width>=1024px){.col.svelte-1jkmxuy{--pw:min(100cqw, calc((100vh - var(--top,5rem) - var(--tl,34vh)) * 16 / 9));container-type:inline-size}.pw.svelte-1jkmxuy{max-width:var(--pw);margin-inline:auto;transition:max-width .3s}.col.svelte-1jkmxuy .tl:where(.svelte-1jkmxuy){max-height:none;height:var(--tl,34vh)}}

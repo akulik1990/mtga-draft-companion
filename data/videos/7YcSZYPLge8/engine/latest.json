@@ -1,0 +1,1733 @@
+{
+ "commit": "ea1d9d7",
+ "date": "2026-11-07",
+ "dataset": "FRA_PremierDraft_All_Data.json",
+ "top1": 17,
+ "top3": 25,
+ "n": 32,
+ "not_scored": 10,
+ "dropped_cards": 26,
+ "picks": [
+  {
+   "pack": 1,
+   "pick": 1,
+   "taken": "Kiora of Fire and Ashes",
+   "top3": [
+    {
+     "name": "Kiora of Fire and Ashes",
+     "score": 66.15
+    },
+    {
+     "name": "Vraska, the Cutting Glare",
+     "score": 64.88
+    },
+    {
+     "name": "Prophesied End",
+     "score": 60.48
+    }
+   ],
+   "his_score": 66.15,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WR 25% \u2192 57.8 (n=4465)",
+    "UR 25% \u2192 62.8 (n=13682)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WR 25% \u2192 57.8 (n=4465)",
+    "UR 25% \u2192 62.8 (n=13682)"
+   ],
+   "lanes_after": {
+    "WU": 0.104,
+    "WB": 0.104,
+    "WG": 0.104,
+    "UB": 0.104
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 2,
+   "taken": "Mindseeker Oculus",
+   "top3": [
+    {
+     "name": "Break Under Pressure",
+     "score": 63.96
+    },
+    {
+     "name": "Mindseeker Oculus",
+     "score": 63.14
+    },
+    {
+     "name": "Vigorbloom Vanguard",
+     "score": 61.32
+    }
+   ],
+   "his_score": 63.14,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 10% \u2192 off-colour",
+    "WB 10% \u2192 57.4 (n=4517)",
+    "castable in 40% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #2",
+    "WU 10% \u2192 60.4 (n=41775)",
+    "WB 10% \u2192 off-colour",
+    "castable in 42% of likely lanes"
+   ],
+   "lanes_after": {
+    "WB": 0.106,
+    "WG": 0.106,
+    "UB": 0.106,
+    "BG": 0.106
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 3,
+   "taken": "Extended Absence",
+   "top3": [
+    {
+     "name": "Extended Absence",
+     "score": 62.35
+    },
+    {
+     "name": "Twinned Vision",
+     "score": 60.1
+    },
+    {
+     "name": "Vigorbloom Vanguard",
+     "score": 59.96
+    }
+   ],
+   "his_score": 62.35,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WB 11% \u2192 56.6 (n=9548)",
+    "WG 11% \u2192 off-colour",
+    "castable in 41% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WB 11% \u2192 56.6 (n=9548)",
+    "WG 11% \u2192 off-colour",
+    "castable in 41% of likely lanes"
+   ],
+   "lanes_after": {
+    "WG": 0.111,
+    "UB": 0.111,
+    "RG": 0.111,
+    "WU": 0.111
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 4,
+   "taken": "Last Gasp",
+   "top3": [
+    {
+     "name": "Last Gasp",
+     "score": 59.5
+    },
+    {
+     "name": "Infinite Coursework",
+     "score": 56.7
+    },
+    {
+     "name": "Way of the Warlord",
+     "score": 55.8
+    }
+   ],
+   "his_score": 59.5,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 2,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UB 12% \u2192 58.7 (n=44400)",
+    "BG 11% \u2192 56.0 (n=18239)",
+    "castable in 43% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "UB 12% \u2192 58.7 (n=44400)",
+    "BG 11% \u2192 56.0 (n=18239)",
+    "castable in 43% of likely lanes"
+   ],
+   "lanes_after": {
+    "UB": 0.12,
+    "BG": 0.106,
+    "WG": 0.105,
+    "RG": 0.105
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 5,
+   "taken": "Keeper of the Quiet Hour",
+   "top3": [
+    {
+     "name": "Way of the Paradox",
+     "score": 57.63
+    },
+    {
+     "name": "Warrior's Blades",
+     "score": 54.41
+    },
+    {
+     "name": "Divining Duelist",
+     "score": 52.52
+    }
+   ],
+   "his_score": 51.04,
+   "his_rank": 6,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WG 12% \u2192 56.2 (n=8889)",
+    "RG 12% \u2192 55.0 (n=6630)",
+    "castable in 45% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #6 \u00b7 Power #6",
+    "WG 12% \u2192 52.9 (n=3957)",
+    "RG 12% \u2192 55.8 (n=7729)"
+   ],
+   "lanes_after": {
+    "RG": 0.119,
+    "WG": 0.112,
+    "UB": 0.111,
+    "BG": 0.111
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 6,
+   "taken": "Keeper of the Quiet Hour",
+   "top3": [
+    {
+     "name": "Vigorbloom Annex",
+     "score": 56.11
+    },
+    {
+     "name": "Arcane Amphisbaena",
+     "score": 56.01
+    },
+    {
+     "name": "Konstrari Improviser",
+     "score": 54.55
+    }
+   ],
+   "his_score": 52.35,
+   "his_rank": 6,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Branch: +0.8 over Arcane Amphisbaena, above the -2.1 top drafters switch at",
+    "Fit #2 \u00b7 Power #1",
+    "RG 16% \u2192 off-colour",
+    "BG 13% \u2192 off-colour",
+    "castable in 13% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #6 \u00b7 Power #6",
+    "RG 16% \u2192 55.8 (n=7729)",
+    "BG 13% \u2192 54.5 (n=4687)"
+   ],
+   "lanes_after": {
+    "RG": 0.162,
+    "BG": 0.129,
+    "WG": 0.121,
+    "UG": 0.111
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 7,
+   "taken": "Paradox Shaper",
+   "top3": [
+    {
+     "name": "Something Worth Saving",
+     "score": 55.06
+    },
+    {
+     "name": "Paradox Shaper",
+     "score": 55.05
+    },
+    {
+     "name": "Unflinching Hortimancer",
+     "score": 52.3
+    }
+   ],
+   "his_score": 55.05,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "BG 13% \u2192 57.0 (n=17292)",
+    "RG 13% \u2192 57.0 (n=13053)",
+    "castable in 48% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #2",
+    "BG 13% \u2192 53.3 (n=4264)",
+    "RG 13% \u2192 off-colour"
+   ],
+   "lanes_after": {
+    "RG": 0.142,
+    "BG": 0.135,
+    "WG": 0.126,
+    "UG": 0.11
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 8,
+   "taken": "Heartstring Puller",
+   "top3": [
+    {
+     "name": "Heartstring Puller",
+     "score": 53.33
+    },
+    {
+     "name": "Silence the Echo",
+     "score": 52.41
+    },
+    {
+     "name": "Sureshot Sower",
+     "score": 50.64
+    }
+   ],
+   "his_score": 53.33,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "RG 16% \u2192 54.4 (n=17070)",
+    "BG 14% \u2192 off-colour",
+    "castable in 41% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "RG 16% \u2192 54.4 (n=17070)",
+    "BG 14% \u2192 off-colour",
+    "castable in 41% of likely lanes"
+   ],
+   "lanes_after": {
+    "RG": 0.157,
+    "BG": 0.14,
+    "WG": 0.127,
+    "UG": 0.105
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 9,
+   "taken": "Meticulous Commons",
+   "top3": [
+    {
+     "name": "Meticulous Commons",
+     "score": 53.56
+    },
+    {
+     "name": "Woodwork Prodigy",
+     "score": 53.46
+    },
+    {
+     "name": "Hexhaven Invigorator",
+     "score": 51.07
+    }
+   ],
+   "his_score": 53.56,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Branch: +4.4 over Woodwork Prodigy, above the -1.9 top drafters switch at",
+    "Fit #2 \u00b7 Power #1",
+    "RG 20% \u2192 fixes a splash (+2.5)",
+    "WG 16% \u2192 fixes a splash (+1.9)",
+    "castable in 6% of likely lanes"
+   ],
+   "reasons_his": [
+    "Branch: +4.4 over Woodwork Prodigy, above the -1.9 top drafters switch at",
+    "Fit #2 \u00b7 Power #1",
+    "RG 20% \u2192 fixes a splash (+2.5)",
+    "WG 16% \u2192 fixes a splash (+1.9)",
+    "castable in 6% of likely lanes"
+   ],
+   "lanes_after": {
+    "RG": 0.204,
+    "WG": 0.16,
+    "BG": 0.153,
+    "UG": 0.118
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 10,
+   "taken": "Something Worth Saving",
+   "top3": [
+    {
+     "name": "Something Worth Saving",
+     "score": 55.51
+    },
+    {
+     "name": "Afterthought Sentry",
+     "score": 50.0
+    },
+    {
+     "name": "Whiplash Wordsmith",
+     "score": 46.91
+    }
+   ],
+   "his_score": 55.51,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "RG 22% \u2192 57.0 (n=13053)",
+    "WG 17% \u2192 54.8 (n=10351)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "RG 22% \u2192 57.0 (n=13053)",
+    "WG 17% \u2192 54.8 (n=10351)"
+   ],
+   "lanes_after": {
+    "RG": 0.225,
+    "WG": 0.169,
+    "BG": 0.168,
+    "UG": 0.124
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 11,
+   "taken": "Transformative Commons",
+   "top3": [
+    {
+     "name": "Transformative Commons",
+     "score": 53.18
+    },
+    {
+     "name": "Hallway Heckler",
+     "score": 49.38
+    },
+    {
+     "name": "Predictive Preparations",
+     "score": 45.06
+    }
+   ],
+   "his_score": 53.18,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "RG 22% \u2192 fixes a splash (+1.9)",
+    "BG 17% \u2192 fixes a splash (+1.6)",
+    "castable in 12% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "RG 22% \u2192 fixes a splash (+1.9)",
+    "BG 17% \u2192 fixes a splash (+1.6)",
+    "castable in 12% of likely lanes"
+   ],
+   "lanes_after": {
+    "RG": 0.221,
+    "BG": 0.166,
+    "WG": 0.155,
+    "UG": 0.116
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 12,
+   "taken": "Konstrari Improviser",
+   "top3": [
+    {
+     "name": "Konstrari Improviser",
+     "score": 64.75
+    },
+    {
+     "name": "Ferocity of the Hunt",
+     "score": 64.28
+    },
+    {
+     "name": "Afterthought Sentry",
+     "score": 60.17
+    }
+   ],
+   "his_score": 64.75,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "RG 29% \u2192 54.9 (n=29150)",
+    "BG 18% \u2192 52.2 (n=7697)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "RG 29% \u2192 54.9 (n=29150)",
+    "BG 18% \u2192 52.2 (n=7697)"
+   ],
+   "lanes_after": {
+    "BG": 0.212,
+    "RG": 0.171,
+    "WG": 0.167,
+    "UG": 0.129
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 13,
+   "taken": null,
+   "top3": [],
+   "his_score": null,
+   "his_rank": null,
+   "scored": false,
+   "dropped": 2,
+   "reasons_top": [],
+   "reasons_his": [],
+   "lanes_after": {
+    "BG": 0.212,
+    "RG": 0.171,
+    "WG": 0.167,
+    "UG": 0.129
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 14,
+   "taken": null,
+   "top3": [],
+   "his_score": null,
+   "his_rank": null,
+   "scored": false,
+   "dropped": 1,
+   "reasons_top": [],
+   "reasons_his": [],
+   "lanes_after": {
+    "BG": 0.212,
+    "RG": 0.171,
+    "WG": 0.167,
+    "UG": 0.129
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 1,
+   "taken": "Vraska, the Cutting Glare",
+   "top3": [
+    {
+     "name": "Mindseeker Oculus",
+     "score": 59.91
+    },
+    {
+     "name": "Vigorbloom Vanguard",
+     "score": 58.13
+    },
+    {
+     "name": "Vraska, the Cutting Glare",
+     "score": 57.44
+    }
+   ],
+   "his_score": 57.44,
+   "his_rank": 3,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "BG 14% \u2192 splash U (fixing 1) 55.4",
+    "WG 13% \u2192 splash U (fixing 1) 53.4",
+    "castable in 40% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #3 \u00b7 Power #1",
+    "BG 23% \u2192 62.9 (n=7407)",
+    "WB 14% \u2192 splash G (fixing 1) 57.4",
+    "castable in 23% of likely lanes"
+   ],
+   "lanes_after": {
+    "UR": 0.339,
+    "WU": 0.306,
+    "WR": 0.242,
+    "BG": 0.023
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 2,
+   "taken": "Recursive Recruitment",
+   "top3": [
+    {
+     "name": "Recursive Recruitment",
+     "score": 59.09
+    },
+    {
+     "name": "Chandra, Chill of Compliance",
+     "score": 58.06
+    },
+    {
+     "name": "Unsummon",
+     "score": 57.57
+    }
+   ],
+   "his_score": 59.09,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 5,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 40% \u2192 splash B (fixing 3) 56.8",
+    "WU 36% \u2192 splash B (fixing 3) 56.7",
+    "castable in 1% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 40% \u2192 splash B (fixing 3) 56.8",
+    "WU 36% \u2192 splash B (fixing 3) 56.7",
+    "castable in 1% of likely lanes"
+   ],
+   "lanes_after": {
+    "BG": 0.407,
+    "WB": 0.224,
+    "BR": 0.169,
+    "UB": 0.16
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 3,
+   "taken": "Violent Echoes",
+   "top3": [
+    {
+     "name": "Awaken the Inferno",
+     "score": 54.62
+    },
+    {
+     "name": "Way of the Healer",
+     "score": 52.97
+    },
+    {
+     "name": "Undulating Witness",
+     "score": 52.97
+    }
+   ],
+   "his_score": 51.98,
+   "his_rank": 4,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #5",
+    "BG 41% \u2192 splash R (fixing 2) 53.5",
+    "WB 22% \u2192 splash R (fixing 2) 50.2",
+    "castable in 23% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #4 \u00b7 Power #2",
+    "BG 41% \u2192 off-colour",
+    "WB 22% \u2192 off-colour",
+    "castable in 23% of likely lanes"
+   ],
+   "lanes_after": {
+    "BG": 0.415,
+    "WB": 0.228,
+    "BR": 0.177,
+    "UB": 0.141
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 4,
+   "taken": "Samut, Hazoret's Champion",
+   "top3": [
+    {
+     "name": "Way of the Paradox",
+     "score": 53.14
+    },
+    {
+     "name": "Samut, Hazoret's Champion",
+     "score": 52.32
+    },
+    {
+     "name": "Theorix Metamage",
+     "score": 51.07
+    }
+   ],
+   "his_score": 52.32,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "BG 39% \u2192 55.0 (n=3665)",
+    "BR 22% \u2192 splash G (fixing 3) 50.8",
+    "castable in 39% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #1",
+    "BG 39% \u2192 splash R (fixing 2) 50.9",
+    "BR 22% \u2192 57.1 (n=3059)",
+    "castable in 27% of likely lanes"
+   ],
+   "lanes_after": {
+    "BR": 0.839,
+    "WR": 0.13,
+    "UR": 0.017,
+    "RG": 0.006
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 5,
+   "taken": "Hapatra, the Desert Fang",
+   "top3": [
+    {
+     "name": "Hapatra, the Desert Fang",
+     "score": 54.39
+    },
+    {
+     "name": "Icy Reception",
+     "score": 50.99
+    },
+    {
+     "name": "Blessed Ghoul",
+     "score": 50.18
+    }
+   ],
+   "his_score": 54.39,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "BR 87% \u2192 splash G (fixing 3) 54.0",
+    "WR 10% \u2192 off-colour",
+    "castable in 1% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "BR 87% \u2192 splash G (fixing 3) 54.0",
+    "WR 10% \u2192 off-colour",
+    "castable in 1% of likely lanes"
+   ],
+   "lanes_after": {
+    "BR": 0.872,
+    "WR": 0.103,
+    "UR": 0.011,
+    "BG": 0.008
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 6,
+   "taken": "Face Yourself",
+   "top3": [
+    {
+     "name": "Room of Refuge",
+     "score": 54.09
+    },
+    {
+     "name": "Skilled Battlecarver",
+     "score": 51.37
+    },
+    {
+     "name": "Void Extrapolator",
+     "score": 51.04
+    }
+   ],
+   "his_score": 44.43,
+   "his_rank": 5,
+   "scored": true,
+   "dropped": 3,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "BR 87% \u2192 54.9 (n=5978)",
+    "WR 11% \u2192 53.5 (n=3322)"
+   ],
+   "reasons_his": [
+    "Fit #5 \u00b7 Power #5",
+    "BR 87% \u2192 51.7 (n=1481)",
+    "WR 11% \u2192 51.8 (n=831)"
+   ],
+   "lanes_after": {
+    "BR": 0.874,
+    "WR": 0.107,
+    "UR": 0.015,
+    "BG": 0.002
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 7,
+   "taken": "Stingerquill Annex",
+   "top3": [
+    {
+     "name": "Stingerquill Annex",
+     "score": 60.93
+    },
+    {
+     "name": "Stingerquill Charm",
+     "score": 59.74
+    },
+    {
+     "name": "Tether Technician",
+     "score": 52.23
+    }
+   ],
+   "his_score": 60.93,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "BR 89% \u2192 51.8 (n=11372)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "BR 89% \u2192 51.8 (n=11372)"
+   ],
+   "lanes_after": {
+    "BR": 0.893,
+    "WR": 0.087,
+    "UR": 0.015,
+    "BG": 0.003
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 8,
+   "taken": "Craftwork Crusher",
+   "top3": [
+    {
+     "name": "Craftwork Crusher",
+     "score": 52.35
+    },
+    {
+     "name": "Charge the Sanctum",
+     "score": 50.03
+    },
+    {
+     "name": "Artifist Acumen",
+     "score": 48.2
+    }
+   ],
+   "his_score": 52.35,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "BR 86% \u2192 off-colour",
+    "WR 11% \u2192 off-colour",
+    "castable in 1% of likely lanes",
+    "open: G"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "BR 86% \u2192 off-colour",
+    "WR 11% \u2192 off-colour",
+    "castable in 1% of likely lanes",
+    "open: G"
+   ],
+   "lanes_after": {
+    "RG": 0.47,
+    "BRG": 0.47,
+    "BG": 0.028,
+    "BR": 0.027
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 9,
+   "taken": "Rank Rat",
+   "top3": [
+    {
+     "name": "Paradox Shaper",
+     "score": 56.04
+    },
+    {
+     "name": "Rank Rat",
+     "score": 54.91
+    },
+    {
+     "name": "Vigorbloom Vanguard",
+     "score": 52.37
+    }
+   ],
+   "his_score": 54.91,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "BRG 48% \u2192 51.8 (n=700)",
+    "RG 45% \u2192 splash U (fixing 3) 49.3",
+    "castable in 55% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #3",
+    "BRG 48% \u2192 54.3 (n=2398)",
+    "RG 45% \u2192 splash B (fixing 4) 48.6",
+    "castable in 54% of likely lanes"
+   ],
+   "lanes_after": {
+    "BRG": 0.497,
+    "RG": 0.376,
+    "BG": 0.081,
+    "BR": 0.04
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 10,
+   "taken": "Murmuring Volume",
+   "top3": [
+    {
+     "name": "Murmuring Volume",
+     "score": 62.74
+    },
+    {
+     "name": "Konstrari Annex",
+     "score": 58.75
+    },
+    {
+     "name": "Apex Witchstalker",
+     "score": 57.89
+    }
+   ],
+   "his_score": 62.74,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #3",
+    "BRG 50% \u2192 57.2 (n=5115)",
+    "RG 32% \u2192 55.4 (n=9133)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #3",
+    "BRG 50% \u2192 57.2 (n=5115)",
+    "RG 32% \u2192 55.4 (n=9133)"
+   ],
+   "lanes_after": {
+    "BRG": 0.496,
+    "RG": 0.322,
+    "BG": 0.109,
+    "BR": 0.065
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 11,
+   "taken": null,
+   "top3": [
+    {
+     "name": "Marwyn, the Clearcutter",
+     "score": 58.14
+    },
+    {
+     "name": "Tether Technician",
+     "score": 54.4
+    },
+    {
+     "name": "Inspired Tethermage",
+     "score": 48.76
+    }
+   ],
+   "his_score": null,
+   "his_rank": null,
+   "scored": false,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "BRG 50% \u2192 53.9 (n=1017)",
+    "RG 35% \u2192 55.8 (n=7862)"
+   ],
+   "reasons_his": [],
+   "lanes_after": {
+    "BRG": 0.496,
+    "RG": 0.348,
+    "BR": 0.077,
+    "BG": 0.071
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 12,
+   "taken": null,
+   "top3": [
+    {
+     "name": "Skilled Battlecarver",
+     "score": 71.44
+    },
+    {
+     "name": "Way of the Paradox",
+     "score": 57.57
+    },
+    {
+     "name": "Mountain",
+     "score": 0.0
+    }
+   ],
+   "his_score": null,
+   "his_rank": null,
+   "scored": false,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "BRG 50% \u2192 49.7 (n=1734)",
+    "RG 38% \u2192 53.2 (n=13289)"
+   ],
+   "reasons_his": [],
+   "lanes_after": {
+    "BRG": 0.498,
+    "RG": 0.382,
+    "BG": 0.07,
+    "BR": 0.046
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 13,
+   "taken": null,
+   "top3": [
+    {
+     "name": "Solve for Disappointment",
+     "score": 71.0
+    },
+    {
+     "name": "Island",
+     "score": 0.0
+    }
+   ],
+   "his_score": null,
+   "his_rank": null,
+   "scored": false,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "BRG 50% \u2192 53.7 (n=621)",
+    "RG 36% \u2192 splash B (fixing 6) 44.4"
+   ],
+   "reasons_his": [],
+   "lanes_after": {
+    "BRG": 0.497,
+    "RG": 0.356,
+    "BG": 0.083,
+    "BR": 0.059
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 14,
+   "taken": null,
+   "top3": [],
+   "his_score": null,
+   "his_rank": null,
+   "scored": false,
+   "dropped": 1,
+   "reasons_top": [],
+   "reasons_his": [],
+   "lanes_after": {
+    "BRG": 0.497,
+    "RG": 0.356,
+    "BG": 0.083,
+    "BR": 0.059
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 1,
+   "taken": "Formidable Commons",
+   "top3": [
+    {
+     "name": "Stingerquill Charm",
+     "score": 58.93
+    },
+    {
+     "name": "Winter, Tormented Loner",
+     "score": 55.69
+    },
+    {
+     "name": "Formidable Commons",
+     "score": 55.56
+    }
+   ],
+   "his_score": 55.56,
+   "his_rank": 3,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #5",
+    "BRG 50% \u2192 55.8 (n=4135)",
+    "RG 32% \u2192 splash B (fixing 6) 51.7",
+    "castable in 57% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #3 \u00b7 Power #4",
+    "BRG 50% \u2192 56.2 (n=6460)",
+    "RG 32% \u2192 splash B (fixing 6) 45.5",
+    "castable in 60% of likely lanes"
+   ],
+   "lanes_after": {
+    "BRG": 0.497,
+    "RG": 0.322,
+    "BG": 0.103,
+    "BR": 0.072
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 2,
+   "taken": "Twinned Vision",
+   "top3": [
+    {
+     "name": "Twinned Vision",
+     "score": 64.7
+    },
+    {
+     "name": "Way of the Warlord",
+     "score": 58.11
+    },
+    {
+     "name": "Bestial Incursion",
+     "score": 56.05
+    }
+   ],
+   "his_score": 64.7,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "BRG 50% \u2192 58.4 (n=3312)",
+    "RG 31% \u2192 56.9 (n=10299)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "BRG 50% \u2192 58.4 (n=3312)",
+    "RG 31% \u2192 56.9 (n=10299)"
+   ],
+   "lanes_after": {
+    "BRG": 0.477,
+    "RG": 0.386,
+    "BR": 0.091,
+    "BG": 0.038
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 3,
+   "taken": "Garruk, Veiled Butcher",
+   "top3": [
+    {
+     "name": "Garruk, Veiled Butcher",
+     "score": 71.1
+    },
+    {
+     "name": "Tether Technician",
+     "score": 53.79
+    },
+    {
+     "name": "Arcane Amphisbaena",
+     "score": 53.65
+    }
+   ],
+   "his_score": 71.1,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "BRG 47% \u2192 65.1 (n=582)",
+    "RG 35% \u2192 off-colour"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "BRG 47% \u2192 65.1 (n=582)",
+    "RG 35% \u2192 off-colour"
+   ],
+   "lanes_after": {
+    "BR": 0.753,
+    "BG": 0.206,
+    "RG": 0.041,
+    "WR": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 4,
+   "taken": "Hungering Puppetbeast",
+   "top3": [
+    {
+     "name": "Last Gasp",
+     "score": 61.04
+    },
+    {
+     "name": "Hungering Puppetbeast",
+     "score": 56.16
+    },
+    {
+     "name": "Hapatra, the Desert Fang",
+     "score": 54.03
+    }
+   ],
+   "his_score": 56.16,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #3",
+    "BR 70% \u2192 54.2 (n=15365)",
+    "BG 25% \u2192 56.0 (n=18239)"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #1",
+    "BR 70% \u2192 off-colour",
+    "BG 25% \u2192 62.7 (n=3219)",
+    "castable in 30% of likely lanes"
+   ],
+   "lanes_after": {
+    "BRG": 0.5,
+    "BG": 0.372,
+    "RG": 0.075,
+    "BR": 0.053
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 5,
+   "taken": "Innovative Commons",
+   "top3": [
+    {
+     "name": "Silence the Echo",
+     "score": 56.28
+    },
+    {
+     "name": "Keeper of the Quiet Hour",
+     "score": 55.95
+    },
+    {
+     "name": "Ferocity of the Hunt",
+     "score": 55.7
+    }
+   ],
+   "his_score": 47.06,
+   "his_rank": 6,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "BRG 50% \u2192 51.4 (n=2740)",
+    "BG 37% \u2192 51.9 (n=11278)"
+   ],
+   "reasons_his": [
+    "Fit #6 \u00b7 Power #1",
+    "BRG 50% \u2192 splash U (fixing 5) 45.5",
+    "BG 37% \u2192 off-colour",
+    "castable in 0% of likely lanes"
+   ],
+   "lanes_after": {
+    "BRG": 0.5,
+    "BG": 0.368,
+    "RG": 0.075,
+    "BR": 0.056
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 6,
+   "taken": null,
+   "top3": [
+    {
+     "name": "Void Extrapolator",
+     "score": 57.4
+    },
+    {
+     "name": "Arcane Amphisbaena",
+     "score": 53.39
+    },
+    {
+     "name": "Skilled Battlecarver",
+     "score": 51.58
+    }
+   ],
+   "his_score": null,
+   "his_rank": null,
+   "scored": false,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "BRG 50% \u2192 54.7 (n=1102)",
+    "BG 37% \u2192 55.1 (n=9396)"
+   ],
+   "reasons_his": [],
+   "lanes_after": {
+    "BRG": 0.5,
+    "BG": 0.369,
+    "RG": 0.076,
+    "BR": 0.055
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 7,
+   "taken": "Hapatra, the Desert Fang",
+   "top3": [
+    {
+     "name": "Hapatra, the Desert Fang",
+     "score": 58.75
+    },
+    {
+     "name": "Paradox Shaper",
+     "score": 58.1
+    },
+    {
+     "name": "Rank Rat",
+     "score": 57.06
+    }
+   ],
+   "his_score": 58.75,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "BRG 50% \u2192 59.2 (n=6608)",
+    "BG 40% \u2192 59.1 (n=20233)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "BRG 50% \u2192 59.2 (n=6608)",
+    "BG 40% \u2192 59.1 (n=20233)"
+   ],
+   "lanes_after": {
+    "BG": 0.488,
+    "BRG": 0.488,
+    "RG": 0.014,
+    "BR": 0.011
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 8,
+   "taken": "Craftwork Crusher",
+   "top3": [],
+   "his_score": null,
+   "his_rank": null,
+   "scored": true,
+   "dropped": 7,
+   "reasons_top": [],
+   "reasons_his": [],
+   "lanes_after": {
+    "BRG": 0.496,
+    "BG": 0.376,
+    "RG": 0.119,
+    "BR": 0.008
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 9,
+   "taken": "Mabel, Bitter Recluse",
+   "top3": [
+    {
+     "name": "Something Worth Saving",
+     "score": 58.57
+    },
+    {
+     "name": "Rank Rat",
+     "score": 54.13
+    },
+    {
+     "name": "Mabel, Bitter Recluse",
+     "score": 53.03
+    }
+   ],
+   "his_score": 53.03,
+   "his_rank": 3,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "BRG 50% \u2192 58.0 (n=5699)",
+    "BG 40% \u2192 57.0 (n=17292)"
+   ],
+   "reasons_his": [
+    "Fit #3 \u00b7 Power #3",
+    "BRG 50% \u2192 52.1 (n=1223)",
+    "BG 40% \u2192 54.2 (n=5557)"
+   ],
+   "lanes_after": {
+    "BRG": 0.496,
+    "BG": 0.445,
+    "RG": 0.051,
+    "BR": 0.009
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 10,
+   "taken": "Keeper of the Quiet Hour",
+   "top3": [
+    {
+     "name": "Keeper of the Quiet Hour",
+     "score": 53.58
+    },
+    {
+     "name": "Living Library",
+     "score": 48.07
+    },
+    {
+     "name": "Rampart Hunter",
+     "score": 45.0
+    }
+   ],
+   "his_score": 53.58,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "BRG 50% \u2192 57.3 (n=2336)",
+    "BG 44% \u2192 54.5 (n=4687)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "BRG 50% \u2192 57.3 (n=2336)",
+    "BG 44% \u2192 54.5 (n=4687)"
+   ],
+   "lanes_after": {
+    "BRG": 0.495,
+    "BG": 0.44,
+    "RG": 0.055,
+    "BR": 0.009
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 11,
+   "taken": null,
+   "top3": [
+    {
+     "name": "Twisted Fates",
+     "score": 45.18
+    },
+    {
+     "name": "Rampart Hunter",
+     "score": 45.08
+    },
+    {
+     "name": "Tether Technician",
+     "score": 42.86
+    }
+   ],
+   "his_score": null,
+   "his_rank": null,
+   "scored": false,
+   "dropped": 0,
+   "reasons_top": [
+    "Branch: +12.3 over Rampart Hunter, above the 6.8 top drafters switch at",
+    "Fit #2 \u00b7 Power #1",
+    "BRG 49% \u2192 off-colour",
+    "BG 45% \u2192 off-colour",
+    "castable in 0% of likely lanes"
+   ],
+   "reasons_his": [],
+   "lanes_after": {
+    "BRG": 0.495,
+    "BG": 0.451,
+    "RG": 0.043,
+    "BR": 0.011
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 12,
+   "taken": "Mabel, Bitter Recluse",
+   "top3": [
+    {
+     "name": "Arni, Renowned Champion",
+     "score": 42.23
+    }
+   ],
+   "his_score": null,
+   "his_rank": null,
+   "scored": true,
+   "dropped": 2,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "BRG 49% \u2192 42.1 (rarely played there)",
+    "BG 45% \u2192 splash R (fixing 6) 42.5",
+    "castable in 55% of likely lanes"
+   ],
+   "reasons_his": [],
+   "lanes_after": {
+    "BG": 0.473,
+    "BRG": 0.473,
+    "RG": 0.042,
+    "BR": 0.012
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 13,
+   "taken": null,
+   "top3": [],
+   "his_score": null,
+   "his_rank": null,
+   "scored": false,
+   "dropped": 2,
+   "reasons_top": [],
+   "reasons_his": [],
+   "lanes_after": {
+    "BG": 0.473,
+    "BRG": 0.473,
+    "RG": 0.042,
+    "BR": 0.012
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 14,
+   "taken": null,
+   "top3": [],
+   "his_score": null,
+   "his_rank": null,
+   "scored": false,
+   "dropped": 1,
+   "reasons_top": [],
+   "reasons_his": [],
+   "lanes_after": {
+    "BG": 0.473,
+    "BRG": 0.473,
+    "RG": 0.042,
+    "BR": 0.012
+   }
+  }
+ ],
+ "builder": [
+  {
+   "main": "BG",
+   "splash": "R",
+   "deck_wr": 68.71,
+   "label": "BRG",
+   "cards": [
+    {
+     "name": "Formidable Commons",
+     "count": 1
+    },
+    {
+     "name": "Stingerquill Annex",
+     "count": 1
+    },
+    {
+     "name": "Mabel, Bitter Recluse",
+     "count": 2
+    },
+    {
+     "name": "Konstrari Improviser",
+     "count": 1
+    },
+    {
+     "name": "Last Gasp",
+     "count": 1
+    },
+    {
+     "name": "Rank Rat",
+     "count": 1
+    },
+    {
+     "name": "Samut, Hazoret's Champion",
+     "count": 1
+    },
+    {
+     "name": "Something Worth Saving",
+     "count": 1
+    },
+    {
+     "name": "Twinned Vision",
+     "count": 1
+    },
+    {
+     "name": "Keeper of the Quiet Hour",
+     "count": 3
+    },
+    {
+     "name": "Murmuring Volume",
+     "count": 1
+    },
+    {
+     "name": "Vraska, the Cutting Glare",
+     "count": 1
+    },
+    {
+     "name": "Extended Absence",
+     "count": 1
+    },
+    {
+     "name": "Heartstring Puller",
+     "count": 1
+    },
+    {
+     "name": "Violent Echoes",
+     "count": 1
+    },
+    {
+     "name": "Garruk, Veiled Butcher",
+     "count": 1
+    },
+    {
+     "name": "Hapatra, the Desert Fang",
+     "count": 2
+    },
+    {
+     "name": "Hungering Puppetbeast",
+     "count": 1
+    },
+    {
+     "name": "Kiora of Fire and Ashes",
+     "count": 1
+    },
+    {
+     "name": "Craftwork Crusher",
+     "count": 2
+    },
+    {
+     "name": "Swamp",
+     "count": 6
+    },
+    {
+     "name": "Mountain",
+     "count": 5
+    },
+    {
+     "name": "Forest",
+     "count": 4
+    }
+   ]
+  }
+ ],
+ "his_deck": {
+  "main": "BG",
+  "splash": "UR",
+  "deck_wr": 66.64,
+  "label": null,
+  "cards": [
+   {
+    "name": "Mabel, Bitter Recluse",
+    "count": 2
+   },
+   {
+    "name": "Last Gasp",
+    "count": 1
+   },
+   {
+    "name": "Paradox Shaper",
+    "count": 1
+   },
+   {
+    "name": "Twinned Vision",
+    "count": 1
+   },
+   {
+    "name": "Konstrari Improviser",
+    "count": 1
+   },
+   {
+    "name": "Keeper of the Quiet Hour",
+    "count": 3
+   },
+   {
+    "name": "Murmuring Volume",
+    "count": 1
+   },
+   {
+    "name": "Extended Absence",
+    "count": 1
+   },
+   {
+    "name": "Violent Echoes",
+    "count": 1
+   },
+   {
+    "name": "Recursive Recruitment",
+    "count": 1
+   },
+   {
+    "name": "Garruk, Veiled Butcher",
+    "count": 1
+   },
+   {
+    "name": "Hungering Puppetbeast",
+    "count": 1
+   },
+   {
+    "name": "Hapatra, the Desert Fang",
+    "count": 2
+   },
+   {
+    "name": "Vraska, the Cutting Glare",
+    "count": 1
+   },
+   {
+    "name": "Kiora of Fire and Ashes",
+    "count": 1
+   },
+   {
+    "name": "Face Yourself",
+    "count": 1
+   },
+   {
+    "name": "Craftwork Crusher",
+    "count": 2
+   },
+   {
+    "name": "Swamp",
+    "count": 5
+   },
+   {
+    "name": "Mountain",
+    "count": 5
+   },
+   {
+    "name": "Forest",
+    "count": 4
+   },
+   {
+    "name": "Innovative Commons",
+    "count": 1
+   },
+   {
+    "name": "Stingerquill Annex",
+    "count": 1
+   },
+   {
+    "name": "Formidable Commons",
+    "count": 1
+   },
+   {
+    "name": "Transformative Commons",
+    "count": 1
+   }
+  ]
+ }
+}

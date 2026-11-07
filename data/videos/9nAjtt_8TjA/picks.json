@@ -1,0 +1,1027 @@
+{
+ "id": "9nAjtt_8TjA",
+ "url": "https://youtu.be/9nAjtt_8TjA",
+ "title": "This Strategy is Incredible in Reality Fracture Draft!!!",
+ "player": "NicolaiBolas",
+ "set": "FRA",
+ "event": "FRA early access event (he thanks Wizards for the free preview access at 0:04-0:08; event name not shown on screen)",
+ "dataset": "FRA_PremierDraft_All_Data.json",
+ "recorded": null,
+ "source": "frames read from data/videos/raw/9nAjtt_8TjA (tools/video_draft.py frames grab with --grab-crop, stacked or read singly); every pack list comes from images that displayed; the 40-card deck screen at 16:04 and the 47-card screen at 14:44 account for all 42 picks (the three picked basics are inferred by count); transcript from YouTube auto captions, card names corrected; nothing past 16:05 read",
+ "colour_path": [
+  {
+   "after": "P1p1",
+   "main": "U",
+   "quote": "I'm going to try to probably take the Mindseeker Oculus."
+  },
+  {
+   "after": "P1p3",
+   "main": "U, second colour open",
+   "quote": "I don't really want to dip into a second color is the thing, but it's not like I'm like sticking to blue for anything crazy good."
+  },
+  {
+   "after": "P1p7",
+   "main": "WU",
+   "quote": "Getting really rewarded for kind of sticking to my guns here."
+  },
+  {
+   "after": "P1p10",
+   "main": "WU, green dip possible",
+   "quote": "we aren't committed fully to white. We only have three white cards."
+  },
+  {
+   "after": "P1p13",
+   "main": "WU",
+   "quote": "white blue is a good spot to end up."
+  },
+  {
+   "after": "P2p6",
+   "main": "WU",
+   "quote": "I think I'm just pretty set on my blue white deck now."
+  },
+  {
+   "after": "P2p12",
+   "main": "WU done",
+   "quote": "So, this deck is done after two packs."
+  }
+ ],
+ "picks": [
+  {
+   "pack": 1,
+   "pick": 1,
+   "time": "0:08-1:20",
+   "pack_cards": [
+    "Gideon's Memorial",
+    "Gideon the Oathless",
+    "Hall of Echoes",
+    "Tomik, Izzet Sparkmage",
+    "Hunter's Axe",
+    "Jiang Yanggu, Never Alone",
+    "Prudent Fateseer",
+    "Memory Trap",
+    "Cryotheory Adept",
+    "Mindseeker Oculus",
+    "Budding Insurgent",
+    "Tethermage's Advantage",
+    "Whiplash Wordsmith",
+    "Stingerquill Annex"
+   ],
+   "taken": "Mindseeker Oculus",
+   "reasoning": "Takes Mindseeker Oculus, which he has been very impressed with: irritating to deal with, and Empower Jace 4 is a lot of value. Memory Trap is good removal and second; Jiang Yanggu third, then maybe Gideon the Oathless (which only does damage if they try to kill it).",
+   "considered": {
+    "Memory Trap": "good removal, second choice",
+    "Jiang Yanggu, Never Alone": "probably third place",
+    "Gideon the Oathless": "fun to try but 'not doing anything crazy unless they try to kill him'; maybe over Jiang Yanggu",
+    "Gideon's Memorial": "discard mode (two mana, four damage to an attacker or blocker) 'isn't the best deal'"
+   },
+   "plan": "Open.",
+   "quotes": [
+    "I'm going to try to probably take the Mindseeker Oculus. I've been very impressed with this card. It's just really irritating to deal with."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 2,
+   "time": "1:20-2:20",
+   "pack_cards": [
+    "Variable Chaser",
+    "Fblthp, Impossibly Lost",
+    "Precise Redaction",
+    "Gallia, Tragic Host",
+    "Gallia, the Merrymaker",
+    "Hexhaven Dueling Arena",
+    "Unflinching Hortimancer",
+    "Undulating Witness",
+    "Cast Away Doubt",
+    "Konstrari Improviser",
+    "Emergency Phytomedic",
+    "Murmuring Volume",
+    "Transformative Commons"
+   ],
+   "taken": "Fblthp, Impossibly Lost",
+   "reasoning": "Fblthp for cheap card draw ('cheap plays that are decent late'); flyers make it easier to connect. Variable Chaser (a three-mana 2/3 flier with prowess, solid on its own) and Gallia, Tragic Host are the alternatives; he stays blue.",
+   "considered": {
+    "Variable Chaser": "solid three-mana 2/3 flying prowess; Arc of Fortune half sometimes does something",
+    "Gallia, Tragic Host": "decent",
+    "Konstrari Improviser": "pretty solid, 'sometimes if you have stuff to ramp'",
+    "Emergency Phytomedic": "some utility sometimes but 'kind of a low impact card'"
+   },
+   "plan": "Blue so far: 'I might as well stick to blue for now. Just get more card draw.'",
+   "quotes": [
+    "I think I go Fblthp, then maybe Gallia, then maybe Variable Chaser.",
+    "I might as well stick to blue for now. Just get more card draw."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 3,
+   "time": "2:20-3:15",
+   "pack_cards": [
+    "Thalia, the Survivor",
+    "Terminal Criticism",
+    "Koth, the Geomancer",
+    "Way of the Wildspeaker",
+    "Eye of Jace",
+    "Blossom-Blessed Angel",
+    "Protege's Awakening",
+    "Tethermage's Advantage",
+    "Whiplash Wordsmith",
+    "Konstrari Improviser",
+    "Afterthought Sentry",
+    "Plains"
+   ],
+   "taken": "Protege's Awakening",
+   "reasoning": "Protege's Awakening (Empower Jace 6 and draw a card): a really good card he has not been taking highly enough; cheaper and easier to use than Way of the Wildspeaker (five mana 4/4 draw-a-card, which makes Mindseeker Oculus a 2/1 plus a 4/4). He does not want to dip into a second colour yet.",
+   "considered": {
+    "Way of the Wildspeaker": "also seems really good, but green and he does not want a second colour",
+    "Eye of Jace": "not his favourite",
+    "Thalia, the Survivor": "likes her a decent amount"
+   },
+   "plan": "Blue; 'maybe I don't stick too heavy just to blue'; not sticking to blue for anything crazy good.",
+   "quotes": [
+    "I think Protege's Awakening is a really good card and I have not been taking it highly enough.",
+    "I don't really want to dip into a second color is the thing"
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 4,
+   "time": "3:15-3:45",
+   "pack_cards": [
+    "Koth of the Homestead",
+    "Perfected Theory",
+    "Koth, the Geomancer",
+    "Hapatra, the Desert Fang",
+    "Campus Crier",
+    "Sphinx's Approach",
+    "Cast Away Doubt",
+    "Awaken the Inferno",
+    "No Admittance",
+    "Wrecking Gecko",
+    "Mountain"
+   ],
+   "taken": "Koth of the Homestead",
+   "reasoning": "Hapatra is 'so far from what I'm doing right now'; he considers No Admittance instead, then takes Koth of the Homestead over Campus Crier: it can be an engine by itself and gains life.",
+   "considered": {
+    "Hapatra, the Desert Fang": "far from what he is doing",
+    "No Admittance": "considered instead",
+    "Campus Crier": "fine as well"
+   },
+   "plan": "Blue-white lean.",
+   "quotes": [
+    "I might just take Koth of the Homestead. I like this card. It can like be kind of an engine all by itself. Gains you some life."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 5,
+   "time": "3:45-4:00",
+   "pack_cards": [
+    "Arni, Humble Scribe",
+    "Danitha, Spear of Agony",
+    "Terminal Criticism",
+    "Arni, Renowned Champion",
+    "Fateshaper Aspirant",
+    "Infinite Coursework",
+    "Rank Rat",
+    "Awaken the Inferno",
+    "Wrecking Gecko",
+    "Plains"
+   ],
+   "taken": "Arni, Humble Scribe",
+   "reasoning": "Arni, Humble Scribe over Infinite Coursework (which he likes but rates a little below Arni); 'gives myself some flexibility'. There is a kill spell if he wanted red. Stick to blue for now.",
+   "considered": {
+    "Infinite Coursework": "also likes it, Arni a little better maybe",
+    "Terminal Criticism": "a kill spell if he wanted to go more red"
+   },
+   "plan": "Stick to blue for now.",
+   "quotes": [
+    "Yeah, let's just take the Arni. Stick to blue for now."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 6,
+   "time": "4:00-4:30",
+   "pack_cards": [
+    "Tomik, Orzhov Lawmage",
+    "Fateshaper Aspirant",
+    "Graft Surgeon",
+    "Sphinx's Approach",
+    "Last Gasp",
+    "Hallway Heckler",
+    "Bestial Incursion",
+    "Greenhouse Propagator",
+    "Plains"
+   ],
+   "taken": "Tomik, Orzhov Lawmage",
+   "reasoning": "Between Last Gasp (great) and Tomik, a really good two-drop that plays well with Fblthp; since he already has Koth, he takes Tomik. Two-power fliers for two are just good.",
+   "considered": {
+    "Last Gasp": "great",
+    "Bestial Incursion": "an option; blue does not feel the most open but he has four really good blue cards"
+   },
+   "plan": "Blue does not feel the most open, but four really good blue cards so far.",
+   "quotes": [
+    "I think it's between Last Gasp and Tomik. And since we already have the Koth, I think we're going to just take the Tomik.",
+    "Two ones for two are just good when they have flying."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 7,
+   "time": "4:30-5:10",
+   "pack_cards": [
+    "Danitha, Spear of Agony",
+    "Arni, Renowned Champion",
+    "Marwyn, the Clearcutter",
+    "Desperate Futurescribe",
+    "Stingerquill Charm",
+    "Campus Crier",
+    "Sphinx's Approach",
+    "Void Extrapolator"
+   ],
+   "taken": "Desperate Futurescribe",
+   "reasoning": "A Desperate Futurescribe arrives: 'we are off to the races', rewarded for sticking to his guns; good synergy with the empower cards, which help surveil. Some black-red stuff coming around.",
+   "considered": {
+    "Campus Crier": "another one, but Futurescribe is better"
+   },
+   "plan": "White-blue; sticking to blue-white; 'red and green may be open, especially green might be open. We will just stick to what we have'.",
+   "quotes": [
+    "Beautiful. We get a Desperate Futurescribe. We are off to the races. Getting really rewarded for kind of sticking to my guns here."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 8,
+   "time": "5:10-5:25",
+   "pack_cards": [
+    "Marwyn, the Clearcutter",
+    "Marwyn, the Preserver",
+    "Archive Arbiter",
+    "Unsummon",
+    "Sureshot Sower",
+    "Medic's Kitesail",
+    "Dedicated Commons"
+   ],
+   "taken": "Unsummon",
+   "reasoning": "Protege's Awakening then Unsummon is a good little line: draw a bunch of cards, then bounce one of their things to buy back time.",
+   "considered": {},
+   "plan": "Stick with blue-white.",
+   "quotes": [
+    "It's nice when you can go like Protege's Awakening and then Unsummon."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 9,
+   "time": "5:25-5:35",
+   "pack_cards": [
+    "Hall of Echoes",
+    "Tomik, Izzet Sparkmage",
+    "Cryotheory Adept",
+    "Budding Insurgent",
+    "Tethermage's Advantage",
+    "Stingerquill Annex"
+   ],
+   "taken": "Cryotheory Adept",
+   "reasoning": "A two-drop in colour. Not a card he would want to play in a perfect world, but a fine one.",
+   "considered": {
+    "Tomik, Izzet Sparkmage": "seen again on the wheel"
+   },
+   "plan": "Blue-white.",
+   "quotes": [
+    "Get ourselves a two drop in color.",
+    "Maybe I wouldn't want to play Cryotheory in a perfect world, but it's a fine card."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 10,
+   "time": "5:35-5:55",
+   "pack_cards": [
+    "Precise Redaction",
+    "Hexhaven Dueling Arena",
+    "Cast Away Doubt",
+    "Emergency Phytomedic",
+    "Transformative Commons"
+   ],
+   "taken": "Transformative Commons",
+   "reasoning": "Takes the land over Emergency Phytomedic: not fully committed to white (only three white cards) and Phytomedic is not crazy in white-blue, so the green land keeps a green dip open. He does not expect to miss the Phytomedic.",
+   "considered": {
+    "Emergency Phytomedic": "'cute with' his deck but he does not think he will miss it"
+   },
+   "plan": "White-blue with a possible green dip: 'we aren't committed fully to white. We only have three white cards.'",
+   "quotes": [
+    "So yeah, let's take the land in case we want to dip into green."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 11,
+   "time": "6:10-6:28",
+   "pack_cards": [
+    "Eye of Jace",
+    "Tethermage's Advantage",
+    "Whiplash Wordsmith",
+    "Plains"
+   ],
+   "taken": "Eye of Jace",
+   "reasoning": "Tries Eye of Jace: a nice surveil payoff that eventually deals some damage.",
+   "considered": {},
+   "plan": "White-blue ('a good spot to end up'); nine playable cards after pack one's first half.",
+   "quotes": [
+    "Okay, maybe I'll try Eye of Jace here. Real nice surveil payoff."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 12,
+   "time": "6:28-6:33",
+   "pack_cards": [
+    "Sphinx's Approach",
+    "Cast Away Doubt",
+    "Mountain"
+   ],
+   "taken": "Sphinx's Approach",
+   "reasoning": "Sphinx's Approach for raw card draw; goes in the speculative pile with the land.",
+   "considered": {},
+   "plan": "White-blue.",
+   "quotes": [
+    "Then I'm going to take Sphinx's Approach. Just raw card draw."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 13,
+   "time": "6:33-6:36",
+   "pack_cards": [
+    "Fateshaper Aspirant",
+    "Plains"
+   ],
+   "taken": "Fateshaper Aspirant",
+   "reasoning": "Not discussed; the Aspirant is the only spell left. Pool then has several legendaries (Arni, Tomik, Koth), so a decent chance Fateshaper Aspirant works.",
+   "considered": {},
+   "plan": "White-blue.",
+   "quotes": [
+    "We have a couple of legendaries. We have Arni, Tomik, Koth. So, decent chance we can get this to work out."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 14,
+   "time": "6:36-6:40",
+   "pack_cards": [
+    "Plains"
+   ],
+   "taken": "Plains",
+   "reasoning": "Last card; basic Plains.",
+   "considered": {},
+   "plan": "White-blue.",
+   "quotes": [
+    "Okay, I like where we're at after pack one."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 1,
+   "time": "6:48-7:25",
+   "pack_cards": [
+    "Craterclaw Colossus",
+    "Ghalta the Immovable",
+    "Tetsuko Umezawa, Fugitive",
+    "Rewrite Regrets",
+    "Tetsuko Umezawa, Pursuer",
+    "Hunter's Axe",
+    "Memory Trap",
+    "Divining Duelist",
+    "Unsummon",
+    "Awaken the Inferno",
+    "Blazing Crescendo",
+    "Inspired Tethermage",
+    "Blessed Ghoul",
+    "Konstrari Annex"
+   ],
+   "taken": "Tetsuko Umezawa, Fugitive",
+   "reasoning": "Tetsuko plays well with Mindseeker Oculus, Tomik and Cryotheory Adept: a really nice aggressive drop. There is a removal spell in the pack but he would rather be proactive than reactive right now. Blessed Ghoul is a bit of a combo with Arni (discard it over and over). He would not mind Memory Trap.",
+   "considered": {
+    "Memory Trap": "'I wouldn't mind Memory Trap' but takes Tetsuko",
+    "Blessed Ghoul": "fine; combo with Arni, discard and get it back repeatedly",
+    "removal spell (not named)": "would rather be proactive than reactive"
+   },
+   "plan": "White-blue after pack one: 'I like where we're at after pack one.'",
+   "quotes": [
+    "Pack two, there's Tetsuko, which I really like.",
+    "I'd rather just focus on being proactive than reactive right now."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 2,
+   "time": "7:25-7:47",
+   "pack_cards": [
+    "Overgrown Farmland",
+    "Teyo, Lightshield Expert",
+    "Teyo, Diamondblade Mage",
+    "Way of the Pyromancer",
+    "Primal Witchstalker",
+    "Fateshaper Aspirant",
+    "Mindseeker Oculus",
+    "Rampart Hunter",
+    "Hallway Heckler",
+    "Sureshot Sower",
+    "Blessed Ghoul",
+    "Konstrari Improviser",
+    "Forest"
+   ],
+   "taken": "Mindseeker Oculus",
+   "reasoning": "Will keep taking Mindseeker Oculus whenever he sees it: so strong. Teyo is good too. Another Fateshaper Aspirant, but he will only stick with the one; Tetsuko is legendary so Fateshaper Aspirant can return it.",
+   "considered": {
+    "Teyo, Lightshield Expert": "which is good",
+    "Fateshaper Aspirant": "only plays the one copy",
+    "Blessed Ghoul": "also seen in the pack"
+   },
+   "plan": "White-blue.",
+   "quotes": [
+    "And now I think I'm just going to keep taking Mindseeker Oculuses whenever I see them. This card is so so strong."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 3,
+   "time": "7:47-8:10",
+   "pack_cards": [
+    "Kindred Judgment",
+    "Way of the Cryomancer",
+    "Way of the Pyromancer",
+    "Fblthp, Knows the Way",
+    "Prudent Fateseer",
+    "Shatterwing Pegasus",
+    "Undulating Witness",
+    "Artifist Acumen",
+    "Wrath of the Bloodmane",
+    "Tam's Resistance",
+    "Afterthought Sentry",
+    "Mountain"
+   ],
+   "taken": "Prudent Fateseer",
+   "reasoning": "Between Kindred Judgment (choose a creature type and kill everything else, strong but a seven-drop) and Prudent Fateseer. Since he will be surveilling a lot he can surveil away lands, and Prudent Fateseer looks like a really good card with plenty in his deck that works with it. Tam's Resistance is probably a fine one.",
+   "considered": {
+    "Kindred Judgment": "strong ('I choose Humongous and kill everything else') but a seven-drop",
+    "Tam's Resistance": "probably a fine one"
+   },
+   "plan": "White-blue, surveil and empower synergies.",
+   "quotes": [
+    "it's between Kindred and Judgment. Like I just like choose a creature type. ... That's pretty strong, but it's a seven drop.",
+    "Prudent Fateseer here just seems like a really good card for my deck."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 4,
+   "time": "8:10-8:28",
+   "pack_cards": [
+    "Karn, Argent Defender",
+    "Teyo, Lightshield Expert",
+    "Terminal Criticism",
+    "Teyo, Diamondblade Mage",
+    "Cryotheory Adept",
+    "Rank Rat",
+    "Wrecking Gecko",
+    "Blessed Ghoul",
+    "Twinned Vision",
+    "Living Library",
+    "Swamp"
+   ],
+   "taken": "Teyo, Lightshield Expert",
+   "reasoning": "Teyo over Cryotheory Adept. Nice that he has no duplicate legendary: one copy of each is pretty good. Better than the Ghoul and better than Twinned Vision.",
+   "considered": {
+    "Cryotheory Adept": "Teyo taken over it",
+    "Blessed Ghoul": "Teyo is better",
+    "Twinned Vision": "Teyo is better"
+   },
+   "plan": "White-blue.",
+   "quotes": [
+    "Now we'll take Teyo over Cryotheory Adept. It's kind of nice. I don't have multiple copies of any legendary."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 5,
+   "time": "8:28-8:55",
+   "pack_cards": [
+    "Danitha, Sword of Hope",
+    "Marwyn, the Clearcutter",
+    "Marwyn, the Preserver",
+    "Divining Duelist",
+    "Semester Foreseer",
+    "Solve for Disappointment",
+    "Tether Technician",
+    "Inspired Tethermage",
+    "Emergency Phytomedic",
+    "Plains"
+   ],
+   "taken": "Semester Foreseer",
+   "reasoning": "A four-drop; works if he has equipment (he has none) or things to target, things like Seed Suture. His spells are not ones that target. Takes the Semester Foreseer.",
+   "considered": {
+    "Danitha, Sword of Hope": "works with equipment or spells that target; he has few targeting spells",
+    "Emergency Phytomedic": "Seed Suture would be really good with it"
+   },
+   "plan": "White-blue.",
+   "quotes": [
+    "So, let's just take the Semester Foreseer."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 6,
+   "time": "9:00-9:30",
+   "pack_cards": [
+    "Repurposed Enforcer",
+    "Prophesied End",
+    "Way of the Mentor",
+    "Hapatra, the Desert Frost",
+    "Primal Witchstalker",
+    "Predictive Preparations",
+    "Sphinx's Approach",
+    "Hallway Heckler",
+    "Mountain"
+   ],
+   "taken": "Repurposed Enforcer",
+   "reasoning": "Great pickup: Repurposed Enforcer helps him be proactive and empowers Jace when it attacks; a really good two-drop. Predictive Preparations could be fine, Hajaira is good for sure, Way of the Mentor not the best.",
+   "considered": {
+    "Predictive Preparations": "could be fine",
+    "Hapatra, the Desert Frost": "good for sure",
+    "Way of the Mentor": "not the best"
+   },
+   "plan": "White-blue: 'I'm just pretty set on my blue white deck now.'",
+   "quotes": [
+    "Repurposed Enforcer helps me be proactive. When I attack, I empower Jace. Great, great card.",
+    "I think I'm just pretty set on my blue white deck now."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 7,
+   "time": "9:30-9:55",
+   "pack_cards": [
+    "Pyre Rhymer",
+    "Yuriko, Blade of the Mighty",
+    "Desperate Futurescribe",
+    "Kiora of Salt and Sand",
+    "Sphinx's Approach",
+    "Cast Away Doubt",
+    "Whiplash Wordsmith",
+    "Island"
+   ],
+   "taken": "Desperate Futurescribe",
+   "reasoning": "Another Desperate Futurescribe; it worked well with Eye of Jace.",
+   "considered": {},
+   "plan": "White-blue; 18 playables halfway through pack two.",
+   "quotes": [
+    "Just going to take another Desperate Futurescribe.",
+    "I've got 18 playables so far and it's only halfway through pack two."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 8,
+   "time": "10:10-10:28",
+   "pack_cards": [
+    "Traxos, Academy Guardian",
+    "Hunter's Axe",
+    "Divining Duelist",
+    "Heartstring Puller",
+    "Budding Insurgent",
+    "Theorix Metamage",
+    "Formidable Commons"
+   ],
+   "taken": "Traxos, Academy Guardian",
+   "reasoning": "Great pickup: even as a four-drop it is pretty nice if he can put some counters on, a huge vigilance flier with prowess.",
+   "considered": {},
+   "plan": "White-blue; 'this deck is looking awesome'.",
+   "quotes": [
+    "It's just a huge vigilance flyer with prowess like that.",
+    "Gosh, this deck is looking awesome."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 9,
+   "time": "10:28-10:37",
+   "pack_cards": [
+    "Tetsuko Umezawa, Pursuer",
+    "Hunter's Axe",
+    "Divining Duelist",
+    "Unsummon",
+    "Blazing Crescendo",
+    "Inspired Tethermage"
+   ],
+   "taken": "Unsummon",
+   "reasoning": "Another Unsummon, don't mind; could be a perfect Unsummon deck, even bouncing his own Mindseeker Oculus.",
+   "considered": {},
+   "plan": "White-blue; 'this could be a two pack deck'.",
+   "quotes": [
+    "Another Unsummon. Don't mind if I do.",
+    "I could even balance my own Mindseeker Oculus."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 10,
+   "time": "10:37-10:41",
+   "pack_cards": [
+    "Fateshaper Aspirant",
+    "Rampart Hunter",
+    "Hallway Heckler",
+    "Sureshot Sower",
+    "Forest"
+   ],
+   "taken": "Fateshaper Aspirant",
+   "reasoning": "Not discussed; the only playable for the deck.",
+   "considered": {},
+   "plan": "White-blue.",
+   "quotes": [
+    "This could be a two pack deck."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 11,
+   "time": "10:41-10:55",
+   "pack_cards": [
+    "Kindred Judgment",
+    "Artifist Acumen",
+    "Afterthought Sentry",
+    "Mountain"
+   ],
+   "taken": "Kindred Judgment",
+   "reasoning": "Kindred Judgment wheels; he counts his creature types for it (two Scouts, four Wizards, eight Humans).",
+   "considered": {},
+   "plan": "White-blue.",
+   "quotes": [
+    "I wield Kindred Judgment. Nice.",
+    "Choose a creature type. Scout. How many scouts do I have? Two scouts. I have four wizards. I have eight humans."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 12,
+   "time": "10:55-11:00",
+   "pack_cards": [
+    "Terminal Criticism",
+    "Blessed Ghoul",
+    "Swamp"
+   ],
+   "taken": "Blessed Ghoul",
+   "reasoning": "A Blessed Ghoul wheels (combo with Arni); after this he calls the deck done after two packs.",
+   "considered": {},
+   "plan": "'This deck is done after two packs'; wants one or two hard removal spells, then boost power level through synergy.",
+   "quotes": [
+    "Nice. We get a Blessed Ghoul.",
+    "So, this deck is done after two packs."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 13,
+   "time": "11:00-11:03",
+   "pack_cards": [
+    "Inspired Tethermage",
+    "Plains"
+   ],
+   "taken": "Inspired Tethermage",
+   "reasoning": "Not discussed; the only spell left.",
+   "considered": {},
+   "plan": "White-blue.",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 14,
+   "time": "11:03-11:06",
+   "pack_cards": [
+    "Mountain"
+   ],
+   "taken": "Mountain",
+   "reasoning": "Last card; basic Mountain (inferred from the P2p6 pack, which held the only Mountain; the frame at 669 s shows Mountain with a fading pick slot).",
+   "considered": {},
+   "plan": "White-blue.",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 1,
+   "time": "11:07-11:35",
+   "pack_cards": [
+    "Avatar of Burgeoning Echoes",
+    "Teyo, Lightshield Expert",
+    "Plan for All Outcomes",
+    "Way of the Deathbringer",
+    "Way of the Wildspeaker",
+    "Blossom-Blessed Angel",
+    "Sphinx's Approach",
+    "Solve for Disappointment",
+    "Artifist Acumen",
+    "Tether Technician",
+    "Budding Insurgent",
+    "Sureshot Sower",
+    "Living Library",
+    "Forest"
+   ],
+   "taken": "Plan for All Outcomes",
+   "reasoning": "The deck is done after two packs; he wants one or two hard removal spells and then more power through synergy. Plan for All Outcomes: any non-creature spell empowers Jace, and he uses that to surveil. Otherwise it is Blossom-Blessed Angel, but he already has a few big fliers at four mana.",
+   "considered": {
+    "Blossom-Blessed Angel": "he already has a few big fliers at four mana"
+   },
+   "plan": "White-blue; 'this deck is done after two packs'; wants one or two hard removal spells.",
+   "quotes": [
+    "I want like one or two hard removal spells, then just like boost my power level through synergy and such.",
+    "Anytime I cast a non-creature spell, I'll get to get my Jace going and then I can use that to surveil."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 2,
+   "time": "11:35-12:02",
+   "pack_cards": [
+    "Gardenize",
+    "Ghalta the Immovable",
+    "Your Fate Ends Here",
+    "Ruric Thar, Biomagus",
+    "Ruric Thar, Magecrusher",
+    "Unflinching Hortimancer",
+    "Cryotheory Adept",
+    "Extended Absence",
+    "Chandra's Emberling",
+    "Eardrum Rattler",
+    "Greenhouse Propagator",
+    "Theorix Metamage",
+    "Fatehold Annex"
+   ],
+   "taken": "Your Fate Ends Here",
+   "reasoning": "He asked for a hard removal spell and gets Your Fate Ends Here: kill spell plus surveil, just what the deck wants. He would play Ruric Thar as a giant flier at the top end. There is also a land (Fatehold Annex) that hopefully wheels.",
+   "considered": {
+    "Ruric Thar, Biomagus": "would definitely play as a giant flier at the top end, but removal that surveils is what the deck wants",
+    "Fatehold Annex": "a land that hopefully wheels"
+   },
+   "plan": "White-blue.",
+   "quotes": [
+    "I said I wanted a hard removal spell and I get Your Fate Ends Here. Kill spell plus surveil. Just perfect card for my deck."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 3,
+   "time": "12:02-12:40",
+   "pack_cards": [
+    "Roiling Canopy",
+    "Countersculpt",
+    "Winter, Tormented Loner",
+    "Winter, Team Player",
+    "Titanbones, Towering Heart",
+    "Graft Surgeon",
+    "Divining Duelist",
+    "No Admittance",
+    "Sureshot Sower",
+    "Blessed Ghoul",
+    "Konstrari Improviser",
+    "Meticulous Commons"
+   ],
+   "taken": "Countersculpt",
+   "reasoning": "A good counter spell for his deck. While deckbuilding he considers cutting Semester Foreseer for it: creature count is at 16, so he is fine cutting a clunky creature, and he has about six two-drops to play on turn two.",
+   "considered": {},
+   "plan": "White-blue; thinking about cuts for the final build.",
+   "quotes": [
+    "Okay, there is a Countersculpt now. Seems like a good counter spell for my deck.",
+    "Creature count is at 16, so I feel okay about cutting a clunky creature."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 4,
+   "time": "12:40-13:00",
+   "pack_cards": [
+    "Solarium Sentry",
+    "Way of the Healer",
+    "Yuriko, Hope from the Shadows",
+    "Way of the Necromancer",
+    "Shatterwing Pegasus",
+    "Undulating Witness",
+    "Rampart Hunter",
+    "Chandra's Emberling",
+    "Twinned Vision",
+    "Emergency Phytomedic",
+    "Theorix Annex"
+   ],
+   "taken": "Way of the Healer",
+   "reasoning": "Loves Way of the Healer: minus two creates a 2/2 and surveils one, for four mana, and it triggers his synergy pieces too; eventually it gets back a legendary card.",
+   "considered": {},
+   "plan": "White-blue; picks now are about synergy pieces.",
+   "quotes": [
+    "Love Way of the Healer. Minus two, create a two two and surveil one for four mana. It's pretty good.",
+    "And this triggers my synergy pieces, too."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 5,
+   "time": "13:00-13:16",
+   "pack_cards": [
+    "Solitary Cell",
+    "Prophesied End",
+    "Way of the Cryomancer",
+    "Gallia, the Merrymaker",
+    "Eye of Jace",
+    "Fateshaper Aspirant",
+    "Cryotheory Adept",
+    "Greenhouse Propagator",
+    "Inspired Tethermage",
+    "Innovative Commons"
+   ],
+   "taken": "Eye of Jace",
+   "reasoning": "Maybe he wants two copies of Eye of Jace; does not want Way of the Cryomancer (not many instants and sorceries). Plays two Eye of Jace for now.",
+   "considered": {
+    "Way of the Cryomancer": "does not want it, not that many instants and sorceries"
+   },
+   "plan": "White-blue.",
+   "quotes": [
+    "Maybe I want two Eye of Jaces. I don't think I want Way of the Cryomancer. I don't have that many instants and sorceries."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 6,
+   "time": "13:16-13:40",
+   "pack_cards": [
+    "Hapatra, the Desert Frost",
+    "Theorix Charm",
+    "Mabel, Valley Hero",
+    "Shatterwing Pegasus",
+    "Cryotheory Adept",
+    "Void Extrapolator",
+    "Emergency Phytomedic",
+    "Murmuring Volume",
+    "Swamp"
+   ],
+   "taken": "Shatterwing Pegasus",
+   "reasoning": "Hapatra seems like a really nice top end and he first leans to it, then reverses: takes the Pegasus because buffing his whole team could be pretty good. Pick confirmed from his words and the next pick; the Pick tag sat on Hapatra from hover.",
+   "considered": {
+    "Hapatra, the Desert Frost": "a really nice top end; he likes it 'a little bit' more, then changes his mind"
+   },
+   "plan": "White-blue.",
+   "quotes": [
+    "Hapatra seems like a really nice top end.",
+    "Maybe I'd rather have the Pegasus. Let's take the Pegasus. I think buffing my whole team could be pretty good."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 7,
+   "time": "13:40-13:54",
+   "pack_cards": [
+    "Clash of Elements",
+    "Predictive Preparations",
+    "Icy Reception",
+    "Screeching Soulbreaker",
+    "Blessed Ghoul",
+    "Tam's Resistance",
+    "Murmuring Volume",
+    "Vigorbloom Annex"
+   ],
+   "taken": "Tam's Resistance",
+   "reasoning": "Tam's Resistance now: does not want Icy Reception in this deck; Tam's Resistance draws a card, surveils and buffs one creature for a turn.",
+   "considered": {
+    "Icy Reception": "does not want it in this deck"
+   },
+   "plan": "White-blue.",
+   "quotes": [
+    "I'm going to take Tam's Resistance now. I don't really want Icy Reception in this deck."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 8,
+   "time": "13:54-14:08",
+   "pack_cards": [
+    "Ruric Thar, Biomagus",
+    "Danitha, Spear of Agony",
+    "Surveillance Phantasm",
+    "Greenhouse Propagator",
+    "Emergency Phytomedic",
+    "Murmuring Volume",
+    "Island"
+   ],
+   "taken": "Ruric Thar, Biomagus",
+   "reasoning": "Ruric Thar wheels from the second pick at the end of the day. Surveillance Phantasm is also there, but he has enough two-drops; getting a little more midrange is fine.",
+   "considered": {
+    "Surveillance Phantasm": "a two-drop; he has enough"
+   },
+   "plan": "White-blue, a bit more mid-range at the top end.",
+   "quotes": [
+    "I think I have enough two drops. I'm just going to take the Ruric Thar.",
+    "I think getting a little bit more midrange is fine."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 9,
+   "time": "14:08-14:15",
+   "pack_cards": [
+    "Sphinx's Approach",
+    "Artifist Acumen",
+    "Budding Insurgent",
+    "Sureshot Sower",
+    "Living Library",
+    "Forest"
+   ],
+   "taken": "Sphinx's Approach",
+   "reasoning": "Not discussed ('I don't know if I'll get any other cards for my deck'); the only playable of his colours.",
+   "considered": {},
+   "plan": "White-blue.",
+   "quotes": [
+    "Okay, then I don't know if I'll get any other cards for my deck."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 10,
+   "time": "14:15-14:17",
+   "pack_cards": [
+    "Ghalta the Immovable",
+    "Cryotheory Adept",
+    "Eardrum Rattler",
+    "Greenhouse Propagator",
+    "Theorix Metamage"
+   ],
+   "taken": "Cryotheory Adept",
+   "reasoning": "Not discussed; the only card of his colours.",
+   "considered": {},
+   "plan": "White-blue.",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 11,
+   "time": "14:17-14:19",
+   "pack_cards": [
+    "Roiling Canopy",
+    "Divining Duelist",
+    "Sureshot Sower",
+    "Blessed Ghoul"
+   ],
+   "taken": "Blessed Ghoul",
+   "reasoning": "Not discussed. He notes that the Fatehold Annex did not wheel.",
+   "considered": {},
+   "plan": "White-blue.",
+   "quotes": [
+    "So, I didn't wheel the land."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 12,
+   "time": "14:19-14:22",
+   "pack_cards": [
+    "Undulating Witness",
+    "Rampart Hunter",
+    "Chandra's Emberling"
+   ],
+   "taken": "Undulating Witness",
+   "reasoning": "He got a landcycler but does not think he wants to play it.",
+   "considered": {},
+   "plan": "White-blue.",
+   "quotes": [
+    "I did get a land cyclinger, but I don't think I want to play it."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 13,
+   "time": "14:22-14:25",
+   "pack_cards": [
+    "Prophesied End",
+    "Inspired Tethermage"
+   ],
+   "taken": "Prophesied End",
+   "reasoning": "Not discussed.",
+   "considered": {},
+   "plan": "White-blue.",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 14,
+   "time": "14:25-14:27",
+   "pack_cards": [
+    "Swamp"
+   ],
+   "taken": "Swamp",
+   "reasoning": "Last card; basic Swamp.",
+   "considered": {},
+   "plan": "White-blue.",
+   "quotes": [
+    "So, we kind of have the world as our oyster."
+   ]
+  }
+ ]
+}

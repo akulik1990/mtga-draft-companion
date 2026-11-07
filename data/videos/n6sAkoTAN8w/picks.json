@@ -1,0 +1,983 @@
+{
+ "id": "n6sAkoTAN8w",
+ "url": "https://youtu.be/n6sAkoTAN8w",
+ "title": "This Strategy is Crazy Fast in Reality Fracture Draft!!!",
+ "player": "NicolaiBolas",
+ "set": "FRA",
+ "event": "FRA early access event (he thanks Wizards for free preview access at 0:04-0:09; event name not shown on screen)",
+ "dataset": "FRA_PremierDraft_All_Data.json",
+ "recorded": null,
+ "source": "frames read from data/videos/raw/n6sAkoTAN8w (pass 3, all images loaded, 0 placeholders): every pack list of P1p1-14, P2p1-12 and P3 from frames, P1p9-14 / P2p10-12 are wheel remnants read in the shrinking pack; takes from the Pick tag, the next pick's pool and his words; P2p13 and P2p14 pack screens never appeared (waiting screen), their takes are inferred (see status). All 42 takes accounted for on the deck screen at 23:40 (24 main non-basic cards + 18 sideboard). Transcript from YouTube auto captions, card names corrected; nothing past 24:00 read.",
+ "colour_path": [
+  {
+   "after": "P1p1",
+   "main": "B/R (Stingerquill)",
+   "quote": "I'll at least not abandon ship right off the bat"
+  },
+  {
+   "after": "P1p4",
+   "main": "R + U or B",
+   "quote": "I think blue red might be the most open. But I'm going to just keep trying to build this kind of ping deck"
+  },
+  {
+   "after": "P1p5",
+   "main": "R (white/blue possible)",
+   "quote": "I think I'm going to be willing to abandon the stinger quill here at this point"
+  },
+  {
+   "after": "P1p9",
+   "main": "B/R",
+   "quote": "we're just going to go back towards our our original plan here"
+  },
+  {
+   "after": "P2p1",
+   "main": "B/R, Vraska splash idea",
+   "quote": "So maybe we just try to splash this."
+  },
+  {
+   "after": "P2p8",
+   "main": "R/b",
+   "quote": "a really good sign for my potential red deck being open"
+  },
+  {
+   "after": "P3p14",
+   "main": "R/b, no splash",
+   "quote": "my deck is just pretty aggressive"
+  },
+  {
+   "after": "deck",
+   "main": "R/b aggro",
+   "quote": "definitely biasing towards red with my mana base"
+  }
+ ],
+ "picks": [
+  {
+   "pack": 1,
+   "pick": 1,
+   "time": "0:12-1:18",
+   "pack_cards": [
+    "Ingris Stingerquill",
+    "Thalia, the Survivor",
+    "Geist of Saint Thalia",
+    "Terminal Criticism",
+    "Winter, Team Player",
+    "Craftwork Crusher",
+    "Fateshaper Aspirant",
+    "Semester Foreseer",
+    "Apex Witchstalker",
+    "Awaken the Inferno",
+    "Chandra's Emberling",
+    "Greenhouse Propagator",
+    "Sureshot Sower",
+    "Fatehold Annex"
+   ],
+   "taken": "Ingris Stingerquill",
+   "reasoning": "Between the two gold cards (mythic Stingerquill vs uncommon Craftwork Crusher); the commons are nothing to write home about. Takes the strong multicoloured card and is willing to move off it.",
+   "considered": {
+    "Craftwork Crusher": "strong uncommon; 'I think I'll have more opportunities to try the Craftwork Crusher'",
+    "Awaken the Inferno": "'this card maybe is the best one though', but nothing crazy"
+   },
+   "plan": "B/R aggressive ping deck around Stingerquill.",
+   "quotes": [
+    "when you have like two really strong outliers and power level, it's worth sometimes to just take the strong multicolored card",
+    "we are of course willing to move off it"
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 2,
+   "time": "1:18-2:22",
+   "pack_cards": [
+    "Way of the Healer",
+    "Way of the Necromancer",
+    "Heartwood Crafter",
+    "Titanbones, Towering Heart",
+    "Eye of Jace",
+    "Hexhaven Battalion",
+    "Protege's Awakening",
+    "Unsummon",
+    "Apex Witchstalker",
+    "Rampart Hunter",
+    "No Admittance",
+    "Something Worth Saving",
+    "Forest"
+   ],
+   "taken": "No Admittance",
+   "reasoning": "Takes No Admittance, a very strong common that goes well in B/R with Stingerquill; no signal because the rare was taken out of this pack.",
+   "considered": {
+    "Heartwood Crafter": "would take it had he taken the red-green card",
+    "Way of the Healer": "'pretty good'"
+   },
+   "plan": "Stay B/R rather than abandon Stingerquill right away.",
+   "quotes": [
+    "I think I'm just going to take no admittance",
+    "We don't really have a signal cuz they took the rare out of this pack"
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 3,
+   "time": "2:22-3:26",
+   "pack_cards": [
+    "Cruel Calculations",
+    "Perfected Theory",
+    "Tetsuko Umezawa, Fugitive",
+    "Yargle, Glutton of Urborg",
+    "Essence Burn",
+    "Tetsuko Umezawa, Pursuer",
+    "Academic Ascent",
+    "Surveillance Phantasm",
+    "Skilled Battlecarver",
+    "Bestial Incursion",
+    "Ferocity of the Hunt",
+    "Swamp"
+   ],
+   "taken": "Skilled Battlecarver",
+   "reasoning": "Aggressive two-drop over the four-drop Tetsuko Pursuer: 'going like this into Ingris Stingerquill seems pretty strong'; willing to be experimental as long as the lane is not far from open.",
+   "considered": {
+    "Tetsuko Umezawa, Pursuer": "2/4 double strike prowess; 'would I rather have that or just a red aggressive two drop'",
+    "Tetsuko Umezawa, Fugitive": "'a very strong uncommon'",
+    "Cruel Calculations": "needs a mill deck, not great",
+    "Yargle, Glutton of Urborg": "only black card, 'not my favorite card'"
+   },
+   "plan": "R/b aggro, see if it stays open.",
+   "quotes": [
+    "let's start by taking the two drop because going like this into Ingress Stinger Quill seems pretty strong"
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 4,
+   "time": "3:26-4:20",
+   "pack_cards": [
+    "Terminal Criticism",
+    "Koth, the Geomancer",
+    "Titanbones, Towering Heart",
+    "Campus Crier",
+    "Mindseeker Oculus",
+    "Sphinx's Approach",
+    "Cast Away Doubt",
+    "Blazing Crescendo",
+    "Budding Insurgent",
+    "Room of Refuge",
+    "Forest"
+   ],
+   "taken": "Koth, the Geomancer",
+   "reasoning": "Takes Koth (landfall ping); still not seeing black, 'really seeing red', so blue-red may be the open lane.",
+   "considered": {
+    "Mindseeker Oculus": "'a very strong card', three-mana 2/1 that draws and leaves a Jace",
+    "Room of Refuge": "helps cast Stingerquill's colour requirements and is somewhat splashable"
+   },
+   "plan": "Blue-red might be most open; keep trying to build the ping deck.",
+   "quotes": [
+    "I think blue red might be the most open. But I'm going to just keep trying to build this kind of ping deck"
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 5,
+   "time": "4:20-5:05",
+   "pack_cards": [
+    "Thalia, the Survivor",
+    "Thalia, the Survivor",
+    "Geist of Saint Thalia",
+    "Yargle, Glutton of Urborg",
+    "Hexhaven Dueling Arena",
+    "Blossom-Blessed Angel",
+    "Artifist Acumen",
+    "Tam's Resistance",
+    "Keeper of the Quiet Hour",
+    "Vigorbloom Annex"
+   ],
+   "taken": "Blossom-Blessed Angel",
+   "reasoning": "Black does not look open, white somewhat; takes the Angel (big flyer) and is ready to abandon Stingerquill.",
+   "considered": {
+    "Thalia, the Survivor": "two copies plus the mirror card in the pack; considered",
+    "Keeper of the Quiet Hour": "the alternative that sticks to his colours; 'I don't think I'll miss the Keeper'"
+   },
+   "plan": "Willing to abandon the Stingerquill; white or blue possible.",
+   "quotes": [
+    "Black does not seem open at all really. White does seem somewhat open.",
+    "I think I'm going to be willing to abandon the stinger quill here at this point"
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 6,
+   "time": "5:05-5:47",
+   "pack_cards": [
+    "Overgrown Farmland",
+    "Arni, Humble Scribe",
+    "Arni, Renowned Champion",
+    "Essence Burn",
+    "Graft Surgeon",
+    "Predictive Preparations",
+    "Rampart Hunter",
+    "Tam's Resistance",
+    "Theorix Annex"
+   ],
+   "taken": "Arni, Humble Scribe",
+   "reasoning": "Not sure about his blue start, but blue looks open and he wants a functional deck at the end; Arni needs a steady stream of creatures to be good.",
+   "considered": {
+    "Rampart Hunter": "death touch enabler, nice aggressive card",
+    "Arni, Renowned Champion": "passed; it wheels at pick 14"
+   },
+   "plan": "Blue is looking open.",
+   "quotes": [
+    "I'm not sure how much I like my start for blue though. But I'm just going to take the blue card. I want to end up with a functional deck at the end of the draft."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 7,
+   "time": "5:47-6:22",
+   "pack_cards": [
+    "Teyo, Diamondblade Mage",
+    "Flourishing Grapple",
+    "Eye of Jace",
+    "Budding Insurgent",
+    "Theorix Metamage",
+    "Charge the Sanctum",
+    "Afterthought Sentry",
+    "Stingerquill Annex"
+   ],
+   "taken": "Teyo, Diamondblade Mage",
+   "reasoning": "'Right back to black': Teyo gives a permanent death touch and attacks well; the Annex would be good only if super committed to black-red.",
+   "considered": {
+    "Stingerquill Annex": "'the land would be good if I was like super committed to black red, but I just don't love it'"
+   },
+   "plan": "Back to black-red.",
+   "quotes": [
+    "I kind of want to play black red"
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 8,
+   "time": "6:22-6:53",
+   "pack_cards": [
+    "Pia, Aether Ascetic",
+    "Restore with Empathy",
+    "Unflinching Hortimancer",
+    "Silence the Echo",
+    "Hallway Heckler",
+    "Tam's Resistance",
+    "Plains"
+   ],
+   "taken": "Hallway Heckler",
+   "reasoning": "Takes the Heckler over Silence the Echo and moves back towards black-red; the Heckler is good if you have a good enchantment to fetch.",
+   "considered": {
+    "Silence the Echo": "works with No Admittance by sacrificing the Jace token; 'seems fine'",
+    "Restore with Empathy": "life gain, good with self-mill"
+   },
+   "plan": "Back to the original B/R plan.",
+   "quotes": [
+    "I think we'll take the hallway heckler now over the silence the echo and just move back towards our kind of black red deck"
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 9,
+   "time": "6:53-7:12",
+   "pack_cards": [
+    "Terminal Criticism",
+    "Winter, Team Player",
+    "Greenhouse Propagator",
+    "Fateshaper Aspirant",
+    "Semester Foreseer",
+    "Chandra's Emberling"
+   ],
+   "taken": "Winter, Team Player",
+   "reasoning": "Winter looks like a perfect card for a deck with both creatures and non-creature spells (Vicious Verse); he admits he waffled with the Arni and the Angel, neither over a great card.",
+   "considered": {
+    "Chandra's Emberling": "'doesn't seem that bad either'"
+   },
+   "plan": "Back to the original plan.",
+   "quotes": [
+    "we're just going to go back towards our our original plan here"
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 10,
+   "time": "7:12-7:36",
+   "pack_cards": [
+    "Way of the Necromancer",
+    "Eye of Jace",
+    "Protege's Awakening",
+    "Rampart Hunter"
+   ],
+   "taken": "Rampart Hunter",
+   "reasoning": "Rampart Hunter wheels from pick 2 ('we could have taken a Rampart Hunter and we get one anyway'): a nice aggressive four-drop.",
+   "considered": {
+    "Way of the Necromancer": "'seems okay, but nothing crazy'",
+    "Eye of Jace": "'I don't love this card'"
+   },
+   "plan": "",
+   "quotes": [
+    "Oh, yeah. We could have taken a Rampart Hunter and we get one anyway."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 11,
+   "time": "7:36-7:51",
+   "pack_cards": [
+    "Cruel Calculations",
+    "Perfected Theory",
+    "Yargle, Glutton of Urborg",
+    "Swamp"
+   ],
+   "taken": "Yargle, Glutton of Urborg",
+   "reasoning": "Nothing in the pack for the deck; he notes the three-two for three and the Rampart Hunter he passed are not a big loss.",
+   "considered": {},
+   "plan": "",
+   "quotes": [
+    "I don't think we're really missing out on much here if I'm being honest"
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 12,
+   "time": "7:51-8:02",
+   "pack_cards": [
+    "Cast Away Doubt",
+    "Budding Insurgent",
+    "Forest"
+   ],
+   "taken": "Cast Away Doubt",
+   "reasoning": "Cast Away Doubt draws cards and fits the aggressive plan; he is glad he took the Battlecarver because two-drops have been scarce.",
+   "considered": {},
+   "plan": "",
+   "quotes": [
+    "I'm glad I took this battle carver though cuz good two drops have been in short supply"
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 13,
+   "time": "8:02-8:09",
+   "pack_cards": [
+    "Yargle, Glutton of Urborg",
+    "Artifist Acumen"
+   ],
+   "taken": "Artifist Acumen",
+   "reasoning": "'We'll take that. Maybe enable some attacks.'",
+   "considered": {
+    "Yargle, Glutton of Urborg": "the other card in the pack"
+   },
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 1,
+   "pick": 14,
+   "time": "8:09-8:11",
+   "pack_cards": [
+    "Arni, Renowned Champion"
+   ],
+   "taken": "Arni, Renowned Champion",
+   "reasoning": "Last card, auto-selected; the Arni he passed at pick 6 wheeled.",
+   "considered": {},
+   "plan": "",
+   "quotes": [
+    "RNA came back. Perfect."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 1,
+   "time": "8:11-8:49",
+   "pack_cards": [
+    "Carnivorous Cultivator",
+    "Vraska, the Cutting Glare",
+    "Vraska, Soul of Stone",
+    "Way of the Mentor",
+    "Fblthp, Impossibly Lost",
+    "Terminal Criticism",
+    "Konstrari Charm",
+    "Memory Trap",
+    "Divining Duelist",
+    "Rampart Hunter",
+    "Awaken the Inferno",
+    "Budding Insurgent",
+    "Afterthought Sentry",
+    "Mountain"
+   ],
+   "taken": "Vraska, the Cutting Glare",
+   "reasoning": "Vraska is really strong (three-mana permanent removal at six lands) and nothing else in the pack is good; takes it as a high-upside card to splash if he finds a landcycler, even in black-red.",
+   "considered": {
+    "Awaken the Inferno": "a landcycler of the kind that would help splash Vraska"
+   },
+   "plan": "Look for a basic landcycler or fixer to splash Vraska.",
+   "quotes": [
+    "Verasa is really, really strong. So maybe we just try to splash this.",
+    "even if we can't end up splashing it, we still just want to take it because it's such a high upside card"
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 2,
+   "time": "8:49-9:39",
+   "pack_cards": [
+    "Shipwreck Marsh",
+    "Winter, Tormented Loner",
+    "Fulminous Forte",
+    "Winter, Team Player",
+    "Loot, the Nexus",
+    "Titanbones, Towering Heart",
+    "Primal Witchstalker",
+    "Predictive Preparations",
+    "Solve for Disappointment",
+    "Hallway Heckler",
+    "Something Worth Saving",
+    "Keeper of the Quiet Hour",
+    "Theorix Annex"
+   ],
+   "taken": "Fulminous Forte",
+   "reasoning": "Red was not the most open, but Forte (one damage to each creature or five to one target) is solid and he needs kill spells.",
+   "considered": {
+    "Hallway Heckler": "passed (wheels at pick 10)",
+    "Winter, Tormented Loner": "nice, forces a sacrifice, but few tokens"
+   },
+   "plan": "Removal count.",
+   "quotes": [
+    "Yeah, I think I'll take the forte though. I do need some kill spells."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 3,
+   "time": "9:39-10:05",
+   "pack_cards": [
+    "Your Fate Ends Here",
+    "Yargle, Goliath of Otaria",
+    "Winter, Tormented Loner",
+    "Winter, Team Player",
+    "Paradox Shaper",
+    "Memory Trap",
+    "Infinite Coursework",
+    "Solve for Disappointment",
+    "Void Extrapolator",
+    "Inspired Tethermage",
+    "Charge the Sanctum",
+    "Innovative Commons"
+   ],
+   "taken": "Winter, Team Player",
+   "reasoning": "Short on two-drops, but takes the second Winter and hopes the Void Extrapolator wheels (it does, pick 11).",
+   "considered": {
+    "Void Extrapolator": "the two-drop; 'maybe I can try to wheel this'"
+   },
+   "plan": "Winter plays well with the deck's effects.",
+   "quotes": [
+    "I'm just really short on two drops right now. Maybe I can try to wheel this and just take winter."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 4,
+   "time": "10:05-10:28",
+   "pack_cards": [
+    "Way of the Mind Sculptor",
+    "Terminal Criticism",
+    "Hunter's Axe",
+    "Fateshaper Aspirant",
+    "Surveillance Phantasm",
+    "Screeching Soulbreaker",
+    "Skilled Battlecarver",
+    "Inspired Tethermage",
+    "Tethermage's Advantage",
+    "Theorix Metamage",
+    "Konstrari Annex"
+   ],
+   "taken": "Skilled Battlecarver",
+   "reasoning": "'Huge, I really needed this guy': a good attacking two-drop.",
+   "considered": {
+    "Konstrari Annex": "'I wouldn't mind a Konstrari, but I'm not even that sure I'm going to splash the Vraska'"
+   },
+   "plan": "More two-drops that can attack.",
+   "quotes": [
+    "Okay, huge. I really needed this guy."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 5,
+   "time": "10:28-11:20",
+   "pack_cards": [
+    "Way of the Mentor",
+    "Hapatra, the Desert Frost",
+    "Way of the Warlord",
+    "Loot, the Nexus",
+    "Protege's Awakening",
+    "Sureshot Sower",
+    "Twinned Vision",
+    "Emergency Phytomedic",
+    "Keeper of the Quiet Hour",
+    "Forest"
+   ],
+   "taken": "Way of the Warlord",
+   "reasoning": "Happy to see Way of the Warlord: deals two to multiple things; the burn package (No Admittance, Cast Away Doubt) is coming together.",
+   "considered": {},
+   "plan": "Direct damage to the face.",
+   "quotes": [
+    "Definitely happy to see a way of the warlord too. Deal two to multiple things."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 6,
+   "time": "11:20-11:52",
+   "pack_cards": [
+    "Extrapolate the Impossible",
+    "Konstrari Annex",
+    "Archive Arbiter",
+    "Protege's Awakening",
+    "Undulating Witness",
+    "Inspired Tethermage",
+    "Ferocity of the Hunt",
+    "Charge the Sanctum",
+    "Keeper of the Quiet Hour"
+   ],
+   "taken": "Konstrari Annex",
+   "reasoning": "Takes the land because it could help splash Vraska.",
+   "considered": {
+    "Extrapolate the Impossible": "'If we do want to splash Vasa, it could help'",
+    "Ferocity of the Hunt": "'giving my Gizkai death touch seems okay'; will watch for it on the wheel",
+    "Keeper of the Quiet Hour": "not high on it, few empower Jace cards"
+   },
+   "plan": "Possible Vraska splash.",
+   "quotes": [
+    "I'll just take the land because maybe I could splash the Vasa if I get enough stuff"
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 7,
+   "time": "11:52-12:25",
+   "pack_cards": [
+    "Edgar, Moonlit Sovereign",
+    "Edgar, Ancient Bloodlord",
+    "Archive Arbiter",
+    "Fateshaper Aspirant",
+    "Undulating Witness",
+    "Extended Absence",
+    "Charge the Sanctum",
+    "Mountain"
+   ],
+   "taken": "Extended Absence",
+   "reasoning": "Another kill spell: exile something and add an extra ping.",
+   "considered": {},
+   "plan": "",
+   "quotes": [
+    "Perfect. We get another kill spell. Extended absence."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 8,
+   "time": "12:25-12:40",
+   "pack_cards": [
+    "Precise Redaction",
+    "Loot, the Anomaly",
+    "Essence Burn",
+    "Pia, Determined Rebuilder",
+    "Cast Away Doubt",
+    "Afterthought Sentry",
+    "Island"
+   ],
+   "taken": "Pia, Determined Rebuilder",
+   "reasoning": "A really good three-drop (2/2 plus a 1/1 flyer) and a good sign for red being open; Loot is mediocre.",
+   "considered": {
+    "Loot, the Anomaly": "mediocre"
+   },
+   "plan": "Red might be open.",
+   "quotes": [
+    "this is a really good pickup and a really good sign for my potential red deck being open"
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 9,
+   "time": "12:40-13:26",
+   "pack_cards": [
+    "Vraska, Soul of Stone",
+    "Terminal Criticism",
+    "Konstrari Charm",
+    "Rampart Hunter",
+    "Budding Insurgent",
+    "Mountain"
+   ],
+   "taken": "Rampart Hunter",
+   "reasoning": "Rampart Hunter works with Battlecarver and attacks as a 3/3 deathtoucher; Terminal Criticism only kills blue or red creatures (good in best of three, not in best of one).",
+   "considered": {
+    "Terminal Criticism": "'good in best of three, but not a card I want in best of one'",
+    "Vraska, Soul of Stone": "sweet but not his colours"
+   },
+   "plan": "Death touch plus first strike.",
+   "quotes": [
+    "This card only kills blue or red things, so good in best of three, but not a card I want in best of one."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 10,
+   "time": "13:26-13:45",
+   "pack_cards": [
+    "Winter, Tormented Loner",
+    "Predictive Preparations",
+    "Hallway Heckler",
+    "Something Worth Saving",
+    "Keeper of the Quiet Hour"
+   ],
+   "taken": "Hallway Heckler",
+   "reasoning": "Heckler is pretty good; Winter, Tormented Loner is fine but he has nothing good to sacrifice other than the Pia token.",
+   "considered": {
+    "Winter, Tormented Loner": "'I don't have good stuff to sacrifice really, other than the Pia token'"
+   },
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 11,
+   "time": "13:45-14:03",
+   "pack_cards": [
+    "Yargle, Goliath of Otaria",
+    "Solve for Disappointment",
+    "Void Extrapolator",
+    "Charge the Sanctum"
+   ],
+   "taken": "Void Extrapolator",
+   "reasoning": "The two-drop wheels as hoped: 'that's actually huge'; an extra synergy piece even without caring about milling.",
+   "considered": {},
+   "plan": "",
+   "quotes": [
+    "No, but we got the two drop back. That's actually huge."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 12,
+   "time": "14:03-14:28",
+   "pack_cards": [
+    "Terminal Criticism",
+    "Hunter's Axe",
+    "Konstrari Annex"
+   ],
+   "taken": "Konstrari Annex",
+   "reasoning": "The second Konstrari Annex wheels: with one Forest he can probably splash Vraska now.",
+   "considered": {},
+   "plan": "Vraska splash looks possible.",
+   "quotes": [
+    "Bang. Got another constraex. So, if I play like one forest, I can probably splash this now."
+   ],
+   "status": "taken card from his words (13:57 'Got another constraex') and the pack lineage; the pick tag was not on screen"
+  },
+  {
+   "pack": 2,
+   "pick": 13,
+   "time": "14:28-14:44",
+   "pack_cards": [
+    "Emergency Phytomedic",
+    "unreadable (pack never shown on screen; second card unknown)"
+   ],
+   "taken": "Emergency Phytomedic",
+   "reasoning": "No reasoning given; the screen shows the waiting screen with hover popups of Yargle and Arni (he discusses the Yargle + Arni combo and that the deck has 22 cards).",
+   "considered": {},
+   "plan": "",
+   "quotes": [
+    "My deck currently has 22 cards in it, including these three. So, I only need a few things for pack three."
+   ],
+   "status": "INFERRED, not seen: the pack screen never appeared. The deck screen shows 42 takes only if the two unsourced cards (Emergency Phytomedic, Charge the Sanctum) are P2p13 and P2p14; Phytomedic is in the pick-5 pack of the same lineage, Charge the Sanctum is not (it is in pick 6), so pick 13 = Phytomedic"
+  },
+  {
+   "pack": 2,
+   "pick": 14,
+   "time": "14:44-14:48",
+   "pack_cards": [
+    "Charge the Sanctum"
+   ],
+   "taken": "Charge the Sanctum",
+   "reasoning": "Last card, auto-selected; 'I don't really need Charge the Sanctum' (14:47).",
+   "considered": {},
+   "plan": "",
+   "quotes": [
+    "I don't really need Charge the Sanctum. I already have so many similar effects that are better"
+   ],
+   "status": "taken card: auto-selected last card (empty Pick slot at 886 s); name from the deck screen and his words, pack screen not visible"
+  },
+  {
+   "pack": 3,
+   "pick": 1,
+   "time": "14:48-15:40",
+   "pack_cards": [
+    "Eye of Ugin",
+    "Lich's Relic",
+    "Samut, Hazoret's Champion",
+    "Ghalta the Immovable",
+    "Koth, the Geomancer",
+    "Ghalta the Unstoppable",
+    "Hunter's Axe",
+    "Recursive Recruitment",
+    "Undulating Witness",
+    "Theoretical Necromancer",
+    "Tethermage's Advantage",
+    "Living Library",
+    "Murmuring Volume",
+    "Vigorbloom Annex"
+   ],
+   "taken": "Lich's Relic",
+   "reasoning": "Takes Lich's Relic (strong) over Samut, Hazoret's Champion: the winters make haste less valuable and the relic is a kill spell plus equipment.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 2,
+   "time": "15:40-16:41",
+   "pack_cards": [
+    "Repurposed Enforcer",
+    "Ghalta the Immovable",
+    "Tetsuko Umezawa, Pursuer",
+    "Ghalta the Unstoppable",
+    "Stingerquill Charm",
+    "Vigorbloom Vanguard",
+    "Memory Trap",
+    "Icy Reception",
+    "Mindseeker Oculus",
+    "Silence the Echo",
+    "Chandra's Emberling",
+    "Ferocity of the Hunt",
+    "Swamp"
+   ],
+   "taken": "Stingerquill Charm",
+   "reasoning": "Kill spell, two-drop or combat trick: 'the perfect card for me'.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 3,
+   "time": "16:41-17:28",
+   "pack_cards": [
+    "Liliana the Faultless",
+    "Pyre Rhymer",
+    "Arni, Renowned Champion",
+    "Heartwood Crafter",
+    "Desperate Futurescribe",
+    "Grim Repriser",
+    "Rampart Hunter",
+    "Skilled Battlecarver",
+    "Something Worth Saving",
+    "Charge the Sanctum",
+    "Living Library",
+    "Innovative Commons"
+   ],
+   "taken": "Grim Repriser",
+   "reasoning": "Two-drop; up to five two-drops.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 4,
+   "time": "17:28-17:51",
+   "pack_cards": [
+    "Gideon's Memorial",
+    "Shipwreck Marsh",
+    "Way of the Cryomancer",
+    "Hunter's Axe",
+    "Desperate Futurescribe",
+    "Void Extrapolator",
+    "Skilled Battlecarver",
+    "Tam's Resistance",
+    "Murmuring Volume",
+    "Room of Refuge",
+    "Forest"
+   ],
+   "taken": "Skilled Battlecarver",
+   "reasoning": "Another two-drop over the land (Room of Refuge).",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 5,
+   "time": "17:51-18:21",
+   "pack_cards": [
+    "Teyo, Lightshield Expert",
+    "Way of the Mentor",
+    "Yargle, Glutton of Urborg",
+    "Void Extrapolator",
+    "Bestial Incursion",
+    "Vinelasher Adept",
+    "Charge the Sanctum",
+    "Keeper of the Quiet Hour",
+    "Island"
+   ],
+   "taken": "Void Extrapolator",
+   "reasoning": "Another two-drop; 'my two drop slot is filling itself in'.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 6,
+   "time": "18:21-18:57",
+   "pack_cards": [
+    "Master of Barbs",
+    "Fulminous Forte",
+    "Campus Crier",
+    "Semester Foreseer",
+    "Void Extrapolator",
+    "Eardrum Rattler",
+    "Compel Brutality",
+    "Greenhouse Propagator",
+    "Stingerquill Annex"
+   ],
+   "taken": "Master of Barbs",
+   "reasoning": "Excellent rare for the deck; passes the red-black land.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 7,
+   "time": "18:57-19:26",
+   "pack_cards": [
+    "Loot, the Anomaly",
+    "Fulminous Forte",
+    "Way of the Warlord",
+    "Loot, the Nexus",
+    "Unsummon",
+    "Apex Witchstalker",
+    "Living Library",
+    "Plains"
+   ],
+   "taken": "Fulminous Forte",
+   "reasoning": "Takes the five-damage Forte over the Warlord, hoping Way of the Warlord wheels (it does).",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 8,
+   "time": "19:26-19:44",
+   "pack_cards": [
+    "Way of the Mentor",
+    "Tetsuko Umezawa, Fugitive",
+    "Way of the Warlord",
+    "Something Worth Saving",
+    "Twinned Vision",
+    "Murmuring Volume",
+    "Meticulous Commons"
+   ],
+   "taken": "Way of the Warlord",
+   "reasoning": "Wheels the Warlord; will play two.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 9,
+   "time": "19:44-19:50",
+   "pack_cards": [
+    "Eye of Ugin",
+    "Ghalta the Immovable",
+    "Ghalta the Unstoppable",
+    "Undulating Witness",
+    "Tethermage's Advantage",
+    "Living Library"
+   ],
+   "taken": "Eye of Ugin",
+   "reasoning": "No reasoning given in the transcript; Eye of Ugin is in the sideboard on the deck screen. Undulating Witness (landcycler) was the alternative.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 10,
+   "time": "19:50-20:10",
+   "pack_cards": [
+    "Ghalta the Immovable",
+    "Ghalta the Unstoppable",
+    "Chandra's Emberling",
+    "Ferocity of the Hunt",
+    "Swamp"
+   ],
+   "taken": "Ferocity of the Hunt",
+   "reasoning": "Death touch + first strike makes a creature nearly unblockable.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 11,
+   "time": "20:10-20:20",
+   "pack_cards": [
+    "Arni, Renowned Champion",
+    "Skilled Battlecarver",
+    "Something Worth Saving",
+    "Charge the Sanctum"
+   ],
+   "taken": "Skilled Battlecarver",
+   "reasoning": "Wheels another Battlecarver.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 12,
+   "time": "20:20-20:23",
+   "pack_cards": [
+    "Hunter's Axe",
+    "Murmuring Volume",
+    "Forest"
+   ],
+   "taken": "Murmuring Volume",
+   "reasoning": "",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 13,
+   "time": "20:23-20:29",
+   "pack_cards": [
+    "Yargle, Glutton of Urborg",
+    "Island"
+   ],
+   "taken": "Yargle, Glutton of Urborg",
+   "reasoning": "Yargle over an Island (two Yargle on the deck screen); no comment.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 14,
+   "time": "20:29-20:37",
+   "pack_cards": [
+    "Stingerquill Annex"
+   ],
+   "taken": "Stingerquill Annex",
+   "reasoning": "Last pick red-black land: 'so good, especially with my restrictive colour requirements'.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  }
+ ]
+}

@@ -1,0 +1,568 @@
+{
+ "video": "8BzUchj9HuA",
+ "player": "NicolaiBolas",
+ "set": "FRA",
+ "player_note": "NicolaiBolas drafts; the guest Alex Nikolic (LLU) advises. 'speaker' = guest, host or both (captions unlabelled).",
+ "source": "YouTube auto-caption transcript 0:00-33:35 (tools/video_draft.py transcript 8BzUchj9HuA --start 0 --end 2015), card names corrected against data/Sets/FRA_PremierDraft_All_Data.json; nothing past 33:35 read. 'type' marks each idea as claim, heuristic or one-off pick; 'repeats' lists ideas of earlier videos it restates; 'related' lists looser topic matches.",
+ "ideas": [
+  {
+   "id": "8Bz-01",
+   "time": 35,
+   "speaker": "Alex Nikolic (guest)",
+   "phase": "draft",
+   "claim": "Reality Fracture is balanced: you do not have to be in one colour or avoid another, and drafts do not feel like the same thing each time.",
+   "quote": "You don't feel like, oh, you got to be in this color or you really want to avoid this color.",
+   "cards": [],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "Spread of deck win rate across colour pairs compared with the spread within a pair, by skill.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "XSY-01",
+    "re7-03",
+    "uoy-21"
+   ]
+  },
+  {
+   "id": "8Bz-02",
+   "time": 110,
+   "speaker": "Alex Nikolic (guest)",
+   "phase": "draft",
+   "claim": "His own favourite decks are green-red ramp (Kiora, the green-red uncommon) and, to win a draft, blue-white surveil aggro.",
+   "quote": "if I really wanted to win this draft, what would I be in? I think Blue White Surveil Aggro is probably my number one pick there.",
+   "cards": [
+    "Kiora of Fire and Ashes"
+   ],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "Win rate of blue-white against green-red decks by skill group.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "re7-08"
+   ]
+  },
+  {
+   "id": "8Bz-03",
+   "time": 160,
+   "speaker": "Alex Nikolic (guest)",
+   "phase": "draft",
+   "claim": "Murmuring Volume is underrated: a colourless mana rock with rummage that does duty on both filtering and getting to big things in ramp decks.",
+   "quote": "Murmuring volume, the mana rock that you pay two to rummage. Big fan of that card in the ramp decks.",
+   "cards": [
+    "Murmuring Volume"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Murmuring Volume in ramp decks.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-20",
+    "mqZ-34"
+   ]
+  },
+  {
+   "id": "8Bz-04",
+   "time": 190,
+   "speaker": "Alex Nikolic (guest)",
+   "phase": "draft",
+   "claim": "Archive Arbiter (six-mana 4/4 flier that destroys a noncreature, nonland permanent or gains four life) is very playable and he gets it last pick.",
+   "quote": "That card is I think very very playable and I get a last pick",
+   "cards": [
+    "Archive Arbiter"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Archive Arbiter and its ALSA.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-08"
+   ]
+  },
+  {
+   "id": "8Bz-05",
+   "time": 300,
+   "speaker": "Alex Nikolic (guest)",
+   "phase": "draft",
+   "claim": "Monocoloured over gold is an upside when close, but he is not afraid of strong gold cards; there are many in this set.",
+   "quote": "as always, I think monocolored over gold is definitely an upside. So, if it's close, I like taking the monocolor card, but I'm not afraid of taking the strong gold cards.",
+   "cards": [
+    "Carnivorous Cultivator",
+    "Clash of Elements"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of gold cards against mono-coloured cards at equal pick position; fraction of gold picks that reach the final colours.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "97Z-06",
+    "n6s-01",
+    "mqZ-07"
+   ]
+  },
+  {
+   "id": "8Bz-06",
+   "time": 380,
+   "speaker": "Alex Nikolic (guest)",
+   "phase": "draft",
+   "claim": "Recursive Recruitment is a phenomenal card: pretty good on four, really good late, can be self-milled to draw it free, or rummaged away for value; it plays well with any self-mill.",
+   "quote": "I think this card is phenomenal. It's just, you know, pretty good on four, really good late.",
+   "cards": [
+    "Recursive Recruitment",
+    "Carnivorous Cultivator"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Recursive Recruitment by number of self-mill cards in the deck.",
+   "type": "claim",
+   "repeats": [
+    "5aM-02",
+    "97Z-18"
+   ],
+   "related": [
+    "mqZ-05"
+   ]
+  },
+  {
+   "id": "8Bz-07",
+   "time": 415,
+   "speaker": "Alex Nikolic (guest)",
+   "phase": "draft",
+   "claim": "Primal Witchstalker is a card he has been super impressed with: three-mana 2/1 menace that ramps, sometimes a three-for-one (body, land, a milled flashback card).",
+   "quote": "sometimes it's like a three for one almost because you get the body, you get a land, and you mill a flashback card or something.",
+   "cards": [
+    "Primal Witchstalker"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Primal Witchstalker in green decks.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "pdI-13"
+   ]
+  },
+  {
+   "id": "8Bz-08",
+   "time": 445,
+   "speaker": "Alex Nikolic (guest)",
+   "phase": "draft",
+   "claim": "Prophesied End is better than the typical destroy-tapped or destroy-attacking removal: in aggressive decks you can kill the big blocker on the last turn and the card draw does not matter.",
+   "quote": "in the aggressive decks you do like the ability to in the last turn of the game say okay I kill your big blocker you draw a card doesn't matter you're dead.",
+   "cards": [
+    "Prophesied End"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Prophesied End in aggro decks.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "8Bz-09",
+   "time": 545,
+   "speaker": "Alex Nikolic (guest)",
+   "phase": "draft",
+   "claim": "Read signals from the whole pack, not one card: three red cards in a row and a Pia in a pack, but the colours that pair with green are not coming, so the open colour is unclear; the set is powerful enough that you need not be in the most open lane.",
+   "quote": "I haven't really felt like I needed to be in the most open lane to get a good deck.",
+   "cards": [
+    "Pia, Determined Rebuilder"
+   ],
+   "kind": "colours / signals",
+   "engine_area": "picker",
+   "test_idea": "Whether being in the most open lane improves deck win rate in FRA, controlling for skill.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "uoy-22",
+    "uoy-21",
+    "re7-03"
+   ]
+  },
+  {
+   "id": "8Bz-10",
+   "time": 550,
+   "speaker": "Alex Nikolic (guest)",
+   "phase": "draft",
+   "claim": "Land cyclers are really good: they fix and are good cards to cast; he has been high on them all set.",
+   "quote": "I've been really high on land cyclingers. They're just really really good at fixing you and they're all good cards.",
+   "cards": [
+    "Vinelasher Adept"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of the landcycler cycle by colour.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "Uy4-04",
+    "994-07",
+    "mqZ-45"
+   ]
+  },
+  {
+   "id": "8Bz-11",
+   "time": 595,
+   "speaker": "Alex Nikolic (guest)",
+   "phase": "draft",
+   "claim": "Add colours to layer synergies rather than only for raw power: white for Generous Revival in a graveyard deck.",
+   "quote": "I don't mind adding colors, not necessarily even for omega powerful cards, but to layer on your synergies.",
+   "cards": [
+    "Generous Revival"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Win rate of decks with a synergy-driven third colour against two-colour decks.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "re7-26"
+   ]
+  },
+  {
+   "id": "8Bz-12",
+   "time": 625,
+   "speaker": "Alex Nikolic (guest)",
+   "phase": "draft",
+   "claim": "Take good spells over fixing in pack one, because the set has plenty of fixing.",
+   "quote": "I've been taking good spells over fixing in pack one anyways.",
+   "cards": [
+    "Bestial Incursion",
+    "Transformative Commons"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Play rate of lands taken in picks 1 to 8 of pack 1; GIH WR of cards passed for them.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "CWs-12",
+    "mqZ-16"
+   ]
+  },
+  {
+   "id": "8Bz-13",
+   "time": 655,
+   "speaker": "Alex Nikolic (guest)",
+   "phase": "draft",
+   "claim": "A card like Paradox Shaper is not worth taking over a land when other cards help mill better; the red cards do not play well with their green cards.",
+   "quote": "It's a nice tool to have the Shaper. But there's other better cards that help you mill.",
+   "cards": [
+    "Paradox Shaper",
+    "Transformative Commons"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Paradox Shaper vs lands taken at pick 8.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "CWs-17"
+   ]
+  },
+  {
+   "id": "8Bz-14",
+   "time": 725,
+   "speaker": "Alex Nikolic (guest)",
+   "phase": "draft",
+   "claim": "Splash fishing removal like Surgical Precision when the deck has none.",
+   "quote": "we don't have any removal right now and I've been happy to splash removal like fishing removal like this one.",
+   "cards": [
+    "Surgical Precision"
+   ],
+   "kind": "splash / mana",
+   "engine_area": "builder",
+   "test_idea": "Splash win rate of Surgical Precision.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "994-05",
+    "mqZ-51"
+   ]
+  },
+  {
+   "id": "8Bz-15",
+   "time": 800,
+   "speaker": "Alex Nikolic (guest)",
+   "phase": "draft",
+   "claim": "Do not be strict about colour-pair themes: his green-white decks have been go-wide rather than life gain; look at what your cards ask you to do.",
+   "quote": "I don't think you have to be super strict about the color pair theming in this set.",
+   "cards": [
+    "Way of the Healer"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Win rate of green-white decks by number of life-gain cards.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "5aM-06"
+   ]
+  },
+  {
+   "id": "8Bz-16",
+   "time": 830,
+   "speaker": "Alex Nikolic (guest)",
+   "phase": "draft",
+   "claim": "Guiding Hydra over Your Fate Ends Here: the higher-upside card, but he could regret it without removal; the host notes they will probably get a removal spell back from the pack.",
+   "quote": "I would go for the higher upside card right now, but I could see us maybe regretting this if we maybe don't see as much removal as we'd like.",
+   "cards": [
+    "Guiding Hydra",
+    "Your Fate Ends Here"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Guiding Hydra against Your Fate Ends Here.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "9nA-29"
+   ]
+  },
+  {
+   "id": "8Bz-17",
+   "time": 905,
+   "speaker": "Alex Nikolic (guest)",
+   "phase": "draft",
+   "claim": "Unsummon has been really good against beast tokens and Kiora dragon tokens: a lot of big tokens to bounce.",
+   "quote": "It's been really good against the beast tokens or the Kiora Dragon tokens.",
+   "cards": [
+    "Unsummon"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Unsummon against opponents' token-making cards.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "55a-24",
+    "CWs-35"
+   ]
+  },
+  {
+   "id": "8Bz-18",
+   "time": 1010,
+   "speaker": "Alex Nikolic (guest)",
+   "phase": "draft",
+   "claim": "Something Worth Saving is good for finding the great cards while binning flashback cards, since there is a big gap between the great and the medium cards; in a deck that is not graveyard focused he wants only one copy.",
+   "quote": "just being able to find your good cards while binning flashback cards has been something I liked.",
+   "cards": [
+    "Something Worth Saving"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Something Worth Saving by copy count and graveyard density.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "994-24",
+    "XSY-15"
+   ]
+  },
+  {
+   "id": "8Bz-19",
+   "time": 1080,
+   "speaker": "Alex Nikolic (guest)",
+   "phase": "draft",
+   "claim": "Prefer the colourless two-drop in pack two so that you can take better expensive cards in pack three; it also doubles as a best-of-three sideboard card.",
+   "quote": "this lets us take better expensive cards in pack three.",
+   "cards": [
+    "Afterthought Sentry"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Play rate and GIH WR of Afterthought Sentry.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "8Bz-20",
+   "time": 1315,
+   "speaker": "Alex Nikolic (guest)",
+   "phase": "draft",
+   "claim": "Twisted Fates is a card he is a huge fan of, particularly when low on removal and with the fixing to cast it.",
+   "quote": "Huge fan of Twisted Fates and huge fan of it here where we're a little bit low on removal.",
+   "cards": [
+    "Twisted Fates"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Twisted Fates as a splash.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "XSY-21",
+    "mqZ-15"
+   ]
+  },
+  {
+   "id": "8Bz-21",
+   "time": 1370,
+   "speaker": "Alex Nikolic (guest)",
+   "phase": "draft",
+   "claim": "Way of the Healer over a green-white gold card: ask what your deck is doing; they are not a life-gain deck, so the gold card is not for them and Healer helps them go wide.",
+   "quote": "This is a perfect example of what is your deck doing.",
+   "cards": [
+    "Way of the Healer",
+    "Bloombrute"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Bloombrute by number of life-gain cards in the deck.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "8Bz-22",
+   "time": 1405,
+   "speaker": "Alex Nikolic (guest)",
+   "phase": "draft",
+   "claim": "In best of three, sideboard cards are worth taking pretty highly because they are a huge upgrade over a game-one card; he picks the sideboard card over a land.",
+   "quote": "I take these sideboard cards pretty highly when I'm drafting best of three.",
+   "cards": [
+    "Wrecking Gecko",
+    "Flourishing Grapple"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Not testable on 17Lands best-of-one data; record only.",
+   "type": "one-off pick",
+   "repeats": [],
+   "related": [
+    "uoy-27",
+    "CWs-25",
+    "994-28"
+   ]
+  },
+  {
+   "id": "8Bz-23",
+   "time": 1585,
+   "speaker": "Alex Nikolic (guest)",
+   "phase": "build",
+   "claim": "Cut Restore with Empathy and Fateshaper Aspirant first: the Aspirant returns few legends in a deck that does not lose its Healers; Restore only belongs in a graveyard deck.",
+   "quote": "if we were in the graveyard deck, I would play it, but not for this deck so much.",
+   "cards": [
+    "Restore with Empathy",
+    "Fateshaper Aspirant"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "GIH WR of Fateshaper Aspirant; play rate of Restore with Empathy outside graveyard decks.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-21",
+    "mqZ-27"
+   ]
+  },
+  {
+   "id": "8Bz-24",
+   "time": 1620,
+   "speaker": "Alex Nikolic (guest)",
+   "phase": "build",
+   "claim": "Aim for one Swamp only: the mana has double green and double white, so a second Swamp for the Twisted Fates splash would hurt.",
+   "quote": "we have double green, double whites, and a swamp in there. So, I would definitely would like to not play a second swamp.",
+   "cards": [
+    "Twisted Fates"
+   ],
+   "kind": "splash / mana",
+   "engine_area": "builder",
+   "test_idea": "Win rate of splash-two-cards decks by source count with double-pip base colours.",
+   "type": "heuristic",
+   "related": [
+    "CWs-42",
+    "mqZ-32",
+    "mqZ-60",
+    "mqZ-61"
+   ]
+  },
+  {
+   "id": "8Bz-25",
+   "time": 1650,
+   "speaker": "Alex Nikolic (guest)",
+   "phase": "build",
+   "claim": "A landcycler you will not cast (a Witchstalker) is not worth playing just for the cycling; play a land instead if there is fixing already.",
+   "quote": "if we're not planning to cast the witchstalker basically ever, it's not really going to pull its weight so much.",
+   "cards": [
+    "Primal Witchstalker"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Play rate of landcyclers by colour fit.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "55a-34",
+    "mqZ-66"
+   ]
+  },
+  {
+   "id": "8Bz-26",
+   "time": 1764,
+   "speaker": "Alex Nikolic (guest)",
+   "phase": "build",
+   "claim": "Titanbones, Towering Heart needs a lot of life gain to be worth the card: Hortimancer is a two-mana 2/1 that can trade early, while the four-mana 4/3 with no enters effect must get huge all the time.",
+   "quote": "I need that thing to be getting huge all the time for it to be worth the card.",
+   "cards": [
+    "Titanbones, Towering Heart",
+    "Unflinching Hortimancer"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Titanbones, Towering Heart by life-gain count.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "8Bz-27",
+   "time": 1824,
+   "speaker": "Alex Nikolic (guest)",
+   "phase": "build",
+   "claim": "Ferocity of the Hunt is not great in a deck with tokens: a death or enters effect on a token does not help; he checks for death triggers or enters effects before a trick.",
+   "quote": "I'm just imagining a scenario where we have our combat trick and we have a perfect spot to use it and we can't because we have like our way of the healer token.",
+   "cards": [
+    "Ferocity of the Hunt"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "GIH WR of Ferocity of the Hunt by token count.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "n6s-30",
+    "re7-15",
+    "994-19"
+   ]
+  },
+  {
+   "id": "8Bz-28",
+   "time": 1877,
+   "speaker": "Alex Nikolic (guest)",
+   "phase": "build",
+   "claim": "Cut a two-drop for a deck that builds out the board and sits back: the Sentry is a plain two-mana 2/2 against decks that ignore the graveyard, and Teyo can be flashed in as a two-mana 2/2.",
+   "quote": "this is more of a build out the board kind of creature deck where we don't mind just sitting back",
+   "cards": [
+    "Afterthought Sentry",
+    "Pia, Aether Ascetic"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Two-drop count against win rate in go-wide decks.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "n6s-12",
+    "9nA-31",
+    "CWs-45"
+   ]
+  }
+ ]
+}

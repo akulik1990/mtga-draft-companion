@@ -1,0 +1,1695 @@
+{
+ "commit": "ea1d9d7",
+ "date": "2026-11-07",
+ "dataset": "FRA_PremierDraft_All_Data.json",
+ "top1": 20,
+ "top3": 27,
+ "n": 35,
+ "not_scored": 7,
+ "dropped_cards": 10,
+ "picks": [
+  {
+   "pack": 1,
+   "pick": 1,
+   "taken": "Plan for All Outcomes",
+   "top3": [
+    {
+     "name": "Plan for All Outcomes",
+     "score": 63.03
+    },
+    {
+     "name": "Way of the Mind Sculptor",
+     "score": 61.54
+    },
+    {
+     "name": "Dark Matter Manipulator",
+     "score": 61.34
+    }
+   ],
+   "his_score": 63.03,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 10% \u2192 59.0 (n=17682)",
+    "WB 10% \u2192 off-colour",
+    "castable in 40% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 10% \u2192 59.0 (n=17682)",
+    "WB 10% \u2192 off-colour",
+    "castable in 40% of likely lanes"
+   ],
+   "lanes_after": {
+    "WB": 0.102,
+    "WR": 0.102,
+    "WG": 0.102,
+    "UB": 0.102
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 2,
+   "taken": "Recursive Recruitment",
+   "top3": [
+    {
+     "name": "Recursive Recruitment",
+     "score": 63.69
+    },
+    {
+     "name": "Stingcaster Mage",
+     "score": 60.73
+    },
+    {
+     "name": "Wrath of the Bloodmane",
+     "score": 59.98
+    }
+   ],
+   "his_score": 63.69,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WB 15% \u2192 off-colour",
+    "UB 15% \u2192 61.0 (n=39798)",
+    "castable in 15% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WB 15% \u2192 off-colour",
+    "UB 15% \u2192 61.0 (n=39798)",
+    "castable in 15% of likely lanes"
+   ],
+   "lanes_after": {
+    "WR": 0.279,
+    "WG": 0.279,
+    "RG": 0.279,
+    "WB": 0.024
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 3,
+   "taken": "Mindseeker Oculus",
+   "top3": [
+    {
+     "name": "Your Fate Ends Here",
+     "score": 60.42
+    },
+    {
+     "name": "Teyo, Lightshield Expert",
+     "score": 59.31
+    },
+    {
+     "name": "Wrath of the Bloodmane",
+     "score": 58.73
+    }
+   ],
+   "his_score": 57.71,
+   "his_rank": 4,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WR 28% \u2192 54.7 (n=3938)",
+    "WG 28% \u2192 55.7 (n=11317)"
+   ],
+   "reasons_his": [
+    "Fit #4 \u00b7 Power #4",
+    "WR 28% \u2192 off-colour",
+    "WG 28% \u2192 off-colour",
+    "castable in 9% of likely lanes"
+   ],
+   "lanes_after": {
+    "WR": 0.285,
+    "WG": 0.285,
+    "RG": 0.283,
+    "WB": 0.022
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 4,
+   "taken": "Rewrite Regrets",
+   "top3": [
+    {
+     "name": "Rewrite Regrets",
+     "score": 60.5
+    },
+    {
+     "name": "Vigorbloom Vanguard",
+     "score": 59.97
+    },
+    {
+     "name": "Twinned Vision",
+     "score": 59.52
+    }
+   ],
+   "his_score": 60.5,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WG 34% \u2192 off-colour",
+    "WR 26% \u2192 off-colour",
+    "castable in 9% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WG 34% \u2192 off-colour",
+    "WR 26% \u2192 off-colour",
+    "castable in 9% of likely lanes"
+   ],
+   "lanes_after": {
+    "WG": 0.283,
+    "WR": 0.239,
+    "RG": 0.238,
+    "BG": 0.04
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 5,
+   "taken": "Extended Absence",
+   "top3": [
+    {
+     "name": "Extended Absence",
+     "score": 59.96
+    },
+    {
+     "name": "Fatehold Chronologist",
+     "score": 56.75
+    },
+    {
+     "name": "Bestial Incursion",
+     "score": 55.91
+    }
+   ],
+   "his_score": 59.96,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WG 25% \u2192 off-colour",
+    "WR 21% \u2192 off-colour",
+    "castable in 24% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "WG 25% \u2192 off-colour",
+    "WR 21% \u2192 off-colour",
+    "castable in 24% of likely lanes"
+   ],
+   "lanes_after": {
+    "WG": 0.264,
+    "WR": 0.221,
+    "RG": 0.193,
+    "UB": 0.069
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 6,
+   "taken": "Apex Witchstalker",
+   "top3": [
+    {
+     "name": "Hexhaven Battalion",
+     "score": 57.1
+    },
+    {
+     "name": "Awaken the Inferno",
+     "score": 55.53
+    },
+    {
+     "name": "Icy Reception",
+     "score": 54.49
+    }
+   ],
+   "his_score": 48.37,
+   "his_rank": 5,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WG 41% \u2192 55.7 (n=21387)",
+    "WR 35% \u2192 55.4 (n=9839)"
+   ],
+   "reasons_his": [
+    "Fit #5 \u00b7 Power #4",
+    "WG 22% \u2192 off-colour",
+    "WR 19% \u2192 off-colour",
+    "castable in 37% of likely lanes"
+   ],
+   "lanes_after": {
+    "WG": 0.295,
+    "WR": 0.255,
+    "RG": 0.197,
+    "UB": 0.048
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 7,
+   "taken": "Apex Witchstalker",
+   "top3": [
+    {
+     "name": "Wrath of the Bloodmane",
+     "score": 53.75
+    },
+    {
+     "name": "Blossom-Blessed Angel",
+     "score": 52.68
+    },
+    {
+     "name": "Greenhouse Propagator",
+     "score": 52.25
+    }
+   ],
+   "his_score": 38.84,
+   "his_rank": 8,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WG 31% \u2192 splash R (fixing 1) 47.0",
+    "RG 25% \u2192 55.6 (n=25996)",
+    "castable in 54% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #8 \u00b7 Power #7",
+    "WG 26% \u2192 off-colour",
+    "RG 21% \u2192 off-colour",
+    "castable in 26% of likely lanes"
+   ],
+   "lanes_after": {
+    "BG": 0.311,
+    "UB": 0.232,
+    "WB": 0.231,
+    "BR": 0.188
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 8,
+   "taken": "Yuriko, Hope from the Shadows",
+   "top3": [
+    {
+     "name": "Yuriko, Hope from the Shadows",
+     "score": 49.98
+    },
+    {
+     "name": "Solve for Disappointment",
+     "score": 48.21
+    },
+    {
+     "name": "Sphinx's Approach",
+     "score": 47.2
+    }
+   ],
+   "his_score": 49.98,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "BG 33% \u2192 splash U (fixing 2) 47.4",
+    "UB 26% \u2192 53.7 (n=6808)",
+    "castable in 26% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #2",
+    "BG 33% \u2192 splash U (fixing 2) 47.4",
+    "UB 26% \u2192 53.7 (n=6808)",
+    "castable in 26% of likely lanes"
+   ],
+   "lanes_after": {
+    "BG": 0.336,
+    "UB": 0.259,
+    "WB": 0.203,
+    "BR": 0.165
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 9,
+   "taken": "Dark Matter Manipulator",
+   "top3": [
+    {
+     "name": "Dark Matter Manipulator",
+     "score": 58.74
+    },
+    {
+     "name": "Way of the Paradox",
+     "score": 52.16
+    },
+    {
+     "name": "Afterthought Sentry",
+     "score": 50.16
+    }
+   ],
+   "his_score": 58.74,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "BG 46% \u2192 57.2 (n=2280)",
+    "UB 22% \u2192 58.3 (n=7891)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "BG 46% \u2192 57.2 (n=2280)",
+    "UB 22% \u2192 58.3 (n=7891)"
+   ],
+   "lanes_after": {
+    "BG": 0.473,
+    "UB": 0.23,
+    "WB": 0.154,
+    "BR": 0.138
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 10,
+   "taken": "Afterthought Sentry",
+   "top3": [
+    {
+     "name": "Afterthought Sentry",
+     "score": 50.29
+    },
+    {
+     "name": "Living Library",
+     "score": 48.08
+    },
+    {
+     "name": "Kiora of Salt and Sand",
+     "score": 45.78
+    }
+   ],
+   "his_score": 50.29,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "BG 47% \u2192 52.4 (n=1199)",
+    "UB 25% \u2192 53.8 (n=2698)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #2",
+    "BG 47% \u2192 52.4 (n=1199)",
+    "UB 25% \u2192 53.8 (n=2698)"
+   ],
+   "lanes_after": {
+    "BG": 0.47,
+    "UB": 0.258,
+    "WB": 0.138,
+    "BR": 0.129
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 11,
+   "taken": null,
+   "top3": [
+    {
+     "name": "Wrecking Gecko",
+     "score": 50.85
+    },
+    {
+     "name": "Tether Technician",
+     "score": 44.07
+    },
+    {
+     "name": "Rampart Hunter",
+     "score": 43.14
+    }
+   ],
+   "his_score": null,
+   "his_rank": null,
+   "scored": false,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "BG 51% \u2192 55.2 (n=8731)",
+    "UB 23% \u2192 splash G (fixing 2) 44.2",
+    "castable in 51% of likely lanes"
+   ],
+   "reasons_his": [],
+   "lanes_after": {
+    "BG": 0.506,
+    "UB": 0.232,
+    "BR": 0.132,
+    "WB": 0.125
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 12,
+   "taken": "Stingerquill Annex",
+   "top3": [
+    {
+     "name": "Stingerquill Annex",
+     "score": 66.02
+    },
+    {
+     "name": "Marwyn, the Clearcutter",
+     "score": 45.46
+    },
+    {
+     "name": "Charge the Sanctum",
+     "score": 42.62
+    }
+   ],
+   "his_score": 66.02,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "BG 45% \u2192 splash R (fixing 2) 45.5",
+    "UB 23% \u2192 splash R (fixing 2) 45.5",
+    "castable in 19% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "BG 45% \u2192 splash R (fixing 2) 45.5",
+    "UB 23% \u2192 splash R (fixing 2) 45.5",
+    "castable in 19% of likely lanes"
+   ],
+   "lanes_after": {
+    "BG": 0.452,
+    "UB": 0.227,
+    "BR": 0.193,
+    "WB": 0.122
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 13,
+   "taken": "Vigorbloom Annex",
+   "top3": [
+    {
+     "name": "Restore with Empathy",
+     "score": 52.57
+    },
+    {
+     "name": "Vigorbloom Annex",
+     "score": 45.83
+    }
+   ],
+   "his_score": 45.83,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "BG 53% \u2192 54.7 (n=6187)",
+    "UB 19% \u2192 splash G (fixing 2) 45.8",
+    "castable in 54% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #1",
+    "BG 53% \u2192 splash W (fixing 2) 45.5",
+    "UB 19% \u2192 off-colour",
+    "castable in 0% of likely lanes"
+   ],
+   "lanes_after": {
+    "BG": 0.535,
+    "UB": 0.193,
+    "BR": 0.16,
+    "WB": 0.104
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 14,
+   "taken": null,
+   "top3": [],
+   "his_score": null,
+   "his_rank": null,
+   "scored": false,
+   "dropped": 1,
+   "reasons_top": [],
+   "reasons_his": [],
+   "lanes_after": {
+    "BG": 0.535,
+    "UB": 0.193,
+    "BR": 0.16,
+    "WB": 0.104
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 1,
+   "taken": "Seasoned Cryomancer",
+   "top3": [
+    {
+     "name": "Theorix Charm",
+     "score": 54.93
+    },
+    {
+     "name": "Unsummon",
+     "score": 54.58
+    },
+    {
+     "name": "Infinite Coursework",
+     "score": 53.08
+    }
+   ],
+   "his_score": 50.77,
+   "his_rank": 5,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #4",
+    "BG 35% \u2192 splash U (fixing 2) 51.1",
+    "UB 29% \u2192 57.4 (n=35496)",
+    "castable in 29% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #5 \u00b7 Power #1",
+    "UB 44% \u2192 59.8 (n=3385)",
+    "BG 27% \u2192 off-colour",
+    "castable in 44% of likely lanes"
+   ],
+   "lanes_after": {
+    "UB": 0.995,
+    "BG": 0.002,
+    "BR": 0.001,
+    "WB": 0.001
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 2,
+   "taken": "Countersculpt",
+   "top3": [
+    {
+     "name": "Countersculpt",
+     "score": 61.83
+    },
+    {
+     "name": "Unsummon",
+     "score": 58.74
+    },
+    {
+     "name": "Gallia, Tragic Host",
+     "score": 57.4
+    }
+   ],
+   "his_score": 61.83,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UB 100% \u2192 60.8 (n=25776)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "UB 100% \u2192 60.8 (n=25776)"
+   ],
+   "lanes_after": {
+    "UB": 1.0,
+    "WU": 0.0,
+    "UR": 0.0,
+    "UG": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 3,
+   "taken": "Countersculpt",
+   "top3": [
+    {
+     "name": "Countersculpt",
+     "score": 61.13
+    },
+    {
+     "name": "Last Gasp",
+     "score": 60.4
+    },
+    {
+     "name": "Dark Matter Manipulator",
+     "score": 59.48
+    }
+   ],
+   "his_score": 61.13,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UB 100% \u2192 60.8 (n=25776)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "UB 100% \u2192 60.8 (n=25776)"
+   ],
+   "lanes_after": {
+    "UB": 1.0,
+    "WU": 0.0,
+    "UR": 0.0,
+    "UG": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 4,
+   "taken": "Last Gasp",
+   "top3": [
+    {
+     "name": "Last Gasp",
+     "score": 60.07
+    },
+    {
+     "name": "Proft, Consulting Detective",
+     "score": 58.78
+    },
+    {
+     "name": "Infinite Coursework",
+     "score": 56.93
+    }
+   ],
+   "his_score": 60.07,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UB 100% \u2192 58.7 (n=44400)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "UB 100% \u2192 58.7 (n=44400)"
+   ],
+   "lanes_after": {
+    "UB": 1.0,
+    "WU": 0.0,
+    "UR": 0.0,
+    "UG": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 5,
+   "taken": "Stingerquill Charm",
+   "top3": [
+    {
+     "name": "Semester Foreseer",
+     "score": 50.82
+    },
+    {
+     "name": "Traxos, Scourge Eternal",
+     "score": 47.49
+    },
+    {
+     "name": "Something Worth Saving",
+     "score": 45.47
+    }
+   ],
+   "his_score": 44.39,
+   "his_rank": 4,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #3",
+    "UB 100% \u2192 53.4 (n=15646)"
+   ],
+   "reasons_his": [
+    "Fit #4 \u00b7 Power #1",
+    "UB 100% \u2192 splash R (fixing 3) 45.2",
+    "castable in 0% of likely lanes"
+   ],
+   "lanes_after": {
+    "UB": 1.0,
+    "WU": 0.0,
+    "UG": 0.0,
+    "UR": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 6,
+   "taken": "Proft, Sinister Mastermind",
+   "top3": [
+    {
+     "name": "Surveillance Phantasm",
+     "score": 58.7
+    },
+    {
+     "name": "Proft, Sinister Mastermind",
+     "score": 56.37
+    },
+    {
+     "name": "Something Worth Saving",
+     "score": 45.47
+    }
+   ],
+   "his_score": 56.37,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UB 100% \u2192 57.0 (n=41014)"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #2",
+    "UB 100% \u2192 55.5 (n=15571)"
+   ],
+   "lanes_after": {
+    "UB": 1.0,
+    "WU": 0.0,
+    "UG": 0.0,
+    "BG": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 7,
+   "taken": "Theoretical Necromancer",
+   "top3": [
+    {
+     "name": "Theoretical Necromancer",
+     "score": 57.79
+    },
+    {
+     "name": "Screeching Soulbreaker",
+     "score": 54.18
+    },
+    {
+     "name": "Massacre Girl, Most Wanted",
+     "score": 53.41
+    }
+   ],
+   "his_score": 57.79,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "UB 100% \u2192 56.0 (n=36485)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #2",
+    "UB 100% \u2192 56.0 (n=36485)"
+   ],
+   "lanes_after": {
+    "UB": 1.0,
+    "BG": 0.0,
+    "WU": 0.0,
+    "UG": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 8,
+   "taken": "Theorix Charm",
+   "top3": [
+    {
+     "name": "Theorix Charm",
+     "score": 62.07
+    },
+    {
+     "name": "Living Library",
+     "score": 52.08
+    },
+    {
+     "name": "Way of the Necromancer",
+     "score": 41.93
+    }
+   ],
+   "his_score": 62.07,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UB 100% \u2192 57.4 (n=35496)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "UB 100% \u2192 57.4 (n=35496)"
+   ],
+   "lanes_after": {
+    "UB": 1.0,
+    "BG": 0.0,
+    "UG": 0.0,
+    "WU": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 9,
+   "taken": "Theorix Charm",
+   "top3": [
+    {
+     "name": "Theorix Charm",
+     "score": 61.86
+    },
+    {
+     "name": "Formidable Commons",
+     "score": 48.09
+    },
+    {
+     "name": "Way of the Pyromancer",
+     "score": 40.81
+    }
+   ],
+   "his_score": 61.86,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "UB 100% \u2192 57.4 (n=35496)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #2",
+    "UB 100% \u2192 57.4 (n=35496)"
+   ],
+   "lanes_after": {
+    "UB": 1.0,
+    "BG": 0.0,
+    "UG": 0.0,
+    "WU": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 10,
+   "taken": "Gallia, Tragic Host",
+   "top3": [
+    {
+     "name": "Unsummon",
+     "score": 61.52
+    },
+    {
+     "name": "Gallia, Tragic Host",
+     "score": 58.5
+    },
+    {
+     "name": "Solve for Disappointment",
+     "score": 53.56
+    }
+   ],
+   "his_score": 58.5,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UB 100% \u2192 57.5 (n=36398)"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #3",
+    "UB 100% \u2192 55.4 (n=16101)"
+   ],
+   "lanes_after": {
+    "UB": 1.0,
+    "BG": 0.0,
+    "WB": 0.0,
+    "BR": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 11,
+   "taken": "Dark Matter Manipulator",
+   "top3": [
+    {
+     "name": "Dark Matter Manipulator",
+     "score": 60.03
+    },
+    {
+     "name": "Living Library",
+     "score": 53.32
+    },
+    {
+     "name": "Gallia, the Merrymaker",
+     "score": 40.22
+    }
+   ],
+   "his_score": 60.03,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UB 100% \u2192 58.3 (n=7891)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "UB 100% \u2192 58.3 (n=7891)"
+   ],
+   "lanes_after": {
+    "UB": 1.0,
+    "BG": 0.0,
+    "BR": 0.0,
+    "WB": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 12,
+   "taken": "Infinite Coursework",
+   "top3": [
+    {
+     "name": "Sphinx's Approach",
+     "score": 78.41
+    },
+    {
+     "name": "Infinite Coursework",
+     "score": 76.45
+    },
+    {
+     "name": "Sureshot Sower",
+     "score": 45.17
+    }
+   ],
+   "his_score": 76.45,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "UB 100% \u2192 56.7 (n=18117)"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #1",
+    "UB 100% \u2192 56.2 (n=31163)"
+   ],
+   "lanes_after": {
+    "UB": 1.0,
+    "BG": 0.0,
+    "BR": 0.0,
+    "WB": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 13,
+   "taken": null,
+   "top3": [
+    {
+     "name": "Charge the Sanctum",
+     "score": 42.49
+    },
+    {
+     "name": "Mountain",
+     "score": 0.0
+    }
+   ],
+   "his_score": null,
+   "his_rank": null,
+   "scored": false,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UB 100% \u2192 splash R (fixing 3) 39.3",
+    "castable in 0% of likely lanes"
+   ],
+   "reasons_his": [],
+   "lanes_after": {
+    "UB": 1.0,
+    "BG": 0.0,
+    "BR": 0.0,
+    "WB": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 14,
+   "taken": null,
+   "top3": [],
+   "his_score": null,
+   "his_rank": null,
+   "scored": false,
+   "dropped": 1,
+   "reasons_top": [],
+   "reasons_his": [],
+   "lanes_after": {
+    "UB": 1.0,
+    "BG": 0.0,
+    "BR": 0.0,
+    "WB": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 1,
+   "taken": "Recursive Recruitment",
+   "top3": [
+    {
+     "name": "Recursive Recruitment",
+     "score": 69.56
+    },
+    {
+     "name": "Twinned Vision",
+     "score": 67.5
+    },
+    {
+     "name": "Tetsuko Umezawa, Fugitive",
+     "score": 57.68
+    }
+   ],
+   "his_score": 69.56,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UB 100% \u2192 61.0 (n=39798)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "UB 100% \u2192 61.0 (n=39798)"
+   ],
+   "lanes_after": {
+    "UB": 1.0,
+    "BG": 0.0,
+    "BR": 0.0,
+    "WB": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 2,
+   "taken": "Divining Duelist",
+   "top3": [
+    {
+     "name": "Fatehold Chronologist",
+     "score": 62.01
+    },
+    {
+     "name": "Keeper of the Quiet Hour",
+     "score": 56.28
+    },
+    {
+     "name": "Winter, Tormented Loner",
+     "score": 54.32
+    }
+   ],
+   "his_score": 54.09,
+   "his_rank": 4,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UB 100% \u2192 56.7 (n=23988)"
+   ],
+   "reasons_his": [
+    "Fit #4 \u00b7 Power #6",
+    "UB 100% \u2192 55.5 (n=10904)"
+   ],
+   "lanes_after": {
+    "UB": 1.0,
+    "BG": 0.0,
+    "UG": 0.0,
+    "BR": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 3,
+   "taken": "Theorix Annex",
+   "top3": [
+    {
+     "name": "Fblthp, Impossibly Lost",
+     "score": 64.38
+    },
+    {
+     "name": "Twinned Vision",
+     "score": 64.14
+    },
+    {
+     "name": "Theorix Annex",
+     "score": 62.23
+    }
+   ],
+   "his_score": 62.23,
+   "his_rank": 3,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UB 100% \u2192 60.4 (n=28352)"
+   ],
+   "reasons_his": [
+    "Fit #3 \u00b7 Power #6",
+    "UB 100% \u2192 56.9 (n=29504)"
+   ],
+   "lanes_after": {
+    "UB": 1.0,
+    "BG": 0.0,
+    "UG": 0.0,
+    "BR": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 4,
+   "taken": "Theorix Metamage",
+   "top3": [
+    {
+     "name": "Theorix Metamage",
+     "score": 55.39
+    },
+    {
+     "name": "Meticulous Commons",
+     "score": 48.09
+    },
+    {
+     "name": "Terminal Criticism",
+     "score": 47.01
+    }
+   ],
+   "his_score": 55.39,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #4",
+    "UB 100% \u2192 55.0 (n=39500)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #4",
+    "UB 100% \u2192 55.0 (n=39500)"
+   ],
+   "lanes_after": {
+    "UB": 1.0,
+    "BG": 0.0,
+    "UG": 0.0,
+    "WU": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 5,
+   "taken": "Formidable Commons",
+   "top3": [
+    {
+     "name": "Geist of Saint Thalia",
+     "score": 59.95
+    },
+    {
+     "name": "Silence the Echo",
+     "score": 53.98
+    },
+    {
+     "name": "Medic's Kitesail",
+     "score": 50.01
+    }
+   ],
+   "his_score": 48.09,
+   "his_rank": 5,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "UB 100% \u2192 57.2 (n=15078)"
+   ],
+   "reasons_his": [
+    "Fit #5 \u00b7 Power #4",
+    "UB 100% \u2192 splash G (fixing 3) 45.5",
+    "castable in 0% of likely lanes"
+   ],
+   "lanes_after": {
+    "UB": 1.0,
+    "BG": 0.0,
+    "UG": 0.0,
+    "WU": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 6,
+   "taken": "Arni, Humble Scribe",
+   "top3": [
+    {
+     "name": "Arni, Humble Scribe",
+     "score": 56.91
+    },
+    {
+     "name": "Tetsuko Umezawa, Fugitive",
+     "score": 55.42
+    },
+    {
+     "name": "Sphinx's Approach",
+     "score": 54.87
+    }
+   ],
+   "his_score": 56.91,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #3",
+    "UB 100% \u2192 55.0 (n=12016)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #3",
+    "UB 100% \u2192 55.0 (n=12016)"
+   ],
+   "lanes_after": {
+    "UB": 1.0,
+    "BG": 0.0,
+    "UG": 0.0,
+    "WU": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 7,
+   "taken": "Proft, Sinister Mastermind",
+   "top3": [
+    {
+     "name": "Fatehold Chronologist",
+     "score": 57.68
+    },
+    {
+     "name": "Proft, Sinister Mastermind",
+     "score": 54.73
+    },
+    {
+     "name": "Solve for Disappointment",
+     "score": 49.73
+    }
+   ],
+   "his_score": 54.73,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UB 100% \u2192 56.7 (n=23988)"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #2",
+    "UB 100% \u2192 55.5 (n=15571)"
+   ],
+   "lanes_after": {
+    "UB": 1.0,
+    "BG": 0.0,
+    "UG": 0.0,
+    "WU": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 8,
+   "taken": null,
+   "top3": [
+    {
+     "name": "Tam's Resistance",
+     "score": 57.24
+    },
+    {
+     "name": "Cast Away Doubt",
+     "score": 49.3
+    },
+    {
+     "name": "Teyo, Diamondblade Mage",
+     "score": 48.79
+    }
+   ],
+   "his_score": null,
+   "his_rank": null,
+   "scored": false,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "UB 100% \u2192 57.7 (n=12909)"
+   ],
+   "reasons_his": [],
+   "lanes_after": {
+    "UB": 1.0,
+    "BG": 0.0,
+    "UG": 0.0,
+    "WU": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 9,
+   "taken": "Rank Rat",
+   "top3": [
+    {
+     "name": "Tetsuko Umezawa, Fugitive",
+     "score": 53.32
+    },
+    {
+     "name": "Rank Rat",
+     "score": 53.25
+    },
+    {
+     "name": "Living Library",
+     "score": 49.46
+    }
+   ],
+   "his_score": 53.25,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #3",
+    "UB 100% \u2192 54.8 (n=10506)"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #4",
+    "UB 100% \u2192 56.4 (n=30212)"
+   ],
+   "lanes_after": {
+    "UB": 1.0,
+    "BG": 0.0,
+    "BR": 0.0,
+    "UG": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 10,
+   "taken": "Keeper of the Quiet Hour",
+   "top3": [
+    {
+     "name": "Keeper of the Quiet Hour",
+     "score": 55.85
+    },
+    {
+     "name": "Theoretical Necromancer",
+     "score": 53.08
+    },
+    {
+     "name": "Stingerquill Annex",
+     "score": 48.09
+    }
+   ],
+   "his_score": 55.85,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "UB 100% \u2192 56.6 (n=16283)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #2",
+    "UB 100% \u2192 56.6 (n=16283)"
+   ],
+   "lanes_after": {
+    "UB": 1.0,
+    "BG": 0.0,
+    "BR": 0.0,
+    "WB": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 11,
+   "taken": "Fblthp, Impossibly Lost",
+   "top3": [
+    {
+     "name": "Fblthp, Impossibly Lost",
+     "score": 59.96
+    }
+   ],
+   "his_score": 59.96,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 3,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UB 100% \u2192 60.4 (n=28352)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "UB 100% \u2192 60.4 (n=28352)"
+   ],
+   "lanes_after": {
+    "UB": 1.0,
+    "WU": 0.0,
+    "UG": 0.0,
+    "BG": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 12,
+   "taken": "Medic's Kitesail",
+   "top3": [],
+   "his_score": null,
+   "his_rank": null,
+   "scored": true,
+   "dropped": 3,
+   "reasons_top": [],
+   "reasons_his": [],
+   "lanes_after": {
+    "UB": 1.0,
+    "WU": 0.0,
+    "UG": 0.0,
+    "BG": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 13,
+   "taken": null,
+   "top3": [
+    {
+     "name": "Living Library",
+     "score": 66.04
+    }
+   ],
+   "his_score": null,
+   "his_rank": null,
+   "scored": false,
+   "dropped": 1,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UB 100% \u2192 53.5 (n=1742)"
+   ],
+   "reasons_his": [],
+   "lanes_after": {
+    "UB": 1.0,
+    "WU": 0.0,
+    "UG": 0.0,
+    "BG": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 14,
+   "taken": null,
+   "top3": [],
+   "his_score": null,
+   "his_rank": null,
+   "scored": false,
+   "dropped": 1,
+   "reasons_top": [],
+   "reasons_his": [],
+   "lanes_after": {
+    "UB": 1.0,
+    "WU": 0.0,
+    "UG": 0.0,
+    "BG": 0.0
+   }
+  }
+ ],
+ "builder": [
+  {
+   "main": "UB",
+   "splash": "",
+   "deck_wr": 62.42,
+   "label": "UB",
+   "cards": [
+    {
+     "name": "Theorix Annex",
+     "count": 1
+    },
+    {
+     "name": "Dark Matter Manipulator",
+     "count": 2
+    },
+    {
+     "name": "Countersculpt",
+     "count": 2
+    },
+    {
+     "name": "Fblthp, Impossibly Lost",
+     "count": 1
+    },
+    {
+     "name": "Gallia, Tragic Host",
+     "count": 1
+    },
+    {
+     "name": "Last Gasp",
+     "count": 1
+    },
+    {
+     "name": "Rank Rat",
+     "count": 1
+    },
+    {
+     "name": "Theorix Charm",
+     "count": 2
+    },
+    {
+     "name": "Arni, Humble Scribe",
+     "count": 1
+    },
+    {
+     "name": "Infinite Coursework",
+     "count": 1
+    },
+    {
+     "name": "Mindseeker Oculus",
+     "count": 1
+    },
+    {
+     "name": "Proft, Sinister Mastermind",
+     "count": 2
+    },
+    {
+     "name": "Seasoned Cryomancer",
+     "count": 1
+    },
+    {
+     "name": "Theoretical Necromancer",
+     "count": 1
+    },
+    {
+     "name": "Theorix Metamage",
+     "count": 1
+    },
+    {
+     "name": "Extended Absence",
+     "count": 1
+    },
+    {
+     "name": "Plan for All Outcomes",
+     "count": 1
+    },
+    {
+     "name": "Recursive Recruitment",
+     "count": 2
+    },
+    {
+     "name": "Rewrite Regrets",
+     "count": 1
+    },
+    {
+     "name": "Apex Witchstalker",
+     "count": 2
+    },
+    {
+     "name": "Island",
+     "count": 7
+    },
+    {
+     "name": "Swamp",
+     "count": 7
+    }
+   ]
+  }
+ ],
+ "his_deck": {
+  "main": "UB",
+  "splash": "",
+  "deck_wr": 60.35,
+  "label": null,
+  "cards": [
+   {
+    "name": "Dark Matter Manipulator",
+    "count": 2
+   },
+   {
+    "name": "Countersculpt",
+    "count": 2
+   },
+   {
+    "name": "Gallia, Tragic Host",
+    "count": 1
+   },
+   {
+    "name": "Last Gasp",
+    "count": 1
+   },
+   {
+    "name": "Rank Rat",
+    "count": 1
+   },
+   {
+    "name": "Theorix Charm",
+    "count": 2
+   },
+   {
+    "name": "Arni, Humble Scribe",
+    "count": 1
+   },
+   {
+    "name": "Divining Duelist",
+    "count": 1
+   },
+   {
+    "name": "Infinite Coursework",
+    "count": 1
+   },
+   {
+    "name": "Mindseeker Oculus",
+    "count": 1
+   },
+   {
+    "name": "Seasoned Cryomancer",
+    "count": 1
+   },
+   {
+    "name": "Proft, Sinister Mastermind",
+    "count": 1
+   },
+   {
+    "name": "Theorix Metamage",
+    "count": 1
+   },
+   {
+    "name": "Plan for All Outcomes",
+    "count": 1
+   },
+   {
+    "name": "Extended Absence",
+    "count": 1
+   },
+   {
+    "name": "Rewrite Regrets",
+    "count": 1
+   },
+   {
+    "name": "Recursive Recruitment",
+    "count": 2
+   },
+   {
+    "name": "Apex Witchstalker",
+    "count": 2
+   },
+   {
+    "name": "Island",
+    "count": 8
+   },
+   {
+    "name": "Swamp",
+    "count": 8
+   },
+   {
+    "name": "Theorix Annex",
+    "count": 1
+   }
+  ]
+ }
+}

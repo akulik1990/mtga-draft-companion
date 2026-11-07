@@ -1,0 +1,1065 @@
+{
+ "id": "97ZjOdFNU4U",
+ "url": "https://youtu.be/97ZjOdFNU4U",
+ "title": "How I Accidentally Broke Reality Fracture Draft!",
+ "player": "NicolaiBolas",
+ "set": "FRA",
+ "event": "FRA early access / preview event (he thanks Wizards for free preview access at 0:04-0:08 'so I could get this recorded early'; Premier / Quick not named on screen)",
+ "dataset": "FRA_PremierDraft_All_Data.json",
+ "recorded": null,
+ "source": "frames read from data/videos/raw/97ZjOdFNU4U (banner, pack grids and title strips every pick; pool at P2p3 and P3p1; deck builder at 17:48); every pack list read from images that loaded except the last card of pack 3 (never displayed, inferred); takes confirmed by the pool and the deck builder (all 42 picks accounted for: 23 main spells, Theorix Annex, 17 in the sideboard, and the picked Mountain among the free basics); transcript from YouTube auto captions, card names corrected against the dataset; nothing past 17:50 read; the cut-off is 1075 s (game board at 1110 s)",
+ "colour_path": [
+  {
+   "after": "P1p1",
+   "main": "open (blue-black gold rare)",
+   "quote": "maybe this will be a splash. Maybe I'll take Memory Trap."
+  },
+  {
+   "after": "P1p4",
+   "main": "flexible, dabbling in gold",
+   "quote": "I'm willing to be flexible here and just dabble."
+  },
+  {
+   "after": "P1p6",
+   "main": "UB splash G",
+   "quote": "we could just be like a blue black deck splashing green."
+  },
+  {
+   "after": "P1p7",
+   "main": "UB, black open",
+   "quote": "blue black looking like it could be open."
+  },
+  {
+   "after": "P2p1",
+   "main": "UB, black open",
+   "quote": "black is looking open. We don't actually have to be blue, though."
+  },
+  {
+   "after": "P2p12",
+   "main": "UB solid",
+   "quote": "We've kind of solidified ourselves into blue black."
+  },
+  {
+   "after": "P3p3",
+   "main": "UB, no splash",
+   "quote": "the more playables I get, the less likely I am to want to splash"
+  },
+  {
+   "after": "deck",
+   "main": "UB, no splash",
+   "quote": "I already have a dual land for my deck. And I don't think I'm going to try to splash."
+  }
+ ],
+ "picks": [
+  {
+   "pack": 1,
+   "pick": 1,
+   "time": "0:14-1:18",
+   "pack_cards": [
+    "Samut, Hazoret's Champion",
+    "Null Summoner",
+    "Proft, Consulting Detective",
+    "Proft, Sinister Mastermind",
+    "Fulminous Forte",
+    "Vigorbloom Vanguard",
+    "Last Gasp",
+    "Rampart Hunter",
+    "Artifist Acumen",
+    "Skilled Battlecarver",
+    "Bestial Incursion",
+    "Fatehold Chronologist",
+    "Keeper of the Quiet Hour",
+    "Vigorbloom Annex"
+   ],
+   "taken": "Null Summoner",
+   "reasoning": "Null Summoner: excellent and very powerful every time he has played it; it does not scale into the late game, but usually the opponent holds something, you take their best card and trade the 4/2 for one creature, a clean two-for-one. Several scary cards in the pack (Samut) but he takes the gold rare.",
+   "considered": {
+    "Samut, Hazoret's Champion": "a scary card when the opponent plays it",
+    "Proft, Consulting Detective": "pretty solid, he thought it would be a bit better; the minus three / minus one early is decent",
+    "Fulminous Forte": "has been excellent, one damage plus a kill makes the game feel over",
+    "Last Gasp": "a good common",
+    "Bestial Incursion": "good unless they Unsummon it",
+    "Fatehold Chronologist": "a mover down for him, still fine"
+   },
+   "plan": "Open; gold blue-black card first.",
+   "quotes": [
+    "Null Summoner is excellent. It has been very, very powerful every time I've been able to play it.",
+    "You take their best card and trade this for one other creature. Really, really strong."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 2,
+   "time": "1:18-2:22",
+   "pack_cards": [
+    "Samut, Tyrant of Naktamun",
+    "Identity Echo",
+    "Essence Burn",
+    "Vigorbloom Vanguard",
+    "Traxos, Scourge Eternal",
+    "Memory Trap",
+    "Rampart Hunter",
+    "Twinned Vision",
+    "Konstrari Improviser",
+    "Emergency Phytomedic",
+    "Keeper of the Quiet Hour",
+    "Room of Refuge",
+    "Swamp"
+   ],
+   "taken": "Memory Trap",
+   "reasoning": "Memory Trap over Vigorbloom Vanguard: he reads from the missing card that the pack lost a blue or red card (the blue Traxos is not in it), thinks of a splash, and locks up a kill spell. He prefers being the one asking the questions rather than answering them, but there is no good follow-up to Null Summoner.",
+   "considered": {
+    "Vigorbloom Vanguard": "a very flexible card at the very least",
+    "Traxos, Scourge Eternal": "its blue partner is missing, so the neighbour probably took a blue or red card"
+   },
+   "plan": "Open; Null Summoner plus a possible white-black splash card.",
+   "quotes": [
+    "let's just take the memory trap. It's good to get a kill spell locked up",
+    "I have been kind of thinking that in this format, I want to be the one asking the questions rather than trying to answer them a lot of the time."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 3,
+   "time": "2:22-3:17",
+   "pack_cards": [
+    "Frostbite Pyromental",
+    "Teyo, Lightshield Expert",
+    "Marwyn, the Clearcutter",
+    "Hexhaven Battalion",
+    "Mindseeker Oculus",
+    "Apex Witchstalker",
+    "Solve for Disappointment",
+    "Skilled Battlecarver",
+    "Compel Brutality",
+    "Konstrari Improviser",
+    "Afterthought Sentry",
+    "Konstrari Annex"
+   ],
+   "taken": "Mindseeker Oculus",
+   "reasoning": "Mindseeker Oculus 'is just the pick': super good, he has been impressed every time he has played it; he accepts the neighbour might move into blue and cut him. The missing card in this pack (Teyo pairs with black, Marwyn with green) points to a black or green card taken; white is neither colour.",
+   "considered": {
+    "Compel Brutality": "pretty solid",
+    "Teyo, Lightshield Expert": "very impressive when he gets to do his thing",
+    "Icy Reception": "a mover down for him; a card you want one copy of; may get better as formats speed up, but games have stalled out"
+   },
+   "plan": "Open; blue Oculus alongside the gold start.",
+   "quotes": [
+    "I think the Oculus is just the pick. Just super good card.",
+    "got to just take the cards that I am presented with."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 4,
+   "time": "3:17-4:08",
+   "pack_cards": [
+    "Yuriko, Blade of the Mighty",
+    "Yuriko, Hope from the Shadows",
+    "Grim Repriser",
+    "Academic Ascent",
+    "Icy Reception",
+    "Sphinx's Approach",
+    "Void Extrapolator",
+    "Wrath of the Bloodmane",
+    "Vinelasher Adept",
+    "Konstrari Improviser",
+    "Plains"
+   ],
+   "taken": "Grim Repriser",
+   "reasoning": "Grim Repriser (black-red gold), the best card in the pack, over Wrath of the Bloodmane and the rest: he will be flexible and dabble, multicoloured cards are strong and a different lane from his current one.",
+   "considered": {
+    "Wrath of the Bloodmane": "mentioned",
+    "Yuriko, Hope from the Shadows": "in the pack, not discussed",
+    "Icy Reception": "second copy, not taken"
+   },
+   "plan": "Open, flexible; blue-black base with a gold dabble.",
+   "quotes": [
+    "I'm going to try taking the Grim Repriser. I think it's just the best card in the pack. And I'm willing to be flexible here and just dabble."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 5,
+   "time": "4:08-4:30",
+   "pack_cards": [
+    "Extrapolate the Impossible",
+    "Perfected Theory",
+    "Hapatra, the Desert Fang",
+    "Academic Ascent",
+    "Blossom-Blessed Angel",
+    "Cryotheory Adept",
+    "Whiplash Wordsmith",
+    "Ferocity of the Hunt",
+    "Medic's Kitesail",
+    "Island"
+   ],
+   "taken": "Hapatra, the Desert Fang",
+   "reasoning": "Hapatra, the Desert Fang: he takes multicoloured cards pretty highly right now because in his experience they are the best card in your deck or one of them, which is worth speculating on; the rest of the pack is weak.",
+   "considered": {
+    "Blossom-Blessed Angel": "can be fine"
+   },
+   "plan": "Open; speculating on gold cards.",
+   "quotes": [
+    "I'm just going to take the multicolored cards pretty highly right now. In my experience, they're just so strong and they can be like the best card in your deck or one of them.",
+    "This pack is just kind of weak other than Hapatra though."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 6,
+   "time": "4:30-4:50",
+   "pack_cards": [
+    "Arni, Humble Scribe",
+    "Way of the Deathbringer",
+    "Mindseeker Oculus",
+    "Apex Witchstalker",
+    "Awaken the Inferno",
+    "Blazing Crescendo",
+    "Wrecking Gecko",
+    "Murmuring Volume",
+    "Mountain"
+   ],
+   "taken": "Mindseeker Oculus",
+   "reasoning": "A second Mindseeker Oculus: he has jumped around but could be a blue-black deck splashing green. He has come down on Arni, Humble Scribe: a three-drop you do not want to block with is a liability, and that was costing him games.",
+   "considered": {
+    "Arni, Humble Scribe": "has come down on it; a three-drop you don't want to block with is a liability and was costing him games",
+    "Apex Witchstalker": "in the pack",
+    "Awaken the Inferno": "in the pack, not discussed"
+   },
+   "plan": "Blue-black splashing green (Hapatra).",
+   "quotes": [
+    "we could just be like a blue black deck splashing green.",
+    "I've come down on Arni because like playing a three drop that you don't want to block with is just kind of a liability sometimes."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 7,
+   "time": "4:50-5:02",
+   "pack_cards": [
+    "Overgrown Farmland",
+    "Shatterwing Pegasus",
+    "Extended Absence",
+    "Heartstring Puller",
+    "Tethermage's Advantage",
+    "Afterthought Sentry",
+    "Living Library",
+    "Island"
+   ],
+   "taken": "Extended Absence",
+   "reasoning": "Extended Absence: blue-black looking like it could be open. He does not want to splash red for Grim Repriser; Paradox Shaper has been fine and Heartstring Puller is still in the pack.",
+   "considered": {
+    "Paradox Shaper": "has been fine",
+    "Heartstring Puller": "still in the pack"
+   },
+   "plan": "Blue-black open; splash maybe.",
+   "quotes": [
+    "Now I get an extended absence. So blue black looking like it could be open.",
+    "I don't really want to splash red for Grim Repriser."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 8,
+   "time": "5:02-5:25",
+   "pack_cards": [
+    "Paradox Shaper",
+    "Academic Ascent",
+    "Undulating Witness",
+    "Silence the Echo",
+    "Heartstring Puller",
+    "Tethermage's Advantage",
+    "Innovative Commons"
+   ],
+   "taken": "Paradox Shaper",
+   "reasoning": "Paradox Shaper over Undulating Witness and Silence the Echo: he needs more twos and has no good one; it helps fill the graveyard and get the synergies going.",
+   "considered": {
+    "Undulating Witness": "in the pack",
+    "Silence the Echo": "in the pack"
+   },
+   "plan": "Blue-black.",
+   "quotes": [
+    "Think I need more twos. I don't really have a good one. And this card can be fine. Helps you fill your graveyard."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 9,
+   "time": "5:25-5:45",
+   "pack_cards": [
+    "Rampart Hunter",
+    "Artifist Acumen",
+    "Skilled Battlecarver",
+    "Bestial Incursion",
+    "Keeper of the Quiet Hour",
+    "Vigorbloom Annex"
+   ],
+   "taken": "Bestial Incursion",
+   "reasoning": "Bestial Incursion (green) from a thin pack: 'sometimes fine'; he does not like another card in the pack and is not the biggest fan of Keeper of the Quiet Hour.",
+   "considered": {
+    "Keeper of the Quiet Hour": "not the biggest fan",
+    "Rampart Hunter": "in the pack"
+   },
+   "plan": "Blue-black; green still a possible splash colour.",
+   "quotes": [
+    "Bestial Incursion is sometimes fine."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 10,
+   "time": "5:45-5:52",
+   "pack_cards": [
+    "Identity Echo",
+    "Essence Burn",
+    "Traxos, Scourge Eternal",
+    "Keeper of the Quiet Hour",
+    "Swamp"
+   ],
+   "taken": "Keeper of the Quiet Hour",
+   "reasoning": "Keeper of the Quiet Hour from a weak pack (Identity Echo, Essence Burn, Traxos, Scourge Eternal, Keeper, Swamp): he says he has not been the biggest fan of it.",
+   "considered": {
+    "Traxos, Scourge Eternal": "in the pack, not taken"
+   },
+   "plan": "Blue-black.",
+   "quotes": [
+    "Have not been the biggest fan of Keeper of the Quiet Hour."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 11,
+   "time": "5:52-6:03",
+   "pack_cards": [
+    "Frostbite Pyromental",
+    "Solve for Disappointment",
+    "Skilled Battlecarver",
+    "Konstrari Annex"
+   ],
+   "taken": "Solve for Disappointment",
+   "reasoning": "Solve for Disappointment: it has been a little obnoxious, so he will try it (empower Jace 1 plus discard); Frostbite Pyromental and Skilled Battlecarver are the alternatives.",
+   "considered": {
+    "Frostbite Pyromental": "in the pack",
+    "Skilled Battlecarver": "in the pack"
+   },
+   "plan": "Blue-black.",
+   "quotes": [
+    "Solve for disappointment has been a little bit obnoxious though. So maybe we'll try that."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 12,
+   "time": "6:03-6:09",
+   "pack_cards": [
+    "Sphinx's Approach",
+    "Void Extrapolator",
+    "Plains"
+   ],
+   "taken": "Void Extrapolator",
+   "reasoning": "Void Extrapolator over Sphinx's Approach: as a two-drop to help his synergies; he thought it pretty decent. He sees black as open: the late Extended Absence, and blue-black could just be played.",
+   "considered": {
+    "Sphinx's Approach": "in the pack"
+   },
+   "plan": "Blue-black.",
+   "quotes": [
+    "I have thought void extrapolator was pretty decent. So just as a two drop to help seal your synergies.",
+    "it's looking like black is open here. We got the late extended absence. We could just play blue black."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 13,
+   "time": "6:09-6:15",
+   "pack_cards": [
+    "Extrapolate the Impossible",
+    "Island"
+   ],
+   "taken": "Extrapolate the Impossible",
+   "reasoning": "Extrapolate the Impossible over Island: no comment; the pack gives nothing else.",
+   "considered": {},
+   "plan": "Blue-black.",
+   "quotes": []
+  },
+  {
+   "pack": 1,
+   "pick": 14,
+   "time": "6:15-6:18",
+   "pack_cards": [
+    "Mountain"
+   ],
+   "taken": "Mountain",
+   "reasoning": "Last card, Mountain, auto-picked.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 1,
+   "time": "6:18-7:13",
+   "pack_cards": [
+    "Diviner of Victory",
+    "Generous Revival",
+    "Yuriko, Blade of the Mighty",
+    "Yuriko, Hope from the Shadows",
+    "Way of the Wildspeaker",
+    "Stingerquill Charm",
+    "Surgical Precision",
+    "Divining Duelist",
+    "Apex Witchstalker",
+    "Screeching Soulbreaker",
+    "Blazing Crescendo",
+    "Compel Brutality",
+    "Keeper of the Quiet Hour",
+    "Stingerquill Annex"
+   ],
+   "taken": "Diviner of Victory",
+   "reasoning": "Diviner of Victory, an 'okay rare': not great but it will be okay, maybe just a cheap play to get on board early. At the start of the pack he notes black looks open and he does not have to be blue; white did not seem open, red did not seem open (he took Grim Repriser and saw no good red cards, second-picked Memory Trap and saw no good white).",
+   "considered": {
+    "Generous Revival": "in the pack",
+    "Yuriko, Hope from the Shadows": "in the pack, wheels at pick 9"
+   },
+   "plan": "Blue-black: black open, 'we don't actually have to be blue'.",
+   "quotes": [
+    "This card seems like it's an okay rare. It's not great, but it'll be okay. Maybe just a cheap play. Get on board early.",
+    "black is looking open. We don't actually have to be blue, though."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 2,
+   "time": "7:13-7:44",
+   "pack_cards": [
+    "Codie, Ravenous Codex",
+    "Traxos, Academy Guardian",
+    "Desperate Futurescribe",
+    "Traxos, Scourge Eternal",
+    "Fateshaper Aspirant",
+    "Icy Reception",
+    "Unsummon",
+    "Cast Away Doubt",
+    "Chandra's Emberling",
+    "Arcane Amphisbaena",
+    "Bestial Incursion",
+    "Blessed Ghoul",
+    "Forest"
+   ],
+   "taken": "Traxos, Academy Guardian",
+   "reasoning": "Traxos, Academy Guardian: 'love me the Traxos'; Codie lets you copy prepared spells, and Traxos has been very, very strong. Blessed Ghoul is fine; raw card draw is fine sometimes; blue-black dreams live.",
+   "considered": {
+    "Codie, Ravenous Codex": "lets you copy prepared spells",
+    "Blessed Ghoul": "fine",
+    "Desperate Futurescribe": "raw card draw, fine sometimes",
+    "Traxos, Scourge Eternal": "also in the pack"
+   },
+   "plan": "Blue-black.",
+   "quotes": [
+    "Love me the Traxos.",
+    "Traxos has been very very strong."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 3,
+   "time": "7:44-8:27",
+   "pack_cards": [
+    "Mabel, Bitter Recluse",
+    "Paradox Shaper",
+    "Mabel, Valley Hero",
+    "Vigorbloom Charm",
+    "Eye of Jace",
+    "Undulating Witness",
+    "Silence the Echo",
+    "Greenhouse Propagator",
+    "Charge the Sanctum",
+    "Living Library",
+    "Room of Refuge",
+    "Meticulous Commons"
+   ],
+   "taken": "Mabel, Bitter Recluse",
+   "reasoning": "Mabel, Bitter Recluse (his first copy): a very strong deathtoucher that can sometimes kill Jaces. Eye of Jace was good in a blue-white surveil tempo aggro deck he had; Mabel, Valley Hero is pretty good; Paradox Shaper is fine.",
+   "considered": {
+    "Eye of Jace": "was pretty good in a blue-white surveil tempo aggro deck: 'this card's really strong'",
+    "Mabel, Valley Hero": "pretty good",
+    "Paradox Shaper": "fine"
+   },
+   "plan": "Blue-black.",
+   "quotes": [
+    "Mabel very strong death toucher that can sometimes kill Jaces.",
+    "Just going to nab my first copy of Mabel. It's pretty nice to get this one."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 4,
+   "time": "8:27-8:44",
+   "pack_cards": [
+    "Vraska's Final Mercy",
+    "Refute Destiny",
+    "Way of the Necromancer",
+    "Essence Burn",
+    "Hexhaven Battalion",
+    "Protege's Awakening",
+    "Unsummon",
+    "Silence the Echo",
+    "Artifist Acumen",
+    "Budding Insurgent",
+    "Theorix Annex"
+   ],
+   "taken": "Vraska's Final Mercy",
+   "reasoning": "Vraska's Final Mercy: either a draw two for two mana or a kill spell for two mana, a flexible spell; the blue-black land (Theorix Annex) is in the pack but he is happy to get the flexible spell.",
+   "considered": {
+    "Theorix Annex": "blue-black land in the pack; he would rather have the flexible spell"
+   },
+   "plan": "Blue-black.",
+   "quotes": [
+    "I do like Vraska's Final Mercy. It's either like a draw spell. It's like a draw two for two mana or kill spell for two mana.",
+    "I think I'm just happy you're getting the flexible spell."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 5,
+   "time": "8:44-8:54",
+   "pack_cards": [
+    "Return to the Light Realms",
+    "Gallia, Tragic Host",
+    "Recursive Recruitment",
+    "Fateshaper Aspirant",
+    "Shatterwing Pegasus",
+    "Rampart Hunter",
+    "Artifist Acumen",
+    "Bestial Incursion",
+    "Living Library",
+    "Island"
+   ],
+   "taken": "Recursive Recruitment",
+   "reasoning": "Recursive Recruitment: really does a lot of work in the late game; Gallia is also pretty nice.",
+   "considered": {
+    "Gallia, Tragic Host": "also pretty nice"
+   },
+   "plan": "Blue-black.",
+   "quotes": [
+    "I really do like recursive recruitment. I think Gallia is also pretty nice, but this card really just does a lot of work in the late game."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 6,
+   "time": "8:54-9:20",
+   "pack_cards": [
+    "Haunted Ridge",
+    "Stingerquill Charm",
+    "Fateshaper Aspirant",
+    "Shatterwing Pegasus",
+    "Protege's Awakening",
+    "Theoretical Necromancer",
+    "Inspired Tethermage",
+    "Medic's Kitesail",
+    "Dedicated Commons"
+   ],
+   "taken": "Theoretical Necromancer",
+   "reasoning": "Theoretical Necromancer, the three-drop, over Protege's Awakening (he has not been impressed by it but wonders whether he is misvaluing it). He does not think he wants to play Grim Repriser and would rather splash green, but might not splash at all.",
+   "considered": {
+    "Protege's Awakening": "has not been impressed, maybe he is misvaluing it",
+    "Grim Repriser": "does not think he wants to play it; would rather splash green",
+    "Stingerquill Charm": "in the pack"
+   },
+   "plan": "Blue-black; green splash or none.",
+   "quotes": [
+    "I'll take the three drop. I've not been that impressed by the Protege's Awakening, but maybe it's just that I'm misvaluing things.",
+    "I don't think I want to play the Grim Repriser. I'd rather splash green, but I might not splash at all."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 7,
+   "time": "9:20-9:29",
+   "pack_cards": [
+    "Way of the Deathbringer",
+    "Recursive Recruitment",
+    "Divining Duelist",
+    "Rank Rat",
+    "Wrath of the Bloodmane",
+    "Blessed Ghoul",
+    "Keeper of the Quiet Hour",
+    "Forest"
+   ],
+   "taken": "Recursive Recruitment",
+   "reasoning": "Recursive Recruitment number two: glad he took a cheaper card there and glad he took Mabel for more defensive options; his deck now has a real (garbled) plan.",
+   "considered": {
+    "Way of the Deathbringer": "in the pack"
+   },
+   "plan": "Blue-black.",
+   "quotes": [
+    "Recursive Recruitment number two. I'm glad I took a cheaper card there. I'm also glad I took this Mabel and just more defensive options."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 8,
+   "time": "9:29-9:51",
+   "pack_cards": [
+    "Yuriko, Hope from the Shadows",
+    "Hexhaven Dueling Arena",
+    "Icy Reception",
+    "Solve for Disappointment",
+    "Wrath of the Bloodmane",
+    "Living Library",
+    "Plains"
+   ],
+   "taken": "Yuriko, Hope from the Shadows",
+   "reasoning": "Yuriko, Hope from the Shadows over Solve for Disappointment, Icy Reception and Wrath of the Bloodmane; no spoken reason for the take (the pool at P3p1 shows Yuriko, Hope, taken here or at the wheel; Apex Witchstalker at pick 9 fits the transcript). He says he will play one Solve for Disappointment when testing.",
+   "considered": {
+    "Solve for Disappointment": "he will play one when he tests it out"
+   },
+   "plan": "Blue-black.",
+   "quotes": [
+    "I think I'll play one Solve for Disappointment when I when I'm testing it out."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 9,
+   "time": "9:51-10:16",
+   "pack_cards": [
+    "Generous Revival",
+    "Yuriko, Blade of the Mighty",
+    "Yuriko, Hope from the Shadows",
+    "Apex Witchstalker",
+    "Blazing Crescendo",
+    "Stingerquill Annex"
+   ],
+   "taken": "Apex Witchstalker",
+   "reasoning": "Apex Witchstalker, a life-gain top-end card (basic landcycling); his deck has tons of playables, none that good but none terrible.",
+   "considered": {
+    "Yuriko, Blade of the Mighty": "in the pack",
+    "Generous Revival": "in the pack"
+   },
+   "plan": "Blue-black.",
+   "quotes": [
+    "Sure. And I'll get an Apex Witchstalker just life gain top end card.",
+    "So, my deck just has tons of playables in it. None of the cards are that good, but none of them are terrible really."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 10,
+   "time": "10:16-10:28",
+   "pack_cards": [
+    "Codie, Ravenous Codex",
+    "Fateshaper Aspirant",
+    "Unsummon",
+    "Blessed Ghoul",
+    "Forest"
+   ],
+   "taken": "Unsummon",
+   "reasoning": "Unsummon over Blessed Ghoul and Codie.",
+   "considered": {
+    "Blessed Ghoul": "considered",
+    "Codie, Ravenous Codex": "in the pack"
+   },
+   "plan": "Blue-black.",
+   "quotes": [
+    "or blessed ghoul. Let's take the unsummon."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 11,
+   "time": "10:28-10:42",
+   "pack_cards": [
+    "Undulating Witness",
+    "Charge the Sanctum",
+    "Living Library",
+    "Meticulous Commons"
+   ],
+   "taken": "Meticulous Commons",
+   "reasoning": "Meticulous Commons: he has not been impressed by Undulating Witness, and the tap land could help him splash for Memory Trap if he needs it.",
+   "considered": {
+    "Undulating Witness": "has not been very impressed",
+    "Charge the Sanctum": "in the pack"
+   },
+   "plan": "Blue-black; white-black land keeps Memory Trap open as a splash.",
+   "quotes": [
+    "I've not been very impressed by the Undulating Witness, honestly.",
+    "And the tap land could help me splash for um Memory Trap if I need it."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 12,
+   "time": "10:42-10:55",
+   "pack_cards": [
+    "Refute Destiny",
+    "Essence Burn",
+    "Theorix Annex"
+   ],
+   "taken": "Theorix Annex",
+   "reasoning": "Theorix Annex (blue-black land) from Refute Destiny, Essence Burn and the land; no comment on the pick, he says at 10:58 that his deck is looking pretty reasonable and he has solidified into blue-black.",
+   "considered": {},
+   "plan": "Blue-black.",
+   "quotes": [
+    "so my deck is looking pretty reasonable We've kind of solidified ourselves into blue black."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 13,
+   "time": "10:55-11:06",
+   "pack_cards": [
+    "Rampart Hunter",
+    "Island"
+   ],
+   "taken": "Rampart Hunter",
+   "reasoning": "Rampart Hunter over an Island, the take confirmed by the sideboard; no comment on the pick.",
+   "considered": {},
+   "plan": "Blue-black.",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 14,
+   "time": "11:06-11:09",
+   "pack_cards": [
+    "Shatterwing Pegasus"
+   ],
+   "taken": "Shatterwing Pegasus",
+   "reasoning": "Last card, Shatterwing Pegasus.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 1,
+   "time": "11:09-11:25",
+   "pack_cards": [
+    "Seasoned Cryomancer",
+    "Koth of the Homestead",
+    "Tomik, Orzhov Lawmage",
+    "Your Fate Ends Here",
+    "Tetsuko Umezawa, Fugitive",
+    "Tetsuko Umezawa, Pursuer",
+    "Blossom-Blessed Angel",
+    "Predictive Preparations",
+    "Icy Reception",
+    "Apex Witchstalker",
+    "Awaken the Inferno",
+    "Compel Brutality",
+    "Tethermage's Advantage",
+    "Dedicated Commons"
+   ],
+   "taken": "Seasoned Cryomancer",
+   "reasoning": "Seasoned Cryomancer: great if you mill it over, great if you just play it, an awesome card for the deck. Tetsuko is also very strong; he does not know whether he wants multiple Witchstalkers; he might get the Icy Reception on the wheel.",
+   "considered": {
+    "Tetsuko Umezawa, Fugitive": "also a very strong card (he takes one at pick 6 and one on the wheel)",
+    "Apex Witchstalker": "does not know if he wants multiple",
+    "Icy Reception": "maybe he gets the copy on the wheel",
+    "Your Fate Ends Here": "'Prime is good' (transcribed)"
+   },
+   "plan": "Blue-black.",
+   "quotes": [
+    "Nice. Seasoned Cryomancer is great if we mill it over. It's great if we just play it. Awesome card for the deck."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 2,
+   "time": "11:25-12:05",
+   "pack_cards": [
+    "Omnipresence",
+    "Yoshimaru, Beloved Companion",
+    "Winter, Tormented Loner",
+    "Winter, Team Player",
+    "Fateshaper Aspirant",
+    "Mindseeker Oculus",
+    "Surveillance Phantasm",
+    "Last Gasp",
+    "Skilled Battlecarver",
+    "Budding Insurgent",
+    "Emergency Phytomedic",
+    "Murmuring Volume",
+    "Fatehold Annex"
+   ],
+   "taken": "Mindseeker Oculus",
+   "reasoning": "Mindseeker Oculus again: 'I'm just going to keep taking Oculus while I see them. It's kind of like my deck's plan.' Winter is also very strong but better in black-white; Last Gasp is nice early removal.",
+   "considered": {
+    "Winter, Tormented Loner": "very strong; better in black-white",
+    "Last Gasp": "nice for early removal"
+   },
+   "plan": "Blue-black built around Mindseeker Oculus.",
+   "quotes": [
+    "I'm just going to keep taking Oculus while I see them. It's kind of like my deck's plan.",
+    "Last gasp is nice for early removal."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 3,
+   "time": "12:05-13:09",
+   "pack_cards": [
+    "Roiling Canopy",
+    "Refute Destiny",
+    "Fblthp, Impossibly Lost",
+    "Fblthp, Knows the Way",
+    "Theorix Charm",
+    "Craftwork Crusher",
+    "Shatterwing Pegasus",
+    "Undulating Witness",
+    "Extended Absence",
+    "Hallway Heckler",
+    "Tethermage's Advantage",
+    "Mountain"
+   ],
+   "taken": "Theorix Charm",
+   "reasoning": "Theorix Charm over Extended Absence, Fblthp and the rest: he wants the cheaper card, an early kill spell that works perfectly here; the more playables he gets, the less likely he is to splash because splashing in a self-milled deck with double black, double blue and blue-black cards is dicey and drawing a Plains could be punishing, especially with a couple of kill spells already.",
+   "considered": {
+    "Extended Absence": "good; he has not yet gotten to play it",
+    "Fblthp, Impossibly Lost": "fine, not that good",
+    "Fblthp, Knows the Way": "mentioned"
+   },
+   "plan": "Blue-black, no splash.",
+   "quotes": [
+    "The charm or I think I just want the cheaper card. So the charm is going to work perfectly here.",
+    "the more playables I get, the less likely I am to want to splash because especially in a self-milled deck, sometimes splashing is a little bit just dicey."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 4,
+   "time": "13:09-13:30",
+   "pack_cards": [
+    "Loot, the Anomaly",
+    "Loot, the Nexus",
+    "Saheeli, Jewel of Avishkar",
+    "Eye of Jace",
+    "Divining Duelist",
+    "Blazing Crescendo",
+    "Skilled Battlecarver",
+    "Inspired Tethermage",
+    "Fatehold Chronologist",
+    "Blessed Ghoul",
+    "Swamp"
+   ],
+   "taken": "Blessed Ghoul",
+   "reasoning": "Blessed Ghoul over Fatehold Chronologist: he has not been impressed by the Ghoul but the Chronologist has also disappointed; the Ghoul has been better as an annoying early play. At the start of the pick he says (caption garbled, no Traxos is in this pack) he only wants one copy of a card he really likes, 'Traxos' in the caption.",
+   "considered": {
+    "Fatehold Chronologist": "has not loved it, a little unimpressed"
+   },
+   "plan": "Blue-black.",
+   "quotes": [
+    "Not been that impressed by the ghoul. I think I will take it here. I I haven't loved Fatold Chronologist that much.",
+    "Think Ghoul's been a little bit better as an annoying early play."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 5,
+   "time": "13:30-13:56",
+   "pack_cards": [
+    "Germinate Recruits",
+    "Refute Destiny",
+    "Fblthp, Impossibly Lost",
+    "Paradox Shaper",
+    "Konstrari Charm",
+    "Graft Surgeon",
+    "Protege's Awakening",
+    "Artifist Acumen",
+    "Wrecking Gecko",
+    "Stingerquill Annex"
+   ],
+   "taken": "Paradox Shaper",
+   "reasoning": "Paradox Shaper over Protege's Awakening: he does not have that much self-mill, so the consistent Paradox Shaping will be nice.",
+   "considered": {
+    "Protege's Awakening": "passed here (taken later in the pack)"
+   },
+   "plan": "Blue-black.",
+   "quotes": [
+    "we'll get another Paradox Shaper over Protege's Awakening.",
+    "I don't have that much self mill, so the consistent paradox shaping is going to be pretty nice, I think."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 6,
+   "time": "13:56-14:23",
+   "pack_cards": [
+    "Tam, the Possibility",
+    "Prophesied End",
+    "Perfected Theory",
+    "Tetsuko Umezawa, Fugitive",
+    "Ferocity of the Hunt",
+    "Charge the Sanctum",
+    "Afterthought Sentry",
+    "Room of Refuge",
+    "Konstrari Annex"
+   ],
+   "taken": "Tetsuko Umezawa, Fugitive",
+   "reasoning": "Tetsuko Umezawa, Fugitive: very strong, plays really well with Mindseeker Oculus; he already has a dual land and does not think he will try to splash.",
+   "considered": {
+    "Room of Refuge": "in the pack",
+    "Perfected Theory": "in the pack (wheels to pick 14)"
+   },
+   "plan": "Blue-black, no splash.",
+   "quotes": [
+    "Tetsuko is very strong. He plays really well with Mindseeker Oculus, too.",
+    "I already have a dual land for my deck. And I don't think I'm going to try to splash."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 7,
+   "time": "14:23-14:42",
+   "pack_cards": [
+    "Way of the Deathbringer",
+    "Flourishing Grapple",
+    "Way of the Wildspeaker",
+    "Saheeli, Jewel of Avishkar",
+    "Protege's Awakening",
+    "Undulating Witness",
+    "Artifist Acumen",
+    "Swamp"
+   ],
+   "taken": "Protege's Awakening",
+   "reasoning": "Protege's Awakening over Way of the Deathbringer (sack a creature for a 4/4): he gets a second Awakening that he expects to keep cutting.",
+   "considered": {
+    "Way of the Deathbringer": "'you can sack a creature to get a 4/4'",
+    "Saheeli, Jewel of Avishkar": "in the pack"
+   },
+   "plan": "Blue-black.",
+   "quotes": [
+    "Now we get a Protege's Awakening. We have the Deathbringer. You can sack a creature to get a 4/4."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 8,
+   "time": "14:42-14:52",
+   "pack_cards": [
+    "Entrust the Spark",
+    "Vraska, Soul of Stone",
+    "Theorix Charm",
+    "Apex Witchstalker",
+    "Heartstring Puller",
+    "Emergency Phytomedic",
+    "Innovative Commons"
+   ],
+   "taken": "Theorix Charm",
+   "reasoning": "A second Theorix Charm: 'nice, we get another Theorix Charm'; Vraska, Soul of Stone is cool but not for this deck.",
+   "considered": {
+    "Vraska, Soul of Stone": "cool, not going to play it in this deck (transcribed 'Rasa')"
+   },
+   "plan": "Blue-black.",
+   "quotes": [
+    "Nice. We get another Theorix charm. Vraska is cool, but we're not going to play it in this deck."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 9,
+   "time": "14:52-15:02",
+   "pack_cards": [
+    "Tetsuko Umezawa, Fugitive",
+    "Tetsuko Umezawa, Pursuer",
+    "Predictive Preparations",
+    "Icy Reception",
+    "Tethermage's Advantage",
+    "Dedicated Commons"
+   ],
+   "taken": "Tetsuko Umezawa, Fugitive",
+   "reasoning": "Tetsuko Umezawa, Fugitive again (wheeled with Icy Reception): Tetsuko is very strong.",
+   "considered": {
+    "Icy Reception": "wheeled with it",
+    "Tetsuko Umezawa, Pursuer": "also wheeled"
+   },
+   "plan": "Blue-black.",
+   "quotes": [
+    "Wow. We wield Tetsuko and Icy Reception. Tetsuko is very strong. Tetsuko is good."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 10,
+   "time": "15:02-15:08",
+   "pack_cards": [
+    "Fateshaper Aspirant",
+    "Surveillance Phantasm",
+    "Skilled Battlecarver",
+    "Budding Insurgent",
+    "Murmuring Volume"
+   ],
+   "taken": "Surveillance Phantasm",
+   "reasoning": "Surveillance Phantasm: he likes it.",
+   "considered": {},
+   "plan": "Blue-black.",
+   "quotes": [
+    "I like their surveillance phantasm."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 11,
+   "time": "15:08-15:12",
+   "pack_cards": [
+    "Refute Destiny",
+    "Craftwork Crusher",
+    "Tethermage's Advantage",
+    "Mountain"
+   ],
+   "taken": "Craftwork Crusher",
+   "reasoning": "Craftwork Crusher (a green rare) over Refute Destiny, Tethermage's Advantage and Mountain; the only caption in this window is 'Wow, this guard's still there' (garbled), the take is confirmed by the sideboard.",
+   "considered": {},
+   "plan": "Blue-black.",
+   "quotes": [
+    "Wow, this guard's still there."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 12,
+   "time": "15:12-15:16",
+   "pack_cards": [
+    "Divining Duelist",
+    "Blazing Crescendo",
+    "Swamp"
+   ],
+   "taken": "Divining Duelist",
+   "reasoning": "Divining Duelist over Blazing Crescendo and Swamp; no comment.",
+   "considered": {},
+   "plan": "Blue-black.",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 13,
+   "time": "15:16-15:25",
+   "pack_cards": [
+    "Refute Destiny",
+    "Artifist Acumen"
+   ],
+   "taken": "Refute Destiny",
+   "reasoning": "Refute Destiny over Artifist Acumen (the take confirmed by the sideboard); no comment.",
+   "considered": {},
+   "plan": "Blue-black.",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 14,
+   "time": "15:25-15:27",
+   "pack_cards": [
+    "unreadable (last card never displayed; Perfected Theory by elimination)"
+   ],
+   "taken": "Perfected Theory",
+   "reasoning": "Last card (Perfected Theory by elimination: it is in the sideboard, it is the one card left from the pick-6 pack, and he says at 15:27 'Perfected Theory could be okay'); the last pick was never shown on screen.",
+   "considered": {},
+   "plan": "",
+   "quotes": [
+    "Perfected theory could be okay."
+   ]
+  }
+ ]
+}

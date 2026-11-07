@@ -1,0 +1,1039 @@
+{
+ "id": "XSY4dH0hZ8Y",
+ "url": "https://youtu.be/XSY4dH0hZ8Y",
+ "title": "This is How Pros Draft Reality Fracture!!! (ft. @LordsofLimited)",
+ "player": "NicolaiBolas",
+ "player_note": "NicolaiBolas drafts (his name is on the banner); the guest Ethan Sack (Lords of Limited) advises on every pick. The captions do not label speakers; reasoning and ideas credit the guest or host only where the content makes it clear, otherwise both.",
+ "set": "FRA",
+ "event": "FRA live pod on Arena, recorded about 24 hours after release (the guest: 'the set has been out barely 24 hours'); best-of-three ('this is going to be best of three, so if we see the sideboard cards, we can actually take them'); Premier / Traditional not named on screen",
+ "dataset": "FRA_PremierDraft_All_Data.json",
+ "recorded": null,
+ "source": "frames read from data/videos/raw/XSY4dH0hZ8Y (banner and pack grid strips every pick; pool at P2p1, P2p3, P2p14; the final deck builder at 1632 s); every pack list read from images that loaded, except the last card of pack 3 (only a tooltip seen, inferred); takes confirmed by the pool and the transcript; P2p7 was auto-picked by a game glitch and the card is unknown; transcript from YouTube auto captions, card names corrected against the dataset; nothing past 27:20 read; the cut-off is 1640 s",
+ "colour_path": [
+  {
+   "after": "P1p1",
+   "main": "G (Verdant Kraken)",
+   "quote": "We are extraordinarily incentivized to play green."
+  },
+  {
+   "after": "P1p5",
+   "main": "G + R",
+   "quote": "I think the rare is pretty strong. I think it is better than taking the second improviser."
+  },
+  {
+   "after": "P1p9",
+   "main": "G base, dabble",
+   "quote": "we can kind of dabble into other colors."
+  },
+  {
+   "after": "P2p1",
+   "main": "G something splashing something",
+   "quote": "I just feel like we are likely to be like green something splashing something."
+  },
+  {
+   "after": "P2p4",
+   "main": "G, splash (Twisted Fates / Vigorbloom Charm)",
+   "quote": "I think you should take Twisted Fates."
+  },
+  {
+   "after": "P3p3",
+   "main": "GR, splash Charm / Last Gasp",
+   "quote": "green green red and maybe splashing like vigor bloom charm or last gasp or whatever."
+  },
+  {
+   "after": "deck",
+   "main": "GR + Vigorbloom Charm / Warrior's Blades splash (one Plains, one Dedicated Commons)",
+   "quote": "we're already kind of inclined to splash the charm."
+  }
+ ],
+ "picks": [
+  {
+   "pack": 1,
+   "pick": 1,
+   "time": "3:19-4:24",
+   "pack_cards": [
+    "Verdant Kraken",
+    "Koth of the Homestead",
+    "Winter, Tormented Loner",
+    "Koth, the Geomancer",
+    "Edgar, Moonlit Sovereign",
+    "Flourishing Grapple",
+    "Stingerquill Voxmancer",
+    "Campus Crier",
+    "Mindseeker Oculus",
+    "Semester Foreseer",
+    "Silence the Echo",
+    "Blazing Crescendo",
+    "Greenhouse Propagator",
+    "Swamp"
+   ],
+   "taken": "Verdant Kraken",
+   "reasoning": "Verdant Kraken is the slam-dunk first pick for both; if it were not there the guest would take Mindseeker Oculus, the best common, because the uncommons (Koth of the Homestead needs the counter / life-gain plan, Winter the sacrifice plan) do not pull him into their colours.",
+   "considered": {
+    "Mindseeker Oculus": "guest: the pick if the rare were not in the pack; host takes Oculus nearly every time he sees it",
+    "Koth of the Homestead": "good only in the plus-one-counter life-gain deck",
+    "Winter, Tormented Loner": "good only in the black sacrifice deck"
+   },
+   "plan": "Open; green first.",
+   "quotes": [
+    "It's sort of a dealer's choice, I think I would lean towards the Mindseeker Oculus ... that's the best common that we've got here."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 2,
+   "time": "4:24-5:28",
+   "pack_cards": [
+    "Arni, Humble Scribe",
+    "Rank Rat",
+    "Medic's Kitesail",
+    "Arni, Renowned Champion",
+    "Skilled Battlecarver",
+    "Murmuring Volume",
+    "Hunter's Axe",
+    "Wrecking Gecko",
+    "Plains",
+    "Edgar, Ancient Bloodlord",
+    "Fatehold Chronologist",
+    "Apex Witchstalker",
+    "Konstrari Improviser"
+   ],
+   "taken": "Konstrari Improviser",
+   "reasoning": "Konstrari Improviser, the red-green card that fits the Kraken: the guest does not generally want to play it on two but it is the best card that goes with what they have; he declines Fatehold Chronologist (flexible, but it could move them off the Kraken) and says Edgar is good only in black-white and Arni, the blue one, is worth killing.",
+   "considered": {
+    "Fatehold Chronologist": "guest: a common he likes; host: great when his opponents played it, never found time to use the ability; not taken to avoid moving off the Kraken",
+    "Edgar, Ancient Bloodlord": "good if you end up black-white",
+    "Arni, Humble Scribe": "impressed him from the other side of the table"
+   },
+   "plan": "Green, incentivised by the Kraken.",
+   "quotes": [
+    "Verdant Kraken is really good. We are extraordinarily incentivized to play green. I don't think that I want to take like a hidden power and take chronologist there and potentially move off of drafting the Kraken."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 3,
+   "time": "5:28-6:28",
+   "pack_cards": [
+    "Arni, Humble Scribe",
+    "Sphinx's Approach",
+    "Murmuring Volume",
+    "Arni, Renowned Champion",
+    "Blazing Crescendo",
+    "Theorix Annex",
+    "Stingerquill Charm",
+    "Arcane Amphisbaena",
+    "Campus Crier",
+    "Wrecking Gecko",
+    "Surgical Precision",
+    "Theorix Metamage"
+   ],
+   "taken": "Arcane Amphisbaena",
+   "reasoning": "Arcane Amphisbaena over Stingerquill Charm, the pack's best card: the guest finds it very similar to the previous pack and likes the Amphisbaena more than the Improviser; red-black is the deck he is most dubious of, and the host agrees.",
+   "considered": {
+    "Stingerquill Charm": "guest: maybe the best card in the pack; red-black is his least favourite deck",
+    "Campus Crier": "in the pack"
+   },
+   "plan": "Green, undecided second colour.",
+   "quotes": [
+    "Red Black is probably the deck I am most dubious of, like least excited."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 4,
+   "time": "6:28-7:22",
+   "pack_cards": [
+    "Way of the Mentor",
+    "Predictive Preparations",
+    "Dedicated Commons",
+    "Marwyn, the Clearcutter",
+    "Rampart Hunter",
+    "Marwyn, the Preserver",
+    "Wrath of the Bloodmane",
+    "Warrior's Blades",
+    "Inspired Tethermage",
+    "Hexhaven Dueling Arena",
+    "Something Worth Saving"
+   ],
+   "taken": "Marwyn, the Preserver",
+   "reasoning": "Marwyn, the Preserver: a really good two-drop with synergy with Jace's surveil into the graveyard and with Something Worth Saving; guest favours green ramp with red as its best partner, and notes Way of the Mentor is best in green-white lifegain.",
+   "considered": {
+    "Wrath of the Bloodmane": "very good, would pair with green ramp and red",
+    "Way of the Mentor": "best in green-white, life gain",
+    "Something Worth Saving": "synergy with Marwyn, left"
+   },
+   "plan": "Green ramp, red likely the pair.",
+   "quotes": [
+    "I would just take Marwyn here. It's a really good two drop. It has synergy with surveilling for lands into the bin from Jace."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 5,
+   "time": "7:22-8:11",
+   "pack_cards": [
+    "Ajani's Anguish",
+    "Infinite Coursework",
+    "Arni, Humble Scribe",
+    "Last Gasp",
+    "Arni, Renowned Champion",
+    "Blazing Crescendo",
+    "Grim Repriser",
+    "Konstrari Improviser",
+    "Unflinching Hortimancer",
+    "Vigorbloom Annex"
+   ],
+   "taken": "Ajani's Anguish",
+   "reasoning": "Ajani's Anguish fifth pick: they both call it wild; the rare is better than taking the second Improviser. They note seeing about ten Arnis so far: bad pairs (the same pair repeated) are a bald spot in the packs.",
+   "considered": {
+    "Konstrari Improviser": "the alternative, a second copy",
+    "Grim Repriser": "in the pack"
+   },
+   "plan": "Green with red.",
+   "quotes": [
+    "I think the rare is pretty strong. I think it is better than taking the second improviser."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 6,
+   "time": "8:11-8:55",
+   "pack_cards": [
+    "Pompous Battlemage",
+    "Refute Destiny",
+    "Gallia, the Merrymaker",
+    "Academic Ascent",
+    "Predictive Preparations",
+    "Divining Duelist",
+    "Last Gasp",
+    "Theoretical Necromancer",
+    "Mountain"
+   ],
+   "taken": "Last Gasp",
+   "reasoning": "Last Gasp over Pompous Battlemage and Gallia: black-green is still possible but they have one red card; Gallia, the Merrymaker is not a good card (ground two/ones are not where it's at).",
+   "considered": {
+    "Gallia, the Merrymaker": "not good; ground two-ones are not where it is at (host: only strong when an opponent paired it with a big flier)",
+    "Pompous Battlemage": "not great"
+   },
+   "plan": "Green, red or black second colour.",
+   "quotes": [
+    "I don't think Gallia of the Merry Maker is a good card. I think ground two ones are not where it's at."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 7,
+   "time": "8:55-9:34",
+   "pack_cards": [
+    "Way of the Cryomancer",
+    "Command the Stage",
+    "Mabel, Valley Hero",
+    "Vigorbloom Charm",
+    "Infinite Coursework",
+    "Rampart Hunter",
+    "Keeper of the Quiet Hour",
+    "Innovative Commons"
+   ],
+   "taken": "Vigorbloom Charm",
+   "reasoning": "Vigorbloom Charm: nothing in the pack is better than the green cards they have; green is a little dry but should be open in pack 2, and a Vigorbloom Charm at pick seven hopefully shows green-white is open.",
+   "considered": {
+    "Mabel, Valley Hero": "in the pack",
+    "Keeper of the Quiet Hour": "flexible card, not taken"
+   },
+   "plan": "Green; green-white possible.",
+   "quotes": [
+    "this vigor bloom charm pick seven hopefully is indicative of green white being open, which would be a welcome place to be."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 8,
+   "time": "9:34-10:08",
+   "pack_cards": [
+    "Loot, the Nexus",
+    "Warrior's Blades",
+    "Extended Absence",
+    "Silence the Echo",
+    "Wrath of the Bloodmane",
+    "Charge the Sanctum",
+    "Plains"
+   ],
+   "taken": "Loot, the Nexus",
+   "reasoning": "Loot, the Nexus out of a pack with Extended Absence, Wrath, Warrior's Blades and Loot: the host wants to wait and see rather than get pushed off red or black by taking a removal spell this late.",
+   "considered": {
+    "Extended Absence": "strong pack, no idea",
+    "Wrath of the Bloodmane": "in the pack",
+    "Warrior's Blades": "in the pack"
+   },
+   "plan": "Green ramp; second colour open.",
+   "quotes": [
+    "I kind of want to take loot because I just don't feel confident that like we take a red card, we might get pushed off red."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 9,
+   "time": "10:08-10:37",
+   "pack_cards": [
+    "Koth, the Geomancer",
+    "Edgar, Moonlit Sovereign",
+    "Semester Foreseer",
+    "Silence the Echo",
+    "Blazing Crescendo",
+    "Swamp"
+   ],
+   "taken": "Edgar, Moonlit Sovereign",
+   "reasoning": "Edgar, Moonlit Sovereign over Silence the Echo: the host has not played it but read it from an opponent; with a bunch of green cards they can dabble in other colours or splash red, and the Improviser helps find a red source.",
+   "considered": {
+    "Silence the Echo": "the other option",
+    "Koth, the Geomancer": "in the pack",
+    "Semester Foreseer": "in the pack"
+   },
+   "plan": "Green base; splash red possible.",
+   "quotes": [
+    "I feel like we just have like a bunch of green cards and then like we can kind of dabble into other colors."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 10,
+   "time": "10:37-11:01",
+   "pack_cards": [
+    "Arni, Renowned Champion",
+    "Rank Rat",
+    "Skilled Battlecarver",
+    "Murmuring Volume",
+    "Plains"
+   ],
+   "taken": "Rank Rat",
+   "reasoning": "Rank Rat: the guest thought discard would not be good because flashback and Jace-token card draw are everywhere, but it has felt very good each time it was cast against him.",
+   "considered": {
+    "Arni, Renowned Champion": "in the pack"
+   },
+   "plan": "Green; black dabble.",
+   "quotes": [
+    "I thought rat wasn't going to be good ... but it's felt very good every time it's been cast against me."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 11,
+   "time": "11:01-11:20",
+   "pack_cards": [
+    "Arni, Renowned Champion",
+    "Blazing Crescendo",
+    "Theorix Metamage",
+    "Theorix Annex"
+   ],
+   "taken": "Theorix Annex",
+   "reasoning": "Theorix Annex (blue-black land) late: take the land, you never know when you find something; a good general rule is to take the lands when you need them.",
+   "considered": {},
+   "plan": "Green-black dabble.",
+   "quotes": [
+    "That's a good like general rule to just take the lands when you when you need."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 12,
+   "time": "11:20-11:34",
+   "pack_cards": [
+    "Marwyn, the Clearcutter",
+    "Predictive Preparations",
+    "Something Worth Saving"
+   ],
+   "taken": "Something Worth Saving",
+   "reasoning": "Something Worth Saving, which gets much better with a Verdant Kraken because finding it feels amazing.",
+   "considered": {},
+   "plan": "Green ramp.",
+   "quotes": [
+    "this card gets exponentially better when you have a card like Verdant Kraken because every time you find it, you just feel like amazing"
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 13,
+   "time": "11:34-11:43",
+   "pack_cards": [
+    "Arni, Renowned Champion",
+    "Blazing Crescendo"
+   ],
+   "taken": "Blazing Crescendo",
+   "reasoning": "Blazing Crescendo over Arni, Renowned Champion: doesn't matter to either of them.",
+   "considered": {},
+   "plan": "Green.",
+   "quotes": [
+    "I don't Yeah, doesn't matter to me."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 14,
+   "time": "11:43-11:45",
+   "pack_cards": [
+    "Mountain"
+   ],
+   "taken": "Mountain",
+   "reasoning": "Last card, Mountain, auto-picked.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 1,
+   "time": "11:45-12:47",
+   "pack_cards": [
+    "Diviner of Victory",
+    "Prophesied End",
+    "Fblthp, Impossibly Lost",
+    "Multiply by Zero",
+    "Tinybones, Pocket Nuisance",
+    "Fblthp, Knows the Way",
+    "Fateshaper Aspirant",
+    "Mindseeker Oculus",
+    "Rampart Hunter",
+    "Rank Rat",
+    "Tether Technician",
+    "Wrath of the Bloodmane",
+    "Tam's Resistance",
+    "Forest"
+   ],
+   "taken": "Fblthp, Knows the Way",
+   "reasoning": "Fblthp, Knows the Way (green): they are likely green something splashing something, and it is perfect for that; the guest has loved Fblthp and thinks the sweet spot is splashing so he can be a 3/2 (domain). He also notes the person passed to likely took a white card (Way of the Healer) because both Fblthps and the white way were in the pair set.",
+   "considered": {
+    "Mindseeker Oculus": "in the pack",
+    "Wrath of the Bloodmane": "in the pack",
+    "Rank Rat": "mentioned",
+    "Tinybones, Pocket Nuisance": "mentioned"
+   },
+   "plan": "Green something splashing something.",
+   "quotes": [
+    "I'm definitely drawn towards the green Fblthp. I just feel like we are likely to be like green something splashing something."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 2,
+   "time": "12:47-13:42",
+   "pack_cards": [
+    "Tarmogoyf",
+    "Fblthp, Impossibly Lost",
+    "Yargle, Goliath of Otaria",
+    "Way of the Necromancer",
+    "Hunter's Axe",
+    "Desperate Futurescribe",
+    "Campus Crier",
+    "Silence the Echo",
+    "Twinned Vision",
+    "Ferocity of the Hunt",
+    "Konstrari Improviser",
+    "Living Library",
+    "Forest"
+   ],
+   "taken": "Tarmogoyf",
+   "reasoning": "Tarmogoyf over a Fblthp, Impossibly Lost, Hunter's Axe and the second Improviser: they do not discuss the take; the pool shows Tarmogoyf here.",
+   "considered": {
+    "Konstrari Improviser": "in the pack"
+   },
+   "plan": "Green.",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 3,
+   "time": "13:42-14:28",
+   "pack_cards": [
+    "Jace's Machinations",
+    "Fblthp, Impossibly Lost",
+    "Plan for All Outcomes",
+    "Fblthp, Knows the Way",
+    "Academic Ascent",
+    "Mindseeker Oculus",
+    "Artifist Acumen",
+    "Arcane Amphisbaena",
+    "Theorix Metamage",
+    "Konstrari Improviser",
+    "Medic's Kitesail",
+    "Island"
+   ],
+   "taken": "Fblthp, Knows the Way",
+   "reasoning": "A second Fblthp, Knows the Way over the two green two-drops; Jace's Machinations, Plan for All Outcomes and Mindseeker Oculus in the pack. The guest suspects the player passing in pack 1 was blue (no good blue cards) and now blue is coming; the person next to them could not get into blue.",
+   "considered": {
+    "Mindseeker Oculus": "in the pack, not taken",
+    "Plan for All Outcomes": "in the pack",
+    "Jace's Machinations": "in the pack"
+   },
+   "plan": "Green with a splash.",
+   "quotes": [
+    "I'm suspecting the person passing to us in pack one was playing blue because we didn't see like any good blue cards and now they're coming this way."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 4,
+   "time": "14:28-15:19",
+   "pack_cards": [
+    "Danitha, Spear of Agony",
+    "Twisted Fates",
+    "Kiora of Salt and Sand",
+    "Mind Meanderer",
+    "Hexhaven Battalion",
+    "Semester Foreseer",
+    "Last Gasp",
+    "Skilled Battlecarver",
+    "Greenhouse Propagator",
+    "Afterthought Sentry",
+    "Fatehold Annex"
+   ],
+   "taken": "Twisted Fates",
+   "reasoning": "Twisted Fates, pretty nuts according to the guest even though it is not black-black enough for a green-black splash; the host likes Mind Meanderer too. They have Vigorbloom Charm for a green-white splash.",
+   "considered": {
+    "Mind Meanderer": "good",
+    "Last Gasp": "mentioned",
+    "Kiora of Salt and Sand": "in the pack"
+   },
+   "plan": "Green with a splash (black or white).",
+   "quotes": [
+    "I think you should take Twisted Fates. I think Twisted Fates is pretty nuts."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 5,
+   "time": "15:19-15:53",
+   "pack_cards": [
+    "Yuriko, Hope from the Shadows",
+    "Way of the Necromancer",
+    "Hunter's Axe",
+    "Paradox Shaper",
+    "Mabel, Valley Hero",
+    "Graft Surgeon",
+    "Cast Away Doubt",
+    "Theoretical Necromancer",
+    "Tether Technician",
+    "Fatehold Chronologist"
+   ],
+   "taken": "Fatehold Chronologist",
+   "reasoning": "Fatehold Chronologist for a green-white shell; Paradox Shaper would be for going back to green-black, but they do not necessarily want that.",
+   "considered": {
+    "Paradox Shaper": "for green-black; both have stacked their decks with it",
+    "Mabel, Valley Hero": "in the pack"
+   },
+   "plan": "Green-white or green-black.",
+   "quotes": [
+    "I like chronologist here."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 6,
+   "time": "15:53-16:26",
+   "pack_cards": [
+    "Loot, the Anomaly",
+    "Tinybones, Pocket Nuisance",
+    "Titanbones, Towering Heart",
+    "Sphinx's Approach",
+    "Void Extrapolator",
+    "Skilled Battlecarver",
+    "Arcane Amphisbaena",
+    "Keeper of the Quiet Hour",
+    "Innovative Commons"
+   ],
+   "taken": "Arcane Amphisbaena",
+   "reasoning": "Arcane Amphisbaena over Tinybones and Titanbones: the guest has not played Titanbones; they do not have much life gain, and the host recalls a Titanbones discard to gain three that saved an opponent.",
+   "considered": {
+    "Titanbones, Towering Heart": "guest has not played with it; host saw it punish an attack",
+    "Tinybones, Pocket Nuisance": "in the pack"
+   },
+   "plan": "Green multicolour deck.",
+   "quotes": [
+    "I think I would be inclined to take a bayana but uh I have not played with titan bones."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 7,
+   "time": "16:26-17:00",
+   "pack_cards": [
+    "Rescue Girl, First Responder",
+    "Jiang Yanggu, Alone",
+    "Mind Meanderer",
+    "Something Worth Saving",
+    "Tethermage's Advantage",
+    "Twinned Vision",
+    "Room of Refuge",
+    "Vigorbloom Annex"
+   ],
+   "taken": null,
+   "reasoning": "taken: unknown (see below). Rescue Girl, First Responder was the card he wanted (the host hovered it and says it is 'so good' with Fblthp, Ajani's Anguish and their deck); the game glitched and the pick was auto-selected before he could take it. Which card was auto-picked is unknown: the host says he thinks it took a basic land; nothing in the pool or the pack can be matched to this pick.",
+   "considered": {
+    "Rescue Girl, First Responder": "the intended pick; good with Fblthp and Ajani's Anguish; would have been splashed"
+   },
+   "plan": "Green with a splash.",
+   "quotes": [
+    "Oh rescue girl. Rescue girl so good.",
+    "The game just glitched out. We getting autopicked.",
+    "I took a basic land for us in that pack. So, I don't know what happened there exactly."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 8,
+   "time": "17:00-17:22",
+   "pack_cards": [
+    "Karn, Argent Defender",
+    "Sphinx's Approach",
+    "Undulating Witness",
+    "Rank Rat",
+    "Skilled Battlecarver",
+    "Inspired Tethermage",
+    "Formidable Commons"
+   ],
+   "taken": "Formidable Commons",
+   "reasoning": "Formidable Commons from a pack of Karn, Sphinx's Approach, Undulating Witness, Rank Rat, Battlecarver, Inspired Tethermage and the land, straight after the glitch; no spoken reasoning for the take, which is confirmed from the pool.",
+   "considered": {},
+   "plan": "Green with a splash.",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 9,
+   "time": "17:22-17:38",
+   "pack_cards": [
+    "Fblthp, Impossibly Lost",
+    "Mindseeker Oculus",
+    "Rampart Hunter",
+    "Tether Technician",
+    "Tam's Resistance",
+    "Forest"
+   ],
+   "taken": "Tam's Resistance",
+   "reasoning": "Tam's Resistance: 'take the Tam's resistance' right after the glitch, over Mindseeker Oculus, Rampart Hunter and Tether Technician.",
+   "considered": {
+    "Mindseeker Oculus": "in the pack",
+    "Tether Technician": "in the pack (wheels to pick 13)"
+   },
+   "plan": "Green with a splash.",
+   "quotes": [
+    "Take the Tam's resistance. Yeah, probably."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 10,
+   "time": "17:38-17:54",
+   "pack_cards": [
+    "Fblthp, Impossibly Lost",
+    "Yargle, Goliath of Otaria",
+    "Hunter's Axe",
+    "Twinned Vision",
+    "Forest"
+   ],
+   "taken": "Hunter's Axe",
+   "reasoning": "Hunter's Axe over Yargle and a second Twinned Vision; no spoken comment (the pick tag is on Hunter's Axe and the pool confirms it).",
+   "considered": {
+    "Twinned Vision": "in the pack",
+    "Yargle, Goliath of Otaria": "in the pack"
+   },
+   "plan": "Green.",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 11,
+   "time": "17:54-18:12",
+   "pack_cards": [
+    "Fblthp, Impossibly Lost",
+    "Academic Ascent",
+    "Theorix Metamage",
+    "Island"
+   ],
+   "taken": "Academic Ascent",
+   "reasoning": "Academic Ascent over Fblthp, Impossibly Lost, Theorix Metamage and an Island; no spoken comment; the pool at P2p14 confirms it.",
+   "considered": {},
+   "plan": "Green.",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 12,
+   "time": "18:12-18:17",
+   "pack_cards": [
+    "Kiora of Salt and Sand",
+    "Semester Foreseer",
+    "Afterthought Sentry"
+   ],
+   "taken": "Kiora of Salt and Sand",
+   "reasoning": "Kiora of Salt and Sand; no spoken comment; the pool confirms it.",
+   "considered": {},
+   "plan": "Green.",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 13,
+   "time": "18:17-18:24",
+   "pack_cards": [
+    "Graft Surgeon",
+    "Tether Technician"
+   ],
+   "taken": "Tether Technician",
+   "reasoning": "Tether Technician over Graft Surgeon; no spoken comment; the pool confirms it.",
+   "considered": {},
+   "plan": "Green-red.",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 14,
+   "time": "18:24-18:48",
+   "pack_cards": [
+    "Sphinx's Approach"
+   ],
+   "taken": "Sphinx's Approach",
+   "reasoning": "Last card, Sphinx's Approach, auto-selected.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 1,
+   "time": "18:48-19:26",
+   "pack_cards": [
+    "Cruel Calculations",
+    "Way of the Deathbringer",
+    "Kiora of Fire and Ashes",
+    "Way of the Wildspeaker",
+    "Warrior's Blades",
+    "Eye of Jace",
+    "Surgical Precision",
+    "Mindseeker Oculus",
+    "Heartstring Puller",
+    "Whiplash Wordsmith",
+    "Ferocity of the Hunt",
+    "Emergency Phytomedic",
+    "Living Library",
+    "Mountain"
+   ],
+   "taken": "Kiora of Fire and Ashes",
+   "reasoning": "Kiora of Fire and Ashes over Way of the Wildspeaker: pretty nuts, especially with Fblthp to hit land drops; they can be green with red as the second colour, and she is a good ramp target. Way of the Wildspeaker is what the guest would take otherwise.",
+   "considered": {
+    "Way of the Wildspeaker": "guest: the pick if Kiora were not there",
+    "Warrior's Blades": "in the pack, wheels"
+   },
+   "plan": "Green-red, no allegiance yet.",
+   "quotes": [
+    "Kiora is pretty nuts and I think is probably worth taking here.",
+    "I think Kiora is just too good of a ramp target."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 2,
+   "time": "19:26-20:06",
+   "pack_cards": [
+    "Vindictive Triumph",
+    "Way of the Mentor",
+    "Perfected Theory",
+    "Yargle, Glutton of Urborg",
+    "Way of the Warlord",
+    "Stingerquill Charm",
+    "Undulating Witness",
+    "Extended Absence",
+    "Theoretical Necromancer",
+    "Bestial Incursion",
+    "Charge the Sanctum",
+    "Tam's Resistance",
+    "Meticulous Commons"
+   ],
+   "taken": "Bestial Incursion",
+   "reasoning": "Bestial Incursion over Way of the Warlord and the black kill spell: a nice mid-range and late-game threat, they have a little self-mill from surveils, and green is the one colour they know they are playing while the second is undecided.",
+   "considered": {
+    "Way of the Warlord": "in the pack (wheels, taken at pick ten)",
+    "Extended Absence": "black kill spell, pretty good"
+   },
+   "plan": "Green, second colour undecided.",
+   "quotes": [
+    "I kind of like the bestial incursion. It's just like a nice little not like exactly top end. It's like a mid-range threat and a late game threat."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 3,
+   "time": "20:06-20:50",
+   "pack_cards": [
+    "Yuriko, Blade of the Mighty",
+    "Yuriko, Hope from the Shadows",
+    "Fulminous Forte",
+    "Titanbones, Towering Heart",
+    "Predictive Preparations",
+    "Unsummon",
+    "Solve for Disappointment",
+    "Hallway Heckler",
+    "Wrecking Gecko",
+    "Twinned Vision",
+    "Murmuring Volume",
+    "Island"
+   ],
+   "taken": "Fulminous Forte",
+   "reasoning": "Fulminous Forte: 'now I'm ready' to pick red; green-green-red, maybe splashing Vigorbloom Charm or Last Gasp. They would have splashed Rescue Girl if they had it.",
+   "considered": {
+    "Yuriko, Hope from the Shadows": "in the pack",
+    "Hallway Heckler": "in the pack"
+   },
+   "plan": "Green-red; splash Charm or Last Gasp.",
+   "quotes": [
+    "I think now I'm ready. We take the fulminous forte here.",
+    "green green red and maybe splashing like vigor bloom charm or last gasp or whatever."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 4,
+   "time": "20:50-21:36",
+   "pack_cards": [
+    "Ghalta the Immovable",
+    "Massacre Girl, Most Wanted",
+    "Ghalta the Unstoppable",
+    "Twisted Fates",
+    "Academic Ascent",
+    "Divining Duelist",
+    "Last Gasp",
+    "Awaken the Inferno",
+    "Greenhouse Propagator",
+    "Sureshot Sower",
+    "Dedicated Commons"
+   ],
+   "taken": "Awaken the Inferno",
+   "reasoning": "Awaken the Inferno (basic landcycler) over Ghalta the Immovable: a good Awaken the Inferno deck; the guest calls Ghalta fine, just a five-mana 8/8 trample that does not feel busted, and takes the landcycler.",
+   "considered": {
+    "Ghalta the Immovable": "guest: fine, just a five mana 8/8 trample, not busted",
+    "Twisted Fates": "in the pack again",
+    "Last Gasp": "in the pack"
+   },
+   "plan": "Green-red.",
+   "quotes": [
+    "I would take the Land Cycler. Yeah, this card's quite good."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 5,
+   "time": "21:36-22:02",
+   "pack_cards": [
+    "Tam, the Possibility",
+    "Marwyn, the Clearcutter",
+    "Hexhaven Dueling Arena",
+    "Unflinching Hortimancer",
+    "Surveillance Phantasm",
+    "Rank Rat",
+    "Arcane Amphisbaena",
+    "Konstrari Improviser",
+    "Afterthought Sentry",
+    "Mountain"
+   ],
+   "taken": "Konstrari Improviser",
+   "reasoning": "A second Konstrari Improviser over a third Arcane Amphisbaena: it gives more ramp.",
+   "considered": {
+    "Arcane Amphisbaena": "a third copy, passed",
+    "Marwyn, the Clearcutter": "in the pack (taken at pick 13)",
+    "Surveillance Phantasm": "in the pack"
+   },
+   "plan": "Green-red ramp.",
+   "quotes": [
+    "I think I would take second improviser over the third snake. Just gives us some more ramp stuff."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 6,
+   "time": "22:02-22:30",
+   "pack_cards": [
+    "Stinging Vitriol",
+    "Traxos, Academy Guardian",
+    "Predictive Preparations",
+    "Cryotheory Adept",
+    "Heartstring Puller",
+    "Wrath of the Bloodmane",
+    "Ferocity of the Hunt",
+    "Medic's Kitesail",
+    "Stingerquill Annex"
+   ],
+   "taken": "Wrath of the Bloodmane",
+   "reasoning": "Wrath of the Bloodmane over Heartstring Puller and Traxos, Academy Guardian: they need the removal and would never take the Puller over one of the red removal spells; Awaken the Inferno and the two-mana deal-three are also good.",
+   "considered": {
+    "Heartstring Puller": "looks better than it plays; they would never take it over a red removal spell",
+    "Traxos, Academy Guardian": "in the pack"
+   },
+   "plan": "Green-red.",
+   "quotes": [
+    "I think Heartstring Puller looks better than it actually plays out ... I would never take it over one of the red removal spells."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 7,
+   "time": "22:30-22:48",
+   "pack_cards": [
+    "Paradox Shaper",
+    "Kiora of Salt and Sand",
+    "Divining Duelist",
+    "Cast Away Doubt",
+    "Eardrum Rattler",
+    "Something Worth Saving",
+    "Sureshot Sower",
+    "Island"
+   ],
+   "taken": "Something Worth Saving",
+   "reasoning": "A second Something Worth Saving: this deck is going to be pretty good at finding Kraken; with two Fblthps it is easy to splash, but they lack a good splash target.",
+   "considered": {
+    "Kiora of Salt and Sand": "in the pack",
+    "Paradox Shaper": "in the pack"
+   },
+   "plan": "Green-red with a splash.",
+   "quotes": [
+    "I feel like this deck is going to be pretty good at finding Kraken."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 8,
+   "time": "22:48-23:17",
+   "pack_cards": [
+    "Danitha, Sword of Hope",
+    "Way of the Mind Sculptor",
+    "Flourishing Grapple",
+    "Clash of Elements",
+    "Predictive Preparations",
+    "Rampart Hunter",
+    "Island"
+   ],
+   "taken": "Way of the Mind Sculptor",
+   "reasoning": "Way of the Mind Sculptor, the blue card: not crazy as a splash because the deck has a lot of ramp but not a lot of card draw; chosen over the green card (Flourishing Grapple) and Clash of Elements.",
+   "considered": {
+    "Flourishing Grapple": "the green sideboard card; they prefer the blue Way",
+    "Clash of Elements": "in the pack"
+   },
+   "plan": "Green-red with a possible blue splash.",
+   "quotes": [
+    "Way of the Mind Sculptor isn't crazy as a splash. Like you have a lot of ramp but not a lot of card draw."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 9,
+   "time": "23:17-23:36",
+   "pack_cards": [
+    "Cruel Calculations",
+    "Warrior's Blades",
+    "Surgical Precision",
+    "Heartstring Puller",
+    "Emergency Phytomedic",
+    "Mountain"
+   ],
+   "taken": "Warrior's Blades",
+   "reasoning": "Warrior's Blades: could be a fine splash, they are already inclined to splash the Vigorbloom Charm for interaction, and with a bunch of little guys the buff would be good.",
+   "considered": {
+    "Surgical Precision": "in the pack",
+    "Cruel Calculations": "in the pack"
+   },
+   "plan": "Green-red with a white splash (Charm, Blades).",
+   "quotes": [
+    "I like warriors blades and we're already kind of inclined to splash the charm."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 10,
+   "time": "23:36-23:54",
+   "pack_cards": [
+    "Way of the Mentor",
+    "Yargle, Glutton of Urborg",
+    "Way of the Warlord",
+    "Theoretical Necromancer",
+    "Charge the Sanctum"
+   ],
+   "taken": "Way of the Warlord",
+   "reasoning": "Way of the Warlord over Way of the Mentor: a little extra synergy with the Way of the Mind Sculptor, the two Amphisbaenas and Tam's Resistance; they say it is the kind of card that could start in the sideboard.",
+   "considered": {
+    "Way of the Mentor": "in the pack",
+    "Yargle, Glutton of Urborg": "in the pack"
+   },
+   "plan": "Green-red.",
+   "quotes": [
+    "All right, I take Way of the Warlord. Get a little bit extra synergy with the Way of the Mind Sculptor."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 11,
+   "time": "23:54-24:06",
+   "pack_cards": [
+    "Predictive Preparations",
+    "Wrecking Gecko",
+    "Twinned Vision",
+    "Island"
+   ],
+   "taken": "Twinned Vision",
+   "reasoning": "Twinned Vision over Wrecking Gecko: it solves the problem of having a ton of mana and needing something to do with it, and helps against flood.",
+   "considered": {
+    "Wrecking Gecko": "the alternative",
+    "Predictive Preparations": "in the pack"
+   },
+   "plan": "Green-red ramp.",
+   "quotes": [
+    "Twin Vision is so good. Like again, it solves the problem of like you're going to have a ton of mana and hopeful you need stuff to do with it."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 12,
+   "time": "24:06-24:22",
+   "pack_cards": [
+    "Divining Duelist",
+    "Sureshot Sower",
+    "Dedicated Commons"
+   ],
+   "taken": "Dedicated Commons",
+   "reasoning": "Dedicated Commons, the land, over Divining Duelist and Sureshot Sower: it is not essential but helps with Warrior's Blades and the Vigorbloom Charm.",
+   "considered": {},
+   "plan": "Green-red with a white splash.",
+   "quotes": [
+    "Take the land here. I don't think this card's essential. And it helps us with our warriors blades. And our vigor bloom charm."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 13,
+   "time": "24:22-24:30",
+   "pack_cards": [
+    "Marwyn, the Clearcutter",
+    "Mountain"
+   ],
+   "taken": "Marwyn, the Clearcutter",
+   "reasoning": "Marwyn, the Clearcutter over a Mountain: called 'just a Savannah Lions', but it works with the other Marwyn and Fblthp can turn extra lands into cards; the host got it with two cards left.",
+   "considered": {},
+   "plan": "Green-red.",
+   "quotes": [
+    "It's just a Savannah Lions.",
+    "It works well with the other Marwin that we have."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 14,
+   "time": "24:30-24:32",
+   "pack_cards": [
+    "unreadable (last card only seen as a tooltip text, 'Put a +1/+1 counter on each of one or two target creatures. Flashback'; Predictive Preparations by elimination from the pick-6 pack)"
+   ],
+   "taken": "Predictive Preparations",
+   "reasoning": "Last card auto-selected; only a tooltip of the card was visible (Predictive Preparations by elimination).",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  }
+ ]
+}

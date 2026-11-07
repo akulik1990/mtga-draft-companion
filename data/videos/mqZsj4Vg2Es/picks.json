@@ -1,0 +1,1064 @@
+{
+ "id": "mqZsj4Vg2Es",
+ "url": "https://youtu.be/mqZsj4Vg2Es",
+ "title": "I LOVE Drafting Reality Fracture!!!",
+ "player": "NicolaiBolas",
+ "set": "FRA",
+ "event": "FRA early access event (he calls it 'the early access event' and thanks Wizards for preview access; event name not shown on screen)",
+ "dataset": "FRA_PremierDraft_All_Data.json",
+ "recorded": null,
+ "source": "frames read from data/videos/raw/mqZsj4Vg2Es (tools/video_draft.py frames); every pick confirmed by the next frame's deck list or pool unless a note says otherwise; transcript from YouTube auto captions (tools/video_draft.py transcript), card names corrected",
+ "colour_path": [
+  {
+   "after": "P1p1",
+   "main": "W (G?)",
+   "quote": "We can also just splash it in any white deck."
+  },
+  {
+   "after": "P1p2",
+   "main": "W",
+   "quote": "I don't necessarily want to commit to playing that color combo"
+  },
+  {
+   "after": "P1p4",
+   "main": "W + U",
+   "quote": "I don't want to get too committed to green."
+  },
+  {
+   "after": "P1p5",
+   "main": "W, splash G or B",
+   "quote": "we can just splash the Qua if we really need to or splash Twisted Fates"
+  },
+  {
+   "after": "P1p7",
+   "main": "WU splash G",
+   "quote": "I could play white blue splash qua. Qua is very splashable."
+  },
+  {
+   "after": "P1p12",
+   "main": "WU splash everything",
+   "quote": "We're playing white blue splashing every other color."
+  },
+  {
+   "after": "P2p4",
+   "main": "WU (green confirmed as splash)",
+   "quote": "I kind of forgot that green wasn't a base color because I do have these double blue cards"
+  },
+  {
+   "after": "P2p9",
+   "main": "WU",
+   "quote": "blue white is pretty much where I was supposed to end up just because Qua wants me to be base white"
+  },
+  {
+   "after": "P3p2",
+   "main": "WU splash G (best case)",
+   "quote": "blue white just splashing green is probably the best bet"
+  },
+  {
+   "after": "deck",
+   "main": "WU splash G, R, B",
+   "quote": "I probably shouldn't be splashing black, but we will anyway."
+  }
+ ],
+ "picks": [
+  {
+   "pack": 1,
+   "pick": 1,
+   "time": "0:14-1:16",
+   "pack_cards": [
+    "Chandra, Chill of Compliance",
+    "Kwia Vigorbloom",
+    "Koth of the Homestead",
+    "Arni, Renowned Champion",
+    "Koth, the Geomancer",
+    "Recursive Recruitment",
+    "Woodwork Prodigy",
+    "Fateshaper Aspirant",
+    "Rank Rat",
+    "Vinelasher Adept",
+    "Twinned Vision",
+    "Konstrari Improviser",
+    "Murmuring Volume",
+    "Stingerquill Annex"
+   ],
+   "taken": "Kwia Vigorbloom",
+   "reasoning": "Kwia over Chandra: a 6/6 flier with ward 2 wins the game if unanswered; Chandra needs protection, draws a card about half the time and is easy to pressure. Wants to try the lifegain deck. Already notes Kwia can be splashed in any white deck.",
+   "considered": {
+    "Chandra, Chill of Compliance": "close second; needs protection, easy to pressure",
+    "Recursive Recruitment": "'very sweet card'",
+    "Koth of the Homestead": "'pretty nice'; better than Koth, the Geomancer because the counter mode matters more than the mana mode",
+    "Koth, the Geomancer": "does things in RB, but ranked below Koth of the Homestead"
+   },
+   "plan": "Open. GW lifegain is the deck he would like, but Kwia is framed as splashable in any white deck from the first pick.",
+   "quotes": [
+    "qua is just like giant 6/6 flyer. If they can't kill it, you win the game",
+    "We can also just splash it in any white deck."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 2,
+   "time": "1:18-2:14",
+   "pack_cards": [
+    "Teyo, Lightshield Expert",
+    "Traxos, Academy Guardian",
+    "Teyo, Diamondblade Mage",
+    "Ruric Thar, Magecrusher",
+    "Craftwork Crusher",
+    "Blossom-Blessed Angel",
+    "Unflinching Hortimancer",
+    "Infinite Coursework",
+    "Unsummon",
+    "Skilled Battlecarver",
+    "Arcane Amphisbaena",
+    "Ferocity of the Hunt",
+    "Forest"
+   ],
+   "taken": "Teyo, Lightshield Expert",
+   "reasoning": "Long deliberation between Ruric Thar, Magecrusher and Blossom-Blessed Angel; the missing rare gives no strong signal. Does not want to commit to a gold pair right after Kwia. Ends on Teyo: a good two-drop in his main colour.",
+   "considered": {
+    "Ruric Thar, Magecrusher": "'kind of want to try taking' it; rejected as committing to a colour pair",
+    "Blossom-Blessed Angel": "'very strong', works with the same cards; nearly the pick",
+    "Craftwork Crusher": "mentioned ('go full beats'), not pursued",
+    "Unflinching Hortimancer": "lifegain card, 'just good card in general'"
+   },
+   "plan": "White is the main colour ('in my main color'); green not committed.",
+   "quotes": [
+    "I don't necessarily want to commit to playing that color combo right after I took [Kwia]",
+    "Teyo is also very good. I like getting a good two drop and it's in my main color."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 3,
+   "time": "2:16-2:38",
+   "pack_cards": [
+    "Ruric Thar, Biomagus",
+    "Ruric Thar, Magecrusher",
+    "Theorix Charm",
+    "Archive Arbiter",
+    "Campus Crier",
+    "Infinite Coursework",
+    "Apex Witchstalker",
+    "Screeching Soulbreaker",
+    "Blazing Crescendo",
+    "Chandra's Emberling",
+    "Something Worth Saving",
+    "Vigorbloom Annex"
+   ],
+   "taken": "Campus Crier",
+   "reasoning": "Likes Campus Crier a lot (surveil, copies stack). Passes the GW land and Archive Arbiter because he does not take seven-drops highly.",
+   "considered": {
+    "Vigorbloom Annex": "GW land, 'which I'm not going to take'",
+    "Archive Arbiter": "'I just don't love taking seven drops too highly'",
+    "Something Worth Saving": "mentioned; prefers the two-drop"
+   },
+   "plan": "White two-drops.",
+   "quotes": [
+    "I like Campus Crier a lot.",
+    "I just don't love taking seven drops too highly."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 4,
+   "time": "2:40-3:24",
+   "pack_cards": [
+    "Countersculpt",
+    "Ruric Thar, Biomagus",
+    "Flourishing Grapple",
+    "Loot, the Nexus",
+    "Warrior's Blades",
+    "Surgical Precision",
+    "Divining Duelist",
+    "Rampart Hunter",
+    "Tether Technician",
+    "Arcane Amphisbaena",
+    "Innovative Commons"
+   ],
+   "taken": "Ruric Thar, Biomagus",
+   "reasoning": "Sees blue. Weighs Countersculpt, Loot, the Nexus (ramps into his big cards and splashes) and Warrior's Blades (the pick if splashing). Takes Ruric Thar, Biomagus, a card he is impressed with every time, explicitly to avoid committing to green.",
+   "considered": {
+    "Countersculpt": "'pretty solid', not taken highly",
+    "Loot, the Nexus": "can ramp to the big stuff and splash",
+    "Surgical Precision": "'okay', not prioritised",
+    "Warrior's Blades": "'if I did want to splash, Warrior's Blades could be the pick'"
+   },
+   "plan": "First move off green: blue becomes the second colour candidate next to white.",
+   "quotes": [
+    "Yeah, I don't want to get too committed to green.",
+    "It's like a card that I'm very impressed with every time I play it."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 5,
+   "time": "3:26-3:42",
+   "pack_cards": [
+    "Danitha, Sword of Hope",
+    "Precise Redaction",
+    "Pia, Aether Ascetic",
+    "Twisted Fates",
+    "Blossom-Blessed Angel",
+    "Infinite Coursework",
+    "Cast Away Doubt",
+    "Artifist Acumen",
+    "Inspired Tethermage",
+    "Transformative Commons"
+   ],
+   "taken": "Twisted Fates",
+   "reasoning": "Twisted Fates is 'a very good card'; Blossom-Blessed Angel is also good, but he can splash Kwia or splash Twisted Fates.",
+   "considered": {
+    "Blossom-Blessed Angel": "'also good'"
+   },
+   "plan": "White base; Kwia (G) and Twisted Fates (B) both described as splashes.",
+   "quotes": [
+    "we can just splash the Qua if we really need to or splash Twisted Fates"
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 6,
+   "time": "3:44-3:54",
+   "pack_cards": [
+    "Rockfall Vale",
+    "Loot, the Anomaly",
+    "Clash of Elements",
+    "Cryotheory Adept",
+    "Heartstring Puller",
+    "Tethermage's Advantage",
+    "Fatehold Chronologist",
+    "Charge the Sanctum",
+    "Meticulous Commons"
+   ],
+   "taken": "Meticulous Commons",
+   "reasoning": "Takes the land because it helps cast Twisted Fates or Kwia; the blue card would not make his deck yet.",
+   "considered": {},
+   "plan": "Fixing for the splashes.",
+   "quotes": [
+    "Now, this land helps me with the twisted fates or with the qua.",
+    "The blue card isn't going to get in right now"
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 7,
+   "time": "3:56-4:18",
+   "pack_cards": [
+    "Winter, Team Player",
+    "Primal Witchstalker",
+    "Campus Crier",
+    "Cast Away Doubt",
+    "Skilled Battlecarver",
+    "Vinelasher Adept",
+    "Tam's Resistance",
+    "Fatehold Annex"
+   ],
+   "taken": "Campus Crier",
+   "reasoning": "Second Campus Crier; copies stack up. Looking back at the Ruric Thar pick: he was already thinking WU splashing Kwia.",
+   "considered": {},
+   "plan": "WU splashing Kwia, stated outright.",
+   "quotes": [
+    "We'll just take another campus crier.",
+    "At the time I was like thinking I could play white blue splash qua. Qua is very splashable."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 8,
+   "time": "4:20-4:50",
+   "pack_cards": [
+    "Pia, Aether Ascetic",
+    "Theorix Charm",
+    "Divining Duelist",
+    "Theoretical Necromancer",
+    "Blazing Crescendo",
+    "Blessed Ghoul",
+    "Konstrari Annex"
+   ],
+   "taken": "Konstrari Annex",
+   "reasoning": "Blessed Ghoul wants enchantments he does not have; maybe he will splash green; takes the land. Notes UB cards flowing. Rates Pia low.",
+   "considered": {
+    "Blessed Ghoul": "needs enchantments; 'also fine'",
+    "Pia, Aether Ascetic": "'I just don't think Pia is very good'"
+   },
+   "plan": "Splash green, fixing.",
+   "quotes": [
+    "Maybe I'll just want to splash green. Maybe I'll just take the land.",
+    "We're seeing some blue black cards."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 9,
+   "time": "4:54-5:10",
+   "pack_cards": [
+    "Arni, Renowned Champion",
+    "Recursive Recruitment",
+    "Fateshaper Aspirant",
+    "Twinned Vision",
+    "Murmuring Volume",
+    "Stingerquill Annex"
+   ],
+   "taken": "Murmuring Volume",
+   "reasoning": "Does not usually like Murmuring Volume but likes Fateshaper Aspirant less, even with a couple of legendaries. Notes a UB gold card wheeling as a signal. The Pick tag sat on Fateshaper Aspirant first; the deck list confirms Murmuring Volume.",
+   "considered": {
+    "Fateshaper Aspirant": "'I really don't like the Fateshaper even though I have a couple cards'",
+    "Recursive Recruitment": "UB card wheeling, 'crazy'"
+   },
+   "plan": "Fixing again (Murmuring Volume makes any colour).",
+   "quotes": [
+    "I don't love Murmuring volume generally speaking, but I really don't like the Fate Shaper",
+    "Maybe late blue black card to wheel that is crazy"
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 10,
+   "time": "5:12-5:36",
+   "pack_cards": [
+    "Infinite Coursework",
+    "Unsummon",
+    "Skilled Battlecarver",
+    "Ferocity of the Hunt",
+    "Forest"
+   ],
+   "taken": "Unsummon",
+   "reasoning": "Unsummon over Ferocity of the Hunt and over Infinite Coursework.",
+   "considered": {
+    "Ferocity of the Hunt": "worse than Unsummon",
+    "Infinite Coursework": "worse than Unsummon"
+   },
+   "plan": "WU splashing a couple of colours.",
+   "quotes": [
+    "So the idea of playing blue white splashing a couple things still on the menu."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 11,
+   "time": "5:38-5:54",
+   "pack_cards": [
+    "Ruric Thar, Biomagus",
+    "Theorix Charm",
+    "Blazing Crescendo",
+    "Vigorbloom Annex"
+   ],
+   "taken": "Vigorbloom Annex",
+   "reasoning": "Passes a second Ruric Thar, Biomagus: he already has one and another top-end card. Reads UB as open from the charms, while noting it may be the UB gold cards only. Takes the GW land to help splash.",
+   "considered": {
+    "Ruric Thar, Biomagus": "already has one; 'another second top end card'",
+    "Theorix Charm": "UB charm, read as a signal"
+   },
+   "plan": "Splash fixing over a second copy of his blue top end.",
+   "quotes": [
+    "We already have one Rurickthar.",
+    "it could also be the case that specifically blue black's open while blue and black are not open",
+    "This card will help me splash"
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 12,
+   "time": "5:56-6:06",
+   "pack_cards": [
+    "Flourishing Grapple",
+    "Warrior's Blades",
+    "Innovative Commons"
+   ],
+   "taken": "Warrior's Blades",
+   "reasoning": "Has no red cards to splash other than Warrior's Blades; takes the card worth splashing before the land.",
+   "considered": {
+    "Innovative Commons": "the land; passed for the splashable card"
+   },
+   "plan": "'White blue splashing every other color.'",
+   "quotes": [
+    "let's take the card that's like worthy of splashing before we go too off the deep end. We're playing white blue splashing every other color."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 13,
+   "time": "6:08-6:11",
+   "pack_cards": [
+    "Precise Redaction",
+    "Artifist Acumen"
+   ],
+   "taken": "Artifist Acumen",
+   "reasoning": "No comment. The pick went to the sideboard at once.",
+   "considered": {},
+   "plan": "",
+   "quotes": [],
+   "note": "taken card identified from the deck builder's sideboard (Artifist Acumen there, Precise Redaction not in his pool)"
+  },
+  {
+   "pack": 1,
+   "pick": 14,
+   "time": "6:12-6:15",
+   "pack_cards": [
+    "Cryotheory Adept"
+   ],
+   "taken": "Cryotheory Adept",
+   "reasoning": "Last card.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 1,
+   "time": "6:16-6:42",
+   "pack_cards": [
+    "The Theorist, Jace Beleren",
+    "Way of the Healer",
+    "Way of the Necromancer",
+    "Essence Burn",
+    "Titanbones, Towering Heart",
+    "Recursive Recruitment",
+    "Campus Crier",
+    "Graft Surgeon",
+    "Mindseeker Oculus",
+    "Eardrum Rattler",
+    "Sureshot Sower",
+    "Ferocity of the Hunt",
+    "Medic's Kitesail",
+    "Theorix Annex"
+   ],
+   "taken": "The Theorist, Jace Beleren",
+   "reasoning": "Jace is 'a pretty sweet pickup' for the WU deck that splashes every other colour, and a base-colour card. Plans to take many lands and some land cyclers.",
+   "considered": {
+    "Murmuring Volume": "already in the pool; goes with the splash-everything plan"
+   },
+   "plan": "WU base splashing every other colour; lands and landcyclers to support it.",
+   "quotes": [
+    "Jace is a pretty sweet pickup for our white blue deck that is going to splash every other color.",
+    "Getting a Jace is really good because that's one of our base color cards."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 2,
+   "time": "6:44-7:26",
+   "pack_cards": [
+    "Refute Destiny",
+    "Tinybones, Pocket Nuisance",
+    "Jiang Yanggu, Alone",
+    "Jiang Yanggu, Never Alone",
+    "Restore with Empathy",
+    "Recursive Recruitment",
+    "Protege's Awakening",
+    "Last Gasp",
+    "Artifist Acumen",
+    "Something Worth Saving",
+    "Vinelasher Adept",
+    "Fatehold Chronologist",
+    "Island"
+   ],
+   "taken": "Jiang Yanggu, Never Alone",
+   "reasoning": "Refute Destiny only hits green or blue (few blue creatures he wants to exile). Restore with Empathy is interesting (gain four life). Mowu (Jiang Yanggu, Never Alone) is really strong. Considers a landcycler, decides to get them later. The Pick tag moved to Vinelasher Adept for a while; the pool confirms Jiang.",
+   "considered": {
+    "Refute Destiny": "only green or blue targets",
+    "Restore with Empathy": "'pretty interesting... you gain four life'",
+    "Vinelasher Adept": "'we could just take a land cycler'; deferred"
+   },
+   "plan": "WU 'splashing around'; green as a splash for a strong green card.",
+   "quotes": [
+    "I think Mowu is really strong.",
+    "Let's try to get the land cyclingers a bit later."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 3,
+   "time": "7:28-7:50",
+   "pack_cards": [
+    "Frostbite Pyromental",
+    "Loot, the Anomaly",
+    "Pia, Determined Rebuilder",
+    "Loot, the Nexus",
+    "Theorix Charm",
+    "Warrior's Blades",
+    "Icy Reception",
+    "Void Extrapolator",
+    "Arcane Amphisbaena",
+    "Twinned Vision",
+    "Room of Refuge",
+    "Meticulous Commons"
+   ],
+   "taken": "Loot, the Nexus",
+   "reasoning": "Lots of options: Loot, the Nexus, Warrior's Blades, another card. Takes Loot: if it survives it does a lot of work. Regrets it next pick (green is only a splash).",
+   "considered": {
+    "Warrior's Blades": "'also pretty good'"
+   },
+   "plan": "Still treating green as heavy; corrected one pick later.",
+   "quotes": [
+    "Let's take Loot the Nexus.",
+    "If it survives, we're going to be able to do a lot of good work with it"
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 4,
+   "time": "7:52-8:38",
+   "pack_cards": [
+    "Variable Chaser",
+    "Koth, the Geomancer",
+    "Academic Ascent",
+    "Fateshaper Aspirant",
+    "Icy Reception",
+    "Surveillance Phantasm",
+    "Extended Absence",
+    "Chandra's Emberling",
+    "Budding Insurgent",
+    "Compel Brutality",
+    "Formidable Commons"
+   ],
+   "taken": "Surveillance Phantasm",
+   "reasoning": "Splash cards and a green card on offer; first leans 'take another land here', then realises Loot was a mistake because green is not a base colour and he has double-blue cards. Takes a blue two-drop for the early game.",
+   "considered": {
+    "Surveillance Phantasm": "'I don't love this card', taken anyway as a blue two-drop",
+    "Formidable Commons": "'take another land here', then changed his mind"
+   },
+   "plan": "Explicit correction: green is a splash, not a base colour; base is WU (double-blue cards).",
+   "quotes": [
+    "Green's going to be a bit heavier of our colors, I guess.",
+    "I should have just taken the tap land. I kind of forgot that green wasn't a base color because I do have these double blue cards",
+    "I'm just going to take a two drop of blue. That'll actually be better."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 5,
+   "time": "8:40-9:18",
+   "pack_cards": [
+    "Jace's Machinations",
+    "Koth of the Homestead",
+    "Traxos, Academy Guardian",
+    "Archive Arbiter",
+    "Hallway Heckler",
+    "Skilled Battlecarver",
+    "Ferocity of the Hunt",
+    "Murmuring Volume",
+    "Room of Refuge",
+    "Mountain"
+   ],
+   "taken": "Room of Refuge",
+   "reasoning": "Murmuring Volume or Room of Refuge: takes Room, hoping for another Murmuring Volume later. Likes Traxos a lot and Koth in a lifegain-survive deck; Jace's Machinations 'pretty okay'.",
+   "considered": {
+    "Murmuring Volume": "the alternative; hopes another comes later",
+    "Traxos, Academy Guardian": "'I love Traxos. Traxos is just a very strong card.'",
+    "Koth of the Homestead": "'very nice in this sort of deck where you just want to gain life and just like survive'",
+    "Jace's Machinations": "'pretty okay'"
+   },
+   "plan": "Five-colour lands deck around a WU base.",
+   "quotes": [
+    "Murmuring volume or room of refuge. Let's take the room of refuge",
+    "This is a strange deck."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 6,
+   "time": "9:20-9:44",
+   "pack_cards": [
+    "Variable Chaser",
+    "Winter, Tormented Loner",
+    "Paradox Shaper",
+    "Rampart Hunter",
+    "Inspired Tethermage",
+    "Wrecking Gecko",
+    "Twinned Vision",
+    "Afterthought Sentry",
+    "Dedicated Commons"
+   ],
+   "taken": "Dedicated Commons",
+   "reasoning": "'A little bit disciplined': the other card is not his main colour, the land helps him splash. Mentions a two-drop and 'random stuff'; asks how many random lands a deck can play.",
+   "considered": {
+    "Variable Chaser": "'there's just a two drop'"
+   },
+   "plan": "Experimental many-lands deck.",
+   "quotes": [
+    "this isn't my main color. This will help me splash.",
+    "how many like random lands can you play?"
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 7,
+   "time": "9:46-10:02",
+   "pack_cards": [
+    "Cruel Calculations",
+    "Eye of Jace",
+    "Mindseeker Oculus",
+    "Sphinx's Approach",
+    "Silence the Echo",
+    "Eardrum Rattler",
+    "Something Worth Saving",
+    "Innovative Commons"
+   ],
+   "taken": "Mindseeker Oculus",
+   "reasoning": "Mindseeker Oculus is a perfect pickup: with a Jace around his tapped lands enter untapped.",
+   "considered": {},
+   "plan": "WU with Jace synergies.",
+   "quotes": [
+    "I love Mindseeker Oculus. That's a perfect pickup for me",
+    "it'll make these lands come into play untapped if I can keep a Jace around"
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 8,
+   "time": "10:04-10:14",
+   "pack_cards": [
+    "Countersculpt",
+    "Academic Ascent",
+    "Divining Duelist",
+    "Cast Away Doubt",
+    "Skilled Battlecarver",
+    "Budding Insurgent",
+    "Vigorbloom Annex"
+   ],
+   "taken": "Vigorbloom Annex",
+   "reasoning": "Regrets not taking a tapped land earlier, but has so many; expects to play about 20 lands to have untapped sources when needed.",
+   "considered": {},
+   "plan": "Many lands, roughly 20.",
+   "quotes": [
+    "I'm gonna have infinite taplands. I'm going to probably play like 20 lands in this deck"
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 9,
+   "time": "10:16-10:28",
+   "pack_cards": [
+    "Way of the Necromancer",
+    "Graft Surgeon",
+    "Mindseeker Oculus",
+    "Eardrum Rattler",
+    "Ferocity of the Hunt",
+    "Theorix Annex"
+   ],
+   "taken": "Mindseeker Oculus",
+   "reasoning": "Wheels the Mindseeker Oculus from P2p1. WU is where he was supposed to end up because Kwia wants him base white, even though white does not look open.",
+   "considered": {
+    "Theorix Annex": "carried the Pick tag at first; not taken"
+   },
+   "plan": "WU base settled; Kwia's green is the splash, Kwia's white is the reason for the base.",
+   "quotes": [
+    "I think blue white is pretty much where I was supposed to end up just because Qua wants me to be base white.",
+    "white doesn't seem particularly open"
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 10,
+   "time": "10:30-10:38",
+   "pack_cards": [
+    "Tinybones, Pocket Nuisance",
+    "Restore with Empathy",
+    "Artifist Acumen",
+    "Something Worth Saving",
+    "Island"
+   ],
+   "taken": "Restore with Empathy",
+   "reasoning": "Wants lifegain. Maybe will not splash black.",
+   "considered": {},
+   "plan": "Dropping black considered.",
+   "quotes": [
+    "I just want some life gain stuff here for sure. Maybe I won't splash black."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 11,
+   "time": "10:40-10:50",
+   "pack_cards": [
+    "Warrior's Blades",
+    "Void Extrapolator",
+    "Twinned Vision",
+    "Meticulous Commons"
+   ],
+   "taken": "Warrior's Blades",
+   "reasoning": "Maybe not even red, but a green splash feels good; with a second Warrior's Blades, splashing red becomes worth it. Decides to 'go for it all'.",
+   "considered": {},
+   "plan": "Splash order: green yes, red now yes (two Blades), black in doubt.",
+   "quotes": [
+    "Maybe I won't even splash red. But getting a little green splash in feels like it'll be good.",
+    "now that I have a second one of these, I feel like splashing red will be very good at least. I might as well try to go for it all though."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 12,
+   "time": "10:52-11:00",
+   "pack_cards": [
+    "Fateshaper Aspirant",
+    "Icy Reception",
+    "Chandra's Emberling"
+   ],
+   "taken": "Fateshaper Aspirant",
+   "reasoning": "Twisted Fates is worse in this deck than elsewhere; Fateshaper Aspirant is a value card to get back his big legendary top end.",
+   "considered": {
+    "Icy Reception": "hovered, not taken"
+   },
+   "plan": "",
+   "quotes": [
+    "It's a nice little value card maybe for getting back my big top end guys."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 13,
+   "time": "11:00-11:02",
+   "pack_cards": [
+    "Skilled Battlecarver",
+    "Mountain"
+   ],
+   "taken": "Skilled Battlecarver",
+   "reasoning": "No comment; went to the sideboard.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 14,
+   "time": "11:04-11:05",
+   "pack_cards": [
+    "Rampart Hunter"
+   ],
+   "taken": "Rampart Hunter",
+   "reasoning": "Last card, auto-selected.",
+   "considered": {},
+   "plan": "",
+   "quotes": [],
+   "note": "shown for under a second at 11:04.2 with the Auto Select tag; confirmed by the deck builder sideboard"
+  },
+  {
+   "pack": 3,
+   "pick": 1,
+   "time": "11:06-11:24",
+   "pack_cards": [
+    "Proctor of Potential",
+    "Danitha, Sword of Hope",
+    "Refute Destiny",
+    "Danitha, Spear of Agony",
+    "Command the Stage",
+    "Way of the Warlord",
+    "Theorix Charm",
+    "Campus Crier",
+    "Mindseeker Oculus",
+    "Awaken the Inferno",
+    "Eardrum Rattler",
+    "Vinelasher Adept",
+    "Blessed Ghoul",
+    "Island"
+   ],
+   "taken": "Proctor of Potential",
+   "reasoning": "A WU gold card that surveils and sets him up. Would like Oculus (hopes to wheel it again) and a landcycler, but landcycling is slow. Might drop black and splash only red.",
+   "considered": {
+    "Mindseeker Oculus": "'I would love Oculus. I wheeled it last time'",
+    "Vinelasher Adept": "a landcycler; 'land cycling is pretty slow'",
+    "Awaken the Inferno": "a landcycler; taken two picks later from another pack"
+   },
+   "plan": "WU base; considering dropping the black splash and keeping red.",
+   "quotes": [
+    "ooh, nice little blue, white, gold card.",
+    "I might just not splash black and I just splash red"
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 2,
+   "time": "11:26-11:46",
+   "pack_cards": [
+    "Ghalta the Immovable",
+    "Your Fate Ends Here",
+    "Way of the Mind Sculptor",
+    "Ruric Thar, Magecrusher",
+    "Way of the Paradox",
+    "Stingerquill Charm",
+    "Blossom-Blessed Angel",
+    "Undulating Witness",
+    "Chandra's Emberling",
+    "Sureshot Sower",
+    "Whiplash Wordsmith",
+    "Living Library",
+    "Mountain"
+   ],
+   "taken": "Your Fate Ends Here",
+   "reasoning": "Your Fate Ends Here: a great kill spell for his base-WU deck. Would not mind Blossom-Blessed Angel or a landcycler. Says WU splashing only green is probably the best version.",
+   "considered": {
+    "Blossom-Blessed Angel": "'wouldn't mind'",
+    "Undulating Witness": "a landcycler, 'wouldn't mind'"
+   },
+   "plan": "Base WU; best version is WU splashing green.",
+   "quotes": [
+    "this is just a great kill spell for my deck that's base blue white",
+    "blue white just splashing green is probably the best bet"
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 3,
+   "time": "11:48-12:02",
+   "pack_cards": [
+    "Samut, Tyrant of Naktamun",
+    "Samut, Hazoret's Champion",
+    "Terminal Criticism",
+    "Traxos, Scourge Eternal",
+    "Academic Ascent",
+    "Icy Reception",
+    "Rampart Hunter",
+    "Awaken the Inferno",
+    "Tethermage's Advantage",
+    "Vinelasher Adept",
+    "Theorix Metamage",
+    "Swamp"
+   ],
+   "taken": "Awaken the Inferno",
+   "reasoning": "Awaken the Inferno, the best of the landcyclers, to fix his mana; the white one is also good.",
+   "considered": {
+    "Vinelasher Adept": "another landcycler, ranked below Awaken"
+   },
+   "plan": "Fixing for the splashes via landcycling.",
+   "quotes": [
+    "Let's take awaken the Inferno. Probably the best of the land Cyclers.",
+    "this one's going to help me out. Get my mana"
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 4,
+   "time": "12:04-12:22",
+   "pack_cards": [
+    "Identity Echo",
+    "Way of the Cryomancer",
+    "Winter, Tormented Loner",
+    "Winter, Team Player",
+    "Twisted Fates",
+    "Divining Duelist",
+    "Silence the Echo",
+    "Tether Technician",
+    "Inspired Tethermage",
+    "Living Library",
+    "Mountain"
+   ],
+   "taken": "Twisted Fates",
+   "reasoning": "Already committed to trying the deck: takes a second Twisted Fates. Has 13 creatures, so he is fine on creatures. Has fixing for green and red.",
+   "considered": {},
+   "plan": "Committed: WU splashing several colours, black back in via a second Twisted Fates.",
+   "quotes": [
+    "I'm already kind of committed here to just trying this out. So, let's take another twisted [fates]",
+    "I have 13 creatures, so we'll be fine"
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 5,
+   "time": "12:24-12:48",
+   "pack_cards": [
+    "Proft, Consulting Detective",
+    "Proft, Sinister Mastermind",
+    "Jiang Yanggu, Alone",
+    "Shatterwing Pegasus",
+    "Surveillance Phantasm",
+    "Rampart Hunter",
+    "Hallway Heckler",
+    "Theorix Metamage",
+    "Konstrari Improviser",
+    "Fatehold Annex"
+   ],
+   "taken": "Proft, Consulting Detective",
+   "reasoning": "Plenty of surveil in the deck, so Proft will be great. Already has six lands; he is making cuts for power level, so this is a power addition over Fatehold Annex.",
+   "considered": {
+    "Fatehold Annex": "'also pretty [good]'; taken next pick from another pack"
+   },
+   "plan": "Power over fixing once six fixing lands are in.",
+   "quotes": [
+    "I'm going to have a decent amount to surveil. Proft is going to be great.",
+    "I'm still making some cuts to the deck for power level reasons. So, this will be a nice little power addition."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 6,
+   "time": "12:50-13:06",
+   "pack_cards": [
+    "Way of the Mentor",
+    "Arni, Humble Scribe",
+    "Arni, Renowned Champion",
+    "Twisted Fates",
+    "Eye of Jace",
+    "Protege's Awakening",
+    "Void Extrapolator",
+    "Blessed Ghoul",
+    "Fatehold Annex"
+   ],
+   "taken": "Fatehold Annex",
+   "reasoning": "Gets the land anyway. Not impressed with Arni (wants to trade creatures, not hold them back). Passes a third Twisted Fates because it is already a splash card.",
+   "considered": {
+    "Arni, Renowned Champion": "'I have not been that impressed with Arni'",
+    "Twisted Fates": "third copy; 'it's already a splash card'"
+   },
+   "plan": "Splash cards capped; land over a third copy.",
+   "quotes": [
+    "We're not going to miss out on third Twisted Fates because it's already a splash card."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 7,
+   "time": "13:08-13:28",
+   "pack_cards": [
+    "Geist of Saint Thalia",
+    "Winter, Tormented Loner",
+    "Twisted Fates",
+    "Undulating Witness",
+    "Eardrum Rattler",
+    "Wrecking Gecko",
+    "Medic's Kitesail",
+    "Forest"
+   ],
+   "taken": "Undulating Witness",
+   "reasoning": "Fourth Twisted Fates: cannot take it. Considers Geist of Saint Thalia; takes Undulating Witness for another creature (and landcycler).",
+   "considered": {
+    "Twisted Fates": "fourth copy, 'I don't think we can take it'",
+    "Geist of Saint Thalia": "considered"
+   },
+   "plan": "",
+   "quotes": [
+    "let's just take an undulating witness. Give myself another creature."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 8,
+   "time": "13:30-14:26",
+   "pack_cards": [
+    "Danitha, Sword of Hope",
+    "Danitha, Spear of Agony",
+    "Marwyn, the Clearcutter",
+    "Infinite Coursework",
+    "Budding Insurgent",
+    "Afterthought Sentry",
+    "Konstrari Annex"
+   ],
+   "taken": "Infinite Coursework",
+   "reasoning": "Wants an on-colour kill spell over another splash land. Then counts: six two-drops if Cryotheory Adept is out; cuts Fateshaper Aspirant; about 25 playables plus two landcyclers 'count for a land'.",
+   "considered": {
+    "Konstrari Annex": "'This does help me splash, but I think I would like an on color kill spell.'"
+   },
+   "plan": "Deck counting; on-colour interaction over more fixing.",
+   "quotes": [
+    "I would like an on color kill spell.",
+    "I think these two will cumulatively account for a land."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 9,
+   "time": "14:28-14:40",
+   "pack_cards": [
+    "Danitha, Sword of Hope",
+    "Refute Destiny",
+    "Eardrum Rattler",
+    "Vinelasher Adept",
+    "Blessed Ghoul",
+    "Island"
+   ],
+   "taken": "Vinelasher Adept",
+   "reasoning": "Another landcycler, 'perfect'. Counts 26 playables.",
+   "considered": {},
+   "plan": "",
+   "quotes": [
+    "perfect. Another land cyclinger."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 10,
+   "time": "14:42-14:47",
+   "pack_cards": [
+    "Way of the Mind Sculptor",
+    "Chandra's Emberling",
+    "Whiplash Wordsmith",
+    "Living Library",
+    "Mountain"
+   ],
+   "taken": "Way of the Mind Sculptor",
+   "reasoning": "Card draw for the top end of a grindy deck.",
+   "considered": {},
+   "plan": "",
+   "quotes": [
+    "I like way of the mind sculptor. Some card draw for the top end for the grindy [deck]"
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 11,
+   "time": "14:48-14:58",
+   "pack_cards": [
+    "Academic Ascent",
+    "Icy Reception",
+    "Vinelasher Adept",
+    "Swamp"
+   ],
+   "taken": "Vinelasher Adept",
+   "reasoning": "Keeps taking Vinelasher Adepts; will not run out of late-game things. Does not like Icy Reception in grindy decks.",
+   "considered": {
+    "Icy Reception": "'I don't love Icy Reception in my grindier decks'"
+   },
+   "plan": "",
+   "quotes": [
+    "I'll just keep taking vine lasher adepts."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 12,
+   "time": "14:58-15:01",
+   "pack_cards": [
+    "Divining Duelist",
+    "Living Library",
+    "Mountain"
+   ],
+   "taken": "Living Library",
+   "reasoning": "Says he hates Living Library, takes it anyway (pick confirmed by his sideboard).",
+   "considered": {},
+   "plan": "",
+   "quotes": [
+    "I just hate living library."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 13,
+   "time": "15:02-15:03",
+   "pack_cards": [
+    "Rampart Hunter",
+    "Hallway Heckler"
+   ],
+   "taken": "Hallway Heckler",
+   "reasoning": "No comment.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 14,
+   "time": "15:04-15:06",
+   "pack_cards": [
+    "Protege's Awakening"
+   ],
+   "taken": "Protege's Awakening",
+   "reasoning": "Last pick; finds it strong but will not play it, he has card advantage elsewhere.",
+   "considered": {},
+   "plan": "",
+   "quotes": [
+    "Protege's Awakening last pick is crazy."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1015 @@
+{
+ "id": "I_Cdetq8Rhc",
+ "url": "https://youtu.be/I_Cdetq8Rhc",
+ "title": "This Strategy is Awesome in Reality Fracture Draft!!!",
+ "player": "NicolaiBolas",
+ "set": "FRA",
+ "event": "FRA live Arena draft, solo; the Arena pick timer is on and chat is not mentioned; Premier / Quick not named on screen",
+ "dataset": "FRA_PremierDraft_All_Data.json",
+ "recorded": null,
+ "source": "frames read from data/videos/raw/I_Cdetq8Rhc (banner strips and pack title rows per pick, two layouts: pool at the right until about P1p9, then pack on top with the pool below; the final 40/40 deck screen at 1108 s with the sideboard row); takes from the transcript, the deck screen and the sideboard row; some pack cards hidden by hover popups; transcript from YouTube auto captions, card names corrected; nothing past 18:55 read; cut-off 1130 s",
+ "colour_path": [
+  {
+   "after": "P1p1",
+   "main": "open (Hydra, white)",
+   "quote": "that really makes me want to bias towards white."
+  },
+  {
+   "after": "P1p2",
+   "main": "R / W",
+   "quote": "I could still abandon the guiding hydra if white doesn't end up being open."
+  },
+  {
+   "after": "P1p4",
+   "main": "RG (white not open)",
+   "quote": "Red Green would be the best home. White has not looked open at all."
+  },
+  {
+   "after": "P2p1",
+   "main": "RG, Colossus plan",
+   "quote": "I'm playing a red black deck. Like red, green is going to be a better home."
+  },
+  {
+   "after": "P2p7",
+   "main": "RG artifacts",
+   "quote": "I really like this deck."
+  },
+  {
+   "after": "deck",
+   "main": "RG, no splash",
+   "quote": "I don't think we want to splash. Just seems risky."
+  }
+ ],
+ "picks": [
+  {
+   "pack": 1,
+   "pick": 1,
+   "time": "0:12-1:18",
+   "pack_cards": [
+    "Guiding Hydra",
+    "Stingerquill Voxmancer",
+    "Hallway Heckler",
+    "Precise Redaction",
+    "Mindseeker Oculus",
+    "Bestial Incursion",
+    "Gallia, Tragic Host",
+    "Undulating Witness",
+    "Charge the Sanctum",
+    "Gallia, the Merrymaker",
+    "Solve for Disappointment",
+    "Forest",
+    "Marwyn, the Preserver",
+    "Theoretical Necromancer"
+   ],
+   "taken": "Guiding Hydra",
+   "reasoning": "Guiding Hydra: a card you should first-pick nearly every time; better than basically every common and uncommon, but not a card he loves splashing because it suits aggressive two-colour decks. His order from the pack: Hydra, Mindseeker Oculus, Gallia Tragic Host (good aggressive two-drop for black), Marwyn, Bestial Incursion; Stingerquill Voxmancer is 'really bad'.",
+   "considered": {
+    "Mindseeker Oculus": "his second pick from the pack: incredible common",
+    "Gallia, Tragic Host": "really good aggressive two-drop for black decks",
+    "Stingerquill Voxmancer": "really bad, an inefficient card"
+   },
+   "plan": "Open; white-leaning with the Hydra.",
+   "quotes": [
+    "Definitely a card that you should be first picking pretty much every time you see it in packs."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 2,
+   "time": "1:18-2:52",
+   "pack_cards": [
+    "Solarium Sentry",
+    "Stingerquill Charm",
+    "Emergency Phytomedic",
+    "Loot, the Anomaly",
+    "Shatterwing Pegasus",
+    "Keeper of the Quiet Hour",
+    "Gallia, the Merrymaker",
+    "Semester Foreseer",
+    "Mountain",
+    "Loot, the Nexus",
+    "Solve for Disappointment",
+    "Fatehold Charm",
+    "No Admittance"
+   ],
+   "taken": "No Admittance",
+   "reasoning": "No Admittance over Solarium Sentry: Sentry is a two-mana 3/3 that gains life if he is white, but he is not guaranteed to play white and there is no good mono-white follow-up; No Admittance is more flexible and he can abandon the Hydra. He notes the pair is still in the pack so no signal.",
+   "considered": {
+    "Solarium Sentry": "incredible if white, but not guaranteed to play white",
+    "Fatehold Charm": "blue-white option"
+   },
+   "plan": "Open, bias to white or red.",
+   "quotes": [
+    "I think no admittance is just like a better pick here ... I could still abandon the guiding hydra if white doesn't end up being open."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 3,
+   "time": "2:52-3:23",
+   "pack_cards": [
+    "Craterclaw Colossus",
+    "Sphinx's Approach",
+    "Living Library",
+    "Arni, Humble Scribe",
+    "Solve for Disappointment",
+    "Transformative Commons",
+    "Arni, Renowned Champion",
+    "Heartstring Puller",
+    "Edgar, Ancient Bloodlord",
+    "Tam's Resistance",
+    "Vigorbloom Vanguard",
+    "Afterthought Sentry"
+   ],
+   "taken": "Craterclaw Colossus",
+   "reasoning": "Craterclaw Colossus: a card he has wanted to try; with Heartwood tokens and Afterthought Sentries it can be interesting and pick three is the time to build around it; Arni, Humble Scribe is what he would take if trying his hardest to win immediately, Vigorbloom Vanguard also reasonable.",
+   "considered": {
+    "Arni, Humble Scribe": "the pick if he were trying his absolute hardest to win now",
+    "Vigorbloom Vanguard": "pretty reasonable"
+   },
+   "plan": "Red-green with artifacts.",
+   "quotes": [
+    "Let's try the crater colossus. I feel like it could do some good stuff if we build around it."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 4,
+   "time": "3:23-4:30",
+   "pack_cards": [
+    "Extrapolate the Impossible",
+    "Cast Away Doubt",
+    "Vigorbloom Annex",
+    "Precise Redaction",
+    "Rampart Hunter",
+    "Marwyn, the Clearcutter",
+    "Skilled Battlecarver",
+    "Marwyn, the Preserver",
+    "Tether Technician",
+    "Edgar, Ancient Bloodlord",
+    "Wrecking Gecko"
+   ],
+   "taken": "Marwyn, the Preserver",
+   "reasoning": "Marwyn, the Preserver: the best card in the pack for him; Wrecking Gecko fine but not prioritised; he sees a few good green cards and thinks red-green is the best home since white has not looked open.",
+   "considered": {
+    "Wrecking Gecko": "fine, not prioritised",
+    "Vigorbloom Vanguard": "splashable Hydra enabler, not his preference"
+   },
+   "plan": "Red-green.",
+   "quotes": [
+    "I think Marwyn is the best card in this pack."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 5,
+   "time": "4:30-5:00",
+   "pack_cards": [
+    "Tinybones, Pocket Nuisance",
+    "Silence the Echo",
+    "Koth, the Geomancer",
+    "Chandra's Emberling",
+    "Archive Arbiter",
+    "Konstrari Improviser",
+    "Unflinching Hortimancer",
+    "Keeper of the Quiet Hour",
+    "Protege's Awakening",
+    "Stingerquill Annex"
+   ],
+   "taken": "Konstrari Improviser",
+   "reasoning": "Konstrari Improviser over Archive Arbiter, Koth and Tinybones: a card he actively wants if playing the Colossus; Tinybones is solid but he does not love red-black.",
+   "considered": {
+    "Archive Arbiter": "pretty solid",
+    "Tinybones, Pocket Nuisance": "solid, one solid card does not mean he abandons the Colossus"
+   },
+   "plan": "Red-green artifacts.",
+   "quotes": [
+    "Konstrari Improviser ... if I'm playing Craterclaw Colossus, this is a card that I actively want."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 6,
+   "time": "5:00-5:23",
+   "pack_cards": [
+    "Refute Destiny",
+    "Unsummon",
+    "Flourishing Grapple",
+    "Whiplash Wordsmith",
+    "Jiang Yanggu, Never Alone",
+    "Afterthought Sentry",
+    "Pia, Aether Ascetic",
+    "Swamp",
+    "Surgical Precision"
+   ],
+   "taken": "Jiang Yanggu, Never Alone",
+   "reasoning": "Jiang Yanggu, Never Alone: seeing one sixth is a nice signal; he is not a big fan of the Afterthought Sentry here (will play with the Colossus) and Surgical Precision is a solid removal spell.",
+   "considered": {
+    "Afterthought Sentry": "will play it with the Colossus",
+    "Surgical Precision": "solid removal"
+   },
+   "plan": "Red-green.",
+   "quotes": [
+    "Seeing one of these pick six is a nice little signal."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 7,
+   "time": "5:23-5:43",
+   "pack_cards": [
+    "Solitary Cell",
+    "Chandra's Emberling",
+    "Way of the Mentor",
+    "Ferocity of the Hunt",
+    "Yargle, Goliath of Otaria",
+    "Meticulous Commons",
+    "Yargle, Glutton of Urborg",
+    "Screeching Soulbreaker"
+   ],
+   "taken": "Ferocity of the Hunt",
+   "reasoning": "Ferocity of the Hunt from a weak pack (does not love Solitary Cell, Chandra's Emberling); maybe he wants a combat trick.",
+   "considered": {
+    "Solitary Cell": "does not love it"
+   },
+   "plan": "Red-green.",
+   "quotes": [
+    "Let's just take the ferocity. Maybe we want a combat trick."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 8,
+   "time": "5:43-5:49",
+   "pack_cards": [
+    "Terminal Criticism",
+    "Afterthought Sentry",
+    "Way of the Necromancer",
+    "Mountain",
+    "Academic Ascent",
+    "Sphinx's Approach",
+    "unreadable (hidden)"
+   ],
+   "taken": "Afterthought Sentry",
+   "reasoning": "Afterthought Sentry from a pack he calls not playable, not playable, not great: no signals.",
+   "considered": {},
+   "plan": "Red-green.",
+   "quotes": [
+    "So this pack, I mean, not playable, not playable, not great."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 9,
+   "time": "5:49-6:02",
+   "pack_cards": [
+    "Precise Redaction",
+    "Forest",
+    "Stingerquill Voxmancer",
+    "Solve for Disappointment",
+    "Hallway Heckler",
+    "Charge the Sanctum"
+   ],
+   "taken": "Hallway Heckler",
+   "reasoning": "Hallway Heckler over Stingerquill Voxmancer and others: he does not love it but likes it better than the alternatives; does not like Voxmancer.",
+   "considered": {
+    "Stingerquill Voxmancer": "does not like it"
+   },
+   "plan": "Red-green.",
+   "quotes": [
+    "I don't love the Heckler, but I like it better than these other options."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 10,
+   "time": "6:02-6:13",
+   "pack_cards": [
+    "Gallia, the Merrymaker",
+    "Loot, the Nexus",
+    "Shatterwing Pegasus",
+    "Solve for Disappointment",
+    "Mountain"
+   ],
+   "taken": "Loot, the Nexus",
+   "reasoning": "Loot, the Nexus: could ramp him towards things; he does not love Gallia.",
+   "considered": {
+    "Gallia, the Merrymaker": "does not love it"
+   },
+   "plan": "Red-green ramp.",
+   "quotes": [
+    "And now there's a loot the nexus. Could ramp me up towards some stuff."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 11,
+   "time": "6:13-6:22",
+   "pack_cards": [
+    "Arni, Renowned Champion",
+    "Solve for Disappointment",
+    "Afterthought Sentry",
+    "Living Library"
+   ],
+   "taken": "Afterthought Sentry",
+   "reasoning": "Another Afterthought Sentry, filling out the low part of the curve; he does not want Arni: 'horrifically bad usually'.",
+   "considered": {
+    "Arni, Renowned Champion": "horrifically bad usually"
+   },
+   "plan": "Red-green.",
+   "quotes": [
+    "I don't want the Arni. Just think he's horrifically bad usually."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 12,
+   "time": "6:22-6:42",
+   "pack_cards": [
+    "unreadable (hidden)",
+    "unreadable (hidden)",
+    "unreadable (hidden)"
+   ],
+   "taken": null,
+   "reasoning": "Taken card unknown and the three cards of the pack were never readable; he says he will 'take the rare to build the collection' and will not play any of these cards.",
+   "considered": {},
+   "plan": "Red-green.",
+   "quotes": [
+    "Sure, we'll take the rare to build the collection. We're not going to play any of these cards."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 13,
+   "time": "6:42-6:51",
+   "pack_cards": [
+    "Archive Arbiter",
+    "Silence the Echo"
+   ],
+   "taken": "Archive Arbiter",
+   "reasoning": "Archive Arbiter (colourless artifact-ish ramp-target): 'another artifact ... I don't mind playing this card'; it goes with the Colossus.",
+   "considered": {
+    "Silence the Echo": "the other card"
+   },
+   "plan": "Red-green artifacts.",
+   "quotes": [
+    "Nice. Another artifact. I don't mind playing this card."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 14,
+   "time": "6:51-6:54",
+   "pack_cards": [
+    "unreadable (hidden)"
+   ],
+   "taken": null,
+   "reasoning": "Last card auto-selected, never read.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 1,
+   "time": "6:54-7:50",
+   "pack_cards": [
+    "Overwrite the Multiverse",
+    "Silence the Echo",
+    "Multiply by Zero",
+    "Void Extrapolator",
+    "Winter, Tormented Loner",
+    "Skilled Battlecarver",
+    "Winter, Team Player",
+    "Compel Brutality",
+    "Edgar, Moonlit Sovereign",
+    "Something Worth Saving",
+    "Kiora of Salt and Sand",
+    "Innovative Commons",
+    "Hexhaven Battalion",
+    "Cryotheory Adept"
+   ],
+   "taken": "Something Worth Saving",
+   "reasoning": "Something Worth Saving over Overwrite the Multiverse (one of the best bombs in the set, but he is not black) and Hexhaven Battalion: he wants to dig for the Colossus; every copy helps find it, and red-green is the better home.",
+   "considered": {
+    "Overwrite the Multiverse": "one of the best bombs in the set; he could splash it, but plays red-green",
+    "Hexhaven Battalion": "also cool, not his colours"
+   },
+   "plan": "Red-green, turbo Colossus.",
+   "quotes": [
+    "I kind of want to just take something worth saving to dig for our crater clock. Every copy of this helps us find it more consistently."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 2,
+   "time": "7:50-8:15",
+   "pack_cards": [
+    "Extrapolate the Impossible",
+    "Theoretical Necromancer",
+    "Yuriko, Hope from the Shadows",
+    "Hallway Heckler",
+    "Edgar, Moonlit Sovereign",
+    "Emergency Phytomedic",
+    "Edgar, Ancient Bloodlord",
+    "Murmuring Volume",
+    "Eye of Jace",
+    "Formidable Commons",
+    "Shatterwing Pegasus",
+    "Surveillance Phantasm",
+    "Undulating Witness"
+   ],
+   "taken": "Murmuring Volume",
+   "reasoning": "Murmuring Volume over Edgar and Emergency Phytomedic: likes it with the artifact plan, and wants to splash the Hydra; mana rocks that give upside seem decent.",
+   "considered": {
+    "Edgar, Moonlit Sovereign": "in the pack",
+    "Emergency Phytomedic": "fine"
+   },
+   "plan": "Red-green artifacts.",
+   "quotes": [
+    "I like the murmuring volume a decent amount, especially when I have this to make the artifact better."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 3,
+   "time": "8:15-8:48",
+   "pack_cards": [
+    "Rise of the Deathbringer",
+    "Cryotheory Adept",
+    "Gallia, Tragic Host",
+    "Apex Witchstalker",
+    "Command the Stage",
+    "Konstrari Improviser",
+    "Gallia, the Merrymaker",
+    "Plains",
+    "Loot, the Nexus",
+    "Paradox Shaper",
+    "Campus Crier",
+    "Graft Surgeon"
+   ],
+   "taken": "Konstrari Improviser",
+   "reasoning": "Konstrari Improviser over Rise of the Deathbringer (reasonable, more splashable) and a second Loot: his two-drop slot looks reasonable so he can focus on top end, but might as well lock it up.",
+   "considered": {
+    "Rise of the Deathbringer": "pretty reasonable, more splashable",
+    "Loot, the Nexus": "does not want multiple Loots"
+   },
+   "plan": "Red-green artifacts.",
+   "quotes": [
+    "I kind of want to take the Konstrari Improviser here over Rise of the Deathbringer."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 4,
+   "time": "8:48-9:05",
+   "pack_cards": [
+    "Yuriko, Blade of the Mighty",
+    "Hapatra, the Desert Frost",
+    "Fulminous Forte",
+    "Hapatra, the Desert Fang",
+    "Graft Surgeon",
+    "Divining Duelist",
+    "Semester Foreseer",
+    "Theoretical Necromancer",
+    "Heartstring Puller",
+    "Something Worth Saving",
+    "Fatehold Annex"
+   ],
+   "taken": "Fulminous Forte",
+   "reasoning": "Fulminous Forte over Something Worth Saving: Hapatra is too hard to cast; they need extra removal and already have one Something Worth Saving; this one is quite good.",
+   "considered": {
+    "Something Worth Saving": "already has one, but needs removal more",
+    "Hapatra, the Desert Fang": "too hard to cast"
+   },
+   "plan": "Red-green.",
+   "quotes": [
+    "We do need extra removal and we already have a something worth saving."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 5,
+   "time": "9:05-9:21",
+   "pack_cards": [
+    "Precise Redaction",
+    "Way of the Deathbringer",
+    "Ghalta the Unstoppable",
+    "Unflinching Hortimancer",
+    "Extended Absence",
+    "Awaken the Inferno",
+    "Sureshot Sower",
+    "Theorix Metamage",
+    "Murmuring Volume",
+    "Theorix Annex"
+   ],
+   "taken": "Awaken the Inferno",
+   "reasoning": "Awaken the Inferno over the second Murmuring Volume: the first copy of a volume is much better than the second; more kill spells and fixing; Ghalta is cutesy; Extended Absence could be a splash.",
+   "considered": {
+    "Murmuring Volume": "first copy way better than second",
+    "Extended Absence": "could be a fine splash target"
+   },
+   "plan": "Red-green.",
+   "quotes": [
+    "Let's take the awaken the inferno though over the murmuring volume number two."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 6,
+   "time": "9:21-10:01",
+   "pack_cards": [
+    "Identity Echo",
+    "Massacre Girl, Most Wanted",
+    "Command the Stage",
+    "Mind Meanderer",
+    "Shatterwing Pegasus",
+    "Undulating Witness",
+    "Something Worth Saving",
+    "Vinelasher Adept",
+    "Meticulous Commons"
+   ],
+   "taken": "Something Worth Saving",
+   "reasoning": "Another Something Worth Saving: he wants to draw Colossus as much as he can; the double-blue Mind Meanderer he passes, and a landcycler could help splash the Hydra.",
+   "considered": {
+    "Mind Meanderer": "double blue",
+    "Vinelasher Adept": "landcycler that could help a splash"
+   },
+   "plan": "Red-green.",
+   "quotes": [
+    "Let's just take another something worth saving. We just want to draw crater clocks as much as we can."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 7,
+   "time": "10:01-10:12",
+   "pack_cards": [
+    "Way of the Cryomancer",
+    "Craftwork Crusher",
+    "Rank Rat",
+    "Blazing Crescendo",
+    "Bestial Incursion",
+    "Blessed Ghoul",
+    "Murmuring Volume",
+    "Konstrari Annex"
+   ],
+   "taken": "Craftwork Crusher",
+   "reasoning": "Craftwork Crusher: exactly what he wants to see, a great pack; another great payoff and an artifact; he passes Bestial Incursion (great with Something Worth Saving) and the red-green land for it.",
+   "considered": {
+    "Bestial Incursion": "great with Something Worth Saving but Crusher is insane",
+    "Konstrari Annex": "red-green land"
+   },
+   "plan": "Red-green ramp artifacts.",
+   "quotes": [
+    "This card's insane. It's another great payoff. It's an artifact."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 8,
+   "time": "10:12-10:25",
+   "pack_cards": [
+    "Precise Redaction",
+    "Edgar, Moonlit Sovereign",
+    "Semester Foreseer",
+    "Chandra's Emberling",
+    "Greenhouse Propagator",
+    "Sureshot Sower",
+    "Forest"
+   ],
+   "taken": "Greenhouse Propagator",
+   "reasoning": "Greenhouse Propagator over Sureshot Sower: gains life as he ramps; he already has five two-drops; Sower is a good card.",
+   "considered": {
+    "Sureshot Sower": "good card, but he already has five two-drops"
+   },
+   "plan": "Red-green.",
+   "quotes": [
+    "Here we're going to take the greenhouse propagator. Gain us some life as we ramp up."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 9,
+   "time": "10:25-10:32",
+   "pack_cards": [
+    "Winter, Tormented Loner",
+    "Winter, Team Player",
+    "Kiora of Salt and Sand",
+    "Silence the Echo",
+    "Void Extrapolator",
+    "Skilled Battlecarver"
+   ],
+   "taken": "Skilled Battlecarver",
+   "reasoning": "Skilled Battlecarver over Kiora of Salt and Sand: he now has six two-drops; Winter is not very good.",
+   "considered": {
+    "Winter, Tormented Loner": "not very good"
+   },
+   "plan": "Red-green.",
+   "quotes": [
+    "Now we get a skilled battle carver over Kiora over Winter who's not very good."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 10,
+   "time": "10:32-10:41",
+   "pack_cards": [
+    "Extrapolate the Impossible",
+    "Edgar, Ancient Bloodlord",
+    "Eye of Jace",
+    "Shatterwing Pegasus",
+    "Formidable Commons"
+   ],
+   "taken": "Formidable Commons",
+   "reasoning": "Formidable Commons (green-black land): maybe he wants to splash black, he already passed some good black cards; he does not like the other cards.",
+   "considered": {},
+   "plan": "Red-green, maybe a black splash.",
+   "quotes": [
+    "Now let's take the green black land. Maybe we end up wanting to splash black."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 11,
+   "time": "10:41-11:02",
+   "pack_cards": [
+    "Gallia, the Merrymaker",
+    "Cryotheory Adept",
+    "Apex Witchstalker",
+    "Plains"
+   ],
+   "taken": "Apex Witchstalker",
+   "reasoning": "Apex Witchstalker (the 'thing' he takes, maybe there is some weird world where it matters).",
+   "considered": {},
+   "plan": "Red-green.",
+   "quotes": [
+    "We'll just take this thing. Maybe there's some weird world where that..."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 12,
+   "time": "11:02-11:11",
+   "pack_cards": [
+    "Heartstring Puller",
+    "unreadable (hidden)",
+    "unreadable (hidden)"
+   ],
+   "taken": "Heartstring Puller",
+   "reasoning": "Heartstring Puller (the Puller is named in the deck screen; his words: it works well with the Colossus later in pack three).",
+   "considered": {},
+   "plan": "Red-green.",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 13,
+   "time": "11:11-11:16",
+   "pack_cards": [
+    "unreadable (hidden)",
+    "unreadable (hidden)"
+   ],
+   "taken": null,
+   "reasoning": "Taken card unknown: both cards of the pack were hidden.",
+   "considered": {},
+   "plan": "Red-green.",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 14,
+   "time": "11:16-11:20",
+   "pack_cards": [
+    "Identity Echo"
+   ],
+   "taken": "Identity Echo",
+   "reasoning": "Identity Echo: 'that's funny, I don't think we can ever play this' (last pick, auto).",
+   "considered": {},
+   "plan": "Red-green.",
+   "quotes": [
+    "Identity Echo. Oh, yes."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 1,
+   "time": "11:20-11:58",
+   "pack_cards": [
+    "Lyra, Archangel of Dawn",
+    "Pompous Battlemage",
+    "Roiling Canopy",
+    "Loot, the Anomaly",
+    "Loot, the Nexus",
+    "Craftwork Crusher",
+    "Hexhaven Battalion",
+    "Shatterwing Pegasus",
+    "Surveillance Phantasm",
+    "Void Extrapolator",
+    "Skilled Battlecarver",
+    "Tethermage's Advantage",
+    "Keeper of the Quiet Hour",
+    "Island"
+   ],
+   "taken": "Craftwork Crusher",
+   "reasoning": "Craftwork Crusher over Lyra, Archangel of Dawn: this is the time and the place; it is like getting a rare for his deck; Roiling Canopy and Pompous Battlemage are not playable or not great; the deck is insane and he does not need to splash white.",
+   "considered": {
+    "Lyra, Archangel of Dawn": "white rare, he does not need to splash white",
+    "Roiling Canopy": "needs too many Forests",
+    "Pompous Battlemage": "better than he thought, still not great"
+   },
+   "plan": "Red-green ramp.",
+   "quotes": [
+    "Craftwork Crusher is pretty sweet at the top end. Okay, our deck is insane. I don't think we're going to even need to splash white."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 2,
+   "time": "11:58-13:10",
+   "pack_cards": [
+    "Ghalta the Immovable",
+    "Way of the Mentor",
+    "Kiora of Fire and Ashes",
+    "Bloombrute",
+    "Kiora of Salt and Sand",
+    "Eye of Jace",
+    "Fateshaper Aspirant",
+    "Protege's Awakening",
+    "Blazing Crescendo",
+    "Inspired Tethermage",
+    "Theorix Metamage",
+    "Murmuring Volume",
+    "Island"
+   ],
+   "taken": "Kiora of Fire and Ashes",
+   "reasoning": "Kiora of Fire and Ashes: 'we have three uncommons that are just extra rares in our deck'; Craterclaw Colossus is going to be interesting; he would play a second Murmuring Volume and has many top-end cards.",
+   "considered": {
+    "Murmuring Volume": "would play a second one",
+    "Ghalta the Immovable": "in the pack"
+   },
+   "plan": "Red-green ramp.",
+   "quotes": [
+    "Kiora, Fire and Ashes is like we have three uncommons that are just extra rares in our deck."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 3,
+   "time": "13:10-13:28",
+   "pack_cards": [
+    "Vraska, the Cutting Glare",
+    "Arni, Humble Scribe",
+    "Arni, Renowned Champion",
+    "Craftwork Crusher",
+    "Campus Crier",
+    "Innovative Commons",
+    "Wrecking Gecko",
+    "Whiplash Wordsmith",
+    "Medic's Kitesail",
+    "Vigorbloom Annex",
+    "unreadable (hidden)",
+    "unreadable (hidden)"
+   ],
+   "taken": "Craftwork Crusher",
+   "reasoning": "Craftwork Crusher (a third copy) over No Admittance: this card is just insane, no admittance is much worse; they might even play 18 lands; Loot and Improviser are on the chopping block.",
+   "considered": {
+    "Vraska, the Cutting Glare": "in the pack",
+    "Medic's Kitesail": "in the pack"
+   },
+   "plan": "Red-green.",
+   "quotes": [
+    "No Admittance is just so much worse than this card. This card is just insane."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 4,
+   "time": "13:28-13:58",
+   "pack_cards": [
+    "Frostbite Pyromental",
+    "Inspired Tethermage",
+    "Way of the Warlord",
+    "Konstrari Improviser",
+    "Bloombrute",
+    "Konstrari Annex",
+    "Graft Surgeon",
+    "Predictive Preparations",
+    "Sphinx's Approach",
+    "Cast Away Doubt",
+    "Chandra's Emberling"
+   ],
+   "taken": "Konstrari Annex",
+   "reasoning": "Konstrari Annex (dual land) over Konstrari Improviser and Way of the Warlord: he already has six two-drops, 24 playables, and wants the land for his double red double green mana; 'lock it up'.",
+   "considered": {
+    "Konstrari Improviser": "fine card, already has six two-drops",
+    "Way of the Warlord": "not that important"
+   },
+   "plan": "Red-green.",
+   "quotes": [
+    "Let's just get the land here. Lock it up. Make my mana a bit better."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 5,
+   "time": "13:58-14:16",
+   "pack_cards": [
+    "Saheeli, Consul of Oversight",
+    "Emergency Phytomedic",
+    "Ghalta the Unstoppable",
+    "Fatehold Annex",
+    "Hunter's Axe",
+    "Graft Surgeon",
+    "Sphinx's Approach",
+    "Silence the Echo",
+    "Blazing Crescendo",
+    "Heartstring Puller"
+   ],
+   "taken": "Heartstring Puller",
+   "reasoning": "Heartstring Puller over Ghalta: he already has seven drops and does not need Ghalta; Puller helps catch up if he spends turn three on a mana rock, with the Colossus.",
+   "considered": {
+    "Ghalta the Unstoppable": "already has seven-drops"
+   },
+   "plan": "Red-green.",
+   "quotes": [
+    "Let's just take the heartstring puller to work well with our crater clock colossus."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 6,
+   "time": "14:16-14:33",
+   "pack_cards": [
+    "Ghalta the Immovable",
+    "Transformative Commons",
+    "Tetsuko Umezawa, Pursuer",
+    "Archive Arbiter",
+    "Blossom-Blessed Angel",
+    "Theoretical Necromancer",
+    "Artifist Acumen",
+    "Skilled Battlecarver",
+    "Keeper of the Quiet Hour"
+   ],
+   "taken": "Keeper of the Quiet Hour",
+   "reasoning": "Keeper of the Quiet Hour over Archive Arbiter: he cannot afford another Archive Arbiter with so many top-end cards; Tetsuko is not his favourite; Keeper is a cheap artifact.",
+   "considered": {
+    "Archive Arbiter": "cannot afford another",
+    "Tetsuko Umezawa, Pursuer": "not his favourite"
+   },
+   "plan": "Red-green.",
+   "quotes": [
+    "Let's just take the Keeper of the Quiet Hour. Cheap artifact does what you need it to do."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 7,
+   "time": "14:33-14:56",
+   "pack_cards": [
+    "Overgrown Farmland",
+    "Saheeli, Consul of Oversight",
+    "Your Fate Ends Here",
+    "Fateshaper Aspirant",
+    "Tethermage's Advantage",
+    "Twinned Vision",
+    "Ferocity of the Hunt",
+    "Formidable Commons"
+   ],
+   "taken": "Twinned Vision",
+   "reasoning": "Twinned Vision over Your Fate Ends Here and Overgrown Farmland: Farmland would help splash the Hydra, but he does not want to splash; Twinned Vision helps against flood.",
+   "considered": {
+    "Overgrown Farmland": "would help splash Guiding Hydra",
+    "Your Fate Ends Here": "does not need it"
+   },
+   "plan": "Red-green, no splash.",
+   "quotes": [
+    "Let's just take the twin division though. I don't think we want to splash. Just seems risky."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 8,
+   "time": "14:56-15:12",
+   "pack_cards": [
+    "Way of the Necromancer",
+    "Command the Stage",
+    "Unflinching Hortimancer",
+    "Whiplash Wordsmith",
+    "Konstrari Improviser",
+    "Medic's Kitesail",
+    "Dedicated Commons"
+   ],
+   "taken": "Konstrari Improviser",
+   "reasoning": "Konstrari Improviser (third copy): he has enough twos but ramp is good; Medic's Kitesail could be okay but he has enough inevitability.",
+   "considered": {
+    "Medic's Kitesail": "could be okay, enough inevitability"
+   },
+   "plan": "Red-green.",
+   "quotes": [
+    "I think we'll get another keeper. We already have plenty of twos."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 9,
+   "time": "15:12-15:21",
+   "pack_cards": [
+    "Loot, the Anomaly",
+    "Shatterwing Pegasus",
+    "Skilled Battlecarver",
+    "Tethermage's Advantage",
+    "Keeper of the Quiet Hour",
+    "Island"
+   ],
+   "taken": "Keeper of the Quiet Hour",
+   "reasoning": "Keeper of the Quiet Hour again: his artifact count continues to rise.",
+   "considered": {},
+   "plan": "Red-green.",
+   "quotes": [
+    "Our artifact count continues to rise."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 10,
+   "time": "15:21-15:29",
+   "pack_cards": [
+    "Ghalta the Immovable",
+    "Kiora of Salt and Sand",
+    "Eye of Jace",
+    "Blazing Crescendo",
+    "Island"
+   ],
+   "taken": "Eye of Jace",
+   "reasoning": "Eye of Jace over Blazing Crescendo: 'we'll just take this thing, but we're not going to play it'.",
+   "considered": {
+    "Blazing Crescendo": "does not want it"
+   },
+   "plan": "Red-green.",
+   "quotes": [
+    "We'll just take this thing, but we're not going to play it."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 11,
+   "time": "15:29-15:46",
+   "pack_cards": [
+    "Wrecking Gecko",
+    "unreadable (hidden)",
+    "unreadable (hidden)",
+    "unreadable (hidden)"
+   ],
+   "taken": "Wrecking Gecko",
+   "reasoning": "Wrecking Gecko: pretty okay, helps in a spot where the curve is lacking.",
+   "considered": {},
+   "plan": "Red-green.",
+   "quotes": [
+    "Gecko's pretty okay. Helps us in a spot on the curve where we're lacking."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 12,
+   "time": "15:46-15:53",
+   "pack_cards": [
+    "unreadable (hidden)",
+    "unreadable (hidden)",
+    "unreadable (hidden)"
+   ],
+   "taken": null,
+   "reasoning": "Taken card unknown: the three cards were never readable.",
+   "considered": {},
+   "plan": "Red-green.",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 13,
+   "time": "15:53-16:02",
+   "pack_cards": [
+    "unreadable (hidden)",
+    "unreadable (hidden)"
+   ],
+   "taken": null,
+   "reasoning": "Taken card unknown: the two cards were never readable.",
+   "considered": {},
+   "plan": "Red-green.",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 14,
+   "time": "16:02-25:45",
+   "pack_cards": [
+    "unreadable (hidden)"
+   ],
+   "taken": null,
+   "reasoning": "Last card, never displayed, unknown.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  }
+ ]
+}

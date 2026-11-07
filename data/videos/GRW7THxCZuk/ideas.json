@@ -1,0 +1,459 @@
+{
+ "video": "GRW7THxCZuk",
+ "player": "Paul Cheon",
+ "set": "FRA",
+ "source": "YouTube auto-caption transcript 0:00-15:45 (tools/video_draft.py transcript GRW7THxCZuk --start 0 --end 945); nothing past 15:45 read. 'type' marks each idea as claim, heuristic or one-off pick; 'repeats' lists ideas of earlier videos it restates; 'related' lists looser topic matches. Solo draft: every idea is the host's (speaker field kept for the schema).",
+ "ideas": [
+  {
+   "id": "GRW-01",
+   "time": 130,
+   "speaker": "Paul Cheon (host)",
+   "phase": "draft",
+   "claim": "Violent Echoes is a really good uncommon: it usually kills something and draws a card for four mana; it is the pick over a rare (Samut) in a weak pack.",
+   "quote": "Most of the time, you're going to kill something and then draw a card, right? Which is excellent for a four-mana spell.",
+   "cards": [
+    "Violent Echoes",
+    "Samut, Hazoret's Champion"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Violent Echoes against Samut, Hazoret's Champion.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "55a-05"
+   ]
+  },
+  {
+   "id": "GRW-02",
+   "time": 184,
+   "speaker": "Paul Cheon (host)",
+   "phase": "draft",
+   "claim": "Verdant Kraken is a legitimate bomb that you must build around (ramp); he takes it over solid red removal (No Admittance) and a second pick of the first colour.",
+   "quote": "This card is a legitimate bomb. You just have to build around it.",
+   "cards": [
+    "Verdant Kraken",
+    "No Admittance",
+    "Memory Trap"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Verdant Kraken, and of decks with 2+ ramp cards.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "n6s-02"
+   ]
+  },
+  {
+   "id": "GRW-03",
+   "time": 215,
+   "speaker": "Paul Cheon (host)",
+   "phase": "draft",
+   "claim": "Protege's Awakening is the better card than Way of the Wildspeaker and is perfectly splashable.",
+   "quote": "Protege's Awakening is a better card ... it's also a perfectly fine splashable",
+   "cards": [
+    "Protege's Awakening",
+    "Way of the Wildspeaker"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Protege's Awakening as a splash.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "55a-28"
+   ]
+  },
+  {
+   "id": "GRW-04",
+   "time": 235,
+   "speaker": "Paul Cheon (host)",
+   "phase": "draft",
+   "claim": "Take the best card each pick and let colours come later: Primal Witchstalker is best in the pack at P1p4 even though he may end up Sultai and abandon red.",
+   "quote": "We're just taking it one pick at a time. I'm just taking the best card.",
+   "cards": [
+    "Primal Witchstalker"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Primal Witchstalker by pick number.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "GRW-05",
+   "time": 290,
+   "speaker": "Paul Cheon (host)",
+   "phase": "draft",
+   "claim": "Pick the graveyard-value card (Something Worth Saving) over a big top-end (Archive Arbiter) because large creatures are easier to find later than value cards.",
+   "quote": "I think I'm more likely to be able to just find random large creatures to put into my deck.",
+   "cards": [
+    "Something Worth Saving",
+    "Archive Arbiter"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Something Worth Saving against Archive Arbiter.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "GRW-06",
+   "time": 314,
+   "speaker": "Paul Cheon (host)",
+   "phase": "draft",
+   "claim": "Vinelasher Adept (basic landcycling) smooths draws and keeps the second colour open; it also makes splashing a busted card like Aerid Konstrari possible.",
+   "quote": "I think I'm going to take Vine Lasher Adept because it smooths out your draws",
+   "cards": [
+    "Vinelasher Adept",
+    "Aerid Konstrari"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Vinelasher Adept; splash success of decks that play it.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "mqZ-60"
+   ]
+  },
+  {
+   "id": "GRW-07",
+   "time": 341,
+   "speaker": "Paul Cheon (host)",
+   "phase": "draft",
+   "claim": "In a weak pack with nothing to play, take the splash land (Fatehold Annex) because it is the card he will actually use.",
+   "quote": "I don't really want to play any of these cards. ... That is a card that I'm looking to splash.",
+   "cards": [
+    "Fatehold Annex"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Playable-count threshold below which a dual land beats the best filler.",
+   "type": "heuristic",
+   "repeats": [
+    "CWs-19",
+    "994-11",
+    "uoy-17"
+   ],
+   "related": []
+  },
+  {
+   "id": "GRW-08",
+   "time": 416,
+   "speaker": "Paul Cheon (host)",
+   "phase": "draft",
+   "claim": "Take cheap interaction (Last Gasp) over a very strong card (Plan for All Outcomes) because decks like this are clunky and a cheap trick shores up their weak turns.",
+   "quote": "often times when I draft these decks, I find that they can be a little clunky and Last Gasp really helps shore up a lot of things.",
+   "cards": [
+    "Last Gasp",
+    "Plan for All Outcomes"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Last Gasp in ramp / self-mill decks.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "GRW-09",
+   "time": 450,
+   "speaker": "Paul Cheon (host)",
+   "phase": "draft",
+   "claim": "Aerid Konstrari (a 5/4 flyer that leaves a Heartwood token) is worth splashing; that is the reason to take the landcycler earlier.",
+   "quote": "this is why you take the Vine Lasher Adept, right? Because it gives you the opportunity to splash for busted cards like the Aerid Konstrari.",
+   "cards": [
+    "Aerid Konstrari",
+    "Vinelasher Adept"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Aerid Konstrari when splashed.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "GRW-10",
+   "time": 466,
+   "speaker": "Paul Cheon (host)",
+   "phase": "draft",
+   "claim": "Recursive Recruitment is a premium uncommon in self-mill decks and justifies moving towards four colours, at the price of having to respect the mana.",
+   "quote": "recursive recruitment seems awesome in this style of deck ... now I'm going to need to respect my mana to some degree",
+   "cards": [
+    "Recursive Recruitment",
+    "Room of Refuge"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Recursive Recruitment by mill-card count.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "GRW-11",
+   "time": 494,
+   "speaker": "Paul Cheon (host)",
+   "phase": "draft",
+   "claim": "Murmuring Volume over Theoretical Necromancer: it lets the deck cast all its cards (fixing plus card draw) and suits self-mill and ramp.",
+   "quote": "This lets us just cast all of our cards",
+   "cards": [
+    "Murmuring Volume",
+    "Theoretical Necromancer"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Murmuring Volume in 3+ colour decks.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-60"
+   ]
+  },
+  {
+   "id": "GRW-12",
+   "time": 524,
+   "speaker": "Paul Cheon (host)",
+   "phase": "draft",
+   "claim": "Take the solid cheap creature (Arcane Amphisbaena: deathtouch plus surveil) in a deck that already has plenty of expensive cards.",
+   "quote": "I don't need good expensive cards like the Archive Arbiter. I will very happily take the Arcane Amphisbaena here as a solid two-drop.",
+   "cards": [
+    "Arcane Amphisbaena",
+    "Archive Arbiter"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Arcane Amphisbaena against Archive Arbiter.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "5aM-09",
+    "uoy-07"
+   ]
+  },
+  {
+   "id": "GRW-13",
+   "time": 554,
+   "speaker": "Paul Cheon (host)",
+   "phase": "draft",
+   "claim": "Commit to full ramp with several colours (green-black base splashing blue and red) and take the second Murmuring Volume over weaker playables.",
+   "quote": "Let's go full ramp. ... Green black base splashing blue and red",
+   "cards": [
+    "Murmuring Volume"
+   ],
+   "kind": "archetype",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of four-colour ramp decks with 2+ Murmuring Volume.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "mqZ-44"
+   ]
+  },
+  {
+   "id": "GRW-14",
+   "time": 569,
+   "speaker": "Paul Cheon (host)",
+   "phase": "draft",
+   "claim": "Cheap ramp creatures (Konstrari Improviser) are worth taking as extra ways to reach the Verdant Kraken.",
+   "quote": "solid two-drop that helps me ramp. Just more ways to try to get to that Verdant Kraken is nice.",
+   "cards": [
+    "Konstrari Improviser",
+    "Verdant Kraken"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Konstrari Improviser in decks with Verdant Kraken.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "GRW-15",
+   "time": 608,
+   "speaker": "Paul Cheon (host)",
+   "phase": "draft",
+   "claim": "Pick up dual lands once splash cards are held, taking the land over a playable (Way of the Wildspeaker).",
+   "quote": "at this point I would like to be able to pick up some lands to be able to support some of these cards",
+   "cards": [
+    "Theorix Annex",
+    "Way of the Wildspeaker"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Playable-count threshold below which a dual land beats the best filler.",
+   "type": "heuristic",
+   "repeats": [
+    "CWs-19",
+    "994-11",
+    "uoy-17"
+   ],
+   "related": [
+    "55a-23"
+   ]
+  },
+  {
+   "id": "GRW-16",
+   "time": 637,
+   "speaker": "Paul Cheon (host)",
+   "phase": "draft",
+   "claim": "He does not main-deck Essence Burn and wonders whether to hate-draft it; pick 11 is spent on a card he will not play.",
+   "quote": "I'm not main decking Essence Burn. ... Like I wonder if hate drafting even",
+   "cards": [
+    "Essence Burn",
+    "Shatterwing Pegasus"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Hate-draft value of late narrow removal.",
+   "type": "one-off pick",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "GRW-17",
+   "time": 715,
+   "speaker": "Paul Cheon (host)",
+   "phase": "draft",
+   "claim": "Double blue is really hard in a deck that only splashes blue; he passes Mind Meanderer for a worse card and takes it later when it wheels.",
+   "quote": "double blue is really hard, right? So, I don't think I take it here.",
+   "cards": [
+    "Mind Meanderer",
+    "Proft, Sinister Mastermind"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Mind Meanderer by blue source count.",
+   "type": "claim",
+   "repeats": [
+    "mqZ-32"
+   ],
+   "related": [
+    "994-10"
+   ]
+  },
+  {
+   "id": "GRW-18",
+   "time": 769,
+   "speaker": "Paul Cheon (host)",
+   "phase": "draft",
+   "claim": "A dual land (Innovative Commons, then Formidable Commons earlier at P3p4) is taken over a marginal playable when the deck is a ramp deck casting everything.",
+   "quote": "I'll take a blue red land with nothing else available.",
+   "cards": [
+    "Innovative Commons",
+    "Formidable Commons"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Dual land against the best filler by number of splash cards held.",
+   "type": "heuristic",
+   "repeats": [
+    "CWs-19",
+    "994-11",
+    "uoy-17"
+   ],
+   "related": []
+  },
+  {
+   "id": "GRW-19",
+   "time": 777,
+   "speaker": "Paul Cheon (host)",
+   "phase": "draft",
+   "claim": "Protege's Awakening and Arni are playable in the deck for card draw if the mana allows.",
+   "quote": "I can probably play Protege's Awakening for like a little more card draw",
+   "cards": [
+    "Protege's Awakening",
+    "Arni, Humble Scribe"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Protege's Awakening in 3+ colour decks.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "55a-28"
+   ]
+  },
+  {
+   "id": "GRW-20",
+   "time": 845,
+   "speaker": "Paul Cheon (host)",
+   "phase": "draft",
+   "claim": "With little interaction and a deck that needs a late game, go full three-colour (Sultai) and play more Islands, relying on four dual lands.",
+   "quote": "I think we're just going to go full Sultai and just play a lot more Islands.",
+   "cards": [
+    "Transformative Commons"
+   ],
+   "kind": "archetype",
+   "engine_area": "picker",
+   "test_idea": "WR of Sultai ramp decks against two-colour decks with a splash.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "GRW-21",
+   "time": 893,
+   "speaker": "Paul Cheon (host)",
+   "phase": "deck",
+   "claim": "His creature count is absurdly high and the deck has not one way to recur; he cuts Hapatra, which does not do much, and one Sureshot Sower.",
+   "quote": "Our creature count's absurdly high.",
+   "cards": [
+    "Hapatra, the Desert Frost",
+    "Sureshot Sower"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Creature-count ceiling in the deck model.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "GRW-22",
+   "time": 914,
+   "speaker": "Paul Cheon (host)",
+   "phase": "deck",
+   "claim": "He does not want 16 lands in a mana-heavy deck of this type and plays 17.",
+   "quote": "Very, very heavy on mana, but I don't think I want to play 16 lands with this type of deck.",
+   "cards": [],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "WR of 16 against 17 lands in three-colour ramp decks.",
+   "type": "heuristic",
+   "repeats": [
+    "5aM-22"
+   ],
+   "related": [
+    "5aM-25"
+   ]
+  },
+  {
+   "id": "GRW-23",
+   "time": 930,
+   "speaker": "Paul Cheon (host)",
+   "phase": "deck",
+   "claim": "Count blue sources including non-land fixers: two Islands plus the dual lands and the two Murmuring Volumes is enough (five blue sources plus the Volumes) for Mind Meanderer and the blue cards.",
+   "quote": "That still gives me five blue sources plus the two Murmuring Volumes, so yeah, we'll cut a swamp.",
+   "cards": [
+    "Murmuring Volume",
+    "Mind Meanderer"
+   ],
+   "kind": "deck building",
+   "engine_area": "builder",
+   "test_idea": "Source counts including Murmuring Volume against play rate.",
+   "type": "heuristic",
+   "repeats": [
+    "mqZ-60"
+   ],
+   "related": [
+    "re7-29"
+   ]
+  }
+ ]
+}

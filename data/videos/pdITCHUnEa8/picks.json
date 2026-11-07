@@ -1,0 +1,1046 @@
+{
+ "id": "pdITCHUnEa8",
+ "url": "https://youtu.be/pdITCHUnEa8",
+ "title": "The PERFECT Reality Fracture Draft!",
+ "player": "NicolaiBolas",
+ "set": "FRA",
+ "event": "FRA early access / preview event (he thanks Wizards for free preview access at 0:04-0:07 'so I could get this recorded early'; event type not named; format (Premier / Quick) not shown)",
+ "dataset": "FRA_PremierDraft_All_Data.json",
+ "recorded": null,
+ "source": "frames read from data/videos/raw/pdITCHUnEa8 (tools/video_draft.py frames); pack lists read from frames that loaded, takes confirmed by the pool strips and the deck builder (sideboard); transcript from YouTube auto captions, card names corrected; nothing past 22:40 read; the game starts after 22:40",
+ "colour_path": [
+  {
+   "after": "P1p1",
+   "main": "open",
+   "quote": "I'm trying not to draft with too many color preferences early days."
+  },
+  {
+   "after": "P1p6",
+   "main": "R/G? (green-white thought)",
+   "quote": "I've been struggling against green white a bit and I have two Marwins and a heartwood crafter for maybe I build green white."
+  },
+  {
+   "after": "P1p8",
+   "main": "RG",
+   "quote": "looking like I'll be a red green back here."
+  },
+  {
+   "after": "P1p12",
+   "main": "R + G or U speculating",
+   "quote": "Maybe play a blue red deck because we only have three green cards"
+  },
+  {
+   "after": "P1p13",
+   "main": "R, G or U",
+   "quote": "we are definitely playing red and we are probably playing red green and maybe we'll play red blue."
+  },
+  {
+   "after": "P2p1",
+   "main": "R + U or G",
+   "quote": "if red and blue are open, we'll end up with a great deck. If just red is open, we'll end up with a pretty good deck."
+  },
+  {
+   "after": "P2p3",
+   "main": "UR",
+   "quote": "We're officially moving into red blue."
+  },
+  {
+   "after": "P2p11",
+   "main": "UR",
+   "quote": "We're we're committed at this point."
+  },
+  {
+   "after": "P3p14",
+   "main": "UR",
+   "quote": "Switching to blue worked out well."
+  }
+ ],
+ "picks": [
+  {
+   "pack": 1,
+   "pick": 1,
+   "time": "0:10-1:14",
+   "pack_cards": [
+    "Stingcaster Mage",
+    "Liliana the Faultless",
+    "Precise Redaction",
+    "Tetsuko Umezawa, Fugitive",
+    "Way of the Necromancer",
+    "Tetsuko Umezawa, Pursuer",
+    "Hunter's Axe",
+    "Unsummon",
+    "Silence the Echo",
+    "Heartstring Puller",
+    "Arcane Amphisbaena",
+    "Blessed Ghoul",
+    "Medic's Kitesail",
+    "Transformative Commons"
+   ],
+   "taken": "Stingcaster Mage",
+   "reasoning": "Takes the mythic: a two-for-one creature with flashback on an instant or sorcery in the graveyard; many good spells to flash back. Liliana is the rare but he rates Stingcaster higher.",
+   "considered": {
+    "Liliana the Faultless": "was impressive against him but mostly because of a Lyra deck; expects someone to take it",
+    "Tetsuko Umezawa, Fugitive": "really strong; expects someone to take it"
+   },
+   "plan": "Open.",
+   "quotes": [
+    "Stingcaster Mage is great. It enters and floods you flashback in his inner sorcery.",
+    "it's going to be a very efficient like two for one creature that you're going to be happy to have."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 2,
+   "time": "1:14-2:12",
+   "pack_cards": [
+    "Way of the Healer",
+    "Precise Redaction",
+    "Marwyn, the Clearcutter",
+    "Marwyn, the Preserver",
+    "Konstrari Charm",
+    "Predictive Preparations",
+    "Sphinx's Approach",
+    "Surveillance Phantasm",
+    "Skilled Battlecarver",
+    "Vinelasher Adept",
+    "Whiplash Wordsmith",
+    "Room of Refuge",
+    "Vigorbloom Annex"
+   ],
+   "taken": "Marwyn, the Preserver",
+   "reasoning": "Between Marwyn (the 2-mana 3/2) and Skilled Battlecarver; picks Marwyn because it is bigger ('getting stats out there'), not biasing towards a colour yet. Take confirmed by the pool strip (two Preservers by P1p9).",
+   "considered": {
+    "Marwyn, the Clearcutter": "some aggro 2-for-1 but he does not prioritise it: you rarely feel good sacrificing a land and there are few artifacts",
+    "Skilled Battlecarver": "an option as a fairly aggressive two-drop",
+    "Way of the Healer": "gets a couple of 2/2s and surveils, but slow and interactable"
+   },
+   "plan": "No colour preference yet.",
+   "quotes": [
+    "I'm trying not to draft with too many color preferences early days.",
+    "I think I'm just going to take the Marwin. It's just bigger."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 3,
+   "time": "2:12-2:54",
+   "pack_cards": [
+    "Massacre Girl, Most Wanted",
+    "Way of the Warlord",
+    "Heartwood Crafter",
+    "Shatterwing Pegasus",
+    "Blazing Crescendo",
+    "Tether Technician",
+    "Arcane Amphisbaena",
+    "Blessed Ghoul",
+    "Theorix Metamage",
+    "Tam's Resistance",
+    "Room of Refuge",
+    "Dedicated Commons"
+   ],
+   "taken": "Heartwood Crafter",
+   "reasoning": "Highest upside of fine options; gives mana for activated abilities (the Marwyn ability) and early game; the mana cannot be spent on spells from hand but can on flashback.",
+   "considered": {
+    "Arcane Amphisbaena": "fine, not crazy",
+    "Way of the Warlord": "fine"
+   },
+   "plan": "Open.",
+   "quotes": [
+    "I think Heartwood Crafter is probably the highest upside here.",
+    "Get myself some more early game."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 4,
+   "time": "2:57-3:37",
+   "pack_cards": [
+    "Tetsuko Umezawa, Fugitive",
+    "Terminal Criticism",
+    "Tetsuko Umezawa, Pursuer",
+    "Marwyn, the Preserver",
+    "Surveillance Phantasm",
+    "Unsummon",
+    "Chandra's Emberling",
+    "Vinelasher Adept",
+    "Blessed Ghoul",
+    "Medic's Kitesail",
+    "Formidable Commons"
+   ],
+   "taken": "Marwyn, the Preserver",
+   "reasoning": "Wants to keep taking Marwyns while they come: two let him build around them.",
+   "considered": {
+    "Tetsuko Umezawa, Pursuer": "double strike prowess is no joke for four mana"
+   },
+   "plan": "Red/green leaning through Marwyn.",
+   "quotes": [
+    "I feel like we just want to keep taking Marwins though while we're seeing them.",
+    "We get two of them, we can build around that a little bit more."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 5,
+   "time": "3:37-4:04",
+   "pack_cards": [
+    "Ghalta the Immovable",
+    "Proft, Sinister Mastermind",
+    "Ghalta the Unstoppable",
+    "Archive Arbiter",
+    "Cryotheory Adept",
+    "Apex Witchstalker",
+    "Artifist Acumen",
+    "Awaken the Inferno",
+    "Vinelasher Adept",
+    "Innovative Commons"
+   ],
+   "taken": "Awaken the Inferno",
+   "reasoning": "Counter plus six damage is a good rate; would have been great with Tetsuko.",
+   "considered": {
+    "Tetsuko Umezawa, Pursuer": "regrets not having taken it earlier"
+   },
+   "plan": "Red.",
+   "quotes": [
+    "I do like awaken the Inferno a lot. Counter plus deal six, just a good rate."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 6,
+   "time": "4:04-4:24",
+   "pack_cards": [
+    "Teyo, Diamondblade Mage",
+    "Command the Stage",
+    "Vigorbloom Charm",
+    "Apex Witchstalker",
+    "Theoretical Necromancer",
+    "Tether Technician",
+    "Tethermage's Advantage",
+    "Twinned Vision",
+    "Forest"
+   ],
+   "taken": "Vigorbloom Charm",
+   "reasoning": "Feels he has been struggling against green-white; two Marwyns and Heartwood Crafter point to green-white or Nia. Takes the high-upside card; says later it is probably not making the cut.",
+   "considered": {
+    "Command the Stage": "has not seen it do anything; only good if supported in black-red",
+    "Apex Witchstalker": "mediocre"
+   },
+   "plan": "Possibly green-white.",
+   "quotes": [
+    "Here I might just take vigor bloom charm.",
+    "I think I'll just take the the high upside card."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 7,
+   "time": "4:24-4:42",
+   "pack_cards": [
+    "Karn, Gilded Guardian",
+    "Eye of Jace",
+    "Academic Ascent",
+    "Apex Witchstalker",
+    "No Admittance",
+    "Theorix Metamage",
+    "Murmuring Volume",
+    "Swamp"
+   ],
+   "taken": "No Admittance",
+   "reasoning": "Easiest No Admittance of his life; has been trying to play Eye of Jace, but No Admittance is the easy pick, and good with Stingcaster Mage.",
+   "considered": {
+    "Eye of Jace": "does some things good, some things bad"
+   },
+   "plan": "Red.",
+   "quotes": [
+    "Easiest no admittance of my life."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 8,
+   "time": "4:42-5:24",
+   "pack_cards": [
+    "Winter, Team Player",
+    "Theorix Charm",
+    "Cryotheory Adept",
+    "Solve for Disappointment",
+    "Wrath of the Bloodmane",
+    "Twinned Vision",
+    "Island"
+   ],
+   "taken": "Wrath of the Bloodmane",
+   "reasoning": "Cheap removal that is really good with Stingcaster Mage; cheap legendaries already in the pool make its cost reduction work. Now says red-green: eight picks in, all red and green cards except Vigorbloom.",
+   "considered": {
+    "Winter, Team Player": "not insane"
+   },
+   "plan": "Red-green.",
+   "quotes": [
+    "Wrath of the blood mane really good with stinger caster mage.",
+    "So looking like I'll be a red green back here."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 9,
+   "time": "5:24-5:37",
+   "pack_cards": [
+    "Precise Redaction",
+    "Way of the Necromancer",
+    "Tetsuko Umezawa, Pursuer",
+    "Hunter's Axe",
+    "Heartstring Puller",
+    "Transformative Commons"
+   ],
+   "taken": "Heartstring Puller",
+   "reasoning": "Tetsuko is better if it lives, but Puller is the better card; red looks wide open in this draft.",
+   "considered": {
+    "Tetsuko Umezawa, Pursuer": "better than Puller if it lives, but Puller is just a better card"
+   },
+   "plan": "Red open.",
+   "quotes": [
+    "Tetsuko is like if it lives, it's better than the Polar, but Polar is just a better card. And red looks wide open in this draft."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 10,
+   "time": "5:37-6:29",
+   "pack_cards": [
+    "Precise Redaction",
+    "Marwyn, the Clearcutter",
+    "Sphinx's Approach",
+    "Skilled Battlecarver",
+    "Whiplash Wordsmith"
+   ],
+   "taken": "Marwyn, the Clearcutter",
+   "reasoning": "Two red cards in the pack; Marwyn is really good when you have two Marwyn the Preservers, a late-game engine; a 2/1 that draws cards late beats the 2/1 first striker. Hover tag first sat on Skilled Battlecarver; pool strip at P1p12 shows Clearcutter.",
+   "considered": {
+    "Skilled Battlecarver": "two-one first strike, the alternative"
+   },
+   "plan": "Red open, 'we should be getting a really sweet deck'.",
+   "quotes": [
+    "I think Marwin is really good when you have two Marwin the Preservers.",
+    "red is completely open here"
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 11,
+   "time": "6:29-6:39",
+   "pack_cards": [
+    "Massacre Girl, Most Wanted",
+    "Blazing Crescendo",
+    "Tether Technician",
+    "unreadable (4th card hidden by hover popup)"
+   ],
+   "taken": "Tether Technician",
+   "reasoning": "Doubts Blazing Crescendo ('not good in other formats'); takes the creature to give it a shot. Pool strip at P1p12 shows Tether Technician.",
+   "considered": {
+    "Blazing Crescendo": "has not been good in other formats"
+   },
+   "plan": "Red.",
+   "quotes": [
+    "Is Blazing Crescendo any good? I mean, it has not been good in other formats. So, let's just take this guy and at least give him a shot."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 12,
+   "time": "6:39-7:25",
+   "pack_cards": [
+    "Tetsuko Umezawa, Fugitive",
+    "Terminal Criticism",
+    "Chandra's Emberling"
+   ],
+   "taken": "Tetsuko Umezawa, Fugitive",
+   "reasoning": "Speculates on the best card in the pack: only three green cards so far, so maybe blue-red; her ability is good with all his one-toughness creatures. Caption says 'we'll take Emberling' but the pool strip at P1p13 shows Tetsuko Fugitive and no Emberling.",
+   "considered": {},
+   "plan": "Red plus green or blue (speculating blue).",
+   "quotes": [
+    "maybe we'll just speculate on this. Maybe play a blue red deck because we only have three green cards",
+    "it's not like a huge draw into green by any stretch"
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 13,
+   "time": "7:25-7:56",
+   "pack_cards": [
+    "Artifist Acumen",
+    "Innovative Commons"
+   ],
+   "taken": "Innovative Commons",
+   "reasoning": "Takes the blue-red land as speculation: 'bobbing and weaving'; definitely red, probably red-green, maybe red-blue.",
+   "considered": {},
+   "plan": "Definitely red; green or blue second.",
+   "quotes": [
+    "We're going to take the blue red land.",
+    "we are definitely playing red and we are probably playing red green and maybe we'll play red blue."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 14,
+   "time": "7:56-8:02",
+   "pack_cards": [
+    "Forest"
+   ],
+   "taken": "Forest",
+   "reasoning": "Last card; no comment.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 1,
+   "time": "8:03-9:35",
+   "pack_cards": [
+    "Hexhaven Invigorator",
+    "Lyra, Tolarian Archangel",
+    "Loot, the Anomaly",
+    "Loot, the Nexus",
+    "Grim Repriser",
+    "Mind Meanderer",
+    "Blossom-Blessed Angel",
+    "Protege's Awakening",
+    "Silence the Echo",
+    "Arcane Amphisbaena",
+    "Konstrari Improviser",
+    "Charge the Sanctum",
+    "Keeper of the Quiet Hour",
+    "Meticulous Commons"
+   ],
+   "taken": "Lyra, Tolarian Archangel",
+   "reasoning": "Best card in the pack by a mile; can abandon the green cards if needed. Argues swingy cards that must be answered win games, and he already has a land (Innovative Commons) for its hard mana cost.",
+   "considered": {
+    "Loot, the Nexus": "will not do anything crazy for him"
+   },
+   "plan": "Red base, blue or green second; green looks less tempting than blue.",
+   "quotes": [
+    "I think we just take the Lyra.",
+    "having a card like Lyra is going to win me like one or two games over the course of my run"
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 2,
+   "time": "9:35-10:28",
+   "pack_cards": [
+    "Frostbite Pyromental",
+    "Tomik, Orzhov Lawmage",
+    "Ruric Thar, Biomagus",
+    "Tomik, Izzet Sparkmage",
+    "Surgical Precision",
+    "Cryotheory Adept",
+    "Last Gasp",
+    "Rampart Hunter",
+    "Artifist Acumen",
+    "Eardrum Rattler",
+    "Inspired Tethermage",
+    "Room of Refuge",
+    "Swamp"
+   ],
+   "taken": "Ruric Thar, Biomagus",
+   "reasoning": "Rare for blue-red in the pack. Frostbite Pyromental (deal damage, draw two) is good but hard to cast and does not help attack a planeswalker; he would rather have the giant flier.",
+   "considered": {
+    "Frostbite Pyromental": "reasonable but hard to cast; the giant flier might be better"
+   },
+   "plan": "Officially moving into red-blue.",
+   "quotes": [
+    "I think the giant flyer might be better.",
+    "We're officially moving into red blue."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 3,
+   "time": "10:28-11:07",
+   "pack_cards": [
+    "Sphinx of False Conclusions",
+    "Rescue Girl, First Responder",
+    "Fblthp, Impossibly Lost",
+    "Fblthp, Knows the Way",
+    "Paradox Shaper",
+    "Craftwork Crusher",
+    "Memory Trap",
+    "Infinite Coursework",
+    "Budding Insurgent",
+    "Konstrari Improviser",
+    "Murmuring Volume",
+    "Island"
+   ],
+   "taken": "Sphinx of False Conclusions",
+   "reasoning": "Third-pick bomb rare in blue; he would have been rewarded for red-green (Craftwork Crusher in the pack) but is being rewarded for blue. Nobody seems to be in blue or red.",
+   "considered": {
+    "Craftwork Crusher": "would have been a great payoff for red-green"
+   },
+   "plan": "Red-blue.",
+   "quotes": [
+    "Craft work crusher would have been a great payoff for red green.",
+    "we're getting a third pick bomb rare in blue."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 4,
+   "time": "11:07-11:55",
+   "pack_cards": [
+    "Draconic Visitor",
+    "Your Fate Ends Here",
+    "Way of the Warlord",
+    "Ghalta the Unstoppable",
+    "Hexhaven Dueling Arena",
+    "Predictive Preparations",
+    "Divining Duelist",
+    "Silence the Echo",
+    "Awaken the Inferno",
+    "Bestial Incursion",
+    "Forest"
+   ],
+   "taken": "Draconic Visitor",
+   "reasoning": "A five-mana 5/5 flier is good even without artifact tokens; takes it over Awaken the Inferno. Plans to prioritise cards that make Heartwood tokens.",
+   "considered": {
+    "Awaken the Inferno": "passed for the five-five flier"
+   },
+   "plan": "Red-blue.",
+   "quotes": [
+    "It's also just a five five for five flying anyway. So we're going to take it for sure over awaken the inferno."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 5,
+   "time": "11:55-12:33",
+   "pack_cards": [
+    "Rockfall Vale",
+    "Thalia, the Survivor",
+    "Flourishing Grapple",
+    "Twisted Fates",
+    "Undulating Witness",
+    "Rank Rat",
+    "Something Worth Saving",
+    "Blessed Ghoul",
+    "Keeper of the Quiet Hour",
+    "Konstrari Annex"
+   ],
+   "taken": "Undulating Witness",
+   "reasoning": "A whiff pack ('only artifact tokens'). Witness over Rockfall Vale on the off chance of splashing green, though he calls it 'kind of terrible'; the blue-green and red-green cards are not ones he wants to splash. Take confirmed by pool strip.",
+   "considered": {
+    "Rockfall Vale": "only for a possible green splash"
+   },
+   "plan": "Red-blue.",
+   "quotes": [
+    "I'll take the undulating witness."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 6,
+   "time": "12:33-13:00",
+   "pack_cards": [
+    "Gardenize",
+    "Traxos, Academy Guardian",
+    "Stingerquill Voxmancer",
+    "Vigorbloom Charm",
+    "Eye of Jace",
+    "Traxos, Scourge Eternal",
+    "Cryotheory Adept",
+    "Skilled Battlecarver",
+    "Wrecking Gecko"
+   ],
+   "taken": "Traxos, Academy Guardian",
+   "reasoning": "Loves Traxos: annoying even at four mana, scary cast alongside a three-drop on turn five.",
+   "considered": {
+    "Traxos, Scourge Eternal": "not the greatest but a synergy piece with prowess"
+   },
+   "plan": "Red-blue.",
+   "quotes": [
+    "Traxxas is so sweet."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 7,
+   "time": "13:00-13:30",
+   "pack_cards": [
+    "Samut, Tyrant of Naktamun",
+    "Hapatra, the Desert Frost",
+    "Way of the Deathbringer",
+    "Hunter's Axe",
+    "Undulating Witness",
+    "Chandra's Emberling",
+    "Eardrum Rattler",
+    "Emergency Phytomedic"
+   ],
+   "taken": "Hapatra, the Desert Frost",
+   "reasoning": "Four-mana 4/3 that taps their stuff and can give his creatures pseudo-haste is way better than Emberling; buys a lot of time. Take confirmed by the pool strip.",
+   "considered": {
+    "Chandra's Emberling": "does not mind it, Hapatra is way better"
+   },
+   "plan": "Red-blue, 'things are coming together'.",
+   "quotes": [
+    "I think this card is just way better though. 4 three buys you a lot of time by tapping their stuff."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 8,
+   "time": "13:30-13:56",
+   "pack_cards": [
+    "Arni, Renowned Champion",
+    "Hexhaven Dueling Arena",
+    "Hallway Heckler",
+    "Ferocity of the Hunt",
+    "Afterthought Sentry",
+    "Murmuring Volume",
+    "Fatehold Annex"
+   ],
+   "taken": "Hallway Heckler",
+   "reasoning": "Deck is coming together: all the four-drops and five-drops needed. Takes the Heckler for a cheaper curve.",
+   "considered": {
+    "Murmuring Volume": "does not want it",
+    "Arni, Renowned Champion": "does not want it"
+   },
+   "plan": "Red-blue.",
+   "quotes": [
+    "Let's take the Heckler.",
+    "Currently looking for a couple more two drops."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 9,
+   "time": "13:56-14:12",
+   "pack_cards": [
+    "Loot, the Anomaly",
+    "Loot, the Nexus",
+    "Protege's Awakening",
+    "Arcane Amphisbaena",
+    "Charge the Sanctum",
+    "Keeper of the Quiet Hour"
+   ],
+   "taken": "Protege's Awakening",
+   "reasoning": "Said he would not take more four-drops, but it curves from Lyra: Lyra into Awakening draws a card, so three cards drawn that turn and another 3/3. Four-drop slot complete.",
+   "considered": {},
+   "plan": "Red-blue.",
+   "quotes": [
+    "You curve Lyra into the uh awakening and then immediately draw a card and then you've drawn three cards and you get another three three"
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 10,
+   "time": "14:12-14:27",
+   "pack_cards": [
+    "Frostbite Pyromental",
+    "Cryotheory Adept",
+    "Artifist Acumen",
+    "Eardrum Rattler",
+    "Swamp"
+   ],
+   "taken": "Frostbite Pyromental",
+   "reasoning": "Pyromental over Cryotheory Adept: few non-creatures for the Adept's prowess.",
+   "considered": {
+    "Cryotheory Adept": "does not have that many non-creatures"
+   },
+   "plan": "Red-blue.",
+   "quotes": [
+    "I rather have that or the Cryo Theory"
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 11,
+   "time": "14:27-14:41",
+   "pack_cards": [
+    "Fblthp, Knows the Way",
+    "Craftwork Crusher",
+    "Infinite Coursework",
+    "Island"
+   ],
+   "taken": "Infinite Coursework",
+   "reasoning": "Takes the draw/removal aura to give it a shot and gain experience for the format. Notes Craftwork Crusher is still coming around, 'we would have been so rewarded for our red green'.",
+   "considered": {
+    "Craftwork Crusher": "still coming around late, which shows red-green was open"
+   },
+   "plan": "Committed to red-blue.",
+   "quotes": [
+    "we'll just take infinite course work. Now, the fact that craft work crusher is still coming around is crazy.",
+    "We're we're committed at this point."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 12,
+   "time": "14:41-14:49",
+   "pack_cards": [
+    "Way of the Warlord",
+    "Divining Duelist",
+    "Forest"
+   ],
+   "taken": "Way of the Warlord",
+   "reasoning": "Another kill spell.",
+   "considered": {},
+   "plan": "Red-blue.",
+   "quotes": [
+    "We get another kill spell, so that's nice."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 13,
+   "time": "14:49-14:53",
+   "pack_cards": [
+    "Flourishing Grapple",
+    "Something Worth Saving"
+   ],
+   "taken": "Flourishing Grapple",
+   "reasoning": "Green-white pack, 'not useful for us'. Take read from the deck-builder sideboard (Flourishing Grapple is there, Something Worth Saving is not); not stated aloud.",
+   "considered": {},
+   "plan": "Red-blue.",
+   "quotes": [
+    "Okay, green white. Not not useful for us."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 14,
+   "time": "14:49-14:57",
+   "pack_cards": [
+    "Cryotheory Adept"
+   ],
+   "taken": "Cryotheory Adept",
+   "reasoning": "Last card: a two-drop 'blast pick', useful.",
+   "considered": {},
+   "plan": "Red-blue.",
+   "quotes": [
+    "Oh, nice. We got a two drop blast pick. That's useful."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 1,
+   "time": "14:57-15:20",
+   "pack_cards": [
+    "Kwia Vigorbloom",
+    "Thalia, the Survivor",
+    "Tetsuko Umezawa, Fugitive",
+    "Tetsuko Umezawa, Pursuer",
+    "Heartwood Crafter",
+    "Kiora of Salt and Sand",
+    "Archive Arbiter",
+    "Academic Ascent",
+    "Divining Duelist",
+    "Silence the Echo",
+    "Skilled Battlecarver",
+    "Something Worth Saving",
+    "Blessed Ghoul",
+    "Transformative Commons"
+   ],
+   "taken": "Tetsuko Umezawa, Fugitive",
+   "reasoning": "Another Tetsuko: a lot of his cards work with it (many 2/1 and 3/1 creatures). Hopes to wheel a red card.",
+   "considered": {},
+   "plan": "Red-blue.",
+   "quotes": [
+    "We're just going to take another Tetssuko. A lot of our cards work with it.",
+    "Try to wheel a red card though."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 2,
+   "time": "15:20-15:46",
+   "pack_cards": [
+    "Solitary Cell",
+    "Plan for All Outcomes",
+    "Proft, Consulting Detective",
+    "Proft, Sinister Mastermind",
+    "Fulminous Forte",
+    "Jiang Yanggu, Alone",
+    "Campus Crier",
+    "Silence the Echo",
+    "Eardrum Rattler",
+    "Tethermage's Advantage",
+    "Twinned Vision",
+    "Afterthought Sentry",
+    "Dedicated Commons"
+   ],
+   "taken": "Fulminous Forte",
+   "reasoning": "Good but not great in his deck (few non-creatures, little surveil for Proft); wants another good instant to flash back with Stingcaster Mage, and instant-speed removal.",
+   "considered": {
+    "Proft, Consulting Detective": "needs surveil, of which he has little"
+   },
+   "plan": "Red-blue.",
+   "quotes": [
+    "Another good instant speed removal spell is going to be great for our deck."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 3,
+   "time": "15:46-16:35",
+   "pack_cards": [
+    "Sphinx of False Conclusions",
+    "Geist of Saint Thalia",
+    "Pia, Determined Rebuilder",
+    "Pia, Aether Ascetic",
+    "Recursive Recruitment",
+    "Blossom-Blessed Angel",
+    "Unsummon",
+    "Heartstring Puller",
+    "No Admittance",
+    "Ferocity of the Hunt",
+    "Keeper of the Quiet Hour",
+    "Theorix Annex"
+   ],
+   "taken": "Sphinx of False Conclusions",
+   "reasoning": "Many good options (No Admittance, Unsummon, Heartstring Puller) but Sphinx is 'messed up', so a near-forced take; hopes No Admittance and Puller wheel (both did).",
+   "considered": {
+    "No Admittance": "good option; wheeled",
+    "Unsummon": "option",
+    "Heartstring Puller": "option"
+   },
+   "plan": "Red-blue.",
+   "quotes": [
+    "I think this card is just messed up, so we got to take it pretty much."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 4,
+   "time": "16:35-17:05",
+   "pack_cards": [
+    "Frostbite Pyromental",
+    "Geist of Saint Thalia",
+    "Way of the Necromancer",
+    "Fatehold Charm",
+    "Surgical Precision",
+    "Unsummon",
+    "Silence the Echo",
+    "Wrath of the Bloodmane",
+    "Ferocity of the Hunt",
+    "Murmuring Volume",
+    "Forest"
+   ],
+   "taken": "Wrath of the Bloodmane",
+   "reasoning": "Considers Unsummon for tempo because the curve is high, then decides to take another kill spell; has a decent number of legends for the cost reduction.",
+   "considered": {
+    "Unsummon": "wanted more tempo, deck a bit high on the curve"
+   },
+   "plan": "Red-blue.",
+   "quotes": [
+    "Maybe I am supposed to just take Wrath. Let's get another kill spell."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 5,
+   "time": "17:05-17:20",
+   "pack_cards": [
+    "Variable Chaser",
+    "Refute Destiny",
+    "Winter, Tormented Loner",
+    "Winter, Team Player",
+    "Hexhaven Dueling Arena",
+    "Semester Foreseer",
+    "Theoretical Necromancer",
+    "Eardrum Rattler",
+    "Budding Insurgent",
+    "Plains"
+   ],
+   "taken": "Variable Chaser",
+   "reasoning": "Variable Chaser or a two-drop (Eardrum Rattler): the Rattler is much worse, takes the high quality prowess creature.",
+   "considered": {
+    "Eardrum Rattler": "much worse; wheeled"
+   },
+   "plan": "Red-blue.",
+   "quotes": [
+    "I think that card is much worse. Let's just take the high quality card, the prowess creature."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 6,
+   "time": "17:20-17:48",
+   "pack_cards": [
+    "Command the Stage",
+    "Jiang Yanggu, Alone",
+    "Blossom-Blessed Angel",
+    "Cryotheory Adept",
+    "Infinite Coursework",
+    "Apex Witchstalker",
+    "Charge the Sanctum",
+    "Room of Refuge",
+    "Theorix Annex"
+   ],
+   "taken": "Jiang Yanggu, Alone",
+   "reasoning": "Does not have many two-drop creatures; Room of Refuge not needed (already one dual); takes the Jiang as a good card, an attacking one.",
+   "considered": {
+    "Command the Stage": "not many two-drop creatures; passes it",
+    "Room of Refuge": "already has one dual land"
+   },
+   "plan": "Red-blue.",
+   "quotes": [
+    "I think Jen is also pretty nice just as a good good card."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 7,
+   "time": "17:48-17:59",
+   "pack_cards": [
+    "Fblthp, Impossibly Lost",
+    "Hexhaven Dueling Arena",
+    "Divining Duelist",
+    "Sphinx's Approach",
+    "Rampart Hunter",
+    "Awaken the Inferno",
+    "Wrath of the Bloodmane",
+    "Island"
+   ],
+   "taken": "Awaken the Inferno",
+   "reasoning": "Already two Wraths; a second Awaken is a guaranteed kill spell, whereas Fblthp feels finicky.",
+   "considered": {
+    "Fblthp, Impossibly Lost": "finicky to use"
+   },
+   "plan": "Red-blue.",
+   "quotes": [
+    "I'd rather just get a good kill spell. Guaranteed."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 8,
+   "time": "17:59-18:07",
+   "pack_cards": [
+    "Generous Revival",
+    "Ruric Thar, Biomagus",
+    "Fulminous Forte",
+    "Marwyn, the Clearcutter",
+    "Predictive Preparations",
+    "Tethermage's Advantage",
+    "Keeper of the Quiet Hour"
+   ],
+   "taken": "Fulminous Forte",
+   "reasoning": "Another Fulminous Forte over a Marwyn and over another top-end flier (Ruric Thar).",
+   "considered": {
+    "Marwyn, the Clearcutter": "passed",
+    "Ruric Thar, Biomagus": "another top-end flier, passed"
+   },
+   "plan": "Red-blue.",
+   "quotes": [
+    "Another Fulminis Forte over a Marwin. Sure. Over another topend flyer."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 9,
+   "time": "18:07-18:36",
+   "pack_cards": [
+    "Tetsuko Umezawa, Pursuer",
+    "Academic Ascent",
+    "Divining Duelist",
+    "Skilled Battlecarver",
+    "Something Worth Saving",
+    "Transformative Commons"
+   ],
+   "taken": "Skilled Battlecarver",
+   "reasoning": "Gets the two-drop back; the deck needed more early game. Expects to wheel many of the red cards he wanted.",
+   "considered": {},
+   "plan": "Red-blue.",
+   "quotes": [
+    "And we do get the two drop back. So that's actually pretty great for us."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 10,
+   "time": "18:36-18:59",
+   "pack_cards": [
+    "Solitary Cell",
+    "Jiang Yanggu, Alone",
+    "Eardrum Rattler",
+    "Tethermage's Advantage",
+    "Twinned Vision"
+   ],
+   "taken": "Twinned Vision",
+   "reasoning": "One Twinned Vision is really good in this deck: some ways to discard it, likes the effect; does not need the two-drop (Rattler) much since two-drops came back.",
+   "considered": {
+    "Eardrum Rattler": "does not need the two-drop that much"
+   },
+   "plan": "Red-blue.",
+   "quotes": [
+    "I think one twin division is really good in this sort of deck."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 11,
+   "time": "18:59-19:10",
+   "pack_cards": [
+    "Heartstring Puller",
+    "No Admittance",
+    "Ferocity of the Hunt",
+    "Theorix Annex"
+   ],
+   "taken": "No Admittance",
+   "reasoning": "No Admittance wheels: 'that's huge for us'. Heartstring Puller would also be good.",
+   "considered": {
+    "Heartstring Puller": "would also be good"
+   },
+   "plan": "Red-blue.",
+   "quotes": [
+    "Oh my gosh, we got no admittance to come around. That's huge."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 12,
+   "time": "19:10-19:15",
+   "pack_cards": [
+    "Frostbite Pyromental",
+    "Fatehold Charm",
+    "Forest"
+   ],
+   "taken": "Frostbite Pyromental",
+   "reasoning": "A second Pyromental.",
+   "considered": {},
+   "plan": "Red-blue.",
+   "quotes": [
+    "got a pyrnmental. We got two of them now."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 13,
+   "time": "19:15-19:22",
+   "pack_cards": [
+    "Eardrum Rattler",
+    "Plains"
+   ],
+   "taken": "Eardrum Rattler",
+   "reasoning": "Another two-drop option if he needs it.",
+   "considered": {},
+   "plan": "Red-blue.",
+   "quotes": [
+    "Okay, we got another two drops. So, we have the options if we need them."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 14,
+   "time": "19:40-19:46",
+   "pack_cards": [
+    "Infinite Coursework"
+   ],
+   "taken": "Infinite Coursework",
+   "reasoning": "Last pick; expects to shave removal and to cut it. 'Switching to blue worked out well.'",
+   "considered": {},
+   "plan": "Red-blue.",
+   "quotes": [
+    "Switching to blue worked out well. Last pick. Infinite coursework."
+   ]
+  }
+ ]
+}

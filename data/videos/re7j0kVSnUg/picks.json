@@ -1,0 +1,857 @@
+{
+ "id": "re7j0kVSnUg",
+ "url": "https://youtu.be/re7j0kVSnUg",
+ "title": "Give em the Ol One Two, Ruric | Reality Fracture Draft",
+ "channel": "Limited Level-Ups",
+ "player": "Alex Nikolic",
+ "set": "FRA",
+ "event": "not stated; a normal 8-player draft with waits on other players (a live pod, not a bot draft). Likely Premier or Traditional; he says \"I've trophied with black, white, blue, red, green decks\" and compares to \"yesterday's draft\". Event name not on screen.",
+ "dataset": "FRA_PremierDraft_All_Data.json",
+ "recorded": null,
+ "source": "frames read from data/videos/raw/re7j0kVSnUg (tools/video_draft.py grab, crop 1000-1400 wide at the pack area; the pack screen always shows the pack in full, with the pool below); taken cards confirmed by the pick tag, transcript and the later pool / deck builder. 42 picks: 38 read, P2p10 and P3p13 unreadable, P3p7 and P3p8 uncertain; transcript from YouTube auto captions, card names corrected; nothing past 20:00 read.",
+ "colour_path": [
+  {
+   "after": "P1p1",
+   "main": "G",
+   "quote": "green green's a pretty good place to start"
+  },
+  {
+   "after": "P1p4",
+   "main": "GR ramp (rares)",
+   "quote": "the green red ramp deck is really awesome"
+  },
+  {
+   "after": "P1p7",
+   "main": "GR, W splash?",
+   "quote": "We've already got like a white card that we want to splash potentially."
+  },
+  {
+   "after": "P2p5",
+   "main": "G base + fixing",
+   "quote": "I'll lock in some fixing there."
+  },
+  {
+   "after": "P3p1",
+   "main": "GR + double splash B/U",
+   "quote": "I can stomach a double splash for some of the best cards in the set."
+  },
+  {
+   "after": "deck",
+   "main": "GR splash B, U",
+   "quote": "being red green base splashing a black and uh blue card"
+  }
+ ],
+ "picks": [
+  {
+   "pack": 1,
+   "pick": 1,
+   "time": "0:14-1:04",
+   "pack_cards": [
+    "Hungering Puppetbeast",
+    "Koth of the Homestead",
+    "Rewrite Regrets",
+    "Koth, the Geomancer",
+    "Clash of Elements",
+    "Kiora of Salt and Sand",
+    "Campus Crier",
+    "Undulating Witness",
+    "Solve for Disappointment",
+    "Chandra's Emberling",
+    "Compel Brutality",
+    "Vinelasher Adept",
+    "Living Library",
+    "Innovative Commons"
+   ],
+   "taken": "Hungering Puppetbeast",
+   "status": "confirmed (pick tag, transcript)",
+   "reasoning": "Five-mana 5/5 that makes a Heartwood token and protects itself; second pick would be Rewrite Regrets (strong reanimation spell with land cyclers around) or Clash of Elements.",
+   "plan": "Open; green start.",
+   "quote": "So we're gonna take that."
+  },
+  {
+   "pack": 1,
+   "pick": 2,
+   "time": "1:04-2:05",
+   "pack_cards": [
+    "Pompous Battlemage",
+    "Perfected Theory",
+    "Jiang Yanggu, Alone",
+    "Jiang Yanggu, Never Alone",
+    "Craftwork Crusher",
+    "Surgical Precision",
+    "Sphinx's Approach",
+    "Awaken the Inferno",
+    "Bestial Incursion",
+    "Whiplash Wordsmith",
+    "Tam's Resistance",
+    "Afterthought Sentry",
+    "Vigorbloom Annex"
+   ],
+   "taken": "Craftwork Crusher",
+   "status": "confirmed (pick tag, pool in later frames)",
+   "reasoning": "Ramp-deck uncommon payoff. Prefers Bestial Incursion to Jiang Yanggu (can discard or mill it); also likes Surgical Precision and Awaken the Inferno.",
+   "plan": "Green-red ramp",
+   "quote": "Nice followup."
+  },
+  {
+   "pack": 1,
+   "pick": 3,
+   "time": "2:07-3:03",
+   "pack_cards": [
+    "Winter, Tormented Loner",
+    "Winter, Team Player",
+    "Vigorbloom Charm",
+    "Hexhaven Dueling Arena",
+    "Memory Trap",
+    "Mindseeker Oculus",
+    "Undulating Witness",
+    "Solve for Disappointment",
+    "Vinelasher Adept",
+    "Whiplash Wordsmith",
+    "Murmuring Volume",
+    "Mountain"
+   ],
+   "taken": "Memory Trap",
+   "status": "confirmed (transcript, pool at 3:04)",
+   "reasoning": "No obvious pick; takes the splashable removal over Vigorbloom Charm (also splashable but wants to be cast early to use its modes). Passes the land cycler as too early.",
+   "plan": "",
+   "quote": "I think I'm just going to take a splashable removal spell and Memory Trap."
+  },
+  {
+   "pack": 1,
+   "pick": 4,
+   "time": "3:03-3:57",
+   "pack_cards": [
+    "Hall of Echoes",
+    "Ruric Thar, Biomagus",
+    "Restore with Empathy",
+    "Ruric Thar, Magecrusher",
+    "Clash of Elements",
+    "Campus Crier",
+    "Surveillance Phantasm",
+    "Eardrum Rattler",
+    "Ferocity of the Hunt",
+    "Afterthought Sentry",
+    "Island"
+   ],
+   "taken": "Ruric Thar, Magecrusher",
+   "status": "confirmed (pick tag, transcript \"take a rare\")",
+   "reasoning": "Uncommon payoff for a green-red ramp deck; the deck is starting with several expensive things and he is not worried.",
+   "plan": "Green-red ramp.",
+   "quote": "So yeah take a rar"
+  },
+  {
+   "pack": 1,
+   "pick": 5,
+   "time": "3:57-4:35",
+   "pack_cards": [
+    "Yargle, Goliath of Otaria",
+    "Yargle, Glutton of Urborg",
+    "Winter, Team Player",
+    "Fateshaper Aspirant",
+    "Divining Duelist",
+    "Rank Rat",
+    "Arcane Amphisbaena",
+    "Compel Brutality",
+    "Whiplash Wordsmith",
+    "Swamp"
+   ],
+   "taken": "Arcane Amphisbaena",
+   "status": "likely (transcript names Amphisbaena or Compel Brutality, says it slows the game and helps land drops; hover on Amphisbaena; final deck has two)",
+   "reasoning": "Takes Amphisbaena over Compel Brutality: removal in his colours would be fine but a green deck can splash it, so not a high priority.",
+   "plan": "",
+   "quote": "Compel brutality is a pretty good one, but when I'm green, it's pretty easy to splash."
+  },
+  {
+   "pack": 1,
+   "pick": 6,
+   "time": "4:35-5:05",
+   "pack_cards": [
+    "Geist of Saint Thalia",
+    "Prudent Fateseer",
+    "Campus Crier",
+    "Fateshaper Aspirant",
+    "Undulating Witness",
+    "Apex Witchstalker",
+    "Vinelasher Adept",
+    "Konstrari Improviser",
+    "Stingerquill Annex"
+   ],
+   "taken": "Konstrari Improviser",
+   "status": "confirmed (pick tag, transcript \"a nice cheap ramp spell\", in pool later)",
+   "reasoning": "Cheap ramp. Notes blue-white is one of his favourite archetypes and Prudent Fateseer / Campus Crier are good, but keeps going down the green path.",
+   "plan": "Green ramp; likes UW in the format.",
+   "quote": "Here we'll just take a nice cheap ramp spell."
+  },
+  {
+   "pack": 1,
+   "pick": 7,
+   "time": "5:05-5:25",
+   "pack_cards": [
+    "Cruel Calculations",
+    "Fateshaper Aspirant",
+    "Divining Duelist",
+    "Silence the Echo",
+    "Void Extrapolator",
+    "Chandra's Emberling",
+    "Vinelasher Adept",
+    "Island"
+   ],
+   "taken": "Vinelasher Adept",
+   "status": "confirmed (transcript: land cycler over Silence the Echo; a Vinelasher in the pool at 11:57)",
+   "reasoning": "Land cycler over Silence the Echo: a white card is already a possible splash, so a cycler is the better pick here.",
+   "plan": "Possible white splash.",
+   "quote": "I think it's a good point to take a land cycler here."
+  },
+  {
+   "pack": 1,
+   "pick": 8,
+   "time": "5:25-5:48",
+   "pack_cards": [
+    "Haunted Ridge",
+    "Traxos, Scourge Eternal",
+    "Hexhaven Dueling Arena",
+    "Infinite Coursework",
+    "Rank Rat",
+    "Twinned Vision",
+    "Meticulous Commons"
+   ],
+   "taken": "Twinned Vision",
+   "status": "confirmed (pick tag, transcript, pool)",
+   "reasoning": "Card draw is nice in ramp decks; with the black card he would take the land instead.",
+   "plan": "",
+   "quote": "Card draw is pretty nice in these ramp decks."
+  },
+  {
+   "pack": 1,
+   "pick": 9,
+   "time": "5:48-6:01",
+   "pack_cards": [
+    "Kiora of Salt and Sand",
+    "Undulating Witness",
+    "Solve for Disappointment",
+    "Chandra's Emberling",
+    "Living Library",
+    "Innovative Commons"
+   ],
+   "taken": "Innovative Commons",
+   "status": "confirmed (pick tag, transcript \"blue red land. Sure, why not\", in pool)",
+   "reasoning": "Blue-red land, takes it over everything else; Kiora of Salt and Sand and Undulating Witness are in the pack (\"not mention at this time\").",
+   "plan": "",
+   "quote": "Blue red land. Sure, why not."
+  },
+  {
+   "pack": 1,
+   "pick": 10,
+   "time": "6:01-6:12",
+   "pack_cards": [
+    "Jiang Yanggu, Alone",
+    "Sphinx's Approach",
+    "Tam's Resistance",
+    "Afterthought Sentry",
+    "Vigorbloom Annex"
+   ],
+   "taken": "Vigorbloom Annex",
+   "status": "confirmed (pick tag, transcript \"green white land\", in pool)",
+   "reasoning": "Green-white land; likes it more in a red-white deck.",
+   "plan": "",
+   "quote": ""
+  },
+  {
+   "pack": 1,
+   "pick": 11,
+   "time": "6:12-6:20",
+   "pack_cards": [
+    "Winter, Team Player",
+    "Hexhaven Dueling Arena",
+    "Solve for Disappointment",
+    "Mountain"
+   ],
+   "taken": "Winter, Team Player",
+   "status": "likely (transcript \"we'll take the Winter, Afterthought Sentry\"; hover on Winter)",
+   "reasoning": "Probably not playing any of these cards; takes the Winter.",
+   "plan": "",
+   "quote": "Probably not playing any of these cards."
+  },
+  {
+   "pack": 1,
+   "pick": 12,
+   "time": "6:20-6:25",
+   "pack_cards": [
+    "Surveillance Phantasm",
+    "Afterthought Sentry",
+    "Island"
+   ],
+   "taken": "Afterthought Sentry",
+   "status": "confirmed (pick tag; pool at 11:57 lists Sentry)",
+   "reasoning": "Filler.",
+   "plan": "",
+   "quote": ""
+  },
+  {
+   "pack": 1,
+   "pick": 13,
+   "time": "6:25-6:40",
+   "pack_cards": [
+    "Winter, Team Player",
+    "Swamp"
+   ],
+   "taken": "Winter, Team Player",
+   "status": "likely (hover then card flies to the pool at 6:40)",
+   "reasoning": "Filler; wait on other players before the last card.",
+   "plan": "",
+   "quote": ""
+  },
+  {
+   "pack": 1,
+   "pick": 14,
+   "time": "6:40",
+   "pack_cards": [
+    "Fateshaper Aspirant"
+   ],
+   "taken": "Fateshaper Aspirant",
+   "status": "confirmed (last card, auto select; Fateshaper Aspirant is in the sideboard)",
+   "reasoning": "Last card.",
+   "plan": "",
+   "quote": ""
+  },
+  {
+   "pack": 2,
+   "pick": 1,
+   "time": "6:43-7:50",
+   "pack_cards": [
+    "Overgrown Farmland",
+    "Danitha, Sword of Hope",
+    "Refute Destiny",
+    "Way of the Mind Sculptor",
+    "Danitha, Spear of Agony",
+    "Rewrite Regrets",
+    "Way of the Paradox",
+    "Surveillance Phantasm",
+    "Rampart Hunter",
+    "Arcane Amphisbaena",
+    "Something Worth Saving",
+    "Charge the Sanctum",
+    "Room of Refuge",
+    "Plains"
+   ],
+   "taken": "Way of the Paradox",
+   "status": "confirmed (pool at 7:42, transcript)",
+   "reasoning": "Empower Jace 5 and extra land drops; the gain-one-life rider matters in slower decks. Close with Amphisbaena (cheap, good); would regret it if no more good cheap cards come. Higher upside.",
+   "plan": "Green-based ramp.",
+   "quote": "I think I'm going to take it here over ASB. That's close though."
+  },
+  {
+   "pack": 2,
+   "pick": 2,
+   "time": "7:50-8:25",
+   "pack_cards": [
+    "Return to the Light Realms",
+    "Way of the Mentor",
+    "Tetsuko Umezawa, Fugitive",
+    "Tetsuko Umezawa, Pursuer",
+    "Hexhaven Dueling Arena",
+    "Graft Surgeon",
+    "Infinite Coursework",
+    "Mindseeker Oculus",
+    "Rampart Hunter",
+    "Blazing Crescendo",
+    "Wrath of the Bloodmane",
+    "Tethermage's Advantage",
+    "Mountain"
+   ],
+   "taken": "Wrath of the Bloodmane",
+   "status": "confirmed (transcript \"four mana deal four\", pool at 9:04)",
+   "reasoning": "Four-mana deal four (three mana, sometimes two with a legend). Nothing else interesting; would take Infinite Coursework over Oculus here. Removal count is critical: five, six, seven spells for a slow deck; a low-curve synergy deck can get away with fewer.",
+   "plan": "Removal count for a slow deck.",
+   "quote": "I just think it's so critical to have enough removal in this set."
+  },
+  {
+   "pack": 2,
+   "pick": 3,
+   "time": "8:25-9:05",
+   "pack_cards": [
+    "Karn, Gilded Guardian",
+    "Karn, Argent Defender",
+    "Danitha, Spear of Agony",
+    "Essence Burn",
+    "Recursive Recruitment",
+    "Screeching Soulbreaker",
+    "Solve for Disappointment",
+    "Budding Insurgent",
+    "Something Worth Saving",
+    "Fatehold Chronologist",
+    "Charge the Sanctum",
+    "Mountain"
+   ],
+   "taken": "Something Worth Saving",
+   "status": "likely (pick tag at 9:04; transcript says \"just going to take something worth saving here, a filtering spell\")",
+   "reasoning": "Filtering spell, nothing else of interest.",
+   "plan": "",
+   "quote": "I'm just going to take something worth saving here, just a filtering spell."
+  },
+  {
+   "pack": 2,
+   "pick": 4,
+   "time": "9:12-9:45",
+   "pack_cards": [
+    "Tetsuko Umezawa, Fugitive",
+    "Tetsuko Umezawa, Pursuer",
+    "Campus Crier",
+    "Graft Surgeon",
+    "Cryotheory Adept",
+    "Divining Duelist",
+    "Solve for Disappointment",
+    "Blazing Crescendo",
+    "Hallway Heckler",
+    "Ferocity of the Hunt",
+    "Theorix Annex"
+   ],
+   "taken": "Ferocity of the Hunt",
+   "status": "confirmed (transcript, pool at 9:54)",
+   "reasoning": "Considers Hallway Heckler and Ferocity of the Hunt; Ferocity is good with enter-the-battlefield effects but does not play well with giant things rotting in hand while you ramp.",
+   "plan": "",
+   "quote": "It's pretty good when you've got good enter the battlefield effects."
+  },
+  {
+   "pack": 2,
+   "pick": 5,
+   "time": "9:48-10:16",
+   "pack_cards": [
+    "Precise Redaction",
+    "Gallia, Tragic Host",
+    "Gallia, the Merrymaker",
+    "Primal Witchstalker",
+    "Fateshaper Aspirant",
+    "Semester Foreseer",
+    "Cast Away Doubt",
+    "Something Worth Saving",
+    "Medic's Kitesail",
+    "Swamp"
+   ],
+   "taken": "Primal Witchstalker",
+   "status": "likely (transcript: \"a witch stalker here, nice ramp card, a black card; we don't have the fixing for it\"; in pool at 11:57)",
+   "reasoning": "Takes the witchstalker (ramp, graveyard) and locks in fixing; removal count is only two (three with the Crusher).",
+   "plan": "Black as a possible splash.",
+   "quote": "So I'll lock in some fixing there."
+  },
+  {
+   "pack": 2,
+   "pick": 6,
+   "time": "10:18-10:40",
+   "pack_cards": [
+    "Rewrite Regrets",
+    "Essence Burn",
+    "Jiang Yanggu, Alone",
+    "Fatehold Charm",
+    "Graft Surgeon",
+    "Divining Duelist",
+    "Compel Brutality",
+    "Whiplash Wordsmith",
+    "Formidable Commons"
+   ],
+   "taken": "Formidable Commons",
+   "status": "likely (tag then card in pool at 12:34; transcript hints he passes Rewrite Regrets again \"I might regret passing these\")",
+   "reasoning": "Passes Rewrite Regrets again to lock in the ramp core and fixing.",
+   "plan": "",
+   "quote": "I'll just lock in the core of the deck, right? The ramp part."
+  },
+  {
+   "pack": 2,
+   "pick": 7,
+   "time": "10:42-10:57",
+   "pack_cards": [
+    "Stinging Vitriol",
+    "Rewrite Regrets",
+    "Apex Witchstalker",
+    "Eardrum Rattler",
+    "Greenhouse Propagator",
+    "Charge the Sanctum",
+    "Tam's Resistance",
+    "Fatehold Annex"
+   ],
+   "taken": "Greenhouse Propagator",
+   "status": "likely (tag, transcript \"greenhouse propagator, nice ramp card\")",
+   "reasoning": "Ramp card with life gain.",
+   "plan": "",
+   "quote": ""
+  },
+  {
+   "pack": 2,
+   "pick": 8,
+   "time": "11:00-11:15",
+   "pack_cards": [
+    "Recursive Recruitment",
+    "Predictive Preparations",
+    "Solve for Disappointment",
+    "Hallway Heckler",
+    "Arcane Amphisbaena",
+    "Charge the Sanctum",
+    "Murmuring Volume"
+   ],
+   "taken": "Arcane Amphisbaena",
+   "status": "likely (tag; final deck has two Amphisbaenas, the other from P1p5)",
+   "reasoning": "Another Amphisbaena over Murmuring Volume and Recursive Recruitment (big fan of the Recruitment but not for this deck).",
+   "plan": "",
+   "quote": "Another Rampina. Great."
+  },
+  {
+   "pack": 2,
+   "pick": 9,
+   "time": "11:18-11:22",
+   "pack_cards": [
+    "Refute Destiny",
+    "Surveillance Phantasm",
+    "Rampart Hunter",
+    "Something Worth Saving",
+    "Charge the Sanctum",
+    "Plains"
+   ],
+   "taken": "Something Worth Saving",
+   "status": "likely (tag; the final deck has two SWS, a second one is not taken elsewhere)",
+   "reasoning": "Another Something Worth Saving.",
+   "plan": "",
+   "quote": ""
+  },
+  {
+   "pack": 2,
+   "pick": 10,
+   "time": "11:24-11:35",
+   "pack_cards": [],
+   "taken": null,
+   "status": "unreadable (the pack is never shown: the waiting screen turns into pick 11 within 0.1 s, checked every 0.05 s from 695.05 to 695.35; wheel of P2p2: Return to the Light Realms, Way of the Mentor, Tetsuko x2, Hexhaven Dueling Arena, Graft Surgeon, Infinite Coursework, Mindseeker Oculus, Blazing Crescendo, Tethermage's Advantage and others)",
+   "reasoning": "No comment; Tethermage's Advantage is a sideboard card in the final pool and appears in this wheel, which makes it the likely pick.",
+   "plan": "",
+   "quote": ""
+  },
+  {
+   "pack": 2,
+   "pick": 11,
+   "time": "11:35-11:43",
+   "pack_cards": [
+    "Karn, Gilded Guardian",
+    "Essence Burn",
+    "Recursive Recruitment",
+    "Mountain"
+   ],
+   "taken": "Recursive Recruitment",
+   "status": "confirmed (tag, final pool lists it)",
+   "reasoning": "Great card (\"I think this card is great, not for us currently\").",
+   "plan": "",
+   "quote": ""
+  },
+  {
+   "pack": 2,
+   "pick": 12,
+   "time": "11:45-11:50",
+   "pack_cards": [
+    "Cryotheory Adept",
+    "Solve for Disappointment",
+    "Theorix Annex"
+   ],
+   "taken": "Theorix Annex",
+   "status": "likely (tag; final pool lists Theorix Annex)",
+   "reasoning": "Land.",
+   "plan": "",
+   "quote": ""
+  },
+  {
+   "pack": 2,
+   "pick": 13,
+   "time": "11:50-11:52",
+   "pack_cards": [
+    "Precise Redaction",
+    "Swamp"
+   ],
+   "taken": "Precise Redaction",
+   "status": "likely (hover; sideboard lists Precise Redaction)",
+   "reasoning": "Filler.",
+   "plan": "",
+   "quote": ""
+  },
+  {
+   "pack": 2,
+   "pick": 14,
+   "time": "11:53",
+   "pack_cards": [
+    "Rewrite Regrets"
+   ],
+   "taken": "Rewrite Regrets",
+   "status": "confirmed (last card; \"I might write that I regret passing these\", deck lists Rewrite Regrets)",
+   "reasoning": "Last card, wheeled the Rewrite Regrets he passed twice.",
+   "plan": "",
+   "quote": ""
+  },
+  {
+   "pack": 3,
+   "pick": 1,
+   "time": "11:57-12:50",
+   "pack_cards": [
+    "Chandra, Chill of Compliance",
+    "Chandra, Torch of Defiance",
+    "Pompous Battlemage",
+    "Danitha, Sword of Hope",
+    "Fatehold Charm",
+    "Blossom-Blessed Angel",
+    "Surgical Precision",
+    "Divining Duelist",
+    "Silence the Echo",
+    "Eardrum Rattler",
+    "Tether Technician",
+    "Tam's Resistance",
+    "Murmuring Volume",
+    "Vigorbloom Annex"
+   ],
+   "taken": "Chandra, Torch of Defiance",
+   "status": "confirmed (pick tag, in pool)",
+   "reasoning": "Opens Chandra, Torch of Defiance: draws cards, makes mana, kills things, ultimates in a few turns. \"We opened up Chandra\"; now more red, thinks about a double splash which he almost never advocates, but this set has the fixing and card draw to support it for some of the best cards.",
+   "plan": "Green-red-black/blue ramp with a possible double splash.",
+   "quote": "I can stomach a double splash for some of the best cards in the set."
+  },
+  {
+   "pack": 3,
+   "pick": 2,
+   "time": "12:50-13:35",
+   "pack_cards": [
+    "Loyal Tutor",
+    "Yuriko, Blade of the Mighty",
+    "Yuriko, Hope from the Shadows",
+    "Koth, the Geomancer",
+    "Archive Arbiter",
+    "Graft Surgeon",
+    "Cryotheory Adept",
+    "Greenhouse Propagator",
+    "Vinelasher Adept",
+    "Twinned Vision",
+    "Whiplash Wordsmith",
+    "Keeper of the Quiet Hour",
+    "Formidable Commons"
+   ],
+   "taken": "Vinelasher Adept",
+   "status": "confirmed (transcript \"take a land cycler ... it fixes us and puts a card in the grave for rewrite regrets\", two in the final deck)",
+   "reasoning": "Considers a black-green land and weighs the number of tapped lands (most decks want two); takes the land cycler for fixing plus graveyard.",
+   "plan": "",
+   "quote": "I think that fulfills our both roles there, right? It fixes us and it gets a card in the grave for rewrite regrets."
+  },
+  {
+   "pack": 3,
+   "pick": 3,
+   "time": "13:35-14:10",
+   "pack_cards": [
+    "Flickering Hound",
+    "Proft, Sinister Mastermind",
+    "Edgar, Ancient Bloodlord",
+    "Woodwork Prodigy",
+    "Blossom-Blessed Angel",
+    "Infinite Coursework",
+    "Extended Absence",
+    "Artifist Acumen",
+    "Arcane Amphisbaena",
+    "Bestial Incursion",
+    "Afterthought Sentry",
+    "Island"
+   ],
+   "taken": "Extended Absence",
+   "status": "confirmed (transcript \"I think I just take a removal spell here\", pick slot empties at 14:08, final deck)",
+   "reasoning": "Woodwork Prodigy is pretty good but with little top end he wants removal; a ramp spell would be the other option.",
+   "plan": "",
+   "quote": "I think I just take a removal spell here."
+  },
+  {
+   "pack": 3,
+   "pick": 4,
+   "time": "14:12-14:45",
+   "pack_cards": [
+    "Countersculpt",
+    "Hapatra, the Desert Frost",
+    "Hapatra, the Desert Fang",
+    "Blossom-Blessed Angel",
+    "Mindseeker Oculus",
+    "Skilled Battlecarver",
+    "Sureshot Sower",
+    "Tethermage's Advantage",
+    "Fatehold Chronologist",
+    "Whiplash Wordsmith",
+    "Swamp"
+   ],
+   "taken": "Hapatra, the Desert Fang",
+   "status": "confirmed (transcript, final deck)",
+   "reasoning": "Double black is a stretch: 1, 2, 3 black sources, blue-black land not counted; \"I'm just going to take Hapatra, maybe we pick up enough fixing to make it work.\"",
+   "plan": "Black splash.",
+   "quote": "I'm just going to take Hapatra. Maybe we pick up enough fixing to make it work."
+  },
+  {
+   "pack": 3,
+   "pick": 5,
+   "time": "14:45-15:07",
+   "pack_cards": [
+    "Proft, Consulting Detective",
+    "Marwyn, the Clearcutter",
+    "Marwyn, the Preserver",
+    "Blossom-Blessed Angel",
+    "Surgical Precision",
+    "Divining Duelist",
+    "Void Extrapolator",
+    "Blazing Crescendo",
+    "Budding Insurgent",
+    "Dedicated Commons"
+   ],
+   "taken": "Dedicated Commons",
+   "status": "confirmed (pick tag at 15:02, transcript \"I'm going to take the land\")",
+   "reasoning": "Takes a red-white land (to splash Memory Trap); chooses it at the buzzer. Marwyn also noted (combo with the mana rock).",
+   "plan": "",
+   "quote": "I'm going to take the land. Sorry to stress anybody."
+  },
+  {
+   "pack": 3,
+   "pick": 6,
+   "time": "15:08-15:35",
+   "pack_cards": [
+    "Identity Echo",
+    "Fblthp, Knows the Way",
+    "Predictive Preparations",
+    "Cryotheory Adept",
+    "Apex Witchstalker",
+    "Chandra's Emberling",
+    "Hallway Heckler",
+    "Emergency Phytomedic",
+    "Fatehold Annex"
+   ],
+   "taken": "Fblthp, Knows the Way",
+   "status": "confirmed (tag, final deck; transcript \"double dip... fixes for all our colours\")",
+   "reasoning": "Fblthp fixes all colours (searches for basics by name).",
+   "plan": "",
+   "quote": "Fixes for all our colours."
+  },
+  {
+   "pack": 3,
+   "pick": 7,
+   "time": "15:37-15:43",
+   "pack_cards": [
+    "Refute Destiny",
+    "Winter, Team Player",
+    "Shatterwing Pegasus",
+    "Surveillance Phantasm",
+    "Wrecking Gecko",
+    "Ferocity of the Hunt",
+    "Medic's Kitesail",
+    "Plains"
+   ],
+   "taken": null,
+   "status": "uncertain (nothing taken is named; hover on Wrecking Gecko and Medic's Kitesail; sideboard has Wrecking Gecko and he says \"stuff we are not going to play\")",
+   "reasoning": "No comment.",
+   "plan": "",
+   "quote": ""
+  },
+  {
+   "pack": 3,
+   "pick": 8,
+   "time": "15:43-15:48",
+   "pack_cards": [
+    "Jiang Yanggu, Alone",
+    "Theorix Charm",
+    "Sphinx's Approach",
+    "Solve for Disappointment",
+    "Wrecking Gecko",
+    "Afterthought Sentry",
+    "Plains"
+   ],
+   "taken": null,
+   "status": "uncertain (nothing named; hover on Wrecking Gecko; sideboard has one Wrecking Gecko)",
+   "reasoning": "\"More stuff that we're not going to play.\"",
+   "plan": "",
+   "quote": ""
+  },
+  {
+   "pack": 3,
+   "pick": 9,
+   "time": "15:48-15:57",
+   "pack_cards": [
+    "Danitha, Sword of Hope",
+    "Fatehold Charm",
+    "Divining Duelist",
+    "Eardrum Rattler",
+    "Tam's Resistance",
+    "Murmuring Volume"
+   ],
+   "taken": "Murmuring Volume",
+   "status": "confirmed (transcript \"Murmuring Volume, I'm going to play that\", in the final deck)",
+   "reasoning": "Plays it.",
+   "plan": "",
+   "quote": ""
+  },
+  {
+   "pack": 3,
+   "pick": 10,
+   "time": "15:57-16:08",
+   "pack_cards": [
+    "Loyal Tutor",
+    "Archive Arbiter",
+    "Cryotheory Adept",
+    "Twinned Vision",
+    "Whiplash Wordsmith"
+   ],
+   "taken": "Archive Arbiter",
+   "status": "confirmed (tag, transcript \"I'll take Arbiter\", final deck)",
+   "reasoning": "One more card draw (Twinned Vision) or Arbiter: \"we're kind of good on value\"; takes the Arbiter.",
+   "plan": "",
+   "quote": "I think we're actually kind of good on value. I'll take Arbiter."
+  },
+  {
+   "pack": 3,
+   "pick": 11,
+   "time": "16:10-16:15",
+   "pack_cards": [
+    "Blossom-Blessed Angel",
+    "Artifist Acumen",
+    "Afterthought Sentry",
+    "Island"
+   ],
+   "taken": "Afterthought Sentry",
+   "status": "likely (hover; the pool and sideboard list a second Sentry, no other card of this pack in the pool)",
+   "reasoning": "Filler.",
+   "plan": "",
+   "quote": ""
+  },
+  {
+   "pack": 3,
+   "pick": 12,
+   "time": "16:15-16:30",
+   "pack_cards": [
+    "Tethermage's Advantage",
+    "Whiplash Wordsmith",
+    "Swamp"
+   ],
+   "taken": "Whiplash Wordsmith",
+   "status": "likely (the pool lists Whiplash Wordsmith in the sideboard; Tethermage's Advantage is more likely P2p10)",
+   "reasoning": "Filler.",
+   "plan": "",
+   "quote": ""
+  },
+  {
+   "pack": 3,
+   "pick": 13,
+   "time": "16:30-16:35",
+   "pack_cards": [],
+   "taken": null,
+   "status": "unreadable (the pack is never shown, waiting screen from 16:23 to 16:40; wheel of P3p5, two cards left: Budding Insurgent and one other; Budding Insurgent is in the sideboard)",
+   "reasoning": "",
+   "plan": "",
+   "quote": ""
+  },
+  {
+   "pack": 3,
+   "pick": 14,
+   "time": "16:40",
+   "pack_cards": [
+    "Cryotheory Adept"
+   ],
+   "taken": "Cryotheory Adept",
+   "status": "confirmed (last card, pick tag; in the sideboard)",
+   "reasoning": "Last card.",
+   "plan": "",
+   "quote": ""
+  }
+ ],
+ "player_note": "Alex Nikolic (Arena handle Chord_O_Calls, name on screen)"
+}

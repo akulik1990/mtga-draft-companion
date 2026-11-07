@@ -1,0 +1,1016 @@
+{
+ "id": "kMo5X6G9lAU",
+ "url": "https://youtu.be/kMo5X6G9lAU",
+ "title": "Making Reality Fracture Draft Look Easy!!!",
+ "player": "NicolaiBolas",
+ "set": "FRA",
+ "event": "FRA live Arena draft, solo; the Arena pick timer is on and chat is not mentioned; Premier / Quick not named on screen",
+ "dataset": "FRA_PremierDraft_All_Data.json",
+ "recorded": null,
+ "source": "frames read from data/videos/raw/kMo5X6G9lAU (banner strips and pack title rows; layout pool-at-right to P1p5, then pack on top with the pool below; the 40/40 deck screen at 1251 s; the sideboard is not shown); takes from the transcript, the pool counts and the deck screen; hover popups hid some cards; transcript from YouTube auto captions, card names corrected; cut-off 1255 s (the 40/40 deck screen is on at 1230 and 1251)",
+ "colour_path": [
+  {
+   "after": "P1p1",
+   "main": "U (Plan for All Outcomes)",
+   "quote": "I do really like blue decks in this format."
+  },
+  {
+   "after": "P1p3",
+   "main": "UB / UW",
+   "quote": "blue is looking decently open ... white's looking maybe open."
+  },
+  {
+   "after": "P1p5",
+   "main": "UB, black open",
+   "quote": "pick five is a signal that black might be open."
+  },
+  {
+   "after": "P1p7",
+   "main": "UB, green splash possible",
+   "quote": "I would rather splash green than red."
+  },
+  {
+   "after": "P2p8",
+   "main": "UB, no splash",
+   "quote": "the better my deck gets, the less likely it is that I will want to splash."
+  },
+  {
+   "after": "deck",
+   "main": "UB graveyard, no splash",
+   "quote": "Nobody else is playing blue black."
+  }
+ ],
+ "picks": [
+  {
+   "pack": 1,
+   "pick": 1,
+   "time": "0:10-1:33",
+   "pack_cards": [
+    "Dark Matter Manipulator",
+    "Way of the Paradox",
+    "Greenhouse Propagator",
+    "Plan for All Outcomes",
+    "Stingerquill Voxmancer",
+    "Charge the Sanctum",
+    "Way of the Mind Sculptor",
+    "Hexhaven Battalion",
+    "Afterthought Sentry",
+    "Teyo, Diamondblade Mage",
+    "Unsummon",
+    "Meticulous Commons",
+    "Edgar, Moonlit Sovereign",
+    "Apex Witchstalker"
+   ],
+   "taken": "Plan for All Outcomes",
+   "reasoning": "Plan for All Outcomes over Dark Matter Manipulator: really strong as a kill spell that later lets you surveil on every noncreature spell; blue works with red, white and black Jace decks. His order from the pack: Plan, the rare, Hexhaven Battalion, Way of the Mind Sculptor; Unsummon and Hexhaven Battalion are the commons he likes; Greenhouse Propagator is far behind.",
+   "considered": {
+    "Dark Matter Manipulator": "a one-mana 3/2 a lot of the time; not as good as Plan",
+    "Hexhaven Battalion": "decent gap, the common he likes",
+    "Unsummon": "decent gap, the second Unsummon is much less valuable"
+   },
+   "plan": "Blue (Jace decks).",
+   "quotes": [
+    "I think I go plan for all outcomes, then maybe the rare, then Hexhaven battalion, then way of the mind sculptor."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 2,
+   "time": "1:33-2:28",
+   "pack_cards": [
+    "Stingcaster Mage",
+    "Archive Arbiter",
+    "Afterthought Sentry",
+    "Mabel, Bitter Recluse",
+    "Wrath of the Bloodmane",
+    "Living Library",
+    "Way of the Wildspeaker",
+    "Blessed Ghoul",
+    "Plains",
+    "Recursive Recruitment",
+    "Charge the Sanctum",
+    "Kiora of Salt and Sand",
+    "Tam's Resistance"
+   ],
+   "taken": "Recursive Recruitment",
+   "reasoning": "Recursive Recruitment over Stingcaster Mage: easy to build a good Recruitment deck with Plan for All Outcomes, splashable in blue-green, one of the best win conditions at common or uncommon for a graveyard strategy; Stingcaster is a 2/1 that draws a card while Recruitment makes two 2/2s and flashes back. They can combo (flash Recruitment back with Stingcaster).",
+   "considered": {
+    "Stingcaster Mage": "loves it but only a 2/1 that draws a card",
+    "Mabel, Bitter Recluse": "fine, usually they have used their Jace",
+    "Kiora of Salt and Sand": "okay"
+   },
+   "plan": "Blue with a graveyard plan.",
+   "quotes": [
+    "I like recursive recruitment here. The uncommon multicolored card over sting caster mage."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 3,
+   "time": "2:28-3:19",
+   "pack_cards": [
+    "Teyo, Lightshield Expert",
+    "Predictive Preparations",
+    "Wrecking Gecko",
+    "Your Fate Ends Here",
+    "Mindseeker Oculus",
+    "Swamp",
+    "Proft, Consulting Detective",
+    "Rampart Hunter",
+    "Proft, Sinister Mastermind",
+    "Tether Technician",
+    "Academic Ascent",
+    "Wrath of the Bloodmane"
+   ],
+   "taken": "Mindseeker Oculus",
+   "reasoning": "Mindseeker Oculus: he has a rule to almost never pass Oculus; even if he were not blue-black it works with the Plan; Proft would be second and Your Fate Ends Here is also good; blue looks open and white maybe open; no information from pairings since the pair is still in the pack.",
+   "considered": {
+    "Proft, Consulting Detective": "he would take it second from this pack",
+    "Your Fate Ends Here": "good, would not mind blue-white",
+    "Teyo, Lightshield Expert": "nice"
+   },
+   "plan": "Blue-black or blue-white.",
+   "quotes": [
+    "I have a rule for myself and that's like almost never pass Mindseeker Oculus."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 4,
+   "time": "3:19-4:14",
+   "pack_cards": [
+    "Rewrite Regrets",
+    "Icy Reception",
+    "Stingerquill Annex",
+    "Way of the Necromancer",
+    "Silence the Echo",
+    "Marwyn, the Clearcutter",
+    "Arcane Amphisbaena",
+    "Vigorbloom Vanguard",
+    "Twinned Vision",
+    "Blossom-Blessed Angel",
+    "Charge the Sanctum"
+   ],
+   "taken": "Rewrite Regrets",
+   "reasoning": "Rewrite Regrets: a card he has gone on a roller coaster with; the landcyclers are very playable and the black one is especially good to get back with it (cycle on turn two, get back a 6/4 menace on turn four); he would not mind Twinned Vision; Way of the Necromancer feels almost unplayable but he likes it; keeping taking good blue and black cards.",
+   "considered": {
+    "Twinned Vision": "really good in the midrange deck, not a card he wants more than one of",
+    "Vigorbloom Vanguard": "solid",
+    "Blossom-Blessed Angel": "solid"
+   },
+   "plan": "Blue-black graveyard.",
+   "quotes": [
+    "The cyclingers are very playable in this format ... you cycle it on turn two, turn four, you get back a 6/4 menace."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 5,
+   "time": "4:14-5:22",
+   "pack_cards": [
+    "Gallia, the Merrymaker",
+    "Hallway Heckler",
+    "Marwyn, the Preserver",
+    "Bestial Incursion",
+    "Restore with Empathy",
+    "Fatehold Chronologist",
+    "Infinite Coursework",
+    "Medic's Kitesail",
+    "Extended Absence",
+    "Vigorbloom Annex"
+   ],
+   "taken": "Extended Absence",
+   "reasoning": "Extended Absence: really good removal and a sign black may be open: it is the best black common and still in the pack at pick five with plenty of uncommons left; other cards in his space are green (Marwyn, Restore with Empathy, Bestial Incursion).",
+   "considered": {
+    "Marwyn, the Preserver": "green card he could maybe splash",
+    "Restore with Empathy": "in the pack"
+   },
+   "plan": "Blue-black; black open.",
+   "quotes": [
+    "Extended absence. Really, really good removal spell. ... pick five is a signal that black might be open."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 6,
+   "time": "5:22-5:51",
+   "pack_cards": [
+    "Identity Echo",
+    "Forest",
+    "Hexhaven Battalion",
+    "Predictive Preparations",
+    "Icy Reception",
+    "Apex Witchstalker",
+    "Artifist Acumen",
+    "Awaken the Inferno",
+    "Arcane Amphisbaena"
+   ],
+   "taken": "Apex Witchstalker",
+   "reasoning": "Apex Witchstalker over Icy Reception: a really good combo with Rewrite Regrets and a card he does not mind casting at the top of the curve to reach the Recruitments; Icy Reception is a card he has gone on a journey with and now rates middle; Hexhaven Battalion not preferred.",
+   "considered": {
+    "Icy Reception": "somewhere in the middle",
+    "Hexhaven Battalion": "no reason to take over the two"
+   },
+   "plan": "Blue-black graveyard.",
+   "quotes": [
+    "I'm going to take the Apex Witchstalker though. I think this card's really a good combo with Rewrite Regrets."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 7,
+   "time": "5:51-6:15",
+   "pack_cards": [
+    "Pia, Aether Ascetic",
+    "Blossom-Blessed Angel",
+    "Fateshaper Aspirant",
+    "Apex Witchstalker",
+    "Solve for Disappointment",
+    "Wrath of the Bloodmane",
+    "Greenhouse Propagator",
+    "Dedicated Commons"
+   ],
+   "taken": "Apex Witchstalker",
+   "reasoning": "Apex Witchstalker (second) over Wrath of the Bloodmane: in this deck with graveyard synergy he would rather splash green than red, and he has a couple of landcyclers to get it done.",
+   "considered": {
+    "Wrath of the Bloodmane": "a potential splash, not taken"
+   },
+   "plan": "Blue-black, green splash possible.",
+   "quotes": [
+    "I would rather splash green than red. And so I'll just take this card."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 8,
+   "time": "6:15-6:47",
+   "pack_cards": [
+    "Cruel Calculations",
+    "Yuriko, Hope from the Shadows",
+    "Ghalta the Unstoppable",
+    "Fateshaper Aspirant",
+    "Sphinx's Approach",
+    "Solve for Disappointment",
+    "Island"
+   ],
+   "taken": "Yuriko, Hope from the Shadows",
+   "reasoning": "Yuriko, Hope from the Shadows ('Euro') over Sphinx's Approach: extra board presence, fills the graveyard; he might not play it; he does not think he is likely to play Sphinx's Approach either.",
+   "considered": {
+    "Sphinx's Approach": "not his favourite, lots of do-nothings already"
+   },
+   "plan": "Blue-black.",
+   "quotes": [
+    "I'm going to take Eureko over the Sphinx's Approach. Just give myself some extra board presence."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 9,
+   "time": "6:47-7:12",
+   "pack_cards": [
+    "Dark Matter Manipulator",
+    "Teyo, Diamondblade Mage",
+    "Way of the Paradox",
+    "Charge the Sanctum",
+    "Afterthought Sentry",
+    "Meticulous Commons"
+   ],
+   "taken": "Dark Matter Manipulator",
+   "reasoning": "Dark Matter Manipulator wheeled: 'that's a pickup'; it fuels his graveyard and gives him a one-drop; he could splash white again, but green is his hope for Hapatra.",
+   "considered": {},
+   "plan": "Blue-black.",
+   "quotes": [
+    "Wow, we wield dark matter manipulator. That's a pickup for sure."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 10,
+   "time": "7:12-7:27",
+   "pack_cards": [
+    "Kiora of Salt and Sand",
+    "Charge the Sanctum",
+    "Afterthought Sentry",
+    "Living Library",
+    "Plains"
+   ],
+   "taken": "Afterthought Sentry",
+   "reasoning": "Afterthought Sentry (a two-drop he needs, opponents have flashback cards); he does not expect to play it ('straight in the sideboard'); he says he takes it so as not to send a black signal.",
+   "considered": {
+    "Kiora of Salt and Sand": "not a card he would want to splash"
+   },
+   "plan": "Blue-black.",
+   "quotes": [
+    "I don't have any two drops. This one can get the job done."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 11,
+   "time": "7:27-7:43",
+   "pack_cards": [
+    "Rampart Hunter",
+    "Tether Technician",
+    "Wrecking Gecko",
+    "Swamp"
+   ],
+   "taken": null,
+   "reasoning": "Taken card not identified: he says he takes 'the black card' so as not to send a black signal; none of Rampart Hunter, Tether Technician or Wrecking Gecko is in the final pool, so the take was probably the Swamp.",
+   "considered": {},
+   "plan": "Blue-black.",
+   "quotes": [
+    "I guess I'll take the black card just so I don't send a black signal."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 12,
+   "time": "7:43-7:58",
+   "pack_cards": [
+    "Marwyn, the Clearcutter",
+    "Charge the Sanctum",
+    "Stingerquill Annex"
+   ],
+   "taken": "Stingerquill Annex",
+   "reasoning": "Stingerquill Annex (black-red land): a land is a good pick whoever passed this pack; with three cards left he would not normally expect to see it.",
+   "considered": {},
+   "plan": "Blue-black.",
+   "quotes": [
+    "Black red land is nice though. This is always just like a thing in draft."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 13,
+   "time": "7:58-8:04",
+   "pack_cards": [
+    "Restore with Empathy",
+    "Vigorbloom Annex"
+   ],
+   "taken": "Vigorbloom Annex",
+   "reasoning": "Vigorbloom Annex over Restore with Empathy: you never know what happens; he does not want to splash Restore.",
+   "considered": {
+    "Restore with Empathy": "never going to splash it"
+   },
+   "plan": "Blue-black.",
+   "quotes": [
+    "Here I'll take Vigorbloom Annex. You never know what's going to happen."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 14,
+   "time": "8:04-8:09",
+   "pack_cards": [
+    "unreadable (hidden)"
+   ],
+   "taken": null,
+   "reasoning": "Last card auto-selected; never displayed.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 1,
+   "time": "8:09-8:59",
+   "pack_cards": [
+    "Seasoned Cryomancer",
+    "Infinite Coursework",
+    "Rescue Girl, First Responder",
+    "Unsummon",
+    "Pia, Determined Rebuilder",
+    "Silence the Echo",
+    "Way of the Pyromancer",
+    "Skilled Battlecarver",
+    "Pia, Aether Ascetic",
+    "Compel Brutality",
+    "Theorix Charm",
+    "Formidable Commons",
+    "Bloombrute",
+    "Fateshaper Aspirant"
+   ],
+   "taken": "Seasoned Cryomancer",
+   "reasoning": "Seasoned Cryomancer (mythic) over Theorix Charm: he would take the charm if there were no mythic that fits his strategy; Cryomancer works with Apex Witchstalker (discard to reanimate later); he thinks a Charm may wheel since nobody else seems to be blue-black.",
+   "considered": {
+    "Theorix Charm": "loves it, would take it if the mythic were absent; expects to wheel one",
+    "Rescue Girl, First Responder": "likely to be taken by someone"
+   },
+   "plan": "Blue-black, open.",
+   "quotes": [
+    "I would definitely take the charm if there wasn't a mythic rare that really fits my strategy well."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 2,
+   "time": "8:59-9:52",
+   "pack_cards": [
+    "Ajani Resolute",
+    "Solve for Disappointment",
+    "Craterclaw Colossus",
+    "No Admittance",
+    "Countersculpt",
+    "Compel Brutality",
+    "Gallia, Tragic Host",
+    "Blessed Ghoul",
+    "Stingerquill Charm",
+    "Mountain",
+    "Vigorbloom Charm",
+    "Divining Duelist",
+    "Unsummon"
+   ],
+   "taken": "Countersculpt",
+   "reasoning": "Countersculpt over Gallia, Tragic Host: perfect for his control deck even with few Jace cards; Gallia second, a two-drop that can come back; Unsummon he would play but only ever wants one.",
+   "considered": {
+    "Gallia, Tragic Host": "his second choice, a two-drop",
+    "Unsummon": "would play one"
+   },
+   "plan": "Blue-black control.",
+   "quotes": [
+    "Counter sculpt is a great card though. I also like Gallia, but I think counter sculpt is perfect for my control deck."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 3,
+   "time": "9:52-10:19",
+   "pack_cards": [
+    "Dark Matter Manipulator",
+    "Sureshot Sower",
+    "Countersculpt",
+    "Fatehold Chronologist",
+    "Ruric Thar, Biomagus",
+    "Living Library",
+    "Gallia, Tragic Host",
+    "Mountain",
+    "Gallia, the Merrymaker",
+    "Graft Surgeon",
+    "Last Gasp",
+    "Artifist Acumen"
+   ],
+   "taken": "Countersculpt",
+   "reasoning": "Countersculpt again over Last Gasp, Dark Matter Manipulator and Gallia: keeps taking Counter Sculpts, a really strong card for a deck trying to go long; three black cards in the pack so one may wheel (it does: Dark Matter Manipulator).",
+   "considered": {
+    "Last Gasp": "would also be fine",
+    "Dark Matter Manipulator": "pretty good, may wheel"
+   },
+   "plan": "Blue-black control.",
+   "quotes": [
+    "I think I'm just going to keep taking counter sculpts. It's a really strong card."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 4,
+   "time": "10:19-10:34",
+   "pack_cards": [
+    "Frostbite Pyromental",
+    "Eardrum Rattler",
+    "Proft, Consulting Detective",
+    "Sureshot Sower",
+    "Jiang Yanggu, Never Alone",
+    "Fatehold Annex",
+    "Grim Repriser",
+    "Vigorbloom Charm",
+    "Infinite Coursework",
+    "Sphinx's Approach",
+    "Last Gasp"
+   ],
+   "taken": "Last Gasp",
+   "reasoning": "Last Gasp: he just needs the kill spell and instant speed makes it better than Proft for his deck; Proft is good but he would not use him as effectively.",
+   "considered": {
+    "Proft, Consulting Detective": "good, but he needs the kill spell"
+   },
+   "plan": "Blue-black control.",
+   "quotes": [
+    "Yeah, I just need the kill spell, especially instant speed makes it..."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 5,
+   "time": "10:34-10:46",
+   "pack_cards": [
+    "Way of the Mentor",
+    "Charge the Sanctum",
+    "Gallia, the Merrymaker",
+    "Mountain",
+    "Stingerquill Charm",
+    "Traxos, Scourge Eternal",
+    "Hexhaven Dueling Arena",
+    "Semester Foreseer",
+    "Eardrum Rattler",
+    "Something Worth Saving"
+   ],
+   "taken": "Stingerquill Charm",
+   "reasoning": "Stingerquill Charm over Semester Foreseer: a two-mana deal three; maybe he splashes black (sic: red), maybe not; he does not need a random four-drop.",
+   "considered": {
+    "Semester Foreseer": "does not think it is very good"
+   },
+   "plan": "Blue-black.",
+   "quotes": [
+    "Here, I will take stinger quill charm maybe over semester foreseer."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 6,
+   "time": "10:46-11:08",
+   "pack_cards": [
+    "Frostbite Pyromental",
+    "Forest",
+    "Refute Destiny",
+    "Proft, Sinister Mastermind",
+    "Woodwork Prodigy",
+    "Academic Ascent",
+    "Surveillance Phantasm",
+    "Inspired Tethermage",
+    "Something Worth Saving"
+   ],
+   "taken": "Proft, Sinister Mastermind",
+   "reasoning": "Proft, Sinister Mastermind over Surveillance Phantasm: easy pick, minus three minus one kills many creatures; he can move it to the one-drop slot.",
+   "considered": {
+    "Surveillance Phantasm": "as a two-drop"
+   },
+   "plan": "Blue-black.",
+   "quotes": [
+    "Easy pick here. It's just like the one mana mode's pretty good."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 7,
+   "time": "11:08-11:34",
+   "pack_cards": [
+    "Way of the Mentor",
+    "Massacre Girl, Most Wanted",
+    "Way of the Warlord",
+    "Screeching Soulbreaker",
+    "Theoretical Necromancer",
+    "Blazing Crescendo",
+    "Wrecking Gecko",
+    "Plains"
+   ],
+   "taken": "Theoretical Necromancer",
+   "reasoning": "Theoretical Necromancer: he likes one copy of the necromancer in these decks when milling himself; Eureko maybe okay; does not like Massacre Girl much.",
+   "considered": {
+    "Massacre Girl, Most Wanted": "does not like it that much"
+   },
+   "plan": "Blue-black.",
+   "quotes": [
+    "I do like one copy of the necromancer in these decks if I'm milling myself."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 8,
+   "time": "11:34-11:54",
+   "pack_cards": [
+    "Entrust the Spark",
+    "Way of the Necromancer",
+    "Theorix Charm",
+    "Vinelasher Adept",
+    "Charge the Sanctum",
+    "Living Library",
+    "Island"
+   ],
+   "taken": "Theorix Charm",
+   "reasoning": "Theorix Charm eighth pick (the second Charm wheel is hoped for); he could have taken a two/three flyer, but it is better if you are surveilling actively.",
+   "considered": {},
+   "plan": "Blue-black.",
+   "quotes": [
+    "Ooh, so we got a theorix charm eighth pick. Can we get one ninth pick?"
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 9,
+   "time": "11:54-12:26",
+   "pack_cards": [
+    "Way of the Pyromancer",
+    "Pia, Aether Ascetic",
+    "Theorix Charm",
+    "Fateshaper Aspirant",
+    "Skilled Battlecarver",
+    "Formidable Commons"
+   ],
+   "taken": "Theorix Charm",
+   "reasoning": "Theorix Charm wheeled: 'Did I wheel it? Bang.' The other card he thought might wheel was the land; the deck is getting special.",
+   "considered": {
+    "Formidable Commons": "the land he thought might wheel"
+   },
+   "plan": "Blue-black.",
+   "quotes": [
+    "Did I wheel it? Did I wheel it? Bang."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 10,
+   "time": "12:26-13:06",
+   "pack_cards": [
+    "Gallia, Tragic Host",
+    "Vigorbloom Charm",
+    "Unsummon",
+    "Solve for Disappointment",
+    "Mountain"
+   ],
+   "taken": "Gallia, Tragic Host",
+   "reasoning": "Gallia, Tragic Host over Unsummon: Gallia fits the mill plan and the theme, he needs two-drops; he only ever wants one Unsummon in this kind of deck.",
+   "considered": {
+    "Unsummon": "would be a good card but only one wanted"
+   },
+   "plan": "Blue-black.",
+   "quotes": [
+    "I think I'm going to take Gallia over Unsummon here."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 11,
+   "time": "13:06-13:16",
+   "pack_cards": [
+    "Dark Matter Manipulator",
+    "Gallia, the Merrymaker",
+    "Living Library",
+    "Mountain"
+   ],
+   "taken": "Dark Matter Manipulator",
+   "reasoning": "Dark Matter Manipulator wheeled again: 'when you think you can wheel cards, you get so much value'; he wanted the Charm, thought it could wheel and got Cryomancer instead.",
+   "considered": {},
+   "plan": "Blue-black.",
+   "quotes": [
+    "Bang. We wield the dark matter manipulator."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 12,
+   "time": "13:16-13:26",
+   "pack_cards": [
+    "Infinite Coursework",
+    "Sphinx's Approach",
+    "Sureshot Sower"
+   ],
+   "taken": "Infinite Coursework",
+   "reasoning": "Infinite Coursework: a marginal card but unconditional removal for many things; he thinks it makes the cut; 18 playables now.",
+   "considered": {
+    "Sureshot Sower": "in the pack"
+   },
+   "plan": "Blue-black.",
+   "quotes": [
+    "Infinite coursework is honestly a card that's more marginal, but I still think it's going to make the cut."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 13,
+   "time": "13:26-13:32",
+   "pack_cards": [
+    "Charge the Sanctum",
+    "Mountain"
+   ],
+   "taken": null,
+   "reasoning": "Taken card not identified: Charge the Sanctum or Mountain left; neither is in the final deck.",
+   "considered": {},
+   "plan": "Blue-black.",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 14,
+   "time": "13:32-13:36",
+   "pack_cards": [
+    "unreadable (hidden)"
+   ],
+   "taken": null,
+   "reasoning": "Last card auto-selected; never displayed.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 1,
+   "time": "13:36-14:36",
+   "pack_cards": [
+    "Vindictive Triumph",
+    "Rank Rat",
+    "Tetsuko Umezawa, Fugitive",
+    "Artifist Acumen",
+    "Loot, the Anomaly",
+    "Something Worth Saving",
+    "Tetsuko Umezawa, Pursuer",
+    "Twinned Vision",
+    "Recursive Recruitment",
+    "Living Library",
+    "Konstrari Charm",
+    "Transformative Commons",
+    "Hexhaven Battalion",
+    "Semester Foreseer"
+   ],
+   "taken": "Recursive Recruitment",
+   "reasoning": "Recursive Recruitment (second): the deck 'is really humming along'; he cuts cards he hopes not to play and counts 18 playables.",
+   "considered": {
+    "Something Worth Saving": "in the pack",
+    "Rank Rat": "in the pack (wheels)"
+   },
+   "plan": "Blue-black graveyard.",
+   "quotes": [
+    "And we get a recursive recruitment. This deck is really humming along."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 2,
+   "time": "14:36-15:26",
+   "pack_cards": [
+    "Deserted Beach",
+    "Bestial Incursion",
+    "Yuriko, Blade of the Mighty",
+    "Inspired Tethermage",
+    "Yuriko, Hope from the Shadows",
+    "Fatehold Chronologist",
+    "Winter, Tormented Loner",
+    "Keeper of the Quiet Hour",
+    "Ruric Thar, Magecrusher",
+    "Stingerquill Annex",
+    "Divining Duelist",
+    "Theoretical Necromancer",
+    "Hallway Heckler"
+   ],
+   "taken": "Divining Duelist",
+   "reasoning": "Divining Duelist: a bad pack for him; the duelist is the card with most potential if he holds up Countersculpt and Theorix Charms; he does not want a second Eureko; Winter is not his favourite.",
+   "considered": {
+    "Winter, Tormented Loner": "not his favourite",
+    "Keeper of the Quiet Hour": "alternative",
+    "Yuriko, Hope from the Shadows": "does not want a second"
+   },
+   "plan": "Blue-black.",
+   "quotes": [
+    "Let's take the duelist. I think duelist actually has the most potential here."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 3,
+   "time": "15:26-15:56",
+   "pack_cards": [
+    "Haunted Ridge",
+    "Bestial Incursion",
+    "Refute Destiny",
+    "Twinned Vision",
+    "Fblthp, Impossibly Lost",
+    "Murmuring Volume",
+    "Fblthp, Knows the Way",
+    "Theorix Annex",
+    "Stingerquill Charm",
+    "Unflinching Hortimancer",
+    "Cast Away Doubt",
+    "Eardrum Rattler"
+   ],
+   "taken": "Theorix Annex",
+   "reasoning": "Theorix Annex over Fblthp: Fblthp is a good card but not much in his deck because he is not going hard enough on mill; he will have many playables, so he takes the land for consistency; he would even rather have Twinned Vision.",
+   "considered": {
+    "Fblthp, Impossibly Lost": "good card, not as much in his deck",
+    "Twinned Vision": "might rather have it"
+   },
+   "plan": "Blue-black.",
+   "quotes": [
+    "I'm just going to take the land here ... getting a land to make my mana more consistent is going to be a really nice thing to have here."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 4,
+   "time": "15:56-16:18",
+   "pack_cards": [
+    "Roiling Canopy",
+    "Sureshot Sower",
+    "Ghalta the Immovable",
+    "Theorix Metamage",
+    "Terminal Criticism",
+    "Meticulous Commons",
+    "Vigorbloom Charm",
+    "Graft Surgeon",
+    "Artifist Acumen",
+    "Blazing Crescendo",
+    "Greenhouse Propagator"
+   ],
+   "taken": "Theorix Metamage",
+   "reasoning": "Theorix Metamage: not the worst in a weak pack; he needs some self-mill, every time he mills he could hit it; it helps Rewrite Regrets and Necromancer a bit.",
+   "considered": {},
+   "plan": "Blue-black.",
+   "quotes": [
+    "Theorix Metamage is not the worst. I do need some self-mill."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 5,
+   "time": "16:18-16:46",
+   "pack_cards": [
+    "Karn, Argent Defender",
+    "Medic's Kitesail",
+    "Geist of Saint Thalia",
+    "Formidable Commons",
+    "Konstrari Charm",
+    "Unflinching Hortimancer",
+    "Silence the Echo",
+    "No Admittance",
+    "Bestial Incursion",
+    "Living Library"
+   ],
+   "taken": "Formidable Commons",
+   "reasoning": "Formidable Commons (green-black land) over Silence the Echo and Geist of Saint Thalia: pretty unlikely that he plays it, but he is unlikely to play any of these cards; Geist could be nice since his deck is mostly noncreature; five-mana kill spell might be better than Coursework.",
+   "considered": {
+    "Silence the Echo": "five-mana kill spell, might be better than coursework",
+    "Geist of Saint Thalia": "nice with so many non-creatures but his spells are blue-blue"
+   },
+   "plan": "Blue-black.",
+   "quotes": [
+    "I'm just going to take the green black land."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 6,
+   "time": "16:46-17:14",
+   "pack_cards": [
+    "Arni, Humble Scribe",
+    "Forest",
+    "Tetsuko Umezawa, Fugitive",
+    "Ghalta the Unstoppable",
+    "Campus Crier",
+    "Sphinx's Approach",
+    "Rampart Hunter",
+    "Budding Insurgent",
+    "Living Library"
+   ],
+   "taken": "Arni, Humble Scribe",
+   "reasoning": "Arni, Humble Scribe over Sphinx's Approach: he is not a Tetsuko deck; Arni is fine; Sphinx's Approach is not high on his list.",
+   "considered": {
+    "Sphinx's Approach": "not high on his list"
+   },
+   "plan": "Blue-black.",
+   "quotes": [
+    "I think I'll take the Arni."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 7,
+   "time": "17:14-17:32",
+   "pack_cards": [
+    "Perfected Theory",
+    "Proft, Sinister Mastermind",
+    "Grim Repriser",
+    "Solve for Disappointment",
+    "Chandra's Emberling",
+    "Skilled Battlecarver",
+    "Fatehold Chronologist",
+    "Island"
+   ],
+   "taken": "Proft, Sinister Mastermind",
+   "reasoning": "Proft, Sinister Mastermind (second): he does not love Fatehold Chronologist and does not know if he needs a second Proft, but takes it for instant-speed shenanigans.",
+   "considered": {
+    "Fatehold Chronologist": "does not love it"
+   },
+   "plan": "Blue-black.",
+   "quotes": [
+    "I'll just take the prof. I think instant speed shenanigans and all that."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 8,
+   "time": "17:32-17:46",
+   "pack_cards": [
+    "Precise Redaction",
+    "Teyo, Diamondblade Mage",
+    "Cast Away Doubt",
+    "Eardrum Rattler",
+    "Sureshot Sower",
+    "Tam's Resistance",
+    "Dedicated Commons"
+   ],
+   "taken": null,
+   "reasoning": "Taken card not stated: 'I don't think resistance does that much for me. So, pretty bad pack three overall'; none of the pack's cards (Precise Redaction, Teyo, Cast Away Doubt, Eardrum Rattler, Sureshot Sower, Tam's Resistance, Dedicated Commons) is in the deck.",
+   "considered": {
+    "Tam's Resistance": "does not do much for him"
+   },
+   "plan": "Blue-black.",
+   "quotes": [
+    "I don't think resistance does that much for me."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 9,
+   "time": "17:46-18:06",
+   "pack_cards": [
+    "Tetsuko Umezawa, Fugitive",
+    "Rank Rat",
+    "Artifist Acumen",
+    "Something Worth Saving",
+    "Living Library",
+    "Transformative Commons"
+   ],
+   "taken": "Rank Rat",
+   "reasoning": "Rank Rat over Tetsuko: better here because Tetsuko is more aggressive and the deck has one Mindseeker Oculus; the Rat trades with the opponent's resources.",
+   "considered": {
+    "Tetsuko Umezawa, Fugitive": "more of an aggressive card"
+   },
+   "plan": "Blue-black.",
+   "quotes": [
+    "Rat at least does a little bit of trading with their resources which we care about."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 10,
+   "time": "18:06-18:14",
+   "pack_cards": [
+    "Theoretical Necromancer",
+    "Hallway Heckler",
+    "Inspired Tethermage",
+    "Keeper of the Quiet Hour",
+    "Stingerquill Annex"
+   ],
+   "taken": "Keeper of the Quiet Hour",
+   "reasoning": "Keeper of the Quiet Hour: he does not need a second Necromancer, no red cards to splash (not Stingerquill Charm), so a Keeper.",
+   "considered": {
+    "Theoretical Necromancer": "does not need a second"
+   },
+   "plan": "Blue-black.",
+   "quotes": [
+    "We don't need a second necromancer ever. ... So just a keeper."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 11,
+   "time": "18:14-18:25",
+   "pack_cards": [
+    "Fblthp, Impossibly Lost",
+    "unreadable (hidden)",
+    "unreadable (hidden)",
+    "unreadable (hidden)"
+   ],
+   "taken": "Fblthp, Impossibly Lost",
+   "reasoning": "Fblthp, Impossibly Lost wheeled ('we got fibble back'); he calls it an okay card, turn one this, turn two draw two; Murmuring Volume also in the pack.",
+   "considered": {
+    "Murmuring Volume": "also in the pack"
+   },
+   "plan": "Blue-black.",
+   "quotes": [
+    "We got fibble back. Fibble tip is actually like an okay card."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 12,
+   "time": "18:25-18:33",
+   "pack_cards": [
+    "unreadable (hidden)",
+    "unreadable (hidden)",
+    "unreadable (hidden)"
+   ],
+   "taken": "Medic's Kitesail",
+   "reasoning": "Medic's Kitesail: 'we probably won't play it but we'll take it'.",
+   "considered": {},
+   "plan": "Blue-black.",
+   "quotes": [
+    "Kite sail. We might probably won't play it but we'll take it."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 13,
+   "time": "18:33-18:38",
+   "pack_cards": [
+    "Living Library",
+    "unreadable (hidden)"
+   ],
+   "taken": null,
+   "reasoning": "Taken card not identified; the cards were hidden.",
+   "considered": {},
+   "plan": "Blue-black.",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 14,
+   "time": "18:38-25:45",
+   "pack_cards": [
+    "unreadable (hidden)"
+   ],
+   "taken": null,
+   "reasoning": "Last card, never displayed.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  }
+ ]
+}

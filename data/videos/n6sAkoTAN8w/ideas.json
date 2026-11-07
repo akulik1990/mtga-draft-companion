@@ -1,0 +1,672 @@
+{
+ "video": "n6sAkoTAN8w",
+ "player": "NicolaiBolas",
+ "set": "FRA",
+ "source": "YouTube auto-caption transcript 0:00-24:00 (cut-off 1440 s, nothing after), card names corrected; repeats/related checked against every other analysis/videos/*/ideas.json (pass 3)",
+ "ideas": [
+  {
+   "id": "n6s-01",
+   "time": 85,
+   "phase": "draft",
+   "claim": "P1p1: with two strong gold outliers in the pack, take the strong multicoloured card and stay willing to move off it.",
+   "quote": "when you have like two really strong outliers and power level, it's worth sometimes to just take the strong multicolored card",
+   "cards": [
+    "Ingris Stingerquill",
+    "Craftwork Crusher"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "How often a P1p1 gold card ends up in the final deck; GIH WR of the gold options at P1p1.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "n6s-02",
+   "time": 125,
+   "phase": "draft",
+   "claim": "No Admittance is a very strong common (probably the best red common) and worth taking at P1p2 even without a signal.",
+   "quote": "This card is a very strong common.",
+   "cards": [
+    "No Admittance"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of No Admittance against the P1p2 alternatives; within-deck value by skill group.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "5aM-01",
+    "uoy-05"
+   ]
+  },
+  {
+   "id": "n6s-03",
+   "time": 190,
+   "phase": "draft",
+   "claim": "A cheap aggressive red two-drop over the stronger four-drop when the plan is an aggro ping deck and the lane is not yet closed.",
+   "quote": "I'm willing to like do a more experimental. Let's see if we can make this deck work as long as it's not looking like too far from being open.",
+   "cards": [
+    "Skilled Battlecarver",
+    "Tetsuko Umezawa, Pursuer"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Within-deck value of Battlecarver vs Tetsuko Pursuer in R/x aggro decks.",
+   "type": "one-off pick",
+   "repeats": [],
+   "related": [
+    "uoy-07"
+   ]
+  },
+  {
+   "id": "n6s-04",
+   "time": 235,
+   "phase": "draft",
+   "claim": "Room of Refuge is good in a deck with hard-to-cast gold cards and is somewhat splashable through its four-mana mode.",
+   "quote": "Room of Refuge is nice because it helps you cast like really difficult to cast cards like Stinger Quill that need very specific",
+   "cards": [
+    "Room of Refuge"
+   ],
+   "kind": "splash / mana",
+   "engine_area": "builder",
+   "test_idea": "Deck WR with Room of Refuge for decks holding double-pipped off-colour cards.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "994-11",
+    "CWs-19"
+   ]
+  },
+  {
+   "id": "n6s-05",
+   "time": 282,
+   "phase": "draft",
+   "claim": "Blossom-Blessed Angel (big flyer) is quite good and the better pick than Thalia, the Survivor or Keeper of the Quiet Hour when white is open.",
+   "quote": "Blossom Blessed Angel seems quite good to me. That's just a big flyer.",
+   "cards": [
+    "Blossom-Blessed Angel",
+    "Thalia, the Survivor",
+    "Keeper of the Quiet Hour"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Blossom-Blessed Angel vs Thalia.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "5aM-05",
+    "5aM-17",
+    "mqZ-15"
+   ]
+  },
+  {
+   "id": "n6s-06",
+   "time": 290,
+   "phase": "draft",
+   "claim": "Abandon the first-pick gold card when its colours are not flowing: no black through five picks, white somewhat open.",
+   "quote": "Black does not seem open at all really. White does seem somewhat open.",
+   "cards": [
+    "Ingris Stingerquill"
+   ],
+   "kind": "colours / signals",
+   "engine_area": "lanes",
+   "test_idea": "Drop-off in deck rate of a P1p1 gold card by colours seen in picks 2-5.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "n6s-07",
+   "time": 335,
+   "phase": "draft",
+   "claim": "Take the open-colour playable over a speculative card to end up with a functional deck, even when the card (Arni, Humble Scribe) needs a steady stream of creatures to be good.",
+   "quote": "I'm not sure how much I like my start for blue though. But I'm just going to take the blue card. I want to end up with a functional deck at the end of the draft.",
+   "cards": [
+    "Arni, Humble Scribe"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Deck rate of mid-pack playables in the open colour vs best-card picks.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "mqZ-49"
+   ]
+  },
+  {
+   "id": "n6s-08",
+   "time": 355,
+   "phase": "draft",
+   "claim": "Teyo, Diamondblade Mage is good in an attacking deck: flash, deathtouch on a permanent, a counter. It combines with first strike (Skilled Battlecarver) and is in the deck on power level.",
+   "quote": "giving my permanence death touch. So if I want to be attacking, that's pretty good.",
+   "cards": [
+    "Teyo, Diamondblade Mage",
+    "Skilled Battlecarver"
+   ],
+   "kind": "synergy",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Teyo in R/B vs other builds; Teyo with first strikers.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "n6s-09",
+   "time": 395,
+   "phase": "draft",
+   "claim": "Hallway Heckler over Silence the Echo for the deck: a two-drop that draws and pings, strong when there is a good enchantment to fetch.",
+   "quote": "Hallway Heckler seems just like a good card though for my deck.",
+   "cards": [
+    "Hallway Heckler",
+    "Silence the Echo"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Within-deck value of Hallway Heckler in R/x decks with 4+ noncreature spells.",
+   "type": "one-off pick",
+   "repeats": [],
+   "related": [
+    "uoy-11"
+   ]
+  },
+  {
+   "id": "n6s-10",
+   "time": 415,
+   "phase": "draft",
+   "claim": "Winter, Team Player fits a deck with both creatures and non-creature spells (convoke, +1/+0 on noncreature spells).",
+   "quote": "winter team player seems like a perfect card for this sort of deck because I I'm going to have creatures and I'm gonna have non-creatures",
+   "cards": [
+    "Winter, Team Player"
+   ],
+   "kind": "synergy",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Winter by creature count and noncreature count.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "uoy-13",
+    "994-25"
+   ]
+  },
+  {
+   "id": "n6s-11",
+   "time": 440,
+   "phase": "draft",
+   "claim": "A mid-power aggressive creature passed early can wheel in a 14-card pack: Rampart Hunter passed at P1p2 wheels at P1p10.",
+   "quote": "Oh, yeah. We could have gotten taken a rampard hunter and we get one anyway.",
+   "cards": [
+    "Rampart Hunter"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Wheel rate of mid-power commons from pick k to k+8 in 14-card packs.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "CWs-38"
+   ]
+  },
+  {
+   "id": "n6s-12",
+   "time": 480,
+   "phase": "draft",
+   "claim": "A good two-drop is taken over other cards because good two-drops are scarce in the set.",
+   "quote": "I'm glad I took this battle carver though cuz good two drops have been in short supply.",
+   "cards": [
+    "Skilled Battlecarver"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Within-deck value of two-drops by number already held; skill split.",
+   "type": "heuristic",
+   "repeats": [
+    "uoy-07"
+   ],
+   "related": []
+  },
+  {
+   "id": "n6s-13",
+   "time": 510,
+   "phase": "draft",
+   "claim": "Take the best gold removal (Vraska, the Cutting Glare) for its upside and plan to splash it only if a landcycler or fixer comes; even in two colours a card like this is worth a splash.",
+   "quote": "even if we can't end up splashing it, we still just want to take it because it's such a high upside card",
+   "cards": [
+    "Vraska, the Cutting Glare",
+    "Awaken the Inferno"
+   ],
+   "kind": "splash / mana",
+   "engine_area": "builder",
+   "test_idea": "Win rate of a splash card when held vs taken but not played.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "CWs-03",
+    "re7-09",
+    "re7-16"
+   ]
+  },
+  {
+   "id": "n6s-14",
+   "time": 575,
+   "phase": "draft",
+   "claim": "Take the five-damage kill spell over bodies in pack 2 even when red is not the most open colour: 'I do need some kill spells'.",
+   "quote": "Yeah, I think I'll take the forte though. I do need some kill spells.",
+   "cards": [
+    "Fulminous Forte",
+    "Hallway Heckler"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Removal count in 60%+ decks by pick position.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "uoy-25",
+    "re7-21"
+   ]
+  },
+  {
+   "id": "n6s-15",
+   "time": 600,
+   "phase": "draft",
+   "claim": "Take the stronger card first and hope a two-drop wheels from a 12-card pack: Winter at P2p3, Void Extrapolator wheels at P2p11.",
+   "quote": "Maybe I can try to wheel this and just take winter.",
+   "cards": [
+    "Winter, Team Player",
+    "Void Extrapolator"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Wheel rate of cheap commons from pick k to k+8 in 12-card packs.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "CWs-38"
+   ]
+  },
+  {
+   "id": "n6s-16",
+   "time": 642,
+   "phase": "draft",
+   "claim": "Build a direct-damage package (No Admittance, Cast Away Doubt, Way of the Warlord, Hallway Heckler) to enable the non-combat damage payoffs.",
+   "quote": "I think like my burn packages coming together of just like direct damage to their face",
+   "cards": [
+    "No Admittance",
+    "Cast Away Doubt",
+    "Way of the Warlord",
+    "Hallway Heckler"
+   ],
+   "kind": "synergy",
+   "engine_area": "picker",
+   "test_idea": "Win rate of Ingris/Master of Barbs/Grim Repriser by number of noncombat damage sources.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "n6s-17",
+   "time": 700,
+   "phase": "draft",
+   "claim": "Take the splash-enabling dual land (Konstrari Annex) over a playable when the pack is thin, because it could enable the Vraska splash.",
+   "quote": "I'll just take the land because maybe I could splash the Vasa if I get enough stuff.",
+   "cards": [
+    "Konstrari Annex",
+    "Vraska, the Cutting Glare"
+   ],
+   "kind": "splash / mana",
+   "engine_area": "builder",
+   "test_idea": "Win rate of a splash card with 2 vs 1 on-colour fixing lands.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "mqZ-51",
+    "994-22"
+   ]
+  },
+  {
+   "id": "n6s-18",
+   "time": 730,
+   "phase": "draft",
+   "claim": "Pia, Determined Rebuilder is a really good three-drop (2/2 plus a 1/1 flyer) and its arrival is a sign red is open.",
+   "quote": "this is a really good pickup and a really good sign for my potential red deck being open",
+   "cards": [
+    "Pia, Determined Rebuilder"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Pia in R/x decks.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "Uy4-08"
+   ]
+  },
+  {
+   "id": "n6s-19",
+   "time": 770,
+   "phase": "draft",
+   "claim": "Terminal Criticism only kills blue or red creatures: a best-of-three card, not one for best of one.",
+   "quote": "This card only kills blue or red things, so good in best of three, but not a card I want in best of one.",
+   "cards": [
+    "Terminal Criticism"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "Deck rate and GIH WR of Terminal Criticism in main decks.",
+   "type": "claim",
+   "repeats": [
+    "CWs-25"
+   ],
+   "related": [
+    "994-28",
+    "uoy-27"
+   ]
+  },
+  {
+   "id": "n6s-20",
+   "time": 800,
+   "phase": "draft",
+   "claim": "Prefer Hallway Heckler to Winter, Tormented Loner when there is no good sacrifice fodder in the deck.",
+   "quote": "I don't have good stuff to sacrifice really, other than the Pia token, maybe.",
+   "cards": [
+    "Hallway Heckler",
+    "Winter, Tormented Loner"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Within-deck value of Winter, Tormented Loner by token count.",
+   "type": "one-off pick",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "n6s-21",
+   "time": 865,
+   "phase": "draft",
+   "claim": "Yargle, Glutton of Urborg plus Arni, Humble Scribe is a combo (Arni untaps, Yargle hits for ten) but two bad cards made slightly more playable are not worth playing.",
+   "quote": "sometimes you don't want to play two bad cards to make them both slightly more playable",
+   "cards": [
+    "Yargle, Glutton of Urborg",
+    "Arni, Humble Scribe"
+   ],
+   "kind": "synergy",
+   "engine_area": "picker",
+   "test_idea": "Win rate when both cards are in the main deck.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-49"
+   ]
+  },
+  {
+   "id": "n6s-22",
+   "time": 877,
+   "phase": "draft",
+   "claim": "At the end of pack 2 he counts his playables (22 in the deck) so pack 3 only has to fill a few needs.",
+   "quote": "My deck currently has 22 cards in it, including these three. So, I only need a few things for pack three.",
+   "cards": [],
+   "kind": "deck building",
+   "engine_area": "picker",
+   "test_idea": "Playables held after pack 2 vs deck win rate.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "n6s-23",
+   "time": 890,
+   "phase": "draft",
+   "claim": "Lich's Relic (kill spell plus equipment) over Samut, Hazoret's Champion because the winters make team haste worth less; Eye of Ugin does nothing in this format and Charge the Sanctum is replaced by better effects.",
+   "quote": "I don't really value it quite as highly because like if I'm going to convoke out",
+   "cards": [
+    "Lich's Relic",
+    "Samut, Hazoret's Champion",
+    "Eye of Ugin",
+    "Charge the Sanctum"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Lich's Relic vs Samut; synergy with Winter.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "uoy-01",
+    "uoy-19"
+   ]
+  },
+  {
+   "id": "n6s-24",
+   "time": 940,
+   "phase": "draft",
+   "claim": "Stingerquill Charm is the perfect card for the deck: a kill spell, a two-drop or a combat trick.",
+   "quote": "It's another kill spell or another two drop or a combat trick. So just the perfect card for me.",
+   "cards": [
+    "Stingerquill Charm"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Stingerquill Charm in B/R.",
+   "type": "one-off pick",
+   "repeats": [],
+   "related": [
+    "uoy-23"
+   ]
+  },
+  {
+   "id": "n6s-25",
+   "time": 1010,
+   "phase": "draft",
+   "claim": "Two-drops do not wheel because other drafters also want them: take Grim Repriser now over a 3/3 prowess for three and a land.",
+   "quote": "I'm not going to be able to wheel this card cuz other players I think are also in demand for two drops.",
+   "cards": [
+    "Grim Repriser"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Wheel rate of two-drops vs other cards of equal rating.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "uoy-07",
+    "uoy-05"
+   ]
+  },
+  {
+   "id": "n6s-26",
+   "time": 1035,
+   "phase": "draft",
+   "claim": "Vraska drops out of the deck without a basic landcycler: a random Forest is not worth it, and tapped lands are a cost in an aggro deck.",
+   "quote": "I don't want to just put a random forest in my deck as much if I can't like search it up as well because it is a downside to have tap lands in your aggro deck",
+   "cards": [
+    "Vraska, the Cutting Glare",
+    "Konstrari Annex"
+   ],
+   "kind": "splash / mana",
+   "engine_area": "builder",
+   "test_idea": "Splash success by number of landcyclers and fixing lands; tapped-land penalty in aggro.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "CWs-03",
+    "re7-09",
+    "994-29"
+   ]
+  },
+  {
+   "id": "n6s-27",
+   "time": 1082,
+   "phase": "draft",
+   "claim": "Speculative picks are free when they were not taken over anything good for the deck.",
+   "quote": "I don't regret the farasa and the lands were pretty free when I took them. I didn't take them over anything great for my deck.",
+   "cards": [
+    "Vraska, the Cutting Glare"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Hard to test; process note.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "n6s-28",
+   "time": 1103,
+   "phase": "draft",
+   "claim": "Master of Barbs (noncombat-damage anthem) over a second Fulminous Forte and the dual land: it turns the pings from Hallway Heckler and Ingris into pump.",
+   "quote": "Whenever one of our opponents are dealt non-combat damage creatures you control get plus and plus O until end of turn",
+   "cards": [
+    "Master of Barbs",
+    "Fulminous Forte",
+    "Hallway Heckler",
+    "Ingris Stingerquill"
+   ],
+   "kind": "synergy",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Master of Barbs by noncombat damage source count.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "n6s-29",
+   "time": 1150,
+   "phase": "draft",
+   "claim": "Take the five-damage Fulminous Forte over Way of the Warlord and expect the Warlord to wheel; it does one pick later. Plays two Warlords, not three.",
+   "quote": "I get kind of immediately rewarded for my decision because now I get a way of the warlord.",
+   "cards": [
+    "Fulminous Forte",
+    "Way of the Warlord"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "How often the second-best removal spell wheels in 8-card packs.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "n6s-30",
+   "time": 1200,
+   "phase": "draft",
+   "claim": "Ferocity of the Hunt works with first strikers: death touch plus first strike makes a creature nearly unblockable.",
+   "quote": "Death touch and first strike makes it pretty much unblockable.",
+   "cards": [
+    "Ferocity of the Hunt",
+    "Skilled Battlecarver",
+    "Chandra's Emberling"
+   ],
+   "kind": "synergy",
+   "engine_area": "picker",
+   "test_idea": "Ferocity GIH WR by first-strike creature count.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "uoy-08",
+    "re7-15",
+    "994-19"
+   ]
+  },
+  {
+   "id": "n6s-31",
+   "time": 1220,
+   "phase": "draft",
+   "claim": "A last-pick on-colour dual land is very valuable for a deck with restrictive colour requirements; he would not take it earlier before the colours were settled.",
+   "quote": "last pick black red land for my black red deck is so good, especially with what my restrictive color requirements on some of my stuff.",
+   "cards": [
+    "Stingerquill Annex"
+   ],
+   "kind": "splash / mana",
+   "engine_area": "builder",
+   "test_idea": "Land WR value by pick position.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "994-29"
+   ]
+  },
+  {
+   "id": "n6s-32",
+   "time": 1230,
+   "phase": "build",
+   "claim": "Do not splash Vraska in a fast aggro deck even with the sources, because a team buff and cheap curve matter more.",
+   "quote": "I probably could try to splash this, but I think my deck is just pretty aggressive.",
+   "cards": [
+    "Vraska, the Cutting Glare"
+   ],
+   "kind": "splash / mana",
+   "engine_area": "builder",
+   "test_idea": "Mock deck WR with and without a splash for aggro builds.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "uoy-14"
+   ]
+  },
+  {
+   "id": "n6s-33",
+   "time": 1246,
+   "phase": "build",
+   "claim": "Build technique: cut every card and add back the premium cards first (removal, two-drops, signature gold), then fill the creature count; adding cards over time helps.",
+   "quote": "you can just kind of cut every card from your deck and then add in the cards you know you want to play",
+   "cards": [],
+   "kind": "deckbuilding",
+   "engine_area": "builder",
+   "test_idea": "Hard to test; process note.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "n6s-34",
+   "time": 1335,
+   "phase": "build",
+   "claim": "Seven two-drops is the target: one Void Extrapolator on top of the six others; eight might be a bit much.",
+   "quote": "I think eight might be a bit much.",
+   "cards": [
+    "Void Extrapolator"
+   ],
+   "kind": "deckbuilding",
+   "engine_area": "builder",
+   "test_idea": "Deck WR by two-drop count.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-52",
+    "CWs-45"
+   ]
+  },
+  {
+   "id": "n6s-35",
+   "time": 1375,
+   "phase": "build",
+   "claim": "Bias the manabase towards the heavier colour: an extra Mountain over a Swamp (9 Mountain, 7 Swamp, one dual).",
+   "quote": "maybe I should just play like an extra mountain over a swamp",
+   "cards": [],
+   "kind": "deckbuilding",
+   "engine_area": "builder",
+   "test_idea": "Basic split vs colour pip weight; mock deck WR.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "n6s-36",
+   "time": 1403,
+   "phase": "build",
+   "claim": "Fill the last slots with the creature that has an effect (second Hallway Heckler) over Artifist Acumen and Cast Away Doubt.",
+   "quote": "I'd rather just play I think hallway heckler in that role.",
+   "cards": [
+    "Hallway Heckler",
+    "Artifist Acumen",
+    "Cast Away Doubt"
+   ],
+   "kind": "deckbuilding",
+   "engine_area": "builder",
+   "test_idea": "Hard to test; process note.",
+   "type": "one-off pick",
+   "repeats": [],
+   "related": []
+  }
+ ]
+}

@@ -1,0 +1,247 @@
+{
+ "video": "Uy49kTqon4o",
+ "player": "Alex Nikolic",
+ "set": "FRA",
+ "source": "YouTube caption transcript 0:00-28:19 (cut-off 1699 s), card names corrected; nothing past 28:19 read. 'type' marks each idea as claim, heuristic or one-off pick. No idea restates an earlier idea one to one, so 'repeats' is empty throughout and shared topics are in 'related'; (idea 5aM-01 and mqZ ids are from other videos).",
+ "ideas": [
+  {
+   "id": "Uy4-01",
+   "time": 195,
+   "phase": "draft",
+   "claim": "Take the best card per 17Lands early in the draft, adjust for context later; the speakers put about 60% trust in the data.",
+   "quote": "at the beginning of the draft, I tend to lean towards like the best card that the data might say is the best. And then after you go on, obviously you have to kind of adjust",
+   "cards": [],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Compare pick-1..4 data-best agreement of strong drafters against later picks.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "Uy4-02",
+   "time": 255,
+   "phase": "draft",
+   "claim": "Violent Echoes is a snap first pick over Draconic Visitor, a build-around that dies to removal.",
+   "quote": "Draconic... is very good in every red deck for sure. Whereas draconic's more of a build around ... it's just kind of killable.",
+   "cards": [
+    "Violent Echoes",
+    "Draconic Visitor"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Violent Echoes vs Draconic Visitor by skill group.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "5aM-01"
+   ]
+  },
+  {
+   "id": "Uy4-03",
+   "time": 330,
+   "phase": "draft",
+   "claim": "Rewrite Regrets is taken over Generous Revival and goes in any deck; blue is the worst cycler to pair it with, black and green are better.",
+   "quote": "I think the blue cyclers the worst one to lock in for regrets. The black and the green are higher impact on regrets.",
+   "cards": [
+    "Rewrite Regrets",
+    "Generous Revival"
+   ],
+   "kind": "synergy",
+   "engine_area": "picker",
+   "test_idea": "Rewrite Regrets GIH WR by number and colour of basic landcyclers in the deck.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "re7-02",
+    "CWs-04"
+   ]
+  },
+  {
+   "id": "Uy4-04",
+   "time": 330,
+   "phase": "draft",
+   "claim": "Ranking of the cycle of basic landcyclers: white first, then red, then green and black, blue last; the best (white) is double white so not free.",
+   "quote": "I think it's like white number one ... I think I'd go like white, red, and then like the green and black ones in there.",
+   "cards": [
+    "Undulating Witness",
+    "Vinelasher Adept",
+    "Apex Witchstalker",
+    "Awaken the Inferno",
+    "Hexhaven Battalion"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of each landcycler with the cycler in hand.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-45",
+    "mqZ-66"
+   ]
+  },
+  {
+   "id": "Uy4-05",
+   "time": 400,
+   "phase": "draft",
+   "claim": "Five-mana cards that need to untap (Draconic-style, Edgar) are rough because removal is good; the same effect at three or four mana is acceptable.",
+   "quote": "at five that is rough. That's a tough sell.",
+   "cards": [
+    "Draconic Visitor",
+    "Edgar, Ancient Bloodlord"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of untap-to-win cards by cmc.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "Uy4-06",
+   "time": 540,
+   "phase": "draft",
+   "claim": "Take the land over a playable (Keeper of the Quiet Hour, Transformative Commons) when the deck is three colours: you always find 23 playables.",
+   "quote": "I think it's just you just always take the land unless it's like so above replacement. Like you're going to get 23.",
+   "cards": [
+    "Transformative Commons",
+    "Keeper of the Quiet Hour",
+    "Theorix Annex"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Within-deck value of a dual or tri land at picks 5-12 against the average playable it displaces.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "CWs-06",
+    "mqZ-48"
+   ]
+  },
+  {
+   "id": "Uy4-07",
+   "time": 700,
+   "phase": "draft",
+   "claim": "Three colours without a strict splash is fine in this format if picks go to lands and cyclers; the pods let you.",
+   "quote": "you can just be three colors if you're willing to spend picks on lands and cyclers.",
+   "cards": [
+    "Garruk, Veiled Butcher"
+   ],
+   "kind": "colours",
+   "engine_area": "builder",
+   "test_idea": "Win rate of three-colour decks with 3+ fixing cards vs two-colour plus splash.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "994-29"
+   ]
+  },
+  {
+   "id": "Uy4-08",
+   "time": 760,
+   "phase": "draft",
+   "claim": "Pia, Determined Rebuilder is one of the better creatures available in a non-creature deck and is taken over Pyre Rhymer; a creature is needed.",
+   "quote": "we have a ton of not creatures, so maybe we just need a creature. And like Pia is one of the better creatures",
+   "cards": [
+    "Pia, Determined Rebuilder",
+    "Pyre Rhymer"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Pia, Determined Rebuilder against other UR three-drops.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "mqZ-19"
+   ]
+  },
+  {
+   "id": "Uy4-09",
+   "time": 1070,
+   "phase": "draft",
+   "claim": "Geist of Saint Thalia is better than expected in a non-creature deck, but cap it at two copies.",
+   "quote": "I'd play up to two Geists at most.",
+   "cards": [
+    "Geist of Saint Thalia"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "Win rate of a second and third Geist in deck.",
+   "type": "claim",
+   "repeats": [],
+   "related": []
+  },
+  {
+   "id": "Uy4-10",
+   "time": 1180,
+   "phase": "draft",
+   "claim": "Take a second Rewrite Regrets despite few cyclers, but three is too many; two is 'the perfect number'.",
+   "quote": "three three would actually be a lot of rewrites anyways. I think two is like the perfect number.",
+   "cards": [
+    "Rewrite Regrets"
+   ],
+   "kind": "pick order",
+   "engine_area": "picker",
+   "test_idea": "Marginal win rate of the second and third Rewrite Regrets by cycler count.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "re7-02"
+   ]
+  },
+  {
+   "id": "Uy4-11",
+   "time": 1220,
+   "phase": "draft",
+   "claim": "With three landcyclers, play 16 lands 'almost every time'; with nine four-drops he keeps 17.",
+   "quote": "I'm not playing 16 lands with nine four drops. That's crazy.",
+   "cards": [
+    "Undulating Witness"
+   ],
+   "kind": "builder",
+   "engine_area": "builder",
+   "test_idea": "Land count vs win rate with 2 and 3 landcyclers.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "5aM-22",
+    "5aM-25"
+   ]
+  },
+  {
+   "id": "Uy4-12",
+   "time": 1260,
+   "phase": "draft",
+   "claim": "An aggressive-card draft note: pitching a land to Tether Technician is not free in this format, so it is the worst Nekrataal; still a respectable body-plus-removal.",
+   "quote": "pitching a land is not free in this format at all.",
+   "cards": [
+    "Tether Technician"
+   ],
+   "kind": "card evaluation",
+   "engine_area": "picker",
+   "test_idea": "GIH WR of Tether Technician by land count.",
+   "type": "claim",
+   "repeats": [],
+   "related": [
+    "994-08",
+    "uoy-08"
+   ]
+  },
+  {
+   "id": "Uy4-13",
+   "time": 1560,
+   "phase": "draft",
+   "claim": "Keep an eight-source base for each main colour; the only worry is the lack of a third cycler for two Rewrite Regrets.",
+   "quote": "having eight eight bases is always the goal and clearly we have more blue and red cards than black ones.",
+   "cards": [],
+   "kind": "builder",
+   "engine_area": "builder",
+   "test_idea": "Source counts of the main colours of winning three-colour decks.",
+   "type": "heuristic",
+   "repeats": [],
+   "related": [
+    "re7-29"
+   ]
+  }
+ ]
+}

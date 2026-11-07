@@ -1,0 +1,1062 @@
+{
+ "id": "uoyPQJ0NxO8",
+ "url": "https://youtu.be/uoyPQJ0NxO8",
+ "title": "It's Finally Aggro's Time to Shine! | Reality Fracture Draft",
+ "channel": "Limited Level-Ups",
+ "player": "Alex Nikolic",
+ "set": "FRA",
+ "event": "not stated; a live 8-player pod (pick screens alternate with \"Waiting on other players to pass a draft pack\"), Premier or Traditional likely; event name not on screen; 14-card packs, TCGplayer-branded stream, 1080p60.",
+ "dataset": "FRA_PremierDraft_All_Data.json",
+ "recorded": null,
+ "source": "frames read from data/videos/raw/uoyPQJ0NxO8 (tools/video_draft.py grab; pack crops 1300x480 at the pack area, later pool and deck-screen crops); all 42 packs were read; the taken card confirmed by the Pick tag, the pool strips (4/40 at 1:58, 13/40 at 4:59, the pool at 6:11 and 6:41) and the deck screen (24 non-basic spells and lands + 14 sideboard cards account for 39 of the 42 picks; the 3 last picks are single-card auto picks of basics, not shown on the deck screen); transcript from YouTube original captions (en-orig), card names corrected; ideas from 0:00 to 13:47, the deck screen shows the game loading from about 13:28.",
+ "colour_path": [
+  {
+   "after": "P1p1",
+   "main": "R aggro (Samut)",
+   "quote": "I have been liking drafting the aggressive decks lately. So, it seems like a good chance to do that."
+  },
+  {
+   "after": "P1p3",
+   "main": "R; not committed to B/R",
+   "quote": "we don't have to be black red necessarily."
+  },
+  {
+   "after": "P1p8",
+   "main": "R; white avoided",
+   "quote": "white is the colour I least pair with my red cards."
+  },
+  {
+   "after": "P1p13",
+   "main": "mono-R or R splash the best cards",
+   "quote": "I think you're just mono-red or like mono-red splash some really, really good cards of the other colors like Extended Absence."
+  },
+  {
+   "after": "P2p1",
+   "main": "R (+ gold/black removal); white to the sideboard",
+   "quote": "I think I'm going to put these white cards in the sideboard."
+  },
+  {
+   "after": "P2p6",
+   "main": "R; red-white would have been fine, no pivot",
+   "quote": "I will say this would have been a fine draft for red-white."
+  },
+  {
+   "after": "P3p4",
+   "main": "R/b removal (Extended Absence, Stingerquill Charm)",
+   "quote": "the deck's shaping up. If I see like one more removal spell, I'll be pretty happy."
+  },
+  {
+   "after": "deck",
+   "main": "R/B, 8 Swamp 8 Mountain Room of Refuge, rated 6 to 6.5 out of 10",
+   "quote": "It's like a six out of 10 ... Six might be a little bit harsh, 6.5."
+  }
+ ],
+ "picks": [
+  {
+   "pack": 1,
+   "pick": 1,
+   "time": "0:00-0:19",
+   "pack_cards": [
+    "Face Yourself",
+    "Samut, Hazoret's Champion",
+    "Prophesied End",
+    "Teyo, Lightshield Expert",
+    "Traxos, Academy Guardian",
+    "Traxos, Scourge Eternal",
+    "Memory Trap",
+    "Surveillance Phantasm",
+    "Undulating Witness",
+    "Screeching Soulbreaker",
+    "Hallway Heckler",
+    "No Admittance",
+    "Tethermage's Advantage",
+    "Mountain"
+   ],
+   "taken": "Samut, Hazoret's Champion",
+   "status": "confirmed (named; in the pool at 1:58, 4/40 cards). The recording starts a few seconds into the pick (timer at 0:31).",
+   "reasoning": "Takes Samut (team haste) for an aggressive deck: \"I love Samut\" and he has been liking aggressive decks lately. No Admittance and Surveillance Phantasm are named as also good; \"solid pack in general\".",
+   "considered": {
+    "No Admittance": "also good",
+    "Surveillance Phantasm": "also good"
+   },
+   "plan": "Aggro, red (Samut).",
+   "quotes": [
+    "I love Samut.",
+    "I have been liking drafting the aggressive decks lately. So, it seems like a good chance to do that."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 2,
+   "time": "0:20-0:57",
+   "pack_cards": [
+    "Dark Matter Manipulator",
+    "Way of the Mentor",
+    "Winter, Tormented Loner",
+    "Essence Burn",
+    "Winter, Team Player",
+    "Restore with Empathy",
+    "Hexhaven Battalion",
+    "Surveillance Phantasm",
+    "Last Gasp",
+    "Blazing Crescendo",
+    "Ferocity of the Hunt",
+    "Murmuring Volume",
+    "Forest"
+   ],
+   "taken": "Dark Matter Manipulator",
+   "status": "confirmed (named; in the pool at 1:58)",
+   "reasoning": "Dark Matter Manipulator (\"pretty good\") over Surveillance Phantasm; a Medic's Kitesail would have been an instant take but there is none in the pack. Winter, Tormented Loner needs a particular mix of cards.",
+   "considered": {
+    "Winter, Tormented Loner": "\"pretty good if you've got the right mix of things\" (recurring spells; caption garbled)",
+    "Surveillance Phantasm": "he says Phantasm and Samut are not exactly a combo on curve (the Phantasm cannot attack without surveil)",
+    "Medic's Kitesail": "\"if there was a kite sail here, I would just take it\""
+   },
+   "plan": "Aggro; blue-red is also mentioned (\"I like blue red aggressive stuff pretty well too\").",
+   "quotes": [
+    "Let's just take the manipulator.",
+    "If there was a kite sail here, I would just take it."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 3,
+   "time": "0:58-1:25",
+   "pack_cards": [
+    "Karn, Gilded Guardian",
+    "Karn, Argent Defender",
+    "Grim Repriser",
+    "Bloombrute",
+    "Kiora of Salt and Sand",
+    "Shatterwing Pegasus",
+    "Rampart Hunter",
+    "Silence the Echo",
+    "No Admittance",
+    "Budding Insurgent",
+    "Medic's Kitesail",
+    "Island"
+   ],
+   "taken": "No Admittance",
+   "status": "confirmed (Pick tag on the hover, in the pool at 1:58, transcript)",
+   "reasoning": "No Admittance over Grim Repriser and Medic's Kitesail: \"a slightly better card\", and he does not have to be black-red. He misses the Kitesail first, then still prefers No Admittance (\"hard to pass up\").",
+   "considered": {
+    "Grim Repriser": "black-red gold, passed",
+    "Medic's Kitesail": "noticed late; still No Admittance",
+    "No Admittance": "taken"
+   },
+   "plan": "Red; not committed to black-red.",
+   "quotes": [
+    "Okay, we're going to take No Admittance. I think it's a slightly better card and we don't have to be black red necessarily.",
+    "I do still think I'd take No Admittance because it is hard to pass up."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 4,
+   "time": "1:26-1:55",
+   "pack_cards": [
+    "Prophesied End",
+    "Tinybones, Pocket Nuisance",
+    "Way of the Warlord",
+    "Titanbones, Towering Heart",
+    "Academic Ascent",
+    "Void Extrapolator",
+    "Skilled Battlecarver",
+    "Compel Brutality",
+    "Ferocity of the Hunt",
+    "Medic's Kitesail",
+    "Innovative Commons"
+   ],
+   "taken": "Skilled Battlecarver",
+   "status": "confirmed (named; pool 4/40 at 1:58 lists it)",
+   "reasoning": "A \"calculated risk\": the two-drop (Skilled Battlecarver) over Medic's Kitesail, because good two-drops are scarce in these decks and the Kitesail is also scarce but he only needs one. The co-host is happy with three Kitesails and \"draw two\".",
+   "considered": {
+    "Medic's Kitesail": "also scarce; he needs one and hopes to see one; does not want multiples (\"drawing multiples is pretty bad\"); co-host disagrees",
+    "Skilled Battlecarver": "taken: a two-drop"
+   },
+   "plan": "Aggro red.",
+   "quotes": [
+    "I'm going to take a bit of a calculated risk here and take the battle carver because ... if you see a two drop, you should probably take it because there aren't very very many that you want.",
+    "I don't really want multiple kite sails ... drawing multiples is pretty bad."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 5,
+   "time": "1:56-2:41",
+   "pack_cards": [
+    "Tam, the Possibility",
+    "Rockfall Vale",
+    "Terminal Criticism",
+    "Eye of Jace",
+    "Unflinching Hortimancer",
+    "Undulating Witness",
+    "Tether Technician",
+    "Ferocity of the Hunt",
+    "Emergency Phytomedic",
+    "Plains"
+   ],
+   "taken": "Ferocity of the Hunt",
+   "status": "confirmed (the pool at 4:59, 13/40, lists Ferocity of the Hunt, and no other pick of the window or the next pick packs can be it; transcript \"take ferocity maybe\"). The \"Auto Select\" tag sat on Rockfall Vale at 2:38 while he hovered.",
+   "reasoning": "Ferocity of the Hunt over Tether Technician and Emergency Phytomedic: \"plays well with Battle Carver\" (first strike plus deathtouch). He likes Technician \"lately in these decks\" but passes it here (it wheels at P1p13 and he takes it then). He later says he does not love Ferocity (P1p9) and it ends in the sideboard.",
+   "considered": {
+    "Tether Technician": "\"I have been into technician lately in these decks, but do I take it here? Probably not.\" Wheels.",
+    "Emergency Phytomedic": "does not really go with the red cards"
+   },
+   "plan": "Red aggro.",
+   "quotes": [
+    "Take ferocity maybe. Like plays well with Battle Carver."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 6,
+   "time": "2:42-2:49",
+   "pack_cards": [
+    "Marwyn, the Clearcutter",
+    "Ruric Thar, Magecrusher",
+    "Hexhaven Dueling Arena",
+    "Shatterwing Pegasus",
+    "Sphinx's Approach",
+    "Apex Witchstalker",
+    "Bestial Incursion",
+    "Keeper of the Quiet Hour",
+    "Swamp"
+   ],
+   "taken": "Marwyn, the Clearcutter",
+   "status": "confirmed (Pick tag and hover, in the pool at 4:59)",
+   "reasoning": "Marwyn, the Clearcutter, a one-drop: \"Hell yeah\", \"really nice in these decks\".",
+   "considered": {},
+   "plan": "Red aggro.",
+   "quotes": [
+    "Ooh, one drop. Hell yeah.",
+    "Marwyn's really nice in these decks."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 7,
+   "time": "2:50-2:59",
+   "pack_cards": [
+    "Ruric Thar, Magecrusher",
+    "Shatterwing Pegasus",
+    "Unflinching Hortimancer",
+    "Undulating Witness",
+    "Hallway Heckler",
+    "Arcane Amphisbaena",
+    "Sureshot Sower",
+    "Dedicated Commons"
+   ],
+   "taken": "Hallway Heckler",
+   "status": "confirmed (Pick tag, in the pool at 4:59)",
+   "reasoning": "Hallway Heckler, a cheap red creature (\"I don't mind a heckler\").",
+   "considered": {},
+   "plan": "Red aggro.",
+   "quotes": [
+    "And now a heckler. I don't mind a heckler."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 8,
+   "time": "3:00-3:43",
+   "pack_cards": [
+    "Roiling Canopy",
+    "Mabel, Valley Hero",
+    "Predictive Preparations",
+    "Unflinching Hortimancer",
+    "Divining Duelist",
+    "Inspired Tethermage",
+    "Ferocity of the Hunt"
+   ],
+   "taken": "Mabel, Valley Hero",
+   "status": "confirmed (named; in the pool at 4:59; two copies end in the sideboard)",
+   "reasoning": "Mabel, Valley Hero (\"not thrilled about it\") over Divining Duelist. Red-white looks natural but \"white is the colour I least pair with my red cards\": most white cards do not synergise with the red ones. The co-host asks whether he trusts the deck to come together; he says aggro decks need that trust, because most drafters take the generically strong cards, and the cards that go in these decks are not those.",
+   "considered": {
+    "Divining Duelist": "the other option",
+    "Ferocity of the Hunt": "a second copy; he says at 3:45 he does not really want it and does not love the first one"
+   },
+   "plan": "Red aggro; white is open-looking but does not fit.",
+   "quotes": [
+    "Kind of strangely enough white is the colour I least pair with my red cards.",
+    "With these aggressive decks you kind of have to put some stock in the fact that you're just going to see the cards you want, because most people draft this format just taking the generically strong cards ... the cards that go in these decks aren't the generically strong ones."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 9,
+   "time": "3:44-4:03",
+   "pack_cards": [
+    "Traxos, Scourge Eternal",
+    "Memory Trap",
+    "Undulating Witness",
+    "Hallway Heckler",
+    "Tethermage's Advantage",
+    "Mountain"
+   ],
+   "taken": "Traxos, Scourge Eternal",
+   "status": "confirmed (named; in the pool at 4:59). This is the P1p1 pack wheeling.",
+   "reasoning": "Traxos, Scourge Eternal over Memory Trap: a fan of Traxos in these decks, especially with Samut (haste on a 5/4 trampler that untaps), and he does not want to play white if he can help it.",
+   "considered": {
+    "Memory Trap": "could take it, \"not all that\""
+   },
+   "plan": "Red aggro, avoiding white.",
+   "quotes": [
+    "I'm actually a fan of Traxos in these decks, especially with Samut.",
+    "I just don't really want to play white if I can help it with my red cards."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 10,
+   "time": "4:04-4:33",
+   "pack_cards": [
+    "Way of the Mentor",
+    "Winter, Team Player",
+    "Blazing Crescendo",
+    "Ferocity of the Hunt",
+    "Forest"
+   ],
+   "taken": "Blazing Crescendo",
+   "status": "confirmed (named; in the pool at 4:59)",
+   "reasoning": "Blazing Crescendo over Winter, Team Player: Winter has high upside but he has been burned by taking it speculatively; it is a card to take when the deck exists. He likes Crescendo \"quite a bit in these decks\". (P1p2 pack wheeling.)",
+   "considered": {
+    "Winter, Team Player": "\"high upside if that works out\" but \"the kind of card you want to take when you already have the deck for it, not speculatively\""
+   },
+   "plan": "Red aggro.",
+   "quotes": [
+    "I think I take Crescendo over Winter.",
+    "I think Winter's the kind of card you want to take when you already have the deck for it, not when you're like, oh, I take it speculatively."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 11,
+   "time": "4:34-4:39",
+   "pack_cards": [
+    "Kiora of Salt and Sand",
+    "Shatterwing Pegasus",
+    "Budding Insurgent",
+    "Island"
+   ],
+   "taken": "Shatterwing Pegasus",
+   "status": "confirmed (named at 4:38; in the pool at 4:59; sideboard at the end). P1p3 pack wheeling.",
+   "reasoning": "Takes the Shatterwing Pegasus; no reasoning given.",
+   "considered": {},
+   "plan": "Red aggro.",
+   "quotes": [
+    "All right, here we take Pegasus."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 12,
+   "time": "4:40-4:45",
+   "pack_cards": [
+    "Titanbones, Towering Heart",
+    "Academic Ascent",
+    "Medic's Kitesail"
+   ],
+   "taken": "Medic's Kitesail",
+   "status": "confirmed (the Kitesail wheeled; in the pool at 4:59). P1p4 pack wheeling.",
+   "reasoning": "The Medic's Kitesail wheels: \"I thought that was the last pack to see a Kite Sail ... we did [wheel one]. Hell yeah.\"",
+   "considered": {},
+   "plan": "Red aggro.",
+   "quotes": [
+    "I was going to say we did not wheel a kite sail, but we did. Hell yeah."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 13,
+   "time": "4:46-4:55",
+   "pack_cards": [
+    "Tether Technician",
+    "Plains"
+   ],
+   "taken": "Tether Technician",
+   "status": "confirmed (the pool at 4:59, 13/40, lists it; the pack held only these two cards). P1p5 pack wheeling.",
+   "reasoning": "Tether Technician wheels. He then says that ideally these decks are mono-red, or mono-red splashing \"really, really good cards of the other colours like Extended Absence\" (and Overwrite), because not having to worry about the mana is great.",
+   "considered": {},
+   "plan": "Mono-red or near mono-red.",
+   "quotes": [
+    "Ideally with these decks, I think you're just mono-red or like mono-red splash some really, really good cards of the other colours.",
+    "If I can just be ... mono-red, that's awesome."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 14,
+   "time": "4:56-5:01",
+   "pack_cards": [
+    "unreadable (last card, not shown; not a Plains)"
+   ],
+   "taken": null,
+   "status": "inferred: the pack held one card and the pick is automatic; the picked basic does not appear on the deck screen, which accounts for 39 of the 42 picks by name (the three last picks of each pack are the unseen basics: Plains, Plains, Forest). The pack was read at 4:56; the card could not be confirmed by the pool.",
+   "reasoning": "Last card of the pack (auto pick).",
+   "considered": {},
+   "plan": "",
+   "quotes": [],
+   "taken_note": "was recorded as 'Plains' (inferred auto-pick); impossible: the P1p6 pack held no Plains (wheel check)"
+  },
+  {
+   "pack": 2,
+   "pick": 1,
+   "time": "5:02-5:36",
+   "pack_cards": [
+    "Repurposed Enforcer",
+    "Gideon the Oathless",
+    "Tetsuko Umezawa, Fugitive",
+    "Rewrite Regrets",
+    "Tetsuko Umezawa, Pursuer",
+    "Pia, Aether Ascetic",
+    "Vigorbloom Vanguard",
+    "Memory Trap",
+    "Undulating Witness",
+    "Rank Rat",
+    "Blazing Crescendo",
+    "Compel Brutality",
+    "Medic's Kitesail",
+    "Island"
+   ],
+   "taken": "Gideon the Oathless",
+   "status": "confirmed (Pick tag on the hover; Gideon is in the pool at 6:11)",
+   "reasoning": "Gideon the Oathless (a gold card in his colours) over Repurposed Enforcer. \"They're really pushing me to want to play the white cards\"; he calls the Enforcer the slightly better card but Gideon \"also really good\", and says the white cards will go in the sideboard. He also notes Dark Matter Manipulator is \"very good\" for the case of staying with the Gideon. \"Funny pick.\"",
+   "considered": {
+    "Repurposed Enforcer": "\"slightly better card\", white; passed because he is not playing white",
+    "Medic's Kitesail": "in the pack (a fourth Kitesail option); not discussed"
+   },
+   "plan": "Red aggro; white cards to the sideboard.",
+   "quotes": [
+    "Both Gideon and Enforcer are great.",
+    "Repurposed Enforcer is a slightly better card, but Gideon's also really good.",
+    "I think I'm going to put these white cards in the sideboard."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 2,
+   "time": "5:38-6:10",
+   "pack_cards": [
+    "Overwrite the Multiverse",
+    "Way of the Mentor",
+    "Multiply by Zero",
+    "Way of the Warlord",
+    "Marwyn, the Preserver",
+    "Craftwork Crusher",
+    "Predictive Preparations",
+    "Surgical Precision",
+    "Cryotheory Adept",
+    "Screeching Soulbreaker",
+    "Konstrari Improviser",
+    "Living Library",
+    "Forest"
+   ],
+   "taken": "Overwrite the Multiverse",
+   "status": "confirmed (named; in the pool at 6:41; main deck)",
+   "reasoning": "Overwrite the Multiverse over Multiply by Zero. He first says it \"should probably just be Multiply\"; the co-host says \"I'm taking Overwrite no matter how aggro my deck is\" and he comes around: \"we don't have to be mega aggro\".",
+   "considered": {
+    "Multiply by Zero": "also a great card; the first instinct",
+    "Overwrite the Multiverse": "taken: \"no matter how aggro my deck is\" (the co-host's words, which he accepts)"
+   },
+   "plan": "Red aggro, open to being a little more midrange.",
+   "quotes": [
+    "I'm taking Overwrite no matter how aggro my deck is.",
+    "Yeah, I think I'm coming around to that as well."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 3,
+   "time": "6:12-6:39",
+   "pack_cards": [
+    "Samut, Tyrant of Naktamun",
+    "Pompous Battlemage",
+    "Samut, Hazoret's Champion",
+    "Prophesied End",
+    "Konstrari Charm",
+    "Undulating Witness",
+    "Solve for Disappointment",
+    "Chandra's Emberling",
+    "No Admittance",
+    "Compel Brutality",
+    "Tam's Resistance",
+    "Swamp"
+   ],
+   "taken": "Samut, Hazoret's Champion",
+   "status": "confirmed by elimination (the deck screen has two Samut and no other pack could supply the second; Pick tag on it at 6:36; he says \"going to take the Samut\", the caption reads \"Sand Mage\"). The pick he regrets later (7:50, 12:32).",
+   "reasoning": "A second Samut over No Admittance and Pompous Battlemage. He sees all three as cards he would like; having taken Overwrite, \"it might just be better to take the Admittance, or I just take another piece of removal moving into a bit more of a midrange deck\"; he takes Samut but says \"it might be wrong\". Later: \"I am regretting the No Admittance pick ... we were pretty low on interaction\", and at the build \"that's a pick I regret, although I think it was reasonable to make at the time\".",
+   "considered": {
+    "No Admittance": "the removal; the regretted pass (7:50, 12:32)",
+    "Pompous Battlemage": "also a card he likes (wheels at P2p11 and he takes it)"
+   },
+   "plan": "Red aggro; weighing a more midrange build.",
+   "quotes": [
+    "Other than we picked up the Overwrite, it might just be better to take the Admittance.",
+    "Going to take the Samut, but it might be wrong."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 4,
+   "time": "6:42-6:50",
+   "pack_cards": [
+    "Danitha, Sword of Hope",
+    "Essence Burn",
+    "Marwyn, the Clearcutter",
+    "Primal Witchstalker",
+    "Academic Ascent",
+    "Unflinching Hortimancer",
+    "Mindseeker Oculus",
+    "Cast Away Doubt",
+    "Vinelasher Adept",
+    "Konstrari Improviser",
+    "Vigorbloom Annex"
+   ],
+   "taken": "Marwyn, the Clearcutter",
+   "status": "confirmed (named at 6:45; two Marwyn in the main deck)",
+   "reasoning": "A second Marwyn, the Clearcutter (\"Okay, then Marwyn, cool\").",
+   "considered": {},
+   "plan": "Red aggro.",
+   "quotes": [
+    "Okay, then Marwyn, cool."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 5,
+   "time": "6:52-7:09",
+   "pack_cards": [
+    "Precise Redaction",
+    "Way of the Cryomancer",
+    "Gallia, the Merrymaker",
+    "Way of the Pyromancer",
+    "Warrior's Blades",
+    "Predictive Preparations",
+    "Divining Duelist",
+    "Cast Away Doubt",
+    "Room of Refuge",
+    "Mountain"
+   ],
+   "taken": "Room of Refuge",
+   "status": "confirmed (named at 7:03 and by elimination: Room of Refuge is the only card of this pack in the main deck)",
+   "reasoning": "Room of Refuge over Gallia (\"pretty weak, but playable\") and Warrior's Blades (which he later says he should have taken). He plays the Room in the final 40.",
+   "considered": {
+    "Gallia, the Merrymaker": "\"I play Gallia sometimes. She's still pretty weak, but she's playable.\"",
+    "Warrior's Blades": "regret at 7:18: \"we ought to have gotten the Warrior's Blades\""
+   },
+   "plan": "Red aggro.",
+   "quotes": [
+    "I think I just take a Room of Refuge."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 6,
+   "time": "7:10-7:27",
+   "pack_cards": [
+    "Terminal Criticism",
+    "Mabel, Valley Hero",
+    "Kiora of Salt and Sand",
+    "Mind Meanderer",
+    "Fateshaper Aspirant",
+    "Semester Foreseer",
+    "Tethermage's Advantage",
+    "Living Library",
+    "Plains"
+   ],
+   "taken": "Mabel, Valley Hero",
+   "status": "confirmed (hover and Pick tag; named at 7:21; two Mabel, Valley Hero in the sideboard)",
+   "reasoning": "A second Mabel, Valley Hero, as a \"take her here still, I'm not playing anything else\": not amazing, but few good three-drops compete. He says this would have been a fine draft for red-white and entertains \"a weird pivot\".",
+   "considered": {
+    "Warrior's Blades": "passed one pick earlier; he says he should have taken it"
+   },
+   "plan": "Red aggro; red-white would have been fine.",
+   "quotes": [
+    "I will say this would have been a fine draft for red-white.",
+    "I guess I take her here still. I'm not playing anything else."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 7,
+   "time": "7:28-7:41",
+   "pack_cards": [
+    "Flickering Hound",
+    "Jiang Yanggu, Never Alone",
+    "Warrior's Blades",
+    "Unflinching Hortimancer",
+    "Artifist Acumen",
+    "Budding Insurgent",
+    "Blessed Ghoul",
+    "Living Library"
+   ],
+   "taken": "Blessed Ghoul",
+   "status": "likely (elimination: Blessed Ghoul is in the sideboard once and Artifist Acumen, the other candidate with a copy in the sideboard, is accounted for at P3p13; the Ghoul in the P2p8 pack is a different copy and P2p8 is the Soulbreaker; at 7:32 he says \"Blessed Ghoul?\" with a question mark). Nothing hovered long enough to read a Pick tag.",
+   "reasoning": "Takes Blessed Ghoul with a question mark and no stated reason; Warrior's Blades is in the pack again and is passed.",
+   "considered": {
+    "Warrior's Blades": "in the pack; not discussed"
+   },
+   "plan": "Red aggro.",
+   "quotes": [
+    "Um, Blessed Ghoul?"
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 8,
+   "time": "7:42-7:49",
+   "pack_cards": [
+    "Saheeli, Jewel of Avishkar",
+    "Hexhaven Dueling Arena",
+    "Screeching Soulbreaker",
+    "Artifist Acumen",
+    "Eardrum Rattler",
+    "Blessed Ghoul",
+    "Island"
+   ],
+   "taken": "Screeching Soulbreaker",
+   "status": "confirmed (named at 7:47; main deck)",
+   "reasoning": "Screeching Soulbreaker (\"don't mind this card\"). He is regretting the No Admittance pass: the deck is low on interaction.",
+   "considered": {
+    "No Admittance": "\"I am regretting the No Admittance back, by the way, or pick ... we were pretty low on interaction.\""
+   },
+   "plan": "Red aggro.",
+   "quotes": [
+    "Okay, I'll take a Soulbreaker. Don't mind this card.",
+    "I am regretting the No Admittance pick. I wish I took that, because we were pretty low on interaction."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 9,
+   "time": "7:50-8:05",
+   "pack_cards": [
+    "Tetsuko Umezawa, Fugitive",
+    "Pia, Aether Ascetic",
+    "Memory Trap",
+    "Blazing Crescendo",
+    "Compel Brutality",
+    "Island"
+   ],
+   "taken": "Blazing Crescendo",
+   "status": "confirmed (the card is dragged to the pool at 8:05; \"Take Crescendo here\"). P2p1 pack wheeling.",
+   "reasoning": "A second Blazing Crescendo. He answers a chat question on the legend rule while on this pick.",
+   "considered": {},
+   "plan": "Red aggro.",
+   "quotes": [
+    "Take Crescendo here."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 10,
+   "time": "8:06-8:08",
+   "pack_cards": [
+    "Way of the Mentor",
+    "Marwyn, the Preserver",
+    "Predictive Preparations",
+    "Konstrari Improviser",
+    "Forest"
+   ],
+   "taken": "Konstrari Improviser",
+   "status": "likely (the pack screen is shown for under 3 s; a gap is left in the fourth slot at 8:09 where Konstrari Improviser stood; the sideboard lists it). No comment.",
+   "reasoning": "Konstrari Improviser, no comment.",
+   "considered": {},
+   "plan": "Red aggro.",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 11,
+   "time": "8:10-8:38",
+   "pack_cards": [
+    "Samut, Tyrant of Naktamun",
+    "Pompous Battlemage",
+    "Konstrari Charm",
+    "Swamp"
+   ],
+   "taken": "Pompous Battlemage",
+   "status": "confirmed (Pick tag on Pompous Battlemage at 8:12; it is in the main deck and no other card of this pack is in the pool). P2p3 pack wheeling: the Battlemage he preferred to take later.",
+   "reasoning": "Pompous Battlemage wheels (it was in the P2p3 pack with Samut and No Admittance). The pick stays on screen while he answers chat questions about how open colours were.",
+   "considered": {},
+   "plan": "Red aggro. Says the most open pair in this seat was probably red-white, but \"drafting the most open colour pair isn't always going to lead you to the best deck\".",
+   "quotes": [
+    "I think if your goal is to draft the most open colour pair in this seat, it was probably red-white. But drafting the most open colour pair isn't always going to lead you to the best deck."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 12,
+   "time": "8:40-8:46",
+   "pack_cards": [
+    "Danitha, Sword of Hope",
+    "Academic Ascent",
+    "Vigorbloom Annex"
+   ],
+   "taken": "Danitha, Sword of Hope",
+   "status": "likely (the sideboard lists Danitha, Sword of Hope and neither of the other two; no comment). P2p4 pack wheeling.",
+   "reasoning": "Danitha, Sword of Hope, no comment (ends in the sideboard).",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 13,
+   "time": "8:48-8:58",
+   "pack_cards": [
+    "Precise Redaction",
+    "Mountain"
+   ],
+   "taken": "Precise Redaction",
+   "status": "likely (the sideboard lists Precise Redaction; the Mountain is a basic; no comment). P2p5 pack wheeling.",
+   "reasoning": "Precise Redaction, no comment (sideboard).",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 14,
+   "time": "9:00-9:01",
+   "pack_cards": [
+    "Plains"
+   ],
+   "taken": "Plains",
+   "status": "inferred (single card, auto pick; not on the deck screen; see P1p14)",
+   "reasoning": "Last card of the pack (auto pick).",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 1,
+   "time": "9:02-9:34",
+   "pack_cards": [
+    "Variable Chaser",
+    "Saheeli, Consul of Oversight",
+    "Hapatra, the Desert Frost",
+    "Flourishing Grapple",
+    "Hapatra, the Desert Fang",
+    "Eye of Jace",
+    "Unflinching Hortimancer",
+    "Unsummon",
+    "Rampart Hunter",
+    "Heartstring Puller",
+    "Arcane Amphisbaena",
+    "Theorix Metamage",
+    "Murmuring Volume",
+    "Innovative Commons"
+   ],
+   "taken": "Heartstring Puller",
+   "status": "confirmed (Pick tag on the hover; named; two Heartstring Puller in the main deck)",
+   "reasoning": "\"Kind of a sad opener\": Heartstring Puller, a three-drop for the deck. While the pack sits on screen he answers whether red is really open: no colour is mega open, and it is fine to draft a colour as long as it is not getting cut completely.",
+   "considered": {},
+   "plan": "Red aggro; colour not cut off.",
+   "quotes": [
+    "Kind of a sad opener, but I guess we take Heartstring Puller.",
+    "It's fine to draft the colour as long as it's not getting completely cut."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 2,
+   "time": "9:36-9:58",
+   "pack_cards": [
+    "Face Yourself",
+    "Way of the Mentor",
+    "Perfected Theory",
+    "Way of the Warlord",
+    "Yoshimaru, Scrappy Stray",
+    "Yoshimaru, Scrappy Stray",
+    "Stingerquill Charm",
+    "Unflinching Hortimancer",
+    "Void Extrapolator",
+    "Eardrum Rattler",
+    "Heartstring Puller",
+    "Tethermage's Advantage",
+    "Fatehold Chronologist"
+   ],
+   "taken": "Stingerquill Charm",
+   "status": "confirmed (named at 9:53, caption \"saying charm\"; main deck)",
+   "reasoning": "Stingerquill Charm over Face Yourself, which is cool but he needs removal; the Charm is also just the better card.",
+   "considered": {
+    "Face Yourself": "\"cool, but I need removal\""
+   },
+   "plan": "Red aggro, needing removal.",
+   "quotes": [
+    "Face Yourself is cool, but I need removal. It's also just better, I think."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 3,
+   "time": "10:00-10:13",
+   "pack_cards": [
+    "Traxos, Academy Guardian",
+    "Terminal Criticism",
+    "Way of the Wildspeaker",
+    "Vigorbloom Vanguard",
+    "Traxos, Scourge Eternal",
+    "Predictive Preparations",
+    "Unflinching Hortimancer",
+    "Silence the Echo",
+    "Solve for Disappointment",
+    "Sureshot Sower",
+    "Medic's Kitesail",
+    "Mountain"
+   ],
+   "taken": "Medic's Kitesail",
+   "status": "confirmed (Pick tag at 10:10; two Medic's Kitesail in the main deck)",
+   "reasoning": "A second Medic's Kitesail (\"are we doing that? I think we might be\"), despite saying at P1p4 that he does not want multiples. Silence the Echo is \"pretty bad\".",
+   "considered": {
+    "Silence the Echo": "\"pretty bad\"",
+    "Traxos, Scourge Eternal": "a second one in the pack; not discussed"
+   },
+   "plan": "Red aggro.",
+   "quotes": [
+    "Second kitesail, are we doing that? I think we might be.",
+    "There's also Silence, but Silence is pretty bad."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 4,
+   "time": "10:14-10:29",
+   "pack_cards": [
+    "Refute Destiny",
+    "Way of the Cryomancer",
+    "Flourishing Grapple",
+    "Ghalta the Unstoppable",
+    "Unflinching Hortimancer",
+    "Divining Duelist",
+    "Extended Absence",
+    "Arcane Amphisbaena",
+    "Inspired Tethermage",
+    "Twinned Vision",
+    "Transformative Commons"
+   ],
+   "taken": "Extended Absence",
+   "status": "confirmed (Pick tag and hover; named at 10:23; main deck)",
+   "reasoning": "Extended Absence over Twinned Vision: \"I would love this Twinned Vision, but got to take Absence\". Removal over card draw; the deck is shaping up and one more removal spell would make him happy.",
+   "considered": {
+    "Twinned Vision": "\"I would love this ... but got to take Absence\""
+   },
+   "plan": "Red aggro with a black splash for removal (Extended Absence).",
+   "quotes": [
+    "I would love this Twinned Vision, but got to take Absence.",
+    "If I see one more removal spell, I'll be pretty happy."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 5,
+   "time": "10:30-10:45",
+   "pack_cards": [
+    "Deserted Beach",
+    "Saheeli, Consul of Oversight",
+    "Way of the Deathbringer",
+    "Saheeli, Jewel of Avishkar",
+    "Bloombrute",
+    "Surgical Precision",
+    "Artifist Acumen",
+    "Wrecking Gecko",
+    "Afterthought Sentry",
+    "Swamp"
+   ],
+   "taken": "Afterthought Sentry",
+   "status": "confirmed (Pick tag at 10:41; named; main deck)",
+   "reasoning": "Afterthought Sentry. Asked whether Way of the Deathbringer does anything for the deck: \"Not in particular.\"",
+   "considered": {
+    "Way of the Deathbringer": "not doing anything in particular"
+   },
+   "plan": "Red aggro.",
+   "quotes": [
+    "Probably taking Afterthought Sentry."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 6,
+   "time": "10:46-11:03",
+   "pack_cards": [
+    "Mabel, Bitter Recluse",
+    "Marwyn, the Preserver",
+    "Mabel, Valley Hero",
+    "Warrior's Blades",
+    "Campus Crier",
+    "Unflinching Hortimancer",
+    "Divining Duelist",
+    "Rampart Hunter",
+    "Forest"
+   ],
+   "taken": "Mabel, Bitter Recluse",
+   "status": "confirmed (named at 11:00; in the sideboard)",
+   "reasoning": "Mabel, Bitter Recluse, a black Mabel, \"and hopefully not playing her\": nothing in the pack for the deck (Warrior's Blades and a third Mabel, Valley Hero are there).",
+   "considered": {
+    "Warrior's Blades": "in the pack; not taken",
+    "Mabel, Valley Hero": "a third copy; not taken"
+   },
+   "plan": "Red aggro.",
+   "quotes": [
+    "All right, I guess we're taking Black Mabel and hopefully not playing her."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 7,
+   "time": "11:04-11:07",
+   "pack_cards": [
+    "Solarium Sentry",
+    "Perfected Theory",
+    "Essence Burn",
+    "Fateshaper Aspirant",
+    "Semester Foreseer",
+    "Heartstring Puller",
+    "Blessed Ghoul",
+    "Ferocity of the Hunt"
+   ],
+   "taken": "Heartstring Puller",
+   "status": "confirmed (Pick tag on Heartstring Puller at 11:05; two in the main deck). The pack is shown for about 3 s.",
+   "reasoning": "A second Heartstring Puller (\"another Puller\"; the caption reads \"pillar\"). Essence Burn (five damage to a black or green permanent) is in the pack and passed.",
+   "considered": {
+    "Essence Burn": "in the pack; not discussed"
+   },
+   "plan": "Red aggro.",
+   "quotes": [
+    "All right, I'll take another Puller."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 8,
+   "time": "11:24-11:41",
+   "pack_cards": [
+    "Vindictive Triumph",
+    "Gallia, the Merrymaker",
+    "Konstrari Charm",
+    "Graft Surgeon",
+    "Cast Away Doubt",
+    "Ferocity of the Hunt",
+    "Formidable Commons"
+   ],
+   "taken": "Cast Away Doubt",
+   "status": "likely (Pick tag and hover on Cast Away Doubt; the slot is empty at 11:34; it is the only card of this pack in the main deck). The pack screen alternates with a waiting screen between 11:07 and 11:24.",
+   "reasoning": "Cast Away Doubt (draw two, deals 2 to each player) to fill the 23rd slot. While on this pick he answers a chat question: hate cards are not main-deckable (too many dead matchups), though \"you could argue\" a really bad 23rd card should be one.",
+   "considered": {
+    "hate cards (Terminal Criticism and the like)": "not main deckable: \"a dead card is terrible, like we all know how bad mulliganing is\""
+   },
+   "plan": "Red aggro.",
+   "quotes": [
+    "What do you think of the uncommon hate cards? Are any of them main deckable? No. There's just going to be way too many matchups where they're dead.",
+    "If your 23rd card is really bad you put it in that 23rd card slot ... I do not think you should play that card."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 9,
+   "time": "11:42-11:53",
+   "pack_cards": [
+    "Flourishing Grapple",
+    "Eye of Jace",
+    "Unflinching Hortimancer",
+    "Unsummon",
+    "Rampart Hunter",
+    "Innovative Commons"
+   ],
+   "taken": "Innovative Commons",
+   "status": "confirmed (the card is dragged to the pool at 11:50; the sideboard lists it). P3p1 pack wheeling.",
+   "reasoning": "Innovative Commons (blue-red land), a pick of no value to the deck. The co-host asks \"what if you just put a land in that 23rd card slot?\"; he answers that is \"probably going to be better a lot of the time\".",
+   "considered": {},
+   "plan": "Red aggro.",
+   "quotes": [
+    "What if you just put a land in that 23rd card slot? Yeah, that's also probably going to be better a lot of the time."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 10,
+   "time": "11:54-12:05",
+   "pack_cards": [
+    "Yoshimaru, Scrappy Stray",
+    "Yoshimaru, Scrappy Stray",
+    "Unflinching Hortimancer",
+    "Eardrum Rattler",
+    "Tethermage's Advantage"
+   ],
+   "taken": "Eardrum Rattler",
+   "status": "confirmed (hover, then the card is dragged to the pool at 12:03; the sideboard lists it). P3p2 pack wheeling.",
+   "reasoning": "Eardrum Rattler. The co-host remarks that the Rattler \"has dipped below the 50% line on 17 lands\" (17Lands games-in-hand win rate).",
+   "considered": {},
+   "plan": "Red aggro.",
+   "quotes": [
+    "Fun fact, your Eardrum Rattler has now dipped below the 50% line on 17 lands. Very impressive. Not many cards have that honor."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 11,
+   "time": "12:06-12:07",
+   "pack_cards": [
+    "Terminal Criticism",
+    "Predictive Preparations",
+    "Unflinching Hortimancer",
+    "Mountain"
+   ],
+   "taken": "Terminal Criticism",
+   "status": "likely (the pack is on screen for 2 s; Terminal Criticism is highlighted at 12:06 and gone at 12:08; the sideboard lists it). P3p3 pack wheeling.",
+   "reasoning": "Terminal Criticism (sideboard card); no comment.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 12,
+   "time": "12:08-12:09",
+   "pack_cards": [
+    "Refute Destiny",
+    "Flourishing Grapple",
+    "Inspired Tethermage"
+   ],
+   "taken": "Refute Destiny",
+   "status": "likely (Refute Destiny's slot is empty with the Pick tag at 12:10; the sideboard lists it). P3p4 pack wheeling.",
+   "reasoning": "Refute Destiny (sideboard card); no comment.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 13,
+   "time": "12:10-12:13",
+   "pack_cards": [
+    "Artifist Acumen",
+    "Swamp"
+   ],
+   "taken": "Artifist Acumen",
+   "status": "likely (Artifist Acumen's slot is empty at 12:12; the sideboard lists it). P3p5 pack wheeling.",
+   "reasoning": "Artifist Acumen (sideboard); no comment.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 14,
+   "time": "12:14-12:16",
+   "pack_cards": [
+    "Forest"
+   ],
+   "taken": "Forest",
+   "status": "inferred (single card, auto pick; not on the deck screen; see P1p14)",
+   "reasoning": "Last card of the pack (auto pick).",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  }
+ ],
+ "player_note": "Alex Nikolic (Limited Level-Ups; Arena handle Chord_O_Calls, name on screen); a co-host (called \"NL\" at 2:21) asks questions and gives opinions, and some lines in the captions are his"
+}

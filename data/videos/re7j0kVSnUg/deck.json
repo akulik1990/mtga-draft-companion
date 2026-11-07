@@ -1,0 +1,64 @@
+{
+ "id": "re7j0kVSnUg",
+ "time": "17:37-19:48 (build; final 40/40 deck screen at about 19:45, read from frames at 1150 s and 1185 s)",
+ "main": {
+  "Arcane Amphisbaena": 2,
+  "Something Worth Saving": 2,
+  "Konstrari Improviser": 1,
+  "Greenhouse Propagator": 1,
+  "Way of the Paradox": 1,
+  "Hungering Puppetbeast": 1,
+  "Vinelasher Adept": 2,
+  "Ruric Thar, Magecrusher": 1,
+  "Fblthp, Knows the Way": 1,
+  "Twinned Vision": 1,
+  "Wrath of the Bloodmane": 1,
+  "Chandra, Torch of Defiance": 1,
+  "Craftwork Crusher": 1,
+  "Primal Witchstalker": 1,
+  "Extended Absence": 1,
+  "Rewrite Regrets": 1,
+  "Hapatra, the Desert Fang": 1,
+  "Memory Trap": 1,
+  "Murmuring Volume": 1,
+  "Archive Arbiter": 1
+ },
+ "lands": {
+  "Forest": 7,
+  "Mountain": 4,
+  "Swamp": 3,
+  "Plains": 1,
+  "Formidable Commons": 1,
+  "Vigorbloom Annex": 1
+ },
+ "sideboard": {
+  "Fateshaper Aspirant": 1,
+  "Cryotheory Adept": 1,
+  "Precise Redaction": 1,
+  "Winter, Team Player": 1,
+  "Tethermage's Advantage": 1,
+  "Budding Insurgent": 1,
+  "Wrecking Gecko": 1,
+  "Whiplash Wordsmith": 1,
+  "Ferocity of the Hunt": 1,
+  "Afterthought Sentry": 1,
+  "Recursive Recruitment": 1,
+  "Innovative Commons": 1,
+  "Theorix Annex": 1,
+  "Dedicated Commons": 1
+ },
+ "spells": 23,
+ "land_count": 17,
+ "landcyclers_in_main": [
+  "Arcane Amphisbaena",
+  "Vinelasher Adept"
+ ],
+ "colours": "Green-red base; splash black (Hapatra, Extended Absence, Rewrite Regrets, Primal Witchstalker) and white (Memory Trap) via Fblthp, landcyclers, Formidable Commons, Vigorbloom Annex; Dedicated Commons, Innovative Commons and Theorix Annex are cut.",
+ "notes": [
+  "He starts by building a red-green base splashing a black and a blue card, then cuts the blue-black and blue-red tapped lands so there are fewer tapped lands and the cyclers do not have to fetch an Island (17:41-18:01). Cuts Recursive Recruitment ('a step too far'), then the Sentry (18:07).",
+  "18:40-19:41: counts 11 green sources, 9 red and 10 black with the cyclers, finds too many lands, and shaves one Forest and one Swamp: 'it's still pretty good, let's ship it'. Final basics: Forest 7, Mountain 4, Swamp 3.",
+  "A single Plains is listed in the final land column without a count; it is read as one Plains for Memory Trap (17 lands = 7 + 4 + 3 + 1 + Formidable Commons + Vigorbloom Annex), unconfirmed.",
+  "Pool accounting: 23 spells + 17 lands = 40 main. Sideboard read at 1060 s: Fateshaper Aspirant, Cryotheory Adept, Precise Redaction, Winter, Team Player, Tethermage's Advantage, Budding Insurgent, Wrecking Gecko, Whiplash Wordsmith, Ferocity of the Hunt, Afterthought Sentry; plus Recursive Recruitment, Innovative Commons, Theorix Annex, Dedicated Commons cut during the build. Free basics are added by the builder, so the 42 taken cards are not all accounted for by name: three taken cards (P1p13 Winter second copy, P2p10, P3p7/P3p8) are not in the lists read.",
+  "'I do have a video all about mana bases if you want to check it out' (20:11): he recommends his mana base video as the best one for becoming a better limited player."
+ ]
+}
