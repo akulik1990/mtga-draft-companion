@@ -162,6 +162,8 @@ class DraftAdvisorV2:
     DUAL_OPEN_EDGE = 8.0  # a nonbasic dual that taps for one of the lane's colours is worth at least replacement + this x (1 - progress); 0 = off. Akshin's call 2026-11-07, untested
     POWER_EARLY = 1.0  # Fit blended toward Power by this weight at pick 1, fading to 0 by POWER_EARLY_BY spells; 0 = off. Akshin's call 2026-11-07, untested
     POWER_EARLY_BY = 18
+    TOP_END_POINTS = 8.0  # WR points off a 6+ mana spell under the finisher line (mean + 1 SD), fading to 0 by TOP_END_BY spells; Akshin's call 2026-11-07, untested
+    TOP_END_BY = 18
     COLOURLESS_FADE_BY = 8  # COLOURLESS_EARLY fades linearly from pick 1 to 0 at this pick of pack 1; 0 = no fade (full all pack 1). On by Akshin's call 2026-11-07; paired test (data/Temp/sim/floor1): top-1 -0.47 (p<0.001), top-3 -0.25 (p<0.001), mock deck WR -0.32 (p 0.18); kept by his decision
     PLAY_RATE_POINTS = 0.0  # WR points off a non-land card in proportion to how far its play rate falls below PLAY_RATE_FROM (all of them at 0%); 0 = off
     PLAY_RATE_FROM = 50.0
@@ -278,6 +280,7 @@ class DraftAdvisorV2:
         for c in self.pool:
             self.names[c.get("name")] = self.names.get(c.get("name"), 0) + 1
         spells = sum(1 for c in self.pool if "Land" not in (c.get("types") or []))
+        self.spells = spells  # set early: value() reads it (TOP_END_POINTS) while the lanes are built
         progress = min(1.0, spells / self.COMMIT_BY) if self.COMMIT_BY > 0 else 0.0
         self.progress = progress
         self.steer = self.STEER * (1.0 - progress)  # the candidate's pull fades as the pool becomes a deck
@@ -527,6 +530,9 @@ class DraftAdvisorV2:
             a += self.REMOVAL_POINTS * self.removal_need
         if self.REMOVAL_FLAT and "removal" in config.tags(card) and kind != "land":
             a += self.REMOVAL_FLAT
+        if self.TOP_END_POINTS and kind != "land" and (card.get("cmc") or 0) >= 6 and not self.is_finisher(card):
+            # Videos (8 of 21): do not take 6-7 drops highly; lock up one or two finishers, then curve. Fades with the pool.
+            a -= self.TOP_END_POINTS * max(0.0, 1.0 - self.spells / self.TOP_END_BY)
         if self.finisher_need and self.is_finisher(card):
             a += self.FINISHER_POINTS * self.finisher_need
         if self.COPIES_POINTS and self.names.get(name, 0) >= self.COPIES_MAX:
