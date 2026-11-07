@@ -1,9 +1,9 @@
 {
- "commit": "e6a9d84",
- "date": "2026-11-06",
+ "commit": "ea1d9d7",
+ "date": "2026-11-07",
  "dataset": "FRA_PremierDraft_All_Data.json",
- "top1": 24,
- "top3": 36,
+ "top1": 17,
+ "top3": 33,
  "n": 39,
  "not_scored": 3,
  "dropped_cards": 4,
@@ -15,18 +15,18 @@
    "top3": [
     {
      "name": "Ajani Unrelenting",
-     "score": 82.49
+     "score": 78.1
     },
     {
      "name": "Rewrite Regrets",
-     "score": 61.6
+     "score": 62.82
     },
     {
      "name": "Unsummon",
-     "score": 54.73
+     "score": 59.65
     }
    ],
-   "his_score": 82.49,
+   "his_score": 78.1,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
@@ -41,10 +41,10 @@
     "UR 25% \u2192 75.1 (n=2832)"
    ],
    "lanes_after": {
-    "UR": 0.472,
-    "RG": 0.472,
-    "WR": 0.028,
-    "BR": 0.028
+    "WU": 0.107,
+    "WB": 0.107,
+    "WG": 0.107,
+    "UB": 0.107
    }
   },
   {
@@ -53,38 +53,39 @@
    "taken": "Your Fate Ends Here",
    "top3": [
     {
-     "name": "Konstrari Improviser",
-     "score": 59.52
-    },
-    {
      "name": "Your Fate Ends Here",
-     "score": 57.9
+     "score": 62.18
     },
     {
      "name": "Protege's Awakening",
-     "score": 57.76
+     "score": 61.84
+    },
+    {
+     "name": "Stingerquill Voxmancer",
+     "score": 57.01
     }
    ],
-   "his_score": 57.9,
-   "his_rank": 2,
+   "his_score": 62.18,
+   "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #7",
-    "UR 47% \u2192 54.7 (n=7404)",
-    "RG 47% \u2192 54.9 (n=29150)"
+    "Fit #1 \u00b7 Power #1",
+    "WU 11% \u2192 59.5 (n=18808)",
+    "WB 11% \u2192 54.3 (n=4184)",
+    "castable in 39% of likely lanes"
    ],
    "reasons_his": [
-    "Fit #2 \u00b7 Power #1",
-    "UR 47% \u2192 off-colour",
-    "RG 47% \u2192 off-colour",
-    "castable in 3% of likely lanes"
+    "Fit #1 \u00b7 Power #1",
+    "WU 11% \u2192 59.5 (n=18808)",
+    "WB 11% \u2192 54.3 (n=4184)",
+    "castable in 39% of likely lanes"
    ],
    "lanes_after": {
-    "UR": 0.431,
-    "RG": 0.431,
-    "WR": 0.113,
-    "BR": 0.023
+    "WU": 0.112,
+    "UB": 0.112,
+    "UR": 0.112,
+    "UG": 0.112
    }
   },
   {
@@ -94,38 +95,38 @@
    "top3": [
     {
      "name": "Mindseeker Oculus",
-     "score": 63.74
+     "score": 61.81
     },
     {
      "name": "Proctor of Potential",
-     "score": 56.09
+     "score": 61.4
     },
     {
-     "name": "Fblthp, Knows the Way",
-     "score": 54.29
+     "name": "Desperate Futurescribe",
+     "score": 58.89
     }
    ],
-   "his_score": 56.09,
+   "his_score": 61.4,
    "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #2",
-    "UR 43% \u2192 59.0 (n=25722)",
-    "RG 43% \u2192 off-colour",
-    "castable in 43% of likely lanes"
+    "WU 11% \u2192 60.4 (n=41775)",
+    "UB 11% \u2192 60.5 (n=48900)",
+    "castable in 45% of likely lanes"
    ],
    "reasons_his": [
     "Fit #2 \u00b7 Power #1",
-    "UR 78% \u2192 off-colour",
-    "WR 20% \u2192 off-colour",
-    "castable in 0% of likely lanes"
+    "WU 16% \u2192 61.3 (n=13004)",
+    "UB 16% \u2192 off-colour",
+    "castable in 16% of likely lanes"
    ],
    "lanes_after": {
-    "UR": 0.431,
-    "RG": 0.431,
-    "WR": 0.107,
-    "BR": 0.02
+    "BG": 0.311,
+    "RG": 0.271,
+    "BR": 0.24,
+    "WU": 0.028
    }
   },
   {
@@ -135,39 +136,38 @@
    "top3": [
     {
      "name": "Fblthp, Impossibly Lost",
-     "score": 64.19
+     "score": 60.81
     },
     {
      "name": "Twinned Vision",
-     "score": 64.09
+     "score": 59.67
     },
     {
      "name": "Clash of Elements",
-     "score": 57.92
+     "score": 58.63
     }
    ],
-   "his_score": 57.92,
+   "his_score": 58.63,
    "his_rank": 3,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Branch: +5.5 over Twinned Vision, above the -1.0 top drafters switch at",
-    "Fit #2 \u00b7 Power #1",
-    "RG 45% \u2192 off-colour",
-    "UR 42% \u2192 59.2 (n=12073)",
-    "castable in 42% of likely lanes"
+    "Fit #1 \u00b7 Power #1",
+    "BG 32% \u2192 off-colour",
+    "RG 28% \u2192 off-colour",
+    "castable in 11% of likely lanes"
    ],
    "reasons_his": [
     "Fit #3 \u00b7 Power #3",
-    "RG 45% \u2192 off-colour",
-    "UR 42% \u2192 58.6 (n=26866)",
-    "castable in 42% of likely lanes"
+    "RG 43% \u2192 off-colour",
+    "BR 35% \u2192 off-colour",
+    "castable in 4% of likely lanes"
    ],
    "lanes_after": {
-    "UR": 0.722,
-    "RG": 0.183,
-    "WR": 0.063,
-    "BR": 0.019
+    "BG": 0.527,
+    "RG": 0.114,
+    "BR": 0.098,
+    "WG": 0.085
    }
   },
   {
@@ -177,37 +177,37 @@
    "top3": [
     {
      "name": "Rewrite Regrets",
-     "score": 62.76
+     "score": 60.16
     },
     {
-     "name": "Way of the Pyromancer",
-     "score": 59.0
+     "name": "Rank Rat",
+     "score": 53.09
     },
     {
-     "name": "Divining Duelist",
-     "score": 48.79
+     "name": "Vigorbloom Annex",
+     "score": 52.65
     }
    ],
-   "his_score": 59.0,
-   "his_rank": 2,
+   "his_score": 51.63,
+   "his_rank": 5,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "UR 72% \u2192 off-colour",
-    "RG 18% \u2192 off-colour",
-    "castable in 3% of likely lanes"
+    "BG 58% \u2192 58.8 (n=9828)",
+    "BR 11% \u2192 55.6 (n=4699)"
    ],
    "reasons_his": [
-    "Fit #2 \u00b7 Power #3",
-    "UR 72% \u2192 52.9 (n=6293)",
-    "RG 18% \u2192 52.9 (n=8112)"
+    "Fit #5 \u00b7 Power #4",
+    "BG 58% \u2192 off-colour",
+    "BR 11% \u2192 49.3 (n=3436)",
+    "castable in 22% of likely lanes"
    ],
    "lanes_after": {
-    "UR": 0.732,
-    "RG": 0.174,
-    "WR": 0.059,
-    "BR": 0.026
+    "BG": 0.596,
+    "BR": 0.107,
+    "WB": 0.083,
+    "RG": 0.081
    }
   },
   {
@@ -217,36 +217,38 @@
    "top3": [
     {
      "name": "Tomik, Izzet Sparkmage",
-     "score": 54.32
+     "score": 49.22
     },
     {
      "name": "Sphinx's Approach",
-     "score": 42.94
+     "score": 47.54
     },
     {
-     "name": "Eardrum Rattler",
-     "score": 37.59
+     "name": "Refute Destiny",
+     "score": 47.03
     }
    ],
-   "his_score": 37.59,
-   "his_rank": 3,
+   "his_score": 43.11,
+   "his_rank": 5,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #1",
-    "UR 74% \u2192 51.3 (n=6562)",
-    "RG 17% \u2192 48.7 (n=2619)"
+    "Fit #1 \u00b7 Power #2",
+    "BG 58% \u2192 off-colour",
+    "BR 11% \u2192 52.7 (n=10866)",
+    "castable in 22% of likely lanes"
    ],
    "reasons_his": [
-    "Fit #3 \u00b7 Power #6",
-    "UR 74% \u2192 48.6 (n=2393)",
-    "RG 17% \u2192 48.6 (n=2415)"
+    "Fit #5 \u00b7 Power #5",
+    "BG 58% \u2192 off-colour",
+    "BR 11% \u2192 51.2 (n=5052)",
+    "castable in 22% of likely lanes"
    ],
    "lanes_after": {
-    "UR": 0.749,
-    "RG": 0.167,
-    "WR": 0.055,
-    "BR": 0.021
+    "BG": 0.601,
+    "BR": 0.103,
+    "RG": 0.085,
+    "WB": 0.079
    }
   },
   {
@@ -255,37 +257,39 @@
    "taken": "Way of the Pyromancer",
    "top3": [
     {
-     "name": "Way of the Pyromancer",
-     "score": 56.6
+     "name": "Campus Crier",
+     "score": 54.14
     },
     {
-     "name": "Campus Crier",
-     "score": 42.47
+     "name": "Way of the Pyromancer",
+     "score": 49.97
     },
     {
      "name": "Living Library",
-     "score": 34.04
+     "score": 46.06
     }
    ],
-   "his_score": 56.6,
-   "his_rank": 1,
+   "his_score": 49.97,
+   "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #2",
-    "UR 74% \u2192 52.9 (n=6293)",
-    "RG 16% \u2192 52.9 (n=8112)"
+    "Fit #1 \u00b7 Power #1",
+    "BG 57% \u2192 off-colour",
+    "BR 10% \u2192 off-colour",
+    "castable in 20% of likely lanes"
    ],
    "reasons_his": [
-    "Fit #1 \u00b7 Power #2",
-    "UR 74% \u2192 52.9 (n=6293)",
-    "RG 16% \u2192 52.9 (n=8112)"
+    "Fit #2 \u00b7 Power #2",
+    "BG 57% \u2192 off-colour",
+    "BR 10% \u2192 49.3 (n=3436)",
+    "castable in 22% of likely lanes"
    ],
    "lanes_after": {
-    "UR": 0.754,
-    "RG": 0.159,
-    "WR": 0.062,
-    "BR": 0.018
+    "BR": 0.453,
+    "RG": 0.399,
+    "UR": 0.063,
+    "WR": 0.046
    }
   },
   {
@@ -294,37 +298,38 @@
    "taken": "Saheeli, Jewel of Avishkar",
    "top3": [
     {
-     "name": "Saheeli, Jewel of Avishkar",
-     "score": 59.57
-    },
-    {
      "name": "Murmuring Volume",
-     "score": 53.13
+     "score": 56.76
     },
     {
-     "name": "Hallway Heckler",
-     "score": 47.61
+     "name": "Saheeli, Jewel of Avishkar",
+     "score": 56.6
+    },
+    {
+     "name": "Campus Crier",
+     "score": 55.19
     }
    ],
-   "his_score": 59.57,
-   "his_rank": 1,
+   "his_score": 56.6,
+   "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #1",
-    "UR 82% \u2192 57.5 (n=23635)",
-    "RG 11% \u2192 off-colour"
+    "Fit #1 \u00b7 Power #3",
+    "BR 46% \u2192 53.2 (n=1946)",
+    "RG 37% \u2192 55.4 (n=9133)"
    ],
    "reasons_his": [
-    "Fit #1 \u00b7 Power #1",
-    "UR 82% \u2192 57.5 (n=23635)",
-    "RG 11% \u2192 off-colour"
+    "Fit #2 \u00b7 Power #2",
+    "BR 47% \u2192 off-colour",
+    "RG 38% \u2192 off-colour",
+    "castable in 9% of likely lanes"
    ],
    "lanes_after": {
-    "UR": 0.945,
-    "RG": 0.034,
-    "WR": 0.015,
-    "BR": 0.004
+    "BR": 0.468,
+    "RG": 0.377,
+    "UR": 0.086,
+    "WR": 0.048
    }
   },
   {
@@ -334,34 +339,38 @@
    "top3": [
     {
      "name": "Unsummon",
-     "score": 63.03
-    },
-    {
-     "name": "Tether Technician",
-     "score": 48.57
+     "score": 53.92
     },
     {
      "name": "Theoretical Necromancer",
-     "score": 40.0
+     "score": 52.49
+    },
+    {
+     "name": "Tether Technician",
+     "score": 50.31
     }
    ],
-   "his_score": 63.03,
+   "his_score": 53.92,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "UR 96% \u2192 56.9 (n=23935)"
+    "BR 49% \u2192 off-colour",
+    "RG 33% \u2192 off-colour",
+    "castable in 12% of likely lanes"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "UR 96% \u2192 56.9 (n=23935)"
+    "BR 49% \u2192 off-colour",
+    "RG 33% \u2192 off-colour",
+    "castable in 12% of likely lanes"
    ],
    "lanes_after": {
-    "UR": 0.991,
-    "RG": 0.005,
-    "WR": 0.002,
-    "WU": 0.001
+    "BR": 0.494,
+    "RG": 0.337,
+    "UR": 0.111,
+    "WR": 0.038
    }
   },
   {
@@ -370,35 +379,38 @@
    "taken": "Protege's Awakening",
    "top3": [
     {
-     "name": "Protege's Awakening",
-     "score": 66.11
+     "name": "Keeper of the Quiet Hour",
+     "score": 57.65
     },
     {
-     "name": "Keeper of the Quiet Hour",
-     "score": 45.68
+     "name": "Protege's Awakening",
+     "score": 56.37
     },
     {
      "name": "Ghalta the Immovable",
-     "score": 31.03
+     "score": 46.54
     }
    ],
-   "his_score": 66.11,
-   "his_rank": 1,
+   "his_score": 56.37,
+   "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #1",
-    "UR 99% \u2192 57.7 (n=18694)"
+    "Fit #1 \u00b7 Power #2",
+    "BR 44% \u2192 53.2 (n=2503)",
+    "RG 32% \u2192 55.8 (n=7729)"
    ],
    "reasons_his": [
-    "Fit #1 \u00b7 Power #1",
-    "UR 99% \u2192 57.7 (n=18694)"
+    "Fit #2 \u00b7 Power #1",
+    "BR 44% \u2192 off-colour",
+    "RG 32% \u2192 off-colour",
+    "castable in 19% of likely lanes"
    ],
    "lanes_after": {
-    "UR": 0.999,
-    "WU": 0.001,
-    "RG": 0.0,
-    "WR": 0.0
+    "UR": 0.984,
+    "BR": 0.006,
+    "RG": 0.004,
+    "UB": 0.002
    }
   },
   {
@@ -408,34 +420,34 @@
    "top3": [
     {
      "name": "Gallia, the Merrymaker",
-     "score": 53.39
+     "score": 51.5
     },
     {
      "name": "Eardrum Rattler",
-     "score": 33.75
+     "score": 46.15
     },
     {
      "name": "Solve for Disappointment",
-     "score": 30.17
+     "score": 42.47
     }
    ],
-   "his_score": 33.75,
+   "his_score": 46.15,
    "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "UR 100% \u2192 50.5 (n=3271)"
+    "UR 98% \u2192 50.5 (n=3271)"
    ],
    "reasons_his": [
     "Fit #2 \u00b7 Power #3",
-    "UR 100% \u2192 48.6 (n=2393)"
+    "UR 98% \u2192 48.6 (n=2393)"
    ],
    "lanes_after": {
-    "UR": 0.999,
-    "WU": 0.001,
-    "RG": 0.0,
-    "WR": 0.0
+    "UR": 0.984,
+    "BR": 0.007,
+    "RG": 0.005,
+    "UB": 0.002
    }
   },
   {
@@ -445,18 +457,18 @@
    "top3": [
     {
      "name": "Twinned Vision",
-     "score": 91.23
+     "score": 84.19
     },
     {
      "name": "Fblthp, Impossibly Lost",
-     "score": 90.91
+     "score": 80.09
     },
     {
      "name": "Hunter's Axe",
-     "score": 31.55
+     "score": 41.77
     }
    ],
-   "his_score": 91.23,
+   "his_score": 84.19,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
@@ -471,10 +483,10 @@
     "open: U"
    ],
    "lanes_after": {
-    "UR": 1.0,
-    "WU": 0.0,
-    "RG": 0.0,
-    "WR": 0.0
+    "UR": 0.997,
+    "BR": 0.001,
+    "RG": 0.001,
+    "UB": 0.001
    }
   },
   {
@@ -484,30 +496,30 @@
    "top3": [
     {
      "name": "Tether Technician",
-     "score": 71.27
+     "score": 75.59
     },
     {
      "name": "Afterthought Sentry",
-     "score": 55.86
+     "score": 70.79
     }
    ],
-   "his_score": 71.27,
+   "his_score": 75.59,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #1",
+    "Fit #1 \u00b7 Power #2",
     "UR 100% \u2192 54.1 (n=5004)"
    ],
    "reasons_his": [
-    "Fit #1 \u00b7 Power #1",
+    "Fit #1 \u00b7 Power #2",
     "UR 100% \u2192 54.1 (n=5004)"
    ],
    "lanes_after": {
-    "UR": 1.0,
-    "WU": 0.0,
-    "RG": 0.0,
-    "WR": 0.0
+    "UR": 0.997,
+    "BR": 0.001,
+    "RG": 0.001,
+    "UB": 0.0
    }
   },
   {
@@ -522,10 +534,10 @@
    "reasons_top": [],
    "reasons_his": [],
    "lanes_after": {
-    "UR": 1.0,
-    "WU": 0.0,
-    "RG": 0.0,
-    "WR": 0.0
+    "UR": 0.997,
+    "BR": 0.001,
+    "RG": 0.001,
+    "UB": 0.0
    }
   },
   {
@@ -535,36 +547,36 @@
    "top3": [
     {
      "name": "Garruk, Veiled Butcher",
-     "score": 60.73
-    },
-    {
-     "name": "Konstrari Improviser",
-     "score": 60.38
+     "score": 59.22
     },
     {
      "name": "Garruk, Curse Breaker",
-     "score": 57.18
+     "score": 58.15
+    },
+    {
+     "name": "Konstrari Improviser",
+     "score": 56.36
     }
    ],
-   "his_score": 60.73,
+   "his_score": 59.22,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "UR 100% \u2192 off-colour",
-    "castable in 0% of likely lanes"
+    "UR 99% \u2192 off-colour",
+    "castable in 1% of likely lanes"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "UR 100% \u2192 off-colour",
-    "castable in 0% of likely lanes"
+    "UR 99% \u2192 off-colour",
+    "castable in 1% of likely lanes"
    ],
    "lanes_after": {
-    "UR": 0.782,
-    "WUR": 0.216,
-    "BR": 0.001,
-    "RG": 0.0
+    "UR": 0.994,
+    "RG": 0.003,
+    "BR": 0.002,
+    "UB": 0.0
    }
   },
   {
@@ -573,37 +585,35 @@
    "taken": "Violent Echoes",
    "top3": [
     {
-     "name": "Violent Echoes",
-     "score": 73.07
-    },
-    {
      "name": "Twinned Vision",
-     "score": 66.05
+     "score": 62.11
     },
     {
      "name": "Surveillance Phantasm",
-     "score": 65.06
+     "score": 59.66
+    },
+    {
+     "name": "Violent Echoes",
+     "score": 59.24
     }
    ],
-   "his_score": 73.07,
-   "his_rank": 1,
+   "his_score": 59.24,
+   "his_rank": 3,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #1",
-    "UR 78% \u2192 60.4 (n=15138)",
-    "WUR 22% \u2192 58.1 (n=2037)"
+    "Fit #1 \u00b7 Power #2",
+    "UR 99% \u2192 58.6 (n=25996)"
    ],
    "reasons_his": [
-    "Fit #1 \u00b7 Power #1",
-    "UR 78% \u2192 60.4 (n=15138)",
-    "WUR 22% \u2192 58.1 (n=2037)"
+    "Fit #3 \u00b7 Power #5",
+    "UR 99% \u2192 60.4 (n=15138)"
    ],
    "lanes_after": {
-    "UR": 0.8,
-    "WUR": 0.198,
-    "BR": 0.001,
-    "RG": 0.0
+    "UR": 0.995,
+    "RG": 0.003,
+    "BR": 0.002,
+    "WR": 0.0
    }
   },
   {
@@ -613,36 +623,34 @@
    "top3": [
     {
      "name": "Traxos, Academy Guardian",
-     "score": 63.62
-    },
-    {
-     "name": "Undulating Witness",
-     "score": 60.93
+     "score": 58.22
     },
     {
      "name": "Konstrari Improviser",
-     "score": 60.14
+     "score": 55.82
+    },
+    {
+     "name": "Undulating Witness",
+     "score": 55.78
     }
    ],
-   "his_score": 63.62,
+   "his_score": 58.22,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #3",
-    "UR 80% \u2192 55.2 (n=10434)",
-    "WUR 20% \u2192 54.7 (n=1607)"
+    "UR 99% \u2192 55.2 (n=10434)"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #3",
-    "UR 80% \u2192 55.2 (n=10434)",
-    "WUR 20% \u2192 54.7 (n=1607)"
+    "UR 99% \u2192 55.2 (n=10434)"
    ],
    "lanes_after": {
-    "UR": 0.817,
-    "WUR": 0.182,
-    "BR": 0.0,
-    "RG": 0.0
+    "UR": 0.999,
+    "RG": 0.001,
+    "BR": 0.001,
+    "WR": 0.0
    }
   },
   {
@@ -652,36 +660,34 @@
    "top3": [
     {
      "name": "Plan for All Outcomes",
-     "score": 73.59
-    },
-    {
-     "name": "Surveillance Phantasm",
-     "score": 65.05
+     "score": 59.33
     },
     {
      "name": "Geist of Saint Thalia",
-     "score": 64.9
+     "score": 59.28
+    },
+    {
+     "name": "Surveillance Phantasm",
+     "score": 58.99
     }
    ],
-   "his_score": 73.59,
+   "his_score": 59.33,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "UR 82% \u2192 59.0 (n=12032)",
-    "WUR 18% \u2192 57.0 (n=2249)"
+    "UR 100% \u2192 59.0 (n=12032)"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "UR 82% \u2192 59.0 (n=12032)",
-    "WUR 18% \u2192 57.0 (n=2249)"
+    "UR 100% \u2192 59.0 (n=12032)"
    ],
    "lanes_after": {
-    "UR": 0.833,
-    "WUR": 0.167,
-    "UB": 0.0,
-    "BR": 0.0
+    "UR": 1.0,
+    "RG": 0.0,
+    "BR": 0.0,
+    "UB": 0.0
    }
   },
   {
@@ -691,36 +697,34 @@
    "top3": [
     {
      "name": "Awaken the Inferno",
-     "score": 63.68
+     "score": 58.13
     },
     {
      "name": "Icy Reception",
-     "score": 62.51
+     "score": 57.35
     },
     {
-     "name": "Tomik, Izzet Sparkmage",
-     "score": 55.77
+     "name": "Generous Revival",
+     "score": 53.67
     }
    ],
-   "his_score": 63.68,
+   "his_score": 58.13,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #3",
-    "UR 83% \u2192 56.8 (n=22053)",
-    "WUR 17% \u2192 55.8 (n=4726)"
+    "UR 100% \u2192 56.8 (n=22053)"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #3",
-    "UR 83% \u2192 56.8 (n=22053)",
-    "WUR 17% \u2192 55.8 (n=4726)"
+    "UR 100% \u2192 56.8 (n=22053)"
    ],
    "lanes_after": {
-    "UR": 0.846,
-    "WUR": 0.154,
+    "UR": 1.0,
+    "RG": 0.0,
     "BR": 0.0,
-    "RG": 0.0
+    "UB": 0.0
    }
   },
   {
@@ -730,36 +734,34 @@
    "top3": [
     {
      "name": "Unsummon",
-     "score": 62.13
+     "score": 56.91
     },
     {
      "name": "Keeper of the Quiet Hour",
-     "score": 56.08
+     "score": 56.91
     },
     {
      "name": "Teyo, Lightshield Expert",
-     "score": 45.38
+     "score": 50.71
     }
    ],
-   "his_score": 62.13,
+   "his_score": 56.91,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #2",
-    "UR 85% \u2192 56.9 (n=23935)",
-    "WUR 15% \u2192 54.6 (n=3327)"
+    "UR 100% \u2192 56.9 (n=23935)"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #2",
-    "UR 85% \u2192 56.9 (n=23935)",
-    "WUR 15% \u2192 54.6 (n=3327)"
+    "UR 100% \u2192 56.9 (n=23935)"
    ],
    "lanes_after": {
-    "UR": 0.859,
-    "WUR": 0.141,
-    "UB": 0.0,
-    "WU": 0.0
+    "UR": 1.0,
+    "RG": 0.0,
+    "WU": 0.0,
+    "UB": 0.0
    }
   },
   {
@@ -768,36 +770,34 @@
    "taken": "Innovative Commons",
    "top3": [
     {
-     "name": "Undulating Witness",
-     "score": 62.62
-    },
-    {
-     "name": "Heartstring Puller",
-     "score": 60.6
-    },
-    {
      "name": "Innovative Commons",
-     "score": 59.78
+     "score": 62.26
+    },
+    {
+     "name": "Undulating Witness",
+     "score": 59.79
+    },
+    {
+     "name": "Room of Refuge",
+     "score": 59.4
     }
    ],
-   "his_score": 59.78,
-   "his_rank": 3,
+   "his_score": 62.26,
+   "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #5",
-    "UR 86% \u2192 54.9 (n=17734)",
-    "WUR 14% \u2192 53.7 (n=3747)"
+    "Fit #1 \u00b7 Power #2",
+    "UR 100% \u2192 56.1 (n=17673)"
    ],
    "reasons_his": [
-    "Fit #3 \u00b7 Power #2",
-    "UR 86% \u2192 56.1 (n=17673)",
-    "WUR 14% \u2192 54.5 (n=4130)"
+    "Fit #1 \u00b7 Power #2",
+    "UR 100% \u2192 56.1 (n=17673)"
    ],
    "lanes_after": {
-    "UR": 0.861,
-    "WUR": 0.139,
+    "UR": 1.0,
     "WU": 0.0,
+    "RG": 0.0,
     "UB": 0.0
    }
   },
@@ -807,38 +807,36 @@
    "taken": "Stingerquill Annex",
    "top3": [
     {
-     "name": "Protege's Awakening",
-     "score": 68.62
-    },
-    {
-     "name": "Prudent Fateseer",
-     "score": 66.85
-    },
-    {
      "name": "Murmuring Volume",
-     "score": 65.61
+     "score": 62.71
+    },
+    {
+     "name": "Protege's Awakening",
+     "score": 61.88
+    },
+    {
+     "name": "Keeper of the Quiet Hour",
+     "score": 60.59
     }
    ],
-   "his_score": 46.83,
-   "his_rank": 5,
+   "his_score": 48.03,
+   "his_rank": 6,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #2",
-    "UR 86% \u2192 57.7 (n=18694)",
-    "WUR 14% \u2192 56.2 (n=3126)"
+    "Fit #1 \u00b7 Power #5",
+    "UR 100% \u2192 55.6 (n=6657)"
    ],
    "reasons_his": [
-    "Fit #5 \u00b7 Power #3",
-    "UR 86% \u2192 splash B (fixing 1) 45.5",
-    "WUR 14% \u2192 splash B (fixing 1) 45.5",
+    "Fit #6 \u00b7 Power #3",
+    "UR 100% \u2192 splash B (fixing 1) 45.5",
     "castable in 0% of likely lanes"
    ],
    "lanes_after": {
-    "UR": 0.862,
-    "WUR": 0.138,
+    "UR": 1.0,
     "WU": 0.0,
-    "UB": 0.0
+    "UB": 0.0,
+    "UG": 0.0
    }
   },
   {
@@ -848,38 +846,36 @@
    "top3": [
     {
      "name": "Sphinx's Approach",
-     "score": 57.31
+     "score": 58.71
     },
     {
      "name": "Afterthought Sentry",
-     "score": 46.88
+     "score": 53.37
     },
     {
-     "name": "Dedicated Commons",
-     "score": 46.76
+     "name": "Desperate Futurescribe",
+     "score": 48.44
     }
    ],
-   "his_score": 46.76,
-   "his_rank": 3,
+   "his_score": 48.03,
+   "his_rank": 4,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #3",
-    "UR 86% \u2192 55.9 (n=10079)",
-    "WUR 14% \u2192 53.7 (n=1201)",
+    "Fit #1 \u00b7 Power #4",
+    "UR 100% \u2192 55.9 (n=10079)",
     "open: U"
    ],
    "reasons_his": [
-    "Fit #3 \u00b7 Power #2",
-    "UR 86% \u2192 splash W (fixing 1) 45.5",
-    "WUR 14% \u2192 53.7 (n=4714)",
-    "castable in 14% of likely lanes"
+    "Fit #4 \u00b7 Power #2",
+    "UR 100% \u2192 splash W (fixing 1) 45.5",
+    "castable in 0% of likely lanes"
    ],
    "lanes_after": {
-    "UR": 0.816,
-    "WUR": 0.184,
+    "UR": 1.0,
     "WU": 0.0,
-    "UB": 0.0
+    "UB": 0.0,
+    "UG": 0.0
    }
   },
   {
@@ -889,37 +885,35 @@
    "top3": [
     {
      "name": "Twinned Vision",
-     "score": 70.87
+     "score": 64.21
     },
     {
      "name": "Skilled Battlecarver",
-     "score": 55.2
+     "score": 55.03
     },
     {
      "name": "Fatehold Charm",
-     "score": 42.88
+     "score": 48.85
     }
    ],
-   "his_score": 55.2,
+   "his_score": 55.03,
    "his_rank": 2,
    "scored": true,
    "dropped": 2,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "UR 82% \u2192 58.6 (n=25996)",
-    "WUR 18% \u2192 56.6 (n=3750)",
+    "UR 100% \u2192 58.6 (n=25996)",
     "open: U"
    ],
    "reasons_his": [
     "Fit #2 \u00b7 Power #3",
-    "UR 82% \u2192 53.1 (n=12937)",
-    "WUR 18% \u2192 49.3 (n=1147)"
+    "UR 100% \u2192 53.1 (n=12937)"
    ],
    "lanes_after": {
-    "UR": 0.831,
-    "WUR": 0.169,
+    "UR": 1.0,
     "WU": 0.0,
-    "UB": 0.0
+    "UB": 0.0,
+    "UG": 0.0
    }
   },
   {
@@ -928,39 +922,37 @@
    "taken": "Formidable Commons",
    "top3": [
     {
-     "name": "Formidable Commons",
-     "score": 39.59
-    },
-    {
      "name": "Cast Away Doubt",
-     "score": 34.65
+     "score": 42.68
     },
     {
-     "name": "Teyo, Diamondblade Mage",
-     "score": 34.24
+     "name": "Formidable Commons",
+     "score": 42.58
+    },
+    {
+     "name": "Academic Ascent",
+     "score": 40.09
     }
    ],
-   "his_score": 39.59,
-   "his_rank": 1,
+   "his_score": 42.58,
+   "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #1",
-    "UR 83% \u2192 off-colour",
-    "WUR 17% \u2192 off-colour",
+    "Fit #1 \u00b7 Power #3",
+    "UR 100% \u2192 splash B (fixing 2) 44.7",
     "castable in 0% of likely lanes"
    ],
    "reasons_his": [
-    "Fit #1 \u00b7 Power #1",
-    "UR 83% \u2192 off-colour",
-    "WUR 17% \u2192 off-colour",
+    "Fit #2 \u00b7 Power #1",
+    "UR 100% \u2192 off-colour",
     "castable in 0% of likely lanes"
    ],
    "lanes_after": {
-    "UR": 0.833,
-    "WUR": 0.167,
+    "UR": 1.0,
     "WU": 0.0,
-    "UB": 0.0
+    "UB": 0.0,
+    "UG": 0.0
    }
   },
   {
@@ -970,38 +962,36 @@
    "top3": [
     {
      "name": "Way of the Cryomancer",
-     "score": 81.41
+     "score": 78.56
     },
     {
      "name": "Konstrari Annex",
-     "score": 59.0
+     "score": 63.0
     },
     {
      "name": "Grim Repriser",
-     "score": 45.98
+     "score": 53.38
     }
    ],
-   "his_score": 45.98,
+   "his_score": 53.38,
    "his_rank": 3,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #3",
-    "UR 83% \u2192 52.8 (n=5477)",
-    "WUR 17% \u2192 50.3 (n=879)",
+    "UR 100% \u2192 52.8 (n=5477)",
     "open: U"
    ],
    "reasons_his": [
     "Fit #3 \u00b7 Power #2",
-    "UR 83% \u2192 splash B (fixing 3) 44.5",
-    "WUR 17% \u2192 splash B (fixing 3) 44.5",
+    "UR 100% \u2192 splash B (fixing 3) 47.9",
     "castable in 0% of likely lanes"
    ],
    "lanes_after": {
-    "UR": 0.778,
-    "UBR": 0.222,
+    "UR": 1.0,
     "WU": 0.0,
-    "UB": 0.0
+    "UB": 0.0,
+    "UG": 0.0
    }
   },
   {
@@ -1011,34 +1001,32 @@
    "top3": [
     {
      "name": "Theoretical Necromancer",
-     "score": 51.82
+     "score": 52.49
     },
     {
      "name": "Swamp",
      "score": 0.0
     }
    ],
-   "his_score": 51.82,
+   "his_score": 52.49,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "UR 78% \u2192 splash B (fixing 3) 45.5",
-    "UBR 22% \u2192 55.7 (n=3304)",
-    "castable in 22% of likely lanes"
+    "UR 100% \u2192 splash B (fixing 3) 49.5",
+    "castable in 0% of likely lanes"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "UR 78% \u2192 splash B (fixing 3) 45.5",
-    "UBR 22% \u2192 55.7 (n=3304)",
-    "castable in 22% of likely lanes"
+    "UR 100% \u2192 splash B (fixing 3) 49.5",
+    "castable in 0% of likely lanes"
    ],
    "lanes_after": {
-    "UR": 0.646,
-    "UBR": 0.354,
+    "UR": 1.0,
+    "WU": 0.0,
     "UB": 0.0,
-    "WU": 0.0
+    "UG": 0.0
    }
   },
   {
@@ -1053,10 +1041,10 @@
    "reasons_top": [],
    "reasons_his": [],
    "lanes_after": {
-    "UR": 0.646,
-    "UBR": 0.354,
+    "UR": 1.0,
+    "WU": 0.0,
     "UB": 0.0,
-    "WU": 0.0
+    "UG": 0.0
    }
   },
   {
@@ -1065,39 +1053,37 @@
    "taken": "Overwrite the Multiverse",
    "top3": [
     {
-     "name": "Overwrite the Multiverse",
-     "score": 67.41
+     "name": "Infinite Coursework",
+     "score": 62.18
     },
     {
-     "name": "Infinite Coursework",
-     "score": 65.75
+     "name": "Overwrite the Multiverse",
+     "score": 59.12
     },
     {
      "name": "Sphinx's Approach",
-     "score": 58.63
+     "score": 56.08
     }
    ],
-   "his_score": 67.41,
-   "his_rank": 1,
+   "his_score": 59.12,
+   "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #1",
-    "UR 65% \u2192 off-colour",
-    "UBR 35% \u2192 65.9 (n=656)",
-    "castable in 35% of likely lanes"
+    "Fit #1 \u00b7 Power #6",
+    "UR 100% \u2192 55.8 (n=17638)",
+    "open: U"
    ],
    "reasons_his": [
-    "Fit #1 \u00b7 Power #1",
-    "UR 65% \u2192 off-colour",
-    "UBR 35% \u2192 65.9 (n=656)",
-    "castable in 35% of likely lanes"
+    "Fit #2 \u00b7 Power #1",
+    "UR 100% \u2192 off-colour",
+    "castable in 0% of likely lanes"
    ],
    "lanes_after": {
-    "UBR": 0.54,
-    "UR": 0.459,
+    "UR": 1.0,
+    "WU": 0.0,
     "UB": 0.0,
-    "BR": 0.0
+    "RG": 0.0
    }
   },
   {
@@ -1107,38 +1093,36 @@
    "top3": [
     {
      "name": "Surveillance Phantasm",
-     "score": 67.41
+     "score": 63.14
     },
     {
      "name": "Fatehold Chronologist",
-     "score": 66.74
+     "score": 62.73
     },
     {
      "name": "Room of Refuge",
-     "score": 60.32
+     "score": 59.36
     }
    ],
-   "his_score": 57.79,
+   "his_score": 53.62,
    "his_rank": 5,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #3",
-    "UBR 54% \u2192 55.8 (n=4357)",
-    "UR 46% \u2192 56.3 (n=19061)",
+    "UR 100% \u2192 56.3 (n=19061)",
     "open: U"
    ],
    "reasons_his": [
     "Fit #5 \u00b7 Power #1",
-    "UBR 54% \u2192 58.2 (n=6521)",
-    "UR 46% \u2192 splash B (fixing 3) 51.7",
-    "castable in 54% of likely lanes"
+    "UR 100% \u2192 splash B (fixing 3) 56.3",
+    "castable in 0% of likely lanes"
    ],
    "lanes_after": {
-    "UBR": 0.775,
-    "UR": 0.22,
-    "UB": 0.004,
-    "BR": 0.002
+    "UR": 0.983,
+    "UB": 0.013,
+    "BR": 0.005,
+    "WU": 0.0
    }
   },
   {
@@ -1147,37 +1131,36 @@
    "taken": "No Admittance",
    "top3": [
     {
+     "name": "Fatehold Chronologist",
+     "score": 62.69
+    },
+    {
      "name": "No Admittance",
-     "score": 71.95
+     "score": 62.1
     },
     {
      "name": "Awaken the Inferno",
-     "score": 69.41
-    },
-    {
-     "name": "Fatehold Chronologist",
-     "score": 66.58
+     "score": 61.25
     }
    ],
-   "his_score": 71.95,
-   "his_rank": 1,
+   "his_score": 62.1,
+   "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "UBR 77% \u2192 57.5 (n=5616)",
-    "UR 22% \u2192 58.5 (n=27523)"
+    "UR 98% \u2192 56.2 (n=15432)",
+    "open: U"
    ],
    "reasons_his": [
-    "Fit #1 \u00b7 Power #1",
-    "UBR 77% \u2192 57.5 (n=5616)",
-    "UR 22% \u2192 58.5 (n=27523)"
+    "Fit #2 \u00b7 Power #5",
+    "UR 98% \u2192 58.5 (n=27523)"
    ],
    "lanes_after": {
-    "UBR": 0.733,
-    "UR": 0.264,
-    "BR": 0.002,
-    "UB": 0.001
+    "UR": 0.992,
+    "BR": 0.005,
+    "UB": 0.003,
+    "RG": 0.0
    }
   },
   {
@@ -1187,36 +1170,34 @@
    "top3": [
     {
      "name": "Splinter Twin",
-     "score": 68.59
-    },
-    {
-     "name": "Pia, Determined Rebuilder",
-     "score": 67.07
+     "score": 63.43
     },
     {
      "name": "Keeper of the Quiet Hour",
-     "score": 59.29
+     "score": 57.57
+    },
+    {
+     "name": "Pia, Determined Rebuilder",
+     "score": 57.21
     }
    ],
-   "his_score": 67.07,
-   "his_rank": 2,
+   "his_score": 57.21,
+   "his_rank": 3,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #2",
-    "UBR 73% \u2192 57.8 (rarely played there)",
-    "UR 26% \u2192 65.3 (n=776)"
+    "Fit #1 \u00b7 Power #3",
+    "UR 99% \u2192 65.3 (n=776)"
    ],
    "reasons_his": [
-    "Fit #2 \u00b7 Power #4",
-    "UBR 73% \u2192 56.5 (n=1904)",
-    "UR 26% \u2192 56.6 (n=11067)"
+    "Fit #3 \u00b7 Power #7",
+    "UR 99% \u2192 56.6 (n=11067)"
    ],
    "lanes_after": {
-    "UBR": 0.69,
-    "UR": 0.307,
-    "BR": 0.003,
-    "UB": 0.0
+    "UR": 0.994,
+    "BR": 0.006,
+    "UB": 0.0,
+    "RG": 0.0
    }
   },
   {
@@ -1226,36 +1207,34 @@
    "top3": [
     {
      "name": "Konstrari Improviser",
-     "score": 59.04
+     "score": 57.08
     },
     {
      "name": "Tetsuko Umezawa, Fugitive",
-     "score": 55.09
+     "score": 55.64
     },
     {
      "name": "Sphinx's Approach",
-     "score": 54.96
+     "score": 55.36
     }
    ],
-   "his_score": 59.04,
+   "his_score": 57.08,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #3",
-    "UBR 69% \u2192 52.9 (n=1043)",
-    "UR 31% \u2192 54.7 (n=7404)"
+    "UR 99% \u2192 54.7 (n=7404)"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #3",
-    "UBR 69% \u2192 52.9 (n=1043)",
-    "UR 31% \u2192 54.7 (n=7404)"
+    "UR 99% \u2192 54.7 (n=7404)"
    ],
    "lanes_after": {
-    "UBR": 0.648,
-    "UR": 0.349,
-    "BR": 0.003,
-    "UB": 0.0
+    "UR": 0.993,
+    "BR": 0.006,
+    "UB": 0.0,
+    "RG": 0.0
    }
   },
   {
@@ -1265,36 +1244,36 @@
    "top3": [
     {
      "name": "Haunted Ridge",
-     "score": 54.66
+     "score": 48.12
+    },
+    {
+     "name": "Chandra's Emberling",
+     "score": 48.11
     },
     {
      "name": "Skilled Battlecarver",
-     "score": 50.58
-    },
-    {
-     "name": "Gallia, the Merrymaker",
-     "score": 50.42
+     "score": 47.86
     }
    ],
-   "his_score": 54.66,
+   "his_score": 48.12,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #2",
-    "UBR 65% \u2192 56.6 (n=1624)",
-    "UR 35% \u2192 splash B (fixing 3) 45.5"
+    "UR 99% \u2192 splash B (fixing 3) 45.5",
+    "castable in 1% of likely lanes"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #2",
-    "UBR 65% \u2192 56.6 (n=1624)",
-    "UR 35% \u2192 splash B (fixing 3) 45.5"
+    "UR 99% \u2192 splash B (fixing 3) 45.5",
+    "castable in 1% of likely lanes"
    ],
    "lanes_after": {
-    "UBR": 0.792,
-    "UR": 0.205,
-    "BR": 0.003,
-    "UB": 0.0
+    "UR": 0.994,
+    "BR": 0.006,
+    "UB": 0.0,
+    "RG": 0.0
    }
   },
   {
@@ -1304,38 +1283,35 @@
    "top3": [
     {
      "name": "Craftwork Crusher",
-     "score": 55.8
+     "score": 50.25
     },
     {
      "name": "Heartstring Puller",
-     "score": 55.7
+     "score": 49.92
     },
     {
-     "name": "Overgrown Farmland",
-     "score": 41.62
+     "name": "Desperate Futurescribe",
+     "score": 43.12
     }
    ],
-   "his_score": 55.7,
+   "his_score": 49.92,
    "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Branch: +20.8 over Heartstring Puller, above the -5.0 top drafters switch at",
-    "Fit #2 \u00b7 Power #1",
-    "UBR 79% \u2192 off-colour",
-    "UR 20% \u2192 off-colour",
+    "Fit #1 \u00b7 Power #1",
+    "UR 99% \u2192 off-colour",
     "castable in 0% of likely lanes"
    ],
    "reasons_his": [
-    "Fit #1 \u00b7 Power #5",
-    "UBR 79% \u2192 54.4 (n=2660)",
-    "UR 20% \u2192 56.2 (n=14286)"
+    "Fit #2 \u00b7 Power #7",
+    "UR 99% \u2192 56.2 (n=14286)"
    ],
    "lanes_after": {
-    "UBR": 0.748,
-    "UR": 0.249,
-    "BR": 0.003,
-    "UB": 0.0
+    "UR": 0.994,
+    "BR": 0.006,
+    "UB": 0.0,
+    "RG": 0.0
    }
   },
   {
@@ -1345,36 +1321,36 @@
    "top3": [
     {
      "name": "Theorix Metamage",
-     "score": 55.27
-    },
-    {
-     "name": "Hexhaven Battalion",
-     "score": 51.12
+     "score": 55.59
     },
     {
      "name": "Medic's Kitesail",
-     "score": 42.62
+     "score": 48.84
+    },
+    {
+     "name": "Blazing Crescendo",
+     "score": 46.98
     }
    ],
-   "his_score": 55.27,
+   "his_score": 55.59,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #2",
-    "UBR 75% \u2192 54.3 (n=2490)",
-    "UR 25% \u2192 53.3 (n=3411)"
+    "UR 99% \u2192 53.3 (n=3411)",
+    "open: U"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #2",
-    "UBR 75% \u2192 54.3 (n=2490)",
-    "UR 25% \u2192 53.3 (n=3411)"
+    "UR 99% \u2192 53.3 (n=3411)",
+    "open: U"
    ],
    "lanes_after": {
-    "UBR": 0.704,
-    "UR": 0.292,
-    "BR": 0.003,
-    "UB": 0.0
+    "UR": 0.994,
+    "BR": 0.006,
+    "UB": 0.0,
+    "RG": 0.0
    }
   },
   {
@@ -1384,36 +1360,36 @@
    "top3": [
     {
      "name": "Sphinx's Approach",
-     "score": 54.97
-    },
-    {
-     "name": "Tomik, Izzet Sparkmage",
-     "score": 54.43
+     "score": 56.14
     },
     {
      "name": "Skilled Battlecarver",
-     "score": 49.95
+     "score": 49.65
+    },
+    {
+     "name": "Tomik, Izzet Sparkmage",
+     "score": 49.55
     }
    ],
-   "his_score": 39.67,
-   "his_rank": 5,
+   "his_score": 43.79,
+   "his_rank": 4,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #6",
-    "UBR 70% \u2192 56.5 (n=1921)",
-    "UR 29% \u2192 55.9 (n=10079)"
+    "Fit #1 \u00b7 Power #4",
+    "UR 99% \u2192 55.9 (n=10079)",
+    "open: U"
    ],
    "reasons_his": [
-    "Fit #5 \u00b7 Power #4",
-    "UBR 70% \u2192 51.7 (n=2355)",
-    "UR 29% \u2192 splash B (fixing 4) 43.0"
+    "Fit #4 \u00b7 Power #3",
+    "UR 99% \u2192 splash B (fixing 4) 47.4",
+    "castable in 1% of likely lanes"
    ],
    "lanes_after": {
-    "UBR": 0.964,
-    "UR": 0.03,
-    "BR": 0.006,
-    "UB": 0.0
+    "UR": 0.99,
+    "BR": 0.01,
+    "UB": 0.0,
+    "RG": 0.0
    }
   },
   {
@@ -1423,32 +1399,32 @@
    "top3": [
     {
      "name": "Room of Refuge",
-     "score": 61.27
+     "score": 59.47
     },
     {
      "name": "Heartstring Puller",
-     "score": 53.97
+     "score": 51.79
     },
     {
      "name": "Winter, Team Player",
-     "score": 43.41
+     "score": 47.59
     }
    ],
-   "his_score": 61.27,
+   "his_score": 59.47,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "UBR 96% \u2192 57.1 (n=4524)"
+    "UR 99% \u2192 55.4 (n=10215)"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "UBR 96% \u2192 57.1 (n=4524)"
+    "UR 99% \u2192 55.4 (n=10215)"
    ],
    "lanes_after": {
-    "UBR": 0.993,
-    "BR": 0.007,
+    "UR": 0.988,
+    "BR": 0.012,
     "UB": 0.0,
     "RG": 0.0
    }
@@ -1459,33 +1435,33 @@
    "taken": "Awaken the Inferno",
    "top3": [
     {
-     "name": "Awaken the Inferno",
-     "score": 65.48
+     "name": "Fatehold Chronologist",
+     "score": 57.91
     },
     {
-     "name": "Fatehold Chronologist",
-     "score": 62.19
+     "name": "Awaken the Inferno",
+     "score": 57.13
     },
     {
      "name": "Marwyn, the Clearcutter",
-     "score": 55.83
+     "score": 53.07
     }
    ],
-   "his_score": 65.48,
-   "his_rank": 1,
+   "his_score": 57.13,
+   "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #2",
-    "UBR 99% \u2192 57.2 (n=6878)"
+    "Fit #1 \u00b7 Power #1",
+    "UR 99% \u2192 56.2 (n=15432)"
    ],
    "reasons_his": [
-    "Fit #1 \u00b7 Power #2",
-    "UBR 99% \u2192 57.2 (n=6878)"
+    "Fit #2 \u00b7 Power #3",
+    "UR 99% \u2192 56.8 (n=22053)"
    ],
    "lanes_after": {
-    "UBR": 0.995,
-    "BR": 0.005,
+    "UR": 0.991,
+    "BR": 0.009,
     "UB": 0.0,
     "RG": 0.0
    }
@@ -1496,33 +1472,34 @@
    "taken": "Stingerquill Annex",
    "top3": [
     {
-     "name": "Stingerquill Annex",
-     "score": 79.28
+     "name": "Gallia, the Merrymaker",
+     "score": 66.13
     },
     {
-     "name": "Gallia, the Merrymaker",
-     "score": 67.27
+     "name": "Stingerquill Annex",
+     "score": 63.13
     },
     {
      "name": "Essence Burn",
-     "score": 54.17
+     "score": 56.94
     }
    ],
-   "his_score": 79.28,
-   "his_rank": 1,
+   "his_score": 63.13,
+   "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #1",
-    "UBR 99% \u2192 54.8 (n=6043)"
+    "Fit #1 \u00b7 Power #2",
+    "UR 99% \u2192 50.5 (n=3271)"
    ],
    "reasons_his": [
-    "Fit #1 \u00b7 Power #1",
-    "UBR 99% \u2192 54.8 (n=6043)"
+    "Fit #2 \u00b7 Power #1",
+    "UR 99% \u2192 splash B (fixing 6) 45.5",
+    "castable in 1% of likely lanes"
    ],
    "lanes_after": {
-    "UBR": 0.994,
-    "BR": 0.006,
+    "UR": 0.991,
+    "BR": 0.009,
     "UB": 0.0,
     "RG": 0.0
    }
@@ -1534,28 +1511,30 @@
    "top3": [
     {
      "name": "Sphinx's Approach",
-     "score": 75.82
+     "score": 76.75
     },
     {
      "name": "Forest",
      "score": 0.0
     }
    ],
-   "his_score": 75.82,
+   "his_score": 76.75,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "UBR 99% \u2192 56.5 (n=1921)"
+    "UR 99% \u2192 55.9 (n=10079)",
+    "open: U"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "UBR 99% \u2192 56.5 (n=1921)"
+    "UR 99% \u2192 55.9 (n=10079)",
+    "open: U"
    ],
    "lanes_after": {
-    "UBR": 0.999,
-    "BR": 0.001,
+    "UR": 0.998,
+    "BR": 0.002,
     "UB": 0.0,
     "RG": 0.0
    }
@@ -1581,8 +1560,8 @@
     "No data"
    ],
    "lanes_after": {
-    "UBR": 0.999,
-    "BR": 0.001,
+    "UR": 0.998,
+    "BR": 0.002,
     "UB": 0.0,
     "RG": 0.0
    }

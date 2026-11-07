@@ -1,0 +1,1857 @@
+{
+ "commit": "ea1d9d7",
+ "date": "2026-11-07",
+ "dataset": "FRA_PremierDraft_All_Data.json",
+ "top1": 25,
+ "top3": 35,
+ "n": 41,
+ "not_scored": 1,
+ "dropped_cards": 1,
+ "picks": [
+  {
+   "pack": 1,
+   "pick": 1,
+   "taken": "Stingcaster Mage",
+   "top3": [
+    {
+     "name": "Liliana the Faultless",
+     "score": 61.98
+    },
+    {
+     "name": "Stingcaster Mage",
+     "score": 61.07
+    },
+    {
+     "name": "Unsummon",
+     "score": 59.65
+    }
+   ],
+   "his_score": 61.07,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 10% \u2192 58.5 (n=3772)",
+    "WB 10% \u2192 56.5 (n=1261)",
+    "castable in 40% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #2",
+    "WU 10% \u2192 off-colour",
+    "WB 10% \u2192 off-colour",
+    "castable in 40% of likely lanes"
+   ],
+   "lanes_after": {
+    "WU": 0.102,
+    "WB": 0.102,
+    "WG": 0.102,
+    "UB": 0.102
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 2,
+   "taken": "Marwyn, the Preserver",
+   "top3": [
+    {
+     "name": "Way of the Healer",
+     "score": 63.38
+    },
+    {
+     "name": "Surveillance Phantasm",
+     "score": 60.82
+    },
+    {
+     "name": "Vigorbloom Annex",
+     "score": 57.74
+    }
+   ],
+   "his_score": 54.51,
+   "his_rank": 5,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 10% \u2192 60.7 (n=20766)",
+    "WB 10% \u2192 56.4 (n=4469)",
+    "castable in 39% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #5 \u00b7 Power #5",
+    "WU 10% \u2192 off-colour",
+    "WB 10% \u2192 off-colour",
+    "castable in 41% of likely lanes"
+   ],
+   "lanes_after": {
+    "WU": 0.103,
+    "WB": 0.103,
+    "UB": 0.103,
+    "BR": 0.103
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 3,
+   "taken": "Heartwood Crafter",
+   "top3": [
+    {
+     "name": "Heartwood Crafter",
+     "score": 58.36
+    },
+    {
+     "name": "Arcane Amphisbaena",
+     "score": 57.06
+    },
+    {
+     "name": "Way of the Warlord",
+     "score": 56.05
+    }
+   ],
+   "his_score": 58.36,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "BR 14% \u2192 off-colour",
+    "BG 14% \u2192 55.2 (n=6400)",
+    "castable in 56% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "BR 14% \u2192 off-colour",
+    "BG 14% \u2192 55.2 (n=6400)",
+    "castable in 56% of likely lanes"
+   ],
+   "lanes_after": {
+    "WU": 0.154,
+    "WB": 0.154,
+    "UB": 0.154,
+    "UG": 0.142
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 4,
+   "taken": "Marwyn, the Preserver",
+   "top3": [
+    {
+     "name": "Surveillance Phantasm",
+     "score": 58.04
+    },
+    {
+     "name": "Unsummon",
+     "score": 57.17
+    },
+    {
+     "name": "Tetsuko Umezawa, Fugitive",
+     "score": 53.23
+    }
+   ],
+   "his_score": 51.38,
+   "his_rank": 7,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 15% \u2192 58.2 (n=43235)",
+    "WB 15% \u2192 off-colour",
+    "castable in 48% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #7 \u00b7 Power #6",
+    "WU 15% \u2192 off-colour",
+    "WB 15% \u2192 off-colour",
+    "castable in 45% of likely lanes"
+   ],
+   "lanes_after": {
+    "WU": 0.144,
+    "WB": 0.144,
+    "UB": 0.144,
+    "BG": 0.134
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 5,
+   "taken": "Awaken the Inferno",
+   "top3": [
+    {
+     "name": "Awaken the Inferno",
+     "score": 56.55
+    },
+    {
+     "name": "Proft, Sinister Mastermind",
+     "score": 53.5
+    },
+    {
+     "name": "Apex Witchstalker",
+     "score": 53.18
+    }
+   ],
+   "his_score": 56.55,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "BG 14% \u2192 off-colour",
+    "UG 14% \u2192 off-colour",
+    "castable in 19% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "BG 14% \u2192 off-colour",
+    "UG 14% \u2192 off-colour",
+    "castable in 19% of likely lanes"
+   ],
+   "lanes_after": {
+    "BG": 0.14,
+    "UG": 0.138,
+    "WU": 0.137,
+    "WB": 0.137
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 6,
+   "taken": "Vigorbloom Charm",
+   "top3": [
+    {
+     "name": "Twinned Vision",
+     "score": 57.08
+    },
+    {
+     "name": "Vigorbloom Charm",
+     "score": 52.87
+    },
+    {
+     "name": "Theoretical Necromancer",
+     "score": 51.03
+    }
+   ],
+   "his_score": 52.87,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "WU 15% \u2192 56.8 (n=17715)",
+    "UG 14% \u2192 55.2 (n=6679)"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #2",
+    "WU 17% \u2192 splash G (fixing 1) 54.3",
+    "UG 17% \u2192 splash W (fixing 1) 50.6",
+    "castable in 16% of likely lanes"
+   ],
+   "lanes_after": {
+    "UB": 0.288,
+    "UR": 0.103,
+    "WU": 0.099,
+    "UG": 0.098
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 7,
+   "taken": "No Admittance",
+   "top3": [
+    {
+     "name": "No Admittance",
+     "score": 56.79
+    },
+    {
+     "name": "Murmuring Volume",
+     "score": 53.2
+    },
+    {
+     "name": "Theorix Metamage",
+     "score": 52.02
+    }
+   ],
+   "his_score": 56.79,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UB 28% \u2192 splash R (fixing 1) 55.4",
+    "BR 15% \u2192 55.1 (n=17172)",
+    "castable in 35% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "UB 28% \u2192 splash R (fixing 1) 55.4",
+    "BR 15% \u2192 55.1 (n=17172)",
+    "castable in 35% of likely lanes"
+   ],
+   "lanes_after": {
+    "UB": 0.293,
+    "BR": 0.138,
+    "UR": 0.131,
+    "WB": 0.084
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 8,
+   "taken": "Wrath of the Bloodmane",
+   "top3": [
+    {
+     "name": "Twinned Vision",
+     "score": 60.54
+    },
+    {
+     "name": "Wrath of the Bloodmane",
+     "score": 55.64
+    },
+    {
+     "name": "Theorix Charm",
+     "score": 54.02
+    }
+   ],
+   "his_score": 55.64,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UB 35% \u2192 58.7 (n=31071)",
+    "UR 25% \u2192 58.6 (n=25996)"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #3",
+    "UB 35% \u2192 splash R (fixing 1) 54.3",
+    "UR 25% \u2192 57.3 (n=25391)",
+    "castable in 45% of likely lanes"
+   ],
+   "lanes_after": {
+    "UR": 0.557,
+    "BR": 0.316,
+    "RG": 0.055,
+    "WR": 0.041
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 9,
+   "taken": "Heartstring Puller",
+   "top3": [
+    {
+     "name": "Heartstring Puller",
+     "score": 54.95
+    },
+    {
+     "name": "Tetsuko Umezawa, Pursuer",
+     "score": 54.13
+    },
+    {
+     "name": "Transformative Commons",
+     "score": 44.36
+    }
+   ],
+   "his_score": 54.95,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "UR 54% \u2192 56.2 (n=14286)",
+    "BR 32% \u2192 54.6 (n=14704)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #2",
+    "UR 54% \u2192 56.2 (n=14286)",
+    "BR 32% \u2192 54.6 (n=14704)"
+   ],
+   "lanes_after": {
+    "UR": 0.561,
+    "BR": 0.326,
+    "RG": 0.06,
+    "WR": 0.043
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 10,
+   "taken": "Marwyn, the Clearcutter",
+   "top3": [
+    {
+     "name": "Marwyn, the Clearcutter",
+     "score": 55.07
+    },
+    {
+     "name": "Skilled Battlecarver",
+     "score": 52.47
+    },
+    {
+     "name": "Sphinx's Approach",
+     "score": 49.33
+    }
+   ],
+   "his_score": 55.07,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 61% \u2192 56.1 (n=5931)",
+    "BR 29% \u2192 55.4 (n=7386)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 61% \u2192 56.1 (n=5931)",
+    "BR 29% \u2192 55.4 (n=7386)"
+   ],
+   "lanes_after": {
+    "UR": 0.622,
+    "BR": 0.284,
+    "RG": 0.054,
+    "WR": 0.037
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 11,
+   "taken": "Tether Technician",
+   "top3": [
+    {
+     "name": "Tether Technician",
+     "score": 50.8
+    },
+    {
+     "name": "Massacre Girl, Most Wanted",
+     "score": 47.62
+    },
+    {
+     "name": "Blazing Crescendo",
+     "score": 47.36
+    }
+   ],
+   "his_score": 50.8,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 1,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "UR 61% \u2192 54.1 (n=5004)",
+    "BR 29% \u2192 51.9 (n=5449)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #2",
+    "UR 61% \u2192 54.1 (n=5004)",
+    "BR 29% \u2192 51.9 (n=5449)"
+   ],
+   "lanes_after": {
+    "UR": 0.615,
+    "BR": 0.29,
+    "RG": 0.056,
+    "WR": 0.038
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 12,
+   "taken": "Tetsuko Umezawa, Fugitive",
+   "top3": [
+    {
+     "name": "Chandra's Emberling",
+     "score": 70.98
+    },
+    {
+     "name": "Tetsuko Umezawa, Fugitive",
+     "score": 50.69
+    },
+    {
+     "name": "Terminal Criticism",
+     "score": 40.21
+    }
+   ],
+   "his_score": 50.69,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #3",
+    "UR 67% \u2192 53.5 (n=11691)",
+    "BR 25% \u2192 51.7 (n=7204)"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #1",
+    "UR 67% \u2192 54.9 (n=6788)",
+    "BR 25% \u2192 splash U (fixing 1) 45.1"
+   ],
+   "lanes_after": {
+    "UR": 0.666,
+    "BR": 0.258,
+    "RG": 0.044,
+    "WR": 0.03
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 13,
+   "taken": "Innovative Commons",
+   "top3": [
+    {
+     "name": "Innovative Commons",
+     "score": 71.45
+    },
+    {
+     "name": "Artifist Acumen",
+     "score": 62.04
+    }
+   ],
+   "his_score": 71.45,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 65% \u2192 56.1 (n=17673)",
+    "BR 27% \u2192 splash U (fixing 1) 45.5"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 65% \u2192 56.1 (n=17673)",
+    "BR 27% \u2192 splash U (fixing 1) 45.5"
+   ],
+   "lanes_after": {
+    "UR": 0.65,
+    "BR": 0.268,
+    "RG": 0.048,
+    "WR": 0.033
+   }
+  },
+  {
+   "pack": 1,
+   "pick": 14,
+   "taken": "Forest",
+   "top3": [
+    {
+     "name": "Forest",
+     "score": 0.0
+    }
+   ],
+   "his_score": 0.0,
+   "his_rank": null,
+   "scored": false,
+   "dropped": 0,
+   "reasons_top": [
+    "No data"
+   ],
+   "reasons_his": [
+    "No data"
+   ],
+   "lanes_after": {
+    "UR": 0.636,
+    "BR": 0.277,
+    "RG": 0.051,
+    "WR": 0.035
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 1,
+   "taken": "Lyra, Tolarian Archangel",
+   "top3": [
+    {
+     "name": "Lyra, Tolarian Archangel",
+     "score": 55.84
+    },
+    {
+     "name": "Protege's Awakening",
+     "score": 55.33
+    },
+    {
+     "name": "Konstrari Improviser",
+     "score": 53.63
+    }
+   ],
+   "his_score": 55.84,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 51% \u2192 59.3 (n=4562)",
+    "BR 34% \u2192 off-colour",
+    "castable in 51% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 51% \u2192 59.3 (n=4562)",
+    "BR 34% \u2192 off-colour",
+    "castable in 51% of likely lanes"
+   ],
+   "lanes_after": {
+    "UR": 0.504,
+    "BR": 0.371,
+    "RG": 0.074,
+    "WR": 0.049
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 2,
+   "taken": "Ruric Thar, Biomagus",
+   "top3": [
+    {
+     "name": "Room of Refuge",
+     "score": 54.3
+    },
+    {
+     "name": "Surgical Precision",
+     "score": 51.41
+    },
+    {
+     "name": "Last Gasp",
+     "score": 50.53
+    }
+   ],
+   "his_score": 43.14,
+   "his_rank": 9,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #3",
+    "UR 50% \u2192 55.4 (n=10215)",
+    "BR 37% \u2192 54.9 (n=5978)"
+   ],
+   "reasons_his": [
+    "Fit #9 \u00b7 Power #5",
+    "UR 50% \u2192 55.4 (n=7987)",
+    "BR 37% \u2192 off-colour",
+    "castable in 51% of likely lanes"
+   ],
+   "lanes_after": {
+    "UR": 0.496,
+    "BR": 0.377,
+    "RG": 0.075,
+    "WR": 0.05
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 3,
+   "taken": "Sphinx of False Conclusions",
+   "top3": [
+    {
+     "name": "Sphinx of False Conclusions",
+     "score": 62.34
+    },
+    {
+     "name": "Fblthp, Impossibly Lost",
+     "score": 58.61
+    },
+    {
+     "name": "Infinite Coursework",
+     "score": 56.18
+    }
+   ],
+   "his_score": 62.34,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 85% \u2192 63.4 (n=4076)",
+    "BR 11% \u2192 off-colour"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 85% \u2192 63.4 (n=4076)",
+    "BR 11% \u2192 off-colour"
+   ],
+   "lanes_after": {
+    "UR": 0.836,
+    "BR": 0.121,
+    "RG": 0.024,
+    "WR": 0.016
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 4,
+   "taken": "Draconic Visitor",
+   "top3": [
+    {
+     "name": "Awaken the Inferno",
+     "score": 53.36
+    },
+    {
+     "name": "Way of the Warlord",
+     "score": 53.23
+    },
+    {
+     "name": "Divining Duelist",
+     "score": 51.68
+    }
+   ],
+   "his_score": 50.35,
+   "his_rank": 5,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #3",
+    "UR 73% \u2192 56.8 (n=22053)",
+    "BR 19% \u2192 54.0 (n=12266)"
+   ],
+   "reasons_his": [
+    "Fit #5 \u00b7 Power #4",
+    "UR 73% \u2192 52.5 (n=2681)",
+    "BR 19% \u2192 51.9 (n=1888)"
+   ],
+   "lanes_after": {
+    "UR": 0.734,
+    "BR": 0.189,
+    "RG": 0.04,
+    "WR": 0.037
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 5,
+   "taken": "Undulating Witness",
+   "top3": [
+    {
+     "name": "Keeper of the Quiet Hour",
+     "score": 53.96
+    },
+    {
+     "name": "Undulating Witness",
+     "score": 51.39
+    },
+    {
+     "name": "Something Worth Saving",
+     "score": 50.88
+    }
+   ],
+   "his_score": 51.39,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #7",
+    "UR 66% \u2192 57.2 (n=8720)",
+    "BR 24% \u2192 53.2 (n=2503)"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #5",
+    "UR 66% \u2192 54.9 (n=17734)",
+    "BR 24% \u2192 splash U (fixing 2) 50.0"
+   ],
+   "lanes_after": {
+    "UR": 0.998,
+    "UB": 0.001,
+    "WU": 0.0,
+    "BR": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 6,
+   "taken": "Traxos, Academy Guardian",
+   "top3": [
+    {
+     "name": "Traxos, Academy Guardian",
+     "score": 55.82
+    },
+    {
+     "name": "Stingerquill Voxmancer",
+     "score": 55.78
+    },
+    {
+     "name": "Cryotheory Adept",
+     "score": 50.61
+    }
+   ],
+   "his_score": 55.82,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 100% \u2192 55.2 (n=10434)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 100% \u2192 55.2 (n=10434)"
+   ],
+   "lanes_after": {
+    "UR": 0.998,
+    "UB": 0.001,
+    "WU": 0.0,
+    "UG": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 7,
+   "taken": "Hapatra, the Desert Frost",
+   "top3": [
+    {
+     "name": "Undulating Witness",
+     "score": 59.64
+    },
+    {
+     "name": "Hapatra, the Desert Frost",
+     "score": 55.79
+    },
+    {
+     "name": "Chandra's Emberling",
+     "score": 53.42
+    }
+   ],
+   "his_score": 55.79,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 100% \u2192 54.9 (n=17734)"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #3",
+    "UR 100% \u2192 53.2 (n=4421)"
+   ],
+   "lanes_after": {
+    "UR": 0.998,
+    "UB": 0.001,
+    "WU": 0.0,
+    "UG": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 8,
+   "taken": "Hallway Heckler",
+   "top3": [
+    {
+     "name": "Murmuring Volume",
+     "score": 62.85
+    },
+    {
+     "name": "Hallway Heckler",
+     "score": 55.16
+    },
+    {
+     "name": "Afterthought Sentry",
+     "score": 53.31
+    }
+   ],
+   "his_score": 55.16,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "UR 100% \u2192 55.6 (n=6657)"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #4",
+    "UR 100% \u2192 52.7 (n=7048)"
+   ],
+   "lanes_after": {
+    "UR": 0.999,
+    "UB": 0.001,
+    "WU": 0.0,
+    "UG": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 9,
+   "taken": "Protege's Awakening",
+   "top3": [
+    {
+     "name": "Protege's Awakening",
+     "score": 61.68
+    },
+    {
+     "name": "Keeper of the Quiet Hour",
+     "score": 60.89
+    },
+    {
+     "name": "Charge the Sanctum",
+     "score": 51.35
+    }
+   ],
+   "his_score": 61.68,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 100% \u2192 57.7 (n=18694)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 100% \u2192 57.7 (n=18694)"
+   ],
+   "lanes_after": {
+    "UR": 0.999,
+    "UB": 0.001,
+    "WU": 0.0,
+    "UG": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 10,
+   "taken": "Frostbite Pyromental",
+   "top3": [
+    {
+     "name": "Cryotheory Adept",
+     "score": 56.55
+    },
+    {
+     "name": "Frostbite Pyromental",
+     "score": 51.03
+    },
+    {
+     "name": "Artifist Acumen",
+     "score": 48.79
+    }
+   ],
+   "his_score": 51.03,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 100% \u2192 53.6 (n=13683)"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #2",
+    "UR 100% \u2192 51.1 (n=3399)"
+   ],
+   "lanes_after": {
+    "UR": 0.999,
+    "UB": 0.001,
+    "WU": 0.0,
+    "UG": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 11,
+   "taken": "Infinite Coursework",
+   "top3": [
+    {
+     "name": "Infinite Coursework",
+     "score": 60.27
+    },
+    {
+     "name": "Craftwork Crusher",
+     "score": 53.92
+    },
+    {
+     "name": "Fblthp, Knows the Way",
+     "score": 43.5
+    }
+   ],
+   "his_score": 60.27,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #3",
+    "UR 100% \u2192 55.8 (n=17638)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #3",
+    "UR 100% \u2192 55.8 (n=17638)"
+   ],
+   "lanes_after": {
+    "UR": 0.999,
+    "UG": 0.0,
+    "UB": 0.0,
+    "WU": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 12,
+   "taken": "Way of the Warlord",
+   "top3": [
+    {
+     "name": "Way of the Warlord",
+     "score": 76.55
+    },
+    {
+     "name": "Divining Duelist",
+     "score": 75.84
+    },
+    {
+     "name": "Forest",
+     "score": 0.0
+    }
+   ],
+   "his_score": 76.55,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 100% \u2192 56.0 (n=7130)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 100% \u2192 56.0 (n=7130)"
+   ],
+   "lanes_after": {
+    "UR": 1.0,
+    "UG": 0.0,
+    "UB": 0.0,
+    "WU": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 13,
+   "taken": "Flourishing Grapple",
+   "top3": [
+    {
+     "name": "Something Worth Saving",
+     "score": 53.43
+    },
+    {
+     "name": "Flourishing Grapple",
+     "score": 43.11
+    }
+   ],
+   "his_score": 43.11,
+   "his_rank": 2,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 100% \u2192 splash G (fixing 2) 49.7",
+    "castable in 0% of likely lanes"
+   ],
+   "reasons_his": [
+    "Fit #2 \u00b7 Power #2",
+    "UR 100% \u2192 splash G (fixing 2) 42.5",
+    "castable in 0% of likely lanes"
+   ],
+   "lanes_after": {
+    "UR": 0.999,
+    "UG": 0.001,
+    "UB": 0.0,
+    "WU": 0.0
+   }
+  },
+  {
+   "pack": 2,
+   "pick": 14,
+   "taken": "Cryotheory Adept",
+   "top3": [
+    {
+     "name": "Cryotheory Adept",
+     "score": 77.11
+    }
+   ],
+   "his_score": 77.11,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 100% \u2192 53.6 (n=13683)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 100% \u2192 53.6 (n=13683)"
+   ],
+   "lanes_after": {
+    "UR": 0.999,
+    "UG": 0.001,
+    "UB": 0.0,
+    "WU": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 1,
+   "taken": "Tetsuko Umezawa, Fugitive",
+   "top3": [
+    {
+     "name": "Tetsuko Umezawa, Fugitive",
+     "score": 56.41
+    },
+    {
+     "name": "Divining Duelist",
+     "score": 55.38
+    },
+    {
+     "name": "Tetsuko Umezawa, Pursuer",
+     "score": 54.34
+    }
+   ],
+   "his_score": 56.41,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #6",
+    "UR 100% \u2192 54.9 (n=6788)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #6",
+    "UR 100% \u2192 54.9 (n=6788)"
+   ],
+   "lanes_after": {
+    "UR": 1.0,
+    "UG": 0.0,
+    "UB": 0.0,
+    "WU": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 2,
+   "taken": "Fulminous Forte",
+   "top3": [
+    {
+     "name": "Twinned Vision",
+     "score": 65.12
+    },
+    {
+     "name": "Plan for All Outcomes",
+     "score": 63.51
+    },
+    {
+     "name": "Proft, Consulting Detective",
+     "score": 62.29
+    }
+   ],
+   "his_score": 62.25,
+   "his_rank": 4,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "UR 100% \u2192 58.6 (n=25996)"
+   ],
+   "reasons_his": [
+    "Fit #4 \u00b7 Power #4",
+    "UR 100% \u2192 57.0 (n=12311)"
+   ],
+   "lanes_after": {
+    "UR": 1.0,
+    "UG": 0.0,
+    "UB": 0.0,
+    "WU": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 3,
+   "taken": "Sphinx of False Conclusions",
+   "top3": [
+    {
+     "name": "Sphinx of False Conclusions",
+     "score": 66.12
+    },
+    {
+     "name": "No Admittance",
+     "score": 62.56
+    },
+    {
+     "name": "Geist of Saint Thalia",
+     "score": 60.84
+    }
+   ],
+   "his_score": 66.12,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 100% \u2192 63.4 (n=4076)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 100% \u2192 63.4 (n=4076)"
+   ],
+   "lanes_after": {
+    "UR": 1.0,
+    "UB": 0.0,
+    "UG": 0.0,
+    "WU": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 4,
+   "taken": "Wrath of the Bloodmane",
+   "top3": [
+    {
+     "name": "Wrath of the Bloodmane",
+     "score": 61.7
+    },
+    {
+     "name": "Geist of Saint Thalia",
+     "score": 60.33
+    },
+    {
+     "name": "Unsummon",
+     "score": 59.91
+    }
+   ],
+   "his_score": 61.7,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #4",
+    "UR 100% \u2192 57.3 (n=25391)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #4",
+    "UR 100% \u2192 57.3 (n=25391)"
+   ],
+   "lanes_after": {
+    "UR": 1.0,
+    "UB": 0.0,
+    "UG": 0.0,
+    "WU": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 5,
+   "taken": "Variable Chaser",
+   "top3": [
+    {
+     "name": "Variable Chaser",
+     "score": 59.31
+    },
+    {
+     "name": "Semester Foreseer",
+     "score": 51.24
+    },
+    {
+     "name": "Winter, Team Player",
+     "score": 47.81
+    }
+   ],
+   "his_score": 59.31,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 100% \u2192 56.9 (n=3743)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 100% \u2192 56.9 (n=3743)"
+   ],
+   "lanes_after": {
+    "UR": 1.0,
+    "UB": 0.0,
+    "UG": 0.0,
+    "WU": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 6,
+   "taken": "Jiang Yanggu, Alone",
+   "top3": [
+    {
+     "name": "Room of Refuge",
+     "score": 59.29
+    },
+    {
+     "name": "Infinite Coursework",
+     "score": 56.84
+    },
+    {
+     "name": "Cryotheory Adept",
+     "score": 51.81
+    }
+   ],
+   "his_score": 50.88,
+   "his_rank": 4,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "UR 100% \u2192 55.4 (n=10215)"
+   ],
+   "reasons_his": [
+    "Fit #4 \u00b7 Power #5",
+    "UR 100% \u2192 52.7 (n=3742)"
+   ],
+   "lanes_after": {
+    "UR": 1.0,
+    "UB": 0.0,
+    "UG": 0.0,
+    "WU": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 7,
+   "taken": "Awaken the Inferno",
+   "top3": [
+    {
+     "name": "Awaken the Inferno",
+     "score": 60.32
+    },
+    {
+     "name": "Fblthp, Impossibly Lost",
+     "score": 58.54
+    },
+    {
+     "name": "Wrath of the Bloodmane",
+     "score": 57.15
+    }
+   ],
+   "his_score": 60.32,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "UR 100% \u2192 56.8 (n=22053)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #2",
+    "UR 100% \u2192 56.8 (n=22053)"
+   ],
+   "lanes_after": {
+    "UR": 1.0,
+    "UB": 0.0,
+    "UG": 0.0,
+    "WU": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 8,
+   "taken": "Fulminous Forte",
+   "top3": [
+    {
+     "name": "Fulminous Forte",
+     "score": 56.62
+    },
+    {
+     "name": "Keeper of the Quiet Hour",
+     "score": 56.15
+    },
+    {
+     "name": "Marwyn, the Clearcutter",
+     "score": 54.2
+    }
+   ],
+   "his_score": 56.62,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "UR 100% \u2192 57.0 (n=12311)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #2",
+    "UR 100% \u2192 57.0 (n=12311)"
+   ],
+   "lanes_after": {
+    "UR": 1.0,
+    "UB": 0.0,
+    "UG": 0.0,
+    "WU": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 9,
+   "taken": "Skilled Battlecarver",
+   "top3": [
+    {
+     "name": "Divining Duelist",
+     "score": 53.72
+    },
+    {
+     "name": "Tetsuko Umezawa, Pursuer",
+     "score": 51.45
+    },
+    {
+     "name": "Skilled Battlecarver",
+     "score": 50.18
+    }
+   ],
+   "his_score": 50.18,
+   "his_rank": 3,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #3",
+    "UR 100% \u2192 57.0 (n=8783)"
+   ],
+   "reasons_his": [
+    "Fit #3 \u00b7 Power #4",
+    "UR 100% \u2192 53.1 (n=12937)"
+   ],
+   "lanes_after": {
+    "UR": 1.0,
+    "UG": 0.0,
+    "UB": 0.0,
+    "WU": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 10,
+   "taken": "Twinned Vision",
+   "top3": [
+    {
+     "name": "Twinned Vision",
+     "score": 59.75
+    },
+    {
+     "name": "Jiang Yanggu, Alone",
+     "score": 50.49
+    },
+    {
+     "name": "Eardrum Rattler",
+     "score": 45.89
+    }
+   ],
+   "his_score": 59.75,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 100% \u2192 58.6 (n=25996)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 100% \u2192 58.6 (n=25996)"
+   ],
+   "lanes_after": {
+    "UR": 1.0,
+    "UB": 0.0,
+    "UG": 0.0,
+    "WU": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 11,
+   "taken": "No Admittance",
+   "top3": [
+    {
+     "name": "No Admittance",
+     "score": 54.49
+    },
+    {
+     "name": "Heartstring Puller",
+     "score": 51.0
+    },
+    {
+     "name": "Theorix Annex",
+     "score": 48.19
+    }
+   ],
+   "his_score": 54.49,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "UR 100% \u2192 58.5 (n=27523)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #2",
+    "UR 100% \u2192 58.5 (n=27523)"
+   ],
+   "lanes_after": {
+    "UR": 1.0,
+    "UB": 0.0,
+    "UG": 0.0,
+    "WU": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 12,
+   "taken": "Frostbite Pyromental",
+   "top3": [
+    {
+     "name": "Frostbite Pyromental",
+     "score": 66.26
+    },
+    {
+     "name": "Fatehold Charm",
+     "score": 50.16
+    },
+    {
+     "name": "Forest",
+     "score": 0.0
+    }
+   ],
+   "his_score": 66.26,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #2",
+    "UR 100% \u2192 51.1 (n=3399)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #2",
+    "UR 100% \u2192 51.1 (n=3399)"
+   ],
+   "lanes_after": {
+    "UR": 1.0,
+    "UB": 0.0,
+    "UG": 0.0,
+    "WU": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 13,
+   "taken": "Eardrum Rattler",
+   "top3": [
+    {
+     "name": "Eardrum Rattler",
+     "score": 61.36
+    },
+    {
+     "name": "Plains",
+     "score": 0.0
+    }
+   ],
+   "his_score": 61.36,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 100% \u2192 48.6 (n=2393)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 100% \u2192 48.6 (n=2393)"
+   ],
+   "lanes_after": {
+    "UR": 1.0,
+    "UB": 0.0,
+    "UG": 0.0,
+    "WU": 0.0
+   }
+  },
+  {
+   "pack": 3,
+   "pick": 14,
+   "taken": "Infinite Coursework",
+   "top3": [
+    {
+     "name": "Infinite Coursework",
+     "score": 71.61
+    }
+   ],
+   "his_score": 71.61,
+   "his_rank": 1,
+   "scored": true,
+   "dropped": 0,
+   "reasons_top": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 100% \u2192 55.8 (n=17638)"
+   ],
+   "reasons_his": [
+    "Fit #1 \u00b7 Power #1",
+    "UR 100% \u2192 55.8 (n=17638)"
+   ],
+   "lanes_after": {
+    "UR": 1.0,
+    "UB": 0.0,
+    "UG": 0.0,
+    "WU": 0.0
+   }
+  }
+ ],
+ "builder": [
+  {
+   "main": "UR",
+   "splash": "",
+   "deck_wr": 72.21,
+   "label": "UR",
+   "cards": [
+    {
+     "name": "Innovative Commons",
+     "count": 1
+    },
+    {
+     "name": "Marwyn, the Clearcutter",
+     "count": 1
+    },
+    {
+     "name": "No Admittance",
+     "count": 2
+    },
+    {
+     "name": "Stingcaster Mage",
+     "count": 1
+    },
+    {
+     "name": "Tetsuko Umezawa, Fugitive",
+     "count": 1
+    },
+    {
+     "name": "Twinned Vision",
+     "count": 1
+    },
+    {
+     "name": "Fulminous Forte",
+     "count": 2
+    },
+    {
+     "name": "Infinite Coursework",
+     "count": 2
+    },
+    {
+     "name": "Lyra, Tolarian Archangel",
+     "count": 1
+    },
+    {
+     "name": "Variable Chaser",
+     "count": 1
+    },
+    {
+     "name": "Way of the Warlord",
+     "count": 1
+    },
+    {
+     "name": "Wrath of the Bloodmane",
+     "count": 2
+    },
+    {
+     "name": "Hapatra, the Desert Frost",
+     "count": 1
+    },
+    {
+     "name": "Heartstring Puller",
+     "count": 1
+    },
+    {
+     "name": "Protege's Awakening",
+     "count": 1
+    },
+    {
+     "name": "Sphinx of False Conclusions",
+     "count": 2
+    },
+    {
+     "name": "Traxos, Academy Guardian",
+     "count": 1
+    },
+    {
+     "name": "Awaken the Inferno",
+     "count": 2
+    },
+    {
+     "name": "Draconic Visitor",
+     "count": 1
+    },
+    {
+     "name": "Ruric Thar, Biomagus",
+     "count": 1
+    },
+    {
+     "name": "Island",
+     "count": 7
+    },
+    {
+     "name": "Mountain",
+     "count": 7
+    }
+   ]
+  },
+  {
+   "main": "RG",
+   "splash": "",
+   "deck_wr": 53.25,
+   "label": "RG",
+   "cards": [
+    {
+     "name": "Flourishing Grapple",
+     "count": 1
+    },
+    {
+     "name": "Heartwood Crafter",
+     "count": 1
+    },
+    {
+     "name": "Marwyn, the Clearcutter",
+     "count": 1
+    },
+    {
+     "name": "Eardrum Rattler",
+     "count": 1
+    },
+    {
+     "name": "Marwyn, the Preserver",
+     "count": 2
+    },
+    {
+     "name": "No Admittance",
+     "count": 2
+    },
+    {
+     "name": "Skilled Battlecarver",
+     "count": 1
+    },
+    {
+     "name": "Stingcaster Mage",
+     "count": 1
+    },
+    {
+     "name": "Twinned Vision",
+     "count": 1
+    },
+    {
+     "name": "Fulminous Forte",
+     "count": 2
+    },
+    {
+     "name": "Hallway Heckler",
+     "count": 1
+    },
+    {
+     "name": "Way of the Warlord",
+     "count": 1
+    },
+    {
+     "name": "Wrath of the Bloodmane",
+     "count": 2
+    },
+    {
+     "name": "Heartstring Puller",
+     "count": 1
+    },
+    {
+     "name": "Awaken the Inferno",
+     "count": 2
+    },
+    {
+     "name": "Draconic Visitor",
+     "count": 1
+    },
+    {
+     "name": "Jiang Yanggu, Alone",
+     "count": 1
+    },
+    {
+     "name": "Tether Technician",
+     "count": 1
+    },
+    {
+     "name": "Mountain",
+     "count": 11
+    },
+    {
+     "name": "Forest",
+     "count": 6
+    }
+   ]
+  }
+ ],
+ "his_deck": {
+  "main": "UR",
+  "splash": "",
+  "deck_wr": 67.43,
+  "label": null,
+  "cards": [
+   {
+    "name": "Cryotheory Adept",
+    "count": 1
+   },
+   {
+    "name": "Tetsuko Umezawa, Fugitive",
+    "count": 2
+   },
+   {
+    "name": "No Admittance",
+    "count": 2
+   },
+   {
+    "name": "Skilled Battlecarver",
+    "count": 1
+   },
+   {
+    "name": "Stingcaster Mage",
+    "count": 1
+   },
+   {
+    "name": "Twinned Vision",
+    "count": 1
+   },
+   {
+    "name": "Variable Chaser",
+    "count": 1
+   },
+   {
+    "name": "Lyra, Tolarian Archangel",
+    "count": 1
+   },
+   {
+    "name": "Fulminous Forte",
+    "count": 2
+   },
+   {
+    "name": "Wrath of the Bloodmane",
+    "count": 2
+   },
+   {
+    "name": "Traxos, Academy Guardian",
+    "count": 1
+   },
+   {
+    "name": "Sphinx of False Conclusions",
+    "count": 2
+   },
+   {
+    "name": "Heartstring Puller",
+    "count": 1
+   },
+   {
+    "name": "Awaken the Inferno",
+    "count": 2
+   },
+   {
+    "name": "Draconic Visitor",
+    "count": 1
+   },
+   {
+    "name": "Ruric Thar, Biomagus",
+    "count": 1
+   },
+   {
+    "name": "Jiang Yanggu, Alone",
+    "count": 1
+   },
+   {
+    "name": "Island",
+    "count": 8
+   },
+   {
+    "name": "Mountain",
+    "count": 8
+   },
+   {
+    "name": "Innovative Commons",
+    "count": 1
+   }
+  ]
+ }
+}

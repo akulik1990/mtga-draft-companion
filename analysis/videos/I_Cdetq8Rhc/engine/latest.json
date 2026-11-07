@@ -1,9 +1,9 @@
 {
- "commit": "47c477b",
- "date": "2026-11-06",
+ "commit": "ea1d9d7",
+ "date": "2026-11-07",
  "dataset": "FRA_PremierDraft_All_Data.json",
- "top1": 23,
- "top3": 35,
+ "top1": 25,
+ "top3": 34,
  "n": 36,
  "not_scored": 6,
  "dropped_cards": 20,
@@ -14,39 +14,39 @@
    "taken": "Guiding Hydra",
    "top3": [
     {
-     "name": "Guiding Hydra",
-     "score": 72.28
-    },
-    {
      "name": "Mindseeker Oculus",
-     "score": 68.52
+     "score": 63.47
     },
     {
-     "name": "Gallia, Tragic Host",
-     "score": 56.45
+     "name": "Guiding Hydra",
+     "score": 63.09
+    },
+    {
+     "name": "Bestial Incursion",
+     "score": 59.24
     }
    ],
-   "his_score": 72.28,
-   "his_rank": 1,
+   "his_score": 63.09,
+   "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "WU 10% \u2192 60.1 (n=5614)",
-    "WB 10% \u2192 58.3 (n=1568)",
+    "WU 10% \u2192 60.4 (n=41775)",
+    "WB 10% \u2192 off-colour",
     "castable in 40% of likely lanes"
    ],
    "reasons_his": [
-    "Fit #1 \u00b7 Power #1",
+    "Fit #2 \u00b7 Power #2",
     "WU 10% \u2192 60.1 (n=5614)",
     "WB 10% \u2192 58.3 (n=1568)",
     "castable in 40% of likely lanes"
    ],
    "lanes_after": {
-    "WU": 0.195,
-    "WB": 0.195,
-    "WR": 0.195,
-    "WG": 0.195
+    "WU": 0.102,
+    "UB": 0.102,
+    "UR": 0.102,
+    "UG": 0.102
    }
   },
   {
@@ -56,38 +56,38 @@
    "top3": [
     {
      "name": "No Admittance",
-     "score": 54.48
+     "score": 61.12
     },
     {
-     "name": "Emergency Phytomedic",
-     "score": 53.76
+     "name": "Fatehold Charm",
+     "score": 61.1
     },
     {
      "name": "Solarium Sentry",
-     "score": 51.9
+     "score": 60.12
     }
    ],
-   "his_score": 54.48,
+   "his_score": 61.12,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "WU 20% \u2192 off-colour",
-    "WB 20% \u2192 off-colour",
-    "castable in 30% of likely lanes"
+    "WU 10% \u2192 off-colour",
+    "UB 10% \u2192 off-colour",
+    "castable in 40% of likely lanes"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "WU 20% \u2192 off-colour",
-    "WB 20% \u2192 off-colour",
-    "castable in 30% of likely lanes"
+    "WU 10% \u2192 off-colour",
+    "UB 10% \u2192 off-colour",
+    "castable in 40% of likely lanes"
    ],
    "lanes_after": {
-    "WR": 0.43,
-    "WU": 0.098,
-    "WB": 0.098,
-    "WG": 0.098
+    "WU": 0.105,
+    "UB": 0.105,
+    "UR": 0.105,
+    "UG": 0.105
    }
   },
   {
@@ -97,35 +97,36 @@
    "top3": [
     {
      "name": "Vigorbloom Vanguard",
-     "score": 62.23
+     "score": 59.92
     },
     {
      "name": "Craterclaw Colossus",
-     "score": 56.72
+     "score": 58.35
     },
     {
-     "name": "Heartstring Puller",
-     "score": 52.63
+     "name": "Transformative Commons",
+     "score": 55.49
     }
    ],
-   "his_score": 56.72,
+   "his_score": 58.35,
    "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #2",
-    "WR 43% \u2192 56.3 (n=3067)"
+    "UR 11% \u2192 off-colour",
+    "WU 10% \u2192 58.7 (n=6722)"
    ],
    "reasons_his": [
     "Fit #2 \u00b7 Power #1",
-    "WR 63% \u2192 52.4 (rarely played there)",
-    "UR 11% \u2192 55.4 (n=936)"
+    "UR 24% \u2192 55.4 (n=936)",
+    "RG 23% \u2192 59.0 (n=2524)"
    ],
    "lanes_after": {
-    "WR": 0.609,
-    "UR": 0.099,
-    "BR": 0.099,
-    "RG": 0.099
+    "WU": 0.105,
+    "UB": 0.105,
+    "UG": 0.105,
+    "BG": 0.105
    }
   },
   {
@@ -134,36 +135,39 @@
    "taken": "Marwyn, the Preserver",
    "top3": [
     {
-     "name": "Marwyn, the Clearcutter",
-     "score": 56.46
-    },
-    {
-     "name": "Skilled Battlecarver",
-     "score": 50.66
-    },
-    {
      "name": "Vigorbloom Annex",
-     "score": 48.4
+     "score": 55.26
+    },
+    {
+     "name": "Marwyn, the Preserver",
+     "score": 53.32
+    },
+    {
+     "name": "Marwyn, the Clearcutter",
+     "score": 53.07
     }
    ],
-   "his_score": 42.69,
-   "his_rank": 4,
+   "his_score": 53.32,
+   "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #2",
-    "WR 61% \u2192 54.2 (n=3979)"
+    "Fit #1 \u00b7 Power #1",
+    "WU 11% \u2192 off-colour",
+    "UB 11% \u2192 fixes a splash (+1.5)",
+    "castable in 10% of likely lanes"
    ],
    "reasons_his": [
-    "Fit #4 \u00b7 Power #3",
-    "WR 61% \u2192 off-colour",
-    "castable in 14% of likely lanes"
+    "Fit #2 \u00b7 Power #2",
+    "WU 11% \u2192 off-colour",
+    "UB 11% \u2192 off-colour",
+    "castable in 41% of likely lanes"
    ],
    "lanes_after": {
-    "WR": 0.393,
-    "RG": 0.189,
-    "UR": 0.105,
-    "BR": 0.105
+    "WU": 0.105,
+    "UB": 0.105,
+    "BG": 0.104,
+    "UG": 0.102
    }
   },
   {
@@ -172,37 +176,38 @@
    "taken": "Konstrari Improviser",
    "top3": [
     {
-     "name": "Konstrari Improviser",
-     "score": 56.78
-    },
-    {
-     "name": "Koth, the Geomancer",
-     "score": 53.31
+     "name": "Protege's Awakening",
+     "score": 59.9
     },
     {
      "name": "Stingerquill Annex",
-     "score": 49.89
+     "score": 55.31
+    },
+    {
+     "name": "Tinybones, Pocket Nuisance",
+     "score": 55.15
     }
    ],
-   "his_score": 56.78,
-   "his_rank": 1,
+   "his_score": 54.57,
+   "his_rank": 4,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #4",
-    "WR 39% \u2192 51.3 (n=2717)",
-    "RG 20% \u2192 54.9 (n=29150)"
+    "Fit #1 \u00b7 Power #1",
+    "RG 11% \u2192 off-colour",
+    "BG 11% \u2192 off-colour",
+    "castable in 40% of likely lanes"
    ],
    "reasons_his": [
-    "Fit #1 \u00b7 Power #4",
-    "WR 39% \u2192 51.3 (n=2717)",
-    "RG 20% \u2192 54.9 (n=29150)"
+    "Fit #4 \u00b7 Power #4",
+    "RG 11% \u2192 54.9 (n=29150)",
+    "BG 11% \u2192 52.2 (n=7697)"
    ],
    "lanes_after": {
-    "WR": 0.415,
-    "RG": 0.211,
-    "UR": 0.109,
-    "BR": 0.107
+    "UG": 0.11,
+    "BG": 0.109,
+    "UB": 0.108,
+    "WU": 0.107
    }
   },
   {
@@ -212,38 +217,38 @@
    "top3": [
     {
      "name": "Surgical Precision",
-     "score": 57.03
-    },
-    {
-     "name": "Jiang Yanggu, Never Alone",
-     "score": 50.2
+     "score": 58.21
     },
     {
      "name": "Unsummon",
-     "score": 45.97
+     "score": 56.58
+    },
+    {
+     "name": "Jiang Yanggu, Never Alone",
+     "score": 55.05
     }
    ],
-   "his_score": 50.2,
-   "his_rank": 2,
+   "his_score": 55.05,
+   "his_rank": 3,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "WR 44% \u2192 54.5 (n=7385)",
-    "RG 20% \u2192 off-colour",
-    "castable in 59% of likely lanes"
+    "WU 13% \u2192 59.4 (n=39031)",
+    "WG 13% \u2192 56.0 (n=24379)",
+    "castable in 46% of likely lanes"
    ],
    "reasons_his": [
-    "Fit #2 \u00b7 Power #3",
-    "WR 44% \u2192 off-colour",
-    "RG 20% \u2192 55.5 (n=11273)",
-    "castable in 34% of likely lanes"
+    "Fit #3 \u00b7 Power #3",
+    "WU 13% \u2192 off-colour",
+    "WG 13% \u2192 53.9 (n=7241)",
+    "castable in 41% of likely lanes"
    ],
    "lanes_after": {
-    "RG": 0.331,
-    "WR": 0.298,
-    "WG": 0.165,
-    "UR": 0.062
+    "WU": 0.135,
+    "WG": 0.129,
+    "UG": 0.122,
+    "WB": 0.105
    }
   },
   {
@@ -253,37 +258,37 @@
    "top3": [
     {
      "name": "Meticulous Commons",
-     "score": 47.97
+     "score": 49.5
     },
     {
      "name": "Ferocity of the Hunt",
-     "score": 45.68
+     "score": 49.43
     },
     {
-     "name": "Solitary Cell",
-     "score": 43.56
+     "name": "Screeching Soulbreaker",
+     "score": 48.45
     }
    ],
-   "his_score": 45.68,
+   "his_score": 49.43,
    "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "RG 34% \u2192 fixes a splash (+1.3)",
-    "WR 29% \u2192 off-colour",
-    "castable in 1% of likely lanes"
+    "WU 12% \u2192 off-colour",
+    "WG 12% \u2192 off-colour",
+    "castable in 11% of likely lanes"
    ],
    "reasons_his": [
-    "Fit #2 \u00b7 Power #4",
-    "RG 34% \u2192 53.2 (n=7193)",
-    "WR 29% \u2192 off-colour"
+    "Fit #2 \u00b7 Power #3",
+    "WU 12% \u2192 off-colour",
+    "WG 12% \u2192 51.4 (n=5195)"
    ],
    "lanes_after": {
-    "RG": 0.391,
-    "WR": 0.222,
-    "WG": 0.179,
-    "BR": 0.063
+    "WU": 0.13,
+    "WG": 0.125,
+    "UG": 0.123,
+    "WB": 0.113
    }
   },
   {
@@ -292,38 +297,37 @@
    "taken": "Afterthought Sentry",
    "top3": [
     {
-     "name": "Sphinx's Approach",
-     "score": 38.1
-    },
-    {
      "name": "Afterthought Sentry",
-     "score": 34.85
+     "score": 48.43
     },
     {
-     "name": "Way of the Necromancer",
-     "score": 31.69
+     "name": "Sphinx's Approach",
+     "score": 48.31
+    },
+    {
+     "name": "Academic Ascent",
+     "score": 46.83
     }
    ],
-   "his_score": 34.85,
-   "his_rank": 2,
+   "his_score": 48.43,
+   "his_rank": 1,
    "scored": true,
    "dropped": 1,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #1",
-    "RG 33% \u2192 off-colour",
-    "WR 19% \u2192 off-colour",
-    "castable in 23% of likely lanes"
+    "Fit #1 \u00b7 Power #3",
+    "WU 14% \u2192 53.8 (n=3179)",
+    "UG 13% \u2192 50.0 (n=770)"
    ],
    "reasons_his": [
-    "Fit #2 \u00b7 Power #5",
-    "RG 39% \u2192 53.7 (n=2417)",
-    "WR 22% \u2192 52.4 (n=1316)"
+    "Fit #1 \u00b7 Power #3",
+    "WU 14% \u2192 53.8 (n=3179)",
+    "UG 13% \u2192 50.0 (n=770)"
    ],
    "lanes_after": {
-    "RG": 0.397,
-    "WR": 0.225,
-    "WG": 0.171,
-    "BR": 0.063
+    "WU": 0.138,
+    "UG": 0.122,
+    "UB": 0.116,
+    "WG": 0.113
    }
   },
   {
@@ -333,36 +337,37 @@
    "top3": [
     {
      "name": "Stingerquill Voxmancer",
-     "score": 51.64
+     "score": 53.15
     },
     {
      "name": "Hallway Heckler",
-     "score": 46.12
+     "score": 47.88
     },
     {
-     "name": "Charge the Sanctum",
-     "score": 30.74
+     "name": "Solve for Disappointment",
+     "score": 46.18
     }
    ],
-   "his_score": 46.12,
+   "his_score": 47.88,
    "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "RG 41% \u2192 51.1 (n=1853)",
-    "WR 23% \u2192 51.8 (n=2110)"
+    "BR 14% \u2192 55.8 (n=13865)",
+    "UB 13% \u2192 51.7 (n=1450)"
    ],
    "reasons_his": [
     "Fit #2 \u00b7 Power #2",
-    "RG 42% \u2192 52.3 (n=6312)",
-    "WR 24% \u2192 49.6 (n=3021)"
+    "BR 15% \u2192 52.4 (n=13471)",
+    "UB 14% \u2192 off-colour",
+    "castable in 42% of likely lanes"
    ],
    "lanes_after": {
-    "RG": 0.442,
-    "WR": 0.246,
-    "BR": 0.104,
-    "WG": 0.093
+    "UR": 0.121,
+    "BR": 0.12,
+    "WU": 0.113,
+    "UB": 0.112
    }
   },
   {
@@ -371,39 +376,39 @@
    "taken": "Loot, the Nexus",
    "top3": [
     {
+     "name": "Shatterwing Pegasus",
+     "score": 49.9
+    },
+    {
      "name": "Loot, the Nexus",
-     "score": 52.83
+     "score": 48.87
     },
     {
      "name": "Gallia, the Merrymaker",
-     "score": 51.45
-    },
-    {
-     "name": "Shatterwing Pegasus",
-     "score": 35.85
+     "score": 48.23
     }
    ],
-   "his_score": 52.83,
-   "his_rank": 1,
+   "his_score": 48.87,
+   "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "RG 44% \u2192 53.4 (n=8842)",
-    "WR 25% \u2192 off-colour",
-    "castable in 59% of likely lanes"
+    "WU 12% \u2192 55.1 (n=19041)",
+    "WB 11% \u2192 53.0 (n=4698)",
+    "castable in 44% of likely lanes"
    ],
    "reasons_his": [
-    "Fit #1 \u00b7 Power #1",
-    "RG 44% \u2192 53.4 (n=8842)",
-    "WR 25% \u2192 off-colour",
-    "castable in 59% of likely lanes"
+    "Fit #2 \u00b7 Power #2",
+    "WU 12% \u2192 off-colour",
+    "WB 11% \u2192 off-colour",
+    "castable in 35% of likely lanes"
    ],
    "lanes_after": {
-    "RG": 0.503,
-    "WR": 0.202,
-    "WG": 0.122,
-    "BR": 0.075
+    "WG": 0.163,
+    "UG": 0.156,
+    "BG": 0.114,
+    "RG": 0.098
    }
   },
   {
@@ -412,37 +417,37 @@
    "taken": "Afterthought Sentry",
    "top3": [
     {
-     "name": "Arni, Renowned Champion",
-     "score": 39.63
-    },
-    {
      "name": "Afterthought Sentry",
-     "score": 35.15
+     "score": 49.59
     },
     {
      "name": "Living Library",
-     "score": 33.28
+     "score": 48.04
+    },
+    {
+     "name": "Solve for Disappointment",
+     "score": 44.19
     }
    ],
-   "his_score": 35.15,
-   "his_rank": 2,
+   "his_score": 49.59,
+   "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #2",
-    "RG 50% \u2192 47.0 (n=2330)",
-    "WR 20% \u2192 45.3 (n=767)"
+    "WG 16% \u2192 49.9 (n=1210)",
+    "UG 15% \u2192 50.0 (n=770)"
    ],
    "reasons_his": [
-    "Fit #2 \u00b7 Power #3",
-    "RG 50% \u2192 53.7 (n=2417)",
-    "WR 20% \u2192 52.4 (n=1316)"
+    "Fit #1 \u00b7 Power #2",
+    "WG 16% \u2192 49.9 (n=1210)",
+    "UG 15% \u2192 50.0 (n=770)"
    ],
    "lanes_after": {
-    "RG": 0.51,
-    "WR": 0.199,
-    "WG": 0.119,
-    "BR": 0.077
+    "WG": 0.155,
+    "UG": 0.15,
+    "BG": 0.12,
+    "RG": 0.097
    }
   },
   {
@@ -457,10 +462,10 @@
    "reasons_top": [],
    "reasons_his": [],
    "lanes_after": {
-    "RG": 0.51,
-    "WR": 0.199,
-    "WG": 0.119,
-    "BR": 0.077
+    "WG": 0.155,
+    "UG": 0.15,
+    "BG": 0.12,
+    "RG": 0.097
    }
   },
   {
@@ -470,32 +475,32 @@
    "top3": [
     {
      "name": "Archive Arbiter",
-     "score": 74.25
+     "score": 80.77
     },
     {
      "name": "Silence the Echo",
-     "score": 50.6
+     "score": 52.66
     }
    ],
-   "his_score": 74.25,
+   "his_score": 80.77,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #2",
-    "RG 50% \u2192 55.2 (n=3528)",
-    "WR 19% \u2192 52.3 (n=811)"
+    "Fit #1 \u00b7 Power #1",
+    "WG 14% \u2192 55.9 (n=2936)",
+    "UG 14% \u2192 56.0 (n=1884)"
    ],
    "reasons_his": [
-    "Fit #1 \u00b7 Power #2",
-    "RG 50% \u2192 55.2 (n=3528)",
-    "WR 19% \u2192 52.3 (n=811)"
+    "Fit #1 \u00b7 Power #1",
+    "WG 14% \u2192 55.9 (n=2936)",
+    "UG 14% \u2192 56.0 (n=1884)"
    ],
    "lanes_after": {
-    "RG": 0.511,
-    "WR": 0.194,
-    "WG": 0.114,
-    "BR": 0.087
+    "WG": 0.148,
+    "UG": 0.147,
+    "BG": 0.134,
+    "UB": 0.095
    }
   },
   {
@@ -510,10 +515,10 @@
    "reasons_top": [],
    "reasons_his": [],
    "lanes_after": {
-    "RG": 0.511,
-    "WR": 0.194,
-    "WG": 0.114,
-    "BR": 0.087
+    "WG": 0.148,
+    "UG": 0.147,
+    "BG": 0.134,
+    "UB": 0.095
    }
   },
   {
@@ -523,38 +528,38 @@
    "top3": [
     {
      "name": "Overwrite the Multiverse",
-     "score": 56.12
+     "score": 61.08
+    },
+    {
+     "name": "Multiply by Zero",
+     "score": 56.97
     },
     {
      "name": "Compel Brutality",
-     "score": 56.02
-    },
-    {
-     "name": "Something Worth Saving",
-     "score": 54.18
+     "score": 52.75
     }
    ],
-   "his_score": 54.18,
-   "his_rank": 3,
+   "his_score": 51.76,
+   "his_rank": 4,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Branch: +28.8 over Compel Brutality, above the -14.1 top drafters switch at",
-    "Fit #2 \u00b7 Power #1",
-    "RG 53% \u2192 off-colour",
-    "WR 20% \u2192 off-colour",
-    "castable in 9% of likely lanes"
+    "Fit #1 \u00b7 Power #1",
+    "UG 18% \u2192 off-colour",
+    "WG 16% \u2192 off-colour",
+    "castable in 33% of likely lanes"
    ],
    "reasons_his": [
-    "Fit #3 \u00b7 Power #6",
-    "RG 53% \u2192 57.0 (n=13053)",
-    "WR 20% \u2192 off-colour"
+    "Fit #4 \u00b7 Power #6",
+    "UG 18% \u2192 54.3 (n=6185)",
+    "WG 16% \u2192 54.8 (n=10351)",
+    "castable in 54% of likely lanes"
    ],
    "lanes_after": {
-    "RG": 0.693,
-    "WG": 0.154,
-    "WR": 0.062,
-    "UG": 0.028
+    "UG": 0.26,
+    "WG": 0.239,
+    "BG": 0.17,
+    "RG": 0.153
    }
   },
   {
@@ -564,36 +569,36 @@
    "top3": [
     {
      "name": "Murmuring Volume",
-     "score": 59.21
+     "score": 56.0
     },
     {
-     "name": "Emergency Phytomedic",
-     "score": 53.24
+     "name": "Surveillance Phantasm",
+     "score": 52.09
     },
     {
-     "name": "Edgar, Moonlit Sovereign",
-     "score": 51.34
+     "name": "Undulating Witness",
+     "score": 50.61
     }
    ],
-   "his_score": 59.21,
+   "his_score": 56.0,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #3",
-    "RG 69% \u2192 55.4 (n=9133)",
-    "WG 15% \u2192 54.4 (n=3885)"
+    "UG 26% \u2192 55.0 (n=5789)",
+    "WG 24% \u2192 54.4 (n=3885)"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #3",
-    "RG 69% \u2192 55.4 (n=9133)",
-    "WG 15% \u2192 54.4 (n=3885)"
+    "UG 26% \u2192 55.0 (n=5789)",
+    "WG 24% \u2192 54.4 (n=3885)"
    ],
    "lanes_after": {
-    "RG": 0.646,
-    "WRG": 0.17,
-    "WG": 0.076,
-    "WR": 0.048
+    "UG": 0.28,
+    "WG": 0.249,
+    "BG": 0.178,
+    "RG": 0.155
    }
   },
   {
@@ -603,36 +608,36 @@
    "top3": [
     {
      "name": "Konstrari Improviser",
-     "score": 58.34
+     "score": 52.53
     },
     {
-     "name": "Loot, the Nexus",
-     "score": 55.19
+     "name": "Campus Crier",
+     "score": 51.39
     },
     {
-     "name": "Gallia, the Merrymaker",
-     "score": 50.88
+     "name": "Paradox Shaper",
+     "score": 51.27
     }
    ],
-   "his_score": 58.34,
+   "his_score": 52.53,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #6",
-    "RG 64% \u2192 54.9 (n=29150)",
-    "WRG 17% \u2192 52.7 (n=4033)"
+    "Fit #1 \u00b7 Power #5",
+    "UG 26% \u2192 53.0 (n=5495)",
+    "WG 23% \u2192 51.6 (n=6696)"
    ],
    "reasons_his": [
-    "Fit #1 \u00b7 Power #6",
-    "RG 64% \u2192 54.9 (n=29150)",
-    "WRG 17% \u2192 52.7 (n=4033)"
+    "Fit #1 \u00b7 Power #5",
+    "UG 26% \u2192 53.0 (n=5495)",
+    "WG 23% \u2192 51.6 (n=6696)"
    ],
    "lanes_after": {
-    "RG": 0.648,
-    "WRG": 0.155,
-    "WG": 0.079,
-    "WR": 0.048
+    "RG": 0.396,
+    "UG": 0.15,
+    "WG": 0.13,
+    "BG": 0.13
    }
   },
   {
@@ -642,36 +647,36 @@
    "top3": [
     {
      "name": "Fulminous Forte",
-     "score": 66.59
+     "score": 57.06
     },
     {
      "name": "Something Worth Saving",
-     "score": 58.18
+     "score": 52.62
     },
     {
      "name": "Heartstring Puller",
-     "score": 54.62
+     "score": 51.43
     }
    ],
-   "his_score": 66.59,
+   "his_score": 57.06,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #2",
-    "RG 69% \u2192 56.8 (n=12576)",
-    "WRG 20% \u2192 55.0 (n=1825)"
+    "RG 47% \u2192 56.8 (n=12576)",
+    "UG 12% \u2192 splash R (fixing 2) 56.2"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #2",
-    "RG 69% \u2192 56.8 (n=12576)",
-    "WRG 20% \u2192 55.0 (n=1825)"
+    "RG 47% \u2192 56.8 (n=12576)",
+    "UG 12% \u2192 splash R (fixing 2) 56.2"
    ],
    "lanes_after": {
-    "RG": 0.781,
-    "WRG": 0.161,
-    "WG": 0.021,
-    "BR": 0.017
+    "RG": 0.648,
+    "UR": 0.109,
+    "BR": 0.089,
+    "WR": 0.063
    }
   },
   {
@@ -681,36 +686,36 @@
    "top3": [
     {
      "name": "Awaken the Inferno",
-     "score": 60.4
+     "score": 56.25
     },
     {
      "name": "Murmuring Volume",
-     "score": 58.01
+     "score": 54.15
     },
     {
-     "name": "Ghalta the Unstoppable",
-     "score": 57.36
+     "name": "Extended Absence",
+     "score": 52.99
     }
    ],
-   "his_score": 60.4,
+   "his_score": 56.25,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #2",
-    "RG 77% \u2192 55.7 (n=24928)",
-    "WRG 15% \u2192 53.9 (n=3894)"
+    "Fit #1 \u00b7 Power #3",
+    "RG 60% \u2192 55.7 (n=24928)",
+    "BR 15% \u2192 54.0 (n=12266)"
    ],
    "reasons_his": [
-    "Fit #1 \u00b7 Power #2",
-    "RG 77% \u2192 55.7 (n=24928)",
-    "WRG 15% \u2192 53.9 (n=3894)"
+    "Fit #1 \u00b7 Power #3",
+    "RG 60% \u2192 55.7 (n=24928)",
+    "BR 15% \u2192 54.0 (n=12266)"
    ],
    "lanes_after": {
-    "RG": 0.801,
-    "WRG": 0.146,
-    "BR": 0.031,
-    "UR": 0.007
+    "RG": 0.659,
+    "BR": 0.155,
+    "UR": 0.103,
+    "WR": 0.055
    }
   },
   {
@@ -719,37 +724,37 @@
    "taken": "Something Worth Saving",
    "top3": [
     {
-     "name": "Vinelasher Adept",
-     "score": 58.07
-    },
-    {
      "name": "Something Worth Saving",
-     "score": 58.02
+     "score": 54.22
     },
     {
-     "name": "Mind Meanderer",
-     "score": 48.68
+     "name": "Undulating Witness",
+     "score": 47.18
+    },
+    {
+     "name": "Command the Stage",
+     "score": 46.56
     }
    ],
-   "his_score": 58.02,
-   "his_rank": 2,
+   "his_score": 54.22,
+   "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #3",
-    "RG 83% \u2192 55.6 (n=21835)",
-    "WRG 10% \u2192 53.7 (n=3417)"
+    "Fit #1 \u00b7 Power #2",
+    "RG 71% \u2192 57.0 (n=13053)",
+    "UR 12% \u2192 splash G (fixing 3) 50.8"
    ],
    "reasons_his": [
-    "Fit #2 \u00b7 Power #5",
-    "RG 83% \u2192 57.0 (n=13053)",
-    "WRG 10% \u2192 56.7 (n=1670)"
+    "Fit #1 \u00b7 Power #2",
+    "RG 71% \u2192 57.0 (n=13053)",
+    "UR 12% \u2192 splash G (fixing 3) 50.8"
    ],
    "lanes_after": {
-    "RG": 0.878,
-    "WRG": 0.101,
-    "WR": 0.007,
-    "WG": 0.006
+    "RG": 0.896,
+    "UR": 0.029,
+    "BR": 0.023,
+    "UG": 0.017
    }
   },
   {
@@ -759,36 +764,34 @@
    "top3": [
     {
      "name": "Craftwork Crusher",
-     "score": 83.97
+     "score": 69.42
     },
     {
      "name": "Bestial Incursion",
-     "score": 67.9
+     "score": 62.71
     },
     {
-     "name": "Murmuring Volume",
-     "score": 65.21
+     "name": "Konstrari Annex",
+     "score": 61.95
     }
    ],
-   "his_score": 83.97,
+   "his_score": 69.42,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "RG 89% \u2192 62.6 (n=25431)",
-    "WRG 10% \u2192 59.1 (n=3937)"
+    "RG 97% \u2192 62.6 (n=25431)"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "RG 89% \u2192 62.6 (n=25431)",
-    "WRG 10% \u2192 59.1 (n=3937)"
+    "RG 97% \u2192 62.6 (n=25431)"
    ],
    "lanes_after": {
-    "RG": 0.906,
-    "WRG": 0.094,
-    "WG": 0.0,
-    "WR": 0.0
+    "RG": 0.999,
+    "UR": 0.0,
+    "BR": 0.0,
+    "UG": 0.0
    }
   },
   {
@@ -798,34 +801,34 @@
    "top3": [
     {
      "name": "Greenhouse Propagator",
-     "score": 61.97
-    },
-    {
-     "name": "Edgar, Moonlit Sovereign",
-     "score": 56.29
+     "score": 58.16
     },
     {
      "name": "Sureshot Sower",
-     "score": 55.73
+     "score": 56.83
+    },
+    {
+     "name": "Edgar, Moonlit Sovereign",
+     "score": 53.66
     }
    ],
-   "his_score": 61.97,
+   "his_score": 58.16,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "RG 91% \u2192 54.3 (n=19497)"
+    "RG 100% \u2192 54.3 (n=19497)"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "RG 91% \u2192 54.3 (n=19497)"
+    "RG 100% \u2192 54.3 (n=19497)"
    ],
    "lanes_after": {
-    "RG": 0.914,
-    "WRG": 0.086,
-    "WG": 0.0,
-    "WR": 0.0
+    "RG": 0.999,
+    "UG": 0.0,
+    "BG": 0.0,
+    "WG": 0.0
    }
   },
   {
@@ -835,34 +838,34 @@
    "top3": [
     {
      "name": "Skilled Battlecarver",
-     "score": 55.95
+     "score": 56.59
     },
     {
      "name": "Winter, Team Player",
-     "score": 45.43
+     "score": 49.19
     },
     {
      "name": "Void Extrapolator",
-     "score": 42.37
+     "score": 43.76
     }
    ],
-   "his_score": 55.95,
+   "his_score": 56.59,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #5",
-    "RG 91% \u2192 53.2 (n=13289)"
+    "Fit #1 \u00b7 Power #4",
+    "RG 100% \u2192 53.2 (n=13289)"
    ],
    "reasons_his": [
-    "Fit #1 \u00b7 Power #5",
-    "RG 91% \u2192 53.2 (n=13289)"
+    "Fit #1 \u00b7 Power #4",
+    "RG 100% \u2192 53.2 (n=13289)"
    ],
    "lanes_after": {
-    "RG": 0.921,
-    "WRG": 0.078,
-    "WG": 0.0,
-    "WR": 0.0
+    "RG": 0.999,
+    "UG": 0.0,
+    "BG": 0.0,
+    "UR": 0.0
    }
   },
   {
@@ -872,36 +875,36 @@
    "top3": [
     {
      "name": "Formidable Commons",
-     "score": 52.13
-    },
-    {
-     "name": "Edgar, Ancient Bloodlord",
-     "score": 41.77
+     "score": 48.14
     },
     {
      "name": "Eye of Jace",
-     "score": 37.19
+     "score": 47.47
+    },
+    {
+     "name": "Shatterwing Pegasus",
+     "score": 42.26
     }
    ],
-   "his_score": 52.13,
+   "his_score": 48.14,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "RG 92% \u2192 splash B (fixing 3) 45.5",
+    "RG 100% \u2192 splash B (fixing 3) 45.5",
     "castable in 0% of likely lanes"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "RG 92% \u2192 splash B (fixing 3) 45.5",
+    "RG 100% \u2192 splash B (fixing 3) 45.5",
     "castable in 0% of likely lanes"
    ],
    "lanes_after": {
-    "RG": 0.922,
-    "WRG": 0.078,
-    "WG": 0.0,
-    "WR": 0.0
+    "RG": 0.999,
+    "BG": 0.0,
+    "UG": 0.0,
+    "WG": 0.0
    }
   },
   {
@@ -911,34 +914,34 @@
    "top3": [
     {
      "name": "Gallia, the Merrymaker",
-     "score": 56.69
+     "score": 55.72
     },
     {
      "name": "Apex Witchstalker",
-     "score": 51.2
+     "score": 47.23
     },
     {
      "name": "Cryotheory Adept",
-     "score": 36.06
+     "score": 40.06
     }
    ],
-   "his_score": 51.2,
+   "his_score": 47.23,
    "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #2",
-    "RG 92% \u2192 51.5 (n=4898)"
+    "Fit #1 \u00b7 Power #3",
+    "RG 100% \u2192 51.5 (n=4898)"
    ],
    "reasons_his": [
     "Fit #2 \u00b7 Power #1",
-    "RG 92% \u2192 off-colour",
+    "RG 100% \u2192 off-colour",
     "castable in 0% of likely lanes"
    ],
    "lanes_after": {
-    "RG": 0.895,
-    "BRG": 0.105,
+    "RG": 0.998,
     "BG": 0.0,
+    "UG": 0.0,
     "BR": 0.0
    }
   },
@@ -949,28 +952,26 @@
    "top3": [
     {
      "name": "Heartstring Puller",
-     "score": 78.98
+     "score": 77.26
     }
    ],
-   "his_score": 78.98,
+   "his_score": 77.26,
    "his_rank": 1,
    "scored": true,
    "dropped": 2,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "RG 89% \u2192 54.4 (n=17070)",
-    "BRG 10% \u2192 53.4 (n=3430)"
+    "RG 100% \u2192 54.4 (n=17070)"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "RG 89% \u2192 54.4 (n=17070)",
-    "BRG 10% \u2192 53.4 (n=3430)"
+    "RG 100% \u2192 54.4 (n=17070)"
    ],
    "lanes_after": {
-    "RG": 0.904,
-    "BRG": 0.096,
+    "RG": 0.999,
     "BR": 0.0,
-    "WR": 0.0
+    "UR": 0.0,
+    "BG": 0.0
    }
   },
   {
@@ -985,10 +986,10 @@
    "reasons_top": [],
    "reasons_his": [],
    "lanes_after": {
-    "RG": 0.904,
-    "BRG": 0.096,
+    "RG": 0.999,
     "BR": 0.0,
-    "WR": 0.0
+    "UR": 0.0,
+    "BG": 0.0
    }
   },
   {
@@ -1012,9 +1013,9 @@
     "No data"
    ],
    "lanes_after": {
-    "RG": 0.905,
-    "BRG": 0.095,
+    "RG": 0.999,
     "BR": 0.0,
+    "UR": 0.0,
     "WR": 0.0
    }
   },
@@ -1025,33 +1026,33 @@
    "top3": [
     {
      "name": "Craftwork Crusher",
-     "score": 87.39
+     "score": 75.35
     },
     {
      "name": "Pompous Battlemage",
-     "score": 62.73
+     "score": 59.99
     },
     {
      "name": "Loot, the Nexus",
-     "score": 60.3
+     "score": 57.27
     }
    ],
-   "his_score": 87.39,
+   "his_score": 75.35,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "RG 90% \u2192 62.6 (n=25431)"
+    "RG 100% \u2192 62.6 (n=25431)"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "RG 90% \u2192 62.6 (n=25431)"
+    "RG 100% \u2192 62.6 (n=25431)"
    ],
    "lanes_after": {
-    "RG": 0.913,
-    "BRG": 0.087,
+    "RG": 1.0,
     "BR": 0.0,
+    "UR": 0.0,
     "WR": 0.0
    }
   },
@@ -1062,32 +1063,32 @@
    "top3": [
     {
      "name": "Kiora of Fire and Ashes",
-     "score": 84.49
+     "score": 68.85
     },
     {
      "name": "Murmuring Volume",
-     "score": 62.6
+     "score": 59.01
     },
     {
      "name": "Inspired Tethermage",
      "score": 50.82
     }
    ],
-   "his_score": 84.49,
+   "his_score": 68.85,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "RG 91% \u2192 63.1 (n=13251)"
+    "RG 100% \u2192 63.1 (n=13251)"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "RG 91% \u2192 63.1 (n=13251)"
+    "RG 100% \u2192 63.1 (n=13251)"
    ],
    "lanes_after": {
-    "RG": 0.914,
-    "BRG": 0.086,
+    "RG": 1.0,
+    "UR": 0.0,
     "BR": 0.0,
     "WR": 0.0
    }
@@ -1099,32 +1100,32 @@
    "top3": [
     {
      "name": "Craftwork Crusher",
-     "score": 79.99
-    },
-    {
-     "name": "Vraska, the Cutting Glare",
-     "score": 58.23
+     "score": 67.08
     },
     {
      "name": "Wrecking Gecko",
-     "score": 54.85
+     "score": 54.34
+    },
+    {
+     "name": "Vraska, the Cutting Glare",
+     "score": 52.28
     }
    ],
-   "his_score": 79.99,
+   "his_score": 67.08,
    "his_rank": 1,
    "scored": true,
    "dropped": 2,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #2",
-    "RG 91% \u2192 62.6 (n=25431)"
+    "Fit #1 \u00b7 Power #1",
+    "RG 100% \u2192 62.6 (n=25431)"
    ],
    "reasons_his": [
-    "Fit #1 \u00b7 Power #2",
-    "RG 91% \u2192 62.6 (n=25431)"
+    "Fit #1 \u00b7 Power #1",
+    "RG 100% \u2192 62.6 (n=25431)"
    ],
    "lanes_after": {
-    "RG": 0.921,
-    "BRG": 0.079,
+    "RG": 1.0,
+    "UR": 0.0,
     "BR": 0.0,
     "WR": 0.0
    }
@@ -1136,32 +1137,32 @@
    "top3": [
     {
      "name": "Konstrari Annex",
-     "score": 61.54
+     "score": 62.25
     },
     {
      "name": "Way of the Warlord",
-     "score": 60.37
+     "score": 54.86
     },
     {
      "name": "Konstrari Improviser",
-     "score": 58.95
+     "score": 54.69
     }
    ],
-   "his_score": 61.54,
+   "his_score": 62.25,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #3",
-    "RG 92% \u2192 54.0 (n=17084)"
+    "Fit #1 \u00b7 Power #2",
+    "RG 100% \u2192 54.0 (n=17084)"
    ],
    "reasons_his": [
-    "Fit #1 \u00b7 Power #3",
-    "RG 92% \u2192 54.0 (n=17084)"
+    "Fit #1 \u00b7 Power #2",
+    "RG 100% \u2192 54.0 (n=17084)"
    ],
    "lanes_after": {
-    "RG": 0.922,
-    "BRG": 0.078,
+    "RG": 1.0,
+    "UR": 0.0,
     "BR": 0.0,
     "WR": 0.0
    }
@@ -1172,33 +1173,33 @@
    "taken": "Heartstring Puller",
    "top3": [
     {
-     "name": "Ghalta the Unstoppable",
-     "score": 58.51
-    },
-    {
      "name": "Heartstring Puller",
-     "score": 57.21
+     "score": 53.29
     },
     {
      "name": "Emergency Phytomedic",
-     "score": 54.36
+     "score": 52.45
+    },
+    {
+     "name": "Ghalta the Unstoppable",
+     "score": 49.15
     }
    ],
-   "his_score": 57.21,
-   "his_rank": 2,
+   "his_score": 53.29,
+   "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #3",
-    "RG 92% \u2192 53.8 (n=8286)"
+    "Fit #1 \u00b7 Power #4",
+    "RG 100% \u2192 54.4 (n=17070)"
    ],
    "reasons_his": [
-    "Fit #2 \u00b7 Power #4",
-    "RG 92% \u2192 54.4 (n=17070)"
+    "Fit #1 \u00b7 Power #4",
+    "RG 100% \u2192 54.4 (n=17070)"
    ],
    "lanes_after": {
-    "RG": 0.928,
-    "BRG": 0.072,
+    "RG": 1.0,
+    "UR": 0.0,
     "BR": 0.0,
     "WR": 0.0
    }
@@ -1209,33 +1210,33 @@
    "taken": "Keeper of the Quiet Hour",
    "top3": [
     {
-     "name": "Archive Arbiter",
-     "score": 56.84
+     "name": "Keeper of the Quiet Hour",
+     "score": 55.61
     },
     {
-     "name": "Keeper of the Quiet Hour",
-     "score": 56.32
+     "name": "Skilled Battlecarver",
+     "score": 50.66
     },
     {
      "name": "Tetsuko Umezawa, Pursuer",
-     "score": 53.67
+     "score": 50.45
     }
    ],
-   "his_score": 56.32,
-   "his_rank": 2,
+   "his_score": 55.61,
+   "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #2",
-    "RG 93% \u2192 55.2 (n=3528)"
+    "Fit #1 \u00b7 Power #3",
+    "RG 100% \u2192 55.8 (n=7729)"
    ],
    "reasons_his": [
-    "Fit #2 \u00b7 Power #4",
-    "RG 93% \u2192 55.8 (n=7729)"
+    "Fit #1 \u00b7 Power #3",
+    "RG 100% \u2192 55.8 (n=7729)"
    ],
    "lanes_after": {
-    "RG": 0.935,
-    "BRG": 0.065,
+    "RG": 1.0,
+    "UR": 0.0,
     "BR": 0.0,
     "WR": 0.0
    }
@@ -1247,34 +1248,34 @@
    "top3": [
     {
      "name": "Twinned Vision",
-     "score": 64.33
+     "score": 59.93
     },
     {
      "name": "Ferocity of the Hunt",
-     "score": 49.82
+     "score": 53.47
     },
     {
      "name": "Formidable Commons",
-     "score": 48.37
+     "score": 48.23
     }
    ],
-   "his_score": 64.33,
+   "his_score": 59.93,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #2",
-    "RG 93% \u2192 56.9 (n=10299)"
+    "RG 100% \u2192 56.9 (n=10299)"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #2",
-    "RG 93% \u2192 56.9 (n=10299)"
+    "RG 100% \u2192 56.9 (n=10299)"
    ],
    "lanes_after": {
-    "RG": 0.94,
-    "BRG": 0.06,
+    "RG": 1.0,
+    "BR": 0.0,
     "WR": 0.0,
-    "BR": 0.0
+    "UR": 0.0
    }
   },
   {
@@ -1284,34 +1285,34 @@
    "top3": [
     {
      "name": "Konstrari Improviser",
-     "score": 57.27
+     "score": 54.03
     },
     {
-     "name": "Command the Stage",
-     "score": 50.14
+     "name": "Medic's Kitesail",
+     "score": 50.95
     },
     {
      "name": "Dedicated Commons",
-     "score": 48.3
+     "score": 48.23
     }
    ],
-   "his_score": 57.27,
+   "his_score": 54.03,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
-    "Fit #1 \u00b7 Power #2",
-    "RG 94% \u2192 54.9 (n=29150)"
+    "Fit #1 \u00b7 Power #4",
+    "RG 100% \u2192 54.9 (n=29150)"
    ],
    "reasons_his": [
-    "Fit #1 \u00b7 Power #2",
-    "RG 94% \u2192 54.9 (n=29150)"
+    "Fit #1 \u00b7 Power #4",
+    "RG 100% \u2192 54.9 (n=29150)"
    ],
    "lanes_after": {
-    "RG": 0.945,
-    "BRG": 0.055,
+    "RG": 1.0,
+    "BR": 0.0,
     "WR": 0.0,
-    "BR": 0.0
+    "UR": 0.0
    }
   },
   {
@@ -1321,34 +1322,34 @@
    "top3": [
     {
      "name": "Keeper of the Quiet Hour",
-     "score": 56.28
+     "score": 55.5
     },
     {
      "name": "Skilled Battlecarver",
-     "score": 51.81
+     "score": 49.9
     },
     {
      "name": "Tethermage's Advantage",
-     "score": 39.82
+     "score": 47.85
     }
    ],
-   "his_score": 56.28,
+   "his_score": 55.5,
    "his_rank": 1,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "RG 95% \u2192 55.8 (n=7729)"
+    "RG 100% \u2192 55.8 (n=7729)"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "RG 95% \u2192 55.8 (n=7729)"
+    "RG 100% \u2192 55.8 (n=7729)"
    ],
    "lanes_after": {
-    "RG": 0.95,
-    "BRG": 0.05,
+    "RG": 1.0,
     "WR": 0.0,
-    "BR": 0.0
+    "BR": 0.0,
+    "UR": 0.0
    }
   },
   {
@@ -1358,34 +1359,34 @@
    "top3": [
     {
      "name": "Blazing Crescendo",
-     "score": 42.15
+     "score": 48.26
     },
     {
      "name": "Eye of Jace",
-     "score": 40.45
+     "score": 47.4
     },
     {
      "name": "Kiora of Salt and Sand",
-     "score": 37.4
+     "score": 39.95
     }
    ],
-   "his_score": 40.45,
+   "his_score": 47.4,
    "his_rank": 2,
    "scored": true,
    "dropped": 0,
    "reasons_top": [
     "Fit #1 \u00b7 Power #4",
-    "RG 95% \u2192 52.4 (n=2229)"
+    "RG 100% \u2192 52.4 (n=2229)"
    ],
    "reasons_his": [
     "Fit #2 \u00b7 Power #3",
-    "RG 95% \u2192 45.3 (rarely played there)"
+    "RG 100% \u2192 45.3 (rarely played there)"
    ],
    "lanes_after": {
-    "RG": 0.954,
-    "BRG": 0.046,
+    "RG": 1.0,
     "WR": 0.0,
-    "BR": 0.0
+    "BR": 0.0,
+    "UR": 0.0
    }
   },
   {
@@ -1395,26 +1396,26 @@
    "top3": [
     {
      "name": "Wrecking Gecko",
-     "score": 52.75
+     "score": 55.12
     }
    ],
-   "his_score": 52.75,
+   "his_score": 55.12,
    "his_rank": 1,
    "scored": true,
    "dropped": 3,
    "reasons_top": [
     "Fit #1 \u00b7 Power #1",
-    "RG 95% \u2192 55.1 (n=14940)"
+    "RG 100% \u2192 55.1 (n=14940)"
    ],
    "reasons_his": [
     "Fit #1 \u00b7 Power #1",
-    "RG 95% \u2192 55.1 (n=14940)"
+    "RG 100% \u2192 55.1 (n=14940)"
    ],
    "lanes_after": {
-    "RG": 0.958,
-    "BRG": 0.042,
+    "RG": 1.0,
     "WR": 0.0,
-    "BR": 0.0
+    "BR": 0.0,
+    "UR": 0.0
    }
   },
   {
@@ -1429,10 +1430,10 @@
    "reasons_top": [],
    "reasons_his": [],
    "lanes_after": {
-    "RG": 0.958,
-    "BRG": 0.042,
+    "RG": 1.0,
     "WR": 0.0,
-    "BR": 0.0
+    "BR": 0.0,
+    "UR": 0.0
    }
   },
   {
@@ -1447,10 +1448,10 @@
    "reasons_top": [],
    "reasons_his": [],
    "lanes_after": {
-    "RG": 0.958,
-    "BRG": 0.042,
+    "RG": 1.0,
     "WR": 0.0,
-    "BR": 0.0
+    "BR": 0.0,
+    "UR": 0.0
    }
   },
   {
@@ -1465,10 +1466,10 @@
    "reasons_top": [],
    "reasons_his": [],
    "lanes_after": {
-    "RG": 0.958,
-    "BRG": 0.042,
+    "RG": 1.0,
     "WR": 0.0,
-    "BR": 0.0
+    "BR": 0.0,
+    "UR": 0.0
    }
   }
  ],
