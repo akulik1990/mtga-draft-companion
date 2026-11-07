@@ -140,6 +140,7 @@ class DraftAdvisorV2:
     ALPHA_LATE = 1.5  # pool commitment weight once the pool has COMMIT_BY spells
     COLOUR_FLOOR = 2.5  # each colour counts at least this many quality points in the lane commitment (1 = one average card); 0 = off. On by Akshin's call 2026-11-07; paired test (data/Temp/sim/floor1): top-1 -0.47 (p<0.001), top-3 -0.25 (p<0.001), mock deck WR -0.32 (p 0.18); kept by his decision
     FLOOR_BY = 0  # spells in the pool by which COLOUR_FLOOR has faded to 0; 0 = no fade (the card count does it)
+    COLOUR_FLOOR_STRONG = 2.0  # under COLOUR_FLOOR_CARDS, a colour counts max(floor, its quality x min(1, average card quality / this)); 0 = floor only (Akshin 2026-11-07)
     COLOUR_FLOOR_CARDS = 5  # a colour with fewer spells than this counts exactly COLOUR_FLOOR (Akshin: a base from 5 cards, as THREE_BASE_CARDS)
     BETA = 0.5  # per-colour signal z
     GAMMA = 0.5  # lane prior, in SDs of the lane's card mean
@@ -169,7 +170,7 @@ class DraftAdvisorV2:
     COLOUR_LEAD = 1  # a colour may lead the next most held colour by this many cards before COLOUR_PACE_POINTS start
     COLOUR_LEAD_SCALE = 4.0  # cards beyond the lead for the full COLOUR_PACE_POINTS (Akshin, 2026-11-07)
     COLOUR_PACE_THREE = "7,6,5"  # the same in a three-colour lane, for the pool's most, second and third most held colour
-    COLOUR_PACE_POINTS = 4.0  # up to this many WR points, in proportion to how far ahead (100% ahead = all); 0 = off. Akshin's call 2026-11-07, untested
+    COLOUR_PACE_POINTS = 2.0  # (4 -> 2, Akshin 2026-11-07: 100 random 60%+ drafts top-1 +1.0) up to this many WR points, in proportion to how far ahead (100% ahead = all); 0 = off. Akshin's call 2026-11-07, untested
     FIT_WEIGHTS_LANES = True  # per-pick fitted weights averaged over the likely pairs (p >= 0.05) instead of choice.top_lane's one pair; Akshin's call 2026-11-07, untested
     TOP_END_FINISHER_GIH = 57.5  # a 6+ drop at this All Decks GIH WR or more is exempt from TOP_END_POINTS (Akshin, 2026-11-07: Verdant Kraken 57.8 is a finisher; the deck-table line, mean + 1 SD = 60.2, stays for FINISHER_POINTS)
     TOP_END_PICKS = 8  # the top-end discount applies only up to this pick of each pack (the videos: not *highly*); Akshin's call 2026-11-07
@@ -185,7 +186,8 @@ class DraftAdvisorV2:
     BRANCH_EARLY_TO = 7
     BRANCH_DEFAULT = 3.0  # GIH WR points; used for stages with no fitted threshold (fitted.json, branch)
     ORDER_FADE_BY = 9  # pick in the pack by which the pick-order prior has faded to 0; 0 = no fade. 9 by Akshin's call 2026-11-07 (prefs are fitted on P1 picks 1-5; gone by the wheel), untested
-    PRIOR_CAP = 3.0  # the pick-order prior is clamped to +/- this many WR points; 0 = no cap. Akshin's call 2026-11-07, untested
+    PRIOR_CAP = 6.0  # the pick-order prior is clamped to +/- this many WR points (commons, uncommons); 0 = no cap. Akshin 2026-11-07: 3 cost 2 top-1 points, mostly good commons
+    PRIOR_CAP_RARE = 3.0  # the same for rares and mythics (Akshin: top players over-take shiny rares)
     PREF_WEIGHT = 4.0  # WR points per SD of top drafters' learnt preference (tools/learn_prefs.py); 0 = off
     PREF_ON_WEIGHT = 4.0  # what the app's switch sets PREF_WEIGHT to; the switch also swaps the pick-order prior out
     ORDER_OFF_WEIGHT = 2.0  # pick-order prior the app's switch restores when learnt preferences are switched off
@@ -323,7 +325,12 @@ class DraftAdvisorV2:
                     if col in have:
                         have[col] += q
                         count[col] += 1
-            target = {col: floor if count[col] < self.COLOUR_FLOOR_CARDS else max(have[col], floor) for col in have}
+            # Akshin: under COLOUR_FLOOR_CARDS a colour's own quality counts by how strong its cards are on average (full at
+            # COLOUR_FLOOR_STRONG SD), so a bomb plus solid cards commits while a few medium cards stay at the floor.
+            strong = {col: min(1.0, max(0.0, have[col] / count[col]) / self.COLOUR_FLOOR_STRONG) if count[col] and self.COLOUR_FLOOR_STRONG else 0.0
+                      for col in have}
+            target = {col: max(floor, have[col] * strong[col]) if count[col] < self.COLOUR_FLOOR_CARDS else max(have[col], floor)
+                      for col in have}
             for lane in self.commit:
                 self.commit[lane] += sum(target[col] - have[col] for col in lane if col in have)
         self.anchor = None
@@ -726,7 +733,7 @@ class DraftAdvisorV2:
             if self.ORDER_WEIGHT or self.PREF_WEIGHT:
                 # What top players reach for, beyond its win rate; only as far as v2 expects to play the card.
                 live = sum(p for lane, p in lanes.items() if castable(card, lane) or self.speculative(card, lane))
-                score += self.order_prior(name, current_pick) * live
+                score += self.order_prior(name, current_pick, rarity=card.get("rarity", "")) * live
             wheel = upstream._wheel_chance(card, max(1, current_pick), rank_in_pack.get(name, 99), pack_size=len(pack_cards))
             recs.append(self._rec(card, name, base, score, (base - pack_mean) / pack_std, cast_p, wheel,
                                   self._reasons(card, lanes, cast_p)))
@@ -837,7 +844,7 @@ class DraftAdvisorV2:
         playable.sort(key=lambda r: r.contextual_score, reverse=True)
         return playable + [r for r in recs if r.contextual_score <= 0]
 
-    def order_prior(self, name, pick, prefs=True):
+    def order_prior(self, name, pick, prefs=True, rarity=""):
         """Prior in WR points from what top players reach for: their average pick position (ORDER_WEIGHT)
         and, when switched on, the preference learnt from their choices (PREF_WEIGHT)."""
         fade = max(0.0, 1.0 - (pick - 1) / self.ORDER_FADE_BY) if self.ORDER_FADE_BY else 1.0
@@ -847,15 +854,16 @@ class DraftAdvisorV2:
             if self.LAND_PREF and name in self.land_names:
                 pref = max(0.0, pref) if self.LAND_PREF_POS else 0.0
             out += self.PREF_WEIGHT * pref
-        if self.PRIOR_CAP:
-            out = max(-self.PRIOR_CAP, min(self.PRIOR_CAP, out))  # breaks ties, cannot override a real win-rate gap
+        cap = self.PRIOR_CAP_RARE if rarity in ("rare", "mythic") else self.PRIOR_CAP
+        if cap:
+            out = max(-cap, min(cap, out))  # rares tighter: top players over-take shiny rares (Kraken), not good commons
         return out * fade
 
     def power(self, card, pick):
         """How good the card is if you end up in its colours: its best lane, ignoring the pool."""
         live = [lane for lane in LANES if castable(card, lane) or self.speculative(card, lane)]
         best = max((self.value(card, lane) for lane in live), default=self.replacement)
-        return best + self.order_prior(card.get("name", ""), pick)
+        return best + self.order_prior(card.get("name", ""), pick, rarity=card.get("rarity", ""))
 
     def fit(self, card, pick):
         """How good the card is for the colours the pool points to: the candidate does not pull the lanes."""
@@ -875,7 +883,7 @@ class DraftAdvisorV2:
             synergy += self.fit_weights(card, pick)
         if self.STRAT_SYN and self.set_code_now:
             synergy += self.STRAT_SYN * self.strategy_points(card)
-        return score + self.order_prior(card.get("name", ""), pick, prefs=self.PREF_SCOPE == "both") * live + self.deck_term(card) + synergy
+        return score + self.order_prior(card.get("name", ""), pick, prefs=self.PREF_SCOPE == "both", rarity=card.get("rarity", "")) * live + self.deck_term(card) + synergy
 
     def strategy_points(self, card):
         """WR points for the card's tags in the pool's main pair's strategy, weighted by that pair's chance. Credit from other
