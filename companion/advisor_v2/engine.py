@@ -173,6 +173,7 @@ class DraftAdvisorV2:
     COLOUR_PACE_POINTS = 2.0  # (4 -> 2, Akshin 2026-11-07: 100 random 60%+ drafts top-1 +1.0) up to this many WR points, in proportion to how far ahead (100% ahead = all); 0 = off. Akshin's call 2026-11-07, untested
     FIT_WEIGHTS_LANES = True  # per-pick fitted weights averaged over the likely pairs (p >= 0.05) instead of choice.top_lane's one pair; Akshin's call 2026-11-07, untested
     TOP_END_FINISHER_GIH = 57.5  # a 6+ drop at this All Decks GIH WR or more is exempt from TOP_END_POINTS (Akshin, 2026-11-07: Verdant Kraken 57.8 is a finisher; the deck-table line, mean + 1 SD = 60.2, stays for FINISHER_POINTS)
+    ADJ_RAMP = 0.025  # > 0: every adjust() term is scaled by min(1, this x pool cards) (Akshin: 0.025, from 0 at P1p1 to full at 40 cards); 0 = off
     TOP_END_PICKS = 8  # the top-end discount applies only up to this pick of each pack (the videos: not *highly*); Akshin's call 2026-11-07
     THREE_OPEN = 0.5  # share of each likely pair's chance moved to its three-colour bases, only for a third colour that qualifies as a base (THREE_BASE_CARDS, THREE_GAP; replaces the fitted THREE_LANES rule); Akshin's call 2026-11-07, untested
     THREE_BASE_CARDS = 5  # spells a third colour needs to be a potential base (Akshin)
@@ -640,6 +641,8 @@ class DraftAdvisorV2:
         if self.DOUBLE_PIP and (self.three_colour or self.DOUBLE_PIP_ALL) and (card.get("cmc") or 0) <= self.DOUBLE_PIP_CMC:
             singles = [o[0] for o in pips(card) if len(o) == 1]
             a -= self.DOUBLE_PIP * max(0, max((singles.count(c) for c in set(singles)), default=0) - 1)
+        if self.ADJ_RAMP:  # Akshin 2026-11-07: adjustments start at 0 and grow by ADJ_RAMP per pool card (full at 1 / ADJ_RAMP cards)
+            a *= min(1.0, self.ADJ_RAMP * len(self.pool))
         return a
 
     def value(self, card, lane):
