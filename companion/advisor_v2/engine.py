@@ -162,8 +162,8 @@ class DraftAdvisorV2:
     DUAL_OPEN_EDGE = 8.0  # a nonbasic dual that taps for one of the lane's colours is worth at least replacement + this x (1 - progress); 0 = off. Akshin's call 2026-11-07, untested
     POWER_EARLY = 1.0  # Fit blended toward Power by this weight at pick 1, fading to 0 by POWER_EARLY_BY spells; 0 = off. Akshin's call 2026-11-07, untested
     POWER_EARLY_BY = 4  # cards in the second-most held colour by which the Power blend has faded (Akshin: a base from 4 cards)
-    SPLASH_EARLY = 1.0  # a splashable off-colour card counts at least this share of its value above replacement at pick 1, fading to 0 by SPLASH_EARLY_BY spells (over the fitted off-colour play rate); Akshin's call 2026-11-07, untested
-    SPLASH_EARLY_BY = 18
+    SPLASH_POOL_K = 4.0  # a splashable off-colour card counts at least K x (its quality + the pool's cards of that colour) / (the pool's quality castable in the pair) of its value above replacement, over the fitted off-colour play rate; 0 = off. Akshin's call 2026-11-07, untested
+    SPLASH_POOL_CAP = 0.85
     COLOUR_PACE = 12.0  # cards of one colour per 23 spells in a two-colour lane; a mono-coloured card of a colour ahead of its pace loses points (Akshin: a ceiling for wanting, not a goal; 11 or 12, 12 for now; trophy decks average 14.2 / 10.1, analysis/colour_split.py)
     COLOUR_LEAD = 1  # a colour may lead the next most held colour by this many cards before COLOUR_PACE_POINTS start
     COLOUR_LEAD_SCALE = 4.0  # cards beyond the lead for the full COLOUR_PACE_POINTS (Akshin, 2026-11-07)
@@ -558,6 +558,24 @@ class DraftAdvisorV2:
         wr = float(all_decks(card).get("gihwr") or 0.0)
         return wr > 0 and wr >= self.mean + self.std
 
+    def splash_share(self, card, lane):
+        """Akshin, 2026-11-07: a splash is worth what its colour brings: the candidate's quality plus every pool card of the
+        splash colour, over the total quality of the pool castable in the pair; x SPLASH_POOL_K, capped at SPLASH_POOL_CAP."""
+        off = off_pips(card, lane)
+        if len(off) != 1:
+            return 0.0
+        x = off[0][0] if isinstance(off[0], (list, tuple)) else off[0]
+        splash, deck = quality(card, self.mean, self.std), 0.0
+        for c in self.pool:
+            if "Land" in (c.get("types") or []):
+                continue
+            q = quality(c, self.mean, self.std)
+            if castable(c, lane):
+                deck += q
+            elif x in (c.get("colors") or []):
+                splash += q
+        return min(self.SPLASH_POOL_CAP, self.SPLASH_POOL_K * splash / deck) if deck > 0 else self.SPLASH_POOL_CAP
+
     def adjust(self, card, lane):
         """Manual per-set adjustments and the neutral-by-default deck-need settings, in WR points."""
         t = config.ACTIVE["tables"]
@@ -634,9 +652,8 @@ class DraftAdvisorV2:
                 return self.replacement
             if self.OFF_PLAY and self.offcolour:
                 play = self.off_play(card, lane)
-                if self.SPLASH_EARLY:
-                    # Akshin, 2026-11-07: a splash never starts if it is never suggested; early, a one-pip-off card is live.
-                    play = max(play, self.SPLASH_EARLY * max(0.0, 1.0 - self.spells / self.SPLASH_EARLY_BY))
+                if self.SPLASH_POOL_K:
+                    play = max(play, self.splash_share(card, lane))
                 return self.replacement + max(0.0, self.shrunk_wr(card, lane)[0] - self.replacement) * play
             if self.splash_colour(card, lane):
                 return max(self.replacement, self.shrunk_wr(card, lane)[0] * self.SPLASH)
