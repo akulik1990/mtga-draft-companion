@@ -140,7 +140,7 @@ class DraftAdvisorV2:
     ALPHA_LATE = 1.5  # pool commitment weight once the pool has COMMIT_BY spells
     COLOUR_FLOOR = 2.5  # each colour counts at least this many quality points in the lane commitment (1 = one average card); 0 = off. On by Akshin's call 2026-11-07; paired test (data/Temp/sim/floor1): top-1 -0.47 (p<0.001), top-3 -0.25 (p<0.001), mock deck WR -0.32 (p 0.18); kept by his decision
     FLOOR_BY = 0  # spells in the pool by which COLOUR_FLOOR has faded to 0; 0 = no fade (the card count does it)
-    COLOUR_FLOOR_CARDS = 4  # a colour with fewer spells than this counts exactly COLOUR_FLOOR (Akshin: 1-3 cards are a splash at best, not a base)
+    COLOUR_FLOOR_CARDS = 5  # a colour with fewer spells than this counts exactly COLOUR_FLOOR (Akshin: a base from 5 cards, as THREE_BASE_CARDS)
     BETA = 0.5  # per-colour signal z
     GAMMA = 0.5  # lane prior, in SDs of the lane's card mean
     REPLACEMENT_SD = 2.0  # V when not castable: mean − 2 SD
@@ -164,6 +164,7 @@ class DraftAdvisorV2:
     POWER_EARLY_BY = 4  # cards in the second-most held colour by which the Power blend has faded (Akshin: a base from 4 cards)
     SPLASH_POOL_K = 4.0  # a splashable off-colour card counts at least K x (its quality + the pool's cards of that colour) / (the pool's quality castable in the pair) of its value above replacement, over the fitted off-colour play rate; 0 = off. Akshin's call 2026-11-07, untested
     SPLASH_POOL_CAP = 0.85
+    SPLASH_MIN_Q = 1.0  # pool cards of the splash colour add to its power only at this quality or more (1 = format mean)
     COLOUR_PACE = 12.0  # cards of one colour per 23 spells in a two-colour lane; a mono-coloured card of a colour ahead of its pace loses points (Akshin: a ceiling for wanting, not a goal; 11 or 12, 12 for now; trophy decks average 14.2 / 10.1, analysis/colour_split.py)
     COLOUR_LEAD = 1  # a colour may lead the next most held colour by this many cards before COLOUR_PACE_POINTS start
     COLOUR_LEAD_SCALE = 4.0  # cards beyond the lead for the full COLOUR_PACE_POINTS (Akshin, 2026-11-07)
@@ -403,9 +404,10 @@ class DraftAdvisorV2:
             # Akshin, 2026-11-07: draft two colours + a splash. A third colour is a base when it has THREE_BASE_CARDS spells and
             # the three colours' average card quality sits within THREE_GAP (max - min); otherwise it stays a splash.
             # Each likely pair passes THREE_OPEN of its chance, evenly, to its qualifying triples.
-            qs = {x: [quality(c, self.mean, self.std) for c in self.pool
-                      if "Land" not in (c.get("types") or []) and x in (c.get("colors") or [])] for x in "WUBRG"}
-            avg = {x: sum(v) / len(v) for x, v in qs.items() if v}
+            qs = {x: sorted((quality(c, self.mean, self.std) for c in self.pool
+                             if "Land" not in (c.get("types") or []) and x in (c.get("colors") or [])), reverse=True) for x in "WUBRG"}
+            # each colour's best THREE_BASE_CARDS only: a weak late pick neither lowers nor builds a base (Akshin)
+            avg = {x: sum(v[:self.THREE_BASE_CARDS]) / len(v[:self.THREE_BASE_CARDS]) for x, v in qs.items() if v}
             out = dict(p)
             for lane, v in p.items():
                 if len(lane) != 2 or v < self.THREE_MIN_P:
@@ -575,7 +577,8 @@ class DraftAdvisorV2:
                 continue
             q = quality(c, self.mean, self.std)
             if x in (c.get("colors") or []):
-                splash += q
+                if q >= self.SPLASH_MIN_Q:  # a weak late pick in the colour does not raise the splash
+                    splash += q
             else:
                 deck += q  # every other spell, not only the pair's (Akshin: each green card against the other ten)
         return min(self.SPLASH_POOL_CAP, self.SPLASH_POOL_K * splash / deck) if deck > 0 else self.SPLASH_POOL_CAP
