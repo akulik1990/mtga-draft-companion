@@ -1,0 +1,185 @@
+655 ideas from 21 videos.
+
+## Strategy ideas, by number of videos that make the point
+
+| # | Idea | Videos | Ideas |
+|---|---|---|---|
+| 1 | Fixing / dual land over a marginal playable (when the pack has nothing, playables are covered, or a splash is likely) | 18 | 35 |
+| 2 | Removal: take it highly until about 5-6, then other needs come first | 17 | 37 |
+| 3 | Signals: read what is missing from a pack and what arrives or wheels late | 17 | 34 |
+| 4 | Two-drops are scarce: fill the curve (about 6-7), stop once you have enough | 14 | 31 |
+| 5 | Stay flexible early: take power, keep first picks loose, drop them if their colours do not flow | 13 | 20 |
+| 6 | Count colour sources for the mana base (splash about 5-6, main colours 7-10; landcyclers and rocks count) | 11 | 17 |
+| 7 | Splash discipline: only the best cards, cap the splash, fewer splashes the more playables you have | 9 | 18 |
+| 8 | Basic landcyclers: real fixing, about two per deck, being taken higher; count them as part-lands | 9 | 18 |
+| 9 | Creature count when building (about 13-16; cut the clunky creature at 16) | 9 | 10 |
+| 10 | Hate / sideboard cards: not main-deck in best of one, worth a pick in best of three | 9 | 10 |
+| 11 | Top end: do not take 6-7 drops highly, lock up one or two finishers, then curve | 8 | 13 |
+| 12 | Commit with reasons: do not jump colours for one card, do not over-read openness | 8 | 12 |
+| 13 | Double pips set the base colours; splash single-pip cards (double splash only for the very best) | 7 | 12 |
+| 14 | One splash colour, carried by two or more good cards; pick it by what it brings (often removal) | 7 | 12 |
+| 15 | 17 lands as the default (adjust for landcyclers, tapped lands, curve) | 7 | 11 |
+| 16 | Count playables during the draft to know how selective to be | 7 | 9 |
+| 17 | Card draw: valuable in ramp, splash and control decks, but enough is enough | 6 | 11 |
+| 18 | The format is balanced: no dominant colour, four- and five-colour decks are viable | 6 | 8 |
+| 19 | Late speculative picks are free when nothing is for the deck | 6 | 7 |
+| 20 | Enters-tapped lands cost tempo: about two tapped duals at most | 4 | 7 |
+| 21 | Build technique: cut everything, add back bombs, removal and two-drops first | 4 | 4 |
+| 22 | Aggressive decks are good right now | 2 | 3 |
+
+### Fixing / dual land over a marginal playable (when the pack has nothing, playables are covered, or a splash is likely) (18 videos)
+  - [mqZ-16] A dual land for the splash colour is worth more than an off-colour playable once the pool holds splashable bombs; fixing value rises with the number of splash cards already taken.
+  - [CWs-12] A land that fixes a possible splash is worth taking over a mediocre playable early (white-black dual over Inspired Tethermage).
+  - [994-11] Take the flexible fixing land (Room of Refuge) over playables when the pack has nothing for the deck, because the deck is casting big things and may splash.
+  - [re7-11] Dual lands are taken when nothing else is playable, but one with no use is a late pick (Innovative Commons): the blue-red land is fine, 'sure, why not'.
+
+### Removal: take it highly until about 5-6, then other needs come first (17 videos)
+  - [mqZ-51] An on-colour removal spell is worth more than another splash land.
+  - [CWs-11] Only take one effect of a type: with one removal spell like Silence the Echo already worth having, the second is passed for card filtering.
+  - [994-02] Removal pick order keeps rising in this set: the usual slot for removal is about fifth, now trending to sixth or seventh, because there are many must-answer threats.
+  - [re7-13] A slow, ramp-based deck needs five, six or seven removal spells; a low, high-synergy deck (red-black, blue-white with synergies) can get by with fewer, but a deck that plans to go 
+
+### Signals: read what is missing from a pack and what arrives or wheels late (17 videos)
+  - [mqZ-06] When the rare is missing from P1p2, the pack carries little signal.
+  - [CWs-08] Seeing cards of a colour pair arrive in pack 1 pick 4 to 5 is the first sign that blue-black is open.
+  - [994-13] Plan for All Outcomes is a card he would consider splashing; mill and filtering cards like Something Worth Saving tend to come around late, so he takes the stronger card first.
+  - [5aM-03] Read the first-pick neighbour: compare what the first pack lost against what it held, and move out of the colour that went. He sees red taken from the pack and moves toward blue-wh
+
+### Two-drops are scarce: fill the curve (about 6-7), stop once you have enough (14 videos)
+  - [mqZ-07] Early in pack 1, a mono-coloured two-drop in the main colour beats a comparable gold card, because the gold card commits to a pair too soon.
+  - [CWs-45] At 16 creatures he cuts one: with enough early plays, the more expensive (or weaker) creature goes and the deck keeps a cheaper curve.
+  - [994-08] With few two-drops he takes a filler two-drop, saying a slow format does not punish missing turn two often, but quick starts happen: filling two-drop slots is not worth more than c
+  - [5aM-09] Take the two-drop the curve needs over the stronger Hexhaven Battalion: Enlightened Confidant over Battalion because the deck needs twos (Battalion is good with Kindred Judgment: i
+
+### Stay flexible early: take power, keep first picks loose, drop them if their colours do not flow (13 videos)
+  - [CWs-04] Removal in a colour you are not playing is passed in favour of the graveyard engine card ('we don't have to be a green deck'); early picks go to power and synergy, not to the on-co
+  - [mqZ-07] Early in pack 1, a mono-coloured two-drop in the main colour beats a comparable gold card, because the gold card commits to a pair too soon.
+  - [n6s-01] P1p1: with two strong gold outliers in the pack, take the strong multicoloured card and stay willing to move off it.
+  - [pdI-03] Early in pack 1 take the bigger body without committing to a colour: Marwyn, the Preserver (2-mana 3/2) over the two-drop Skilled Battlecarver, 'trying not to bias too much'.
+
+### Count colour sources for the mana base (splash about 5-6, main colours 7-10; landcyclers and rocks count) (11 videos)
+  - [mqZ-60] Count splash sources with non-land fixers (landcyclers, Murmuring Volume) as part sources: 7 blue, 7 white, 'kind of' 3 black, 4 red, 6 green.
+  - [CWs-42] A single Forest with several green sources (Formidable Commons, Room of Refuge x2) gives about six green sources for three splash cards, which he calls totally enough.
+  - [994-29] Count splash sources including the cards that find it; he cuts tapped lands, thinking five tapped lands is too many.
+  - [re7-26] Filtering and card draw (Empower Jace cards, Something Worth Saving) help find the splash sources, so a mana base like this is more reasonable than the source count suggests.
+
+### Splash discipline: only the best cards, cap the splash, fewer splashes the more playables you have (9 videos)
+  - [mqZ-25] In a deck planning several splashes, base-colour cards are the scarce resource and are worth more than splash cards of similar power.
+  - [CWs-10] Clash of Elements is very strong but not worth splashing for; he stays in colours and gets Keeper of the Quiet Hour later.
+  - [994-14] Heartwood Crafter (an enabler) is taken over splashing a very good off-colour card (Null Summoner): not diving into splashiness until the base is secured; he would take the splash 
+  - [97Z-09] He will not splash red for Grim Repriser: a card he took for power is left in the sideboard once the colours are set.
+
+### Basic landcyclers: real fixing, about two per deck, being taken higher; count them as part-lands (9 videos)
+  - [mqZ-29] Basic landcyclers come late; take power early and pick up landcyclers later in the pack.
+  - [CWs-03] A gold card with a basic landcycler in the deck is easier to splash: cycle the landcycler, the big card in the graveyard turns Hapatra on, and the cycler fetches the basic that mak
+  - [994-30] Keep landcyclers as spells where possible; add a second basic of the splash colour (Swamp) so you do not have to cycle them as often.
+  - [re7-09] Take a landcycler over the splashable removal (Silence the Echo) when a white card is already a possible splash: the cycler fixes and the removal cannot be cast without the colour.
+
+### Creature count when building (about 13-16; cut the clunky creature at 16) (9 videos)
+  - [mqZ-46] Thirteen creatures is enough for a deck.
+  - [CWs-41] The deck builder starts at 47 cards (auto-filled with 14 basics) and he makes seven cuts, preferring to cut the more expensive cards and keep a cheaper curve.
+  - [5aM-24] Keep at least 13 creatures (counting the Recursive Recruitment tokens) when the deck has Jace and a team pump spell.
+  - [pdI-30] A 12-creature count is too low for this deck, so he adds another threat (Jiang Yanggu, Alone) in the last slot.
+
+### Hate / sideboard cards: not main-deck in best of one, worth a pick in best of three (9 videos)
+  - [994-28] Hate-cycle cards (Refute Destiny, Terminal Criticism) are worth a C plus/B minus pick for best-of-three, where they upgrade a weak card into efficient interaction; not for best-of-
+  - [8Bz-22] In best of three, sideboard cards are worth taking pretty highly because they are a huge upgrade over a game-one card; he picks the sideboard card over a land.
+  - [CLK-21] In best of three Flourishing Grapple would be a great sideboard card, but in best of one he takes a deck card.
+  - [XSY-34] Bring Way of the Mind Sculptor in from the sideboard against a reindeer matchup, even though it is left out of the main deck.
+
+### Top end: do not take 6-7 drops highly, lock up one or two finishers, then curve (8 videos)
+  - [mqZ-08] Seven-drops should not be taken highly, even good ones like Archive Arbiter.
+  - [994-04] Take the enabler over a good-but-not-bomb rare when the top end is already good: Woodwork Prodigy (three mana 3/3 that keeps making Heartwood tokens) over Face Yourself; he calls i
+  - [re7-21] Take the removal spell over a good rare creature (Woodwork Prodigy) when the deck has little top end; with two or three more top-end threats he would take another ramp spell instea
+  - [9nA-19] Kindred Judgment is strong (choose a type and destroy everything else) but a seven-drop; Prudent Fateseer is taken over it because he surveils a lot and can bin the lands.
+
+### Commit with reasons: do not jump colours for one card, do not over-read openness (8 videos)
+  - [uoy-21] The most open colour pair is not necessarily the best deck: red-white was the most open pair in this seat, but he does not follow it.
+  - [9nA-06] Do not move into a second colour early unless the card is crazy good; he stays mono-blue for now at P1p3.
+  - [55a-04] Why dip into a second colour when you do not have to: with two red cards already, No Admittance over Repurposed Enforcer locks him into red; he says he may be too greedy for the po
+  - [9Db-04] Do not bias picks towards a colour early because of one strong late-game card: he refuses to go white just because he has Return to the Light Realms.
+
+### Double pips set the base colours; splash single-pip cards (double splash only for the very best) (7 videos)
+  - [mqZ-32] The base colours are set by the double-pip cards; a colour with double-pip cards cannot be the splash.
+  - [re7-18] With many strong cards in the format a double splash is acceptable for the best cards in the set because the set is slower and has a lot of fixing and card draw; normally he advise
+  - [7Yc-05] Blue-black with Kiora: you can sometimes splash double red cards in this format.
+  - [iGz-11] Commit to splashing green for a heavy-blue card: take the second Mind Meanderer; with the Heartwood token makers or an Improviser you can get green mana.
+
+### One splash colour, carried by two or more good cards; pick it by what it brings (often removal) (7 videos)
+  - [mqZ-40] A splash colour becomes worth it with two good cards of that colour, not one: the cost of the splash is per colour, the gain is per card.
+  - [CWs-22] A splash colour is chosen by what it brings: green for Hapatra and later Bestial Incursion rather than white for Surgical Precision or Generous Revival.
+  - [994-31] A second basic of the splash colour is normally wrong, but right when the splash is heavy; splash the colour that supplies the removal the base colours lack.
+  - [re7-27] A black splash heavier than usual is justified when the deck lacks removal and fixing: 'just enough interaction'; red-green base splashing black and blue.
+
+### 17 lands as the default (adjust for landcyclers, tapped lands, curve) (7 videos)
+  - [mqZ-38] A deck with many tapped fixing lands should play more lands (about 20) to have untapped sources when needed.
+  - [5aM-22] Never go below 17 lands: missing land drops is the worse failure; fill the extra slots with card draw instead.
+  - [uoy-28] A really bad 23rd card is worse than a land: "what if you just put a land in that 23rd card slot", it is probably better a lot of the time.
+  - [Uy4-11] With three landcyclers, play 16 lands 'almost every time'; with nine four-drops he keeps 17.
+
+### Count playables during the draft to know how selective to be (7 videos)
+  - [n6s-22] At the end of pack 2 he counts his playables (22 in the deck) so pack 3 only has to fill a few needs.
+  - [9nA-23] Counting playables early (18 halfway through pack two) shows how much more selective he can be in the rest of the draft.
+  - [55a-12] Once the deck has four great red cards and three good blue cards he does not need to worry about playables: he fills the curve and takes cheap interchangeable cards over the strong
+  - [97Z-27] The more playables he has, the less he wants to splash: in a self-milled deck with double black, double blue and blue-black cards, splashing is dicey and drawing a Plains would be 
+
+### Card draw: valuable in ramp, splash and control decks, but enough is enough (6 videos)
+  - [mqZ-57] Protege's Awakening is strong but not for a deck that cannot protect it and already has card advantage.
+  - [CWs-31] Prefer the removal spell to extra card draw when the pool has plenty of draw; Multiply by Zero over Last Gasp and Mindseeker Oculus.
+  - [994-15] Card advantage is needed in a rampy, splashy deck: Twinned Vision (cheap card draw) over Murmuring Volume; he would take one of the three-mana rocks but not at high priority.
+  - [re7-10] Card draw is valuable in ramp decks because it helps hit land drops and find ramp targets (Twinned Vision taken over the land).
+
+### The format is balanced: no dominant colour, four- and five-colour decks are viable (6 videos)
+  - [mqZ-65] Reality Fracture supports four- and five-colour decks: opponents also play many extra lands.
+  - [re7-03] Colour strength matters little for pick order: there will be stronger and weaker colours, but he drafts the cards that come, unlike in earlier sets where one colour was much better
+  - [Uy4-07] Three colours without a strict splash is fine in this format if picks go to lands and cyclers; the pods let you.
+  - [XSY-01] Colour power rankings do not matter in this format: he is happy to draft any colour or colour combination, with only slight ideas about what leads and what trails.
+
+### Late speculative picks are free when nothing is for the deck (6 videos)
+  - [5aM-11] A second Blessed Ghoul is never wanted; he would spec on a land (Transformative Commons) or an off-colour card instead.
+  - [uoy-26] Mabel, Bitter Recluse is taken as a black card he hopes not to play: nothing else in the pack is for the deck.
+  - [n6s-27] Speculative picks are free when they were not taken over anything good for the deck.
+  - [pdI-08] Speculating on a card that was not taken over anything good is free: Tetsuko Umezawa, Fugitive at P1p12 and the blue-red land at P1p13 cost nothing, and he keeps blue as an option.
+
+### Enters-tapped lands cost tempo: about two tapped duals at most (4 videos)
+  - [mqZ-69] Enters-tapped lands cost tempo; playing many of them is bad.
+  - [994-22] Another Awaken the Inferno is taken for fixing rather than a land, because tapped lands hurt even in multicolour decks; Gallia is more for aggressive decks.
+  - [re7-17] Most decks want only two tapped dual lands: even a multicolour deck will play them to cast spells, but they hurt tempo; he takes one because it fixes for the card he wants, accepti
+  - [n6s-26] Vraska drops out of the deck without a basic landcycler: a random Forest is not worth it, and tapped lands are a cost in an aggro deck.
+
+### Build technique: cut everything, add back bombs, removal and two-drops first (4 videos)
+  - [n6s-33] Build technique: cut every card and add back the premium cards first (removal, two-drops, signature gold), then fill the creature count; adding cards over time helps.
+  - [pdI-26] Build technique: start from the end and work backwards, adding the bombs first (both Sphinxes, Stingcaster Mage, Lyra), then good removal, then the curve fillers.
+  - [55a-36] Build technique: cut every card, then add back the ones you definitely want first (premium removal, both Clash of Elements, both Traxos, the Oculus, Plan for All Outcomes, Ruric Th
+  - [iGz-17] He builds a tempo version of the deck first, knowing it is worse than the other version, to see what it looks like, then puts in the better version; the weird cards (Emberling, Cre
+
+### Aggressive decks are good right now (2 videos)
+  - [5aM-21] Aggressive decks are better right now: in his last ten or so drafts the midrange mirrors came down to who drew better.
+  - [uoy-02] Aggressive decks have been good lately and this pack is a chance to draft one (the video is titled "finally aggro's time to shine").
+
+## Cards discussed in the most videos
+
+| Card | Videos | Typical claim |
+|---|---|---|
+| Mindseeker Oculus | 11 | Mindseeker Oculus is a great pickup in a deck with planeswalker-conditional tapped lands: keeping a Jace around makes th |
+| Unsummon | 8 | Unsummon is better than Ferocity of the Hunt and better than the removal aura Infinite Coursework. |
+| Twinned Vision | 8 | Card advantage is needed in a rampy, splashy deck: Twinned Vision (cheap card draw) over Murmuring Volume; he would take |
+| Recursive Recruitment | 7 | Recursive Recruitment is a strong card; seeing it wheel at pick 9 is a sign UB is open. |
+| Arni, Humble Scribe | 7 | Arni underperforms: a creature that wants to sit back is worse than one you can trade off. |
+| No Admittance | 7 | Hapatra, the Desert Fang over No Admittance in P1p1: a two-for-one (3/3 plus a kill once the graveyard has a card) that  |
+| Ferocity of the Hunt | 6 | Unsummon is better than Ferocity of the Hunt and better than the removal aura Infinite Coursework. |
+| Traxos, Academy Guardian | 6 | Traxos, Academy Guardian is a very strong card; Jace's Machinations is only okay. |
+| Awaken the Inferno | 6 | Awaken the Inferno is the best of the basic landcyclers (6-damage removal); Undulating Witness is also good. |
+| Protege's Awakening | 6 | Protege's Awakening is strong but not for a deck that cannot protect it and already has card advantage. |
+| Extended Absence | 6 | Cap off-colour cards: Extended Absence is the last off-colour card he takes ('we don't want to splash infinite cards');  |
+| Craftwork Crusher | 6 | Verdant Kraken vs Craftwork Crusher: he thinks Kraken is currently better but would not be surprised if the stats show t |
+| Something Worth Saving | 6 | Something Worth Saving (a cheap filter/mill spell that finds top end and lands) over a second threat: with great top end |
+| Murmuring Volume | 5 | Murmuring Volume is a weak card in general but is worth taking as fixing in a splash deck, over Fateshaper Aspirant. |
+| Room of Refuge | 5 | Room of Refuge is a better fixer than Murmuring Volume. |
+| Icy Reception | 5 | Icy Reception is poor in slow, grindy decks. |
+| Infinite Coursework | 5 | Cutting the deck's only on-colour removal spell (Infinite Coursework) for a landcycler creature is a risky cut. |
+| Hapatra, the Desert Fang | 5 | Hapatra, the Desert Fang over No Admittance in P1p1: a two-for-one (3/3 plus a kill once the graveyard has a card) that  |
+| Undulating Witness | 5 | Undulating Witness is a flier with basic landcycling that works with a splash and Hapatra. |
+| Paradox Shaper | 5 | Paradox Shaper is a late-game card worth exactly one copy in a self-mill deck: mill the whole deck and stack it; slow, b |
+
+Not in a bucket: 135 strategy ideas (one-off points, synergy pairs, card-specific picks).
