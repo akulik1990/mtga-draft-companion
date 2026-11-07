@@ -174,6 +174,7 @@ class DraftAdvisorV2:
     FIT_WEIGHTS_LANES = True  # per-pick fitted weights averaged over the likely pairs (p >= 0.05) instead of choice.top_lane's one pair; Akshin's call 2026-11-07, untested
     TOP_END_FINISHER_GIH = 57.5  # a 6+ drop at this All Decks GIH WR or more is exempt from TOP_END_POINTS (Akshin, 2026-11-07: Verdant Kraken 57.8 is a finisher; the deck-table line, mean + 1 SD = 60.2, stays for FINISHER_POINTS)
     ADJ_RAMP = 0.025  # > 0: every adjust() term is scaled by min(1, this x pool cards) (Akshin: 0.025, from 0 at P1p1 to full at 40 cards); 0 = off
+    ADJ_RAMP_PLAY_RATE = False  # ramp the play-rate penalty too (ramp flips on 100 drafts: ramping it fixed 11, broke 21 picks)
     TOP_END_PICKS = 8  # the top-end discount applies only up to this pick of each pack (the videos: not *highly*); Akshin's call 2026-11-07
     THREE_OPEN = 0.5  # share of each likely pair's chance moved to its three-colour bases, only for a third colour that qualifies as a base (THREE_BASE_CARDS, THREE_GAP; replaces the fitted THREE_LANES rule); Akshin's call 2026-11-07, untested
     THREE_BASE_CARDS = 5  # spells a third colour needs to be a potential base (Akshin)
@@ -608,11 +609,16 @@ class DraftAdvisorV2:
             # Colourless cards fit every lane, so spread early lanes overrate them; drafters leave them for later (ATA 7-8).
             fade = max(0.0, 1.0 - (getattr(self, "pick_now", 1) - 1) / self.COLOURLESS_FADE_BY) if self.COLOURLESS_FADE_BY else 1.0
             a -= self.COLOURLESS_EARLY * fade
+        full = 0.0  # terms kept out of ADJ_RAMP
         if self.PLAY_RATE_POINTS and kind != "land":
             # Rarely played when picked (17Lands play rate): niche or unplayable cards, even when their win rate looks fine.
             rate = all_decks(card).get("play_rate")
             if rate is not None:
-                a -= self.PLAY_RATE_POINTS * max(0.0, self.PLAY_RATE_FROM - float(rate)) / self.PLAY_RATE_FROM
+                pr = self.PLAY_RATE_POINTS * max(0.0, self.PLAY_RATE_FROM - float(rate)) / self.PLAY_RATE_FROM
+                if self.ADJ_RAMP_PLAY_RATE:
+                    a -= pr
+                else:
+                    full -= pr
         if self.removal_need and self.counts_as_removal(card) and kind != "land":
             a += self.REMOVAL_POINTS * self.removal_need
         if self.REMOVAL_FLAT and "removal" in config.tags(card) and kind != "land":
@@ -643,7 +649,7 @@ class DraftAdvisorV2:
             a -= self.DOUBLE_PIP * max(0, max((singles.count(c) for c in set(singles)), default=0) - 1)
         if self.ADJ_RAMP:  # Akshin 2026-11-07: adjustments start at 0 and grow by ADJ_RAMP per pool card (full at 1 / ADJ_RAMP cards)
             a *= min(1.0, self.ADJ_RAMP * len(self.pool))
-        return a
+        return a + full
 
     def value(self, card, lane):
         v = self._value(card, lane)
