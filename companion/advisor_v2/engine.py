@@ -243,7 +243,7 @@ class DraftAdvisorV2:
     WHEEL_SPLIT = False  # apply the WHEEL_EPS tiebreak to the split's final order too (it used to apply only with SPLIT off)
     THREE_LANES = 0.0  # from pack 2, each likely pair passes this share of the fitted chance that top drafters end in it plus a third colour (fitted "three_draft", tools/fit_three_draft.py) to that three-colour lane; 0 = two-colour lanes only
     THREE_MIN_P = 0.05  # pairs below this probability are not split
-    SIGNAL_OTHER = 0.0  # weight of the other neighbour's signal added to the one passing now (pack 2 still learns from pack 1's side, which passes again in pack 3); 0 = off
+    SIGNAL_OTHER = 0.5  # Akshin's call 2026-11-07 (pack 1's reading was dropped in pack 2), untested; weight of the other neighbour's signal added to the one passing now (pack 2 still learns from pack 1's side, which passes again in pack 3); 0 = off
     WHEEL_PENALTY = 0.0  # WR points taken from Power and Fit per 100% chance the card comes back; 0 = off
 
     land_names = frozenset()  # lands in the pack being scored (LAND_PREF)
