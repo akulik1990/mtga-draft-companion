@@ -138,6 +138,8 @@ class DraftAdvisorV2:
     STEER = 4.0  # the candidate's own quality counts this many times
     COMMIT_BY = 18  # spells in the pool by which STEER has decayed to 0 and ALPHA reached ALPHA_LATE; 0 = no decay
     ALPHA_LATE = 1.5  # pool commitment weight once the pool has COMMIT_BY spells
+    COLOUR_FLOOR = 1.5  # each colour counts at least this many quality points in the lane commitment (1 = one average card); 0 = off. On by Akshin's call 2026-11-07; paired test (data/Temp/sim/floor1): top-1 -0.47 (p<0.001), top-3 -0.25 (p<0.001), mock deck WR -0.32 (p 0.18); kept by his decision
+    FLOOR_BY = 18  # spells in the pool by which COLOUR_FLOOR has faded to 0
     BETA = 0.5  # per-colour signal z
     GAMMA = 0.5  # lane prior, in SDs of the lane's card mean
     REPLACEMENT_SD = 2.0  # V when not castable: mean − 2 SD
@@ -156,6 +158,10 @@ class DraftAdvisorV2:
     BRANCH_FILE = ""  # override the fitted rule's file (measuring alternatives); "" = the set's fitted.json
     CARD_PAIRS_PULL = 0.0  # extra pull of a setup bomb in the pool toward its home pairs (fitted card_pairs), x its quality; 0 = off
     COLOURLESS_EARLY = 0.0  # WR points off colourless cards (artifacts, colourless lands) in pack 1; 0 = off
+    DUAL_OPEN_EDGE = 16.0  # a nonbasic dual that taps for one of the lane's colours is worth at least replacement + this x (1 - progress); 0 = off. Akshin's call 2026-11-07, untested
+    POWER_EARLY = 0.5  # Fit blended toward Power by this weight at pick 1, fading to 0 by POWER_EARLY_BY spells; 0 = off. Akshin's call 2026-11-07, untested
+    POWER_EARLY_BY = 18
+    COLOURLESS_FADE_BY = 8  # COLOURLESS_EARLY fades linearly from pick 1 to 0 at this pick of pack 1; 0 = no fade (full all pack 1). On by Akshin's call 2026-11-07; paired test (data/Temp/sim/floor1): top-1 -0.47 (p<0.001), top-3 -0.25 (p<0.001), mock deck WR -0.32 (p 0.18); kept by his decision
     PLAY_RATE_POINTS = 0.0  # WR points off a non-land card in proportion to how far its play rate falls below PLAY_RATE_FROM (all of them at 0%); 0 = off
     PLAY_RATE_FROM = 50.0
     BOMB_WR = 61.0  # All Decks GIH WR from which the strong card counts as a bomb in the switch rule (its "f" term, tools/fit_branch.py --bomb)
@@ -283,6 +289,19 @@ class DraftAdvisorV2:
                 for lane in homes.get(c.get("name"), homes.get((c.get("name") or "").split(" // ")[0], [])):
                     if lane in self.commit:
                         self.commit[lane] += self.CARD_PAIRS_PULL * quality(c, self.mean, self.std)
+        if self.COLOUR_FLOOR and self.FLOOR_BY > 0:
+            # Akshin, 2026-11-07: a colour with no cards yet is not ruled out, so one good card does not decide the second
+            # colour. Each colour counts at least COLOUR_FLOOR quality points, fading to 0 by FLOOR_BY spells.
+            # ponytail: the floor is on the pool only; a candidate's STEER pull adds on top of it rather than filling it.
+            floor = self.COLOUR_FLOOR * max(0.0, 1.0 - spells / self.FLOOR_BY)
+            have = dict.fromkeys("WUBRG", 0.0)
+            for c in self.pool:
+                q = quality(c, self.mean, self.std)
+                for col in c.get("colors") or ():
+                    if col in have:
+                        have[col] += q
+            for lane in self.commit:
+                self.commit[lane] += sum(max(0.0, floor - have[col]) for col in lane if col in have)
         self.anchor = None
         free = self._lanes(self.commit)
         self.top_lane = max(free, key=free.get)
@@ -492,7 +511,8 @@ class DraftAdvisorV2:
             a += self.CREATURE_POINTS * self.creature_need
         if self.COLOURLESS_EARLY and not (card.get("colors") or []) and self.pack_now == 1:
             # Colourless cards fit every lane, so spread early lanes overrate them; drafters leave them for later (ATA 7-8).
-            a -= self.COLOURLESS_EARLY
+            fade = max(0.0, 1.0 - (getattr(self, "pick_now", 1) - 1) / self.COLOURLESS_FADE_BY) if self.COLOURLESS_FADE_BY else 1.0
+            a -= self.COLOURLESS_EARLY * fade
         if self.PLAY_RATE_POINTS and kind != "land":
             # Rarely played when picked (17Lands play rate): niche or unplayable cards, even when their win rate looks fine.
             rate = all_decks(card).get("play_rate")
@@ -526,7 +546,11 @@ class DraftAdvisorV2:
                     v = max(v, self.replacement + self.LAND_MAIN_DUAL_EDGE)
                 return v
             if any(c in lane for c in colours):
-                return self.replacement + self.fixing_gain(card, lane) + self.FIX_BONUS  # taps for the lane and fixes a splash
+                v = self.replacement + self.fixing_gain(card, lane) + self.FIX_BONUS  # taps for the lane and fixes a splash
+                if self.DUAL_OPEN_EDGE and len(colours) >= 2 and "Basic" not in (card.get("types") or []):
+                    # Akshin, 2026-11-07: early on a dual keeps its other colour open (pair or splash); fades with the pool.
+                    v = max(v, self.replacement + self.DUAL_OPEN_EDGE * (1.0 - self.progress))
+                return v
             return self.replacement
         if not castable(card, lane):
             if not self.splash_worthy(card, lane):
@@ -560,7 +584,7 @@ class DraftAdvisorV2:
         upstream = DraftAdvisor(self.metrics, self.pool)  # only for its wheel polynomial
         set_code = next((c.get("set") for c in (*self.pool, *pack_cards) if c.get("set")), None)
         config.activate(set_code)
-        self.set_code_now, self.pack_now = set_code, current_pack
+        self.set_code_now, self.pack_now, self.pick_now = set_code, current_pack, current_pick
         if self.OFF_PLAY and not self.offcolour and set_code:
             self.offcolour = config.fitted(set_code, "offcolour")
         self.order = pick_order(set_code) if self.ORDER_WEIGHT and set_code else {}
@@ -865,9 +889,13 @@ class DraftAdvisorV2:
         wheel = {r.card_name: (r.wheel_chance or 0.0) / 100.0 for r in playable}
         power = {r.card_name: self.power(by_name[r.card_name], pick) - self.WHEEL_PENALTY * wheel[r.card_name] for r in playable}
         fit = {r.card_name: self.fit(by_name[r.card_name], pick) - self.WHEEL_PENALTY * wheel[r.card_name] for r in playable}
+        spells = sum(1 for c in self.pool if "Land" not in (c.get("types") or []))
+        if self.POWER_EARLY and self.POWER_EARLY_BY > 0:
+            # Akshin, 2026-11-07: early on, raw strength counts for more than the pool's colours; fades with the pool.
+            w = self.POWER_EARLY * max(0.0, 1.0 - spells / self.POWER_EARLY_BY)
+            fit = {n: (1.0 - w) * fit[n] + w * power[n] for n in fit}
         p_top = max(power, key=power.get)
         c_top = max(fit, key=fit.get)
-        spells = sum(1 for c in self.pool if "Land" not in (c.get("types") or []))
         stage = stage_of(spells)
         gap = power[p_top] - power[c_top]
         table = branch_file(self.BRANCH_FILE) if self.BRANCH_FILE else (branch_thresholds(set_code) if set_code else {})
