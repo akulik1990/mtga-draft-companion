@@ -158,8 +158,8 @@ class DraftAdvisorV2:
     BRANCH_FILE = ""  # override the fitted rule's file (measuring alternatives); "" = the set's fitted.json
     CARD_PAIRS_PULL = 0.0  # extra pull of a setup bomb in the pool toward its home pairs (fitted card_pairs), x its quality; 0 = off
     COLOURLESS_EARLY = 0.0  # WR points off colourless cards (artifacts, colourless lands) in pack 1; 0 = off
-    DUAL_OPEN_EDGE = 16.0  # a nonbasic dual that taps for one of the lane's colours is worth at least replacement + this x (1 - progress); 0 = off. Akshin's call 2026-11-07, untested
-    POWER_EARLY = 0.5  # Fit blended toward Power by this weight at pick 1, fading to 0 by POWER_EARLY_BY spells; 0 = off. Akshin's call 2026-11-07, untested
+    DUAL_OPEN_EDGE = 8.0  # a nonbasic dual that taps for one of the lane's colours is worth at least replacement + this x (1 - progress); 0 = off. Akshin's call 2026-11-07, untested
+    POWER_EARLY = 1.0  # Fit blended toward Power by this weight at pick 1, fading to 0 by POWER_EARLY_BY spells; 0 = off. Akshin's call 2026-11-07, untested
     POWER_EARLY_BY = 18
     COLOURLESS_FADE_BY = 8  # COLOURLESS_EARLY fades linearly from pick 1 to 0 at this pick of pack 1; 0 = no fade (full all pack 1). On by Akshin's call 2026-11-07; paired test (data/Temp/sim/floor1): top-1 -0.47 (p<0.001), top-3 -0.25 (p<0.001), mock deck WR -0.32 (p 0.18); kept by his decision
     PLAY_RATE_POINTS = 0.0  # WR points off a non-land card in proportion to how far its play rate falls below PLAY_RATE_FROM (all of them at 0%); 0 = off
