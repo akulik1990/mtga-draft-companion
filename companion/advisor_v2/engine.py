@@ -138,7 +138,7 @@ class DraftAdvisorV2:
     STEER = 4.0  # the candidate's own quality counts this many times
     COMMIT_BY = 18  # spells in the pool by which STEER has decayed to 0 and ALPHA reached ALPHA_LATE; 0 = no decay
     ALPHA_LATE = 1.5  # pool commitment weight once the pool has COMMIT_BY spells
-    COLOUR_FLOOR = 1.5  # each colour counts at least this many quality points in the lane commitment (1 = one average card); 0 = off. On by Akshin's call 2026-11-07; paired test (data/Temp/sim/floor1): top-1 -0.47 (p<0.001), top-3 -0.25 (p<0.001), mock deck WR -0.32 (p 0.18); kept by his decision
+    COLOUR_FLOOR = 2.5  # each colour counts at least this many quality points in the lane commitment (1 = one average card); 0 = off. On by Akshin's call 2026-11-07; paired test (data/Temp/sim/floor1): top-1 -0.47 (p<0.001), top-3 -0.25 (p<0.001), mock deck WR -0.32 (p 0.18); kept by his decision
     FLOOR_BY = 18  # spells in the pool by which COLOUR_FLOOR has faded to 0
     BETA = 0.5  # per-colour signal z
     GAMMA = 0.5  # lane prior, in SDs of the lane's card mean
