@@ -139,7 +139,8 @@ class DraftAdvisorV2:
     COMMIT_BY = 18  # spells in the pool by which STEER has decayed to 0 and ALPHA reached ALPHA_LATE; 0 = no decay
     ALPHA_LATE = 1.5  # pool commitment weight once the pool has COMMIT_BY spells
     COLOUR_FLOOR = 2.5  # each colour counts at least this many quality points in the lane commitment (1 = one average card); 0 = off. On by Akshin's call 2026-11-07; paired test (data/Temp/sim/floor1): top-1 -0.47 (p<0.001), top-3 -0.25 (p<0.001), mock deck WR -0.32 (p 0.18); kept by his decision
-    FLOOR_BY = 18  # spells in the pool by which COLOUR_FLOOR has faded to 0
+    FLOOR_BY = 0  # spells in the pool by which COLOUR_FLOOR has faded to 0; 0 = no fade (the card count does it)
+    COLOUR_FLOOR_CARDS = 2  # a colour with fewer spells than this counts exactly COLOUR_FLOOR (Akshin: one card means nothing)
     BETA = 0.5  # per-colour signal z
     GAMMA = 0.5  # lane prior, in SDs of the lane's card mean
     REPLACEMENT_SD = 2.0  # V when not castable: mean − 2 SD
@@ -289,19 +290,23 @@ class DraftAdvisorV2:
                 for lane in homes.get(c.get("name"), homes.get((c.get("name") or "").split(" // ")[0], [])):
                     if lane in self.commit:
                         self.commit[lane] += self.CARD_PAIRS_PULL * quality(c, self.mean, self.std)
-        if self.COLOUR_FLOOR and self.FLOOR_BY > 0:
-            # Akshin, 2026-11-07: a colour with no cards yet is not ruled out, so one good card does not decide the second
-            # colour. Each colour counts at least COLOUR_FLOOR quality points, fading to 0 by FLOOR_BY spells.
-            # ponytail: the floor is on the pool only; a candidate's STEER pull adds on top of it rather than filling it.
-            floor = self.COLOUR_FLOOR * max(0.0, 1.0 - spells / self.FLOOR_BY)
-            have = dict.fromkeys("WUBRG", 0.0)
+        if self.COLOUR_FLOOR:
+            # Akshin, 2026-11-07: one card means nothing. A colour with fewer than COLOUR_FLOOR_CARDS spells counts exactly
+            # COLOUR_FLOOR quality points (none and one card alike); with more it counts its own quality, at least the floor.
+            # FLOOR_BY > 0 fades the floor by that many spells. ponytail: pool only; a candidate's STEER pull adds on top.
+            floor = self.COLOUR_FLOOR * (max(0.0, 1.0 - spells / self.FLOOR_BY) if self.FLOOR_BY > 0 else 1.0)
+            have, count = dict.fromkeys("WUBRG", 0.0), dict.fromkeys("WUBRG", 0)
             for c in self.pool:
+                if "Land" in (c.get("types") or []):
+                    continue
                 q = quality(c, self.mean, self.std)
                 for col in c.get("colors") or ():
                     if col in have:
                         have[col] += q
+                        count[col] += 1
+            target = {col: floor if count[col] < self.COLOUR_FLOOR_CARDS else max(have[col], floor) for col in have}
             for lane in self.commit:
-                self.commit[lane] += sum(max(0.0, floor - have[col]) for col in lane if col in have)
+                self.commit[lane] += sum(target[col] - have[col] for col in lane if col in have)
         self.anchor = None
         free = self._lanes(self.commit)
         self.top_lane = max(free, key=free.get)
