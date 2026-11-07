@@ -162,6 +162,8 @@ class DraftAdvisorV2:
     DUAL_OPEN_EDGE = 8.0  # a nonbasic dual that taps for one of the lane's colours is worth at least replacement + this x (1 - progress); 0 = off. Akshin's call 2026-11-07, untested
     POWER_EARLY = 1.0  # Fit blended toward Power by this weight at pick 1, fading to 0 by POWER_EARLY_BY spells; 0 = off. Akshin's call 2026-11-07, untested
     POWER_EARLY_BY = 18
+    SPLASH_EARLY = 1.0  # a splashable off-colour card counts at least this share of its value above replacement at pick 1, fading to 0 by SPLASH_EARLY_BY spells (over the fitted off-colour play rate); Akshin's call 2026-11-07, untested
+    SPLASH_EARLY_BY = 18
     THREE_OPEN = 0.5  # share of each likely pair's chance moved to its three-colour bases at pick 1, fading to 0 by THREE_OPEN_BY spells; Akshin's call 2026-11-07, untested
     THREE_OPEN_BY = 18
     TOP_END_POINTS = 8.0  # WR points off a 6+ mana spell under the finisher line (mean + 1 SD), x the pool's top-end pace (5+ drops held / the top pair's typical count scaled to spells held, capped at 1); Akshin's call 2026-11-07, untested
@@ -590,7 +592,11 @@ class DraftAdvisorV2:
             if not self.splash_worthy(card, lane):
                 return self.replacement
             if self.OFF_PLAY and self.offcolour:
-                return self.replacement + max(0.0, self.shrunk_wr(card, lane)[0] - self.replacement) * self.off_play(card, lane)
+                play = self.off_play(card, lane)
+                if self.SPLASH_EARLY:
+                    # Akshin, 2026-11-07: a splash never starts if it is never suggested; early, a one-pip-off card is live.
+                    play = max(play, self.SPLASH_EARLY * max(0.0, 1.0 - self.spells / self.SPLASH_EARLY_BY))
+                return self.replacement + max(0.0, self.shrunk_wr(card, lane)[0] - self.replacement) * play
             if self.splash_colour(card, lane):
                 return max(self.replacement, self.shrunk_wr(card, lane)[0] * self.SPLASH)
             if self.speculative(card, lane):
