@@ -165,6 +165,8 @@ class DraftAdvisorV2:
     SPLASH_EARLY = 1.0  # a splashable off-colour card counts at least this share of its value above replacement at pick 1, fading to 0 by SPLASH_EARLY_BY spells (over the fitted off-colour play rate); Akshin's call 2026-11-07, untested
     SPLASH_EARLY_BY = 18
     COLOUR_PACE = 12.0  # cards of one colour per 23 spells in a two-colour lane; a mono-coloured card of a colour ahead of its pace loses points (Akshin: a ceiling for wanting, not a goal; 11 or 12, 12 for now; trophy decks average 14.2 / 10.1, analysis/colour_split.py)
+    COLOUR_LEAD = 1  # a colour may lead the next most held colour by this many cards before COLOUR_PACE_POINTS start
+    COLOUR_LEAD_SCALE = 4.0  # cards beyond the lead for the full COLOUR_PACE_POINTS (Akshin, 2026-11-07)
     COLOUR_PACE_THREE = "7,6,5"  # the same in a three-colour lane, for the pool's most, second and third most held colour
     COLOUR_PACE_POINTS = 4.0  # up to this many WR points, in proportion to how far ahead (100% ahead = all); 0 = off. Akshin's call 2026-11-07, untested
     FIT_WEIGHTS_LANES = True  # per-pick fitted weights averaged over the likely pairs (p >= 0.05) instead of choice.top_lane's one pair; Akshin's call 2026-11-07, untested
@@ -587,9 +589,13 @@ class DraftAdvisorV2:
         if self.COLOUR_PACE_POINTS and kind != "land" and len(cols) == 1:
             # Akshin, 2026-11-07: two main colours, not one; a colour ahead of COLOUR_PACE cards per 23 spells wants less.
             due = getattr(self, "colour_pace", {}).get(cols[0], self.COLOUR_PACE) * getattr(self, "spells", 0) / 23.0
-            have = getattr(self, "colour_count", {}).get(cols[0], 0)
-            if due > 0 and have > due:
-                a -= self.COLOUR_PACE_POINTS * min(1.0, (have - due) / due)
+            counts = getattr(self, "colour_count", {})
+            have = counts.get(cols[0], 0)
+            absolute = min(1.0, (have - due) / due) if due > 0 and have > due else 0.0
+            # Akshin: relative to the next colour too; the 8th blue card with a 2-card second colour is penalised.
+            other = max((v for k, v in counts.items() if k != cols[0]), default=0)
+            relative = min(1.0, max(0.0, have - other - self.COLOUR_LEAD) / self.COLOUR_LEAD_SCALE)
+            a -= self.COLOUR_PACE_POINTS * max(absolute, relative)
         if self.finisher_need and self.is_finisher(card):
             a += self.FINISHER_POINTS * self.finisher_need
         if self.COPIES_POINTS and self.names.get(name, 0) >= self.COPIES_MAX:
