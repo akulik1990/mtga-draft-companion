@@ -41,6 +41,44 @@ def set_ranks(ratings):
     return {n: i for i, n in enumerate(sorted(rows, key=lambda n: -rows[n]), 1)}
 
 
+def fill_from_premier(json_data, file_location):
+    """17Lands blanks a win rate (0.0) under ~500 games; a smaller format's dataset then scores a playable card as 0.
+    Fill each blank from the same set's PremierDraft All dataset, per colour key; sample counts stay the format's own."""
+    path = Path(file_location)
+    premier = path.with_name(f"{path.name.split('_')[0]}_PremierDraft_All_Data.json")
+    if path.name == premier.name or not premier.exists() or "card_ratings" not in json_data:
+        return
+    import json
+    by_name = {c.get("name"): c.get("deck_colors") or {} for c in json.loads(premier.read_text())["card_ratings"].values()}
+    filled = 0
+    for card in json_data["card_ratings"].values():
+        p = by_name.get(card.get("name")) or {}
+        for colours, row in (card.get("deck_colors") or {}).items():
+            src_row = p.get(colours) or {}
+            for f in GRADED_FIELDS:
+                if not row.get(f) and src_row.get(f):
+                    row[f] = src_row[f]
+                    filled += 1
+    log.info("dataset %s: %d blank win rates filled from %s", path.name, filled, premier.name)
+
+
+def _patch_open_file():
+    """Upstream's Dataset.open_file plus fill_from_premier on the loaded JSON (vendor is not edited)."""
+    import src.dataset as ds
+    orig_check = ds.check_file_integrity
+
+    def check(file_location):
+        result, data = orig_check(file_location)
+        if data:
+            fill_from_premier(data, file_location)
+        return result, data
+
+    ds.check_file_integrity = check
+
+
+_patch_open_file()
+
+
 class DraftSession:
     def __init__(self, scanner, config):
         self._ranks = (None, {})  # (dataset, {name: set rank by GIH WR})
