@@ -88,7 +88,7 @@ def deck_vs_top(s, lane, complete_by=30):
             if curve_slot(c):
                 curve[curve_slot(c)] += 1
     picks = len(s.get("pool") or [])
-    return {"lane": lane, "have": have, "target": {r: target[r] for r in ROLES}, "curve": curve,
+    return {"lane": lane, "have": have, "target": {r: target[r] for r in ROLES if r in target}, "curve": curve,
             "target_curve": target.get("curve") or {}, "pace": round(min(1.0, picks / complete_by), 2)}
 
 
