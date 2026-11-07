@@ -55,7 +55,7 @@
   "LAND_MAIN_DUAL": true,
   "LAND_MAIN_DUAL_EDGE": 16,
   "ORDER_WEIGHT": 1.0,
-  "CARD_PAIRS_PULL": 0.5,
+  "CARD_PAIRS_PULL": 0.0,
   "REMOVAL_SLACK_PICK": 0.0,
   "composition.TOKENS_AS_CREATURES": true,
   "deckbuilder.STRUCTURE": false,
