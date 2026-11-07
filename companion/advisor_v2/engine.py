@@ -173,10 +173,7 @@ class DraftAdvisorV2:
     COLOUR_PACE_POINTS = 2.0  # (4 -> 2, Akshin 2026-11-07: 100 random 60%+ drafts top-1 +1.0) up to this many WR points, in proportion to how far ahead (100% ahead = all); 0 = off. Akshin's call 2026-11-07, untested
     FIT_WEIGHTS_LANES = True  # per-pick fitted weights averaged over the likely pairs (p >= 0.05) instead of choice.top_lane's one pair; Akshin's call 2026-11-07, untested
     TOP_END_FINISHER_GIH = 57.5  # a 6+ drop at this All Decks GIH WR or more is exempt from TOP_END_POINTS (Akshin, 2026-11-07: Verdant Kraken 57.8 is a finisher; the deck-table line, mean + 1 SD = 60.2, stays for FINISHER_POINTS)
-    TOP_END_SCALED = False  # top-end pace against the 5+ drops due for the spells held (True, the earlier rule) or against a whole deck's count (False)
-    TOP_END_RAMP = 0.025  # > 0: the top-end discount grows from 0 by this share per pool card (Akshin: 0.025) instead of fading
-    TOP_END_PACE = False  # scale the top-end discount by the pool's top-end pace
-    TOP_END_FADE_BY = 28  # pool cards by which the top-end discount has faded to 0 (replaces picks 1-8 of every pack; Akshin 2026-11-07: dynamic by the pool); 0 = no fade
+    TOP_END_PICKS = 8  # the top-end discount applies only up to this pick of each pack (the videos: not *highly*); Akshin's call 2026-11-07
     THREE_OPEN = 0.5  # share of each likely pair's chance moved to its three-colour bases, only for a third colour that qualifies as a base (THREE_BASE_CARDS, THREE_GAP; replaces the fitted THREE_LANES rule); Akshin's call 2026-11-07, untested
     THREE_BASE_CARDS = 5  # spells a third colour needs to be a potential base (Akshin)
     THREE_GAP = 0.5  # max - min of the three colours' average card quality (in SDs; 0.5 is about 2 WR points in FRA) for a base, else a splash
@@ -342,11 +339,9 @@ class DraftAdvisorV2:
         # Top end on pace: 5+ drops held vs the typical deck of the top pair, scaled to the spells held (1 = on pace or ahead).
         target = ((((config.fitted(set_code_of(self.pool), "decks") or {}).get("pairs") or {}).get(self.top_lane) or {}).get("five_plus")
                   if set_code_of(self.pool) else None) or 3.5
-        due = target * spells / 23.0 if self.TOP_END_SCALED else target
+        due = target * spells / 23.0
         have = sum(1 for c in self.pool if "Land" not in (c.get("types") or []) and (c.get("cmc") or 0) >= 5)
-        # TOP_END_SCALED off (Akshin 2026-11-07: too aggressive early): share of a whole deck's top end already held, so an
-        # empty pool gets no discount; on: against the count due for the spells held (an empty pool counted as on pace).
-        self.top_end_pace = min(1.0, have / due) if due > 0 else (1.0 if self.TOP_END_SCALED else 0.0)
+        self.top_end_pace = min(1.0, have / due) if due > 0 else 1.0
         splashes = sum(1 for c in self.pool if "Land" not in (c.get("types") or []) and len(off_pips(c, self.top_lane)) == 1)
         self.three_colour = bool(self.THREE_COLOUR_AT) and splashes >= self.THREE_COLOUR_AT
         creatures = sum(1 for c in self.pool if "Creature" in (c.get("types") or []))
@@ -622,15 +617,11 @@ class DraftAdvisorV2:
         if self.REMOVAL_FLAT and "removal" in config.tags(card) and kind != "land":
             a += self.REMOVAL_FLAT
         if (self.TOP_END_POINTS and kind != "land" and (card.get("cmc") or 0) >= 6
-                and float(all_decks(card).get("gihwr") or 0.0) < self.TOP_END_FINISHER_GIH):
+                and float(all_decks(card).get("gihwr") or 0.0) < self.TOP_END_FINISHER_GIH
+                and getattr(self, "pick_now", 1) <= self.TOP_END_PICKS):
             # Videos (8 of 21): do not take 6-7 drops highly; lock up one or two finishers, then curve. Full while the pool's
-            # top end is on pace, less as it falls short (Akshin: by the pool, not the pick number); fades as the pool grows
-            # (Akshin: dynamic over the draft, not reset each pack).
-            if self.TOP_END_RAMP:  # Akshin: from 0, +TOP_END_RAMP of the full discount per card in the pool
-                fade = min(1.0, self.TOP_END_RAMP * len(self.pool))
-            else:
-                fade = max(0.0, 1.0 - len(self.pool) / self.TOP_END_FADE_BY) if self.TOP_END_FADE_BY else 1.0
-            a -= self.TOP_END_POINTS * (getattr(self, "top_end_pace", 1.0) if self.TOP_END_PACE else 1.0) * fade
+            # top end is on pace, less as it falls short (Akshin: by the pool, not the pick number).
+            a -= self.TOP_END_POINTS * getattr(self, "top_end_pace", 1.0)
         cols = [c for c in (card.get("colors") or []) if c in "WUBRG"]
         if self.COLOUR_PACE_POINTS and kind != "land" and len(cols) == 1:
             # Akshin, 2026-11-07: two main colours, not one; a colour ahead of COLOUR_PACE cards per 23 spells wants less.
