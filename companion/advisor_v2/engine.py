@@ -171,6 +171,7 @@ class DraftAdvisorV2:
     COLOUR_PACE_THREE = "7,6,5"  # the same in a three-colour lane, for the pool's most, second and third most held colour
     COLOUR_PACE_POINTS = 4.0  # up to this many WR points, in proportion to how far ahead (100% ahead = all); 0 = off. Akshin's call 2026-11-07, untested
     FIT_WEIGHTS_LANES = True  # per-pick fitted weights averaged over the likely pairs (p >= 0.05) instead of choice.top_lane's one pair; Akshin's call 2026-11-07, untested
+    TOP_END_FINISHER_GIH = 57.5  # a 6+ drop at this All Decks GIH WR or more is exempt from TOP_END_POINTS (Akshin, 2026-11-07: Verdant Kraken 57.8 is a finisher; the deck-table line, mean + 1 SD = 60.2, stays for FINISHER_POINTS)
     TOP_END_PICKS = 8  # the top-end discount applies only up to this pick of each pack (the videos: not *highly*); Akshin's call 2026-11-07
     THREE_OPEN = 0.5  # share of each likely pair's chance moved to its three-colour bases, only for a third colour that qualifies as a base (THREE_BASE_CARDS, THREE_GAP; replaces the fitted THREE_LANES rule); Akshin's call 2026-11-07, untested
     THREE_BASE_CARDS = 5  # spells a third colour needs to be a potential base (Akshin)
@@ -608,7 +609,8 @@ class DraftAdvisorV2:
             a += self.REMOVAL_POINTS * self.removal_need
         if self.REMOVAL_FLAT and "removal" in config.tags(card) and kind != "land":
             a += self.REMOVAL_FLAT
-        if (self.TOP_END_POINTS and kind != "land" and (card.get("cmc") or 0) >= 6 and not self.is_finisher(card)
+        if (self.TOP_END_POINTS and kind != "land" and (card.get("cmc") or 0) >= 6
+                and float(all_decks(card).get("gihwr") or 0.0) < self.TOP_END_FINISHER_GIH
                 and getattr(self, "pick_now", 1) <= self.TOP_END_PICKS):
             # Videos (8 of 21): do not take 6-7 drops highly; lock up one or two finishers, then curve. Full while the pool's
             # top end is on pace, less as it falls short (Akshin: by the pool, not the pick number).
