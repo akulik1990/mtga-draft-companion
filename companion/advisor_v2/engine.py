@@ -187,7 +187,7 @@ class DraftAdvisorV2:
     BRANCH_DEFAULT = 3.0  # GIH WR points; used for stages with no fitted threshold (fitted.json, branch)
     ORDER_FADE_BY = 9  # pick in the pack by which the pick-order prior has faded to 0; 0 = no fade. 9 by Akshin's call 2026-11-07 (prefs are fitted on P1 picks 1-5; gone by the wheel), untested
     PRIOR_CAP = 6.0  # the pick-order prior is clamped to +/- this many WR points (commons, uncommons); 0 = no cap. Akshin 2026-11-07: 3 cost 2 top-1 points, mostly good commons
-    PRIOR_CAP_RARE = 3.0  # the same for rares and mythics (Akshin: top players over-take shiny rares)
+    PRIOR_CAP_RARE = 0.0  # cap for rares and mythics; 0 = uncapped (Akshin 2026-11-07: the cap is for commons and uncommons only)
     PREF_WEIGHT = 4.0  # WR points per SD of top drafters' learnt preference (tools/learn_prefs.py); 0 = off
     PREF_ON_WEIGHT = 4.0  # what the app's switch sets PREF_WEIGHT to; the switch also swaps the pick-order prior out
     ORDER_OFF_WEIGHT = 2.0  # pick-order prior the app's switch restores when learnt preferences are switched off
@@ -856,7 +856,7 @@ class DraftAdvisorV2:
             out += self.PREF_WEIGHT * pref
         cap = self.PRIOR_CAP_RARE if rarity in ("rare", "mythic") else self.PRIOR_CAP
         if cap:
-            out = max(-cap, min(cap, out))  # rares tighter: top players over-take shiny rares (Kraken), not good commons
+            out = max(-cap, min(cap, out))  # rares and mythics uncapped by default (PRIOR_CAP_RARE 0)
         return out * fade
 
     def power(self, card, pick):
