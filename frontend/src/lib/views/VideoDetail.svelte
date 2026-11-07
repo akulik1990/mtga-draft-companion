@@ -31,10 +31,16 @@ import { api, IDEA_STATUSES, type EngineDeck, type Idea, type IdeaStatus, type V
 	let now = $state(-1); // current video time in seconds, -1 until the player reports one
 	let timer: ReturnType<typeof setInterval> | undefined;
 	const tick = () => { const t = player?.getCurrentTime?.(); if (typeof t === 'number') now = t; };
+	let apiReady = $state(!!(window as any).YT?.Player);
+	let attached: HTMLIFrameElement | undefined;
+	function detach() { clearInterval(timer); try { player?.destroy?.(); } catch { /* iframe already gone */ } player = null; attached = undefined; }
 	function attach() {
-		if (!frame || !yt()?.Player) return;
+		if (!frame || !yt()?.Player || attached === frame) return;
+		if (player) detach();
+		attached = frame;
 		player = new (yt().Player)(frame, {
 			events: {
+				onReady: () => { tick(); if (player?.getPlayerState?.() === 1) { clearInterval(timer); timer = setInterval(tick, 500); } },
 				// state 1 = playing: poll every 500 ms; any other state: stop, one last read so seeks while paused show
 				onStateChange: (ev: { data: number }) => {
 					clearInterval(timer);
@@ -44,7 +50,9 @@ import { api, IDEA_STATUSES, type EngineDeck, type Idea, type IdeaStatus, type V
 			},
 		});
 	}
-	onDestroy(() => clearInterval(timer));
+	// the iframe only exists once data has loaded, so attach reactively (api ready AND frame present)
+	$effect(() => { if (frame && apiReady) attach(); });
+	onDestroy(detach);
 	function seek(t: string | number) {
 		const s = secs(t);
 		now = s;
@@ -70,10 +78,9 @@ import { api, IDEA_STATUSES, type EngineDeck, type Idea, type IdeaStatus, type V
 		try { showPacks = localStorage.getItem('videoPacks') === '1'; } catch { /* default closed */ }
 		try { showTl = localStorage.getItem('videoTimeline') !== '0'; } catch { /* default shown */ }
 		try { showTbl = localStorage.getItem('videoPicksTable') === '1'; } catch { /* default closed */ }
-		if (yt()?.Player) attach();
-		else {
+		if (!apiReady) {
 			const prev = (window as any).onYouTubeIframeAPIReady;
-			(window as any).onYouTubeIframeAPIReady = () => { prev?.(); attach(); };
+			(window as any).onYouTubeIframeAPIReady = () => { prev?.(); apiReady = true; };
 			const s = document.createElement('script');
 			s.src = 'https://www.youtube.com/iframe_api';
 			document.head.appendChild(s);
