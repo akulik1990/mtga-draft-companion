@@ -171,9 +171,9 @@ class DraftAdvisorV2:
     COLOUR_PACE_POINTS = 4.0  # up to this many WR points, in proportion to how far ahead (100% ahead = all); 0 = off. Akshin's call 2026-11-07, untested
     FIT_WEIGHTS_LANES = True  # per-pick fitted weights averaged over the likely pairs (p >= 0.05) instead of choice.top_lane's one pair; Akshin's call 2026-11-07, untested
     TOP_END_PICKS = 8  # the top-end discount applies only up to this pick of each pack (the videos: not *highly*); Akshin's call 2026-11-07
-    THREE_OPEN = 0.5  # share of each likely pair's chance moved to its three-colour bases, only for a third colour with THREE_GOOD good cards (replaces the fitted THREE_LANES rule); Akshin's call 2026-11-07, untested
-    THREE_GOOD = 3
-    THREE_GOOD_Q = 1.5  # "good": quality >= this (1 = format mean GIH WR, 1.5 = half an SD above, about 58 in FRA)
+    THREE_OPEN = 0.5  # share of each likely pair's chance moved to its three-colour bases, only for a third colour that qualifies as a base (THREE_BASE_CARDS, THREE_GAP; replaces the fitted THREE_LANES rule); Akshin's call 2026-11-07, untested
+    THREE_BASE_CARDS = 5  # spells a third colour needs to be a potential base (Akshin)
+    THREE_GAP = 0.5  # max - min of the three colours' average card quality (in SDs; 0.5 is about 2 WR points in FRA) for a base, else a splash
     TOP_END_POINTS = 8.0  # WR points off a 6+ mana spell under the finisher line (mean + 1 SD), x the pool's top-end pace (5+ drops held / the top pair's typical count scaled to spells held, capped at 1); Akshin's call 2026-11-07, untested
     COLOURLESS_FADE_BY = 8  # COLOURLESS_EARLY fades linearly from pick 1 to 0 at this pick of pack 1; 0 = no fade (full all pack 1). On by Akshin's call 2026-11-07; paired test (data/Temp/sim/floor1): top-1 -0.47 (p<0.001), top-3 -0.25 (p<0.001), mock deck WR -0.32 (p 0.18); kept by his decision
     PLAY_RATE_POINTS = 0.0  # WR points off a non-land card in proportion to how far its play rate falls below PLAY_RATE_FROM (all of them at 0%); 0 = off
@@ -400,15 +400,19 @@ class DraftAdvisorV2:
         """Move each likely pair's chance of ending three-colour (fitted from top drafters, pack 2 on) to that lane."""
         set_code = set_code_of(self.pool)
         if self.THREE_OPEN:
-            # Akshin, 2026-11-07: draft two colours + a splash; a third base colour only with THREE_GOOD good cards in it
-            # (quality >= THREE_GOOD_Q). Each likely pair passes THREE_OPEN of its chance, evenly, to its qualifying triples.
-            good = {x: sum(1 for c in self.pool if "Land" not in (c.get("types") or []) and x in (c.get("colors") or [])
-                           and quality(c, self.mean, self.std) >= self.THREE_GOOD_Q) for x in "WUBRG"}
+            # Akshin, 2026-11-07: draft two colours + a splash. A third colour is a base when it has THREE_BASE_CARDS spells and
+            # the three colours' average card quality sits within THREE_GAP (max - min); otherwise it stays a splash.
+            # Each likely pair passes THREE_OPEN of its chance, evenly, to its qualifying triples.
+            qs = {x: [quality(c, self.mean, self.std) for c in self.pool
+                      if "Land" not in (c.get("types") or []) and x in (c.get("colors") or [])] for x in "WUBRG"}
+            avg = {x: sum(v) / len(v) for x, v in qs.items() if v}
             out = dict(p)
             for lane, v in p.items():
                 if len(lane) != 2 or v < self.THREE_MIN_P:
                     continue
-                thirds = [x for x in "WUBRG" if x not in lane and good[x] >= self.THREE_GOOD]
+                thirds = [x for x in "WUBRG" if x not in lane and len(qs[x]) >= self.THREE_BASE_CARDS
+                          and all(y in avg for y in lane)
+                          and max(avg[y] for y in lane + x) - min(avg[y] for y in lane + x) <= self.THREE_GAP]
                 if not thirds:
                     continue
                 out[lane] -= v * self.THREE_OPEN
@@ -570,10 +574,10 @@ class DraftAdvisorV2:
             if "Land" in (c.get("types") or []):
                 continue
             q = quality(c, self.mean, self.std)
-            if castable(c, lane):
-                deck += q
-            elif x in (c.get("colors") or []):
+            if x in (c.get("colors") or []):
                 splash += q
+            else:
+                deck += q  # every other spell, not only the pair's (Akshin: each green card against the other ten)
         return min(self.SPLASH_POOL_CAP, self.SPLASH_POOL_K * splash / deck) if deck > 0 else self.SPLASH_POOL_CAP
 
     def adjust(self, card, lane):
