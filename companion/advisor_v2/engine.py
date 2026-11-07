@@ -161,7 +161,7 @@ class DraftAdvisorV2:
     COLOURLESS_EARLY = 0.0  # WR points off colourless cards (artifacts, colourless lands) in pack 1; 0 = off
     DUAL_OPEN_EDGE = 8.0  # a nonbasic dual that taps for one of the lane's colours is worth at least replacement + this x (1 - progress); 0 = off. Akshin's call 2026-11-07, untested
     POWER_EARLY = 1.0  # Fit blended toward Power by this weight at pick 1, fading to 0 by POWER_EARLY_BY spells; 0 = off. Akshin's call 2026-11-07, untested
-    POWER_EARLY_BY = 18
+    POWER_EARLY_BY = 4  # cards in the second-most held colour by which the Power blend has faded (Akshin: a base from 4 cards)
     SPLASH_EARLY = 1.0  # a splashable off-colour card counts at least this share of its value above replacement at pick 1, fading to 0 by SPLASH_EARLY_BY spells (over the fitted off-colour play rate); Akshin's call 2026-11-07, untested
     SPLASH_EARLY_BY = 18
     COLOUR_PACE = 12.0  # cards of one colour per 23 spells in a two-colour lane; a mono-coloured card of a colour ahead of its pace loses points (Akshin: a ceiling for wanting, not a goal; 11 or 12, 12 for now; trophy decks average 14.2 / 10.1, analysis/colour_split.py)
@@ -969,8 +969,10 @@ class DraftAdvisorV2:
         fit = {r.card_name: self.fit(by_name[r.card_name], pick) - self.WHEEL_PENALTY * wheel[r.card_name] for r in playable}
         spells = sum(1 for c in self.pool if "Land" not in (c.get("types") or []))
         if self.POWER_EARLY and self.POWER_EARLY_BY > 0:
-            # Akshin, 2026-11-07: early on, raw strength counts for more than the pool's colours; fades with the pool.
-            w = self.POWER_EARLY * max(0.0, 1.0 - spells / self.POWER_EARLY_BY)
+            # Akshin, 2026-11-07: raw strength counts while the second colour is unformed (Fit dilutes every non-main card
+            # across the open pairs and favours main-colour filler); fades as the second colour reaches POWER_EARLY_BY cards.
+            second = sorted(self.colour_count.values(), reverse=True)[1]
+            w = self.POWER_EARLY * max(0.0, 1.0 - second / self.POWER_EARLY_BY)
             fit = {n: (1.0 - w) * fit[n] + w * power[n] for n in fit}
         p_top = max(power, key=power.get)
         c_top = max(fit, key=fit.get)
