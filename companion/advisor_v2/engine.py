@@ -168,6 +168,7 @@ class DraftAdvisorV2:
     COLOUR_PACE_THREE = "7,6,5"  # the same in a three-colour lane, for the pool's most, second and third most held colour
     COLOUR_PACE_POINTS = 4.0  # up to this many WR points, in proportion to how far ahead (100% ahead = all); 0 = off. Akshin's call 2026-11-07, untested
     FIT_WEIGHTS_LANES = True  # per-pick fitted weights averaged over the likely pairs (p >= 0.05) instead of choice.top_lane's one pair; Akshin's call 2026-11-07, untested
+    TOP_END_PICKS = 8  # the top-end discount applies only up to this pick of each pack (the videos: not *highly*); Akshin's call 2026-11-07
     THREE_OPEN = 0.5  # share of each likely pair's chance moved to its three-colour bases at pick 1, fading to 0 by THREE_OPEN_BY spells; Akshin's call 2026-11-07, untested
     THREE_OPEN_BY = 18
     TOP_END_POINTS = 8.0  # WR points off a 6+ mana spell under the finisher line (mean + 1 SD), x the pool's top-end pace (5+ drops held / the top pair's typical count scaled to spells held, capped at 1); Akshin's call 2026-11-07, untested
@@ -577,7 +578,8 @@ class DraftAdvisorV2:
             a += self.REMOVAL_POINTS * self.removal_need
         if self.REMOVAL_FLAT and "removal" in config.tags(card) and kind != "land":
             a += self.REMOVAL_FLAT
-        if self.TOP_END_POINTS and kind != "land" and (card.get("cmc") or 0) >= 6 and not self.is_finisher(card):
+        if (self.TOP_END_POINTS and kind != "land" and (card.get("cmc") or 0) >= 6 and not self.is_finisher(card)
+                and getattr(self, "pick_now", 1) <= self.TOP_END_PICKS):
             # Videos (8 of 21): do not take 6-7 drops highly; lock up one or two finishers, then curve. Full while the pool's
             # top end is on pace, less as it falls short (Akshin: by the pool, not the pick number).
             a -= self.TOP_END_POINTS * getattr(self, "top_end_pace", 1.0)
