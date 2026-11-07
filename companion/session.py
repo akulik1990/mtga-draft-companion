@@ -136,6 +136,9 @@ class DraftSession:
             event_string = s.event_string
             cards_per_pick = s.cards_per_pick
 
+        # Upstream's restore after a restart re-appends picks it rescans from the log (P1P1 and the current pick each time),
+        # which multiplies those packs in the signals; one entry per (pack, pick), the latest.
+        history = list({(e["Pack"], e["Pick"]): e for e in history}.values())
         seen_packs = [(e["Pack"], e["Pick"], self.scanner.set_data.get_data_by_id(e["Cards"])) for e in history]
         signals = self._signals(metrics, seen_packs)
         deck_filter = filter_options(taken, self.config.settings.deck_filter, metrics, self.config)

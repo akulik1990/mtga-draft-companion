@@ -140,7 +140,7 @@ class DraftAdvisorV2:
     ALPHA_LATE = 1.5  # pool commitment weight once the pool has COMMIT_BY spells
     COLOUR_FLOOR = 2.5  # each colour counts at least this many quality points in the lane commitment (1 = one average card); 0 = off. On by Akshin's call 2026-11-07; paired test (data/Temp/sim/floor1): top-1 -0.47 (p<0.001), top-3 -0.25 (p<0.001), mock deck WR -0.32 (p 0.18); kept by his decision
     FLOOR_BY = 0  # spells in the pool by which COLOUR_FLOOR has faded to 0; 0 = no fade (the card count does it)
-    COLOUR_FLOOR_CARDS = 2  # a colour with fewer spells than this counts exactly COLOUR_FLOOR (Akshin: one card means nothing)
+    COLOUR_FLOOR_CARDS = 4  # a colour with fewer spells than this counts exactly COLOUR_FLOOR (Akshin: 1-3 cards are a splash at best, not a base)
     BETA = 0.5  # per-colour signal z
     GAMMA = 0.5  # lane prior, in SDs of the lane's card mean
     REPLACEMENT_SD = 2.0  # V when not castable: mean − 2 SD
