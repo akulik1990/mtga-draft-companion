@@ -171,8 +171,9 @@ class DraftAdvisorV2:
     COLOUR_PACE_POINTS = 4.0  # up to this many WR points, in proportion to how far ahead (100% ahead = all); 0 = off. Akshin's call 2026-11-07, untested
     FIT_WEIGHTS_LANES = True  # per-pick fitted weights averaged over the likely pairs (p >= 0.05) instead of choice.top_lane's one pair; Akshin's call 2026-11-07, untested
     TOP_END_PICKS = 8  # the top-end discount applies only up to this pick of each pack (the videos: not *highly*); Akshin's call 2026-11-07
-    THREE_OPEN = 0.5  # share of each likely pair's chance moved to its three-colour bases at pick 1, fading to 0 by THREE_OPEN_BY spells; Akshin's call 2026-11-07, untested
-    THREE_OPEN_BY = 18
+    THREE_OPEN = 0.5  # share of each likely pair's chance moved to its three-colour bases, only for a third colour with THREE_GOOD good cards (replaces the fitted THREE_LANES rule); Akshin's call 2026-11-07, untested
+    THREE_GOOD = 3
+    THREE_GOOD_Q = 1.5  # "good": quality >= this (1 = format mean GIH WR, 1.5 = half an SD above, about 58 in FRA)
     TOP_END_POINTS = 8.0  # WR points off a 6+ mana spell under the finisher line (mean + 1 SD), x the pool's top-end pace (5+ drops held / the top pair's typical count scaled to spells held, capped at 1); Akshin's call 2026-11-07, untested
     COLOURLESS_FADE_BY = 8  # COLOURLESS_EARLY fades linearly from pick 1 to 0 at this pick of pack 1; 0 = no fade (full all pack 1). On by Akshin's call 2026-11-07; paired test (data/Temp/sim/floor1): top-1 -0.47 (p<0.001), top-3 -0.25 (p<0.001), mock deck WR -0.32 (p 0.18); kept by his decision
     PLAY_RATE_POINTS = 0.0  # WR points off a non-land card in proportion to how far its play rate falls below PLAY_RATE_FROM (all of them at 0%); 0 = off
@@ -398,20 +399,22 @@ class DraftAdvisorV2:
     def _three(self, p):
         """Move each likely pair's chance of ending three-colour (fitted from top drafters, pack 2 on) to that lane."""
         set_code = set_code_of(self.pool)
-        spells = sum(1 for c in self.pool if "Land" not in (c.get("types") or []))
-        if self.THREE_OPEN and spells < self.THREE_OPEN_BY:
-            # Akshin, 2026-11-07: three-colour bases are live while the colours are open. Each likely pair passes a share
-            # (fading by THREE_OPEN_BY spells) to its three triples, evenly: UG feeds WUG, UBG, URG.
-            share_of = self.THREE_OPEN * (1.0 - spells / self.THREE_OPEN_BY)
+        if self.THREE_OPEN:
+            # Akshin, 2026-11-07: draft two colours + a splash; a third base colour only with THREE_GOOD good cards in it
+            # (quality >= THREE_GOOD_Q). Each likely pair passes THREE_OPEN of its chance, evenly, to its qualifying triples.
+            good = {x: sum(1 for c in self.pool if "Land" not in (c.get("types") or []) and x in (c.get("colors") or [])
+                           and quality(c, self.mean, self.std) >= self.THREE_GOOD_Q) for x in "WUBRG"}
             out = dict(p)
             for lane, v in p.items():
                 if len(lane) != 2 or v < self.THREE_MIN_P:
                     continue
-                others = [x for x in "WUBRG" if x not in lane]
-                out[lane] -= v * share_of
-                for x in others:
+                thirds = [x for x in "WUBRG" if x not in lane and good[x] >= self.THREE_GOOD]
+                if not thirds:
+                    continue
+                out[lane] -= v * self.THREE_OPEN
+                for x in thirds:
                     three = "".join(sorted(lane + x, key="WUBRG".index))
-                    out[three] = out.get(three, 0.0) + v * share_of / len(others)
+                    out[three] = out.get(three, 0.0) + v * self.THREE_OPEN / len(thirds)
             return out
         rule = config.fitted(set_code, "three_draft") if self.THREE_LANES and set_code and len(self.pool) >= 14 else None
         if not rule:
