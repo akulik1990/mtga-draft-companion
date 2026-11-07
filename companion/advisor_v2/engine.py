@@ -174,7 +174,8 @@ class DraftAdvisorV2:
     BRANCH_EARLY = 0.0  # WR points added to the switch bar at pack 1 picks 2..BRANCH_EARLY_TO (FRA train: early switches matched top drafters 30.9% vs 55.4% otherwise)
     BRANCH_EARLY_TO = 7
     BRANCH_DEFAULT = 3.0  # GIH WR points; used for stages with no fitted threshold (fitted.json, branch)
-    ORDER_FADE_BY = 0  # pick in the pack by which the pick-order prior has faded to 0; 0 = no fade
+    ORDER_FADE_BY = 9  # pick in the pack by which the pick-order prior has faded to 0; 0 = no fade. 9 by Akshin's call 2026-11-07 (prefs are fitted on P1 picks 1-5; gone by the wheel), untested
+    PRIOR_CAP = 3.0  # the pick-order prior is clamped to +/- this many WR points; 0 = no cap. Akshin's call 2026-11-07, untested
     PREF_WEIGHT = 4.0  # WR points per SD of top drafters' learnt preference (tools/learn_prefs.py); 0 = off
     PREF_ON_WEIGHT = 4.0  # what the app's switch sets PREF_WEIGHT to; the switch also swaps the pick-order prior out
     ORDER_OFF_WEIGHT = 2.0  # pick-order prior the app's switch restores when learnt preferences are switched off
@@ -780,6 +781,8 @@ class DraftAdvisorV2:
             if self.LAND_PREF and name in self.land_names:
                 pref = max(0.0, pref) if self.LAND_PREF_POS else 0.0
             out += self.PREF_WEIGHT * pref
+        if self.PRIOR_CAP:
+            out = max(-self.PRIOR_CAP, min(self.PRIOR_CAP, out))  # breaks ties, cannot override a real win-rate gap
         return out * fade
 
     def power(self, card, pick):
