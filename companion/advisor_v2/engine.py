@@ -164,6 +164,9 @@ class DraftAdvisorV2:
     POWER_EARLY_BY = 18
     SPLASH_EARLY = 1.0  # a splashable off-colour card counts at least this share of its value above replacement at pick 1, fading to 0 by SPLASH_EARLY_BY spells (over the fitted off-colour play rate); Akshin's call 2026-11-07, untested
     SPLASH_EARLY_BY = 18
+    COLOUR_PACE = 12.0  # cards of one colour per 23 spells in a two-main-colour deck; a mono-coloured card of a colour ahead of that pace loses points
+    COLOUR_PACE_POINTS = 4.0  # up to this many WR points, in proportion to how far ahead (100% ahead = all); 0 = off. Akshin's call 2026-11-07, untested
+    FIT_WEIGHTS_LANES = True  # per-pick fitted weights averaged over the likely pairs (p >= 0.05) instead of choice.top_lane's one pair; Akshin's call 2026-11-07, untested
     THREE_OPEN = 0.5  # share of each likely pair's chance moved to its three-colour bases at pick 1, fading to 0 by THREE_OPEN_BY spells; Akshin's call 2026-11-07, untested
     THREE_OPEN_BY = 18
     TOP_END_POINTS = 8.0  # WR points off a 6+ mana spell under the finisher line (mean + 1 SD), x the pool's top-end pace (5+ drops held / the top pair's typical count scaled to spells held, capped at 1); Akshin's call 2026-11-07, untested
@@ -285,6 +288,8 @@ class DraftAdvisorV2:
             self.names[c.get("name")] = self.names.get(c.get("name"), 0) + 1
         spells = sum(1 for c in self.pool if "Land" not in (c.get("types") or []))
         self.spells = spells  # set early: value() reads it (TOP_END_POINTS) while the lanes are built
+        self.colour_count = {x: sum(1 for c in self.pool if "Land" not in (c.get("types") or []) and x in (c.get("colors") or []))
+                             for x in "WUBRG"}
         progress = min(1.0, spells / self.COMMIT_BY) if self.COMMIT_BY > 0 else 0.0
         self.progress = progress
         self.steer = self.STEER * (1.0 - progress)  # the candidate's pull fades as the pool becomes a deck
@@ -559,6 +564,13 @@ class DraftAdvisorV2:
             # Videos (8 of 21): do not take 6-7 drops highly; lock up one or two finishers, then curve. Full while the pool's
             # top end is on pace, less as it falls short (Akshin: by the pool, not the pick number).
             a -= self.TOP_END_POINTS * getattr(self, "top_end_pace", 1.0)
+        cols = [c for c in (card.get("colors") or []) if c in "WUBRG"]
+        if self.COLOUR_PACE_POINTS and kind != "land" and len(cols) == 1:
+            # Akshin, 2026-11-07: two main colours, not one; a colour ahead of COLOUR_PACE cards per 23 spells wants less.
+            due = self.COLOUR_PACE * getattr(self, "spells", 0) / 23.0
+            have = getattr(self, "colour_count", {}).get(cols[0], 0)
+            if due > 0 and have > due:
+                a -= self.COLOUR_PACE_POINTS * min(1.0, (have - due) / due)
         if self.finisher_need and self.is_finisher(card):
             a += self.FINISHER_POINTS * self.finisher_need
         if self.COPIES_POINTS and self.names.get(name, 0) >= self.COPIES_MAX:
@@ -840,17 +852,21 @@ class DraftAdvisorV2:
         w = picks[key]
         if w[1] <= 0.02:
             return 0.0
-        x = self.blend_parts(card, self.set_code_now, pick)
-        out = sum(wi * xi for wi, xi in zip(w[self.FIT_PARTS_FROM:], x)) / w[1]
+        # Akshin, 2026-11-07: over the engine's own likely pairs, not choice.top_lane's single pair (which kept UR while the
+        # lanes had moved on, so a W/B card got -4 and a blue one +4).
+        lanes = [(lane, p) for lane, p in self.lanes.items() if len(lane) == 2 and p >= 0.05] if self.FIT_WEIGHTS_LANES else [(None, 1.0)]
+        total = sum(p for _, p in lanes) or 1.0
+        out = sum(p * sum(wi * xi for wi, xi in zip(w[self.FIT_PARTS_FROM:], self.blend_parts(card, self.set_code_now, pick, lane)))
+                  for lane, p in lanes) / total / w[1]
         return max(-self.FIT_WEIGHTS_CAP, min(self.FIT_WEIGHTS_CAP, out))
 
-    def blend_parts(self, card, set_code, pick=0):
-        """Fit's parts among the blend inputs (choice_model.CHART from Themes on)."""
+    def blend_parts(self, card, set_code, pick=0, lane=None):
+        """Fit's parts among the blend inputs (choice_model.CHART from Themes on), for lane (default: choice.top_lane)."""
         from companion.advisor_v2 import choice, needs
 
         tags = choice.theme_tags(set_code)
         targets = (config.fitted(set_code, "decks") or {}).get("pairs") or {}
-        lane = choice.top_lane(self.pool)
+        lane = lane or choice.top_lane(self.pool)
         x = choice.features(card, self.pool, lane, list(tags), tags, targets, 0.0, 0.0)
         wr = needs.set_wr(set_code)
         passed = needs.passed(card, self.pool, self.seen_packs, self.pack_now, pick, *wr) if self.FIT_PASSED else 0.0
