@@ -1,0 +1,1022 @@
+{
+ "id": "GRW7THxCZuk",
+ "url": "https://youtu.be/GRW7THxCZuk",
+ "title": "The $2000 Draft Starts Now! | Arena Limited Championship Qualifier Draft 2 | Reality Fracture",
+ "player": "Paul Cheon",
+ "set": "FRA",
+ "event": "Arena Limited Championship Qualifier (draft 2): live Arena pod with a pick timer, drafting for gems and, with five wins, $1,000 and qualification (6-1 or better $2,000); match format (best of one or three) not stated before the cut-off",
+ "dataset": "FRA_PremierDraft_All_Data.json",
+ "recorded": null,
+ "source": "frames read from data/videos/raw/GRW7THxCZuk (pack 14 cards at P1p1; pool-right layout only at P1p2, pool below from P1p3; pick start times from OCR (tesseract) of the Pack|Pick banner at 2 s and 1 s steps, P1p2 and P1p3 from the pool-right banner); takes from the transcript, the pool counter and the pick tag, checked against the final deck screen at 940 s; hover popups hid some cards; transcript from YouTube auto captions, card names corrected; cut-off 945 s",
+ "colour_path": [
+  {
+   "after": "P1p1",
+   "main": "open (red first pick)",
+   "quote": "noting this doesn't necessarily lock us into red"
+  },
+  {
+   "after": "P1p4",
+   "main": "green ramp, graveyard value",
+   "quote": "We could still end up in like Sultai good stuff and abandon the red"
+  },
+  {
+   "after": "P2p3",
+   "main": "green-black self-mill, three or four colours",
+   "quote": "we might be delving into four colors here, folks"
+  },
+  {
+   "after": "P2p6",
+   "main": "green-black base, splash blue and red",
+   "quote": "Green black base splashing blue and red"
+  },
+  {
+   "after": "P3p10",
+   "main": "full Sultai (green-black-blue)",
+   "quote": "I think we're just going to go full Sultai and just play a lot more Islands."
+  },
+  {
+   "after": "deck",
+   "main": "green-black-blue ramp, red splash for Aerid Konstrari",
+   "quote": "this is what we drafted, so this is, you know, what we're going to do."
+  }
+ ],
+ "picks": [
+  {
+   "pack": 1,
+   "pick": 1,
+   "time": "1:57-2:36",
+   "pack_cards": [
+    "Samut, Hazoret's Champion",
+    "Hall of Echoes",
+    "Danitha, Sword of Hope",
+    "Violent Echoes",
+    "Edgar, Moonlit Sovereign",
+    "Edgar, Ancient Bloodlord",
+    "Vigorbloom Vanguard",
+    "Academic Ascent",
+    "Predictive Preparations",
+    "Skilled Battlecarver",
+    "Theorix Metamage",
+    "Ferocity of the Hunt",
+    "Afterthought Sentry",
+    "Plains"
+   ],
+   "taken": "Violent Echoes",
+   "reasoning": "Violent Echoes: kills something and draws a card for four mana, and nothing else in the pack comes close; Samut and Vigorbloom Vanguard are the other options. It does not lock him into red.",
+   "considered": {
+    "Samut, Hazoret's Champion": "fine rare, not something he takes here",
+    "Vigorbloom Vanguard": "other consideration"
+   },
+   "plan": "Open; red not locked.",
+   "quotes": [
+    "Violent Echoes is probably the pick here",
+    "Most of the time, you're going to kill something and then draw a card"
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 2,
+   "time": "2:36-3:09",
+   "pack_cards": [
+    "Verdant Kraken",
+    "Vindictive Triumph",
+    "Yuriko, Blade of the Mighty",
+    "Yuriko, Hope from the Shadows",
+    "Mabel, Bitter Recluse",
+    "Restore with Empathy",
+    "Grim Repriser",
+    "Memory Trap",
+    "Void Extrapolator",
+    "Hallway Heckler",
+    "No Admittance",
+    "Vinelasher Adept",
+    "Island"
+   ],
+   "taken": "Verdant Kraken",
+   "reasoning": "Verdant Kraken: a legitimate bomb if you can ramp into it, so he builds towards it; he does not want to take Memory Trap after Violent Echoes. No Admittance would stay the course with red removal.",
+   "considered": {
+    "Memory Trap": "does not want to go Memory Trap after Violent Echoes",
+    "No Admittance": "very solid red removal, the other consideration"
+   },
+   "plan": "Ramp deck around Kraken.",
+   "quotes": [
+    "This card is a legitimate bomb. You just have to build around it.",
+    "I'm not going to have somebody just pass me a Verdant Kraken and not try to get there with this card."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 3,
+   "time": "3:09-3:52",
+   "pack_cards": [
+    "Vraska's Final Mercy",
+    "Tomik, Orzhov Lawmage",
+    "Tomik, Izzet Sparkmage",
+    "Restore with Empathy",
+    "Way of the Wildspeaker",
+    "Protege's Awakening",
+    "Void Extrapolator",
+    "Skilled Battlecarver",
+    "Compel Brutality",
+    "Ferocity of the Hunt",
+    "Medic's Kitesail",
+    "Swamp"
+   ],
+   "taken": "Protege's Awakening",
+   "reasoning": "Protege's Awakening over Way of the Wildspeaker: the better card and a perfectly fine splash; Vraska's Final Mercy and Compelled Brutality are not options for him.",
+   "considered": {
+    "Way of the Wildspeaker": "another random expensive big thing",
+    "Vraska's Final Mercy": "not the biggest fan",
+    "Compel Brutality": "not even considering it"
+   },
+   "plan": "",
+   "quotes": [
+    "Protege's Awakening is a better card",
+    "it's also a perfectly fine splashable"
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 4,
+   "time": "3:52-4:20",
+   "pack_cards": [
+    "Loot, the Anomaly",
+    "Gallia, the Merrymaker",
+    "Loot, the Nexus",
+    "Primal Witchstalker",
+    "Campus Crier",
+    "Predictive Preparations",
+    "Sphinx's Approach",
+    "Solve for Disappointment",
+    "Wrath of the Bloodmane",
+    "Sureshot Sower",
+    "Mountain"
+   ],
+   "taken": "Primal Witchstalker",
+   "reasoning": "Primal Witchstalker is the best card in the pack; he takes the best card one pick at a time and may end Sultai and drop red. Wrath of the Bloodmane is a solid removal spell he passes.",
+   "considered": {
+    "Wrath of the Bloodmane": "quite a solid removal spell"
+   },
+   "plan": "Best card each pick; could be Sultai good stuff and abandon red.",
+   "quotes": [
+    "We're just taking it one pick at a time. I'm just taking the best card.",
+    "We could still end up in like Sultai good stuff and abandon the red"
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 5,
+   "time": "4:20-4:50",
+   "pack_cards": [
+    "Way of the Cryomancer",
+    "Yargle, Glutton of Urborg",
+    "Way of the Pyromancer",
+    "Warrior's Blades",
+    "Archive Arbiter",
+    "Sphinx's Approach",
+    "Something Worth Saving",
+    "Blessed Ghoul",
+    "Whiplash Wordsmith",
+    "Forest"
+   ],
+   "taken": "Something Worth Saving",
+   "reasoning": "Something Worth Saving over Archive Arbiter: with Witchstalker and this he is building towards a graveyard value strategy; he already has Kraken as a top end and is more likely to find large creatures later than value cards.",
+   "considered": {
+    "Archive Arbiter": "fine top-end card, but he already has Verdant Kraken",
+    "Way of the Pyromancer": "not good unless on the play"
+   },
+   "plan": "Graveyard value strategy.",
+   "quotes": [
+    "we are building towards some kind of graveyard-based value strategy, and I think that's a really good place to be"
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 6,
+   "time": "4:50-5:20",
+   "pack_cards": [
+    "Hapatra, the Desert Frost",
+    "Archive Arbiter",
+    "Silence the Echo",
+    "Theoretical Necromancer",
+    "Skilled Battlecarver",
+    "Greenhouse Propagator",
+    "Vinelasher Adept",
+    "Charge the Sanctum",
+    "Forest"
+   ],
+   "taken": "Vinelasher Adept",
+   "reasoning": "Vinelasher Adept: smooths draws (basic landcycling) and keeps the second colour open; he does not want to commit to black yet. Theoretical Necromancer and a second Arbiter were available.",
+   "considered": {
+    "Theoretical Necromancer": "pretty good, but he does not want to commit to black",
+    "Archive Arbiter": "another one in the pack",
+    "Silence the Echo": "fairly inefficient removal"
+   },
+   "plan": "Figure out the second colour later.",
+   "quotes": [
+    "I don't necessarily want to commit to the black just yet. I think I'm going to take Vine Lasher Adept because it smooths out your draws",
+    "This way we can kind of figure out what our second color needs to be"
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 7,
+   "time": "5:20-5:32",
+   "pack_cards": [
+    "Loyal Tutor",
+    "Essence Burn",
+    "Graft Surgeon",
+    "Rampart Hunter",
+    "Eardrum Rattler",
+    "Sureshot Sower",
+    "Medic's Kitesail",
+    "Island"
+   ],
+   "taken": "Sureshot Sower",
+   "reasoning": "Sureshot Sower as fine filler with something to play early.",
+   "considered": {},
+   "plan": "",
+   "quotes": [
+    "It's fine filler level card, right? Just to, you know, have something to play early."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 8,
+   "time": "5:32-5:45",
+   "pack_cards": [
+    "Loyal Tutor",
+    "Yargle, Goliath of Otaria",
+    "Yargle, Glutton of Urborg",
+    "Predictive Preparations",
+    "Eardrum Rattler",
+    "Afterthought Sentry",
+    "Fatehold Annex"
+   ],
+   "taken": "Fatehold Annex",
+   "reasoning": "A weak pack with nothing he wants to play: he takes Fatehold Annex (the captions garble it) as a land for a splash he is looking to make.",
+   "considered": {},
+   "plan": "Splash.",
+   "quotes": [
+    "this pack is quite weak. I don't really want to play any of these cards",
+    "That is a card that I'm looking to splash"
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 9,
+   "time": "5:45-6:01",
+   "pack_cards": [
+    "Edgar, Moonlit Sovereign",
+    "Academic Ascent",
+    "Predictive Preparations",
+    "Ferocity of the Hunt",
+    "Afterthought Sentry",
+    "Plains"
+   ],
+   "taken": "Ferocity of the Hunt",
+   "reasoning": "Ferocity of the Hunt over Edgar, Moonlit Sovereign: he does not love either; he has good enters-the-battlefield effects to reuse, and notes he is not seeing a ton of red.",
+   "considered": {
+    "Edgar, Moonlit Sovereign": "does not really love Edgar"
+   },
+   "plan": "Red is not flowing.",
+   "quotes": [
+    "I don't really love Edgar. I don't really like Ferocity of the Hunt ... But maybe this is I do have some good come into play effects.",
+    "Noting that we're not seeing a ton of red."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 10,
+   "time": "6:01-6:11",
+   "pack_cards": [
+    "Yuriko, Hope from the Shadows",
+    "Mabel, Bitter Recluse",
+    "Restore with Empathy",
+    "Void Extrapolator",
+    "Island"
+   ],
+   "taken": "Mabel, Bitter Recluse",
+   "reasoning": "Mabel, Bitter Recluse over Restore with Empathy: focus on the cheaper part of the curve.",
+   "considered": {
+    "Restore with Empathy": "the alternative"
+   },
+   "plan": "",
+   "quotes": [
+    "Let's focus on the cheaper part of our mana curve here."
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 11,
+   "time": "6:11-6:19",
+   "pack_cards": [
+    "Tomik, Orzhov Lawmage",
+    "Void Extrapolator",
+    "Ferocity of the Hunt",
+    "Swamp"
+   ],
+   "taken": "Void Extrapolator",
+   "reasoning": "Void Extrapolator (self-mill); a Tome is in the pack, Ferocity of the Hunt wheels as a trick. Black seen late makes him feel okay about the spot.",
+   "considered": {
+    "Ferocity of the Hunt": "trick, still in the pack"
+   },
+   "plan": "Self-mill, black seems open late.",
+   "quotes": [
+    "certainly we are setting up for some self-mill stuff",
+    "seeing the late makes me feel okay about this spot"
+   ]
+  },
+  {
+   "pack": 1,
+   "pick": 12,
+   "time": "6:19-6:22",
+   "pack_cards": [
+    "Loot, the Anomaly",
+    "Predictive Preparations",
+    "Mountain"
+   ],
+   "taken": null,
+   "reasoning": "Not discussed; a three-card pack (Loot, the Anomaly; Predictive Preparations; Mountain). The take is not identified: the final deck screen does not show the sideboard.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 1,
+   "pick": 13,
+   "time": "6:22-6:29",
+   "pack_cards": [
+    "Yargle, Glutton of Urborg",
+    "Forest"
+   ],
+   "taken": "Yargle, Glutton of Urborg",
+   "reasoning": "Not discussed. Two cards left (Yargle, Glutton of Urborg and a Forest); the take is inferred from the last pick showing the Forest.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 1,
+   "pick": 14,
+   "time": "6:29-6:31",
+   "pack_cards": [
+    "Forest"
+   ],
+   "taken": "Forest",
+   "reasoning": "Last card, Auto Select.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 1,
+   "time": "6:31-7:12",
+   "pack_cards": [
+    "Identity Echo",
+    "Arni, Humble Scribe",
+    "Plan for All Outcomes",
+    "Way of the Deathbringer",
+    "Way of the Wildspeaker",
+    "Blossom-Blessed Angel",
+    "Unflinching Hortimancer",
+    "Sphinx's Approach",
+    "Cast Away Doubt",
+    "Last Gasp",
+    "Skilled Battlecarver",
+    "Bestial Incursion",
+    "Tam's Resistance",
+    "Theorix Annex"
+   ],
+   "taken": "Last Gasp",
+   "reasoning": "Last Gasp over Plan for All Outcomes (fantastic, but he takes the safe cheap interaction): decks like this are often clunky and Last Gasp helps shore up a lot of things. Bestial Incursion and others are fine.",
+   "considered": {
+    "Plan for All Outcomes": "fantastic",
+    "Bestial Incursion": "fine"
+   },
+   "plan": "Take a good cheap interactive spell.",
+   "quotes": [
+    "Play it safe. Take a good cheap interactive spell",
+    "often times when I draft these decks, I find that they can be a little clunky and Last Gasp really helps shore up a lot of things"
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 2,
+   "time": "7:12-7:42",
+   "pack_cards": [
+    "Aerid Konstrari",
+    "Shipwreck Marsh",
+    "Arni, Humble Scribe",
+    "Precise Redaction",
+    "Arni, Renowned Champion",
+    "Eye of Jace",
+    "Surgical Precision",
+    "Solve for Disappointment",
+    "Hallway Heckler",
+    "Skilled Battlecarver",
+    "Tam's Resistance",
+    "Medic's Kitesail",
+    "Stingerquill Annex"
+   ],
+   "taken": "Aerid Konstrari",
+   "reasoning": "Aerid Konstrari: a green-green-red 5/4 flyer that leaves a Heartwood token; very splashable power, and the reason he took Vinelasher Adept.",
+   "considered": {
+    "Tam's Resistance": "no"
+   },
+   "plan": "Splash red for it.",
+   "quotes": [
+    "Yeah, this card is",
+    "this is why you take the Vine Lasher Adept, right? Because it gives you the opportunity to splash for busted cards like the Aerid Konstrari."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 3,
+   "time": "7:42-8:02",
+   "pack_cards": [
+    "Variable Chaser",
+    "Generous Revival",
+    "Proft, Consulting Detective",
+    "Essence Burn",
+    "Recursive Recruitment",
+    "Shatterwing Pegasus",
+    "Sphinx's Approach",
+    "Cast Away Doubt",
+    "Wrecking Gecko",
+    "Twinned Vision",
+    "Room of Refuge",
+    "Plains"
+   ],
+   "taken": "Recursive Recruitment",
+   "reasoning": "Recursive Recruitment: a premium uncommon for this self-mill deck, even if it pushes him towards four colours; Room of Refuge is a good fixer but this is the stronger card. He now has to respect his mana.",
+   "considered": {
+    "Room of Refuge": "good mana fixer, passed for the premium uncommon"
+   },
+   "plan": "Possibly four colours.",
+   "quotes": [
+    "we might be delving into four colors here, folks, cuz Recursive Recruitment seems awesome in this style of deck",
+    "now I'm going to need to respect my mana to some degree"
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 4,
+   "time": "8:02-8:36",
+   "pack_cards": [
+    "Samut, Tyrant of Naktamun",
+    "Tinybones, Pocket Nuisance",
+    "Jiang Yanggu, Alone",
+    "Woodwork Prodigy",
+    "Fateshaper Aspirant",
+    "Cryotheory Adept",
+    "Theoretical Necromancer",
+    "Skilled Battlecarver",
+    "Sureshot Sower",
+    "Murmuring Volume",
+    "Island"
+   ],
+   "taken": "Murmuring Volume",
+   "reasoning": "Murmuring Volume over Theoretical Necromancer: it lets him cast all his cards and works with self-mill; with the power and ramp of the deck he calls it a Murmuring Volume deck.",
+   "considered": {
+    "Theoretical Necromancer": "good, but Murmuring Volume suits what the deck does"
+   },
+   "plan": "Ramp and fixing.",
+   "quotes": [
+    "This lets us just cast all of our cards",
+    "this is actually a pretty good Murmuring Volume deck"
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 5,
+   "time": "8:36-8:58",
+   "pack_cards": [
+    "Extrapolate the Impossible",
+    "Thalia, the Survivor",
+    "Arni, Renowned Champion",
+    "Archive Arbiter",
+    "Academic Ascent",
+    "Protege's Awakening",
+    "Cast Away Doubt",
+    "Arcane Amphisbaena",
+    "Living Library",
+    "Forest"
+   ],
+   "taken": "Arcane Amphisbaena",
+   "reasoning": "Arcane Amphisbaena: a solid two-drop with deathtouch that surveils to fill the graveyard; he does not need more expensive cards like Archive Arbiter.",
+   "considered": {
+    "Archive Arbiter": "does not need more good expensive cards"
+   },
+   "plan": "",
+   "quotes": [
+    "I don't need good expensive cards like the Archive Arbiter. I will very happily take the Arcane Amphisbaena here as a solid two-drop."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 6,
+   "time": "8:58-9:18",
+   "pack_cards": [
+    "Command the Stage",
+    "Kiora of Salt and Sand",
+    "Fateshaper Aspirant",
+    "Undulating Witness",
+    "Screeching Soulbreaker",
+    "Greenhouse Propagator",
+    "Twinned Vision",
+    "Murmuring Volume",
+    "Forest"
+   ],
+   "taken": "Murmuring Volume",
+   "reasoning": "Second Murmuring Volume: he commits to full ramp, green-black base splashing blue and red; Undulating Witness, Twinned Vision and Greenhouse Propagator are passed (Propagator worse than Volume for what the deck does).",
+   "considered": {
+    "Undulating Witness": "passed",
+    "Twinned Vision": "does not love it",
+    "Greenhouse Propagator": "worse than Murmuring Volume for this deck"
+   },
+   "plan": "Green-black base, splash blue and red.",
+   "quotes": [
+    "Let's go full ramp.",
+    "Green black base splashing blue and red"
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 7,
+   "time": "9:18-9:36",
+   "pack_cards": [
+    "Vraska, Soul of Stone",
+    "Yoshimaru, Beloved Companion",
+    "Precise Redaction",
+    "Shatterwing Pegasus",
+    "Artifist Acumen",
+    "Theorix Metamage",
+    "Konstrari Improviser",
+    "Dedicated Commons"
+   ],
+   "taken": "Konstrari Improviser",
+   "reasoning": "Konstrari Improviser: a solid two-drop that ramps, one more way to get to Verdant Kraken.",
+   "considered": {
+    "Vraska, Soul of Stone": "not taken (gold, off-plan colours)"
+   },
+   "plan": "",
+   "quotes": [
+    "solid two-drop that helps me ramp. Just more ways to try to get to that Verdant Kraken is nice."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 8,
+   "time": "9:36-10:06",
+   "pack_cards": [
+    "Hexhaven Dueling Arena",
+    "Graft Surgeon",
+    "Bestial Incursion",
+    "Theorix Metamage",
+    "Keeper of the Quiet Hour",
+    "Medic's Kitesail",
+    "Plains"
+   ],
+   "taken": "Bestial Incursion",
+   "reasoning": "Bestial Incursion: good with self-mill and gives late-game things to do; Keeper of the Quiet Hour is also fine, Theorix Metamage is okay.",
+   "considered": {
+    "Keeper of the Quiet Hour": "also fine",
+    "Theorix Metamage": "okay"
+   },
+   "plan": "",
+   "quotes": [
+    "Yes, really good with self-mill, gives you more late game things to do."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 9,
+   "time": "10:06-10:23",
+   "pack_cards": [
+    "Arni, Humble Scribe",
+    "Way of the Wildspeaker",
+    "Sphinx's Approach",
+    "Cast Away Doubt",
+    "Skilled Battlecarver",
+    "Theorix Annex"
+   ],
+   "taken": "Theorix Annex",
+   "reasoning": "Theorix Annex (a dual land): he would like to pick up lands to support the splash cards and does not need another Way of the Wildspeaker.",
+   "considered": {
+    "Way of the Wildspeaker": "does not need it"
+   },
+   "plan": "Fixing.",
+   "quotes": [
+    "at this point I would like to be able to pick up some lands to be able to support some of these cards",
+    "I would much rather have Theorix Annex here"
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 10,
+   "time": "10:23-10:30",
+   "pack_cards": [
+    "Arni, Humble Scribe",
+    "Precise Redaction",
+    "Arni, Renowned Champion",
+    "Solve for Disappointment",
+    "Hallway Heckler"
+   ],
+   "taken": "Arni, Humble Scribe",
+   "reasoning": "Arni, Humble Scribe on the splash over Solve for Disappointment, which he never wants to play; he calls Arni on the splash kind of weak too. He is not main-decking Essence Burn (seen in the next pack).",
+   "considered": {
+    "Solve for Disappointment": "never wants to play it",
+    "Essence Burn": "not main-decking it, wonders about hate-drafting"
+   },
+   "plan": "",
+   "quotes": [
+    "I think I'll take Arni on the splash. I don't think I ever want to play Solve for Disappointment."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 11,
+   "time": "10:30-10:41",
+   "pack_cards": [
+    "Essence Burn",
+    "Shatterwing Pegasus",
+    "Sphinx's Approach",
+    "Plains"
+   ],
+   "taken": "Shatterwing Pegasus",
+   "reasoning": "Shatterwing Pegasus taken (the slot empties at about 640 s) from Essence Burn, Sphinx's Approach, Plains; his stated thought is about hate-drafting Essence Burn, so the pick is a low-value take from a pack with nothing for him.",
+   "considered": {
+    "Essence Burn": "not main-decking; wonders if hate drafting is worth it"
+   },
+   "plan": "",
+   "quotes": [
+    "I'm not main decking Essence Burn.",
+    "Like I wonder if hate drafting even"
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 12,
+   "time": "10:41-10:45",
+   "pack_cards": [
+    "Samut, Tyrant of Naktamun",
+    "Skilled Battlecarver",
+    "Island"
+   ],
+   "taken": "Samut, Tyrant of Naktamun",
+   "reasoning": "Samut, Tyrant of Naktamun from Samut, Skilled Battlecarver, Island (take read from the card flying to the pool). Not discussed beyond needing interaction.",
+   "considered": {},
+   "plan": "",
+   "quotes": [
+    "We do need some interaction. We'll be looking out for that here."
+   ]
+  },
+  {
+   "pack": 2,
+   "pick": 13,
+   "time": "10:45-10:47",
+   "pack_cards": [
+    "Academic Ascent",
+    "Forest"
+   ],
+   "taken": "Academic Ascent",
+   "reasoning": "Academic Ascent from Academic Ascent and Forest. Not discussed.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 2,
+   "pick": 14,
+   "time": "10:47-10:49",
+   "pack_cards": [
+    "Forest"
+   ],
+   "taken": "Forest",
+   "reasoning": "Last card, Auto Select (Forest).",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 1,
+   "time": "10:49-11:24",
+   "pack_cards": [
+    "Codie, Ravenous Codex",
+    "Refute Destiny",
+    "Yargle, Goliath of Otaria",
+    "Mabel, Bitter Recluse",
+    "Teyo, Diamondblade Mage",
+    "Paradox Shaper",
+    "Mabel, Valley Hero",
+    "Shatterwing Pegasus",
+    "Divining Duelist",
+    "Rampart Hunter",
+    "Sureshot Sower",
+    "Twinned Vision",
+    "Keeper of the Quiet Hour",
+    "Konstrari Annex"
+   ],
+   "taken": "Paradox Shaper",
+   "reasoning": "Paradox Shaper: nothing else in the pack for him (a bad pack to open); it self-mills every turn and goes with the graveyard cards. Keeper of the Quiet Hour was the other playable.",
+   "considered": {
+    "Keeper of the Quiet Hour": "a playable, not exciting",
+    "Codie, Ravenous Codex": "does not care about it"
+   },
+   "plan": "Self-mill value.",
+   "quotes": [
+    "Wow, this pack is really bad for us.",
+    "I guess I'll take Paradox Shaper. Just being able to self-mill every single turn"
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 2,
+   "time": "11:24-11:48",
+   "pack_cards": [
+    "Gardenize",
+    "Saheeli, Consul of Oversight",
+    "Massacre Girl, Most Wanted",
+    "Saheeli, Jewel of Avishkar",
+    "Primal Witchstalker",
+    "Eye of Jace",
+    "Memory Trap",
+    "Infinite Coursework",
+    "Extended Absence",
+    "Eardrum Rattler",
+    "Ferocity of the Hunt",
+    "Keeper of the Quiet Hour",
+    "Transformative Commons"
+   ],
+   "taken": "Primal Witchstalker",
+   "reasoning": "Primal Witchstalker: premium. He would love a reanimation spell or removal but there is none.",
+   "considered": {
+    "Extended Absence": "removal but off his colours"
+   },
+   "plan": "",
+   "quotes": [
+    "Primal Witchstalker is so premium.",
+    "Would love a reanimation spell here. Would love removal."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 3,
+   "time": "11:48-12:18",
+   "pack_cards": [
+    "Theorist's Proxy",
+    "Proft, Consulting Detective",
+    "Proft, Sinister Mastermind",
+    "Mind Meanderer",
+    "Fateshaper Aspirant",
+    "Divining Duelist",
+    "Void Extrapolator",
+    "Skilled Battlecarver",
+    "Budding Insurgent",
+    "Living Library",
+    "Medic's Kitesail",
+    "Meticulous Commons"
+   ],
+   "taken": "Proft, Sinister Mastermind",
+   "reasoning": "Proft, Sinister Mastermind over Mind Meanderer: double blue is really hard for him; Proft is not great but acts as a trick and the deck gets threshold easily; there are few good options.",
+   "considered": {
+    "Mind Meanderer": "double blue is really hard",
+    "Proft, Consulting Detective": "blue card he does not want"
+   },
+   "plan": "",
+   "quotes": [
+    "double blue is really hard, right? So, I don't think I take it here.",
+    "I'm not super high on Proft, Sinister Mastermind, but there really isn't that many good options here."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 4,
+   "time": "12:18-12:34",
+   "pack_cards": [
+    "Traxos, Academy Guardian",
+    "Essence Burn",
+    "Tetsuko Umezawa, Pursuer",
+    "Yoshimaru, Scrappy Stray",
+    "Archive Arbiter",
+    "Traxos, Scourge Eternal",
+    "Divining Duelist",
+    "Rampart Hunter",
+    "Tam's Resistance",
+    "Afterthought Sentry",
+    "Formidable Commons"
+   ],
+   "taken": "Formidable Commons",
+   "reasoning": "The black-green dual land (Formidable Commons) over big creatures and Yoshimaru: his deck ramps into Krakens and wants mana; Tam's Resistance is decent.",
+   "considered": {
+    "Yoshimaru, Scrappy Stray": "not a big fan",
+    "Tam's Resistance": "decent card"
+   },
+   "plan": "Fixing for ramp.",
+   "quotes": [
+    "I don't think I need big things or the Yoshimaru",
+    "our deck is trying to ramp into Krakens"
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 5,
+   "time": "12:34-12:42",
+   "pack_cards": [
+    "Yuriko, Blade of the Mighty",
+    "Yuriko, Hope from the Shadows",
+    "Command the Stage",
+    "Gallia, the Merrymaker",
+    "Primal Witchstalker",
+    "Archive Arbiter",
+    "Theoretical Necromancer",
+    "Sureshot Sower",
+    "Living Library",
+    "Mountain"
+   ],
+   "taken": "Primal Witchstalker",
+   "reasoning": "Another Primal Witchstalker; Theoretical Necromancer would also be nice but the Witchstalker fits what the deck does.",
+   "considered": {
+    "Theoretical Necromancer": "nice pick up"
+   },
+   "plan": "",
+   "quotes": [
+    "Another Primal Witchstalker, okay.",
+    "Theoretical Necromancer would also be a nice pick up, but our deck is trying to ramp into Krakens"
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 6,
+   "time": "12:42-13:04",
+   "pack_cards": [
+    "Danitha, Sword of Hope",
+    "Tomik, Orzhov Lawmage",
+    "Danitha, Spear of Agony",
+    "Flourishing Grapple",
+    "Eye of Jace",
+    "Fateshaper Aspirant",
+    "Cryotheory Adept",
+    "Charge the Sanctum",
+    "Innovative Commons"
+   ],
+   "taken": "Innovative Commons",
+   "reasoning": "The blue-red dual land (Innovative Commons) with nothing else available; he thinks he can play Protege's Awakening for card draw and maybe Arni.",
+   "considered": {},
+   "plan": "Splash.",
+   "quotes": [
+    "I'll take a blue red land with nothing else available.",
+    "I can probably play Protege's Awakening for like a little more card draw"
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 7,
+   "time": "13:04-13:24",
+   "pack_cards": [
+    "Samut, Tyrant of Naktamun",
+    "Yoshimaru, Beloved Companion",
+    "Hexhaven Dueling Arena",
+    "Fateshaper Aspirant",
+    "Divining Duelist",
+    "Solve for Disappointment",
+    "Sureshot Sower",
+    "Vigorbloom Annex"
+   ],
+   "taken": "Sureshot Sower",
+   "reasoning": "Sureshot Sower from an empty pack; the green-white land is for white, the only colour he does not splash.",
+   "considered": {
+    "Vigorbloom Annex": "green-white land, white is the colour he does not splash"
+   },
+   "plan": "",
+   "quotes": [
+    "Empty pack. There's a green white land, but white is the only color we don't have to splash. I guess I'll just take a Sower."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 8,
+   "time": "13:24-13:44",
+   "pack_cards": [
+    "Saheeli, Consul of Oversight",
+    "Hapatra, the Desert Frost",
+    "Yargle, Glutton of Urborg",
+    "Hexhaven Dueling Arena",
+    "Academic Ascent",
+    "Medic's Kitesail",
+    "Swamp"
+   ],
+   "taken": "Hapatra, the Desert Frost",
+   "reasoning": "Hapatra over Merfolk Skydiver (the captions): not a card he is interested in splashing, but nothing better; he has to play all these cards.",
+   "considered": {
+    "Merfolk Skydiver": "does not feel like a Skydiver deck"
+   },
+   "plan": "",
+   "quotes": [
+    "I guess I'll take Hapatra, but like not really a card that you're really interested in splashing."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 9,
+   "time": "13:44-13:49",
+   "pack_cards": [
+    "Refute Destiny",
+    "Yargle, Goliath of Otaria",
+    "Mabel, Valley Hero",
+    "Shatterwing Pegasus",
+    "Rampart Hunter",
+    "Keeper of the Quiet Hour"
+   ],
+   "taken": "Keeper of the Quiet Hour",
+   "reasoning": "Keeper of the Quiet Hour is fine; maybe he has to play it for some good late game. He wonders whether his pod just plays decks like this.",
+   "considered": {},
+   "plan": "",
+   "quotes": [
+    "Keeper of the Quiet Hour is fine.",
+    "Maybe I have to play this for some good late game."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 10,
+   "time": "13:49-13:59",
+   "pack_cards": [
+    "Gardenize",
+    "Eye of Jace",
+    "Eardrum Rattler",
+    "Ferocity of the Hunt",
+    "Transformative Commons"
+   ],
+   "taken": "Transformative Commons",
+   "reasoning": "A land (Transformative Commons) while he says he needs interaction and another big late-game thing; he decides to go full Sultai and play more Islands, cutting two cards from the list.",
+   "considered": {},
+   "plan": "Full Sultai.",
+   "quotes": [
+    "I think we're just going to go full Sultai and just play a lot more Islands.",
+    "We did pick up the four dual lands, so I think it's more possible."
+   ]
+  },
+  {
+   "pack": 3,
+   "pick": 11,
+   "time": "13:59-14:11",
+   "pack_cards": [
+    "Mind Meanderer",
+    "Divining Duelist",
+    "Void Extrapolator",
+    "Living Library"
+   ],
+   "taken": "Mind Meanderer",
+   "reasoning": "Mind Meanderer wheels from pick 3; read from the Pick tag, and it is in the final deck.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 12,
+   "time": "14:11-14:14",
+   "pack_cards": [
+    "Tetsuko Umezawa, Pursuer",
+    "Rampart Hunter",
+    "Afterthought Sentry"
+   ],
+   "taken": "Afterthought Sentry",
+   "reasoning": "Afterthought Sentry from Tetsuko Umezawa, Rampart Hunter and the Sentry. Not discussed.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 13,
+   "time": "14:14-14:27",
+   "pack_cards": [
+    "Living Library",
+    "Mountain"
+   ],
+   "taken": "Living Library",
+   "reasoning": "Living Library from Living Library and Mountain. Not discussed.",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  },
+  {
+   "pack": 3,
+   "pick": 14,
+   "time": "14:27-14:28",
+   "pack_cards": [
+    "Charge the Sanctum"
+   ],
+   "taken": "Charge the Sanctum",
+   "reasoning": "Last card, Auto Select (Charge the Sanctum).",
+   "considered": {},
+   "plan": "",
+   "quotes": []
+  }
+ ]
+}

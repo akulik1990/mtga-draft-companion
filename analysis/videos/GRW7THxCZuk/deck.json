@@ -1,0 +1,48 @@
+{
+ "id": "GRW7THxCZuk",
+ "time": "15:40 (final 40/40 screen at 940 s; matchmaking from about 946 s; cut-off 945 s)",
+ "main": {
+  "Mabel, Bitter Recluse": 1,
+  "Void Extrapolator": 1,
+  "Arcane Amphisbaena": 1,
+  "Sureshot Sower": 1,
+  "Paradox Shaper": 1,
+  "Konstrari Improviser": 1,
+  "Arni, Humble Scribe": 1,
+  "Proft, Sinister Mastermind": 1,
+  "Primal Witchstalker": 3,
+  "Keeper of the Quiet Hour": 1,
+  "Bestial Incursion": 1,
+  "Recursive Recruitment": 1,
+  "Aerid Konstrari": 1,
+  "Vinelasher Adept": 1,
+  "Mind Meanderer": 1,
+  "Verdant Kraken": 1,
+  "Last Gasp": 1,
+  "Something Worth Saving": 1,
+  "Murmuring Volume": 2,
+  "Protege's Awakening": 1
+ },
+ "lands": {
+  "Island": 2,
+  "Swamp": 4,
+  "Mountain": 1,
+  "Forest": 6,
+  "Theorix Annex": 1,
+  "Innovative Commons": 1,
+  "Formidable Commons": 1,
+  "Transformative Commons": 1
+ },
+ "sideboard": {},
+ "spells": 23,
+ "land_count": 17,
+ "landcyclers_in_main": [
+  "Vinelasher Adept"
+ ],
+ "colours": "Green-black-blue ramp with a red splash for Aerid Konstrari (Mountain 1, Innovative Commons): Forest 6, Swamp 4, Island 2, Mountain 1, four dual lands (Formidable Commons, Theorix Annex, Transformative Commons, Innovative Commons); two Murmuring Volume count as fixers.",
+ "notes": [
+  "The 40/40 screen at 940 s lists 23 spells and 17 lands; basic-land counts are Arena's auto-added basics (the 42/40 build at 880 s had Island 3, Swamp 4, Forest 5; he cut Hapatra and one Sureshot Sower for Arni, Humble Scribe and cut a Swamp for a Forest).",
+  "The sideboard is not shown on any screen before the cut-off, so deck.json lists none. Picks not in the 40 (inferred sideboard, not read from the screen): Academic Ascent, Afterthought Sentry, Charge the Sanctum, Fatehold Annex, Ferocity of the Hunt, Forest x2, Hapatra, the Desert Frost, Living Library, Samut, Tyrant of Naktamun, Shatterwing Pegasus, Sureshot Sower, Violent Echoes, Yargle, Glutton of Urborg.",
+  "P1p12 take unidentified (Loot, the Anomaly / Predictive Preparations / Mountain), so the inferred sideboard is one card short of the 42."
+ ]
+}
