@@ -162,6 +162,8 @@ class DraftAdvisorV2:
     DUAL_OPEN_EDGE = 8.0  # a nonbasic dual that taps for one of the lane's colours is worth at least replacement + this x (1 - progress); 0 = off. Akshin's call 2026-11-07, untested
     POWER_EARLY = 1.0  # Fit blended toward Power by this weight at pick 1, fading to 0 by POWER_EARLY_BY spells; 0 = off. Akshin's call 2026-11-07, untested
     POWER_EARLY_BY = 18
+    THREE_OPEN = 0.5  # share of each likely pair's chance moved to its three-colour bases at pick 1, fading to 0 by THREE_OPEN_BY spells; Akshin's call 2026-11-07, untested
+    THREE_OPEN_BY = 18
     TOP_END_POINTS = 8.0  # WR points off a 6+ mana spell under the finisher line (mean + 1 SD), x the pool's top-end pace (5+ drops held / the top pair's typical count scaled to spells held, capped at 1); Akshin's call 2026-11-07, untested
     COLOURLESS_FADE_BY = 8  # COLOURLESS_EARLY fades linearly from pick 1 to 0 at this pick of pack 1; 0 = no fade (full all pack 1). On by Akshin's call 2026-11-07; paired test (data/Temp/sim/floor1): top-1 -0.47 (p<0.001), top-3 -0.25 (p<0.001), mock deck WR -0.32 (p 0.18); kept by his decision
     PLAY_RATE_POINTS = 0.0  # WR points off a non-land card in proportion to how far its play rate falls below PLAY_RATE_FROM (all of them at 0%); 0 = off
@@ -368,6 +370,21 @@ class DraftAdvisorV2:
     def _three(self, p):
         """Move each likely pair's chance of ending three-colour (fitted from top drafters, pack 2 on) to that lane."""
         set_code = set_code_of(self.pool)
+        spells = sum(1 for c in self.pool if "Land" not in (c.get("types") or []))
+        if self.THREE_OPEN and spells < self.THREE_OPEN_BY:
+            # Akshin, 2026-11-07: three-colour bases are live while the colours are open. Each likely pair passes a share
+            # (fading by THREE_OPEN_BY spells) to its three triples, evenly: UG feeds WUG, UBG, URG.
+            share_of = self.THREE_OPEN * (1.0 - spells / self.THREE_OPEN_BY)
+            out = dict(p)
+            for lane, v in p.items():
+                if len(lane) != 2 or v < self.THREE_MIN_P:
+                    continue
+                others = [x for x in "WUBRG" if x not in lane]
+                out[lane] -= v * share_of
+                for x in others:
+                    three = "".join(sorted(lane + x, key="WUBRG".index))
+                    out[three] = out.get(three, 0.0) + v * share_of / len(others)
+            return out
         rule = config.fitted(set_code, "three_draft") if self.THREE_LANES and set_code and len(self.pool) >= 14 else None
         if not rule:
             return p
